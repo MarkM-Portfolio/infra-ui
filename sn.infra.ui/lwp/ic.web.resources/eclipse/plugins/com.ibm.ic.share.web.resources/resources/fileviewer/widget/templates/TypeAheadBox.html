@@ -1,0 +1,29 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="ics-typeaheadbox-container">
+  <div data-dojo-attach-point="textAreaContainer">
+    <table style="width: 100%;">
+      <th>
+        <label for="${id}_memberTypeSelector" data-dojo-attach-point="typeaheadSelectorLabel" class="lotusOffScreen">${nls.MEMBER_TYPE}</label>
+        <select id="${id}_memberTypeSelector" data-dojo-attach-point="typeaheadSelector">
+          <option value="user">${nls.USER}</option>
+          <option value="community">${nls.COMMUNITY}</option>
+          <option value="everyone">${shareNLS.PUBLIC.SHORT}</option>
+          </select>
+      </th>
+      <tr>
+        <td><div data-dojo-attach-point="typeAheadInput">
+            <textarea data-dojo-attach-point="textarea"></textarea>
+          </div>
+          <div class="actionContainer" data-dojo-attach-point="actionContainer">
+            <a href="javascript:;" data-dojo-attach-event="click:_addByEmail"
+              data-dojo-attach-point="manualAdd" role="button"
+              title="${nls.SHARE_ALT}">
+              <span>${nls.SHARE}</span>
+            </a>
+          </div></td>
+      </tr>
+    </table>
+  </div>
+  <div data-dojo-attach-point="errorContainer"></div>
+  <div data-dojo-attach-point="warningContainer"></div>
+</div>

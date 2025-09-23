@@ -1,0 +1,17 @@
+/* Copyright IBM Corp. 2011, 2015  All Rights Reserved.              */
+
+@import url(core.css)
+
+@import url(/dijit/themes/dijit.css)
+@import url(/dijit/themes/claro/Tree.css)
+@import url(/dijit/themes/claro/ProgressBar.css)
+
+@import url(/com.ibm.oneui3.styles/dojoTheme/lotusui30dojo/form/Common.css);
+@import url(/com.ibm.oneui3.styles/dojoTheme/lotusui30dojo/Calendar.css)
+@import url(/com.ibm.oneui3.styles/dojoTheme/lotusui30dojo/Menu.css)
+@import url(/com.ibm.oneui3.styles/dojoTheme/lotusui30dojo/form/Slider.css)
+@import url(/com.ibm.oneui3.styles/dojoTheme/lotusui30dojo/Dialog.css)
+@import url(/com.ibm.social.sharebox/css/TabContainer.css)
+
+@import url(dojo.css);
+@import url(../sprite/sprite-lconn.css);

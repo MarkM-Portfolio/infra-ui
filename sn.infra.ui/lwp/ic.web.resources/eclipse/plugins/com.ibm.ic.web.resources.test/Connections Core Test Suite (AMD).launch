@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.pde.ui.JunitLaunchConfig">
+<booleanAttribute key="append.args" value="true"/>
+<stringAttribute key="application" value="org.eclipse.pde.junit.runtime.coretestapplication"/>
+<booleanAttribute key="askclear" value="false"/>
+<booleanAttribute key="automaticAdd" value="true"/>
+<booleanAttribute key="automaticValidate" value="true"/>
+<stringAttribute key="bootstrap" value=""/>
+<stringAttribute key="checked" value="[NONE]"/>
+<booleanAttribute key="clearConfig" value="true"/>
+<booleanAttribute key="clearws" value="true"/>
+<booleanAttribute key="clearwslog" value="false"/>
+<stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/pde-junit"/>
+<booleanAttribute key="default" value="false"/>
+<booleanAttribute key="default_auto_start" value="true"/>
+<stringAttribute key="deselected_workspace_plugins" value="com.ibm.social.personcard.web.resources,com.ibm.lconn.communities.web.resources,com.ibm.lconn.filegadgets.web.resources,com.ibm.lconn.news.microblogging.sharebox.form,com.ibm.lconn.bookmarklet.web.resources,com.ibm.lconn.osgi.servletbridge,com.ibm.ic.ui.web.resources,com.ibm.social.ee.web.resources,com.ibm.ajax.auth.web.resources,com.ibm.lconn.web.resources.test,com.ibm.lconn.core.styles.test,com.ibm.social.eeconfig.web.resources,com.ibm.lconn.gallery.tests.web.resources,com.ibm.social.gadget.web.resources,org.wikimodel.wem,org.dojotoolkit.dijit,com.ibm.lconn.files.web.resources,com.ibm.oneui.web.resources.test,com.ibm.lconn.ecmpicker.web.resources,com.ibm.lconn.gadget.web.resources,com.ibm.lconn.wikis.web.resources,com.ibm.lconn.communityfiles.web.resources,org.dojotoolkit.dojo,com.ibm.lconn.files.ui,com.ibm.smartcloud.web.resources,com.ibm.lconn.search.web.resources,com.ibm.lconn.highway.web.resources,org.dojotoolkit.dojox,com.ibm.social.sharebox.web.resources,com.ibm.lconn.librarywidget.tests.web.resources,com.ibm.social.test.web.resources,com.ibm.lconn.mediagallery.web.resources.examples,com.ibm.social.ublog.web.resources,com.ibm.social.layout.web.resources,com.ibm.lconn.librarywidget.web.resources,com.ibm.lconn.communitywikis.web.resources,com.ibm.lconn.news.digest.web.resources,com.ibm.oneui3.styles,com.ibm.social.incontext.web.resources,com.ibm.lconn.homepage.web.resources,com.ibm.social.gen4.theme,com.ibm.lconn.core0.web.resources,com.ibm.lconn.sand.web.resources,com.ibm.social.as.lconn.web.resources,com.ibm.lconn.librarywidget.ui,com.ibm.social.appext.web.resources,com.ibm.lconn.oauth.web.resources,com.ibm.example.theme,com.ibm.social.as.web.resources,com.ibm.lconn.gallery.web.resources,com.ibm.lconn.socialmail.web.resources,com.ibm.lconn.librarywidget.web.resources.examples,com.ibm.oneui.web.resources,com.ibm.lconn.profiles.web.resources,com.ibm.lconn.activities.web.resources,com.ibm.lconn.share.web.resources,com.ibm.oneui.ckeditor,com.ibm.lconn.osgi.test,com.ibm.lconn.core.styles,com.ibm.lconn.moderation.web.resources,com.ibm.lconn.share0.web.resources,com.ibm.lconn.communities.catalog.web.resources,com.ibm.lconn.layout.web.resources,com.ibm.example.web.resources,com.ibm.ic.share.web.resources,org.dojotoolkit.doh,com.ibm.lconn.homepage.web.test.resources,com.ibm.mm.web.resources"/>
+<booleanAttribute key="includeOptional" value="true"/>
+<stringAttribute key="location" value="${workspace_loc}/../junit-workspace"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/com.ibm.ic.web.resources.test"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
+<listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.junit.CONTAINER" value=""/>
+<booleanAttribute key="org.eclipse.jdt.junit.KEEPRUNNING_ATTR" value="false"/>
+<stringAttribute key="org.eclipse.jdt.junit.TESTNAME" value=""/>
+<stringAttribute key="org.eclipse.jdt.junit.TEST_KIND" value="org.eclipse.jdt.junit.loader.junit4"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.ibm.ic.web.resources.test.suite.AllTests"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="com.ibm.ic.web.resources.test"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Djetty.http.port=9085 &#10;-Djetty.https.port=9448&#10;-Dorg.osgi.service.http.port=54250&#10;-Djava.util.logging.config.file=${workspace_loc:/lc.web.resources.war}/runtime/logging.properties &#13;&#10;-Dlog4j.configuration=file:///${workspace_loc:/log4j.settings}/src/log4j.properties&#13;&#10;-Dtest.config.files=/Users/procidac/dev/lconn/work/LotusConnections-config&#13;&#10;-DCONNECTIONS_CUSTOMIZATION_PATH=/Users/procidac/dev/lconn/work/customization&#10;-DCONNECTIONS_CUSTOMIZATION_DEBUG=true"/>
+<stringAttribute key="pde.version" value="3.3"/>
+<stringAttribute key="product" value=""/>
+<booleanAttribute key="run_in_ui_thread" value="true"/>
+<stringAttribute key="selected_target_plugins" value="com.ibm.sistdase.json@default:default,org.apache.http@default:default,org.apache.commons.lang@default:default,org.apache.log4j@default:default,com.ibm.team.json@default:default,org.apache.http.client@default:default,org.apache.commons.beanutils@default:default,org.apache.commons.codec@default:default,org.eclipse.core.runtime@default:true,org.apache.commons.collections@default:default,javax.servlet@default:default,org.eclipse.equinox.common@default:default,org.dojotoolkit.shrinksafe@default:default,org.apache.commons.logging@default:default,org.apache.commons.configuration@default:default,org.eclipse.equinox.preferences@default:default,org.eclipse.core.runtime.compatibility.registry@default:false,org.eclipse.core.jobs@default:default,org.eclipse.equinox.app@default:default,org.apache.commons.digester@default:default,com.ibm.team.jfs.app.config@default:default,com.ibm.team.repository.provision@default:default,org.eclipse.equinox.ds@default:true,org.mozilla.javascript@default:default,org.eclipse.equinox.http.servlet@default:default,org.apache.commons.httpclient@default:default,org.apache.commons.fileupload@default:default,com.ibm.team.jfs.app.http@default:default,org.junit*4.8.1.v4_8_1_v20100427-1100@default:default,org.apache.james.mime4j@default:default,org.eclipse.equinox.registry@default:default,org.eclipse.equinox.util@default:default,org.hamcrest.core@default:default,org.apache.commons.io@default:default,org.eclipse.core.contenttype@default:default,org.eclipse.osgi.services@default:default,org.eclipse.osgi,com.ibm.team.jfs.app.distributed@default:default"/>
+<stringAttribute key="selected_workspace_plugins" value="com.ibm.lconn.core.web.eclipse@default:default,com.ibm.ic.web.resources.test@default:default,com.ibm.lconn.core.web.resources@default:default,com.ibm.lconn.core.config@default:default,com.ibm.ic.core.web.resources@default:default,net.jazz.ajax.tests@default:default,com.ibm.lconn.personcard.web.resources@default:default,net.jazz.ajax@default:default,log4j.settings@default:false,com.ibm.lconn.core.web@default:default"/>
+<booleanAttribute key="show_selected_only" value="true"/>
+<stringAttribute key="templateConfig" value="${target_home}/configuration/config.ini"/>
+<booleanAttribute key="tracing" value="false"/>
+<booleanAttribute key="useCustomFeatures" value="false"/>
+<booleanAttribute key="useDefaultConfig" value="true"/>
+<booleanAttribute key="useDefaultConfigArea" value="false"/>
+<booleanAttribute key="useProduct" value="false"/>
+</launchConfiguration>

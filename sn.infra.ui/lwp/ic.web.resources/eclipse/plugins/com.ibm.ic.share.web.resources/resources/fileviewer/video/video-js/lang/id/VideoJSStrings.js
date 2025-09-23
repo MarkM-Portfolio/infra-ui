@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "id",
+      "Play": "Putar",
+      "Pause": "Pause",
+      "Current Time": "Waktu Saat ini",
+      "Duration Time": "Waktu Durasi",
+      "Remaining Time": "Waktu Tersisa",
+      "Stream Type": "Tipe Stream",
+      "LIVE": "LANGSUNG",
+      "Loaded": "Dimuat",
+      "Progress": "Progres",
+      "Fullscreen": "Layar Penuh",
+      "Non-Fullscreen": "Bukan Layar Penuh",
+      "Mute": "Senyap.",
+      "Unmute": "Nyalakan Suara",
+      "Unmuted": "Suara dinyalakan",
+      "Playback Rate": "Laju Pemutaran",
+      "Subtitles": "Subtitle",
+      "subtitles off": "subtitle dimatikan",
+      "Captions": "Keterangan",
+      "captions off": "keterangan dimatikan",
+      "Chapters": "Bab",
+      "Volume": "Volume",
+      "You aborted the video playback.": "Anda membatalkan pemutaran video",
+      "A network error caused the video download to fail part-way.": "Kesalahan jaringan menyebabkan pengunduhan video gagal.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "Video tidak dapat dimuatkan ke video could, apakah dikarenakan kegagalan server atau jaringan atau dikarenakan format tidak didukung.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "Pemutaran video dibatalkan karena masalah kerusakan atau karena video menggunakan fitur yang tidak didukung oleh browser Anda.",
+      "No compatible source was found for this video.": "Tidak ditemukan sumber yang sesuai untuk video ini."
+});
+

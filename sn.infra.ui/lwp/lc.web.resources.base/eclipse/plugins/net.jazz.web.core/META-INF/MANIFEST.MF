@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: %bundle.vendor
+Bundle-Localization: OSGI-INF/l10n/plugin
+Bundle-Name: %bundle.name
+Bundle-SymbolicName: net.jazz.web.core;singleton:=true
+Require-Bundle: org.dojotoolkit.dojo;visibility:=reexport,org.dojotool
+ kit.dijit;visibility:=reexport,org.dojotoolkit.dojox;visibility:=reex
+ port,net.jazz.ajax
+Bundle-Version: 2.1.1000.v20130626_0447
+Bundle-ManifestVersion: 2
+

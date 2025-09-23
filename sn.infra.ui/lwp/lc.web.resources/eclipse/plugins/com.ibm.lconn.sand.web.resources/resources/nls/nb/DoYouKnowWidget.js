@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Inviter til å ta kontakt",
+	NDYK1:"Ingen flere å anbefale",
+	LOADING: "laster inn",
+	DYK_TITLE: "Personer du kanskje kjenner",
+	INVITE_TITLE: "Send invitasjon om tilkobling",
+	SEND_ACTION: "Send",
+	CANCEL_ACTION: "Avbryt",
+	PREV: "Forrige",
+	NEXT: "Neste",
+	bpct: "Har kommentert på din blogg",
+	bpcc: "Dere har kommentert på samme blogg",
+	lpfr: "Er en kollega av noen du kjenner",
+	lm1: "Du er denne personens leder",
+	le1: "Denne personen er din leder",
+	sdm: "Dere deler samme leder",
+	pt: "Denne personen tagget deg",
+	pbt: "Du tagget denne personen",
+	acm: "Dere deler aktiviteter",
+	wikiCoContribution: "Dere redigerte samme wiki",
+	bpcb: "Du kommenterte på deres blogg",
+	lpcfr: "Dere deler kolleger",
+	ccmf: "Dere er i et fellesskap sammen",
+	ccms: "Dere er i et fellesskap sammen",
+	filesharing: "Dere deler noen filer",
+	forumthreaddiscussion: "Dere deler en forumtråd",
+	ctb: "Dere deler et bokmerke",
+	tgw: "Dere har samsvarene tagger",
+	tcu: "Dere har brukt samme tagg",
+	pctg: "Dere har tagget samme person",
+	tgb: "De samme personene har tagget dere begge"
+})

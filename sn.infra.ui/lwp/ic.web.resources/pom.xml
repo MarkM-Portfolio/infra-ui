@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mantis-super-pom</artifactId>
+        <groupId>com.ibm.maven</groupId>
+        <version>1.0</version>
+        <relativePath></relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ibm.lconn.infra.ui.ic.web.resources</groupId>
+    <artifactId>ic.web.resources</artifactId>
+    <name>ic.web.resources</name>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>eclipse/plugins/com.ibm.ic.core.web.resources</module>
+        <module>eclipse/plugins/com.ibm.ic.gadget.web.resources</module>
+        <module>eclipse/plugins/com.ibm.ic.gadget.web.resources.test</module>
+        <module>eclipse/plugins/com.ibm.ic.highway.web.resources</module>
+        <module>eclipse/plugins/com.ibm.ic.highway.web.resources.test</module>
+        <module>eclipse/plugins/com.ibm.ic.mm.web.resources</module>
+        <module>eclipse/plugins/com.ibm.ic.mm.web.resources.test</module>
+        <module>eclipse/plugins/com.ibm.ic.personcard.web.resources</module>
+        <module>eclipse/plugins/com.ibm.ic.search.web.resources</module>
+        <module>eclipse/plugins/com.ibm.ic.share.web.resources</module>
+        <module>eclipse/plugins/com.ibm.ic.share.web.resources.test</module>
+        <module>eclipse/plugins/com.ibm.ic.ui.web.resources</module>
+        <module>eclipse/plugins/com.ibm.ic.web.resources.test</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ibm.maven.prereqs</groupId>
+            <artifactId>was</artifactId>
+            <version>7.0</version>
+            <type>pom</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.lconn.util</groupId>
+            <artifactId>lc.util.web</artifactId>
+            <version>3.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.lconn</groupId>
+            <artifactId>lc.config.svc</artifactId>
+            <version>1.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.jazz</groupId>
+            <artifactId>net.jazz.ajax</artifactId>
+            <version>2.2.1000.20150220-0240</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.jazz</groupId>
+            <artifactId>net.jazz.ajax.tests</artifactId>
+            <version>2.1.0.20150220-0240</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.jazz</groupId>
+            <artifactId>net.jazz.web.core</artifactId>
+            <version>2.1.1000.v20130626_0447</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm</groupId>
+            <artifactId>sistdase.json</artifactId>
+            <version>1.1.1100.v20120901_0511</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.lconn.tk</groupId>
+            <artifactId>tk.rproxysvc.server</artifactId>
+            <version>3.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.lconn</groupId>
+            <artifactId>lc.shindig.serverapi.core</artifactId>
+            <version>3.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <archive>
+                        <manifestFile>META-INF/MANIFEST.MF</manifestFile>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <resources>
+            <resource>
+                <directory>resources</directory>
+                <targetPath>resources</targetPath>
+            </resource>
+            <resource>
+                <directory>${basedir}</directory>
+                <includes>
+                    <include>plugin.xml</include>
+                </includes>
+            </resource>
+        </resources>
+
+    </build>
+
+</project>

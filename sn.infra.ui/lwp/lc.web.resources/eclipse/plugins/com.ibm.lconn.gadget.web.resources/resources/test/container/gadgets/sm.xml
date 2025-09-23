@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<Module>
+  <ModulePrefs title="Social Mail Inbox" height="200" width="600" author="IBM">
+    <Require feature="dynamic-height"/>
+  </ModulePrefs>
+ <Content type="html" view="badge">
+<![CDATA[ 
+<style type="text/css">
+		.unselectable {
+			-moz-user-select: -moz-none;
+			-webkit-user-select: none;
+			user-select: none;
+		}
+		.text {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 12px;
+			font-weight: bold;
+			color: Red;
+			line-height: 1.3em;
+			text-align: center;
+			background-color: #222222;
+		}
+	</style>
+	<div id="MailNotify" class="text unselectable">14</div>
+ ]]> 
+ </Content>
+  <Content type="html" view="HoverView">
+<![CDATA[ 
+<div id="os-site-mail-hover" style="position: absolute; top: 0px; left: 0px; height: 568px; width: 350px; z-index: 2000;" widgetid="os-site-mail-hover" title="" role="group" class="dijitContentPane">
+<iframe width="100%" scrolling="no" height="100%" frameborder="2" hspace="0" vspace="0" marginheight="0" marginwidth="0" src="http://eichorn.notesdev.ibm.com/socmail-client/gadgets/inbox.html?db=/mail/pclemmon.nsf" name="__gadget_os-site-mail-hover" id="__gadget_os-site-mail-hover" style="height: 600px;">
+</iframe>
+</div>
+]]> 
+  </Content>
+  <Content type="html" view="default">
+<![CDATA[ 
+<center>
+<div id="os-site-calendar-hover" style="position: absolute; top: 0px; left: 0px; height: 300px; width: 350px; z-index: 2000;" widgetid="os-site-calendar-hover" title="" role="group" class="dijitContentPane">
+<iframe width="100%" scrolling="no" height="100%" frameborder="2" hspace="0" vspace="0" marginheight="0" marginwidth="0" src="http://eichorn.notesdev.ibm.com/socmail-client/gadgets/calendar.html?db=/mail/pclemmon.nsf" name="__gadget_os-site-calendar-hover" id="__gadget_os-site-calendar-hover" style="height: 300px;">
+</iframe>
+</div>
+</center>
+]]> 
+  </Content>
+</Module>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.pde.ui.EquinoxLauncher">
+<booleanAttribute key="append.args" value="true"/>
+<booleanAttribute key="automaticAdd" value="true"/>
+<booleanAttribute key="automaticValidate" value="true"/>
+<stringAttribute key="bad_container_name" value="\lc.web.resources.war\runtime\web.resources.launch"/>
+<stringAttribute key="bootstrap" value=""/>
+<stringAttribute key="checked" value="net.jazz.ajax"/>
+<booleanAttribute key="clearConfig" value="true"/>
+<booleanAttribute key="com.ibm.debug.breakpoints.java.appendFile" value="false"/>
+<stringAttribute key="com.ibm.debug.breakpoints.java.traceFilename" value="/home/i73707/OSGi.log"/>
+<booleanAttribute key="com.ibm.debug.breakpoints.java.traceToConsole" value="true"/>
+<booleanAttribute key="com.ibm.debug.breakpoints.java.traceToFile" value="true"/>
+<stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/Launch Shared Resources WAR as an OSGI program"/>
+<booleanAttribute key="default" value="true"/>
+<booleanAttribute key="default_auto_start" value="true"/>
+<intAttribute key="default_start_level" value="4"/>
+<booleanAttribute key="includeOptional" value="false"/>
+<stringAttribute key="org.eclipse.debug.core.source_locator_id" value="org.eclipse.pde.ui.launcher.PDESourceLookupDirector"/>
+<stringAttribute key="org.eclipse.debug.core.source_locator_memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sourceLookupDirector&gt;&#10;&lt;sourceContainers duplicates=&quot;false&quot;&gt;&#10;&lt;container memento=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;directory nest=&amp;quot;false&amp;quot; path=&amp;quot;/home/delphine/dev/work/org.eclipse.equinox.ds.source_1.2.1.R36x_v20100803&amp;quot;/&amp;gt;&quot; typeId=&quot;org.eclipse.debug.core.containerType.directory&quot;/&gt;&#10;&lt;container memento=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;default/&amp;gt;&quot; typeId=&quot;org.eclipse.debug.core.containerType.default&quot;/&gt;&#10;&lt;/sourceContainers&gt;&#10;&lt;/sourceLookupDirector&gt;"/>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.hyades.trace.ui.ATTR_DESTINATION_FILE" value=""/>
+<stringAttribute key="org.eclipse.hyades.trace.ui.ATTR_DESTINATION_MONITOR" value="DefaultMonitor"/>
+<stringAttribute key="org.eclipse.hyades.trace.ui.ATTR_DESTINATION_PROJECT" value="ProfileProject"/>
+<booleanAttribute key="org.eclipse.hyades.trace.ui.ATTR_PROFILE_TO_FILE" value="false"/>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -console"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Declipse.ignoreApp=true&#10;-Dosgi.noShutdown=true &#10;-Djetty.http.port=9085 &#10;-Djetty.https.port=9448&#10;-Dorg.osgi.service.http.port=52450&#10;-Djava.util.logging.config.file=${workspace_loc:/lc.web.resources.war}/runtime/logging.properties &#13;&#10;-Dlog4j.configuration=file:///${workspace_loc:/log4j.settings}/src/log4j.properties&#13;&#10;-Dtest.config.files=/Users/procidac/dev/lconn/work/LotusConnections-config&#13;&#10;-DCONNECTIONS_CUSTOMIZATION_PATH=/Users/procidac/dev/lconn/work/customization"/>
+<stringAttribute key="pde.version" value="3.3"/>
+<stringAttribute key="selectedPlugin" value="net.jazz.ajax"/>
+<booleanAttribute key="show_selected_only" value="false"/>
+<stringAttribute key="target_bundles" value="com.ibm.sistdase.json@default:default,com.ibm.team.jfs.app.config@default:default,com.ibm.team.jfs.app.distributed@default:default,com.ibm.team.jfs.app.http@default:default,com.ibm.team.json@default:default,com.ibm.team.repository.jndi@default:default,com.ibm.team.repository.provision@default:default,com.ibm.team.server.embedded.jetty@default:default,javax.servlet@default:default,org.apache.commons.beanutils@default:default,org.apache.commons.codec@default:default,org.apache.commons.collections@default:default,org.apache.commons.configuration@default:default,org.apache.commons.digester@default:default,org.apache.commons.fileupload@default:default,org.apache.commons.httpclient@default:default,org.apache.commons.io@default:default,org.apache.commons.lang@default:default,org.apache.commons.logging@default:default,org.apache.http.client@default:default,org.apache.http@default:default,org.apache.james.mime4j@default:default,org.apache.log4j@default:default,org.apache.naming@default:default,org.dojotoolkit.shrinksafe@default:default,org.eclipse.core.contenttype@default:default,org.eclipse.core.jobs@default:default,org.eclipse.core.runtime.compatibility.registry@default:false,org.eclipse.core.runtime@default:true,org.eclipse.equinox.app@default:default,org.eclipse.equinox.common@2:true,org.eclipse.equinox.ds@default:true,org.eclipse.equinox.http.jetty@default:default,org.eclipse.equinox.http.registry@default:default,org.eclipse.equinox.http.servlet@default:default,org.eclipse.equinox.preferences@default:default,org.eclipse.equinox.registry@default:default,org.eclipse.equinox.simpleconfigurator@1:true,org.eclipse.equinox.util@default:default,org.eclipse.osgi.services@default:true,org.eclipse.osgi@-1:true,org.hamcrest.core@default:default,org.junit*3.8.2.v3_8_2_v20100427-1100@default:default,org.junit*4.8.1.v4_8_1_v20100427-1100@default:default,org.mortbay.jetty.server@default:default,org.mortbay.jetty.util@default:default,org.mozilla.javascript@default:default,org.mozilla.rhino@default:default"/>
+<stringAttribute key="timestamp" value="1292979979115"/>
+<booleanAttribute key="tracing" value="true"/>
+<mapAttribute key="tracingOptions">
+<mapEntry key="net.jazz.ajax/AjaxFramework" value="true"/>
+<mapEntry key="net.jazz.ajax/Cache" value="true"/>
+<mapEntry key="net.jazz.ajax/ExtensionRegistry" value="true"/>
+<mapEntry key="net.jazz.ajax/Render" value="true"/>
+<mapEntry key="net.jazz.ajax/Resources/StyleSheet" value="true"/>
+<mapEntry key="net.jazz.ajax/Servlets/WebBundle" value="true"/>
+<mapEntry key="net.jazz.ajax/WebBundleScanner" value="true"/>
+<mapEntry key="org.eclipse.core.contenttype/debug" value="false"/>
+<mapEntry key="org.eclipse.core.jobs/jobs" value="false"/>
+<mapEntry key="org.eclipse.core.jobs/jobs/beginend" value="false"/>
+<mapEntry key="org.eclipse.core.jobs/jobs/errorondeadlock" value="false"/>
+<mapEntry key="org.eclipse.core.jobs/jobs/locks" value="false"/>
+<mapEntry key="org.eclipse.core.jobs/jobs/shutdown" value="false"/>
+<mapEntry key="org.eclipse.core.jobs/jobs/timing" value="false"/>
+<mapEntry key="org.eclipse.core.runtime/compatibility/debug" value="false"/>
+<mapEntry key="org.eclipse.core.runtime/debug" value="false"/>
+<mapEntry key="org.eclipse.core.runtime/debug/context" value="false"/>
+<mapEntry key="org.eclipse.core.runtime/perf" value="false"/>
+<mapEntry key="org.eclipse.core.runtime/perf/success" value="false"/>
+<mapEntry key="org.eclipse.core.runtime/preferences/plugin" value="false"/>
+<mapEntry key="org.eclipse.core.runtime/url/debug" value="false"/>
+<mapEntry key="org.eclipse.core.runtime/url/debug/cachecopy" value="false"/>
+<mapEntry key="org.eclipse.core.runtime/url/debug/cachelookup" value="false"/>
+<mapEntry key="org.eclipse.core.runtime/url/debug/connect" value="false"/>
+<mapEntry key="org.eclipse.equinox.preferences/general" value="false"/>
+<mapEntry key="org.eclipse.equinox.preferences/get" value="false"/>
+<mapEntry key="org.eclipse.equinox.preferences/set" value="false"/>
+<mapEntry key="org.eclipse.equinox.registry/debug" value="false"/>
+<mapEntry key="org.eclipse.equinox.registry/debug/events" value="false"/>
+<mapEntry key="org.eclipse.osgi/debug" value="false"/>
+<mapEntry key="org.eclipse.osgi/debug/bundleTime" value="false"/>
+<mapEntry key="org.eclipse.osgi/debug/events" value="false"/>
+<mapEntry key="org.eclipse.osgi/debug/filter" value="false"/>
+<mapEntry key="org.eclipse.osgi/debug/loader" value="false"/>
+<mapEntry key="org.eclipse.osgi/debug/manifest" value="false"/>
+<mapEntry key="org.eclipse.osgi/debug/messageBundles" value="false"/>
+<mapEntry key="org.eclipse.osgi/debug/packageadmin" value="false"/>
+<mapEntry key="org.eclipse.osgi/debug/security" value="false"/>
+<mapEntry key="org.eclipse.osgi/debug/services" value="false"/>
+<mapEntry key="org.eclipse.osgi/debug/startlevel" value="false"/>
+<mapEntry key="org.eclipse.osgi/defaultprofile/buffersize" value="256"/>
+<mapEntry key="org.eclipse.osgi/defaultprofile/logfilename" value=""/>
+<mapEntry key="org.eclipse.osgi/defaultprofile/logsynchronously" value="false"/>
+<mapEntry key="org.eclipse.osgi/eclipseadaptor/converter/debug" value="false"/>
+<mapEntry key="org.eclipse.osgi/eclipseadaptor/debug" value="false"/>
+<mapEntry key="org.eclipse.osgi/eclipseadaptor/debug/location" value="false"/>
+<mapEntry key="org.eclipse.osgi/eclipseadaptor/debug/platformadmin" value="false"/>
+<mapEntry key="org.eclipse.osgi/eclipseadaptor/debug/platformadmin/resolver" value="false"/>
+<mapEntry key="org.eclipse.osgi/monitor/activation" value="false"/>
+<mapEntry key="org.eclipse.osgi/monitor/classes" value="false"/>
+<mapEntry key="org.eclipse.osgi/monitor/resources" value="false"/>
+<mapEntry key="org.eclipse.osgi/profile/benchmark" value="false"/>
+<mapEntry key="org.eclipse.osgi/profile/debug" value="false"/>
+<mapEntry key="org.eclipse.osgi/profile/impl" value="org.eclipse.osgi.internal.profile.DefaultProfileLogger"/>
+<mapEntry key="org.eclipse.osgi/profile/startup" value="false"/>
+<mapEntry key="org.eclipse.osgi/resolver/cycles" value="false"/>
+<mapEntry key="org.eclipse.osgi/resolver/debug" value="false"/>
+<mapEntry key="org.eclipse.osgi/resolver/generics" value="false"/>
+<mapEntry key="org.eclipse.osgi/resolver/imports" value="false"/>
+<mapEntry key="org.eclipse.osgi/resolver/requires" value="false"/>
+<mapEntry key="org.eclipse.osgi/resolver/uses" value="false"/>
+<mapEntry key="org.eclipse.osgi/resolver/wiring" value="false"/>
+<mapEntry key="org.eclipse.osgi/trace/activation" value="false"/>
+<mapEntry key="org.eclipse.osgi/trace/classLoading" value="false"/>
+<mapEntry key="org.eclipse.osgi/trace/filename" value="runtime.traces"/>
+<mapEntry key="org.eclipse.osgi/trace/filters" value="trace.properties"/>
+</mapAttribute>
+<booleanAttribute key="useCustomFeatures" value="false"/>
+<booleanAttribute key="useDefaultConfigArea" value="true"/>
+<stringAttribute key="workspace_bundles" value="com.ibm.ajax.auth.web.resources@default:default,com.ibm.ic.core.web.resources@default:default,com.ibm.ic.gadget.web.resources.test@default:default,com.ibm.ic.gadget.web.resources@default:default,com.ibm.ic.highway.web.resources.test@default:default,com.ibm.ic.highway.web.resources@default:default,com.ibm.ic.mm.web.resources.test@default:default,com.ibm.ic.mm.web.resources@default:default,com.ibm.ic.ng.web.resources@default:default,com.ibm.ic.oauth.web.resources.test@default:default,com.ibm.ic.oauth.web.resources@default:default,com.ibm.ic.personcard.web.resources@default:default,com.ibm.ic.share.web.resources.test@default:default,com.ibm.ic.share.web.resources@default:default,com.ibm.ic.ui.web.resources@default:default,com.ibm.ic.web.resources.test@default:default,com.ibm.lconn.bookmarklet.web.resources@default:default,com.ibm.lconn.communityactivities.web.resources@default:default,com.ibm.lconn.core.config@default:default,com.ibm.lconn.core.styles.test@default:default,com.ibm.lconn.core.styles@default:default,com.ibm.lconn.core.web.eclipse@default:default,com.ibm.lconn.core.web.resources@default:default,com.ibm.lconn.core.web.was@default:default,com.ibm.lconn.core.web@default:default,com.ibm.lconn.gadget.web.resources@default:default,com.ibm.lconn.highway.web.resources@default:default,com.ibm.lconn.layout.web.resources@default:default,com.ibm.lconn.oauth.web.resources@default:default,com.ibm.lconn.osgi.servletbridge@default:default,com.ibm.lconn.personcard.web.resources@default:default,com.ibm.lconn.sand.web.resources@default:default,com.ibm.lconn.search.web.resources@default:default,com.ibm.lconn.share.web.resources.test@default:default,com.ibm.lconn.share.web.resources@default:default,com.ibm.lconn.socialmail.web.resources@default:default,com.ibm.lconn.web.resources.test@default:default,com.ibm.lotuslive.theme@default:default,com.ibm.mm.web.resources@default:default,com.ibm.oneui.ckeditor@default:default,com.ibm.oneui.styles@default:default,com.ibm.oneui.web.resources.test@default:default,com.ibm.oneui.web.resources@default:default,com.ibm.oneui3.styles@default:default,com.ibm.social.as.lconn.web.resources@default:default,com.ibm.social.as.web.resources@default:default,com.ibm.social.ee.web.resources@default:default,com.ibm.social.eeconfig.web.resources@default:default,com.ibm.social.gadget.web.resources@default:default,com.ibm.social.gen4.theme@default:default,com.ibm.social.hikari.theme@default:default,com.ibm.social.incontext.web.resources@default:default,com.ibm.social.layout.web.resources@default:default,com.ibm.social.personcard.web.resources@default:default,com.ibm.social.sharebox.web.resources@default:default,com.ibm.social.test.web.resources@default:default,com.ibm.social.ublog.web.resources@default:default,log4j.settings@default:false,net.jazz.ajax.tests.client@default:default,net.jazz.ajax.tests@default:default,net.jazz.ajax@default:default,net.jazz.web.core@default:default,org.angularjs@default:default,org.dojotoolkit.dijit@default:default,org.dojotoolkit.doh@default:default,org.dojotoolkit.dojo@default:default,org.dojotoolkit.dojox@default:default"/>
+</launchConfiguration>

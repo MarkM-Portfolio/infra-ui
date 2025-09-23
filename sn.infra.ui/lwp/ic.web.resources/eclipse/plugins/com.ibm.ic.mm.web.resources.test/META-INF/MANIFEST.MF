@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Mashup Maker Enabler Test (AMD)
+Bundle-SymbolicName: com.ibm.ic.mm.web.resources.test;singleton:=true
+Bundle-Version: 1.1.0.qualifier
+Bundle-Vendor: IBM
+Bundle-ActivationPolicy: lazy

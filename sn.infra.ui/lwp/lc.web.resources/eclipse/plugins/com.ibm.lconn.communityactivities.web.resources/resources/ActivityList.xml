@@ -1,0 +1,30 @@
+<!-- Copyright IBM Corp. 2007, 2015  All Rights Reserved.              -->
+
+<!-- 5724_S68                                                          -->
+<iw:iwidget id="activityList" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget"
+	supportedModes="view edit fullpage search" mode="view" lang="en"
+	iScope="lconn.core.ActivityList">
+	<iw:content mode="view">
+		<![CDATA[
+		<div id="activityList" class="lotusIndent10">
+		</div>
+		]]>
+	</iw:content>
+	<iw:content mode="edit">
+		<![CDATA[
+		<div id="activityEditDivID">
+		</div>
+		]]>
+	</iw:content>	
+    <iw:content mode="fullpage">
+        <![CDATA[
+        <div id="activityList">
+        </div>
+        ]]>
+    </iw:content>
+    <iw:content mode="search">
+        <![CDATA[
+            <div id="resultContainer"></div>
+        ]]>
+    </iw:content>
+</iw:iwidget>

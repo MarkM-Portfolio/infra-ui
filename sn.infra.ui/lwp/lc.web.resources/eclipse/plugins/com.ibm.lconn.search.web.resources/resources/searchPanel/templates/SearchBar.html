@@ -1,0 +1,15 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+
+<div class="icSearchBar">
+	<div title="${SEARCH_PLACEHOLDER}" dojoType="dijit.form.TextBox" dojoAttachPoint="searchBox" dojoAttachEvent="onFocus: onBarFocused" placeholder="${SEARCH_PLACEHOLDER}"></div>
+	<a href="javascript:;" role="button" class="icSvgIcon icSvgSearch" dojoAttachPoint="_searchButton" dojoAttachEvent="onclick: onSearchClicked" title="${SEARCH_ALT_TEXT}" aria-label="${SEARCH_ALT_TEXT}">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+			<g>
+				<path d="M12,1C5.926,1,1,5.926,1,12c0,6.074,4.926,11,11,11s11-4.926,11-11C23,5.926,18.074,1,12,1z M12,21c-4.962,0-9-4.038-9-9 s4.038-9,9-9s9,4.038,9,9S16.962,21,12,21z"/>
+				<rect x="23.879" y="21.05" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -10.7696 26)" width="4.243" height="9.899"/>
+				<circle cx="21" cy="21" r="1"/>
+			</g>
+		</svg>
+	</a>
+	<span class="lotusAltText">${SEARCH_ALT_TEXT}</span>
+</div>

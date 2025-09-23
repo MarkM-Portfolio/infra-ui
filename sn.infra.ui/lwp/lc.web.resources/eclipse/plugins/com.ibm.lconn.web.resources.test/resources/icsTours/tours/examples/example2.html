@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+    
+		<!-- Copyright IBM Corp. 2008, 2016  All Rights Reserved.              
+		//  ${script:lconn.test.icsTours.tours.Tour}
+		-->
+        <title>IBM Connections - Dojo Dialog</title>
+${endhead}
+<html>
+	<header>
+		<link rel="stylesheet" href="../hopscotch.css"></link>
+	</header>
+      <head>
+        <title>My First Hopscotch Tour</title>
+      </head>
+      <body style="margin: auto;text-align: center;width:500px;">
+       <h1 id="header" style="text-align: center;margin: auto; width:300px">My First Hopscotch Tour</h1>
+        <div id="content" style="text-align: center;margin: auto;width:200px">
+          <p>Content goes here...</p>
+        </div>
+        <footer id="footer" style="text-align: center;margin: auto;width:200px">
+          <p>footer goes here...</p>
+          <button class="lotusBtn" title="Download vCard" id="guidedT" style="margin:10px"> <img alt="" class="AEMenuItemIcon_lconn_profiles_actionBar_ActionBar_0 lotusHidden" > <span>Guided tours</span> </button>
+        </footer>
+        <script src="../Tour.js"></script>
+        <script src="example1.js"></script>
+		<script>
+		var node = dojo.byId("guidedT");
+		dojo.connect(node, "onclick", function(){
+			var hello = new lconn.test.icsTours.tours.Tour();
+			hello.startTour(tour);
+		});
+		</script>
+      </body>
+    </html>

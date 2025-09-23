@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+	<head>
+	    <title>Tests for lconn.core.util.*</title>
+
+		<script type="text/javascript">	
+			var loc = location + '';
+			if (loc.indexOf('render=test') < 0) {
+				if (loc.indexOf('?') > 0) {
+					location = loc + "&render=test";
+				}
+				else {
+					location = loc + "?render=test";
+				}
+			}
+		</script>
+
+		<script type="text/javascript">
+			window.location = "${contextRoot}/web/com.ibm.oneui.test/runner.html?render=test&testModule=lconn.test.util.module&registerModulePath=lconn.core,${contextRoot}/web/lconn.core"
+		</script>
+	</head>
+	<body>
+		Redirecting to D.O.H runner.   
+	</body>
+</html>

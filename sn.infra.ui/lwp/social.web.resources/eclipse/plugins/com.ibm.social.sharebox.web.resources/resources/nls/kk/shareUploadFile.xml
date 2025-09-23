@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">Файлдар</msg>
+  <msg name="description">Файлдарды жүктеп салуға және ортақтасуға арналған файлдар гаджеті</msg>
+  <msg name="action_uploadFile_label">Файлдар</msg>
+  <msg name="action_uploadFile_tooltip">Файлдарды жүктеп салу және ортақтасу</msg>
+  <msg name="loading">Жүктелуде...</msg>
+  <msg name="error_msg">Мазмұнды жүктеу мүмкін емес. Кейінірек қайталаңыз немесе жүйе әкімшіңізге хабарласыңыз.</msg>
+  <msg name="error_alt">Қате</msg>
+</messagebundle>

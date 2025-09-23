@@ -1,0 +1,277 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2003, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="social.web.resources" default="development" basedir=".">
+   <!-- Import helpers for property builds, do not change -->
+   <locateComponent component="prereqs.web.resources" property="eclipseBuildDir" locateBuildDir="false"/>
+   <import file="${eclipseBuildDir}/build_utils.xml" />
+   <import file="${env.WPLC_IMPORT}/pde_build.xml"/>  
+
+	<locateComponent component="prereqs.sn/jasmine-2.0" property="jasmine.basedir" locateBuildDir="false"/>
+	<import file="${jasmine.basedir}/jasmine.xml" />
+
+	<locateComponent component="prereqs.sn/jsdoc3" property="jsdoc.basedir" locateBuildDir="false"/>
+	<import file="${jsdoc.basedir}/jsdoc3.xml" />
+
+	<locateComponent component="prereqs.sn/jslint4java" property="jslint.basedir" locateBuildDir="false"/>
+	<import file="${jslint.basedir}/jslint.xml" />
+
+	<locateComponent component="prereqs.sn/ant-contrib" property="ant-contrib.basedir" locateBuildDir="false"/>
+	<taskdef name="for_each" classname="net.sf.antcontrib.logic.ForEach" classpath="${ant-contrib.basedir}/ant-contrib-1.0b3.jar" />
+
+	<import file="${basedir}/../imports/jscover.xml" />
+	<property name="jscover.bundles" value="com.ibm.lconn.socialmail.web.resources,com.ibm.ic.mail.web.resources" />
+
+	<target name="custom_init" depends="instrument-for-jscover">
+      <property name="gadgetdir" value="${basedir}/eclipse/plugins/com.ibm.lconn.socialmail.web.resources/resources/gadget" />
+      <concat destfile="${gadgetdir}/_NavigationHandler.js" encoding="UTF-8" eol="dos">
+         <header trimleading="yes">
+            (function() {
+            dojo.provide("com.ibm.lconn.socialmail.gadget._NavigationHandler");
+         </header>
+
+         <footer trimleading="yes">
+            com.ibm.lconn.socialmail.gadget._NavigationHandler = _NavigationHandlerGadget;
+            })();
+         </footer>
+         <fileset file="${gadgetdir}/_dojolessObject.js" />
+
+         <filterchain>
+            <tokenfilter delimoutput="\r\n"/> <!-- ensure consistent line endings no matter what platform the build is run on -->
+            <deletecharacters chars="&#xFEFF;"/> <!-- remove the unicode BOM at the start of CK files  -->
+         </filterchain>
+      </concat>
+
+      <property name="gadgetdir.amd" value="${basedir}/eclipse/plugins/com.ibm.ic.mail.web.resources/resources/gadget" />
+      <concat destfile="${gadgetdir.amd}/_NavigationHandler.js" encoding="UTF-8" eol="dos">
+         <header trimleading="yes">
+define([], function() {
+         </header>
+
+         <footer trimleading="yes">
+    return _NavigationHandlerGadget;
+});
+         </footer>
+         <fileset file="${gadgetdir}/_dojolessObject.js" />
+
+         <filterchain>
+            <tokenfilter delimoutput="\r\n"/> <!-- ensure consistent line endings no matter what platform the build is run on -->
+            <deletecharacters chars="&#xFEFF;"/> <!-- remove the unicode BOM at the start of CK files  -->
+         </filterchain>
+      </concat>
+
+		<antcall target="extract_jasmine_standalone">
+			<param name="to.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.social.web.resources.test/resources/" />
+		</antcall>
+   </target>
+
+	<target name="custom_complete" depends="generate_jsdoc" />
+
+	<target name="run_jslint">
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.as.lconn.web.resources/resources" />
+			<param name="jslint.outfile" value="jslint.ic-as-lconn.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.as.web.resources/resources" />
+			<param name="jslint.outfile" value="jslint.ic-as.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.ee.web.resources/resources" />
+			<param name="jslint.outfile" value="jslint.ic-ee.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.incontext.web.resources/resources" />
+			<param name="jslint.outfile" value="jslint.ic-incontext.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.mail.web.resources/resources" />
+			<param name="jslint.outfile" value="jslint.ic-mail.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.sharebox.web.resources/resources" />
+			<param name="jslint.outfile" value="jslint.ic-sharebox.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.socgadget.web.resources/resources" />
+			<param name="jslint.outfile" value="jslint.ic-socgadget.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.social.web.resources.test/resources" />
+			<param name="jslint.outfile" value="jslint.ic-social-test.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/spec/*.js,**/src/*.js,**/lib/jasmine*/**/*.js,**/specRunner.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.lconn.socialmail.web.resources/resources" />
+			<param name="jslint.outfile" value="jslint.com.ibm.lconn.socialmail.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.as.lconn.web.resources/resources" />
+			<param name="jslint.outfile" value="jslint.com.ibm.social.as.lconn.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.as.web.resources/resources" />
+			<param name="jslint.outfile" value="jslint.com.ibm.social.as.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.ee.cloud.resources/resources" />
+			<param name="jslint.outfile" value="jslint.com.ibm.social.ee.cloud.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.ee.web.resources/resources" />
+			<param name="jslint.outfile" value="jslint.com.ibm.social.ee.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.gadget.web.resources/resources" />
+			<param name="jslint.outfile" value="jslint.com.ibm.social.gadget.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.incontext.web.resources/resources" />
+			<param name="jslint.outfile" value="jslint.com.ibm.social.incontext.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.sharebox.web.resources/resources" />
+			<param name="jslint.outfile" value="jslint.com.ibm.social.sharebox.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.test.web.resources/resources" />
+			<param name="jslint.outfile" value="jslint.com.ibm.social.test.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/spec/*.js,**/src/*.js,**/lib/jasmine*/**/*.js,**/specRunner.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.ublog.web.resources/resources" />
+			<param name="jslint.outfile" value="jslint.com.ibm.social.ublog.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+	</target>
+
+	<target name="generate_jsdoc">
+		<mkdir dir="${dir.build}/jsdoc"/>
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.as.lconn.web.resources/resources" />
+			<param name="docs.topic.dir" value="ic-as-lconn" />
+		</antcall>
+		<!-- FIXME: JSDoc terminates with error on this bundle, investigate -->
+		<!--antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.as.web.resources/resources" />
+			<param name="docs.topic.dir" value="ic-as" />
+		</antcall-->
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.ee.web.resources/resources" />
+			<param name="docs.topic.dir" value="ic-ee" />
+		</antcall>
+		<!-- FIXME: JSDoc terminates with error on this bundle, investigate -->
+		<!--antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.incontext.web.resources/resources" />
+			<param name="docs.topic.dir" value="ic-incontext" />
+		</antcall-->
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.mail.web.resources/resources" />
+			<param name="docs.topic.dir" value="ic-mail" />
+		</antcall>
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.sharebox.web.resources/resources" />
+			<param name="docs.topic.dir" value="ic-sharebox" />
+		</antcall>
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.socgadget.web.resources/resources" />
+			<param name="docs.topic.dir" value="ic-socgadget" />
+		</antcall>
+		<!-- FIXME: JSDoc terminates with error on this bundle, investigate -->
+		<!--antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.social.web.resources.test/resources" />
+			<param name="docs.topic.dir" value="ic-social-test" />
+		</antcall-->
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.lconn.socialmail.web.resources/resources" />
+			<param name="docs.topic.dir" value="com.ibm.lconn.socialmail" />
+		</antcall>
+		<!-- FIXME: JSDoc terminates with error on this bundle, investigate -->
+		<!--antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.as.lconn.web.resources/resources" />
+			<param name="docs.topic.dir" value="com.ibm.social.as.lconn" />
+		</antcall-->
+		<!-- FIXME: JSDoc terminates with error on this bundle, investigate -->
+		<!--antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.as.web.resources/resources" />
+			<param name="docs.topic.dir" value="com.ibm.social.as" />
+		</antcall-->
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.ee.cloud.resources/resources" />
+			<param name="docs.topic.dir" value="com.ibm.social.ee.cloud" />
+		</antcall>
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.ee.web.resources/resources" />
+			<param name="docs.topic.dir" value="com.ibm.social.ee" />
+		</antcall>
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.gadget.web.resources/resources" />
+			<param name="docs.topic.dir" value="com.ibm.social.gadget" />
+		</antcall>
+		<!-- FIXME: JSDoc terminates with error on this bundle, investigate -->
+		<!--antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.incontext.web.resources/resources" />
+			<param name="docs.topic.dir" value="com.ibm.social.incontext" />
+		</antcall-->
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.sharebox.web.resources/resources" />
+			<param name="docs.topic.dir" value="com.ibm.social.sharebox" />
+		</antcall>
+		<!-- FIXME: JSDoc terminates with error on this bundle, investigate -->
+		<!--antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.test.web.resources/resources" />
+			<param name="docs.topic.dir" value="com.ibm.social.test" />
+		</antcall-->
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.social.ublog.web.resources/resources" />
+			<param name="docs.topic.dir" value="com.ibm.social.ublog" />
+		</antcall>
+	</target>
+	
+	<!-- No-op for now -->
+	<target name="collect_jsdoc"/>
+</project>

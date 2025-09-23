@@ -1,0 +1,179 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+${script:com.ibm.lconn.layout.people}
+${script:com.ibm.lconn.personcard.standard}
+${script:net.jazz.ajax.xdloader}
+${style:com.ibm.oneui/controls/templates/ResourceLink.css}
+${endhead}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+FIXME: Needs to work across multiple servers and allow flexible settings.  For now, use
+<a href="../../com.ibm.lconn.personcard/test/externalCard.html?render=test&oneui=3">the external card test</a> to try the new
+person card.
+
+<script>
+	if (!dojo.exists("com.ibm.social.layout.people")) 
+		throw "Social People API not defined";
+	if (com.ibm.social.layout.people.createLink != com.ibm.lconn.layout.people.createLink)
+		throw "Social People API does not match LConn createLink method";
+	if (com.ibm.social.layout.people.createImage != com.ibm.lconn.layout.people.createImage)
+		throw "Social People API does not match LConn createImage method";
+	dojo.addOnLoad(function() {console.log("Loaded")});
+</script>
+
+<table style="width: 100%;" cellpadding="1" cellspacing="1" border="1">
+<thead><tr>
+<th>Test case</th><th>Description</th>
+</tr></thead><tbody>
+
+<tr><td>
+	<div id="1_1"></div>
+	<div id="1_2"></div>
+	<div id="1_3"></div>
+	<div id="1_4"></div>
+	<script>
+	dojo.place(com.ibm.lconn.layout.people.createLink({
+		uid: "asingh",
+		name: "Test Link by id"
+	}), dojo.byId("1_1"));
+	dojo.place(com.ibm.lconn.layout.people.createLink({
+		email: "asingh@renovations.com",
+		name: "Test Link by email"
+	}), dojo.byId("1_2"));
+	dojo.place(com.ibm.lconn.layout.people.createLink({
+		profileId: "key_asingh",
+		name: "Test Link by key"
+	}), dojo.byId("1_3"));
+	dojo.place(com.ibm.lconn.layout.people.createLink({
+		dn: "dn_asingh",
+		name: "Test Link by dn"
+	}), dojo.byId("1_4"));
+	</script>
+</td><td>
+	<ol>
+	<li>Create a link to the profiles service for the user with ID 1  
+	</ol>
+</td></tr>
+
+<tr><td>
+	<div id="2_1"></div>
+	<div id="2_2"></div>
+	<div id="2_3"></div>
+	<div id="2_4"></div>
+	<script>
+	dojo.place(com.ibm.lconn.layout.people.createImage({
+		uid: "asingh",
+		name: "Test Link by id"
+	}), dojo.byId("2_1"));
+	dojo.place(com.ibm.lconn.layout.people.createImage({
+		email: "asingh@renovations.com",
+		name: "Test Link by email"
+	}), dojo.byId("2_2"));
+	dojo.place(com.ibm.lconn.layout.people.createImage({
+		profileId: "key_asingh",
+		name: "Test Link by key"
+	}), dojo.byId("2_3"));
+	dojo.place(com.ibm.lconn.layout.people.createImage({
+		dn: "dn_asingh",
+		name: "Test Link by dn"
+	}), dojo.byId("2_4"));
+	</script>
+</td><td>
+	<ol>
+	<li>Create a link to the profiles service for the user with ID 1  
+	</ol>
+</td></tr>
+
+<tr><td>
+	<div id="3_1"></div>
+	<div id="3_2"></div>
+	<div id="3_3"></div>
+	<div id="3_4"></div>
+	<div id="3_5"></div>
+	<div id="3_6"></div>
+	<script>
+	dojo.place(com.ibm.lconn.layout.people.createImage({
+		uid: "asingh",
+		name: "Test Link by id"
+	}, 32), dojo.byId("3_1"));
+	dojo.place(com.ibm.lconn.layout.people.createImage({
+		dn: "dn_asingh",
+		name: "Test Link by dn"
+	}, 32), dojo.byId("3_2"));
+	dojo.place(com.ibm.lconn.layout.people.createImage({
+		uid: "asingh",
+		name: "Test Link by id"
+	}, 64), dojo.byId("3_3"));
+	dojo.place(com.ibm.lconn.layout.people.createImage({
+		dn: "dn_asingh",
+		name: "Test Link by dn"
+	}, 64), dojo.byId("3_4"));
+	dojo.place(com.ibm.lconn.layout.people.createImage({
+		uid: "vhanley",
+		name: "Test Link by id"
+	}, 128), dojo.byId("3_5"));
+	dojo.place(com.ibm.lconn.layout.people.createImage({
+		dn: "dn_asingh",
+		name: "Test Link by dn"
+	}, 128), dojo.byId("3_6"));
+	</script>
+</td><td>
+	<ol>
+	<li>Create a link to the profiles service for the user with ID 1  
+	</ol>
+</td></tr>
+
+<tr><td>
+	<div id="4_1"></div>
+	<div id="4_2"></div>
+	<div id="4_3"></div>
+	<script>
+	dojo.place(com.ibm.lconn.layout.people.createImage({
+		uid: "asingh",
+		name: "Test Link by id"
+	}, 32, true), dojo.byId("4_1"));
+	dojo.place(com.ibm.lconn.layout.people.createImage({
+		dn: "dn_asingh",
+		name: "Test Link by dn"
+	}, 128, true), dojo.byId("4_2"));
+	dojo.place(com.ibm.lconn.layout.people.createImage({
+		uid: "mshani",
+		name: "Test Link by id"
+	}, 128, true), dojo.byId("4_3"));
+	</script>
+</td><td>
+	<ol>
+	<li>Create a link to the profiles service for the user with ID 1  
+	</ol>
+</td></tr>
+
+
+<tr><td>
+	<div id="5_1"><a class="lotusPerson" href="http://ccdev2.raleigh.ibm.com:9082/profiles/html/profileView.do?uid=asingh">Allie Singh (link by uid)</a></div>
+	<div id="5_2"><a class="lotusPerson" href="http://ccdev2.raleigh.ibm.com:9082/profiles/html/profileView.do?email=asingh@renovations.com">Allie Singh (link by email)</a></div>
+	<div id="5_3"><a class="lotusPerson" href="http://ccdev2.raleigh.ibm.com:9082/profiles/html/profileView.do">Allie Singh (no attribute)</a></div>
+	<div id="5_4"><a class="lotusPerson" href="http://ccdev2.raleigh.ibm.com:9082/profiles/html/profileView.do?uid=asingh">Allie Singh (link by uid)<span style="display:none;" class="fn">Allie Singh</span></a></div>
+</td><td>
+	<ol>
+	<li>Create a link to the profiles service for the user with ID 1  
+	</ol>
+</td></tr>
+
+<tr><td>
+	<div id="6_1"><span class="lotusPerson vcard">Allie Singh (microformat by uid)<span class="x-lconn-userid" style="display: none;">asingh</span></span></div>
+	<div id="6_2"><span class="lotusPerson vcard">Allie Singh (microformat by email)<span class="email" style="display: none;">asingh@renovations.com</span></span></div>
+	<div id="6_3"><span class="lotusPerson vcard">Allie Singh (microformat by dn)<span class="dn" style="display: none;">asingh</span></span></div>
+</td><td>
+	<ol>
+	<li>Test microformat business card  
+	</ol>
+</td></tr>
+
+</tbody></table>
+
+</div>
+</div>
+
+${end}

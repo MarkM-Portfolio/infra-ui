@@ -1,0 +1,63 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+${script:lconn.core.widget.mentions.MentionsHelper}
+${script:lconn.core.widget.mentions.PersonMentionsType}
+${script:lconn.core.widget.mentions.TagMentionsType}
+${script:lconn.core.widget.mentions.MentionsUtils}
+${script:lconn.core.config}
+${script:lconn.core.config.services}
+${script:lconn.core.url}
+${endhead}
+<body>
+    <div class="lotusMain">
+        <div class="lotusContent">
+        	<textarea id="textArea"></textarea>
+			<textarea id="textArea2"></textarea>
+<script>
+var content = dojo.query("lotusContent")[0];
+
+var args ={};
+	args.inputField = dojo.byId("textArea");
+	args.eventHandles = null;
+	args.multiline = true;
+	args.disableURLPreview = false;
+	
+var helper = null;
+var helper2 = null;
+try{
+	helper = new lconn.core.widget.mentions.MentionsHelper(args);
+	var personType = new lconn.core.widget.mentions.PersonMentionsType({
+		parentNode: helper.domNode
+	});
+	helper.registerActivatorType(personType);
+	
+	var tagsType = new lconn.core.widget.mentions.TagMentionsType({
+		parentNode: helper.domNode
+	});
+	helper.registerActivatorType(tagsType);
+	
+	//2nd helper
+	args.inputField = dojo.byId("textArea2");
+	args.disableURLPreview = true;
+	helper2 = new lconn.core.widget.mentions.MentionsHelper(args);
+	var personType = new lconn.core.widget.mentions.PersonMentionsType({
+		parentNode: helper2.domNode
+	});
+	helper2.registerActivatorType(personType);
+	
+	var tagsType = new lconn.core.widget.mentions.TagMentionsType({
+		parentNode: helper2.domNode
+	});
+	helper2.registerActivatorType(tagsType);
+}
+catch(e){
+	console.debug("Error creating @mentions helper");
+	console.debug(e);
+	helper = null;
+	helper2 = null;
+}
+
+</script>
+        </div>
+    </div>
+</body>

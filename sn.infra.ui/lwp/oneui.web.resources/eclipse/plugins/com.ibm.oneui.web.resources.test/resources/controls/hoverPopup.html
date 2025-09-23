@@ -1,0 +1,456 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+${script:com.ibm.oneui.controls.HoverPopup}
+${script:com.ibm.oneui.controls.HoverDialog}
+${script:com.ibm.oneui.controls.HoverHelp}
+${script:com.ibm.oneui.controls.PreviewDialog}
+
+${style:com.ibm.oneui/controls/templates/Dialog}
+${style:com.ibm.oneui/controls/templates/HoverPopup}
+${style:com.ibm.oneui/controls/templates/HoverHelp}
+
+${endhead}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+<script>
+dojo.declare("TestPopup", [com.ibm.oneui.controls.HoverPopup, com.ibm.oneui.controls._HoverDialogMixin], {
+});
+</script>
+<a onclick="document.body.style.width = '1200px'; return false;" href="#">Page width 1000px</a> |
+<a onclick="document.body.style.width = '400px'; return false;" href="#">Page width 400px</a>
+<br>
+
+<table style="width: 100%;" cellpadding="1" cellspacing="1" border="1">
+<thead><tr>
+<th>Test case</th><th>Description</th>
+</tr></thead><tbody>
+
+<tr><td>
+	<a id="link1" href="javascript:alert('clicked')">Simple</a>
+	<script>
+	new com.ibm.oneui.controls.HoverPopup({
+		around: dojo.byId('link1'), 
+		html: "<div style='padding: 10px;'>Hello</div>"
+	});
+	</script>
+</td><td>
+	<ol>
+	<li>Hover over link to show popup.  
+	<li>Moving mouse out of link or popup should close popup after 800ms
+	<li>Popup should open to the right of the content 
+	<li>Popup contents should contain "Hello"
+	<li>Popup contains a close button in the upper right
+	<li>Clicking close button should close popup
+	<li>Clicking link should popup an alert with the text 'clicked'
+	</ol>
+</td></tr>
+
+<tr><td>
+	<a id="link1a" href="test">Simple (no close button)</a>
+	<script>
+	new com.ibm.oneui.controls.HoverPopup({
+		hideClose: true, 
+		around: dojo.byId('link1a'), 
+		html: "<div style='padding: 10px;'>Hello</div>"
+	});
+	</script>
+</td><td>
+	<ol>
+	<li>Hover over link to show popup.  
+	<li>Moving mouse out of link or popup should close popup after 800ms
+	<li>Popup should open to the right of the content 
+	<li>Popup contents should contain "Hello"
+	<li>Popup should contain no close button (the placeClose attribute was null)
+	</ol>
+</td></tr>
+
+<tr><td>
+	<a id="link2" href="test" class="lotusRight">Simple (right)</a>
+	<script>
+	new com.ibm.oneui.controls.HoverPopup({
+		around: dojo.byId('link2'), 
+		html: "Hello"
+	});</script>
+</td><td>
+	<ol>
+	<li>Hover over link to show popup.  
+	<li>Moving mouse out of link or popup should close popup after 800ms
+	<li>Popup should open to the in the direction of the most space on the page 
+	<li>Popup contents should contain "Hello"
+	</ol>
+</td></tr>
+
+<tr><td>
+	<div style="position: relative; height: 200px;">
+	<a id="link3" href="test" style="position: absolute; bottom: 10px; right: 10px;">Simple (bottom right)</a>
+	<script>
+	new com.ibm.oneui.controls.HoverPopup({
+		around: dojo.byId('link3'), 
+		html: "Hello"
+	});</script>
+	</div>
+</td><td>
+	<ol>
+	<li>Hover over link to show popup.  
+	<li>Moving mouse out of link or popup should close popup after 800ms
+	<li>Popup should open to the in the direction of the most space on the page 
+	<li>Popup contents should contain "Hello"
+	<li>Link is absolutely positioned, popup should work correctly
+	</ol>
+</td></tr>
+
+<tr><td>
+<div>
+<a id="link3a" href="test">HoverPopup with mixin</a>
+<script>new TestPopup({around: dojo.byId('link3a'), html: "Hello"});</script>
+</div>
+</td><td>
+	<ol>
+	<li>Hover over link to show popup.  
+	<li>Moving mouse out of link or popup should close popup after 800ms
+	<li>Popup should open to the in the direction of the most space on the page 
+	<li>Popup contents should contain "Hello"
+	</ol>
+</td></tr>
+
+<tr><td>
+<div>
+<a id="link3b" href="javascript:link3b.open();">HoverPopup with mixin and calls to open</a>
+<script>var link3b = new TestPopup({around: dojo.byId('link3b'), html: "<div tabindex='0'>Hello</div>"});</script>
+</div>
+</td><td>
+	<ol>
+	<li>Hover over link to show popup.  
+	<li>Clicking on link should open the popup, but NOT transfer focus
+	<li>Moving mouse out of link or popup should close popup after 800ms
+	<li>Popup should open to the in the direction of the most space on the page 
+	<li>Popup contents should contain "Hello"
+	<li>The body of the popup should be focusable
+	<li>Popup contains a close button in the upper right
+	<li>Clicking close button should close popup
+	<li>When focus is in the popup, pressing TAB should not leave the popup
+	<li>When focus is in the popup, pressing ESC should close the popup
+	<li>When focus is not in the popup, pressing ESC should close the popup
+	</ol>
+</td></tr>
+
+<tr><td>
+<div>
+<a id="link3c" href="javascript:link3c.openWithFocus();">HoverPopup with mixin and calls to open and focus</a>
+<script>var link3c = new TestPopup({around: dojo.byId('link3c'), html: "<div tabindex='0'>Hello</div>"});</script>
+</div>
+</td><td>
+	<ol>
+	<li>Hover over link to show popup.  
+	<li>Clicking on link should open the popup and move focus to the first focusable node, which is the DIV of the contents
+	<li>Moving mouse out of link or popup should close popup after 800ms
+	<li>Popup should open to the in the direction of the most space on the page 
+	<li>Popup contents should contain "Hello"
+	<li>The body of the popup should be focusable
+	<li>Popup contains a close button in the upper right
+	<li>Clicking close button should close popup
+	<li>When focus is in the popup, pressing TAB should toggle the user between the body DIV and the close button
+	<li>When focus is in the popup, pressing ESC should close the popup
+	<li>When focus is not in the popup, pressing ESC should close the popup
+	</ol>
+</td></tr>
+
+<tr><td>
+<div>
+<a id="link4" href="test">Simple (bottom)</a>
+<script>var link4 = new com.ibm.oneui.controls.HoverPopup({around: dojo.byId('link4'), orientation: "B", html: "<div style='padding: 10px;'>Hello</div>"});</script>
+</div>
+</td><td>
+	<ol>
+	<li>Hover over link to show popup.  
+	<li>Popup should open below the link, centered horizontally underneath the link.  It should maintain a 10 px gutter between the left edge of the window and the left edge of the popup at all times. 
+	</ol>
+</td></tr>
+
+<tr><td>
+<div>
+<a id="link5" href="test">Simple wide (bottom)</a>
+<script>var link5 = new com.ibm.oneui.controls.HoverPopup({around: dojo.byId('link5'), orientation: "B", html: "<div style='padding: 10px; width: 300px;'>Hello</div>"});</script>
+</div>
+</td><td>
+	<ol>
+	<li>Hover over link to show popup.  
+	<li>Popup should open below the link, centered horizontally underneath the link.  It should maintain a 10 px gutter between the left edge of the window and the left edge of the popup at all times.
+	<li>The popup should be 300px wide
+	</ol>
+</td></tr>
+
+<tr><td>
+<a id="link6" href="test" class="lotusRight">Simple wide (bottom)</a>
+<script>var link6 = new com.ibm.oneui.controls.HoverPopup({around: dojo.byId('link6'), orientation: "B", html: "<div style='padding: 10px; width: 300px;'>Hello</div>"});</script>
+</td><td>
+	<ol>
+	<li>Hover over link to show popup.  
+	<li>Popup should open below the link, centered horizontally underneath the link.  It should maintain a 10 px gutter between the left edge of the window and the left edge of the popup at all times.
+	<li>The popup should be 300px wide
+	</ol>
+</td></tr>
+
+<tr><td>
+	<div style="position: relative; height: 200px;">
+		<a id="link6a" href="test" style="position: absolute; right: 10px; bottom: 10px;">Absolutely positioned (bottom)</a>
+		<script>
+		var link6a = new com.ibm.oneui.controls.HoverPopup({
+			around: dojo.byId('link6a'), 
+			orientation: "B", 
+			html: "<div style='padding: 10px; width: 300px;'>Hello</div>"
+		});</script>
+	</div>
+</td><td>
+	<ol>
+	<li>Hover over link to show popup.  
+	<li>Popup should open below the link, centered horizontally underneath the link.  It should maintain a 10 px gutter between the left edge of the window and the left edge of the popup at all times.
+	<li>The popup should be 300px wide
+	</ol>
+</td></tr>
+
+<tr><td>
+	<a id="link7" href="javascript:link7.open();">Programmatic</a>
+	<script>
+	var link7 = new com.ibm.oneui.controls.HoverPopup({
+		around: dojo.byId('link7'), 
+		programmatic: true, 
+		orientation: "B", 
+		html: "<div style='padding: 10px; width: 300px;'>Hello</div>"
+	});
+	</script>
+</div>
+</td><td>
+	<ol>
+	<li>Hover over link will not open popup.  Programmatic attribute set to true.  
+	<li>Click link to invoke the popup open() method.
+	<li>Popup contains a close button in the upper right
+	<li>Popup will not close without user clicking the close button  
+	<li>Popup should open below the link, centered horizontally underneath the link.  It should maintain a 10 px gutter between the left edge of the window and the left edge of the popup at all times.
+	<li>The popup should be 300px wide
+	</ol>
+</td></tr>
+
+<tr><td>
+<div>
+	<a id="link8" href="javascript:link8.open();">Hover Dialog</a>
+	<script>
+	var link8 = new com.ibm.oneui.controls.HoverDialog({
+		around: dojo.byId('link8'), 
+		orientation: "B", 
+		html: "<div style='padding: 10px; width: 300px;'>Hello</div>"
+	});
+	</script>
+</div>
+</td><td>
+	<ol>
+	<li>Hover over link will open popup.  
+	<li>Click link to invoke the popup open() method.
+	<li>Popup contains a close button in the upper right
+	<li>Clicking close button will close the popup.
+	<li>Clicking outside of the dialog (on any node) will close the popup
+	<li>Hitting the ESC key while focus is anywhere in the page will close the popup  
+	<li>Popup should open below the link, centered horizontally underneath the link.  It should maintain a 10 px gutter between the left edge of the window and the left edge of the popup at all times.
+	<li>The popup should be 300px wide
+	<li>Focus will not change when you click the link.  If you give focus to the close button it will trap focus in the dialog until closed.
+	</ol>
+</td></tr>
+
+<tr><td>
+<div>
+	<a id="link9" href="javascript:link9.openWithFocus();">Hover Dialog (take focus)</a>
+	<script>
+		var link9 = new com.ibm.oneui.controls.HoverDialog({
+			around: dojo.byId('link9'), 
+			orientation: "B", 
+			html: "<div style='padding: 10px; width: 300px;'>Hello <a href='javascript:console.log(&quot;clicked&quot;);'>clickme</a></div>"
+		});</script>
+</div>
+</td><td>
+	<ol>
+	<li>Hover over link will open popup.  
+	<li>Click link to invoke the popup openWithFocus() method, which should transfer focus to the close button in the popup.
+	<li>When the popup is closed, focus will be returned to the element that opened the popup.
+	<li>Popup contains a close button in the upper right
+	<li>Clicking close button will close the popup.
+	<li>Clicking outside of the dialog (on any node) will close the popup
+	<li>Hitting the ESC key while focus is anywhere in the page will close the popup  
+	<li>Popup should open below the link, centered horizontally underneath the link.  It should maintain a 10 px gutter between the left edge of the window and the left edge of the popup at all times.
+	<li>The popup should be 300px wide
+	</ol>
+</td></tr>
+
+<tr><td>
+<div>
+<a id="link10" href="javascript:link10.openWithFocus();">Hover Dialog with nested popup</a>
+<script>
+var link11;
+var link10 = new com.ibm.oneui.controls.HoverDialog({
+	around: dojo.byId('link10'), 
+	underlay: true,
+	orientation: "B", 
+	html: "<div style='padding: 10px; width: 300px;'>Hello <a id='link11' href='javascript:link11.openWithFocus();'>clickme</a></div>",
+	createContents: function() {
+		var d = document.createElement("div");
+		if (this.html)
+			d.innerHTML = this.html;
+		link11 = new TestPopup({around: d.getElementsByTagName("a")[0], html: "<div style='padding: 10px; width: 300px;'>Hello</div>"});
+		return d;
+	}
+});
+</script>
+</div>
+</td><td>
+	<ol>
+	<li>Hover over link will open popup.  
+	<li>Click link to invoke the popup openWithFocus() method, which should transfer focus to the close button in the popup.
+	<li>When the popup opens, a gray underlay should cover the page.  The underlay should have a tooltip that appears when you rest your mouse anywhere on the page.
+	<li>When the popup is closed, focus will be returned to the element that opened the popup.
+	<li>Popup contains a close button in the upper right
+	<li>Clicking close button will close the popup.
+	<li>Clicking outside of the dialog (on any node) will close the popup
+	<li>Hitting the ESC key while focus is anywhere in the page will close the popup
+	<li>The popup contains a second popup.
+	<li>If you hover on the link in the popup, a second popup should appear on top of the popup
+	<li>If you open a regular popup before opening this popup, you should still see the nested popup appear on top of this popup
+	<li>If you click on the link in the popup, the second popup should open and take focus
+	<li>If you hit ESC while a popup is focused, it should close that popup, and any sub popups.  So focus the second popup and hit ESC, and the original remains open.  Hover on the second popup so it appears, but don't change focus, and then when you hit ESC both popups will close.'
+	<li>Clicking outside of both popups should close both popups.
+	<li>Clicking inside the first popup should close the second popup.
+	</ol>
+</td></tr>
+
+<tr><td>
+<div>
+<a id="link12" href="#">Hover Help</a>
+<script>var link12 = new com.ibm.oneui.controls.HoverHelp({around: dojo.byId('link12'), help: "This is a useful bit of help text that explains some information about the product.  It might be multiline."});</script>
+</div>
+</td><td>
+	<ol>
+	<li>Hover over link will open popup.  
+	<li>Click link to invoke the popup openWithFocus() method, which should transfer focus to the close button in the popup.
+	<li>When the popup is closed, focus will be returned to the element that opened the popup.
+	<li>Popup contains a close button in the upper right
+	<li>Clicking close button will close the popup.
+	<li>Clicking outside of the dialog (on any node) will close the popup
+	<li>Hitting the ESC key while focus is anywhere in the page will close the popup
+	</ol>
+</td></tr>
+
+<tr><td>
+<div>
+<a id="link13" href="#">Hover Help (with title)</a>
+<script>var link13 = new com.ibm.oneui.controls.HoverHelp({around: dojo.byId('link13'), title: "Very long title with the possibility of wrapping", help: "This is a useful bit of help text that explains some information about the product.  It might be multiline."});</script>
+</div>
+</td><td>
+	<ol>
+	<li>Hover over link will open popup.  
+	<li>Click link to invoke the popup openWithFocus() method, which should transfer focus to the close button in the popup.
+	<li>When the popup is closed, focus will be returned to the element that opened the popup.
+	<li>Popup contains a close button in the upper right
+	<li>Clicking close button will close the popup.
+	<li>Clicking outside of the dialog (on any node) will close the popup
+	<li>Hitting the ESC key while focus is anywhere in the page will close the popup
+	</ol>
+</td></tr>
+
+
+<tr><td>
+<div>
+<a id="link14" href="#">Preview Dialog</a>
+<script>
+	var link14 = new com.ibm.oneui.controls.PreviewDialog({
+		around: dojo.byId('link14'), 
+		title: "Previewable item",
+		updateDialogContents: function(item, widget, node) {
+			node.innerHTML = "Testing";
+		}
+	});
+</script>
+</div>
+</td><td>
+	<ol>
+	</ol>
+</td></tr>
+
+
+<tr><td>
+<div>
+<a id="link15_1" href="#">Preview Dialog (1) with multiple arounds</a>
+<a id="link15_2" href="#">Preview Dialog (2) with multiple arounds</a>
+<script>
+	var link15 = new com.ibm.oneui.controls.PreviewDialog({
+		around: [dojo.byId('link15_1'), dojo.byId("link15_2")], 
+		title: "Previewable item (0)",
+		updateDialogContents: function(item, widget, node) {
+			node.innerHTML = "Testing";
+		}
+	});
+</script>
+</div>
+</td><td>
+	<ol>
+	</ol>
+</td></tr>
+
+<tr><td>
+<div>
+<a id="link16_1" href="#">Preview Dialog (1) with next/previous</a>
+<a id="link16_2" href="#">Preview Dialog (2) with next/previous</a>
+<script>
+	var iterator16 = {
+			position: 0,
+			items: [{title: "Item1", around: "link16_1"}, {title: "Item2", around: "link16_2"}],
+			hasNext: function() {return true},
+			hasPrevious: function() {return true},
+			next: function() {
+				var next = this.position = (this.position+1) % this.items.length;
+				var item = this.items[next];
+				return {title: item.title, around: dojo.byId(item.around)};
+			},
+			previous: function() {
+				var previous = this.position = (this.items.length+this.position-1) % this.items.length;
+				var item = this.items[previous];
+				return {title: item.title, around: dojo.byId(item.around)};
+			},
+			item: function() {
+				var item = this.items[this.position];
+				return {title: item.title, around: dojo.byId(item.around)};
+			},
+			find: function(around) {
+				for (var i=0; i<this.items.length; i++) {
+					if (this.items[i].around === around.id) {
+						this.position = i;
+						var item = this.items[i];
+						return {title: item.title, around: dojo.byId(item.around)};
+					}
+				}
+				throw "Item around not found";
+			}
+	}
+	var link16 = new com.ibm.oneui.controls.PreviewDialog({
+		around: [dojo.byId('link16_1'), dojo.byId("link16_2")], 
+		iterator: iterator16,
+		title: "Previewable item (0)",
+		updateDialogContents: function(item, widget, node) {
+			node.style.width = "300px";
+			node.innerHTML = "Testing: "+item.title;
+		}
+	});
+</script>
+</div>
+</td><td>
+	<ol>
+	</ol>
+</td></tr>
+
+
+
+</tbody></table>
+</div>
+</div>
+</body>
+${end}

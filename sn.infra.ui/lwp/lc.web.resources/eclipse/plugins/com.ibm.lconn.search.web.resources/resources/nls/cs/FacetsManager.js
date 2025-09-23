@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+({
+	"CLOSE_HELP_DATE":"Zavřít nápovědu pro data",
+	"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Zavřít nápovědu pro typy dokumentů",
+	"CLOSE_HELP_PERSON":"Zavřít nápovědu pro lidi",
+	"CLOSE_HELP_TAG":"Zavřít nápovědu pro značky",
+	"CLOSE_HELP_TREND":"Zavřít nápovědu k trendům",
+	"COLLAPSE_DATE":"Sbalit filtr Data",
+	"COLLAPSE_ECM_DOCUMENT_TYPE":"Sbalit filtr typů dokumentů",
+	"COLLAPSE_PERSON":"Sbalit filtr Lidé",
+	"COLLAPSE_TAG":"Sbalit filtr Značky",
+	"COLLAPSE_TREND":"Sbalit filtr Trendy",
+	"DESCRIPTION_DATE":"Chcete-li zobrazit výsledky vytvořené nebo aktualizované v konkrétním čase, rozbalte ovládací prvek se šipkou a filtrujte informace podle roku a měsíce.",
+	"DESCRIPTION_ECM_DOCUMENT_TYPE":"Typ dokumentu je klíčové slovo, které můžete přiřadit k souborům a usnadnit si tak jejich hledání. Po klepnutí na dokument se zobrazí výsledky hledání s přiřazeným příslušným klíčovým slovem.",
+	"DESCRIPTION_PERSON":"Můžete zobrazit osoby přidružené k výsledkům hledání. Po klepnutí na jméno se zobrazí výsledky hledání přidružené ke konkrétní osobě.",
+	"DESCRIPTION_TAG":"Značka je klíčové slovo, které přiřadíte k obsahu či lidem, abyste usnadnili jejich hledání. Po klepnutí na značku se zobrazí výsledky hledání s přiřazeným příslušným klíčovým slovem.",
+	"DESCRIPTION_TREND":"Trend je klíčové slovo generované systémem, které usnadňuje vyhledávání v aktualizacích stavu. Po klepnutí na trend se zobrazí výsledky hledání s přiřazeným příslušným klíčovým slovem.",
+	"EXPAND_DATE":"Rozbalit filtr Data",
+	"EXPAND_ECM_DOCUMENT_TYPE":"Rozbalit filtr typů dokumentů",
+	"EXPAND_PERSON":"Rozbalit filtr Lidé",
+	"EXPAND_TAG":"Rozbalit filtr Značky",
+	"EXPAND_TREND":"Rozbalit filtr Trendy",
+	"HELP_DATE":"Nápověda pro data",
+	"HELP_ECM_DOCUMENT_TYPE":"Nápověda k typům dokumentů",
+	"HELP_PERSON":"Nápověda pro lidi",
+	"HELP_TAG":"Nápověda pro značky",
+	"HELP_TREND":"Nápověda k trendům",
+	"NO_DATE_CONTENT":"Data aktuálně nejsou k dispozici.",
+	"NO_ECM_DOCUMENT_TYPE_CONTENT":"Typy dokumentů aktuálně nejsou k dispozici.",
+	"NO_PERSON_CONTENT":"Lidé aktuálně nejsou k dispozici.",
+	"NO_TAG_CONTENT":"Značky aktuálně nejsou k dispozici.",
+	"NO_TREND_CONTENT":"Trendy aktuálně nejsou k dispozici.",
+	"TITLE_DATE":"Data",
+	"TITLE_ECM_DOCUMENT_TYPE":"Typy dokumentů",
+	"TITLE_PERSON":"Lidé",
+	"TITLE_TAG":"Značky",
+	"TITLE_TREND":"Trendy"
+})
+

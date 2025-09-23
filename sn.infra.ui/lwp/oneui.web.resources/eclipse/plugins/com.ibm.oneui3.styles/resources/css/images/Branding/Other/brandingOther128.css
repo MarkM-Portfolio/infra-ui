@@ -1,0 +1,6 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.brandingOther128-Docs80{width:80px;height:80px;background-position:0 0}
+.brandingOther128-DocsWhite128{width:128px;height:128px;background-position:0 -88px}
+
+.brandingOther128{background-image:url('./brandingOther128-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .brandingOther128{display:none}

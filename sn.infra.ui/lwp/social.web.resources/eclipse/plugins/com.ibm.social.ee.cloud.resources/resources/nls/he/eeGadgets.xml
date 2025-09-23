@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">IBM Connections</msg>
+  <msg name="connectionsEE_description">פקד Embedded Experience OpenSocial המשמש להצגת פרטים נוספים ופעולות עבור אירועי Connections</msg>
+  <msg name="connectionsEE_errorTitle">שגיאה</msg>
+  <msg name="connectionsEE_errorDescription">תוכן זה לא אושר על ידי ארגונכם ואינו זמין. פנו אל מנהלן הארגון כדי להפעיל את הסיומת. </msg>
+</messagebundle>

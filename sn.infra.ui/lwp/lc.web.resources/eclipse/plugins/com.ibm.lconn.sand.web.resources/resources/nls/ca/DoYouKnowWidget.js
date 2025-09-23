@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Convida a connectar-se",
+	NDYK1:"No hi ha més persones per recomanar",
+	LOADING: "s'està carregant",
+	DYK_TITLE: "Persones que potser coneixeu",
+	INVITE_TITLE: "Envia una invitació per connectar-se",
+	SEND_ACTION: "Envia",
+	CANCEL_ACTION: "Cancel·la",
+	PREV: "Anterior",
+	NEXT: "Següent",
+	bpct: "Ha fet comentaris al vostre blog",
+	bpcc: "Heu fet comentaris al mateix blog",
+	lpfr: "Es company d'algú que coneixeu",
+	lm1: "Sou el cap d'aquesta persona",
+	le1: "Aquesta persona és el vostre gestor",
+	sdm: "Compartiu el mateix gestor",
+	pt: "Aquesta persona us ha etiquetat",
+	pbt: "Heu etiquetat aquesta persona",
+	acm: "Compartiu activitats",
+	wikiCoContribution: "Tots dos heu editat el mateix wiki",
+	bpcb: "Heu comentat en el seu bloc",
+	lpcfr: "Compartiu alguns companys",
+	ccmf: "Esteu junts en una comunitat",
+	ccms: "Esteu junts en una comunitat",
+	filesharing: "Compartiu alguns fitxers",
+	forumthreaddiscussion: "Compartiu un fil del fòrum",
+	ctb: "Compartiu una adreça d'interès",
+	tgw: "Teniu etiquetes coincidents",
+	tcu: "Heu utilitzat la mateixa etiqueta",
+	pctg: "Tots dos heu etiquetat la mateixa persona",
+	tgb: "La mateixa persona us ha etiquetat a tots dos"
+})

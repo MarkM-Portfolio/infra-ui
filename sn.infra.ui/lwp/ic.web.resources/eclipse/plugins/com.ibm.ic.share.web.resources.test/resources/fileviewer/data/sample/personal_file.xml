@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entry xmlns:thr="http://purl.org/syndication/thread/1.0"
+	xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:snx="http://www.ibm.com/xmlns/prod/sn"
+	xmlns:td="urn:ibm.com/td" xmlns="http://www.w3.org/2005/Atom">
+	<id>urn:lsid:ibm.com:td:e20fb793-91a3-49b3-8c02-28612503b0a0</id>
+	<td:uuid>e20fb793-91a3-49b3-8c02-28612503b0a0</td:uuid>
+	<td:label>GatekeeperJS.odt</td:label>
+	<link
+		href="https://apps.na.collabserv.com/files/form/api/library/6ee9be0d-8996-4a93-a98f-4f47563d8511/document/e20fb793-91a3-49b3-8c02-28612503b0a0/entry"
+		rel="self"></link>
+	<link
+		href="https://apps.na.collabserv.com/files/app/file/e20fb793-91a3-49b3-8c02-28612503b0a0"
+		rel="alternate" type="text/html"></link>
+	<link
+		href="https://apps.na.collabserv.com/docs/app/doc/lcfiles/e20fb793-91a3-49b3-8c02-28612503b0a0/editorview/content"
+		rel="custom" type="text/html"></link>
+	<link
+		href="https://apps.na.collabserv.com/files/form/api/library/6ee9be0d-8996-4a93-a98f-4f47563d8511/document/e20fb793-91a3-49b3-8c02-28612503b0a0/entry"
+		rel="edit"></link>
+	<link
+		href="https://apps.na.collabserv.com/files/form/api/library/6ee9be0d-8996-4a93-a98f-4f47563d8511/document/e20fb793-91a3-49b3-8c02-28612503b0a0/media"
+		rel="edit-media"></link>
+	<link
+		href="https://apps.na.collabserv.com/files/form/api/library/6ee9be0d-8996-4a93-a98f-4f47563d8511/document/e20fb793-91a3-49b3-8c02-28612503b0a0/media/GatekeeperJS.odt"
+		rel="enclosure" type="application/vnd.oasis.opendocument.text" title="GatekeeperJS.odt"
+		hreflang="en" length="20736"></link>
+	<link
+		href="https://apps.na.collabserv.com/files/form/api/library/6ee9be0d-8996-4a93-a98f-4f47563d8511/document/e20fb793-91a3-49b3-8c02-28612503b0a0/thumbnail?renditionKind=mediumview"
+		rel="thumbnail"></link>
+	<category term="document" scheme="tag:ibm.com,2006:td/type"
+		label="document"></category>
+    <category term="testtag1" label="testtag1"></category>
+	<link
+		href="https://apps.na.collabserv.com/files/form/api/library/6ee9be0d-8996-4a93-a98f-4f47563d8511/document/e20fb793-91a3-49b3-8c02-28612503b0a0/feed"
+		rel="replies" type="application/atom+xml" thr:count="0"
+		xmlns:thr="http://purl.org/syndication/thread/1.0"></link>
+	<author>
+		<name>John Girata</name>
+		<snx:userid>21123754</snx:userid>
+		<snx:orgId>126</snx:orgId>
+		<snx:orgName>IBM</snx:orgName>
+		<email></email>
+		<snx:userState>active</snx:userState>
+	</author>
+	<title type="text">GatekeeperJS.odt</title>
+	<published>2014-12-05T14:32:07.910Z</published>
+	<updated>2014-12-05T18:42:35.435Z</updated>
+	<td:created>2014-12-05T14:32:07.910Z</td:created>
+	<td:modified>2014-12-05T18:40:09.724Z</td:modified>
+	<td:lastAccessed></td:lastAccessed>
+	<td:modifier>
+		<name>John Girata (modifier)</name>
+		<snx:userid>21123754m</snx:userid>
+		<snx:orgId>126m</snx:orgId>
+		<snx:orgName>IBMm</snx:orgName>
+		<email></email>
+		<snx:userState>activem</snx:userState>
+	</td:modifier>
+	<td:visibility>private</td:visibility>
+	<snx:isExternal>true</snx:isExternal>
+	<td:libraryId>6ee9be0d-8996-4a93-a98f-4f47563d8511</td:libraryId>
+	<td:libraryType>personalFiles</td:libraryType>
+	<td:isSyncable>false</td:isSyncable>
+	<td:policy>
+		<td:organizationPublic>true</td:organizationPublic>
+		<td:contentFollowing>true</td:contentFollowing>
+	</td:policy>
+	<td:versionUuid>bc10c219-d9ea-451e-a4c9-46e0df053b5c</td:versionUuid>
+	<td:versionLabel>3</td:versionLabel>
+	<td:propagation>false</td:propagation>
+	<snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">8</snx:rank>
+	<snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">1</snx:rank>
+	<snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/share">0</snx:rank>
+	<snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/collections">0</snx:rank>
+	<snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/attachments">0</snx:rank>
+	<snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/versions">3</snx:rank>
+	<snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/references">0</snx:rank>
+	<td:totalMediaSize>71996</td:totalMediaSize>
+	<summary type="text">Test Desc.</summary>
+	<content type="application/vnd.oasis.opendocument.text"
+		src="https://apps.na.collabserv.com/files/form/api/library/6ee9be0d-8996-4a93-a98f-4f47563d8511/document/e20fb793-91a3-49b3-8c02-28612503b0a0/media"></content>
+	<snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">13</snx:rank>
+	<snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">7</snx:rank>
+	<td:restrictedVisibility>false</td:restrictedVisibility>
+	<td:objectTypeId>00000000-0000-0000-0001-000000000000</td:objectTypeId>
+	<td:objectTypeName>ibmdocs:file</td:objectTypeName>
+	<td:lock type="NONE"></td:lock>
+	<snx:encrypt>false</snx:encrypt>
+	<snx:isExternal>true</snx:isExternal>
+	<snx:orgId>126</snx:orgId>
+	<snx:orgName>IBM</snx:orgName>
+</entry>
+<!-- Copyright IBM Corp. 2015 All Rights Reserved. -->

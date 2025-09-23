@@ -1,0 +1,47 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusStream">
+	<div class="lotusWidgetBody" id="activityStreamMain">
+		<div class="lotusAccess" role="status" aria-live="assertive" aria-relevant="all" aria-atomic="true">
+			<div id="hiddenAriaMessage"></div>
+		</div>
+		<div dojoAttachPoint="streamHeaderWrapper" class="streamHeaderWrapper">
+			<div class="streamHeaderInner">
+				<div dojoAttachPoint="shareboxNode" class="streamSharebox"></div>
+				<div dojoAttachPoint="pagingNode" class="lotusPaging lotusPagingTop" role="navigation" aria-label="Activity Stream Header Menu">
+					<span dojoAttachPoint="placeholderHeaderTopLeft" class="lotusHidden lotusLeft"></span>
+					<span dojoAttachPoint="filterContainerNode"></span>
+					<span dojoAttachPoint="placeholderHeaderTopRight" class="lotusHidden lotusRight"></span>
+				</div>
+			</div>
+			<div class="headerFins" dojoAttachPoint="headerFinsNode">
+				<div class="stream-finWrapper" role="presentation" dojoAttachPoint="filterSharkfin">
+		            <div class="stream-finLeft"></div>
+		            <span class="lotusAltText">▲</span>
+		            <img class="otherActivityStream14 otherActivityStream14-asKnockedfin14 stream-finMiddle" dojoAttachPoint="filterSharkFinImg" src="${_blankGif}" alt="">
+		            <div class="stream-finRight"></div>
+		        </div>
+	        </div>
+			<div dojoAttachPoint="searchBoxMain"></div>
+		</div>		
+		<div class="filterArea" dojoAttachPoint="pagingTop">			
+			<div class="filterAreaInner">
+				<span dojoAttachPoint="statusBoxNode"></span>				
+				<span dojoAttachPoint="placeholderHeaderLeft" class="lotusLeft"></span>
+				<div dojoAttachPoint="placeholderHeaderCenter" class="lotusLeft"></div>
+				<span class="lotusRight">
+					<span dojoAttachPoint="placeholderHeaderRight" class="lotusHidden lotusLeft placeholderHeaderRight"></span>
+					<span dojoAttachPoint="placeholderHeaderRightSub" class="lotusHidden lotusLeft placeholderHeaderRightSub"></span>	
+				</span>			
+				<span dojoAttachPoint="asDescription" id="asDesc" class="icStream-labelInner"></span>
+			</div>			
+		</div>		
+		<div id="connectViews" dojoAttachPoint="feedTabsNode"
+			 class="lotusHidden"></div>			 
+		<div dojoAttachPoint="loadingNode" class="lotusStreamTopLoading"></div>
+		<div role="region" aria-label="${strings.ariaNewsItemRegion}">
+            <ul id="asPermLinkAnchor" dojoAttachPoint="newsFeedNode" class="lotusStream"></ul>
+		</div>
+		<div dojoAttachPoint="pagingLoaderNode"></div>
+		<div dojoAttachPoint="showMoreNode"></div>
+	</div>
+</div>

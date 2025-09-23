@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2010, 2012                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<?eclipse version="3.4"?>
+<!--
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<plugin>
+    <extension point="net.jazz.ajax.webBundles">
+		<!-- 
+		Defining an extension to webBundles uses the name of this bundle (com.mycompany.example) as
+		the base package for all Dojo modules included in this bundle.  So the file demonstration.js,
+		located in the resources/ folder, becomes com.mycompany.example.demonstration.
+		
+		To have a different bundle name and base package, add an <alias> element to this extension.
+		
+	      <extension point="net.jazz.ajax.webBundles">
+			   <alias value="mycompany.example" />
+			</extension> 
+			
+			would make the file demonstration.js be visible at:
+				
+				mycompany.example.demonstration
+			
+		-->
+    </extension>
+    <extension point="net.jazz.ajax.dojoModuleBinding">
+    	<!--
+    	Dojo module bindings ensure that when one module is loaded, an extension module is also loaded.  
+    	This allows you to have your JavaScript loaded and then perform any necessary calculations after 
+    	another module is loaded.
+    	
+    	The example below loads demonstration.js when other core Connections JavaScript is being loaded.
+    	It prints a log message to the Firebug console so you can see that it was loaded.
+    	-->
+      <dojoModuleBinding bind="com.mycompany.example.demonstration" to="lconn.core.header" />
+      
+    	<!--
+    	The example below loads actions.js after the main Files application loads.  The module
+    	demonstrates adding a custom action to Files.  The file is not loaded in other Connections
+    	applications.
+    	-->
+      <dojoModuleBinding bind="com.mycompany.example.actions" to="lconn.files.PersonalFiles" />
+    </extension>
+</plugin>

@@ -1,0 +1,62 @@
+${head}
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<title>User Typeahead Test</title>
+${script:lconn.core.config.services}
+${script:com.ibm.social.incontext.typeahead.CommunitySearchQCSAdapter}
+${script:com.ibm.social.incontext.NetworkDojo}
+${script:com.ibm.social.incontext.util.proxy}
+<script>
+
+function communitySelected(community) {
+	dojo.byId("communitySelection").innerHTML = "Selected community: <strong>" + community.title + "</strong> (id: " + community.id + ")";
+	communityInput.attr("value", "");
+}
+
+function login(isSecure, callback) {
+	var profilesUrl = lconn.core.config.services.profiles[isSecure ? "secureUrl" : "url"];
+	var profilesSvcUrl = profilesUrl + "/atom/profileService.do";
+	var dfd = dojo.xhrGet({
+		url: profilesSvcUrl,
+	   handleAs: "xml"	   
+	});
+	dfd.addCallback(callback);
+}
+
+dojo.addOnLoad(function() {
+	var isSecure = (window.location.protocol || "http").replace(':','') === "https";
+	login(isSecure, function () {
+		   var communitiesUrl = lconn.core.config.services.communities[isSecure ? "secureUrl" : "url"];
+		   var network = new com.ibm.social.incontext.NetworkDojo();
+		   var adapter = new com.ibm.social.incontext.typeahead.CommunitySearchQCSAdapter(communitiesUrl, network, function(url) {
+		      return com.ibm.social.incontext.util.proxy(url);
+		   });
+		   var opt = {
+		            id: "communityInput",
+		            name: "communityInput"
+		         }; 
+		   var communityInput = adapter.createTypeAhead(dojo.byId("communityInput"), opt);
+		   communityInput.domNode.style.width = "300px";
+		   adapter.connectOnSelect(communityInput, dojo.global, "communitySelected");
+		   window.communityInput = communityInput;		
+	});
+});
+</script>
+${endhead}
+
+Select a community: <input type="text" id="communityInput" value=""><br />
+<span id="communitySelection"></span>
+</body>
+${end}

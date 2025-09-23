@@ -1,0 +1,363 @@
+/* Copyright IBM Corp. 2011, 2016  All Rights Reserved.              */
+
+// 5724-E76                                                          
+// NLS_ENCODING : UNICODE
+// NLS_MESSAGEFORMAT_VAR
+//// G11N GA UI
+
+// Component ID key required by msgID tool.
+
+// Activity Stream Strings
+
+// //// G11N GA UI
+// NLS_CHARSET : UTF-8
+define({      
+
+//loading string
+loadingText: "Memuat...",
+
+//common strings
+errorText: "Terjadi Kesalahan",
+
+invalidASConfig: "Terjadi kesalahan pada konfigurasi untuk stream Pembaruan. Harap hubungi administrator Anda.",
+
+// News Item
+// ${0}  :  Person display name
+photoOfText: "Foto dari ${0}",
+// ${0}  :  Application
+eventFromText: "Peristiwa milik ${0}",
+removeNewsItemText: "Hapus item ini ",
+// ${0}  :  Number of likes for a news item
+tagsText: "Label: ${0}",
+// ${0}  :  Number of likes for a news item
+likesText: "${0} suka",
+likeText: "1 suka",
+imageNotAvailable: "Pratinjau saat ini tidak tersedia",
+likeError: "Kesalahan terjadi saat proses menyukai item ini.",
+unLikeError: "Kesalahan terjadi saat proses tidak menyukai item ini.",
+// ${0} author name
+fromText: "Dari: ${0}",
+
+sizeMB: "${0} MB",
+sizeGB: "${0} GB",
+sizeKB: "${0} KB",
+
+//File download strings
+downloadError: "Gagal Mengunduh",
+downloadErrorMessage: "File tidak dapat diunduh. File mungkin telah dihapus atau Anda tidak memiliki akses.",
+closeText: "tutup",
+okText: "OK",
+
+// Alt for link to person text ${0}  :  person name
+linkToPersonText: "Ini adalah tautan ke profil ${0}",
+
+// Files News Items
+publicText: "Publik",
+privateText: "Pribadi",
+
+// Video Preview
+ariaPlayVideo: "Putar Video",
+ariaVideoArea: "Area video, tekan ENTER untuk mengakses pengontrol video",
+
+// News Item Actions - Comment
+commentText: "Komentar",
+logInText: "Login",
+logInCommentText: "Masuk untuk memberikan komentar",
+deleteCommentText: "Hapus komentar",
+addCommentText: "Tambahkan komentar...",
+ariaAddCommentText: "Tambah satu komentar",
+writeCommentText: "Tulis sesuatu...",
+ariaCommentText: "Tulis sesuatu",
+commentNotPermittedText: "Anda tidak berwenang untuk memberikan komentar pada pesan ini.",
+commentFailureText: "Upaya untuk menambahkan teks komentar gagal. Harap muat kembali halaman Anda dan coba lagi.",
+commentSessionTimedOut: "Anda telah dikeluarkan dari server secara otomatis karena tidak aktif. Salin teks yang telah Anda masukkan ke clipboard Anda sehingga Anda tidak akan' kehilangan teks tersebut, kemudian <a href : ''${0}''>login</a> untuk memulai kembali.",
+commentPostText: "Kirim",
+commentCancelText: "Batal",
+
+
+
+
+// Defect 59368 - String to say comment length exceeded.
+commentLengthExceeded: "Komentar terlalu panjang untuk dipublikasikan. Harap ubah komentar dan coba lagi.",
+
+// Defect 65712 - Alert message for posting an inline comment - may only be read by Jaws.
+commentPosted: "Komentar Anda telah dikirim.",
+
+// Text shown as a region name for a comment
+// ${0} - Person name, ${1} - Date the comment was made.
+commentAriaLabel: "${0} menulis komentar pada ${1}",
+// same as above, but for replies
+replyAriaLabel: "${0} menulis balasan pada ${1}",
+
+// Aria label for link to application in Activity Stream item
+// ${0} - Date item was created
+linkToAriaLabel: "Tampilkan item di window baru pada halaman ${0}. ",
+
+// Text shown as a region name for a comment on the same day - date shown in hh:mm.
+// ${0} - Person name, ${1} - Time the comment was made in format hh:mm am/pm.
+commentAriaLabelSameDay: "${0} menulis komentar pada pukul ${1}",
+// same as above, but for replies
+replyAriaLabelSameDay: "${0} menulis balasan pada ${1}",
+
+// News Item Actions - Save
+savedText: "Tersimpan",
+savedSuccessText: "Berhasil Disimpan",
+
+// No Content Item
+noContentText: "Tidak ada pembaruan untuk ditampilkan.",
+
+// News Feed Error
+feedErrorText: "Terdapat kesalahan saat memperoleh umpan berita Anda.",
+itemErrorText: "Terjadi kesalahan saat menampilkan item di umpan Anda.",
+errorAlt : "Kesalahan:",
+errorShowMore: "Tampilkan banyak",
+errorShowLess: "Tampilkan sedikit",
+
+// Paging Handler
+backToTopText: "Kembali ke atas",
+ariaShowMore: "Perlihatkan lebih banyak item stream aktivitas",
+ariaShowLess: "Perlihatkan lebih sedikit item stream aktivitas",
+ariaBackToTop: "Kembali ke item stream aktivitas di atas",
+
+// Feed Link
+feedLinkText: "Umpan untuk entri-entri ini",
+
+// Inline Comments
+// Indicate more comments ${0}  :  number of more comments
+moreCommentsText: "${0} komentar lagi",
+oneMoreCommentsText: "1 komentar lagi",
+
+// Show total number of comments ${0}  :  total number of comments
+allCommentsText: "Tampilkan semua ${0} komentar ",
+singleCommentText: "Tampilkan komentar",
+
+// Spoken text for comments container ${0}  :  title of item comments are for.
+commentsAriaLabel: "Komentar untuk ${0}",
+
+// Spoken text for comments container where more comments available 
+// ${0}  :  title of item comments are for
+// ${1}  :  total number of available comments (will always be more than 1).
+moreCommentsAriaLabel: "Komentar untuk ${0} . Gunakan detail lebih banyak untuk menampilkan semua ${1} komentar.",
+
+// Spoken text for when an item has no description - possible from a third party feed
+noDescriptionAriaLabel: "item",
+
+// Aria text for describing region holding activity stream items.
+ariaNewsItemRegion: "Stream Aktivitas",
+
+// Filters
+selectFilter: "Pilih filter",
+filterAriaDescription: "Pilih filter untuk mengubah jenis item yang ditampilkan pada Stream Aktivitas",
+filterAriaLabel: "Filter stream aktivitas",
+
+// Aria description for newsitem mentioning how the EE can be opened. ${0}  :  Title of the item.
+openEEDescription: "Tekan tombol enter untuk menampilkan detail lebih lanjut tentang item ini",
+
+// Aria description for button allowing Jaws using Virtual PC cursor to show more actions. ${0}  :  Title of the item.
+showActionsDescription: "Tampilkan Tindakan",
+
+ariaActionsToolbar: "Item Tindakan",
+
+// Description for EE opener
+openEEText: "Tampilkan detail lebih lanjut tentang item ini",
+openEEAltText: ">>",
+
+
+//Mircroblog Deletion Extension
+statusRemoveText: "Hapus pesan ini",
+statusRemoveConfirmMessageText: "Apakah Anda yakin ingin menghapus pesan ini?",
+statusRemoveConfirmText: "Hapus",
+statusRemoveCancelText: "Batal",
+statusRemoveConfirmationMsg:  "Pesan telah berhasil dihapus.",
+statusRemoveErrorMsg: "Pesan tidak dapat dihapus saat ini. Coba lagi atau hubungi administrator Anda.",
+commentRemoveText: "Hapus Komentar ini",
+commentRemoveConfirmMessageText: "Apakah Anda yakin ingin menghapus komentar ini?",
+commentRemoveConfirmText: "Hapus",
+commentRemoveCancelText: "Batal",
+commentRemoveConfirmationMsg: "Komentar telah berhasil dihapus.",
+commentRemoveErrorMsg: "Komentar tidak dapat dihapus saat ini. Coba lagi atau hubungi administrator Anda.",
+
+// Label for the characters remaining. This will be read by Jaws rather than displayed.
+charactersRemaining: "Karakter Yang Tersisa",
+
+// Message
+msgCloseAlt: "Tutup Pesan",
+
+//More Less Link
+showMoreText: "Tampilkan banyak",
+showLessText: "Tampilkan sedikit",
+showMoreActions: "Lainnya....",
+
+ariaShowMoreLabel: "Tombol ini digunakan untuk menampilkan konten yang telah disembunyikan untuk tujuan tampilan. Tidak relevan bagi pengguna teknologi bantuan.",
+
+
+//Tags
+listTags: "${0} dan ${1} lagi",
+
+//Trends
+expandTrend: "Perluas filter Tren",
+collapseTrend: "Ciutkan filter Tren",
+trendTitle: "Tren",
+relatedTrendTitle: "Tambahkan tren ''${0}''",
+trendHelp: "Bantuan Tren",
+closeTrendHelp: "Tutup Bantuan Tren",
+trendDescription: "Tren adalah kata kunci yang dihasilkan oleh sistem untuk membuat pencarian di Pembaruan Status menjadi lebih mudah. Klik tren untuk menampilkan hasil pencarian yang telah ditentukan oleh kata kunci tersebut.",
+noTrends: "Belum ada tren",
+selectedTrends: "Tren Yang Dipilih",
+relatedTrends: "Tren Terkait",
+relatedTrendsDesc: "Tambahkan tren terkait untuk lebih mempersempit pencarian Anda",
+removeTrend: "Hapus tren ${0}'' dari tren filter yang dipilih",
+removeGeneric: "Hapus",
+removeHashtag: "Hapus tanda pagar ${0} dari tanda filter yang dipilih.",
+
+//ActivityStream search
+asSearchLabel: "Cari di aliran terkini",
+asSearchShadowtext: "Cari di aliran ini",
+asSearchBarOpen: "Buka bar pencarian untuk mencari di tampilan terkini",
+asSearchBarCancel: "Batalkan Pencarian dan kembali ke tampilan utama",
+asSearch: "Cari",
+asSearchGlobalView: "Tampilkan hasil pencarian dari semua konten Anda",
+
+matching: "Cocok:",
+matchingAllOf: "Mencocokkan semua dari:",
+
+
+//ViewAll extension
+viewAllUpdates: "Perlihatkan semua pembaruan",
+
+// Strings for the @mentions feature
+// Main mention string. ${0}  :  name
+mention: "@${0}",
+
+// Aria string for single mention. ${0}  :  name
+ariaSingleMention: "${0} telah disebutkan",
+
+// Aria string for multiple mentions  :  ${0}  :  string of names
+ariaMultipleMentions: "${0} telah disebutkan",
+
+// String for new filter
+filterMention: "@Sebutan",
+
+// Aria string for mentions
+ariaFilterMention: "Sebutan",
+
+// Time Strings
+// e.g. Friday at 10:25
+timeDay: "${EEEE} pukul ${time}",
+// e.g. June 6th
+timeMonth: "${MMM} ${d}",
+// e.g. Today at 11:23
+timeToday: "Hari ini pukul ${time}",
+// e.g. June 6th, 2011
+timeYear: "${MMM} ${d}, ${YYYY}",
+// e.g. Yesterday at 5:45
+timeYesterday: "Kemarin pukul ${time}",
+// e.g. Tomorrow at 6:45
+timeTomorrow: "Besok pukul ${time}",
+
+// Names for filters in ActivityStream - used by gadget
+filterAll: "Semua",
+filterStatusUpdates: "Pembaharuan Status",
+filterActivities: "Aktivitas",
+filterBlogs: "Blog",
+filterBookmarks: "Markah",
+filterCommunities: "Komunitas",
+filterFiles: "File-File",
+filterForums: "Forum",
+filterPeople: "Orang",
+filterProfiles: "Profil",
+filterWikis: "Wiki",
+filterTags: "Tanda",
+filterLibraries: "Pustaka",
+filterMyNetworkAndPeopleIFollow: "Jaringan Saya dan Orang yang Saya Ikuti",
+filterMyNetwork: "Jaringan Saya",
+filterPeopleIFollow: "Orang yang Saya Ikuti",
+filterMyUpdates: "Pembaruan Saya",
+filterCommunitiesIFollow: "Komunitas yang Saya Ikuti",
+filterForMe: "Untuk Saya",
+filterFromMe: "Dari Saya",
+
+// Label for filters - used by gadget
+viewFilterLabel: "Sub Tampilan:",
+filterOneLabel: "Filter Menurut:",
+filterTwoLabel: "Tunjukkan:",
+
+// Names for views in ActivityStream - used by gadget
+viewImFollowing: "Saya Mengikuti",
+viewStatusUpdates: "Pembaharuan Status",
+viewActionRequired: "Tindakan yang Diperlukan",
+viewSaved: "Tersimpan",
+viewMyNotifications: "Notifikasi Saya",
+viewDiscover: "Temukan",
+viewRecentUpdates: "Pembaruan Terkini",
+
+// Aria label for As View Side Nav
+ariaASViews: "Tampilan Stream Aktivitas",
+
+selectedLabel: "Dipilih",
+
+// Gadget title
+asTitle: "Pembaruan Koneksi",
+
+// Used by gadget in Notes
+updatesFromSender: "Pembaruan dari Pengirim",
+updatesFromContact: "Pembaruan dari Kontak",
+updatesForUser: "Pembaruan dari pengguna",
+updatesFor: "Notifikasi untuk ${0}",
+noUser: "Tidak Ada Pengguna yang ditemukan untuk alamat email ini: ${0}",
+returnMainView: "Kembali",
+
+//External Application Text
+externalApplication: "Aplikasi Eksternal",
+
+//Strings for expanding comments inline
+showPreviousComments: "Perlihatkan Komentar Sebelumnya...",
+hideAdditionalComments: "Sembunyikan Komentar Sebelumnya...",
+// Used to display current shown comments. e.g. "2 of 10"
+commentsCounter: "${0} dari ${1}",
+errorRetrieveComments: "Terjadi kesalahan saat memperoleh komentar sebelumnya.",
+errorRetrieveCommentsDeleted: "Terjadi kesalahan saat memperoleh komentar sebelumnya. Item mungkin telah dihapus.",
+
+// News Item Actions - Repost
+repostText: "Publikasikan ulang",
+logInRepostText: "Masuk untuk posting kembali",
+repostMsgSuccess: "Informasi terbaru sudah berhsail dikirim kembali untuk pengikut Anda.",
+repostMsgFail: "Terjadi kesalahan saat memposting kembali pesan ini.",
+repostMsgErrorResGeneric: "Anda tidak berwenang untuk memposting kembali pesan ini.",
+repostMsgErrorRestricted: "Pesan ini tidak dapat dipublikasikan kembali karena komunitas ${0} sekarang merupakan Komunitas Terbatas.",
+
+// Hashtags
+// Defect 112455
+// a11y feature to inform the user the hashtag can be clicked on
+hashtagTitle:" Klik di sini untuk mencari tanda ${0}. ",
+
+// a11y information about the link opening on a new window
+opensInNewWindow: "Tautan ini akan terbuka di jendela baru.",
+attachFile : "Tambahkan File",
+removeFileAttachment: "Menghilangkan lampiran file",
+
+// External users 
+externalUsersCommentsMsg: "Komentar dapat dilihat oleh orang di luar organisasi Anda.",
+externalUsersStatusUpdatesMsg: "Pembaruan Status dapat dilihat oleh orang di luar organisasi Anda.",
+externalUsersItemMsg: "Dibagi secara eksternal",
+
+// Notifications Center
+ariaNotificationCenter: "Pusat Notifikasi - Tampilkan pembaruan terkait konten Anda dan notifikasi yang telah Anda terima",
+allNotifications : "Semua Notifikasi",
+seeAllNotifications : "Lihat semua",
+ariaSeeAllNotifications : "Klik di sini untuk pergi ke Tampilan Notifikasi Saya pada Halaman Beranda",
+notificationsTitle : "Notifikasi",
+notificationsSettings : "Pengaturan",
+ariaNotificationsSettings : "Klik di sini untuk pergi ke halaman pengaturan notifikasi",
+ariaNewNotification : "Judul notifikasi baru. ${0}",
+newNotifications: "${0} notifikasi baru",
+loadingNotifications: "Memuat...",
+noNewNotifications: "Anda belum menerima notifikasi apa pun minggu lalu.",
+markRead: "Tandai telah dibaca",
+markUnread: "Tandai belum dibaca",
+markAllRead: "Tandai semua telah dibaca",
+markAllReadDetails: "Klik di sini untuk menandai semua notifikasi telah dibaca.",
+notificationPopupSingleGeneric: "Anda memiliki 1 notifikasi baru",
+notificationPopupGeneric: "Anda memiliki ${0} notifikasi baru"
+});
+

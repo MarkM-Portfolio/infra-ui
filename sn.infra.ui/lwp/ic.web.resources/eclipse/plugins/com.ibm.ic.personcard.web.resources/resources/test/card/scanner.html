@@ -1,0 +1,31 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<html><body><p>${head}
+
+${script:com.ibm.social.personcard.test.card.TestScanResourceLink}
+
+${style:com.ibm.oneui/controls/templates/HoverPopup}
+${style:com.ibm.oneui/controls/templates/ResourceLink}
+
+${endhead}
+
+</p><div class="lotusMain">
+<div class="lotusContent">
+
+<div><a id="link1" href="person.oslccompact">Clayton Coleman</a></div>
+<br>
+<div><a id="link2" href="person.oslccompact" class="lotusPerson">Bob Smith</a></div>
+<br>
+<div><a id="link3" href="person.oslccompact" class="lotusPerson">text <img src="dash.gif"></a></div>
+<br>
+<div><a id="link4" href="person.oslccompact" class="lotusPerson">nested spans <span style="display: none">sometext</span></a></div>
+<br>
+<div><a id="link5" href="person.oslccompact" class="lotusPerson"><img src="dash.gif"></a></div>
+<br>
+<div><span id="link6" class="lotusPerson">Span instead of link</span></div>
+<script>
+</script>
+
+</div>
+</div>
+</body><p>
+${end}</p></html>

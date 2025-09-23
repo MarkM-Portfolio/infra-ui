@@ -1,0 +1,73 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div>
+	<div class="qkrError" style="display:none" data-dojo-attach-point="errorNode"></div>
+	<div data-dojo-attach-point="messageContainerNode"></div>
+	<div data-dojo-attach-point="loadingDiv"></div>
+	<div style="display:none" data-dojo-attach-point="sharingInfoData">
+	<table border="0" summary="" class="lotusVertTable lotusChunk" data-dojo-attach-point="infoTableNode">
+		<tbody>
+		   <tr>
+		      <th>${nls.READERS_LABEL}</th>
+		      <td data-dojo-attach-point="fileReadersNode"></td>
+		   </tr>
+		   <tr style="display:none;" data-dojo-attach-point="addShareRow">
+		      <th> </th>
+		      <td>
+		      <a role="button" href="javascript:;" class="lotusAction" style="display:none" title="${nls.TOOLTIP}" data-dojo-attach-point="addShareLink" data-dojo-attach-event="onclick:showSharing">${nls.ADD}</a>
+		      </td>		      
+		   </tr>
+		   <tr>
+		      <th>${nls.EDITORS_LABEL}</th>
+		      <td data-dojo-attach-point="fileEditorsNode"></td>
+		   </tr>
+		   <tr>
+		      <th>${nls.OWNER_LABEL}</th>
+		      <td data-dojo-attach-point="ownerNode"></td>
+		   </tr>
+		</tbody>
+	</table>
+	<form aria-live="assertive" action="javascript:;" method="post" class="lotusForm2" style="display: none;" data-dojo-attach-point="shareSect" data-dojo-attach-event="onsubmit:shareFile">
+	    <div class="lotusFormTitle">
+	       <h2 aria-describedby="formDesc" class="lotusHeading2">${nls.SHARE}</h2>
+	       <div class="lotusMeta" id="formDesc">${nls.ADD_TXT}</div>
+	    </div>
+	    <div class="lotusFormBody">
+	       <div class="lotusFormError" style="display:none" data-dojo-attach-point="formError"></div>
+	       <div class="lotusFormField">
+	          <label for="${id}_sourceChooser">${nls.SHARE_WITH}</label>
+	          <div class="lotusFieldWrapper">
+	             <select style="width:102px;" id="${id}_sourceChooser" name="sourceChooser" data-dojo-attach-point="sourceChooser" data-dojo-attach-event="onchange:sourceChanged">
+	                <option value="person">${nls.PERSON}</option>
+	                <option value="community" id="communitySource">${nls.COMMUNITY}</option>
+                </select>
+                <input style="width:150px;" value="" class="lotusText" data-dojo-attach-point="personInput"><input style="width:150px; display:none" value="" class="lotusText" data-dojo-attach-point="communityInput">
+	          </div>
+	       </div>
+	       <div class="lotusFormField" style="display:none" data-dojo-attach-point="readersRole">
+	          <label for="${id}_readers">${nls.READERS_LABEL}</label>
+	          <div class="lotusFieldWrapper">
+	             <div id="${id}_readers" data-dojo-attach-point="readersContainer"></div>
+	          </div>
+	       </div>
+	       <div class="lotusFormError" style="display:none" data-dojo-attach-point="messageError"></div>
+	       <div class="lotusFormField">
+	          <label for="${id}_message">${nls.MESSAGE}</label>
+	          <div class="lotusFieldWrapper">
+	             <a class="eeActionLinks" role="button" href="javascript:;" data-dojo-attach-point="msgLink" data-dojo-attach-event="onclick:showTxtArea">${nls.MESSAGE_TXT}</a>
+	             <textarea style="display:none; width:256px;" name="message" class="lotusText" id="${id}_message" data-dojo-attach-point="txtArea"></textarea>
+	          </div>
+	       </div>
+	    </div>
+	    <div class="lotusFormFooter">
+	       <ul class="lotusInlinelist lotusActions eeActionLinks">
+	          <li class="lotusFirst">
+	             <a class="submitEnabled" role="button" href="javascript:;" data-dojo-attach-point="shareSubmit" data-dojo-attach-event="onclick:shareFile"><strong>${nls.SHARE}</strong></a>
+             </li>
+             <li>
+                <a role="button" href="javascript:;" data-dojo-attach-event="onclick:hideSharing">${nls.CANCEL}</a>
+             </li>
+          </ul>
+	    </div>
+   </form>
+   </div>
+</div>

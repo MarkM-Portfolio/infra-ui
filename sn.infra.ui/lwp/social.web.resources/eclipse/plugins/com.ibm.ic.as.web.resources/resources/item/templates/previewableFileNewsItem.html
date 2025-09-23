@@ -1,0 +1,21 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusPostDetails lotusChunk previewable" data-dojo-attach-point="fileContainer">
+    <div class="lotusPostObject" data-dojo-attach-point="imageCellNode">       
+        <img class="${imageClass}" src="${imageSrc}" title="${fileName}" alt="${fileName}" data-dojo-attach-point="previewImage">
+        <div class="fileBody" data-dojo-attach-point="fileDetailsContainer">
+            <a class="fileIcon" dojoAttachPoint="iconFileLink"  href="${filePageURL}" role="presentation" tabindex="-1">
+                <img class="${iconClass}" src="${iconSrc}" title="${fileName}" alt="${fileName}" data-dojo-attach-point="iconImage">
+                <span dir="ltr" class="lotusHidden" data-dojo-attach-point="highContrastFileIcon"></span>
+            </a>
+            <div class="fileDetails" data-dojo-attach-point="fileDetails">
+                <a class="fileName bidiAware" dojoAttachPoint="pageFileLink" href="${filePageURL}" ${anchorTarget}  role="button">${!fileName}</a>
+                <div class="fileMeta">
+                    <ul class="inlineSepList">
+                        <li class="fileAuthor" data-dojo-attach-point="authorInfoItem">${!authorInfo}</li>
+                        <li class="lotusHidden fileTags" data-dojo-attach-point="tagsListItem">
+                    </li></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

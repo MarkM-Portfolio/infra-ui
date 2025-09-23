@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:snx="http://www.ibm.com/xmlns/prod/sn" xmlns="http://www.w3.org/2005/Atom">
+  <id>http://garner.rtp.raleigh.ibm.com/communities/service/atom/community/widgets?pageSize=10&amp;widgetDefId=&amp;communityUuid=568695e9-575c-43b1-8d51-d3b9e2fb51d2</id>
+  <title type="text">No Files Widgets</title>
+  <updated>2015-09-10T14:08:27.041Z</updated>
+  <generator version="5.0.0.0" uri="http://www.ibm.com/xmlns/prod/sn">IBM Connections - Communities</generator>
+  <link href="http://garner.rtp.raleigh.ibm.com/communities/service/atom/community/widgets?pageSize=10&amp;widgetDefId=&amp;communityUuid=568695e9-575c-43b1-8d51-d3b9e2fb51d2" rel="self">
+  </link>
+</feed>
+<!-- Copyright IBM Corp. 2015 All Rights Reserved. -->

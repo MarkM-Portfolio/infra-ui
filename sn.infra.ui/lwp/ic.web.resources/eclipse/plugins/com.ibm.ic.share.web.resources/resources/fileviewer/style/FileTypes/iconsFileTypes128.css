@@ -1,0 +1,23 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+.ics-viewer .iconsFileTypes128-ftAudio128{width:128px;height:128px;background-position:0 0}
+.ics-viewer .iconsFileTypes128-ftCode128{width:128px;height:128px;background-position:0 -136px}
+.ics-viewer .iconsFileTypes128-ftCompressed128{width:128px;height:128px;background-position:0 -272px}
+.ics-viewer .iconsFileTypes128-ftContact128{width:128px;height:128px;background-position:0 -408px}
+.ics-viewer .iconsFileTypes128-ftData128{width:128px;height:128px;background-position:0 -544px}
+.ics-viewer .iconsFileTypes128-ftDefault128{width:128px;height:128px;background-position:0 -680px}
+.ics-viewer .iconsFileTypes128-ftFlash128{width:128px;height:128px;background-position:0 -816px}
+.ics-viewer .iconsFileTypes128-ftFileSyncCheckmark128{width:48px;height:48px;background-position:0 -952px}
+.ics-viewer .iconsFileTypes128-ftFolder128{width:128px;height:128px;background-position:0 -1008px}
+.ics-viewer .iconsFileTypes128-ftFolderOpen128{width:128px;height:128px;background-position:0 -1144px}
+.ics-viewer .iconsFileTypes128-ftGraphic128{width:128px;height:128px;background-position:0 -1280px}
+.ics-viewer .iconsFileTypes128-ftLink128{width:128px;height:128px;background-position:0 -1416px}
+.ics-viewer .iconsFileTypes128-ftPage128{width:128px;height:128px;background-position:0 -1552px}
+.ics-viewer .iconsFileTypes128-ftPdf128{width:128px;height:128px;background-position:0 -1688px}
+.ics-viewer .iconsFileTypes128-ftPresentation128{width:128px;height:128px;background-position:0 -1824px}
+.ics-viewer .iconsFileTypes128-ftText128{width:128px;height:128px;background-position:0 -1960px}
+.ics-viewer .iconsFileTypes128-ftVideo128{width:128px;height:128px;background-position:0 -2096px}
+.ics-viewer .iconsFileTypes128-ftVisualization128{width:128px;height:128px;background-position:0 -2232px}
+.ics-viewer .iconsFileTypes128-ftWordProcessing128{width:128px;height:128px;background-position:0 -2368px}
+
+.ics-viewer .iconsFileTypes128{background-image:url('../images/deprecated/iconsFileTypes128-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsFileTypes128{display:none}

@@ -1,0 +1,21 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.iconsComponents16-Activities16{width:16px;height:16px;background-position:0 0}
+.iconsComponents16-Blogs16{width:16px;height:16px;background-position:0 -24px}
+.iconsComponents16-Bookmarks16{width:16px;height:16px;background-position:0 -48px}
+.iconsComponents16-Calendar16{width:16px;height:16px;background-position:0 -72px}
+.iconsComponents16-Charts16{width:16px;height:16px;background-position:0 -96px}
+.iconsComponents16-Chat16{width:16px;height:16px;background-position:0 -120px}
+.iconsComponents16-Events16{width:16px;height:16px;background-position:0 -144px}
+.iconsComponents16-Files16{width:16px;height:16px;background-position:0 -168px}
+.iconsComponents16-Forms16{width:16px;height:16px;background-position:0 -192px}
+.iconsComponents16-Forums16{width:16px;height:16px;background-position:0 -216px}
+.iconsComponents16-Home16{width:16px;height:16px;background-position:0 -240px}
+.iconsComponents16-Mail16{width:16px;height:16px;background-position:0 -264px}
+.iconsComponents16-MediaGallery16{width:16px;height:16px;background-position:0 -288px}
+.iconsComponents16-Places16{width:16px;height:16px;background-position:0 -312px}
+.iconsComponents16-Profiles16{width:16px;height:16px;background-position:0 -336px}
+.iconsComponents16-Tasks16{width:16px;height:16px;background-position:0 -360px}
+.iconsComponents16-Wikis16{width:16px;height:16px;background-position:0 -384px}
+
+.iconsComponents16{background-image:url('./iconsComponents16-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsComponents16{display:none}

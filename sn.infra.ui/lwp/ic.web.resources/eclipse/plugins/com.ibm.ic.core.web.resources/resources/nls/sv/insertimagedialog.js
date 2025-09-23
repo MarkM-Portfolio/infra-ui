@@ -1,0 +1,45 @@
+define({
+	      /* ***************************************************************** */
+  /*                                                                   */
+  /* Copyright IBM Corp. 2011, 2018  All Rights Reserved.              */
+
+		   dialogTitle : "Lägg till bild",
+		   newUpload : "Ny uppladdning",
+		   URL : "URL-adress",
+		   imageLibrary : "Bildbibliotek",
+		   description : "Beskrivning:",
+		   imageFile : "Filer:",
+		   OK: "OK",
+		   cancel: "Avbryt",
+		   required: "Obligatoriskt fält",
+		   preview: "Förhandsgranskning:",
+		   previewWarning: "Det gick inte att läsa in bilden. Kontrollera att du har angett en giltig bild-URL-adress.",
+		   alt: "Alternativ text:",
+		   filesTab: "Från Filer",
+		   images:"Bilder:",
+		   browse:"Bläddra...",
+		   imagePickerTitle:"Infoga bilder från Filer",
+		   componentImagePickerTitle:" ${0} uppladdade bilder",
+		   /* New String for insert image dialog */
+		   title: "Infoga bild",
+		   uploadBtn: "Ladda upp bild",
+		   insertBtn: "Infoga bild",
+		   uploadTab: "Lokala filer",
+		   externalTab: "Webb-URL",
+		   internalTab: "Befintliga bilder",
+		   fileFieldTip: "Dra bilder direkt från datorn till det här fönstret för att överföra dem.",
+		   AdditionalSection: "Ytterligare alternativ",
+		   ExpandSection: "Expandera ytterligare alternativ",
+		   CloseSection: "Komprimera ytterligare alternativ",
+		   webURLPrompt: "Webbild-URL:",
+		   previewPrompt: "Förhandsgranskningsområde: Stora bilder kan ta ett tag att visa.",
+		   noExistingImage: "Ingen bild har lagts till ännu.",
+		   selectExistingImage: "Välj en befintlig bild:",
+		   urlMissing: "Du måste ange en URL-adress",
+		   urlInvalid: "Du har angett en ogiltig URL-adress. Kontrollera att du angett en giltig URL och försök igen.",
+		   previousItem: "Föregående",
+		   nextItem: "Nästa",
+			 oneImageOneTime: "En bild har redan lagts till i det här fönstret. Du kan bara infoga en bild åt gången.",
+			 altTextForImgInList: "Klicka för att lägga till en bild"
+});
+

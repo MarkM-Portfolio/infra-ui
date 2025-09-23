@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "en",
+      "Play": "Възпроизвеждане",
+      "Pause": "Пауза",
+      "Current Time": "Текущо време",
+      "Duration Time": "Продължителност",
+      "Remaining Time": "Оставащо време",
+      "Stream Type": "Тип предаване",
+      "LIVE": "НА ЖИВО",
+      "Loaded": "Зареден",
+      "Progress": "В изпълнение",
+      "Fullscreen": "На цял екран",
+      "Non-Fullscreen": "Излизане от цял екран",
+      "Mute": "Без звук",
+      "Unmute": "Със звук",
+      "Unmuted": "С включен звук",
+      "Playback Rate": "Скорост на възпроизвеждане",
+      "Subtitles": "Субтитри",
+      "subtitles off": "Изключване на субтитрите",
+      "Captions": "Надписи",
+      "captions off": "Изключване на надписите",
+      "Chapters": "Глави",
+      "Volume": "Сила на звука",
+      "You aborted the video playback.": "Вие спряхте възпроизвеждането на видеоклипа",
+      "A network error caused the video download to fail part-way.": "Мрежова грешка попречи на пълното изтегляне на видеоклипа.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "Видеоклипът не може да бъде зареден, тъй като или сървърът, или мрежата са недостъпни, или защото форматът не се поддържа.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "Възпроизвеждането на видеоклипа е прекратено поради повреда или защото видеоклипът използва характеристики, които Вашият браузър не поддържа.",
+      "No compatible source was found for this video.": "Не е намерен съвместим източник за този видеоклип."
+});
+

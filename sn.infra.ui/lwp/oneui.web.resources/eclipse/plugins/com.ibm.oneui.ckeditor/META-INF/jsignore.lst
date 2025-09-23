@@ -1,0 +1,3 @@
+/resources/editor/(adapters|_source|lang|plugins|skins|themes|_samples)/.*
+/resources/editor/(ckeditor|config|ckeditor_source|ckeditor_basic|ckeditor_basic_source)\.js
+

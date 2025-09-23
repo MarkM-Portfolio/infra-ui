@@ -1,0 +1,29 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div>
+   <div style="display: none;" class="eeReviewTab" data-dojo-attach-point="main">
+      <div style="margin-bottom: 15px;" data-dojo-attach-point="draftInfo"></div>
+      <h3>${_strings.reviewers}</h3>
+      <div class="lotusMeta eeGreyText" data-dojo-attach-point="helpTxt"></div>
+	   <table role="presentation">
+         <colgroup>
+            <col style="width: 12px;">
+            <col>
+         </colgroup>
+	      <tbody data-dojo-attach-point="mainTbody"></tbody>
+	   </table>
+       <span style="display: none;" data-dojo-attach-point="addtlReviewers">
+         <h3 style="margin-top: 15px;">${_strings.reviwers_addtl}</h3>
+         <div class="lotusMeta eeGreyText">${_strings.review_additional_required}</div>
+         <table role="presentation">
+            <colgroup>
+               <col style="width: 12px;">
+               <col>
+            </colgroup>
+            <tbody data-dojo-attach-point="AddtlTbody"></tbody>
+      </table>
+      </span>
+   </div>
+   <div style="display: none;" data-dojo-attach-point="empty"></div>
+   <div style="display: none;" data-dojo-attach-point="error"></div>
+   <div style="display: none;" data-dojo-attach-point="loading"></div>
+</div>

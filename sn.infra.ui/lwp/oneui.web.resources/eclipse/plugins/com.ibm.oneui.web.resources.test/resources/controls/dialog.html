@@ -1,0 +1,114 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+${script:dijit.Dialog}
+${script:dijit.layout.TabContainer}
+${script:com.ibm.oneui.controls.FormErrors}
+
+${style:com.ibm.oneui/controls/templates/Dialog}
+${style:com.ibm.oneui/controls/templates/TabbedDialog}
+${style:com.ibm.oneui/controls/templates/TabContainer}
+${style:com.ibm.oneui/controls/templates/HoverPopup}
+
+<style>
+</style>
+
+${endhead}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+<script>
+/*dojo.declare("TestPopup", [com.ibm.oneui.controls.HoverPopup, com.ibm.oneui.controls._HoverDialogMixin], {
+});*/
+</script>
+<a onclick="document.body.style.width = '1200px'; return false;" href="#">Page width 1000px</a> |
+<a onclick="document.body.style.width = '400px'; return false;" href="#">Page width 400px</a>
+<br>
+
+<table style="width: 100%;" cellpadding="1" cellspacing="1" border="1">
+<thead><tr>
+<th>Test case</th><th>Description</th>
+</tr></thead><tbody>
+
+<tr><td>
+	<a href="javascript:dijit.byId('link1').show();">Simple</a>
+	<script>
+	new dijit.Dialog({
+		id: "link1", 
+		autofocus: true,
+		content: "<div style='padding: 10px; width: 200px;'>Hello</div>"
+	});
+	</script>
+</td><td>
+	<ol>
+	</ol>
+</td></tr>
+
+<tr><td>
+	<a href="javascript:dijit.byId('link2').show();">Simple with title</a>
+	<script>
+	new dijit.Dialog({
+		id: "link2", 
+		autofocus: true,
+		title: "A big title",
+		content: "<div style='padding: 10px; width: 200px;'>Hello</div>"
+	});
+	</script>
+</td><td>
+	<ol>
+	</ol>
+</td></tr>
+
+
+<tr><td>
+	<a href="javascript:dijit.byId('link3').show();">Tabbed dialog</a>
+	<script>
+	dojo.declare("com.ibm.oneui.controls.TabbedDialog", dijit.Dialog,  {
+		templateString: null,
+		widgetsInTemplate: true,
+		parseOnLoad: true,
+		templatePath: dojo.moduleUrl("com.ibm.oneui", "controls/templates/TabbedDialog.html"),
+		attributeMap: dojo.delegate(dijit._Widget.prototype.attributeMap, {
+			title: []
+		}),		
+		createTabs: function(tabs) {	
+			//tabs.startup();
+			//tabs.resize();
+		},
+		_setup: function() {
+		  this.inherited(arguments);
+		  this.createTabs(this.tabs);
+		}
+	});
+	
+	new com.ibm.oneui.controls.TabbedDialog({
+		id: "link3", 
+		autofocus: true,
+		title: "A tabbed dialog",
+		createTabs: function(tabs) {
+			var cp1 = new dijit.layout.ContentPane({
+			    title: "Food",
+			    content: "We offer amazing food"
+			});
+			tabs.addChild(cp1);
+			var cp2 = new dijit.layout.ContentPane({
+			    title: "More food",
+			    content: "We offer even more amazing food<br>and other stuff too!"
+			});
+			tabs.addChild(cp2);
+			tabs.startup();
+			tabs.resize();
+		}
+	});
+	</script>
+</td><td>
+	<ol>
+	</ol>
+</td></tr>
+
+</tbody></table>
+</div>
+</div>
+</body>
+${end}

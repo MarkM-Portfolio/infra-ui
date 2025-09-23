@@ -1,0 +1,24 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<widgetDef defId="SingeIframeWidgetTest" modes="view fullpage edit" themes="wpthemeNarrow wpthemeWide wpthemeBanner" showInPalette="true" uniqueInstance="false" url="{webresourcesSvcRef}/web/lconn.urlwidget/descriptor/SingleIframeWidget.xml?version={version}">
+   <itemSet>
+      <item name="url" value="{webresourcesSvcRef}/web/lconn.urlwidget/test/testSingleIframeWidget.html" />
+      <item name="editUrl" value="{webresourcesSvcRef}/web/lconn.urlwidget/test/testSingleIframeWidget.html" />
+      <item name="fullpageUrl" value="{webresourcesSvcRef}/web/lconn.urlwidget/test/testSingleIframeWidget.html" />
+      <item name="width" value="100%" />
+      <item name="height" value="400px" />
+      <item name="fullpageHeight" value="700px" />
+   </itemSet>
+</widgetDef>  

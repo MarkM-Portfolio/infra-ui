@@ -1,0 +1,62 @@
+<div class="lotusFlyoutInner">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+   <div dojoAttachPoint="gadgetBody">
+   <div class="lotusHeadingChunk eeHeading" dojoAttachPoint="headerNode">
+      <h1 class="lotusHeading">
+         <img alt="" role="presentation" aria-hidden="true" src="${_blankGif}" class="lconnSprite lconnSprite-iconBlogsItem16" />
+         <a href="" class="bidiAware" target="_blank" dojoAttachPoint="titleNode"></a>
+      </h1>
+   </div>
+      <span dojoAttachPoint="sharedExternally"></span>
+   <div class="lotusChunk" dojoAttachPoint="tagsDiv" style="display:none">
+      <span class="lotusMeta lotusTags" dojoAttachPoint="tagSpan">
+         <label role="list">${nls.generic.tags}</label> 
+         <span dojoAttachPoint="tagsNode"></span>
+      </span>
+   </div>
+   <div class="lotusChunk gadgetActions"> 
+    <ul class="lotusInlinelist" role="toolbar" dojoAttachPoint="actionsToolbarNode">
+      <li class="lotusFirst">
+       <span dojoAttachPoint="recommendationNode"></span>
+      </li>
+  	 </ul>
+  </div>
+
+   <div class="lotusChunk blogsWrapText" dojoAttachPoint="contentArea"></div>
+   <a class="lotusAction" href="" target="_blank" dojoAttachPoint="readMoreNode">${nls.blog.readMore}</a>
+   <div class="lotusChunk" dojoAttachPoint="imageContainer" style="overflow:hidden; padding: 1px;"></div>  
+  
+  <div class="lotusClear"></div>
+   
+   <div class="lotusTabContainer lotusTabCondensed">
+      <ul class="lotusTabs" role="tablist" dojoAttachPoint="tabContainerNode">
+		 <li class="lotusFirst lotusSelected eeFirstTab" dojoAttachPoint="thiscommentTab" role="presentation">
+           <a href="javascript:;" role="tab" aria-selected="true" id="${id}_thiscommentTabLink" dojoAttachPoint="thiscommentTabLink">${nls.THISCOMMENT.TAB_TITLE}</a>
+         </li>
+         <li dojoAttachPoint="commentsTab" role="presentation">
+           <a href="javascript:;" role="tab" aria-selected="false" tabindex="-1"  id="${id}_commentsTabLink" dojoAttachPoint="commentsTabLink"></a>
+         </li>
+         <li dojoAttachPoint="historyTab" role="presentation">
+            <a href="javascript:;" role="tab" aria-selected="false" tabindex="-1" id="${id}_historyTabLink" dojoAttachPoint="historyTabLink">${nls.HISTORY.TAB_TITLE}</a>
+         </li>
+      </ul>
+   </div>
+   
+   <div tabindex="0" role="tabpanel" aria-labelledby="${id}_thiscommentTabLink" dojoAttachPoint="thiscommentTabBody" class="eeTabBody"></div> 
+   <div tabindex="0" role="tabpanel" aria-labelledby="${id}_commentsTabLink" dojoAttachPoint="commentsTabBody" style="display:none" class="eeTabBody"></div>   
+   <div tabindex="0" role="tabpanel" aria-labelledby="${id}_historyTabLink" dojoAttachPoint="historyTabBody" style="display:none" class="eeTabBody"></div>
+   </div>
+</div>

@@ -1,0 +1,75 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+${head}
+
+<title>Notification Center Flyout</title>
+
+<script>
+    djConfig.blankGif="";
+    djConfig.async=true;
+    djConfig.parseOnLoad=true;
+</script>
+<script type="text/javascript" src="/push/basic/js/org/cometd.js"></script>
+
+${script:lconn.core.config.services}
+${script:com.ibm.social.as.notification.NotificationsFlyout}
+${script:com.ibm.social.as.notification.NotificationsItem}
+${script:com.ibm.social.as.notification.NotificationCenterCometService}
+
+<script src="/connections/resources/web/com.ibm.social.as/notification/NotificationLauncher.js">
+</script>
+
+<script>
+    dojo.require("dijit.form.Button");
+
+    dojo.ready(function(){
+        // Create a button programmatically:
+        var button = new dijit.form.Button({
+            label: "Click me!",
+            onClick: function(){
+                // Do something:
+                soc.as.not.NotificationLauncher.init(this.domNode);
+            }
+        }, "progButtonNode");
+
+    
+    	dojo.require("com.ibm.social.as.notification.NotificationsCenterCometService");
+    	var cometService = new com.ibm.social.as.notification.NotificationsCenterCometService();
+    	cometService.initCometService();
+    
+    });
+</script>
+
+<link rel="stylesheet" type="text/css" href="/connections/resources/web/com.ibm.social.as/notification/css/notificationCenter.css">
+${endhead}
+
+<h1>Notification Center Flyout</h1>
+<div id="test">
+    <div dojoType="com.ibm.social.as.notification.NotificationsFlyout"></div>
+    
+</div>
+
+<br/>
+<br/>
+
+<div>
+    <button id="progButtonNode" type="button"></button>
+</div>
+
+
+</body>
+${end}
+
+

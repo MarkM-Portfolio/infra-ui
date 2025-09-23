@@ -1,0 +1,33 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="${baseClass}">
+  <div class="qkrError" style="display: none; color: red;" data-dojo-attach-point="errorNode"></div>
+  <div class="lotusPaging" style="${_initPageStyle}" data-dojo-attach-point="topPageNode">
+     <div class="lotusLeft numShape" style="display:none;" data-dojo-attach-point="pageInfoNode"></div>
+     <ul class="lotusRight lotusInlinelist" style="display:none;" data-dojo-attach-point="topPageNavigateNode">
+        <li class="lotusFirst" data-dojo-attach-point="tPreviousLinkNode"><a href="#" title="${_strings.PREVIOUS_TOOLTIP}" data-dojo-attach-event="onclick:previous">${_strings.PREVIOUS}</a></li>
+        <li class="lotusFirst" data-dojo-attach-point="tPreviousTextNode">${_strings.PREVIOUS}</li>
+        <li data-dojo-attach-point="tNextLinkNode"><a href="#" title="${_strings.NEXT_TOOLTIP}" data-dojo-attach-event="onclick:next">${_strings.NEXT}</a></li>
+        <li data-dojo-attach-point="tNextTextNode">${_strings.NEXT}</li>
+     </ul>
+     <ul class="lotusInlinelist" style="display:none" data-dojo-attach-point="pageListNode">${_strings.PAGE}<li></ul>
+  </div>
+  <div class="qkrLoading" data-dojo-attach-point="loadingIndicator">
+     <img alt="${_strings.LOADING}" src="${_loadingImg}">${_strings.LOADING}
+  </div>
+  <div data-dojo-attach-point="streamNode"></div>
+  <div class="lotusPaging" style="${_initPageStyle}" data-dojo-attach-point="bottomPageNode">
+     <div class="lotusLeft">
+        <ul class="lotusLeft lotusInlinelist" style="display: none;" data-dojo-attach-point="pageSizeListNode">${_strings.SHOW}
+        	  <li class="lotusFirst"><a href="javascript:;" role="button" aria-pressed="false" title="${_strings.SHOW_TOOLTIP_10}">10</a></li><li class="lotusFirst" style="display: none;" id="${id}10" role="button" aria-pressed="true" aria-disabled="true">10</li><li><a href="javascript:;" role="button" aria-pressed="false" title="${_strings.SHOW_TOOLTIP_25}">25</a></li><li style="display: none;" id="${id}25" role="button" aria-pressed="true" aria-disabled="true">25</li>
+           ${_strings.ITEMS_PER_PAGE}
+        </ul>         
+     </div>
+     <ul class="lotusRight lotusInlinelist" style="display: none;" data-dojo-attach-point="bottomPageNavigateNode">
+        <li class="lotusFirst" data-dojo-attach-point="bPreviousLinkNode"><a href="#" title="${_strings.PREVIOUS_TOOLTIP}" data-dojo-attach-event="onclick:previous">${_strings.PREVIOUS}</a></li>
+        <li numShape" data-dojo-attach-point="bPreviousTextNode">${_strings.PREVIOUS}</li>
+        <li data-dojo-attach-point="bNextLinkNode"><a href="#" title="${_strings.NEXT_TOOLTIP}" data-dojo-attach-event="onclick:next">${_strings.NEXT}</a></li>
+        <li data-dojo-attach-point="bNextTextNode">${_strings.NEXT}</li>
+     </ul>
+     <div style="display:none;" data-dojo-attach-point="jumpPageNode"></div>
+  </div>      
+</div>

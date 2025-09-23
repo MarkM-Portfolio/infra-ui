@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Embedded Experience Social Resources 
+Bundle-SymbolicName: com.ibm.social.ee.web.resources;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: IBM
+Bundle-ActivationPolicy: lazy

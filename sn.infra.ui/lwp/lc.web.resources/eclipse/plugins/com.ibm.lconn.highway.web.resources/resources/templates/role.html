@@ -1,0 +1,59 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div align="right" >
+  
+  <table dojoattachpoint="tableNode" width="90%" class="lotusInfoBox" style="${extraStyles} ${spacingStyles}" tabindex="0" 
+     dojoattachevent="onfocus:onSettingFocus,onblur:onSettingBlur,onmouseover:onMouseOver,onmouseout:onMouseOut">
+	  <tr>
+		<td class="lotusAlignLeft ${displayNameClass} ${displayValueClass}" width="150" title="${displayDescription}">
+			<span dojoattachpoint="roleNode">
+				${displayName}
+			</span>
+			<span dojoattachpoint="roleEditNode" class="lotusHidden" >
+				<input type="text" aria-required="true" class="lotusText" value="${_resourceBundle.roleNewRole}" title="${_resourceBundle.roleNewRole}" style="width:90% !important;" dojoattachpoint="roleEditTextBox" />
+			</span>
+		</td>
+		<td class="lotusAlignRight ${displayValueClass}">
+			<span dojoattachpoint="valueNode">
+				${displayValue}
+			</span>
+			<span dojoattachpoint="valueUpdatingNode" class="lotusHidden lotusInactive">
+				${_resourceBundle.settingUpdating}
+			</span>
+			<span dojoattachpoint="valueEditNode" class="lotusHidden" >
+				<input type="text" aria-required="true" class="lotusText" value="${displayValue}" title="${_resourceBundle.roleValue}" style="width:100% !important;" dojoattachpoint="valueEditTextBox" />
+			</span>
+		</td>
+		<td class="lotusAlignRight" width="100">
+			<ul class="lotusInlinelist lotusActions">
+				<span dojoattachpoint="editActionNode" class="lotusHidden"  dojoattachevent="onclick:onEdit">
+					<li title="${displayEditActionDescription}" class="lotusFirst lotusAlignLeft">
+						<a href="javascript:;" role="button">${_resourceBundle.roleEditActionName}</a>
+					</li>
+				</span>
+				<span dojoattachpoint="deleteRoleActionNode" class="lotusHidden"  dojoattachevent="onclick:onDelete">
+					<li title="${_resourceBundle.roleDeleteActionDescription}" class="lotusAlignLeft">
+						| <a href="javascript:;" role="button" class="${displayValueClass}" >${_resourceBundle.roleDeleteActionName}</a> <!-- TODO : Remove bar and use style instead -->
+					</li>
+				</span>
+				<span dojoattachpoint="overrideActionNode" class="lotusHidden" dojoattachevent="onclick:onEdit">
+					<li title="${_resourceBundle.roleOverrideActionDescription}" class="lotusFirst lotusAlignLeft">
+						<a href="javascript:;" role="button">${_resourceBundle.roleOverrideActionName}</a>
+					</li>
+				</span>
+				<span dojoattachpoint="saveActionNode" class="lotusHidden" dojoattachevent="onclick:onSave">
+					<li title="${_resourceBundle.roleSaveActionDescription}" class="lotusFirst lotusAlignLeft">
+						<a href="javascript:;" role="button">${_resourceBundle.roleSaveActionName}</a>
+					</li>
+				</span>
+				<span dojoattachpoint="cancelActionNode" class="lotusHidden"  dojoattachevent="onclick:onCancel">
+					<li title="${_resourceBundle.roleCancelActionDescription}" class="lotusAlignLeft">
+						| <a href="javascript:;" role="button">${_resourceBundle.roleCancelActionName}</a>  <!-- TODO : Remove bar and use style instead -->
+					</li>
+				</span>
+
+			</ul>
+		</td>
+	  </tr>
+  </table>
+    
+</div>

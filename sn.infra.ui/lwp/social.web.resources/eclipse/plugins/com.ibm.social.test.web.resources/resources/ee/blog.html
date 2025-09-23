@@ -1,0 +1,205 @@
+${head}
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<title>Blog EE Test</title>
+<link id="lotusAppStylesheet2" rel="stylesheet" type="text/css" href="../../_style?include=com.ibm.social.ee/css/eePreview.css">
+
+${script:lconn.core.config.services}
+${script:com.ibm.social.ee.test.util.serviceutil}
+${script:com.ibm.social.incontext.util.dom}
+${script:com.ibm.social.incontext.util.html}
+${script:com.ibm.lconn.gadget.container.iContainer2}
+${script:net.jazz.ajax.xdloader}
+${script:dojo.cookie}
+
+<script>
+(function () {
+   var util = com.ibm.social.ee.test.util.serviceutil;
+   var lookup = com.ibm.social.ee.test.util.personlookup;
+   var isSecure = util.isSecure();
+   var blogsCfg = lconn.core.config.services.blogs;
+   var webResources = lconn.core.config.services.webresources;
+   var webResUrl = (isSecure) ? webResources.secureUrl : webResources.url;
+   var blogsUrl = (isSecure) ? blogsCfg.secureUrl : blogsCfg.url;
+   var profilesCfg = lconn.core.config.services.profiles;
+   var profilesUrl = (isSecure) ? profilesCfg.secureUrl : profilesCfg.url;
+   var util2 = com.ibm.social.incontext.util;
+   var iContainer = null;
+   var inlineWidget = null;
+   var gadgetHandle = null;
+   var startTime = 0;
+   var endTime = 0;
+   var loadTime = 0;
+   var userId;
+   var currentBlogHandle = null;
+
+   function resetInlineWidget() {
+	   if (inlineWidget) {
+		   inlineWidget.destroy();
+		   inlineWidget = null;
+		   var container = dojo.byId("inlineBlog");
+		   dojo.empty(container);
+		   dojo.create("center", { innerHTML: "Inline gadget goes here" }, container);
+	   }
+   }
+
+   function resetGadget() {
+	   if (gadgetHandle) {
+		   gadgetHandle.close();
+		   gadgetHandle = null;
+		   var container = dojo.byId("iFrameBlog");
+         dojo.empty(container);
+         dojo.create("center", { innerHTML: "iFrame gadget goes here" }, container);
+	   }
+   }
+   function parseParams() {
+      var p = { }, params = window.location.search.substring(1).split("&"), i, parts;
+      for (i = 0; i < params.length; i++) { parts = params[i].split("="); p[parts[0]] = decodeURIComponent(parts[1]); }
+      return p;
+   }
+   
+   function addNotificationParams(context) {
+      var params = parseParams();
+      if(params.notification && params.notification === "true") {
+         dojo.mixin(context, {"notification.content": "test message provided during sharing action",
+            actor: {connections: {state: "active"}, displayName: "Amadou Alain", 
+               id: "urn:lsid:lconn.ibm.com:profiles.person:81e18b48-1378-4850-b758-7212d0f6f479",
+               objectType: "person"}});
+      }   
+   }
+   window.viewBlogEntries = function(handle, title) {
+	   dojo.byId("currentBlogTitle").innerHTML = title;
+	   var entriesFeed = blogsUrl + "/" + handle + "/feed/entries/atom?lang=en_us";
+	   currentBlogHandle = handle;
+	   util.applyXsl(entriesFeed, "blog/entries.xsl", dojo.byId("blogEntries"));
+   }
+
+   window.viewBlogEEInline = function(atomUrl,url) {
+      resetInlineWidget();
+      resetGadget();
+	   var container = dojo.byId("inlineBlog");
+	   dojo.empty(container);
+	   var div = dojo.create("div", { }, container);
+	   var user = { id: userId };
+	   var id = atomUrl.substring(atomUrl.indexOf("?entryid=") + 9, atomUrl.indexOf("?entryid=") + 45);
+	   var context = {
+				   connectionsContentUrl: atomUrl,
+				   authUser: user,
+				   eventType: "blog.entry.created",
+				   id: id
+				};
+	   addNotificationParams(context);
+	   net.jazz.ajax.xdloader.batch_load_async(["com.ibm.social.ee.widget.BlogEntryLoader", "com.ibm.social.incontext.NetworkDojo"], function() {
+		   inlineWidget = new com.ibm.social.ee.widget.BlogEntryLoader({
+		       isGadget: false,
+			   context: context,
+				network: new com.ibm.social.incontext.NetworkDojo()
+		   }, div);
+	   });
+   }
+
+
+  window.viewBlogEEGadgetiFrame = function(atomUrl, url) {
+      resetInlineWidget();
+      resetGadget();
+	   if(!iContainer) {
+		   iContainer = com.ibm.lconn.gadget.container.iContainer2;
+		   iContainer.init();
+	   }
+	  var id = atomUrl.substring(atomUrl.indexOf("?entryid=") + 9, atomUrl.indexOf("?entryid=") + 45);
+      var context = {
+    		 connectionsContentUrl: atomUrl,
+    		 itemUrl: url,
+    		 eventType: "blog.entry.created",
+    		 id: id
+      };
+      addNotificationParams(context);
+      var container = dojo.byId("iFrameBlog");
+      dojo.empty(container);
+      var oauthEnabled = "false";
+      if (dojo.cookie("_oauthEnabled") === "true") {
+         oauthEnabled = "true";
+      }
+      var gadgetUrl = webResUrl + "/web/com.ibm.social.ee/ConnectionsEE.xml";
+      if (!oauthEnabled)
+         gadgetUrl += ("?preventCache=" + (new Date()).getTime());
+
+      var def = {
+    	   definitionUrl: gadgetUrl,
+         placement: "iFrameBlog",
+         componentType: "gadget",
+         instanceData: {
+            renderType: "default",
+            renderParams: { userPrefs: { "debug": "true" }  },
+            eeDataModel: {
+               context: context
+            },
+            viewParams: {
+              useOAuth: oauthEnabled
+            }
+         }
+      };
+      gadgetHandle = iContainer.loadWidget(def);
+   }
+
+   dojo.addOnLoad(function () {
+      var currentUser = null;
+      var blogsFeed = blogsUrl + "/roller-ui/rendering/feed/homepage/blogs/atom?lang=en_us";
+      util.getXml(profilesUrl + "/atom/profileService.do", function (svcdoc) {
+          currentUser = util.evalXPathString(svcdoc, "//app:workspace/atom:title/text()", { app: "http://www.w3.org/2007/app"});
+          userId = util.evalXPathString(svcdoc, "//app:collection/snx:userid/text()", {app: "http://www.w3.org/2007/app"});
+          dojo.place("<strong>" + currentUser + "</strong>", dojo.byId("currentUser"));
+          util.applyXsl(blogsFeed, "blog/blogs.xsl", dojo.byId("blogsList"));
+      });
+      if (!currentUser) {
+         util.applyXsl(blogsFeed, "blog/blogs.xsl", dojo.byId("blogsList"));
+      }
+   });
+})();
+
+</script>
+${endhead}
+
+<div style="min-height:0px">
+<div class="lotusContent" style="width: 1200px; height: 2000px;">
+<table>
+<tbody>
+<tr>
+<td width="500" style="vertical-align:top;">
+<div style="overflow: hidden; width: 500px;">
+<h1>Blog EE Test Page</h1>
+<p style="width: 500px; word-wrap: break-word;">Current user: <span id="currentUser"></span></p>
+<p style="height:20px"></p>
+<h3>Blogs</h3>
+<div id="blogsList"></div>
+<p></p>
+<h3>Blog Entries</h3>
+<p>Current blog: <span id="currentBlogTitle"></span></p>
+<div id="blogEntries"></div>
+<p></p>
+</td>
+<td width="390" style="vertical-align:top;">
+<div id="inlineBlog" style="width:380px; margin-left:50px;border-style:solid;border-width:1px;border-color:#aaa;padding:20px">
+<center>Inline gadget goes here</center>
+</div>
+<div id="iFrameBlog" style="width:380px; margin-left:50px;border-style:solid;border-width:1px;border-color:#aaa;padding:20px;margin-top:10px">
+<center>iFrame gadget goes here</center>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+${end}

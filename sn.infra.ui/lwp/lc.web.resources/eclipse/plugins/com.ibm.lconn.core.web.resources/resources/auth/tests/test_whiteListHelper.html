@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2008, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<head>
+
+<title>Test WhiteList Helper</title>
+
+<script type="text/javascript"
+	src="../../../../dojo/dojo.js"
+	djConfig="parseOnLoad: true, isDebug: true"></script>
+
+<script type="text/javascript">
+	// caution: registerModulePath take path relative to /dojo folder
+	dojo.registerModulePath('lconn', '../lconn');
+	dojo.require("dojo.parser");
+	dojo.require("lconn.core.auth.whiteListHelper");
+	dojo.require("doh.runner");
+</script>
+
+
+<script type="text/javascript">
+
+	var jsonServices = {
+		'profiles': {
+			'url': 'http:\/\/profiles.tap.ibm.com\/profiles\/foo\/bar',
+			'secureUrl': 'https:\/\/profiles.tap.ibm.com\/profiles\/foo\/bar'
+		},
+		'homepage': {
+			'url': 'http:\/\/homepage.tap.ibm.com',
+			'secureUrl': 'http:\/\/otherUrl.homepage.tap.ibm.com'
+		}
+	};
+
+	var proxyUrl = "http:\/\/homepage.tap.ibm.com\/proxy";
+
+
+	dojo.addOnLoad( function() {
+		doh.registerGroup("white list basic tests", [ {
+			// fetch the item with type=widget in the store
+			name :"white list",
+			helperUnderTest: null,
+			setUp : function(t) {
+				this.helperUnderTest = new lconn.core.auth.whiteListHelper(jsonServices, proxyUrl);				
+			},
+			runTest : function(t) {
+				doh.assertTrue(this.helperUnderTest.isWhiteListedURL('http:\/\/profiles.tap.ibm.com\/profiles\/foo\/bar/some/random/resources.html'));
+				doh.assertTrue(this.helperUnderTest.isWhiteListedURL('http:\/\/profiles.tap.ibm.com\/profiles\/foo\/bar/some'));
+				doh.assertFalse(this.helperUnderTest.isWhiteListedURL('http:\/\/profiles.tap.ibm.com\/profiles\/foo'));			
+
+				doh.assertTrue(this.helperUnderTest.isWhiteListedURL('some/relative/url.html'));					
+
+				// relative url are always whitelisted
+				doh.assertTrue(this.helperUnderTest.isWhiteListedURL("../test.html"));
+			}
+		},
+
+		{
+			// fetch the item with type=widget in the store
+			name :"white list init tests",
+			setUp : function(t) {							
+			},
+			runTest : function(t) {
+
+				var hasFailed = false;
+				
+				try {
+					// should not be able to pass no arguments
+					this.helperUnderTest = new lconn.core.auth.whiteListHelper();
+				} catch(e){
+					hasFailed = true;
+				}
+				doh.assertTrue(hasFailed);
+			}
+		},
+
+		{
+			// fetch the item with type=widget in the store
+			name :"white list proxy",
+			helperUnderTest: null,
+			setUp : function(t) {			
+				this.helperUnderTest = new lconn.core.auth.whiteListHelper(jsonServices, proxyUrl);				
+			},
+			runTest : function(t) {
+				doh.assertTrue(this.helperUnderTest.isWhiteListedURL('http:\/\/homepage.tap.ibm.com\/proxy\/profiles.tap.ibm.com\/profiles\/foo\/bar/resource.html'));
+				doh.assertFalse(this.helperUnderTest.isWhiteListedURL('http:\/\/homepage.tap.ibm.com\/proxy\/profiles.tap.ibm.com\/profiles\/foo\/resource.html'));
+			}
+		},
+
+		{
+			// fetch the item with type=widget in the store
+			name :"white list relative proxy",
+			helperUnderTest: null,
+			setUp : function(t) {			
+				this.helperUnderTest = new lconn.core.auth.whiteListHelper(jsonServices, "/proxy");				
+			},
+			runTest : function(t) {
+				doh.assertTrue(this.helperUnderTest.isWhiteListedURL('/proxy\/profiles.tap.ibm.com\/profiles\/foo\/bar/resource.html'));
+				doh.assertFalse(this.helperUnderTest.isWhiteListedURL('/proxy\/profiles.tap.ibm.com\/profiles\/foo\/resource.html'));
+			}
+		},
+		{
+			// fetch the item with type=widget in the store
+			name :"white list no proxy",
+			helperUnderTest: null,
+			setUp : function(t) {			
+				this.helperUnderTest = new lconn.core.auth.whiteListHelper(jsonServices);				
+			},
+			runTest : function(t) {				
+				// considered as relative url as no proxy url passed to the constructor
+				doh.assertTrue(this.helperUnderTest.isWhiteListedURL('/proxy\/profiles.tap.ibm.com\/profiles\/foo\/resource.html'));
+
+				doh.assertTrue(this.helperUnderTest.isWhiteListedURL('http:\/\/profiles.tap.ibm.com\/profiles\/foo\/bar/some/random/resources.html'));
+				doh.assertFalse(this.helperUnderTest.isWhiteListedURL('http:\/\/profiles.tap.ibm.com\/profiles\/foo'));				
+			}
+		}
+
+		 ]);
+		
+		doh.run();
+	});
+</script>
+
+</head>
+<body>
+</body>
+</html>

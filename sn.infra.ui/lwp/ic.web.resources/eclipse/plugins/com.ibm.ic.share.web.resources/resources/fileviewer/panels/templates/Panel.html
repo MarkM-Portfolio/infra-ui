@@ -1,0 +1,15 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="ics-panel-entry-container" role="tabpanel">
+  <div class="panelTitle">
+    <div class="panelTitleText" data-dojo-attach-point="titleNode"></div>
+  </div>  
+  <div class="panelContent" data-dojo-attach-point="content">
+    <span data-dojo-attach-point="fileError" class="lotusHidden">${LOAD_ERROR}</span>
+  </div>
+  <div class="${feedDivClasses}" data-dojo-attach-point="feedDivNode">
+      <a data-dojo-attach-point="feedLinkNode" target="_blank" href="${feedLink}" title="${feedLinkTitle}">
+        <img class="panelFeedIcon" src="${blank}" alt=""/>
+        <span data-dojo-attach-point="feedLinkSpan">${feedText}</span>
+      </a>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015, 2016  All Rights Reserved.                    -->
+<messagebundle>
+  <msg name="as_title">التحديثات</msg>
+  <msg name="as_description">التحديثات من IBM Connections</msg>
+  <msg name="as_error">حدث خطأ في توصيف تسلسل التحديثات. برجاء الاتصال بمسؤول النظام الخاص بك.</msg>
+</messagebundle>

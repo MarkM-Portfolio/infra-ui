@@ -1,0 +1,153 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+${script:dijit.ProgressBar}
+${script:lconn.core.upload.FileField}
+${script:lconn.core.upload.provider.FlashFileProvider}
+<script type="text/javascript">
+
+	var bodyScript = function() {
+		// instantiate widgets
+		var manager;
+		var field = new lconn.core.upload.FileField({
+			id: "uploader",
+			inputName: "lconnFile",
+			allowMultiple: true,
+			invalidCharacters: /[\\\/\:\*\?\<\>\|\"]/g,
+			fileProvider: new lconn.core.upload.provider.FlashFileProvider(),
+			maxFileLength: 25,
+			maxFileSize: 419430400,	// 400 MB upload limit
+			allowRename: true,
+			allowReplace: true,
+			
+			// will throw an error if the word "remote" appears in the file name
+			remoteFileExists: function(fileName) {
+				var deferred = new dojo.Deferred();
+				setTimeout(function() {
+					deferred.callback({called: true});
+				}, 500);
+				
+				deferred.addBoth(function() { return (/remote/i.test(fileName)); });
+				
+				return deferred;
+			}
+		}, dojo.byId('uploadContainer'));
+		
+		field.startup();
+		
+		var pbar = new dijit.ProgressBar({progress: 0, indeterminate: false}, dojo.byId('progressContainer'));
+		
+		var btn = dojo.byId('doUpload');
+		dojo.connect(btn, 'onclick', function(e) {
+			dojo.stopEvent(e);
+			
+			dojo.addClass(btn, 'lotusDisabled');
+			btn.disabled = true;
+			
+			manager = field.createUploadManager(field.getFileList().getUploadableFiles());
+			pbar.domNode.style.display = '';
+			
+			var args = {
+				form: dojo.byId('uploadForm'),
+				handleAs: 'html',
+				contentTypeHack: true,
+				handle: function (response, ioArgs) {
+					var ta = response.getElementsByTagName('textarea')[0];
+					return dojo.fromJson(ta.value);
+				}
+			};
+			
+			dojo.connect(manager, 'onProgress', function(obj) {
+				pbar.update({indeterminate: false, progress: obj.percentComplete + '%'});
+			});
+			
+			dojo.connect(manager, 'onItemStart', function(mgr, file) {
+				args.content = {};
+				args.content.label = file.getName();
+			});
+			
+			dojo.connect(manager, 'onItemComplete', function (mgr, file, response) {
+				if (response.status != 200) {
+					var status = {
+	                  id: "lconn.files.upload.error",
+	                  level: file.StatusLevels.ERROR,
+	                  preventUpload: true,
+	                  message: "A Server Error Occured"
+	               };
+	               
+	               file.setStatus(status);
+				}
+				
+				if (mgr.hasMore()) {
+					mgr.uploadNext(args);
+				} else {
+					dojo.removeClass(btn, 'lotusDisabled');
+					btn.disabled = false;
+				}
+			});
+			
+			manager.uploadNext(args);			
+		});	
+				
+		dojo.connect(dojo.byId('doCancel'), 'onclick', function(e) {
+			dojo.stopEvent(e);
+			
+			if (manager) {
+				manager.cancel();
+				
+				dojo.removeClass(btn, 'lotusDisabled');
+				btn.disabled = false;
+			}
+		});
+	};
+	
+	dojo.addOnLoad(bodyScript);
+</script>
+<style type="text/css">
+	#uploadForm { width: 500px; }
+</style>
+${endhead}
+<div class="lotusFrame lotusui30 lotusui30_layout">
+	<h2>File Upload</h2>
+	<p>Allows users to select and upload multiple files at once. Instantiation Arguments (all arguments are optional):</p>
+	<ul>
+		<li>id: the widget id</li>
+		<li>inputName: the form field name that will be sent to the server. Defaults to "file"</li>
+		<li>allowMultiple: whether to let the user select multiple files. Defaults to false</li>
+		<li>invalidCharacters: A regular expression denoting the characters that are NOT allowed in file names. Defaults to /[\\\/\:\*\?\&lt;\&gt;\|\"]/g</li>
+		<li>fileProvider: An instance of lconn.core.upload.provider.FlashFileProvider or lconn.core.upload.provider.HtmlFileProvider. Defaults to lconn.core.upload.provider.HtmlFileProvider, but FlashFileProvider is required if multiple selection is required on IE.</li>
+		<li>maxFileLength: The maximum file name length. No max length by default.</li>
+		<li>maxFileSize: The maximum size of the file allowed, in bytes.</li>
+		<li>allowRename: If the server allows the user to pass in a file name as a separate parameter, set this to true. Defaults to false.</li>
+		<li>allowReplace: If the server will replace an existing file, set to true. Defaults to false.</li>
+		<li>allowDuplicates: True if the server allows multiple files with the same name. Defaults to false.</li>
+		<li>remoteFileExists: A callback function that returns a deferred. The deferred should have a callback that returns true if a file exists on the server, false otherwise.</li>
+		<li>checkProgress: A callback function that will set the progress on the file. The function takes a file object. It should utilize the File.setSize() and File.setBytesComplete() methods. Modern browsers (IE with Flash, FF 4+, Safari 5+) will not need this, as progress is handled natively.</li>		
+	</ul>
+	<p>When ready to upload (for example, after a button is clicked), you should create an Upload Manager, using FileField.createUploadManager(list). See the documentation on lconn.core.util.UploadManager for the necessary connect functions. Once connects are set, use UploadManager.uploadNext(args)</p>
+	<p>View the source of this page to see the example invocation.</p>	
+	<p>For more tests and examples on different UI configurations, go <a href="${contextRoot}/web/lconn.test/upload/runTests.html?render=test">here</a>.</p>
+	<form action="${contextRoot}/web/test/upload" method="post" id="uploadForm" class="lotusForm2">
+		<div class="lotusFormBody">
+			<label>Select Files:</label>
+			<div id="uploadContainer"></div><br/>
+			<label for="var1">Some Checkbox:</label>
+			<input type="checkbox" name="someCheck" id="var1"/><br/>
+			<label for="var2">Some TextBox:</label>
+			<input type="text" name="someText" id="var2" value="Add some text here if you wish" /><br/>			
+		</div>
+		<div class="lotusFormFooter">
+			<table>
+				<tr>
+					<td>
+						<button id="doUpload" class="lotusBtn">Upload</button>
+						<a href="javascript:void(0)" id="doCancel" class="lotusAction">Cancel</a>
+					</td>
+					<td>
+						<div id="progressContainer" style="display: none"></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</div>
+${end}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">S'utilitza el gadget OpenSocial d'experiència incrustada per visualitzar detalls i accions d'esdeveniments de Connections</msg>
+  <msg name="connectionsEE_errorTitle">Error</msg>
+  <msg name="connectionsEE_errorDescription">Aquest contingut no està aprovat per la vostra organització i no està disponible. Poseu-vos en contacte amb l'administrador de la vostra organització per habilitar l'extensió.</msg>
+</messagebundle>

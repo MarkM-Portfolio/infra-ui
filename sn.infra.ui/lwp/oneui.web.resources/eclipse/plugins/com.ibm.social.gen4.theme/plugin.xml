@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2010, 2013                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<?eclipse version="3.4"?>
+<!--
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<plugin>
+    <extension point="net.jazz.ajax.webBundles" />
+    
+    <extension point="com.ibm.lconn.core.styles.themes">
+		<theme 
+			id="gen4" 
+			resource="/theme.css"
+			resource-rtl="/themeRTL.css"
+			application-path="/css/base/applications/" 
+			version="oneui3"
+			/>
+    </extension>
+</plugin>

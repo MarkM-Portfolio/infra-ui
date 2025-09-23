@@ -1,0 +1,39 @@
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+
+<form class="lotusForm2" method="post" action="javascript:;" aria-live="assertive">
+
+	<!-- error summary -->
+	<div id="errorSummary" class="lotusMessage2" role="alert" style="display:none;" data-dojo-attach-point="errorNode"></div>
+	
+	<!-- form body -->
+	<div class="lotusFormBody">
+
+	<div class="lotusFormField" data-dojo-attach-point="languageField">
+		<label for="${id}_language" aria-label="${strings.language.label}">${strings.language.label} <a data-dojo-attach-point="languageHelpNode"></a></label>
+		<div class="lotusFieldWrapper"><select id="${id}_language" data-dojo-attach-point="languageNode" data-dojo-attach-event="onchange:_onSelChange"></select></div>
+	</div>
+
+	<div class="lotusFormField">
+		<label for="${id}_calendar">${strings.calendar.label}</label>
+		<div class="lotusFieldWrapper"><select id="${id}_calendar" data-dojo-attach-point="calendarNode" data-dojo-attach-event="onchange:_onSelChange"></select></div>
+	</div>
+
+	<div class="lotusFormField">
+		<input id="${id}_checkbox" type="checkbox" class="lotusCheckbox" data-dojo-attach-point="bidiNode" data-dojo-attach-event="onchange:_onBidiChange"><label for="${id}_checkbox" class="lotusCheckbox" aria-label="${strings.bidi.label}">${strings.bidi.label} </label>
+		<a aria-label="${strings.bidi.help}" data-dojo-attach-point="bidiHelpNode"></a>
+	</div>	
+
+	<div class="lotusIndent20">
+		<div class="lotusFormField">
+			<label for="${id}_direction" aria-label="${strings.direction.label}">${strings.direction.label} <a data-dojo-attach-point="directionHelpNode"></a></label>
+			<div class="lotusFieldWrapper"><select id="${id}_direction" data-dojo-attach-point="directionNode" data-dojo-attach-event="onchange:_onSelChange"></select></div>
+		</div>
+	</div>
+
+	</div><!--end form body-->
+	
+	<!-- form footer -->
+	<div class="lotusFormFooter" data-dojo-attach-point="footerNode">
+		<input type="button" value="${strings.cancel.label}" class="lotusBtn lotusBtnDisabled" disabled data-dojo-attach-point="cancelButton" data-dojo-attach-event="onclick:_onCancel">
+	</div>
+</form>

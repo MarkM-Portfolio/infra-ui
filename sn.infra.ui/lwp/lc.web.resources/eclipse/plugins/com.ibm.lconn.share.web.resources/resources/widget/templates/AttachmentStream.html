@@ -1,0 +1,23 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="${baseClass}">
+  <div class="lotusPaging" role="navigation" aria-label="${_strings.PAGING_TOP_LABEL}" dojoAttachPoint="topPageNode" style="${_initPageStyle}">
+     <div class="lotusLeft numShape" style="display:none;" dojoAttachPoint="pageInfoNode"></div>
+     <ul class="lotusRight lotusInlinelist" dojoAttachPoint="topPageNavigateNode" style="display:none;">
+        <li dojoAttachPoint="tPreviousLinkNode" class="lotusFirst"><a class="numShape" href="#" dojoAttachEvent="onclick:previous" title="${_strings.PREVIOUS_T}">${_strings.PREVIOUS}</a></li>
+        <li dojoAttachPoint="tPreviousTextNode" class="lotusFirst">${_strings.PREVIOUS}</li>
+        <li dojoAttachPoint="tNextLinkNode"><a class="numShape" href="#" dojoAttachEvent="onclick:next" title="${_strings.NEXT_T}">${_strings.NEXT}</a></li>
+        <li dojoAttachPoint="tNextTextNode">${_strings.NEXT}</li>
+     </ul>
+     <ul class="lotusInlinelist" style="display:none" dojoAttachPoint="pageListNode"><li class="lotusFirst">${_strings.PAGE}</li></ul>
+  </div>
+  <div dojoAttachPoint="streamNode"></div>
+  <div class="lotusPaging" role="navigation" aria-label="${_strings.PAGING_BOTTOM_LABEL}" dojoAttachPoint="bottomPageNode" style="${_initPageStyle}">
+     <ul class="lotusRight lotusInlinelist" dojoAttachPoint="bottomPageNavigateNode" style="display: none;">
+        <li dojoAttachPoint="bPreviousLinkNode" class="lotusFirst"><a class="numShape" href="#" dojoAttachEvent="onclick:previous" title="${_strings.PREVIOUS_T}">${_strings.PREVIOUS}</a></li>
+        <li dojoAttachPoint="bPreviousTextNode" class="lotusFirst">${_strings.PREVIOUS}</li>
+        <li dojoAttachPoint="bNextLinkNode"><a href="#" dojoAttachEvent="onclick:next" title="${_strings.NEXT_T}">${_strings.NEXT}</a></li>
+        <li dojoAttachPoint="bNextTextNode">${_strings.NEXT}</li>
+     </ul>
+  </div>    
+  <div dojoAttachPoint="actionsNode" class="lotusChunk" style="display:none;"></div>
+</div>

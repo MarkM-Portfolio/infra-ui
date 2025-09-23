@@ -1,0 +1,760 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* HCL Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright HCL Technologies Limited 2006, 2022                     */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+/* About styles */
+
+.lotusAbout h1 {font:normal 1.8em/1.0, Helvetica, Arial, Verdana, sans-serif;margin-bottom:0;}
+.lotusAbout p {color:#444444;margin:5px 0px;}
+.lotusAboutBoxBody {padding-right:25px;background:#a2d7ff url(../../images/backgroundAbout.gif) left top repeat-x;overflow:hidden;}
+.lotusAboutBoxBody img {vertical-align:center;float:left;margin:0 5px 0 10px}
+.lotusAboutText {margin:22px 20px 20px 225px;}
+.lotusAboutText h2{color:#fff;margin:0;font-size:3em !important;padding:0}
+.lotusAboutText h3 {text-align:left;margin:3px 0 15px 0;font-size:1.5em;color:#274a71;}
+.lotusAboutText p {text-align:left;color:#000;}
+.lotusContentColOne {width:45%;margin:0 0px 10px 10px;padding-right:10px;}
+.lotusContentColTwo {width:45%;margin:0 10px 10px 0px;text-align:left;}
+#lotusFooter .lotusAboutInfo {margin:10px 100px;}
+#lotusFooter .lotusAboutInfo p{font-size:.8em;color:#666;margin:0 60px 0 120px;}
+
+
+/* Welcome styles */
+.lotusWelcomeBox {margin-bottom:20px;}
+
+/** Pivot Browsing Styles **/
+.lotusList ul.lotusEditable li{text-align:right;overflow:hidden;clear:both;border-bottom:1px solid #b4b4b4;padding:2px;}
+.lotusList .lotusEditable .icon{background-image:url(../../images/delete.gif);background-position:right center;background-repeat:no-repeat}
+.lotusList .lotusEditable .icon:hover, .list .editable .icon:focus{background-image:url(../../images/xRed.gif);background-color:transparent}
+.lotusList .lotusEditable .icon img{width:10px;height:10px;}
+
+a.dogearUntag, a.dogearUntag:visited {background:  url(../../images/delete.gif) center left no-repeat; padding-left:12px; }
+ a.dogearUntag:hover {color: black;background-image: url(../../images/delete.gif);}
+
+
+a.dogearPlustag,a.dogearPlustag:visited {background: url(../../images/moveUp.gif) center left no-repeat; padding-left:12px;}
+a.dogearPlustag:hover,.my a.dogearPlustag:hover {color: #000;background-image: url(../../images/moveUp.gif);}
+
+/*.section h4{margin:7px 0 5px 0;font-size:1.1em;font-weight:normal;padding:0px 0px 2px 2px;border-bottom:1px dotted #ccc;clear:both;color:#000}
+.section h4.icons{text-align:right;overflow:hidden}
+.section h4.icons img{margin-left:3px}*/
+.lotusSection h6{margin:0 0 2px 0;color:gray;clear:both;}
+
+a.lotusClear,
+a.lotusClear:visited
+{
+	color: #244064;
+	font-size: 1.0em;
+	font-weight: normal;
+	text-decoration:underline;
+	padding-left:10px;
+}
+
+/**  Dogear this button */
+a.dtButton {text-decoration:none;cursor:pointer;display:block;background:url("../../images/dogearThisButtonBgBottom.gif") no-repeat bottom left;color:#000;  font-size:1.1em;padding:7px 15px 5px 30px;}
+* html a.dtButton{height:1%;}
+.toolBMtext{color:#FDCC65; font-weight:bold; font-size:1.2em; line-height:1.0em; overflow:hidden; margin-left:10px; margin-top:5px;}
+.toolBMImage{float:left;margin-top:5px;width:120px;background: url("../../images/dogearThisButtonBgTop.gif") no-repeat top left;}
+
+/**  Dogear this button Firefox */
+a.fdtButton {text-decoration:none;cursor:pointer;color:#000;font-size:1.1em;margin:10px 0 0 30px;float:left; border:1px solid #ccc; -moz-border-radius:3px; padding:2px;}
+a.fdtButton:hover{text-decoration:underline}
+a.fdtButton img{margin-top:-5px}
+.ftoolBMImage{float: left !important; margin: -5px 0 0 10px;}
+.ftoolBMtext{color:#FDCC65; font-weight:bold; font-size:1.2em; line-height:1.0em; float:left; margin-left:10px; margin-top:5px;}
+.toolHeader {color:#4F9BEF; clear:both; font-weight:normal;}
+ol.decimal{list-style-type:decimal;}
+
+.lotusHelp{padding:4px;position:absolute;padding:4px;top:-9999px;}
+.lotusAllTagsPopup{top:-9999px;position:absolute;background-color:#FFFFFF;border:2px solid #669CE2;padding:10px 10px 10px 30px;width:600px;}
+.lotusAllTagsPopup img{float:right;}
+#retagMultiForm .lotusText, #addtagMultiForm .lotusText, #deltagMultiForm .lotusText, #notifyMultiForm .lotusText{width:90%;}  
+
+.completedIcon {background:transparent url(../../images/checkmark.gif) no-repeat scroll left center;}
+.memberList{border: 1px solid #9A9A9A; border-bottom:none;margin-bottom:4px;width:50%;}
+.member {padding:1px 5px;background-color:#EBEFFA;border:1px solid #90CAFF;margin-right:8px;color:#105CB6;margin-bottom:5px;float:left;}
+.member .picon{background:transparent url(../../images/iconVisitor.gif) no-repeat scroll center center;height:16px;width:16px;padding:3px;}
+.fieldDel{background:transparent url(../../images/iconClose.png) no-repeat scroll center center;border:medium none;height:16px;width:16px;}
+.fieldDelText{border:medium none;display:none;height:16px;width:16px;}
+.scroll{overflow-x:hidden;overflow-y:auto;}
+.importDialogDesc{padding:10px;}
+.importDialogActionDiv{paddding:8px;}
+.fieldhelp{color:#7B7B7B;font-size:1em;}
+.lotusEditBookmarksIndent{margin-left:20px;}
+a.lotusFeed{display:inline;padding-left:5px;}
+.globalSearchForm table.dijitComboButton .dijitButtonContents {text-align:left;}
+.lotusui_ie .globalSearchForm .baseIcon {display:inline;}
+.lotusui_ie .globalSearchForm table.dijitComboButton  {DISPLAY: inline;vertical-align:middle;}
+.dijit_a11y .globalSearchForm .dijitArrowButtonChar {display:inline !important;}
+.lotusMessage{clear:both;}
+.lotusui_ie .globalSearchForm .dijitInline {display: inline !important;}
+.lotusHelp h3{float:none;}
+.privateBookmark {font-size:0.75em;font-weight:normal;padding:0 0 6px 6px;}
+#commonTagsWidget {width: 75% !important;}
+.lotusImagesOff .lotusViewControl .lotusDetailsOff span{text-decoration:underline;}
+.lotusImagesOff .lotusViewControl .lotusSummaryOff span{text-decoration:underline;}
+.lotusToolHeader {clear:both;font-size:1.5em;font-weight:normal;padding-top:5px;}
+			.lotusToolHeaderStep {background-color:#4C8AD6;color:#FFFFFF;font-weight:bold;display:inline-block;padding:2px 5px 1px;}
+			.lotusFFToolBMText{color:#FDCC65;float:left;font-size:1.2em;font-weight:bold;line-height:1em;margin-left:10px;margin-top:5px;}
+.lotusFFToolBMText {color:#FDCC65;float:left;font-size:1.2em;font-weight:bold;line-height:1em;margin-left:10px;margin-top:5px;}
+.lotusToolTip {color:#4F9BEF;clear:both;font-weight:normal;}
+.lotusFFToolBMImage{float:left;}
+#notifyMessage span{color: red; padding-left: 25px;}
+.rightalign{text-align:right;}
+.lotusTable tr.lotusDetails td [dir="rtl"]{text-align:right !important;}
+.lotusTable tr.lotusDetails td [dir="ltr"]{text-align:left !important;}
+.lotusTable tr.lotusDetails td * {text-align:expression( this.getAttribute("dir")=="ltr"?"left":this.getAttribute("dir")=="rtl"?"right":"left" +"!important;")}
+.lotusui .lotusForm td label.lotusInactive {
+    color: #999999;
+}
+.lotusDialogBorder{
+	max-width: 600px;
+	min-width: 400px;
+}
+div.dijitDialog ul {
+	list-style-type:none;
+	margin: 0px;
+	padding: 0px;
+}
+.dogearTableFix {
+	table-layout: fixed;
+}
+
+.dogearTableFix td {
+    overflow: hidden;
+    word-wrap: break-word;
+}
+/** hack the td width bug in webkit in when table-layout:fixed  */
+.checkWidth {width: 16px;}
+.iconWidth, .iconFirstWidth{width: 20px;}
+.moreWidth {width: 40px;}
+/** webkit only */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.checkWidth {width: 28px; !important}
+	.iconWidth {width: 24px; !important}
+	.iconFirstWidth{width: 32px; !important}
+	.moreWidth {width: 52px; !important}
+}
+
+/************pagination********************************/
+
+.cnx8-ui.app-dogear .lotusPaging .prev {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: url("../../images/chevron-left.svg");
+	background-position: 100%;
+	padding-right: 11px;
+	background-size: 1em 1em;
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 15px;
+}
+.cnx8-ui.app-dogear .lotusPaging .next {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: url("../../images/chevron-right.svg");
+	background-position: 100%;
+	padding-right: 11px;
+	background-size: 1em 1em;
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 15px;
+}
+.cnx8-ui.app-dogear .lotusPaging .page-last {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: url("../../images/page-last.svg");
+	background-position: 100%;
+	padding-right: 15px;
+	margin-left: 14px !important;
+	background-size: 1.25em 1.25em;
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 15px;
+}
+
+.cnx8-ui.app-dogear .lotusPaging .page-first {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: url("../../images/page-first.svg");
+	background-position: 100%;
+	padding-right: 15px;
+	margin-right: 14px !important;
+	background-size: 1.25em 1.25em;
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 15px;
+}
+
+.cnx8-ui.app-dogear .lotusPaging .pagination {
+	display: inline-flex;
+	float: left;
+	padding-top: 5px;
+}
+.cnx8-ui.app-dogear .lotusPaging .pageDropdown {
+	float: right;
+	margin-right: -15px;
+}
+
+.cnx8-ui.app-dogear .lotusPaging .pageDropdown li select {
+	font-size: var(--font-size-medium) !important;
+    font-family: var(--font-family);
+   	font-weight: var(--font-weight-bold);
+	background-position: 56% !important;
+	background-size: 0.9em 0.75em !important;
+	padding-top: 9px !important;
+	padding-right: 0px !important;
+	width: 63px;
+}
+.cnx8-ui.app-dogear .lotusPaging .rppText {
+	color: var(--color-text-secondary) !important;
+}
+
+.cnx8-ui.app-dogear .lotusPaging .disable-paging {
+	opacity: 0.3;
+}
+.cnx8-ui.app-dogear .lotusPaging .lotusInlinelist li,
+.cnx8-ui.app-dogear .lotusPaging .lotusInlinelist li a,
+.cnx8-ui.app-dogear .lotusPaging .lotusInlinelist li a:focus,
+.cnx8-ui.app-dogear .lotusPaging .lotusInlinelist li a:hover,
+.cnx8-ui.app-dogear .lotusPaging .lotusInlinelist li a:visited {
+	font-size: var(--font-size-medium) !important;
+	text-decoration: none !important;
+}
+
+.cnx8-ui.app-dogear .lotusPaging .lotusInlinelist li .active {
+	color: var(--color-link) !important;
+	font-weight: 400;
+}
+
+.cnx8-ui.app-dogear .lotusPaging .lotusInlinelist li a.inactive {
+	color: var(--color-text-secondary) !important;
+	font-weight: 600;
+}
+.app-dogear.cnx8-ui .lotusInlinelist .pagePrevIconList {
+	margin-right: 5px;
+}
+.cnx8-ui.app-dogear .lotusPaging.cnx8Paging {
+	padding-top: 20px;
+	padding-bottom: 15px;
+}
+.cnx8-ui.app-dogear .lotusPaging .lotusInlinelist li {
+	border: none;
+	font-size: var(--font-size-medium) !important;
+	font-weight: var(--font-weight-bold) !important;
+}
+.cnx8-ui.app-dogear .pageActionsBtn { /* for page action dropdown */
+    height: 8px;
+    display: inline-block;
+    width: 20%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../../images/caret-down.svg");
+    background-repeat: no-repeat;
+    background-size: 0.75em 0.75em;
+    background-position: 98%;
+    margin-right: 15px;
+}
+.cnx8-ui.app-dogear .lotusAction .pageActionsBtn { /* for more action dropdown */
+	width: 5% !important;
+}
+.cnx8-ui.app-dogear span#moreactionsholder a#moreactionsachor {
+    color: var(--color-link) !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+	border: none !important;
+}
+
+.cnx8-ui.app-dogear div#lconnTagCloudContent [dojoattachpoint=_tagSearchForm],
+.cnx8-ui.app-dogear .lotusHeader {
+	display: block !important;
+}
+.cnx8-ui.app-dogear .lotusHeader {
+	margin-left: 5px;
+	margin-bottom: 0;
+}
+
+.cnx8-ui.app-dogear .lotusBtnImg {
+	background-repeat: no-repeat;
+	background-color: var(--color-button);
+	background-image: url("../../images/blogs/search-tags.svg");
+	background-position: center;
+	background-size: 18px;
+	height: 19px;
+	width: 20px;
+}
+
+.cnx8-ui.app-dogear .lotusBtnImg .lotusSearchButton {
+	background-image: none !important;
+}
+
+.cnx8-ui.app-dogear input#lconnTagWidgetcommonTagsTypeAhead {
+	height: 20px;
+	width: 98px;
+	margin-right: 0px;
+}
+
+.cnx8-ui.app-dogear #dogearTagTitle #tags-section-info {
+	background-image: url("../../images/tags-info-icon.svg");
+	background-repeat: no-repeat;
+	background-size: 1.95em 1.15em;
+	background-position: 98% center;
+	background-clip: border-box;
+	padding: 7px 14px !important;
+}
+
+.cnx8-ui.app-dogear .lotusWrapper,
+.app-dogear.cnx8-ui #headerTextHolder,
+.app-dogear.cnx8-ui div#lconnTagWidget [dojoattachpoint=_tagSearchText] {
+	display: none !important;
+}
+
+/******************************* Display Type Icons ******************/
+.app-dogear.cnx8-ui .lotusSummaryOff .bookmark_list_view {
+	background-image: url("../../images/display_list_view.svg");
+	width: 18px;
+	height: 18px;
+	background-repeat: no-repeat;
+}
+.app-dogear.cnx8-ui .lotusSummaryOn .bookmark_list_view {
+	background-image: url("../../images/display_list_view_selected.svg");
+	width: 18px;
+	height: 18px;
+	background-repeat: no-repeat;
+}
+.app-dogear.cnx8-ui .lotusDetailsOff .bookmark_details_view {
+	background-image: url("../../images/display_details_view.svg");
+	width: 18px;
+	height: 18px;
+	background-repeat: no-repeat;
+}
+.app-dogear.cnx8-ui .lotusSummaryOn, .app-dogear.cnx8-ui .lotusDetailsOn {
+	border: none !important;
+}
+.app-dogear.cnx8-ui .lotusDetailsOn .bookmark_details_view {
+	background-image: url("../../images/display_details_view_selected.svg");
+	width: 18px;
+	height: 18px;
+	background-repeat: no-repeat;
+}
+.app-dogear.cnx8-ui .lotusDetailsOn .bookmark_details_view,
+.app-dogear.cnx8-ui .lotusSummaryOn .bookmark_list_view {
+	pointer-events: none;
+}
+.cnx8-ui.app-dogear .lotusViewControl td div {
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+.app-dogear.cnx8-ui #lotusFrame .lotusMain {
+	margin: 0px !important;
+	padding-left: 0px;
+	padding-top: 0px;
+	max-width: 1700px;
+}
+.app-dogear.cnx8-ui #lotusFrame {
+	min-width: 550px;
+}
+.app-dogear.cnx8-ui .lotusContent {
+	padding-top: 10px !important;
+	padding-left: 20px;
+}
+.app-dogear.cnx8-ui .lotusColLeft {
+	background: var(--color-third-navigation);
+	color: var(--color-third-navigation-text) !important;
+	min-height: 100vh !important;
+	margin-left: 0px;
+    padding-right: 0px;
+}
+.app-dogear.cnx8-ui .lotusFooter {
+	margin-top: 0px;
+}
+.app-dogear.cnx8-ui .lotusColLeft .lotusMenu{
+	margin: 0px;
+}
+.app-dogear.cnx8-ui .lotusColLeft .lotusMenu li.lotusSelected a:before {
+	content: '';
+}
+.app-dogear.cnx8-ui .lotusColLeft .lotusMenu li.lotusSelected {
+    background-color: var(--color-third-navigation-selected-option);
+	border-left: none;
+}
+.app-dogear.cnx8-ui .lotusColLeft .lotusMenu li.lotusSelected a {
+    font-weight: var(--font-weight-normal);
+}
+.app-dogear.cnx8-ui .lotusColLeft li a:hover {
+    background-color: var(--color-third-navigation-selected-option);
+}
+.app-dogear.cnx8-ui .lotusColRight .lotusSection h2 {
+    border-top: none;
+    border-bottom: none;
+}
+.app-dogear.cnx8-ui .lotusTable  tr td img,
+.app-dogear.cnx8-ui .dogearTableFix tr td img {
+	width: 20px;
+    height: 20px;
+	margin-top: 3px;
+}
+.app-dogear.cnx8-ui #bookmarksMainContent td.iconWidth  {
+	width: 20px !important;
+}
+.app-dogear.cnx8-ui .lotusTwistyClosed {
+    background-image: url("../../images/caret-right.svg");
+    background-position: 50%;
+    margin-right: 15px;
+    opacity: 1;
+}
+.app-dogear.cnx8-ui .lotusTwistyOpen{
+    background-image: url("../../images/caret-down.svg");
+    background-position: 50%;
+    margin-top: 3px;
+    margin-right: 15px;
+    opacity: 1;
+}
+.app-dogear.cnx8-ui .lotusSection h2 {
+    border: none;
+}
+.app-dogear.cnx8-ui .lconnSprite-iconHelp16 {
+	width: 30px;
+    height: 20px;
+    background-position: right top;
+    background-size: 1.95em 1.15em;
+	background-image: url("../../images/tags-info-icon.svg");
+}
+.app-dogear.cnx8-ui #lconnWatchList h2 span,
+.app-dogear.cnx8-ui #lconnPeopleList h2 span {
+	width: unset;
+}
+.app-dogear.cnx8-ui .lotusColRight #subsHelpIcon,
+.app-dogear.cnx8-ui .lotusColRight #peopleHelpIcon {
+	float: none;
+}
+.app-dogear.cnx8-ui .lotusColRight {
+	margin-top: 15px;
+}
+.app-dogear.cnx8-ui .lotusActionBar {
+	margin: 8px 10px 10px 10px;
+	height: unset !important;
+}
+.app-dogear.cnx8-ui .lotusSort {
+    margin: 0 0 10px 10px;
+}
+.app-dogear.cnx8-ui .lotusSort .lotusDescending {
+	background-image: url("../../images/caret-down.svg");
+    background-position: 100%;
+    margin-top: 3px;
+}
+.app-dogear.cnx8-ui .lotusSort .lotusDescending,
+.app-dogear.cnx8-ui .lotusSort .lotusAscending {
+	background-size: 0.75em 0.75em;
+    padding-right: 15px;
+}
+.lotusui30 .lotusSort .lotusAscending {
+	background-image: url("../../images/caret-up.svg");
+    background-position: 100%;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+/** TagCloud in Bookmark **/
+.app-dogear.cnx8-ui .lotusTagCloud {
+    margin: 0;
+    padding: 0;
+}
+.app-dogear.cnx8-ui .lotusTagCloud ul {
+    display: flex !important;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none !important;
+}
+.app-dogear.cnx8-ui .lotusTagCloud ul li {
+    display: flex !important;
+    align-items: center;
+    margin: 0 2px;
+}
+.app-dogear.cnx8-ui .lotusTagCloud ul li a,
+.app-dogear.cnx8-ui .lotusTagCloud ul li a:visited {
+    padding:.2em;
+    margin: .1em 0;
+    display: inline-flex;
+    line-height: 1em;
+    color: var(--tagcloud-chip-text) !important;
+    transition: 0.3s;
+    text-decoration: none;
+    letter-spacing: 0.02px !important;
+}
+.app-dogear.cnx8-ui .lotusTagCloud ul li a:hover {
+    color: var(--tagcloud-chip-text) !important;
+    text-decoration: underline !important;
+    text-decoration-style: solid !important;
+}
+.app-dogear.cnx8-ui .lotusTagCloud ul li a.lotusF1 {
+    zoom: .9;
+}
+.app-dogear.cnx8-ui .lotusTagCloud ul li a.lotusF2 {
+    zoom: 1;
+}
+.app-dogear.cnx8-ui .lotusTagCloud ul li a.lotusF3 {
+    zoom: 1.05;
+}
+.app-dogear.cnx8-ui .lotusTagCloud ul li a.lotusF4 {
+    zoom: 1.1;
+}
+.app-dogear.cnx8-ui .lotusTagCloud ul li a.lotusF5 {
+    zoom: 1.15;
+}
+/** TagList in bookmarks **/
+.app-dogear.cnx8-ui ul.lotusMeta.lotusList {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none !important;
+}
+.app-dogear.cnx8-ui ul.lotusMeta.lotusList li {
+    padding: 0.2em 0.7em;
+    height: 1.5em;
+    width: fit-content;
+    margin: 8px;
+    display: flex;
+    border-radius: 16px;
+    letter-spacing: 0.37px;
+    justify-content: right;
+    text-decoration: none !important;
+    line-height: 20px;
+}
+.app-dogear.cnx8-ui #lconnTagWidget_tagListView {
+    margin: 0;
+    padding: 0;
+}
+.app-dogear.cnx8-ui ul#lconnTagWidget_tagList.lotusMeta.lotusList li,
+.app-dogear.cnx8-ui ul#lconnTagWidget_tagList.lotusMeta.lotusList li:visited {
+    color: var(--tagcloud-chip-text) !important;
+    background-color: var(--tagcloud-chip-background);
+    border: 1px solid var(--tagcloud-chip-border);
+    transition: 0.3s;
+}
+.app-dogear.cnx8-ui ul#lconnTagWidget_tagList.lotusMeta.lotusList li:hover {
+    color: var(--tagcloud-chip-text) !important;
+    background-color: var(--tagcloud-chip-background-hover);
+    border: 1px solid var(--tagcloud-chip-border-hover);
+}
+.app-dogear.cnx8-ui ul.lotusMeta.lotusList li a,
+.app-dogear.cnx8-ui ul.lotusMeta.lotusList li a:hover,
+.app-dogear.cnx8-ui ul.lotusMeta.lotusList li a:visited {
+    font-size: var(--font-size-medium) !important;
+    color: var(--color-chip-text) !important;
+    text-decoration: none !important;
+	font-weight: var(--font-weight-normal);
+}
+.app-dogear.cnx8-ui ul.lotusMeta.lotusList li a.lotusDelete img {
+    vertical-align: middle !important;
+    filter: grayscale(100%);
+}
+.app-dogear.cnx8-ui ul.lotusMeta.lotusList li span {
+    text-align: center;
+    z-index: 1;
+    flex-wrap: wrap;
+    min-width: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    align-content: center;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: center;
+}
+.app-dogear.cnx8-ui ul.lotusMeta.lotusList li span.lotusRight {
+    font-size: var(--font-size-small) !important;
+    font-weight: 500 !important;
+}
+.app-dogear.cnx8-ui ul.lotusMeta.lotusList li span.lotusLeft,
+.app-dogear.cnx8-ui a.lotusFilter .lotusDelete,
+.app-dogear.cnx8-ui .lotusFilters2 img.lotusDelete {
+    padding: 0px 5px;
+}
+.app-dogear.cnx8-ui ul.lotusMeta.lotusList li span.lotusLeft,
+.app-dogear.cnx8-ui ul.lotusMeta.lotusList li span.lotusLeft:visited,
+.app-dogear.cnx8-ui ul.lotusMeta.lotusList li a.lotusDelete,
+.app-dogear.cnx8-ui ul.lotusMeta.lotusList li a.lotusDelete:visited {
+    color: var(--color-link) !important;
+    font-weight: var(--font-weight-bold) !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+.app-dogear.cnx8-ui ul.lotusMeta.lotusList li span.lotusLeft:hover,
+.app-dogear.cnx8-ui ul.lotusMeta.lotusList li a.lotusDelete:hover{
+    color: var(--color-link-hover) !important;
+    background-color: transparent !important;
+    border: none !important;
+    cursor: pointer;
+}
+/** Selected Tag in Bookmark **/
+.app-dogear.cnx8-ui #lotusContent .lotusFilters2 a.lotusFilter,
+.app-dogear.cnx8-ui #lotusContent .lotusFilters2 a.lotusFilter:hover,
+.app-dogear.cnx8-ui #lotusContent .lotusFilters2 a.lotusFilter:visited {
+    border-color: var(--tagcloud-chip-border-hover);
+    color: var(--tagcloud-chip-text) !important;
+    background-color: var(--tagcloud-chip-background-hover);
+    padding: 0.2em 0.7em;
+    height: 1.5em;
+    width: fit-content;
+    border-radius: 16px;
+    letter-spacing: 0.37px;
+    justify-content: right;
+    text-decoration: none !important;
+    line-height: 20px;
+    transition: 0.3s;
+}
+.app-dogear.cnx8-ui #lotusColRight, .app-blogs.cnx8-ui #lotusContent{
+	padding-left: 30px;
+	padding-top: 10px;
+}
+.app-dogear.cnx8-ui .lotusBtn a[role="button"],
+.app-dogear.cnx8-ui .lotusBtn a[role="button"]:hover,
+.app-dogear.cnx8-ui .lotusDialogFooter input[value="Cancel"]  {
+	text-transform: unset !important;
+	background: transparent !important;
+    border-radius: 2px !important;
+    border: 1px solid var(--color-button) !important;
+    color: var(--color-link) !important;
+}
+.app-dogear.cnx8-ui .lotusBtn a[role="button"]:hover,
+.app-dogear.cnx8-ui .lotusDialogFooter input[value="Cancel"]:hover {
+	background-color: var(--color-button) !important;
+	color: var(--color-badge-text) !important;
+}
+.app-dogear.cnx8-ui #uploadBookmarksFile #importButton1 {
+	color: var(--color-button-text) !important;
+}
+.app-dogear.cnx8-ui #uploadBookmarksFile input[type="checkbox"] {
+	vertical-align: middle;
+}
+.app-dogear.cnx8-ui #exportDialog td select {
+	padding-right: 20px !important;
+}
+.app-dogear.cnx8-ui .lotusTitleBar2.lotusTitleBar2Tabs {
+	border-bottom: none;
+}
+.app-dogear.cnx8-ui .dijitMenuPopup table {
+	background: var(--color-base-background);
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 12%), 0px 2px 2px rgb(0 0 0 / 14%), 0px 1px 5px rgb(0 0 0 / 20%);
+    border-radius: 2px;
+    color: var(--color-chip-text);
+}
+.app-dogear.cnx8-ui .dijitMenuPopup table tr.dijitMenuItem {
+	line-height: unset;
+}
+.app-dogear.cnx8-ui .dijitMenuItem td.dijitMenuItemLabel {
+	padding: 10px 20px 8px 5px !important;
+}
+.app-dogear.cnx8-ui .dijitMenuItem td.dijitMenuItemLabel,
+.app-dogear.cnx8-ui .dijitComboBoxMenu .dijitMenuItem,
+.app-dogear.cnx8-ui .dijitMenuPopup table.dijitMenuTable {
+	padding: 10px 20px 8px 5px !important;
+}
+.app-dogear.cnx8-ui .dijitMenuActive .dijitMenuItemHover,
+.app-dogear.cnx8-ui .dijitMenuActive .dijitMenuItemSelected,
+.app-dogear.cnx8-ui .dijitMenuItemHover {
+	background-color: var(--color-third-navigation-selected-option) !important;
+}
+.app-dogear.cnx8-ui .dijitMenuPopup .dijitMenuTable td.dijitMenuItemLabel:hover,
+.app-dogear.cnx8-ui .dijitMenuPopup .dijitMenuTable td.dijitMenuItemLabel:active,
+.app-dogear.cnx8-ui .dijitMenuPopup .dijitMenuTable td.dijitMenuItemLabel:focus {
+    border-top: unset !important;
+    border-bottom: unset !important;
+}
+.app-dogear.cnx8-ui #moreactionsachor_dropdown {
+	height: unset;
+}
+.app-dogear.cnx8-ui [dojoattachpoint="_normalTagsSection"] {
+    display: flex;
+    flex-direction: column;
+}
+.app-dogear.cnx8-ui div#lconnTagWidget_tagCloudView,
+.app-dogear.cnx8-ui div#lconnTagWidget_tagListView {
+    order: 2;
+}
+.app-dogear.cnx8-ui [dojoattachpoint="_tagCloudLink"] li span, .app-dogear.cnx8-ui [dojoattachpoint="_tagListLink"] span {
+   color: var(--color-link) !important;
+}
+.cnx8-ui.app-dogear #labelSortBy,
+.cnx8-ui.app-dogear .lotusSort li a,
+.cnx8-ui.app-dogear .lotusSort li a:focus,
+.cnx8-ui.app-dogear .lotusSort li a:hover,
+.cnx8-ui.app-dogear .lotusSort li a:visited {
+	font-size: var(--font-size-small) !important;
+	line-height: 13px;
+	font-color: var(--link-color);
+}
+.app-dogear.cnx8-ui .dogearTableFix tr h4 a,
+.app-dogear.cnx8-ui .dogearTableFix tr h4 a:hover,
+.cnx8-ui.app-dogear .lotusTable td h4 a,
+.cnx8-ui.app-dogear .lotusTable td h4 a:hover {
+	color: var(--color-link) !important;
+}
+.app-dogear.cnx8-ui .lotusTable .lotusDetails td,
+.app-dogear.cnx8-ui .lotusTable .lotusMore td {
+	padding-bottom: 15px !important;
+	border-bottom: none !important;
+}
+.app-dogear.cnx8-ui .lotusSection div.lotusChunk,
+.app-dogear.cnx8-ui .lotusSection div.lotusSubsection {
+	margin: 0px !important;
+}
+.app-dogear.cnx8-ui #find-person-link a#peopleSearchLink {
+    display: none;
+}
+
+.app-dogear.cnx8-ui #dogearPeopleArea .lotusSearch form#namenavform {
+    display: block !important;
+}
+
+.app-dogear.cnx8-ui #dogearPeopleArea .lotusSearch form#namenavform input#nameinput {
+    height: 21px;
+    width: 54% !important;
+    margin-right: -4px;
+}
+.app-dogear.cnx8-ui .lotusDialogBorder{
+	border: 0px !important;
+}
+.app-dogear.cnx8-ui .lotusDialog .lotusDialogHeader .lotusDialogClose {
+    top: 15px;
+    right: 15px;
+}
+.app-dogear.cnx8-ui .lotusDialog .lotusDialogHeader {
+	background: var(--color-modal-header) !important;
+}
+.app-dogear.cnx8-ui .lotusDialog .lotusDialogFooter {
+    border-top: unset;
+}
+.app-dogear.cnx8-ui .lotusDialog .lotusFormTable td {
+    overflow: hidden;
+}
+.app-dogear.cnx8-ui #lconnTagCloudFilter h2 {
+    display: flex;
+}
+.app-dogear.cnx8-ui #dogearTagTitle {
+	width: auto;
+}
+.app-dogear.cnx8-ui #mynotificationDiv tbody tr:first-child td:first-child {
+	width: 13%;
+}
+.app-dogear.cnx8-ui #lotusContent .lotusFeeds a.lotusFeed {
+    font-weight: var(--font-weight-normal) !important ;
+}
+.app-dogear.cnx8-ui .lotusInfoBox #subsHelpIcon_popup_content p {
+	max-width: unset !important;
+}
+.app-dogear.cnx8-ui #importBookmarks_ariadesc input#baddtags,
+.app-dogear.cnx8-ui #importBookmarks_ariadesc select#importOption {
+    width: 53%;
+}

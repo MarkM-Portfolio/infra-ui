@@ -1,0 +1,19 @@
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+
+<div class="lconn_personContainer compact">
+	<div class="lconn_profileImage">
+		<img class="lconn_userImage" dojoattachpoint="photoNode" alt="" role="presentation" src="${photoUrl}" style="max-width: ${_compactSize}px; max-height: ${_compactSize}px;">
+	</div>
+	<div class="lconn_profileInfo">
+		<div>
+			<span class="lconn_title" dojoattachpoint="linkNode">${!displayNameString}</span>
+			<a class="lconn_title" dojoattachpoint="hiddenLinkNode" href="${profileUrl}" style="display: none;">${!displayNameString}</a>
+		</div>
+		<div class="lconn_gray">
+			<span dojoAttachPoint="jobResponsibilityNode">${!jobResponsibility}</span>
+		</div>
+		<div class="lconn_gray">
+			<span dojoAttachPoint="addressNode">${!address}</span>
+		</div>
+	</div>
+</div>

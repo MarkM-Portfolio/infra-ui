@@ -1,0 +1,10 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="ics-viewer-video-preview" data-dojo-attach-point="videoPreview">
+   <span class="align-helper"></span>
+   <div class="ics-video-widget vjsVideo" data-dojo-attach-point="videoContainer" data-dojo-attach-event="onclick:_cancelEvent, onkeydown:_keyEvents">
+      <video id="${id}" class="video-js vjs-default-skin" controls autoplay preload="none" width="${videoWidth}" height="${videoHeight}" data-dojo-attach-point="vjsVideo">
+         <source src="${videoURL}" type="${videoType}" />
+         <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+      </video>
+   </div>
+</div>

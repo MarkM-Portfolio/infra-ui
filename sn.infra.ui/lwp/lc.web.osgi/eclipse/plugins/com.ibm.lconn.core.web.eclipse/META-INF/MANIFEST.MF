@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IBM Connections Core Web Services Stubs for Eclipse
+Bundle-SymbolicName: com.ibm.lconn.core.web.eclipse
+Bundle-Version: 4.7.0.qualifier
+Bundle-ClassPath: lib/lc.web.resources.remote.jar,
+ lib/lc.shindig.serverapi.core.jar,
+ lib/lc.oauth.messages.jar,
+ lib/lc.oauth.platform.jar
+Bundle-Vendor: IBM
+Export-Package: com.ibm.lconn.core.services.cre.core.config,
+ com.ibm.lconn.core.services.cre.core.config.settings,
+ com.ibm.lconn.core.services.cre.core.jsbridge,
+ com.ibm.lconn.core.web.resources.remote,
+ com.ibm.lconn.oauth.platform.config,
+ com.ibm.lconn.oauth.util
+Import-Package: com.ibm.lconn.core.util;version="1.0.0",
+ com.ibm.lconn.core.web.util.services;version="3.0.0",
+ com.ibm.ventura.internal.config.api;version="3.0.1",
+ com.ibm.ventura.internal.config.helper.api;version="3.0.1",
+ org.apache.commons.configuration;version="1.5.0",
+ org.apache.commons.lang;version="2.4.0"

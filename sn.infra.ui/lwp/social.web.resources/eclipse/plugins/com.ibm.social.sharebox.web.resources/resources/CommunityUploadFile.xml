@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2012, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<Module>
+   <ModulePrefs title="Community Upload File" description="Community Upload File Description">
+      <Require feature="dynamic-height" />
+      <Require feature="dynamic-width" />
+       <Require feature="selection" />
+       <Require feature="views" />
+       <Require feature="embedded-experiences"/>
+       <Require feature="open-views"/>
+       <Require feature="opensocial-templates">
+	      <Param name="requireLibrary">ShareTemplateLibrary.xml</Param>	
+       </Require>
+       <Optional feature="content-rewrite">
+         <Param name="exclude-url">*</Param>
+      </Optional>       
+      <Optional feature="actions">
+         <Param name="action-contributions">
+               <![CDATA[
+                  <actions>
+                  <action id="communityUploadFile" path="container/communitySharebox" label="Files" tooltip="Upload File" />
+                  </actions>
+               ]]>
+            </Param>
+         </Optional>
+   </ModulePrefs>
+   <!-- 
+   <UserPref name="resourceId" required="false" type="hidden" default_value=""/>
+    -->
+   <UserPref name="debug" required="false" type="hidden" default_value="false"/>
+   <Content  view="default" type="html">
+      <![CDATA[
+         <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+      
+      <!-- Stylesheets -->
+      <link rel="stylesheet" type="text/css" href="../_style?include=com.ibm.lconn.core.styles.oneui3/base/package3.css">      
+      <link rel="stylesheet" type="text/css" href="../_lconntheme/default.css?version=oneui3">
+      <link rel="stylesheet" type="text/css" href="../_style?include=com.ibm.lconn.core.styles/base/applications/profiles.css">
+      <link rel="stylesheet" type="text/css" href="../_lconnappstyles/default/files.css?version=oneui3&rtl=false">
+
+      <style type="text/css">
+         .lotusCommunityShare div.shareCSPicker {padding-bottom: 10px;}
+         .lotusui30 .lotusCommunityShare .lotusMessage {margin-bottom: 5px;}
+         .lotusui30 .lotusCommunityShare div.lotusBorderTop {border-top: 1px solid #EEEEEE;}
+      </style> 
+
+      <!--[if IE 6]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie lotusui_ie6";</script><![endif]-->
+      <!--[if IE 7]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie lotusui_ie7";</script><![endif]-->
+      <!--[if IE 8]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie8";</script><![endif]-->
+      <!--[if IE 9]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie9";</script><![endif]-->
+ 
+      <!-- Initialize djConfig -->
+      <script type="text/javascript">
+      (function() {
+      
+         var baseUrl = window.location.href;    
+         var gadgetUrlRE = /[?&]url=([^&]+)/;
+         var hostInfoRE = /http(s)?:\/\/([^\/]+)([^?]+)/;
+         var gadgetUrl = decodeURIComponent(baseUrl.match(gadgetUrlRE)[1]);
+         var hostInfo = gadgetUrl.match(hostInfoRE);  
+         var gadgetPath = "/web/com.ibm.social.sharebox/CommunityUploadFile.xml";
+         
+         var baseProtocol = hostInfo[1] ? "https" : "http";       
+         var baseHost = hostInfo[2];
+         var basePath = hostInfo[3].substring(0, hostInfo[3].lastIndexOf(gadgetPath));
+         window.djConfig = {
+            isDebug: false,
+            baseUrl: (baseProtocol + "://" + baseHost) + basePath + "/web/dojo/",
+            locale: "en-us",
+            blankGif: baseProtocol + "://" + baseHost + basePath + "/web/com.ibm.oneui.styles/css/images/blank.gif",
+            usePlainJson: true,
+            localizationComplete: true,
+            isSecure: (baseProtocol == "https"),
+            proxy: basePath + "/ajaxProxy"
+         };
+      })();
+      </script>
+      
+      <!-- Include Connections JS -->
+      <script src="../_js?include=com.ibm.social.sharebox.widget.CommunityUploadFile.js~net.jazz.ajax.xdloader.js"></script>   
+ 
+      <!-- Initialize the gadget -->
+      <script type="text/javascript">
+         var widget__MODULE_ID__;
+         function initGadget() {
+            if (gadgets.actions) {
+               var uploadFileAction = {
+                id: "communityUploadFile",
+                  callback: updateContext
+               };
+               gadgets.actions.updateAction(uploadFileAction);
+            }
+
+	         // TODO: Take this out when we can get a fix for the broken logic in this method.
+	         //   The problem is that when you call adjustWidth not passing an opt_width value, 
+	         //   you get into the if statement (using IE) that has the comment about quirks 
+	         //   mode.  Here it will reset the newWidth to be 1 and then when it calls 
+	         //   resize_iframe_width it sets the width to 1, then calls the callback function 
+	         //   and recalls the adjustWidth method again passing no value for new width.  What 
+	         //   it needs to do is to save the value of newWidth to a separate variable before 
+	         //   newWidth gets reset to 1.  Then pass that new variable into the adjustWidth 
+	         //   call in the callback.
+	         // CRE defect: https://csnext.ibm.com/ccm6/resource/itemName/com.ibm.team.workitem.WorkItem/28411
+	         // Connections defect: todo
+	         gadgets.window.adjustWidth = function(opt_width) {
+	            opt_width = parseInt(opt_width, 10);
+	            var widthAutoCalculated = false;
+	            var viewportWidth = gadgets.window.getViewportDimensions().width;
+	            var newWidth = opt_width || gadgets.window.getWidth();
+	            if (navigator.userAgent.indexOf('AppleWebKit') >= 0) {
+	               viewportWidth++; // Adjust for 1px inaccuracy in Webkit browsers
+	            }
+	            var callback = null;
+	            if (isNaN(opt_width) && viewportWidth > newWidth) {
+	               // Due to quirks in the width property, the auto-calculated width will
+	               // never be smaller than the size of the viewport. In order to decrease
+	               // the width to a fit size, we must first make the viewport too small (1px),
+	               // then callback a function that increases the frame to the right width.
+	               var savedWidth = newWidth;
+	               callback = function() {
+	                 gadgets.window.adjustWidth(savedWidth);
+	               };
+	               newWidth = 1;
+	            }
+	            gadgets.rpc.call(null, 'resize_iframe_width', callback, newWidth);
+	         };            
+         }
+
+
+         function initFileContent(context) {
+            if(!widget__MODULE_ID__) {
+               dojo.addClass(dojo.body(), "lotusui30 lotusui30_fonts lotusui30_layout lotusui30_body");
+               var fileBody = dojo.byId("__MODULE_ID__fileBody"),
+                  loadingDiv = dojo.byId("__MODULE_ID__loadingDiv"),
+                  gadgetBody = dojo.byId("__MODULE_ID__gadgetBody");
+               var div = dojo.create("div", {style:{minWidth: "450px"}}, fileBody);
+
+               widget__MODULE_ID__ = new com.ibm.social.sharebox.widget.CommunityUploadFile({domNode: div,
+                  communityId: context.resourceId, 
+                  communityTitle: context.resourceTitle,
+                  communityType: context.resourceType,
+                  msgNode: dojo.byId("__MODULE_ID__topMsgNode"),                  
+                  onSizeChange: function() {
+                     //Make sure that node is visible before doing a size adjustment                     
+                     var allowChange = false;
+                        
+                     if(window.getComputedStyle) {
+                        allowChange = window.getComputedStyle(gadgetBody, null) != null;
+                     }
+                     else if(dojo.isIE && gadgetBody) { 
+                        allowChange = dojo.style(gadgetBody, "display") != "none";
+                     } 
+                     
+                     if(allowChange) {                                          
+                        if (gadgets.window.adjustHeight)
+                           gadgets.window.adjustHeight();
+                        if (gadgets.window.adjustWidth)
+                           gadgets.window.adjustWidth();
+                     }
+                  },
+                  onLoaded: function() {
+                     loadingDiv.style.display= "none";
+                     gadgetBody.style.display = "";
+                     this.onSizeChange();
+                  
+                  },
+                  onClose: function() {
+                     gadgets.rpc.call(null, "closeShare"); //TODO -Replace with gadgets.views.close() in the future
+                  },
+                  setMessage:function(opts) {
+                     if(!opts)
+                        return;
+                     var rpcOpts = {type: opts.type}, span;
+                     if(opts.message) {
+                        rpcOpts.message = opts.message;
+                     } else if(opts.messageNode && opts.messageNode.nodeType) {
+                        if(opts.messageNode.nodeType == 11) {
+                           span = dojo.create("span");
+                           span.appendChild(opts.messageNode);
+                           rpcOpts.messageHtml = span.innerHTML; 
+                        }
+                        else {
+                           rpcOpts.messageHtml = opts.messageNode.innerHTML;
+                        }
+                     }
+                     
+                     gadgets.rpc.call(null, "shareMessage", null, rpcOpts);
+                  }
+               }); 
+
+               if(!context)
+     	          context = {};
+
+     	       var selectorArgs = {
+     	          type: context.type,
+     	          moduleId: "__MODULE_ID__" + "CUF",
+                  onCommunitySelectionUpdate: dojo.hitch(widget__MODULE_ID__, "setCommunity"),
+                  resourceId: context.resourceId,
+                  resourceTitle: context.resourceTitle,
+                  resourceType: context.resourceType
+     	       };
+               initCommunitySelector(selectorArgs); 
+
+               if (gadgets.window.adjustHeight)
+                  gadgets.window.adjustHeight();
+               if (gadgets.window.adjustWidth)
+                   gadgets.window.adjustWidth();                   
+            }
+            else if(widget__MODULE_ID__){
+               widget__MODULE_ID__.onSizeChange();
+            }
+         }
+         
+         function updateContext(selection) {
+            if(selection.type == "com.ibm.social.sharebox.context")
+               initFileContent(selection.dataObject);
+         }
+         
+         gadgets.util.registerOnLoadHandler(initGadget);
+     </script> 
+      <div id="__MODULE_ID__gadgetDiv" class="lotusCommunityShare">
+         <div id="__MODULE_ID__loadingDiv" class="lotusLoading" style="min-height: 60px; width: 100%; background-position: center center;"></div>
+         <div id="__MODULE_ID__gadgetBody" style="display:none">
+         	<div class="lotusBorderBottom">
+         	    <div id="__MODULE_ID__topMsgNode"></div>
+	       		<script type="text/os-template" xmlns:share="http://www.ibm.com/share" >
+              		<share:internalCommunitySelector moduleId="__MODULE_ID__CUF"/>
+           		</script>
+	     	</div>
+	     	<div id="__MODULE_ID__fileBody" class="communityFile"></div>	     
+         </div>
+      </div>
+
+   ]]>
+</Content>  
+
+</Module>

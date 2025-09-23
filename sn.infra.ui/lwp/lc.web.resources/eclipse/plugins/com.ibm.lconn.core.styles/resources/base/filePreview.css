@@ -1,0 +1,53 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+.filePreviewParentNode {
+	display: block !important;
+	position: relative !important;
+}
+
+.filePreviewParentNode img {
+	display: block !important;
+	line-height: 100%;
+	color: #333;
+	margin: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	overflow: hidden;
+	border: 0 none;
+	vertical-align: middle;
+}
+
+.filePreviewParentNode span { /* draft label */
+    position: absolute;
+    bottom: 8px;
+    right: 0;
+    color: #666666;
+    background-color: #E6F1FE;
+    border: 1px solid #B9CFEB;
+    display: block;
+    font-size: 0.935em;
+    line-height: 1.3em;
+    padding: 3px 5px;
+}
+
+/* high contrast mode */
+.lotusui30.lotusImagesOff .filePreviewParentNode img, .lotusui30 .lotusImagesOff .filePreviewParentNode img {
+    display: none !important;
+}
+
+.filePreviewParentNode .hcModeText, .filePreviewParentNode .hcModeText {
+	display: none;
+}
+
+.lotusui30.lotusImagesOff .filePreviewParentNode span.hcModeText, .lotusui30 .lotusImagesOff .filePreviewParentNode span.hcModeText {
+	display: inline-block;
+	font-size: 1em;
+	font-weight: bold;
+	border: none;
+	position: static;
+	padding: 0;
+}
+

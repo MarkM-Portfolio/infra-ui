@@ -1,0 +1,31 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2013, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<div class="lcSharebox lotusTabDialog dijitDialog lotusDialog" tabindex="-1" role="dialog" aria-labelledby="${id}_title">
+    <div class="lotusDialogBorder">
+        <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent lotusui30 lotusTabDialog" role="region" aria-label="Share Box">
+            <div class="dijitDialogTitleBar lotusDialogHeader" data-dojo-attach-point="titleBar">
+                <span class="dijitDialogTitle" data-dojo-attach-point="titleNode" id="${id}_title" role="presentation"></span>
+            </div>
+            <div data-dojo-type="com.ibm.social.sharebox.controls.TabContainer" data-dojo-attach-point="tabs" class="shareTabContainer" useSlider="false" useMenu="false" region="center" tabStrip="true" doLayout="false" parseOnLoad="false"></div>
+            <div class="shareMessage" data-dojo-attach-point="messageBar" style="display: none;"></div>
+            <div class="lotusDialogHeader shareBoxBottomHeader">
+                <a href="javascript:;" title="${nls.close.label}" data-dojo-attach-event="onclick: closeDialog" role="button" class="lotusDialogClose" data-dojo-attach-point="closeButtonNode">
+                    <img alt="${nls.close.label}" aria-label="${nls.close.label}" src="${blankIcon}">
+                    <span class="lotusAltText">X</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

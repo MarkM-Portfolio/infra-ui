@@ -1,0 +1,21 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.iconsComponentsGray16-ActivitiesGray16{width:16px;height:16px;background-position:0 0}
+.iconsComponentsGray16-BlogsGray16{width:16px;height:16px;background-position:0 -24px}
+.iconsComponentsGray16-BookmarksGray16{width:16px;height:16px;background-position:0 -48px}
+.iconsComponentsGray16-CalendarGray16{width:16px;height:16px;background-position:0 -72px}
+.iconsComponentsGray16-CommunitiesGray16{width:16px;height:16px;background-position:0 -96px}
+.iconsComponentsGray16-FilesGray16{width:16px;height:16px;background-position:0 -120px}
+.iconsComponentsGray16-ForumsGray16{width:16px;height:16px;background-position:0 -144px}
+.iconsComponentsGray16-HomeGray16{width:16px;height:16px;background-position:0 -168px}
+.iconsComponentsGray16-LibraryLinkedGray16{width:16px;height:16px;background-position:0 -192px}
+.iconsComponentsGray16-LibraryManagedGray16{width:16px;height:16px;background-position:0 -216px}
+.iconsComponentsGray16-MailGray16{width:16px;height:16px;background-position:0 -240px}
+.iconsComponentsGray16-MetricsGray16{width:16px;height:16px;background-position:0 -264px}
+.iconsComponentsGray16-NewsFeedGray16{width:16px;height:16px;background-position:0 -288px}
+.iconsComponentsGray16-ProfilesGray16{width:16px;height:16px;background-position:0 -312px}
+.iconsComponentsGray16-StatusUpdateGray16{width:16px;height:16px;background-position:0 -336px}
+.iconsComponentsGray16-TodoGray16{width:16px;height:16px;background-position:0 -360px}
+.iconsComponentsGray16-WikisGray16{width:16px;height:16px;background-position:0 -384px}
+
+.iconsComponentsGray16{background-image:url('./iconsComponentsGray16-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsComponentsGray16{display:none}

@@ -1,0 +1,380 @@
+/**! hopscotch - v0.2.5
+*
+* Copyright 2015 LinkedIn Corp. All rights reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/* Copyright IBM Corp. 2016  All Rights Reserved.              */
+/* IBM ICS specific vars */
+div.hopscotch-bubble .hopscotch-nav-button {
+  /* mostly replaced for ESS tours */
+  width: auto;
+  height: 30px;
+  margin: 0;
+  padding: 0px 16px 0px 16px;
+  color: #4178be;
+  background-color: #fff;
+  border-width: 0px;
+  border-style: solid;
+  border-color: #4178BE;
+  font-size: 12px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+div.hopscotch-bubble {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  color: #333;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 13px;
+  position: absolute;
+  z-index: 999999;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+div.hopscotch-bubble * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+div.hopscotch-bubble.animate {
+  transition-property: top, left;
+  transition-duration: 600ms;
+  transition-timing-function: ease-in-out;
+}
+div.hopscotch-bubble.invisible {
+  opacity: 0;
+}
+div.hopscotch-bubble.hide,
+div.hopscotch-bubble .hide,
+div.hopscotch-bubble .hide-all {
+  display: none;
+}
+div.hopscotch-bubble h3 {
+  color: #000000;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19px;
+  margin: -1px 0px 0 0;
+  padding: 0;
+}
+div.hopscotch-bubble .hopscotch-bubble-container {
+  outline: none;
+  padding: 0px;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+div.hopscotch-bubble .hopscotch-content {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: normal;
+  line-height: 17px;
+  margin: -5px 0px 11px;
+  padding-top: 8px;
+}
+div.hopscotch-bubble .hopscotch-bubble-content {
+  margin: 0 0 0 40px;
+}
+div.hopscotch-bubble.no-number .hopscotch-bubble-content {
+  margin: 0;
+}
+div.hopscotch-bubble .hopscotch-bubble-close {
+  appearance: none;
+  border: 0;
+  color: #000000;
+  display: block;
+  padding: 8px;
+  position: absolute;
+  text-decoration: none;
+  top: 0;
+  right: 0;
+}
+html[dir='rtl'] div.hopscotch-bubble .hopscotch-bubble-close {
+  right: auto;
+  left: 0;
+}
+div.hopscotch-bubble .hopscotch-bubble-close.hide,
+div.hopscotch-bubble .hopscotch-bubble-close.hide-all {
+  display: none;
+}
+div.hopscotch-bubble .hopscotch-bubble-number {
+  color: #fff;
+  display: block;
+  float: left;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 31px;
+  padding: 0px 10px 0px 0px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+}
+/* these are styles for the IBM ICS tour */
+div.hopscotch-bubble {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+div.hopscotch-bubble .hopscotch-actions {
+  padding: 0;
+  margin: -1px -2px -1px -2px;
+  text-align: center;
+  height: 52px;
+  background-color: #4178be;
+  border: 1px solid #4178be;
+}
+div.hopscotch-bubble .hopscotch-nav-arrow {
+  cursor: pointer;
+  background-color: #4178be;
+  border: none;
+  color: #ffffff;
+  fill: currentColor;
+  width: 10px;
+  height: 14px;
+  margin: 1px;
+}
+div.hopscotch-bubble .hopscotch-nav-arrow.next {
+  padding: 4px 2px 4px 4px;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 14px;
+  right: 68px;
+}
+html[dir='rtl'] div.hopscotch-bubble .hopscotch-nav-arrow.next {
+  right: auto;
+  left: 68px;
+}
+div.hopscotch-bubble .hopscotch-nav-arrow.next .hopscotch-svg-nav {
+  width: 14px;
+  height: 14px;
+  top: 4px;
+  left: 4px;
+  padding: 0px;
+  transform: scaleX(-1);
+}
+html[dir='rtl'] div.hopscotch-bubble .hopscotch-nav-arrow.next .hopscotch-svg-nav {
+  left: auto;
+  right: 4px;
+  transform: scaleX(1);
+}
+div.hopscotch-bubble .hopscotch-nav-arrow.prev {
+  padding: 4px 2px 4px 4px;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 14px;
+  left: 68px;
+}
+html[dir='rtl'] div.hopscotch-bubble .hopscotch-nav-arrow.prev {
+  left: auto;
+  right: 68px;
+}
+div.hopscotch-bubble .hopscotch-nav-arrow.prev .hopscotch-svg-nav {
+  width: 10px;
+  height: 14px;
+  top: 4px;
+  left: 4px;
+  transform: scaleX(1);
+  padding: 0px;
+}
+html[dir='rtl'] div.hopscotch-bubble .hopscotch-nav-arrow.prev .hopscotch-svg-nav {
+  left: auto;
+  right: 4px;
+  transform: rotate(180deg);
+}
+div.hopscotch-bubble .hopscotch-nav-arrow.is-disabled {
+  cursor: default;
+}
+div.hopscotch-bubble .hopscotch-nav-arrow.is-disabled .hopscotch-svg-nav {
+  width: 10px;
+  height: 14px;
+  opacity: 0.6;
+}
+div.hopscotch-bubble .hopscotch-nav-arrow:focus {
+  outline: 1px solid #ffffff;
+}
+div.hopscotch-bubble .progress-nums {
+  padding: 0px 15px;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  position: relative;
+  top: 13px;
+  line-height: normal;
+}
+div.hopscotch-bubble .hopscotch-bubble-close {
+  background-color: transparent;
+  color: #ffffff;
+  fill: currentColor;
+  cursor: pointer;
+  padding: 4px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 14px;
+  height: 14px;
+  display: block;
+  text-decoration: none;
+  border: none;
+}
+html[dir='rtl'] div.hopscotch-bubble .hopscotch-bubble-close {
+  left: 20px;
+  right: auto;
+}
+div.hopscotch-bubble .hopscotch-bubble-close.hopscotch-close .hopscotch-svg-close {
+  padding: 0;
+  top: 4px;
+  left: 4px;
+  width: 14px;
+  height: 14px;
+}
+html[dir='rtl'] div.hopscotch-bubble .hopscotch-bubble-close.hopscotch-close .hopscotch-svg-close {
+  left: auto;
+  right: 4px;
+}
+div.hopscotch-bubble .hopscotch-bubble-close:focus {
+  outline: 1px solid #ffffff;
+}
+div.hopscotch-bubble .no-actions {
+  color: #4178be;
+  fill: currentColor;
+  background-color: transparent;
+}
+div.hopscotch-bubble .no-actions:focus {
+  padding: 4px;
+  outline: 1px solid #4178be;
+}
+div.hopscotch-bubble button::-moz-focus-inner {
+  border: none;
+}
+div.hopscotch-bubble h3 {
+  color: #5a5a5a;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  padding: 20px 30px 0px 30px;
+  line-height: 110%;
+}
+div.hopscotch-bubble h3.no-actions {
+  padding: 15px 46px 0px 30px;
+}
+div.hopscotch-bubble .hopscotch-content {
+  margin: 0;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  color: #5a5a5a;
+  font-size: 14px;
+  padding: 15px 30px 30px 30px;
+}
+div.hopscotch-bubble .hopscotch-content.no-actions {
+  padding: 15px 46px 30px 30px;
+}
+div.hopscotch-bubble a {
+  text-decoration: none;
+  color: #4178be;
+  cursor: pointer;
+}
+div.hopscotch-bubble a:focus,
+div.hopscotch-bubble a:hover {
+  outline: none;
+  text-decoration: underline;
+}
+div.hopscotch-bubble a.hopscotch-nav-button {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+div.hopscotch-bubble .hide {
+  display: none;
+}
+div.hopscotch-bubble .hopscotch-bubble-content {
+  margin: 0;
+  padding: 0;
+}
+div.hopscotch-bubble .hopscotch-bubble-arrow-container {
+  color: #4178be;
+  fill: currentColor;
+  position: absolute;
+}
+div.hopscotch-bubble .hopscotch-bubble-arrow-container.up {
+  top: -22px;
+  left: 40px;
+  transform: rotate(270deg);
+}
+html[dir='rtl'] div.hopscotch-bubble .hopscotch-bubble-arrow-container.up {
+  left: auto;
+  right: 40px;
+}
+div.hopscotch-bubble .hopscotch-bubble-arrow-container.up .hopscotch-img-arrow {
+  height: 22px;
+  width: 17px;
+}
+div.hopscotch-bubble .hopscotch-bubble-arrow-container.down {
+  bottom: -22px;
+  left: 40px;
+  transform: rotate(90deg);
+}
+html[dir='rtl'] div.hopscotch-bubble .hopscotch-bubble-arrow-container.down {
+  left: auto;
+  right: 40px;
+}
+div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-img-arrow {
+  height: 22px;
+  width: 17px;
+}
+div.hopscotch-bubble .hopscotch-bubble-arrow-container.left {
+  top: 14px;
+  left: -18px;
+}
+div.hopscotch-bubble .hopscotch-bubble-arrow-container.left .hopscotch-img-arrow {
+  transform: scaleX(-1);
+  height: 22px;
+  width: 17px;
+}
+div.hopscotch-bubble .hopscotch-bubble-arrow-container.right {
+  top: 14px;
+  right: -18px;
+}
+div.hopscotch-bubble .hopscotch-bubble-arrow-container.right .hopscotch-img-arrow {
+  transform: scaleX(1);
+  height: 22px;
+  width: 17px;
+}
+/* Fade-in animations for ICS tours */
+.fade-in-up {
+  opacity: 1;
+  transition: opacity 600ms linear;
+}
+.fade-in-down {
+  opacity: 1;
+  transition: opacity 600ms linear;
+}
+.fade-in-right {
+  opacity: 1;
+  transition: opacity 600ms linear;
+}
+.fade-in-left {
+  opacity: 1;
+  transition: opacity 600ms linear;
+}
+/* label included for a11y support */
+#tour-label {
+  position: absolute;
+  left: -9999px;
+}
+html[dir='rtl'] #tour-label {
+  right: -9999px;
+  left: auto;
+}

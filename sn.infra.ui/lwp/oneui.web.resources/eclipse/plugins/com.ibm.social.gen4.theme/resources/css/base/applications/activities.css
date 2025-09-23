@@ -1,0 +1,1072 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.              */
+
+.dijit_a11y .actHighVis { display: none !important; }
+#errorhandler{
+position: absolute;
+top: -9999px;
+z-index: 1001;
+}
+#errorException, .errorDetails {
+display: none;
+height: 10em;
+overflow: auto;
+}
+.lotusFormField .lotusFieldWrapper .topSpace {margin-top:4px;}
+.lotusFormField .lotusFieldWrapper .multiAssignmentWarning .lotusMessage2 {margin:4px 0 0 0;top:0;}
+.lotusFormField .activityFieldWrapper {width: 530px;}
+.lotusFormField .activityFieldWrapper .peopleList{width: 520px;}
+.lotusFormField .activityFieldWrapper .lotusSearch input{width: 290px;min-width: 290px;}
+.scloud3 .addMembersContainers { 
+   white-space: nowrap; overflow: visible;
+}
+.scloud3 #activitiesAddButton{
+   vertical-align: middle;
+}
+.lotusDialog .lotusForm .content{
+padding:20px 12px 20px 20px;
+}
+a.lotusFileAction:link, a.lotusFileAction:visited,  a.lotusFileAction:hover,  a.lotusFileAction:active{font-size:0.9em; font-weight:normal; }
+.field .iconSlot {margin-right:4px; margin-bottom:2px; width: 16px;}
+a.lotusBookmarkField:link, a.lotusBookmarkField:active, a.lotusBookmarkField:visited, a.lotusBookmarkField:hover { color:#1970B0; text-decoration:none; font-weight:normal; }
+.placeList .lotusList a { display:block; padding:3px; background:url("/com.ibm.lconn.core.styles.oneui3/images/activities/icon_quickr.gif") no-repeat; background-position: 18px 2px; background-repeat:no-repeat; padding-left:38px;}
+.sections {
+background-color: #E7EEF6;
+padding: 5px 5px 5px 5px;
+}
+.sections .dijitTitlePane {
+margin-bottom: 5px;
+}
+.lotusBlue .dijitTitlePane .dijitTitlePaneTitle:focus  {outline: invert solid thin}
+.lotusBlue .dijitTitlePane .dijitTitlePaneTitle {
+font-weight: bold;
+font-size: 1.1em;
+padding: 4px 3px;
+cursor: pointer;
+}
+.lotusSection .dijitTitlePane .dijitTitlePaneTitle {
+font-size: 1.2em;
+}
+.lotusBlue .dijitTitlePane .dijitTitlePaneTitle .dijitArrowNode {
+float: left;
+height: 16px;
+width: 11px;
+margin-right:6px;
+}
+.lotusBlue .lotusMenu .dijitTitlePane { border-bottom: 0px; }
+.lotusBlue .dijitTitlePane .dijitOpen .dijitArrowNode {background: transparent url("/com.ibm.lconn.core.styles.oneui3/images/activities/arrows.gif") no-repeat 0px -18px;margin-left: 7px; margin-right: -2px;}
+.lotusui_ie .lotusBlue .dijitTitlePane .dijitOpen .dijitArrowNode {margin-right: 2px;}
+.lotusBlue .dijitTitlePane .dijitClosed .dijitArrowNode {background: transparent url("/com.ibm.lconn.core.styles.oneui3/images/activities/arrows.gif") no-repeat -22px -18px;margin-left: 6px; margin-right: -4px;}
+.lotusui_ie .lotusBlue .dijitTitlePane .dijitClosed .dijitArrowNode {margin-right: 0px;}
+.lotusBlue .dijitTitlePane .dijitArrowNodeInner {visibility: hidden;}
+.dijit_a11y  .dijitTitlePane .dijitArrowNodeInner {visibility: visible;}
+.dojoHelp { padding-right: 4px; padding-top: 5px; cursor: pointer}
+.lotusBlue .dijitTooltipContainer .dojoHelp {width:200px; padding: 4px;}
+.lotusBlue .dijitTooltipContainer .dojoHelp .dojoInfoBox {margin:0;border-width:1px;border-style:solid;-moz-border-radius:0;-webkit-border-radius:0;background-position:left top;background-repeat:repeat-x;}
+.lotusBlue .dijitTooltipContainer .dojoHelp .dojoInfoBox {margin:5px 0 5px 0;padding:5px;border-width:1px;border-style:solid;-moz-border-radius:2px;-webkit-border-radius:2px;overflow:hidden}
+.lotusBlue .dijitTooltipContainer .dojoHelp .dojoInfoBox p {margin:0;padding:5px;}
+.lotusBlue .dijitTooltipContainer .dojoHelp {background-color:#fff;-moz-box-shadow: 0 2px 5px #EEEEEE;}
+.lotusBlue .dijitTooltipContainer .dojoHelp .dojoInfoBox {font-size: .9em;border-color:#ffffff;background-color:#fff;-moz-border-radius: 0 0 0 0;}
+.lotusBlue .Section {
+border-bottom: none;
+margin: 3px 0px;
+}
+.lotusui30 .Section .dijitTitlePaneTitle {
+background-color: transparent;
+border-width:1px 0 0 0;
+border-style:solid;
+border-color: #eeeff1;
+font-size: 1.2em;
+font-weight: bold;
+}
+
+.lotusui30 .Section .dijitOpen {
+border-width:1px 1px 0 1px;
+}
+
+/* RTC 108527 [GVT] Button/text overlaid after I save one Activity entry as template*/
+.lotusui30 .lotusContent .ActivityNode .activiyActionBar {float:none;}
+
+.lotusBlue .Section .dijitTitlePaneContentInner {
+border: 1px solid #eeeff1;
+border-top: none;
+padding: 5px 5px 3px 9px;
+}
+.lotusBlue .Section .dijitArrowNode {
+height: 16px;
+width: 13px;
+}
+.lotusBlue .Section .dijitOpen .dijitArrowNode{
+background: transparent url("/com.ibm.lconn.core.styles.oneui3/images/activities/arrows.gif") no-repeat 0px 0px;
+}
+.lotusBlue .Section .dijitClosed .dijitArrowNode{
+background: transparent url("/com.ibm.lconn.core.styles.oneui3/images/activities/arrows.gif") no-repeat -26px 0px;
+}
+.EventLog ul.lotusList li{
+padding: 3px 0 1px;
+margin: 0px;
+}
+.EventLog ul.lotusList li.first{
+border-top-width:0;
+}
+.EventLog ul.lotusList li{
+border-top: 1px solid #CFE6FF;
+}
+.EventLog .event .date    { color:#000000; font-style:italic; }
+.EventLog .event          { margin: 0px; padding: 0px 4px 0px 20px; }
+div.dijitTextBox div, div.dijitComboBox div {
+vertical-align: top;
+}
+
+div.dijitTextBox, div.dijitComboBox {
+background-color: white;
+}
+.Section .actionsMenu {
+margin: 0px 5px;
+width: 100px;
+}
+.lotusColRight, .lotusContent, .lotusColLeft, .lotusTagCloud{overflow:visible;}
+*html .lotusColRight, *html .lotusContent, *html .lotusColLeft, *html .lotusTagCloud{height: 1%;}
+.martyMore {color:#578cca; padding: 2px 0 0 0; font-weight: bold;}
+.moreIcon {
+margin-left: 14px;
+}
+.moreIcon2 {
+margin-left: 24px;
+}
+.MemberList .lotusList li img{
+padding-right: 3px;
+}
+.activeTarget {
+border: 1px solid black;
+}
+.completed h4                           { font-weight:normal; color: gray; text-decoration: line-through; }
+.assigneeCompleted                      { font-weight:normal; color: gray; text-decoration: line-through; }
+.assignedToCheckbox                     { vertical-align:middle; margin-right:8px;}
+
+.Node .entryHeader h4 .cnxsDueDate,
+.MiniNode h4 .cnxsDueDate             { color: #666666; font-weight: normal; font-size:0.9em;  }
+.AddMembers .memberList {
+border: 1px solid #9a9a9a;
+border-bottom: none;
+background-color: white;
+}
+.AddMembers .scroll {
+border-bottom: 1px solid #9a9a9a;
+}
+.AddMembers .memberList .member {
+border-bottom: 1px solid #9a9a9a;
+}
+.AddMembers .memberList .member .type {
+color: #afafaf;
+font-style: italic;
+}
+.AddMembers .typeAhead {
+font-size: 1.1em;
+border: 1px solid #9a9a9a;
+vertical-align: middle;
+}
+.dijitMenuItem {
+overflow: auto;
+}
+.footer .entrySpinner {
+background: transparent url("/com.ibm.lconn.core.styles.oneui3/images/loading.gif") no-repeat scroll top center;
+width: 16px;
+height: 16px;
+}
+.field .fieldHeader {
+color: #222222;
+font-size: 13px;
+}
+.field .dijitClickableRegion {
+background-color: #ffffcc;
+}
+.field .fieldHeader .editableHeader {
+border-bottom: 1px dashed #105CB6;
+}
+.field .fieldDel {
+border: none;
+padding: 0px;
+margin: 3px;
+background-color: #999998;
+}
+.field .fieldDelText {
+height: 16px;
+width: 16px;
+border: none;
+display: none;
+}
+.dijit_a11y  .field .fieldDelText {
+height: 16px;
+width: 16px;
+border: none;
+cursor: pointer;
+display: inline;
+}
+.field .fieldAdd {
+border: none;
+padding: 0;
+background-color: transparent;
+}
+.field .fieldAddText {
+height: 16px;
+width: 16px;
+border: none;
+display: none;
+}
+.dijit_a11y .fieldControls span{
+padding-left: .5em;
+}
+.dijit_a11y  .field .fieldAddText {
+height: 16px;
+width: 16px;
+border: none;
+cursor: pointer;
+display: inline;
+}
+.lotusForm .extraFields {
+border-top: 1px solid #C9D8E9;
+}
+.EditEntryTypes .typesList {
+background-color: white;
+border: 1px solid #cccccc;
+}
+.EditEntryTypes .typesList .type {
+border-bottom: 1px solid #cccccc;
+font-weight: bold;
+}
+.entryFormBody {
+background-color: #eff4f7 !important;
+}
+.fieldData div.dijitInlineTable {
+border: 1px solid #cccccc;
+}
+.fieldData div th {
+background-color: white;
+border-bottom: 1px solid #cccccc;
+}
+.assignToList .peopleList,
+.notifyList .peopleList,
+.templateList .peopleList{
+background-color: white;
+border:1px solid #AAA;
+}
+.assignToList .peopleList.disabled,
+.notifyList .peopleList.disabled,
+.templateList .peopleList.disabled{
+background-color: ThreeDFace;
+}
+.notifyPerson {
+font-size:.9em;
+}
+.MiniNode,
+.MoreMiniNode {overflow: hidden; cursor: pointer; padding: 0; padding-left: 7px;}
+.MiniNode:hover,
+.MiniNode-hover {background-color: #F3F7FC;}
+/* RTC 98896 IE8: BHT6: Activities: Layout issue of To Do Items view when a To Do Item has due date. */
+.lotusui_ie .MiniNode, 
+.lotusui_ie .MoreMiniNode {display: block;}
+/* END RTC 98896 */
+.MoreMiniNode {margin-left: 9px; padding-left: 10px;}
+.Node .entryHeader h4,
+.MiniNode h4 {font-weight: bold;display: block;background-position: left center;background-repeat: no-repeat;word-wrap: break-word;}
+.Node .entryHeader h4 {font-size: 1.0em;padding:0px;margin:0.2em 0 0 0;}
+.MiniNode h4 {font-size: 1em;padding: 0px;margin:0.2em 0 0 0;}
+.lotusui_ie .MiniNode h4 {padding-top: 3px;}
+.Node .entryHeader .meta {color: #666666;}
+.Node .entryContent .fields .field,
+.NodeSummary .fields .field, {
+color: #666666;
+border-bottom:1px dotted #CFE6FF;
+}
+.Node .entryContent .fields .field .fieldValue,
+.NodeSummary .fields .field .fieldValue {
+color:black;
+}
+.Node .entryContent .fields .field .fieldValue .placeholder,
+.NodeSummary .fields .field .fieldValue .placeholder,
+.field .fieldData .placeholder{
+font-style: italic;
+}
+.Node .entryContent .fields .field .fieldValue .filename,
+.NodeSummary .fields .field .fieldValue .filename{
+font-weight: bold;
+}
+.Node .entryFooter .lotusActions {margin-bottom: 8px;}
+.MiniNode .lconnSprite-iconLink16 {margin-top: 2px; margin-bottom: -2px;}
+.MiniNode .lconnSprite-iconNote16,
+.Node .lconnSprite-iconNote16 {margin-left:4px; margin-top: 2px;}
+.MiniNode .lconnSprite-iconComment16 {margin-left: 2px; margin-top: 3px;}
+.Node .lconnSprite-iconComment16 {margin-left: 2px; margin-top: 2px;}
+.ResponseForm {
+background-color: #eef4f7;
+border-top: 1px dashed #CFE6FF;
+}
+.ResponseForm .responseFormFooter {
+background-color: #d9e7f4;
+}
+.help {
+padding-top: 5px;
+padding-right: 4px;
+}
+.IconPalette td .icon:hover {
+background-color: #fcde81;
+}
+.IconPalette .selected {
+border-top: 1px solid #898989;
+border-right: 1px solid #d7d7d7;
+border-bottom: 1px solid #d7d7d7;
+border-left: 1px solid #898989;
+background-color: #d9e7f4;
+}
+.taskIcon             { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/iconTask.gif");         width: 16px; height: 16px; }
+.taskIncompleteIcon   { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/icon_taskIncomplete.gif");         width: 16px; height: 16px; }
+.oaIcon16             { height: 16px; width: 16px; background-repeat: no-repeat; background-position: center center; }
+.dj_ie .oaIconLeft    { height: expression( this.scrollHeight < 16 ? "16px" : "auto" ); }
+.dijit_a11y .oaIcon {display: none; }
+.oaIconLeft { margin-right: 4px; }
+.dndHandleIcon        { background-image: url("/com.ibm.oneui3.styles/imageLibrary/OtherImages/Framework/dndHandle.png"); }
+.airplane_typeIcon  { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/airplane_typeIcon.gif");    width: 16px; height: 16px; }
+.alert_typeIcon     { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/alert_typeIcon.gif");       width: 16px; height: 16px; }
+.book_typeIcon      { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/book_typeIcon.gif");        width: 16px; height: 16px; }
+.building_typeIcon  { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/building_typeIcon.gif");    width: 16px; height: 16px; }
+.car_typeIcon       { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/car_typeIcon.gif");         width: 16px; height: 16px; }
+.cart_typeIcon      { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/cart_typeIcon.gif");        width: 16px; height: 16px; }
+.computer_typeIcon  { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/computer_typeIcon.gif");    width: 16px; height: 16px; }
+.date_typeIcon      { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/date_typeIcon.gif");        width: 16px; height: 16px; }
+.folder_typeIcon    { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/folder_typeIcon.gif");      width: 16px; height: 16px; }
+.group_typeIcon     { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/group_typeIcon.gif");       width: 16px; height: 16px; }
+.idea_typeIcon      { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/idea_typeIcon.gif");        width: 16px; height: 16px; }
+.lineChart_typeIcon { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/lineChart_typeIcon.gif");   width: 16px; height: 16px; }
+.link_typeIcon      { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/link_typeIcon.gif");        width: 16px; height: 16px; }
+.lock_typeIcon      { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/lock_typeIcon.gif");        width: 16px; height: 16px; }
+.news_typeIcon      { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/news_typeIcon.gif");        width: 16px; height: 16px; }
+.person_typeIcon    { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/person_typeIcon.gif");      width: 16px; height: 16px; }
+.picture_typeIcon   { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/picture_typeIcon.gif");     width: 16px; height: 16px; }
+.pieChart_typeIcon  { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/pieChart_typeIcon.gif");    width: 16px; height: 16px; }
+.postit_typeIcon    { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/postit_typeIcon.gif");      width: 16px; height: 16px; }
+.script_typeIcon    { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/script_typeIcon.gif");      width: 16px; height: 16px; }
+.stack_typeIcon     { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/stack_typeIcon.gif");       width: 16px; height: 16px; }
+.star_typeIcon      { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/star_typeIcon.gif");        width: 16px; height: 16px; }
+.tack_typeIcon      { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/tack_typeIcon.gif");        width: 16px; height: 16px; }
+.telephone_typeIcon { background-image: url("/com.ibm.lconn.core.styles.oneui3/images/activities/telephone_typeIcon.gif");   width: 16px; height: 16px; }
+.hasIcon { padding-left: 20px; }
+.hasIconRight { padding-right: 20px; background-position: center right; }
+.hasMenuArrowRight { padding-right: 10px; background-position: center right; }
+.typeIcon { margin: 0px 4px; }
+.lotusTaskGrouping {-moz-border-radius-bottomleft:2px; -moz-border-radius-bottomright:2px; -moz-border-radius-topleft:2px; -moz-border-radius-topright:2px; background-color:#F3F3F3; border:1px solid #E0E0E0; font-weight:bold;  margin-bottom:4px; margin-top:4px; padding: 3px 3px 3px 6px; }
+.ActivityList .lotusSection h2:hover, #lotusContent .ActivityList .lotusSection h2:hover { background-image:none; border-top:none;}
+.ActivityList .lotusSection h2, #lotusContent .ActivityList .lotusSection h { background-image:none; border-top:none;}
+.lotusDialog .lotusFormLabel{
+min-width:9em;
+}
+/**OCS 123948: Insert Link to files - Tags box is cut off */
+.lotusUploadFile .lotusFormLabel{
+min-width:1em;
+}
+.lotusDialog .lotusClose{
+margin-left: 5px;
+}
+.dj_ie .fadedOut {
+filter: alpha(opacity=30);
+zoom: 1;
+}
+.fadedOut {
+opacity: 0.3;
+}
+.displayNone { display: none; }
+.Node .entryHeader h4 .cnxsDueDate,
+.Node .entryHeader h4 .cnxsDueDateLate,
+.MiniNode .cnxsDueDate,
+.MiniNode .cnxsDueDateLate { padding-left: 10px; color:#B81927; font-size:1.2em;
+font-style:italic; }
+.ActivityList .sortEntries            { padding: 5px; }
+.ActivityList .sortEntries h4         { display:inline; }
+.ActivityList .sortEntries ul         { display:inline; list-style-type:none; }
+.ActivityList .sortEntries ul li      { display:inline; padding:2px 5px; }
+.ConfirmForm .field { margin:1em; max-width:500px;}
+.ConfirmForm .footer { padding-bottom:5px; padding-left:1em; padding-top:5px; }
+.ConfirmDeleteForm .field { margin:1em; }
+.ConfirmDeleteForm .footer { padding-bottom:5px; padding-left:1em; padding-top:5px; }
+.ConfirmNotifyForm .field { margin:1em; }
+.ConfirmNotifyForm .footer { padding-bottom:5px; padding-left:1em; padding-top:5px; }
+.a11yLabel                   { display: none; }
+.dijit_a11y .a11yLabel       { display: inline; }
+.ActivityNode .list {zoom:1;margin-top:10px; margin-left: -9px;}
+.ActivityNode .list .ftux{margin-left: 9px;}
+.nodeContainer {
+margin-top: 0px;
+margin-bottom: 0px;
+border-top: 1px solid #CAD9E1;
+}
+.nodeContainer.first {
+border-top-width: 0px;
+}
+.nodeContainer .nodeContainer {margin-top: 0; margin-bottom: 0;}
+.ActivityNode .Section .sectionFooter {color: #666666;margin-top: 8px; margin-bottom: 8px; padding-left: 15px;}
+.ActivityNode .NodeForm {padding-top: 8px; margin-left: 9px; width: auto;}
+.ActivityNode .SectionForm {margin-left: 9px; margin-top: 4px; width: auto;}
+.ActivityNode .SectionForm .content {padding-top: 8px; padding-bottom: 8px;}
+.ActivityNode .SectionForm .fieldHeader {padding-left: 28px;}
+.ActivityNode .MiniNode a.lotusRight {padding-right: 4px; font-size: 0.9em;}
+.ActivityNode .Section .MiniNode a.lotusRight {padding-right: 0;}
+.ActivityNode .Section .NodeForm .content {padding-right: 12px;}
+.ActivityNode .Section span.lotusRight {margin-top: 4px;}
+.AddMembers .memberList {
+visibility: hidden;
+}
+.AddMembers .scroll {
+overflow: auto;
+}
+.AddMembers .memberList .member {
+padding: 3px;
+}
+.AddMembers .memberList .member .P {
+float: left;
+}
+.AddMembers .memberList .member .G {
+float: left;
+}
+.AddMembers .memberList .member .C {
+float: left;
+}
+.AddMembers .memberList .member .fieldDel {
+}
+.AddMembers .typeAhead {
+width:90%;
+}
+.AddMembers .field {
+padding:5px 5px 5px 65px;
+}
+.dj_ie .AddMembers select{
+vertical-align: middle;
+}
+.NodeForm .content {
+display: none;
+}
+.EntryForm {
+padding: 0px;
+}
+.footer .entrySpinner {
+display: none;
+float: left;
+}
+.NotifyForm .field,
+.NodeForm .field,
+.PublicAccessRolesForm .field,
+.EntryTypeForm .field,
+.ActivityForm .field,
+.SectionForm .field,
+.AddMembersForm .field,
+.EditEntryTypes .field {
+clear: both;
+overflow: hidden;
+}
+.dj_ie .NodeForm .field,
+.dj_ie .PublicAccessRolesForm .field,
+.dj_ie .ActivityForm .field,
+.dj_ie .SectionForm .field,
+.dj_ie .NotifyForm .field,
+.dj_ie .AddMembersForm .field{
+    display: inline-block;
+}
+
+.dj_ie .EditEntryTypes .field{
+    display: block;
+}
+
+.field .fieldHeader {
+display: block;
+float: left;
+width: 120px;
+padding: 5px;
+word-wrap: break-word;
+}
+.dj_gecko .field .fieldHeader {
+overflow-x: auto;
+}
+.field .fieldHeader label{
+display: inline;
+}
+.fieldHeaderComboBox {padding-top:10px;}
+.field .fieldData {
+padding: 5px 5px 5px 130px;
+font-size: 14px;
+}
+.field .fieldDel {
+cursor: pointer;
+}
+.field .fieldAdd {
+cursor: pointer;
+}
+.field .fieldData .fieldNode {
+font-size: 0.9em;
+width: 380px;
+padding: 1px 0px;
+}
+.field .fieldData .fieldDateNode {
+font-size: 0.9em;
+width: 200px;
+}
+.field .fieldData .fieldFileNode {
+}
+.field .fieldData .hiddenFieldFileNode {
+font-size: 0.9em;
+size: 100px;
+visibility: hidden;
+}
+.field .fieldData .bookmarkTitle {
+width: 150px;
+margin-right: 5px;
+}
+.field .fieldData .bookmarkUrl {
+width: 245px;
+}
+.ActivityForm  .extraFields {
+padding-top:5px;
+margin-top: 5px;
+}
+.ActivityForm textarea {
+height: 75px;
+}
+.ActivityForm .templateDescription {
+width: 411px;
+margin-top: 10px;
+}
+.ActivityForm .lotusFormTable{
+table-layout:fixed;
+}
+.ActivityForm .lotusFormLabel{
+word-wrap:break-word;
+}
+.ActivityForm .labelCol{
+width: 16%;
+}
+.ActivityForm .helpCol{
+width: 2em;
+}
+.EntryTypeForm .icon {
+width: 16px;
+height: 16px;
+margin-right: 4px;
+}
+.EntryTypeForm .field .fieldData img {
+margin: 0px 3px;
+}
+.EditEntryTypes .typesList {
+width: 411px;
+height: 200px;
+overflow: auto;
+margin: 5px;
+}
+.EditEntryTypes .typesList .type .actions {
+float: right;
+}
+.EditEntryTypes .typesList .type {
+padding: 2px;
+background-position: 4px 50%;
+background-repeat: no-repeat;
+overflow: hidden;
+clear: both;
+margin: 1px 0;
+}
+.EditEntryTypes .typesList .type .label img{
+margin-right: 5px;
+margin-left: 2px;
+}
+.fieldData table {
+width: 411px;
+border-collapse: collapse;
+}
+.fieldData table th,
+.fieldData table td {
+padding: 3px;
+}
+.assignToList,
+.notifyList{
+width:550px;
+}
+.lotusDialog .notifyList { width : auto; }
+.dj_ie .notifyList fieldset { margin-left: 0px; }
+
+.lotusui30 .lotusFilters2 a.lotusFilter {margin-top:4px;}
+.lotusui30 .lotusDivider {color:#333333}
+.lotusui30 .lconnIconSharedExternalInTitle {margin: 0px 10px 4px 0px;}
+.lotusui30 .lconnIconSharedExternalInList {margin: 0px 6px 3px 2px}
+.lotusui30 .lconnIconSharedExternalText {font-size:0.75em;color:#222;font-weight:400}
+
+.lotusui30 .lotusTitleBar2 .lotusNavTabs {height:34px;}
+
+.assignToList .peopleList,
+.notifyList .peopleList,
+.templateList .peopleList {
+overflow: auto;
+display:block;
+height:150px;
+padding: 3px;
+width: 530px;
+}
+.CopyMoveEntry .selection .templateList .peopleList {
+height:100px;
+width: 640px;
+}
+.communitySelector {
+padding-bottom:5px;
+}
+.dj_ie .assignToList .peopleList,
+.dj_ie .notifyList .peopleList,
+.dj_ie .templateList .peopleList {
+padding: 0;
+}
+.assignToList .lotusSearch,
+.templateList .lotusSearch,
+.notifyList .lotusSearch{
+padding-bottom:5px;
+}
+.assignToList .lotusSearch input,
+.templateList .lotusSearch input{
+width: 99%;
+border: 1px solid #AAA;
+}
+.dj_ff3 .templateList .lotusSearch input{
+width: 99.5%;
+}
+.assignToList .lotusSearch.hasGroup select,
+.notifyList .lotusSearch.hasGroup select,
+.templateList .lotusSearch.hasGroup select{
+width: 43%;
+}
+.assignToList .lotusSearch.hasGroup input,
+.templateList .lotusSearch.hasGroup input{
+width: 49%;
+}
+.notifyPerson {
+width:170px;
+height:20px;
+}
+.notifyPerson input {
+display:block;
+}
+.notifyPerson label {
+height:20px;
+line-height:18px;
+overflow:hidden;
+white-space:nowrap;
+width:145px;
+display:block;
+}
+.nodeHandle {
+cursor: move;
+float: left;
+width: 9px;
+height: 17px;
+margin-top: 1px;
+visibility: hidden;
+background-repeat: no-repeat;
+background-position: center left;
+}
+.handleVisible {
+visibility: visible;
+}
+.nodeHandleDragging { 
+background-color: #efefef;
+border: 1px solid #cccccc;
+padding: 2px 2px 2px 30px;
+width: 300px;
+z-index: 5;
+}
+.Node {display: none; margin-left: 7px}
+.Node .miniPerson {
+display: none;
+}
+.Node .miniAssignedTo {
+    display: none;
+}
+.Node .entryHeader {padding: 7px 2px 5px 8px;}
+.Node .entryHeader .hideLink {
+float: right;
+font-size:0.9em;
+}
+.Node .entryIcon, .MiniNode .entryIcon {
+float: left;
+}
+.Node .entryHeader .meta {
+padding-left: 20px;
+}
+.Node .entryContent {
+padding: 5px;
+margin-left: 25px;
+}
+.Node .entryContent .fields,
+.NodeSummary .fields {
+padding-bottom: 5px;
+margin-bottom: 5px;
+}
+.Node .entryContent .fields .field,
+.NodeSummary .fields .field {
+overflow: hidden;
+}
+.dj_ie .NodeSummary .fields .field {
+display: inline-block;
+}
+.Node .entryContent .fields .field .fieldName,
+.NodeSummary .fields .field .fieldName {
+float: left;
+width: 150px;
+clear: both;
+padding-top: 3px;
+word-wrap: break-word;
+}
+.dj_gecko .Node .entryContent .fields .field .fieldName,
+.dj_gecko .NodeSummary .fields .field .fieldName {
+overflow-x: auto;
+}
+.Node .entryContent .fields .field .fieldValue,
+.NodeSummary .fields .field .fieldValue {
+padding-bottom:3px;
+padding-left:155px;
+padding-top:3px;
+}
+.Node .entryContent .description{
+overflow-y: visible;
+overflow-x: auto;
+width: 100%;
+line-height: normal;
+}
+.nodeContainer {
+clear: both;
+}
+.Node .entryFooter {
+margin-left: 30px;
+}
+.Node .entryFooter .tags {
+display: none;
+padding: 5px 0px 5px 0px;
+font-size: 0.9em;
+margin-left: 10px;
+}
+.MiniNode .entryTitleBar, .Node .entryTitleBar {
+cursor: pointer;
+}
+.MiniNode h4.comment {
+font-weight: normal;
+color: #444444;
+}
+.MiniNode .miniExpand {
+float: right;
+width: 20px;
+height: 20px;
+background-repeat: no-repeat;
+background-position: center center;
+}
+.dijit_a11y .MiniNode .miniExpand {
+width: 60px;
+}
+.MiniNode .miniExpand .a11yLabel
+.MiniNode .miniExpand a {
+width: 20px;
+height: 20px;
+background-position: center center;
+background-repeat: no-repeat;
+}
+.MiniNode .miniIndicator {
+float: right;
+width: 20px;
+height: 20px;
+background-repeat: no-repeat;
+}
+.MiniNode .miniPerson {
+    float: right;
+    font-size: 0.9em;
+    width: 160px;
+    overflow: hidden;
+}
+
+.MiniNode .miniAssignedTo {
+    float: right;
+    font-size: 0.9em;
+    width: 200px;
+    overflow: hidden;
+    padding:2px 0;
+}
+.MiniNode .miniPerson .lotusPerson
+{
+    
+    vertical-align: top;
+    display: inline-block;  
+    max-width: 126px;  
+    overflow: hidden;    
+    text-overflow:ellipsis;  
+    white-space:nowrap;
+}
+.MiniNode .miniAssignedTo .lotusPerson
+{
+    white-space:nowrap;
+    vertical-align: top;
+    display: inline-block;
+    max-width: 90px;        
+    overflow: hidden;          
+    text-overflow:ellipsis;
+}
+.MiniNode .miniDate {
+float: right;
+font-size: 0.9em;
+width: 100px;
+overflow: hidden;
+}
+.nodeChildren {
+padding-left: 20px;
+}
+.innerNode {
+font-size: 0.9em;
+}
+.ResponseForm {
+padding-top: 10px;
+}
+.ResponseForm .contents {
+opacity: 0;
+}
+.ResponseForm .responseFormFooter {
+padding: 5px;
+}
+.SectionForm .content .sectionInput {
+width: 200px;
+}
+.SectionForm .content .field .fieldHeader,
+.EditEntryTypes .content .field .fieldHeader {
+width: auto;
+}
+.SectionForm .content .field .fieldData,
+.EditEntryTypes .content .field .fieldData {
+padding-left: 10px;
+}
+.MemberList h3 {
+padding:6px 0px 4px 0px;
+}
+.MemberList li {
+padding: 4px 0px;
+}
+.IconPalette table {
+border: none;
+border-collapse: collapse;
+width: auto;
+}
+.IconPalette table tr {
+border: none;
+}
+.IconPalette table td {
+border: none;
+}
+.IconPalette .icon {
+width: 16px;
+height: 16px;
+padding: 3px;
+margin: 1px;
+background-repeat: no-repeat;
+background-position: center center;
+cursor: pointer;
+}
+.IconPalette .selected {
+padding: 2px;
+}
+.IconPalette .icon img {
+margin: 0 !important;
+}
+.iconPlaceholder {
+background-repeat: no-repeat;
+background-position: center left;
+background-attachment: scroll;
+}
+.CopyMoveEntry .content { width: 680px}
+.CopyMoveEntry .content .copyMoveTarget{ width: 640px}
+.CopyMoveEntry .description {
+padding-top: 5px;
+padding-left: 12px;
+padding-right: 12px;
+}
+.CopyMoveEntry .selection {
+margin-left: 1em;
+margin-right: 1em;
+padding-bottom: 5px;
+}
+
+/* RTC 99278 TCT#96 FRA Communities-->Activity -->create a Activity Wrong wrapping*/
+.lotusui30 .lotusLeftLabels .lotusFormField .metaLongText{width:auto;}
+
+/* MoveActivity widget */
+.lotusui30 .lotusDialog .MoveActivity {max-height:500px;}
+
+.MoveActivity .detailLink {margin-left:5px;}
+
+.MoveActivity .sharingText {margin:15px 0px 0px 0px;}
+
+.MoveActivity .publicReaderText {margin-top:10px;}
+
+.MoveActivity .content {
+  width: 540px;
+  padding: 0px 0px 0px 0px !important;
+}
+
+.MoveActivity .description {padding: 5px 0px 12px 0px;}
+
+.MoveActivity .selection {
+  margin:0 0 0 0;
+  padding:0px 5px 0px 5px;
+  width:530px;
+  height:180px;
+  white-space:nowrap;
+  overflow: auto;
+}
+
+.MoveActivity .selection .item{
+  cursor:pointer;
+  margin:5px 0px 5px 0px;
+  width:auto;
+}
+
+.MoveActivity .selection .itemSelected{background-color: #E1F4F9;}
+
+.MoveActivity .selection .itemNotSelected{background-color: white;}
+
+.restrictedText{color: #666666;}
+
+.restrictedLogo{margin:0px 5px 0px 5px;}
+
+.MoveActivity .selection .itemLogo{
+  width:60px;
+  height:60px;
+  margin-right:10px;
+}
+
+.MoveActivity .lotusSearch { padding-bottom:0px; }
+
+.MoveActivity .peopleList { height:100px; }
+
+.MoveActivity .people {
+  width: 540px;
+  margin: 0 0 0 0;
+}
+
+.MoveActivity .people .lotusFilters2 a {
+  margin: 3px 1px 0px 0px;
+}
+
+/* this should go to a css in infra later */
+.field .fieldData .dijitTextBox {
+padding: 1px 0px 0px 0px;
+}
+
+.QuickrPublishForm .documentPicker .dijitTreeContent { margin-left: 0 !important; }
+.QuickrPublishForm .documentPicker .treeIconNode { float: none !important; }
+.QuickrPublishForm .documentPicker .pickerContainer { height: 200px; min-height: 200px; }
+.QuickrPublishForm .documentPicker .dijitComboBox { border: 1px solid #B6C2D1 !important; width: 20em !important; }
+.lotusDialog .QuickrPublishForm .lotusDialogContent { max-height: 625px; }
+.ActivityTitleBar h2 .lconnSprite { vertical-align: middle; }
+.TagCloudSearchBarSafari{ width: 135px; }
+.ActivityList .lotusLastCell {
+width: 6em;
+}
+.lotusColLeft .lotusList.lotusEditable li .lotusLeft,
+.lotusColRight .lotusList.lotusEditable li .lotusLeft {
+width: 85%;
+word-wrap: break-word;
+}
+.MemberContainers .lotusPerson{
+    white-space:nowrap;
+    width: 100px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+.MemberContainers{
+width: 250px;
+padding-bottom:10px;
+}
+.notifyList .lotusSearch.hasGroup input{
+width:49%;
+}
+.notifyList .lotusSearch input{
+min-width:300px;
+width:534px;
+border: 1px solid #AAA;
+}
+.notifyMessage{
+width:530px;
+}
+.groupPicker {
+display:inline-block;
+}
+.individualMemContainer{
+margin-top:10px;
+}
+.addMembersContainers{
+float:left;
+vertical-align:top;
+padding-left:0px;
+padding-right:1px;
+padding-top:1px;
+}
+.lotusBlue .dijitTitlePane .dijitTitlePaneTitle:focus {
+border: 1px dotted #000000;
+}
+.peopleFilterListContainers{
+width:500px;
+}
+.lineSeperator{
+padding-right:5px;
+padding-left:5px;
+}
+
+/*new theme*/
+.lotusui30 .list,
+#memberPane div[role="list"]{background-color:#fff;}
+#memberPane div[role="list"]{overflow:hidden;}
+#dashboard,
+#todolistid,
+#activitypage,
+#templatedashboard,
+#recentupdatesid,
+#communityActivityForm {margin-top:-25px; padding-top:25px;} /*brings the left column content up*/
+.lotusui_ie #recentupdatesid {margin-top:0; padding-top:0;}
+/*ABOUT*/
+/* Push right column up to cope with extraneous div */
+/* FIXME: Activities is missing .lotusAbout on the body of the about page, should be: */
+/* .lotusui30.lotusAbout #aboutpageinner .lotusColRight { */
+.lotusui30 #aboutpageinner .lotusColRight {
+  margin-top: -25px;
+}
+/** 94614: The height of box "Type to find person" is not consistent with the box before it when starting a activity. */
+.AddMembers .typeAhead.lotusText {
+  padding: 1px;
+}
+/** 95452: [OCS 116569] E2B: There are some problems in the Activity members page */
+.MemberContainers.lotusLeft .fn {
+  vertical-align: top;
+  display: inline-block;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/** 96676: [OCS 117984] BHT6: An activity of a long name overlaps on Action buttons */
+.oaActivityListContentNode .lotusTable.lotusClear {
+  word-break: break-all;
+}
+/**113574: [dojo upgrade]entry item are not aligned with todo item */
+/**118551: [OCS 137016] Template icon too close to entry name if name starts with dbcs */
+.MiniNode .nodeTypeEntry, .Node .nodeTypeEntry{
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.MiniNode .nodeTypeTodo, .Node .nodeTypeTodo{
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 2px;
+}
+/** IC132954 SVT: Mark this entry private, and notify people of this entry check boxes are not displaying correctly */
+/** when trying to add a to do or an entry within a section in an activity*/
+.lotusui30 .dijitReset .lotusFormField .lotusFieldWrapper{line-height:1.5;}
+/** 139268 [OCS 155117]people list will be changed from 3 columns to 2 columns when the scroll bar appears */
+.assignToList .peopleList .lconnNotify{width: 165px;}
+/** IC 163120: [Safari8 on Mac 10.10]A Gery line shows in the middle of message box after you save the entry template. */
+.lotusui30 .lotusDialog .lotusFormTable, .lotusui30 .lotusDialog .lotusDialogContent{
+  overflow:visible;
+}

@@ -1,0 +1,69 @@
+<%@ page session="false" contentType="text/html; charset=UTF-8" buffer="48kb" %>
+<%--wscExemptBegin--%>
+<%-- ***************************************************************** --%>
+<%--                                                                   --%>
+<%-- IBM Confidential                                                  --%>
+<%--                                                                   --%>
+<%-- OCO Source Materials                                              --%>
+<%--                                                                   --%>
+<%-- Copyright IBM Corp. 2006, 2015                                    --%>
+<%--                                                                   --%>
+<%-- The source code for this program is not published or otherwise    --%>
+<%-- divested of its trade secrets, irrespective of what has been      --%>
+<%-- deposited with the U.S. Copyright Office.                         --%>
+<%--                                                                   --%>
+<%-- ***************************************************************** --%>
+<%--wscExemptEnd--%>
+
+<%@ taglib prefix="c" 			uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" 			uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" 			uri="http://java.sun.com/jsp/jstl/fmt" %>
+<tr id="blogsFields" class="tabcontent" style="display:none">
+	<td colspan="3" style="padding:0px;">
+	<c:if test="${BlogsEnabled}">
+		<img title="processing" alt="processing" src="<c:url value="/images/progressIndicator.gif" />" id="blogsProcessing"/>
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" id="blogsInputs" style="display: none" role="group" aria-describedby="addToBlogDesc">
+			<tr class="lotusFormTabContentFirst">
+				<td colspan="3" class="lotusFormFieldRow lotusIndent40">
+					<label id="addToBlogDesc"><fmt:message key="jspf.blogs.help.post" /></label>
+				</td>
+			</tr>
+			<tr class="lotusFormTabContent">
+				<td width="15%" class="lotusFormLabel lotusFormFieldRow">
+					<br /><label><fmt:message key="jsp.helpapi.bookmark.prop.blog" /></label>
+				</td>
+				<td class="lotusFormFieldRow">
+					<label><fmt:message key="jspf.blogs.select.tip" /></label>
+					<br />
+					<select style="height:60px;" aria-label="<fmt:message key="jsp.bookmarklet.blogs.select" />" title="<fmt:message key="jsp.bookmarklet.blogs.select" />" class="lotusText" onclick="javascript: TabController.imgEffect(this, 3, this.value, 'click');" id="blogUuid" size="3" multiple="true" name="blogUuid">
+					</select>
+					<br />
+					<a href="#" role="button" onclick="javascript: TabController.resetSelectedItems(dojo.byId('blogUuid'), 3);return false;"><fmt:message key="jspf.blogs.clear" /></a>
+				</td>
+				<td>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+			</tr>
+			<tr>
+				<td width="15%" class="lotusFormLabel lotusFormFieldRow" style="background-color:#fff !important;">
+					<label for="rteDivForBlogs"><fmt:message key="jsp.helpapi.bookmark.prop.additional" /></label>
+				</td>
+				<td class="lotusFormFieldRow" style="background-color:#fff !important;">
+					<textarea style="widht:98%;" rows="2" id="rteDivForBlogs" class="lotusText bidiAware" onblur="fnValidateDesc()"></textarea>
+					<input type="hidden" id="verbiageForBlogs" name="verbiageForBlogs" />
+				</td>
+				<td style="background-color:#fff !important;">
+					&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+			</tr>
+		</table>
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" id="noblogs" style="display: none">
+			<tr class="lotusFormTabContentFirst">
+				<td class="lotusFormFieldRow lotusIndent20">
+					<label aria-label="<fmt:message key="jspf.blogs.noblogs" />" role="alert" id="noblogsLabel" tabindex="0"><fmt:message key="jspf.blogs.noblogs" /></label>
+				</td>
+			</tr>
+		</table>
+	</c:if>
+	</td>
+</tr>

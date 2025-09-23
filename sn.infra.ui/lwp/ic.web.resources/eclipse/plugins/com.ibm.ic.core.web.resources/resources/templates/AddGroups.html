@@ -1,0 +1,25 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="AddMembers" style="display:inline;" data-dojo-attach-point="addGroups_AP">
+    <input type="hidden" name="authors_GRP" data-dojo-attach-point="authors_GRP_AP">
+
+    <div class="BrowseGroups" data-dojo-attach-point="addGroupsTA_AP">
+        <span data-dojo-attach-point="groupSelect1_AP">
+            <label class="lotusHidden" for="groupSelect">${rs_group_select}</label>
+            <label class="lotusAccess" for="addGroupsWidgetPeopleTypeAhead">${rs_group_typeahead}</label>
+            <select id="groupSelect" data-dojo-attach-point="aclLevel_AP">
+                <option value="authors" data-dojo-attach-point="authors_AP">${rs_members}</option>
+            </select>
+        </span>
+
+        <input data-dojo-attach-point="membersCombo_AP">
+        <span aria-disabled="true" data-dojo-attach-point="addButton_AP">
+            <button title="${rs_addMember_title}" role="button" class="fieldAddDisabled" data-dojo-attach-event="onclick: noProcessing"> </button>
+            <span title="${rs_addMember_title}" role="button" class="fieldAddText" style="display:none" data-dojo-attach-event="onclick: noProcessing">+</span>
+        </span>
+
+        <div data-dojo-attach-point="groupSelect2_AP"><div class="field"></div></div></div>
+            <div class="browseLink" data-dojo-attach-point="browserGroupsTA_AP">
+                <a class="lotusAction" role="button" href="javascript:void();" data-dojo-attach-event="onclick: browseGroups, onkeypress: keyListener">${rs_browseGroups}</a>
+                <div style="display:none;" data-dojo-attach-point="browseGroups_AP"></div>
+            </div>
+        </div>

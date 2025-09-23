@@ -1,0 +1,12 @@
+@Library('jedi') _
+// NOTE: The underscore (_) above is not a typo!  You need this underscore if
+// the line immediately after the @Library annotation is not an import statement
+
+prefix = 'IC10.0_UI'
+env.prefix = prefix
+// This error_jslint file will prevent jslint errors to fail the build
+// This can be remooved once all jslint errors are fixed
+env.phase9L='cp errors_jslint ${absToolsPath}/util/bin/errors_linux'
+// This phaase will run jslint 
+env.phase23='${PerlExe} ${absToolsPath}/util/bin/MultiBuild.pl -pass4 -opt4 "jslint -DcrConvert.1to3=false"'
+runBluePipelinePR()

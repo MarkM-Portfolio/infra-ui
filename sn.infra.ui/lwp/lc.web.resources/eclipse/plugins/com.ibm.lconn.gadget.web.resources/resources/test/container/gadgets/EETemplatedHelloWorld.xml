@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<Module >
+<ModulePrefs title="Hello EE World" description="Templated Hello World Embedded Experience Gadget" height="400" width="500">
+<Require feature="embedded-experiences"/>
+<Require feature="opensocial-templates">
+	<Param name="requireLibrary">../../../support/EEResourceLoaderTemplate.xml</Param>
+</Require>
+<Require feature="open-views"/>
+</ModulePrefs>
+<Content type="html" view="embedded, default">
+<![CDATA[
+     <script type="text/javascript">
+     	var context;
+     	var isDebug=false;
+     	var webResourcesUrl = "";
+     	
+     	(function() {
+         var baseUrl = window.location.href;    
+         var gadgetUrlRE = /[?&]url=([^&]+)/;
+         var hostInfoRE = /http(s)?:\/\/([^\/]+)([^?]+)/;
+         var gadgetUrl = decodeURIComponent(baseUrl.match(gadgetUrlRE)[1]);
+         var hostInfo = gadgetUrl.match(hostInfoRE);  
+         var gadgetPath = "/web/com.ibm.lconn.gadget/test/container/gadgets/EETemplatedHelloWorld.xml";
+         
+         var baseProtocol = hostInfo[1] ? "https" : "http";       
+         var baseHost = hostInfo[2];
+         var basePath = hostInfo[3].substring(0, hostInfo[3].lastIndexOf(gadgetPath));
+         window.djConfig = {
+            isDebug: isDebug,
+            baseUrl: (baseProtocol + "://" + baseHost) + basePath + "/web/dojo/",
+            locale: "en-us",
+            blankGif: baseProtocol + "://" + baseHost + basePath + "/web/com.ibm.oneui.styles/css/images/blank.gif",
+            usePlainJson: true,
+            localizationComplete: true,
+            isSecure: (baseProtocol == "https")
+         };
+         webResourcesUrl = (gadgets.views.getParams().webResourcesUrl) || ((baseProtocol + "://" + baseHost) + basePath);
+      })();
+     	
+     	function init(){
+     		console.debug("EEHelloWorld - init - entering");
+     		console.debug("EEHelloWorld - init - opensocial.data.getDataContext()", opensocial.data.getDataContext());
+     		console.debug("EEHelloWorld - init - opensocial.data.getDataContext().getData()", opensocial.data.getDataContext().getData());
+     		console.debug("EEHelloWorld - init - opensocial.data.getDataContext().getDataSet()", opensocial.data.getDataContext().getDataSet());
+     		opensocial.data.getDataContext().registerListener('org.opensocial.ee.context', function(key) {
+     			console.debug("EEHelloWorld - entering - contextListener");
+     			context = opensocial.data.getDataContext().getDataSet(key);
+     			document.getElementById('eeContext').innerHTML = context;
+     			console.debug("EEHelloWorld - exiting - Key: " + key + ", context: " + context);
+     		});
+     		console.debug("EEHelloWorld - init - exiting");
+			var loaderCallback = function(){
+				var status = "The loaded callback was called. ";
+				var statusEl = document.getElementById("loaderStatus");
+				status += "The shared bundle was ";
+				status += (window.com && com.ibm && com.ibm.lconn && com.ibm.lconn.gadget && com.ibm.lconn.gadget.support && com.ibm.lconn.gadget.support.eeBundle)?"loaded":"not loaded.";
+				status += ". The specified modules were ";
+				status += (window.com && com.ibm && com.ibm.social && com.ibm.social.ee && com.ibm.social.ee.widget && com.ibm.social.ee.widget.StatusUpdateLoader)?"loaded":"not loaded.";
+				statusEl.innerHTML = status + ". ";
+			};
+     		com.ibm.lconn.gadget.support.EEResourceLoader.load(webResourcesUrl, ["lconn.core.config.services","com.ibm.social.ee.widget.StatusUpdateLoader"], true, loaderCallback, ["/_style?include=com.ibm.lconn.core.styles.oneui3/base/package3.css", "/_lconntheme/default.css?version=oneui3", "/_style?include=com.ibm.social.ee/css/eePreview.css"])
+     	}
+     	
+		gadgets.util.registerOnLoadHandler(init);
+     	
+   	 </script>
+   	 
+	<script type="text/os-template" xmlns:lconn="http://www.ibm.com/ibm/connections" >
+		<lconn:importJS/>
+	</script>
+    
+	 <div id="hello">
+	 	<h3>Hello Embedded Experiences World</h3>
+	 	I am a Templated EE gadget.<br>
+	 	My context is: <span id="eeContext">[Context will go here]</span><br>
+	 	Resource loading status: <span id="loaderStatus">[Status will go here]</span>
+	 </div>
+  ]]></Content>
+</Module>

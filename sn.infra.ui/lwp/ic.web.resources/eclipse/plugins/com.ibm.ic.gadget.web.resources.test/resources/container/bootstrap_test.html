@@ -1,0 +1,407 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<html><body><p>${head}
+${script:com.ibm.lconn.gadget.resources.iRuntimeModule}
+${script:com.ibm.lconn.gadget.container._Accessor}
+${script:com.ibm.lconn.gadget.container._Handle}
+${script:com.ibm.lconn.gadget.container._Container}
+${script:com.ibm.lconn.gadget.container.iContainer2}
+
+<!-- Redirect to &render=test -->
+<script type="text/javascript">	
+	var loc = location + '';
+	if (loc.indexOf('render=test') < 0) {
+		if (loc.indexOf('?') > 0) {
+			location = loc + "&render=test";
+		}
+		else {
+			location = loc + "?render=test";
+		}
+	}
+</script>
+
+<script type="text/javascript">	
+	
+	dojo.require('lconn.core.config.services');
+	dojo.require("com.ibm.oneui.util.proxy");
+	dojo.require("lconn.core.url");
+	
+	var web_resources_url = lconn.core.config.services['webresources'].url;
+	var page_url_dotdot_dotdot = lconn.core.url.parse(window.location.toString(), '../..').toString();
+	page_url_dotdot_dotdot = page_url_dotdot_dotdot.substring(0, page_url_dotdot_dotdot.length - 1);
+	
+</script>
+
+<script type="text/javascript">
+	var mContainer = null;
+	var mHandle = null;
+	var mEEHandle = null;
+	var iWidgetHandle = null;
+	
+	//dojo.registerModulePath("com.ibm.lconn.gadget", page_url_dotdot_dotdot);
+</script>
+
+
+<style>
+#attach_point {
+  width: auto;
+  height: auto;
+}
+#ee_attach_point {
+  width: 600px;
+  height: 80px;
+}
+#attach_point2 {
+  width: 500px;
+  height: 100px;
+}
+
+</style>
+
+${endhead}
+
+</p><h1>Showcases iContainer2 API. See <a href="bootstrap_test_old.html">THIS</a> page for the legacy iContainer API</h1>
+<h3>Post beta the intention is to rename 'iContainer2' to 'iContainer' and update existing API callers</h3>
+
+<!-- BODY -->
+<table width="100%"><tr><td>
+	<h1>BootStrap Test</h1>
+	
+	<script type="text/javascript">
+		function load_callback() {
+			console.log("Load callback called!");
+		}
+		
+		function load_errback(error) {
+			console.log("Load ERROR called!: " + error);
+		}
+	
+		function load_widget(isMulti) {
+			var def = {
+					definitionUrl: dojo.formToObject('gadgetBootstrapper').gadget,
+					placement: dojo.byId('attach_point'),
+					componentType : 'gadget',
+					instanceData : {
+						renderType: dojo.formToObject('gadgetBootstrapper').renderType,
+						renderParams: {
+							height: "auto", width: '500px',
+							userPrefs: {
+								foo: 'bar'
+							}
+						},
+						viewParams : {
+								test: 'value'						
+						},
+						callback : load_callback,
+						errback : load_errback
+					}
+				};
+				
+			if (mHandle) {
+				mHandle.close();
+				mHandle = null;
+			}
+		
+			if (isMulti) {					
+				mHandle = mContainer.loadWidgets([def])[0];
+			} else {
+				mHandle = mContainer.loadWidget(def)
+			}
+			
+			return false;
+		}
+		
+		function refresh_widget() {
+			if (mHandle) {
+				mHandle.refresh();
+			}
+		}
+		
+		function close_widget() {
+			if (mHandle) {
+				mHandle.close();
+			}
+		}
+		
+		function parse_action() {
+			return false;
+		}
+		
+		function fill_hello_inline() {
+			document.forms.gadgetBootstrapper.gadget.value = page_url_dotdot_dotdot + '/test/container/gadgets/helloWorldGadget.xml';
+		}
+		
+		function fill_time_gadget() {
+			document.forms.gadgetBootstrapper.gadget.value = 'http://hosting.gmodules.com/ig/gadgets/file/109810496796399416248/timedate2.xml';
+		}
+		
+		function fill_resLoader() {
+			document.forms.gadgetBootstrapper.gadget.value = page_url_dotdot_dotdot + '/test/container/gadgets/ResourceLoaderTest.xml';
+		}
+		
+		function fill_409_test() {
+			document.forms.gadgetBootstrapper.gadget.value = page_url_dotdot_dotdot + '/test/container/gadgets/test409.xml';
+		}
+	</script>
+	<div id="bootstrapForm">
+		<form name="gadgetBootstrapper" id="gadgetBootstrapper">
+			Gadget Url:
+			<input type="text" id="gadget" name="gadget" style="width: 60%" value="http://hosting.gmodules.com/ig/gadgets/file/109810496796399416248/timedate2.xml">
+	        <br>
+	        Render inline: 
+	        <input type="checkbox" name="renderType" value="inline">
+		</form>
+	
+		<button onclick="load_widget();" name="submitButton" value="submit">Load Gadget</button>
+		<button onclick="load_widget(true);" name="submitButton" value="submit">Load Gadget - multi test</button>
+		<button onclick="refresh_widget();">Refresh</button>
+		<button onclick="close_widget();">Close</button>
+		<br>
+		<button onclick="fill_time_gadget();">Pre-fill Time Gadget</button>
+		<button onclick="fill_hello_inline();">Pre-fill Hello Inline Gadge</button>
+		<br>
+		<button onclick="fill_resLoader();">Pre-fill ResourceLoader Gadget</button>
+		<button onclick="fill_409_test();">Pre-fill http409 response test</button>
+	</div>   
+	
+	<h3>Attach Point</h3>
+	<div id="attach_point" style="">Gadget Goes Here...</div>
+</td>
+<td valign="top">
+	<h1>EE BootStrap Test</h1>
+	
+	<script type="text/javascript">
+		var count=1;
+		function load_ee_widget() {
+			//try {
+				if (mEEHandle) {
+					mEEHandle.close();
+					mEEHandle = null;
+				}
+				
+				
+				var theform = dojo.formToObject('eeGadgetBootstrapper');
+	
+				var isUrl = theform.type === 'url';
+				
+				var rawContext = theform.eeContext;
+				var eeContext;
+				if ( dojo.trim(rawContext).charAt(0) == '{' ) {
+					eeContext = dojo.fromJson(rawContext);
+				} else  {
+					eeContext = rawContext;
+				}
+				
+				var parentElm = dojo.byId('ee_attach_point');
+				parentElm.innerHTML = '';
+				var id = 'ee_elm_' + count++;
+				dojo.create('div', { id : id }, parentElm);
+				var elm = id;
+				
+				var def = {
+						placement: elm,
+						componentType : "gadget",
+						instanceData : {
+							renderParams: {
+								userPrefs: {
+									foo: 'bar'
+								}
+							},
+							viewParams : {
+								test: "value"
+							},
+							eeDataModel : {
+								context : eeContext
+							},
+							callback: function (info) {
+								console.debug("bootstrap_test - gadget rendered, or so I'm told. ");
+							},
+							errback: function () {
+								console.debug("bootstrap_test - ERROR in load.")
+							}	
+						}
+				};
+				
+				if (isUrl) {
+					def.instanceData.eeDataModel.url = theform.eeGadget;
+				} else {
+					def.definitionUrl = theform.eeGadget;
+				}
+						
+				mEEHandle = mContainer.loadWidget(def);
+			//} catch ( e ) {
+			//	console.debug("Caught exception: " + e);
+			//}
+			
+			return true;
+		}
+		
+		function refresh_ee_widget() {
+ 			if (mEEHandle) {
+				mEEHandle.refresh();
+			}
+
+//			close_ee_widget();
+//			load_ee_widget();
+ 		}
+		
+		function close_ee_widget() {
+			if (mEEHandle) {
+				mEEHandle.close();
+			}
+		}
+		
+		function parse_ee_action() {
+			return false;
+		}	
+	</script>
+
+	<div id="eeBootstrapForm">
+		<form name="eeGadgetBootstrapper" id="eeGadgetBootstrapper">
+			Type: <input type="radio" name="type" value="gadget" checked>GADGET
+				  <input type="radio" name="type" value="url">URL<br>
+			Gadget Url / URl:
+			<input type="text" id="eeGadget" name="eeGadget" style="width: 60%"><br>
+	        Context:
+	        <input type="text" id="eeContext" name="eeContext" style="width: 60%" value="Some context goes here">
+
+		</form>
+		<script>
+			function preFillHello() {
+				var gadgetUrl = lconn.core.url.parse(location.toString(), 'gadgets/EEHelloWorld.xml').toString();
+				dojo.byId('eeGadget').value = gadgetUrl;
+				dojo.byId('eeContext').value = 'some context goes here';
+			}
+			
+			function preFillFilesEE() {
+				dojo.byId('eeGadget').value = 'http://paris.rtp.raleigh.ibm.com:9080/connections/resources/web/com.ibm.social.ee/File.xml';
+				dojo.byId('eeContext').value = '{ "id": "03fa819a-17bc-476c-861b-e4845e5e1133" }';
+			}
+			
+			function prefill_prefs_testEE() {
+				dojo.byId('eeGadget').value = page_url_dotdot_dotdot + '/test/container/gadgets/helloWorldGadget.xml';
+			}
+			
+		</script>
+		<button onclick="preFillHello();">Pre-fill Hello World</button>
+		<button onclick="preFillFilesEE();">Pre-fill Files EE (from paris)</button>
+		<button onclick="prefill_prefs_testEE();">Pre-fill prefs test</button>
+		<br><br>
+		<button onclick="load_ee_widget();">Load EE Gadget</button>
+		<button onclick="refresh_ee_widget();">Refresh</button>
+		<button onclick="close_ee_widget();">Close</button>
+	</div>   
+	
+	<h3>EE Attach Point</h3>
+	<div id="ee_attach_point" style="">EE Gadget Goes Here...</div>
+</td>
+</tr>
+<tr>
+<td>
+<h1>IWidget test</h1>
+	
+	<script type="text/javascript">
+		function load_iwidget() {
+			//try {
+				if (iWidgetHandle) iWidgetHandle.close();
+				
+				var spot; 
+				dojo.query("#attach_point2 > div").at(0).forEach(function(n) { spot =n; });
+				
+				var def = {
+						definitionUrl: dojo.formToObject('IWidgetBootstrapper').IWidget,
+						componentType: "iWidget",
+						placement: 'attach_point2',
+						instanceData : {
+							callback : function() {
+								console.log("iWidget callback reached");
+							},
+							errback : function(error) {
+								console.log("iWidget ERROR reached: " + error);
+							}
+						}
+					};
+				dojo.empty("attach_point2");
+				//console.log("getCREServerUrl():  ", cre$.iRuntime.getCREServerUrl());
+				console.log("definitionUrl:  ", dojo.formToObject('IWidgetBootstrapper').IWidget);
+				
+				iWidgetHandle = mContainer.loadWidget(def);
+				
+				iWidgetHandle.getWidgetInfo().then(function (data) {
+					alert('Got widget info: ' + typeof data); // NOTE: do not dojo.toJson this; it WILL blow up
+				});
+				
+			//} catch ( e ) {
+			//	console.debug("Caught exception: " + e);
+			//}
+			
+			return false;
+		}
+		
+		function serverHost() {
+			var loc = document.location;
+			return(loc.protocol + "//" + location.hostname + ":" + location.port);
+		}
+		
+		function refresh_iwidget() {
+			iWidgetHandle.refresh();
+		}
+		
+		function close_iwidget() {
+			iWidgetHandle.close();
+		}
+
+		function preFillHelloIwidget() {
+			var iWidgetNode = dojo.byId("IWidget");
+			var loc = document.location;
+			iWidgetNode.value = web_resources_url + "/web/com.ibm.lconn.gadget/test/container/helloworld.xml";
+		}
+			
+		function preFillStockIwidget() {
+			var iWidgetNode = dojo.byId("IWidget");
+			var loc = document.location;
+			iWidgetNode.value = web_resources_url + "/web/com.ibm.lconn.gadget/test/container/iwidgets/simple_stock/stock3.xml";
+		}
+		
+		function preFillProxyIwidget() {
+			var iWidgetNode = dojo.byId("IWidget");
+			var loc = document.location;
+			iWidgetNode.value = web_resources_url + "/web/com.ibm.lconn.gadget/test/container/iwidgets/testproxy/TestProxy.xml";
+		}	
+	</script>
+
+	<div id="bootstrapForm">
+		<form name="IWidgetBootstrapper" id="IWidgetBootstrapper">
+			Gadget Url:
+			<input type="text" id="IWidget" name="IWidget" style="width: 60%" value="http://broberts2.swg.usma.ibm.com:9080/connections/resources/web/com.ibm.lconn.gadget/test/container/helloworld.xml">
+		</form>
+	
+	<button onclick="preFillHelloIwidget();">Pre-fill Hello World</button>
+		<button onclick="preFillStockIwidget();">Pre-fill Stocks</button>
+		<button onclick="preFillProxyIwidget();">Pre-fill Proxy Test</button>
+		<br><br>
+		<button onclick="load_iwidget();">Load Iwidget</button>
+		<button onclick="refresh_iwidget();">Refresh</button>
+		<button onclick="close_iwidget();">Close</button>
+	</div>   
+	
+	<h3>Attach Point</h3>
+	<span id="attach_point2">
+	<div style="">iWidget Goes Here...</div>
+	</span>
+</td>
+</tr>
+</table>
+	
+	<script type="text/javascript">
+		dojo.addOnLoad(function() {
+			mContainer = com.ibm.lconn.gadget.container.iContainer2;			
+			mContainer.init();
+			
+			preFillHelloIwidget();
+			
+			load_widget();
+		});
+	</script>
+
+${end}
+</body></html>

@@ -1,0 +1,33 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2014, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<project name="jscover">
+	<!-- Boolean flag. Defaults to false. Set to true to instrument bundles, e.g. via commandline $ bld -Djscover.instrument=true -->
+	<property name="jscover.instrument" value="false"/>
+	<!-- List of bundles to instrument. Define in your component's buildfile -->
+	<!--property name="jscover.bundles" value="com.ibm.bundle.to.instrument.web.resources"/-->
+
+	<!-- Target to instrument a single bundle. Not to be invoked directly. @private @param {String} bundle -->
+	<target name="instrument-bundle-for-jscover" if="${jscover.instrument}">
+		<concat append="true" destfile="${basedir}/eclipse/plugins/${bundle}/build.properties" fixlastline="yes">
+customBuildCallbacks=customBuildCallbacks.xml
+customBuildCallbacks.inheritall=true
+</concat>
+	</target>
+
+	<!-- Target to instrument all bundles in a component. Make it a dependency of target "custom_init" -->
+	<target name="instrument-for-jscover" if="${jscover.instrument}">
+		<for_each list="${jscover.bundles}" param="bundle" target="instrument-bundle-for-jscover" inheritall="true" />
+	</target>
+</project>
+

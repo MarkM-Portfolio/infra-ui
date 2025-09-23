@@ -1,0 +1,74 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2006, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<component name="lc.web.resources.war" description="" project-type="war" spec-version="1.0">
+
+   <output-group name="to_ear">
+      <output type="war" visibility="public" platform="all" location="${env.LWP_COMP_BUILD}/lib/connections.web.resources.war" />
+   </output-group>
+   
+   <output-group name="to_war">
+      <output type="jar" visibility="public" platform="all" location="${env.LWP_COMP_BUILD}/lib/connections.web.resources.jar" preferredInstallLocation="WEB-INF/lib"/>
+   </output-group>
+   
+   <!-- Servlet bridge implementation -->
+   <dependency name="lc.web.osgi.servletbridge" type="jar" />
+   <!-- Email settings -->
+   <dependency name="notify/client" type="jar" />
+   <!-- Base OSGI dependencies for lc.web.osgi -->
+   <dependency name="prereqs.web.resources" type="dir" />
+   <!-- Dojo web resources -->
+   <dependency name="dojo.web.resources" type="dir" />
+   <dependency name="cometd.web.resources" type="dir" />
+   <!-- The core dependencies for the web resources WAR -->
+   <dependency name="lc.web.resources.base" type="dir" />
+   <!-- OneUI imports -->
+   <dependency name="oneui.web.resources" type="dir" />
+   <!-- The core Connections dependencies for the web resources WAR -->
+   <dependency name="lc.web.osgi" type="dir" />
+   <!-- Web bundles for core Vulcan code -->
+   <dependency name="social.web.resources" type="dir" />
+   <!-- Core Connections code -->
+   <dependency name="lc.web.resources" type="dir" />
+   <!-- AMD Connections code -->
+   <dependency name="ic.web.resources" type="dir" />
+   
+   <dependency name="prereqs.sn/was7.0" type="jar" />
+   <!-- Needed by shindig core / gadget 
+  	 Manually added to classpath!
+   <dependency name="lc.shindig.serverapi/core" type="jar" version="1.0"/>
+   <dependency name="lc.customauthclient" type="jar"/>
+   <dependency name="lc.util/base" type="jar" version="1.0" />
+   <dependency name="lc.util/web" type="jar" version="1.0" />
+   
+   -->
+   <dependency name="lc.util/cache" type="jar" /><!-- Need for taglib -->
+   <dependency name="lc.util/web" type="jar" /><!-- Need for taglib -->
+   <dependency name="lc.util/base" type="jar" /><!-- Need for taglib -->
+   <dependency name="lc.MBean" type="jar" />
+   <dependency name="lc.oauth/provider.web" version="1.0" type="jar" />
+   <dependency name="lc.oauth/platform" version="1.0" type="jar" />
+   <dependency name="highway/common" type="jar" />
+   <dependency name="highway/service" type="jar" />
+   <dependency name="lc.shindig.serverapi/remote" type="jar" />
+   <dependency name="lc.config.svc" type="jar"/>
+   <dependency name="lc.widgets/lc.widgets.core" type="jar" version="1.0" />
+   <dependency name="lc.extdatamodel/lc.extdatamodel.api" type="jar" version="1.0" />
+   <dependency name="prereqs.sn/json4j" type="jar" />
+   <dependency name="sn.coreui" type="directory" version="1.3" />
+   <dependency name="lc.mtconfig.svc" type="jar" />
+   <dependency name="lc.mtconfig.engine" type="jar" />
+   <dependency name="prereqs.sn/spring256" type="jar" version="2.5.6"/>
+   <dependency name="prereqs.sn/hystrix" type="jar" />
+   <dependency name="prereqs.sn/mybatis" type="jar"/>
+</component>

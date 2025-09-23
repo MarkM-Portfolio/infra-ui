@@ -1,0 +1,18 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lcSharebox lotusTabDialog dijitDialog lotusDialog" tabindex="-1" role="dialog" aria-labelledby="${id}_title">
+    <div class="lotusDialogBorder">
+        <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent lotusui30 lotusTabDialog" role="region">
+            <div class="dijitDialogTitleBar lotusDialogHeader" data-dojo-attach-point="titleBar">
+                <span class="dijitDialogTitle" data-dojo-attach-point="titleNode" id="${id}_title" role="presentation"></span>
+            </div>
+            <div data-dojo-type="com.ibm.social.sharebox.controls.TabContainer" data-dojo-attach-point="tabs" class="shareTabContainer" useslider="false" usemenu="false" region="center" tabstrip="true" dolayout="false" parseonload="false"></div>
+            <div class="shareMessage" data-dojo-attach-point="messageBar" style="display: none;"></div>
+            <div class="lotusDialogHeader shareBoxBottomHeader">
+                <a href="javascript:;" title="${nls.close.label}" data-dojo-attach-event="onclick: closeDialog" role="button" class="lotusDialogClose" data-dojo-attach-point="closeButtonNode">
+                    <img alt="${nls.close.label}" aria-label="${nls.close.label}" src="${blankIcon}">
+                    <span class="lotusAltText">X</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

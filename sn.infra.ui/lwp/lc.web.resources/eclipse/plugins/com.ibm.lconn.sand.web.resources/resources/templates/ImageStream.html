@@ -1,0 +1,20 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div>
+	<div align="center" style="padding-top: 10px">
+		<span>
+			<a role="button" href="javascript:void(0);" style="display: none" dojoAttachPoint="StreamButtonPrev" dojoAttachEvent="onclick:_previous" aria-label="${strings.PREVIOUS}" title="${strings.PREVIOUS}">
+				<img dojoAttachPoint="StreamImgPrev" alt="" src="${_blankIcon}" width="40" height="40" style="padding-top: 10px;"/>
+			</a>
+		</span>
+		<span>
+			<img dojoAttachPoint="StreamImgMain" alt="" src="${_blankIcon}" width="60" height="60"/>
+		</span>
+		<span>
+			<a role="button" href="javascript:void(0);" style="display: none" dojoAttachPoint="StreamButtonNext" dojoAttachEvent="onclick:_next" aria-label="${strings.NEXT}" title="${strings.NEXT}">
+				<img dojoAttachPoint="StreamImgNext" alt="" src="${_blankIcon}" width="40" height="40"  style="padding-top: 10px;"/>
+			</a>
+		</span>
+	</div>
+	<div class="vcard" align="center"  aria-live="assertive" aria-relevant="all" dojoAttachPoint="StreamMainName">
+	</div>
+</div>

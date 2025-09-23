@@ -1,0 +1,8 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.otherMediaPlayer32-mpPlayButton30{width:30px;height:30px;background-position:0 0}
+.otherMediaPlayer32-mpScrollLargeBeginning{width:32px;height:32px;background-position:0 -38px}
+.otherMediaPlayer32-mpScrollLargeLeft{width:32px;height:33px;background-position:0 -78px}
+.otherMediaPlayer32-mpScrollLargeRight{width:32px;height:33px;background-position:0 -119px}
+
+.otherMediaPlayer32{background-image:url('./otherMediaPlayer32-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .otherMediaPlayer32{display:none}

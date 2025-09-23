@@ -1,0 +1,203 @@
+${head}
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<title>Forum EE Test</title>
+${script:lconn.core.config.services}
+${script:com.ibm.social.ee.test.util.serviceutil}
+${script:com.ibm.social.incontext.util.dom}
+${script:com.ibm.social.incontext.util.html}
+${script:com.ibm.lconn.gadget.container.iContainer2}
+${script:net.jazz.ajax.xdloader}
+${script:dojo.cookie}
+
+<link id="lotusAppStylesheet2" rel="stylesheet" type="text/css" href="../../_style?include=com.ibm.social.ee/css/eeStyles.css&debug=true">
+
+<script>
+(function () {
+   var util = com.ibm.social.ee.test.util.serviceutil;
+   var lookup = com.ibm.social.ee.test.util.personlookup;
+   var isSecure = util.isSecure();
+   var forumsCfg = lconn.core.config.services.forums;
+   var webResources = lconn.core.config.services.webresources;
+   var webResUrl = (isSecure) ? webResources.secureUrl : webResources.url;
+   var forumsUrl = (isSecure) ? forumsCfg.secureUrl : forumsCfg.url;
+   var profilesCfg = lconn.core.config.services.profiles;
+   var profilesUrl = (isSecure) ? profilesCfg.secureUrl : profilesCfg.url;     
+   var util2 = com.ibm.social.incontext.util;
+   var iContainer = null;
+   var inlineWidget = null;
+   var gadgetHandle = null;
+   var startTime = 0;
+   var endTime = 0;
+   var loadTime = 0;
+   var userId;
+   var currentBlogHandle = null;
+        
+   function resetInlineWidget() {
+	   if (inlineWidget) {
+		   inlineWidget.destroy();
+		   inlineWidget = null;
+		   var container = dojo.byId("inlineForum");
+		   dojo.empty(container);
+		   dojo.create("center", { innerHTML: "Inline gadget goes here" }, container);
+	   }
+   }
+   
+   function resetGadget() {
+	   if (gadgetHandle) {
+		   gadgetHandle.close();
+		   gadgetHandle = null;
+		   var container = dojo.byId("iFrameForum");
+         dojo.empty(container);
+         dojo.create("center", { innerHTML: "iFrame gadget goes here" }, container);		   
+	   }
+   }   
+   
+   window.viewForumTopics = function(id, title) {
+	   dojo.byId("currentForumTitle").innerHTML = title;
+	   dojo.byId("repliesSection").style.display = "none";
+	   var id = /forum\:([\-a-f0-9]*)/.exec(id)[1];
+	   var topicsFeed = forumsUrl + "/atom/topics?forumUuid=" + id;
+	   util.applyXsl(topicsFeed, "forum/topics.xsl", dojo.byId("forumTopics"));
+   }
+   window.viewForumEEReplyInline = function (url) {
+	   viewForumEEInline(url);
+   }
+   
+   window.viewForumEEInline = function(url) {
+      resetInlineWidget();
+      resetGadget();
+	   var container = dojo.byId("inlineForum");
+	   dojo.empty(container);
+	   var div = dojo.create("div", { }, container);
+	   var context = { 
+	       itemUrl: url,         
+           authUser: { id: userId },
+           eventType: "forum.topic.created" 
+      }; 
+      net.jazz.ajax.xdloader.batch_load_async(["com.ibm.social.ee.widget.ForumTopicLoader", "com.ibm.social.incontext.NetworkDojo"], function() { 
+		   inlineWidget = new com.ibm.social.ee.widget.ForumTopicLoader({ 
+			   isGadget: false, 
+			   context: context,
+				network: new com.ibm.social.incontext.NetworkDojo()
+		   }, div);
+      });
+   };
+
+   
+  window.showReplies = function (topicId, title) {
+	  dojo.byId("repliesSection").style.display = "";
+	  dojo.byId("currentTopicTitle").innerHTML = title;
+	  window.currentTopicId = topicId;
+	  var id = /forum\:([\-a-f0-9]*)/.exec(topicId)[1];
+	  var repliesFeed = forumsUrl + "/atom/replies?topicUuid=" + id;
+	  util.applyXsl(repliesFeed, "forum/replies.xsl", dojo.byId("topicReplies"));	  
+  }
+   
+  window.viewForumEEGadgetiFrame = function(url) {
+      resetInlineWidget();
+      resetGadget();
+	   if(!iContainer) {
+		   iContainer = com.ibm.lconn.gadget.container.iContainer2;
+		   iContainer.init();
+	   }	   
+      var context = {
+    		 itemUrl: url,
+    		 eventType: "forum.topic.created"
+      };
+      
+		var container = dojo.byId("iFrameForum");
+      dojo.empty(container);
+      var oauthEnabled = "false";
+      if (dojo.cookie("_oauthEnabled") === "true") {
+         oauthEnabled = "true";
+      }       
+      var gadgetUrl = webResUrl + "/web/com.ibm.social.ee/ConnectionsEE.xml";
+      if (!oauthEnabled)
+         gadgetUrl += ("?preventCache=" + (new Date()).getTime());
+           
+      var def = {
+    	 definitionUrl: gadgetUrl,
+         placement: "iFrameForum",
+         componentType: "gadget",
+         instanceData: {
+            renderType: "default",
+            renderParams: { userPrefs: { "debug": "true" }  },
+            eeDataModel: {
+               context: context
+            },
+            viewParams: {
+              useOAuth: oauthEnabled
+            } 
+         }
+      };      
+      gadgetHandle = iContainer.loadWidget(def);
+   }
+   
+   dojo.addOnLoad(function () {
+      var currentUser = null; 
+      var forumsFeed = forumsUrl + "/atom/forums";
+      util.getXml(profilesUrl + "/atom/profileService.do", function (svcdoc) { 
+          currentUser = util.evalXPathString(svcdoc, "//app:workspace/atom:title/text()", { app: "http://www.w3.org/2007/app"});
+          userId = util.evalXPathString(svcdoc, "//app:collection/snx:userid/text()", {app: "http://www.w3.org/2007/app"});
+          dojo.place("<strong>" + currentUser + "</strong>", dojo.byId("currentUser"));
+          util.applyXsl(forumsFeed, "forum/forums.xsl", dojo.byId("forumsList"));          
+      });
+      if (!currentUser) {
+          util.applyXsl(forumsFeed, "forum/forums.xsl", dojo.byId("forumsList"));
+      }
+   });
+})();
+
+</script>
+${endhead}
+
+<div style="min-height:0px">
+<div class="lotusContent" style="width: 1200px; height: 2000px;">
+<table>
+<tbody>
+<tr>
+<td width="500" style="vertical-align:top;">
+<div style="overflow: hidden; width: 500px;">
+<h1>Forum EE Test Page</h1>
+<p style="width: 500px; word-wrap: break-word;">Current user: <span id="currentUser"></span></p>
+<p style="height:20px"></p>
+<h3>Forums</h3>
+<div id="forumsList"></div>
+<p></p>
+<h3>Forum Topics</h3>
+<p>Current Forum: <span id="currentForumTitle"></span></p>
+<div id="forumTopics"></div>
+<p></p>
+<div id="repliesSection" style="display:none">
+<h3>Topic Replies</h3>
+<p>Current Topic: <span id="currentTopicTitle"></span></p>
+<div id="topicReplies"></div>
+<p></p>
+</div>
+</td>
+<td width="390" style="vertical-align:top;">
+<div id="inlineForum" style="width:380px; margin-left:50px;border-style:solid;border-width:1px;border-color:#aaa;padding:20px">
+<center>Inline gadget goes here</center>
+</div>
+<div id="iFrameForum" style="width:380px; margin-left:50px;border-style:solid;border-width:1px;border-color:#aaa;padding:20px;margin-top:10px">
+<center>iFrame gadget goes here</center>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+${end}

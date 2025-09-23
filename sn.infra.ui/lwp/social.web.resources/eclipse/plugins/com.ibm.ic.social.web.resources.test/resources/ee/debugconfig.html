@@ -1,0 +1,106 @@
+<html>
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+<body><p>${head}
+</p><title>Configure Gadget Debug</title>
+${script:dojo.cookie}
+<script type="text/javascript">
+(function() {
+  function $(id) {
+    return dojo.byId(id);
+  }
+  
+  function updateFl() {
+    var setting = dojo.cookie("_forceTestLogin");
+    if (setting === "false") {
+       $("fl_notEnabled").style.display = "";
+       $("fl_enabled").style.display = "none";
+    }
+    else {
+       $("fl_enabled").style.display = "";
+       $("fl_notEnabled").style.display = "none";    
+    }
+  }
+  
+  function updateDba() {
+    var setting = dojo.cookie("_debugAtAllCosts");
+    if (setting === "true") {
+       $("dba_notEnabled").style.display = "none";
+       $("dba_enabled").style.display = "";
+    }
+    else {
+       $("dba_enabled").style.display = "none";
+       $("dba_notEnabled").style.display = "";    
+    }
+  }
+  
+  function updateTraceClasses() {
+     var setting = dojo.cookie("_classesToTrace");
+     $("classesToTraceValue").innerHTML = (setting ? setting : "");
+  }
+  
+  function initUI() {
+     updateDba();
+     updateFl();
+     updateTraceClasses();
+     dojo.connect($("enableDba"), "onclick", null, function() {
+        dojo.cookie("_debugAtAllCosts", "true", { path: "/" });
+        updateDba();
+     });
+     
+     dojo.connect($("disableDba"), "onclick", null, function() {
+        dojo.cookie("_debugAtAllCosts", "false", { path: "/" });
+        updateDba();
+     });
+     
+     
+     dojo.connect($("enableFl"), "onclick", null, function() {
+        dojo.cookie("_forceTestLogin", "true", { path: "/" });
+        updateFl();
+     });
+     
+     dojo.connect($("disableFl"), "onclick", null, function() {
+        dojo.cookie("_forceTestLogin", "false", { path: "/" });
+        updateFl();
+     });     
+         
+     dojo.connect($("setClasses"), "onclick", null, function() {
+        dojo.cookie("_classesToTrace", $("classesToTrace").value, { path: "/" });
+        updateTraceClasses();
+     });
+  }
+    
+  dojo.addOnLoad(initUI);
+})();
+</script>
+${endhead}
+<div id="dba_notEnabled">
+<h3>Dojo debug at all costs is not enabled </h3>
+<button id="enableDba">Enable</button>
+</div>
+<div id="dba_enabled" style="display:none">
+<h3>Dojo debug at all costs is enabled
+<button id="disableDba">Disable</button>
+</h3></div>
+
+<div style="margin-top:30px"></div>
+<div id="fl_enabled">
+<h3>Force login on test page is enabled</h3>
+<button id="disableFl">Disable</button>
+</div>
+<div id="fl_notEnabled" style="display:none">
+<h3>Force login on test page is disabled</h3>
+<button id="enableFl">Enable</button>
+</div>
+
+<div style="margin-top:30px">
+<h3>Classes to trace (Separate with ~):</h3>
+Current value:<br>
+-----<br>
+<pre id="classesToTraceValue"></pre>
+-----<br>
+<textarea id="classesToTrace" style="width:50em;height:10em"></textarea><br>
+<button id="setClasses">Set</button>
+</div>
+
+</body><p>
+${end}</p></html>

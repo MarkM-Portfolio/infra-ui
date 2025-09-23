@@ -1,0 +1,366 @@
+/* *************************************************************** */
+/*                                                                 */
+/* HCL Confidential                                                */
+/*                                                                 */
+/* OCO Source Materials                                            */
+/*                                                                 */
+/* Copyright HCL Technologies Limited 2008, 2019                   */
+/*                                                                 */
+/* The source code for this program is not published or otherwise  */
+/* divested of its trade secrets, irrespective of what has been    */
+/* deposited with the U.S. Copyright Office.                       */
+/*                                                                 */
+/* *************************************************************** */
+
+// NLS_CHARSET=UTF-8
+({
+   'rs_close' : "‏اغلاق‏",
+   'rs_loading' : "تحميل...",
+   'rs_at' : "في",
+
+   'rs_searchDirectory' : "اسم الشخص غير معروض؟ استخدم البحث الكامل...",
+   'rs_searchGroupDirectory' : "المجموعة غير معروضة؟ استخدم البحث الكامل...",
+   'rs_searchPersonAndGroupDirectory' : "الشخص أو المجموعة غير معروضة؟ استخدم البحث الكامل...",
+   'rs_searchCommunityDirectory' : "المجتمع غير معروض؟ استخدم البحث الكامل...",
+
+   'rs_shadowText_searchDirectory' : "قم بالادخال لايجاد الشخص",
+   'rs_shadowText_searchGroupDirectory' : "قم بالادخال لايجاد المجتمع",
+   'rs_shadowText_searchPersonAndGroupDirectory' : "قم بالادخال لايجاد الشخص أو المجموعة",
+   'rs_shadowText_searchCommunityDirectory' : "قم بالادخال لايجاد المجتمع",
+
+   'rs_listItem' : "كشف البنود",
+   'rs_noResults' : "لا توجد نتائج بالنسبة الى '${0}'",
+   'rs_today' : "اليوم",
+   'rs_tomorrow' : "غدا",
+   'rs_yesterday' : "أمس",
+
+   /* Activity List Widget */
+   'rs_activityFeedLink' : "وحدة المعلومات المسترجعة لهذه الأنشطة",
+   'rs_externalText' : "يمكن أن يكون لهذا النشاط أعضاء من خارج المؤسسة الخاصة بك.",
+   'rs_moveActivitySuccess' : 'تم نقل \"${activityTitle}\" بنجاح الى المجتمع الفرعي \"${destCommName}\".',
+   // copy 'rs_moreInfo' and 'rs_hideInfo' from activity's strings.js
+   'rs_moreInfo' : 'عرض مزيد من المعلومات عن هذا النشاط',
+   'rs_hideInfo' : 'اخفاء المعلومات الاضافية',
+   'rs_more' : "يتبع",
+   'rs_hide' : "اخفاء",
+   'rs_edit' : "تعديل",
+   'rs_restore' : "‏استعادة‏",
+   'rs_deleteEntry' : "‏حذف ‏",
+   'rs_prioritize' : "تحديد أولوية",
+   'rs_markComplete' : "تعليم كتام",
+   'rs_markIncomplete' : "‏استعادة‏",
+   'rs_linkMore' : ".‏.. [أكثر]",
+   'rs_linkLess' : ".‏.. [أقل]",
+   'rs_actUpdatedByDate' : "تم تحديثه بواسطة ${0} ${1}",// Updated by (author name) (date)
+   'rs_actUpdatedBy' : "تم تحديثه بواسطة ${0}",// Updated by (author name)
+   'rs_actDue' : "استحقاق ${0}",// Due (date)
+   'rs_actTags' : "شارات التعليم: ",
+   'rs_actTagsDelim' : "، ",
+   'rs_startFromTemplate' : "بدء نشاط من هذا القالب",
+   'rs_favoriteTemplate' : "تعليم كقالب مفضل",
+   'rs_normalTemplate' : "تعليم كقالب عادي",
+   'rs_tunedOutPri' : "حضور",
+   'rs_pagepos' : "${0} - ${1} من ${2}", // pagination - e.g. 1 - 10 of 100
+   'rs_navPrevLabel' : "السابق",
+   'rs_navNextLabel' : "التالي",
+   'rs_noActivities' : "لا توجد أنشطة تم بدءها لهذا المجتمع.",
+   'rs_feedError' : "فشلت عملية تحميل وحدة المعلومات المسترجعة.",
+   'rs_highPri' : "‏أولوية عالية‏",
+   'rs_medPri' : "أولوية متوسطة",
+   'rs_normalPri' : "أولوية عادية (مفترضة)",
+   'rs_tuneOut' : "تعليم كمستبعد",
+   'rs_startActivity' : "بدء نشاط",
+   'rs_startFirstActivity' : "تكوين أول نشاط خاص بك",
+   'rs_navNextLabel' : "التالي",
+   'rs_viewAll' : "مشاهدة كل",
+   'rs_activityWidgetTitle' : "الأنشطة",
+   'rs_activityWidgetBriefDescription' : "تتبع أهداف المجتمع.  قم بتكوين كشف مهام واجبة ومشاركة المصادر.",
+   'rs_activityWidgetDescription' : "يمكن استخدام أنشطة المجتمع للمشاركة وتتبع تقدم أنشطة ومشاريع المجتمع.",
+   'rs_completedActivityLink' : "عرض الأنشطة التامة",
+   'rs_activitiesUnavailable' : "خدمة الأنشطة غير متاحة.",
+   'rs_errorPersists' : "اذا استمرت المشكلة، يجب الاتصال بمسؤول النظام.",
+   'rs_shared' : "مشترك",
+   'rs_removeActFromComm' : "ازالة من مجتمع",
+   'rs_externalLabel' : "خارجيا",
+
+   // for ActivityForm
+   'rs_templateOptions' : "اختيارات القالب",
+   'rs_template' : "قالب",
+   'rs_tagsLabel' : "شارات التعليم",
+   'rs_peopleLabel' : "أشخاص",
+   'rs_aboutThisTemplate' : "نبذة عن هذا القالب",
+   'rs_activity' : "المهمة",
+   'rs_copyOf' : "نسخة من ${0}",// copy of (activity name)
+   'rs_activityFormGoal' : "هدف النشاط",
+   'rs_noTemplate' : "‏لا شيء‏",
+   'rs_copyActivityMembers' : "استخدام الأعضاء من النشاط",
+   'rs_copyTemplateMembers' : "استخدام الأعضاء من القالب",
+
+   /* Forum Widget */
+   'rs_noTopics' : "لا توجد موضوعات بعد لهذا المجتمع.",
+   'rs_noTopicsLoggedIn' : "طرح أسئلة أو طرح أفكار أو مشاركة الأفكار الخاصة بك.",
+   'rs_postedBy' : "آخر ارسال بواسطة",
+   'rs_topics' : "الموضوعات",
+   'rs_noTopicsShort' : "لا توجد موضوعات",
+   'rs_topic' : "الموضوع",
+   'rs_replies' : "ردود",
+   'rs_noReplies' : "لا توجد ردود",
+   'rs_reply' : "رد",
+   'rs_startTopic' : "بدء موضوع",
+   'rs_startFirstTopic' : "بدء الموضوع الأول",
+   'rs_ok' : "‏حسنا‏",
+   'rs_locked' : "[تم الاقفال]",
+   'rs_manageForumSetting' : "ادارة محددات المنتدى",
+   'rs_forumSettingCommunityOverviewPage' : "صفحة مقدمة المجتمع:",
+   'rs_defaultForumList' : "عرض كشف منتديات المناقشات بصفة مفترضة",
+   'rs_defaultTopicList' : "عرض كشف الموضوعات بصفة مفترضة",
+   'rs_forumSettingApplicationView' : "مشاهدة مفترضات تطبيق المنتدى:",
+   'rs_forumSettingNote' : "ملحوظة: يتم عرض الموضوعات بصفة مفترضة اذا كان هناك منتدى واحد.",
+   'rs_forumSettingSubmit' : "احالة",
+   'rs_forumSettingSave' : "‏حفظ‏",
+   'rs_forumSettingSaveAndClose' : "حفظ واغلاق",
+   'rs_forumSettingConfirm' : "تم حفظ التغييرات الخاصة بك في منتديات المناقشات.",
+   'rs_forumSettingError' : "‏حدث خطأ.‏ اتصل بمسؤول النظام الخاص بك.",
+   'rs_formSettingHideMessage' : "اخفاء هذه الرسالة",
+   'rs_forumSettingCancel' : "الغاء",
+   'rs_forumAnsweredQuestion' : "سؤال تم اجابته",
+   'rs_forumUnAnsweredQuestion' : "سؤال لم يتم اجابته",
+   'rs_forumSortBy' : "الفرز بواسطة:",
+   'rs_forumSortByDate' : "تاريخ",
+   'rs_forumSortByReplies' : "ردود",
+   'rs_forumSortByTopic' : "موضوعات",
+   'rs_forumSortByTopicsAndReplies' : "الموضوعات والردود",
+   'rs_sortByReplies' : "فرز بواسطة الردود:",
+   'rs_sortbyTopicsAndReplies' : "فرز بواسطة الموضوعات والردود",
+   'rs_forumOpenQuestions' : "فتح الأسئلة",
+   'rs_feedOpenQuestions' : "وحدة المعلومات المسترجعة لهذه الأسئلة المفتوحة",
+   'rs_feedAnsweredQuestions' : "وحدة المعلومات المسترجعة لهذه الأسئلة التي تم الاجابة عليها",
+   'rs_forumMessages' : "${0} من الرسائل",
+   'rs_forumLastAddedPost' : "آخر ادخال بواسطة ${0}",
+   'rs_forumTopics' : "${0} من الموضوعات",
+   /* End discussion forum */
+
+   /* Editor plugins -- some for a possible one we haven't implemented yet */
+   'rs_createPersonLink' : "تكوين رابط لشخص",
+   'rs_quote' : "اقتباس كتلة",
+   'rs_labelColon' : "التسمية التوضيحية: ",
+   'rs_personColon' : "الشخص: ",
+   'rs_personLink' : "رابط لشخص",
+   'rs_replace' : "‏استبدال‏",
+   'rs_inactivePerson' : "${0} (غير فعال)", // person's name (inactive)
+   'rs_PersonPicture' : "صورة ${0}", // person name's picture
+
+   /*Visitor mode -- external user name decoration use cases */
+   'rs_PersonExternalLabel' : "مستخدم خارجي", // A label for the visitor model use cases.
+   'rs_PersonExternal' : "${0} (مستخدم خارجي)", //'{0}' is the person's name. This will be used for the user profile name and profile photo tooltip
+   'rs_PersonPictureExternal' : "صورة ${0}(مستخدم خارجي)", // Alt text for the external user's profile photo
+   'rs_personExternalDesc' : "يتوافر لدى هذا المستخدم امكانية توصل الى الملفات والمجتمعات التي يتم مشاركتها خارجيا.",
+   /* End editor plugins */
+
+   /* Notification Form */
+   'rs_notifyOthers' : "اعلام الأشخاص الآخرين",
+   'rs_messageColon' : "الرسالة: ",
+   'rs_notifyColon' : "اخطار: ",
+   'rs_notificationConfirm' : "تم ارسال رسالة الاعلام بنجاح. ",
+   'rs_notificationFail' : "لم يتم ارسال رسالة الاعلام. أعد المحاولة مرة أخرى لاحقا واتصل بمسؤول النظام اذا استمرت المشكلة.",
+   'rs_pickCommunity' : "اختر من كشف المجتمع",
+   'rs_typeName' : "ادخل اسم",
+   'rs_typeToFilter' : "أدخل قيمة لترشيح هذا الكشف",
+   /* End Notification Form */
+
+   /* FilteringCheckbox */
+   'rs_filterListPrompt' : "أدخل قيمة لترشيح هذا الكشف",
+   'rs_filterGroupLabel' : "تحديد مجموعة",
+   'rs_noResults' : "لم يتم ايجاد أية نتائج",
+   // ${0} will be replaced with a number
+   'rs_numResults' : "عرض ${0} نتيجة/نتائج من ${1}",
+
+   /* PeopleFilterList */
+   'rs_removeFilter' : "‏ازالة‏",
+
+   /* Language Selector */
+   'rs_browser_setting' : "تحديدات برنامج الاستعراض",
+   'rs_customLangaugeLinkLabel' : "تهيئة اللغة",
+
+   /* Paging controls */
+   // 0 and 1 are page numbers
+   'rs_jumpPage' : "الذهاب الى صفحة ${0} من ${1}",
+   "rs_jumpPageLabel" : "‏اذهب الى صفحة‏",
+   'rs_pageNumLabel' : "رقم الصفحة",
+   'rs_pageLabel' : "الصفحة:",
+
+   /* Common Tags Widget */
+   'rs_tagCloudNavigationLabel' : 'شارات التعليم',
+   'rs_tagCloudToggleHint' : "اضغط للعرض أو الاخفاء",
+   'rs_tagCloudHelpAlt' : "مساعدة عن شارات التعليم",
+   'rs_tagCloudNoTags' : "لا توجد شارات تعليم",
+   'rs_tagCloudNoRecentTags' : "لا توجد شارات تعليم حديثة",
+   'rs_tagCloudNoTagsProfiles' : "بحث الدليل. شارات التعليم لملفات بيانات التعريف التي تم ارجاعها من خلال عملية البحث سيتم عرضها هنا.",
+   'rs_tagLoadingTags' : "تحميل المحتويات",
+   'rs_tagCloudSelectedTags' : "شارات التعليم المحددة",
+   'rs_tagCloudSeachDesc' : "ايجاد شارة تعليم",
+   'rs_tagCloudSeach' : "‏بحث‏",
+   'rs_tagCloudRelatedTags' : "شارات التعليم المتعلقة",
+   'rs_tagCloudRelatedTagsDescription' : "قم باضافة شارة تعليم متعلقة لمزيد من التنقيح لعملية البحث الخاصة بك",
+   'rs_tagCloudError' : 'حدث خطأ',
+
+   'rs_viewAsCloud' : "وحدة شارات التعليم المجمعة",
+   'rs_viewAsCloudTitle' : "عرض شارات التعليم كوحدة شارات تعليم مجمعة",
+   'rs_viewAsCloudDescription' : "مشاهدة شارات التعليم كوحدة شارات التعليم المجمعة",
+   'rs_viewAsList' : "الكشف",
+   'rs_viewAsListTitle' : "عرض شارات التعليم ككشف متسلسل لشارات التعليم",
+   'rs_viewAsListDescription' : "مشاهدة شارات التعليم ككشف متسلسل لشارات التعليم",
+   'rs_tagCloudViewAll' : "تصفح",
+   'rs_tagCloudViewAllTitle' : "استعراض كل شارات التعليم",
+
+   'rs_normalTags' : "شارات التعليم الفعالة",
+
+   'rs_removeTag' : "ازالة شارة التعليم من شارات التعليم المرشحة المحددة",
+   'rs_clearAll' : "محو كل",
+   'rs_searchInputDefault' : "قم بالادخال لايجاد شارة التعليم",
+   'rs_searchInputTagSelected' : "أدخل شارة تعليم أخرى",
+   'rs_relatedTagTitle' : "عرض نتائج البحث لشارة التعليم ${0}، العدد ${1}",
+   'rs_removeTagTitle' : "ازالة شارة التعليم ${0} من علامات الترشيح المحددة",
+   'rs_addTagTitle' : "قم بترشيح البيانات وفقا لشارة التعليم ${0} بالعدد ${1}",
+
+   'rs_tagDialogCloseTile' : "‏اغلاق‏",
+   'rs_tagDialogTitle' : "كل شارات التعليم",
+   'rs_tagDialogPageInfo' : "${0} - ${1} من ${2} شارة تعليم",
+
+   /* Group Selection (Picker) Widget */
+   'rs_group_browse_groups' : "استعراض المجموعات",
+   'rs_group_browse_groups_dialog_title' : "استعراض المجموعات",
+   'rs_group_browse_find_groups' : "ايجاد مجموعات",
+   'rs_group_browse_add_button' : "اضافة",
+   'rs_group_browse_cancel_button' : "الغاء",
+   'rs_group_browse_enter_string' : "أدخل بيانات لايجاد المجموعات",
+   'rs_group_browse_group_typeahead_label' : "أدخل اسم المجموعة:",
+   'rs_group_browse_group_name' : "اسم المجموعة:",
+   'rs_group_browse_results_label' : "حدد مجموعة مطابقة:",
+   'rs_group_browse_parent_group_label' : "أنت موجود في:",
+   'rs_group_browse_next_page' : "الصفحة التالية",
+   'rs_group_browse_previous' : "السابق",
+   'rs_group_browse_next' : "التالي",
+   'rs_group_browse_paging' : "تصفح",
+   'rs_group_browse_previous_page' : "الصفحة السابقة",
+   'rs_group_browse_group_selected' : "المجموعات المحددة:",
+   'rs_group_browse_group_no_groups' : "هذه المجموعة لا تتضمن أي مجموعات",
+   'rs_group_browse_page_info' : "${0} - ${1} من ${2}",
+   'rs_group_browse_page_info_alt' : "المجموعات المطابقة ${0} الى ${1} من ${2}",
+   'rs_group_browse_remove_selection' : 'ازالة اختيار المجموعة المتداخلة: ${0}',
+   'rs_group_browse_paging' : "تصفح",
+   'rs_member_groups' : "‏المجموعات‏",
+   'rs_member_members' : "أعضاء",
+   'rs_member_no_results' : "لم يتم ايجاد أية نتائج",
+   'rs_member_remove_group' : "ازالة ${0}",
+   'rs_member_add_to_community' : "اضغط لاضافة عضو",
+   'rs_member_remove_name' : "اضغط لازالة عضو",
+   'rs_group_add_to_community' : "اضغط لاضافة مجموعة",
+   'rs_group_remove_name' : "اضغط لازالة مجموعة",
+   'rs_group_name' : "اسم المجموعة",
+   'rs_group_role' : "وظيفة المجموعة",
+
+   'rs_warning' : "تحذير",
+   'rs_a11y_warning' : "تحذير:",
+
+   'rs_messagebox_close_btn_title' : "‏اغلاق‏",
+   'rs_messagebox_close_btn_alt' : "‏اغلاق‏",
+   'rs_messagebox_error_icon_alt' : "خطأ",
+   'rs_messagebox_error_a11y_label' : "خطأ:",
+   'rs_messagebox_warning_icon_alt' : "تحذير",
+   'rs_messagebox_warning_a11y_label' : "تحذير:",
+   'rs_messagebox_info_icon_alt' : "معلومات",
+   'rs_messagebox_info_a11y_label' : "المعلومات:",
+   'rs_messagebox_success_icon_alt' : "نجاح",
+   'rs_messagebox_success_a11y_label' : "نجاح:",
+
+   /* Document Picker CK Plugin */
+   'rs_docpicker_title' : "ادراج رابط الى الملفات",
+   'rs_docpicker_label' : "رابط الى Connections Files",
+   // '{0}' is a filename
+   'rs_docpicker_download_title' : "تنزيل ${0}",
+   'rs_docpicker_viewdetails_text' : "مشاهدة التفاصيل",
+   // '{0}' is a filename
+   'rs_docpicker_viewdetails_title' : "مشاهدة تفاصيل ${0}",
+
+   /* AttachedFileList widget */
+   'rs_attachedfile_remove_alt' : "‏ازالة‏",
+   'rs_attachedfile_filename' : "الصورة ${0}",
+
+   'rs_feedreader_warning' : "تحذير: هذا الرابط خاصة بوحدات قراءة المعلومات المسترجعة وقد يتم عرضها بطريقة غير صحيحة في برنامج الاستعراض الخاص بك. اضغط حسنا للاستمرار أو الغاء للعودة الى الصفحة.",
+
+   'rs_search' : "‏بحث‏",
+   'rs_all_connections' : "كل الاتصالات",
+   'rs_advanced' : "متقدم",
+   'rs_select_scope' : "تحديد نطاق البحث",
+
+   'rs_icfixlayout' : {
+      button_label : "اعادة تنسيق",
+      dialog_title : "اعادة تنسيق المحتويات",
+      warning : "تحذير",
+      reformat_save : "اعادة التنسيق والحفظ",
+      save_as_is : "حفظ كما هو",
+      cancel : "الغاء",
+      warn_layout : "تعدت المحتويات الخاصة بك الحد الأقصى لعرض الشاشة.  هل تريد اعادة التنسيق آليا لملائمة المساحة المتاحة؟",
+      remember_decision : "تذكر القرار الخاص بي"
+   },
+
+   //The following error messages are used by icdocpicker when private files are shared with a Community.
+   'rs_sharefile_constraint_violation' : "حدث خطأ أثناء مشاركة الملفات المحددة.",
+   'rs_sharefile_access_denied' : "تم حذف هذا الملف أو لم يعد يتم مشاركته معك.",
+   'rs_sharefile_invalid_request' : "حدث خطأ أثناء مشاركة الملفات المحددة.",
+   'rs_sharefile_sharing_intent_restriction' : "يمكن مشاركة الملف داخل المؤسسة الخاصة بك فقط.",
+   'rs_sharefile_error_title' : "خطأ",
+
+   /* Strings for the native mobile app banners */
+   'rs_mobileBanner_title' : 'HCL Connections',
+   'rs_mobileBanner_inAppStore' : 'في App Store',
+   'rs_mobileBanner_inGooglePlay' : 'في Google Play',
+   'rs_mobileBanner_author' : 'HCL Software',
+   'rs_mobileBanner_open' : 'فتح',
+   'rs_mobileBanner_view' : 'مشاهدة',
+   'rs_mobileBanner_hide' : 'اخفاء',
+
+   'rs_empty_column_placeholder' : 'قم بسحب التطبيقات هنا.',
+   'rs_widget_loading_error_title' : 'لا يمكن عرض عنصر واجهة التعامل',
+   'rs_widget_loading_error_message' : 'أعد المحاولة مرة أخرى لاحقا واتصل بمسؤول النظام اذا استمرت المشكلة.',
+   'rs_widgets_loading_error_title' : 'لا يمكن عرض عنصر واجهة التعامل في هذا المجتمع',
+   'rs_widget_misplacement_warning' : 'هذا التطبيق غير ملائم بهذا العمود. يستطيع مالك المجتمع نقله الى عمود آخر أو ازالته من الصفحة.',
+
+   'rs_widget_title_change_fail_message' : {
+      title_too_long : 'العنوان الذي قمت بادخاله طويل جدا.',
+      empty_new_title : 'لا يمكن أن يكون العنوان الذي قمت بادخاله خالي.',
+      default_message : 'لا يمكن تغيير العنوان لهذا التطبيق ${0}.'
+   },
+
+   /* Strings for change title dialog */
+   'rs_widget_title_change_label' : '‏العنوان‏:  ',
+   'rs_widget_title_change_direction' : 'قم بتغيير العنوان لهذا التطبيق ${0}.',
+   'rs_widget_title_change_title' : 'تغيير العنوان',
+
+   /* Strings for Visitor Model Invite dialog */
+	'rs_vmmainContentTitle' : "دعوة أو اضافة أعضاء",
+	'rs_vmmainContentDesc' : "دعوة الأعضاء لمنحهم فرصة الانضمام الى المجتمع. قم باضافة الأعضاء لتضمينهم بشكل آلي.",
+	'rs_vmtypeAheadLabel' : "الاسم أو البريد الالكتروني: ",
+	'rs_vmgroupTypeAheadLabel' : "الاسم: ",
+	'rs_vmtypeAheadRoleLabel' : " مثل ",
+	'rs_vmgroupTypeAheadRoleLabel' : " كأعضاء ",
+	'rs_vmtaNoResults' : "لم يتم ايجاد نتائج.",
+	'rs_vmtaHeader' : "نص الرأس",
+	'rs_vmaddUser' : "اضافة",
+	'rs_vmradioSectionTitle' : "اختيارات العضو:",
+	'rs_vmradioOne' : "ارسال الدعوات للانضمام الى المجتمع",
+	'rs_vmradioTwo' : "اضافة المستخدمين آليا للمجتمع",
+	'rs_vmtwistyA' : "اضافة رسالة اختيارية",
+	'rs_vmtwistyB' : "ازالة النص الاضافي",
+	'rs_vmmessage' : "رسالة:",
+	'rs_vmtextAreaStartText' : "اكتب ما يجول بخاطرك...",
+	'rs_vmcheckboxLabel' : "ارسال نسخة الي",
+	'rs_vmsave' : "‏حفظ‏",
+	'rs_vminvite' : "دعوة",
+	'rs_vmcancel' : "الغاء",
+	'rs_userContentTitle' : "ادخال المعلومات",
+	'rs_vmaddUser' : "تكوين مستخدم",
+	'rs_vmback'	 : "للخلف",
+	'rs_vmvisitor'	 : "زائر"
+})

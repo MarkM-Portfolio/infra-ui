@@ -1,0 +1,90 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="ics-typeaheadbox-container ics-typeaheadboxmulti-container">
+  <div data-dojo-attach-point="textAreaContainer">
+    <table style="width: 100%;" role="presentation">
+      <colgroup>
+        <col width="100%">
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <td colspan="2"><label for="${id}_memberTypeSelector"
+            data-dojo-attach-point="typeaheadSelectorLabel"
+            class="lotusOffScreen">${nls.MEMBER_TYPE}</label> <select
+            id="${id}_memberTypeSelector"
+            data-dojo-attach-point="typeaheadSelector"
+            style="width: 100%;">
+              <option value="user">${nls.USER}</option>
+              <option value="community">${nls.COMMUNITY}</option>
+              <option value="everyone">${shareNLS.PUBLIC.SHORT}</option>
+          </select></td>
+        </tr>
+        <tr data-dojo-attach-point="memberSelector">
+          <td>
+            <div data-dojo-attach-point="typeAheadInput">
+              <textarea data-dojo-attach-point="textarea"></textarea>
+            </div>
+            </td>
+          <td><label for="${id}_roleSelector"
+            data-dojo-attach-point="roleSelectorLabel"
+            class="lotusOffScreen">${nls.ROLE_LABEL}</label> <select
+            id="${id}_roleSelector"
+            data-dojo-attach-point="roleSelector">
+              <option value="editor">${nls.ROLE_EDIT}</option>
+              <option value="reader">${nls.ROLE_VIEW}</option>
+          </select>
+          </td>
+          <td>
+            <div class="externalAddContainer" data-dojo-attach-point="externalAddContainer">
+              <a href="javascript:;"
+                data-dojo-attach-event="click:_multiSelect"
+                data-dojo-attach-point="manualAdd" role="button"
+                alt="${nls.SHARE_ALT}" title="${nls.SHARE_ALT}">
+                <img src="${blank}" alt="${nls.SHARE_ALT}" title="${nls.SHARE_ALT}"/>
+                <span class="lotusAltText fileViewerIconText">${nls.SHARE}</span>
+              </a>
+            </div>
+          </td>
+        </tr>
+        <tr data-dojo-attach-point="messageContainer">
+          <td colspan="2"><div class="actionContainer"
+              data-dojo-attach-point="optionalMsgLinkContainer"
+              data-dojo-attach-event="click:_showMessageField">
+              <a href="javascript:;" role="button"
+                title="${nls.ADD_OPTIONAL_MESSAGE}"> <span>${nls.ADD_OPTIONAL_MESSAGE}</span>
+              </a>
+            </div></td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-dojo-attach-point="entryContainer">
+      <div data-dojo-attach-point="editorContainer"
+        style="display: none;">
+        <div style="color: black;">${shareNLS.ROLES.EDIT}</div>
+      </div>
+      <div data-dojo-attach-point="readerContainer"
+        style="display: none;">
+        <div style="color: black;">${shareNLS.ROLES.VIEW}</div>
+      </div>
+    </div>
+    <div class="actionContainer actionButton"
+      data-dojo-attach-point="actionContainer">
+      <a href="javascript:;" class="manualAdd"
+        data-dojo-attach-event="click:_multiShare"
+        data-dojo-attach-point="manualAdd" role="button"
+        title="${nls.SHARE_ALT}"> <span>${nls.SHARE}</span>
+      </a>
+    </div>
+    <div class="actionContainer actionButton"
+      data-dojo-attach-point="cancelContainer">
+      <a href="javascript:;" class="manualCancel"
+        data-dojo-attach-event="click:_cancel"
+        data-dojo-attach-point="manualCancel" role="button"
+        title="${nls.CANCEL}"> <span>${nls.CANCEL}</span> 
+      </a>
+    </div>
+    
+  </div>
+  <div data-dojo-attach-point="errorContainer"></div>
+  <div data-dojo-attach-point="warningContainer"></div>
+</div>

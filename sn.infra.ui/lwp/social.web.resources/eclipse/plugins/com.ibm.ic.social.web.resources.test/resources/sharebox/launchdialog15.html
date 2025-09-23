@@ -1,0 +1,44 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="x-ua-compatible" content="IE=7">
+<script src="http://www.google.com/jsapi"></script>
+<script>
+djConfig = {
+      lang: "en-us",
+      isDebug: true,
+      blankGif: "${_blankGif}"
+}
+</script>
+<script>
+ google.load("dojo", "1.5.0");
+</script>
+<script>
+dojo.require("dijit.Dialog");
+dojo.require("dojo.i18n");
+</script>
+<script>
+dojo.addOnLoad(function() {
+   dojo.requireLocalization = function() { };
+   dojo.create("script", { src: "${contextRoot}/web/_js?include=com.ibm.social.sharebox.DialogLauncher.js&exclude=dojo.dojo.js~dojo.i18n.js&debug=true" }, dojo.doc.head);
+});
+</script>
+<link rel="stylesheet" href="${contextRoot}/web/_style?include=com.ibm.lconn.core.styles.oneui3/base/package3.css">
+<link rel="stylesheet" href="${contextRoot}/web/_style?include=com.ibm.lconn.core.styles.oneui3/sprites.css">
+<link rel="stylesheet" href="${contextRoot}/web/_lconntheme/default.css?version=oneui3&amp;rtl=false">
+</head>
+<body class="lotusui lotusLogin2 lotusui30_body lotusui30_fonts lotusui30 lotusui30dojo">
+<div class="lotusFrame">
+<h3>Dialog Launcher Test Page</h3>
+
+<div>
+   <a href="javascript:;" onclick="com.ibm.social.sharebox.DialogLauncher.open()">Open Share Dialog</a>
+</div>
+<div class="lotusMain">
+   <div class="lotusContent">
+   <h3>This is the content area</h3>
+   </div>
+</div>
+</div>
+</body>
+</html>

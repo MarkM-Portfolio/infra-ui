@@ -1,0 +1,140 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	UPDATED_BY: "Päivittäjä ${author}",
+	PREVIEW_MODE_ONLY: "(vain esikatselutila)",
+	
+	//Community
+	COMMUNITY_VIEWED_TODAY: "Yhteisöä on tarkasteltu tänään",
+	COMMUNITY_VIEWED_YESTERDAY: "Yhteisöä on tarkasteltu eilen",
+	COMMUNITY_VIEWED_HOURS_AGO: "Yhteisöä on tarkasteltu ${hours} tuntia sitten",
+	COMMUNITY_VIEWED_MINUTES_AGO: "Yhteisöä on tarkasteltu ${minutes} minuuttia sitten",
+	COMMUNITY_VIEWED_SECONDS_AGO: "Yhteisöä on tarkasteltu ${seconds} sekuntia sitten",
+	COMMUNITY_VIEWED_1_HOUR_AGO: "Yhteisöä on tarkasteltu tunti sitten",
+	COMMUNITY_VIEWED_1_MINUTE_AGO: "Yhteisöä on tarkasteltu minuutti sitten",
+	COMMUNITY_VIEWED_1_SECOND_AGO: "Yhteisöä on tarkasteltu sekunti sitten",
+	COMMUNITY_VIEWED_AT_DATE: "Yhteisöä on tarkasteltu ${date}",
+	
+	//File
+	FILE_VIEWED_TODAY: "Tiedostoa on tarkasteltu tänään",
+	FILE_VIEWED_YESTERDAY: "Tiedostoa on tarkasteltu eilen",
+	FILE_VIEWED_HOURS_AGO: "Tiedostoa on tarkasteltu ${hours} tuntia sitten",
+	FILE_VIEWED_MINUTES_AGO: "Tiedostoa on tarkasteltu ${minutes} minuuttia sitten",
+	FILE_VIEWED_SECONDS_AGO: "Tiedostoa on tarkasteltu ${seconds} sekuntia sitten",
+	FILE_VIEWED_1_HOUR_AGO: "Tiedostoa on tarkasteltu tunti sitten",
+	FILE_VIEWED_1_MINUTE_AGO: "Tiedostoa on tarkasteltu minuutti sitten",
+	FILE_VIEWED_1_SECOND_AGO: "Tiedostoa on tarkasteltu sekunti sitten",
+	FILE_VIEWED_AT_DATE: "Tiedostoa on tarkasteltu ${date}",
+	
+	//Profile
+	PROFILE_VIEWED_TODAY: "Profiilia on tarkasteltu tänään",
+	PROFILE_VIEWED_YESTERDAY: "Profiilia on tarkasteltu eilen",
+	PROFILE_VIEWED_HOURS_AGO: "Profiilia on tarkasteltu ${hours} tuntia sitten",
+	PROFILE_VIEWED_MINUTES_AGO: "Profiilia on tarkasteltu ${minutes} minuuttia sitten",
+	PROFILE_VIEWED_SECONDS_AGO: "Profiilia on tarkasteltu ${seconds} sekuntia sitten",
+	PROFILE_VIEWED_1_HOUR_AGO: "Profiilia on tarkasteltu tunti sitten",
+	PROFILE_VIEWED_1_MINUTE_AGO: "Profiilia on tarkasteltu minuutti sitten",
+	PROFILE_VIEWED_1_SECOND_AGO: "Profiilia on tarkasteltu sekunti sitten",
+	PROFILE_VIEWED_AT_DATE: "Profiilia on tarkasteltu ${date}",
+	
+	//Activity
+	ACTIVITY_VIEWED_TODAY: "Aktiviteettia on tarkasteltu tänään",
+	ACTIVITY_VIEWED_YESTERDAY: "Aktiviteettia on tarkasteltu eilen",
+	ACTIVITY_VIEWED_HOURS_AGO: "Aktiviteettia on tarkasteltu ${hours} tuntia sitten",
+	ACTIVITY_VIEWED_MINUTES_AGO: "Aktiviteettia on tarkasteltu ${minutes} minuuttia sitten",
+	ACTIVITY_VIEWED_SECONDS_AGO: "Aktiviteettia on tarkasteltu ${seconds} sekuntia sitten",
+	ACTIVITY_VIEWED_1_HOUR_AGO: "Aktiviteettia on tarkasteltu tunti sitten",
+	ACTIVITY_VIEWED_1_MINUTE_AGO: "Aktiviteettia on tarkasteltu minuutti sitten",
+	ACTIVITY_VIEWED_1_SECOND_AGO: "Aktiviteettia on tarkasteltu sekunti sitten",
+	ACTIVITY_VIEWED_AT_DATE: "Aktiviteettia on tarkasteltu ${date}",
+	
+	//Bookmark
+	BOOKMARK_VIEWED_TODAY: "Kirjanmerkkiä on tarkasteltu tänään",
+	BOOKMARK_VIEWED_YESTERDAY: "Kirjanmerkkiä on tarkasteltu eilen",
+	BOOKMARK_VIEWED_HOURS_AGO: "Kirjanmerkkiä on tarkasteltu ${hours} tuntia sitten",
+	BOOKMARK_VIEWED_MINUTES_AGO: "Kirjanmerkkiä on tarkasteltu ${minutes} minuuttia sitten",
+	BOOKMARK_VIEWED_SECONDS_AGO: "Kirjanmerkkiä on tarkasteltu ${seconds} sekuntia sitten",
+	BOOKMARK_VIEWED_1_HOUR_AGO: "Kirjanmerkkiä on tarkasteltu tunti sitten",
+	BOOKMARK_VIEWED_1_MINUTE_AGO: "Kirjanmerkkiä on tarkasteltu minuutti sitten",
+	BOOKMARK_VIEWED_1_SECOND_AGO: "Kirjanmerkkiä on tarkasteltu sekunti sitten",
+	BOOKMARK_VIEWED_AT_DATE: "Kirjanmerkkiä on tarkasteltu ${date}",
+	
+	//Blog
+	BLOG_VIEWED_TODAY: "Verkkolokia on tarkasteltu tänään",
+	BLOG_VIEWED_YESTERDAY: "Verkkolokia on tarkasteltu eilen",
+	BLOG_VIEWED_HOURS_AGO: "Verkkolokia on tarkasteltu ${hours} tuntia sitten",
+	BLOG_VIEWED_MINUTES_AGO: "Verkkolokia on tarkasteltu ${minutes} minuuttia sitten",
+	BLOG_VIEWED_SECONDS_AGO: "Verkkolokia on tarkasteltu ${seconds} sekuntia sitten",
+	BLOG_VIEWED_1_HOUR_AGO: "Verkkolokia on tarkasteltu tunti sitten",
+	BLOG_VIEWED_1_MINUTE_AGO: "Verkkolokia on tarkasteltu minuutti sitten",
+	BLOG_VIEWED_1_SECOND_AGO: "Verkkolokia on tarkasteltu sekunti sitten",
+	BLOG_VIEWED_AT_DATE: "Verkkolokia on tarkasteltu ${date}",
+	
+	//Forum
+	FORUM_VIEWED_TODAY: "Keskusteluryhmää on tarkasteltu tänään",
+	FORUM_VIEWED_YESTERDAY: "Keskusteluryhmää on tarkasteltu eilen",
+	FORUM_VIEWED_HOURS_AGO: "Keskusteluryhmää on tarkasteltu ${hours} tuntia sitten",
+	FORUM_VIEWED_MINUTES_AGO: "Keskusteluryhmää on tarkasteltu ${minutes} minuuttia sitten",
+	FORUM_VIEWED_SECONDS_AGO: "Keskusteluryhmää on tarkasteltu ${seconds} sekuntia sitten",
+	FORUM_VIEWED_1_HOUR_AGO: "Keskusteluryhmää on tarkasteltu tunti sitten",
+	FORUM_VIEWED_1_MINUTE_AGO: "Keskusteluryhmää on tarkasteltu minuutti sitten",
+	FORUM_VIEWED_1_SECOND_AGO: "Keskusteluryhmää on tarkasteltu sekunti sitten",
+	FORUM_VIEWED_AT_DATE: "Keskusteluryhmää on tarkasteltu ${date}",
+	
+	//Wiki
+	WIKI_VIEWED_TODAY: "Wikiä on tarkasteltu tänään",
+	WIKI_VIEWED_YESTERDAY: "Wikiä on tarkasteltu eilen",
+	WIKI_VIEWED_HOURS_AGO: "Wikiä on tarkasteltu ${hours} tuntia sitten",
+	WIKI_VIEWED_MINUTES_AGO: "Wikiä on tarkasteltu ${minutes} minuuttia sitten",
+	WIKI_VIEWED_SECONDS_AGO: "Wikiä on tarkasteltu ${seconds} sekuntia sitten",
+	WIKI_VIEWED_1_HOUR_AGO: "Wikiä on tarkasteltu tunti sitten",
+	WIKI_VIEWED_1_MINUTE_AGO: "Wikiä on tarkasteltu minuutti sitten",
+	WIKI_VIEWED_1_SECOND_AGO: "Wikiä on tarkasteltu sekunti sitten",
+	WIKI_VIEWED_AT_DATE: "Wikiä on tarkasteltu ${date}",
+
+	//Event
+	EVENT_VIEWED_TODAY: "Tapahtumaa on tarkasteltu tänään",
+	EVENT_VIEWED_YESTERDAY: "Tapahtumaa on tarkasteltu eilen",
+	EVENT_VIEWED_HOURS_AGO: "Tapahtumaa on tarkasteltu ${hours} tuntia sitten",
+	EVENT_VIEWED_MINUTES_AGO: "Tapahtumaa on tarkasteltu ${minutes} minuuttia sitten",
+	EVENT_VIEWED_SECONDS_AGO: "Tapahtumaa on tarkasteltu ${seconds} sekuntia sitten",
+	EVENT_VIEWED_1_HOUR_AGO: "Tapahtumaa on tarkasteltu tunti sitten",
+	EVENT_VIEWED_1_MINUTE_AGO: "Tapahtumaa on tarkasteltu minuutti sitten",
+	EVENT_VIEWED_1_SECOND_AGO: "Tapahtumaa on tarkasteltu sekunti sitten",
+	EVENT_VIEWED_AT_DATE: "Tapahtumaa on tarkasteltu ${date}",
+	
+	//To Do
+	TODO_VIEWED_TODAY: "Tehtävää on tarkasteltu tänään",
+	TODO_VIEWED_YESTERDAY: "Tehtävää on tarkasteltu eilen",
+	TODO_VIEWED_HOURS_AGO: "Tehtävää on tarkasteltu ${hours} tuntia sitten",
+	TODO_VIEWED_MINUTES_AGO: "Tehtävää on tarkasteltu ${minutes} minuuttia sitten",
+	TODO_VIEWED_SECONDS_AGO: "Tehtävää on tarkasteltu ${seconds} sekuntia sitten",
+	TODO_VIEWED_1_HOUR_AGO: "Tehtävää on tarkasteltu tunti sitten",
+	TODO_VIEWED_1_MINUTE_AGO: "Tehtävää on tarkasteltu minuutti sitten",
+	TODO_VIEWED_1_SECOND_AGO: "Tehtävää on tarkasteltu sekunti sitten",
+	TODO_VIEWED_AT_DATE: "Tehtävää on tarkasteltu ${date}",
+	
+	//Survey
+	SURVEY_VIEWED_TODAY: "Kyselyä on tarkasteltu tänään",
+	SURVEY_VIEWED_YESTERDAY: "Kyselyä on tarkasteltu eilen",
+	SURVEY_VIEWED_HOURS_AGO: "Kyselyä on tarkasteltu ${hours} tuntia sitten",
+	SURVEY_VIEWED_MINUTES_AGO: "Kyselyä on tarkasteltu ${minutes} minuuttia sitten",
+	SURVEY_VIEWED_SECONDS_AGO: "Kyselyä on tarkasteltu ${seconds} sekuntia sitten",
+	SURVEY_VIEWED_1_HOUR_AGO: "Kyselyä on tarkasteltu 1 tunti sitten",
+	SURVEY_VIEWED_1_MINUTE_AGO: "Kyselyä on tarkasteltu 1 minuutti sitten",
+	SURVEY_VIEWED_1_SECOND_AGO: "Kyselyä on tarkasteltu 1 sekunti sitten",
+	SURVEY_VIEWED_AT_DATE: "Kyselyä on tarkasteltu ${date}",
+	
+	//Survey
+	GENERIC_VIEWED_TODAY: "Tarkasteltu tänään",
+	GENERIC_VIEWED_YESTERDAY: "Tarkasteltu eilen",
+	GENERIC_VIEWED_HOURS_AGO: "Tarkasteltu ${hours} tuntia sitten",
+	GENERIC_VIEWED_MINUTES_AGO: "Tarkasteltu ${minutes} minuuttia sitten",
+	GENERIC_VIEWED_SECONDS_AGO: "Tarkasteltu ${seconds} sekuntia sitten",
+	GENERIC_VIEWED_1_HOUR_AGO: "Tarkasteltu 1 tunti sitten",
+	GENERIC_VIEWED_1_MINUTE_AGO: "Tarkasteltu 1 minuutti sitten",
+	GENERIC_VIEWED_1_SECOND_AGO: "Tarkasteltu 1 sekunti sitten",
+	GENERIC_VIEWED_AT_DATE: "Tarkasteltu ${date}"
+})
+

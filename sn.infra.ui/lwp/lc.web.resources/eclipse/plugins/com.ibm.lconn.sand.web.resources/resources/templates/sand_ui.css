@@ -1,0 +1,14 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+
+@charset "utf-8";
+/* ========= SocialPath images ========= */
+div.socialPath .arrowDown {
+	background: scroll transparent url("../images/icon-arrow-down.gif")
+		center center no-repeat;
+	height: 14px;
+}
+
+.dijit_a11y div.socialPath .arrowDown {
+	height: auto;
+}
+

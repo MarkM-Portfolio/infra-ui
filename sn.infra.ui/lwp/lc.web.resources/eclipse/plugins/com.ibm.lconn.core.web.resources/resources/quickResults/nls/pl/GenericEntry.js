@@ -1,0 +1,140 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	UPDATED_BY: "Zaktualizowane przez użytkownika ${author}",
+	PREVIEW_MODE_ONLY: "(Tylko tryb podglądu)",
+	
+	//Community
+	COMMUNITY_VIEWED_TODAY: "Wyświetlono społeczność: dzisiaj",
+	COMMUNITY_VIEWED_YESTERDAY: "Wyświetlono społeczność: wczoraj",
+	COMMUNITY_VIEWED_HOURS_AGO: "Wyświetlono społeczność: ${hours} godz. temu",
+	COMMUNITY_VIEWED_MINUTES_AGO: "Wyświetlono społeczność: ${minutes} min temu",
+	COMMUNITY_VIEWED_SECONDS_AGO: "Wyświetlono społeczność: ${seconds} s temu",
+	COMMUNITY_VIEWED_1_HOUR_AGO: "Wyświetlono społeczność: 1 godzinę temu",
+	COMMUNITY_VIEWED_1_MINUTE_AGO: "Wyświetlono społeczność: 1 minutę temu",
+	COMMUNITY_VIEWED_1_SECOND_AGO: "Wyświetlono społeczność: 1 sekundę temu",
+	COMMUNITY_VIEWED_AT_DATE: "Wyświetlono społeczność: ${date}",
+	
+	//File
+	FILE_VIEWED_TODAY: "Wyświetlono plik: dzisiaj",
+	FILE_VIEWED_YESTERDAY: "Wyświetlono plik: wczoraj",
+	FILE_VIEWED_HOURS_AGO: "Wyświetlono plik: ${hours} godz. temu",
+	FILE_VIEWED_MINUTES_AGO: "Wyświetlono plik: ${minutes} min temu",
+	FILE_VIEWED_SECONDS_AGO: "Wyświetlono plik: ${seconds} s temu",
+	FILE_VIEWED_1_HOUR_AGO: "Wyświetlono plik: 1 godzinę temu",
+	FILE_VIEWED_1_MINUTE_AGO: "Wyświetlono plik: 1 minutę temu",
+	FILE_VIEWED_1_SECOND_AGO: "Wyświetlono plik: 1 sekundę temu",
+	FILE_VIEWED_AT_DATE: "Wyświetlono plik: ${date}",
+	
+	//Profile
+	PROFILE_VIEWED_TODAY: "Wyświetlono profil: dzisiaj",
+	PROFILE_VIEWED_YESTERDAY: "Wyświetlono profil: wczoraj",
+	PROFILE_VIEWED_HOURS_AGO: "Wyświetlono profil: ${hours} godz. temu",
+	PROFILE_VIEWED_MINUTES_AGO: "Wyświetlono profil: ${minutes} min temu",
+	PROFILE_VIEWED_SECONDS_AGO: "Wyświetlono profil: ${seconds} s temu",
+	PROFILE_VIEWED_1_HOUR_AGO: "Wyświetlono profil: 1 godzinę temu",
+	PROFILE_VIEWED_1_MINUTE_AGO: "Wyświetlono profil: 1 minutę temu",
+	PROFILE_VIEWED_1_SECOND_AGO: "Wyświetlono profil: 1 sekundę temu",
+	PROFILE_VIEWED_AT_DATE: "Wyświetlono profil: ${date}",
+	
+	//Activity
+	ACTIVITY_VIEWED_TODAY: "Wyświetlono działanie: dzisiaj",
+	ACTIVITY_VIEWED_YESTERDAY: "Wyświetlono działanie: wczoraj",
+	ACTIVITY_VIEWED_HOURS_AGO: "Wyświetlono działanie: ${hours} godz. temu",
+	ACTIVITY_VIEWED_MINUTES_AGO: "Wyświetlono działanie: ${minutes} min temu",
+	ACTIVITY_VIEWED_SECONDS_AGO: "Wyświetlono działanie: ${seconds} s temu",
+	ACTIVITY_VIEWED_1_HOUR_AGO: "Wyświetlono działanie: 1 godzinę temu",
+	ACTIVITY_VIEWED_1_MINUTE_AGO: "Wyświetlono działanie: 1 minutę temu",
+	ACTIVITY_VIEWED_1_SECOND_AGO: "Wyświetlono działanie: 1 sekundę temu",
+	ACTIVITY_VIEWED_AT_DATE: "Wyświetlono działanie: ${date}",
+	
+	//Bookmark
+	BOOKMARK_VIEWED_TODAY: "Wyświetlono zakładkę: dzisiaj",
+	BOOKMARK_VIEWED_YESTERDAY: "Wyświetlono zakładkę: wczoraj",
+	BOOKMARK_VIEWED_HOURS_AGO: "Wyświetlono zakładkę: ${hours} godz. temu",
+	BOOKMARK_VIEWED_MINUTES_AGO: "Wyświetlono zakładkę: ${minutes} min temu",
+	BOOKMARK_VIEWED_SECONDS_AGO: "Wyświetlono zakładkę: ${seconds} s temu",
+	BOOKMARK_VIEWED_1_HOUR_AGO: "Wyświetlono zakładkę: 1 godzinę temu",
+	BOOKMARK_VIEWED_1_MINUTE_AGO: "Wyświetlono zakładkę: 1 minutę temu",
+	BOOKMARK_VIEWED_1_SECOND_AGO: "Wyświetlono zakładkę: 1 sekundę temu",
+	BOOKMARK_VIEWED_AT_DATE: "Wyświetlono zakładkę: ${date}",
+	
+	//Blog
+	BLOG_VIEWED_TODAY: "Wyświetlono bloga: dzisiaj",
+	BLOG_VIEWED_YESTERDAY: "Wyświetlono bloga: wczoraj",
+	BLOG_VIEWED_HOURS_AGO: "Wyświetlono bloga: ${hours} godz. temu",
+	BLOG_VIEWED_MINUTES_AGO: "Wyświetlono bloga: ${minutes} min temu",
+	BLOG_VIEWED_SECONDS_AGO: "Wyświetlono bloga: ${seconds} s temu",
+	BLOG_VIEWED_1_HOUR_AGO: "Wyświetlono bloga: 1 godzinę temu",
+	BLOG_VIEWED_1_MINUTE_AGO: "Wyświetlono bloga: 1 minutę temu",
+	BLOG_VIEWED_1_SECOND_AGO: "Wyświetlono bloga: 1 sekundę temu",
+	BLOG_VIEWED_AT_DATE: "Wyświetlono bloga: ${date}",
+	
+	//Forum
+	FORUM_VIEWED_TODAY: "Wyświetlono forum: dzisiaj",
+	FORUM_VIEWED_YESTERDAY: "Wyświetlono forum: wczoraj",
+	FORUM_VIEWED_HOURS_AGO: "Wyświetlono forum: ${hours} godz. temu",
+	FORUM_VIEWED_MINUTES_AGO: "Wyświetlono forum: ${minutes} min temu",
+	FORUM_VIEWED_SECONDS_AGO: "Wyświetlono forum: ${seconds} s temu",
+	FORUM_VIEWED_1_HOUR_AGO: "Wyświetlono forum: 1 godzinę temu",
+	FORUM_VIEWED_1_MINUTE_AGO: "Wyświetlono forum: 1 minutę temu",
+	FORUM_VIEWED_1_SECOND_AGO: "Wyświetlono forum: 1 sekundę temu",
+	FORUM_VIEWED_AT_DATE: "Wyświetlono forum: ${date}",
+	
+	//Wiki
+	WIKI_VIEWED_TODAY: "Wyświetlono wiki: dzisiaj",
+	WIKI_VIEWED_YESTERDAY: "Wyświetlono wiki: wczoraj",
+	WIKI_VIEWED_HOURS_AGO: "Wyświetlono wiki: ${hours} godz. temu",
+	WIKI_VIEWED_MINUTES_AGO: "Wyświetlono wiki: ${minutes} min temu",
+	WIKI_VIEWED_SECONDS_AGO: "Wyświetlono wiki: ${seconds} s temu",
+	WIKI_VIEWED_1_HOUR_AGO: "Wyświetlono wiki: 1 godzinę temu",
+	WIKI_VIEWED_1_MINUTE_AGO: "Wyświetlono wiki: 1 minutę temu",
+	WIKI_VIEWED_1_SECOND_AGO: "Wyświetlono wiki: 1 sekundę temu",
+	WIKI_VIEWED_AT_DATE: "Wyświetlono wiki: ${date}",
+
+	//Event
+	EVENT_VIEWED_TODAY: "Wyświetlono zdarzenie: dzisiaj",
+	EVENT_VIEWED_YESTERDAY: "Wyświetlono zdarzenie: wczoraj",
+	EVENT_VIEWED_HOURS_AGO: "Wyświetlono zdarzenie: ${hours} godz. temu",
+	EVENT_VIEWED_MINUTES_AGO: "Wyświetlono zdarzenie: ${minutes} min temu",
+	EVENT_VIEWED_SECONDS_AGO: "Wyświetlono zdarzenie: ${seconds} s temu",
+	EVENT_VIEWED_1_HOUR_AGO: "Wyświetlono zdarzenie: 1 godzinę temu",
+	EVENT_VIEWED_1_MINUTE_AGO: "Wyświetlono zdarzenie: 1 minutę temu",
+	EVENT_VIEWED_1_SECOND_AGO: "Wyświetlono zdarzenie: 1 sekundę temu",
+	EVENT_VIEWED_AT_DATE: "Wyświetlono zdarzenie: ${date}",
+	
+	//To Do
+	TODO_VIEWED_TODAY: "Wyświetlono czynność do wykonania: dzisiaj",
+	TODO_VIEWED_YESTERDAY: "Wyświetlono czynność do wykonania: wczoraj",
+	TODO_VIEWED_HOURS_AGO: "Wyświetlono czynność do wykonania: ${hours} godz. temu",
+	TODO_VIEWED_MINUTES_AGO: "Wyświetlono czynność do wykonania: ${minutes} min temu",
+	TODO_VIEWED_SECONDS_AGO: "Wyświetlono czynność do wykonania: ${seconds} s temu",
+	TODO_VIEWED_1_HOUR_AGO: "Wyświetlono czynność do wykonania: 1 godzinę temu",
+	TODO_VIEWED_1_MINUTE_AGO: "Wyświetlono czynność do wykonania: 1 minutę temu",
+	TODO_VIEWED_1_SECOND_AGO: "Wyświetlono czynność do wykonania: 1 sekundę temu",
+	TODO_VIEWED_AT_DATE: "Wyświetlono czynność do wykonania: ${date}",
+	
+	//Survey
+	SURVEY_VIEWED_TODAY: "Wyświetlono ankietę: dzisiaj",
+	SURVEY_VIEWED_YESTERDAY: "Wyświetlono ankietę: wczoraj",
+	SURVEY_VIEWED_HOURS_AGO: "Wyświetlono ankietę: ${hours} godz. temu",
+	SURVEY_VIEWED_MINUTES_AGO: "Wyświetlono ankietę: ${minutes} min temu",
+	SURVEY_VIEWED_SECONDS_AGO: "Wyświetlono ankietę: ${seconds} s temu",
+	SURVEY_VIEWED_1_HOUR_AGO: "Wyświetlono ankietę: 1 godzinę temu",
+	SURVEY_VIEWED_1_MINUTE_AGO: "Wyświetlono ankietę: 1 minutę temu",
+	SURVEY_VIEWED_1_SECOND_AGO: "Wyświetlono ankietę: 1 sekundę temu",
+	SURVEY_VIEWED_AT_DATE: "Wyświetlono ankietę: ${date}",
+	
+	//Survey
+	GENERIC_VIEWED_TODAY: "Wyświetlono: dzisiaj",
+	GENERIC_VIEWED_YESTERDAY: "Wyświetlono: wczoraj",
+	GENERIC_VIEWED_HOURS_AGO: "Wyświetlono: ${hours} godz. temu",
+	GENERIC_VIEWED_MINUTES_AGO: "Wyświetlono: ${minutes} min temu",
+	GENERIC_VIEWED_SECONDS_AGO: "Wyświetlono: ${seconds} s temu",
+	GENERIC_VIEWED_1_HOUR_AGO: "Wyświetlono: 1 godzinę temu",
+	GENERIC_VIEWED_1_MINUTE_AGO: "Wyświetlono: 1 minutę temu",
+	GENERIC_VIEWED_1_SECOND_AGO: "Wyświetlono: 1 sekundę temu",
+	GENERIC_VIEWED_AT_DATE: "Wyświetlono: ${date}"
+})
+

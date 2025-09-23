@@ -1,0 +1,67 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div style="${style}">
+<style>
+.dijitButtonNode .dijitArrowButtonInner {display:none;}
+.dijitButtonNode .dijitArrowButtonChar {display:block !important;}
+.narrowInput { width: 200px; }
+</style>
+	<!-- AS Form --> 
+	<div enctype="multipart/form-data" action="" method="" data-dojo-attach-point="_ASForm" data-dojo-type="dijit/form/Form">
+		
+		<label for="gadgetUrl">Gadget Url:</label>
+		<input type="text" class="icTestGadgetUrl" name="gadget" required="true" value="../../../com.ibm.social.as/gadget/ActivityStream.xml" data-dojo-attach-point="_gadget" data-dojo-type="dijit/form/TextBox" data-dojo-props='"intermediatechanges":true'><br>
+		<b>Container options:</b>     
+		<label for="viewSelect">View : </label>
+        <select id="viewSelect" name="viewSelect" data-dojo-attach-point="_viewSelect" data-dojo-type="dijit/form/Select"><option value="canvas">canvas</option><option value="profile">profile</option><option value="none">&lt;none&gt;</option></select> 
+        <label for="width">Width:</label>
+        <input type="text" id="width" name="width" style="width: 100px" value="800" data-dojo-attach-point="_width" data-dojo-type="dijit/form/TextBox">
+        <br>
+        <b>Gadget options:</b>
+        <div style="padding-left: 15px">
+			<label for="asfeed">AS Feed [Opt]:</label>
+			<input type="text" class="icTestGadgetUrl" name="asfeed" data-dojo-attach-point="_asfeed" data-dojo-type="dijit/form/TextBox"><br>
+			<label for="asconfig">AS Config [Opt]:</label>
+			<input type="text" class="icTestGadgetUrl" name="asconfig" data-dojo-attach-point="_asconfig" data-dojo-type="dijit/form/TextBox"><br>
+			
+			<label for="asmode">AS Mode [Opt]:</label>
+			<input type="text" class="icTestGadgetUrl narrowInput" name="asmode" data-dojo-attach-point="_asmode" data-dojo-type="dijit/form/TextBox">
+			
+			<label for="profileid">Profile Id [Opt]:</label>
+			<input type="text" class="icTestGadgetUrl narrowInput" name="profileid" data-dojo-attach-point="_profileid" data-dojo-type="dijit/form/TextBox">
+			
+			<label for="singleEntryId">Single Entry Id [Opt]:</label>
+			<input type="text" class="icTestGadgetUrl narrowInput" name="singleEntryId" data-dojo-attach-point="_singleEntryId" data-dojo-type="dijit/form/TextBox">
+			<br>
+			
+			<label for="shareboxboardid">Sharebox Board Id [Opt]:</label>
+			<input type="text" class="icTestGadgetUrl narrowInput" name="shareboxboardid" value="" data-dojo-attach-point="_shareboxboardid" data-dojo-type="dijit/form/TextBox">
+			
+			<label for="shareboxposttype">Sharebox Post Type [Opt]:</label>
+			<input type="text" class="icTestGadgetUrl narrowInput" name="shareboxposttype" value="" data-dojo-attach-point="_shareboxpostype" data-dojo-type="dijit/form/TextBox">
+			<br>
+			
+	        <label for="asMaxWidth">asMaxWidth [Opt]:</label>
+	        <input type="text" id="asMaxWidth" name="asMaxWidth" style="width: 50px" data-dojo-attach-point="_asMaxWidth" data-dojo-type="dijit/form/TextBox">
+	           
+	        
+	        <label for="asMinWidth">asMinWidth [Opt]:</label>
+	        <input type="text" id="asMinWidth" name="asMinWidth" style="width: 50px" data-dojo-attach-point="_asMinWidth" data-dojo-type="dijit/form/TextBox">
+	           
+	        
+	        <input type="checkbox" id="debugFF" name="debugFF" checked data-dojo-attach-point="_debugFF">Debug FF
+	            
+	        <input type="checkbox" id="debug" name="debug" data-dojo-attach-point="_debug">Debug
+	            
+	        <input type="checkbox" id="useOAuth" name="useOAuth" checked data-dojo-attach-point="_useOAuth">Use OAuth
+	            
+	        <input type="checkbox" id="showSharebox" name="showSharebox" checked data-dojo-attach-point="_showSharebox">Show Sharebox
+	            
+	        <input type="checkbox" id="showFeedLink" name="showFeedLink" checked data-dojo-attach-point="_showFeedLink">Show Feed Link
+	            
+	        <input type="checkbox" id="showHeader" name="showHeader" checked data-dojo-attach-point="_showHeader">Show Header
+	            
+	        <input type="checkbox" id="isCommunityStream" name="isCommunityStream" data-dojo-attach-point="_isCommunityStream">is Community Stream
+	    </div>
+	<input name="persistAndRefreshButton" type="button" value="ReLoad Page while persisting Current Settings" class="lotusBtn" data-dojo-attach-point="persistAndRefreshButton">
+	</div> <!-- End form -->
+</div>

@@ -1,0 +1,3437 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* HCL Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright HCL Technologies Limited 2022                          */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+/*** Useful Adjustments ***/
+html {scroll-padding-top: 250px;}
+.flushLeft  {margin-left: 0px !important; padding-left: 0px !important;}
+.flushRight {margin-right:0px !important; padding-right:0px !important;}
+
+/*For the RTE in community*/
+textarea.qkrPageEditor{margin-top:0px;width:99%;height:425px;}
+.lotusui_ie textarea.qkrPageEditor{margin-top:-1px;}
+
+#pageDetails ul.lotusTabs#qkrEditorTabs li, .wikiPageTable ul.lotusTabs#qkrEditorTabs li {
+  float: right; }
+
+#qkrReferenceTd .lotusInfoBox {
+  border: 1px solid #ccc;
+  margin: 44px 0 0 10px;
+  background: #fff;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  color: #444444; }
+
+#qkrReferenceTd .lotusInfoBox h3 {
+  background: #e8e8e8;
+  border-bottom: 1px solid #dadada;
+  color: #444;
+  margin: -10px -10px 5px;
+  padding: 10px; }
+
+/*For the internalLink of files and dir in community*/
+.lotusHeader .lconnInternalLink {color: #1970B0; font-size: .6em;}
+
+#lotusColLeft .communityLink    a:hover {background-color:transparent;} 
+#lotusColLeft .communityImgLink a:hover {background-color:transparent;} 
+
+.lotusui30 .lotusForm .commFormText {line-height:normal;}
+.commFormBottomRow {padding-bottom:15px !important;}
+.commFormFooter {border-color: #AAAAAA !important; border-style:solid !important; border-width: 1px 0 0 !important; padding: 15px 0 0 0 !important;}
+
+.filterSpacing {margin: 0px 5px 5px 0px !important; }
+
+.commAccess {left: -5000px;}
+
+/*** FOCUS STYLES - Make current focus indicator more visible ***/ 
+
+.lotusui30 .commFocusML   {margin-left:1px    !important}
+.lotusui30 .commFocusMR   {margin-right:1px   !important}
+.lotusui30 .commFocusMT   {margin-top:1px     !important}
+.lotusui30 .commFocusMB   {margin-bottom:1px  !important}
+.lotusui30 .commFocusMALL {margin:1px         !important}
+
+.lotusui30 .commFocusPL   {padding-left:1px   !important}
+.lotusui30 .commFocusPR   {padding-right:1px  !important}
+.lotusui30 .commFocusPT   {padding-top:1px    !important}
+.lotusui30 .commFocusPB   {padding-bottom:1px !important}
+.lotusui30 .commFocusPALL {padding:1px        !important}
+
+.lotusui30 .lconnBackToTop {
+	position: fixed;
+	bottom: 15px;
+	right: 90px;
+	border-radius: 50%;
+	border: 0;
+	background-color: #e3e3e3;
+	box-sizing: border-box;
+	height: 36px;
+	width: 36px;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 300ms, opacity 300ms;
+	padding: 8px;
+	cursor: pointer;
+}
+
+.lotusui30 .lconnBackToTop.lconnScrollBack {
+	visibility: visible;
+	opacity: 1;
+}
+
+/* Make radio button / checkbox focus clearer in Firefox */     
+input[type=checkbox]:-moz-focusring, input[type=radio]:-moz-focusring {outline:thin dotted black !important;}
+
+
+/*** D E F A U L T   S T Y L E S***/    
+
+.lotusDim {opacity:0.5; filter:alpha(opacity=50);}
+
+/*image*/
+img{border:0;vertical-align:middle}
+
+/***G E N E R A L   S T Y L E S ***/
+
+/*general alignment styles*/
+.indent10 {padding-left:10px;}
+.indent15 {padding-left:15px;}
+.indent20 {padding-left:20px}
+.indent40 {padding-left:40px;}
+.indent60 {padding-left:60px;}
+.left{float:left;text-align:left;}
+.right{float:right;text-align:right;}
+.center {text-align:center;}
+.clear {clear:both}
+.clearLeft {clear:left}
+.clearRight {clear:right}
+
+/*general list styles*/
+.inlinelist{margin:0;padding:0}
+.inlinelist li{display:inline;margin:0 0 0 -4px;padding:0 10px;border-left:1px solid #ccc;}
+.inlinelist li.first{margin-left:0;padding-left:0;border-left-width:0;}
+.inlinelist li.first, .inlinelist li.last{margin-left:-5px;padding-left:0;border-left-width:0;}
+
+/*other general styles*/
+span.date{color:#666}
+.highlight{}
+.selected{}
+.inactive{color:#ccc !important}
+.alternate{}
+
+/*these styles are for a customized menu, with icons, which you can give a unique name or a secondary style, like altmenu.  In this case, we are styling a menu with an id of postMenu*/
+#postMenu{background:#edeff4 left top repeat-y}
+#postMenu li{border-top:1px solid #edeff4}
+#postMenu a{padding:5px 3px 7px 35px;background-position:7px center;background-repeat:no-repeat;text-decoration:none;display:block}
+
+/***********************************************************/
+
+/*** C O M M E N T S ***/  /*complete*/
+.comments h4{background-color:#ccc;padding:3px;text-align:right;overflow:hidden;}
+.comments h4 .action{font-size:.7em;}
+.comments h5{font-size:.9em;border-bottom:1px solid #ccc;margin-bottom:3px}
+.comments h5 a.person{margin:0 8px}
+.comments h5 span{padding:0 3px}
+.comments h5 span.highlight{background-color:#f6cb26;}
+.comments p{margin-top:0}
+/***********************************************************/
+
+/*** C O N T E N T   E N T R Y ***/ /*complete*/
+.entry{padding:5px 0;border-bottom:1px solid #ddd;overflow:hidden;clear:both;}
+.entry input{margin:0}
+.singleLine h4, .singleLine .divider{float:left;}
+.singleLine h5{padding-top:2px}
+.entry h4 input, .entry h4 img{vertical-align:middle;margin-right:3px;float:left}
+.entry h4 input{margin-top:2px}
+.entryBody {margin:0 0 0 20px;}
+.entry h4{margin:0 3em 0 0;font-size:1.2em;font-weight:bold;overflow:hidden}
+.entry h4.alternate{margin-left:20px}/*for a non-hanging entry header*/
+.entry h4 div{float:left}/*need this div to allow long headers to wrap nicely*/
+.entry h4 a{text-decoration:none;vertical-align:middle;}
+.entry h4 a:hover {text-decoration:underline;}
+.entry .icons{float:left;}
+.entry .icons img{display:block}
+.entry h5{margin:0 0 0 0px;font-size:1.0em;color:#666;line-height:1.2em;}
+.entry h6{margin:0 0 0 0px;font-size:.85em;color:#666;}
+.entry p{margin:5px 0 0 0px}
+.entry .tags{float:right;margin-right:10px;overflow:hidden}
+.entry ul.actions{margin: 5px 0 0 0px;padding:0 10px 0 0;font-size:.9em}
+.entry ul.actions li{display:inline;margin: 0 0 -4px;padding:0 10px;border-left:1px solid #ccc}
+.entry ul.actions li.first{margin-left:0;padding-left:0;border-left-width:0}
+.entry .divider{margin:0 8px}
+/***********************************************************/
+
+/*** F O R M S ***/ /*this is Tim's css, haven't done much testing on any implementations of this*/
+form div{/*width: 45em;clear: left;margin: 0;padding: 5px 0 8px 10em;*/}/*10em is width of left column containing the label elements*/
+form label{/*text-align: right;font-weight: bold;float: left;padding-top: 3px;margin-left: -10em; width: 9em;*/}/*margin-left is width of left column; width is width of labels. Should be smaller than left column (155px) to create some right margin*/
+.lotusForm td label.lotusDisabled {color:gray}
+form .text{/*width: 29em;*/}
+form .checkBox{}
+form .radio{}
+form .button{}
+form .image{}
+form textarea{/*width: 29.8em;height: 14em;*/}
+form p{/*margin:0;*/}
+form .indent{/*padding-left: 10em;*/}
+/***********************************************************/
+
+/*** I N F O   B O X ***/ /*this is used for help and tips*/
+.infoBox {padding:5px;border:1px solid #c2e2f4; -moz-border-radius:2px; margin-top:15px;background-color:#f5f9fe;}
+.infoBox h3{margin:0 0 5px 0;padding:0 0 0 5px;font:bold 1.2em/1.5em Helvetica, Arial, Verdana, sans-serif;color:#43a0f6;border-bottom:1px solid #c2e2f4;text-align:right;overflow:hidden}
+.infoBox p {padding:5px;margin:0;}
+.help{width:200px;padding:3px 8px;background-color:#fff}
+
+/*** L I S T S ***/ /*complete*/
+.list h3{margin:10px 0 5px 0;font-size:1.2em;font-weight:bold}
+.list h3.alternate{color:#ff9523;}
+.list h3.icons{text-align:right;overflow:hidden}
+.list h3.icons img{margin-left:3px}
+.list .label{color:#666}
+.list ul{list-style:none;margin:0;padding: 0;clear:both}
+.list ul li {padding:2px 0}
+.list ul.editable li{text-align:right;overflow:hidden;clear:both;border-bottom:1px solid #b4b4b4}
+.list .editable .icon img{width:10px;height:10px;}
+.list .description {padding:0;margin:0;margin-bottom:7px;color:#595959;}
+
+/*plain list (no bullets)*/
+.alternate h3{color:#333f06;border-bottom:2px dotted #333f06}
+.alternate ul li{background-image:none}
+div.alternate a, div.alternate a:visited{/*color:#719e0d*/}
+/***********************************************************/
+
+/*** P A G I N G ***/ /* complete */
+.paging{height:2em;line-height:2em;text-align:center;border:1px solid #e0e0e0;-moz-border-radius:2px;margin-top:.2em;color:#848484;padding:0 5px;clear:both;font-size:.9em;background-color:#f0f0f0;}
+.paging ul li, .paging div{/*font-size:0.9em;*/color:#848484;}
+.paging a, .paging a:visited{font-weight:bold !important;}
+.paging input{width:20px;text-align:center;/*font-size:0.9em;*/color:#848484;}
+.paging .inlinelist{padding-left:5px}
+.paging .inlinelist li {padding:0 6px;}
+
+/*paging variations*/
+.table .paging, .caption .paging{background-image:none;background-color:#fdfdfd}
+.table .paging td{border:1px solid #e0e0e0;padding:0 5px}
+.caption .paging, .caption .paging td{margin-top:0;border-top-width:0;border-left-width:0;border-right-width:0;background-color:transparent}
+/***********************************************************/
+
+/*** S E A R C H ***/ /*complete */
+.searchTab{background-color:#fff;filter: Alpha(opacity=65);-moz-opacity:.65;opacity:.65;border:1px solid #ccc;-moz-border-radius:4px;padding:.3em 5px;z-index:100;height:1.5em}
+.searchTab:hover, .tabExpanded{filter: Alpha(opacity=100);-moz-opacity:1;opacity:1;color:#414546}
+.tabExpanded{border-bottom-color:#fff;-moz-border-radius:4px 4px 0 0}
+.searchTab a, .searchTab a:visited{display:block;padding-right:18px;color:#000;text-decoration:none;font-weight:bold}
+#searchForm{padding:12px 10px;border:1px solid #ccc;background-color:#fff;-moz-border-radius:4px 0 4px 4px;position:absolute;top:2.5em;right:15px;display:none}
+#searchForm input, #searchForm select{vertical-align:middle;margin-left:3px;color:#999}
+#searchForm option{color:black}
+#searchForm .text{color:#999}
+/***********************************************************/
+
+/*S E C T I O N */
+.section{margin:15px 0px 0 10px;background-color:#f5f9fe;border:1px solid #e0e0e0;-moz-border-radius:7px;padding:2px 5px 10px 5px;}
+.section h3{margin:0}
+.section h4{margin:7px 0 5px 0;font-size:1.1em;font-weight:normal;padding:0px 0px 2px 2px;border-bottom:1px dotted #ccc;clear:both;color:#000}
+.section h4.icons{text-align:right;overflow:hidden}
+.section h4.icons img{margin-left:3px}
+.section h6{margin:0 0 2px 0;color:gray;clear:both;}
+.section .tag{color:#000 !important}
+ 
+.tabSection .tabContainer{border-bottom-width:0;margin:5px 0px 0 10px}
+.tabSection .tabcontent{margin-top:0;z-index:-100;-moz-border-radius:0 2px 2px 2px; }
+
+    /*section list */
+.section .list h3{color:#000;text-align:left;}
+.section .list img {vertical-align:middle;padding:0px 1px 3px 1px;}
+.section .list ul{margin-top:0;}
+.section .list ul li{border-bottom:1px solid #dbdbdb;text-align:right;clear:both;padding:0px 2px 0px 4px}
+.section .list h6{margin:5px 0 0 8px;padding-top:3px;color:#666;color:#84b2d8;border-top:2px dotted #84b2d8;}
+.section .list a, .section .list a:visited{color:#327EBE;border-bottom:0;}
+.section .list h6 a, .section .list h6 a:visited{color:#4f9cef}
+.section .alternate li{border-bottom-width:0 !important;text-align:left !important}
+/****************************************************************/
+
+/*** MESSAGE ***/
+.message {background-color:#fff799;border:1px solid #ffcd04;padding:5px 10px;margin-bottom:10px;-moz-border-radius:7px;}
+
+
+/*** T A B L E ***/ /*complete */
+.table caption, .caption h4{text-align:right;font-weight:bold;background-color:#f3f3f3;border:1px solid #e0e0e0;padding:3px 5px;margin-bottom:0;-moz-border-radius:2px;}
+.table th, .table td{padding:3px 5px;border-collapse:collapse}
+.table th{text-align:left;border-bottom:1px solid #e0e0e0;}
+.table td{border-bottom:1px solid #e0e0e0}
+.table tr.last td{border-bottom-width:0}
+/***********************************************************/
+
+/*** T A B S ***/ /*complete*/
+.tabContainer{position:relative;height:3em;border-bottom:1px solid #e0e0e0; z-index: 1;}
+ul.tabs{position:absolute;bottom:-1px;overflow:hidden;margin:0;padding:0;list-style:none;}
+.tabs li{float:left;margin-right:2px;padding-left:3px;border-bottom:1px solid #e0e0e0}
+.tabs a, .tabs a:visited{display:block;padding:5px 15px 4px 10px;text-decoration:none;line-height:1.2em;color:#999;}/*line-height is for IE, to keep the selected tab sitting on top of the border when there is a drop-down image in the tab*/
+.narrow a, .narrow a:visited {display:block;padding:5px 10px 4px 5px;}
+.tabs a:hover, .tabs a:focus{color:#000;}
+.tabs li.selected{border-bottom-color:#fff}
+.tabs li.selected a, .tabs li.selected a:visited{color:#000;font-weight:bold;}
+/*the notatab class on a tab allows you to include other selectable items in a row of tabs*/
+li.notatab:hover, li.notatab:focus{background-image:none}
+li.notatab:hover a, li.notatab:focus a{background-image:none}
+/*these styles should be moved to your layout.css file - they are in here temporarily as the commmon css site gets developed*/
+#titleBar .tabs{left:200px;background-image:none}
+#titleBar .tabs li{background-image:none;border-bottom-width:0;}
+#titleBar .tabs a, #titleBar .tabs a:visited{padding:7px 15px 10px 10px;}
+#titleBar .tabs li a{background-image:none;}
+#titleBar .tabs li.selected a, #titleBar .tabs li.selected a:visited{padding-left:10px;}
+/***********************************************************/
+
+
+/*** V C A R D ***/
+.vCardHover{border:1px solid #aeaeae;-moz-border-radius:2px;padding:5px 7px 5px 25px;}
+.vCardHover:hover, .vCardHover:focus{text-decoration:none}
+
+/* Popup help */
+.popup {position: absolute;
+        left: -9999px;
+        z-index: 200;
+                
+        background-color: #fff;
+        width: 20em;
+        float: none;
+        text-align: left;
+}
+
+
+/* ***************************************************************** */
+/*                                                                   */
+/* /stylesheet/update_community.css                                  */
+/** search control styles **/
+    
+    .baseIcon {
+        width:16px; height:16px; border: 0; padding: 0px; display:inline-block; width:20px; float:left;
+    }
+
+    #simpleSearchForm .dijitMenu {
+        /*border: 1px solid #999;*/
+        border-width:1px !important;border-style:solid !important; background-color:white;
+    }
+    
+    #simpleSearchForm #searchFormCombo .dijitMenuTable{background-position:left top;background-repeat:repeat-y;}
+    #simpleSearchForm #searchFormCombo .dijitMenuItem td{white-space:nowrap;padding:2px 0;}
+    #simpleSearchForm #searchFormCombo .dijitMenuItemIcon{width:25px;height:16px;background-position:center center}
+    #simpleSearchForm #searchFormCombo .dijitMenuItemLabel{padding-left:5px !important;padding-right:5px !important;}
+    #simpleSearchForm #searchFormCombo .dijitMenuSeparatorTop{margin-top:0;border-bottom-width:1px;border-bottom-style:solid}
+    #simpleSearchForm #searchFormCombo .dijitMenuSeparatorBottom{margin-bottom:0;border:0;}
+    #simpleSearchForm #searchFormCombo .dijitButtonText {
+        padding-right:4px; padding-left:4px; font-weight:bold; font-size:.9em;
+    }
+    #simpleSearchForm #searchFormCombo .dijitReset {
+        font-family: inherit; font-size: inherit; font-size-adjust: inherit; font-stretch: inherit;
+        font-style: inherit; font-variant: inherit; font-weight: inherit;
+    }
+    
+    #simpleSearchForm #searchFormCombo .dijitArrowButtonChar {
+        display:none !important;
+    }
+
+    #simpleSearchForm #searchFormCombo .dijitComboButton .dijitDownArrowButton {
+        padding:4px;
+    }
+    #simpleSearchForm #searchFormCombo .dijitArrowButton {
+        color:#111;
+    }
+    #simpleSearchForm #searchFormCombo .dijitInline {
+        display:inline-block;
+    }
+    #simpleSearchForm .dijitComboButton {
+        background-color:white; border: #999 solid 1px;
+    }
+    #simpleSearchForm #searchFormCombo .dijitButtonNode {
+        border:none; cursor:pointer; line-height:normal; margin:0; vertical-align:middle; 
+                white-space:nowrap; text-align:left;
+    }
+    #simpleSearchForm #searchFormCombo .dijitButtonContents {
+        width:150px;
+    }
+    #simpleSearchForm #searchFormCombo .dijitButtonNode * {
+        vertical-align: middle;
+    }
+
+/** End Code for Common Search Dropdown **/
+
+
+.linkAlignRight {text-align: right;}
+ 
+/** dnd */
+
+.idbc {
+width:400px;
+border:2px solid #cccccc;
+background-color: white;
+
+}
+
+.idbt {
+margin:1px;
+padding:5px 10px 3px 10px;
+background-color:#eeeeee;
+font-weight:bold;
+}
+
+.idbi {
+padding:3px 10px 5px 10px;
+}
+
+.target {min-height: 400px; min-width: 100px;} 
+.target .dndOther{cursor: move;}
+
+#widget-container-banner .target {min-height: 25px;}
+#lotusColBanner {
+min-height: 25px;
+background-color: transparent;
+border: none;
+padding: 0;
+}
+
+.lotusui30 .lotusEmptyColWarn {
+font-size: 14px;
+padding-top: 5px;
+color: #666;
+border-top: 2px solid #ccc;
+height: 50px;
+line-height: 50px;
+}
+.lotusui30 .lotusContent .lotusEmptyColWarn {
+border-top-width: 2px;
+border-top-color: #ccc;
+}
+.lotusui30 .lotusColLeft .lotusEmptyColWarn {
+color: #999;
+border-top-color: #555;
+}
+
+#lotusMainColumns {margin-left: 220px;}
+/** end of dnd */
+
+.commThemePalette {height:400px; min-height:400px; overflow:auto; padding-left:20px; padding-right:20px;}
+
+.lotusTwoColFloater{margin:10px 10px 0 10px;overflow:auto;}
+#lotusMain{background-image:none}
+.lotusPalette td{padding:0 25px;width:33%;vertical-align:top}
+
+.lotusMenuPlain{margin:0 0 15px 0;padding-top:5px;background-color:#fff;border:1px solid #BDC1C4;padding:10px;height:12em;overflow:auto}
+.lotusMenuPlain h2{margin:0 0 7px 13px;padding:0;font-size:1em}
+.lotusMenuPlain .lotusSectionHeader{font-weight:bold}
+/*Use a ul element for menu items. Put an additional lotusIcons class on it if your menu items have icons*/
+.lotusMenuPlain ul{margin:0;padding:0;list-style-type:none;}
+.lotusMenuPlain li{zoom:1}/*sets hasLayout in IE*/
+.lotusMenuPlain li img{margin:0 3px 0 0}
+.lotusMenuPlain li a, .lotusMenuPlain li a:visited{padding:5px 0 5px 13px;display:block;text-decoration:none;font-weight:normal;line-height:1.0em}
+.lotusMenuPlain ul.lotusIcons img{vertical-align:text-bottom}
+.lotusMenuPlain ul.lotusIcons a{padding:5px 0 5px 19px}
+.lotusMenuPlain li a:hover, .lotusMenu li a:focus{text-decoration:underline}
+.lotusMenuPlain li.lotusSelected a, .lotusMenuPlain li.lotusSelected a:visited{margin:0 -10px;padding:5px 5px 5px 29px;text-decoration:none;cursor:default;background-color:#cfecff;color:#000}
+
+/** Overview class for supporting overflow **/
+.communityOverview {
+   overflow-x: auto;
+   overflow-y: visible;
+   width:100%;
+   position: relative;
+   text-align:start; 
+   line-height: normal;
+}
+	
+
+
+
+/* Needed these styles from update_layout.css */
+
+/* Login styles */
+/*hide these pieces of the interface for the login screen - we may do this server side, instead....*/
+body .login {left:50%;margin-left:-320px;position:relative;width:640px;}
+.login #titleBar, .login #banner ul li, .login #menuBar ul li{display:none}
+.login h2{margin:20px 0 0 20px;font-size:1.9em;}
+.login p{margin:5px 0 0 20px}
+#loginFooter{margin:70px 20px 20px 20px;}
+#loginFooter p{font-size:.8em;color:#666;margin:0 0px 0 120px;}
+.loginBox {padding:4px;background:#fff;border:1px solid #aaa;-moz-border-radius:5px;overflow:hidden;margin-top:15px;padding-bottom:25px;}
+.loginContent {padding:25px 0 20px 0;overflow:hidden;}
+.loginText {margin:22px 20px 20px 225px;}
+.loginContent img {float:left;padding-left:10px}
+.loginContent h1 {color:#fff;margin:0;font-size:3em !important;padding:0;line-height:1.0em;}
+.loginContent h2 {font-size:1.4em;line-height:1.3em;color:#333333/*#4d4d4d*/;padding:0;padding-right:15px;margin:15px 0}
+.loginContent h2 .emphasis {font-weight:bold;color:#000;}
+.loginContent input {margin-bottom:5px;}
+.loginButton {padding-top:10px;}
+
+/* End needed these style from update_layout.css */
+
+/* Needed this style to fix editor */
+/*.rte {vertical-align: middle !important; line-height: .6em; background: #FFFFFF;border:1px solid #908F8F;height:auto;min-height:150px;width:90%; }*/
+/* from profiles */
+.rte {border:1px solid #908f8f;min-height:150px;margin-bottom:10px;height:auto;width:750px;line-height:1.2em;}
+.commForm {vertical-align: top !important; }
+
+.noSpacing {padding:0; margin:0;}
+
+.verticalSpacing {padding:2px 0 2px 0 !important; margin:0 !important; ; }
+
+.commWelcome {padding: 0px 18px 0px 18px;}
+
+.privateCommunity {background-color:#d2d2d2}
+.privateCommunityInfo {margin-left:23px;color:#a2a2a2;font-size:.8em}   
+.privateCommunityInlineInfo {margin-left:0px;color:#626262;font-size:.8em}  
+
+.lotusDiscussion .commFlatComment {margin:10px 0px 0px 0px; border-width:1px !important;border-color:#E7E8EA; border-style:solid;}
+.replyContainer {border-width: 0px 1px 1px 1px; border-color:#E7E8EA; border-style:solid; padding: 0px 10px 10px 10px;}
+.replyContainerThreaded {border-width: 0px 1px 1px 1px; border-color:#E7E8EA; border-style:solid; padding: 0px 10px 10px 0px;}
+.lotusDiscussion .commCommentBody {margin:0;padding:0 0 0 30px;position:static;-moz-border-radius:0;} 
+/* .lotusDiscussion .lotusTable td{background-color:#F0F4F7 !important;} */
+.lotusDiscussion ul {list-style-type:none; margin:0px;}
+.lotusDiscussion li {margin-left:0px; margin-right:0px; margin-top:0px; overflow:hidden; }
+
+.commCommentBody ul{list-style-type:disc;margin-left:20px;margin-top:5px;padding-left:0;}
+.commCommentBody ol{list-style-type:decimal;margin-left:20px;margin-top:5px;padding-left:.2em;/*padding keeps the numbers from being cut off*/} 
+.commCommentBody ul li{overflow:visible}
+.commCommentBody ol li {overflow:visible;}
+.commCommentBody blockquote{margin:5px 20px}
+.commCommentBody ul ul, .commCommentBody ol ul {list-style-type:circle;}
+.commCommentBody ul ul ul, .commCommentBody ol ul ul, .commCommentBody ol ol ul{list-style-type:square}
+
+.commBidiLink {display:inline-block;}
+
+/** General styles **/
+#frame #content .errorMessages {background-color:#ffff66;font-weight:bold;font-size:1.0em;margin:10px 0px 10px 0px;-moz-border-radius:3px;padding:3px 0px 3px 0px; width:100%;}
+
+/** Communities styles **/
+.communities h1 {font-size:1.9em;padding:0;margin:0;}
+.X-person-display-inline {margin-bottom:10px}
+
+/* Button styles */
+.communityButton {border-top:1px solid #e0e0e0;margin:0 3px!important;padding:0 !important;}
+#profile .communityButton img {border:0;margin:5px 3px 5px 10px;}
+a.communityButtonBottom, a.communityButtonBottom:hover, a.communityButtonBottom:focus {display:inline-block;padding:5px 0px 7px 0px !important;margin:0;text-decoration:underline;}
+
+/* Communities layout addons */
+#frame #colLeft #profile a.button, #frame #colLeft #profile a.button:visited {display:block;margin:5px 10px 0px 10px;color:#6A791D;text-align:center;padding:5px 1px;border:1px solid #C5CE95;cursor:pointer;}
+
+#frame #colLeft #service{
+    border: 1px solid #e0e0e0;
+    -moz-border-radius:2px;
+    margin: 0 0 0 10px;
+}
+
+#frame #colLeft #service img{
+    margin: 10px 0 0px 20px; /* Used margin instead of padding because padding did not work in IE */
+    padding:2px;
+    border:1px solid #9d9c9c;
+}
+
+#frame #colLeft #service ul {
+    list-style: none;
+    padding: 10px 3px 5px 3px;
+    margin: 0 0 3px 0;
+    background: #fff; 
+}
+* html #frame #colLeft #service ul {margin-bottom:0;padding-bottom:0;} /* IE spacing hack */
+    
+    #frame #colLeft #service ul li {
+        padding: 0;
+        margin: 0;
+        /* border-top: 1px solid #e0e0e0; */
+        height: 2.0em;
+    }
+        
+        #frame #colLeft #service ul li a{
+            display: block;
+            padding: 5px 0 0px 10px;
+            font: normal 1.1em/1.2em Helvetica, Arial, Verdana, sans-serif;
+            /* color: #626161;*/
+            text-decoration: none; }
+
+        #frame #colLeft #service ul li.selected {background: #cce3fa;border:1px solid #a5d8fe;}
+        #frame #colLeft #service ul li.selected a {color: #000;font-weight:bold; }
+        #frame #colLeft #service ul li.selected a:hover {color: #000; font-weight:bold; }
+
+
+#frame #content #communityProfile img {
+    padding: 15px 20px 10px 0;
+}
+
+#frame #content #communityProfile h2{
+    color: #000;
+    margin: 0;
+    font-size: 1.1em;
+    padding: 0;
+}
+
+#frame #content #communityProfile h3{
+    color: #7da1bc;
+    font-size: 1.1em;
+    margin: 0;
+    padding: 0;
+}
+
+#frame #content #communityProfile h4{
+    margin: 0;
+    font-size: 1.1em;
+    padding: 0;
+    color: #7e7978;
+}
+
+#frame #content #communityProfile h5{
+    color: #ff9523;
+    margin: 0;
+    font-size: 1.1em;
+    padding: 10px 0 0 0;
+}
+
+#frame #content #communityProfile h6{
+    color: #4f4e53;
+    margin: 0;
+    font-size: 1.1em;
+    padding: 0;
+    position: relative;
+}
+
+#frame #content #communityProfile span{
+    color: #7da1bc;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 80px;
+}
+
+#frame #content #communityProfile span.available{
+    padding-left: 18px;
+}
+
+#frame #content #communityProfile #time{
+    float: right;
+    padding-top: 15px;
+}
+
+#frame #content #communityProfile #time h3{
+    color: #4f4e53;
+    font-size: 1.0em;
+    margin: 0;
+    padding: 75px 0 0 20px;
+}
+
+#frame #content #communityProfile #time h4{
+    color: #ff9523;
+    font-size: 1.0em;
+    margin: 0;
+    padding: 0;
+}
+
+#frame #content #communityProfile #bioLevel1 {
+    padding-top:15px;
+}
+
+#frame #content #communityProfile #bioLevel2 {
+    margin:0;
+    margin-right: 15em;
+    padding: 7px 0;
+    border-top: 1px dashed #ff9523;
+    border-bottom: 1px dashed #ff9523;
+}
+
+/** End of Community layout classes */
+
+.formTable { width: 100%; padding-left:5px; padding-right:5px;}
+.formTable a{/*color:#0063de;*/ text-decoration:none; }
+.formTable a:hover{/*color:#0063de;*/ text-decoration:underline; background-color:#f2f2f2}
+.formTable tr {padding:0;margin:0;}
+.formTable td {padding-top:1px;}
+.formTable .column1 {text-align:right; width:10em; vertical-align:top;}
+.formTable .column2 { vertical-align:top;}
+.formTable .submitArea input { width:90px; margin-top:15px; margin-bottom:10px; }
+.formTable .formFooter {width:100%; margin:0px; padding: 0px;}
+.formTable .formFooter .notifyArea { text-align:right; margin-top:15px; margin-bottom:10px; margin-right:10px; padding-right:10px; }
+.formTable .formFooter .submitArea { padding-left:0px; margin-left:-15px; }
+.formTitle {font-size: 1.7em; font-family:Trebuchet MS, Verdana, Arial, Helvetica, sans-serif; margin-bottom:4px; color:rgb(102, 102, 102); }
+.formTable .labelCell { color:#000000; text-align: right !important; vertical-align: top; padding-top: .5em;}
+.formTable select { max-width: 20em; }
+.formTable .entryField {width:90%;}
+.formTable .pickerCell {vertical-align:bottom}
+.formTable .noSpacing {padding:0; margin:0;}
+.formTable .helpText {font-style:italic;}
+.formInfo { background-color:#ffffff;border:1px solid #e0e0e0; text-align:left;padding-left:.5em;padding-right:.5em;}
+
+#frame #colLeft #profile ul .listButton img{
+    position:relative;
+    left:-53px;
+    padding-top:0px;
+    margin-top:0px;
+    border:0px;
+}
+
+/* REMOVED AND REPLACED WITH BELOW FOR SUPPORTING THE HOVER CONTROL */
+/*.memberList {margin:1.7em 0em;border-collapse:collapse;width:100%;*//*margin-left:3px;*//*font-size:1.1em;}
+.memberList .memberEntry {border:1px solid #d2d2d2;}
+.memberEntry .person {border:1px solid #d2d2d2;border-right:0;padding-left:1em;}
+.memberEntry .person a, .memberEntry .person a:visited{border-left:0;border-top:0;padding:0;}
+.memberEntry .person a:hover, .memberEntry .person a:focus {color:#05386b;text-decoration:none;border-bottom:1px dotted #05386b;}
+.memberEntry .role {border-width:1px;border-style:solid none solid none;border-color:#d2d2d2;padding-left:6em;}
+.memberEntry .action {border:1px solid #d2d2d2;border-left:0;text-align:right;padding-right:5em;}
+*/
+
+/*****/
+.memberList {margin:0em 0em 0em 0em;border-collapse:collapse;width:100%;/*margin-left:3px;*/font-size:1.1em;}
+.memberList .memberEntry {}
+.memberEntry .person {border-right:0;padding-left:1em;color:#578cca}
+.memberEntry .person a, .memberEntry .person a:visited{border-left:0;border-top:0;padding:0;}
+.memberEntry .person a:hover, .memberEntry .person a:focus {color:#05386b;text-decoration:none;border-bottom:1px dotted #05386b;}
+.memberEntry .role {padding-left:6em;color:#000000}
+.memberEntry .action {border-left:0;text-align:right;padding-right:5em;}
+#communityMemberTable tr.highlight{background:#d2d2d2;color:#ccc;}
+/*****/
+
+#tagThisAction {
+    text-decoration:underline;
+    margin-left:3px;
+}
+
+/* errors and messages */
+    .message {}
+    .message img {position:absolute;margin-top:20px;margin-left:20px;z-index:100}
+    .messageArea {
+        position:absolute;
+        top:20px; 
+        width:60% ;
+        margin:25px 25px 0px 25px;
+        background-color:#ffffff;
+        z-index:50;
+        border:1px solid #e3e3e3;
+        -moz-border-radius:7px;
+    }
+    .messageArea .headline {font-size:2em;line-height:1.5em;margin-top:33px;margin-left:50px; 85px;margin-right:25px;color:#2d5289;text-align:left}
+    .messageArea .details {font-size:1.2em;margin-top:30px;margin-left:50px;margin-right:50px;color:#2d5289}
+    .messageArea .context {font-size:1.1em;margin-left:50px;margin-right:25px;margin-top:10px;vertical-align:text-bottom;color:#2d5289}
+    .messageArea .context img{vertical-align:text-bottom}
+    .messageArea .actionsArea {font-size:1.1em;margin-top:20px;margin-left:50px;margin-right:25px}
+    .messageArea .action {margin-top:5px;}
+    .messageArea .footer { float: right; margin: 10px 10px 10px 10px; padding: 0; }
+    .messageArea #exception { height: 30em; overflow: auto; background-color: white; color: black; border-style: inset; }
+
+/* feeds and aggregation */
+    #feedListing {
+        margin-top:9px;
+        margin-bottom:8px
+        }
+    .feedHeading{
+        padding:3px 0;
+        border:1px solid #e0e0e0;
+        overflow:hidden;
+        /*background-color: #ececec;*/
+        background-color: #F2F2F2;
+        margin-bottom:2px;
+        color: #105CB6;
+    }
+    .feedMargin{
+        margin-top: 20px;
+    }
+    /* .entryBody {width: 95%; padding: 0px 2px;} */
+    
+    * html .feedHeading {height:1%;}
+    .feedHeading input, .feedHeading img{margin:5px 4px 0 5px;float:left}    
+    .feedHeading h4{margin:0 11em 0 0;font-size:1.3em;font-weight:bold;}
+    .feedHeading h4.left, .entry h5.left{padding-right:10px;}
+    .feedHeading h4 a{text-decoration:none;vertical-align:middle}
+    .feedHeading h5{margin:0 11em 0 0px;font-size:1.0em;color:#666;line-height:1.2em;}
+    .feedHeading h6{margin:0 11em 0 0px;font-size:.85em;color:#666;}
+    .feedHeading p{margin:5px 11em 0 0px}
+    .feedHeading .tags{float:right;margin-right:10px;overflow:hidden;}
+    .feedHeading ul.actions{margin: 5px 0 0 0px;padding:0 10px 0 0;font-size:.9em}
+    .feedHeading ul.actions li{display:inline;margin: 0 0 -4px;padding:0 10px;border-left:1px solid #ccc}
+    .feedHeading ul.actions li.first{margin-left:0;padding-left:0;border-left-width:0}
+    .feedHeading .divider{margin:0 8px}    
+    .feedHeading .entryBody .description {color: black}
+
+    .feedSourceActions {
+        font-size:.8em;
+        margin-left:0px;
+        border:1px solid #ff9000;
+    }
+    
+    .feedEntriesPaging {height:2em;line-height:2em;text-align:center;border-top:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;margin-top:.2em;color:#848484;padding:0 5px;}   
+    .feedEntriesPaging ul li{font-size:0.9em;color:#848484;}
+    .feedEntriesPaging a, .paging a:visited{/*color:#545484;*/font-weight:bold !important;}
+    .feedEntriesPaging a:hover, .paging a:focus {/*color:#244064;*/border-bottom:1px dotted #244064;}
+    .feedEntriesPaging input{width:20px; text-align:center; font-size:0.9em; color:#848484;}
+    .feedEntriesPaging .inlinelist{padding-left:5px;}
+    .feedEntriesPaging .inlinelist li {padding:0 6px;}
+    .feedEntriesPaging .inlinelist li.first{background:transparent}
+    .feedEntriesPaging .left {margin-left:1.4em;}
+
+    div.feedEntriesList {
+        background-color: #ffffff;
+    }
+    
+    div.feedEntriesList ul {
+        list-style-type:none;
+        margin-top:0px;
+        margin-bottom:0px;
+    }
+
+    div.feedEntriesList li {
+        margin-left:0em;
+        margin-right: 0em;
+        margin-top:.2em;
+        overflow:hidden;
+        /* white-space:nowrap; */
+        /* border-bottom:1px solid #e0e0e0; */
+    }
+    
+    div.feedEntriesList li .moreAction {
+        float:right;
+        margin-right:.5em;
+        }
+
+    div.feedEntriesList li p{
+        margin-top:2px;
+        margin-bottom:2px;
+        font-size:.9em;
+        }
+        
+    div.feedEntriesList li .bookmarkThisAction {
+        float:left;
+        font-size:.85em;
+        margin-left:.1em;
+        }
+    
+    div.feedEntriesList .first{
+        margin-top:.5em;
+    }
+
+    div.feedEntriesList .last{
+        margin-bottom:.5em;
+    }
+
+    div.feedEntriesList a {
+        /*margin-left:1.7em;*/
+    }
+
+    .feedEntriesList ul li .feedBookmarkAction {
+        float:left;
+        text-align::left;
+        font-size:.9em;
+    }
+    
+    .feedEntryInfo {
+        margin-left:.5em;
+    }
+    
+    .authorInfo {
+        font-size:.85em;
+        color: #848383;
+    }
+    
+    .feedView {
+        margin-left:1.9em;
+    }
+    
+    .feedViewActions {
+        list-style-type:none;
+        }
+        
+    .feedViewActions li {
+        display:inline;
+        }
+        
+    .feedViewActions li .selected {}
+
+    .actionButton {
+        margin-left:1.7em;
+        padding: 0 0 0 0;
+        font-size:.9em;
+    }
+    
+    .indent22 {
+        margin-left:22px;
+        }
+        
+     .indent24{
+     	margin-left:24px;
+     }
+    
+    .topicHeading {color: #105CB6; font-weight:bold;}
+    
+    .discussionEntry {
+        border-top:  1px solid #DDDDDD;
+        border-left: 1px solid #DDDDDD;
+        border-right:1px solid #DDDDDD;
+        padding-left:  5px;
+        padding-right: 5px;
+    }
+    
+
+
+div.auto_complete {
+    width: 350px;
+    background: #fff;
+    /*display: block;*/
+    position: relative;
+    z-index: 100;
+}
+
+div.auto_complete ul {
+    border:1px solid #888;
+    margin:0;
+    padding:0;
+    width:100%;
+    list-style-type:none;
+    
+}
+
+div.auto_complete ul li {
+    margin:0;
+    padding:3px;
+}
+
+div.auto_complete ul li.selected {
+    background-color: #ffb;
+}
+
+div.auto_complete ul strong.highlight {
+    color: #800;
+    margin:0;
+    padding:0;
+}
+
+#banner #popup {
+    float: left;
+    color: #fff;
+    font:Verdana, Arial, Helvetica, sans-serif;
+    text-align:left;
+    font-size:2em;
+    margin-left:1em;
+    line-height:1.6em;
+}
+
+/* Tag Slider CSS */
+.hide{display: none;}
+.show{display: block;}
+
+/* Add to Community button styles */
+.toolBMtext {color:#FDCC65;font-size:1.2em;font-weight:bold;line-height:1em;margin-left:10px;margin-top:5px;overflow:hidden;}
+.toolBMImage {float:left;margin-top:5px;padding-right:10px;}
+
+.bulletList {margin-left:23px;}
+
+/* bidi fixes for the dividers - works for both ltr and rtl, and both IE and FF */
+.lotusCommunities .lotusTable .lotusDivider {display: -moz-inline-box; display: inline-block;}
+.lotusCommunities .lotusTable .lotusType {display: -moz-inline-box; display: inline-block;}
+.lotusCommunities .lotusHeader .lotusTable .lotusType {font-size: 1em;}
+
+/* general discussion forum fixes */
+.lotusCommunities .lotusDiscussion .lotusCommentHeader{position:static;margin:0;padding:4px 4px 0px 4px;height:auto;overflow:hidden;background-position:left top;background-repeat:repeat-x}
+.lotusCommunities .lotusDiscussion .lotusTable td{border-style:none;}
+.lotusCommunities .lotusDiscussion .lotusTable .lotusDetails td{padding: 0px 0px 5px 0px;}
+
+/* discussion forum padding fixes */
+.lotusCommunities .lotusDiscussion .lotusCommentBody{margin:0;padding:0 38px 0 38px;position:static;-moz-border-radius:0;-webkit-border-radius:0;border-width:0}
+.lotusCommunities .lotusDiscussion .lotusTable .lotusDetails TD DIV.lotusChunk {margin-left: 0px; margin-right: 0px}
+
+/* ***************************************************************** */
+/*                                                                   */
+/* /javascript/source/lconn/comm/typeahead/themes/lconn.typeahead.css*/
+/*
+  * This file houses structural styles for lconn.act.* widgets
+  */
+
+/* DIALOG */
+.dijitDialog {
+    padding: 0px !important;
+}
+
+.dijitDialogTitleBar {
+    padding: 5px 5px 0px 5px !important;
+}
+
+.dijitDialogCloseIcon {
+    margin: 5px;
+}
+/* DIALOG */
+
+*html .fadedOut {
+    visibility: hidden;
+}
+.fadedOut {
+    opacity: 0.3;
+}
+
+.displayNone { display: none; }
+
+/* EVENT LOG */
+.EventLog                { padding:         5px; }
+.EventLog .log           { list-style-type: none; }
+.EventLog .log div       { margin:          3px 3px 3px 5px; }
+.EventLog .log .logEntry { margin-left:     10px; }
+.EventLog .nav           { padding:         0px 3px 0px 3px; }
+/* END EVENT LOG */
+
+/* CONFIRM DELETE FORM */
+.ConfirmDeleteForm .field { margin:1em; }
+.ConfirmDeleteForm .footer { padding-bottom:5px; padding-left:1em; padding-top:5px; }
+/* END CONFIRM DELETE FORM */
+
+/* CONFIRM NOTIFY FORM */
+.ConfirmNotifyForm .field { margin:1em; }
+.ConfirmNotifyForm .footer { padding-bottom:5px; padding-left:1em; padding-top:5px; }
+/* END CONFIRM NOTIFY FORM */
+
+/* NAVIGATOR */
+/*.lotusMenu ul li a,
+.lotusMenu ul li a:visited,
+.lotusMenu ul li.lotusSelected a,
+.lotusMenu ul li.lotusSelected a:visited {
+    margin: 0pt 5px 3px 5px;
+    padding-left: 20px;
+    cursor: pointer;
+}*/
+/* END NAVIGATOR */
+
+/* A11y Labels */
+
+.a11yLabel                   { display: none; }
+.dijit_a11y .a11yLabel       { display: inline; }
+
+/* End A11y Labels */
+
+
+/* ADD MEMBER FORM */
+
+.AddMembers .memberList {
+    visibility: hidden;
+}
+
+.AddMembers .scroll {
+    overflow: auto;
+}
+
+.AddMembers .memberList .member {
+    padding: 3px;
+}
+
+.AddMembers .memberList .member .P {
+    float: left;
+}
+
+.AddMembers .memberList .member .G {
+    float: left;
+}
+
+.AddMembers .memberList .member .C {
+    float: left;
+}
+
+.AddMembers .memberList .member .nameContent {
+    padding-left: 20px;
+}
+
+.AddMembers .memberList .member .fieldDel {
+    /* float: right; */
+}
+
+/* make size wider for longer translations */
+.AddMembers .typeAhead {
+    width: 350px !important;
+}
+
+.AddMembers .field {
+    padding:5px 5px 5px 5px;
+}
+
+#addMembersSelect {
+	vertical-align: bottom;
+}
+
+.AddMembers .field input {
+	vertical-align: bottom;
+}
+
+/* END ADD MEMBER FORM */
+
+
+/* FORMS AND FIELDS */
+
+.NodeForm .content {
+    display: none; 
+}
+
+.EntryForm {
+    /*padding-left: 110px;*/
+    padding: 0px;
+}
+
+.footer .entrySpinner {
+    display: none;
+    float: left;
+}
+
+.AddMembersForm .field {
+    clear: both;
+    overflow: hidden;
+}
+
+.dj_ie .AddMembersForm .field {
+    display: inline-block;
+}
+
+.field .fieldHeader {
+    display: block;
+    float: left;
+    width: 130px;
+    text-align: right;
+    padding: 5px;
+}
+
+.fieldHeaderComboBox {padding-top:10px;}
+
+.field .lotusMeta strong {padding-right:20px;}
+
+.field .fieldData {
+    padding: 5px 5px 5px 140px;
+    font-size: 14px;
+}
+
+.field .fieldDel {
+    cursor: pointer;
+}
+
+.field .fieldAdd {
+    cursor: pointer;
+}
+
+.field .fieldData .fieldNode {
+    font-size: 0.9em;
+    width: 411px;
+}
+
+.field .fieldData .fieldDateNode {
+    font-size: 0.9em;
+    width: 200px;   
+}
+
+.field .fieldData .fieldFileNode {
+    font-size: 0.9em;
+    size: 100px;
+    width: 225px;
+}
+
+.field .fieldData .hiddenFieldFileNode {
+    font-size: 0.9em;
+    size: 100px;
+    visibility: hidden;
+}
+
+.field .fieldData .bookmarkTitle {
+    width: 150px;
+    margin-right: 5px;
+}
+
+.field .fieldData .bookmarkUrl {
+    width: 245px;
+}
+
+.ActivityForm  .extraFields {
+    padding-top:5px;
+    margin-top: 5px;
+}
+
+.ActivityForm textarea {
+    height: 75px;
+}
+
+.ActivityForm .templateDescription {
+    width: 411px;
+    margin-top: 10px;
+}
+
+.AddMembersForm .content {
+    padding: 5px;
+}
+
+.AddMembersForm .footer {
+    padding: 5px;
+}
+
+.EntryTypeForm .icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+.EntryTypeForm .field .fieldData img {
+    margin: 0px 3px;
+}
+
+.EditEntryTypes .typesList {
+    width: 411px;
+    height: 200px;
+    overflow: auto;
+    margin: 5px;
+}
+
+.EditEntryTypes .typesList .type .actions {
+    float: right;
+}
+
+.EditEntryTypes .typesList .type {
+    padding: 2px 2px 2px 24px;
+    background-position: 4px 50%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    clear: both;
+}
+
+.EditEntryTypes .typesList .type .label {
+    margin-top: 5px;
+}
+
+/* ie6 */
+*html .ActivityButtons .NodeForm {
+    display: inline-block;
+}
+
+.fieldData table {
+    width: 411px;
+    border-collapse: collapse;
+}
+
+.fieldData table th,
+.fieldData table td {
+    padding: 3px;
+}
+/* END FORMS AND FIELDS */
+
+
+/* NODE */
+.nodeHandle {
+    cursor: move; 
+    float: left; 
+    width: 9px; 
+    height: 17px;
+    visibility: hidden; 
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+.handleVisible {
+    visibility: visible;
+}
+.nodeHandleDragging {
+    background-color: #efefef;
+    border: 1px solid #cccccc;
+    padding: 2px 2px 2px 30px; 
+    width: 300px;
+}
+
+.Node {
+    display: none;
+}
+
+.Node .miniPerson {
+    display: none;
+}   
+
+.nodeChildren {
+    /*padding: 0px 0px 0px 20px;*/
+}
+
+.Node .entryHeader {
+    padding:5px 5px 5px 10px; 
+}
+
+.Node .entryHeader .hideLink {
+    float: right;
+}
+
+.Node .entryIcon, .MiniNode .entryIcon {
+    width: 16px;
+    height: 16px;
+    float: left;
+}
+
+.Node .entryHeader h1, .MiniNode h1{
+    padding-left: 20px;
+    display: block;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+.Node .entryHeader .meta {
+    padding-left: 20px;
+}
+
+.Node .entryContent {
+    padding: 5px;
+    margin-left: 25px;
+}
+.Node .entryContent .fields {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.Node .entryContent .fields .field {
+    overflow: hidden;
+}
+
+/* IE only */
+.dj_ie .Node .entryContent .fields .field {
+    display: inline-block;
+}
+
+.Node .entryContent .fields .field .fieldName {
+    float: left;
+    width: 150px;
+    clear: both;
+    padding-top: 3px;
+}
+
+.Node .entryContent .fields .field .fieldValue {
+    padding-bottom:3px; 
+    padding-left:155px; 
+    padding-top:3px; 
+}
+
+/* SYEE7BHT3P rich text editor indent  */
+.Node .entryContent .description blockquote {
+    margin-left: 35px;
+}
+.Node .entryContent .description ul {
+    margin-left: 35px;
+}
+
+.nodeContainer {
+    clear: both;
+}
+
+.Node .entryFooter {
+    margin-left: 30px;
+}
+
+.Node .entryFooter .tags {
+    display: none;
+    padding: 5px 0px 5px 0px;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+.MiniNode {
+    overflow: hidden;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.MiniNode .entryTitleBar, .Node .entryTitleBar {
+    cursor: pointer;
+}
+
+.MiniNode h1.comment {
+    font-weight: normal;
+    font-style: italic;
+    color: #7f7f7f;
+}
+
+.MiniNode .miniExpand {
+    float: right;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.dijit_a11y .MiniNode .miniExpand {
+    width: 60px;
+}
+
+.MiniNode .miniExpand .a11yLabel
+.MiniNode .miniExpand a {
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.MiniNode .miniIndicator {
+    float: right;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.MiniNode .miniPerson {
+    float: right;
+    font-size: 0.9em;
+    width: 160px;
+    overflow: hidden;
+}
+
+.MiniNode .miniDate {
+    float: right;
+    font-size: 0.9em;
+    width: 100px;
+    overflow: hidden;
+}
+
+.nodeChildren {
+    padding-left: 20px;
+}
+
+
+/* END NODE */
+
+.ResponseForm {
+    padding-top: 10px;
+}
+.ResponseForm .contents {
+    opacity: 0;
+}
+
+.ResponseForm .responseFormFooter {
+    padding: 5px;
+}
+
+.SectionForm .content .sectionInput {
+    width: 200px;
+}
+
+.SectionForm .content .field .fieldHeader,
+.EditEntryTypes .content .field .fieldHeader {
+    width: auto;
+}
+
+.SectionForm .content .field .fieldData,
+.EditEntryTypes .content .field .fieldData {
+    padding-left: 10px;
+}
+
+.Section .actionsMenu {
+    float: right;
+}
+
+.MemberList .list { 
+    margin-left:17px; 
+}
+
+.MemberList h3 {
+    font-size:1em; 
+    font-weight:bold; 
+    padding:6px 0px 4px 0px;
+}
+
+.MemberList li {
+    padding: 4px 0px;
+}
+
+/* NotifyForm widget */
+
+.NotifyForm .field {
+    clear: left;
+    margin: 0pt;
+    padding: 5px 0pt 8px 10em;
+}
+
+form.NotifyForm .indent {padding-left: 10em; } 
+
+.NotifyForm .bottomarea {
+    padding-bottom: 3px;
+    paddding-right: 5%;
+    position: relative;
+    text-align: right;
+}
+
+.NotifyForm .basicForm {
+    margin:2px 0; 
+    padding:3px 0 5px 0;
+}
+
+.NotifyForm .saveArea { float: left; }
+
+form.NotifyForm  label{
+  text-align: right;
+  font-weight: bold;
+  float: left;
+  padding-top: 3px;
+  margin-left: -10em; /*width of left column*/
+  width: 9em; /*width of labels. Should be smaller than left column (155px) to create 
+  some right margin*/
+}
+
+/* END NOTIFY FORM */
+
+
+/* ICONPALETTE WIDGET */
+
+.IconPalette table {
+    border: none;
+    border-collapse: collapse;
+    width: auto;
+}
+
+.IconPalette table tr {
+    border: none;
+}
+
+.IconPalette table td {
+    border: none;
+}
+
+.IconPalette .icon {
+    width: 16px;
+    height: 16px;
+    padding: 3px;
+    margin: 1px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+
+.IconPalette .selected {
+    padding: 2px;
+}
+/* END ICONPALETTE WIDGET */
+
+/* this is to make the drop down boxes show black text in case the text boxes are disabled */
+.buttonIcon {
+    width: 20px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-attachment: scroll;
+}
+
+.iconPlaceholder {
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-attachment: scroll;
+}
+
+/* CopyMoveEntry widget */
+.CopyMoveEntry .content { width: 560px}
+
+.CopyMoveEntry .footer { background-color:#D9E7F4; padding-bottom:5px; padding-left:1em; padding-top:5px; }
+
+.CopyMoveEntry .lotusBlue {
+  background-color:#eff4f7;
+}
+
+.CopyMoveEntry .description {
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-top: 5px;
+}
+
+.CopyMoveEntry .selection {
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-bottom: 5px;
+}
+
+
+/* ***************************************************************** */
+/*                                                                   */
+/* /javascript/source/lconn/comm/typeahead/themes/lotusBlue/LotusBlue.css*/
+a:hover {
+    text-decoration: underline;
+}
+
+/* DND */
+
+.activeTarget {
+    border: 1px solid black;
+}
+
+/* END DND */
+
+/* EVENT LOG */
+.EventLog h1                   { font-size:       14px; }
+.EventLog .log .dateHeader     { font-weight:     bold; }
+.EventLog .log .logEntry .date { font-style:      italic;
+                                 color:           gray; }
+/* END EVENT LOG */
+
+
+/* ADD MEMBER FORM */
+.AddMembers .memberList {
+    border: 1px solid #9a9a9a;
+    border-bottom: none;
+    background-color: white;
+}
+
+.AddMembers .scroll {
+    border-bottom: 1px solid #9a9a9a;
+}
+
+.AddMembers .memberList .member {
+    border-bottom: 1px solid #9a9a9a;
+}
+
+.AddMembers .memberList .member .type {
+    color: #afafaf;
+    font-style: italic;
+}
+
+.AddMembers .memberList .member .fieldDel {
+    /* float: right; */
+}
+
+.AddMembers .typeAhead {
+    border: 1px solid #9a9a9a;
+}
+
+/* END ADD MEMBER FORM */
+
+
+/* FORMS AND FIELDS */
+.footer .entrySpinner {
+    width: 16px;
+    height: 16px;
+}
+
+.field .fieldHeader {
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.field .dijitClickableRegion {
+    background-color: #ffffcc;
+}
+
+.field .fieldHeader .editableHeader {
+    border-bottom: 1px dashed #105CB6;
+}
+
+.field .fieldDel {
+    height: 16px;
+    width: 16px;
+    border: none;
+}
+
+.field .fieldDelText {
+    height: 16px;
+    width: 16px;
+    border: none;
+    display: none;
+}
+
+.dijit_a11y  .field .fieldDelText {
+    height: 16px;
+    width: 16px;
+    border: none;
+    cursor: pointer;
+    display: inline;
+}
+
+.dijit_a11y  .field .fieldDel {
+    height: 16px;
+    width: 16px;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.field .fieldAdd {
+    height: 16px;
+    width: 16px;
+    border: none;
+}
+
+.field .fieldAddText {
+    height: 16px;
+    width: 16px;
+    border: none;
+    display: none;
+}
+
+.dijit_a11y  .field .fieldAddText {
+    height: 16px;
+    width: 16px;
+    border: none;
+    cursor: pointer;
+    display: inline;
+}
+
+.dijit_a11y  .field .fieldAdd {
+    height: 16px;
+    width: 16px;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.NodeForm .editor, 
+.EntryForm .editor,
+.ActivityForm .editor,
+.PublishForm .editor {
+    border: 1px solid #cccccc;
+    background-color: white;
+}
+
+.ActivityForm  .extraFields {
+    border-top: 1px solid #C9D8E9;
+}
+
+.AddMembersForm .content {
+    background-color: #eff4f7;
+}
+
+.AddMembersForm .footer {
+    border-top: 1px solid #666666;
+    background-color: #d9e7f4;
+}
+
+.EditEntryTypes .typesList {
+    background-color: white;
+    border: 1px solid #cccccc;
+}
+
+.EditEntryTypes .typesList .type {
+    border-bottom: 1px solid #cccccc;
+    font-weight: bold;
+}
+
+.entryFormBody {
+    background-color: #eff4f7 !important;
+}
+
+.fieldData div.dijitInlineTable {
+    border: 1px solid #cccccc;
+}
+
+/* todo fixme what is this */
+.fieldData div th {
+    background-color: white;
+    border-bottom: 1px solid #cccccc;
+}
+
+.fieldData div.dijitInlineTable div.dijitInputField {
+    font-style: italic;
+    border-bottom: 1px solid #cccccc;
+}
+/* END FORMS AND FIELDS */
+
+
+/* NODE */
+.Node, .MiniNode {
+    border-bottom: 1px solid #CFE6FF;
+}
+.MiniNode {
+    padding: 0 0 0 6px;
+}
+
+.nodeChildren .Node {
+    border-left: 1px solid #cfe6ff;
+}
+
+.Node .entryHeader h1 {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.Node .entryHeader .meta {
+    color: #666666;
+}
+
+.Node .entryContent .fields .field { 
+    color: #666666;
+    border-bottom:1px dotted #CFE6FF;
+}
+
+.Node .entryContent .fields .field .fieldValue {
+    color:black; 
+}
+
+.Node .entryFooter .actions {
+    color: #666666;
+}
+
+.Node .entryFooter .actions a {
+    text-decoration: none;
+}
+
+.Node .addNew a {
+    font-style: italic;
+}
+
+.MiniNode h1 {
+    font-size: 1em;
+    padding:2px 0px 0px 24px;
+    font-weight: bold;
+}
+/* END NODE */
+
+.ResponseForm {
+    background-color: #eef4f7;
+    border-top: 1px dashed #CFE6FF;
+}
+
+.ResponseForm .responseFormFooter {
+    background-color: #d9e7f4;
+}
+
+
+/* NotifyForm widget */
+
+.NotifyForm .basicForm { 
+    border-top:2px dotted #A0A0A0; 
+    border-bottom:2px dotted #A0A0A0; 
+    background-color:#DFDFDF; 
+}
+
+form.NotifyForm  label{
+  color: #999999;
+}
+
+.NotifyForm .notifyTop {border-bottom: 1px solid #999999; }
+.NotifyForm .notifyBottom {border-top: 1px solid #999999; }
+
+.nobordertable tr td { border-style: none }
+
+/* END NOTIFY FORM */
+
+.help {
+    padding-top: 5px;
+    padding-right: 4px;
+}
+
+/* ICONPALETTE WIDGET */
+.IconPalette td .icon:hover {
+    background-color: #fcde81;
+}
+
+.IconPalette .selected {
+    border-top: 1px solid #898989;
+    border-right: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+    border-left: 1px solid #898989;
+    background-color: #d9e7f4;
+}
+/* END ICONPALETTE WIDGET */
+
+/* feed icons */
+.feedContainer {font-size:.9em; margin-top:10px;}
+/* END ICONS */
+
+/* Fix for IE Typeahead issue */
+.lotusui_ie .dijitPopup .lotusActionMenu {position: static;}
+    
+/* SPR ALEE87Z5J3 */
+.lotusui_ie .lotusDialogBorder { width: 500px; }  
+
+/* fix for alt text with images disabled */
+#membersListId img { line-height:1; }
+.lotusui30 img.lotusForceLineHeight { line-height: 1; }
+
+/* fix spacing for x link in remove filter */
+.lotusui30 .lotusFilters2 .fieldDelText { margin: 0 5px; }
+
+/* spacing for Members header page */
+.lotusui30 .lotusHeader .cnxnsType {margin-left: 5px; margin-right: 5px;}
+
+/* fix input field sizing for addmemberswidget */
+#addMembersWidgetPeopleTypeAhead { height: 1.25em; }
+
+/* Fix edit member "dialog" */
+.lotusui30 .lotusTable .lconnCommEditMember { opacity: 1; z-index: 900; position: absolute; background-color: #FFFFFF; padding: 5px; }
+.lotusui30 .lotusTable .lconnCommEditMember .lotusForm { border: none; margin: 0; }
+.lotusui30 .lotusTable .lotusFirstCell .lconnCommEditMember input.lotusFormButton { margin: 0 9px 3px 1px; }
+
+.lotusui30 .lotusMenu. lotusBottomCorner #avtLotusMenuLeft { width: 200px; }
+
+/* Introduce a separator line above a menu item */
+.lotusui30 .lotusMenu .lotusMenuSeparatorTop { border-top: 1px solid #434B4D; }
+
+/* Safari only.  If the window is too small, we need scrollbars because of the way safari handles widths */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .lotusui30_layout .lotusMain .lotusContent {
+        overflow: auto!important;
+    }
+}
+
+/* Styles for columns based on different widget layouts */
+
+#lotusFrame.lotusWidget_3columnsTopMenuLayout,
+#lotusFrame.lotusWidget_3columnsWithBannerTopMenuLayout {
+    background: #f1f1f1;
+}
+
+#tabNavCommunityName .tabNavTextEllipsis .comNavIcon {
+  float: none;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.lotusWidget_3columnsTopMenuLayout.lotusui30_layout .lotusColLeft:after, 
+.lotusWidget_3columnsWithBannerTopMenuLayout.lotusui30_layout .lotusColLeft:after {
+  left: 0;
+  right: 0;
+  margin: 0;
+  width: auto;
+}
+
+
+/* Rules for community title placement */
+.communities-widget-appearance .lotusWidget_2columnLayout .lotusPlaceBar .lotusRightCorner, 
+.communities-widget-appearance .lotusWidget_3columnLayout .lotusPlaceBar .lotusRightCorner, 
+.communities-widget-appearance .lotusWidget_3columnLayoutWithBanner .lotusPlaceBar .lotusRightCorner 
+{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.communities-widget-appearance .lotusWidget_2columnLayout .lotusPlaceBar h2,
+.communities-widget-appearance .lotusWidget_3columnLayout .lotusPlaceBar h2,
+.communities-widget-appearance .lotusWidget_3columnLayoutWithBanner .lotusPlaceBar h2
+{
+    top: -40px;
+	margin-left: 44px;
+}
+
+/** 3 Columns left sidebar **/
+.communities-widget-appearance .lotusWidget_3columnLayout #lotusContent,
+.communities-widget-appearance .lotusWidget_3columnLayout .lotusColRight
+{
+	margin-top: 40px;
+}
+
+.communities-widget-appearance .lotusWidget_3columnLayout .lotusColLeft { 
+	margin-right: 40px;
+}
+
+
+/** 3 Columns left sidebar with Banner **/
+.communities-widget-appearance .lotusWidget_3columnLayoutWithBanner #lotusColBanner {
+	margin-top: 40px;
+	margin-bottom: 0;
+}
+
+
+/** 3columns B layout **/
+#lotusFrame.lotusWidget_3columnsTopMenuLayout {
+    min-width: 1440px;
+}
+
+.lotusWidget_3columnsTopMenuLayout .lotusMain {
+    width: 1360px;
+	max-width: none;
+	overflow-x: auto;
+	padding: 40px;
+}
+
+.lotusWidget_3columnsTopMenuLayout .lotusColLeft { 
+	width: 370px;
+	margin: 0 30px 0 0;
+	padding-left: 0;
+    padding-right: 0;
+}
+
+.lotusWidget_3columnsTopMenuLayout .lotusColLeft .lotusWidget2 {
+margin: 0 0 30px 0;
+}
+
+.lotusWidget_3columnsTopMenuLayout #lotusContent  { 
+	display: inline-block;
+	padding-left: 0;
+} 
+
+.lotusWidget_3columnsTopMenuLayout  #contentArea  { 
+width: 560px;
+margin: 0 30px 0 0;
+}
+
+.lotusWidget_3columnsTopMenuLayout .lotusMain .lotusContent .lotusWidget2{ 
+margin: 0 0 30px 0;
+}
+
+.lotusWidget_3columnsTopMenuLayout .lotusColRight { 
+width: 370px;
+margin: 0;
+}
+
+.lotusWidget_3columnsTopMenuLayout .lotusColRight .lotusWidget2 {
+margin: 0 0 30px;
+}
+
+/** 3columns layout with RTE **/
+
+#lotusFrame.lotusWidget_3columnsWithBannerTopMenuLayout {
+    min-width: 1440px;
+}
+
+.lotusWidget_3columnsWithBannerTopMenuLayout .lotusMain {
+    width: 1360px;
+	max-width: none;
+	overflow-x: auto;
+	margin: 0 auto 0 auto;
+	padding: 40px 40px;
+}
+
+.lotusWidget_3columnsWithBannerTopMenuLayout #lotusColBanner {
+	margin-bottom: 0;
+}
+
+.lotusWidget_3columnsWithBannerTopMenuLayout #lotusMainColumns {
+	margin-left: 0px;
+	float: right;
+}
+
+.lotusWidget_3columnsWithBannerTopMenuLayout .lotusColLeft  { 
+	width: 432px;
+	margin-left: 0;
+	margin-right: 32px;
+	padding-top: 0;
+	padding-right: 0;
+}
+
+.lotusWidget_3columnsWithBannerTopMenuLayout #lotusContent  { 
+	margin-right: 0px;
+	padding-top: 0;
+	padding-left: 0;
+	float: left;
+	display: inline-block;
+} 
+
+.lotusWidget_3columnsWithBannerTopMenuLayout #contentArea  { 
+	width: 432px;
+} 
+
+
+.lotusWidget_3columnsWithBannerTopMenuLayout .lotusColRight  { 
+	width: 432px;
+	margin-left: 32px;
+	padding-top: 0;
+}
+
+.lotusWidget_3columnsWithBannerTopMenuLayout .lotusColLeft .lotusWidget2, .lotusWidget_3columnsWithBannerTopMenuLayout  #lotusContent .lotusWidget2:not(.app-communities.cnx8-ui *),
+.lotusWidget_3columnsWithBannerTopMenuLayout .lotusColRight .lotusWidget2, .lotusWidget_3columnsWithBannerTopMenuLayout #lotusColBanner .lotusWidget2:not(.app-communities.cnx8-ui *){
+        margin: 0 0 30px 0;
+}
+
+
+/*  Styles for widgets to adapt to narrow, wide and banner columns. */
+
+/** Common styles for widgets **/
+.wpthemeNarrowPlus .lconnHideNarrowPlus       {display:none; visibility:hidden;}
+.wpthemeNarrowOrig .lconnHideTrueNarrow       {display:none; visibility:hidden;}
+.wpthemeNarrowOrig .lconnFontNormalTrueNarrow {font-weight: normal !important;}  
+.wpthemeNarrowOrig .lconnFontSmallTrueNarrow  {font-weight: normal; font-size: 12px;} 
+.wpthemeNarrowOrig .lconnlotusHideWidgetFooterBorderTrueNarrow {border: 0px !important;}
+.wpthemeNarrow 	.lconnHideNarrow       {display:none; visibility:hidden;}
+.wpthemeNarrow 	.lconnFontNormalNarrow {font-weight: normal !important;}  
+.wpthemeNarrow 	.lconnFontSmallNarrow  {font-weight: normal; font-size: 12px;} 
+.wpthemeNarrow .lconnlotusHideWidgetFooterBorder {border: 0px !important;}
+.wpthemeThin 	.lconnHideNarrow,       .wpthemeThin .lconnHideTrueNarrow       {display:none; visibility:hidden;}
+.wpthemeThin 	.lconnFontNormalNarrow, .wpthemeThin .lconnFontNormalTrueNarrow {font-weight: normal;}  
+.wpthemeThin 	.lconnFontSmallNarrow,  .wpthemeThin .lconnFontSmallTrueNarrow  {font-weight: normal; font-size: 12px;} 
+.wpthemeWide   	.lconnIndent15Wide     {padding-left:15px;padding-right:15px;} 
+.wpthemeWide   	.lconnIndent10Wide     {padding-left:10px;padding-right:10px;} 
+.wpthemeBanner   	.lconnIndent10Banner     {padding-left:10px;padding-right:10px;} 
+.wpthemeWide   	.lconnFontNormalWide   {font-weight: normal;} 
+.wpthemeWide	.lconnHideWide 		{display:none; visibility:hidden;}
+.wpthemeBanner	.lconnHideBanner		{display:none; visibility:hidden;}
+.wpthemeWide	.lconnFontNormal	{font-weight: normal;}
+.wpthemeNarrow	.lconnFontNormal	{font-weight: normal;}
+.wpthemeBanner	.lconnFontNormal	{font-weight: normal;}
+
+/** Member Summary widget styles **/
+.wpthemeNarrow .lconnMemberSummary {overflow:hidden; max-height:100px}
+.wpthemeThin .lconnMemberSummary {overflow:hidden; max-height:100px}
+.wpthemeWide .lconnMemberSummary{overflow:hidden; max-height:85px}
+.wpthemeBanner .lconnMemberSummary {overflow:hidden; max-height:85px}
+
+/* Feedreader widget */ 
+.wpthemeNarrowOrig .lconnfeedTitle 		{font-weight: normal; font-size: 12px;}
+.wpthemeNarrowOrig .lotusTable 			td.lconnfeedEntryRow {border-top: none;}
+.wpthemeNarrowOrig .lotusTable 			td.lconnfeedBottomAction {border-top: none;}
+.wpthemeNarrowOrig .lconnfeedEntryRow	a {font-weight: bold;}
+
+.wpthemeThin .lconnfeedTitle 		{font-weight: normal; font-size: 12px;}
+.wpthemeThin .lotusTable 			td.lconnfeedEntryRow {border-top: none;}
+.wpthemeThin .lotusTable 			td.lconnfeedBottomAction {border-top: none;}
+.wpthemeThin .lconnfeedEntryRow		a {font-weight: bold;}
+
+
+/* Subcommunity widget */
+.wpthemeNarrow .lotusTable           .lconnHideBorderNarrow {border-width:0px;}
+.wpthemeNarrow .lotusTable            td.lconnHideMarginNarrow {margin-left:0px;padding-left:0px;padding-right:0px;margin-right:0px}
+.wpthemeNarrow .lotusTable            td.lconnBottomAction {border-top: none;}
+
+.wpthemeThin .lotusTable           .lconnHideBorderNarrow {border-width:0px;}
+.wpthemeThin .lotusTable            td.lconnHideMarginNarrow {margin-left:0px;padding-left:0px;padding-right:0px;margin-right:0px}
+.wpthemeThin .lotusTable            td.lconnBottomAction {border-top: none;}
+
+.wpthemeNarrow .lconnSubcomImageDiv   {height:85px; width:85px; padding-top:0px; overflow:hidden;}
+.wpthemeNarrow .lconnSubcomImageDiv  .lconnSubcomImageCell {padding:0px;}
+.wpthemeNarrow .lconnSubcomImageDiv  .lconnSubcomImage {height:80px; width:80px;}
+
+.wpthemeThin .lconnSubcomImageDiv   {height:85px; width:85px; padding-top:0px; overflow:hidden;}
+.wpthemeThin .lconnSubcomImageDiv  .lconnSubcomImageCell {padding:0px;}
+.wpthemeThin .lconnSubcomImageDiv  .lconnSubcomImage {height:80px; width:80px;}
+
+.wpthemeWide   .lconnSubcomImageDiv   {height: 200px; width:105px; padding-top:0px; overflow:hidden;}
+.wpthemeWide   .lconnSubcomImageDiv  .lconnSubcomImageCell {padding:0px;}
+.wpthemeWide   .lconnSubcomImageDiv  .lconnSubcomImage {height:90px; width:90px;}
+
+.wpthemeBanner   .lconnSubcomImageDiv   {height: 200px; width:105px; padding-top:0px; overflow:hidden;}
+.wpthemeBanner   .lconnSubcomImageDiv  .lconnSubcomImageCell {padding:0px;}
+.wpthemeBanner   .lconnSubcomImageDiv  .lconnSubcomImage {height:90px; width:90px;}
+
+.communities-widget-appearance .lconnSubcomImageDiv .lconnSubcomImage {border-radius: 50%;}
+
+/* Tags widget */
+.wpthemeBanner  div.lconnTagDisplayWide {border-top: 1px solid #eee;border-bottom: 1px solid #eee;margin-left:0px;padding-left:15px;padding-right:15px;margin-right:0px;}
+.wpthemeWide    div.lconnTagDisplayWide {border-top: 1px solid #eee;border-bottom: 1px solid #eee;margin-left:0px;padding-left:15px;padding-right:15px;margin-right:0px;}
+
+
+/*RTC 143545: Message content should always be of dark color*/
+.lotusui30 .lotusMessage2 {color: #222;}
+
+/*RTC 143981: Unclickable layout link should look the same as plain text*/
+.lotusui a.homepageUnclickable,
+.lotusui a.homepageUnclickable:hover,
+.lotusui a.homepageUnclickable:focus,
+.lotusui a.homepageUnclickable:active{
+	text-decoration: none;
+	cursor: default;
+}
+
+/*RTC 145001: Widget title should be wrapped*/
+.lotusui30 .lotusWidget2 h2 > span {
+  word-wrap: break-word;
+  display: block;
+  margin-right: 20px;
+}
+
+/*RTC 147318: Palette button should break its contents into lines if too long*/
+.lotusui30 .lotusPaletteWidget .lotusTitle h4 {
+	height: auto;
+	white-space: normal;
+}
+.lotusui30 .lotusPaletteWidget .lotusTitle h4 span{
+	white-space: nowrap;
+}
+.lotusui30 .lotusContent .lotusFileCollectionsStream a.iconsOther16 {
+   display: none;
+}
+
+/*RTC 152105: As an end user, I can use a consolidated global button to create new files/folders for Community Files */
+.lotusui30 .lotusGlobalActionBar {
+  width: 191px !important;
+  margin-left: 12px !important;
+  margin-bottom: 10px !important; 
+}
+
+/*RTC 157711: Implement full patch breadcrum w/o view prefix */
+.lotusHeader .lconnBreadcrumb {
+   color: #292929;
+   font-weight: normal;
+}
+.lotusHeader .lconnBreadcrumb .lconnBreadcrumbitem {
+   float: left;
+}
+.lotusHeader .lconnBreadcrumb .lconnBreadcrumbdropdown {
+   border-width: 0px;
+   height: 15px;
+   width: 20px;
+   position: relative;
+   padding-left: 5px;
+   display: inline;
+}
+/* adjust lotusBtn for breadcrumb usage */
+.lotusHeader .lconnBreadcrumb .lconnBreadcrumbdropdown .lotusBtn {
+   background-image: url(../../images/overflow32bit.png);
+   background-repeat: no-repeat;
+   margin: 0;
+   padding: 0;
+   height: 20px;
+   width: 30px;
+   border: none;
+   box-shadow: none;
+}
+/* hide drop down img in breadcrumb drop down button */
+.lotusHeader .lconnBreadcrumb .lconnBreadcrumbdropdown .lotusDropDownSprite {
+   display: none;
+}
+
+.lotusHeader .lconnBreadcrumb .lconnBreadcrumbtwisty {
+   padding-top: 3px;
+}
+.lotusHeader .lconnBreadcrumb .lconnBreadcrumbtwisty img {
+   margin-left:10px;
+   margin-right:10px;
+}
+.lotusHeader .lconnBreadcrumb .lconnBreadcrumbnode {
+   max-width: none;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   cursor: pointer;
+}
+.lotusHeader .lconnBreadcrumb li:last-child .lconnBreadcrumbdiv .lconnBreadcrumbnode {
+   font-weight: bold;
+}
+
+/* styling of dijitMenu used as breadcrumb drop down menu */ 
+.lotusui30dojo .dijitMenu.lconnBreadcrumb.lotusGlobalActionBarMenu {
+   border-color: #F1F1F1;
+}
+.lotusui_ie8 .lotusui30dojo .dijitMenu.lconnBreadcrumb.lotusGlobalActionBarMenu {
+   table-layout: fixed;
+   /* value = width of td.dijitMenuItemLabel + margin + border + padding + other td elements */
+   width: 352px;
+}
+/* styling of dijitMenuItem for breadcrumb drop down menu */
+.lconnBreadcrumb.lotusGlobalActionBarMenu .dijitMenuItem td.dijitMenuItemLabel {
+   max-width: 300px;
+   width: 300px;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+
+/* styling of dijitMenuItem for folder actions menu */
+.lotusui30dojo .lconnContentTitleDropdownBody .dijitMenuItem td.dijitMenuItemLabel {
+  min-width: 180px;
+}
+
+
+.lotusui30 .lotusHeader .lconnContentTitleDropdownContainer .lotusDropDownSprite {
+   background-image: url("/com.ibm.oneui3.styles/imageLibrary/Icons/Other/dropdown24-black.png");
+   background-position: 0px 0px;
+   width: 24px;
+   height: 24px;
+   margin-left: 10px;
+   margin-right: 0;
+   vertical-align: baseline;
+   opacity: inherit;
+}
+.lotusui30 .lotusHeader .lconnContentTitleDropdownContainer .lotusDropDownSprite:hover,
+.lotusui30 .lotusHeader .lconnContentTitleDropdownContainer .lotusDropDownSprite:focus,
+.lotusui30 .lotusHeader .lconnContentTitleDropdownContainer div:hover>.lotusDropDownSprite,
+.lotusui30 .lotusHeader .lconnContentTitleDropdownContainer div:focus>.lotusDropDownSprite {
+   background-image: url("/com.ibm.oneui3.styles/imageLibrary/Icons/Other/dropdown24-blue.png");
+}
+
+/*RTC 159263: More and Next links are too close to the right scrollbar in My Files*/
+.files-independent-scrollbars-compatible.hikari-theme-active .lotusContent .filesList {
+	padding-right: 15px;
+}
+
+.files-independent-scrollbars-compatible .lconnNonVerticalScrollableBody {
+   overflow-y: hidden !important;
+}
+
+.files-independent-scrollbars-compatible .lotusStyledScroll {
+   padding-right: 10px;
+   padding-left: 10px;
+}
+/*RTC 159877: [IE8] Community files page with independent scrollbars has extra padding below footer*/
+.files-independent-scrollbars-compatible .lotusContent {
+	padding-bottom: 0 !important;
+	margin-bottom: 0 !important;
+}	
+
+/*RTC 159513: Remove independent scrollbar when list height (instead of viewport height) is too small*/
+.files-independent-scrollbars-compatible .lotusFeeds {
+	float: none;
+}
+
+/*RTC 160242: When independent scroll bars are active, footer bottom is truncated when messagebox appears*/
+.files-independent-scrollbars-compatible .lotusMessageContainer {
+	overflow: auto;
+}
+
+.lotusui30 .lotusGlobalActionBarMenu {
+  width: 195px !important;
+}
+#lotusColLeft .lotusDropDownSprite{  
+    opacity: 1;
+	filter:alpha(opacity=100);   
+}
+
+/* Catalog style classes */
+.restrictedCommInvite {
+	width: 42.5em;
+}
+/* END Catalog style classes */
+
+/* For lotusFooter to be placed in scrollable right content pane */
+.files-independent-scrollbars-compatible .lotusui30 .lotusContent .lotusFooter ul {
+	margin: 450px 0 0 0;
+	background: none;
+}
+
+.files-independent-scrollbars-compatible .lotusui30 .filesListFilled .lotusFooter ul {
+    margin-top: 20px;
+}
+
+.files-independent-scrollbars-compatible .lotusui30 .lotusContent .lconnTabBody+.lotusFooter ul {
+    margin-top: 20px;
+}
+
+.lotusMain .lotusColLeft  .lotusStyledScroll .lotusSelected{
+	font-weight: bold;
+}
+
+/* FILES TREE WIDGET */
+.lotusui30 #navTreeMain {
+  font-size: 13px;
+}
+
+.lotusui30 .lconnFilesTree .node  .headerSelector{
+	cursor: pointer;
+}
+
+/* DND for Grid View and List View */
+.lconnFiles .dojoDndItemBefore, .lconnFiles .dojoDndItemAfter { 
+  	border: 1px solid #325c80 !important; 
+  	background-color: rgba(50, 92, 128, 0.05) !important;
+  	padding: 0;
+}
+
+.lconnFiles .lotusMenu {
+	margin: 0 0 5px;
+}
+
+.lconnFiles .lotusui30 .lotusVertTable th{
+	white-space: nowrap;
+}
+
+/* Dnd style*/
+.lconnFiles .qkrDropAvatar {
+   font-size: 14px;
+   font-weight: 400;
+   text-align: center;
+   box-shadow: none;
+   background: transparent;
+   border:none
+}
+.lconnFiles .qkrDropAvatar .DropAvatarBadge {
+	border-radius: 14px;
+	background-color :#ffffff;
+	width: 35px;
+	padding: 2px;
+	line-height: 1.9;
+}
+.lconnFiles .qkrDropAvatar .DropAvatarBadge div {
+	background: white;
+	height: 25px;
+	border-radius: 14px;
+	border: 1px solid #ccc;
+}
+
+.lconnFiles .qkrDropAvatar .DropAvatarContainer {
+	box-shadow: 2px 2px 8px #888;
+	border-radius: 3px;
+	background-color: #FFF;
+	border: 1px solid #ccc;
+	width:182px;	
+	position: relative;
+	padding: 11px;	
+	height: 20px;
+	line-height: 1;
+}
+.lconnFiles .qkrDropAvatar .topPostion {
+	top: -14px;
+	left: 25px;
+	z-index: -1;
+}
+
+.lconnFiles .qkrDropAvatar .bottomPosition {	
+	left: 30px;
+	top: -50px;
+	z-index: -2;
+}
+
+.lconnFiles .qkrDropAvatar .border {
+	border: 1px solid white;
+}
+
+.lconnFiles .qkrDropAvatar .dojoDndItem {
+	padding: 1px;
+}
+
+.lconnFiles .qkrDropAvatar .DropAvatarContainer .dndFolderIcon{
+   margin: -10px 5px 0 0;
+}
+
+.lconnFiles .qkrDropAvatar .DropAvatarContainer .DropAvatarItem {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin-right: 15px;
+	display: inline-block;
+	max-width: 75%;
+	height: 16px;
+}
+
+.lconnFiles .qkrDropAvatar .DropAvatarContainer img{
+	margin-top:-8px;
+}
+
+.lconnFiles .ic-thumb-widget-flip-card {
+border: 1px solid;
+}
+
+.lconnFiles .dojoDndItem {
+    padding: 0;
+}
+
+.lconnFiles .DndItemMoving {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* styling for Files Grid view */
+.lconnFiles .lconnFilesGridItem {
+   display: block;
+   position: relative;
+   float: left;
+   width: 202px;
+   height: 164px;
+   margin: 10px 18px 10px 2px;
+}
+/*    reset size, margin, padding of thumb-widget styling for Files */
+.lconnFiles .ic-thumb-widget-flip-card {
+   border: 1px solid;
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+}
+/* END OF styling for Files Grid view */
+
+.lconnFiles .dojoDndItem {
+    padding: 0;
+}
+
+.lconnFiles .DndItemMoving {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.lconnFiles .qkrViewControlHeader {
+   min-height: 30px;
+}
+
+/* Style for single iframe widget */
+.lconnSingleIframeWidgetFullpage #lotusMain {
+    padding-right: 0;
+    padding-top: 0;
+}
+
+.fullpageWidgetWithNoLeftPane #lotusMain {
+    padding: 40px;
+}
+
+.fullpageWidgetWithNoLeftPane #lotusMain #lotusColLeft{
+   display: none;
+}
+
+.fullpageWidgetWithNoLeftPane #lotusMain #lotusMainColumns {
+    margin-left: 0px;
+}
+
+.lconnSingleIframeWidgetFullpage #lotusColLeft {
+    margin-right: 0;
+}
+
+.lconnSingleIframeWidgetFullpage .lotusGlobalSearch,
+.lconnSingleIframeWidgetFullpage #commonSearchControlContainer,
+.lconnSingleIframeWidgetFullpage .lotusPlaceBar,
+.lconnSingleIframeWidgetFullpage #lotusTitleBar {
+    display: none;
+}
+
+.lconnSingleIframeWidgetFullpage .lotusMain .lotusContent {
+    margin: 0;
+    padding: 0;
+}
+
+.lconnSingleIframeWidgetFullpage #communityActionBar {
+    display: none !important;
+}
+
+.lconnFiles .lotusui30 .lotusPaging {
+   overflow: hidden;
+}
+.lconnFiles .lotusui30 .lotusHeader {
+   overflow: hidden;
+}
+
+.lconnFiles .lotusui .withoutFocusStyle:focus {
+   outline: none;
+   border: none;
+}
+
+.lconnFiles .lotusMessage2 .lotusMessageBody{
+   word-break: break-word;
+}
+
+.lconnFiles .lotusDialogBorder .lotusDialogContent .forceDownloadDescription{
+   padding-bottom: 15px;
+}
+
+.lconnFiles .lotusDialogBorder .lotusDialogContent .forceDownloadItems{
+   padding-top: 15px;
+}
+
+.lconnFiles .lotusDialogBorder .lotusDialogContent .forceDownloadWarning .lotusMessage2{
+   background-color: transparent;
+   border-color: transparent;
+}
+
+.lconnFiles .lotusDialogBorder .lotusDialogContent .forceDownloadWarning .lotusMessageBody{
+   padding-top: 3px;
+}
+
+.lconnFiles .lotusDialogBorder .lotusDialogContent .forceDownloadWarning .checkboxGroup{
+   padding-left: 41px;
+}
+
+.lconnFiles .lotusDialogBorder .lotusDialogContent .forceDownloadWarning .lotusFormField{
+   float: left;
+   padding-right: 10px;
+   color: #4178be;
+}
+
+.lconnFiles .lotusDialogBorder .lotusDialogContent .forceDownloadWarning .lotusFormField label{
+   display: inline-block;
+   width: 120px;
+   word-break: normal;
+}
+
+.lconnFiles .inMyDriveLable {
+	font-size: 0.6em;
+	margin-left: 6px;
+	font-weight: normal;
+	color: #222;
+}
+
+.lconnFiles .MyDriveIndicator {
+   margin-right: 15px;
+}
+.lconnFiles .MyDriveIndicator a{
+   text-decoration: none;
+}
+
+.lconnFiles .myDriveMenu {
+   table-layout: fixed;
+   width: 200px;
+}
+
+.lconnFiles .myDriveMenu .dijitMenuItemIconCell, .lconnFiles .myDriveMenu .dijitMenuArrowCell{
+   width: 2.5%;
+}
+
+.lconnFiles .myDriveMenu .dijitMenuItemLabel {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.lconnSingleIframeWidgetFullpage .tabNavBar .lotusGlobalSearch,
+.lconnSingleIframeWidgetFullpage .tabNavBar .lotusPlaceBar,
+.lconnSingleIframeWidgetFullpage .tabNavBar #lotusTitleBar {
+    display: block;
+}
+
+.lconnSingleIframeWidgetFullpage .tabNavBar #communityActionBar {
+    display: block !important;
+}
+
+
+/* Styles for select a community to copy page */
+.lotusui30 .newCommTypeahead {
+	margin-top: -7px;
+	margin-left: -22px;
+	padding-top: 10px;
+	padding-left: 28px; 
+	padding-bottom: 2px;
+	width: 350px;
+	border-right:none; 
+	border-left:none; 
+	border-top: none; 
+	border-bottom: 2px solid;
+}
+
+.lotusui30 .commTypeAheadIcon {
+	width: 16px; 
+	height: 16px; 
+	display: inline-block;
+	z-index: 10;
+	position: relative;
+	padding-left: 6px;
+}
+
+.lotusui30 .commTypeAheadIcon  svg {
+	fill: #0072a7;
+}
+
+#communityTypeAhead_dropdown img {border-radius: 50%;}
+.lotusui30 .lotusLeftArrow { background-position: 2px -50px; margin-right: 2px; opacity: 0.55;}
+
+/* Styles for create a community loading animation */
+#logo_connection-filled circle#oval_1 {
+  stroke-dasharray: 210;
+  stroke-dashoffset: 210;
+  animation: oval_1 2s ease-in-out alternate infinite;
+}
+
+@keyframes oval_1 {
+  65%, 100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+#logo_connection-filled path {
+  stroke-dasharray: 110;
+  stroke-dashoffset: 110;
+  animation: dash 2s ease-in-out alternate infinite;
+}
+
+#logo_connection-filled path#line_1 {
+}
+
+#logo_connection-filled path#line_2 {
+  animation-delay: .25s;
+}
+
+#logo_connection-filled path#line_3 {
+  animation-delay: .5s;
+}
+
+
+@keyframes dash {
+  0%, 50% {
+    stroke-dashoffset: 110;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+
+}
+
+#logo_connection-filled circle#oval_2, #logo_connection-filled circle#oval_3, #logo_connection-filled circle#oval_4 {
+  stroke-dasharray: 210;
+  stroke-dashoffset: 210;
+  animation: oval_2 2s ease-in-out alternate infinite;
+}
+
+#logo_connection-filled circle#oval_3 {
+  animation-delay: .25s
+}
+
+#logo_connection-filled circle#oval_4 {
+  animation-delay: .5s
+}
+
+@keyframes oval_2 {
+  0%, 75% {
+    stroke-dashoffset: 210;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+
+}
+
+.lconnFiles.files-enable-refine-panel .lotusui30 .lotusViewControl .lotusView {
+   width: 24px;
+   height: 24px;
+   background: none;
+   margin: 0px 2px;
+   text-align: center;
+}
+
+.lconnFiles.files-enable-refine-panel #qkrViewControl .viewOn:after {
+    width: 100%;
+    height: 0;
+    border-bottom: 3px solid #4178be;
+    top: 3px;
+    content: '';
+    position: relative;
+    display: block;
+    left: 0;
+}
+
+.lconnFiles.files-enable-refine-panel .lconnContentSceneActions {
+   overflow: auto;
+}
+
+.lconnFiles.files-enable-refine-panel .lconnContentSceneActions .lotusBtnContainer {
+   float: left;
+}
+
+#dj_history {
+  /* history iframe is visibility hidden and normally absolutely positioned, but for some reason
+   * it still takes up space in edge. fixed-positioning it prevents it from contributing to page height/width */
+  position: fixed !important;
+}
+
+/* Catalog Ui Updated styles */
+
+.catalog-ui-updated .catalog #lotusBanner {
+  position: relative;
+  /* the quick-search button is z-index 800 */
+  z-index: 801;
+}
+
+.catalog-ui-updated .catalog #lotusBanner .ics-scbanner.navbar-hidden {
+  pointer-events: none;
+}
+
+.catalog-ui-updated .catalog .lotusTitleBar2 .lotusInner {
+  height: 0;
+}
+
+.catalog-ui-updated .catalog .lotusColLeftContents {
+  position: relative;
+}
+
+html:not(.catalog-ui-updated) .catalog .icResultsFetcher svg {
+  display: none;
+}
+
+.catalog-ui-updated .catalog .icResultsFetcher {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.catalog-ui-updated .catalog .icResultsFetcher svg {
+  animation: spin 1s linear infinite;
+}
+  
+.catalog-ui-updated .catalog .icResultsFetcher_text {
+  opacity: 0;
+}
+
+.catalog-ui-updated .catalog .zeroResultsNode {
+  text-align: center;
+  margin: 20px auto 50px;
+  width: 250px;
+  font-size: 14px;
+}
+
+.catalog-ui-updated .catalog .zeroResultsImage {
+  flex: 1 0 100%;
+}
+
+.catalog-ui-updated .catalog .zeroResultsImage svg {
+  display: block;
+  margin: 30px auto 20px;
+}
+
+.catalog-ui-updated .catalog.lotusui30 .backToTop {
+  position: fixed;
+  bottom: 15px;
+  right: 64px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 300ms, opacity 300ms;
+}
+
+.catalog-ui-updated:not(.catalog-card-view) .catalog .backToTop {
+  background-color: #e3e3e3;
+  border-radius: 50%;
+  border: 0;
+  box-sizing: border-box;
+  height: 36px;
+  width: 36px;
+}
+
+.catalog-ui-updated .catalog.catalog--scrolled.lotusui30 .backToTop {
+  visibility: visible;
+  opacity: 1;
+}
+
+.catalog-ui-updated .catalog.lotusui30 .backToTop .scrollText {
+  display: block;
+  overflow: hidden;
+  height: 0;
+  width: 0;
+}
+
+.catalog-ui-updated .catalog .resultsDisplay {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.catalog-ui-updated .catalog .resultsDisplay .container {
+  flex: 1;
+}
+
+.catalog-ui-updated .catalog .resultsDisplay .lotusTable {
+  flex: 1 0 100%;
+}
+
+/* nav breadcrumb styles */
+
+nav.breadcrumb li {
+  display: inline;
+}
+
+nav.breadcrumb ol {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderPublic16,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderPrivate16,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderShared16,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderCommunity16,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderPublic24,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderPrivate24,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderShared24,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderCommunity24,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderPublic32,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderPrivate32,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderShared32,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderCommunity32,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderPublic64,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderPrivate64,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderShared64,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderCommunity64 {
+   background-image: url()!important;
+}
+
+.lconnFiles.files-enable-new-folder-icon .ic-thumb-folder svg {
+   width: 126px;
+   padding-top: 48px;
+   padding-left: 70px;
+}
+
+.files-enable-new-folder-icon .lconnFilesFolderIcon svg {
+   width: 24px;
+   height: 24px;
+   margin-top: -4px;
+}
+
+.lconnFiles.files-enable-new-folder-icon .DropAvatarContainer .dojoDndItem div {
+   display: inline-block;
+   margin-top: -5px;
+   margin-right: 3px;
+}
+
+.lconnFiles.files-enable-new-pin-icon .lconnSprite-iconPinned16-on{
+   background-image: url();
+}
+
+.lconnFiles.files-enable-new-pin-icon .lconnSprite.lconnSprite-iconPinned16-off{
+   background-image: url();
+}
+
+.lconnFiles.files-enable-new-pin-icon .lconnSprite-iconPinned16-on svg .pinInside {
+   fill: #000000;
+}
+
+.lconnFiles.files-enable-new-pin-icon .lconnSprite-iconPinned16-off svg .pinInside {
+   fill: #FFFFFF;
+}
+
+.lconnFiles.files-enable-new-pin-icon img.lconnSprite.lconnSprite-iconPinned16-on {
+   display: none;
+}
+
+.lconnFiles.files-enable-new-pin-icon img.lconnSprite.lconnSprite-iconPinned16-off {
+   display: none;
+}
+
+.lconnFiles .shareLinkDialog .lotusDialogContent {
+   min-height: 170px;
+   padding-bottom: 0px;
+}
+
+.lconnFiles .shareLinkDialog .shareLinkSelect table.dijitSelectOpened {
+   border-bottom: 1px solid #4178be;
+}
+
+.lconnFiles .shareLinkDialog table.dijitValidationTextBox {
+   color: #292929;
+   border: none;
+   border-bottom: 1px solid #979797;
+}
+
+.lconnFiles .shareLinkDialog td.dijitArrowButtonContainer, .lconnFiles .shareLinkDialog td.dijitButtonContents {
+   border-style: none;
+}
+
+.lconnFiles .shareLinkDialog td.dijitButtonContents {
+   padding: 10px 10px 10px 5px
+}
+
+.lconnFiles .shareLinkDialog td.dijitArrowButtonContainer input {
+   background-position: -7px -4372px;
+   display: inline-block;
+   width: 16px;
+   background-image: url(/com.ibm.oneui3.styles/css/images/lotusSprite-8bit.png);
+}
+
+.lconnFiles .shareLinkDialog .shareLinkSelect {
+   overflow: hidden;
+}
+
+.lconnFiles .shareLinkDialog .shareLinkSelect span.label {
+   float: left;
+   margin-top: 10px;
+}
+
+.lconnFiles .shareLinkDialog .shareLinkSelect .deleteLink {
+   float: right;
+   margin: 10px 2px 3px 0px;
+   cursor: pointer;
+}
+
+.lconnFiles .shareLinkDialog .shareLinkSelect .deleteLink:hover, .lconnFiles .shareLinkDialog .shareLinkInputContainer a:hover {
+   text-decoration: none;
+}
+
+.lconnFiles .dijitSelectSelectedOption td {
+   font-weight: normal;
+}
+
+.lconnFiles .shareLinkDialog .shareLinkInputContainer {
+   margin: 10px 0 8px 0;
+   display: table;
+   width: 100%;
+}
+
+.lconnFiles .shareLinkDialog .shareLinkInputContainer input {
+   padding: 8px 5px;
+   border: 1px solid #979797;
+   color: #292929;
+   margin: 0;
+   display: table-cell;
+   width: 98%;
+}
+
+.lconnFiles .shareLinkDialog .shareLinkInputContainer a {
+   border-bottom: 1px solid #979797;
+   border-right: 1px solid #979797;
+   border-top: 1px solid #979797;
+   padding: 6px 0px;
+   cursor: pointer;
+   display: table-cell;
+   width: auto;
+   text-align: center;
+}
+.lconnFiles .shareLinkDialog .shareLinkDescription {
+   color: #777677;
+}
+
+.lconnFiles .shareLinkDialog .shareLinkMessageBox {
+   margin: 10px 0 0 0;
+}
+
+.lconnFiles .shareLinkDialog .topMessageBox {
+   position: absolute;
+   top: -70px;
+   width: 550px;
+}
+
+.lconnFiles .lotusContent .lconnLoadingIcon svg {
+   width: 17px;
+   animation: spin 1s linear infinite;
+   margin-left: 50%;
+}
+
+.lconnFiles .lotusContent .lconnLoadingIcon.lconnLoadingShow {
+   display: block;
+}
+
+.lconnFiles .lotusContent .lconnLoadingIcon,
+.lconnFiles .lotusContent .lconnLoadingIcon.lconnLoadingHide {
+   display: none;
+}
+
+.lconnFiles .shareLinkDialog .emptyCreateLink, .lconnFiles .shareLinkDialog .lotusDialogFooter {
+   text-align: center;
+}
+
+.lconnFiles .shareLinkDialog .emptyCreateLink {
+   padding-top: 18px;
+}
+.lconnFiles .shareLinkDialog .lotusDialogFooter {
+   padding-bottom: 32px;
+}
+
+.lconnFiles .shareLinkDialog .lotusDialogFooter input{
+   margin: 0px;
+}
+
+.lconnFiles .shareLinkDialog .emptyCreateLink svg {
+   width: 180px;
+}
+
+.lconnFiles .shareLinkDialog .emptyDescription {
+   text-align: center;
+   margin-top: 16px;
+}
+
+.lconnFiles .shareLink {
+	display: none;
+}
+
+.lconnFiles.files-enable-file-share-with-link .shareLink {
+	display: block;
+}
+.app-communities.cnx8-ui .lotusTwistyClosed {
+    background-image: url("../../images/caret-right.svg");
+    background-position: 50%;
+    margin-left: 15px;
+    opacity: 1;
+}
+.app-communities.cnx8-ui .lotusTwistyOpen{
+    background-image: url("../../images/caret-down.svg");
+    background-position: 50%;
+    margin-top: 3px;
+    margin-left: 15px;
+    opacity: 1;
+}
+.app-communities.cnx8-ui #lotusColLeft {
+    padding: 0px;
+}
+.app-communities.cnx8-ui .lotusColLeft .lotusSection h2 {
+    border-top: none;
+    border-bottom: none;
+}
+.app-communities.cnx8-ui .lconnSprite-iconHelp16:not(.widgetContainer *){
+	width: 30px;
+    height: 20px;
+    background-position: right top;
+    background-size: 1.95em 1.15em;
+	background-image: url("../../images/tags-info-icon.svg");
+}
+.app-communities.cnx8-ui #tagsText{
+    width: unset;
+}
+.app-communities.cnx8-ui #tagsHelpSPN {
+    float: none;
+}
+.app-communities.cnx8-ui .lotusMain span.lotusBtn a[role="button"],
+.app-communities.cnx8-ui .lotusMain span.lotusBtn a#addBookmarkBtn,
+.app-communities.cnx8-ui .lotusDialogFooter input[value="Cancel"],
+.app-communities.cnx8-ui .lotusFormFooter .lotusBtn,
+.app-communities.cnx8-ui .lotusFormFooter.commFormFooter input[value="Cancel"] {
+	background: transparent !important;
+    border-radius: 2px !important;
+    border: 1px solid var(--color-button) !important;
+    color: var(--color-link) !important;
+}
+.app-communities.cnx8-ui .lotusMain .lotusBtnContainer .lotusBtn a[role="button"] { 
+    color: var(--color-button) !important;
+    border: 1px solid var(--color-button) !important; 
+}
+.app-communities.cnx8-ui .lotusMain .lotusBtnContainer .lotusBtn a[role="button"]:hover { 
+    background-color: rgba(1, 83, 155, 0.1) !important;
+    color: var(--color-button) !important;
+    border: 1px solid var(--color-button) !important;
+    box-shadow: none !important;
+}
+.app-communities.cnx8-ui .lotusMain input.lotusFormButton#addTopicButton { 
+    color: var(--color-button-text) !important;
+    background-color: var(--color-button) !important;
+    box-shadow: none !important;
+}
+.app-communities.cnx8-ui .lotusMain input.lotusFormButton#addTopicButton:hover { 
+    color: var(--color-button-text) !important;
+    background-color: var(--color-button-hover) !important;
+    box-shadow: none !important;
+}
+.app-communities.cnx8-ui .lotusMain input.lotusFormButton { 
+    background: transparent !important;
+    border-radius: 2px !important;
+    border: 1px solid var(--color-button) !important;
+    color: var(--color-link) !important;
+}
+.app-communities.cnx8-ui .lotusMain input.lotusFormButton:hover { 
+    background-color: rgba(1, 83, 155, 0.1) !important;
+    color: var(--color-button) !important;
+    border: 1px solid var(--color-button) !important;
+    box-shadow: none !important;
+}
+.app-communities.cnx8-ui .lotusBtn a[role="button"]:hover,
+.app-communities.cnx8-ui .lotusMain span.lotusBtn a#addBookmarkBtn:hover,
+.app-communities.cnx8-ui .lotusDialogFooter input[value="Cancel"]:hover,
+.app-communities.cnx8-ui .lotusFormFooter input#editBookmarkCancelBtn:hover,
+.app-communities.cnx8-ui .lotusFormFooter.commFormFooter input[value="Cancel"]:hover {
+	background-color: var(--color-button) !important;
+	color: var(--color-badge-text) !important;
+}
+.app-communities.cnx8-ui .lotusFormFooter input[type="submit"] {
+    color: var(--color-button-text) !important;
+}
+.app-communities.cnx8-ui .lotusDialog .lotusDialogHeader {
+    background: var(--color-base-background) !important;
+}
+.app-communities.cnx8-ui .lotusDialog .lotusDialogHeader .lotusDialogClose {
+    top: 15px;
+    right: 5px;
+}
+.app-communities.cnx8-ui .lotusDialog .lotusDialogFooter {
+    border-top: unset;
+}
+.app-communities.cnx8-ui .lotusDialog .lotusFormTable td {
+    overflow: hidden;
+}
+.app-communities.cnx8-ui .lotusFormFieldRow input[type="checkbox"] {
+    vertical-align: middle;
+}
+.app-communities.cnx8-ui .lotusForm td.lotusFormFieldRow,
+.app-communities.cnx8-ui .lotusForm td.lotusFormLabel {
+    padding-top: 5px;
+}
+.app-communities.cnx8-ui .lotusForm .lotusFormTitle h2,
+.app-communities.cnx8-ui .lotusTable div h4 {
+    font-size: var(--font-size-large) !important;
+}
+.app-communities.cnx8-ui .lotusForm .lotusFormFieldRow .lotusText,
+.app-communities.cnx8-ui #addbookmarkTagTypeAheadContainer,
+.app-communities.cnx8-ui #bookmarkContentAreaSub #editbookmarkTagTypeAheadContainer input {
+    border-radius: 3px;
+    border: 1px solid var(--color-third-navigation-border) !important;
+}
+.app-communities.cnx8-ui .lotusForm td.lotusFormLabel label,
+.app-communities.cnx8-ui .lotusTable div h4 a.commFocusML {
+    font-size: var(--font-size-medium) !important;
+}
+/* Styles for Popup windows */
+.app-communities.cnx8-ui .dijitMenuPopup table {
+	background: var(--color-base-background);
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 12%), 0px 2px 2px rgb(0 0 0 / 14%), 0px 1px 5px rgb(0 0 0 / 20%);
+    border-radius: 2px;
+    color: var(--color-chip-text);
+}
+.app-communities.cnx8-ui .dijitMenuPopup table tr.dijitMenuItem {
+	line-height: unset;
+}
+.app-communities.cnx8-ui .dijitMenuItem td.dijitMenuItemLabel {
+	padding: 10px 20px 8px 5px !important;
+}
+.app-communities.cnx8-ui .dijitMenuActive .dijitMenuItemHover,
+.app-communities.cnx8-ui .dijitMenuActive .dijitMenuItemSelected,
+.app-communities.cnx8-ui .dijitMenuItemHover {
+	background-color: var(--color-third-navigation-selected-option) !important;
+}
+/* End styling for popups */
+.app-communities.cnx8-ui #bookmarkAddForm form[name=bookmarkAddForm] tr,
+.app-communities.cnx8-ui #bookmarkContentAreaSub form[name=bookmarkEditForm] tr {
+	width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.app-communities.cnx8-ui #bookmarkAddForm form[name=bookmarkAddForm] .lotusFormLabel.lotusFormFieldRow {
+    order: 1;
+}
+.app-communities.cnx8-ui #bookmarkAddForm form[name=bookmarkAddForm] .lotusFormFieldRow {
+    order: 3;
+}
+.app-communities.cnx8-ui #bookmarkAddForm form[name=bookmarkAddForm] td:last-child {
+    order: 2;
+    margin-top: -33px;
+    margin-left: 20px;
+}
+.app-communities.cnx8-ui #bookmarkAddForm form[name=bookmarkAddForm] .lotusFormFooter.commFormFooter {
+    order: unset;
+    margin-top: 20px;
+    margin-left: unset;
+}
+.app-communities.cnx8-ui #bookmarkAddForm #addBookImpHelpSPN {
+    position: relative;
+    top: 40px;
+    left: 150px
+}
+.app-communities.cnx8-ui #bookmarkAddForm table .lotusFormTitle {
+    margin-left: 0px !important;
+}
+.app-communities.cnx8-ui #bookmarkAddForm {
+    margin: 0 10px;
+}
+.app-communities.cnx8-ui #lotusContent #contentArea .commFocusML a,
+.app-communities.cnx8-ui #ideatoins_main .lotusFeeds a.lotusFeed {
+    font-weight: var(--font-weight-normal) !important;
+    font-size: var(--font-size-small) !important;
+}
+.app-communities.cnx8-ui #ideatoins_main div[dojoattachpoint=viewBodyAP] .lotusTabs li,
+.app-communities.cnx8-ui #ideatoins_main div[dojoattachpoint=viewBodyAP] .lotusTabs li.selected {
+    border: none;
+}
+.app-communities.cnx8-ui #ideatoins_main div[dojoattachpoint=viewBodyAP] .lotusTabs {
+    margin: 0px
+}
+.app-communities.cnx8-ui #ideatoins_main .lotusBtn a,
+.app-communities.cnx8-ui #ideatoins_main .lotusBtn a:hover {
+    color: var(--color-link) !important;
+}
+.app-communities.cnx8-ui #ideatoins_main div[dojoattachpoint=viewBodyAP]
+.app-communities.cnx8-ui #ideatoins_main div[dojoattachpoint=viewBodyAP] .lotusTabContainer {
+    margin: 20px 0;
+    width: 100%;
+}
+.app-communities.cnx8-ui #ideatoins_main div[dojoattachpoint=viewHeaderAP] .lotusFormField .lotusFieldWrapper {
+    width: 99%;
+}
+.app-communities.cnx8-ui #ideatoins_main .lotusFieldWrapper textarea {
+    width: 100% !important;
+    border-radius: 3px;
+}
+.app-communities.cnx8-ui #ideatoins_main div[dojoattachpoint=viewHeaderAP] .lotusForm2 {
+    width: 60%;
+}
+.app-communities.cnx8-ui #ideatoins_main div[dojoattachpoint=viewHeaderAP] .lotusForm2 .lotusFormField {
+    display: flex;
+    flex-direction: column;
+}
+.app-communities.cnx8-ui #ideatoins_main div[dojoattachpoint=viewHeaderAP] .lotusLeft {
+    float: none;
+}
+.app-communities.cnx8-ui #ideatoins_main .lotusActionBar {
+    height: 40px;
+    margin-top: 2px;
+}
+.app-communities.cnx8-ui #ideatoins_main {
+    margin-left: 20px;
+}
+.app-communities.cnx8-ui .tabNavBar div.lotusTitleBar2 .tabNavTitleBarWrapper,
+.app-communities.cnx8-ui .lotusTabs #lotusNavBar {
+    margin: unset;
+}
+.app-communities.cnx8-ui #lotusPlaceBar #tabNavMenu {
+    padding-left: 0;
+}
+.app-communities.cnx8-ui .tabNavPlaceBarRightCorner{
+    padding-left: 0px;
+    max-width: 100%;
+}
+.app-communities.cnx8-ui .lotusTitleBar2 .lotusInner {
+    border-bottom: unset;
+}
+.app-communities.cnx8-ui .lotusTabs #lotusNavBar li {
+    border: none;
+}
+.app-communities.cnx8-ui .tabNavBar .lotusTabs li:focus {
+    outline: unset;
+}
+.app-communities.cnx8-ui #tabNavBar {
+    box-shadow: 0 1px 6px 0 rgb(var(--color-main-box-shadow) / 40%) !important;
+    z-index: 90;
+    background-color: var(--color-tab) !important;
+}
+.app-communities.cnx8-ui #bookmarkContentAreaSub .lotusPaging {
+    display: block !important;
+}
+.app-communities.cnx8-ui #lotusColRight #lconnTagCloudFilter h2 {
+    border: none !important;
+}
+.app-communities.cnx8-ui #lotusColRight #lconnTagCloudFilter .lotusTwistyOpen {
+    margin-left: unset;
+    margin-right: 15px;
+}
+
+/******************************start pagination*****************************/
+.cnx8-ui.app-communities .cnx8Paging {
+   padding: 20px 0 15px 0 !important;
+    margin: 0px !important;
+}
+.cnx8-ui.app-communities .cnx8Paging .cnx8-ui-pagination-prev {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../../images/chevron-left.svg");
+    background-position: 100%;
+    margin: 0 10px;
+    background-size: 1em 1em;
+    background-repeat: no-repeat;
+}
+.cnx8-ui.app-communities .cnx8Paging .cnx8-ui-pagination-next {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../../images/chevron-right.svg");
+    background-position: 100%;
+    margin: 0 5px;
+    background-size: 1em 1em;
+    background-repeat: no-repeat;
+}
+.cnx8-ui.app-communities .cnx8Paging .cnx8-ui-pagination-last {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../../images/page-last.svg");
+    background-position: 100%;
+    padding: 0 5px;
+    background-size: 1.25em 1.25em;
+    background-repeat: no-repeat;
+}
+.cnx8-ui.app-communities .cnx8Paging .cnx8-ui-pagination-first {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../../images/page-first.svg");
+    background-position: 100%;
+    padding-right: 5px !important;
+    background-size: 1.25em 1.25em;
+    background-repeat: no-repeat;
+}
+.app-communities.cnx8-ui .cnx8Paging hr,
+.app-communities.cnx8-ui .cnx8Paging .hline {
+    border-top: 1px solid var(--color-third-navigation-border) !important;
+    border: none;
+}
+.app-communities.cnx8-ui .cnx8Paging li.cnx8ui-icon-container {
+    padding: 0 1px !important;
+    margin: 0 !important;
+}
+.app-communities.cnx8-ui .cnx8Paging .cnx8-ui-pull-to-center {
+    position: relative;
+    display: inline;
+    top: -3px;
+}
+.cnx8-ui.app-communities .cnx8Paging .lotusInlinelist.pagination li {
+    margin: 0 5px !important;
+    padding: 0 5px !important;
+}
+.cnx8-ui.app-communities .cnx8Paging .lotusInlinelist {
+    display: inline-flex;
+    float: left;
+}
+.cnx8-ui.app-communities .cnx8Paging .lotusInlinelist li,
+.cnx8-ui.app-communities .cnx8Paging .lotusInlinelist li a,
+.cnx8-ui.app-communities .cnx8Paging .lotusInlinelist li span {
+    margin: unset !important;
+    padding: unset !important;
+}
+
+.cnx8-ui.app-communities .cnx8Paging .lotusInlinelist li.lotusFirst {
+    padding-left: 0 !important;
+}
+.cnx8-ui.app-communities .cnx8Paging .lotusInlinelist li.lotusLast {
+    padding-right: 5px !important;
+}
+.cnx8-ui.app-communities .cnx8Paging .pageDropdown {
+    float: right;
+}
+.cnx8-ui.app-communities .cnx8Paging .pageDropdown li select {
+    padding: 5px !important;
+    border: none !important;
+    background-size: 0.9em 0.75em !important;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-medium) !important;
+    width: 50px !important;
+}
+.cnx8-ui.app-communities .cnx8Paging .rppText {
+    color: var(--color-text-secondary) !important;
+}
+.cnx8-ui.app-communities .cnx8Paging .disable-paging {
+    opacity: 0.3 !important;
+}
+.cnx8-ui.app-communities .cnx8Paging .lotusInlinelist li,
+.cnx8-ui.app-communities .cnx8Paging .lotusInlinelist li a,
+.cnx8-ui.app-communities .cnx8Paging .lotusInlinelist li a:focus,
+.cnx8-ui.app-communities .cnx8Paging .lotusInlinelist li a:hover,
+.cnx8-ui.app-communities .cnx8Paging .lotusInlinelist li a:visited {
+    font-size: var(--font-size-medium) !important;
+    text-decoration: none !important;
+}
+/******************************end pagination*****************************/
+
+.cnx8-ui.app-communities #cnx8-ui-toggle .lotusSummaryOn,
+.cnx8-ui.app-communities #cnx8-ui-toggle .lotusDetailsOn {
+    border: none !important;
+}
+.cnx8-ui.app-communities .lotusViewControl #cnx8-ui-toggle td div {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0px !important;
+}
+.cnx8-ui.app-communities .cnx8UI #sortbyToolbarLabel {
+    text-transform: capitalize;
+    color: var(--color-text-secondary) !important;
+    padding-right: 30px;
+}
+
+.cnx8-ui.app-communities .cnx8UI .lotusSort .lotusInlinelist li.lotusFirst {
+    padding-left: 0 !important;
+}
+.cnx8-ui.app-communities .cnx8UI .lotusSort .lotusInlinelist li {
+    padding: 0 10px !important;
+}
+.cnx8-ui.app-communities .cnx8UI .lotusSort .lotusInlinelist li a {
+    font-weight: 600;
+    text-decoration: none !important;
+}
+
+.cnx8-ui.app-communities .cnx8UI .lotusSort .lotusAscending{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../../images/chevron-up.svg");
+    background-size: 0.85em 0.85em;
+    background-position: 97% center;
+    padding-right: 20px;
+}
+.cnx8-ui.app-communities .cnx8UI .lotusSort .lotusDescending{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../../images/chevron-down.svg");
+    background-size: 0.85em 0.85em;
+    background-position: 97% center;
+    padding-right: 20px;
+}
+
+.cnx8-ui.app-communities #lotusContent .cnx8UI a.lotusAction,
+.cnx8-ui.app-communities #lotusContent .cnx8UI a.commFocusMR {
+    font-weight: unset !important;
+}
+.cnx8-ui.app-communities .blog_list_view {
+    background-image: url("../../images/display_list_view.svg");
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+}
+.cnx8-ui.app-communities .lotusSelected .blog_list_view {
+    background-image: url("../../images/display_list_view_selected.svg");
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+}
+.cnx8-ui.app-communities .blog_details_view {
+    background-image: url("../../images/display_details_view.svg");
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+}
+.cnx8-ui.app-communities .lotusSelected .blog_details_view {
+    background-image: url("../../images/display_details_view_selected.svg");
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+}
+.cnx8-ui.app-communities .lotusSelected .blog_details_view,
+.cnx8-ui.app-communities .lotusSelected .blog_list_view {
+    pointer-events: none;
+}
+.cnx8-ui.app-communities #cnx8-ui-toggle #viewAsListToggleLink,
+.cnx8-ui.app-communities #cnx8-ui-toggle #viewAsDetailToggleLink  {
+    border: none;
+}
+.cnx8-ui.app-communities .lotusTabContainer.cnx8UI ul.lotusTabs li {
+    border: none !important;
+}
+.cnx8-ui.app-communities .lotusTabContainer.cnx8UI ul li a {
+    font-size: var(--font-size-medium) !important;
+    text-decoration: none !important;
+    color:var(--color-tab-text) !important;
+    margin-bottom:10px !important;
+}
+.cnx8-ui.app-communities .lotusTabContainer.cnx8UI ul li.lotusSelected a {
+    border-bottom:2px solid var(--color-button);
+}
+.cnx8-ui.app-communities .lotusTabContainer.cnx8UI ul li.lotusSelected {
+    background-color:transparent !important;
+}

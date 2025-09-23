@@ -1,0 +1,62 @@
+/* Copyright IBM Corp. 2015  All Rights Reserved.              */
+
+.ics-viewer .ics-typeaheadbox-container .lotusMentionsDiv{
+	background: #f9f9f9;
+	border-color: #bcbcbc;
+	transition: min-height 0.3s ease 0s;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	font-size: 12px;
+}
+
+.ics-viewer .ics-typeaheadbox-container.active .lotusMentionsDiv{
+	min-height: 8em;
+	max-height: 20em;
+	margin-bottom: 6px;
+	transition: min-height 0.3s ease 0s;
+}
+.ics-viewer-action-share .ics-typeaheadbox-container.active {
+	display: inline-block;
+}
+
+.ics-viewer-action-share .ics-typeaheadbox-container.active .lotusMentionsDiv {
+	min-height: 0em;
+}
+
+.ics-viewer .ics-typeaheadbox-container .typeaheadActions {
+	display: none;
+}
+
+.ics-viewer .ics-typeaheadbox-container.active .typeaheadActions {
+	display: inline;
+	font-weight: bold;
+}
+
+.ics-viewer .ics-typeaheadbox-container.active .typeaheadActions a {
+	font-size: 12px;
+}
+
+.ics-viewer .ics-typeaheadbox-container.active .typeaheadActions a.lotusFirst {
+	border-left: none;
+	padding-left: 0;
+}
+
+.ics-viewer .ics-typeaheadbox-container.active .ics-viewer-messagebox {
+	margin-top: 18px;
+}
+
+.ics-viewer .ics-typeaheadbox-container.active .ics-viewer-messagebox ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 10px 0 0 0;
+}
+
+.ics-viewer .ics-typeaheadbox-container.active .ics-viewer-messagebox li {
+	margin: 6px 0;
+	padding: 0;
+}
+
+.ics-viewer .ics-typeaheadbox-container .bhcPeopleTypeAhead .dijitValidationContainer {
+    display: none;
+}

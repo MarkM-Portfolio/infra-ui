@@ -1,0 +1,36 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2011, 2012                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+/*
+This CSS file is included by the theme and themeRTL files via a @import declaration.
+*/
+
+
+.mycompany a {color: blue;}
+
+
+/*
+To include an image, use a relative URL path to access a file relative to the current location. 
+This declaration finds the image relative to the current CSS file.
+*/
+.mycompany .logo {background-image: url(images/customlogo.png);}
+
+
+/*
+You can locate images in other bundles (if those bundles are installed) through an absolute path.
+The first segment of the path must be the name of the web bundle (defined in plugin.xml) or the
+bundle's OSGi symbolic name. 
+*/
+.mycompany .originalLogo {background-image: url(/com.ibm.lconn.core.styles/images/logo.png);}
+

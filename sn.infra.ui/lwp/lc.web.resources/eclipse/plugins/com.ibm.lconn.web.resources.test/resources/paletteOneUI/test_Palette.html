@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+<title>Test palette tree widget</title>
+${endhead}
+
+<script type="text/javascript">
+
+function addWidgetListener(item){
+	console.log("Add widget event detected");
+	console.log(item);
+}
+
+function populateFromFile(fileName){
+	var palette = dijit.byId("paletteWidget");
+	palette.setJsonSourceUrl(fileName);
+	palette.populatePalette(true);
+}
+
+function closePaletteListener(){
+	console.log("Close palette event detected");
+}
+
+function registerCanAddWidgetHandlerFalse(){
+	var palette = dijit.byId("paletteWidget");
+	palette.registerCanAddWidgetFct(function(widget){
+		console.log("can add widget handler returning false");
+		console.log(widget);
+		return false;
+	});
+}
+
+function registerCanAddWidgetHandlerTrue(){
+	var palette = dijit.byId("paletteWidget");
+	palette.registerCanAddWidgetFct(function(widget){
+		console.log("can add widget handler returning true");
+		console.log(widget);
+		return true;
+	});
+}
+
+function registerCanAddWidgetHandlerUndefined(){
+	var palette = dijit.byId("paletteWidget");
+	palette.registerCanAddWidgetFct(function(widget){
+		console.log("can add widget handler returning nothing");
+		console.log(widget);
+		// don't return anything. Should be the same as returning false (= button disabled)
+	});
+}
+
+function publishRecheckEvent(){
+	dojo.publish(lconn.core.paletteOneUI.Palette.prototype.RECHECK_CAN_ADD_WIDGET_HANDLER_EVENT);
+}
+
+function registerLayoutImage(){
+	var palette = dijit.byId("paletteWidget");
+	
+	palette.setLayoutImage(palette.PRIMARY_WIDGET, "img/2col.jpg");
+}
+
+function removeItem(){
+	var palette = dijit.byId("paletteWidget");
+	palette.removeItem("idCalendar");
+}
+
+function addTabPane(){
+	var palette = dijit.byId("paletteWidget");
+	
+	
+	var palette = dijit.byId("paletteWidget");
+		
+	var newPane = new lconn.core.paletteOneUI.AddContentPane();
+	
+	newPane.setJsonSourceUrl('otherContentPane.txt');
+	newPane.populatePalette(true);
+	
+	
+	palette.addTabPane("header1", "TEST HEADER", newPane);
+}
+
+globPalette = null;
+
+function createProgPalette(){
+	globPalette = new lconn.core.paletteOneUI.Palette();
+
+	dojo.byId("progPalette").appendChild(globPalette.domNode);	
+
+	globPalette.setJsonSourceUrl('widgetJSON.txt');
+	globPalette.populatePalette(true);
+}
+
+function destroyPalette(){
+	globPalette.destroy();
+	
+}
+
+function resetCounterPalette(){
+	dojo.publish(lconn.core.paletteOneUI.Palette.prototype.RESET_COUNTER_EVENT);
+}
+
+function enableWidgetCounter(){
+	dijit.byId("paletteWidget").enableItemCounter();	
+}
+
+dojo.addOnLoad(function(){
+	dojo.subscribe(lconn.core.paletteOneUI.Palette.prototype.ADD_WIDGET_EVENT, addWidgetListener);
+	dojo.subscribe(lconn.core.paletteOneUI.Palette.prototype.CLOSE_PALETTE_EVENT, closePaletteListener);
+});
+
+dojo.addOnLoad(function(){
+
+doh.registerGroup("palette tree",
+				[																																
+				]
+			);			
+			doh.run();
+});
+
+
+</script>
+
+<div id="progPalette"></div>
+<div dojoType="lconn.core.paletteOneUI.Palette" id="paletteWidget"></div>
+
+<button onclick="populateFromFile('widgetJSON.txt')">Populate from widgetJSON.txt</button>
+<button onclick="registerCanAddWidgetHandlerFalse()">Register test canAddWidget handler returning false</button>
+<button onclick="registerCanAddWidgetHandlerTrue()">Register test canAddWidget handler returning true</button>
+<button onclick="registerCanAddWidgetHandlerUndefined()">Register test canAddWidget handler returning undefined</button>
+<button onclick="publishRecheckEvent()">Publish recheck event</button>
+<button onclick="registerLayoutImage()">Register layout image</button>
+<button onclick="removeItem()">Remove calendar widget</button>
+<button onclick="addTabPane()">Add tab pane</button>
+<button onclick="createProgPalette()">Create prog palette</button>
+<button onclick="destroyPalette()">Destroy prog palette</button>
+<button onclick="resetCounterPalette()">Reset counter palette</button>
+<button onclick="enableWidgetCounter()">Enable counter</button>
+
+    <script>
+        djConfig.parseOnLoad=true;
+        djConfig.isDebug=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+
+    ${script:dojo.parser}
+    ${script:net.jazz.ajax.xdloader}
+    ${script:lconn.core.paletteOneUI.Palette}
+    ${script:dijit.ColorPalette}
+    ${script:doh.runner}
+</body>
+</html>

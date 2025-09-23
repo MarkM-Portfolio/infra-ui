@@ -1,0 +1,413 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+${script:dijit._Widget}
+${script:dijit._Templated}
+${script:com.ibm.oneui.controls.AutocompleteDataStore}
+${script:com.ibm.oneui.controls.AutocompleteInput~com.ibm.oneui.controls._caret}
+${script:com.ibm.oneui.controls.AutocompleteMenu}
+${script:lconn.core.widget.autocomplete.person}
+${script:com.ibm.social.layout.widget.Search}
+
+<style>
+	ul.dijitMenu {border: 1px solid #aaa !important; list-style: none; background-color: white; width: 400px !important; margin: 0; padding: 0; -moz-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3)}
+	ul.dijitMenu li {list-style-image: none; zoom:1; cursor: pointer; margin: 0; padding: 0;}
+	ul.testVisible {border: 2px solid green !important;}
+	td {vertical-align: top;}
+	td:first-child {background-color: #aeaeae; padding: 20px;}
+	.dijitMenuItemSelected {background-color: yellow !important;}
+	.lotusui input { padding-right: 18px; border: 1px solid black;}
+	.lotusui input.lotusLoading {height: auto; width: auto; background-position: right center;}
+	.dijitPopup {position: absolute; z-index: 1000;}
+	
+	ul.dijitMenu .lotusSearchScope {border-bottom: 1px solid #aaa; padding: 4px; padding-top: 0;}
+	ul.dijitMenu .lotusSearchScope div {margin-left: 10px;}
+	ul.dijitMenu h4 {font-size: 1.0em; font-weight: bold; padding: 2px 4px; margin: 0;}
+	
+	.dijitBackgroundIframe {
+		/* iframe used to prevent problems with PDF or other applets overlaying menus etc */
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		border: 0;
+		padding: 0;
+		margin: 0;
+	}
+</style>
+
+${endhead}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+<script>
+
+var users = [
+   {"name":"Amadou Aalain","id":"aalain", email: "aalain@renovations.com", type: "person", title: "Product Designer"},
+   {"name":"Kelly Hardart","id":"khardart", email: "khardart@renovations.com", type: "person", title: "Development Manager"},
+   {"name":"Heather Reeds","id":"hreeds", email: "hreeds@renovations.com", type: "person", title: "Senior Marketing Advisor"},
+   {"name":"Monifa Shani","id":"mshani", email: "mshani@renovations.com", type: "person", title: "Technical Lead"}
+   //{"name":"","id":"", email: "@renovations.com", type: "person", title: ""}
+];
+
+var templatePerson = "<img style='float: left; width: 32px; height: 32px; margin: 4px; -moz-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3)'><div style='height: 40px; margin-left: 44px; position: relative;'><div>&nbsp;</div><div style='position: absolute; top: 0px; right: 4px;'>&nbsp;</div><span style='font-size: 0.9em; color: gray;'>&nbsp;</span></div>";;
+function updatePerson(item, node, store) {
+	node.lastChild.lastChild.lastChild.data = store.getValue(item, "title", "");
+	node.lastChild.firstChild.firstChild.data = store.getValue(item, "name");
+	node.lastChild.firstChild.nextSibling.firstChild.data = store.getValue(item, "email", "");
+	var photo = store.getValue(item, "photo");
+	if (photo)
+		node.firstChild.src = photo;
+	else
+		node.firstChild.style.display = "none";
+}
+
+var wikis = [
+   {name: "Development and Test Wiki", description: "Helpful information for developers", id: "w1", type: "wiki"},
+   {name: "Release Notes", description: "Information about our upcoming release", id: "w1", type: "wiki"}
+];
+
+var templateWiki = "<div style='padding: 2px 4px;'><div>&nbsp;</div><div style='font-size: 0.9em; color: gray;'>&nbsp;</div></div>";
+function updateWiki(item, node, store) {
+	node.firstChild.firstChild.firstChild.data = store.getValue(item, "name");
+	node.firstChild.lastChild.firstChild.data = store.getValue(item, "description", "No description");
+}
+
+var templateSearch = "<div style='font-weight: bold; padding: 2px 4px;'>&nbsp;</div>";
+function updateSearch(item, node, store) {
+	node.firstChild.firstChild.data = store.getValue(item, "name");
+}
+
+function updateItem(item, node, store) {
+	var type = item.type;
+	if (type == "person") {
+		node.innerHTML = templatePerson;
+		updatePerson(item, node, store);
+	}
+	else if (type == "wiki") {
+		node.innerHTML = templateWiki;
+		updateWiki(item, node, store);
+	}
+	else if (type == "search") {
+		node.innerHTML = templateSearch;
+		updateSearch(item, node, store);
+	}
+	else
+		throw "bad type";
+}
+
+function getValue(item, attr, defaultValue) {
+	if (attr == "photo")
+		return "../sampleUsers/"+encodeURIComponent(item.id)+".jpg";
+	return item[attr] || defaultValue;
+}
+
+function getQueryResults(kwArgs) {
+	var timer;
+	var deferred = new dojo.Deferred(function() {clearTimeout(timer);});
+	timer = setTimeout(dojo.hitch(deferred, "callback", this.remoteItems), 100);
+	deferred.addCallback(this, "filter", kwArgs.query, kwArgs);
+	return deferred;
+};
+function filterGeneric(query, kwArgs, results) {
+	query = query.toLowerCase();
+	var filtered = [];
+	for (var i=0,l=results.length; i<l; i++) {
+		var result = results[i]
+		if (result.type == "search" || result.name.substr(0, query.length).toLowerCase() == query)
+			filtered.push(result);
+	}
+	return filtered;
+}
+function getLocalResults(kwArgs) {
+	var timer;
+	deferred = this._localDfd = new dojo.Deferred();
+	deferred.addCallback(this, filterGeneric, kwArgs.query, kwArgs);
+	deferred.callback(this.localItems);
+	return deferred;
+}
+
+function onSelect(item, store) {
+	var type = item.type;
+	if (type == "person") {
+		alert("Browse to files owned by "+item.name);
+	}
+	else if (type == "wiki") {
+		alert("Browse to the wiki "+item.name);
+	}
+	else if (type == "search") {
+		alert("Start a search on "+this.domNode.value+" in the scope "+item.label);
+	}
+	else
+		throw "bad type";
+}
+
+</script>
+<a onclick="document.body.style.width = '1200px'; return false;" href="#">Page width 1000px</a> |
+<a onclick="document.body.style.width = '400px'; return false;" href="#">Page width 400px</a>
+<br>
+<table style="width: 100%;" cellpadding="1" cellspacing="1" border="1">
+<thead><tr>
+<th>Test case</th><th>Description</th>
+</tr></thead><tbody>
+
+<tr><td>
+	<input id="input1" autocomplete="off" name="value">
+	<ul id="output1" style="display: none;"></ul>
+	<script>
+	
+	var store1 = new com.ibm.oneui.controls.AutocompleteDataStore();
+	store1.requestDelay = 200;
+	store1.cachedRequestDelay = 50;
+	store1.maximumResultsDelay = 10000;
+	store1.cache = {};
+	store1.getValue = getValue;
+	store1.getQueryResults = getQueryResults;
+	store1.filter = filterGeneric;
+	store1.getLocalResults = getLocalResults;
+	store1.localItems = [].concat(users);
+	
+	store1.remoteItems = [];
+	
+	dojo.declare("SearchScopeMenu", com.ibm.oneui.controls.AutocompleteMenu, {
+		idProperty: "id",
+		buildRendering: function() {
+			this.inherited(arguments);
+			this.templateNode.innerHTML = "";
+			var scopesNode = dojo.create("li", {
+				className: "dijitMenuItem",
+				innerHTML: "<h4>Search for '<span class='_input'>&nbsp;</span>' in... </h4><div class='lotusSearchScope'><div class='_selectable' clickMethod='search'>My Files <span class='lotusMeta'>(default)</span></div><div class='_selectable' clickMethod='search'>All Files</div><div class='_selectable' clickMethod='search'>Connections</div></div><h4>See files belonging to...</h4>"
+			});
+			this.queryTextNode = dojo.query("._input", scopesNode)[0].firstChild;
+			scopesNode._ignoreHide = true;
+			dojo.place(scopesNode, this.listNode, "first");
+		},
+		search: function(node) {
+			alert("Doing a search for "+this.parent.attr("value")+" on scope "+node.firstChild.data);
+			this.hide();
+			return true;
+		},
+		start: function(request) {
+			this.queryTextNode.data = request.query;
+			this.inherited(arguments);
+		}
+	});
+	
+	var r1 = new SearchScopeMenu({
+		hideOnSelect: true,
+		store: store1,
+		updateItem: updateItem
+	}, dojo.byId("output1"));
+	var w1 = new com.ibm.oneui.controls.AutocompleteInput({
+		store: store1,
+		initRenderer: function() {
+			r1.parent = w1;
+			r1.around = w1.domNode;
+			return r1;
+		}
+	}, dojo.byId("input1"));
+	dojo.connect(r1, "onSelect", w1, onSelect);
+	/*w1.connect(w1.domNode, "onclick", function() {
+		if (this._focused) this.suggestSearch();
+	});*/
+	dojo.attr(r1.domNode, "dijitPopupParent", "input1");
+	</script>
+</td><td>
+	Example Files contextual search
+	<ol>
+	</ol>
+</td></tr>
+
+<tr><td>
+	<input id="input2" autocomplete="off" name="value">
+	<ul id="output2" style="display: none;"></ul>
+	<script>
+	
+	var store2 = new com.ibm.oneui.controls.AutocompleteDataStore();
+	store2.requestDelay = 200;
+	store2.cachedRequestDelay = 50;
+	store2.maximumResultsDelay = 10000;
+	store2.cache = {};
+	store2.getValue = getValue;
+	store2.getQueryResults = getQueryResults;
+	store2.filter = filterGeneric;
+	store2.getLocalResults = getLocalResults;
+	store2.localItems = [
+		{name: "Search This Wiki...", type: "search"},
+		{name: "Search All Wikis...", type: "search"},
+		{name: "Search Connections...", type: "search"}
+	].concat(wikis);
+	
+	store2.remoteItems = [];
+	
+	var r2 = new com.ibm.oneui.controls.AutocompleteMenu({
+		hideOnSelect: true,
+		store: store2,
+		updateItem: updateItem
+	}, dojo.byId("output2"));
+	r2.templateNode.innerHTML = "";
+	var w2 = new com.ibm.oneui.controls.AutocompleteInput({
+		store: store2,
+		initRenderer: function() {
+			r2.parent = w2;
+			r2.around = w2.domNode;
+			return r2;
+		}
+	}, dojo.byId("input2"));
+	dojo.connect(r2, "onSelect", w2, onSelect);
+	/*w2.connect(w2.domNode, "onclick", function() {
+		if (this._focused) this.suggestSearch();
+	});*/
+	dojo.attr(r2.domNode, "dijitPopupParent", "input2");
+	</script>
+</td><td>
+	Example Wikis contextual search
+	<ol>
+	</ol>
+</td></tr>
+
+<tr><td>
+	<input id="input3" autocomplete="off" name="value">
+	<ul id="output3" style="display: none;"></ul>
+	<script>
+	
+	var store3 = new com.ibm.oneui.controls.AutocompleteDataStore();
+	store3.requestDelay = 200;
+	store3.cachedRequestDelay = 50;
+	store3.maximumResultsDelay = 10000;
+	store3.cache = {};
+	store3.getValue = getValue;
+	store3.getQueryResults = getQueryResults;
+	store3.filter = filterGeneric;
+	store3.getLocalResults = getLocalResults;
+	store3.localItems = [
+		{name: "Search This Activity...", type: "search"},
+		{name: "Search All Activities...", type: "search"},
+		{name: "Search Connections...", type: "search"},
+		{name: "Search Quickr...", type: "search"}
+	];//.concat(wikis);
+	
+	store3.remoteItems = [];
+	
+	var r3 = new com.ibm.oneui.controls.AutocompleteMenu({
+		hideOnSelect: true,
+		store: store3,
+		updateItem: updateItem
+	}, dojo.byId("output3"));
+	r3.templateNode.innerHTML = "";
+	var w3 = new com.ibm.oneui.controls.AutocompleteInput({
+		store: store3,
+		initRenderer: function() {
+			r3.parent = w3;
+			r3.around = w3.domNode;
+			return r3;
+		}
+	}, dojo.byId("input3"));
+	dojo.connect(r3, "onSelect", w3, onSelect);
+	/*w3.connect(w3.domNode, "onclick", function() {
+		if (this._focused) this.suggestSearch();
+	});*/
+	dojo.attr(r3.domNode, "dijitPopupParent", "input3");
+	</script>
+</td><td>
+	Example contextual search with no suggestions
+	<ol>
+	<li>Just shows the hypothetical local scopes, as well as a single custom scope
+	</ol>
+</td></tr>
+
+<tr><td>
+	<form action="javascript: alert('submitted');" onsubmit="var value = dojo.trim(w4.attr('value')); dojo.stopEvent(event); if (value.length == 0) return; alert('Do a search for '+value)">
+		<input id="input4" autocomplete="off" name="value">
+		<input type="submit" value="Submit button">
+	</form>
+	
+	<script>
+	
+	function onSearch4(value, scope) {
+		if (value !== '')
+		alert("Doing a search for "+value+" on scope "+scope.label);
+	}
+	function onSearch4a(value, scope) {
+		alert("Go to global search page");
+	}
+	
+	var filesScopes1 = [{label: "My Files", onSearch: onSearch4, requiresInput: true}, {label: "All Files", onSearch: onSearch4}, {label: "All Connections", onSearch: onSearch4a}];
+	var filesScopes2 = [{label: "Folders by Name", onSearch: onSearch4}, {label: "All Files", onSearch: onSearch4}, {label: "All Connections", onSearch: onSearch4a}];
+	
+	var w4 = new com.ibm.social.layout.widget.Search({
+		scopes: filesScopes1,
+		suggest: {
+			renderer: lconn.core.widget.autocomplete.person,
+			store: store1,
+			messages: {suggestion: "Type a name or e-mail to see files belonging to..."}
+		},
+	}, dojo.byId("input4"));
+	dojo.connect(w4, "onSelect", function(item, store) {alert("selected "+item.name)});
+	
+	</script>
+</td><td>
+	Connections contextual search with people suggestions
+	<ol>
+	<li>Implements example of search scope being used in a product, with suggestions (but an empty store).
+	<li>Changing the scope should update the scopes displayed, and mouse events should work in the popup the next time (scope change properly purges behavior).
+	<li>Hitting ENTER when no suggestion is highlighted should submit the form IF the value is not empty.
+	<li>Clicking on the My Files search scope while the value is empty should do nothing (leave the menu is open). 
+	<li>Clicking on the All Files search scope while the value is empty should close the menu but not fire an alert.
+	<li>Clicking on the All Connections search scope should always fire an alert.
+	<li><a href="javascript:;" onclick="w4.setScopes(filesScopes1); return false;">Change the scopes to My Files (default)</a> 
+	<li><a href="javascript:;" onclick="w4.setScopes(filesScopes2); return false;">Change the scopes to Public Folders</a>
+	</ol>
+</td></tr>
+
+<tr><td>
+	<form action="javascript: alert('submitted');" onsubmit="var value = dojo.trim(w5.attr('value')); dojo.stopEvent(event); if (value.length == 0) return; alert('Do a search for '+value)">
+		<input id="input5" autocomplete="off" name="value">
+		<input type="submit" value="Submit button">
+	</form>
+	
+	<script>
+	
+	function onSearch5(value, scope) {
+		if (value !== '')
+		alert("Doing a search for "+value+" on scope "+scope.label);
+	}
+	function onSearch5a(value, scope) {
+		alert("Go to global search page");
+	}
+	
+	var filesScopes1 = [{label: "My Files", onSearch: onSearch5, requiresInput: true}, {label: "All Files", onSearch: onSearch5}, {label: "All Connections", onSearch: onSearch5a}];
+	var filesScopes2 = [{label: "Folders by Name", onSearch: onSearch5}, {label: "All Files", onSearch: onSearch5}, {label: "All Connections", onSearch: onSearch5a}];
+	
+	var w5 = new com.ibm.social.layout.widget.Search({
+		scopes: filesScopes1,
+		suggest: {
+			messages: {instruction: "Enter keywords to seach for.  You may select a different scope above."}
+		}
+	}, dojo.byId("input5"));
+	dojo.connect(w5, "onSelect", function(item, store) {alert("selected "+item.label)});
+	
+	</script>
+</td><td>
+	Connections contextual search popup with no suggestions
+	<ol>
+	<li>Implements example of search scope being used in a product, with no suggestions.
+	<li>Changing the scope should update the scopes displayed, and mouse events should work in the popup the next time (scope change properly purges behavior).
+	<li>Hitting ENTER when no suggestion is highlighted should submit the form IF the value is not empty.
+	<li>Clicking on the My Files search scope while the value is empty should do nothing (leave the menu is open). 
+	<li>Clicking on the All Files search scope while the value is empty should close the menu but not fire an alert.
+	<li>Clicking on the All Connections search scope should always fire an alert.
+	<li><a href="javascript:;" onclick="w5.setScopes(filesScopes1); return false;">Change the scopes to My Files (default)</a> 
+	<li><a href="javascript:;" onclick="w5.setScopes(filesScopes2); return false;">Change the scopes to Public Folders</a>
+	</ol>
+</td></tr>
+
+
+</tbody></table>
+</div>
+</div>
+</body>
+${end}

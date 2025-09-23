@@ -1,0 +1,292 @@
+${head}
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<title>Network Invitation Test</title>
+<link id="lotusAppStylesheet1" rel="stylesheet" type="text/css" href="../../_style?include=com.ibm.lconn.core.styles/base/applications/profiles.css">
+<link id="lotusAppStylesheet2" rel="stylesheet" type="text/css" href="../../_style?include=com.ibm.social.ee/css/eePreview.css">
+
+${script:lconn.core.config.services}
+${script:com.ibm.social.ee.test.util.serviceutil}
+${script:com.ibm.social.ee.test.util.personlookup}
+${script:com.ibm.social.incontext.util.html}
+${script:com.ibm.lconn.gadget.container.iContainer2}
+${script:net.jazz.ajax.xdloader}
+${script:dojo.cookie}
+
+<script>
+(function () {
+	var util = com.ibm.social.ee.test.util.serviceutil;
+	var lookup = com.ibm.social.ee.test.util.personlookup;
+	var isSecure = util.isSecure();
+	var webResources = lconn.core.config.services.webresources;
+    var webResUrl = (isSecure) ? webResources.secureUrl : webResources.url;
+	var profilesCfg = lconn.core.config.services.profiles;
+	var profilesUrl = (isSecure) ? profilesCfg.secureUrl : profilesCfg.url;
+	var connectionsUrl, networkInvitesUrl, pendingInvitesUrl;
+    var iCntr = null;
+    var inlineWidget = null;
+    var gadgetHandle = null;
+
+   function resetInlineWidget() {
+	   if (inlineWidget) {
+		   inlineWidget.destroy();
+		   inlineWidget = null;
+		   var container = dojo.byId("inlineNI");
+		   dojo.empty(container);
+		   dojo.create("center", { innerHTML: "Inline gadget goes here" }, container);		   
+	   }
+   } 
+    
+   function resetGadget() {
+	   if (gadgetHandle) {
+		   gadgetHandle.close();
+		   gadgetHandle = null;
+		   var container = dojo.byId("iFrameNI");
+         dojo.empty(container);
+         dojo.create("center", { innerHTML: "iFrame gadget goes here" }, container);		   
+	   }
+   }    
+    
+	window.viewNIEEInline = function(atomId, name, authId) {
+	  resetInlineWidget();
+	  resetGadget();
+     dojo.empty(dojo.byId("inlineNI"));
+	  var inviteId = atomId.substring(atomId.indexOf("entry")+5);
+	  var ctnr = dojo.create("div", {}, dojo.byId("inlineNI"));
+	  net.jazz.ajax.xdloader.batch_load_async(["com.ibm.social.incontext.NetworkDojo", "com.ibm.social.ee.widget.NetworkInviteLoader"], function () {
+         inlineWidget = new com.ibm.social.ee.widget.NetworkInviteLoader({isGadget: false, context: { id: inviteId, actor: {displayName: name, id: authId}}}, ctnr);
+      });
+	}
+	
+	window.viewNIEEGadgetiFrame = function(atomId, name, authId) {
+	   resetInlineWidget();
+	   resetGadget();
+		if(!iCntr) {
+	       iCntr = com.ibm.lconn.gadget.container.iContainer2;
+	       iCntr.init();
+		}
+	   var inviteId = atomId.substring(atomId.indexOf("entry")+5);
+	   var context = {
+	         "actor": {displayName: name, id: authId},
+	         "id": inviteId,
+	         "eventType": "profiles.colleague.created"
+	      };
+      var oauthEnabled = "false";
+      if (dojo.cookie("_oauthEnabled") === "true") {
+         oauthEnabled = "true";
+      }	
+      var gadgetUrl = webResUrl + "/web/com.ibm.social.ee/ConnectionsEE.xml";
+      if (!oauthEnabled)
+         gadgetUrl += ("?preventCache=" + (new Date()).getTime());
+            
+      var def = {
+         definitionUrl: gadgetUrl,
+         instanceData: {
+        	renderParams: { userPrefs: { "debug": "true" }  },
+     	    eeDataModel: {
+     	    	context: context
+     	    },
+     	    viewParams: { useOAuth: oauthEnabled }
+         },
+         componentType: "gadget",
+         placement: "iFrameNI"
+      };
+      gadgetHandle = iCntr.loadWidget(def);   
+	}
+	window.deleteConnection = function(url) {
+	   dojo.xhrDelete({ url: url, handle: function () {
+	       util.applyXsl(connectionsUrl, "networkinvite/friends.xsl", dojo.byId("friends"));
+	       util.applyXsl(pendingInvitesUrl, "networkinvite/pendinginvites.xsl", dojo.byId("pendingInvitations"));
+	   }});
+	},
+	
+	window.createConnections = function (fromUser, toUsers) {
+	   var reqs = [];
+	   var inviteXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+                      '<entry ' +
+ 'xmlns="http://www.w3.org/2005/Atom" ' +
+ 'xmlns:snx="http://www.ibm.com/xmlns/prod/sn">' +
+ ' <category term="connection" ' +
+ '  scheme="http://www.ibm.com/xmlns/prod/sn/type" />' +
+ ' <category term="colleague" ' +
+ '  scheme="http://www.ibm.com/xmlns/prod/sn/connection/type" />' +
+ ' <category term="pending" '+
+ '  scheme="http://www.ibm.com/xmlns/prod/sn/status" />' +  
+ ' <content type="html">' +
+ '  Please accept this invitation to be in my network of Connections colleagues.' +
+ ' </content>' +
+ '</entry>'; 
+      var acceptXml = '<?xml version="1.0" encoding="UTF-8"?>' +
+'<entry xmlns="http://www.w3.org/2005/Atom">' +
+'<category term="connection" scheme="http://www.ibm.com/xmlns/prod/sn/type"></category>' +
+'<category term="colleague" scheme="http://www.ibm.com/xmlns/prod/sn/connection/type"></category>' +
+'<category term="accepted" scheme="http://www.ibm.com/xmlns/prod/sn/status"></category>' +
+'</entry>';
+ 
+ 
+      var connUrl = connectionsUrl.substring(0, connectionsUrl.indexOf('?'));
+	   for (var i = 0; i < toUsers.length; i++) {
+	     reqs.push(dojo.xhrPost({ url: connUrl + "?userid=" + toUsers[i], postData: inviteXml, headers: { "Content-Type": "application/atom+xml"} }));
+	   }
+	   var dfdList = new dojo.DeferredList(reqs);
+	   var acceptUrls = [];
+	   dfdList.addCallback(function (result) {
+	      console.log("Received result from invitation request.", result);
+	      
+	      dojo.empty("toUsers");
+	      
+	      // Now iterate through all connections
+	      if (dojo.attr(dojo.byId("autoAccept"), "checked")) {
+	          for (i = 0; i < reqs.length; i++) {
+	              var url = reqs[i].ioArgs.xhr.getResponseHeader("Location");
+	              if (url) {
+	                 acceptUrls.push(url);
+	              }
+	          }
+	      }
+	      
+	      if (acceptUrls.length) {
+	          reqs = [];
+	          for (i = 0; i < acceptUrls.length; i++) {
+	              reqs.push(dojo.xhrPut({
+	                 url: acceptUrls[i],
+	                 putData: acceptXml,
+	                 headers: { "Content-Type": "application/atom+xml"}
+	              }));
+	          }
+	          var acceptDfds = new dojo.DeferredList(reqs);
+	          acceptDfds.addCallback(function (result) {
+	              console.log("Received result from accept requests ", result);
+	              util.applyXsl(connectionsUrl, "networkinvite/friends.xsl", dojo.byId("friends"));
+	              util.applyXsl(pendingInvitesUrl, "networkinvite/pendinginvites.xsl", dojo.byId("pendingInvitations"));
+	          });
+	      }
+	      else {
+	          util.applyXsl(pendingInvitesUrl, "networkinvite/pendinginvites.xsl", dojo.byId("pendingInvitations"));
+	      }
+	   });
+	}
+
+	dojo.addOnLoad(function () {
+      util.getXml(profilesUrl + "/atom/profileService.do", function (svcdoc) {	   
+	      // Get the current user
+	      var currentUser = util.evalXPathString(svcdoc, "//app:workspace/atom:title/text()", { app: "http://www.w3.org/2007/app"});
+	      if (currentUser) {
+	         dojo.place("<strong>" + currentUser + "</strong>", dojo.byId("currentUser"));
+	         dojo.place("<strong>" + currentUser + "</strong>", dojo.byId("selectedFromUser"));
+	      }
+	      var currentUserId = util.evalXPathString(svcdoc, "//app:workspace/app:collection/snx:userid/text()", { app: "http://www.w3.org/2007/app"});
+	      if (currentUserId) {
+	         dojo.attr(dojo.byId("selectedFromUser"), "_userid", currentUserId);
+	      }
+	      
+	      // Get connections url
+	      connectionsUrl = util.evalXPathString(svcdoc, "//atom:link[@rel='http://www.ibm.com/xmlns/prod/sn/connections/colleague']/@href");
+	      if (connectionsUrl) {
+	         connectionsUrl += "&ps=100&sortBy=displayName";
+	         networkInvitesUrl = connectionsUrl + "&status=pending"; // Add status=pending for pending network invites
+	         pendingInvitesUrl = connectionsUrl + "&status=unconfirmed";
+	         util.applyXsl(networkInvitesUrl, "networkinvite/invitelist.xsl", dojo.byId("networkInviteList"));
+	         util.applyXsl(connectionsUrl, "networkinvite/friends.xsl", dojo.byId("friends"));
+	         util.applyXsl(pendingInvitesUrl, "networkinvite/pendinginvites.xsl", dojo.byId("pendingInvitations"));
+	      }
+	      else {
+	         alert("Could not find friends URL");
+	      }  
+	      
+	      // Create people lookup
+	      lookup.createPersonTypeahead("toUser", profilesUrl, function (item) {	              
+	              var li = dojo.create("li", { _userid: item.userid, innerHTML: item.name + "&nbsp;" }, dojo.byId("toUsers"));
+	              var a = dojo.create("a", { href: "javascript:;", innerHTML: "Remove"}, li);
+	              dojo.connect(a, "onclick", null, function () {
+	                 dojo.destroy(li);
+	              })
+	              dojo.byId("toUser").value = "";
+	      });
+	      
+	      // Create connections
+	      dojo.connect(dojo.byId("createConnection"), "onclick", null, function () {      
+	           window.createConnections(dojo.attr(dojo.byId("selectedFromUser"), "_userid"), 
+	                    dojo.query("li", "toUsers").map(function(li) { return dojo.attr(li, "_userid"); }));
+	      });
+	      
+	      
+	  });   
+	});
+})();
+
+</script>
+${endhead}
+<div class="lotusMain" style="min-height:0px;">
+<div class="lotusContent" style="width: 1200px; height: 2000px;">
+<table>
+<tbody>
+<tr>
+<td width="500" style="vertical-align:top">
+<div style="overflow: hidden; width: 500px;">
+<h1>EE Network Invite Test Page</h1>
+<p  style="width: 500px; word-wrap: break-word;">Current user: <span id="currentUser"></span></p>
+<h3>Network Invitations</h3>
+<div id="networkInviteList"></div>
+<p></p>
+<h3>Friends</h3>
+<div id="friends"></div>
+<p></p>
+<h3>Pending Invitations</h3>
+<div id="pendingInvitations"></div>
+<p></p>
+<h3>Create Invitations</h3>
+<table>
+<tbody>
+<tr>
+<td style="vertical-align:top">From user:</td>
+<td>
+<span id="selectedFromUser"></span>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top"><label for="toUser">To user:</label></td>
+<td><input id="toUser" type="text" value="" style="width:200px">
+<ul id="toUsers">
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<input type="checkbox" id="autoAccept"><label for="autoAccept">Automatically accept invitation (Must have admin role)</label>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<button id="createConnection">Create</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+<td width="540" style="vertical-align:top">
+<div id="inlineNI" style="width:380px; overflow: auto; margin-left:50px;border-style:solid;border-width:1px;border-color:#aaa;padding:20px">
+<center>Inline gadget goes here</center>
+</div>
+<div id="iFrameNI" style="width:380px; margin-top: 10px; margin-left:50px;border-style:solid;border-width:1px;border-color:#aaa;padding:20px; overflow:auto">
+<center>iFrame gadget goes here</center>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+${end}

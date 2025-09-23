@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "zh_TW",
+      "Play": "播放",
+      "Pause": "暫停",
+      "Current Time": "現行時間",
+      "Duration Time": "持續時間",
+      "Remaining Time": "剩餘時間",
+      "Stream Type": "串流類型",
+      "LIVE": "即時",
+      "Loaded": "已載入",
+      "Progress": "進行中",
+      "Fullscreen": "全螢幕",
+      "Non-Fullscreen": "非全螢幕",
+      "Mute": "靜音",
+      "Unmute": "取消靜音",
+      "Unmuted": "已取消靜音",
+      "Playback Rate": "播放速度",
+      "Subtitles": "字幕",
+      "subtitles off": "關閉字幕",
+      "Captions": "標題",
+      "captions off": "關閉標題",
+      "Chapters": "章節",
+      "Volume": "音量",
+      "You aborted the video playback.": "您已中止視訊播放",
+      "A network error caused the video download to fail part-way.": "發生網路錯誤，導致視訊下載中途失敗。",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "無法載入視訊，因為伺服器或網路失敗，或者格式不受支援。",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "已中止視訊播放，因為發生毀損問題，或者視訊使用了瀏覽器不支援的功能。",
+      "No compatible source was found for this video.": "找不到此視訊的相容來源。"
+});
+

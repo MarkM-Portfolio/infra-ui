@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Connections olayları işlemleri ve diğer ayrıntıları görüntülemek için kullanılan yerleşik Experience OpenSocial aracı</msg>
+  <msg name="connectionsEE_errorTitle">Hata</msg>
+  <msg name="connectionsEE_errorDescription">Bu içerik kuruluşunuz tarafından onaylanmamış ve kullanılamıyor. Lütfen uzantıyı etkinleştirmek için Kuruluşunuzun yöneticisiyle iletişim kurun.</msg>
+</messagebundle>

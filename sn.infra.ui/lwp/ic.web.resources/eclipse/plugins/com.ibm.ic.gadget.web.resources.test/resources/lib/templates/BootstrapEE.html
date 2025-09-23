@@ -1,0 +1,28 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div style="padding: 10px 10px 10px 10px; ">
+	<div>	
+		<form>
+			<div>
+				<label for="${id}eeDataModel">EE Data Context</label><br>
+				<input type="text" id="${id}eeDataModel" name="eeDataModel" style="width: 250px" value="{'should not':'be empty'}" data-dojo-attach-point="eeDataModel" data-dojo-type="dijit/form/TextBox">
+			</div>
+			
+			<div>	
+				<input name="loadGadgetButton" type="button" value="[Re]Load Gadget" class="lotusBtn" data-dojo-attach-point="loadGadgetButton">
+				<input name="closeGadgetButton" type="button" value="Unload Gadget/Close Post" class="lotusBtn" data-dojo-attach-point="unloadGadgetButton">
+				<input name="setupPostGadgetButton" type="button" value="[Re]Setup Post Gadget to Activity Stream" class="lotusBtn" data-dojo-attach-point="setupPostGadgetButton">
+			</div>
+		</form>
+	</div>
+	<div>
+		<span data-dojo-attach-point="eeGadgetRootNode"> </span>
+	</div>
+	<div style="display:none" data-dojo-attach-point="eeGadgetPostForm">
+		<h3>Do not forget to use wsadmin NewsActivityStreamService.registerApplication for non Developer-Mode use</h3>
+		<h3>NOTE : Activity Entry is posted to "I'm Following" page only.</h3>
+		<label for="eeGadgetPostUrl">Activity Stream POST URL :</label>
+		<input type="text" style="width:100%;" id="eeGadgetPostUrl" name="eeGadgetPostUrl" readonly data-dojo-attach-point="eeGadgetPostUrl" data-dojo-type="dijit/form/TextBox">
+		<textarea rows="30" cols="100" style="width:100%;" data-dojo-attach-point="eeGadgetPostText">This feature can only be tested if you are authenticated with Connections.  Please authenticate first.</textarea>
+		<input name="postGadgetButton" type="button" value="Post Gadget to Activity Stream" class="${buttonStyle}" data-dojo-attach-point="postGadgetButton">
+	</div>
+</div>

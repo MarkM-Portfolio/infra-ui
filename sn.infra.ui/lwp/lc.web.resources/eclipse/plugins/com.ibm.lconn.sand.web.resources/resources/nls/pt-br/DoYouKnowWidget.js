@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Convidar para se Conectar",
+	NDYK1:"Nenhuma outra pessoa recomendada",
+	LOADING: "carregando",
+	DYK_TITLE: "Pessoas que talvez você conheça",
+	INVITE_TITLE: "Enviar convite para conectar",
+	SEND_ACTION: "Enviar",
+	CANCEL_ACTION: "Cancelar",
+	PREV: "Anterior",
+	NEXT: "Próxima",
+	bpct: "Fez um comentário em seu blog",
+	bpcc: "Você fez um comentário no mesmo blog",
+	lpfr: "É colega de alguém que você conhece",
+	lm1: "Você é o gerente dessa pessoa",
+	le1: "Essa pessoa é o seu gerente",
+	sdm: "Vocês têm o mesmo gerente",
+	pt: "Essa pessoa marcou você",
+	pbt: "Você marcou essa pessoa",
+	acm: "Vocês têm atividades em comum",
+	wikiCoContribution: "Vocês editaram a mesma wiki",
+	bpcb: "Vocês fizeram comentários no blog deles",
+	lpcfr: "Vocês têm colegas em comum",
+	ccmf: "Vocês estão em uma comunidade juntos",
+	ccms: "Vocês estão em uma comunidade juntos",
+	filesharing: "Você compartilha alguns arquivos",
+	forumthreaddiscussion: "Vocês têm um thread de fórum em comum",
+	ctb: "Vocês têm um favorito em comum",
+	tgw: "Vocês têm marcações em comum",
+	tcu: "Você usaram a mesma marcação",
+	pctg: "Vocês marcaram a mesma pessoa",
+	tgb: "As mesmas pessoas marcaram vocês"
+})

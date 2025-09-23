@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2010, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<?eclipse version="3.4"?>
+<!--
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<plugin>
+	<extension point="net.jazz.ajax.webBundles"/>
+	
+	<extension point="com.ibm.lconn.core.styles.themes">
+		<theme 
+			id="hikari" 
+			resource="/theme.css"
+			resource-rtl="/themeRTL.css"
+			application-path="/css/base/applications/" 
+			version="oneui3"
+			/>
+		<theme 
+			id="hikari-green" 
+			resource="/greenTheme.css"
+			resource-rtl="/greenThemeRTL.css"
+			application-path="/css/greenTheme/applications/" 
+			version="oneui3"
+			/>
+		<theme 
+			id="hikari-orange" 
+			resource="/orangeTheme.css"
+			resource-rtl="/orangeThemeRTL.css"
+			application-path="/css/orangeTheme/applications/" 
+			version="oneui3"
+			/>
+		<theme 
+			id="hikari-pink" 
+			resource="/pinkTheme.css"
+			resource-rtl="/pinkThemeRTL.css"
+			application-path="/css/pinkTheme/applications/" 
+			version="oneui3"
+			/>
+		<theme 
+			id="hikari-purple" 
+			resource="/purpleTheme.css"
+			resource-rtl="/purpleThemeRTL.css"
+			application-path="/css/purpleTheme/applications/" 
+			version="oneui3"
+			/>
+		<theme 
+			id="hikari-red" 
+			resource="/redTheme.css"
+			resource-rtl="/redThemeRTL.css"
+			application-path="/css/redTheme/applications/" 
+			version="oneui3"
+			/>
+	</extension>
+</plugin>

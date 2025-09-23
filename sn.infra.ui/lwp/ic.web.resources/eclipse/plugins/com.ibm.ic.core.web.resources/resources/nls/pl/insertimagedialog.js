@@ -1,0 +1,45 @@
+define({
+	      /* ***************************************************************** */
+  /*                                                                   */
+  /* Copyright IBM Corp. 2011, 2018  All Rights Reserved.              */
+
+		   dialogTitle : "Dodawanie obrazu",
+		   newUpload : "Nowe przesyłanie",
+		   URL : "Adres URL",
+		   imageLibrary : "Biblioteka obrazów",
+		   description : "Opis:",
+		   imageFile : "Pliki:",
+		   OK: "OK",
+		   cancel: "Anuluj",
+		   required: "Pole wymagane",
+		   preview: "Podgląd:",
+		   previewWarning: "Ładowanie obrazu nie powiodło się, czy adres URL obrazu jest na pewno poprawny?",
+		   alt: "Tekst zastępczy:",
+		   filesTab: "Z komponentu Pliki",
+		   images:"Obrazy:",
+		   browse:"Przeglądaj...",
+		   imagePickerTitle:"Wstaw obrazy z komponentu Pliki",
+		   componentImagePickerTitle:" Liczba przesłanych obrazów: ${0}",
+		   /* New String for insert image dialog */
+		   title: "Wstawianie obrazu",
+		   uploadBtn: "Prześlij obraz",
+		   insertBtn: "Wstaw obraz",
+		   uploadTab: "Pliki lokalne",
+		   externalTab: "Adres URL WWW",
+		   internalTab: "Istniejące obrazy",
+		   fileFieldTip: "Aby przesłać obrazy, przeciągnij je z komputera desktop bezpośrednio do tego okna.",
+		   AdditionalSection: "Opcje dodatkowe",
+		   ExpandSection: "Rozwiń opcje dodatkowe",
+		   CloseSection: "Zwiń opcje dodatkowe",
+		   webURLPrompt: "Adres URL WWW obrazu:",
+		   previewPrompt: "Obszar podglądu: wyświetlenie dużego obrazu może zająć trochę czasu.",
+		   noExistingImage: "Uwaga! Nie dodano jeszcze żadnego obrazu.",
+		   selectExistingImage: "Wybierz istniejący obraz:",
+		   urlMissing: "Wprowadź adres URL",
+		   urlInvalid: "Niepoprawny adres URL. Wprowadź poprawny adres URL i spróbuj ponownie.",
+		   previousItem: "Wstecz",
+		   nextItem: "Dalej",
+			 oneImageOneTime: "Do tego okna został już dodany obraz. Można wstawiać tylko jeden obraz naraz. ",
+			 altTextForImgInList: "Kliknij, aby wybrać jeden obraz"
+});
+

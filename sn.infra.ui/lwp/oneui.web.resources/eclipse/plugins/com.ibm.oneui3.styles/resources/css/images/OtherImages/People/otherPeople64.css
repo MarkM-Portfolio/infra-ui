@@ -1,0 +1,9 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.otherPeople64-LoadingPhotoPerson64{width:64px;height:64px;background-position:0 0}
+.otherPeople64-NoPhotoCommunity64{width:64px;height:64px;background-position:0 -72px}
+.otherPeople64-NoPhotoGroup64{width:64px;height:64px;background-position:0 -144px}
+.otherPeople64-NoPhotoPerson64{width:64px;height:64px;background-position:0 -216px}
+.otherPeople64-NoPhotoPerson55{width:55px;height:55px;background-position:0 -288px}
+
+.otherPeople64{background-image:url('./otherPeople64-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .otherPeople64{display:none}

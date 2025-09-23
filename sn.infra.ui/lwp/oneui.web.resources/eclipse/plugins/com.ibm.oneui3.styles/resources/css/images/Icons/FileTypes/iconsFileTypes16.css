@@ -1,0 +1,40 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2012, 2015                                    */ 
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+.iconsFileTypes16-ftAudio16{width:16px;height:16px;background-position:0 0}
+.iconsFileTypes16-ftCode16{width:16px;height:16px;background-position:0 -24px}
+.iconsFileTypes16-ftCompressed16{width:16px;height:16px;background-position:0 -48px}
+.iconsFileTypes16-ftContact16{width:16px;height:16px;background-position:0 -72px}
+.iconsFileTypes16-ftData16{width:16px;height:16px;background-position:0 -96px}
+.iconsFileTypes16-ftDataDocs16{width:16px;height:16px;background-position:0 -120px}
+.iconsFileTypes16-ftDefault16{width:16px;height:16px;background-position:0 -144px}
+.iconsFileTypes16-ftFlash16{width:16px;height:16px;background-position:0 -168px}
+.iconsFileTypes16-ftFileSyncCheckmark16{width:10px;height:10px;background-position:0 -192px}
+.iconsFileTypes16-ftFolder16{width:16px;height:16px;background-position:0 -210px}
+.iconsFileTypes16-ftFolderOpen16{width:16px;height:16px;background-position:0 -234px}
+.iconsFileTypes16-ftGraphic16{width:16px;height:16px;background-position:0 -258px}
+.iconsFileTypes16-ftLink16{width:16px;height:16px;background-position:0 -282px}
+.iconsFileTypes16-ftPage16{width:16px;height:16px;background-position:0 -306px}
+.iconsFileTypes16-ftPdf16{width:16px;height:16px;background-position:0 -330px}
+.iconsFileTypes16-ftPresentation16{width:16px;height:16px;background-position:0 -354px}
+.iconsFileTypes16-ftPresentationDocs16{width:16px;height:16px;background-position:0 -378px}
+.iconsFileTypes16-ftText16{width:16px;height:16px;background-position:0 -402px}
+.iconsFileTypes16-ftVideo16{width:16px;height:16px;background-position:0 -426px}
+.iconsFileTypes16-ftVisualization16{width:16px;height:16px;background-position:0 -450px}
+.iconsFileTypes16-ftWordProcessing16{width:16px;height:16px;background-position:0 -474px}
+.iconsFileTypes16-ftWordProcessingDocs16{width:16px;height:16px;background-position:0 -498px}
+.iconsFileTypes16-CommunityGray16{width:16px;height:16px;background-position:0 -522px}
+.iconsFileTypes16-SharedGray16{width:16px;height:16px;background-position:0 -546px}
+
+.iconsFileTypes16{background-image:url('./iconsFileTypes16-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsFileTypes16{display:none}

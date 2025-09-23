@@ -1,0 +1,18 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+.otherHTML5Player24-collapse-16{width:16px;height:16px;background-position:0 0}
+.otherHTML5Player24-collapse-hover-16{width:16px;height:16px;background-position:0 -24px}
+.otherHTML5Player24-fullscreen-16{width:16px;height:16px;background-position:0 -48px}
+.otherHTML5Player24-fullscreen-hover-16{width:16px;height:16px;background-position:0 -72px}
+.otherHTML5Player24-mute-16{width:16px;height:16px;background-position:0 -96px}
+.otherHTML5Player24-mute-hover-16{width:16px;height:16px;background-position:0 -120px}
+.otherHTML5Player24-pause-16{width:16px;height:16px;background-position:0 -144px}
+.otherHTML5Player24-pause-hover-16{width:16px;height:16px;background-position:0 -168px}
+.otherHTML5Player24-play-16{width:16px;height:16px;background-position:0 -192px}
+.otherHTML5Player24-play-hover-16{width:16px;height:16px;background-position:0 -216px}
+.otherHTML5Player24-volume-16{width:16px;height:16px;background-position:0 -240px}
+.otherHTML5Player24-volume-hover-16{width:16px;height:16px;background-position:0 -264px}
+.otherHTML5Player24-play-overlay-lg{width:64px;height:64px;background-position:0 -288px}
+.otherHTML5Player24-play-overlay-lg-hover{width:64px;height:64px;background-position:0 -360px}
+
+.otherHTML5Player24{background-image:url('./otherHTML5Player24-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .otherHTML5Player24{display:none}

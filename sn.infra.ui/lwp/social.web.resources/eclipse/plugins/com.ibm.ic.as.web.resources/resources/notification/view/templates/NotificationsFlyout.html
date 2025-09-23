@@ -1,0 +1,30 @@
+<div class="icBanner-notif-center lotusHidden" role="dialog" id="notificationsFlyout" aria-labelledby="arialabelNotificationsFlyout">
+	<span aria-hidden="true" class="lotusHidden" id="arialabelNotificationsFlyout">${strings.ariaNotificationCenter}</span>
+    <div class="icBanner-popover-inner">
+        <div id="headerPopupNode" class="icBanner-popover-header" data-dojo-attach-point="headerNode"><div class="header-left">${strings.viewMyNotifications}</div>
+        	<div class="header-right">
+				<span tabindex="0" data-dojo-attach-point="readAllAction" title="${strings.markAllRead}" role="button" class="icBanner-popover-notificationReadAll lotusHidden">
+					${strings.markAllRead}
+				</span>
+				<span id="separator" class="icBanner-popover-notificationSeparator">|</span>
+                <a class="icBanner-popover-notificationSettings" tabindex="0" href="${settingsUrl}" title="${strings.notificationsSettings}" target="_blank" data-dojo-attach-point="settingsLink">
+                    ${!strings.notificationsSettings}
+                </a>
+            </div>           
+        </div>
+        <div class="icBanner-popover-content" data-dojo-attach-event="onscroll: checkScroll" data-dojo-attach-point="contentNode" tabindex="-1">
+            <div class="icBanner-popover-newNotifications lotusHidden">${newNotifications}</div>
+            <div data-dojo-attach-point="notificationItem">
+            </div>
+            <div data-dojo-attach-point="loadingNode" class="lotusLoading icBanner-popover-loader lotusHidden"></div>
+        </div>
+       
+        <div class="icBanner-popover-footer">
+            <ul class="l-icFloatList">                
+                <li class="lotusFirst"><a class="icBanner-footer-link" tabindex="0" aria-describedby="ariaNotificationCenterSeeAll" data-dojo-attach-point="seeAllLink" href="${allNotificationsUrl}" target="_blank">${strings.seeAllNotifications}</a></li> 
+            </ul>
+            <span class="lotusAccess" id="ariaNotificationCenterSeeAll">${strings.ariaSeeAllNotifications}</span>
+            <div class="l-icClear"></div>
+        </div>
+    </div>
+</div>

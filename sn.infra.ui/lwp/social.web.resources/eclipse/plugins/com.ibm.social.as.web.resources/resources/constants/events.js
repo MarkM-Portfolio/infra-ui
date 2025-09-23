@@ -1,0 +1,78 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+
+dojo.provide("com.ibm.social.as.constants.events");
+
+/**
+ * Class that defines constants used for events in Activity Stream.
+ * @author Jim Antill
+ *
+ * The as.events object gives each event signature a label.
+ * To get an event signature use the label of the event e.g:
+ * 		com.ibm.social.as.constants.POPULATE
+ *
+ * will return "com/ibm/social/as/event/populate".
+ **/
+	
+com.ibm.social.as.constants.events = {
+    BADGE_DECREASE_MY_NOTIFICATIONS: "lconn/homepage/activitystream/event/mynotificationsbadge/decrease",
+    BADGE_UPDATE_MY_NOTIFICATIONS: "lconn/homepage/activitystream/event/mynotificationsbadge/update",
+    BADGE_DECREASE_MENTIONS: "lconn/homepage/activitystream/event/mentionsbadge/decrease",
+    BADGE_UPDATE_MENTIONS: "lconn/homepage/activitystream/event/mentionsbadge/update",
+    BADGE_DATA_LOADED: "lconn/homepage/activitystream/event/badges/loaded",
+    BADGE_RESET: "lconn/homepage/activitystream/event/badges/reset",
+    BADGE_SYNC_MY_NOTIFICATIONS: "lconn/homepage/activitystream/event/mynotificationsbadge/sync",
+	ACTIONREQUIREDBADGEDECREASE: "lconn/homepage/activitystream/event/actionrequiredbadge/decrease",
+	ACTIONREQUIREDBADGEUPDATE: "lconn/homepage/activitystream/event/actionrequiredbadge/update",
+	ACTIVITYSTREAMLOADED: "com/ibm/social/as/event/activitystreamloaded",
+	BACKTOMAIN: "com/ibm/social/as/event/backtomain",
+	CLEARMESSAGE: "lconn/homepage/activitystream/event/message/clear",
+	CREATEMESSAGE: "lconn/homepage/activitystream/event/message/create",
+	FEEDFETCHED: "com/ibm/social/as/event/feedfetched",
+	INIT: "com/ibm/social/as/event/populate/init",
+	DYNAMICFAIL: "/com/ibm/social/as/event/dynamicfail",
+	ITEMCLICKED: "com/ibm/social/as/event/newsitemclicked",
+	ITEMSELECTED: "com/ibm/social/as/event/newsitemselected",
+	ITEMDESELECTED: "com/ibm/social/as/event/newsitemdeselected",
+	ITEMGOTFOCUS: "com/ibm/social/as/event/newitemgotfocus",
+	ITEMLOSTFOCUS: "com/ibm/social/as/event/itemlostfocus",
+	KEYBOARDNAVIGATION: "com/ibm/social/as/event/keyboardnavigation",
+	ADDACTIVITYENTRY: "com/ibm/social/as/event/addactivityentry",
+	PAGECHANGE: "com/ibm/social/as/event/pagechange",
+	PLACEHOLDERADD: "com/ibm/social/as/event/placeholder/add",
+	PLACEHOLDERREMOVE: "com/ibm/social/as/event/placeholder/remove",
+	POPULATE: "com/ibm/social/as/event/populate",
+	POPULATEERROR: "com/ibm/social/as/event/populate/error",
+	PARAMCHANGE: "com/ibm/social/as/event/paramchange",
+	CONFIGERROR: "com/ibm/social/as/event/config/error",
+	REMOVEACTIVITYENTRY: "com/ibm/social/as/event/removeactivityentry",
+	STATEUPDATED: "com/ibm/social/as/event/stateupdated",
+	TAGSFOLLOWING: "lconn/homepage/activitystream/event/tagmanagerextension/tagsfollowing",
+	UPDATESTATE: "com/ibm/social/as/event/updatestate",
+	UPDATEFILTERS: "lconn/homepage/activitystream/event/updatefilters",
+	UPDATEEETARGET: "com/ibm/social/as/event/updateeetarget",
+	PAGEDIRTY: "lconn/homepage/activitystream/event/pagedirty",
+	PAGECLEAN: "lconn/homepage/activitystream/event/pageclean",
+	DIRTYCHECKLEAVE: "lconn/homepage/activitystream/dirtycheck/leave/",
+	STARTCOMMENT: "com/ibm/social/as/comment/startComment",
+	STATUSUPDATEPOST: "com/ibm/social/as/statusupdateposted",
+	STOPCOMMENT: "com/ibm/social/as/comment/stopComment",
+	RESIZEHEIGHT:"com/ibm/social/as/event/resizeTextHeight",
+	NEWSITEMDELETE: "com/ibm/social/as/event/newsitemdelete",
+	FEEDRENDERED: "com/ibm/social/as/event/feedrendered",
+	FEEDDESTROYED: "com/ibm/social/as/event/feeddestroyed",
+	CLOSEEE: "com/ibm/social/as/event/closeee",
+	COMMUNITYDISABLED: "com/ibm/social/as/community/disabled",
+	LIKEPOPUPOPEN:	"com/ibm/oneui/recommend/popup/onOpen",
+	MICROBLOGCONFIGLOADED: "com/ibm/social/as/event/mbConfigLoaded",
+	SHOWTOPBORDER: "com/ibm/social/as/event/showTopBorder",
+	REMOVETOPBORDER: "com/ibm/social/as/event/removeTopBorder",
+	CHANGEPAGETITLE: "com/ibm/social/as/event/changePageTitle",
+	ASSTREAMFILTERED: "com/ibm/social/as/event/streamFiltered",
+	ENABLESEARCH: "com/ibm/social/as/event/enableSearch",
+	FILTERMENUHIDE: "com/ibm/social/as/event/filtermenuhide",
+    SAVEACTIONCOMPLETE: "com/ibm/social/as/event/saveActionComplete",
+    SHOWMORECLICKED: "com/ibm/social/as/event/showMoreClicked",
+    HTML5VIDEOPLAYING: "com/ibm/social/as/event/html5VideoPlaying",
+    LIVEPREVIEW_PREF_CHANGE: "com/ibm/social/as/notification/LIVEPREVIEW_PREF_CHANGE"
+    	
+};

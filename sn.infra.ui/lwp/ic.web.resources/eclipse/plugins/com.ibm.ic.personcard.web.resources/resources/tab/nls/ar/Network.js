@@ -1,0 +1,29 @@
+define(
+	/* ***************************************************************** */
+	/*                                                                   */
+	/* IBM Confidential                                                  */
+	/*                                                                   */
+	/* OCO Source Materials                                              */
+	/*                                                                   */
+	/* Copyright IBM Corp. 2011, 2012                                    */
+	/*                                                                   */
+	/* The source code for this program is not published or otherwise    */
+	/* divested of its trade secrets, irrespective of what has been      */
+	/* deposited with the U.S. Copyright Office.                         */
+	/*                                                                   */
+	/* ***************************************************************** */
+	
+	({
+		error: "لم يتم اتاحة حالة دعوة شبكة الاتصال الخاصة بك.  برجاء اعادة المحاولة فيما بعد.",
+		loading: "تحميل دعوة شبكة الاتصال...",
+		inNetwork: "${0} هو عضو في شبكة الاتصال الخاصة بك.",
+		pendingNetwork: "${0} تم دعوته للانضمام الى شبكة الاتصال الخاصة بك.",
+		removeNetwork: "هل تريد ازالته؟",
+		defaultMessage: "أود دعوتك لانضمام الى شبكة الاتصال الخاصة بي.",
+		notLoggedIn: "يجب أن تقوم ببدء الاتصال لدعوة الأشخاص الى شبكة الاتصال الخاصة بك.",
+		labelMessage: "دعوة ${0} لشبكة الاتصال الخاصة بك: ",
+		labelFollow: "أيضا متابعة واستلام التعديلات",
+		btnInvite: "ارسال دعوة"
+	})
+	
+);

@@ -1,0 +1,34 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusGlobalSearch" role="search">
+	<div class="lotusSearch">
+		<form method="POST" data-dojo-attach-point="formNode" data-dojo-attach-event="onsubmit:formSubmitted">
+			<input name="scope" value="" type="hidden" data-dojo-attach-point="scopeInputNode">
+			<input name="component" value="" type="hidden" data-dojo-attach-point="featureInputNode">
+			<table class="lotusLayout" cellspacing="0" role="presentation" summary="">
+				<tbody>
+					<tr>
+						<td>
+							<div class="lotusHidden" id="${id}-searchOptionLabel">${_strings.LABEL_SELECT_SCOPE}</div>
+							<div>
+								<a href="javascript:;" title="${_strings.LABEL_SELECT_SCOPE}" class="lotusScope" aria-haspopup="true" role="button" aria-labelledby="${id}-searchOptionLabel ${id}searchOpt" data-dojo-attach-point="scopeNode" data-dojo-attach-event="onclick:openMenu,onkeypress:openMenuA11y">
+								<img class="lotusIcon" alt="" src="${_blankGif}" role="presentation" data-dojo-attach-point="currScopeIconNode">
+								<span id="${id}searchOpt" data-dojo-attach-point="currScopeLabelNode"> </span>
+								<span class="lotusAltText" role="presentation">▼</span>
+								</a>
+							</div>
+						</td>
+						<td>
+							<input id="${id}searchInput" class="lotusText lotusInactive" type="text" name="query" title="${_strings.LABEL_SEARCH}" data-dojo-attach-point="textNode">
+						</td>
+						<td>
+							<span class="lotusBtnImg">
+								<input class="lotusSearchButton" type="image" src="${_blankGif}" alt="${_strings.LABEL_SEARCH}" title="${_strings.LABEL_SEARCH}" aria-label="${_strings.LABEL_SEARCH}" data-dojo-attach-point="onclick:submitForm">
+								<a href="javascript:;" alt="${_strings.LABEL_SEARCH}" class="lotusAltText" data-dojo-attach-event="onclick:submitForm">${_strings.LABEL_SEARCH}</a>
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+</div>

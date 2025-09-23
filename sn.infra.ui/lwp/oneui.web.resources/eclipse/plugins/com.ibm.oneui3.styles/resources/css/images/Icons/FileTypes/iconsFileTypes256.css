@@ -1,0 +1,23 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.iconsFileTypes256-ftAudio256{width:256px;height:256px;background-position:0 0}
+.iconsFileTypes256-ftCode256{width:256px;height:256px;background-position:0 -264px}
+.iconsFileTypes256-ftCompressed256{width:256px;height:256px;background-position:0 -528px}
+.iconsFileTypes256-ftContact256{width:256px;height:256px;background-position:0 -792px}
+.iconsFileTypes256-ftData256{width:256px;height:256px;background-position:0 -1056px}
+.iconsFileTypes256-ftDefault256{width:256px;height:256px;background-position:0 -1320px}
+.iconsFileTypes256-ftFlash256{width:256px;height:256px;background-position:0 -1584px}
+.iconsFileTypes256-ftFileSyncCheckmark256{width:85px;height:85px;background-position:0 -1848px}
+.iconsFileTypes256-ftFolder256{width:256px;height:256px;background-position:0 -1941px}
+.iconsFileTypes256-ftFolderOpen256{width:256px;height:256px;background-position:0 -2205px}
+.iconsFileTypes256-ftGraphic256{width:256px;height:256px;background-position:0 -2469px}
+.iconsFileTypes256-ftLink256{width:256px;height:256px;background-position:0 -2733px}
+.iconsFileTypes256-ftPage256{width:256px;height:256px;background-position:0 -2997px}
+.iconsFileTypes256-ftPdf256{width:256px;height:256px;background-position:0 -3261px}
+.iconsFileTypes256-ftPresentation256{width:256px;height:256px;background-position:0 -3525px}
+.iconsFileTypes256-ftText256{width:256px;height:256px;background-position:0 -3789px}
+.iconsFileTypes256-ftVideo256{width:256px;height:256px;background-position:0 -4053px}
+.iconsFileTypes256-ftVisualization256{width:256px;height:256px;background-position:0 -4317px}
+.iconsFileTypes256-ftWordProcessing256{width:256px;height:256px;background-position:0 -4581px}
+
+.iconsFileTypes256{background-image:url('./iconsFileTypes256-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsFileTypes256{display:none}

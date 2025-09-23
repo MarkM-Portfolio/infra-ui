@@ -1,0 +1,51 @@
+${head}
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+
+<title>BizCard</title>
+
+
+<script>
+dojoConfig.parseOnLoad=true;
+
+</script>
+${script:dojo/parser}
+${script:net.jazz.ajax.xdloader}
+${script:ic-test.widget.ContainerBizCards}
+<!--  add your custom modules here -->
+<script>
+    // Declare your custom scripts here
+</script>
+
+
+<style>
+/* Add your custom styles here */
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-test/ui/index.html?render=test">Core UI widgets and utilities</a>
+    <span class="lotusDivider">&gt;</span>
+    BizCard
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain">
+<div class="lotusContent">
+<h1>BizCard</h1>
+<dl>
+    <!--  Update the module ID -->
+    <dt>Module ID: <code>ic-ui/BizCard</code></dt>
+    <!--  Update the JSDoc page URL -->
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-ui/ic-ui.BizCard.html">JSDoc</a></dd>
+</dl>
+<div>
+    <div data-dojo-type="ic-test/widget/ContainerBizCards" aria-label="Business Cards"></div>
+</div>
+</div>
+</div>
+</body>
+${end}

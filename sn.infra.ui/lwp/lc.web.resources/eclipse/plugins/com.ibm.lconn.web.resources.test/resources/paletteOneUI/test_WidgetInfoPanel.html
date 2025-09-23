@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+<title>Test info panel</title>
+${endhead}
+
+<script type="text/javascript">
+	var count = 0;
+
+	function setLabels(){
+		var panel = dijit.byId("panel");
+		panel.setTitle("Title " + count);
+		panel.setCategoryTitle("Category Title " + count);
+		panel.setDesc("Desc " + count);
+		panel.setLayoutImgUrl("img/2col.jpg");
+		panel.setPreviewImgUrl("img/profiles_my_colleagues.jpg");
+		count++;
+	}
+	
+	function switchToWelcomeMode(){
+		var panel = dijit.byId("panel");
+		panel.switchToWelcomeMode();
+	}
+	
+	function switchToWidgetInfoMode(){
+		var panel = dijit.byId("panel");
+		panel.switchToWidgetInfoMode();
+	}
+	
+	function switchToCategoryInfoMode(){
+		var panel = dijit.byId("panel");
+		panel.switchToCategoryInfoMode();
+	}
+	
+</script>
+
+	<div dojoType="lconn.core.paletteOneUI.WidgetInfoPanel" id="panel"></div>
+	
+	<button onclick="setLabels()">Change all labels and images</button>
+	<button onclick="switchToWelcomeMode()">Switch to welcome mode</button>
+	<button onclick="switchToWidgetInfoMode()">Switch to widget info mode</button>
+	<button onclick="switchToCategoryInfoMode()">Switch to widget info mode</button>
+
+    <script>
+        djConfig.parseOnLoad=true;
+        djConfig.isDebug=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+
+    ${script:dojo.parser}
+    ${script:lconn.core.paletteOneUI.WidgetInfoPanel}
+    ${script:doh.runner}
+</body>
+</html>

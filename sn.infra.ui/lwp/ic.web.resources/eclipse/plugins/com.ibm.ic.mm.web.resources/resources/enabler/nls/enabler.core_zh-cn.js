@@ -1,0 +1,17 @@
+define({
+	root: /* ***************************************************************** */
+		/*                                                                   */
+		/* IBM Confidential                                                  */
+		/*                                                                   */
+		/* OCO Source Materials                                              */
+		/*                                                                   */
+		/* Copyright IBM Corp. 2008, 2012                                    */
+		/*                                                                   */
+		/* The source code for this program is not published or otherwise    */
+		/* divested of its trade secrets, irrespective of what has been      */
+		/* deposited with the U.S. Copyright Office.                         */
+		/*                                                                   */
+		/* ***************************************************************** */
+		
+		dojo.provide("com.ibm.mm.enabler.nls.enabler_zh-cn");dojo.provide("com.ibm.mm.enabler.nls.iwStr");com.ibm.mm.enabler.nls.iwStr._built=true;dojo.provide("com.ibm.mm.enabler.nls.iwStr.zh_cn");com.ibm.mm.enabler.nls.iwStr.zh_cn={"LOAD":"正在加载....."};dojo.provide("com.ibm.mm.enabler.nls.iwMessages");com.ibm.mm.enabler.nls.iwMessages._built=true;dojo.provide("com.ibm.mm.enabler.nls.iwMessages.zh_cn");com.ibm.mm.enabler.nls.iwMessages.zh_cn={"E_IWIDGETDEF_CONTENTNOTAVAILABLE_1":"BMWIW0002E:无法找到针对方式 ${0} 的内容。","E_IWIDGETDEF_NOTAVAILABLE_1":"BMWIW0001E:无法加载 iWidget ${0}。"};dojo.provide("com.ibm.mm.data.nls.dataTypeStrings");com.ibm.mm.data.nls.dataTypeStrings._built=true;dojo.provide("com.ibm.mm.data.nls.dataTypeStrings.zh_cn");com.ibm.mm.data.nls.dataTypeStrings.zh_cn={"countrycode":"国家或地区代码","languagecode":"语言代码","date":"日期","boolean":"布尔","json":"JSON","table":"表","rss":"RSS","email":"电子邮件","image":"图像","any":"任意数据","text":"文本","html":"HTML","modeldata":"模型数据","time":"时间","phone":"电话","url":"URL","currency":"货币","address":"地址","postalcode":"邮政编码","xml":"XML","timestamp":"时间戳记","person":"人员","number":"数字","atom":"ATOM"};
+		});

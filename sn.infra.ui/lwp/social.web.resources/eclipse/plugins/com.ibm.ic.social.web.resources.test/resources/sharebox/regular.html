@@ -1,0 +1,43 @@
+<html>
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+<body><p>${head}
+</p><title>Sharebox Test</title>
+${script:com.ibm.social.sharebox.dialog}
+${style:com.ibm.social.sharebox/css/Dialog}
+${style:com.ibm.social.sharebox/css/TabContainer}
+${style:com.ibm.social.sharebox/css/sbDialog}
+<style>
+</style>
+${endhead}
+
+<script>
+(function () {
+   var showConn = null;
+   function showDialog(ctx) {
+      com.ibm.social.sharebox.show(ctx);
+   }
+   dojo.addOnLoad(function() {  
+      dojo.connect(dojo.byId("sbOpenLinkg1"), "onclick", dojo.hitch(null, showDialog, null));
+      dojo.connect(dojo.byId("sbOpenLinkg2"), "onclick", dojo.hitch(null, showDialog, {type: "global"}));
+      dojo.connect(dojo.byId("sbOpenLinkc1"), "onclick", dojo.hitch( null, showDialog, {type: "community", resourceId: "1"}));
+      showDialog();	 
+   });
+   dojo.addOnUnload(function() {
+      if(showConn)
+         dojo.disconnect(showConn);
+   });
+   
+  
+})();
+</script>
+
+<div class="lotusMain" style="min-height:0px">
+<div class="lotusContent" style="width: 1200px; height: 2000px;">
+<h1>Sharebox Test Page</h1>  
+<a href="#" id="sbOpenLinkg1">Open Sharebox Dialog - Global</a><br>
+<a href="#" id="sbOpenLinkg2">Open Sharebox Dialog - Context set for global</a><br>
+<a href="#" id="sbOpenLinkc1">Open Sharebox Dialog - Community Context #1</a><br>
+</div>
+</div>
+</body><p>
+${end}</p></html>

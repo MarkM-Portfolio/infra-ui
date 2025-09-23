@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015, 2016  All Rights Reserved.                    -->
+<messagebundle>
+  <msg name="as_title">更新項目</msg>
+  <msg name="as_description">來自 IBM Connections 的更新項目</msg>
+  <msg name="as_error">「更新項目」串流的配置有錯誤。 請聯絡您的管理者。</msg>
+</messagebundle>

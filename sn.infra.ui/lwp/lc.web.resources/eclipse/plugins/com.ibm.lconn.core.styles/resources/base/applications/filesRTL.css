@@ -1,0 +1,2037 @@
+/*
+ Copyright IBM Corp. 2009, 2015  All Rights Reserved.              
+*/
+
+/*-------------------------------------------------------
+   ADDITIONS FROM DOJO
+   These classes can probably remain the same name
+-------------------------------------------------------*/
+
+.dojoDndAvatarHeader {display:none;}
+
+/* Transparent avatar */
+.dojoDndAvatar tr { opacity: 0.5 !important;}
+.lotusui_ie .dojoDndAvatar td { filter: Alpha(Opacity=50) !important; zoom: 1;}
+
+/* Opaque avatar over drop zone */
+.lotusui .dojoDndAvatarCanDrop .qkrDropAvatar { border: 1px solid black; }
+.lotusui .dojoDndAvatarCanDrop tr { opacity: 1.0 !important; }
+.lotusui_ie .lotusui .dojoDndAvatarCanDrop td { filter: Alpha(Opacity=100) !important;  zoom: 1;}
+
+/* Set drag handle background on row when hovering, and on source row while dragging */
+tr.dojoDndItem td.lotusFirstCell { background-repeat: no-repeat; background-position: right 5px; }
+.qkrIcon32 tr.dojoDndItem td.lotusFirstCell { background-position: right 13px; }
+
+tr.dojoDndItemOver td.lotusFirstCell,
+.dojoDndCopy table.dojoDndSourceCopied tr.dojoDndItemAnchor td.lotusFirstCell { background-image: url(../../images/dndHandle.gif); }
+
+.lotusui30 tr.dojoDndItemOver td.lotusFirstCell,
+.lotusui30 .dojoDndCopy table.dojoDndSourceCopied tr.dojoDndItemAnchor td.lotusFirstCell { background-image: url("/com.ibm.oneui3.styles/imageLibrary/OtherImages/Framework/dndHandle.png"); }
+
+tr.dojoDndItemOver .dojoDndHandle { cursor: move; }
+tr.dojoDndItemOver .dojoDndHandle .lotusCheckbox { cursor: default; }
+
+/* Clear drag handle when drag is in progress */
+.dojoDndCopy tr.dojoDndItemOver td.lotusFirstCell { background-image: none; }
+
+.dijitDialogUnderlay {background: black;opacity: 0.15;}
+.dj_ie .dijitDialogUnderlay {filter: alpha(opacity=15);}
+
+/*-------------------------------------------------------
+   Lotus Connections 2.5 styles
+-------------------------------------------------------*/
+
+.qkrErrorDetailsText, .qkrErrorDetailsLink { font-weight: normal; }
+
+/* Styles for date filters on search results page */
+ul.lotusYearTree {list-style: none;list-style-position:outside;margin-right: 0;}
+ul.lotusYearTree ul.lotusMonthTree {list-style: none;list-style-position:outside;margin-right: 30px;}
+
+/*-------------------------------------------------------
+   NEW FOR ONE UI
+   These are classes added to the new One UI stylesheets
+   to perform Quickr Files specific items, or to fill
+   gaps in the OneUI styles.
+-------------------------------------------------------*/
+
+/* Make the selected tab more visible in high contrast mode */
+.lotusImagesOff .lotusTabs li.lotusSelected { position:relative; top:1px; }
+
+/* Make the delete X distinguishable from content in high contrast mode */
+.lotusImagesOff .lotusDelete .lotusAltText { padding-right: 5px; }
+
+/* Workaround for bogus horizontal scrollbars and tags not snug against content in IE RTL */
+.lotusui_ie .lotusTitleBar ul.lotusTabs,
+.lotusui_ie .lotusTitleBar ul.lotusTabs .portlet-tab {top: auto;bottom:-1px;position:absolute;width: 95%;}
+
+/* Ensure the loading element in a stream is properly aligned with the rest of the sections, but reset for loading within the table */
+.lconnTabBody .qkrLoading {margin-top: 14px;}
+.lconnTabBody .lotusVertTable .qkrLoading {margin-top: 0;}
+
+.lotusSection p.lotusChunk {margin:5px 0 0 0;clear:both;display:block;}
+
+/* Make room for the "X" for active filters */
+.lotusColLeft .lotusSection .lotusList li.lotusSelected .lotusLeft { width: 87%; }
+
+.lotusColLeft .lotusSection .lotusChunk #filterSharesByUser { white-space: nowrap; text-overflow: ellipsis; }
+
+/* Make top view filters display correctly in IE7, by copying IE6 special styles */
+.lotusui_ie7 .lotusFilters a{display:inline-block;}
+.lotusui_ie7 .lotusFilters a.lotusFilter{padding:0 5px;line-height:1.6em}
+
+/* Cursor pointer on view controls */
+a.lotusView {cursor: pointer;}
+
+/* Make sure non-link headers are vertically aligned with linked sort headers */
+.lotusSort th, .lotusSort td { vertical-align: middle; }
+/* The vertical align for sorts doesn't line up with the "Sort by:" unless all elements have valign baseline */
+.lotusSort A { vertical-align: baseline; }
+
+.lotusChunk .qkrEmpty,
+.lotusChunk .qkrLoading,
+.lotusChunk .qkrError {
+	font-style: italic;
+}
+
+/* use lotusCheckbox if necessary */
+.lotusInfoBox .lotusInlinelist {margin-left: 0;}
+ul.lotusList li label {vertical-align: middle;}
+
+/* IE radio buttons and checkboxes already have internal padding */
+.lotusui_ie .lotusTable .lotusFirstCell input{margin-top:-1px;}
+
+td.lotusFormError UL {margin-bottom:0; margin-right:0; padding-right:0; }
+td.lotusFormHelp {width: 20px; vertical-align: top;}
+
+/* TDs inside TDs shouldn't have duplicate padding */
+.lotusForm tr.lotusFormFieldRow td td {padding-bottom:0;}
+
+.qkrBackLink { margin-bottom: 8px; }
+.qkrBackLink img { margin-left:5px; }
+.dj_gecko .qkrBackLink img { vertical-align:baseline; }
+
+/* The float/margin combination on lotusBtns causes margins to be incorrect
+     setting a padding forces the margin to align with the top of the button as it appears on screen */
+.lotusPlaceBar .lotusBtnContainer {float: right !important; padding-right: 20px; padding-top:0.5em;}
+.lotusPlaceBar .qkrQuota {margin-left:10px; margin-top:8px; float: left;}
+.qkrQuota {margin: 5px 10px; float: left; font-size: .9em;}
+
+.qkrPlaceMessageBar {padding-right: 10px; padding-top: 12px; padding-left:12px; padding-bottom: 0px; margin-bottom: -12px;}
+
+.lotusui h1 a,
+.lotusui h1 a:visited,
+.lotusui h1 a:hover,
+.lotusui h1 a:focus,
+.lotusui h1 a:active {color: #444;}
+
+/* Fix wacky horizontal margins on buttons in IE */
+.lotusui_ie button.lotusBtn, .lotusui_ie input.lotusBtn{padding-left:7px;padding-right:7px;overflow:visible;}
+.lotusui_ie button.lotusFormButton, .lotusui_ie input.lotusFormButton{padding-left:7px;padding-right:7px;overflow:visible;}
+
+/* Fix clipped buttons in action bars above lists */
+.lotusContent .lotusBtnContainer {overflow: visible; white-space: normal; min-height: 32px; } 
+
+/*-------------------------------------------------------
+   The entry feed doesn't provide us with space for
+   ratings, and tags aren't included in the "more"
+   which is a necessity.  Copied from old css for now
+-------------------------------------------------------*/
+.lotusStream {clear: both;}
+.lotusStream .qkrEmpty {margin: 20px 10px; font-style: italic;}
+.lotusStream .qkrError {margin: 20px 10px; font-style: italic; color: #666;}
+.lotusStream .qkrLoading {margin: 20px 10px;}
+.lotusStream .qkrLoading IMG {margin-left: 5px;}
+
+.lotusStream span {cursor: default;}
+.lotusStream a span {cursor: pointer;}
+
+.lotusStream .lotusDetails .lotusMeta {margin-bottom: 5px;}
+.lotusStream .lotusActions {margin-top: 5px;}
+
+.lotusTable td ul.lotusFirst,
+.lotusTable td div.lotusFirst {margin-top:0;}
+
+/* Center 14x13 context icon in 16x16 area */
+.lotusStream .lconnSprite-iconContext { margin-top: 3px !important; vertical-align: baseline; }
+
+/* Evenly align the sharing icons with the remaining icons */
+.lotusStream .lconnSprite-iconRating16-off,
+.lotusStream .lconnSprite-iconRating16-on,
+.lotusStream .lconnSprite-iconPublic16,
+.lotusStream .lconnSprite-iconPrivate16,
+.lotusStream .lconnSprite-iconShared16,
+.lotusStream .lconnIconListSharedExternal {vertical-align:top !important;}
+.lconn-ftype16 {vertical-align:top !important;}
+
+/* Make fixed-width tables hide overflow, except in a11y mode */
+table.lotusFixedTable td, table.lotusFixedTable th {overflow: hidden; text-overflow: ellipsis; }
+.dijit_a11y table.lotusFixedTable { table-layout: auto; }
+
+textarea { height: 6em; }
+
+/* Workaround for Safari not showing vertical scrollbars on short textareas */
+html.dj_safari textarea { min-height: 75px; resize:none; }
+
+
+.lotusHeader .lconnPinnedToggle {margin-right: 10px;} 
+.lotusHeader .lconnPinnedToggle img {margin:0; padding:0; vertical-align: baseline;} 
+.lotusHeader .lconnInternalLink {color: #1970B0; font-size: .6em;}
+
+/*-------------------------------------------------------
+   Preliminary comments work.  Should be replaced by the
+   appropriate OneUI markup and CSS.
+-------------------------------------------------------*/
+
+/* Fix for top margins showing up on comment actions */
+.lotusCommentList .lotusInlinelist li{margin:0;border-top-width:0;}
+
+/* Separate actions from comment content */
+.lotusCommentList .lotusActions {padding-top: 5px;}
+
+/* Align top of comments section with the other sections */
+.qkrComments { margin-top: 12px; }
+.lotusui_ie .qkrComments {margin-top: 0px;}
+/* Align sort header with comment content */
+.lotusui_ie7 .qkrComments div.lotusSort {margin-top: 0px;}
+
+/* Ensure there is appropriate padding on the comment form */
+.qkrAddComment .lotusFormTable {padding: 6px 16px;}
+.qkrAddComment .lotusFormTable TEXTAREA {height: 13em;}
+
+/*-------------------------------------------------------
+   Dialogs for sharing files with other users
+-------------------------------------------------------*/
+.lotusDialog .lotusFormFieldRow TD {vertical-align: top;} /* force cells in a dialog form table to top align */
+.lotusDialog .lotusFormErrorSummary div {margin-top: 0;}
+
+/* Undo autoscrolling rules in OneUI */
+.lotusui .lotusDialogBorder{max-width:none;}
+.lotusui .lotusDialog .lotusDialogContent {max-height:none; max-width: none;overflow-x: hidden; overflow-y: visible; padding-left: 17px;}
+.lotusui_ie .lotusDialog .lotusDialogContent{position:static;}
+
+/* Fix for shrinking footer row in IE6 when focusing on tag typeahead */
+.lotusui_ie .lotusDialog .lotusDialogFooter{zoom:1}
+
+.qkrDialogScrolledY {overflow-y: scroll;}
+/* Fix non-scrolling relative content inside a scrolling dialog */
+.lotusui_ie .qkrDialogScrolledY { position: relative; }
+.lotusui .lotusDialog .qkrDialogScrolledY .lotusDialogContent  {padding-left:1px;}
+.dj_safari .lotusui .lotusDialog .qkrDialogScrolledY .lotusDialogContent  {padding-left:2px;}
+
+.lotusForm .qkrEmpty {font-style: italic;}
+
+/*-------------------------------------------------------
+   FIXME: Why doesn't lotusCheckbox in OneUI align middle?
+-------------------------------------------------------*/
+.lotusui .lotusCheckbox {padding:0; vertical-align:middle;}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+   .lotusui .lotusCheckbox {margin-right:3px !important;}
+}
+
+.lotusui_ie7 .lotusDialog input.qkrFile {width: 300px;}
+
+/*-------------------------------------------------------
+   Version table
+-------------------------------------------------------*/
+.lotusui_ie .qkrVersions {margin-top:0;}
+
+/*-------------------------------------------------------
+   Temporary help override (since we don't want to assign
+   a width)
+.qkrLotusHelp {position: static;	width: auto;}
+-------------------------------------------------------*/
+/* FIXME: Needs an SPR and resolution */
+.dijitPopup .lotusHelp,
+.dijitTooltipDialog .lotusHelp,
+.lotusTooltipDialog .lotusHelp {position: relative; left: 0; top: 0; width: auto;}
+.lotusui .dijitTooltipContainer {font-size: 1em;} /* dijitTooltip sets font-size: small */
+.lotusHelp .lotusChunk {margin: 5px 0 0;}
+.lotusHelp .lotusInfoBox h3 {float: none; margin-right: 0; padding-right: 0}
+.lotusui30 .lotusHelp .lotusInfoBox p {line-height: 1.2;}
+.lotusTooltipDialog .dijitTooltipContainer {background-image: none; background-color: transparent; border: 0; padding: 0;}
+.lotusTooltipDialog .dijitTooltipConnector {display: none;}
+
+
+/* Class for displaying important messages with popup tips. */
+.qkrInlineWarning {color:#FF0000;padding-right: 5px;font-weight: bold;cursor: pointer;}
+.lotusStream .qkrInlineWarning {padding-right: 0;}
+.dj_ff2 .lotusStream .qkrInlineWarning,
+.lotusui_ie .lotusStream .qkrInlineWarning {padding-right: 5px;}
+.lotusui_ie .lotusStream .qkrInlineWarning {zoom: 1;}
+
+/*-------------------------------------------------------
+   New metrics right column style
+-------------------------------------------------------*/
+.qkrMetrics dd table {}
+.qkrMetrics dd table td {white-space: nowrap;}
+.qkrMetrics dd table th {padding-left: 15px; padding-right: 0;}
+.dijitCalendarDisabledDate span {color: #ccc !important;}
+
+.qkrViewControlHeader {
+   position: relative;
+   padding-left: 175px;
+}
+.dijit_a11y .qkrViewControlHeader {
+   padding-left: 0px;
+}
+.qkrViewControlInline {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+}
+.dijit_a11y .qkrViewControlInline {
+   position: static;
+   float: left;
+}
+
+
+/* Fixes FF2-only crash when printing */
+@media print 
+{
+	.dj_ff2 .lotusBtnImg,
+	.dj_ff2 .lotusBtnSpecial,
+	.dj_ff2 .lotusFormButton
+	{
+		color: #000;
+		background: none !important;
+	}
+}
+
+/*-------------------------------------------------------
+   Temporary expansion styles, lotusMenu tweaks
+-------------------------------------------------------*/
+.lotusMenu .lotusMenuSubsection{margin-bottom: 10px;}
+.lotusMenu .lotusMenuSubsection .XlotusSubsectionInfo {margin-right: 20px;}
+.lotusMenu .lotusIcons li img{vertical-align: bottom;}
+.lotusMenu h3 a { display: block; }
+
+/* Prevent double clicking on the header selecting text */
+.lotusMenu h3, .lotusSection h2, .lotusSection .dijitTitlePaneTitle {-moz-user-select: none;}
+
+.lconnPinnedToggle .lconnPinnedUnknown {opacity: 0.4;}
+.lotusui_ie .lconnPinnedToggle .lconnPinnedUnknown {filter: Alpha(Opacity=40);}
+
+.lotusui .lotusFeeds a.lotusFeed { margin: 0; }
+.lotusui .lotusFeeds .lotusDivider { margin: 0 5px; color: #666666; }
+
+.lotusui .lotusMain .lconnSelectAllContainer {
+	padding-right: 0px;
+}
+/* for the render of picker section title */
+.lotusui .pickerTitle{ font-size: 1.1em; font-weight:bold; text-align:right;}
+
+/* for the sync view */
+.lotusui30 .lotusSyncViewWelcomeBox{
+   padding-top:60px; padding-bottom:108px; margin-left:0; background-color:#057bb0; border:0;
+   background-image:-moz-linear-gradient(top, #096da3 0%, #0189be 100%);
+   background-image:-webkit-gradient(linear, left top, left bottom, from(#096da3), to(#0189be));
+   background-image:linear-gradient(top, #096da3, #0189be);
+   -moz-border-radius:8px;
+   -webkit-border-radius:8px;
+   border-radius:8px;
+}
+
+.lotusui30 .lotusSyncViewWelcomeBox .lotusSyncHeading {
+   font-weight: normal;
+   color: #FFFFFF;
+   font-family: "Helvetica Neue Bold",Helvetica,Arial,Roboto;
+   font-weight: 300;
+   min-width: 400px;
+   max-width: 560px;
+   text-align: center;
+   margin: 0px;
+   font-size: 3em;
+   margin-bottom: 34px;
+   margin-left: 7px;
+   line-height: 100%;
+}
+
+.lotusui30 .lotusSyncViewWelcomeBox p {
+   color: #FFFFFF;
+   font-size: 1.3em;
+   font-family: "Helvetica Neue",Helvetica,Arial,Roboto;
+   font-weight: 200;
+   min-width: 400px;
+   max-width: 560px;
+   margin-bottom: 50px;
+}
+
+.lotusui30 .lotusSyncViewWelcomeBox .lotusSyncPic {
+   width: 150px;
+   height: 272px;
+   position: absolute;
+   right: -190px;
+   background-image:url(../../images/sync_currenttheme.png);
+   -moz-background-size: 150px 272px;
+   -o-background-size: 150px 272px;
+   -webkit-background-size: 150px 272px;
+   background-size:150px 272px;
+}
+
+@media screen and (width:1280px){
+   .lotusui30 .lotusSyncViewWelcomeBox .lotusSyncPic {
+      left: -170px;
+   }
+}
+
+.lotusui30 .lotusSyncViewWelcomeBox .lotusSyncPicMove {
+   right: -999px !important;
+}
+
+.lotusui30 .lotusSyncViewWelcomeBox .lotusSyncButtonDiv .lotusSyncInstallButton{
+   background: #93d9ff; /* Old browsers */
+   background: -moz-linear-gradient(top,  #93d9ff 0%, #82d3ff 100%); /* FF3.6+ */
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#93d9ff), color-stop(100%,#82d3ff)); /* Chrome,Safari4+ */
+   background: -webkit-linear-gradient(top,  #93d9ff 0%,#82d3ff 100%); /* Chrome10+,Safari5.1+ */
+   background: -o-linear-gradient(top,  #93d9ff 0%,#82d3ff 100%); /* Opera 11.10+ */
+   background: -ms-linear-gradient(top,  #93d9ff 0%,#82d3ff 100%); /* IE10+ */
+   background: linear-gradient(to bottom,  #93d9ff 0%,#82d3ff 100%); /* W3C */
+   font-family: "Helvetica Neue",Helvetica,Arial,Roboto;
+   font-size: 1em;
+   border: 1px solid #1b6e9b;
+   border-radius: 8px;
+   min-height: 40px;
+   max-height: 50px;
+   text-align: center;
+   width: 173px; 
+   color: #000000;
+   cursor: pointer;
+   position: absolute;
+   right: 0px;
+}
+
+.lotusui30 .lotusSyncViewWelcomeBox .lotusSyncButtonDiv .lotusSyncAddFilesButton:hover{
+   color: #FFFFFF;
+   cursor: pointer;
+   font-size: 1em;
+   font-family: "Helvetica Neue",Helvetica,Arial,Roboto;
+}
+
+.lotusui30 .lotusSyncViewWelcomeBox .lotusSyncButtonDiv .lotusSyncInstallButton:hover{
+   text-decoration:underline;
+}
+
+.lotusui30 .lotusSyncViewWelcomeBox .lotusSyncButtonDiv{
+   min-width: 400px;
+   max-width: 560px;
+   margin-bottom: 60px;
+}
+
+.lotusui30 .lotusSyncViewWelcomeBox .lotusSyncLinkSpan{
+   bottom: 10px;
+   color: #FFFFFF;
+   font-size: 1em;
+   font-weight: 300;
+   right: 188px;
+   top: 12px;
+   position: absolute;
+}
+
+.lotusui30 .lotusSyncViewWelcomeBox .lotusSyncLinkSpan A{
+   color: #FFFFFF;
+   font-weight: 300;
+   text-decoration:underline;
+   cursor: pointer;
+   font-size: 1em;
+}
+
+/* For Navigation Tree  */
+
+.lconnFiles .lotusui30 .lotusColLeft .lotusMenu .lotusInner #menu_allfolders_childContainer > div{
+   margin-top: 5px;
+   margin-right: 15px;
+   font-size: 1em;
+ }
+
+ .lconnFiles .lotusui30 .lotusColLeft .lotusMenu .lotusInner #menu_allfiles_childContainer div{
+   margin-top: 5px;
+   margin-right: 20px;
+ }
+ 
+ .lconnFiles .lotusui30 .lotusColLeft .lotusMenu .lotusInner #menu_allfiles_childContainer div a{
+   margin-right: 15px;
+ }
+
+.lconnFiles .lotusui30 .lotusColLeft .lotusMenu .lotusInner #menu_allfolders_childContainer #label_sharedfolders{
+   margin-right: 20px;
+}
+
+.lconnFiles .lotusui30 .lotusColLeft .lotusMenu li a:hover{
+   border-width: 0px!important;
+ }
+ 
+.lconnFiles .lotusColLeft #lconnSideNavBody .myDriveNavigation{
+	margin-right:-7px;
+}
+
+.lconnFiles .lotusColLeft .myDriveNavigation .lotusMenuSubsection .XlotusSubsectionInfo {
+    margin-right: 25px;
+    margin-top: 10px;
+ 	 white-space: normal;
+}
+
+.lconnFiles .lotusColLeft .myDriveNavigation #menu_myfolders_childContainer .XlotusSubsectionInfo{
+   margin-top: 0px;
+}
+
+.lconnFiles .lotusui30 .lotusColLeft .lotusMenu .lotusInner #menu_allfolders_childContainer .lotusClickable:hover{
+   background-color: #e0e0e0;
+ }
+
+.lconnFiles .lotusui30 .lotusColLeft .myDriveAnonymous .lotusInner #menu_allfolders_childContainer > div:hover{
+   background-color: #e0e0e0;
+}
+
+ .lconnFiles .lotusui30 .lotusColLeft .myDriveAnonymous .lotusInner #menu_allfolders_childContainer > div{
+   margin-right: 20px;
+}
+ 
+.lconnFiles .lotusui30 .lotusColLeft .lotusMenu .lotusInner .subNavigationMenu:hover{
+   background-color: #e0e0e0;
+}
+
+.lconnFiles .lotusui30 .lotusColLeft .lotusMenu .lotusInner #menu_allfiles_childContainer > div:hover{
+   background-color: #e0e0e0;
+}
+
+.lconnFiles .lotusui30 .lotusColLeft .lotusMenu .lotusInner #menu_fileSync:hover{
+   background-color: #e0e0e0;
+}
+
+.lconnFiles .lotusui30 .lotusColLeft .myDriveAnonymous  .lotusInner #label_fileSync:hover{
+   background-color: #e0e0e0;
+}
+
+.lconnFiles .lotusui30 .lotusColLeft .lotusMenu .lotusInner #menu_myfolders:hover{
+   background-color: #e0e0e0;
+}
+
+.lconnFiles .myDriveNavigation .lotusInner .myDriveNormalItem > div:hover {
+    background-color: #e0e0e0;
+}
+
+.lconnFiles .myDriveNavigation .lotusInner .myDriveNormalItem div a {
+   margin: 14px 8px;
+   padding: 2px 10px;
+   line-height: 2;
+   font-size: 1.07692em;
+   border-width: 0;
+   color: #000;
+   background-color: transparent;
+   text-decoration: none;
+   border-top: 1px solid transparent;
+   border-bottom: 1px solid transparent;
+}
+
+.lconnFiles .iconTrash{
+   background-image:url('../../images/trash.svg');
+   width:16px;
+   height:16px;
+   background-position:0 0px
+}
+
+.lconnFiles .myDriveNavigation .lotusInner .myDriveNormalItem div img {
+    margin-left: 10px;
+}
+.lconnFiles .lotusui30 .lotusColLeft .myDriveAnonymous  .lotusInner .lotusMenuSection div {
+    margin-right: 6px;
+}
+
+.lconnFiles .lotusui30 .lotusColLeft .lotusMenu .lotusInner #menu_allfiles_childContainer div.lotusSelected a {
+    margin-right: 11px;
+} 
+
+.lconnFiles .lotusui30 .lotusColLeft .myDriveNavigation .lotusInner .myDriveNormalItem div.lotusSelected a {
+    margin-right: 4px;
+}
+
+/* For drag and drop prompt start  */
+.filesDropAvatar {
+   border: 6px solid #5aaafa;
+}
+
+.filesDropAvatarSmallScreen {
+   position: absolute;
+}
+
+.dropfilesIcon64{
+   background-image: url(../../images/dropicon64.png);
+   margin-bottom: 20px;
+   width:64px;
+   height: 64px;
+}
+.tallDropfilesPrompt{
+   height: 360px; 
+   border: 2px dashed #cccccc;
+   text-align: center;
+   vertical-align: middle;
+   display: table-cell;
+   background: repeating-linear-gradient(
+    45deg,
+    #f6f6f6,
+    #f6f6f6 10px,
+    #f8f9f9 10px,
+    #f8f9f9 20px
+  );
+}
+.shorterDropfilesPrompt{
+   height: 240px; 
+   border: 2px dashed #cccccc;
+   text-align: center;
+   vertical-align: middle;
+   display: table-cell;
+   background: repeating-linear-gradient(
+    45deg,
+    #f6f6f6,
+    #f6f6f6 10px,
+    #f8f9f9 10px,
+    #f8f9f9 20px
+  );
+}
+.filesDnDTitle{
+   text-align: center;
+   width: 100%;
+   font-family: "Helvetica Neue",Helvetica,Arial,Roboto;
+   font-weight: 300;
+   color: #292929;
+   font-size: 2.3em;
+   line-height: 100%;
+   margin: 0 0 10px !important;
+}
+.filesDnDDesc{
+   text-align: center;
+   width: 100%;
+   font-family: "Helvetica Neue",Helvetica,Arial,Roboto;
+   font-weight: 200;
+   color: #292929;
+   font-size: 1.25em;
+   line-height: 100%;
+   margin: 0px !important;
+}
+/* For drag and drop prompt end */
+.lotusui30 .lotusForm textarea {
+   overflow: auto
+}
+
+/* For left nav tree */
+.lotusui30 .lotusMenu .lconnFilesLeftNavTree {
+   border-right: 20px;
+}
+
+/* For Drop down button */
+.lotusui30 .lotusPlaceBar button[id^="lconn_files_action_createitem_"] {
+   border-left-width: 0px;
+   border-right-width: 0px;
+}
+
+.lotusHeader .lconnBreadcrumb {
+   color: #292929;
+   font-weight: normal;
+}
+.lotusHeader .lconnBreadcrumb .lconnBreadcrumbitem {
+   float: right;
+}
+.lotusHeader .lconnBreadcrumb .lconnBreadcrumbdropdown {
+   border-width: 0px;
+   height: 15px;
+   width: 20px;
+   position: relative;
+   padding-right: 5px;
+   display: inline;
+}
+/* adjust lotusBtn for breadcrumb usage */
+.lotusHeader .lconnBreadcrumb .lconnBreadcrumbdropdown .lotusBtn {
+   background-image: url(../../images/overflow32bit.png);
+   background-repeat: no-repeat;
+   background-position: center center;
+   margin: 0;
+   padding: 0;
+   height: 20px;
+   width: 30px;
+   border: none;
+   box-shadow: none;
+}
+/* hide drop down img in breadcrumb drop down button */
+.lotusHeader .lconnBreadcrumb .lconnBreadcrumbdropdown .lotusDropDownSprite {
+   display: none;
+}
+.lotusHeader .lconnBreadcrumb .lconnBreadcrumbtwisty {
+   padding-top: 3px;
+}
+.lotusHeader .lconnBreadcrumb .lconnBreadcrumbtwisty img {
+   margin-left:10px;
+   margin-right:10px;
+}
+
+.lotusHeader .lconnBreadcrumb .lconnBreadcrumbnode {
+   max-width: none;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   cursor: pointer;
+}
+.lotusHeader .lconnBreadcrumb li:last-child .lconnBreadcrumbdiv .lconnBreadcrumbnode {
+   font-weight: bold;
+}
+
+/* styling of dijitMenu used as breadcrumb drop down menu */ 
+.lotusui30dojo .dijitMenu.lconnBreadcrumb.lotusGlobalActionBarMenu {
+   border-color: #F1F1F1;
+}
+.lotusui_ie8 .lotusui30dojo .dijitMenu.lconnBreadcrumb.lotusGlobalActionBarMenu {
+   table-layout: fixed;
+   /* value = width of td.dijitMenuItemLabel + margin + border + padding + other td elements */
+   width: 352px;
+}
+/* styling of dijitMenuItem for breadcrumb drop down menu */
+.lconnBreadcrumb.lotusGlobalActionBarMenu .dijitMenuItem td.dijitMenuItemLabel {
+   max-width: 300px;
+   width: 300px;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+
+/* styling of dijitMenuItem for folder actions menu */
+.lotusui30dojo .lconnContentTitleDropdownBody .dijitMenuItem td.dijitMenuItemLabel {
+  min-width: 180px;
+}
+
+
+.lotusui30 .lotusHeader .lconnContentTitleDropdownContainer .lotusDropDownSprite {
+   background-image: url("/com.ibm.oneui3.styles/imageLibrary/Icons/Other/dropdown24-black.png");
+   background-position: 0px 0px;
+   width: 24px;
+   height: 24px;
+   margin-left: 0;
+   margin-right: 10px;
+   vertical-align: baseline;
+   opacity: inherit;
+}
+.lotusui30 .lotusHeader .lconnContentTitleDropdownContainer .lotusDropDownSprite:hover,
+.lotusui30 .lotusHeader .lconnContentTitleDropdownContainer .lotusDropDownSprite:focus,
+.lotusui30 .lotusHeader .lconnContentTitleDropdownContainer div:hover>.lotusDropDownSprite,
+.lotusui30 .lotusHeader .lconnContentTitleDropdownContainer div:focus>.lotusDropDownSprite {
+   background-image: url("/com.ibm.oneui3.styles/imageLibrary/Icons/Other/dropdown24-blue.png");
+}
+
+/*RTC 158944: Remove welcome box on pages where independent scrollbars are enabled*/
+.files-independent-scrollbars-compatible .lotusWelcomeBox {
+   display: none;
+}
+
+/*RTC 158940: Remove excessive padding under right content panel with independent scrollbar*/
+.files-independent-scrollbars-compatible .lotusContent {
+	padding-bottom: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+/*RTC 158943: When independent scrollbars are enabled, and at least 1 file is present in the listview, hide drag and drop upload*/
+.files-independent-scrollbars-compatible .lotusContent.filesListFilled .shorterDropfilesPrompt,
+.files-independent-scrollbars-compatible .lotusContent.filesListFilled .tallDropfilesPrompt {
+	display: none;
+}
+
+/*RTC 159263: More and Next links are too close to the right scrollbar in My Files*/
+.files-independent-scrollbars-compatible.hikari-theme-active .lotusContent .filesListRtl {
+	padding-left: 15px;
+}
+.files-independent-scrollbars-compatible.hikari-theme-active .lotusColLeft {
+	padding-left: 30px;
+} 
+
+/*RTC 159513: Remove independent scrollbar when list height (instead of viewport height) is too small*/
+.files-independent-scrollbars-compatible .lotusFeeds {
+	float: none;
+}
+
+/*RTC 159513: Remove independent scrollbar when list height (instead of viewport height) is too small*/
+.files-independent-scrollbars-compatible .lotusFeeds {
+	float: none;
+}
+
+/*RTC 160242: When independent scroll bars are active, footer bottom is truncated when messagebox appears*/
+.files-independent-scrollbars-compatible .lotusMessageContainer {
+	overflow: auto;
+}
+.lotusColLeft .lconnTitle  a, .lotusColLeft .lotusMenu .lconnTitle a{
+ 	overflow: hidden;
+  	text-overflow: ellipsis;
+ 	white-space: nowrap;
+}
+.lotusGlobalActionBarMenu {
+  width: 195px !important;
+  box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.05);
+}
+
+#lotusColLeft .lotusDropDownSprite{  
+    opacity: 1;
+	filter:alpha(opacity=100);   
+}
+
+
+/* Condense space */
+.lotusui30_body .lotusMain {
+   padding-top: 0;
+} 
+
+.files-independent-scrollbars-compatible .lotusui30 .lotusColLeft {
+   padding-left: 0;
+   margin-right: 0;
+}
+
+.lotusui30_layout .lotusColLeft:after {
+   border-left: 0;
+}
+
+.files-independent-scrollbars-compatible .lconnNonVerticalScrollableBody {
+   overflow-y: hidden;
+}
+
+.files-independent-scrollbars-compatible .lotusui30_body .lotusMain {
+   padding-left: 0px;
+   padding-right: 0px;
+}
+
+.files-independent-scrollbars-compatible .lotusStyledScroll {
+   padding-left: 10px;
+   padding-right: 10px;
+}
+
+.files-independent-scrollbars-compatible .lotusColLeft .lotusStyledScroll {
+   padding-right: 0px;
+   padding-left: 0px;
+}
+
+.lotusui30 div.lotusHeader .lotusSearch {
+    top: 0
+}
+
+.lotusui30 .lconnBackToTop {
+	position: fixed;
+	bottom: 15px;
+	left: 20px;
+	border-radius: 50%;
+	border: 0;
+	background-color: #e3e3e3;
+	box-sizing: border-box;
+	height: 36px;
+	width: 36px;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 300ms, opacity 300ms;
+	padding: 8px;
+	cursor: pointer;
+}
+
+.lotusui30 .lconnBackToTop.lconnScrollBack {
+	visibility: visible;
+	opacity: 1;
+}
+
+#lotusContentHeader h1 {
+	height: 35px;
+	line-height: 1.3;
+}
+
+.lotusui30_layout .lotusMain .lotusContent {
+	padding-right: 20px;
+}
+
+.lotusui30_layout .lotusContent .lotusTable TR TD.lotusFirstCell.dojoDndHandle {
+	padding-right: 10px;
+	margin-right: -10px;
+} /*forces vertical alignment of checkboxes in first column*/
+
+.lotusui30_layout .lotusContent .lotusTable TR.dojoDndHandle TD.lotusFirstCell {
+   padding-right: 10px;
+} /*forces vertical alignment of checkboxes in first column*/
+
+.lotusui30_layout .lotusContent .lotusTable {
+	margin-right: -10px;
+}
+
+.files-independent-scrollbars-compatible #scene-body {
+	margin-right: -10px;
+}
+
+.lotusui30_layout .lotusContent .filesList > DIV {
+	padding-right: 10px;
+	margin-right: -10px;
+}
+
+/* For lotusFooter to be placed in scrollable right content pane */
+.files-independent-scrollbars-compatible .lotusui30 .lotusContent .lotusFooter ul {
+	margin: 450px 0 0 0;
+	background: none;
+}
+
+.files-independent-scrollbars-compatible .lotusui30 .filesListFilled .lotusFooter ul {
+    margin-top: 20px;
+}
+
+.files-independent-scrollbars-compatible .lotusui30 .lotusContent .lconnTabBody+.lotusFooter ul {
+    margin-top: 20px;
+}
+
+.lotusHeader .lotusTitleBar {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.lconnFiles .lotusui30 .lotusMenu .lotusHeading {
+	font-size: 1.07692em;
+	line-height: 1.5;
+	margin-top: 15px;
+	padding-right: 10px
+}
+
+.lconnFiles .lotusui30 .lotusMenu .lotusHeading, .lconnFiles .lotusui30 .lotusMenu .lotusMenuSection a{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lotusui30 .lconnFilesTree .node .headerSelector {
+	cursor: pointer;
+}
+
+.lconnFiles .lotusui30 .lotusVertTable th{
+	white-space: nowrap;
+}
+
+/* styling for Files Grid view */
+.lconnFiles .lconnFilesGridItem {
+   display: block;
+   position: relative;
+   float: right;
+   width: 202px;
+   height: 164px;
+   margin: 10px 2px 10px 18px;
+}
+/*    reset size, margin, padding of thumb-widget styling for Files */
+.lconnFiles .ic-thumb-widget-flip-card {
+   border: 1px solid;
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+}
+/* END OF styling for Files Grid view */
+
+
+/* DND for Grid View and List View */
+.lconnFiles .dojoDndItemBefore, .lconnFiles .dojoDndItemAfter { 
+  	border: 1px solid #325c80 !important; 
+  	background-color: rgba(50, 92, 128, 0.05) !important;
+  	padding: 0;
+}
+
+.lconnFiles .dojoDndItem {
+    padding: 0;
+}
+
+.lconnFiles .DndItemMoving {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.lotusui30 .lotusUploadFile .lotusForm fieldset{
+	margin-right:1px;
+}
+
+.lconnFiles .lotusui30_layout .lotusTitleBar .lotusColLeft:after {
+    position: absolute;
+} 
+
+.lconnFiles .lotusui30 .lotusTitleBar .lotusHeader #scene-title {
+    padding-top: 6px;
+}
+
+.lconnFiles .lotusContent .lotusHeader{
+	margin-bottom: 0;
+}
+.lconnFiles .lotusui30 .lotusTitleBar .lotusHeader .lconnContentTitleDropdownContainer .lotusDropDownSprite {
+	margin-top: -2px;
+}
+
+/* Dnd style*/
+.lconnFiles .qkrDropAvatar {
+   font-size: 14px;
+   font-weight: 400;
+   text-align: center;
+   box-shadow: none;
+   background: transparent;
+   border:none
+}
+.lconnFiles .qkrDropAvatar .DropAvatarBadge {
+	border-radius: 14px;
+	background-color :#ffffff;
+	width: 35px;
+	padding: 2px;
+	line-height: 1.9;
+}
+.lconnFiles .qkrDropAvatar .DropAvatarBadge div {
+	background: white;
+	height: 25px;
+	border-radius: 14px;
+	border: 1px solid #ccc;
+}
+
+.lconnFiles .qkrDropAvatar .DropAvatarContainer {
+	box-shadow: 2px 2px 8px #888;
+	border-radius: 3px;
+	background-color: #FFF;
+	border: 1px solid #ccc;
+	width:182px;	
+	position: relative;
+	padding: 11px;	
+	height: 20px;
+	line-height: 1;
+}
+.lconnFiles .qkrDropAvatar .topPostion {
+	top: -14px;
+	right: 25px;
+	z-index: -1;
+}
+
+.lconnFiles .qkrDropAvatar .bottomPosition {	
+	right: 30px;
+	top: -50px;
+	z-index: -2;
+}
+
+.lconnFiles .qkrDropAvatar .border {
+	border: 1px solid white;
+}
+
+.lconnFiles .qkrDropAvatar .dojoDndItem {
+	padding: 1px;
+}
+
+.lconnFiles .qkrDropAvatar .DropAvatarContainer .dndFolderIcon{
+   margin: -10px 0 0 5px;
+}
+
+.lconnFiles .qkrDropAvatar .DropAvatarContainer .DropAvatarItem {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin-left: 15px;
+	display: inline-block;
+	max-width: 75%;
+	height: 16px;
+}
+
+.lconnFiles .lotusTitleBar .icSearchPaneButton{
+   margin-top: 16px;
+   top: auto ! important;
+}
+
+.lconnFiles .lotusui30 .lotusPaging {
+   overflow: hidden;
+}
+
+.lconnFiles .lotusui .withoutFocusStyle:focus {
+   outline: none;
+   border: none;
+}
+
+.lconnFiles .filesDropAvatar .lotusFrame .lotusTopNav .lotusTitleBar {
+   z-index: auto;
+}
+
+.lotusui30 .lotusMessage2 .lotusMessageBody{
+   word-break: break-word;
+}
+
+.lconnFiles .lotusDialogBorder .lotusDialogContent .forceDownloadDescription{
+   padding-bottom: 15px;
+}
+
+.lconnFiles .lotusDialogBorder .lotusDialogContent .forceDownloadItems{
+   padding-top: 15px;
+}
+
+.lconnFiles .lotusDialogBorder .lotusDialogContent .forceDownloadWarning .lotusMessage2{
+   background-color: transparent;
+   border-color: transparent;
+}
+
+.lconnFiles .lotusDialogBorder .lotusDialogContent .forceDownloadWarning .lotusMessageBody{
+   padding-top: 3px;
+}
+
+.lconnFiles .lotusDialogBorder .lotusDialogContent .forceDownloadWarning .checkboxGroup{
+   padding-right: 41px;
+}
+
+.lconnFiles .lotusDialogBorder .lotusDialogContent .forceDownloadWarning .lotusFormField{
+   float: right;
+   padding-left: 10px;
+   color: #4178be;
+}
+
+.lconnFiles .lotusDialogBorder .lotusDialogContent .forceDownloadWarning .lotusFormField label{
+   display: inline-block;
+   width: 120px;
+   word-break: normal;
+}
+
+.lconnFiles .dijitComboBoxMenuPopup .dijitComboBoxMenu , .lotusUploadFile .dijitComboBoxMenuPopup .dijitComboBoxMenu {
+   width: auto !important;
+}
+
+.lconnFiles .lotusSyncViewWelcomeBox .lotusSyncAddFilesButton{
+   margin-left: 10px;
+   display: inline-block;
+   max-width: 120px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
+   vertical-align: bottom;
+}
+
+
+.lconnFiles .inMyDriveLable {
+	font-size: 0.6em;
+	margin-right: 6px;
+	font-weight: normal;
+	color: #222;
+}
+.lconnFiles .lotusHeader .lotusInlinelist {
+	margin-left: 20px;
+}
+
+
+.lconnFiles .MyDriveIndicator {
+   margin-left: 15px;
+}
+
+.lconnFiles .MyDriveIndicator a{
+   text-decoration: none;
+}
+
+.lconnFiles .myDriveMenu {
+   table-layout: fixed;
+}
+
+.lconnFiles .myDriveMenu .dijitMenuItemLabel {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 500px;
+}
+
+.lconnFiles .iconMyDriveSyncOn{
+   background-image:url('../../images/iconSyncOn.svg');
+   background-repeat:no-repeat;
+   display:-moz-inline-box;
+   display:inline-block
+ }
+.lconnFiles .iconMyDriveSyncOff{
+   background-image:url('../../images/iconSyncOff.svg');
+   background-repeat:no-repeat;
+   display:-moz-inline-box;
+   display:inline-block
+}
+.lconnFiles #lotusContentHeaderTitleBar .iconMyDrive{
+   width: 24px;
+   height: 20px;
+   background-position: 0 0;
+   margin: 2px 0 0 3px;
+}
+
+.lconnFiles .lconnFileVirusOverlayInTrash {
+   position: relative;
+   left: 8px;
+   top: 8px;
+}
+
+.lconnFiles .lotusui30 .lotusTopNav .lotusToolBar {
+   background: #fff;
+   box-sizing: border-box;
+   height: 45px;
+   z-index: 0;
+   padding: 2px 30px 0px 20px;
+   border-bottom: 1px solid #f1f1f1;
+   overflow:hidden;
+}
+
+.lconnFiles .toolActions .actionOn {
+   border-bottom: 3px solid #4178be
+}
+
+.lconnFiles .toolActions .actionOff {
+   border-bottom: 3px solid transparent
+}
+
+.lconnFiles .toolActions {
+   display: flex;
+   padding: 7px 30px 0px 30px;
+   width: 232px;
+   float: right;
+   box-sizing: border-box;
+}
+.lconnFiles .toolActions a{
+   margin-left: 20px
+}
+
+.lconnFiles .lotusui30 .lotusTopNav .lotusToolBar .lconnContentSceneActions button{
+   box-shadow: 0 0;
+}
+
+.lotusSection h2 .disabledFilter{
+   color : #aaa;
+}
+
+.lconnFiles .lotusSection h2 .lotusRefinePanelArrow{
+   float : left;  
+}
+
+.lconnFiles .lotusRefinedPanelTwistyClosed{
+   background-position:2px -466px;
+   opacity: 1;   
+}
+
+/* Slide in/out for inner panels of left navigation */
+.files-enable-refine-panel.lconnFiles .lotusColLeft .lconnSlideIn {
+   transition: visibility 400ms linear 100ms, height 400ms linear 100ms, transform 400ms ease-out 100ms;
+   -moz-transition: visibility 400ms linear 100ms, height 400ms linear 100ms, transform 400ms ease-out 100ms;
+   -webkit-transition: visibility 400ms linear 100ms, height 400ms linear 100ms, transform 400ms ease-out 100ms;
+   -o-transition: visibility 400ms linear 100ms, height 400ms linear 100ms, transform 400ms ease-out 100ms;
+}
+
+.files-enable-refine-panel.lconnFiles .lotusColLeft .lconnSlideOut {
+   transition: transform 100ms ease-in 0ms, visibility 0ms linear 500ms, height 0ms linear 500ms;
+   -moz-transition: transform 100ms ease-in 0ms, visibility 0ms linear 500ms, height 0ms linear 500ms;
+   -webkit-transition:  transform 100ms ease-in 0ms, visibility 0ms linear 500ms, height 0ms linear 500ms;
+   -o-transition:  transform 100ms ease-in 0ms, visibility 0ms linear 500ms, height 0ms linear 500ms;
+}
+
+.files-enable-refine-panel.lconnFiles .lotusColLeft .lconnInvisible {
+   transform: translateX(250px);
+   visibility: hidden;
+   height: 0;
+   position: absolute;
+}
+
+.files-enable-refine-panel.lconnFiles .lotusColLeft .lconnSlideOut,
+.files-enable-refine-panel.lconnFiles .lotusColLeft .lconnSlideIn {
+   position: absolute;
+}
+
+/* Slide in/out for the whole left navigation */
+.files-enable-refine-panel.lconnFiles .lotusColLeft.lconnSlideIn {
+   transition: visibility 500ms linear 10ms, width 500ms ease-out 10ms;
+   -moz-transition: visibility 500ms linear 10ms, width 500ms ease-out 10ms;
+   -webkit-transition: visibility 500ms linear 10ms, width 500ms ease-out 10ms;
+   -o-transition: visibility 500ms linear 10ms, width 500ms ease-out 10ms;
+}
+
+.files-enable-refine-panel.lconnFiles .lotusColLeft.lconnSlideOut {
+   transition: width 500ms ease-in 0ms, visibility 0ms linear 500ms, height 0ms linear 500ms;
+   -moz-transition: width 500ms ease-in 0ms, visibility 0ms linear 500ms, height 0ms linear 500ms;
+   -webkit-transition: width 500ms ease-in 0ms, visibility 0ms linear 500ms, height 0ms linear 500ms;
+   -o-transition: width 500ms ease-in 0ms, visibility 0ms linear 500ms, height 0ms linear 500ms;
+}
+
+.files-enable-refine-panel.lconnFiles .lotusColLeft.lconnInvisible {
+   transform: none;
+   width: 0;
+   visibility: hidden;
+   margin-left: 0px;
+   border-left-width: 0px;   
+}
+
+.files-enable-refine-panel .lotusui30_layout .lotusColLeft:after {
+   border-right: 0;
+}
+
+.files-enable-refine-panel #lconnFolderNavPanel,
+.files-enable-refine-panel #lconnFilterPanel {
+   width: 220px;
+}
+
+.lconnFiles .filesSearchBar .icSearchBar {
+   position: relative;
+}
+
+.lconnFiles .filesSearchBar .icSearchBar .dijitTextBox {
+   width: 90%;
+   height: 33px;
+   padding: 0px 5px 0px 0px;
+   border-width: 0px 0px 1px;
+   border-bottom-style: solid;    
+   border-bottom-color: #0072A7;
+   box-sizing: border-box;
+}
+
+.filesSearchBar .icSearchBar .dijitTextBox:focus,
+.filesSearchBar .icSearchBar .dijitTextBoxFocused {
+   outline: none;
+   box-shadow: 0 1px 0 #4178be;
+}
+
+.lconnFiles .filesSearchBar .icSearchBar .icSearchIcon {
+   height: 30px;
+   width: 24px;
+   top: 0px;    
+   margin-top: 31px;
+   display: none;
+}
+
+.lconnFiles .filesSearchBar .icSearchBar .icClearAllIcon {
+   height: 30px;
+   width: 24px;
+   top: 0px;    
+   margin-top: 31px;
+}
+
+.lconnFiles .filesSearchBar .icSearchBar .icSearchIcon svg{
+   position: absolute;
+   width: 24px;
+   top: 50%;
+   margin-top: -12px;
+   fill: #0072A7;
+}
+
+.lconnFiles .filesSearchBar .icSearchBar input::-ms-clear {
+   display:none;
+}
+.lconnFiles .filesSearchBar .icSearchBar a.icClearAllIcon svg {
+   border: 1px solid transparent;
+}
+.lconnFiles .filesSearchBar .icSearchBar a.icClearAllIcon:focus svg {
+   border-color: #4178be;
+}
+.lconnFiles .filesSearchBar .icSearchBar a.icClearAllIcon:focus {
+   outline: none;
+}
+
+.lconnFiles .filesSearchBar .icSearchBar .icSearchInstructions{
+   display: none;
+}
+
+.lconnFiles .recentList {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.lconnFiles .recentList .recentItems {
+   overflow: hidden;
+   margin: 10px 0;
+   width: 350px;
+   flex: auto;
+}
+
+.lconnFiles .recentList .recentItems .itemColumn {
+   float: right;
+   margin: 5px;
+}
+
+.lconnFiles .dsipalyView {
+   margin: 5px;
+   padding: 1px;
+}
+
+.lconnFiles .viewOn {
+   border-bottom: 3px solid rgb(65, 120, 190);
+}
+
+.lconnFiles .viewOff {
+   border-bottom: 3px solid transparent;
+}
+
+
+.lconnFiles .recentEmptyMsg {
+   text-align: center;
+   font-size: 1.5em;
+}
+
+.lconnFiles .recentEmptyMsg div{
+   padding: 10px;
+}
+
+.lconnFiles .recentEmptyMsg a{
+   cursor: pointer;
+}
+
+/*Files Recently Visited style updates*/
+/*header updates*/
+.lotusui30_layout .lotusColLeft {width: 220px;}
+.lotusui30_layout .lotusMain .lotusContent {padding-top: 0;}
+
+/*toolbar - panel*/
+@media screen and (min-width: 1250px) {
+  .lconnFiles .lotusui30 .lotusTopNav .lotusToolBar {padding-right: 50px;}
+}
+.lconnFiles .lotusui30 .lotusTopNav .lotusToolBar .toolActions {padding-right: 2px;}
+
+/*panel icons*/
+.lconnFiles .toolActions a {
+  margin-left: 10px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 1px 2px;
+  position: relative;
+  height: 21px;
+}
+
+.lconnFiles .toolActions a.actionOn,
+.lconnFiles .toolActions a.actionOff {
+  border-bottom: none;
+  padding: 0px 1px;
+}
+
+.lconnFiles .toolActions .actionOn:after, .lconnFiles .lotusToolBar #qkrViewControl .viewOn:after{
+  width: 100%;
+  height: 0;
+  border-bottom: 3px solid #4178be;
+  top: 7px;
+  content: '';
+  position: relative;
+  display: block;
+  right: 0;
+}
+
+.lconnFiles .lotusToolBar .lotusBtnContainer {
+  padding-top: 3px;
+}
+
+.lconnFiles .lotusToolBar #qkrViewControl .dsipalyView{
+   display: inline-block;
+   padding: 0px;
+   border-radius: 2px;
+}
+
+.lconnFiles .lotusToolBar #qkrViewControl .viewOn{
+   border-bottom: none;
+}
+
+.lconnFiles .toolActions a:focus, 
+.lconnFiles .lotusToolBar #qkrViewControl .dsipalyView:focus {
+   outline: none;
+   box-shadow: 0px 0px 0px 1px #4178be;
+}
+
+.lconnFiles .toolActions a:hover svg {
+  fill: #4178be;
+}
+.lconnFiles .toolActions a svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20px;
+}
+
+/*toolbar - display*/
+.lconnFiles .lotusui30 .lotusTopNav .lotusToolbar {
+  width: 100%;
+  margin: 0 auto;
+}
+.lconnFiles .lotusui30 .lotusTopNav .lotusToolBar .lconnContentSceneActions {
+  float: right;
+  margin: 0 auto;
+  width: 80%;
+}
+.lconnFiles .lotusui30 .lotusTopNav .lotusToolBar .lconnContentSceneActions #qkrViewControl {
+  float: left;
+}
+.lconnFiles .lotusui30 .lotusTopNav .lotusToolBar .lconnContentSceneActions #qkrViewControl .dsipalyView:hover svg {
+  fill: #4178be;
+}
+.lconnFiles .lotusui30 .lotusTopNav .lotusToolBar .lconnContentSceneActions .lotusBtnContainer {
+  float: right;
+}
+.lconnFiles .lotusui30 .lotusTopNav .lotusToolBar .lconnContentSceneActions .lotusBtnContainer  .lotusBtn {
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+.lconnFiles .lotusui30 .lotusTopNav .lotusToolBar .lconnContentSceneActions .lotusBtnContainer  .lotusBtn:hover {
+  text-decoration: underline;
+}
+.lconnFiles .lotusui30 .lotusTopNav .lotusToolBar .lconnContentSceneActions .lotusBtnContainer  .lotusBtn:focus {
+  outline: none;
+  border-color: #4178be;
+}
+
+/*background of left side*/
+.files-enable-recent-view .lotusui30_layout .lotusMain,
+.files-enable-refine-panel .lotusui30_layout .lotusMain {
+  background-color: #fff;
+}
+
+.files-enable-recent-view .lotusui30_layout .lotusColLeft,
+.files-enable-refine-panel .lotusui30_layout .lotusColLeft {
+  background-color: #fff;
+  border-left: 1px solid #ccc;
+}
+
+/*quick find*/
+.lconnFiles .filesSearchBar {
+  border: 1px solid #d8d8d8;
+  padding: 14px 14px 10px 24px;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,.1);
+  margin-bottom: 10px;
+}
+.lconnFiles .filesSearchBar .icSearchBar .dijitTextBox {
+  width: 99%;
+  border-bottom: none;
+}
+.lconnFiles .filesSearchBar .icSearchBar .dijitTextBox .dijitInputInner {
+  font-size: 1.5em;
+}
+
+/*recently visited*/
+.lconnFiles .recentList .recentItems {
+  border: 1px solid #d8d8d8;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,.1);
+  -webkit-font-smoothing: antialiased;
+  margin-left: 20px;
+  padding: 14px 14px;
+  max-width: 300px;
+}
+/*file type*/
+.lconnFiles .recentList .recentItems > div.itemColumn:nth-child(1) {
+  float: right;
+}
+
+/*filename*/
+.lconnFiles .recentList .recentItems > div.itemColumn:nth-child(2) div:nth-child(1), .lconnFiles .recentList .recentItems .lconn_personContainer a.lconn_title{
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.lconnFiles .recentList .recentItems .lconn_personContainer .lconn_profileInfo a {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  outline: none;
+}
+
+.lconnFiles .recentList .recentItems > div.itemColumn:nth-child(2) div:nth-child(1) a {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 240px;
+  display: inline-block;
+}
+
+.lconnFiles .recentList .recentItems .recentItemTitle .metaInfo {
+   width: 240px;
+}
+
+/*when*/
+.lconnFiles .recentList .recentItems > div.itemColumn:nth-child(2) div:nth-child(2) {
+  color: #6F6F6F;
+}
+.lconnFiles .recentList .recentItems > div.itemColumn:nth-child(2) div:nth-child(2) li {
+  border: none;
+  padding: 0px 0px;
+}
+
+.lconnFiles .toolBarActionDisable {
+    pointer-events: none;
+}
+
+.lconnFiles .toolBarActionDisable svg{
+    fill: #d5d5d5;
+}
+
+.lconnFiles .recentEmptyImg{
+   background-image:url('../../images/recent_empty.svg');
+   background-position:0 0px;
+   width: 155px;
+   height: 112px;
+}
+
+.lconnFiles .recentEmptyMsg .searchBtn {
+    background: #4178be;
+    padding: 10px 20px;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    color: #fff;
+    font-size: 0.8em;
+}
+
+.lconnFiles .recentEmptyMsg .searchBtn:hover {
+  background: #325c80;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.files-enable-refine-panel .lconnContentSceneActions:before {
+  content: "";
+  height: 26px;
+  width: 1px;
+  top: 6px;
+  background-color: #ccc;
+  right: -12px;
+  position: relative;
+  float: right;
+}
+
+.files-enable-refine-panel .lconnContentSceneActions .lotusBtn {
+  color: #292929;
+}
+
+.files-enable-refine-panel .lconnContentSceneActions .lotusBtn.lotusBtnDisabled {
+  color: #d5d5d5;
+  text-decoration: none !important;
+}
+
+.files-enable-refine-panel .lotusui30_layout .lotusColLeft.newButton {
+  width: 120px;
+  border:0px;
+}
+
+
+.files-enable-refine-panel .lotusui30_layout .lotusColLeft.newButton {
+  width: 120px;
+  border:0px;
+}
+
+.files-enable-refine-panel .lotusColLeft #lconnFilterPanel .lotusSection {
+  margin-left: 10px;
+}
+
+/*filter updates*/
+.files-enable-refine-panel a.lotusFilter .lotusDelete {
+  margin-right: 4px;
+  margin-left: 2px;
+}
+.files-enable-refine-panel a.lotusFilter {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 4px 10px;
+  color: #5a5a5a;
+  text-decoration: none;
+}
+.files-enable-refine-panel a.lotusFilter:focus,
+.files-enable-refine-panel a.lotusFilter:hover {
+  border-color: #4178be;
+  outline: none;
+}
+
+.files-enable-refine-panel #lconnFilterPanel .lotusSection h2 span[id$="_titleSpan"] {
+  padding-left: 6px !important;
+  font-weight: 600;
+  width: auto !important;
+}
+
+.files-enable-refine-panel .lotusui30_body .lotusMain,
+.files-enable-refine-panel .lotusui30_body .lotusTopNav .lotusTitleBar .lotusRightCorner {
+  margin: 0 0;
+}
+/*Let content flow to the right side of the window*/
+.files-enable-refine-panel .lotusui30_body #lotusMain {
+  max-width: 100%;
+}
+
+/*Keep left panel in same place even on narrow window*/
+.files-enable-refine-panel .lotusui30_body .lotusMain {
+  padding: 0px 48px 0px 0px;
+}
+
+.files-enable-refine-panel .myDriveNavigation .lotusInner .myDriveNormalItem div{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 450px;
+}
+
+.files-enable-refine-panel .lotusColLeft .lotusSearch{
+  margin-left:0
+}
+
+.lconnFiles .recentItemsFocus {
+  outline: 1px solid #4178be
+}
+
+.lconnFiles .recentItems .recentItemTitle a {
+  outline: none
+}
+.lconnFiles .recentItems .recentItemTitle ul {
+  overflow: hidden;
+}
+
+.lconnFiles .recentItems .recentItemTitle ul li.timeInfo{
+  float: right;
+}
+
+.lconnFiles .recentItems .recentItemTitle ul li.visibilityIcon{
+  float: left;
+  margin: 0 2px;
+}
+
+.lconnFiles .recentItems .recentItemTitle ul li img{
+  margin: 0 2px;
+}
+
+.lconnFiles .recentItems .recentItemTitle .marker {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.lconnFiles .recentItems .recentItemTitle .peopleLink {
+  color: #6F6F6F;
+}
+
+.lconnFiles #lotusToolBar .toolActions, 
+.lconnFiles #lotusToolBar .lconnContentSceneActions {
+   transition: width 500ms ease-in-out 0ms;
+}
+
+.lconnFiles #lotusToolBar.colLeftHidden .toolActions {
+   width: 100px;
+}
+
+.lconnFiles #lotusToolBar.colLeftHidden .lconnContentSceneActions {
+   width: 90%;
+}
+
+.files-enable-refine-panel .lotusui30 .lotusViewControl .lotusView {
+   float: inherit;
+   background: none;
+   width: auto;
+   height: auto;
+}
+
+
+.files-enable-refine-panel .lotusImagesOff #lotusToolBar svg {
+   display: none;
+}
+.files-enable-refine-panel .lotusImagesOff .lotusToolBar img{
+   line-height: normal;
+}
+
+/* chrome */
+.lconnFiles .filesSearchBar .icSearchBar .dijitInputContainer input::placeholder {
+   color: #6f6f6f;
+}
+/* firefox */
+.lconnFiles .filesSearchBar .icSearchBar .dijitInputContainer input::-moz-placeholder {
+   color: #6f6f6f;
+}
+/* IE10 - IE11 */
+.lconnFiles .filesSearchBar .icSearchBar .dijitInputContainer input:-ms-input-placeholder {
+   color: #6f6f6f;
+}
+/* IE Edge */
+.lconnFiles .filesSearchBar .icSearchBar .dijitInputContainer input::-ms-input-placeholder {
+   color: #6f6f6f;
+}
+
+@media screen and (max-width: 1250px) {
+   .files-enable-refine-panel .lotusui30_body .lotusui30_layout .lotusMain {
+      padding-right: 30px;
+   }
+
+   .files-enable-refine-panel .lotusui30 .lotusTopNav #lotusTitleBar .lotusRightCorner {
+      padding-right: 30px;
+   }
+}
+
+nav.breadcrumb li {
+ display: inline;
+}
+
+nav.breadcrumb ol {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.lconnFiles #lconnFolderNavPanel .myDriveNormalItem.lconnFilesMenu > div {
+   margin-top: 8px;
+}
+
+.lotusui30.lotusImagesOff .lconnFilesTree .node .header .icon img {
+  line-height : 2;
+}
+
+.files-enable-refine-panel .welcomeMyDriveSvg {
+   background-image:url('../../images/welcome-mydrive.svg');
+   background-position: center center;
+   background-repeat: no-repeat;
+   height: 200px;
+   margin-bottom: 30px;
+}
+.files-enable-refine-panel #lotusSyncViewWelcomeBox .lotusSyncHeading {
+   color: #666666;
+   text-align: center;
+}
+.files-enable-refine-panel #lotusSyncViewWelcomeBox p {
+   color: #444;
+   font-weight: normal;
+}
+
+.files-enable-refine-panel #lotusSyncViewWelcomeBox .lotusSyncButtonDiv .lotusSyncLinkSpan a {
+   color: #3C6DF0;
+   text-decoration: none;
+   font-weight: normal;
+   margin-right: 10px;
+}
+
+.files-enable-refine-panel #lotusSyncViewWelcomeBox{
+   background-image: none;
+   -moz-border-radius: 0;
+   -webkit-border-radius: 0;
+   border-radius: 0;
+   background-color: white;
+   padding: 0;
+}
+
+.files-enable-refine-panel #lotusSyncViewWelcomeBox .lotusSyncPic {
+   display:none;
+}
+
+.files-enable-refine-panel #lotusSyncViewWelcomeBox .lotusSyncLinkSpan {
+   color: #444;
+   font-weight: normal;
+}
+
+.files-enable-refine-panel .lotusSyncButtonDiv .lotusBtn{
+    width: 170px;
+    min-height: 40px;
+    max-height: 50px;
+}
+
+.files-enable-refine-panel .myDriveNavigation .iconTrash {
+   display: none;
+}
+
+.lconnFiles .ic-thumb-widget-flip-card .card-front .summary span.text {
+   width: 195px;
+   padding: 10px 10px 5px 28px;
+}
+
+.lotusImagesOff .lconnFilesTree .node .icon {
+	width: 100px;
+}
+
+.lotusImagesOff .lconnFilesTree .node.lconnSystemNavFolder .icon {
+	width: inherit;
+}
+.lconnFiles.files-enable-filter-section-animation #lconnFilterPanel .lconnSlideDown {
+   overflow: hidden;
+   visibility: visible;
+   max-height: 500px;
+   transition: visibility 500ms linear 0ms, max-height 500ms linear 0ms;
+}
+
+.lconnFiles.files-enable-filter-section-animation #lconnFilterPanel .lconnSlideUp {
+   overflow: hidden;
+   max-height: 0;
+   visibility: hidden;
+   transition: visibility 250ms linear 0ms, max-height 250ms ease 0ms;
+}
+
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderPublic16,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderPrivate16,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderShared16,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderCommunity16,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderPublic24,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderPrivate24,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderShared24,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderCommunity24,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderPublic32,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderPrivate32,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderShared32,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderCommunity32,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderPublic64,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderPrivate64,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderShared64,
+.lconnFiles.files-enable-new-folder-icon .lconnSprite-iconFolderCommunity64 {
+   background-image: url()!important;
+}
+
+.lconnFiles.files-enable-new-folder-icon .ic-thumb-folder svg {
+   width: 126px;
+   padding-top: 48px;
+   padding-right: 70px;
+}
+
+.lconnFiles.files-enable-new-folder-icon .DropAvatarContainer .dojoDndItem div {
+   display: inline-block;
+   margin-top: -5px;
+   margin-left: 3px;
+}
+
+.lconnFiles.files-enable-new-pin-icon a.pin.hc{
+   text-indent: inherit;
+}
+
+.lconnFiles.files-enable-new-pin-icon span.pin.hc{
+   text-indent: inherit;
+}
+
+.lconnFiles.files-enable-new-pin-icon .lconnSprite-iconPinned16-on{
+   background-image: url();
+}
+
+.lconnFiles.files-enable-new-pin-icon .lconnSprite.lconnSprite-iconPinned16-off{
+   background-image: url();
+}
+
+.lconnFiles.files-enable-new-pin-icon .lconnSprite-iconPinned16-on svg .pinInside {
+   fill: #000000;
+}
+
+.lconnFiles.files-enable-new-pin-icon .lconnSprite-iconPinned16-off svg .pinInside {
+   fill: #FFFFFF;
+}
+
+.lconnFiles.files-enable-new-pin-icon img.lconnSprite.lconnSprite-iconPinned16-on {
+   display: none;
+}
+
+.lconnFiles.files-enable-new-pin-icon img.lconnSprite.lconnSprite-iconPinned16-off {
+   display: none;
+}
+
+.lconnFiles .lotusContent .lotusHeader .lotusMeta .lotusFilter {
+   margin-bottom: 10px;
+   display: inline-block;
+}
+
+.lconnFiles .shareLinkDialog .lotusDialogContent {
+   min-height: 170px;
+   padding-bottom: 0px;
+}
+
+.lconnFiles .shareLinkDialog .shareLinkSelect table.dijitSelectOpened {
+   border-bottom: 1px solid #4178be;
+}
+
+.lconnFiles .shareLinkDialog table.dijitValidationTextBox {
+   color: #292929;
+   border: none;
+   border-bottom: 1px solid #979797;
+}
+
+.lconnFiles .shareLinkDialog td.dijitArrowButtonContainer, .lconnFiles .shareLinkDialog td.dijitButtonContents {
+   border-style: none;
+}
+
+.lconnFiles .shareLinkDialog td.dijitButtonContents {
+   padding: 10px 5px 10px 10px
+}
+
+.lconnFiles .shareLinkDialog td.dijitArrowButtonContainer input {
+   background-position: -7px -4372px;
+   display: inline-block;
+   width: 16px;
+   background-image: url(/com.ibm.oneui3.styles/css/images/lotusSprite-8bit.png);
+}
+
+.lconnFiles .shareLinkDialog .shareLinkSelect {
+   overflow: hidden;
+}
+
+.lconnFiles .shareLinkDialog .shareLinkSelect span.label {
+   float: right;
+   margin-top: 10px;
+}
+
+.lconnFiles .shareLinkDialog .shareLinkSelect .deleteLink {
+   float: left;
+   margin: 10px 0px 3px 2px;
+   cursor: pointer;
+}
+
+.lconnFiles .shareLinkDialog .shareLinkSelect .deleteLink:hover, .lconnFiles .shareLinkDialog .shareLinkInputContainer a:hover {
+   text-decoration: none;
+}
+
+.lconnFiles .dijitSelectSelectedOption td {
+   font-weight: normal;
+}
+
+.lconnFiles .shareLinkDialog .shareLinkInputContainer {
+   margin: 10px 0 8px 0;
+   display: table;
+   width: 100%
+}
+
+.lconnFiles .shareLinkDialog .shareLinkInputContainer input {
+   display: table-cell;
+   width: 98%;
+   padding: 8px 5px;
+   border: 1px solid #979797;
+   color: #292929;
+   margin: 0;
+}
+
+.lconnFiles .shareLinkDialog .shareLinkInputContainer a {
+   border-bottom: 1px solid #979797;
+   border-left: 1px solid #979797;
+   border-top: 1px solid #979797;
+   padding: 6px 0px;
+   cursor: pointer;
+   display: table-cell;
+   width: auto;
+   text-align: center;
+}
+.lconnFiles .shareLinkDialog .shareLinkDescription {
+   color: #777677;
+}
+
+.lconnFiles .shareLinkDialog .shareLinkMessageBox {
+   margin: 10px 0 0 0;
+}
+
+.lconnFiles .shareLinkDialog .topMessageBox {
+   position: absolute;
+   top: -70px;
+   width: 550px;
+}
+
+.lconnFiles .lotusContent .lconnLoadingIcon svg {
+   width: 17px;
+   animation: spin 1s linear infinite;
+   margin-right: 50%;
+}
+
+.lconnFiles .lotusContent .lconnLoadingIcon.lconnLoadingShow {
+   display: block;
+}
+
+.lconnFiles .lotusContent .lconnLoadingIcon,
+.lconnFiles .lotusContent .lconnLoadingIcon.lconnLoadingHide {
+   display: none;
+}
+
+.lconnFiles .shareLinkDialog .emptyCreateLink, .lconnFiles .shareLinkDialog .lotusDialogFooter {
+   text-align: center;
+}
+
+.lconnFiles .shareLinkDialog .emptyCreateLink {
+   padding-top: 18px;
+}
+
+.lconnFiles .shareLinkDialog .lotusDialogFooter {
+   padding-bottom: 32px;
+}
+
+.lconnFiles .shareLinkDialog .lotusDialogFooter input{
+   margin: 0px;
+}
+
+.lconnFiles .shareLinkDialog .emptyCreateLink svg {
+   width: 180px;
+}
+
+.lconnFiles .shareLinkDialog .emptyDescription {
+   text-align: center;
+   margin-top: 16px;
+}
+
+.lconnFiles .shareLink {
+	display: none;
+}
+
+.lconnFiles.files-enable-file-share-with-link .shareLink {
+	display: block;
+}

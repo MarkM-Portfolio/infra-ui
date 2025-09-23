@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">“嵌入式体验”OpenSocial 小配件用于显示 Connections 事件的附加详细信息和操作</msg>
+  <msg name="connectionsEE_errorTitle">错误</msg>
+  <msg name="connectionsEE_errorDescription">装入小配件资源时发生错误。 请保证已连接到网络，然后重新尝试装入小配件。</msg>
+</messagebundle>

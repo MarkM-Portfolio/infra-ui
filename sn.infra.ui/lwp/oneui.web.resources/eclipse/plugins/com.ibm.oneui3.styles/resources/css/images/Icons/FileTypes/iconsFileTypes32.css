@@ -1,0 +1,42 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2012, 2015                                    */ 
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+.iconsFileTypes32-ftAudio32{width:32px;height:32px;background-position:0 0}
+.iconsFileTypes32-ftCode32{width:32px;height:32px;background-position:0 -40px}
+.iconsFileTypes32-ftCompressed32{width:32px;height:32px;background-position:0 -80px}
+.iconsFileTypes32-ftContact32{width:32px;height:32px;background-position:0 -120px}
+.iconsFileTypes32-ftData32{width:32px;height:32px;background-position:0 -160px}
+.iconsFileTypes32-ftDataDocs32{width:32px;height:32px;background-position:0 -200px}
+.iconsFileTypes32-ftDefault32{width:32px;height:32px;background-position:0 -240px}
+.iconsFileTypes32-ftFlash32{width:32px;height:32px;background-position:0 -280px}
+.iconsFileTypes32-ftFileSyncCheckmark32{width:14px;height:14px;background-position:0 -320px}
+.iconsFileTypes32-ftFolder32{width:32px;height:32px;background-position:0 -342px}
+.iconsFileTypes32-ftFolderOpen32{width:32px;height:32px;background-position:0 -382px}
+.iconsFileTypes32-ftGraphic32{width:32px;height:32px;background-position:0 -422px}
+.iconsFileTypes32-ftLink32{width:32px;height:32px;background-position:0 -462px}
+.iconsFileTypes32-ftPage32{width:32px;height:32px;background-position:0 -502px}
+.iconsFileTypes32-ftPdf32{width:32px;height:32px;background-position:0 -542px}
+.iconsFileTypes32-ftPresentation32{width:32px;height:32px;background-position:0 -582px}
+.iconsFileTypes32-ftPresentationDocs32{width:32px;height:32px;background-position:0 -622px}
+.iconsFileTypes32-ftText32{width:32px;height:32px;background-position:0 -662px}
+.iconsFileTypes32-ftVideo32{width:32px;height:32px;background-position:0 -702px}
+.iconsFileTypes32-ftVisualization32{width:32px;height:32px;background-position:0 -742px}
+.iconsFileTypes32-ftWordProcessing32{width:32px;height:32px;background-position:0 -782px}
+.iconsFileTypes32-ftWordProcessingDocs32{width:32px;height:32px;background-position:0 -822px}
+.iconsFileTypes32-CommunityFolderHikari32{width:32px;height:32px;background-position:0 -862px}
+.iconsFileTypes32-PrivateFolder32{width:32px;height:32px;background-position:0 -902px}
+.iconsFileTypes32-PublicFolderHikari32{width:32px;height:32px;background-position:0 -942px}
+.iconsFileTypes32-SharedFolderHikari32{width:32px;height:32px;background-position:0 -982px}
+
+.iconsFileTypes32{background-image:url('./iconsFileTypes32-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsFileTypes32{display:none}

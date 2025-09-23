@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>IBM Connections - Dialog Util</title>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <h1>Dialog utility</h1>
+                <ul>
+                    <li><a href="javascript:;" onclick="lconn.core.DialogUtil.alert(ALERT.TITLE, ALERT.MESSAGE); return false;">Alert</a></li>
+                    <li><a href="javascript:;" onclick="lconn.core.DialogUtil.prompt(PROMPT.TITLE, PROMPT.MESSAGE, PROMPT.SUBMIT, PROMPT.CANCEL); return false;">Prompt</a></li>
+                    <li><a href="javascript:;" onclick="lconn.core.DialogUtil.popupForm(FORM.TITLE, FORM.NODE, FORM.SUBMIT, FORM.CANCEL, FORM.ONSUBMIT, FORM.ONCANCEL); return false;">Form</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+
+        var ALERT = {
+            TITLE: "Alert",
+            MESSAGE: "This is an alert dialog"
+        }, PROMPT = {
+            TITLE: "Prompt",
+            MESSAGE: "This is a prompt dialog",
+            SUBMIT: "Accept",
+            CANCEL: "Deny"
+        }, FORM = {
+            TITLE: "Form",
+            NODE: dojo.toDom('<div><input id="chk1" type="checkbox" class="lotusCheckbox" /><label class="lotusCheckbox" for="chk1">Check this</label></div>'),
+            SUBMIT: "OK",
+            CANCEL: "Cancel",
+            ONSUBMIT: function() { console.log("Submitting form"); },
+            ONCANCEL: function() { console.log("Canceling"); }
+        };
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:dojo.parser}
+    ${script:lconn.core.DialogUtil}
+</body>
+</html>

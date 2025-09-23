@@ -1,0 +1,346 @@
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+${head}
+<title>BasicTextBox</title>
+
+<script type="text/javascript">
+   var textBox = null;
+   function getOptions(rte) {
+      var emptyCallback = function(empty) {
+         if (empty) {
+            dojo.addClass(dojo.byId("postLink"), "lotusPersonInactive");
+            dojo.addClass(dojo.byId("resetLink"), "lotusPersonInactive");
+         }
+         else {
+            dojo.removeClass(dojo.byId("postLink"), "lotusPersonInactive");
+            dojo.removeClass(dojo.byId("resetLink"), "lotusPersonInactive");
+         }
+      };
+
+      var limitCallback = function(limit) {
+         if (limit) {
+            dojo.style(dojo.query(".charDisplay")[0], "color", "red");
+         }
+         else {
+            dojo.style(dojo.query(".charDisplay")[0], "color", "black");
+         }
+      }
+
+      var onFocusCallback = function() {
+         dojo.style(dojo.byId("actionList"), "visibility", "visible");
+      }
+
+      var onBlurCallback = function() {
+         dojo.style(dojo.byId("actionList"), "visibility", "hidden");
+      }
+
+      var keyDownCallback = function() {
+         console.log("Key has been pressed");
+      }
+
+      return {
+         //height : 100,
+         useRTE : rte,
+         isEE : true,
+         //maxLength : 100,
+         //maxLengthBytes : 100,
+         //textBoxRows : 4,
+         //showRemainingLimit : 20,
+         //charRemainingDisplay : dojo.byId("countContainer"),
+         //textPopulatedCallback : emptyCallback,
+         //keyDownCallback: keyDownCallback,
+         //reachedCharLimitCallback : limitCallback,
+         //onFocusCallback : onFocusCallback,
+         //onBlurCallback : onBlurCallback,
+         //customCSS: 'myOwnClass',
+         //disableURLPreview: true,
+         //dataStore : dataStore
+      //onLoadCallback: function(){console.log('INSIDE')}
+      };
+   }
+   
+   function useStandard() {
+      require(["ic-core/lcTextArea/widgets/BasicTextBox",
+               "ic-core/PeopleDataStore",
+               "ic-ui/MessageBox",
+               "dojo/domReady!"
+               ],
+       function(BasicTextBox, PeopleDataStore, MessageBox) {
+         var options = getOptions(false);
+         options.mentionsEnabled = true;
+         if (textBox)
+            textBox.destroy();
+         if (!dojo.byId("textBox"))
+            dojo.create("div", {
+               id : "textBox"
+            }, dojo.byId("textBoxContainer"), "only");
+         textBox = new BasicTextBox(options, dojo.byId("textBox"));
+         // Look how easy it is to override the datasource...
+         textBox._mentionsHelper._registeredTypes[0].typeaheadDataStore = new PeopleDataStore({
+            url : '../ckeditor/people.json',
+            queryParam : "name"
+         });
+         textBox._mentionsHelper._registeredTypes[0].initTypeaheadArgs();
+         textBox._mentionsHelper._registeredTypes[0]._typeahead.destroy();
+         textBox._mentionsHelper._registeredTypes[0].initTypeahead();
+         // ...not
+
+         // Should be:
+         // options.store = new lconn.core.PeopleDataStore({url:'../ckeditor/people.json',queryParam : "name"});
+      });
+   }
+
+   
+   function useRTE() {
+      require([ "ic-core/lcTextArea/widgets/BasicTextBox",
+                "ic-core/PeopleDataStore",
+                "ic-ui/MessageBox",
+                "dojo/_base/connect",
+                "dojo/domReady!" ],
+       function(BasicTextBox, PeopleDataStore, MessageBox, connect) {
+         var options = getOptions(true);
+         options.dataStore = new PeopleDataStore({
+            queryParam : 'name',
+            url : '../ckeditor/people.json'
+         });
+         if (textBox) {
+            textBox.destroy();
+         }
+         if (!dojo.byId("textBox")) {
+            dojo.create("div", {
+               id : "textBox"
+            }, dojo.byId("textBoxContainer"), "only");
+         }
+         textBox = new BasicTextBox(options, dojo.byId("textBox"));
+         textBox.setRows(2);
+
+         var printMessage = function(text) {
+            var message = new MessageBox({
+               canClose : true,
+               type : MessageBox.TYPE.SUCCESS,
+               msg : text
+            }, "message");
+            setTimeout(function() {
+               message.destroy()
+            }, 6000);
+         }
+
+         connect.subscribe("lconn/microblogging/mention/removed", function(mention) {
+         //printMessage("Mention Removed: " + mention.mention + " (" + mention.getUserId() + ")");
+         });
+         connect.subscribe("lconn/core/ckeditor/url/entered", function(url) {
+         //printMessage("URL introduced:  " + url.url);
+         });
+         connect.subscribe("lconn/microblogging/mention/completed", function(mention) {
+         //mention[0].removeSymbol();
+         //printMessage("Mention Added:  " + mention[0].mention + " (" + mention[0].getUserId() + ")");
+         });
+      });
+   }
+
+   addTAHeader = function() {
+      textBox.setTypeAheadHeader('TypeAhead Header...');
+   }
+
+   printResults = function(message) {
+      var message = new com.ibm.oneui.controls.MessageBox({
+         canClose : true,
+         type : com.ibm.oneui.controls.MessageBox.TYPE.SUCCESS,
+         msg : message
+      }, "results");
+      setTimeout(function() {
+         message.destroy()
+      }, 6000);
+   }
+
+   formatTrackedMentions = function(data) {
+      var formatter = new lconn.core.widget.mentions.MentionsDataFormatter();
+      printResults(formatter.formatData(data));
+   }
+
+   function recreateTextArea() {
+      textBox.destroy();
+      //useRTE();
+      ///*
+      if (!dojo.byId("textBox"))
+         dojo.create("div", {
+            id : "textBox"
+         }, dojo.byId("textBoxContainer"), "only");
+      textBox = CKEDITOR.appendTo(dojo.byId("textBox"), {});
+      //debugger;
+      //textBox.insertHtml('<span style="color:#666">shadow text</span>')
+      //textBox.document.getBody().setHtml('<span style="color:#666">' + this.shadowText + '</span>');
+      //*/
+   }
+
+   require([ "dojo/domReady!" ], function() {
+      useRTE();
+   });
+</script>
+<style type="text/css">
+#textBoxContainer {
+   width: 600px;
+   padding-${right}: 10px;
+}
+</style>
+${endhead}
+
+<div class="lotusBanner">
+   <div class="lotusRightCorner">
+      <div class="lotusInner">
+         <a href="#lotusMainContent" accesskey="S" class="lotusAccess">
+            <img src="${_blankGif}" />
+         </a>
+         <div class="lotusLogo">
+            <span class="lotusAltText">IBM Connections Common UI</span>
+         </div>
+      </div>
+   </div>
+</div>
+   <div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+      <nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+         <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+         <span class="lotusDivider">&gt;</span>
+         <a href="${contextRoot}/web/ic-test/lcTextArea/index.html?render=test">CKEditor wrappers, plugins and utilities</a>
+         <span class="lotusDivider">&gt;</span>
+         Basic Text Box loader
+      </nav>
+   </div></div></div><!--end lotusBannerExt-->
+<div class="lotusTitleBar2 lotusTitleBar2Tabs">
+   <div class="lotusWrapper">
+      <div class="lotusInner">
+         <div class="lotusTitleBarContent">
+            <h2 class="lotusHeading">
+               <span class="lotusText">BasicTextBox Widget</span>
+            </h2>
+            <nav aria-label="Select page width" role="navigation"></nav>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="lotusFrame">
+   <div class="lotusMain">
+      <div class="lotusContent">
+
+         <form class="lotusForm2">
+            <!-- form header (use a div instead of a header tag if you aren't using html5) -->
+            <header class="lotusFormTitle">
+               <h1 class="lotusHeading" aria-describedby="formDesc">About:</h1>
+               <div id="formDesc" class="lotusMeta">This form
+                  includes a BasicTextBox widget, a rich text control
+                  with support for shadow text, maximum field length
+                  warning, and enabled for mentions.</div>
+            </header>
+
+            <!-- form body -->
+            <div class="lotusFormBody">
+
+               <div class="lotusFormField">
+                  <fieldset class="lotusFieldset" role="radiogroup">
+                     <legend>Implementation (this will replace
+                        the textbox)</legend>
+                     <div class="lotusFieldWrapper">
+                        <input type="radio" id="radio1" name="impl"
+                           value="RTE" checked="checked"
+                           onclick="useRTE();" /> <label
+                           class="lotusCheckbox" for="radio1">Uses
+                           CKEditor</label>
+                     </div>
+                     <!-- div class="lotusFieldWrapper">
+                        <input type="radio" id="radio3" name="impl" value="RTEAutogrow" onclick="useRTE(true);" />
+                        <label class="lotusCheckbox" for="radio3">Uses CKEditor (Autogrow)</label>
+                     </div -->
+                     <div class="lotusFieldWrapper">
+                        <input type="radio" id="radio2" name="impl"
+                           value="Standard" onclick="useStandard();" />
+                        <label class="lotusCheckbox" for="radio2">Standard
+                           control</label>
+                     </div>
+                  </fieldset>
+               </div>
+
+               <div class="lotusFormField">
+                  <label for="description">Textbox:</label>
+                  <div class="lotusFieldWrapper lotusBoard">
+                     <!-- textarea id="editor1" cols="80" rows="2"></textarea-->
+                     <div id="textBoxContainer"
+                        class="lotusStreamUpdate">
+                        <div id="textBox"></div>
+                     </div>
+                     <div id='message'></div>
+                     <ul id="actionList"
+                        class="lotusInlinelist lotusActions"
+                        style="visibility: hidden">
+                        <li class="lotusFirst"><a
+                           href="javascript:;" id="postLink"
+                           class="lotusAction lotusPersonInactive">Post</a>
+                        </li>
+                        <li><a href="javascript:;" id="resetLink"
+                           class="lotusAction lotusPersonInactive"
+                           onclick="textBox.resetBox();">Reset</a></li>
+                     </ul>
+                  </div>
+               </div>
+
+               <div class="lotusFormField">
+                  <fieldset class="lotusFieldset" role="radiogroup">
+                     <legend>Read only</legend>
+                     <div class="lotusFieldWrapper">
+                        <input type="radio" id="radio3" name="state"
+                           value="Editable" checked="checked"
+                           onclick="textBox.setEditable();" /> <label
+                           class="lotusCheckbox" for="radio3">Editable</label>
+                     </div>
+                     <div class="lotusFieldWrapper">
+                        <input type="radio" id="radio3" name="state"
+                           value="Read Only"
+                           onclick="textBox.setReadOnly();" /> <label
+                           class="lotusCheckbox" for="radio4">Read
+                           only</label>
+                     </div>
+                  </fieldset>
+               </div>
+
+               <div class="lotusFormField lotusMeta"
+                  title="Chars remaining" id="countContainer">
+                  Chars remaining: <span class="charDisplay"></span>
+               </div>
+            </div>
+            <!--end form body-->
+
+            <!-- form footer -->
+            <div class="lotusFormFooter">
+               <!-- input type="button" class="lotusBtn" value="Re Create"
+                  onclick="recreateTextArea();" /--> 
+               <input type="button"
+                  class="lotusBtn" value="Get No. Chars"
+                  onclick="printResults('Chars:' + textBox.getTextLength());" />
+               <input type="button" class="lotusBtn"
+                  value="Get UTF Length"
+                  onclick="printResults('UTF length:' + textBox.getUtfLength() || '0');" />
+               <input type="button" class="lotusBtn"
+                  value="Get Untruncated"
+                  onclick="printResults(textBox.getTextOutput(false));" />
+               <input type="button" class="lotusBtn"
+                  value="Get Truncated"
+                  onclick="printResults(textBox.getTextOutput(true))" />
+               <input type="button" class="lotusBtn"
+                  value="Text too long?"
+                  onclick="printResults(textBox.isTextTooLong() ? 'Yes! :-(' : 'Not yet...');" />
+               <input type="button" class="lotusBtn"
+                  value="Add TA Header" onclick="addTAHeader();" /> 
+               <!-- input
+                  type="button" class="lotusBtn"
+                  value="getTrackedMentions"
+                  onclick="formatTrackedMentions(textBox.getTrackedMentions());" /-->
+            </div>
+         </form>
+         <div id='results'></div>
+      </div>
+   </div>
+</div>
+${script:lconn.core.lcTextArea.widgets.BasicTextBox}
+${script:dojo.parser}
+${script:com.ibm.oneui.controls.MessageBox}
+${script:lconn.core.widget.mentions.MentionsDataFormatter}
+</html>

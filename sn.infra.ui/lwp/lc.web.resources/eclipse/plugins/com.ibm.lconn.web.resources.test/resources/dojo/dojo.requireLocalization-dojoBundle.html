@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>dojo.requireLocalization with Jazz dojo bundles</title>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="dojo.requireLocalization with Jazz dojo bundles">
+            <div class="lotusContent">
+                <h1 id="hdr1"></h1>
+                <div class="lotusMeta">If the test works, you should see a title above.</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        dojoConfig.locale = "en-us";
+        dojo.addOnLoad(function() {
+            dojo.requireLocalization("com.ibm.social.as", "activitystream");
+            var strings = dojo.i18n.getLocalization("com.ibm.social.as", "activitystream"),
+                widgetbundles = dojo.i18n.getLocalization("lconn.core.config", "widgetbundles"),
+                widgets = dojo.i18n.getLocalization("lconn.core", "widgets");
+            if (strings) {
+                dojo.html.set(dojo.byId("hdr1"), strings.asTitle);
+            } else {
+                dojo.html.set(dojo.byId("hdr1"), "It didn't work :-(");
+            }
+        });
+    </script>
+    ${script:dojo.i18n}
+    ${script:dojo.html}
+    ${script:lconn.test.dojo.module3}
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div>
+   <div style="display: none;" data-dojo-attach-point="sortNode">
+      <div class="lotusSort">
+         <ul class="lotusInlinelist">
+            <li class="lotusFirst">${_strings.SORT_BY}</li>
+            <li class="lotusFirst">
+               <a id="sortDesc" role="button" aria-pressed="true" class="lotusActiveSort lotusDescending" aria-sort="descending" title="${_strings.SORTS.DATE_TOOLTIP_REVERSE}" href="#" data-dojo-attach-event="onclick:_sortAsc">${_strings.SORTS.DATE}</a>
+               <a id="sortAsc" role="button" aria-pressed="true" class="lotusActiveSort lotusAscending" aria-sort="ascending" title="${_strings.SORTS.DATE_TOOLTIP}" href="#" style="display: none;" data-dojo-attach-event="onclick:_sortDesc">${_strings.SORTS.DATE}</a>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div class="lotusBoard" style="display: none;" data-dojo-attach-point="main">
+      <ul class="lotusCommentList lotusCommentsCondensed" data-dojo-attach-point="listCtnr"></ul>
+   </div>
+   <div style="display: none;" data-dojo-attach-point="empty"></div>
+   <div style="display: none;" data-dojo-attach-point="error"></div>
+   <div style="display: none;" data-dojo-attach-point="loading"></div>
+   <div style="display: none;" data-dojo-attach-point="moreLink">
+      <a href="#" role="button" data-dojo-attach-event="onclick:_showMoreHistory">${_strings.MORE}</a>
+   </div>
+</div>

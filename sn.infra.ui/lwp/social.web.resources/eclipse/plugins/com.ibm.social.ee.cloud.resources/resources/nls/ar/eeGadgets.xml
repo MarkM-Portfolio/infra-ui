@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">الوصلات</msg>
+  <msg name="connectionsEE_description">يتم استخدام أداة Embedded Experience OpenSocial لعرض تفاصيل وتصرفات أضافية لأحداث Connections</msg>
+  <msg name="connectionsEE_errorTitle">خطأ</msg>
+  <msg name="connectionsEE_errorDescription">لم يتم اعتماد هذه المحتويات بواسطة الشركة الخاصة بك وهي غير متاحة.يرجى الاتصال بمسؤول النظام بالشركة الخاصة بك ليتيح التمديد.</msg>
+</messagebundle>

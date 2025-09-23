@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Koneksi</msg>
+  <msg name="connectionsEE_description">Gadget Embedded Experience OpenSocial digunakan untuk menampilkan detail tambahan dan tindakan untuk Peristiwa Koneksi</msg>
+  <msg name="connectionsEE_errorTitle">Terjadi Kesalahan</msg>
+  <msg name="connectionsEE_errorDescription">Konten ini tidak disetujui oleh organisasi Anda dan tidak tersedia. Harap hubungi administrator Organisasi Anda untuk mengaktifkan ekstensi.</msg>
+</messagebundle>

@@ -1,0 +1,64 @@
+<html>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<head>
+<style>
+body { background-color: gray; }
+#container { 
+   background-color: white;
+   border: 1px solid #222;
+   width: 200px;
+   display: inline-block;
+   vertical-align: -5px;
+}
+#truncate {
+   vertical-align: top;
+   width: 100%;
+}
+#truncate .outer {
+   position: relative;
+}
+#truncate .inner { 
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   position: absolute;
+   width: 100%;
+}
+#notruncate {
+   white-space: nowrap;
+}
+</style>
+</head>
+<body>
+<div id="tablecontainer">
+This is my test: 
+<table id="container">
+<tbody>
+<tr>
+<td id="truncate">
+<div class="outer">
+<div class="inner">
+Integer posuere erat a ante venenatis dapibus posuere velit aliquet. 
+</div>
+</div>
+</td>
+<td id="notruncate">1234</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

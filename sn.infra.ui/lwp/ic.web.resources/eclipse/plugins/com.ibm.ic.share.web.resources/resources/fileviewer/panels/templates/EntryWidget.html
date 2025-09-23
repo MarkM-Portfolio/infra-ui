@@ -1,0 +1,56 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="ics-panel-entry bidiAware" data-dojo-attach-event="mouseover:mouseOver, mouseout:mouseOut">
+  <div class="confirmation"><span>&nbsp;</span>
+  	<div>
+  	<a class="confirm bad" href="javascript:;" title="ok">${entryNls.OK}</a>
+  	<a class="cancel neutral" href="javascript:;" title="cancel">${entryNls.CANCEL}</a>
+  	</div>
+  </div>
+
+  <div class="icon" data-dojo-attach-point="iconNodeContainer">
+     <a href="${iconLink}" class="${iconLinkClasses}" title="${iconLinkTitle}" data-dojo-attach-point="iconLinkNode" role="button" tabindex="-1" aria-label="${dropDownButton}">
+        <img src="${iconSource}" class="${iconClasses}" data-dojo-attach-point="iconNode" alt="${dropDownButton}"/>
+     </a>
+  </div>
+
+  <span class="header1" data-dojo-attach-point="h1Node">${h1}</span>
+  <a class="header1Action action" href="javascript:;" data-dojo-attach-point="header1Action" data-dojo-attach-event="click:_headerActionClick" role="button" ${editNls.ROLE}" alt="">
+  	<img class="header1ActionIcon" src="${_blankGif}" alt=""></img>
+  	<span class="lotusAltText fileViewerIconText">${editNls.ROLE}</span>
+  </a>
+  <a class="remove action" href="javascript:;" data-dojo-attach-point="removeAction" data-dojo-attach-event="onclick:remove" role="button" title="${entryNls.REMOVE}"><img class="removeIcon" src="${_blankGif}" alt=""></img>
+  	<span class="lotusAltText fileViewerIconText">${entryNls.REMOVE}</span>
+  </a>
+  <span class="header2" data-dojo-attach-point="h2Node">${h2}</span>
+  <span class="header3">${h3}</span>
+
+  <div class="content bidiAware" data-dojo-attach-point="contentContainer,contentNode"></div>
+  <div class="footer">${footer}</div>
+  <div class="actions" data-dojo-attach-point="actionContainer">
+      <span class="action download">
+	  	<a href="${downloadLink}" title="${downloadTooltip}" data-dojo-attach-point="link" data-dojo-attach-event="onclick:download" role="button"><img class="downloadIcon" src="${_blankGif}" alt="">
+	  		<span class="lotusAltText fileViewerIconText">${downloadNls.TOOLTIP}</span>
+	  	</a>
+	  </span>
+	  <span class="action restore">
+	  	<a href="javascript:;" title="${restoreTooltip}" data-dojo-attach-event="onclick:restore" role="button"><img class="restoreIcon" src="${_blankGif}" alt=""></img>
+	  		<span class="lotusAltText fileViewerIconText">${entryNls.RESTORE}</span>
+	  	</a>
+	  </span>
+	  <span class="action edit">
+	  	<a href="javascript:;" title="${editTooltip}" data-dojo-attach-event="onclick:edit" role="button"><img class="editIcon" src="${_blankGif}" alt=""></img>
+	  		<span class="lotusAltText fileViewerIconText">${editNls.ROLE}</span>
+	  	</a>
+	  </span>
+	  <span class="action delete">
+	  	<a href="javascript:;" title="${removeTooltip}" data-dojo-attach-event="onclick:remove" role="button" class="deleteAnchor"><img class="removeIcon" src="${_blankGif}" alt=""></img>
+	  		<span class="lotusAltText fileViewerIconText">${entryNls.REMOVE}</span>
+	  	</a>
+	  </span>
+        <span class="action flag">
+      <a href="javascript:;" title="${flagTooltip}" data-dojo-attach-event="onclick:flag" role="button"><img class="removeIcon" src="${_blankGif}" alt=""></img>
+        <span class="lotusAltText fileViewerIconText">${entryNls.FLAG}</span>
+      </a>
+    </span>
+  </div>
+</div>

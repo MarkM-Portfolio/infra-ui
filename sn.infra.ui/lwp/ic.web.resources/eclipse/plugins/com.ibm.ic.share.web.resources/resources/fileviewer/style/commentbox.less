@@ -1,0 +1,76 @@
+/* Copyright IBM Corp. 2015  All Rights Reserved.              */
+
+.ics-viewer .ics-commentbox-container .lotusMentionsDiv{
+	transition: min-height 0.3s ease 0s;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	font-size: 12px;
+}
+
+.ics-viewer .ics-commentbox-container.active .lotusMentionsDiv{
+	min-height: 8em;
+	max-height: 20em;
+	margin-bottom: 6px;
+	transition: min-height 0.3s ease 0s;
+}
+
+.ics-viewer-action-share .ics-commentbox-container.active .lotusMentionsDiv {
+	min-height: 0em;
+}
+
+.ics-viewer .ics-commentbox-container .commentActions {
+	display: none;
+	line-height: 16px;
+}
+
+.ics-viewer .ics-commentbox-container.active .commentActions {
+	display: inline;
+	font-weight: bold;
+}
+
+.ics-viewer .ics-commentbox-container.active .commentActions a {
+	font-size: 12px;
+}
+
+.ics-viewer .ics-commentbox-container.active .ics-viewer-messagebox {
+	margin-top: 18px;
+}
+
+.ics-viewer .ics-commentbox-container.active .ics-viewer-messagebox ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 10px 0 0 0;
+}
+
+.ics-viewer .ics-commentbox-container.active .ics-viewer-messagebox li {
+	margin: 6px 0;
+	padding: 0;
+}
+
+.ics-viewer .ics-commentbox-container .ckeditor {
+  .cke_contents {
+    transition: min-height 0.3s ease 0s !important;
+    height: 2.5em !important;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    font-size: 12px;
+  }
+  textarea {
+    display:none;
+  }
+}
+
+.ics-viewer .ics-commentbox-container.active .ckeditor {
+  .cke_contents {
+    min-height: 8em !important;
+    max-height: 20em !important;
+    margin-bottom: 6px;
+    transition: min-height 0.3s ease 0s !important;
+    height: auto !important;
+  }
+}
+.ics-viewer-width-auto {
+  width: auto;
+}

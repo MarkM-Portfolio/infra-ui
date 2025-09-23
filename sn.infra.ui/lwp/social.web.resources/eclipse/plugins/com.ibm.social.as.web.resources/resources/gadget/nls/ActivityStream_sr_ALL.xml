@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015, 2016  All Rights Reserved.                    -->
+<messagebundle>
+  <msg name="as_title">Novosti</msg>
+  <msg name="as_description">Novosti iz usluge IBM Connections</msg>
+  <msg name="as_error">Došlo je do greške tokom konfiguracije toka novosti. Kontaktirajte svog administratora.</msg>
+</messagebundle>

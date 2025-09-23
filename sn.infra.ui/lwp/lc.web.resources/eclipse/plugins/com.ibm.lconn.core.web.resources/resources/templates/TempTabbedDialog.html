@@ -1,0 +1,29 @@
+<!-- Copyright IBM Corp. 2013, 2015  All Rights Reserved.              -->
+
+<div class="lotusTabDialog" tabindex="-1" waiRole="dialog" waiState="labelledby-${id}_title">
+	<div>
+		<div class="dijitDialogPaneContent lotusDialogBorder">
+			<div class="lotusDialog">
+				<div data-dojo-attach-point="containerNode">
+					<div data-dojo-attach-point="titleBar" class="lotusDialogHeader" title="${messages.dialogTitle}" role="dialog">
+						<h1 data-dojo-attach-point="titleNode" id="${id}_title" class="lotusHeading"></h1>
+						<a class="lotusDialogClose" role="button" href="javascript:;" title="${rs.rs_close}" data-dojo-attach-point="closeButtonNode" data-dojo-attach-event="onclick: onCancel"> 
+							<img src="${blankGif}" alt="${rs.rs_close}" aria-label="${rs.rs_close}" /> 
+							<span class="lotusAltText">X</span>
+						</a>
+					</div>
+					<form class="lotusForm2 lotusLeftLabels" data-dojo-attach-point="form" data-dojo-attach-event="onsubmit: save" method="post" aria-live="assertive">
+						<div data-dojo-type="dijit.layout.TabContainer" data-dojo-attach-point="tabs" tabStrip="true" doLayout="false">
+						</div>
+						<!-- form footer -->
+						<div class="lotusFormFooter lotusDialogFooter">
+							<input value="${rs.rs_ok}" class="lotusFormButton" type="submit" value="OK" title="${rs.rs_ok}" /> 
+							<input value="${rs.rs_close}" class="lotusFormButton" type="button" title="${rs.rs_close}" data-dojo-attach-event="onclick: onCancel" />
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>Inline SVG example</title>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <h2>A red circle</h2>
+                <div id="red-circle" data-dojo-type="ic-test/svg/RedCircle"></div>
+                <button onclick="makeitblue()">Make it blue</button>
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        dojoConfig.parseOnLoad=true;
+        function makeitblue() {
+            document.querySelector("#red-circle svg circle").style.fill = 'blue';
+        }
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:dojo.parser}
+    ${script:ic-test.svg.RedCircle}
+</body>
+</html>

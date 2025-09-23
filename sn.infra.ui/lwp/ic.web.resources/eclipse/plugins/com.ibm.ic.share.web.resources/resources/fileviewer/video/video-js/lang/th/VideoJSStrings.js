@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "en",
+      "Play": "เล่น",
+      "Pause": "หยุด",
+      "Current Time": "เวลาปัจจุบัน",
+      "Duration Time": "ระยะเวลา",
+      "Remaining Time": "เวลาที่เหลือ",
+      "Stream Type": "ชนิดของสตรีม",
+      "LIVE": "LIVE",
+      "Loaded": "ถูกโหลด",
+      "Progress": "ความคืบหน้า",
+      "Fullscreen": "เต็มจอ",
+      "Non-Fullscreen": "ไม่ใช่แบบเต็มจอ",
+      "Mute": "ปิดเสียง",
+      "Unmute": "ยกเลิกการปิดเสียง",
+      "Unmuted": "ยกเลิกการปิดเสียงแล้ว",
+      "Playback Rate": "อัตราการเล่นกลับ",
+      "Subtitles": "คำบรรยาย",
+      "subtitles off": "ปิด คำบรรยาย",
+      "Captions": "คำอธิบาย",
+      "captions off": "ปิด คำอธิบาย",
+      "Chapters": "บท",
+      "Volume": "เสียง",
+      "You aborted the video playback.": "คุณออกจากการเล่นวิดีโอแล้ว",
+      "A network error caused the video download to fail part-way.": "ข้อผิดพลาดของเครือข่ายทำให้การดาวน์โหลด part-way ล้มเหลว",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "ไม่สามารถโหลดวิดีโอ เนื่องจากเซิร์ฟเวอร์หรือเครือข่ายล้มเหลว หรือเนื่องจากรูปแบบที่ไม่สนับสนุน",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "การเล่นวิดีโอถูกยุติเนื่องจากปัญหาที่ทำให้เสียหาย หรือวิดีโอใช้คุณลักษณะที่เบราว์เซอร์ของคุณไม่สนับสนุน",
+      "No compatible source was found for this video.": "ไม่พบซอร์สที่เข้ากันได้สำหรับวิดีโอนี้"
+});
+

@@ -1,0 +1,70 @@
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<div style="${style}">
+<style>
+.dijitButtonNode .dijitArrowButtonInner {display:none;}
+.dijitButtonNode .dijitArrowButtonChar {display:block !important;}
+.narrowInput { width: 200px; }
+</style>
+	<!-- AS Form --> 
+	<div dojoType="dijit.form.Form" encType="multipart/form-data" dojoAttachPoint="_ASForm" action="" method="">
+		
+		<label for="gadgetUrl">Gadget Url:</label>
+		<input type="text" class="icTestGadgetUrl" name="gadget" required="true" intermediateChanges="true" dojoAttachPoint="_gadget"
+			dojoType="dijit.form.TextBox" value="../../../com.ibm.social.as/gadget/ActivityStream.xml"/><br/>
+		<b>Container options:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<label for="viewSelect">View : </label>
+        <select id="viewSelect" name="viewSelect" dojoAttachPoint="_viewSelect"  dojoType="dijit.form.Select"><option value="canvas">canvas</option><option value="profile">profile</option><option value="none">&lt;none&gt;</option></select> 
+        <label for="width">Width:</label>
+        <input type="text" id="width" name="width" dojoAttachPoint="_width" style="width: 100px" value="800" dojoType="dijit.form.TextBox"/>
+        <br/>
+        <b>Gadget options:</b></br>
+        <div style="padding-left: 15px">
+			<label for="asfeed">AS Feed [Opt]:</label>
+			<input type="text" class="icTestGadgetUrl" name="asfeed" dojoAttachPoint="_asfeed" 
+				dojoType="dijit.form.TextBox" /><br/>
+			<label for="asconfig">AS Config [Opt]:</label>
+			<input type="text" class="icTestGadgetUrl" name="asconfig" dojoAttachPoint="_asconfig" dojoType="dijit.form.TextBox" /><br/>
+			
+			<label for="asmode">AS Mode [Opt]:</label>
+			<input type="text" class="icTestGadgetUrl narrowInput" name="asmode" dojoAttachPoint="_asmode" dojoType="dijit.form.TextBox"/>
+			
+			<label for="profileid">Profile Id [Opt]:</label>
+			<input type="text" class="icTestGadgetUrl narrowInput" name="profileid" dojoAttachPoint="_profileid" dojoType="dijit.form.TextBox"/>
+			
+			<label for="singleEntryId">Single Entry Id [Opt]:</label>
+			<input type="text" class="icTestGadgetUrl narrowInput" name="singleEntryId" dojoAttachPoint="_singleEntryId" dojoType="dijit.form.TextBox"/>
+			<br/>
+			
+			<label for="shareboxboardid">Sharebox Board Id [Opt]:</label>
+			<input type="text" class="icTestGadgetUrl narrowInput" name="shareboxboardid" dojoAttachPoint="_shareboxboardid" dojoType="dijit.form.TextBox" value=""/>
+			
+			<label for="shareboxposttype">Sharebox Post Type [Opt]:</label>
+			<input type="text" class="icTestGadgetUrl narrowInput" name="shareboxposttype" dojoAttachPoint="_shareboxpostype" dojoType="dijit.form.TextBox" value=""/>
+			<br/>
+			
+	        <label for="asMaxWidth">asMaxWidth [Opt]:</label>
+	        <input type="text" id="asMaxWidth" name="asMaxWidth" dojoAttachPoint="_asMaxWidth" style="width: 50px" dojoType="dijit.form.TextBox"/>
+	        &nbsp;&nbsp;&nbsp;
+	        
+	        <label for="asMinWidth">asMinWidth [Opt]:</label>
+	        <input type="text" id="asMinWidth" name="asMinWidth" dojoAttachPoint="_asMinWidth" style="width: 50px" dojoType="dijit.form.TextBox"/>
+	        &nbsp;&nbsp;&nbsp;
+	        
+	        <input type="checkbox" id="debugFF" name="debugFF" dojoAttachPoint="_debugFF" checked="true">Debug FF</input>
+	        &nbsp;&nbsp;&nbsp;&nbsp;
+	        <input type="checkbox" id="debug" name="debug" dojoAttachPoint="_debug">Debug</input>
+	        &nbsp;&nbsp;&nbsp;&nbsp;
+	        <input type="checkbox" id="useOAuth" name="useOAuth" dojoAttachPoint="_useOAuth" checked="checked">Use OAuth</input>
+	        &nbsp;&nbsp;&nbsp;&nbsp;
+	        <input type="checkbox" id="showSharebox" name="showSharebox" dojoAttachPoint="_showSharebox" checked="checked">Show Sharebox</input>
+	        &nbsp;&nbsp;&nbsp;&nbsp;
+	        <input type="checkbox" id="showFeedLink" name="showFeedLink" dojoAttachPoint="_showFeedLink" checked="checked">Show Feed Link</input>
+	        &nbsp;&nbsp;&nbsp;&nbsp;
+	        <input type="checkbox" id="showHeader" name="showHeader" dojoAttachPoint="_showHeader" checked="checked">Show Header</input>
+	        &nbsp;&nbsp;&nbsp;&nbsp;
+	        <input type="checkbox" id="isCommunityStream" name="isCommunityStream" dojoAttachPoint="_isCommunityStream">is Community Stream</input>
+	    </div>
+	<input name="persistAndRefreshButton" dojoAttachPoint="persistAndRefreshButton" type="button" value="ReLoad Page while persisting Current Settings" class="lotusBtn" />
+	</div> <!-- End form -->
+</div>

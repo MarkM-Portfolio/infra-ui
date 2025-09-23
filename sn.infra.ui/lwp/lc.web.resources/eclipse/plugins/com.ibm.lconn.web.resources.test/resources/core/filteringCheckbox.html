@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>IBM Connections - Filtering Checkbox</title>
+        <style>
+            div.notifyList.lotusHidden {
+                display: block;
+            }
+        </style>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+<!--
+        new lconn.core.FilteringCheckbox({
+            isSingleSelect: true,
+            feedFunction: dojo.hitch(this,"getFeed"),
+            controlsLegend: this.rs_template,
+            filterNames: dojo.hitch(this, "requestTemplates"),
+            groupOptions: templateGroups,
+            'class': 'templateList fieldNode'
+        }, this.templateSelect_AP); 
+ -->
+                <h1>Filtering Checkbox</h1>
+                <p>
+                Legacy widget to filter and select a list of items used in Activities. This widget allows single or multiple selection based on the value of the <code>isSingleSelect</code> property.
+                Each time an item is selected, the <code>personSelected()</code> event is fired, with two arguments: the item selected, and a flag set to <code>true</code> if the element is selected,
+                <code>false</code> if deselected.
+                </p>
+                <p>
+                The widget is hidden by default <em>(what were they thinking?)</em> and must be displayed by calling its method <code>getList()</code>.
+                Callers must set a <code>feedFunction</code> member function that accepts a page number as first argument, and a callback as second argument.
+                The callback accepts a JSON object with a <code>names</code> member, consisting of an array of objects with a <code>name</code>, <code>userid</code>
+                and an optional <code>disabled</code> properties.
+                </p>
+                <p>
+                If the property <code>groupOptions</code> is set to an array of objects with a <code>name</code> and <code>value</code> properties, it shows a dropdown.
+                Callers can connect to the <code>groupChanged()</code> event to be notified of the change and receive the selected group as argument.
+                Note that the widget itself won't do anything when the user chooses a different group. It's up to the caller to do something &mdash; typically set a different <code>feedFunction</code>.
+                </p>
+                
+                <h2>Single select</h2>
+                <p>Shows a list of radio buttons. Items can be filtered by typing in the text box.</p>
+                <div id="fc1" data-dojo-type="lconn.core.FilteringCheckbox" data-dojo-props="isSingleSelect:true, feedFunction:feedFunction1, personSelected:cd"></div>
+                <button onclick="dijit.byId('fc1').getList()">Load list</button>
+                <button onclick="dijit.byId('fc1').reset()">Reset</button>
+
+                <h2>Single select, with groups</h2>
+                <p>Notifies when group changes, allows listeners to change the feed function.</p>
+                <div id="fc2" data-dojo-type="lconn.core.FilteringCheckbox" data-dojo-props="isSingleSelect:true, groupOptions:GROUPS, feedFunction:feedFunction1, personSelected:cd, groupChanged:cd"></div>
+                <button onclick="dijit.byId('fc2').getList()">Load list</button>
+                <button onclick="dijit.byId('fc2').reset()">Reset</button>
+
+                <h2>Multiple select</h2>
+                <p>Shows a list of checkboxes, allowing multiple selection. Note that <code>personSelected()</code> is fired for each selection, and the caller must keep count of selected items.</p>
+                <div id="fc3" data-dojo-type="lconn.core.FilteringCheckbox" data-dojo-props="feedFunction:feedFunction1, personSelected:cd"></div>
+                <button onclick="dijit.byId('fc3').getList()">Load list</button>
+                <button onclick="dijit.byId('fc3').reset()">Reset</button>
+
+                <h2>Multiple select, with groups</h2>
+                <p>Note that items can appear disabled and cannot be selected.</p>
+                <div id="fc4" data-dojo-type="lconn.core.FilteringCheckbox" data-dojo-props="groupOptions:GROUPS, feedFunction:feedFunction1, personSelected:cd, groupChanged:cd"></div>
+                <button onclick="dijit.byId('fc4').getList()">Load list</button>
+                <button onclick="dijit.byId('fc4').reset()">Reset</button>
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+        
+        var FEED1 = {names:[{name:'Allie Singh',userid:'asingh'},{name:'Dina Maroni',userid:'dmaroni'},{name:'Ed El-Amon',userid:'eelamon',disabled:1}]};
+        var GROUPS = [{name:'Colleagues',value:1},{name:'Contacts',value:2}];
+        function feedFunction1(page, cb) {
+            cb(FEED1);
+        }
+        function cd() { console.dir(arguments); }
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:dojo.parser}
+    ${script:lconn.core.FilteringCheckbox}
+</body>
+</html>

@@ -1,0 +1,1665 @@
+/* Copyright IBM Corp. 2013, 2015  All Rights Reserved.              */
+
+.sc td {
+   vertical-align: top;
+}
+
+.sc .scTypeahead.lotusLoading {
+   height: auto;
+   width: auto;
+}
+.sc .scdirectory .sccontact .hightLightText {
+   text-decoration: underline;
+}
+.sc .lotusDialog .lotusDialogFooter .lotusLeft,
+.sc .slideDialog .dialogFooter .lotusLeft{
+   float: left;
+}
+.sc .lotusDialog .lotusDialogFooter .lotusLeft img.lotusLoading,
+.sc .slideDialog .dialogFooter .lotusLeft img.lotusLoading{
+   margin-top: 5px;
+}
+.sc .lotusDialog .lotusDialogFooter .lotusLeft p.processing,
+.sc .slideDialog .dialogFooter .lotusLeft p.processing{
+   float: right;
+   padding-left: 10px;
+}
+.scTypeahead ul.dijitMenu {
+   border: 0px solid #AAAAAA !important;
+   list-style: none;
+   background-color: white;
+   margin: 0;
+   padding: 0;
+   width: 320px !important;
+}
+
+ul.scTypeahead li{
+   list-style: none;
+}
+
+.scTypeahead ul.dijitMenu li {
+   list-style-image: none;
+   zoom: 1;
+   cursor: pointer;
+   margin: 0;
+   padding: 0;
+}
+
+.scTypeahead ul.testVisible {
+   border: 2px solid green !important;
+}
+
+.scTypeahead .dijitMenuItemSelected {
+   background-color: #E1F4F9;
+   color: #222222;
+}
+
+.scTypeahead .dijitPopup {
+   position: absolute;
+   z-index: 1000;
+}
+
+.scTypeahead .dijitBackgroundIframe {
+   /* iframe used to prevent problems with PDF or other applets overlaying menus etc */
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   border: 0;
+   padding: 0;
+   margin: 0;
+}
+
+.scTypeahead .lotusui30 .lotusVCard {
+   display: inherit;
+   border-radius: inherit;
+   font-size: inherit;
+   position: inherit;
+   width: inherit;
+   border: 1px solid #ccc;
+   -webkit-box-shadow: inherit;
+   -moz-box-shadow: inherit;
+   box-shadow: inherit;
+   background-color: inherit;
+}
+
+.scTypeahead .scPreview {
+   position: fixed;
+   border: 1px solid #ccc;
+}
+
+.scTypeahead .lotusui30 .lotusPhoto {
+   margin-top: 14px;
+   padding: 5px;
+   float: left;
+}
+
+.scTypeahead .lotusui30 .lotusDetails p,.lotusui30 .lotusDetails div.adr
+   {
+   font-size: 12px;
+   line-height: 1.2;
+}
+
+.scTypeahead .lotusui30 .lotusVCard #cardTable .lotusDetails {
+   background-color: inherit;
+}
+
+.scTypeahead .lotusui30 .lotusVCard .lotusPersonActions {
+   background-color: inherit;
+}
+
+.scTypeahead .lotusui30 .lotusVCard .lotusPersonActions {
+   padding: 0 0 6px;
+}
+
+.scTypeahead .lotusui30 .lotusVCard .lotusDetails {
+   background-color: inherit;
+   padding: 0 0 10px;
+}
+
+.scTypeahead .lotusui30 .lotusVCard .lotusPersonInfo h2 {
+   width: 130px;
+}
+
+ul.scTagTypeahead {
+   list-style: none;
+}
+
+.scTagTypeahead .dijitMenuItemSelected {
+   background-color: #E1F4F9;
+   color: #222222;
+}
+
+.scNoValue {
+   display: none;
+}
+
+.scExternalPhoto {
+   height: 48px;
+   width: 48px
+}
+
+.scIndicator {
+   background-repeat: no-repeat;
+   bottom: -36px;
+   float: left;
+   height: 12px;
+   position: relative;
+   right: -48px;
+   width: 12px;
+   z-index: 10;
+}
+
+.scImport ul {
+   list-style: decimal
+}
+
+.scImport .sourceIcon {
+   padding: 10px;
+}
+
+.scImport h4 ul {
+   font-weight: normal;
+}
+
+.scImport .sourceIconHover,.lotusui30 .scImport div.lotusList a.lotusSelected
+{
+   box-shadow: 0 0 75px #333 inset;
+   -moz-box-shadow: 0 0 75px #333 inset;
+   -webkit-box-shadow: 0 0 75px #333 inset;
+}
+
+.lotusui30 .scImport div.lotusList a {
+   color: #000000;
+   text-decoration: none;
+}
+
+.scImport div.lotusList {
+   margin-top: 30px;
+}
+
+.lotusui30 .scImport .lotusMenu .lotusAction{
+   margin-left: 50px;
+}
+.notesIcon {
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -93px -48px;
+   width: 96px;
+   height: 96px;
+}
+
+.lIcon {
+   background-image: url("../../images/contacts/l-icon.png");
+   background-repeat: no-repeat;
+   width: 96px;
+   height: 96px;
+}
+
+.gIcon {
+   background-image: url("../../images/contacts/g-icon.png");
+   background-repeat: no-repeat;
+   width: 96px;
+   height: 96px;
+}
+
+.outlookIcon {
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll 0px -48px;
+   width: 96px;
+   height: 96px;
+}
+
+.scShare, .scRemove{
+   width: 380px;
+}
+
+.scExportOptHeading{
+   width: 380px;
+   font-weight: bold;
+}
+
+.scShare textarea, .scInvite textarea{
+   min-height: 80px;
+   width: 99%;
+}
+.scInvite .inviteSection input, .scAddCommunity .addSection input{
+   width: 99%;
+}
+
+.scShare .shareSection, .scInvite .inviteSection, .scAddCommunity .addSection {
+   padding-top: 15px;
+}
+.scShare .shareSection .addButton img{
+   margin-left: 4px;
+}
+
+.scShare .typeaheadInput input{
+   border: 0 none;
+   width: 100%;
+}
+
+.sc .communityIcon{
+   width: 32px;
+   height: 32px;
+   padding: 2px;
+   float: left;
+}
+.sc .communityText{
+   line-height: 15px;
+   width: auto;
+   max-width: 228px;
+}
+
+.sc .communityTextDiv .communityText b{
+   color: #105CB6;
+}
+
+.sc .communityTextDiv{
+   margin-left: 3px;
+   min-height: 42px;
+   padding: 3px 0 0;
+}
+
+.lotusui30 .scform .lotusLeftLabels label {
+   width: 145px;
+}
+
+.lotusui30 .scform .lotusForm2 textarea {
+   width: 182px;
+}
+
+.lotusui30 .scform .lotusTags .lotusText {
+   width: 175px;
+}
+
+.lotusui30 .scNameDetail .lotusText {
+   width: 175px;
+}
+
+.lotusui30 .scNameDetail .zipText {
+   width: 75px;
+}
+
+.lotusui30 .scNameDetail select {
+   width: 175px;
+}
+
+.scform .lotusVertTable th {
+   padding-left: 0px;
+}
+
+.image-cropper .crop-node {
+   width: 100px;
+   height: 100px;
+   border: 1px dotted #999;
+   position: absolute;
+   left: 0;
+   top: 0;
+   cursor: move;
+}
+
+.image-cropper .crop-node img {
+   position: absolute;
+   z-index: 100;
+   width: 5px;
+   height: 5px;
+   border: 1px solid #ccc;
+}
+
+.image-cropper .crop-node .cropBlankImg {
+   width: 100%;
+   height: 100%;
+}
+
+.image-cropper .crop-node img.lt {
+   cursor: nw-resize;
+   left: -4px;
+   top: -4px;
+}
+
+.image-cropper .crop-node img.t {
+   cursor: s-resize;
+   top: -4px;
+}
+
+.image-cropper .crop-node img.rt {
+   cursor: ne-resize;
+   right: -4px;
+   top: -4px;
+}
+
+.image-cropper .crop-node img.r {
+   cursor: e-resize;
+   right: -4px;
+}
+
+.image-cropper .crop-node img.rb {
+   cursor: se-resize;
+   right: -4px;
+   bottom: -4px;
+}
+
+.image-cropper .crop-node img.b {
+   cursor: s-resize;
+   bottom: -4px;
+}
+
+.image-cropper .crop-node img.lb {
+   cursor: sw-resize;
+   left: -4px;
+   bottom: -4px;
+}
+
+.image-cropper .crop-node img.l {
+   cursor: e-resize;
+   left: -4px;
+}
+
+.image-cropper .block {
+   position: absolute;
+   opacity: 0.5;
+   filter: alpha(opacity = 0.5);
+   z-index: 50;
+   background-color: #000;
+}
+
+.image-cropper .block-l {
+   left: 0;
+   top: 149px;
+   width: 149px;
+   height: 102px;
+}
+
+.image-cropper .block-t {
+   top: 0;
+   width: 100%;
+   height: 149px;
+}
+
+.image-cropper .block-r {
+   right: 0;
+   top: 149px;
+   width: 149px;
+   height: 102px;
+}
+
+.image-cropper .block-b {
+   bottom: 0;
+   width: 100%;
+   height: 149px;
+}
+
+.image-cropper {
+   border: 0px solid #aaa;
+   position: relative;
+   background: white;
+}
+
+.image-cropper>img {
+   position: absolute;
+}
+
+.sc .lotusPhoto {
+   background-color: #FFFFFF;
+   border: 1px solid #CCCCCC;
+   box-shadow: 0 3px 5px #EEEEEE;
+   position:relative;
+   margin: 0 0 20px 0;
+}
+
+.dj_ie .sc .lotusPhoto {
+   position: relative;
+}
+.sc .lotusDialog .lotusDialogContent {
+   max-height: 400px;
+}
+.lotusui_ie8 .sc .lotusDialog .lotusDialogContent .scRemove .scInputVal{
+   word-break: break-all;
+}
+.sc .previewDialog{
+   width: 450px;
+}
+.sc .previewDialog .lotusClear {
+   padding-top: 10px;
+   clear: both;
+}
+
+.sc .previewDialog .lotusBtn {
+   width: 120px;
+   white-space: normal;
+}
+
+.dj_ie .sc .previewDialog .transparentFile{
+   cursor: pointer;
+   position: absolute;
+   z-index: 100;
+   opacity: 0;
+   height: 26px;
+   width: 120px;
+   font-size: 30px;
+   filter: alpha(opacity = 0);
+}
+
+.lotusui30 .lotusTabs a:link{
+   color: #666666;
+}
+
+.lotusui30 a.lotusInactive:link {
+   color: #777777;
+}
+
+.tabContet .lotusSort {
+   background-color: #FAFAFA;
+   border: 1px solid #CCCCCC;
+   padding: 2px;
+   border-radius: 2px 2px 2px 2px;
+}
+.noteCreateDate {
+   padding-right: 7px;
+}
+.editNoteTextArea{
+   width: 100%;
+}
+.scdirectory {
+   overflow: hidden;
+   z-index: 1;
+}
+.sccontact{
+   display: inline-block;
+   float: left;
+   height: 140px;
+   width: 48%;
+   margin: 3px;
+   border: 2px solid #FFF;
+}
+
+.ccMember {
+   display: inline-block;
+   height: 100%;
+   width: 100%;
+}
+.sc .ccMember .lotusFloat img{
+   border: 2px solid white;
+   width: 115px;
+   height: 115px;
+}
+
+.scdirectory .lotusFloat {
+   display: inline-block;
+   margin: 10px;
+}
+.scdirectory .lotusFloatContent {
+   display: inline-block;
+   padding: 10px 0;
+   text-align: left;
+   vertical-align: top;
+   width: 60%;
+}
+
+.dj_gecko .scdirectory > a {
+    display: block;
+    outline: none;
+}
+.scdirectory .lotusFloatContent .lotusPerson, .scdirectory .lotusFloatContent div,
+#profilesTabContent .lotusClear > a{
+   display: inline-block;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   width: 100%;
+   white-space: nowrap;
+}
+.scdirectory .lotusFloatContent .scNetwork{
+   white-space: normal;
+}
+.scdirectory .lotusFloatContent .lotusPerson{
+   padding-bottom: 3px;
+   white-space: nowrap;
+}
+.scdirectory .lotusFloatContent .jobTitle{
+   color: #222222;
+   white-space: nowrap;
+   width: 10%;
+}
+.scdirectory .lotusFloatContent .company{
+   white-space: nowrap;
+}
+.ccMember .lotusPerson {
+   color: #222222 !important;
+   font-size: 18px;
+   font-weight: bold;
+   margin-top: 6px;
+   text-decoration: none !important;
+}
+.scdirectory .lotusFloatContent .inMyNetwork {
+   margin-top: 5px;
+}
+
+.itemHover .ccMember {
+   background-color: #ECF4F6;
+}
+
+.lotusSectionBody .entry{
+   margin: 5px 0;
+   min-height: 34px;
+}
+.lotusSectionBody .entry .lotusFloat {
+   margin-right: 10px;
+}
+.lotusSectionBody .entry .lotusFloatContent .lotusPerson, .lotusDialog .lotusPerson{
+   font-weight: bold;
+}
+.lotusSectionBody .entry .lotusFloatContent{
+   padding-left: 0px;
+}
+.sc .lotusActionBar{
+   border-color: #E0E0E0;
+   border-style: solid;
+   border-width: 1px 0;
+   float: none;
+   height: auto;
+   padding: 15px 3px;
+}
+.sc .lotusActionBar.scrolling{
+   background-color: #FFFFFF;
+}
+.lotusui30 .lotusHeader img {margin:0;}
+.sc .contactsSearch {
+   background-color: white;
+   display: inline-block;
+   width: 70%;
+   border-radius: 15px 15px 15px 15px;
+   border: 1px solid #E3E3E3;
+   padding: 3px 0px;
+}
+.sc .scSearchInput{border: 0px;margin-left:8px; width:100%;text-overflow:ellipsis;}
+
+.sc .contactsSearch div.lotusLeft{margin-top: 2px;}
+.sc .contactsSearch.filter_0 .inputWrap{width: 95%;}
+
+.sc .contactsSearch.filter_1 .lotusFilters2 {display: inline; margin-left:8px; width: 80px;}
+@media only screen and (max-width: 1286px){
+   .sc .contactsSearch.filter_1 .inputWrap{width: 75%;}
+}
+@media only screen and (min-width: 1287px){
+   .sc .contactsSearch.filter_1 .inputWrap{width: 83%;}
+}
+
+.sc .contactsSearch.filter_2 .lotusFilters2 {display: inline; margin-left:8px; width: 160px;}
+@media only screen and (max-width: 1380px){
+   .sc .contactsSearch.filter_2 .inputWrap{width: 60%;}
+}
+@media only screen and (min-width: 1381px){
+   .sc .contactsSearch.filter_2 .inputWrap{width: 70%;}
+}
+
+.sc .contactsSearch.filter_3 .lotusFilters2 {display: inline; margin-left:8px; width: 240px;}
+@media only screen and (max-width: 1408px){
+   .sc .contactsSearch.filter_3 .inputWrap{width: 40%;}
+   .sc .contactsSearch .inputWrap{width: 40%;}
+}
+@media only screen and (min-width: 1409px){
+   .sc .contactsSearch.filter_3 .inputWrap{width: 55%;}
+   .sc .contactsSearch .inputWrap{width: 65%;}
+}
+
+.sc .contactsSearch .lotusFilters2 {display: inline; margin-left:8px; width: 240px;}
+.sc .contactsSearch .lotusFilters2 a.lotusFilter .name{overflow:hidden; width:50px; text-overflow:ellipsis; display: inline-block;}
+.sc .contactsSearch .lotusFilters2 a.lotusFilter:first-child{margin-left: 1px;}
+.sc .contactsSearch .lotusFilters2 img.lotusDelete{margin: 3px 5px;}
+.sc .lotusFilters2 a.lotusFilter {
+border-radius: 15px;
+overflow: hidden;
+text-overflow: ellipsis;
+max-width: 100%;
+}
+.sc .lotusFilters2 a.lotusFilter .name{
+   display: inline-block;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   width: 50px;
+}
+.sc .scActionsBar {display:inline-block;padding-top: 4px;}
+/*
+Add !important to overwrite the important style from oneui
+*/
+.sc .scActionsBar .lotusBtnDisabled{
+   background-color: transparent !important;
+   box-shadow: none !important;
+}
+.sc .lotusBtnContainer{min-height: 25px;padding: 20px 0;}
+.sc .ccMember .lotusBtnContainer{
+   min-height: 25px;
+   padding: 5px 5px 0 0;
+}
+.sc .lotusFloatContent .lotusBtnContainer{padding: 0;margin-top: -6px;}
+.sc .lotusHeader div.lotusBtnContainer{margin-top: -2px; margin-bottom: 15px;padding:0;}
+.sc div.lotusBtnContainer .scActionIcon {padding: 0 3px 5px; margin: 0 5px;}
+.sc div.lotusBtnContainer .scActionIcon img{margin:5px 0 0 0;}
+.sc div.lotusBtnContainer .iconForward img.iconForward {
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -21px -31px transparent;
+   height: 17px;
+   width: 21px;
+}
+.sc .ccMember div.lotusBtnContainer .iconForward:hover img.iconForward, .sc .ccMember  div.lotusBtnContainer .iconForward:focus img.iconForward {
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -42px -31px transparent;
+   height: 17px;
+   width: 21px;
+}
+
+.sc img.iconNetwork{
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -615px -13px transparent;
+   height: 24px;
+   width: 24px;
+}
+.sc .iconDelete img.iconDelete{
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -428px -32px transparent;
+   height: 18px;
+   width: 17px;
+}
+.sc .iconRemove img.iconRemove{
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -166px -32px transparent;
+   height: 17px;
+   width: 17px;
+}
+.sc .iconMove img.iconMove{
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -85px -32px transparent;
+   height: 16px;
+   width: 16px;
+}
+.sc .ccMember div.lotusBtnContainer .iconRemove:hover img.iconRemove, .sc .ccMember  div.lotusBtnContainer .iconRemove:focus img.iconRemove {
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -183px -32px transparent;
+   height: 17px;
+   width: 17px;
+}
+.sc div.lotusBtnContainer .iconAdd img.iconAdd {
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -284px -32px transparent;
+   height: 17px;
+   width: 17px;
+}
+
+.sc div.lotusBtnContainer .iconEdit img.iconEdit {
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -116px -32px transparent;
+   height: 16px;
+   width: 16px;
+}
+.sc .ccMember  div.lotusBtnContainer .iconEdit:hover img.iconEdit, .sc .ccMember  div.lotusBtnContainer .iconEdit:focus img.iconEdit {
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -132px -32px transparent;
+   height: 16px;
+   width: 16px;
+}
+.sc div.lotusBtnContainer .iconMoreActions img.iconMoreActions {
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -340px -32px transparent;
+   height: 17px;
+   width: 17px;
+}
+a img.icon16, img.icon16 {
+   background-position: center center;
+   background-repeat: no-repeat;
+   height: 23px;
+   width: 23px;
+}
+a img.icon32{
+   height: 32px;
+   width: 32px;
+}
+.sc .profileDataTable {
+   border-spacing: 0;
+   width: 100%;
+}
+.lotusui30 .lotusHeader .lotusHeading{font-size:30px;}
+.sc .icon30{height:30px;width:30px;margin-right:10px;}
+.sc .iconMail30{
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -502px -27px transparent;
+   height: 30px;
+   width: 30px;
+}
+.sc .iconPhone30{
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -549px -19px transparent;
+   height: 30px;
+   width: 30px;
+}
+.sc .iconLocation30{
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -527px 0 transparent;
+   height: 30px;
+   width: 30px;
+}
+.sc .iconInfo{
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -579px -13px transparent;
+   height: 30px;
+   width: 30px;
+}
+.sc .profileDataTable{padding-bottom: 5px;}
+.sc .profileDataTable.dojoDndAvatar{padding-bottom: 0px;}
+.sc .profileDataTable .lotusText{padding:4.5px;width:272px;margin:0 1px 5px 0;border:1px solid #CCCCCC;}
+.sc .scSceneBody .profileDataTable .scFieldTable .yearMonthDayPicker .yearInput{width: 43%;}
+.sc .scSceneBody .profileDataTable .scFieldTable .yearMonthDayPicker .monthSelect{
+   width: 28%;
+}
+.sc .scSceneBody .profileDataTable .scFieldTable .yearMonthDayPicker .daySelect{width: 20%;}
+.sc .scSceneBody .profileDataTable .scFieldTable .yearMonthDayPicker td.dijitButtonContents{
+   width: 100%;
+}
+textarea.lotusText{height:100px;}
+.sc .scDottedBottom{border-bottom:1px dotted #E0E0E0;}
+.sc .contactHeader{color: #444444;font-size: 1.7em;font-weight: normal;line-height: 1.2em;margin: 0;padding: 0;display:inline;}
+.sc .scLeftSide{width: 500px;}
+.sc .scRightSide{width: 350px;}
+.sc .scFieldTable,.sc .scFieldTableAvatar{width:100%;border-spacing: 0;}
+.sc .scActionBar{padding:5px;border-top: 1px solid #E0E0E0;}
+.sc .dijitMenuItemIconCell,
+.sc .lotusMsgBox{display:none;}
+.sc .scEditButton{position:absolute;top:5px;right:5px;z-index:1;}
+.sc a.scEditButton img{background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -247px -32px transparent;width:18px;height:18px;}
+.sc .profileDataTable .dijitTextBox .dijitValidationContainer{display:none;}
+.sc .profileDataTable .dijitComboBox .dijitInputField .dijitInputInner{padding:3px 0;}
+.sc .profileDataTable .dijitTextBox, .dijitComboBox, .dijitSpinner{width:100%; border-color: #CCCCCC;}
+.sc .dropDown .dijitComboBox{min-width:270px;border: 1px solid #CCCCCC; padding-left: 5px !important;}
+.lotusui_ie8 .lotusui30 .lotusMenu .lotusMenuSection{
+   border-bottom: 0px solid;
+}
+.lotusui_ie8 .sc .scSceneBody .profileDataTable .scFieldTable .yearMonthDayPicker .monthSelect{
+   width: 27%;
+}
+
+.sc .scHeader .lotusMeta{
+   margin-top: 10px;
+}
+.sc .scHeader .lotusMeta img{
+   margin-right: 3px;
+   margin-top: -3px;
+}
+.sc .forwardDlgContainer{
+   width: 400px;
+}
+.sc .slideDialog {
+   box-shadow: 0 0 40px #222222;
+   left: 30%;
+   position: absolute;
+   top: 0;
+   overflow: hidden;
+   z-index: 999;
+}
+.dj_ie8 .sc .slideDialog{
+   position: fixed;
+}
+
+.sc .dijitPopup .dijitMenuExpand{
+   width: 0px;
+   padding: 0;
+}
+
+.sc .slideDialog .dialogBody{
+   background-color: #4F4F4F;
+   box-shadow: 0 0 75px #222222 inset;
+   color: #EEEEEE;
+   overflow-x: hidden;
+   overflow-y: auto;
+   min-height: 300px;
+   position: relative;
+   width: 100%;
+}
+.sc .slideDialog .dialogImportList{
+   background-color: #FFFFFF;
+   position: relative;
+   width: 100%;
+}
+.sc .slideDialog .dialogImportList .importHeader{
+   background-color: #4F4F4F;
+   line-height: 1.2;
+   padding: 15px;
+   color: #eee;
+}
+
+.sc .slideDialog .dialogImportList h1,
+.sc .lotusWelcomeBox{
+   margin: 0;
+}
+
+.sc .slideDialog .dialogImportList .importBody{
+   overflow-y: auto;
+   height: 350px;
+}
+.sc .lotusColRight{
+   width: 13%;
+}
+.sc .slideDialog .dialogImportList .importBody .duplicate{
+   background-color: #FFEE9F;
+}
+.sc .slideDialog .dialogFooter{
+   background-color: #FFFFFF;
+   border-top: 1px solid #EFEFEF;
+   padding: 10px;
+   text-align: right;
+}
+
+.sc .slideDialog .dialogPanelWrap {
+   padding: 30px 40px 0;
+   float: left;
+}
+
+.sc .slideDialog .dialogPanel {
+   -moz-box-sizing: border-box;
+   width: 400px;
+   overflow-y: auto;
+   position: relative;
+   color: #fff;
+}
+.sc .slideDialog .title {
+   font-size: 18px;
+   color: #FFFFFF;
+}
+.sc .slideDialog .dialogPanel .title {
+   color: #FFF;
+}
+.sc .slideDialog .sourceIcons{
+   text-align: center;
+   display: table;
+   width: 100%;
+}
+.sc .slideDialog .dialogPanel ul{
+   list-style: decimal;
+   font-weight: normal;
+   padding: 0 0 0 18px;
+}
+.sc .slideDialog .dialogPanel ul li h4 ul{
+   padding: 0 0 0 40px;
+}
+.sc .slideDialog .dialogPanel ul li{
+   padding: 2px 0 6px;
+}
+.sc .slideDialog .dialogPanel ul li h4{
+   margin: 5px 0 5px -4px;
+}
+.sc .slideDialog .dialogPanel ul li div{
+   padding: 5px 1px 3px;
+}
+.sc .slideDialog .lotusCenter{
+   text-align: center;
+   padding-top: 30px;
+}
+.sc .slideDialog .dialogPanel .changeBtn{
+   margin-left: 5px;
+   margin-right: 10px;
+}
+
+.sc .slideDialog .errorText{
+   background-color: #FFFFFF;
+   border: 1px solid #C81E1E;
+   color: #C81E1E;
+   margin: -5px 0 0 5px;
+}
+.sc .slideDialog .fileNamePreview{
+   text-overflow:ellipsis;
+   overflow: hidden;
+   max-width: 85px;
+}
+.dj_ie .sc .slideDialog .transparentFile{
+   cursor: pointer;
+   position: absolute;
+   z-index: 100;
+   opacity: 0;
+   height: 26px;
+   width: 80px;
+   font-size: 30px;
+   filter: alpha(opacity = 0);
+}
+
+.sc.lotusui30 .lotusSectionBody[dojoattachpoint="tagCloudContent"], 
+.sc.lotusui30 #socialTagsSubArea, .lotusui30 #lconnTagCloudContent, 
+.sc.lotusui30 .lotusSection .lconnTagCloudContent, 
+.sc.lotusui30 .lotusWidget2 .lconnTagCloudContent {
+   background: inherit;
+}
+
+.sc.lotusui30 .lotusTitleBar {
+   z-index: auto;
+}
+
+.sc .dijitTextBox .dijitArrowButton{
+   display: block;
+}
+
+.sc .dijitTextBox .dijitInputField {
+   padding: 2px;
+   width: 86%;
+}
+/*
+Add !important to workround connections css defect 89266
+*/
+.sc .dijitComboBox .dijitArrowButtonInner {
+   width: 16px !important;
+}
+.sc .profileDataTable .firstRow td, .sc .profileDataTable td.tableSpacer {border:0px;padding:2px 0;}
+.sc .scFieldTable td {
+   border-top: 1px dotted #C4C5C4;
+   padding: 15px 0 10px;
+   text-align: left;
+   vertical-align: top;
+}
+.sc .scFieldTable td.dijitReset {
+   padding: 0;
+}
+.editRow {
+   list-style-type: none;
+   margin: 0;
+   overflow: hidden;
+   padding: 0;
+   width: 100%;
+}
+.sc ul.editRow  li {
+   float: left;
+   margin-right: 15px;
+   padding:0;
+}
+.sc ul.editRow  li.iconNode {
+   margin-right: 5px;
+}
+.sc .scFieldTable .lconnEmpty{margin-top:0px;}
+.sc .lotusContent .scFieldTable .lotusTable tr td{padding:0 0 10px 0;border:0;}
+.sc .scFieldList li{padding:5px 0; float:left;width:265px;}
+.sc .scNotesList{margin:10px 0;}
+.sc.lotusui30 .lotusStream .lotusPaging {
+   background: none repeat scroll 0 0 transparent;
+   border: solid #DDDDDD !important;
+   border-width:1px 0 !important;
+   height: 100%;
+   padding-left: 0;
+   padding-right: 0;
+   border-radius: inherit;
+   margin: 5px 0;
+   padding: 5px 0;
+}
+.sc .lotusActionBar input.lotusButtonSubmit{background-color:#2D7AAF;color:#FFFFFF;text-shadow: 0 1px 1px #373737;background-image:none;}
+.sc .profileDataTable .firstRow .lotusSection{margin:0 0 0 5px;}
+.sc .profileDataTable .firstRow .lotusSection h2{font-size:16px;}
+.sc .scIndentRight10{margin-right:10px;}
+.sc .dynamicSelection.lotusFilters2{margin-bottom:5px; padding-left: 20px}
+.sc .dynamicSelection.lotusFilters2 a.lotusFilter .name{overflow:hidden; width:75px; text-overflow:ellipsis; display: inline-block;}
+.sc .dynamicSelection.lotusFilters2 img.lotusDelete{margin: 3px 5px;}
+.sc .dynamicSelection.lotusFilters2 a.lotusFilter:first-child{margin-left: 2px;}
+.sc .lotusMain .lotusContent{
+   background-color: #FFFFFF;
+   padding: 0;
+   margin: 0;
+   border: none;
+}
+.sc .lotusMain .lotusContent.lotusSceneAction{
+   padding: 20px;
+   margin: 25px 0 0;
+}
+.sc .lotusMain .lotusContent .lotusHeader{
+   margin: 0;
+   padding: 15px 0 0;
+   background-color: #F0F0F0;
+   z-index: 1;
+} 
+.sc.lotusui30 .lotusContent .lotusHeader .lotusPaging{
+   filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#F7F7F7',endColorStr='#E8E8E8',gradientType='0');
+   background: -moz-linear-gradient(center top , #F7F7F7 0%, #E8E8E8 100%) repeat scroll 0 0 transparent;
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(100%, #e8e8e8));
+   border: 1px solid #CCCCCC;
+   padding: 10px 15px;
+   border-radius: 5px 5px 0 0;
+   margin: 15px 0 0;
+}
+.sc .slideDialog .lotusStream .lotusMessage2.lotusWarning{
+   border: none;
+   border-radius: 0 0 0 0;
+   margin: 0;
+   padding: 0;
+}
+.sc .slideDialog .lotusStream .lotusMessage2.lotusWarning img.lotusIcon.lotusIconMsgWarning{
+   margin: 10px 10px -17px 10px;
+}
+.sc .slideDialog .lotusStream .lotusMessage2.lotusWarning .lotusMessageBody{
+   padding: 8px 6px 8px 15px;
+   word-break: break-word;
+}
+.sc .slideDialog .lotusStream .lotusPaging{
+   border-top: medium none !important;
+   margin: 0;
+   padding: 8px 10px 6px;
+}
+.sc .slideDialog .lotusStream .lotusTable tr.duplicate{
+   background-color: #FFFFFF;
+}
+.sc .slideDialog .lotusStream .lotusTable td{
+   border: medium none;
+   height: 60px;
+   vertical-align: middle;
+}
+.sc .slideDialog .lotusStream .lotusTable .lotusPhoto{
+   margin: 0;
+}
+.sc .slideDialog .lotusStream .lotusTable td:first-child{
+   padding: 0 0 0 10px;
+}
+.sc .slideDialog .lotusStream .lotusTable td:last-child{
+   padding: 0 10px 0 0;
+}
+.sc .slideDialog .dialogFooter .lotusInlinelist{
+   color: #6e6e6e;
+   float: left;
+   padding: 5px;
+}
+.sc .slideDialog .lotusStream .lotusPaging .lotusInlinelist .lotusFirst{
+   margin: 0 0 0 -2px;
+   padding: 0 4px 0 0;
+}
+.sc .scSceneBody .lotusInlinelist li.lotusFirst .lotusText{
+   width: 100%;
+}
+.sc .scSceneBody .lotusInlinelist li.lotusFirst{
+   width: 93%;
+}
+.sc .scFieldTable.scAddContact li.lotusFirst .lotusText{
+   width: 72%;
+   height: 3em;
+}
+.sc .scSceneBody .scEditContact,.sc .scSceneBody .scViewContact{
+   width:65%;
+}
+.sc .scSceneBody.scViewContact .scFieldList .lotusInlinelist li.lotusFirst, 
+.sc .scSceneBody .profileFields .lotusInlinelist li.lotusFirst{
+   width: 45%;
+}
+.sc .scSceneBody.scEditContact .scFieldList .lotusInlinelist li.lotusFirst,
+.sc .scSceneBody.scAddContact .scFieldList .lotusInlinelist li.lotusFirst, 
+.sc .scSceneBody .profileFields .lotusInlinelist li.lotusFirst{
+   width: 54%;
+}
+.sc .scSceneBody .profileFields .lotusInlinelist li.lotusFirst + li{
+   width: auto;
+   min-width: 172px;
+}
+.sc .scSceneBody .profileFields .lotusInlinelist li.lotusFirst.iconNode{
+   margin-right: 7px;
+   width: 2%;
+   min-width: 0;
+}
+.sc .slideDialog .lotusStream .lotusPaging .lotusInlinelist .lotusFirst .lotusCheckbox{
+   margin: 0;
+   position: relative;
+   top: 2px
+}
+.sc .lotusMain .lotusStream{
+   border: 1px solid #DDDDDD;
+   border-top: none;
+   min-height: 320px
+}
+.sc .lotusMain .lotusStream .lotusMessage3{
+   padding: 5px 10px 0;
+}
+.sc .lotusMain .lotusStream .lotusMessage3 .lotusMessage2.lotusSuccess{
+   margin: 5px 0 -3px;
+}
+.sccontact .lotusFloatContent .lotusPerson span:hover{
+   text-decoration: underline !important;
+   color: blue !important;
+}
+.sc .lotusInactive{
+   color: #665555;
+}
+.scdirectory .lotusFloatContent{
+   overflow: visible;
+}
+.sccontact{
+   width: 48%;
+}
+.sccontact .lotusFloatContent{
+   width: 43%;
+}
+.sc .forwardDlgContainer .lotusMeta{
+   white-space: pre-wrap;
+   word-break: break-word;
+}
+/*overwrite others styles like package3.css/common.css/gen4.css*/
+.sc.lotusui30dojo .dijitSelect .dijitButtonText{
+   padding:0;
+}
+/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
+
+@media only screen and (min-width: 480px) {
+.sccontact {
+   width: 80%;
+   display: inline-block;
+   clear: none;
+   height: 100%;
+   margin: 3px;
+}
+.sccontent {
+   width: 100%;
+   padding: 20px;
+}
+.sccontact .lotusFloatContent{
+   padding: 0;
+}
+.sccontact .lotusFloatContent .lotusRight{
+   padding-top: 10px;
+}
+.sccontact .lotusFloatContent .lotusPerson{
+   margin-top: -8px;
+}
+.sccontact img {
+   width: 75px;
+   height: 75px;
+}
+.sc .lotusFrame {
+   min-width: 60%;
+}
+.sc .lotusFrame .lotusTitleBar .lotusRightCorner{
+   min-width: 60%;
+}
+.sc .lotusFrame .lotusMain{
+   min-width: 824px;
+}
+/* .sc .lotusFrame .lotusMain .lotusColRight{ */
+/*   display: none; */
+/* } */
+.sc .contactsSearch {
+   width: 50%;
+}
+.sc .lotusMain .lotusContent:before{
+   width: 60%;
+}
+.ccMember .lotusPerson{
+   font-size: 12px;
+}
+.scdirectory .lotusFloatContent .jobTitle,
+.scdirectory .lotusFloatContent div{
+   font-size: 11px;
+}
+}
+@media only screen and (min-width: 568px) {
+body{
+   min-width: 1000px;
+   overflow-x: scroll;
+}
+.sccontact {
+   width: 75%;
+   display: inline-block;
+   clear: none;
+   height: 100%;
+   margin: 3px;
+}
+.sccontent {
+   width: 100%;
+   padding: 20px;
+}
+.sccontact .lotusFloatContent{
+   padding: 0;
+   width: 46%;
+}
+.sccontact .lotusFloatContent .lotusRight{
+   padding-top: 10px;
+}
+.sccontact .lotusFloatContent .lotusPerson{
+   margin-top: -8px;
+}
+.sccontact img {
+   width: 75px;
+   height: 75px;
+}
+.sc .lotusFrame {
+   min-width: 60%;
+}
+.sc .lotusFrame .lotusTitleBar .lotusRightCorner{
+   min-width: 60%;
+}
+/* .sc .lotusFrame .lotusMain .lotusColRight{ */
+/*   display: none; */
+/* } */
+.sc .contactsSearch {
+   width: 50%;
+}
+.sc .lotusMain .lotusContent:before{
+   width: 60%;
+}
+/* .sc .lotusFrame .lotusMain .lotusColRight{ */
+/*   display: none; */
+/* } */
+.ccMember .lotusPerson{
+   font-size: 12px;
+}
+.scdirectory .lotusFloatContent .jobTitle,
+.scdirectory .lotusFloatContent div{
+   font-size: 11px;
+}
+}
+/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
+
+@media only screen and (min-width: 769px) {
+body{
+   min-width: 1000px;
+   overflow-x: scroll;
+}
+.sccontact {
+   width: 77%;
+   display: inline-block;
+   clear: none;
+   height: 100%;
+   margin: 3px;
+}
+.sc .lotusFrame {
+   min-width: 60%;
+}
+.sc .lotusFrame .lotusTitleBar .lotusRightCorner{
+   min-width: 60%;
+}
+.sc .lotusMain .lotusContent:before{
+   width: 60%;
+} 
+/* .sc .lotusFrame .lotusMain .lotusColRight{ */
+/*   display: block; */
+/* } */
+.sccontact .lotusFloatContent .lotusPerson {
+   margin-top: 0;
+}
+.sccontact img {
+   width: 95px;
+   height: 95px;
+}
+.scdirectory .lotusFloatContent {
+   padding: 0;
+   width: 54%;
+}
+.ccMember .lotusPerson{
+   font-size: 12px;
+}
+
+.scdirectory .lotusFloatContent .jobTitle,
+.scdirectory .lotusFloatContent div{
+   font-size: 11px;
+}
+}
+@media only screen and (min-width: 830px) {
+body{
+   min-width: 1000px;
+   overflow-x: scroll;
+}
+.sccontact {
+   width: 70%;
+   display: inline-block;
+   clear: none;
+   height: 100%;
+   margin: 3px;
+}
+.sc .lotusFrame {
+   min-width: 60%;
+}
+.sc .lotusFrame .lotusTitleBar .lotusRightCorner{
+   min-width: 60%;
+}
+.sc .lotusMain .lotusContent:before{
+   width: 60%;
+} 
+
+.sccontact .lotusFloatContent .lotusPerson {
+   margin-top: 0;
+}
+.sccontact .lotusFloatContent .lotusPerson span:hover{
+   text-decoration: underline !important;
+   color: blue !important;
+}
+.sccontact img {
+   width: 95px;
+   height: 95px;
+}
+.scdirectory .lotusFloatContent {
+   padding: 0;
+   width: 50%;
+}
+.ccMember .lotusPerson{
+   font-size: 16px;
+}
+.scdirectory .lotusFloatContent .jobTitle,
+.scdirectory .lotusFloatContent div{
+   font-size: 12px;
+}
+}
+@media only screen and (min-width: 1000px) {
+body{
+   min-width: 1000px;
+   overflow-x: scroll;
+}
+.sccontact {
+   width: 48%;
+   display: inline-block;
+   clear: none;
+   height: 100%;
+   margin: 3px;
+}
+.scdirectory .lotusFloatContent {
+   padding: 0;
+   width: 42%;
+}
+
+.sc .scSceneBody .scEditContact, .sc .scSceneBody .scViewContact{
+   width: 84%;
+}
+.sc .scFieldTable.scAddContact li.lotusFirst .lotusText{
+   width: 89%;
+}
+}
+@media only screen and (min-width: 1025px) {
+.sccontact {
+   width: 47%;
+   display: inline-block;
+   clear: none;
+   height: 100%;
+   margin: 3px;
+}
+.scdirectory .lotusFloatContent {
+   padding: 0;
+   width: 45%
+}
+.sccontact img {
+   width: 100px;
+   height: 100px;
+}
+.sc .lotusColRight {
+   width: 170px;
+   margin-left: 15px;
+}
+.ccMember .lotusPerson{
+   font-size: 16px;
+}
+}
+@media only screen and (min-width: 1260px) {
+.sccontact {
+   width: 32%;
+   display: inline-block;
+   clear: none;
+   height: 100%;
+   margin: 3px;
+}
+.scdirectory .lotusFloatContent {
+   padding: 0;
+   width: 47%
+}
+.sccontact img {
+   width: 100px;
+   height: 100px;
+}
+.sc .lotusColRight {
+   width: 200px;
+   margin-left: 15px;
+}
+.ccMember .lotusPerson{
+   font-size: 16px;
+}
+.sc .scSceneBody .scEditContact, .sc .scSceneBody .scViewContact{
+   width: 80%;
+}
+.sc .scFieldTable.scAddContact li.lotusFirst .lotusText{
+   width: 72%;
+}
+}
+@media only screen and (min-width: 1200px) {
+.scdirectory .lotusFloatContent {
+   padding: 0;
+   width: 44%
+}
+}
+@media screen and (min-width:1360px) {
+.sccontact{
+   width: 32%;
+   display: inline-block;
+   height: 100%;
+   margin: 3px;
+   border: 2px solid #FFF
+}
+.scdirectory .lotusFloatContent {
+   display: inline-block;
+   padding: 0;
+   text-align: left;
+   vertical-align: top;
+}
+.ccMember .lotusPerson{
+   font-size: 16px;
+}
+}
+@media screen and (min-width:1400px) {
+.scdirectory .lotusFloatContent {
+   width: 50%;
+}
+.sc .scSceneBody.scViewContact .scFieldList .lotusInlinelist li.lotusFirst, 
+.sc .scSceneBody .profileFields .lotusInlinelist li.lotusFirst{
+   width: 40%;
+}
+.sc .scSceneBody.scEditContact .scFieldList .lotusInlinelist li.lotusFirst,
+.sc .scSceneBody.scAddContact .scFieldList .lotusInlinelist li.lotusFirst, 
+.sc .scSceneBody .profileFields .lotusInlinelist li.lotusFirst{
+   width: 50%;
+}
+.sc .scSceneBody .scFieldList .lotusInlinelist .lotusFirst.lotusBreakWord{
+   width: 50%
+}
+.sc .scSceneBody .scEditContact, .sc .scSceneBody .scViewContact{
+   width: 70%;
+}
+}
+@media screen and (min-width:1520px) {
+.sccontact{
+   width: 32%;
+   display: inline-block;
+   height: 100%;
+   margin: 3px;
+   border: 2px solid #FFF
+}
+.sccontact img {
+   width: 118px;
+   height: 118px;
+}
+.sc .lotusColRight {
+   width: 312.5px;
+   margin-left: 25px;
+}
+}
+.contactSelected {
+   border-color: #BBBBBB;
+   border: 2px solid #1878A0;
+}
+.contactSelected .ccMember {
+   background-color: #ECF4F6;
+}
+.sc .lotusColRight .lotusSection .lotusArrow{
+   background: url("../../images/contacts/contactsSprite.png") no-repeat scroll -449px -36px transparent;
+   float: right;
+   height: 11px;
+   margin: 4px 0 0;
+   width: 11px;
+   opacity: 1;
+}
+.sc .lotusColRight{
+   padding: 18px 0 25px 0;
+}
+.sc .lotusColRight .lotusSection #lconnTagCloudContent.lotusSectionBody{
+   border: none;
+}
+.sc .lotusContent .lconnEmpty{
+   margin: 20px;
+}
+.sc .dialogImportList .lconnEmpty{
+   padding: 20px;
+}
+.sc .lotusMain .lotusColLeft .lotusMenu .lotusMenuSection .subNavItem a{
+   padding-left: 35px;
+}
+.sc .lotusEllipsis{
+   width: 0;
+}
+.sc .lotusColRight .lotusList .lotusAlignLeft .lotusLeft{
+   max-width: 280px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+.sc .companyNodeDiv{
+   padding: 10px 5px 10px 20px;
+   border-bottom: 1px solid #EEEEEE;
+}  
+ 
+.sc .companyNodeDiv a{
+   color: #1970B0;
+   font-size: 16px;
+   font-weight: bold;
+   text-decoration: none;
+}
+
+.sc .companyFilter{
+   font-size: 18px;
+   font-weight: bold;
+   padding: 12px 5px 12px 20px;
+   color: #222222;
+   border-left: 1px solid #DDDDDD;
+   border-right: 1px solid #DDDDDD;
+   border-bottom: 1px solid #DDDDDD;
+}
+.sc .lotusRadioLabel {
+   margin-left: 5px;
+   vertical-align: middle;
+}
+.sc .lotusRadio {
+   vertical-align: middle;
+   margin-top: 0px;
+}
+.sc .lotusRadioDiv {
+   margin: 6px;
+}
+
+.sc .scExpLotusRadioDiv {
+   margin: 6px;
+   font-weight: normal;
+}
+.sc .scExpLotusRadioLabel {
+   margin-left: 5px;
+   font-weight: normal;
+   vertical-align: middle;
+}
+
+.sc .inviteToJoinCateBtns a{
+   color: #222222;
+   font-size: 13px;
+   text-decoration: none;
+}
+
+.sc .inviteToJoinCateBtns li.lotusFirst{
+   padding-right: 10px;
+}
+
+.sc .inviteToJoinCateBtns a.lotusBold{
+   font-weight: bold;
+}
+
+.sc .arrowTotop{
+   background-position: 2px -725px;
+   margin-top: 2px;
+   position: absolute;
+   opacity: 1;
+   width: 16px;
+   height: 16px;
+}
+.sc.lotusImagesOff .iconRemove img,
+.sc.lotusImagesOff .iconEdit img, 
+.sc.lotusImagesOff .iconAdd img,
+.sc.lotusImagesOff .iconForward img,
+.sc.lotusImagesOff .iconMoreActions img,
+.sc.lotusImagesOff img.iconNetwork,
+.sc.lotusImagesOff .sourceIcon img,
+.sc.lotusImagesOff .scFieldTable img.icon30,
+.sc.lotusImagesOff img.iconMove,
+.sc.lotusImagesOff img.iconDelete,
+.sc.lotusImagesOff a.lotusTwistyOpen,
+.sc.lotusImagesOff a.lotusTwistyClosed,
+.sc.lotusImagesOff .dijitArrowButtonInner,
+.sc.lotusImagesOff .dijitArrowButtonChar {
+    display: none !important;
+}
+.sc.lotusImagesOff .ccMember .actionGroup a.scActionIcon {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.sc.lotusImagesOff button.lotusBtn,
+.sc.lotusImagesOff input.lotusBtn {
+    border: 2px outset #000000 !important;
+}
+.sc.lotusImagesOff .itemHover .sccontact {
+   border: 2px dashed;
+}
+.sc.lotusImagesOff .scSceneBody .profileFields .lotusInlinelist li.lotusFirst.iconNode{
+   width: 3%;
+}
+.sc .scBackground{
+   background-color: #F0F0F0;
+   padding: 20px 0 0;
+}
+.sc .scBackground .entry.lotusChunk{
+   background-color: #FFFFFF;
+   border: 1px solid #CCCCCC;
+   padding: 10px;
+   position: relative;
+}
+.sc .scBackground .entry.lotusChunk .lotusActions{
+   padding: 10px 0 0;
+}
+.sc .scBackground .entry.lotusChunk .lotusDelete{
+   position: absolute;
+   right: 23px;
+   top: 12px;
+}
+
+.lotusui30dojo .dijitComboBox .dijitArrowButtonInner{
+    background-position: -35px 53%;
+    background-repeat: no-repeat;
+    border: 0 solid #FFFFFF;
+    height: 100%;
+    margin: 0;
+    padding: 1px;
+    width: 16px;
+}
+
+.lotusui30dojo .dijitTextBox INPUT.dijitArrowButtonInner {
+    direction: ltr !important;
+    height: auto !important;
+    text-align: left !important;
+    text-indent: -1em !important;
+}
+
+.lotusui30dojo .dijitSelect .dijitArrowButton .dijitArrowButtonInner{
+    background-position: -35px 53%;
+    background-repeat: no-repeat;
+    border: 0 solid #FFFFFF;
+    height: 16px;
+    margin: 0;
+    padding: 1px;
+    width: 16px;
+}
+
+.lotusui30dojo .dijitSelect .dijitButtonText {
+    padding: 0 5px;
+}
+.lotusui30dojo .dijitSelect {
+    padding: 3px 0px 3px 3px;
+    margin-left: 0;
+    margin-top: 0;
+    border: 1px solid #CCCCCC;
+    border-collapse: separate;
+}
+.lotusui30dojo .dijitSelect .dijitButtonNode {
+    border: 0px;
+}
+
+.lotusui30dojo .dijitDialog .dijitDialogPaneContent{
+   background: none repeat scroll 0 0 transparent;
+   padding: 0;
+}
+
+.lotusui30dojo .dijitDialog {
+   background: none repeat scroll 0 0 transparent;
+   border: 0 none;
+   border-radius: 3px 3px 3px 3px;
+   box-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
+   outline: medium none;
+   overflow: visible;
+}

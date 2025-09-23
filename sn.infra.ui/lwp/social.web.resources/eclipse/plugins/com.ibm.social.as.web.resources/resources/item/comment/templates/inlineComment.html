@@ -1,0 +1,36 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<li class="lotusCommentItem ${rootClass}" tabindex="0"
+	><div class="lotusPost" aria-label="${commentAriaLabel}" role="article"
+		><div class="lotusPostAuthorInfo"
+			><div class="lotusPostAvatar"
+				><img src="${photoUrl}" class="activityStreamPhotoOf" alt="${photoOfText}"	
+			></div
+		></div
+		><a class="lotusDelete ${xClass}" role="button" href="javascript:;" dojoattachevent="onclick: onDeleteClicked"
+			 title="${strings.deleteCommentText}" alt="${strings.deleteCommentText}"  aria-label="${strings.deleteCommentText}"
+				><img src="${_blankGif}" alt="${strings.deleteCommentText}" title="${strings.deleteCommentText}"   
+				><span class="lotusAltText">X</span
+		></a
+		><div class="lotusPostContent"
+			><div class="lotusMeta asLinkContainer"
+				><ul class="lotusInlinelist lotusActions"
+					><li class="lotusFirst">${!actorHtml}</li
+					><li class="lotusFirst"><abbr title="${comment.updated}" dojoAttachPoint="timeagoNode">${time}</abbr></li
+					><li class="${commentLikeClass}"><span dojoAttachPoint="likeControlContainer" class="lotusLike"></span></li
+				></ul
+				><div class="lotusHidden asCommentLikeError" dojoAttachPoint="likeErrorNode" style="padding-top: 5px;"></div
+			></div
+			><div class="${commentLikeClass}"
+			></div
+			><div class="lotusPostDetails"
+				><div class="asLinkContainer bidiAware bidiSTT_AT_USER1" dojoAttachPoint="commentContent">${!commentText}</div
+				>
+				<div dojoAttachPoint="commentFileAttachedDetails"></div>
+				<div class="lotusHidden" dojoAttachPoint="showMoreText"
+					><span aria-hidden="true">...</span><a href="javascript:;" dojoAttachEvent="onclick: onShowMoreLessClicked">${strings.showMoreText}
+					<span class="lotusAccess">${strings.ariaShowMoreLabel}</span></a
+					></div
+			></div
+		></div
+	></div
+></li>

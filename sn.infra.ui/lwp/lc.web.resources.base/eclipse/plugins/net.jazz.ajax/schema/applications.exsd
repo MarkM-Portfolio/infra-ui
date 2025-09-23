@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2013, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!-- Schema file written by PDE -->
+<schema targetNamespace="net.jazz.ajax" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="net.jazz.ajax" id="applications" name="WebUI Applications"/>
+      </appInfo>
+      <documentation>
+         Declares a WebUI Application
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+         <documentation>
+            Application extensions must define one or more applications.
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="application" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute deprecated="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="application">
+      <annotation>
+         <appInfo>
+            <meta.element labelAttribute="alias"/>
+         </appInfo>
+      </annotation>
+      <complexType>
+         <attribute name="alias" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The path for this web application, which is appended to the contextPath of the larger application context.  For example, if the alias were &quot;/admin&quot; and the application WAR were deployed at &quot;/jazz&quot;, the web application&apos;s URL would be &lt;code&gt;[scheme]://[server]:[port]/jazz/admin&lt;/code&gt;
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="jsclass" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="icon" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="statusHandler" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":net.jazz.ajax.resource.IResourceLoaderStatusHandler"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="internalPriority" type="string">
+            <annotation>
+               <documentation>
+                  For internal use only
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         0.6
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         The following example shows a declaration of a WebUI application.
+&lt;pre&gt;&lt;extension point=&quot;com.ibm.team.repository.web.applications&quot;&gt;
+   &lt;application
+        id=&quot;my.namespace.testApplication&quot;
+        alias=&quot;/test&quot;
+        jsclass=&quot;com.ibm.team.example.test.ExampleWorkbench&quot;
+        icon=&quot;/TeamConcert.ico&quot;
+        statusHandler=&quot;com.ibm.team.example.ProjectAreaStatusHandler&quot;/&gt;
+ &lt;/extension&gt;&lt;/pre&gt;
+      </documentation>
+   </annotation>
+
+
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Licensed Materials - Property of IBM
+(c) Copyright IBM Corporation 2007, 2008. All Rights Reserved. 
+
+Note to U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+      </documentation>
+   </annotation>
+
+</schema>

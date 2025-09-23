@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2009, 2012                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!--
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<!-- JEE web deployment descriptor for Jazz Web UI Test Client Server -->
+
+<web-app id="WebApp_ID" 
+         version="2.4" 
+         xmlns="http://java.sun.com/xml/ns/j2ee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	
+	<!-- Web UI Test Client Servlet -->
+	
+	<servlet id="browser">
+		<description>Listens for requests to run web UI test cases on a specified web browser</description>
+		<display-name>Web UI Test Client Servlet</display-name>
+		<servlet-name>browserClientServlet</servlet-name>
+		<servlet-class>net.jazz.ajax.tests.client.internal.BrowserClientServlet</servlet-class>
+		<init-param>
+			<param-name>enableFrameworkControls</param-name>
+			<param-value>false</param-value>			
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>browserClientServlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- set session timeouts to occur after 6 hours -->
+	
+	<session-config>
+		<session-timeout>360</session-timeout>
+	</session-config>
+	
+	<!--
+		Specify explicit MIME mappings for extensions that otherwise generate
+		console noise
+	-->
+	
+	<mime-mapping>
+		<extension>ico</extension>
+		<mime-type>image/vnd.microsoft.icon</mime-type> 
+	</mime-mapping>
+	
+	<mime-mapping>
+		<extension>png</extension>
+        <mime-type>image/png</mime-type> 
+	</mime-mapping>
+	
+	<!--
+		The Web UI Test Client requires that no authentication or authorization
+		is configured for the client servlet. 
+	-->
+	
+</web-app>

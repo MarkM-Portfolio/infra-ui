@@ -1,0 +1,24 @@
+{
+  "type": "link",
+  "version": "1.0",
+  "title": "Instagram",
+  "provider_url": "www.instagram.com",
+  "url": "www.instagram.com",
+  "": "",
+  "thumbnails": [
+    "https://lcauto87.swg.usma.ibm.com/connections/thumbnail/api/imageProxy?url=http%3a%2f%2fd36xtkk24g8jdx.cloudfront.net%2fbluebar%2f359de8f%2fimages%2fpublic%2fbadge_ios.png",
+    "https://lcauto87.swg.usma.ibm.com/connections/thumbnail/api/imageProxy?url=http%3a%2f%2fg-ecx.images-amazon.com%2fimages%2fG%2f01%2fx-locale%2fcommon%2ftransparent-pixel._V386942464_.gif",
+    "https://lcauto87.swg.usma.ibm.com/connections/thumbnail/api/imageProxy?url=http%3a%2f%2fd36xtkk24g8jdx.cloudfront.net%2fbluebar%2f359de8f%2fimages%2fpublic%2fbadge_android3.png",
+    "https://lcauto87.swg.usma.ibm.com/connections/thumbnail/api/imageProxy?url=http%3a%2f%2fd36xtkk24g8jdx.cloudfront.net%2fbluebar%2f359de8f%2fimages%2fpublic%2fbadge_android.png",
+    "https://lcauto87.swg.usma.ibm.com/connections/thumbnail/api/imageProxy?url=http%3a%2f%2fyastatic.net%2fmorda-logo%2fi%2fshare-logo-ru.png",
+    "https://lcauto87.swg.usma.ibm.com/connections/thumbnail/api/imageProxy?url=http%3a%2f%2fd36xtkk24g8jdx.cloudfront.net%2fbluebar%2f359de8f%2fimages%2fpublic%2fbadge_android2.png",
+    "https://lcauto87.swg.usma.ibm.com/connections/thumbnail/api/imageProxy?url=%2f%2fs.ytimg.com%2fyts%2fimg%2fyoutube_logo_stacked-vfl225ZTx.png"
+  ],
+  "raw": {
+    "title": "Instagram",
+    "robots": "noimageindex",
+    "apple-mobile-web-app-status-bar-style": "black",
+    "apple-mobile-web-app-capable": "yes"
+  },
+  "originalUrl": "www.instagram.com"
+}

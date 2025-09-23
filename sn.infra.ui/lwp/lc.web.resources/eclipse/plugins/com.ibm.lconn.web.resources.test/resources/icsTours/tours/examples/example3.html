@@ -1,0 +1,692 @@
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" dir="ltr" style="" hv="a0" class="dj_webkit dj_chrome dj_contentbox activities-block-community activity-recentupdate-leftnavigation calendar-export-ical-file ckeditor-copy-formatting-plugin ckeditor-lite-mentions ckeditor-lite-mentions-ee communities-list-restricted communities-move-community connections-ui-newrelic-next contacts-group-info contacts-group-peoplepicker event-tracker-metrics-via-event-tracker-only event-tracker-service files-add-to-sync-in-listview files-dnd-single-right-to-right files-enable-custom-view files-enable-file-zip-download files-enable-single-file-larger-than-2g files-grant-file-edit-permission-to-folder-editor-only files-merge-original-date files-nested-folder files-new-banner-in-sync-view files-personal-dnd-upload-indicator files-picker-dnd files-tree-dnd files-tree-dnd-accepts-files files-tree-dnd-accepts-folders files-use-waltz2 files-view-hide-description filesync-push-service fileviewer-ccm-preview fileviewer-detailspage fileviewer-dynamic-filetypes fileviewer-everywhere fileviewer-everywhere-activitystream fileviewer-everywhere-nc fileviewer-history fileviewer-ir-autopublish fileviewer-newrelic fileviewer-panels fileviewer-panels-resize fileviewer-panels-textnav fileviewer-preview-videojs fileviewer-preview-xlsm folders-dnd-single-right-to-right forums-forum-search-attachment hikari-default-theme ie-native-mode insights-new-relic json-widget-metadata metrics-event-capture-service metrics-ui-restapi-service news-push-service news-read-status-enabled notification-center-common-navbar notification-center-live-updates profiles-cloud_single_db_photo search-dr-validation-enabled search-global-search-restyle search-language-per-org search-panel-ui-insights ui-welcome-box widget-catalog-scee-impl wikis-enable-used-page-title wikis-use-waltz2 wikis_enable_xxe_protection foxclocks-statusbar-bottom foxclocks-use-transform-false">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+<title>Test palette tree widget</title>
+${endhead}	
+		<title>My Profile</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- IBM Connections Mobile App for iOS -->
+<meta content="app-id=450533489" name="apple-itunes-app">
+<!-- IBM Connections Mobile App for Android -->
+<meta content="app-id=com.ibm.lotus.connections.mobile" name="google-play-app">
+
+<body class="myProfile lotusui lotusui30dojo lotusui30_body lotusui30_fonts lotusui30 lotusSpritesOn"><span id="semtagmenu" role="tooltip" style="position: absolute; display: none;"></span>
+       	
+<script type="text/javascript">
+if( dojo ) {
+	// create dojo dijit alert dialog
+	dojo.require("dijit.Dialog");
+	dojo.addOnLoad( function(){
+	    var alertDlg = new dijit.Dialog(
+			{ id: "lotusAlertDialog",
+		      duration: 1,
+		      title: "Profiles",
+		      style: "padding: 0px; border: none" 
+		    }, 
+			"lotusAlertDialog_div");
+	});
+}
+</script>
+
+		<span id="debugArea"></span>
+		
+		<div id="lotusFrame" class="lotusFrame lotusui30_layout">
+			<div role="banner">
+				
+<script type="text/javascript">
+var profiles_gotoLoginRedirect = function() {
+	// get current URL and set the loginReturnPage (SPR #XJZO8PTC78)
+	var returnToPage = encodeURIComponent( window.location.pathname + window.location.search + window.location.hash );
+	profiles_goto('/profiles/auth/loginRedirect.do?loginReturnPage='+returnToPage,true);
+}
+</script>
+
+<div id="lotusBanner" class="lotusBanner">
+	
+	<script type="text/javascript">
+if (self != top) {
+   try {
+      // Reset location if in different host.
+      // per Same Origin Policy, try to get top location attributes,
+      // will get permission denied if in different origin.
+      if (self.location.hostname != top.location.hostname)
+         top.location=self.location;
+   }catch(e){
+      // reset location if in different origin
+      top.location=self.location;
+   }
+}
+</script>
+<div class="lotusRightCorner">
+   <div class="lotusInner"><div class="lotusLogo" id="lotusLogo"><span class="lotusAltText">IBM Connections</span></div>
+	<ul class="lotusInlinelist lotusLinks" aria-label="Connections"><li id="lotusBannerHomepage" class="lotusFirst "><a href="" title="Home" aria-label="Home"><img alt="" role="presentation" src="" class="lconnBannerIcon lconnSprite lconnSprite-iconHomeBlue16"><span id="lconnBannerHomepageLabel">Home</span></a></li><li id="lotusBannerProfiles" class="lotusSelected" widgetid="lotusBannerProfiles" aria-owns="lconnheadermenu-people"><a onmouseover="dojo.require('lconn.core.header');lconn.core.header.menuMouseover(this);" onclick="dojo.require('lconn.core.header');lconn.core.header.menuClick(this);" onfocus="dojo.require('lconn.core.header');lconn.core.header.menuFocus(this);" role="button" aria-label="Profiles" src="/profiles/static/20161021.145240!en/nav/templates/menu/people.jsp" href="" errormessage="Profiles is not available"><img alt="" role="presentation" src="" class="lconnBannerIcon lconnSprite lconnSprite-iconProfilesBlue16">Profiles <img role="presentation" alt="" src="" class="lotusArrow lotusDropDownSprite"><span class="lotusAltText">▼</span></a></li><li id="lotusBannerCommunities" class=" "><a id="lotusBannerCommunitiesLink" onmouseover="dojo.require('lconn.core.header');lconn.core.header.menuMouseover(this);" onclick="dojo.require('lconn.core.header');lconn.core.header.menuClick(this);" onfocus="dojo.require('lconn.core.header');lconn.core.header.menuFocus(this);" role="button" _lconn_menuid="lconnheadermenu-communities" aria-label="Communities" src="/profiles/static/20161021.145240!en/nav/templates/menu/communities.jsp?authenticated=true" href="" errormessage="Communities is not available"><img alt="" role="presentation" src="" class="lconnBannerIcon lconnSprite lconnSprite-iconCommunitiesBlue16">Communities <img role="presentation" alt="" src="
+	" class="lotusArrow lotusDropDownSprite"><span class="lotusAltText">▼</span></a></li><li id="lotusBannerApps" class=" "><a onmouseover="dojo.require('lconn.core.header');lconn.core.header.menuMouseover(this);" onclick="dojo.require('lconn.core.header');lconn.core.header.menuClick(this);" onfocus="dojo.require('lconn.core.header');lconn.core.header.menuFocus(this);" role="button" _lconn_menuid="lconnheadermenu-apps" aria-label="Apps" src="/profiles/static/20161021.145240!en/nav/templates/menu/apps.jsp" href="javascript:;" errormessage="Profiles is not available">Apps <img role="presentation" alt="" src="" class="lotusArrow lotusDropDownSprite"><span class="lotusAltText">▼</span></a></li><li id="lotusBannerHeaderMetrics" style="" class=""><a href="">Metrics</a></li><li id="lotusBannerModeration" class=""><a href="https://lcauto81.swg.usma.ibm.com/moderation/">Moderation</a></li></ul>
+      <ul class="lotusInlinelist lotusUtility lotusNowrap" id="headerMenuContainer"><li class="lotusFirst" id="lotusBannerNotifications"><a id="notificationCenterNode" onmouseover="dojo.require('lconn.core.header');lconn.core.header.menuMouseover(this);" onclick="dojo.require('lconn.core.header');lconn.core.header.menuClick(this);" onfocus="dojo.require('lconn.core.header');lconn.core.header.menuFocus(this);" role="button" aria-label="Notifications" src="/profiles/static/20161021.145240!en/nav/templates/menu/notifications.jsp" _lconn_menuid="lconnheadermenu-notifications" href="javascript:;"><img role="presentation" alt="" src="" class="lconnSprite iconsComponents16-Notifications"><span class="lotusAltText">Notifications</span></a><div id="com_ibm_social_as_notification_badging_NotificationCenterInlineBadge_1" widgetid="com_ibm_social_as_notification_badging_NotificationCenterInlineBadge_1" style="position: relative;">
+    <div data-dojo-attach-point="ncBadge" id="ncBadge" aria-hidden="true" class="lotusAccess notificationCenter">new notifications</div>
+	<div data-dojo-attach-point="notificationCenterBadge" role="alert" aria-live="polite" aria-label="new notifications" class="icBanner-badge lotusHidden icBanner-badge-onprem">0</div>
+	<div class="lotusAccess" data-dojo-attach-point="ariaNewNotification" role="alert" aria-live="polite"></div>
+	<span aria-hidden="true" class="lotusAccess notificationCenter" id="arialabelNotificationsFlyoutBadge">Notification Center - View updates related to your content and notifications you have received</span>
+</div></li><li class="" id="lotusPerson"><span id="logoutLabel" aria-label="Log in / log out" role="region"><a class="lotusUser" id="headerUserName" onmouseover="dojo.require('lconn.core.header');lconn.core.header.menuMouseover(this);" onclick="dojo.require('lconn.core.header');lconn.core.header.menuClick(this);" onfocus="dojo.require('lconn.core.header');lconn.core.header.menuFocus(this);" role="button" _lconn_menuid="lconnheadermenu-user" aria-label="Current user Amy Jones1" src="/profiles/static/20161021.145240!en/nav/templates/menu/user.jsp?appName=profiles&amp;username=Amy+Jones1&amp;userid=4cbc45c0-16a7-1033-9239-95472f45d54f" href="javascript:;" onmenuloaded="lconn.core.header.apps.updateUserNameMenu"><img class="usersRadius" alt="Amy Jones1" src="" width="26" height="26"> <img role="presentation" alt="" src="" class="lotusArrow lotusDropDownSprite"><span class="lotusAltText">▼</span></a></span></li><li id="logoutLi" class="lotusHidden" style="display:none"><span id="loginLabel" aria-label="Log in / log out"><a id="logoutLink" href="javascript:;">Log Out</a></span></li><li class="shareboxLi" id="headerSharebox"><a class="lotusBannerBtn" href="javascript:;" onclick="dojo.stopEvent(event);dojo.require('net.jazz.ajax.xdloader');net.jazz.ajax.xdloader.load_async('com.ibm.social.sharebox.dialog', dojo.hitch(this, function() {com.ibm.social.sharebox.show();}));" role="button">Share</a></li><li id="languageSelectorText"><a id="headerLanguageSelectorMenu" href="javascript:;" role="button" aria-haspopup="true">English<span class="lotusAccess">Language Selector</span> <img alt="" role="presentation" src="" class="lotusArrow lotusDropDownSprite"><span class="lotusAltText">▼</span></a></li><li id="headerHelpLi"><a role="button" aria-label="Open help window" href="javascript:openHelpWindow();" id="headerHelpLink"><img role="presentation" alt="" src="" class="iconsOther16 iconsOther16-bannerHelpNormal16"><span class="lotusAltText">?</span></a></li><li><span class="lotusBranding"><img src="" alt="IBM" class="lotusIBMLogo"><span class="lotusAltText">IBM</span></span></li></ul>
+      <div class="lotusClear"><!-- IE --></div></div></div>
+
+</div>
+
+<script type="text/javascript">
+	
+	var lconn_core_thirdPartySearchEngines = [];
+</script>
+
+	 
+		<div class="lotusTitleBar2 lotusTitleBar2Tabs">
+		   <div class="lotusWrapper">
+			  <div class="lotusInner">
+				 <div class="lotusTitleBarContent" aria-label="Profiles" role="region">
+					<h2 class="lotusHeading">
+						<img alt="" class="lotusIcon iconsComponentsBlue24 iconsComponentsBlue24-ProfilesBlue24" src=""><span class="lotusText">Profiles</span>
+					</h2>
+					<div aria-label="Profiles" role="navigation" aria-controls="lotusMain">
+					   <ul id="lotusHeaderNavigation_UL" class="lotusNavTabs" role="toolbar" aria-label="Profiles">
+						  <li id="liProfileHeader_MyProfile" class="lotusSelected"><div class="lotusTabWrapper"><a id="aProfileHeader_MyProfile" onclick="lconn.profiles.ProfilesCore.setLastElement(this.id);" class="lotusTab" href="/profiles/html/myProfileView.do" role="button" aria-label="MY PROFILE selected."><span class="lotusTabInner">My Profile</span></a></div></li>
+						  <li id="liProfileHeader_MyNetwork"><div class="lotusTabWrapper"><a id="aProfileHeader_MyNetwork" onclick="lconn.profiles.ProfilesCore.setLastElement(this.id);" class="lotusTab" href="/profiles/html/networkView.do?widgetId=friends&amp;requireAuth=true" role="button" aria-label="MY NETWORK." tabindex="-1"><span class="lotusTabInner">My Network</span></a></div></li>
+						  <li id="liProfileHeader_Directory"><div class="lotusTabWrapper"><a id="aProfileHeader_Directory" onclick="lconn.profiles.ProfilesCore.setLastElement(this.id);" class="lotusTab" href="/profiles/html/searchProfiles.do" role="button" aria-label="DIRECTORY." tabindex="-1"><span class="lotusTabInner">Directory</span></a></div></li>
+					   </ul>
+					<div class="lotusClear"></div>
+				 </div>
+			  </div>
+			  <div class="lotusGlobalSearch lotusAlignLeft" role="search" id="commonSearchControlDiv" widgetid="commonSearchControlDiv" aria-label="Search Profiles"> <div class="lotusSearch"> <form dojoattachpoint="formNode" method="GET" dojoattachevent="onsubmit:formSubmitted" action="/profiles/html/simpleSearch.do"> <input name="scope" value="simple" dojoattachpoint="scopeInputNode" type="hidden"> <input name="component" value="" dojoattachpoint="featureInputNode" type="hidden"> <table class="lotusLayout" cellspacing="0" role="presentation" summary=""> <tbody> <tr> <td> <div class="lotusHidden" id="commonSearchControlDiv-searchOptionLabel">Refine search options</div> <div> <a href="javascript:;" title="Refine search options" class="lotusScope" dojoattachpoint="scopeNode" dojoattachevent="onclick:openMenu,onkeypress:openMenuA11y" aria-haspopup="true" role="button" aria-labelledby="commonSearchControlDiv-searchOptionLabel commonSearchControlDivsearchOpt"> <img class="lotusIcon baseIcon lconnSprite lconnSprite-iconProfiles16" alt="" src="" dojoattachpoint="currScopeIconNode" role="presentation"> <span id="commonSearchControlDivsearchOpt" dojoattachpoint="currScopeLabelNode">Profiles by Name</span> <span class="lotusAltText" role="presentation">▼</span> </a> </div> </td> <td> <span id="commonSearchControlDivsearchInput" title="Search" widgetid="commonSearchControlDivsearchInput" role="combobox" popupactive="true" aria-expanded="false"><input type="text" class="lotusText lotusInactive" dojoattachpoint="textbox" name="commonSearchControlDivsearchInput_textbox" title="Search" id="commonSearchControlDiv_TAtextField" role="textbox" aria-invalid="false" autocomplete="off"><input type="hidden" value="" dojoattachpoint="hiddenbox" name="query"></span> </td> <td> <span class="lotusBtnImg"> <input dojoattachpoint="onclick:submitForm" class="lotusSearchButton" type="image" src="" alt="Search" title="Search" aria-label="Search"> <a href="javascript:;" alt="Search" dojoattachevent="onclick:submitForm" class="lotusAltText">Search</a> </span> </td> </tr> </tbody> </table> </form> </div></div>
+			</div>			 
+		  </div>
+		</div>
+	
+			</div>
+			<div id="lotusMain" class="lotusMain">
+
+<div id="profilePaneLeft" class="lotusColLeft">
+
+<div class="lotusSection2" role="complementary" aria-label="Edit profile photo">
+	<div id="smallBizCardInfoPhotoDiv" class="lotusCenter">
+		
+			
+				
+
+				<a href="/profiles/html/editMyProfileView.do?tab=photo" title="Edit profile photo">
+					<span id="spanEditProfilePhoto" class="lotusHidden" style="position: relative; vertical-align: top; height: 0px; width: 0px; float: right;">
+						<span id="aEditProfilePhoto">
+							<img src="" class="lconnSprite lconnSprite-iconWidgetEdit16" alt="" onclick="profiles_goto('/profiles/html/editMyProfileView.do?tab=photo');" style="cursor:hand">
+						</span>
+					</span>
+					<img id="imgProfilePhoto" src="" alt="Edit profile photo - Amy Jones1" width="155px" height="155px" class="lconnProfilePortrait">			
+				</a>
+			
+			
+		
+	</div>
+</div>
+
+<script type="text/javascript">
+dojo.addOnLoad(
+    function() {
+    		var resetEditImgIcon = function() {
+			// calculate the edit photo image icon placement
+			var editImg = dojo.byId("aEditProfilePhoto");
+			var editImgSpan = dojo.byId("spanEditProfilePhoto");
+			var editWrapper = dojo.byId("smallBizCardInfoPhotoDiv");
+			
+			if(editImg && editImgSpan && editWrapper) {
+				var imgWidth = ( dojo.style("imgProfilePhoto","width") <= 0? 155 : dojo.style("imgProfilePhoto","width")); //default to 155 if we cannot get the actual width 
+				var containerWidth = ( dojo.style( editWrapper, "width" ) <= 0? 180 : dojo.style( editWrapper, "width" )); // default container width to 180 if we cannot get actual width
+				var offsetWidth = ((containerWidth-imgWidth)/2)+3; // padded to 3 from the border of the img
+				
+				var args = { "background": "none repeat scroll 0 0 #FFFFFF",
+							"position": "absolute",
+							"opacity": 0.75,
+							"top": "2px",
+							"padding": "5px" };
+				
+				if (profiles_isBidiRTL) {
+					dojo.style(editImgSpan,"float","left");
+					args.left = offsetWidth+"px";
+				} else { 
+					dojo.style(editImgSpan,"float","right");
+					args.right = offsetWidth+"px";
+				}
+	
+				dojo.style(editImg, args);
+				return true;
+			}
+			return false;
+		}
+
+		//connect the mouseout and mouseover events to show/hide the edit icon
+		var editWrapper = dojo.byId("smallBizCardInfoPhotoDiv");
+		if(editWrapper) {
+			dojo.connect(editWrapper, "mouseover", 
+				function(){ 
+					var el=dojo.byId('spanEditProfilePhoto'); 
+					if(el) { 
+						if( resetEditImgIcon()) dojo.removeClass(el,'lotusHidden'); 
+					}
+				}
+			);
+	
+			dojo.connect(editWrapper, "mouseout",  
+				function(){ 
+					var el=dojo.byId('spanEditProfilePhoto'); 
+					if(el) dojo.addClass(el,'lotusHidden'); 
+				}
+			);
+		}
+	});
+</script>
+	
+		<div class="lotusSection2" role="complementary" aria-label="Edit My Profile">
+			<div id="editProfileButtonDiv" class="lotusChunk lotusCenter">
+				<input id="editProfileButton" style="margin-left: 0; margin-right: 0" type="button" value="Edit My Profile" class="lotusFormButton" onclick="profiles_goto('/profiles/html/editMyProfileView.do', true);">
+			</div>
+		</div>
+	
+	
+		<div class="lotusChunk" style="padding-top: 20px;">
+			<span id="widget-container-col1" class="widgetContainer" role="presentation"><div id="socialTagsSection" class="lotusWidget2" widgetid="socialTags" role="region" aria-labelledby="socialTagsId"><h2 style="cursor: default"><a id="widgetActionsMenusocialTags" class="lotusIcon lotusActionMenu" href="javascript:void(0);" onclick="lconn.core.WidgetPlacement.openMenu(event, 'socialTags','widgetActionsMenusocialTags');" onkeydown="if(event.keyCode==40) lconn.core.WidgetPlacement.openMenu(event, 'socialTags','widgetActionsMenusocialTags');" title="Actions for: Tags" role="button" aria-haspopup="true" aria-label="Actions for: Tags"><img src="" alt=""><span class="lotusAltText">Actions for: Tags</span></a><span class="ibmDndDragHandle" id="socialTagsId">Tags</span></h2><table class="dijit dijitMenu dijitMenuPassive dijitReset dijitMenuTable" role="menu" tabindex="0" cellspacing="0" dir="ltr" lang="en" id="socialTagsmoreActions" aria-label="More Action Menu" widgetid="socialTagsmoreActions" style="display: none;">
+	<tbody class="dijitReset" data-dojo-attach-point="containerNode"><tr class="dijitReset dijitMenuItem" data-dojo-attach-point="focusNode" role="menuitem" tabindex="-1" dir="ltr" lang="en" id="socialTags_toggleAction" aria-label="Minimize " widgetid="socialTags_toggleAction" style="-webkit-user-select: none;">
+	<td class="dijitReset dijitMenuItemIconCell" role="presentation">
+		<span role="presentation" class="dijitInline dijitIcon dijitMenuItemIcon dijitNoIcon" data-dojo-attach-point="iconNode"></span>
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" data-dojo-attach-point="containerNode,textDirNode" role="presentation" id="socialTags_toggleAction_text">Minimize</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" data-dojo-attach-point="accelKeyNode" id="socialTags_toggleAction_accel"></td>
+	<td class="dijitReset dijitMenuArrowCell" role="presentation">
+		<span data-dojo-attach-point="arrowWrapper" style="visibility: hidden">
+			<span class="dijitInline dijitIcon dijitMenuExpand"></span>
+			<span class="dijitMenuExpandA11y">+</span>
+		</span>
+	</td>
+</tr><tr class="dijitReset dijitMenuItem" data-dojo-attach-point="focusNode" role="menuitem" tabindex="-1" id="dijit_MenuItem_0" dir="ltr" lang="en" aria-label="Refresh " widgetid="dijit_MenuItem_0" style="-webkit-user-select: none;">
+	<td class="dijitReset dijitMenuItemIconCell" role="presentation">
+		<span role="presentation" class="dijitInline dijitIcon dijitMenuItemIcon dijitNoIcon" data-dojo-attach-point="iconNode"></span>
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" data-dojo-attach-point="containerNode,textDirNode" role="presentation" id="dijit_MenuItem_0_text">Refresh</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" data-dojo-attach-point="accelKeyNode" id="dijit_MenuItem_0_accel"></td>
+	<td class="dijitReset dijitMenuArrowCell" role="presentation">
+		<span data-dojo-attach-point="arrowWrapper" style="visibility: hidden">
+			<span class="dijitInline dijitIcon dijitMenuExpand"></span>
+			<span class="dijitMenuExpandA11y">+</span>
+		</span>
+	</td>
+</tr><tr class="dijitReset dijitMenuItem" data-dojo-attach-point="focusNode" role="menuitem" tabindex="-1" id="dijit_MenuItem_1" dir="ltr" lang="en" aria-label="Help " widgetid="dijit_MenuItem_1" style="-webkit-user-select: none;">
+	<td class="dijitReset dijitMenuItemIconCell" role="presentation">
+		<span role="presentation" class="dijitInline dijitIcon dijitMenuItemIcon dijitNoIcon" data-dojo-attach-point="iconNode"></span>
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" data-dojo-attach-point="containerNode,textDirNode" role="presentation" id="dijit_MenuItem_1_text">Help</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" data-dojo-attach-point="accelKeyNode" id="dijit_MenuItem_1_accel"></td>
+	<td class="dijitReset dijitMenuArrowCell" role="presentation">
+		<span data-dojo-attach-point="arrowWrapper" style="visibility: hidden">
+			<span class="dijitInline dijitIcon dijitMenuExpand"></span>
+			<span class="dijitMenuExpandA11y">+</span>
+		</span>
+	</td>
+</tr></tbody>
+</table><div id="socialTagsSubArea" style="-webkit-user-select: auto;" widgetloaded="true" widgetneedrefresh="false"><div id="socialTags"><div class="socialTags Content view">
+            
+            <div id="socialTags_widgetId_container"><div xmlns="http://www.w3.org/1999/xhtml" xmlns:html="http://www.w3.org/1999/xhtml" id="social_tags" aria-live="polite"><div id="add-tag-view" class="lotusChunk lotusSearch"><form id="tagInputForm" onsubmit="lconn.profiles.SocialTags.saveNewTag( '4bf21884-de24-49f3-89ce-eb73720343b2', this); return false;"><span dojotype="lconn.core.TypeAheadDataStore" jsid="tagTypeAheadStore" queryparam="tag" url="/profiles/html/tagTypeahead.do?useJson=true"></span><input type="text" id="socialTagName" class="lotusText tagTypeAhead dijitTextBox dijitComboBox dijitValidationTextBox" autocomplete="off" name="socialTagName" dojoattachevent="onkeypress:_onKeyPress, onkeyup:_onKeyUp" dojoattachpoint="domNode,comboNode,textbox,focusNode" waistate="haspopup-true,autocomplete-list,expanded-false" role="combobox" aria-autocomplete="list" tabindex="0" dir="ltr" lang="en" title="Add tag(s) to this profile" widgetid="socialTagName" aria-owns="socialTagName_dummypopup" value="" style="width: 80%; color: rgb(102, 102, 102);" aria-invalid="false"><span class="lotusBtnImg" style="padding: 4px 1px;"><a id="addTagButtonId" role="button" class="lotusAdd" href="javascript:;" title="Add tag(s) to this profile" onclick="lconn.profiles.SocialTags.saveNewTag( '4bf21884-de24-49f3-89ce-eb73720343b2', this); return false;"><img alt="Add tag(s) to this profile" src=""><span class="lotusAltText">+</span></a></span><div style="display: none;"></div><div id="socialTagName_dummypopup" role="textbox" style="display: none;"></div></form></div><div id="tagCloud"></div><div class="lotusChunk">Enter a tag as a single word with no spaces. Examples: human-resources, hiring_manager, payroll.</div></div></div>
+		 
+     </div></div></div></div></span>
+		</div>
+	
+	
+</div>
+
+<div id="profilePaneRight" class="lotusColRight">
+	
+		<span id="widget-container-col3" class="widgetContainer" role="presentation"><div id="reportStructureSection" class="lotusWidget2" widgetid="reportStructure" role="region" aria-labelledby="reportStructureId" aria-label="Report-to Chain"><h2 style="cursor: default"><a id="widgetActionsMenureportStructure" class="lotusIcon lotusActionMenu" href="javascript:void(0);" onclick="lconn.core.WidgetPlacement.openMenu(event, 'reportStructure','widgetActionsMenureportStructure');" onkeydown="if(event.keyCode==40) lconn.core.WidgetPlacement.openMenu(event, 'reportStructure','widgetActionsMenureportStructure');" title="Actions for: Report-to Chain" role="button" aria-haspopup="true" aria-label="Actions for: Report-to Chain"><img src="" alt=""><span class="lotusAltText">Actions for: Report-to Chain</span></a><span class="ibmDndDragHandle" id="reportStructureId">Report-to Chain</span></h2><table class="dijit dijitMenu dijitMenuPassive dijitReset dijitMenuTable" role="menu" tabindex="0" cellspacing="0" dir="ltr" lang="en" id="reportStructuremoreActions" aria-label="More Action Menu" widgetid="reportStructuremoreActions" style="display: none;">
+	<tbody class="dijitReset" data-dojo-attach-point="containerNode"><tr class="dijitReset dijitMenuItem" data-dojo-attach-point="focusNode" role="menuitem" tabindex="-1" dir="ltr" lang="en" id="reportStructure_toggleAction" aria-label="Minimize " widgetid="reportStructure_toggleAction" style="-webkit-user-select: none;">
+	<td class="dijitReset dijitMenuItemIconCell" role="presentation">
+		<span role="presentation" class="dijitInline dijitIcon dijitMenuItemIcon dijitNoIcon" data-dojo-attach-point="iconNode"></span>
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" data-dojo-attach-point="containerNode,textDirNode" role="presentation" id="reportStructure_toggleAction_text">Minimize</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" data-dojo-attach-point="accelKeyNode" id="reportStructure_toggleAction_accel"></td>
+	<td class="dijitReset dijitMenuArrowCell" role="presentation">
+		<span data-dojo-attach-point="arrowWrapper" style="visibility: hidden">
+			<span class="dijitInline dijitIcon dijitMenuExpand"></span>
+			<span class="dijitMenuExpandA11y">+</span>
+		</span>
+	</td>
+</tr><tr class="dijitReset dijitMenuItem" data-dojo-attach-point="focusNode" role="menuitem" tabindex="-1" id="dijit_MenuItem_2" dir="ltr" lang="en" aria-label="Refresh " widgetid="dijit_MenuItem_2" style="-webkit-user-select: none;">
+	<td class="dijitReset dijitMenuItemIconCell" role="presentation">
+		<span role="presentation" class="dijitInline dijitIcon dijitMenuItemIcon dijitNoIcon" data-dojo-attach-point="iconNode"></span>
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" data-dojo-attach-point="containerNode,textDirNode" role="presentation" id="dijit_MenuItem_2_text">Refresh</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" data-dojo-attach-point="accelKeyNode" id="dijit_MenuItem_2_accel"></td>
+	<td class="dijitReset dijitMenuArrowCell" role="presentation">
+		<span data-dojo-attach-point="arrowWrapper" style="visibility: hidden">
+			<span class="dijitInline dijitIcon dijitMenuExpand"></span>
+			<span class="dijitMenuExpandA11y">+</span>
+		</span>
+	</td>
+</tr><tr class="dijitReset dijitMenuItem" data-dojo-attach-point="focusNode" role="menuitem" tabindex="-1" id="dijit_MenuItem_3" dir="ltr" lang="en" aria-label="Help " widgetid="dijit_MenuItem_3" style="-webkit-user-select: none;">
+	<td class="dijitReset dijitMenuItemIconCell" role="presentation">
+		<span role="presentation" class="dijitInline dijitIcon dijitMenuItemIcon dijitNoIcon" data-dojo-attach-point="iconNode"></span>
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" data-dojo-attach-point="containerNode,textDirNode" role="presentation" id="dijit_MenuItem_3_text">Help</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" data-dojo-attach-point="accelKeyNode" id="dijit_MenuItem_3_accel"></td>
+	<td class="dijitReset dijitMenuArrowCell" role="presentation">
+		<span data-dojo-attach-point="arrowWrapper" style="visibility: hidden">
+			<span class="dijitInline dijitIcon dijitMenuExpand"></span>
+			<span class="dijitMenuExpandA11y">+</span>
+		</span>
+	</td>
+</tr></tbody>
+</table><div id="reportStructureSubArea" style="-webkit-user-select: auto;" widgetloaded="true" widgetneedrefresh="false"><div id="reportStructure"><div class="reportStructure Content view">
+        
+          <div id="report-chain-reportStructure"><div xmlns="http://www.w3.org/1999/xhtml" id="report-chain-reportStructure-sub"><div class="lotusChunk" style="margin-top: 5px; overflow-x: auto; overflow-y: hidden;"><ul class="lotusTree" role="list"><li role="listitem" aria-level="0"><div class="lotusOrgChartBottom lotusBottom bidiAware" style="margin-left: 2px; padding-left:20px;">Amy Jones1</div></li></ul></div><div class="lotusChunk lotusLast"><a class="lotusAction" href="/profiles/html/reportingStructureView.do?key=4bf21884-de24-49f3-89ce-eb73720343b2">Full Report-to Chain</a><div class="report-chain-reportStructure-sub-peopleManaged"><a class="lotusAction" href="/profiles/html/reportingStructureView.do?key=4bf21884-de24-49f3-89ce-eb73720343b2&amp;subAction=peopleManaged">People Managed</a></div></div></div></div>
+         
+     </div></div></div></div><div id="friendsSection" class="lotusWidget2" widgetid="friends" role="region" aria-labelledby="friendsId"><h2 style="cursor: default"><a id="widgetActionsMenufriends" class="lotusIcon lotusActionMenu" href="javascript:void(0);" onclick="lconn.core.WidgetPlacement.openMenu(event, 'friends','widgetActionsMenufriends');" onkeydown="if(event.keyCode==40) lconn.core.WidgetPlacement.openMenu(event, 'friends','widgetActionsMenufriends');" title="Actions for: Network" role="button" aria-haspopup="true" aria-label="Actions for: Network"><img src="" alt=""><span class="lotusAltText">Actions for: Network</span></a><span class="ibmDndDragHandle" id="friendsId">Network</span></h2><table class="dijit dijitMenu dijitMenuPassive dijitReset dijitMenuTable" role="menu" tabindex="0" cellspacing="0" dir="ltr" lang="en" id="friendsmoreActions" aria-label="More Action Menu" widgetid="friendsmoreActions" style="display: none;">
+	<tbody class="dijitReset" data-dojo-attach-point="containerNode"><tr class="dijitReset dijitMenuItem" data-dojo-attach-point="focusNode" role="menuitem" tabindex="-1" dir="ltr" lang="en" id="friends_toggleAction" aria-label="Minimize " widgetid="friends_toggleAction" style="-webkit-user-select: none;">
+	<td class="dijitReset dijitMenuItemIconCell" role="presentation">
+		<span role="presentation" class="dijitInline dijitIcon dijitMenuItemIcon dijitNoIcon" data-dojo-attach-point="iconNode"></span>
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" data-dojo-attach-point="containerNode,textDirNode" role="presentation" id="friends_toggleAction_text">Minimize</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" data-dojo-attach-point="accelKeyNode" id="friends_toggleAction_accel"></td>
+	<td class="dijitReset dijitMenuArrowCell" role="presentation">
+		<span data-dojo-attach-point="arrowWrapper" style="visibility: hidden">
+			<span class="dijitInline dijitIcon dijitMenuExpand"></span>
+			<span class="dijitMenuExpandA11y">+</span>
+		</span>
+	</td>
+</tr><tr class="dijitReset dijitMenuItem" data-dojo-attach-point="focusNode" role="menuitem" tabindex="-1" id="dijit_MenuItem_4" dir="ltr" lang="en" aria-label="Refresh " widgetid="dijit_MenuItem_4" style="-webkit-user-select: none;">
+	<td class="dijitReset dijitMenuItemIconCell" role="presentation">
+		<span role="presentation" class="dijitInline dijitIcon dijitMenuItemIcon dijitNoIcon" data-dojo-attach-point="iconNode"></span>
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" data-dojo-attach-point="containerNode,textDirNode" role="presentation" id="dijit_MenuItem_4_text">Refresh</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" data-dojo-attach-point="accelKeyNode" id="dijit_MenuItem_4_accel"></td>
+	<td class="dijitReset dijitMenuArrowCell" role="presentation">
+		<span data-dojo-attach-point="arrowWrapper" style="visibility: hidden">
+			<span class="dijitInline dijitIcon dijitMenuExpand"></span>
+			<span class="dijitMenuExpandA11y">+</span>
+		</span>
+	</td>
+</tr><tr class="dijitReset dijitMenuItem" data-dojo-attach-point="focusNode" role="menuitem" tabindex="-1" id="dijit_MenuItem_5" dir="ltr" lang="en" aria-label="Help " widgetid="dijit_MenuItem_5" style="-webkit-user-select: none;">
+	<td class="dijitReset dijitMenuItemIconCell" role="presentation">
+		<span role="presentation" class="dijitInline dijitIcon dijitMenuItemIcon dijitNoIcon" data-dojo-attach-point="iconNode"></span>
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" data-dojo-attach-point="containerNode,textDirNode" role="presentation" id="dijit_MenuItem_5_text">Help</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" data-dojo-attach-point="accelKeyNode" id="dijit_MenuItem_5_accel"></td>
+	<td class="dijitReset dijitMenuArrowCell" role="presentation">
+		<span data-dojo-attach-point="arrowWrapper" style="visibility: hidden">
+			<span class="dijitInline dijitIcon dijitMenuExpand"></span>
+			<span class="dijitMenuExpandA11y">+</span>
+		</span>
+	</td>
+</tr></tbody>
+</table><div id="friendsSubArea" style="-webkit-user-select: auto;" widgetloaded="true" widgetneedrefresh="false"><div id="friends"><div class="friends Content view">
+		
+            <div id="recent_colleagues_widgetId_container"><div xmlns="http://www.w3.org/1999/xhtml" id="recent-friends-container"><div class="lotusChunk" role="list"><div class="lotusChunk" role="listitem" tabindex="-1">No network contacts are associated with this profile</div></div><div class="lotusClear"></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="lotusChunk" style="padding-top:5px;"><p><a class="lotusAction" href="javascript:void(0);" id="recent-friends-viewall" onclick=" lconn.profiles.Friending.viewAllColleagues('4bf21884-de24-49f3-89ce-eb73720343b2'); ">View All</a></p></div></div>
+		
+	</div></div></div></div><div id="linkRollSection" class="lotusWidget2" widgetid="linkRoll" role="region" aria-labelledby="linkRollId"><h2 style="cursor: default"><a id="widgetActionsMenulinkRoll" class="lotusIcon lotusActionMenu" href="javascript:void(0);" onclick="lconn.core.WidgetPlacement.openMenu(event, 'linkRoll','widgetActionsMenulinkRoll');" onkeydown="if(event.keyCode==40) lconn.core.WidgetPlacement.openMenu(event, 'linkRoll','widgetActionsMenulinkRoll');" title="Actions for: My Links" role="button" aria-haspopup="true" aria-label="Actions for: My Links"><img src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" alt=""><span class="lotusAltText">Actions for: My Links</span></a><span class="ibmDndDragHandle" id="linkRollId">My Links</span></h2><table class="dijit dijitMenu dijitMenuPassive dijitReset dijitMenuTable" role="menu" tabindex="0" cellspacing="0" dir="ltr" lang="en" id="linkRollmoreActions" aria-label="More Action Menu" widgetid="linkRollmoreActions" style="display: none;">
+	<tbody class="dijitReset" data-dojo-attach-point="containerNode"><tr class="dijitReset dijitMenuItem" data-dojo-attach-point="focusNode" role="menuitem" tabindex="-1" dir="ltr" lang="en" id="linkRoll_toggleAction" aria-label="Minimize " widgetid="linkRoll_toggleAction" style="-webkit-user-select: none;">
+	<td class="dijitReset dijitMenuItemIconCell" role="presentation">
+		<span role="presentation" class="dijitInline dijitIcon dijitMenuItemIcon dijitNoIcon" data-dojo-attach-point="iconNode"></span>
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" data-dojo-attach-point="containerNode,textDirNode" role="presentation" id="linkRoll_toggleAction_text">Minimize</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" data-dojo-attach-point="accelKeyNode" id="linkRoll_toggleAction_accel"></td>
+	<td class="dijitReset dijitMenuArrowCell" role="presentation">
+		<span data-dojo-attach-point="arrowWrapper" style="visibility: hidden">
+			<span class="dijitInline dijitIcon dijitMenuExpand"></span>
+			<span class="dijitMenuExpandA11y">+</span>
+		</span>
+	</td>
+</tr><tr class="dijitReset dijitMenuItem" data-dojo-attach-point="focusNode" role="menuitem" tabindex="-1" id="dijit_MenuItem_6" dir="ltr" lang="en" aria-label="Refresh " widgetid="dijit_MenuItem_6" style="-webkit-user-select: none;">
+	<td class="dijitReset dijitMenuItemIconCell" role="presentation">
+		<span role="presentation" class="dijitInline dijitIcon dijitMenuItemIcon dijitNoIcon" data-dojo-attach-point="iconNode"></span>
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" data-dojo-attach-point="containerNode,textDirNode" role="presentation" id="dijit_MenuItem_6_text">Refresh</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" data-dojo-attach-point="accelKeyNode" id="dijit_MenuItem_6_accel"></td>
+	<td class="dijitReset dijitMenuArrowCell" role="presentation">
+		<span data-dojo-attach-point="arrowWrapper" style="visibility: hidden">
+			<span class="dijitInline dijitIcon dijitMenuExpand"></span>
+			<span class="dijitMenuExpandA11y">+</span>
+		</span>
+	</td>
+</tr><tr class="dijitReset dijitMenuItem" data-dojo-attach-point="focusNode" role="menuitem" tabindex="-1" id="dijit_MenuItem_7" dir="ltr" lang="en" aria-label="Help " widgetid="dijit_MenuItem_7" style="-webkit-user-select: none;">
+	<td class="dijitReset dijitMenuItemIconCell" role="presentation">
+		<span role="presentation" class="dijitInline dijitIcon dijitMenuItemIcon dijitNoIcon" data-dojo-attach-point="iconNode"></span>
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" data-dojo-attach-point="containerNode,textDirNode" role="presentation" id="dijit_MenuItem_7_text">Help</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" data-dojo-attach-point="accelKeyNode" id="dijit_MenuItem_7_accel"></td>
+	<td class="dijitReset dijitMenuArrowCell" role="presentation">
+		<span data-dojo-attach-point="arrowWrapper" style="visibility: hidden">
+			<span class="dijitInline dijitIcon dijitMenuExpand"></span>
+			<span class="dijitMenuExpandA11y">+</span>
+		</span>
+	</td>
+</tr></tbody>
+</table><div id="linkRollSubArea" style="-webkit-user-select: auto;" widgetloaded="true" widgetneedrefresh="false"><div id="linkRoll"><div class="linkRoll Content view"> </div><div id="linkRoll_widgetId_container" widgetid="linkRoll_widgetId_container"> <span dojoattachpoint="loadingNode" class="lotusHidden">Loading links...</span> <span dojoattachpoint="nonLoadingNode" class=""> <div class="lotusChunk"> <ul class="lotusList lotusEditable lotusMeta lotusHidden" dojoattachpoint="linksNode"></ul> <span class="" dojoattachpoint="noLinksNode">There are no links yet for this profile.</span> </div> <div class="lotusChunk" dojoattachpoint="addNode"> <a id="addLinkLinkRollButton" dojoattachpoint="addLinkNode" href="javascript:;" class="lotusAction" role="button" dojoattachevent="onclick:showAddForm" title="Add a link to your links section. "> Add Link </a> </div> <form dojoattachpoint="addLinkFormNode" name="add-link" class="lotusForm lotusHidden" aria-labelledby="linkRoll_widgetId_container_addLink" onsubmit="return false;" dojoattachevent="onsubmit:saveAddLink"> <table cellspacing="0" cellpadding="0" border="0" class="lotusFormTable" role="presentation"> <tbody><tr> <td class="lotusFormFieldRow"> <div><label dojoattachpoint="addLinkNameLabelNode" for="name">*Name:</label></div> <div><input dojoattachpoint="addLinkNameNode" type="text" name="name" id="name" class="lotusText" aria-required="true"></div> </td> </tr> <tr> <td class="lotusFormFieldRow"> <div><label dojoattachpoint="addLinkUrlLabelNode" for="url">*Link:</label></div> <div><input dojoattachpoint="addLinkUrlNode" type="text" name="url" id="url" class="lotusText" aria-required="true"></div> </td> </tr> <tr> <td> <div class="lotusFormField lotusMeta">* Required</div> </td> </tr> <tr> <td class="lotusFormFooter"> <input type="submit" value="Save" class="lotusFormButton"> <wbr> <input type="button" value="Cancel" class="lotusFormButton" dojoattachevent="onclick:cancelAddLink"> </td> </tr> </tbody></table> </form> </span></div></div></div></div></span>
+	
+	
+</div>
+
+
+<div id="profileBody" class="lotusContent">	
+			<div id="_profilesMyViewWelcome_div" class="lotusWelcomeBox" role="complementary" aria-label="Reasons to Update Your Profile">
+
+<h2 id="_profilesWelcomeTitle_p" class="lotusHeading">Reasons to Update Your Profile</h2>
+<p id="_profilesWelcomeBody_p"></p>
+
+	<ul><li id="profilesWelcomeMsg1">Your profile is visible to everyone in the organization. Use it to define who you are and what you do.</li>
+
+		<li id="profilesWelcomeMsg2">Post a message to share an idea or problem that you are working on and get immediate feedback about it from your colleagues.</li>
+
+		<li id="profilesWelcomeMsg3">Click "Edit My Profile" to update your contact information, upload a photo, and add information about your work and expertise. </li></ul>
+<a href="javascript:;" class="lotusBtnImg lotusClose" id="_profilesViewWelcome_closeLink" title="Close welcome section" onclick="dojo.cookie(this.parentNode.id,'hide',{expires:9999}); dojo.addClass(this.parentNode.id, 'lotusHidden');"><img src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" alt="Close welcome section">
+	<span class="lotusAltText">X</span></a>
+
+			</div>
+	<div id="profileInfoMsgDiv" class="lotusHidden" role="alert"></div>
+	<div id="profileDetails" role="main">
+		<div id="profileHeader" class="profileHeader">
+	    	
+<input type="hidden" name="profileUid" value="ajones1" id="profileUid">
+<input type="hidden" name="profileKey" value="4bf21884-de24-49f3-89ce-eb73720343b2" id="profileKey">
+<input type="hidden" name="managerUid" value="" id="managerUid">
+<input type="hidden" name="isManager" value="Y" id="isManager">
+<input type="hidden" name="lastMod" value="1477123248250" id="lastMod">
+<input type="hidden" name="lastPhotoMod" value="1477303134743" id="lastPhotoMod">
+<input type="hidden" name="timezoneId" value="America/New_York" id="timezoneId">
+
+
+<input type="hidden" name="inlineEditDesc" value="Is this description up to date? You can change this as frequently as you want!" id="inlineEditDesc">
+<input type="hidden" name="label.profile.description.inlineedit.link" value="Edit" id="inlineEditLink">
+
+<div id="businessCardContent" class="lotusHeader">
+   	
+    	
+			
+		
+		
+	
+	<div class="vcard lotusHeading lotusLeft">
+		<a href="javascript:;" class="fn url lotusPerson bidiAware" _bizcardprocessed_="true" role="button" href_bc_="/profiles/html/profileView.do?key=4bf21884-de24-49f3-89ce-eb73720343b2">Amy Jones1</a>
+		<span class="x-lconn-userid" style="display: none;">4cbc45c0-16a7-1033-9239-95472f45d54f</span>
+	</div>
+	
+	
+	<div id="connectionIndicator" class="lotusIndicator lotusLeft" style="margin-top:3px; padding-bottom:0px; padding-top: 0px;">
+		
+	</div>
+	
+</div>
+
+	<div id="businessCardDetails" class="lotusDetails lotusLeft" style=" padding-top: 3px;">
+ 		IBM Employee
+<br>
+IBM Software Group
+<br>
+Westford
+,
+Massachusetts
+,
+United States
+<br>
+1-978-399-0001
+<br>
+<a href="mailto:ajones1@janet.iris.com" class="bidiAware">ajones1@janet.iris.com</a>
+<br>
+Assistant:
+<span class="vcard">
+<span class="x-lconn-userid" style="display: none;">53d359c0-f6e0-1032-9c7e-d02a14283ea9</span>
+<span class="email" style="display: none;">buser3@janet.iris.com</span>
+<a class="fn url person bidiAware " href="javascript:;" _bizcardprocessed_="true" role="button" href_bc_="/profiles/html/simpleSearch.do?searchFor=53d359c0-f6e0-1032-9c7e-d02a14283ea9&amp;searchBy=userid">
+Bill User3x
+</a>
+</span>
+<br>    		
+		
+	  	<strong><span style="white-space: nowrap;">Local Time:</span></strong>
+		<span id="time" style="white-space: nowrap;">5:58 AM</span>
+		
+				
+			
+		
+	</div>
+
+
+
+
+<div id="businessCardActions" class="lotusClear lotusDetails" style="padding-top: 10px;">
+	<div class="lotusActionBar" style="overflow:visible; height:auto;"><span style="overflow:visible; height:auto;" id="lconn_profiles_actionBar_ActionBar_0" widgetid="lconn_profiles_actionBar_ActionBar_0"> <span dojoattachpoint="stylesNode" class="lotusHidden"> <style type="text/css"> .AEMenuItemIcon_lconn_profiles_actionBar_ActionBar_0 { width: 13px; height: 13px; } </style> </span> <span dojoattachpoint="buttonsNode" class=""><button class="lotusBtn" title="Send Email" id="btn_actn__personCardSendEMail"> <img alt="" class="AEMenuItemIcon_lconn_profiles_actionBar_ActionBar_0 lotusHidden" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240"> <span>Send Email</span> </button><button class="lotusBtn" title="Download vCard" id="btn_actn__personCardDownloadVCard"> <img alt="" class="AEMenuItemIcon_lconn_profiles_actionBar_ActionBar_0 lotusHidden" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240"> <span>Download vCard</span> </button></span> <button dojoattachpoint="singleButtonNode" class="lotusBtn lotusHidden" title="Download vCard"> <img dojoattachpoint="singleButtonImageNode" alt="" class="AEMenuItemIcon_lconn_profiles_actionBar_ActionBar_0 lotusHidden" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240"> <span dojoattachpoint="singleButtonTextNode">Download vCard</span> </button><button class="lotusBtn" title="Download vCard" id="guidedT" style="margin:10px"> <img alt="" class="AEMenuItemIcon_lconn_profiles_actionBar_ActionBar_0 lotusHidden" > <span>Guided tours</span> </button> <button dojoattachpoint="moreActionsNode" dojoattachevent="onclick: _showMoreActions" class="lotusBtn lotusHidden" title="More Actions" aria-haspopup="true" id="moreActionsBtn_lconn_profiles_actionBar_ActionBar_0"> <span>More Actions<span> <img alt="" class="lotusArrow lotusDropDownSprite" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240"><span class="lotusAltText">▼</span> </span></span></button> <div dojoattachpoint="menuNode" class="lotusHidden" id="AEMenu_lconn_profiles_actionBar_ActionBar_0"></div></span></div>
+	<div class="lotusClear"></div>
+</div>
+
+	    </div>
+	    <div id="centerWidgetContainer">
+			<span id="widget-container-col2" class="widgetContainer" role="presentation"><div id="tabsWidget1Section"><div id="tabsWidget1SubArea" widgetloaded="true"><div id="tabsWidget1"><div class="tabsWidget1 Content view"> </div><div><div id="tabsWidget1_widgetId_container" style="clear: both;"><div id="lconn_tabsWidget1_CenterTabsDiv" class="lotusTabContainer" style="height: auto;"><ul id="lconn_tabsWidget1_CenterTabsUL" class="lotusTabs" role="tablist" style="min-width: 700px;"><li id="Updates_TabItem" role="tab" title="Recent Updates" itemidx="1" class="lotusSelected" tabindex="0" aria-selected="true" style="cursor: pointer;"><a tabindex="-1" class="_linkHolder lotusLeft">Recent Updates</a><a class="_iconHolder lotusIcon lotusLeft" style="padding: 0; display: none;"></a><div class="_menuHolder" style="display: none;"><div></div></div></li><li id="contactInfo_TabItem" role="tab" title="Contact Information" itemidx="2" tabindex="-1" style="cursor: pointer;"><a tabindex="-1" class="_linkHolder lotusLeft">Contact Information</a><a class="_iconHolder lotusIcon lotusLeft" style="padding: 0; display: none;"></a><div class="_menuHolder" style="display: none;"><div></div></div></li><li id="backgroundInfo_TabItem" role="tab" title="Background" itemidx="3" tabindex="-1" style="cursor: pointer;"><a tabindex="-1" class="_linkHolder lotusLeft">Background</a><a class="_iconHolder lotusIcon lotusLeft" style="padding: 0; display: none;"></a><div class="_menuHolder" style="display: none;"><div></div></div></li></ul></div><div id="tabsWidget1_widgetId_moreActions" class="lotusWidget2" style="z-index: 100; display: inline; border-width: 0px; top: 219px; position: absolute; left: 1032px;"><h2><a id="tabsWidget1_widgetId_moreActionsLink" aria-haspopup="true" role="button" href="javascript:void(0);" class="lotusIcon lotusActionMenu" title="Actions for: Recent Updates" aria-label="Actions for: Recent Updates"><img alt="" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240"><span class="lotusAltText">Actions for: Recent Updates</span></a></h2></div><table class="dijit dijitMenu dijitMenuPassive dijitReset dijitMenuTable tabsWidget1_widgetId_moreActions_menuHolder" role="menu" tabindex="0" cellspacing="0" dir="ltr" lang="en" id="UpdatesmoreActions" widgetid="UpdatesmoreActions" style="display: none;">
+	<tbody class="dijitReset" data-dojo-attach-point="containerNode"><tr class="dijitReset dijitMenuItem" data-dojo-attach-point="focusNode" role="menuitem" tabindex="-1" id="dijit_MenuItem_8" dir="ltr" lang="en" aria-label="Refresh " widgetid="dijit_MenuItem_8" style="-webkit-user-select: none;">
+	<td class="dijitReset dijitMenuItemIconCell" role="presentation">
+		<span role="presentation" class="dijitInline dijitIcon dijitMenuItemIcon dijitNoIcon" data-dojo-attach-point="iconNode"></span>
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" data-dojo-attach-point="containerNode,textDirNode" role="presentation" id="dijit_MenuItem_8_text">Refresh</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" data-dojo-attach-point="accelKeyNode" id="dijit_MenuItem_8_accel"></td>
+	<td class="dijitReset dijitMenuArrowCell" role="presentation">
+		<span data-dojo-attach-point="arrowWrapper" style="visibility: hidden">
+			<span class="dijitInline dijitIcon dijitMenuExpand"></span>
+			<span class="dijitMenuExpandA11y">+</span>
+		</span>
+	</td>
+</tr><tr class="dijitReset dijitMenuItem" data-dojo-attach-point="focusNode" role="menuitem" tabindex="-1" id="dijit_MenuItem_9" dir="ltr" lang="en" aria-label="Help " title="Clicking this will open a new window" widgetid="dijit_MenuItem_9" style="-webkit-user-select: none;">
+	<td class="dijitReset dijitMenuItemIconCell" role="presentation">
+		<span role="presentation" class="dijitInline dijitIcon dijitMenuItemIcon dijitNoIcon" data-dojo-attach-point="iconNode"></span>
+	</td>
+	<td class="dijitReset dijitMenuItemLabel" colspan="2" data-dojo-attach-point="containerNode,textDirNode" role="presentation" id="dijit_MenuItem_9_text">Help</td>
+	<td class="dijitReset dijitMenuItemAccelKey" style="display: none" data-dojo-attach-point="accelKeyNode" id="dijit_MenuItem_9_accel"></td>
+	<td class="dijitReset dijitMenuArrowCell" role="presentation">
+		<span data-dojo-attach-point="arrowWrapper" style="visibility: hidden">
+			<span class="dijitInline dijitIcon dijitMenuExpand"></span>
+			<span class="dijitMenuExpandA11y">+</span>
+		</span>
+	</td>
+</tr></tbody>
+</table><div id="lconn_tabsWidget1_CenterTabContent" class="profileContents" tabindex="0"><span id="widget-container-tabsWidget1" class="widgetContainer"><div id="UpdatesSection"><div id="UpdatesSubArea" widgetloaded="true"><div id="Updates"><div class="Updates Content view">
+		
+			<div class="lotusBoard">
+				<div id="shareboxContainer" widgetid="shareboxContainer"><div><div style="display: none;"><table class="eeLoadingCtnr" role="presentation"><tbody><tr><td><div class="lotusLoading"></div></td><td><span class="lotusAltText">Loading...</span></td></tr></tbody></table></div><div class="lotusBoard" id="lconn_news_microblogging_sharebox_InputForm_0" widgetid="lconn_news_microblogging_sharebox_InputForm_0"> <div dojoattachpoint="rootNode"> <div dojoattachpoint="inputFormNode" class="lotusStreamUpdate" style="margin-bottom: 9px;"> <div role="region" aria-label="What do you want to share?" style="padding-bottom:1px;"> <div dojoattachpoint="globalSuccessMessageNode" style="top:0px; margin:0 0 10px;" class="lotusMessage2 lotusSuccess lotusHidden" role="alert"> <img class="lotusIcon lotusIconMsgSuccess" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" alt="Success:"><span class="lotusAltText">Success:</span> <div class="lotusMessageBody">The message was successfully posted.</div> <a href="javascript:;" class="lotusDelete" role="button" title="Close" dojoattachevent="onclick: hideMessageBox, onkeypress: _closeMessageKey"><img alt="Close message" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240"><span class="lotusAltText">X</span></a> </div> <div dojoattachpoint="globalErrorMessageNode" style="top:0px; margin:0 0 10px;" class="lotusMessage2 lotusHidden" role="alert"> <img class="lotusIcon lotusIconMsgError" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" alt="Error:"><span class="lotusAltText">Error:</span> <div class="lotusMessageBody">An error occurred while posting the status update. If the issue persists contact your administrator.</div> <a href="javascript:;" class="lotusDelete" role="button" dojoattachevent="onclick: hideMessageBox, onkeypress: _closeMessageKey" title="Close message"> <img alt="Close" style="vertical-align: middle;" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240"><span class="lotusAltText">X</span> </a> </div> <div id="lconn_news_microblogging_sharebox_InputForm_0_textBoxContainer" class="lconnRTE" title="What do you want to share?" widgetid="lconn_news_microblogging_sharebox_InputForm_0_textBoxContainer"><div id="cke_editor1" class="cke_1 cke cke_reset cke_chrome cke_editor_editor1 cke_ltr cke_browser_webkit cke_hidpi" dir="ltr" lang="en" role="application" aria-labelledby="cke_editor1_arialbl"><span id="cke_editor1_arialbl" class="cke_voice_label">What do you want to share?</span><div class="cke_inner cke_reset" role="presentation"><div id="cke_1_contents" class="cke_contents cke_reset lotusTextCollapsed lconnShareboxCke" role="presentation" style="height: 36px;"><iframe src="" frameborder="0" class="cke_wysiwyg_frame cke_reset" style="width: 100%; height: 100%;" title="What do you want to share?" tabindex="0" allowtransparency="true"></iframe></div></div></div></div> <div class="lotusHidden" dojoattachpoint="actionAreaNode"> <div style="width: 99%;" id="lconn_news_microblogging_sharebox_InputForm_0_myactions" widgetid="lconn_news_microblogging_sharebox_InputForm_0_myactions"> <div class="lotusActions lotusMeta"> <ul class="lotusInlinelist lotusRight ublogActionsList" style="visibility: visible; height: 1.5em;"> <li class="lotusFirst" dojoattachpoint="uploadProgressContainer" style="display: none;"> <div style="display: inline;" class="ublogFileUploadProgress" dojoattachpoint="uploadProgressNode"></div> </li> <li class="lotusFirst" dojoattachpoint="fileAttachmentSectionNode" style="visibility: visible;"> <a dojoattachpoint="attachActionButtonNode" role="button" aria-label="Add a File" href="javascript:void(0);" tabindex="0" class="share-attachAction">Add a File </a> <span dojoattachpoint="fileAttachmentNode" class="lotusHidden" style="display: none;"> <img class="lconnSprite lconnSprite-iconAttachment16" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" alt=""> <span dojoattachpoint="fileAttachmentDetailsNode" class="lotusInline" dir="ltr"></span> <a dojoattachpoint="removeAttachmentNode" href="javascript:void(0);" class="lotusDelete" title="Remove file attachment" role="button" tabindex="0" aria-label="Remove file attachment"> <img width="16" height="14" alt="Remove file attachment" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240"> <span class="lotusAltText">X</span> </a> </span> </li> <li id="lconn_news_microblogging_sharebox_InputForm_0_myactions_remainingCharContainer" dojoattachpoint="remainingCharsLabelNode" aria-atomic="true" aria-live="polite" role="status" aria-relevant="text" class="shareboxPositiveCount" style="display: none;"> <span class="charDisplay"></span> <div class="ariaCharLabel lotusOffScreen" style="height:0px; width:0px; overflow: hidden;"></div> </li> </ul> <ul class="lotusInlinelist lotusLeft" style="visibility: visible; height: 1.5em;"> <li class="lotusFirst"> <a class="ublogPost lotusPersonInactive" dojoattachpoint="postButtonNode" style="font-weight: bold;" href="javascript:void(0);" role="button" aria-label="Post" aria-live="polite" aria-relevant="additions text" tabindex="0" aria-disabled="true">Post</a> </li> <li> <a dojoattachpoint="resetButtonNode" role="button" aria-label="Clear message" tabindex="0" href="javascript:void(0);">Clear</a> </li> </ul> </div></div> </div> <div style="clear:both;"> <div dojoattachpoint="successMessageNode" class="lotusHidden wipeNode" role="alert" aria-hidden="true"> <div class="lotusMessage2 lotusSuccess"> <img class="lotusIcon lotusIconMsgSuccess" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" alt="Success:"><span class="lotusAltText">Success:</span> <div class="lotusMessageBody" dojoattachpoint="mbSuccess" tabindex="-1">The message was successfully posted.</div> <a href="javascript:;" class="lotusDelete" role="button" tabindex="-1" dojoattachpoint="mbSuccessClose" title="Close message" dojoattachevent="onclick: hideMessageBox, onkeypress: _closeMessageKey"><img alt="Close message" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240"><span class="lotusAltText">X</span> </a> </div> </div> <div dojoattachpoint="errorMessageNode" class="lotusHidden wipeNode" role="alert" aria-hidden="true"> <div class="lotusMessage2"> <img class="lotusIcon lotusIconMsgError" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" alt="Error:"><span class="lotusAltText">Error:</span> <div class="lotusMessageBody" dojoattachpoint="mbError" tabindex="-1">An error occurred while posting the status update. If the issue persists contact your administrator.</div> <a href="javascript:;" class="lotusDelete" role="button" tabindex="-1" dojoattachpoint="mbErrorClose" title="Close message" dojoattachevent="onclick: hideMessageBox, onkeypress: _closeMessageKey"> <img alt="Close message" style="vertical-align: middle;" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240"><span class="lotusAltText">X</span> </a> </div> </div> <div dojoattachpoint="previewMessageNode" class="lotusHidden wipeNode" role="alert" aria-hidden="true"> <div class="lotusMessage2"> <img class="lotusIcon lotusIconMsgError" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" alt="Error:"><span class="lotusAltText">Error:</span> <div class="lotusMessageBody" dojoattachpoint="previewError" tabindex="-1">An error occurred while retrieving url preview information. If the issue persists contact your administrator.</div> <a href="javascript:;" class="lotusDelete" role="button" tabindex="-1" dojoattachpoint="previewErrorClose" title="Close message" dojoattachevent="onclick: hideMessageBox, onkeypress: _closeMessageKey"> <img alt="Close message" style="vertical-align: middle;" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240"><span class="lotusAltText">X</span> </a> </div> </div> <div dojoattachpoint="tooLongMessageNode" class="lotusHidden wipeNode" aria-hidden="true"> <div class="lotusMessage2"> <img class="lotusIcon lotusIconMsgError" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" alt="Error:"><span class="lotusAltText">Error:</span> <div class="lotusMessageBody" dojoattachpoint="tooLong" tabindex="-1">The message entered is too long to post. Change the text entered and try again</div> <a href="javascript:;" class="lotusDelete" role="button" dojoattachpoint="tooLongClose" tabindex="-1" title="Close message" dojoattachevent="onclick: hideMessageBox, onkeypress: _closeMessageKey"> <img alt="Close message" style="vertical-align: middle;" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240"><span class="lotusAltText">X</span> </a> </div> </div> <div dojoattachpoint="sessionExpiredMessageNode" role="alert" class="lotusHidden wipeNode" aria-hidden="true"> <div class="lotusMessage2"> <img class="lotusIcon lotusIconMsgError" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" alt="Error:"><span class="lotusAltText">Error:</span> <div class="lotusMessageBody" dojoattachpoint="sessionExpired" tabindex="-1">Your session has timed out. The message was not posted. Please save your message and log-in again. <a href="/homepage" tabindex="-1">Click here to log-in.</a></div> <a href="javascript:;" class="lotusDelete" role="button" dojoattachpoint="sessionExpiredClose" tabindex="-1" title="Close message" dojoattachevent="onclick: hideMessageBox, onkeypress: _closeMessageKey"> <img alt="Close message" style="vertical-align: middle;" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240"><span class="lotusAltText">X</span> </a> </div> </div> <div dojoattachpoint="unauthorizedErrorMessageNode" role="alert" class="lotusHidden wipeNode" aria-hidden="true"> <div class="lotusMessage2"> <img class="lotusIcon lotusIconMsgError" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" alt="Error:"><span class="lotusAltText">Error:</span> <div class="lotusMessageBody" dojoattachpoint="unauthorizedError" tabindex="-1">An authorization error occurred while posting the message.</div> <a href="javascript:;" class="lotusDelete" role="button" tabindex="-1" dojoattachpoint="unauthorizedErrorClose" dojoattachevent="onclick: hideMessageBox, onkeypress: _closeMessageKey" title="Close message"> <img alt="Close message" style="vertical-align: middle;" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240"><span class="lotusAltText">X</span> </a> </div> </div> </div> </div> </div> <div dojoattachpoint="unauthorizedMessageNode" class="lotusCenter lotusMeta lotusHidden"> </div> <div dojoattachpoint="warningParentNode" class="lotusHidden ublogWarningMessage" role="alert" id="lconn_news_microblogging_sharebox_MentionsWarningMessage_0" widgetid="lconn_news_microblogging_sharebox_MentionsWarningMessage_0"> <span dojoattachpoint="warningNode"><div class="lotusMessage2 lotusWarning" role="alert" aria-live="assertive" id="com_ibm_oneui_controls_MessageBox_0" widgetid="com_ibm_oneui_controls_MessageBox_0" style="margin: 0px 10px 30px;">
+	<img class="lotusIcon lotusIconMsgWarning" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" alt="" data-dojo-attach-point="imgNode">
+	<span class="lotusAltText">Close</span>
+	<div class="lotusMessageBody"><span data-dojo-attach-point="msgBody"><span><span id="lconn_news_microblogging_sharebox_MentionsWarningMessage_0_promptmessage">The following people mentioned will not be able to see the message as they are in a different organization:</span><span id="lconn_news_microblogging_sharebox_MentionsWarningMessage_0_warningmessage"><div></div></span></span></span>
+	
+	<a href="javascript:;" class="lotusHidden" data-dojo-attach-point="showMoreNode" data-dojo-attach-event="onclick: showMoreLessClicked">Show More</a>
+	<a href="javascript:;" class="lotusHidden" data-dojo-attach-point="showLessNode" data-dojo-attach-event="onclick: showMoreLessClicked">Show Less</a>
+	<div class="lotusHidden" data-dojo-attach-point="showMoreMessageNode"></div>
+	</div>
+	<a href="javascript:;" class="lotusDelete lotusHidden" role="button" title="Close" data-dojo-attach-point="closeBtn">
+		<img alt="" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" role="presentation">
+		<span class="lotusAltText">X</span> 
+	</a>
+</div></span></div> </div></div></div></div>
+				<div class="lotusStream" id="activityStream" widgetid="activityStream"> <div class="lotusWidgetBody" id="activityStreamMain"> <div class="lotusAccess" role="status" aria-live="assertive" aria-relevant="all" aria-atomic="true"> <div id="hiddenAriaMessage"></div> </div> <div dojoattachpoint="streamHeaderWrapper" class="" style="width: auto;" aria-hidden="false"> <div class="streamHeaderInner"> <div dojoattachpoint="shareboxNode" class="streamSharebox"></div> <div dojoattachpoint="pagingNode" class="lotusPaging lotusPagingTop noSubFilterView" role="presentation" aria-label="Activity Stream Header Menu"> <span dojoattachpoint="placeholderHeaderTopLeft" class="lotusHidden lotusLeft"></span> <span id="com_ibm_social_as_filter_FilterContainer_0" widgetid="com_ibm_social_as_filter_FilterContainer_0"> <span dojoattachpoint="containerNode" class="lotusLeft"> </span> <span dojoattachpoint="searchContainerNode" class="lotusRight"> </span></span> <span dojoattachpoint="placeholderHeaderTopRight" class="lotusHidden lotusRight"></span> </div> </div> <div class="headerFins lotusHidden" dojoattachpoint="headerFinsNode"> <div class="stream-finWrapper" role="presentation" dojoattachpoint="filterSharkfin"> <div class="stream-finLeft"></div> <span class="lotusAltText">▲</span> <img class="otherActivityStream14 otherActivityStream14-asKnockedfin14 stream-finMiddle" dojoattachpoint="filterSharkFinImg" src="ges/blank.gif?etag=20161021.145240" alt=""> <div class="stream-finRight"></div> </div> </div> <div dojoattachpoint="searchBoxMain"></div> </div> <div class="filterArea" dojoattachpoint="pagingTop" style="margin-top: 0px;"> <div class="filterAreaInner"> <span dojoattachpoint="statusBoxNode"></span> <span dojoattachpoint="placeholderHeaderLeft" class="lotusLeft"></span> <div dojoattachpoint="placeholderHeaderCenter" class="lotusLeft"></div> <span class="lotusRight"> <span dojoattachpoint="placeholderHeaderRight" class="lotusLeft placeholderHeaderRight"><span class="asFilterMenu" dojoattachpoint="filterMenuNode" id="com_ibm_social_as_filter_FilterMenu_0" widgetid="com_ibm_social_as_filter_FilterMenu_0"><label for="com_ibm_social_as_filter_FilterMenu_0_filterHolderNode" class="lotusHidden">_</label> Filter By: <select dojoattachpoint="filterHolderNode" id="com_ibm_social_as_filter_FilterMenu_0_filterHolderNode" aria-describedby="com_ibm_social_as_filter_FilterMenu_0_asFilterDescription" dojoattachevent="onchange: menuItemClicked" class="maxWidth"><option value="all">All</option><option value="statusupdates">Status Updates</option><option value="activites">Activities</option><option value="blogs">Blogs</option><option value="bookmarks">Bookmarks</option><option value="communities">Communities</option><option value="files">Files</option><option value="forums">Forums</option><option value="libraries">Libraries</option><option value="profiles">Profiles</option><option value="wikis">Wikis</option></select> <span class="lotusAccess" id="com_ibm_social_as_filter_FilterMenu_0_asFilterDescription">Select a filter to change the type of items shown on the Activity Stream</span></span></span> <span dojoattachpoint="placeholderHeaderRightSub" class="lotusHidden lotusLeft placeholderHeaderRightSub"></span> </span> <span dojoattachpoint="asDescription" id="asDesc" class="icStream-labelInner"></span> </div> </div> <div id="connectViews" dojoattachpoint="feedTabsNode" class="lotusHidden"></div> <div dojoattachpoint="loadingNode" class="lotusStreamTopLoading"><div dojoattachpoint="asLoadingNode" class="loaderMain lotusHidden" id="com_ibm_social_as_loading_Loader_0" widgetid="com_ibm_social_as_loading_Loader_0"> <img dojoattachpoint="loadingImageNode" alt="" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" class="lotusLoading loading">&nbsp;Loading...</div></div> <div role="region" aria-label="Activity Stream"> <ul id="asPermLinkAnchor" dojoattachpoint="newsFeedNode" class="lotusStream" style="min-height: 0px;"><li id="com_ibm_social_as_item_NewsItem_0" widgetid="com_ibm_social_as_item_NewsItem_0" class="lastNewsItem"><div class="activityStreamNewsItemContainer lotusPost" data-eeopener="true" role="article" tabindex="0" aria-describedby="com_ibm_social_as_item_NewsItem_0_openeedescription" dojoattachpoint="newsItemNode" aria-label="Amy Jones1 created a blog named dfsfdsfds.  10:06:59 AM" dojoattachevent="onclick: _onClick, onmouseover: _onFocus, onfocus: _onFocus, onmouseout: _onBlur, onblur: _onBlur, onkeypress: _onKeyPress"> <label class="lotusHidden" id="com_ibm_social_as_item_NewsItem_0_openeedescription">Press the enter key to show more details about this item</label> <a class="lotusAccess" role="button" href="javascript:;" tabindex="-1" aria-label="Show Actions" dojoattachevent="onclick: _showActions, onkeypress: _showActions">Show Actions</a> <div class="lotusPostAuthorInfo"> <div class="lotusPostAvatar"> <img class="activityStreamPhotoOf" alt="Photo of Amy Jones1" src=""> </div> </div> <div class="lotusPostContent"> <div class="lotusPostAction asLinkContainer" dojoattachpoint="contentNode" style="max-height: 126px;"> <span class="bidiAware bidiSTT_AT_USER1"><span class="vcard"><a class="bidiAware fn url" href="javascript:;" target="_blank" _bizcardprocessed_="true" role="button" href_bc_="https://lcauto81.swg.usma.ibm.com/profiles/html/profileView.do?userid=4cbc45c0-16a7-1033-9239-95472f45d54f"><span class="photo" src="https://lcauto81.swg.usma.ibm.com/profiles/photo.do?userid=4cbc45c0-16a7-1033-9239-95472f45d54f" role="presentation" style="display : none"></span>Amy Jones1</a><span class="x-lconn-userid" style="display : none">4cbc45c0-16a7-1033-9239-95472f45d54f</span></span> created a blog named <a class="bidiAware" title="Open original item" href="https://lcauto81.swg.usma.ibm.com/blogs/dfsfds" target="_blank">dfsfdsfds</a>.</span> <span dojoattachpoint="sharedExternally"></span> </div>   <div class="lotusHidden" dojoattachpoint="showMoreText"> <span aria-hidden="true">...</span><a href="javascript:;" role="button" dojoattachevent="onclick: onShowMoreLessClicked">Show more<span class="lotusAccess">This button is used to display content that has been hidden for display purposes. Not relevant for assistive technology users.</span></a> </div> <div dojoattachpoint="urlPreviewNode"></div> <div dojoattachpoint="footerSummary" class="lotusMeta lotusChunk"> <ul class="lotusInlinelist lotusActions lotusLeft" role="toolbar" aria-label="Item Actions" dojoattachpoint="actionListContainer"><li class="lotusHidden"><span dojoattachpoint="likeControlContainer"></span></li><li class="lotusHidden"><span>0 likes</span></li><li class="lotusHidden actionMoreLink" dojoattachpoint="actionMoreLink"> <a href="javascript:;" role="button" dojoattachevent="onclick: showMoreActions">More...</a> </li> </ul><span class="lotusRight" title="Event from Blogs"> <abbr class="timeago" dojoattachpoint="timeagoNode" title="October 24, 10:06 AM" id="lconn_core_ext_timeago_Timeago_0" widgetid="lconn_core_ext_timeago_Timeago_0">53m ago</abbr> <img src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" alt="Event from Blogs" class="otherActivityStream14 otherActivityStream14-asBlogs14 generatorImageSize"></span><div class="lotusHidden likeErrorMessage" role="alert" dojoattachpoint="likeErrorNode"></div></div> <a class="lotusDelete lotusHidden" role="button" href="javascript:;" dojoattachevent="onclick: onDeleteClicked" aria-label="Delete this item" title="Delete this item" alt="Delete this item"><img src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" alt=""><span class="lotusAltText">X</span></a> <div class="lotusHidden repostMessage" role="alert" dojoattachpoint="repostMessageNode"></div> <div class="lotusPostIndicator"> <a role="button" dojoattachevent="onclick: openEE, onkeypress: _onKeyPress" data-eeopener="true" href="javascript:;" alt="Show more details about this item" title="Show more details about this item"><img src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" role="presentation" alt=""><span class="lotusAltText">&gt;&gt;</span></a> </div> </div> <span dojoattachpoint="inlineCommentsNode"></span> <span dojoattachpoint="commentInputNode"></span></div></li></ul> </div> <div dojoattachpoint="pagingLoaderNode"><div dojoattachpoint="asLoadingNode" class="lotusHidden loaderMain" id="com_ibm_social_as_loading_Loader_1" widgetid="com_ibm_social_as_loading_Loader_1"> <img dojoattachpoint="loadingImageNode" alt="" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" class="lotusLoading loading">&nbsp;Loading...</div></div> <ul dojoattachpoint="bottomScrollerNode" class="lotusPagingBottom"> <li class="pagingHandler"> <a href="javascript:;" class="streamMore lotusHidden" dojoattachpoint="showMoreNode" dojoattachevent="onclick: showNextPage, onkeypress: showNextPageKey" role="button" aria-label="Show more activity stream items">Show more</a><div class="lotusLeft lotusAction lotusHidden" dojoattachpoint="backToTopNode" role="presentation"><a href="javascript:;" dojoattachevent="onclick: goBackToTop, onkeypress: backToTopKey" role="button" aria-label="Back to top of activity stream items" class="lotusAction">Back to top<img class="lotusBackToTop" src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" alt=""></a></div><div class="lotusFeeds lotusLeft" id="com_ibm_social_as_feed_FeedLink_0" widgetid="com_ibm_social_as_feed_FeedLink_0"><a href="https://lcauto81.swg.usma.ibm.com/connections/opensocial/basic/rest/activitystreams/urn:lsid:lconn.ibm.com:profiles.person:4cbc45c0-16a7-1033-9239-95472f45d54f/@involved/@all?rollup=true&amp;shortStrings=true&amp;format=atom" class="lotusFeed lotusAction" target="_blank" dojoattachpoint="feedLinkNode">Feed for these entries</a></div> </li> </ul> </div></div>
+			</div>
+		
+	</div></div></div></div></span></div></div></div></div></div></div></span>
+		</div>
+	</div>
+</div>
+
+			</div>
+			
+		<div id="lotusFooter" class="lotusFooter" role="contentinfo" aria-label="Footer">
+			<div id="removeBlankFooter"></div><ul><li><a href="https://lcauto81.swg.usma.ibm.com/homepage/">Home</a></li><li><a href="javascript:;" onclick="javascript:openHelpWindow('','/topic/com.ibm.lotus.connections.profiles.help/pframe.html'); return false;" class="">Help</a></li><li><a href="http://www-10.lotus.com/ldd/lcforum.nsf">IBM Support Forums</a></li> <li><a href="/profiles/nav/toolbox?appName=profiles" class="">Bookmarking Tools</a></li><li id="lotusBannerFooterMetrics" style=""><a class="lotusMetricsReaderLink" href="https://lcauto81.swg.usma.ibm.com/metrics/">Server Metrics</a></li><li id="lconnFooterMobile" class="lotusHidden"><a id="lconnMobileRedirectLink" href="javascript:;">Mobile UI</a></li><li><a href="/profiles/app/about" class="">About</a></li><li><a href="http://www-306.ibm.com/software/lotus/products/connections/">IBM Connections on ibm.com</a></li><li><a href="http://www.lotus.com/ldd/doc/cct/nextgen.nsf/feedback_choice?OpenForm&amp;Context=footer+ventura+NoTitle+4.5">Submit Feedback</a></li></ul><script type="text/javascript">
+(function(){
+   function loadConnectionsLanguageSelector() {
+      try {
+         dojo.require("lconn.core.header");
+         lconn.core.header.enableLanguageSelector("languageSelectorText", {"en":"English","zh":"\u4e2d\u6587 (\u200f\u7b80\u4f53)","fr":"Fran\u00e7ais","ar":"\u200f\u0627\u0644\u0639\u0631\u0628\u064a\u0629\u200f"},
+            "lcLang", "", -1);
+      } catch (e) {
+         console.error(e);
+      }
+   }
+   if (dojo.exists("lconn.core.header") && !dojo.exists("_skipConnectionsLanguageSelector"))
+      dojo.addOnLoad(loadConnectionsLanguageSelector);
+})();
+</script><script type="text/javascript">
+      dojo.require("lconn.core.header.apps");
+      dojo.require("lconn.core.auth");
+
+    </script><script type="text/javascript">
+         dojo.addOnLoad(function(){
+            lconn.core.header.apps.updateLoginRegion();
+            lconn.core.header.apps.updateBannerByRoles();
+         });
+       </script>
+		</div>	
+
+		</div><div class="dijitPopup" style="display: none; z-index: 900;" role="presentation" id="com_ibm_oneui_controls_internal__MasterPopup_0" widgetid="com_ibm_oneui_controls_internal__MasterPopup_0"> <div dojoattachpoint="wrapper" role="dialog" aria-hidden="true"> <a dojoattachpoint="closeNode" class="lotusPopupClose" href="#" dojoattachevent="click:clickClose" role="button" alt="Close" aria-describedby="com_ibm_oneui_controls_internal__MasterPopup_0_content"><img src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" alt="Close"><span class="lotusAltText">X</span></a> <div dojoattachpoint="contentWrapper" role="presentation"> <div dojoattachpoint="content" id="com_ibm_oneui_controls_internal__MasterPopup_0_content"> </div> </div> <div dojoattachpoint="arrow" class="lotusFlyoutConnector" role="presentation"> </div> </div></div><div class="dijitPopup" role="region" aria-label="undefined" style="visibility: hidden; top: -9999px; left: -9999px; right: auto;"></div><span widgetid="lconnheadermenu-people" style="display: none;"></span>
+	
+
+<div id="foxclocks-statusbar-spacer" class="foxclocks-content"></div><div class="icBanner-notif-center lotusHidden" role="dialog" id="com_ibm_social_as_notification_NotificationsFlyout_0" aria-labelledby="arialabelNotificationsFlyout" widgetid="com_ibm_social_as_notification_NotificationsFlyout_0">
+	<span aria-hidden="true" class="lotusHidden" id="arialabelNotificationsFlyout">Notification Center - View updates related to your content and notifications you have received</span>
+    <div class="icBanner-popover-inner">
+        <div id="headerPopupNode" class="icBanner-popover-header" data-dojo-attach-point="headerNode"><div class="header-left">My Notifications</div>
+        	<div class="header-right">
+				<span tabindex="0" data-dojo-attach-point="readAllAction" title="Mark all read" role="button" class="icBanner-popover-notificationReadAll">
+					Mark all read
+				</span>
+				<span id="separator" class="icBanner-popover-notificationSeparator">|</span>
+                <a class="icBanner-popover-notificationSettings" tabindex="0" href="https://lcauto81.swg.usma.ibm.com/news" title="Settings" target="_blank" data-dojo-attach-point="settingsLink">
+                    Settings
+                </a>
+            </div>           
+        </div>
+        <div class="icBanner-popover-content" data-dojo-attach-event="onscroll: checkScroll" data-dojo-attach-point="contentNode" tabindex="-1">
+            <div class="icBanner-popover-newNotifications lotusHidden"></div>
+            <div data-dojo-attach-point="notificationItem">
+            </div>
+            <div data-dojo-attach-point="loadingNode" class="lotusLoading icBanner-popover-loader lotusHidden"></div>
+        </div>
+       
+        <div class="icBanner-popover-footer">
+            <ul class="l-icFloatList">                
+                <li class="lotusFirst"><a class="icBanner-footer-link" tabindex="0" aria-describedby="ariaNotificationCenterSeeAll" data-dojo-attach-point="seeAllLink" href="https://lcauto81.swg.usma.ibm.com/homepage/web/updates/#myNotifications/forme/all" target="_blank">See All</a></li> 
+            </ul>
+            <span class="lotusAccess" id="ariaNotificationCenterSeeAll">Click here to go to the My Notifications View in Homepage</span>
+            <div class="l-icClear"></div>
+        </div>
+    </div>
+</div><div class="dijitDialog" role="dialog" aria-labelledby="lotusAlertDialog_title" id="lotusAlertDialog" widgetid="lotusAlertDialog" style="padding: 0px; border: none; display: none; position: absolute;">
+	<div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+		<span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="lotusAlertDialog_title" role="heading" level="1">Profiles</span>
+		<span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="ondijitclick: onCancel" title="Cancel" role="button" tabindex="-1">
+			<span data-dojo-attach-point="closeText" class="closeText" title="Cancel">x</span>
+		</span>
+	</div>
+	<div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+	<div class="lotusDialogBorder">
+		<div id="alertForm" class="lotusDialog lotusForm" style="min-width: 400px;">
+			<div class="lotusDialogHeader">
+				<h1 class="lotusHeading">Profiles</h1>
+				<a title="Close" role="button" class="lotusRight lotusDialogClose" href="javascript:;" onclick="dijit.byId('lotusAlertDialog').hide(); return true;">
+					<img src="https://lcauto81.swg.usma.ibm.com/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20161021.145240" role="presentation" alt="Close">
+					<span class="lotusAltText">X</span>
+				</a>
+			</div>		
+			<div id="lotusAlertDialogContent" class="lotusDialogContent" style="min-width: 400px;" role="alert">
+			</div>
+			<div class="lotusDialogFooter">
+				<input value="Close" class="lotusFormButton" onclick="dijit.byId('lotusAlertDialog').hide(); return true;" type="submit"> 
+			</div>
+		</div>
+	</div>
+</div>
+	
+</div><div class="dijitDialog" role="dialog" aria-labelledby="exportVcardDialog_title" id="exportVcardDialog" widgetid="exportVcardDialog" style="padding: 0px; border: none; display: none; position: absolute;">
+	<div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+		<span data-dojo-attach-point="titleNode" class="dijitDialogTitle lotusAltText" id="exportVcardDialog_title" role="heading" level="1">Export vCard</span>
+		<span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="ondijitclick: onCancel" title="Cancel" role="button" tabindex="-1">
+			<span data-dojo-attach-point="closeText" class="closeText" title="Cancel">x</span>
+		</span>
+	</div>
+	<div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+	
+<div class="lotusDialogBorder">
+	<form id="exportVcardDialogForm" class="lotusDialog lotusForm" action="/profiles/vcard/profile.do" method="get" aria-describedby="exportVcardDlgTitle">
+		<div class="lotusDialogHeader">
+			<h1 class="lotusHeading" id="exportVcardDlgTitle">Export vCard</h1>
+			<a title="Cancel" role="button" class="lotusRight lotusDialogClose" href="javascript:;" onclick="hideVcardExport();return false;">
+				<img src="" role="presentation" alt="">
+				<span class="lotusAltText">X</span>
+			</a>
+		</div>	
+		<div class="lotusDialogContent">
+			<a id="mainContent" name="mainContent"></a><!-- skip links for accessibility -->
+			<fieldset>
+				<legend class="lotusHidden">Select download character encoding</legend>
+				<table role="presentation" class="lotusFormTable" cellpadding="0" cellspacing="0" border="0" summary="">
+					<tbody><tr class="lotusFormFieldRow">
+						<td><span id="radio_group_label">Select download character encoding</span></td>
+						<td><a id="exportVcardHelpLink" href="javascript:;" class="lotusRight" role="button" widgetid="exportVcardHelpLink"><img class="lconnSprite lconnSprite-iconHelp16" src="" alt="Character encoding help"><span class="lotusAltText">?</span></a></td>
+					</tr>
+				</tbody></table>
+				<div role="radiogroup" aria-labelledby="radio_group_label">
+					<input type="hidden" name="key" value="4bf21884-de24-49f3-89ce-eb73720343b2">
+					<input type="hidden" name="lastMod" value="1477123248250">
+					
+					
+						<div>
+							<input role="radio" type="radio" name="encoding" class="lotusCheckbox" value="UTF-8" id="defaultEncoding1" checked="true" aria-checked="true" onchange="dojo.query('input[name=&quot;encoding&quot;]').forEach(function(node) {dojo.attr(node, 'aria-checked',((node.checked)?'true':'false'))});">
+							<span class="lotusCheckbox"><label for="defaultEncoding1">Internationalized (UTF-8)</label></span>
+						</div>
+						
+					
+						<div>
+							<input role="radio" type="radio" name="encoding" class="lotusCheckbox" value="ISO-8859-1" id="defaultEncoding2" aria-checked="false" onchange="dojo.query('input[name=&quot;encoding&quot;]').forEach(function(node) {dojo.attr(node, 'aria-checked',((node.checked)?'true':'false'))});">
+							<span class="lotusCheckbox"><label for="defaultEncoding2">Western European (ISO-8859-1)</label></span>
+						</div>
+						
+					
+						<div>
+							<input role="radio" type="radio" name="encoding" class="lotusCheckbox" value="Cp943c" id="defaultEncoding3" aria-checked="false" onchange="dojo.query('input[name=&quot;encoding&quot;]').forEach(function(node) {dojo.attr(node, 'aria-checked',((node.checked)?'true':'false'))});">
+							<span class="lotusCheckbox"><label for="defaultEncoding3">Japanese (Cp943c)</label></span>
+						</div>
+						
+					
+				</div>
+
+			</fieldset>
+		</div>
+		<div class="lotusDialogFooter">
+			<input id="vcardDlgSubmit" value="Download" class="lotusFormButton" onclick="hideVcardExportForDL();return true;" type="submit"> 
+			<input value="Cancel" class="lotusFormButton" onclick="hideVcardExport();return false;" type="button">
+		</div>
+	</form>
+</div>	
+
+</div>
+	
+</div><div id="escapeBufferDiv" style="display: none;"></div><div class="dijitPopup dijitTooltipDialogPopup" role="region" aria-label="lconnheadermenu-people" id="lotusBannerProfiles_dropdown" dijitpopupparent="lotusBannerProfiles" style="display: none; height: auto; overflow: visible;"><div role="dialog" tabindex="-1" class="lotusNavMenu dijitTooltipABLeft" id="lconnheadermenu-people" widgetid="lconnheadermenu-people" style="top: 0px; visibility: visible;" aria-hidden="true">
+	<div class="dijitTooltipContainer" role="presentation">
+		<div data-dojo-attach-point="contentsNode" class="dijitTooltipContents dijitTooltipFocusNode">
+			<div data-dojo-attach-point="containerNode" aria-label="Profiles"><div role="document"><table class="lotusLayout lotusNavMenuLarge" cellpadding="0" cellspacing="0"><tbody><tr><th scope="row" class="lotusNowrap"><a href="https://lcauto81.swg.usma.ibm.com/profiles/html/myProfileView.do"><strong>My Profile</strong></a></th><td class="lotusNowrap lotusLastCell"><a href="https://lcauto81.swg.usma.ibm.com/profiles/html/editMyProfileView.do">Edit My Profile</a></td></tr><tr><th scope="row" class="lotusNowrap lotusLastCell"><a href="https://lcauto81.swg.usma.ibm.com/profiles/html/networkView.do?widgetId=friends&amp;requireAuth=true"><strong>My Network</strong></a></th><td class="lotusNowrap lotusLastCell"><a href="https://lcauto81.swg.usma.ibm.com/homepage/web/updates/#statusUpdates/all">Status Updates</a></td></tr><tr><th scope="row" class="lotusNowrap lotusLastCell"><a href="https://lcauto81.swg.usma.ibm.com/profiles/html/searchProfiles.do"><strong>Directory</strong></a></th></tr></tbody></table></div>
+</div>
+			
+		</div>
+	</div>
+	<div class="dijitTooltipConnector" role="presentation" data-dojo-attach-point="connectorNode"></div>
+</div></div><div id="window-resizer-tooltip" style="display: none;"><a href="#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth">1376</span> x <span class="tooltipHeight" id="winHeight">873</span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth">1376</span> x <span class="tooltipHeight" id="vpHeight">211</span></div>
+
+    <!--  List the Dojo modules your test page requires -->
+
+    ${script:dojo.parser}
+    ${script:net.jazz.ajax.xdloader}
+    ${script:lconn.core.paletteOneUI.Palette}
+    ${script:dijit.ColorPalette}
+    ${script:doh.runner}
+    <link rel="stylesheet" href="../hopscotch.css"></link>
+        <script src="../Tour.js"></script>
+        <script src="example3.js"></script>
+		<script>
+		var node = dojo.byId("guidedT");
+		dojo.connect(node, "onclick", function(){
+			var hello = new lconn.test.icsTours.tours.Tour();
+			hello.startTour(tour);
+		});
+		</script>	
+    </body></html>

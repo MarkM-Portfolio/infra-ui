@@ -1,0 +1,30 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="ics-dialog-action">
+	<table class="linkContainer" role="presentation" data-dojo-attach-point="linkContainer">
+		<tr>
+			<td>
+			  <label class="linkLabel" for="${fileLinkInputId}">${nls.LINK_FILE}</label>
+			</td>
+			<td>
+			  <input onFocus="this.select();" type="text" class="linkValue" value="${fileLink}" id="${fileLinkInputId}" readonly>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			  <label class="linkLabel preview" for="${previewLinkInputId}">${nls.LINK_PREVIEW}</label>
+			</td>
+			<td>
+			  <input onFocus="this.select();" type="text"  class="linkValue preview" value="${filePreview}" id="${previewLinkInputId}" readonly>
+		   </td>
+		</tr>
+		<tr>
+			<td>
+			  <label class="linkLabel" for="${downloadLinkInputId}">${nls.LINK_DOWNLOAD}</label>
+			</td>
+			<td>
+			  <input onFocus="this.select();" type="text" class="linkValue" value="${fileDownload}" id="${downloadLinkInputId}" readonly>
+			</td>
+		</tr>
+	</table>
+	<a class="confirm bad" href="javascript:;" data-dojo-attach-event="onclick:clickLink" id="ok" role="button">${nls.OK}</a>
+</div>

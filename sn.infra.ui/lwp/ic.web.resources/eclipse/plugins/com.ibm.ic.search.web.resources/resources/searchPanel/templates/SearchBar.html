@@ -1,0 +1,26 @@
+<div class="icSearchBar">
+	<div data-dojo-props='title: "${SEARCH_ALT_TEXT}", placeholder: "${SEARCH_PLACEHOLDER}"' data-dojo-attach-point="searchBox" data-dojo-attach-event="onFocus: onBarFocused" data-dojo-type="dijit/form/TextBox"></div>
+	<a class="icClearAllIcon lotusHidden" href="javascript:;" role="button" class="icSvgIcon icSvgSearch" title="${SEARCH_CLEAR_ALT_TEXT}" aria-label="${SEARCH_CLEAR_ALT_TEXT}" data-dojo-attach-point="_clearAllButton" data-dojo-attach-event="onclick: onClearAllClicked">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+			<path d="M18 6.67L17.33 6 12 11.33 6.67 6 6 6.67 11.33 12 6 17.33l.67.67L12 12.67 17.33 18l.67-.67L12.67 12 18 6.67z"></path>
+		</svg>
+	</a>
+	<a class="icSearchIcon" href="javascript:;" role="button" class="icSvgIcon icSvgSearch" title="${SEARCH_ALT_TEXT}" aria-label="${SEARCH_ALT_TEXT}" data-dojo-attach-point="_searchButton" data-dojo-attach-event="onclick: onSearchClicked">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+			<g>
+				<path d="M12,1C5.926,1,1,5.926,1,12c0,6.074,4.926,11,11,11s11-4.926,11-11C23,5.926,18.074,1,12,1z M12,21c-4.962,0-9-4.038-9-9 s4.038-9,9-9s9,4.038,9,9S16.962,21,12,21z"></path>
+				<rect x="23.879" y="21.05" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -10.7696 26)" width="4.243" height="9.899"></rect>
+				<circle cx="21" cy="21" r="1"></circle>
+			</g>
+		</svg>
+	</a>
+	<div id="${id}_searchInstrNode" class="icSearchInstructions lconnClearFix lotusHidden" data-dojo-attach-point="searchInstructions">
+		<span>${SEARCH_INSTRUCTIONS}</span>
+	</div>
+	<div id="${id}_ariaLiveNode" class="lotusOffScreen" data-dojo-attach-point="ariaLiveNode" role="status" aria-live="assertive"></div>
+	<div class="icScopes lconnClearFix lotusHidden" data-dojo-attach-point="_optionsNode">
+		<span class="icGlobalScope" style="display: none;" data-dojo-attach-point="_dropDownOptions"></span>
+		<a href="javascript:;" class="icGlobalScope" aria-label="${globalScopeAria}" data-dojo-attach-point="_globalOptionNode" data-dojo-attach-event="onclick: onGlobalOptionClicked">${globalScopeLabel}</a>
+		<a href="javascript:;" class="icLocalScope" style="display: none;" data-dojo-attach-point="_localOptionNode" data-dojo-attach-event="onclick: onLocalOptionClicked"></a>
+	</div>
+</div>

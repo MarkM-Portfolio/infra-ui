@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Invita a connettersi",
+	NDYK1:"Non ci sono altre persone da consigliare.",
+	LOADING: "caricamento",
+	DYK_TITLE: "Persone che potresti conoscere",
+	INVITE_TITLE: "Invia un invito a connettersi",
+	SEND_ACTION: "Invia",
+	CANCEL_ACTION: "Annulla",
+	PREV: "Indietro",
+	NEXT: "Avanti",
+	bpct: "Ha aggiunto un commento sul tuo blog.",
+	bpcc: "Avete aggiunto un commento sullo stesso blog.",
+	lpfr: "È un collega di qualcuno che conosci.",
+	lm1: "Sei il responsabile di questa persona.",
+	le1: "Questa persona è il tuo responsabile.",
+	sdm: "Condividete lo stesso responsabile.",
+	pt: "Questa persona ti ha taggato.",
+	pbt: "Hai taggato questa persona.",
+	acm: "Condividete alcune attività.",
+	wikiCoContribution: "Avete modificato entrambi lo stesso wiki.",
+	bpcb: "Hai aggiunto un commento sul suo blog.",
+	lpcfr: "Condividete alcuni colleghi.",
+	ccmf: "Vi trovate nella stessa comunità.",
+	ccms: "Vi trovate nella stessa comunità.",
+	filesharing: "Condividete alcuni file.",
+	forumthreaddiscussion: "Condividete un thread del forum.",
+	ctb: "Condividete un segnalibro.",
+	tgw: "Avete tag corrispondenti.",
+	tcu: "Avete utilizzato lo stesso tag.",
+	pctg: "Avete entrambi taggato la stessa persona.",
+	tgb: "La stessa persona ha taggato entrambi."
+})

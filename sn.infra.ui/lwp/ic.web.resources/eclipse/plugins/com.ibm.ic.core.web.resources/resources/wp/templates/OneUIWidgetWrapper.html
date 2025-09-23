@@ -1,0 +1,18 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+
+<div id="${_props.webInstanceId}Section" class="lotusWidget2" widgetId="${_props.instanceId}" 
+	data-dojo-attach-point="sectionNode" role="region" aria-labelledby="${_props.instanceId}Id">
+	<h2 style="cursor: default">
+		<a id="widgetActionsMenu${_props.instanceId}" class="lotusIcon lotusActionMenu" 
+			title="${_resourceBundle.actionsAlt}" role="button" href="javascript:void(0);"
+			data-dojo-attach-point="actionMenuNode"
+			aria-haspopup="true" aria-label="${_resourceBundle.actionsAlt}" aria-expanded="false">
+			<img src="${_blankGif}" alt=""/>
+			<span class="lotusAltText">${_resourceBundle.actionsAlt}</span>
+		</a>
+		<span class="ibmDndDragHandle" data-dojo-attach-point="titleNode"
+			id="${_props.instanceId}Id">${_props.widgetName}</span>
+	</h2>
+	<div id="${_props.webInstanceId}moreActions"></div>
+	<div id="${_props.webInstanceId}SubArea" data-dojo-attach-point="subAreaNode"></div>
+</div>

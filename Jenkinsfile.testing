@@ -1,0 +1,38 @@
+@Library('quickstart') _
+def param = [
+  "SERVER_POOL":"Pipeline",
+  "global_ENABLE_CODE_COVERAGE":false,
+  "BVT":["Smoke_Test":["bvtGUIStages":["Infra":["CI_PREBVT_TEST_NAME":"Infra","CI_PREBVT_TEST_CLASS":"","NodeLable":"devsub3"]]],
+		       "GUI_AND_JS_Test":["bvtGUIStages":[
+		                            "EmbeddedExperience":[
+					      "CI_PREBVT_TEST_NAME":"EmbeddedExperience",
+					      "CI_PREBVT_TEST_CLASS":"com.ibm.conn.auto.tests.homepage.BVT_Level_2_Homepage_EE",
+					      "NodeLable":"InfraMisc_BVT"],
+                                            "Sharebox":[
+					      "CI_PREBVT_TEST_NAME":"Sharebox",
+					      "CI_PREBVT_TEST_CLASS":"com.ibm.conn.auto.tests.sharebox.BVT_Level_2_Sharebox",
+					      "NodeLable":"InfraMisc_BVT"],
+					    "Widgets":[
+					      "CI_PREBVT_TEST_NAME":"Widgets",
+					      "CI_PREBVT_TEST_CLASS":"com.ibm.conn.auto.tests.communities.BVT_Level_2_Communities_Widgets"],
+					    "Mentions":[
+					      "CI_PREBVT_TEST_NAME":"Mentions",
+					      "CI_PREBVT_TEST_CLASS":"com.ibm.conn.auto.tests.mentions.BVT_Homepage_Mentions",
+					      "NodelLable":"InfraMisc_BVT"],
+					    "FileDetailsOverlay":[
+					      "CI_PREBVT_TEST_NAME":"FileDetailsOverlay",
+					      "CI_PREBVT_TEST_CLASS":"com.ibm.conn.auto.tests.fileviewer.BVT_FileViewer_Iframe"],
+					    "Communities":[
+					      "CI_PREBVT_TEST_NAME":"Communities",
+					      "CI_PREBVT_TEST_CLASS":"com.ibm.conn.auto.tests.communities.BVT_Level_2_Communities"],
+					    "Homepage":[
+					      "CI_PREBVT_TEST_NAME":"Homepage",
+					      "CI_PREBVT_TEST_CLASS":"com.ibm.conn.auto.tests.homepage.BVT_Level_2_Homepage",
+					      "NodeLable":"HomepageNews_BVT"]
+					  ],
+		      "bvtJSStages":["Infra":["NodeLable":"devsub4"]]
+												]
+	 ],
+	 // "PTI":["Promote":["PTIStages":["Infra_UI":["NodeLable":"write_BVTBuildLabel"]]]]
+]		 
+JenkinsBlue(param)

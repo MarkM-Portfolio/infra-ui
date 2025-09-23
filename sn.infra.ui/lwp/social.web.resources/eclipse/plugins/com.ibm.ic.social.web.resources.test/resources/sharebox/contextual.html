@@ -1,0 +1,118 @@
+<html>
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+<body><p>${head}
+</p><title>Contextual Sharebox Test</title>
+${script:lconn.core.config.services}
+${script:net.jazz.ajax.xdloader}
+${script:com.ibm.social.sharebox.ContextualSharebox}
+${endhead}
+
+<script>
+(function () {
+  var newsSvcUrl;
+  var scheme = (window.location.protocol || "http").replace(':','');
+  var isSecure = (scheme === "https");
+  var newsCfg = lconn.core.config.services.news;
+  var newsSvcUrl = (isSecure) ? newsCfg.secureUrl : newsCfg.url;
+  var profilesCfg = lconn.core.config.services.profiles;
+  var profilesUrl = (isSecure) ? profilesCfg.secureUrl : profilesCfg.url;
+  var profileSvcUrl = profilesUrl + "/atom/profileService.do";
+  var webResourcesCfg = lconn.core.config.services.webresources;
+  var userId = null;
+  
+   function evalXPathString (doc, xpath, mapping) {
+   	var result = evalXPath(doc,xpath,mapping);
+   	var str = null;
+   	if (result.length) {
+   		str = result[0].nodeValue;
+   	}
+   	return str;
+   }
+      
+   function evalXPath(doc, xpath, mapping) {
+   	var nodes = [];
+      try {
+         if (doc.evaluate) {
+            var nsResolver;
+            if (mapping) {
+            	var internalResolver = doc.createNSResolver( doc.ownerDocument == null ? doc.documentElement : doc.ownerDocument.documentElement);
+            	nsResolver = function (prefix) { return mapping[prefix] || internalResolver.lookupNamespaceURI(prefix); };
+            }
+            else {
+            	nsResolver = doc.createNSResolver( doc.ownerDocument == null ? doc.documentElement : doc.ownerDocument.documentElement);
+            }
+            var result = doc.evaluate(xpath, doc, nsResolver, XPathResult.ANY_TYPE, null);      
+            var node = result.iterateNext();
+            while (node) {
+               nodes.push(node);
+               node = result.iterateNext();
+            }
+         }
+         else {
+            var root = doc.documentElement;
+            var result;
+            if (mapping) {
+               var namespaces = "";
+               for (prefix in mapping) {
+                  if (namespaces.length) namespaces += " ";
+                  namespaces += ("xmlns:" + prefix + "='" + mapping[prefix] + "'");
+               }
+               doc.setProperty("SelectionNamespaces", namespaces);
+            }           
+            result = root.selectNodes(xpath);
+            for (var i = 0; i < result.length; i++)
+               nodes.push(result.item(i));            
+         }
+      }
+      catch (e) {
+         console.log("Exception evaluating xpath ", e);
+      }
+      return nodes;
+   }
+   
+   function createSharebox () {
+      new com.ibm.social.sharebox.ContextualSharebox({ newsSvcUrl: newsSvcUrl, context: { resourceId: userId, resourceType: "person"} }, dojo.byId("sharebox"));
+   }
+  
+  dojo.addOnLoad(function () {
+	 
+      dojo.xhrGet({
+         url: profileSvcUrl,
+         handleAs: "xml",
+         preventCache: true,
+         errorOk: true,
+         load: function (doc) {
+	        userId = evalXPathString(doc, "//snx:userid/text()", { app: "http://www.w3.org/2007/app"});
+	        createSharebox();
+         },
+         error: function (e, req) {
+         	if (req.xhr.status === 0) {
+         		if (!isSecure) {         			
+			         var svcUrl = new dojo._Url(webResourcesCfg.secureUrl);
+			         var localUrl = new dojo._Url(""+window.location.href);
+			         var localPath = localUrl.path.substring(svcUrl.path.length);
+			         if (localUrl.query)
+			            localPath += ("?" + localUrl.query);
+			         window.location.href = lconn.core.config.services.webresources.secureUrl + localPath;
+               }
+         	}
+         	else {
+         	  console.log("AJAX error: ", e, " request ", req);
+         	}
+         }
+      });
+  });
+  
+})();
+</script>
+
+<div class="lotusMain" style="min-height:0px">
+<div class="lotusContent" style="width: 1200px; height: 2000px;">
+<h1>Contextual Sharebox Test Page</h1>
+<div style="width:500px; border-style:solid;border-width:1px;border-color:#aaa;padding:20px">
+   <div id="sharebox"></div>
+</div>
+</div>
+</div>
+</body><p>
+${end}</p></html>

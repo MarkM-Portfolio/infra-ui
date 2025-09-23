@@ -1,0 +1,14 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="app_palette_modal_content">
+<div aria-live="assertive" aria-atomic="true" class="lotusHidden lotusPaging" style="width: auto; text-align: justify;" data-dojo-attach-point="noWidgetNode">
+${_resourceBundle.NO_WIDGET_NO_SHELF}</div>
+<div data-dojo-attach-point="containerNode"></div>
+<div class="lotusPaging lotusHidden" data-dojo-attach-point="pagerContainerNode">
+<div class="lotusLeft" aria-live="polite" aria-atomic="true" data-dojo-attach-point="pagerNode"></div>
+<ul class="lotusRight lotusInlinelist lotusHidden" data-dojo-attach-point="scrollControlNode">
+	<li class="lotusFirst" data-dojo-attach-point="previousNode" data-dojo-attach-event="onclick: onPrevious">${_resourceBundle.PREVIOUS}</li>
+	<li data-dojo-attach-point="nextNode" data-dojo-attach-event="onclick: onNext">
+	<a role="button" href="javascript:;">${_resourceBundle.NEXT}</a></li>
+</ul>
+</div>
+</div>

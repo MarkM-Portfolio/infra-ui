@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2008, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+${head}
+    <title>IBM Connections - CKEditor dynamic loader</title>
+${endhead}
+<div class="lotusBanner">
+   <div class="lotusRightCorner">
+      <div class="lotusInner">
+         <a href="#lotusMainContent" accesskey="S" class="lotusAccess">
+            <img src="${_blankGif}" />
+         </a>
+         <div class="lotusLogo">
+            <span class="lotusAltText">IBM Connections Common UI</span>
+         </div>
+      </div>
+   </div>
+</div>
+   <div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+      <nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+         <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+         <span class="lotusDivider">&gt;</span>
+         <a href="${contextRoot}/web/ic-test/ckeditor/index.html?render=test">CKEditor wrappers, plugins and utilities</a>
+         <span class="lotusDivider">&gt;</span>
+         CKEditor dynamic loader
+      </nav>
+   </div></div></div><!--end lotusBannerExt-->
+<div class="lotusTitleBar2 lotusTitleBar2Tabs">
+   <div class="lotusWrapper">
+      <div class="lotusInner">
+         <div class="lotusTitleBarContent">
+            <h2 class="lotusHeading">
+               <span class="lotusText">Rich Text Editor (Full Version)</span>
+            </h2>
+            <nav aria-label="Select page width" role="navigation"></nav>
+         </div>
+      </div>
+   </div>
+</div>
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="CKEditor dynamic loader">
+            <div class="lotusContent">
+               <form class="lotusForm2">
+                  <div class="lotusFormBody">
+                   <header class="lotusFormTitle">
+                   <h1 class="lotusHeading" >CKEditor dynamic loader (DOM Replaced at ready)</h1>
+                   <div id="formDesc" class="lotusMeta">
+                      When requiring <code>ic-ui/ckeditor/dynamic</code>, a proxy object will be loaded in your application. By calling its methods, CKEDITOR will be loaded asynchronously on-demand.
+                   </div>
+                   </header>
+                      <textarea id="editor1"></textarea>
+                      <div class="lotusFormFooter">
+                        <input id="TANoResults" type="button" class="lotusBtn"
+                           value="TA Returns No Results" onclick="noResultsTA()" />
+                        <input id="HTMLSource" type="button" class="lotusBtn"
+                           value="HTML Source" onclick="switchToSource()" />
+                        <input id="RichText" type="button" class="lotusBtn"
+                           value="Rich Text" onclick="switchToRichText()" />
+                        <div id='message'></div>
+                   </div>
+                   
+                   <h2>Push button to replace</h2>
+                   <div>
+                       <textarea id="txt2">I will be a rich text editor.</textarea>
+                   </div>
+                   <div class="lotusFormFooter">
+                      <input id="Replace" type="button" class="lotusBtn"
+                        value="Replace" onclick="var dynamic = require(&quot;ic-ui/ckeditor/dynamic&quot;); dynamic.replace(&quot;txt2&quot;);" />
+                   </div>
+                  </div>
+               </form>
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+    </script>
+
+    <script>
+        require(["ic-ui/ckeditor/dynamic",
+                 "ic-ui/ckeditor/plugins/mentions/PersonHandler",
+                 "ic-core/PeopleDataStore",
+                 "dojo/_base/connect",
+                 "ic-ui/MessageBox",
+                 "dojo/domReady!"
+                 ],
+         function(dynamic, PersonHandler, PeopleDataStore, connect, MessageBox) {
+            var newDS = new PeopleDataStore({
+               queryParam : 'name',
+               url : './people.json'
+            });
+            PersonHandler.setStore(newDS);
+            dynamic.addCustomPlugin('ic-ui/ckeditor/plugins/urlDetect');
+            dynamic.replace("editor1", {
+               //lite: false,
+               //on: {
+               //   instanceReady: function(ev){
+               //      alert('LOADED!');
+               //   }
+               //}
+            });
+            
+            var printMessage = function(text) {
+               var message = new MessageBox({
+                  canClose : true,
+                  type : MessageBox.TYPE.SUCCESS,
+                  msg : text
+               }, "message");
+               setTimeout(function() {
+                  message.destroy()
+               }, 6000);
+            }
+
+            connect.subscribe("lconn/microblogging/mention/removed", function(mention) {
+               printMessage("Mention Removed: " + mention.mention + " (" + mention.getUserId() + ")");
+            });
+            connect.subscribe("lconn/core/ckeditor/url/entered", function(url) {
+               printMessage("URL introduced:  " + url[0].url);
+            });
+            connect.subscribe("lconn/microblogging/mention/completed", function(mention) {
+               //mention[0].removeSymbol();
+               printMessage("Mention Added:  " + mention[0].mention + " (" + mention[0].getUserId() + ")");
+            });
+        });
+
+        function noResultsTA() {
+           require(["ic-ui/ckeditor/plugins/mentions/PersonHandler", "ic-core/PeopleDataStore"],
+                 function(PersonHandler, PeopleDataStore) {
+              var newDS = new PeopleDataStore({
+                 queryParam : 'name',
+                 url : './peopleNoResults.json'
+              });
+              PersonHandler.setStore(newDS);
+           });
+        }
+
+        function switchToSource() {
+           CKEDITOR.instances.editor1.setMode("source");
+        }
+
+        function switchToRichText() {
+           CKEDITOR.instances.editor1.setMode("wysiwyg");
+        }
+    </script>
+</body>
+</html>

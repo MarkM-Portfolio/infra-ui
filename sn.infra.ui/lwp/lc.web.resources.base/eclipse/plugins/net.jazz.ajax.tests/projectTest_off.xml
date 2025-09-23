@@ -1,0 +1,34 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2009, 2012                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!--
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<project name="com.ibm.team.repository.service.tests" default="runTest">
+	<import file="${working.dir}/plugins/com.ibm.team.server.tests/serverProjectTest.xml" />
+	<property name="testForBuildTypes" value="continuous.server continuous.webui.foundation"/>
+	<target name="runTest">
+		<exec executable="hostname" outputproperty="host.name"/>
+		<copy file="${working.dir}/build.artifacts/jafTestClient-${buildId}.war" tofile="${working.dir}/build.artifacts/jafTestClient.war"/>
+		<runRemoteTest testPluginName="net.jazz.ajax.tests" 
+			           testClassName="net.jazz.ajax.tests.internal.harness.AllTests" 
+			           serverFeature="net.jazz.ajax.feature.tests"
+			           additionalWebApp="${working.dir}/build.artifacts/jafTestClient.war"
+					   userDefinedVmArg="-Dnet.jazz.ajax.tests.client.browserList=&quot;firefox:firefox -P ${host.name}&quot;"
+	                   testForBuildTypes="${testForBuildTypes}"/>
+	</target>
+	
+</project>

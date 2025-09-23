@@ -1,0 +1,17 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<iw:iwidget id="helloWorld" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" supportedModes="view edit" mode="view" lang="en">
+<iw:resource uri="cre.jpg" mimeType="image/jpeg" >
+</iw:resource>
+<iw:resource uri="1.css" mimeType="text/css" >
+</iw:resource>
+<iw:resource uri="2.css" mimeType="text/css" >
+</iw:resource>
+<iw:content mode="view">
+<![CDATA[
+<div><span><img src="cre.jpg" class="iw-RewriteURI helloworld_image"/></span></div>
+<div class="helloworld_text">Hello World from Common Rendering Engine!</div>
+<script type="text/javascript">alert('eval-d');</script>
+]]>
+</iw:content>
+
+</iw:iwidget> 

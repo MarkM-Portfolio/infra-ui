@@ -1,0 +1,54 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2011, 2015                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+.lotusui30dojo .lcSharebox .dijitDialogPaneContent {
+   background-color: #ffffff;
+}
+
+.lotusui30dojo div.lcSharebox {
+   padding: 0 !important;
+}
+.lotusui30dojo .lcSharebox div.dijitDialogTitleBar {
+   padding: 15px 20px 5px 20px !important;
+}
+
+.lotusui30dojo .lcSharebox div.shareMessage {
+   padding: 10px;
+}
+
+.lotusui30dojo .lcSharebox div.shareTabContainer{
+   width: 540px;
+   min-height: 150px;
+}
+
+.lotusui30dojo .lcSharebox .shareBoxBottomHeader {
+   padding: 0px;
+}
+
+.lotusui30dojo .lcShareboxConfirmDialog div.lotusDialog,
+.lotusui_ie div.lcShareboxConfirmDialog{
+   width: 450px;
+}
+
+.lotusui30dojo .lcSharebox div.lotusLoading {
+   min-height: 60px; 
+   width: 100%; 
+   background-position: center center;
+}
+.lotusui_ie .lcSharebox .lotusDialogBorder {
+   width: auto;
+}
+
+.lotusui_ie .lcSharebox div.lotusMessage  {
+   width: 500px;
+}

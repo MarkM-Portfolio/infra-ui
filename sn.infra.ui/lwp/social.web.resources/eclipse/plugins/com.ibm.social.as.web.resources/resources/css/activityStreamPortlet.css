@@ -1,0 +1,61 @@
+/* Copyright IBM Corp. 2013, 2015  All Rights Reserved.              */
+
+/************Beginning of OneUI303 Styles to supplement************/
+/*Filter section*/
+.lotusui30 .icWidgetPortletsCommon .icActivityStream .lotusPaging {
+   margin-top:2px; 
+   overflow:hidden; 
+   clear:both; text-align:center; 
+   font-size:.9em; zoom:1;}
+
+/*Inline Comments and Actions*/
+.lotusui30 .icWidgetPortletsCommon .icActivityStream .lotusPost .lotusPostMore{position:relative;top:-9999px;}
+.lotusui30 .icWidgetPortletsCommon .icActivityStream .lotusPostHover .lotusPostMore, 
+.lotusui30 .icWidgetPortletsCommon .icActivityStream .lotusPostSelected .lotusPostMore, 
+.lotusui30 .icWidgetPortletsCommon .icActivityStream .lotusPostHover .lotusPostIndicator, 
+.lotusui30 .icWidgetPortletsCommon .icActivityStream .lotusPostSelected .lotusPostIndicator, 
+.lotusui30 .icWidgetPortletsCommon .icActivityStream .lotusPostHover .lotusDelete, 
+.lotusui30 .icWidgetPortletsCommon .icActivityStream .lotusPostSelected .lotusDelete{top:0;}
+
+/*Update for loading icon*/
+.lotusui30 .icWidgetPortletsCommon .icActivityStream .lotusLoading{background-repeat:no-repeat;width:16px;height:16px;}
+/*********End of OneUI 303 Styles************/
+
+/*lotusBoard styles from default.css*/
+.lotusui30 .icWidgetPortletsCommon .icActivityStream .lotusBoard .lotusStream .lotusPostHover, .lotusui30 .lotusBoard .lotusStream .lotusPostSelected{background-color:#e1f4f9;border-color:#cad9e1;}
+.lotusui30 .icWidgetPortletsCommon .icActivityStream .lotusBoard .lotusCommentItem > a.lotusMeta{color:#1970B0;}
+
+/*EE flipped so use RTL arrow*/
+.lotusActivityStreamPortlet .asPortletFlip .lotusFlyoutConnector{
+   background-position:-1090px -9px;
+}
+
+/*Dialog update to handle styling conflicts*/
+.lotusActivityStreamPortlet .lotusui30 .lotusDialogBorder {
+-webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/*EE arrow*/
+.lotusActivityStreamPortlet .lotusFlyout {
+	border:1px solid #aaa; background:#fff;
+	-moz-border-radius:13px;
+	-webkit-border-radius:13px;
+	border-radius:13px;
+	-moz-box-shadow:0 2px 8px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow:0 2px 8px rgba(0, 0, 0, 0.1);
+	box-shadow:0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*Fix Like control display in Activity Stream for IE */
+.lotusui30 .icWidgetPortletsCommon .icActivityStream .lotusLike .lotusLikeCount {
+    padding-bottom: 0px;
+}
+
+.lotusui_ie .lotusui30 .icWidgetPortletsCommon .icActivityStream .lotusLike .lotusLikeAction {
+    padding-bottom: 0px;
+}
+
+.lotusui_ie .lotusui30 .icWidgetPortletsCommon .icActivityStream .lotusLike .lotusLikeDescription {
+    padding-bottom: 0px;
+}

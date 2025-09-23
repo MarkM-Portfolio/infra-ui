@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IBM Lotus Connections Profiles Person Card
+Bundle-SymbolicName: com.ibm.lconn.personcard.web.resources;singleton:=true
+Bundle-Version: 3.0.0.qualifier
+Bundle-Vendor: IBM
+Import-Package: com.ibm.lconn.core.web.util.services;version="3.0.0",
+ com.ibm.ventura.internal.config.api;version="3.0.1",
+ com.ibm.ventura.internal.config.exception;version="3.0.1",
+ com.ibm.ventura.internal.config.helper.api;version="3.0.1",
+ net.jazz.ajax.model,
+ org.osgi.framework;version="1.5.0"
+Bundle-Activator: com.ibm.lconn.personcard.web.resources.Activator
+Export-Package: com.ibm.lconn.personcard.web.resources;x-friends:="com.ibm.lconn.web.resources.test",
+ com.ibm.lconn.personcard.web.resources.internal;x-friends:="com.ibm.lconn.web.resources.test"

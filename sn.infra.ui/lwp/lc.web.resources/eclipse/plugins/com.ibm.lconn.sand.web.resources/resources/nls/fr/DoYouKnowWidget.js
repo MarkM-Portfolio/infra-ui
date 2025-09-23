@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Inviter à se connecter",
+	NDYK1:"Aucune autre personne à recommander",
+	LOADING: "chargement",
+	DYK_TITLE: "Personnes que vous connaissez peut-être",
+	INVITE_TITLE: "Envoyer une invitation à se connecter",
+	SEND_ACTION: "Envoyer",
+	CANCEL_ACTION: "Annuler",
+	PREV: "Précédent",
+	NEXT: "Suivant",
+	bpct: "A ajouté un commentaire sur votre blogue",
+	bpcc: "Vous avez ajouté un commentaire sur le même blogue",
+	lpfr: "Est une collègue d'une personne que vous connaissez",
+	lm1: "Vous êtes le directeur de cette personne",
+	le1: "Cette personne est votre directeur",
+	sdm: "Vous partagez le même directeur",
+	pt: "Cette personne vous a attribué une étiquette",
+	pbt: "Vous avez attribué une étiquette à cette personne",
+	acm: "Vous partagez des activités",
+	wikiCoContribution: "Vous avez tous deux édité le même wiki",
+	bpcb: "Vous avez ajouté un commentaire sur leur blogue",
+	lpcfr: "Vous avez des collègues communs",
+	ccmf: "Vous êtes ensemble dans une communauté",
+	ccms: "Vous êtes ensemble dans une communauté",
+	filesharing: "Vous partagez certains fichiers",
+	forumthreaddiscussion: "Vous partagez un fil de discussion",
+	ctb: "Vous partagez un signet",
+	tgw: "Vous avez des étiquettes qui correspondent",
+	tcu: "Vous avez utilisé la même étiquette",
+	pctg: "Vous avez tous deux étiqueté la même personne",
+	tgb: "Les mêmes personnes vous ont tous deux marqués"
+})

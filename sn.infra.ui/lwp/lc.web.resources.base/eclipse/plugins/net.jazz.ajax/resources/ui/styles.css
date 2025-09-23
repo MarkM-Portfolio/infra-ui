@@ -1,0 +1,58 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2013, 2014                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+/*
+ * Overridable top-level styles for PlatformUI.js.
+ */
+
+/* force form controls to inherit font-size */
+button, input, select, textarea {
+	font-size: 1em;
+	font-family: inherit;
+}
+
+/*
+ * Internal top-level styles for the Jazz Ajax Framework.
+ *
+ * Note: these styles should NOT be overridden and are subject to change without
+ * notice.
+ */
+
+#net-jazz-ajax-WorkbenchRoot {
+	position: relative;
+}
+
+#net-jazz-ajax-InitialLoadMessage {
+	width: 100%;
+	color: #D0D0D0;
+	font-size: 2em;
+	text-align: center;
+	position: absolute;
+	top: 40%;
+	z-index: 999;
+}
+.net-jazz-ajax-block {
+	display: block;
+	word-wrap: break-word;
+}
+.net-jazz-ajax-hidden {
+	display: none !important;
+}
+.dijitPopup div, .dijitPopup table {
+	opacity: 1 !important;
+}
+.dijitInlineEditBoxDisplayModeHover {
+	background-color: #FFFFCC;
+	border: 1px dotted #999999;
+}

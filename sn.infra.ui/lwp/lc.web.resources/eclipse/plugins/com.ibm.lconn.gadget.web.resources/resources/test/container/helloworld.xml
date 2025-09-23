@@ -1,0 +1,6 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<iw:iwidget name="myWidget" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" 
+supportedModes="view edit" mode="view">
+    <iw:content mode="view">Hello World!</iw:content>
+    <iw:content mode="edit">Configure me.</iw:content>
+</iw:iwidget>

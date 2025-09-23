@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Gadget OpenSocial de experiencia incluida utilizado para mostrar detalles y acciones adicionales para eventos de Connections</msg>
+  <msg name="connectionsEE_errorTitle">Error</msg>
+  <msg name="connectionsEE_errorDescription">Este contenido no ha sido aprobado por su organización y no está disponible. Póngase en contacto con el administrador de la organización para habilitar la extensión.</msg>
+</messagebundle>

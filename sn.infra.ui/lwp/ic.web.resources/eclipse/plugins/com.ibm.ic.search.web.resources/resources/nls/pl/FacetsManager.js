@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+define({
+		"CLOSE_HELP_DATE":"Zamknij pomoc dotyczącą daty",
+		"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Zamknij pomoc dotyczącą typów dokumentów",
+		"CLOSE_HELP_PERSON":"Zamknij pomoc dotyczącą osób",
+		"CLOSE_HELP_TAG":"Zamknij pomoc dotyczącą znaczników",
+		"CLOSE_HELP_TREND":"Zamknij pomoc dotyczącą trendów",
+		"COLLAPSE_DATE":"Zwiń filtr Daty",
+		"COLLAPSE_ECM_DOCUMENT_TYPE":"Zwiń filtr Typy dokumentów",
+		"COLLAPSE_PERSON":"Zwiń filtr Osoby",
+		"COLLAPSE_TAG":"Zwiń filtr Znaczniki",
+		"COLLAPSE_TREND":"Zwiń filtr Trendy",
+		"DESCRIPTION_DATE":"Aby wyświetlić wyniki utworzone lub zaktualizowane w określonym czasie, rozwiń ikonę rozwijania oraz odfiltruj informacje wg roku i miesiąca.",
+		"DESCRIPTION_ECM_DOCUMENT_TYPE":"Typ dokumentu jest słowem kluczowym przypisywanym plikom w celu ułatwienia ich znalezienia. Kliknij typ dokumentu, aby wyświetlić wyniki wyszukiwania, do których zostało przypisane to słowo kluczowe.",
+		"DESCRIPTION_PERSON":"Wyświetl osoby powiązane z wynikami wyszukiwania. Kliknij nazwę, aby wyświetlić wyniki wyszukiwania powiązane z konkretną osobą.",
+		"DESCRIPTION_TAG":"Znacznik jest słowem kluczowym przypisywanym do treści lub osób w celu ułatwienia ich wyszukiwania. Kliknij znacznik, aby wyświetlić wyniki wyszukiwania, do których zostało przypisane to słowo kluczowe.",
+		"DESCRIPTION_TREND":"Trend jest słowem kluczowym generowanym przez system w celu ułatwienia wykonywania wyszukiwania w aktualizacjach statusów. Kliknij trend, aby wyświetlić wyniki wyszukiwania, do których zostało przypisane dane słowo kluczowe.",
+		"EXPAND_DATE":"Rozwiń filtr Daty",
+		"EXPAND_ECM_DOCUMENT_TYPE":"Rozwiń filtr Typy dokumentów",
+		"EXPAND_PERSON":"Rozwiń filtr Osoby",
+		"EXPAND_TAG":"Rozwiń filtr Znaczniki",
+		"EXPAND_TREND":"Rozwiń filtr Trendy",
+		"HELP_DATE":"Pomoc dotycząca daty",
+		"HELP_ECM_DOCUMENT_TYPE":"Pomoc dotycząca typów dokumentów",
+		"HELP_PERSON":"Pomoc dotycząca osób",
+		"HELP_TAG":"Pomoc dotycząca znaczników",
+		"HELP_TREND":"Pomoc dotycząca trendów",
+		"NO_DATE_CONTENT":"Daty nie są aktualnie dostępne",
+		"NO_ECM_DOCUMENT_TYPE_CONTENT":"Typy dokumentów nie są aktualnie dostępne",
+		"NO_PERSON_CONTENT":"Osoby nie są aktualnie dostępne",
+		"NO_TAG_CONTENT":"Znaczniki nie są aktualnie dostępne",
+		"NO_TREND_CONTENT":"Trendy nie są aktualnie dostępne",
+		"TITLE_DATE":"Daty",
+		"TITLE_ECM_DOCUMENT_TYPE":"Typy dokumentów",
+		"TITLE_PERSON":"Osoby",
+		"TITLE_TAG":"Znaczniki",
+		"TITLE_TREND":"Trendy"
+});
+

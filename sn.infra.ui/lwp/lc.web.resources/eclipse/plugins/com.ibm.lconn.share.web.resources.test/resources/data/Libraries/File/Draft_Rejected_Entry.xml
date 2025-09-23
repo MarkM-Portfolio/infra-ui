@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<entry xmlns="http://www.w3.org/2005/Atom" xmlns:td="urn:ibm.com/td" xmlns:wplcext="http://www.ibm.com/wplcext/atom/1.0" xmlns:snx="http://www.ibm.com/xmlns/prod/sn" xml:lang="en" xml:base="http://earth.rtp.raleigh.ibm.com/dm/atom/library/40FD8BDB-1C1F-4955-9F3C-0CE61A358089%3B00E75DEB-B884-4102-9129-1B606FC1689E/">
+  <title type="text">fishdance.gif</title>
+  <category term="draft" scheme="tag:ibm.com,2006:td/type" label="draft"></category>
+  <td:documenttype>40FD8BDB-1C1F-4955-9F3C-0CE61A358089;01A3A8C2-7AEC-11D1-A31B-0020AF9FBB1C</td:documenttype>
+  <td:nexusId>Document;{40FD8BDB-1C1F-4955-9F3C-0CE61A358089};{9E591A47-6215-4C5C-8923-6AA780767B69}</td:nexusId>
+  <td:versionLabel>0.1</td:versionLabel>
+  <link href="http://earth.rtp.raleigh.ibm.com/communities/service/html/widgetview?communityUuid=8f1de8c6-c1ec-4bd6-8f46-fa381c1f149d&amp;componentId=40FD8BDB-1C1F-4955-9F3C-0CE61A358089%3B00E75DEB-B884-4102-9129-1B606FC1689E&amp;hash=draft%3D%7B9E591A47-6215-4C5C-8923-6AA780767B69%7D" rel="via"></link>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+  <td:approvalState>rejected</td:approvalState>
+  <td:approvalProcess>BasicApproval</td:approvalProcess>
+  <td:approvalType>any</td:approvalType>
+  <td:updateToken>3</td:updateToken>
+  <content type="image/gif" xml:lang="en" src="http://earth.rtp.raleigh.ibm.com/dm/atom/library/40FD8BDB-1C1F-4955-9F3C-0CE61A358089%3B00E75DEB-B884-4102-9129-1B606FC1689E/draft/%7B9E591A47-6215-4C5C-8923-6AA780767B69%7D/media/%66%69%73%68%64%61%6e%63%65%2e%67%69%66?follow=true">fishdance.gif</content>
+  <link href="http://earth.rtp.raleigh.ibm.com/dm/atom/library/40FD8BDB-1C1F-4955-9F3C-0CE61A358089%3B00E75DEB-B884-4102-9129-1B606FC1689E/draft/%7B9E591A47-6215-4C5C-8923-6AA780767B69%7D/entry" rel="self"></link>
+  <link href="http://earth.rtp.raleigh.ibm.com/dm/atom/library/40FD8BDB-1C1F-4955-9F3C-0CE61A358089%3B00E75DEB-B884-4102-9129-1B606FC1689E/draft/%7B9E591A47-6215-4C5C-8923-6AA780767B69%7D/entry" rel="edit"></link>
+  <link href="http://earth.rtp.raleigh.ibm.com/dm/atom/library/40FD8BDB-1C1F-4955-9F3C-0CE61A358089%3B00E75DEB-B884-4102-9129-1B606FC1689E/draft/%7B9E591A47-6215-4C5C-8923-6AA780767B69%7D/media/%66%69%73%68%64%61%6e%63%65%2e%67%69%66?follow=true" rel="edit-media"></link>
+  <link href="http://earth.rtp.raleigh.ibm.com/dm/atom/library/40FD8BDB-1C1F-4955-9F3C-0CE61A358089%3B00E75DEB-B884-4102-9129-1B606FC1689E/draft/%7B9E591A47-6215-4C5C-8923-6AA780767B69%7D/feed" rel="replies"></link>
+  <link href="http://earth.rtp.raleigh.ibm.com/dm/atom/library/40FD8BDB-1C1F-4955-9F3C-0CE61A358089%3B00E75DEB-B884-4102-9129-1B606FC1689E/document/%7B9E591A47-6215-4C5C-8923-6AA780767B69%7D/downloadedby/feed" rel="downloaders"></link>
+  <link href="http://earth.rtp.raleigh.ibm.com/dm/atom/library/40FD8BDB-1C1F-4955-9F3C-0CE61A358089%3B00E75DEB-B884-4102-9129-1B606FC1689E/document/%7B9E591A47-6215-4C5C-8923-6AA780767B69%7D/recommendedby/feed" rel="recommenders"></link>
+  <link href="http://earth.rtp.raleigh.ibm.com/dm/atom/library/40FD8BDB-1C1F-4955-9F3C-0CE61A358089%3B00E75DEB-B884-4102-9129-1B606FC1689E/document/%7B9E591A47-6215-4C5C-8923-6AA780767B69%7D/feed?category=comment" rel="commenters"></link>
+  <link href="http://earth.rtp.raleigh.ibm.com/dm/atom/library/40FD8BDB-1C1F-4955-9F3C-0CE61A358089%3B00E75DEB-B884-4102-9129-1B606FC1689E/draft/%7B9E591A47-6215-4C5C-8923-6AA780767B69%7D/members/feed" rel="members"></link>
+  <link href="http://earth.rtp.raleigh.ibm.com/dm/atom/library/40FD8BDB-1C1F-4955-9F3C-0CE61A358089%3B00E75DEB-B884-4102-9129-1B606FC1689E/draft/%7B9E591A47-6215-4C5C-8923-6AA780767B69%7D/media/%66%69%73%68%64%61%6e%63%65%2e%67%69%66?follow=true" rel="enclosure" type="image/gif" title="fishdance.gif" language="en" length="262952"></link>
+  <id>urn:lsid:ibm.com:td:%7B9E591A47-6215-4C5C-8923-6AA780767B69%7D</id>
+  <td:permissions>GrantAccess,grantaccess,ViewContent,viewcontent,ViewProperties,viewproperties,EditContent,editcontent,Delegate,delegate,AddFolder,addfolder,LockOverride,lockoverride,EditProperties,editproperties,View,view,Delete,delete,AddChild,add,Edit,edit</td:permissions>
+  <author>
+    <email>aalain@renovations.com</email>
+    <name>Amadou Alain</name>
+    <uri>uid%3Daalain%2Ccn%3Dusers%2CO%3DRENOVATIONS</uri>
+    <td:uid>81e18b48-1378-4850-b758-7212d0f6f479</td:uid>
+  </author>
+  <td:label>fishdance.gif</td:label>
+  <td:uuid>{9E591A47-6215-4C5C-8923-6AA780767B69}</td:uuid>
+  <td:modifier>
+    <td:uri>uid%3Daalain%2Ccn%3Dusers%2CO%3DRENOVATIONS</td:uri>
+    <td:name>Amadou Alain</td:name>
+    <td:email>aalain@renovations.com</td:email>
+    <td:uid>81e18b48-1378-4850-b758-7212d0f6f479</td:uid>
+  </td:modifier>
+  <td:locked>false</td:locked>
+  <td:averageRating>0.0</td:averageRating>
+  <td:ratingCount>0</td:ratingCount>
+  <summary type="text"></summary>
+  <td:created>2014-09-16T13:58:42.464Z</td:created>
+  <published>2014-09-16T13:58:42.464Z</published>
+  <td:modified>2014-09-16T13:59:10.860Z</td:modified>
+  <updated>2014-09-16T13:59:10.860Z</updated>
+</entry>

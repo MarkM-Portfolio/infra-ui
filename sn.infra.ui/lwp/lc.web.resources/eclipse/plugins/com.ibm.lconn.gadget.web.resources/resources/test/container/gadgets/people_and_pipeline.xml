@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<Module>
+<ModulePrefs title="data pipelining gadget">
+	<Require feature="opensocial-data" />
+	<Require feature="opensocial-templates" />
+	<Require feature="osapi"/>
+</ModulePrefs>
+<Content type="html">
+<![CDATA[
+ *You must be logged in for any of this to work*
+<script type="text/os-data" xmlns:os="http://ns.opensocial.org/2008/markup">
+	<os:ActivityStreamsRequest key="ViewerActivities" userid="@viewer" appId="@all" groupId="@all" />
+	<os:DataRequest key="myPerson" method="people.get" userId="@me" groupId="@self" />
+</script>
+<script type="text/os-template" require="ViewerActivities, myPerson">
+    <div>pipelined person data : <br />${myPerson}</div><br />
+    <div>pipelined activities data : <br />${ViewerActivities}</div><br />
+</script>
+<script type="text/javascript">
+	console.log("pipeline person datarequest : ", opensocial.data.getDataContext().getDataSet("myPerson"));
+	console.log("pipeline activities activitiesrequest", opensocial.data.getDataContext().getDataSet("ViewerActivities"));
+	
+	function get_Person(){
+		var userId = document.getElementById("userId").value;
+		osapi.people.get({"userId":userId}).execute(
+						function(result) {
+							console.log("osapi request result", result);
+							var message = "result of people request : <br />";;
+							if(result.id)
+								message += "result.id : " + result.id + "<br /><br />";
+							if(result.displayName)
+								message += "result.displayName : " + result.displayName + " <br />";
+							if(result.emails)
+								message += "result.emails[0].value : " + result.emails[0].value + " </ br>";
+							document.getElementById("personOutput").innerHTML=message;
+						}
+					);
+	}
+</script>
+<label for="userId">user id : </label><input type="text" name="userId" id="userId"/><br />
+<button onClick="get_Person();">get Person Data</button><br />
+<div id="personOutput"></div>
+]]>
+</Content>
+</Module>

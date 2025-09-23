@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Gadgetten Integreret oplevelse - OpenSocial bruges til at vise yderligere oplysninger og handlinger for Connections-begivenheder</msg>
+  <msg name="connectionsEE_errorTitle">Fejl</msg>
+  <msg name="connectionsEE_errorDescription">Dette indhold er ikke godkendt af din organisation og er ikke tilgængeligt. Kontakt din organisations administrator for at få udvidelsen aktiveret.</msg>
+</messagebundle>

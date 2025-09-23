@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+({
+	"CLOSE_HELP_DATE":"Tarihler Yardımını Kapat",
+	"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Belge Türleri Yardımını Kapat",
+	"CLOSE_HELP_PERSON":"Kişiler Yardımını Kapat",
+	"CLOSE_HELP_TAG":"Etiketler Yardımını Kapat",
+	"CLOSE_HELP_TREND":"Eğilim Yardımını Kapat",
+	"COLLAPSE_DATE":"Tarihler süzgecini daralt",
+	"COLLAPSE_ECM_DOCUMENT_TYPE":"Belge Türleri süzgecini daralt",
+	"COLLAPSE_PERSON":"Kişiler süzgecini daralt",
+	"COLLAPSE_TAG":"Etiketler süzgecini daralt",
+	"COLLAPSE_TREND":"Eğilimler süzgecini daralt",
+	"DESCRIPTION_DATE":"Belirli bir zamanda oluşturulan ya da güncelleştirilen sonuçları görüntülemek için üçgen simgesini tıklatarak bağlantıyı açın ve bilgileri yıla ve aya göre süzün.",
+	"DESCRIPTION_ECM_DOCUMENT_TYPE":"Belge türü, daha sonra bulunmasını kolaylaştırmak üzere dosyalara atadığınız anahtar sözcüktür. Bir belge türünü tıklatarak ilgili anahtar sözcüğe atanmış arama sonuçlarını görüntüleyebilirsiniz.",
+	"DESCRIPTION_PERSON":"Arama sonuçlarınızla ilişkilendirilen kişileri görüntüleyin. Belirli bir kişiyle ilişkilendirilen arama sonuçlarını görüntülemek için kişinin adını tıklatın.",
+	"DESCRIPTION_TAG":"Etiketler, içerik ya da kişileri daha kolay bulmanıza yardımcı olmak üzere onlara atadığınız anahtar sözcüklerdir. Bir etiketi tıklatarak ilgili anahtar sözcüğe atanmış arama sonuçlarını görüntüleyebilirsiniz.",
+	"DESCRIPTION_TREND":"Eğilim, Durum Güncelleştirmeleri içinde arama yapılmasını kolaylaştırmak için sistem tarafından oluşturulan bir anahtar sözcüktür. Bir eğilimi tıklatarak ilgili anahtar sözcüğe atanmış arama sonuçlarını görüntüleyebilirsiniz.",
+	"EXPAND_DATE":"Tarihler süzgecini genişlet",
+	"EXPAND_ECM_DOCUMENT_TYPE":"Belge Türleri süzgecini genişlet",
+	"EXPAND_PERSON":"Kişiler süzgecini genişlet",
+	"EXPAND_TAG":"Etiketler süzgecini genişlet",
+	"EXPAND_TREND":"Eğilimler süzgecini genişlet",
+	"HELP_DATE":"Tarihler Yardımı",
+	"HELP_ECM_DOCUMENT_TYPE":"Belge Türleri Yardımı",
+	"HELP_PERSON":"Kişiler Yardımı",
+	"HELP_TAG":"Etiketler Yardımı",
+	"HELP_TREND":"Eğilim Yardımı",
+	"NO_DATE_CONTENT":"Tarihler şu anda kullanılamıyor",
+	"NO_ECM_DOCUMENT_TYPE_CONTENT":"Belge Türleri şu anda kullanılamıyor",
+	"NO_PERSON_CONTENT":"Kişiler şu anda kullanılamıyor",
+	"NO_TAG_CONTENT":"Etiketler şu anda kullanılamıyor",
+	"NO_TREND_CONTENT":"Eğilimler şu anda kullanılamıyor",
+	"TITLE_DATE":"Tarihler",
+	"TITLE_ECM_DOCUMENT_TYPE":"Belge Türleri",
+	"TITLE_PERSON":"Kişiler",
+	"TITLE_TAG":"Etiketler",
+	"TITLE_TREND":"Eğilimler"
+})
+

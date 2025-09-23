@@ -1,0 +1,36 @@
+<html>
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <script type="text/javascript">
+      var config = {};
+      var dojo = {provide: function(){return {};},mixin: function(p1, p2){ config = p2;}};
+   </script>
+   <script type="text/javascript">
+      function parseParams() {
+         var p = { }, params = window.location.search.substring(1).split("&"), i, parts;
+         for (i = 0; i < params.length; i++) { parts = params[i].split("="); p[parts[0]] = decodeURIComponent(parts[1]); }
+         return p;
+      }
+      
+      function onImageError() {
+         window.open("", "_self");
+         window.close();
+      }
+      
+      function init() {
+         var params = parseParams(), imageUrl, img;
+         if (params.link) {
+            imageUrl = params.link + "?logDownload=false&preventCache=" + (new Date()).getTime();
+            img = document.createElement("img");
+            img.src = imageUrl;
+            img.role = "presentation";
+            img.onerror = onImageError;
+            document.body.appendChild(img);
+         }
+      }
+   </script>
+</head>
+<body onload="init()">   
+</body>
+</html>

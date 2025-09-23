@@ -1,0 +1,5 @@
+This bundle contains the Jazz Ajax Test Harness infrastructure and test cases to
+verify the correctness of the test infrastructure. For more information, see
+this wiki page on Jazz.net:
+
+https://jazz.net/wiki/bin/view/WebUIBook/AutomatedTests

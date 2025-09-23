@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IBM Connections Search scripts
+Bundle-SymbolicName: com.ibm.lconn.search.web.resources;singleton:=true
+Bundle-Version: 3.0.0.qualifier
+Bundle-Vendor: IBM

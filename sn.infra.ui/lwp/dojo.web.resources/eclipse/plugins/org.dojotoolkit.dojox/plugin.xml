@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2009, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<?eclipse version="3.2"?>
+<!--
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<plugin>
+   <extension
+         point="net.jazz.ajax.webBundles">
+         <alias value="dojox"/>
+   </extension>
+
+	<extension point="net.jazz.ajax.cssBindingSets">
+		<cssBindingSet id="dojox.av.CSSBindingSet" path="/av/widget/resources">
+			<cssBinding jsModule="dojox.av.widget.Player">
+				<cssModule path="/Player.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.calc.CSSBindingSet" path="/calc/resources">
+			<cssBinding jsModule="dojox.calc.Grapher">
+				<cssModule path="/Common.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.calc.GraphPro">
+				<cssModule path="/GraphPro.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.calc.Standard">
+				<cssModule path="/Standard.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.calendar.CSSBindingSet" path="/calendar/themes/claro">
+			<cssBinding jsModule="dojox.calendar.Calendar">
+				<cssModule path="/Calendar.css"/>
+				<cssModule path="/Calendar_rtl.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.calendar.ColumnView">
+				<cssModule path="/ColumnView.css"/>
+				<cssModule path="/ColumnView_rtl.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.calendar.MatrixView">
+				<cssModule path="/MatrixView.css"/>
+				<cssModule path="/MatrixView_rtl.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.calendar.MonthColumnView">
+				<cssModule path="/MonthColumnView.css"/>
+				<cssModule path="/MonthColumnView_rtl.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.calendar.SimpleColumnView">
+				<cssModule path="/SimpleColumnView.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.charting.CSSBindingSet" path="/charting/resources">
+			<cssBinding jsModule="dojox.charting.widget.Legend">
+				<cssModule path="/Legend.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.drawing.CSSBindingSet" path="/drawing/resources">
+			<cssBinding jsModule="dojox.drawing.Drawing">
+				<cssModule path="/drawing.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.drawing.plugins.drawing.GreekPalette">
+				<cssModule path="/GreekPalette.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.drawing.ui.Toolbar">
+				<cssModule path="/toolbar.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.editor.CSSBindingSet" path="/editor/plugins/resources/css">
+			<cssBinding jsModule="dojox.editor.plugins.AutoSave">
+				<cssModule path="/AutoSave.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.editor.plugins.BlockQuote">
+				<cssModule path="/BlockQuote.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.editor.plugins.Breadcrumb">
+				<cssModule path="/Breadcrumb.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.editor.plugins.CollapsibleToolbar">
+				<cssModule path="/CollapsibleToolbar.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.editor.plugins.FindReplace">
+				<cssModule path="/FindReplace.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.editor.plugins.InsertAnchor">
+				<cssModule path="/InsertAnchor.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.editor.plugins.InsertEntity">
+				<cssModule path="/InsertEntity.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.editor.plugins.LocalImage">
+				<cssModule path="/LocalImage.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.editor.plugins.PageBreak">
+				<cssModule path="/PageBreak.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.editor.plugins.PasteFromWord">
+				<cssModule path="/PasteFromWord.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.editor.plugins.Preview">
+				<cssModule path="/Preview.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.editor.plugins.Save">
+				<cssModule path="/Save.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.editor.plugins.ShowBlockNodes">
+				<cssModule path="/ShowBlockNodes.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.editor.plugins.Smiley">
+				<cssModule path="/Smiley.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.editor.plugins.SpellCheck">
+				<cssModule path="/SpellCheck.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.editor.plugins.StatusBar">
+				<cssModule path="/StatusBar.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.editor.plugins.TextColor">
+				<cssModule path="/TextColor.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.form.CSSBindingSet" path="/form/resources">
+			<cssBinding jsModule="dojox.form.BusyButton">
+				<cssModule path="/BusyButton.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.form.CheckedMultiSelect">
+				<cssModule path="/CheckedMultiSelect.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.form.FileInput">
+				<cssModule path="/FileInput.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.form.FilePickerTextBox">
+				<cssModule path="/FilePickerTextBox.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.form.FileUploader">
+				<cssModule path="/FileUploader.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.form.ListInput">
+				<cssModule path="/ListInput.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.form.RangeSlider">
+				<cssModule path="/RangeSlider.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.form.Rating">
+				<cssModule path="/Rating.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.form.TriStateCheckBox">
+				<cssModule path="/TriStateCheckBox.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.form.UploaderFileList">
+				<cssModule path="/UploaderFileList.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.gantt.CSSBindingSet" path="/gantt/resources">
+			<cssBinding jsModule="dojox.gantt.GanttChart">
+				<cssModule path="/gantt.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.gauges.CSSBindingSet" path="/gauges">
+			<cssBinding jsModule="dojox.gauges._Gauge">
+				<cssModule path="/_Gauge.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.geo.CSSBindingSet" path="/geo/charting/resources">
+			<cssBinding jsModule="dojox.geo.charting.Map">
+				<cssModule path="/Map.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.grid.CSSBindingSet" path="/grid/resources">
+			<cssBinding jsModule="dojox.grid.DataGrid">
+				<cssModule path="/Grid.css"/>
+				<cssModule path="/Grid_rtl.css"/>
+				<cssModule path="/claroGrid.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.highlight.CSSBindingSet" path="/highlight/resources">
+			<cssBinding jsModule="dojox.highlight._base">
+				<cssModule path="/highlight.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.html.CSSBindingSet" path="/html/resources">
+			<cssBinding jsModule="dojox.html.ellipsis">
+				<cssModule path="/ellipsis.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.image.CSSBindingSet" path="/image/resources">
+			<cssBinding jsModule="dojox.image.Badge">
+				<cssModule path="/Badge.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.image.Gallery">
+				<cssModule path="/Gallery.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.image.Lightbox">
+				<cssModule path="/Lightbox.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.image.Magnifier">
+				<cssModule path="/Magnifier.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.image.SlideShow">
+				<cssModule path="/SlideShow.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.image.ThumbnailPicker">
+				<cssModule path="/ThumbnailPicker.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.layout.CSSBindingSet" path="/layout/resources">
+			<cssBinding jsModule="dojox.layout.ExpandoPane">
+				<cssModule path="/ExpandoPane.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.layout.FloatingPane">
+				<cssModule path="/FloatingPane.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.layout.GridContainer">
+				<cssModule path="/GridContainer.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.layout.RadioGroup">
+				<cssModule path="/RadioGroup.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.layout.ResizeHandle">
+				<cssModule path="/ResizeHandle.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.layout.RotatorContainer">
+				<cssModule path="/RotatorContainer.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.layout.ScrollPane">
+				<cssModule path="/ScrollPane.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.layout.ToggleSplitter">
+				<cssModule path="/ToggleSplitter.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.sketch.CSSBindingSet" path="/sketch/resources">
+			<cssBinding jsModule="dojox.sketch.Figure">
+				<cssModule path="/sketch.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.treemap.CSSBindingSet" path="/treemap/themes">
+			<cssBinding jsModule="dojox.treemap.DrillDownUp">
+				<cssModule path="/DrillDownUp.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.treemap.GroupLabel">
+				<cssModule path="/GroupLabel.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.treemap.TreeMap">
+				<cssModule path="/TreeMap.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dojox.widget.CSSBindingSet" path="/widget">
+			<cssBinding jsModule="dojox.widget.Calendar">
+				<cssModule path="/Calendar/Calendar.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.widget.ColorPicker">
+				<cssModule path="/ColorPicker/ColorPicker.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.widget.Dialog">
+				<cssModule path="/Dialog/Dialog.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.widget.DocTester">
+				<cssModule path="/DocTester/DocTester.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.widget.FilePicker">
+				<cssModule path="/FilePicker/FilePicker.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.widget.FisheyeList">
+				<cssModule path="/FisheyeList/FisheyeList.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.widget.Loader">
+				<cssModule path="/Loader/Loader.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.widget.Pager">
+				<cssModule path="/Pager/Pager.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.widget.RollingList">
+				<cssModule path="/RollingList/RollingList.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.widget.SortList">
+				<cssModule path="/SortList/SortList.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.widget.TitleGroup">
+				<cssModule path="/TitleGroup/TitleGroup.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.widget.Toaster">
+				<cssModule path="/Toaster/Toaster.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.widget.UpgradeBar">
+				<cssModule path="/UpgradeBar/UpgradeBar.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dojox.widget.Wizard">
+				<cssModule path="/Wizard/Wizard.css"/>
+			</cssBinding>
+		</cssBindingSet>
+	</extension>
+</plugin>

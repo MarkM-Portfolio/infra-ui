@@ -1,0 +1,23 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<ul class="lotusCommentList" dojoAttachPoint="commentListNode" role="presentation"
+	><li class="lotusHidden lotusCommentItem" dojoAttachPoint="moreCommentsNode"
+		><span dojoAttachPoint="moreCommentsTextNode" class="lotusMeta"></span
+	></li
+	><li class="lotusHidden lotusCommentItem" dojoAttachPoint="expandCommentsNode"
+		><div class="lotusMeta"
+			><span class="lotusRight" dojoAttachPoint="commentCounterNode"></span
+			><span
+				><a class="lotusHidden" href="javascript:;" role="button" dojoAttachPoint="showPreviousLink"
+					dojoattachevent="onclick: onShowPreviousComments">${strings.showPreviousComments}</a
+				><a class="lotusHidden" href="javascript:;" role="button" dojoAttachPoint="hideAdditionalLink"
+					dojoattachevent="onclick: onHideAdditionalComments">${strings.hideAdditionalComments}</a
+				>&nbsp;<img dojoAttachPoint="loadingImageNode" alt="" src="${_blankGif}" class="lotusHidden lotusLoading asCommentLoading"></img
+			></span
+		></div
+	></li
+	><li class="lotusHidden lotusCommentItem expandCommentsError" dojoAttachPoint="expandCommentsErrorNode"
+	></li
+	>
+	     <li dojoAttachPoint="sharedExternallyComments"></li>
+	<li dojoAttachPoint="commentInputNodeInline"></li
+></ul>

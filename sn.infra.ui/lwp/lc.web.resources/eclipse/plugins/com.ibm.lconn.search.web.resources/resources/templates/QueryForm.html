@@ -1,0 +1,23 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusGlobalSearch">
+	<form dojoAttachPoint="formDomNode" method="GET" action="javascript:;">
+		<div class="lotusSearch" role="search" aria-label="${_strings.REFINE_YOUR_SEARCH_RESULTS}">
+			<div class="icSearchInputBox">
+				<input id="${id}_textBox" dojoAttachPoint="textBox" type="text" class="lotusText" 
+					name="query" title="${_strings.SEARCH_VERB}" />
+			</div>
+			<div class="icSearchBarButtons" style="display: none;" dojoAttachPoint="clearButton">
+				<a href="javascript:;" class="lotusBtnImg lotusClose" role="button" dojoAttachEvent="onclick: _clearQuery">
+					<img title="${_strings.CLEAR}" alt="${_strings.CLEAR}" src="${_blankGif}">
+					<span class="lotusAltText">x</span>
+				</a>
+			</div>
+			<div class="icSearchBarButtons" style="display: none;" dojoAttachPoint="searchButton">
+				<input type="submit" class="lotusBtn icSubmitSearch" value="${_strings.SEARCH_VERB}">
+			</div>
+		</div>
+	</form>
+
+	<div dojoAttachPoint="didYouMeanContainerDomNode" class="lconnSearchDidYouMean" style="display:none">
+	</div>
+</div>

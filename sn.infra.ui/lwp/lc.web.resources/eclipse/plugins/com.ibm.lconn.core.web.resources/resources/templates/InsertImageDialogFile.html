@@ -1,0 +1,16 @@
+<!-- Copyright IBM Corp. 2015, 2018  All Rights Reserved.                    -->
+<div role="presentation">
+	<div class=" lconnFileUpload" dojoAttachPoint="labelRow">
+		<img src="${_blankGif}" dojoAttachPoint="fileIcon" class="lconnFileUploadIcon ${_fileIcon}" />
+		<div class="lconnFileUploadLabel">
+			<div>
+				<div dojoAttachPoint="nameNode" class="lconnFilenameContainer bidiSTT_FILE_PATH_SIZE">${_fileName}</div>
+			</div>
+		</div>
+		<div style="display: inline" dojoAttachPoint="actionNode" class="lconnFileUploadAction">		
+			<a role="button" href="javascript:;" dojoAttachEvent="onclick:_remove,onmouseover:_startHover,onmouseout:_stopHover" class="lconnRemoveLink" dojoAttachPoint="removeLink"
+			   ><img src="${_blankGif}" class="lotusDelete" dojoAttachPoint="removeNode"
+			   ><span class="lotusAltText">X</span></a>
+		</div>
+	</div>
+</div>

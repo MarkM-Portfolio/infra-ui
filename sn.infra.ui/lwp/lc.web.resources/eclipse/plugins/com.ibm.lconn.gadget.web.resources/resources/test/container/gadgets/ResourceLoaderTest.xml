@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<Module>
+	<ModulePrefs title="EE Resource Loader Test" description="none" height="400" width="500">
+		<Require feature="opensocial-0.9"/>
+		<Require feature="opensocial-templates">
+			<Param name="requireLibrary">../../../../com.ibm.social.gadget/loader/ResourceLoaderTemplate.xml</Param>
+		</Require>
+		<Require feature="opensocial-data"/>
+	</ModulePrefs>
+
+	<Content view="default" type="html"><![CDATA[	
+		<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+		<style type="text/css">
+			.mTest {
+				display: none
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="test.css" />
+		<script type="text/os-data" xmlns:os="http://ns.opensocial.org/2008/markup">
+			<os:HttpRequest key="icResourceData" method="GET" href="../../../../../ic/forms/api/resloader/UploadFileGadget"/>
+		</script>
+		<script type="text/os-template" xmlns:lconn="http://www.ibm.com/ibm/connections" >
+			<lconn:importResources/>
+		</script>
+		<script type="text/javascript">
+			var mCss = ['/web/_style?include=com.ibm.social.as/gadget/css/gadgetOverrideNarrow.css{etag}'];
+			
+			function notifyLoadComplete() {
+				document.getElementById("write2me").innerHTML = "Bingo!";
+				alert("Load complete callback");
+			}
+			
+			function notifyError() {
+				document.getElementById("write2me").innerHTML = "Bummer!";
+				alert('error');
+			}
+			
+			com.ibm.social.gadget.loader.bootstrapPromise.then(function() {
+				var initComplete = com.ibm.social.gadget.loader.bootstrap.init({extraCss : mCss});
+		 		initComplete.then(notifyLoadComplete, notifyError);
+			});	
+		</script>
+		<script src="test.js" type="text/javascript"></script>
+		<h2>Loaded!</h2>
+		<h2 id="write2me"></h2>
+		
+		<h3 class="mTest">Success with CSS</h3>
+	]]></Content>
+</Module>
+

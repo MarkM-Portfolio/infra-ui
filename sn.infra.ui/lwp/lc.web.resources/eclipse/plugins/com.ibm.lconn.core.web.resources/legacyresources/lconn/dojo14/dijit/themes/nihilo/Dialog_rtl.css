@@ -1,0 +1,7 @@
+/* Copyright IBM Corp. 2015  All Rights Reserved.                    */
+/* Dialog */
+
+.dijitRtl .nihilo .dijitDialogTitleBar .dijitDialogCloseIcon {
+	right: auto;
+	left: 5px;
+}

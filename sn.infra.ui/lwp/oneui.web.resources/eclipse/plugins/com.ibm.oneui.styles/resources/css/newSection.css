@@ -1,0 +1,40 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+.lotusSection h2{background:url(images/sectionBkgd.gif) left top repeat-x;border-top:1px solid #e3e2e2;zoom:1;overflow:hidden}
+#lotusContent .lotusSection h2{border-top:1px solid #e3e2e2;padding:4px 3px 4px 3px}
+#lotusMain, .lotusMain{background-image:none}
+#lotusColLeft .lotusSection h2, .lotusColLeft .lotusSection h2, #lotusColRight .lotusSection h2, .lotusColRight .lotusSection h2{font-size:1.1em;font-weight:bold;color:#444;background-color:transparent !important;padding:4px 3px 4px 3px;display:block}
+#lotusColRight .lotusSection h2, .lotusColRight .lotusSection h2{padding-right:10px}
+.lotusSection h2:hover, #lotusContent .lotusSection h2:hover{background-image:url(images/sectionBkgdHover.gif)}
+#lotusColLeft .lotusSection h2 span.lotusLeft, .lotusColLeft .lotusSection h2 span.lotusLeft, #lotusColRight .lotusSection h2 span.lotusLeft, .lotusColRight .lotusSection h2 span.lotusLeft, #lotusColRight .lotusSection h2, .lotusColRight .lotusSection h2{width:auto}
+#lotusColRight h2 .lotusArrow, .lotusColRight h2 .lotusArrow{display:inline}
+
+/*arrow sprites, reset to the defaults*/
+#lotusColLeft .lotusArrow, 
+.lotusColLeft .lotusArrow,
+#lotusColRight .lotusArrow,
+.lotusColRight .lotusArrow{width:13px;height:18px;}
+#lotusColLeft .lotusTwistyOpen,
+.lotusColLeft .lotusTwistyOpen,
+#lotusColRight .lotusTwistyOpen,
+.lotusColRight .lotusTwistyOpen{background-position:0 0}
+#lotusColLeft .lotusTwistyOpen:hover,
+#lotusColLeft .lotusTwistyOpen:focus, 
+.lotusColLeft .lotusTwistyOpen:hover,
+.lotusColLeft .lotusTwistyOpen:focus,
+#lotusColRight .lotusTwistyOpen:hover,
+#lotusColRight .lotusTwistyOpen:focus, 
+.lotusColRight .lotusTwistyOpen:hover,
+.lotusColRight .lotusTwistyOpen:focus{background-position:-13px 0}
+#lotusColLeft .lotusTwistyClosed, 
+.lotusColLeft .lotusTwistyClosed,
+#lotusColRight .lotusTwistyClosed, 
+.lotusColRight .lotusTwistyClosed{background-position:-26px 0}
+#lotusColLeft .lotusTwistyClosed:hover,
+#lotusColLeft .lotusTwistyClosed:focus, 
+.lotusColLeft .lotusTwistyClosed:hover,
+.lotusColLeft .lotusTwistyClosed:focus,
+#lotusColRight .lotusTwistyClosed:hover,
+#lotusColRight .lotusTwistyClosed:focus, 
+.lotusColRight .lotusTwistyClosed:hover,
+.lotusColRight .lotusTwistyClosed:focus{background-position:-39px 0}

@@ -1,0 +1,32 @@
+<project name="build_utils">
+   <!-- leave these settings -->
+   <property name="disable.updatesite" value="true" />
+   <property name="eclipseDir" value="${eclipseBuildDir}/eclipse" />
+
+	<macrodef name="reuseExistingProperties">
+		<attribute name="component" />
+		<attribute name="toBundle" />
+		<attribute name="fromJar" />
+		<attribute name="unique" />
+		<attribute name="localBuildDir" default="_build_dir_@{unique}" />
+		<attribute name="localPropertiesDir" default="_props_dir_@{unique}" />
+		<element name="includes" />
+		<sequential>
+			<property name="propprocessing.excludes" value="_properties/**/*" />
+			<property name="cr.excludes" value="_properties/**/*" />
+			<locateComponent component="@{component}" property="@{localBuildDir}" locateBuildDir="true"/>
+			<property name="@{localPropertiesDir}" value="${basedir}/eclipse/plugins/@{toBundle}/_properties" />
+			<delete failonerror="false">
+				<fileset dir="${@{localPropertiesDir}}">
+					<includes />
+				</fileset>
+			</delete>
+			<mkdir dir="${@{localPropertiesDir}}" />
+			<unzip src="${@{localBuildDir}}/@{fromJar}" dest="${@{localPropertiesDir}}" overwrite="true">
+				<patternset>
+					<includes />
+				</patternset>
+			</unzip>
+		</sequential>
+	</macrodef>   
+</project>

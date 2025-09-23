@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IBM Connections Infra JavaScript Unit Tests
+Bundle-SymbolicName: com.ibm.social.test.web.resources;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: IBM
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: . 

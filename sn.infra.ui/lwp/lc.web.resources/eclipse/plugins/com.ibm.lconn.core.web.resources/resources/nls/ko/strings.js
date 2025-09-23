@@ -1,0 +1,366 @@
+/* *************************************************************** */
+/*                                                                 */
+/* HCL Confidential                                                */
+/*                                                                 */
+/* OCO Source Materials                                            */
+/*                                                                 */
+/* Copyright HCL Technologies Limited 2008, 2019                   */
+/*                                                                 */
+/* The source code for this program is not published or otherwise  */
+/* divested of its trade secrets, irrespective of what has been    */
+/* deposited with the U.S. Copyright Office.                       */
+/*                                                                 */
+/* *************************************************************** */
+
+// NLS_CHARSET=UTF-8
+({
+   'rs_close' : "닫기",
+   'rs_loading' : "로드 중...",
+   'rs_at' : "위치",
+
+   'rs_searchDirectory' : "검색된 사용자가 없습니까? 상세 검색을 사용하십시오.",
+   'rs_searchGroupDirectory' : "검색된 그룹이 없습니까? 상세 검색을 사용하십시오.",
+   'rs_searchPersonAndGroupDirectory' : "검색된 사용자나 그룹이 없습니까? 상세 검색을 사용하십시오.",
+   'rs_searchCommunityDirectory' : "검색된 커뮤니티가 없습니까? 상세 검색을 사용하십시오.",
+
+   'rs_shadowText_searchDirectory' : "사용자를 검색하려면 입력",
+   'rs_shadowText_searchGroupDirectory' : "그룹을 검색하려면 입력",
+   'rs_shadowText_searchPersonAndGroupDirectory' : "사용자 또는 그룹을 검색하려면 입력",
+   'rs_shadowText_searchCommunityDirectory' : "커뮤니티를 검색하려면 입력",
+
+   'rs_listItem' : "목록 항목",
+   'rs_noResults' : "'${0}'에 대한 결과 없음",
+   'rs_today' : "오늘",
+   'rs_tomorrow' : "내일",
+   'rs_yesterday' : "어제",
+
+   /* Activity List Widget */
+   'rs_activityFeedLink' : "이 활동 피드",
+   'rs_externalText' : "이 활동에 조직 외부 회원이 포함될 수 있습니다.",
+   'rs_moveActivitySuccess' : '\"${activityTitle}\"이(가) \"${destCommName}\" 하위 커뮤니티로 이동되었습니다.',
+   // copy 'rs_moreInfo' and 'rs_hideInfo' from activity's strings.js
+   'rs_moreInfo' : '이 활동에 대한 자세한 정보 표시',
+   'rs_hideInfo' : '자세한 정보 숨기기',
+   'rs_more' : "자세히",
+   'rs_hide' : "숨기기",
+   'rs_edit' : "편집",
+   'rs_restore' : "복원",
+   'rs_deleteEntry' : "삭제",
+   'rs_prioritize' : "우선순위 지정",
+   'rs_markComplete' : "완료로 표시",
+   'rs_markIncomplete' : "복원",
+   'rs_linkMore' : "... [자세히]",
+   'rs_linkLess' : "... [간단히]",
+   'rs_actUpdatedByDate' : "업데이트: ${0} ${1}",// Updated by (author name) (date)
+   'rs_actUpdatedBy' : "업데이트한 사용자: ${0}",// Updated by (author name)
+   'rs_actDue' : "기한: ${0}",// Due (date)
+   'rs_actTags' : "태그: ",
+   'rs_actTagsDelim' : ", ",
+   'rs_startFromTemplate' : "이 템플리트에서 활동 시작",
+   'rs_favoriteTemplate' : "즐겨찾기 템플리트로 표시",
+   'rs_normalTemplate' : "일반 템플리트로 표시",
+   'rs_tunedOutPri' : "제외",
+   'rs_pagepos' : "${0} - ${1}/${2}", // pagination - e.g. 1 - 10 of 100
+   'rs_navPrevLabel' : "이전",
+   'rs_navNextLabel' : "다음",
+   'rs_noActivities' : "이 커뮤니티에 대해 시작된 활동이 없습니다.",
+   'rs_feedError' : "피드를 로드하는 데 실패했습니다.",
+   'rs_highPri' : "높은 우선순위",
+   'rs_medPri' : "중간 우선순위",
+   'rs_normalPri' : "보통 우선순위(기본값)",
+   'rs_tuneOut' : "제외로 표시",
+   'rs_startActivity' : "활동 시작",
+   'rs_startFirstActivity' : "첫 활동 작성",
+   'rs_navNextLabel' : "다음",
+   'rs_viewAll' : "모두 보기",
+   'rs_activityWidgetTitle' : "활동",
+   'rs_activityWidgetBriefDescription' : "커뮤니티 목표를 추적합니다. 작업을 작성하고 자원을 공유하십시오.",
+   'rs_activityWidgetDescription' : "커뮤니티 활동은 공동으로 작업하고 커뮤니티 프로젝트 또는 이니셔티브에 대한 진행 상황을 추적하는 데 사용될 수 있습니다.",
+   'rs_completedActivityLink' : "완료된 활동 표시",
+   'rs_activitiesUnavailable' : "활동 서비스를 사용할 수 없습니다.",
+   'rs_errorPersists' : "문제가 계속되면 시스템 관리자에게 문의하십시오.",
+   'rs_shared' : "공유된 날짜",
+   'rs_removeActFromComm' : "커뮤니티에서 제거",
+   'rs_externalLabel' : "외부",
+
+   // for ActivityForm
+   'rs_templateOptions' : "템플리트 옵션",
+   'rs_template' : "템플리트",
+   'rs_tagsLabel' : "태그",
+   'rs_peopleLabel' : "사용자",
+   'rs_aboutThisTemplate' : "이 템플리트 정보",
+   'rs_activity' : "활동",
+   'rs_copyOf' : "${0} 사본",// copy of (activity name)
+   'rs_activityFormGoal' : "활동 목표",
+   'rs_noTemplate' : "없음",
+   'rs_copyActivityMembers' : "활동의 회원 사용",
+   'rs_copyTemplateMembers' : "템플리트의 회원 사용",
+
+   /* Forum Widget */
+   'rs_noTopics' : "이 커뮤니티에 대한 주제가 아직 없습니다.",
+   'rs_noTopicsLoggedIn' : "질문을 올리고 브레인 스토밍을 하거나 아이디어를 간단하게 공유하십시오.",
+   'rs_postedBy' : "최근 게시자",
+   'rs_topics' : "주제",
+   'rs_noTopicsShort' : "주제 없음",
+   'rs_topic' : "주제",
+   'rs_replies' : "답글",
+   'rs_noReplies' : "답글 없음",
+   'rs_reply' : "답글",
+   'rs_startTopic' : "주제 시작",
+   'rs_startFirstTopic' : "첫 주제 시작",
+   'rs_ok' : "확인",
+   'rs_locked' : "[잠김]",
+   'rs_manageForumSetting' : "포럼 설정 관리",
+   'rs_forumSettingCommunityOverviewPage' : "커뮤니티 개요 페이지:",
+   'rs_defaultForumList' : "기본값으로 포럼 목록 표시",
+   'rs_defaultTopicList' : "기본값으로 주제 목록 표시",
+   'rs_forumSettingApplicationView' : "포럼 애플리케이션 기본 보기:",
+   'rs_forumSettingNote' : "참고: 포럼 하나만 있는 경우 기본값으로 주제를 표시합니다.",
+   'rs_forumSettingSubmit' : "제출",
+   'rs_forumSettingSave' : "저장",
+   'rs_forumSettingSaveAndClose' : "저장 후 닫기",
+   'rs_forumSettingConfirm' : "포럼의 변경사항이 저장되었습니다.",
+   'rs_forumSettingError' : "오류가 발생했습니다. 관리자에게 문의하십시오.",
+   'rs_formSettingHideMessage' : "이 메시지 숨기기",
+   'rs_forumSettingCancel' : "취소",
+   'rs_forumAnsweredQuestion' : "답변된 질문",
+   'rs_forumUnAnsweredQuestion' : "답변되지 않은 질문",
+   'rs_forumSortBy' : "정렬 기준:",
+   'rs_forumSortByDate' : "날짜",
+   'rs_forumSortByReplies' : "답글",
+   'rs_forumSortByTopic' : "주제",
+   'rs_forumSortByTopicsAndReplies' : "주제 및 답글",
+   'rs_sortByReplies' : "답글로 정렬",
+   'rs_sortbyTopicsAndReplies' : "주제 및 답글로 정렬",
+   'rs_forumOpenQuestions' : "미응답 질문",
+   'rs_feedOpenQuestions' : "이 미응답 질문의 피드",
+   'rs_feedAnsweredQuestions' : "이 답변된 질문의 피드",
+   'rs_forumMessages' : "${0}개 메시지",
+   'rs_forumLastAddedPost' : "최근 게시자: ${0}",
+   'rs_forumTopics' : "${0}개 주제",
+   /* End discussion forum */
+
+   /* Editor plugins -- some for a possible one we haven't implemented yet */
+   'rs_createPersonLink' : "사용자 링크 작성",
+   'rs_quote' : "따옴표",
+   'rs_labelColon' : "레이블: ",
+   'rs_personColon' : "사용자: ",
+   'rs_personLink' : "사용자 링크",
+   'rs_replace' : "대체",
+   'rs_inactivePerson' : "${0}(비활성)", // person's name (inactive)
+   'rs_PersonPicture' : "${0}의 사진", // person name's picture
+
+   /*Visitor mode -- external user name decoration use cases */
+   'rs_PersonExternalLabel' : "외부 사용자", // A label for the visitor model use cases.
+   'rs_PersonExternal' : "${0}(외부 사용자)", //'{0}' is the person's name. This will be used for the user profile name and profile photo tooltip
+   'rs_PersonPictureExternal' : "${0}의 사진(외부 사용자)", // Alt text for the external user's profile photo
+   'rs_personExternalDesc' : "사용자가 외부적으로 공유되는 파일 및 커뮤니티에 대한 액세스 권한이 있습니다.",
+   /* End editor plugins */
+
+   /* Notification Form */
+   'rs_notifyOthers' : "다른 사용자에게 알림",
+   'rs_messageColon' : "메시지: ",
+   'rs_notifyColon' : "알림: ",
+   'rs_notificationConfirm' : "알림 메시지가 발송되었습니다. ",
+   'rs_notificationFail' : "알림 메시지가 발송되지 않았습니다. 나중에 다시 시도하거나, 문제가 계속되면 시스템 관리자에게 문의하십시오.",
+   'rs_pickCommunity' : "커뮤니티 목록에서 선택하십시오.",
+   'rs_typeName' : "이름 입력",
+   'rs_typeToFilter' : "이 목록을 필터링하려면 입력하십시오.",
+   /* End Notification Form */
+
+   /* FilteringCheckbox */
+   'rs_filterListPrompt' : "이 목록을 필터링하려면 입력하십시오.",
+   'rs_filterGroupLabel' : "그룹 선택",
+   'rs_noResults' : "결과가 없음",
+   // ${0} will be replaced with a number
+   'rs_numResults' : "${1}개 중 ${0}개 표시",
+
+   /* PeopleFilterList */
+   'rs_removeFilter' : "제거",
+
+   /* Language Selector */
+   'rs_browser_setting' : "브라우저 설정",
+   'rs_customLangaugeLinkLabel' : "사용자 정의 언어",
+
+   /* Paging controls */
+   // 0 and 1 are page numbers
+   'rs_jumpPage' : "${0}/${1} 페이지로 이동",
+   "rs_jumpPageLabel" : "페이지 이동",
+   'rs_pageNumLabel' : "페이지 번호",
+   'rs_pageLabel' : "페이지:",
+
+   /* Common Tags Widget */
+   'rs_tagCloudNavigationLabel' : '태그',
+   'rs_tagCloudToggleHint' : "숨기거나 표시하려면 클릭하십시오.",
+   'rs_tagCloudHelpAlt' : "태그 도움말 보기",
+   'rs_tagCloudNoTags' : "아직 태그 없음",
+   'rs_tagCloudNoRecentTags' : "최근 태그 없음",
+   'rs_tagCloudNoTagsProfiles' : "디렉토리를 검색하십시오. 검색으로 리턴된 프로파일과 연관된 태그가 여기에 표시됩니다.",
+   'rs_tagLoadingTags' : "컨텐츠 로드 중",
+   'rs_tagCloudSelectedTags' : "선택한 태그",
+   'rs_tagCloudSeachDesc' : "태그 찾기",
+   'rs_tagCloudSeach' : "검색",
+   'rs_tagCloudRelatedTags' : "관련 태그",
+   'rs_tagCloudRelatedTagsDescription' : "관련 태그를 추가하여 검색 세분화",
+   'rs_tagCloudError' : '오류가 발생했습니다.',
+
+   'rs_viewAsCloud' : "클라우드",
+   'rs_viewAsCloudTitle' : "태그를 태그 클라우드로 나열",
+   'rs_viewAsCloudDescription' : "태그를 태그 클라우드로 보기",
+   'rs_viewAsList' : "목록",
+   'rs_viewAsListTitle' : "태그를 순차 태그 목록으로 나열",
+   'rs_viewAsListDescription' : "태그를 순차 태그 목록으로 보기",
+   'rs_tagCloudViewAll' : "찾아보기",
+   'rs_tagCloudViewAllTitle' : "모든 태그 찾아보기",
+
+   'rs_normalTags' : "활성 태그",
+
+   'rs_removeTag' : "선택한 필터 태그에서 태그 제거",
+   'rs_clearAll' : "모두 지우기",
+   'rs_searchInputDefault' : "태그를 찾으려면 입력",
+   'rs_searchInputTagSelected' : "다른 태그 입력",
+   'rs_relatedTagTitle' : "태그 ${0}, 계수 ${1}의 검색 결과 표시",
+   'rs_removeTagTitle' : "선택된 필터 태그에서 ${0} 태그를 제거합니다.",
+   'rs_addTagTitle' : "계수가 ${1}인 ${0} 태그별로 필터링",
+
+   'rs_tagDialogCloseTile' : "닫기",
+   'rs_tagDialogTitle' : "모든 태그",
+   'rs_tagDialogPageInfo' : "${0} - ${1}/${2} 태그",
+
+   /* Group Selection (Picker) Widget */
+   'rs_group_browse_groups' : "그룹 찾아보기",
+   'rs_group_browse_groups_dialog_title' : "그룹 찾아보기",
+   'rs_group_browse_find_groups' : "그룹 찾기",
+   'rs_group_browse_add_button' : "추가",
+   'rs_group_browse_cancel_button' : "취소",
+   'rs_group_browse_enter_string' : "그룹을 검색하려면 입력",
+   'rs_group_browse_group_typeahead_label' : "그룹 이름 입력:",
+   'rs_group_browse_group_name' : "그룹 이름:",
+   'rs_group_browse_results_label' : "일치하는 그룹 선택:",
+   'rs_group_browse_parent_group_label' : "사용자 위치:",
+   'rs_group_browse_next_page' : "다음 페이지",
+   'rs_group_browse_previous' : "이전",
+   'rs_group_browse_next' : "다음",
+   'rs_group_browse_paging' : "페이징",
+   'rs_group_browse_previous_page' : "이전 페이지",
+   'rs_group_browse_group_selected' : "선택한 그룹:",
+   'rs_group_browse_group_no_groups' : "이 그룹에 포함된 그룹이 없음",
+   'rs_group_browse_page_info' : "${0} - ${1}/${2}",
+   'rs_group_browse_page_info_alt' : "${2}개 중 ${0} - ${1}개 일치하는 그룹",
+   'rs_group_browse_remove_selection' : '중첩된 그룹 선택 제거: ${0}',
+   'rs_group_browse_paging' : "페이징",
+   'rs_member_groups' : "그룹",
+   'rs_member_members' : "회원",
+   'rs_member_no_results' : "결과가 없음",
+   'rs_member_remove_group' : "${0} 제거",
+   'rs_member_add_to_community' : "회원을 추가하려면 클릭",
+   'rs_member_remove_name' : "회원을 제거하려면 클릭",
+   'rs_group_add_to_community' : "그룹을 추가하려면 클릭",
+   'rs_group_remove_name' : "그룹을 제거하려면 클릭",
+   'rs_group_name' : "그룹 이름",
+   'rs_group_role' : "그룹 역할",
+
+   'rs_warning' : "경고",
+   'rs_a11y_warning' : "경고:",
+
+   'rs_messagebox_close_btn_title' : "닫기",
+   'rs_messagebox_close_btn_alt' : "닫기",
+   'rs_messagebox_error_icon_alt' : "오류",
+   'rs_messagebox_error_a11y_label' : "오류:",
+   'rs_messagebox_warning_icon_alt' : "경고",
+   'rs_messagebox_warning_a11y_label' : "경고:",
+   'rs_messagebox_info_icon_alt' : "정보",
+   'rs_messagebox_info_a11y_label' : "정보:",
+   'rs_messagebox_success_icon_alt' : "성공",
+   'rs_messagebox_success_a11y_label' : "성공:",
+
+   /* Document Picker CK Plugin */
+   'rs_docpicker_title' : "Files에 링크 삽입",
+   'rs_docpicker_label' : "Connections Files에 링크",
+   // '{0}' is a filename
+   'rs_docpicker_download_title' : "${0} 다운로드",
+   'rs_docpicker_viewdetails_text' : "세부사항 보기",
+   // '{0}' is a filename
+   'rs_docpicker_viewdetails_title' : "${0}의 세부사항 보기",
+
+   /* AttachedFileList widget */
+   'rs_attachedfile_remove_alt' : "제거",
+   'rs_attachedfile_filename' : "이미지 ${0}",
+
+   'rs_feedreader_warning' : "경고: 이 링크는 피드 리더용이므로 사용자의 브라우저에는 잘못 표시될 수 있습니다. 계속하려면 확인을 클릭하고 페이지로 돌아가려면 취소를 클릭하십시오.",
+
+   'rs_search' : "검색",
+   'rs_all_connections' : "모든 Connections",
+   'rs_advanced' : "고급",
+   'rs_select_scope' : "검색 범위 선택",
+
+   'rs_icfixlayout' : {
+      button_label : "다시 포맷",
+      dialog_title : "컨텐츠 다시 포맷",
+      warning : "경고",
+      reformat_save : "다시 포맷 후 저장",
+      save_as_is : "다른 이름으로 저장",
+      cancel : "취소",
+      warn_layout : "사용자의 컨텐츠가 최대 표시 너비를 초과했습니다. 사용 가능한 공간에 맞춰 자동으로 다시 포맷하시겠습니까?",
+      remember_decision : "내 의사결정 기억"
+   },
+
+   //The following error messages are used by icdocpicker when private files are shared with a Community.
+   'rs_sharefile_constraint_violation' : "선택한 파일을 공유하는 중에 오류가 발생했습니다.",
+   'rs_sharefile_access_denied' : "파일이 삭제되었거나 더 이상 공유되지 않습니다.",
+   'rs_sharefile_invalid_request' : "선택한 파일을 공유하는 중에 오류가 발생했습니다.",
+   'rs_sharefile_sharing_intent_restriction' : "이 파일은 조직 안에서만 공유할 수 있습니다.",
+   'rs_sharefile_error_title' : "오류",
+
+   /* Strings for the native mobile app banners */
+   'rs_mobileBanner_title' : 'HCL Connections',
+   'rs_mobileBanner_inAppStore' : '애플리케이션 저장소에서',
+   'rs_mobileBanner_inGooglePlay' : 'Google Play에서',
+   'rs_mobileBanner_author' : 'HCL Software',
+   'rs_mobileBanner_open' : '열기',
+   'rs_mobileBanner_view' : '보기',
+   'rs_mobileBanner_hide' : '숨기기',
+
+   'rs_empty_column_placeholder' : '여기에 앱 끌기.',
+   'rs_widget_loading_error_title' : '위젯을 표시할 수 없음',
+   'rs_widget_loading_error_message' : '나중에 다시 시도하거나, 문제가 계속되면 시스템 관리자에게 문의하십시오.',
+   'rs_widgets_loading_error_title' : '이 커뮤니티에 위젯을 표시할 수 없음',
+   'rs_widget_misplacement_warning' : '이 앱이 이 열에 맞지 않습니다. 커뮤니티 소유자가 앱을 다른 열로 이동하거나 페이지에서 제거해야 합니다.',
+
+   'rs_widget_title_change_fail_message' : {
+      title_too_long : '입력한 제목이 너무 깁니다.',
+      empty_new_title : '입력한 제목은 비워둘 수 없습니다.',
+      default_message : '이 ${0} 앱에 대한 제목을 변경할 수 없습니다.'
+   },
+
+   /* Strings for change title dialog */
+   'rs_widget_title_change_label' : '제목:  ',
+   'rs_widget_title_change_direction' : '이 ${0} 앱에 대한 제목을 변경합니다.',
+   'rs_widget_title_change_title' : '제목 변경',
+
+   /* Strings for Visitor Model Invite dialog */
+	'rs_vmmainContentTitle' : "회원 초대 또는 추가",
+	'rs_vmmainContentDesc' : "회원을 초대하여 커뮤니티에 가입할 수 있는 기회를 제공하십시오. 자동으로 포함되도록 회원을 추가하십시오.",
+	'rs_vmtypeAheadLabel' : "이름 또는 이메일: ",
+	'rs_vmgroupTypeAheadLabel' : "이름: ",
+	'rs_vmtypeAheadRoleLabel' : " 역할 ",
+	'rs_vmgroupTypeAheadRoleLabel' : " 회원으로 ",
+	'rs_vmtaNoResults' : "결과를 찾을 수 없습니다.",
+	'rs_vmtaHeader' : "머리글",
+	'rs_vmaddUser' : "추가",
+	'rs_vmradioSectionTitle' : "회원 옵션:",
+	'rs_vmradioOne' : "커뮤니티에 가입하도록 초대하기",
+	'rs_vmradioTwo' : "자동으로 커뮤니티에 사용자 추가",
+	'rs_vmtwistyA' : "선택적 메시지 추가",
+	'rs_vmtwistyB' : "추가 텍스트 제거",
+	'rs_vmmessage' : "메시지:",
+	'rs_vmtextAreaStartText' : "내용 쓰기...",
+	'rs_vmcheckboxLabel' : "나에게 사본 보내기",
+	'rs_vmsave' : "저장",
+	'rs_vminvite' : "초대",
+	'rs_vmcancel' : "취소",
+	'rs_userContentTitle' : "정보 입력",
+	'rs_vmaddUser' : "사용자 작성",
+	'rs_vmback'	 : "이전",
+	'rs_vmvisitor'	 : "방문자"
+})

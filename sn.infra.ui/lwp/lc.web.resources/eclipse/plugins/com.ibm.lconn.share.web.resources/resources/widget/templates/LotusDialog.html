@@ -1,0 +1,20 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="dijitDialog" tabindex="-1" waiRole="dialog" waiState="labelledby-${id}_title" role="dialog" aria-labelledby="${id}_title" widgetid="${id}" >
+	<div class="lotusDialogBorder" dojoAttachPoint="dialogBorder">
+		<form class="lotusDialog lotusForm" dojoAttachPoint="formNode" "action="javascript:;" dojoAttachEvent="onsubmit: _onSubmit" method="${formMethod}">
+			<div dojoAttachPoint="titleBar" class="lotusDialogHeader">
+				<h1 class="lotusHeading"><span dojoAttachPoint="titleNode" class="dijitDialogTitle" id="${id}_title" style="vertical-align: middle;"></span></h1>
+				<a class="lotusDialogClose" role="button" tabIndex="0" dojoAttachPoint="closeButtonNode" dojoAttachEvent="onclick: onCancel" href="javascript:;" title="${buttonClose}">
+					<img alt="${buttonClose}" src="${_blankGif}" role="presentation" />
+					<span class="lotusAltText">X</span>
+				</a>
+			</div>
+			<div dojoAttachPoint="containerNode,dialogBodyNode"></div>
+			<div class="lotusDialogFooter" dojoAttachPoint="footerBar">
+				<div class="lotusRight" dojoAttachPoint="footerStatusNode"></div>
+				<input id="submit_button" type="submit" role="button" dojoAttachEvent="onclick: _onSubmit" dojoAttachPoint="submitButtonNode" class="lotusFormButton" value="${buttonOk}" title="${buttonOkTitle}"/>
+				<input id="cancel_button" type="button" role="button" dojoAttachEvent="onclick: onCancel" class="lotusFormButton" value="${buttonCancel}"/>
+			</div>
+		</form>
+	</div>
+</div>

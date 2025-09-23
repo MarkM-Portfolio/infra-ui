@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2012, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<Templates xmlns:lconn="http://www.ibm.com/ibm/connections" xmlns:os="http://ns.opensocial.org/2008/markup">
+	<Namespace prefix="lconn" url="http://www.ibm.com/ibm/connections" />
+	<JavaScript><![CDATA[
+var com = com || {};
+com.ibm = com.ibm || {};
+com.ibm.social = com.ibm.social || {};
+com.ibm.social.gadget = com.ibm.social.gadget || {};
+com.ibm.social.gadget.loader = com.ibm.social.gadget.loader || {};
+
+/**
+ * This exports:
+ *  com.ibm.social.gadget.loader.bootstrap = {
+ *		-- config {Object} of properties:
+ *		-- 	{
+ *		--   extraCss : [...]
+ *		--  }
+ *		init : function(config)
+ *  }
+ *
+ * See below for more details
+ */	
+	/**
+	 * Promise-like thing to make API more consistent
+	 */
+	function LamePromise_() {
+		this._fired = -1;
+		this._result = null;
+		this._cbQ = [];
+		this._errQ = [];
+		
+		this.then = function(cb, errbck) {
+			if (cb) this._cbQ.push(cb);
+			if (errbck) this._errQ.push(errbck);
+			
+			this._runCallbacks();
+		};
+		
+		this._resolve = function(fired, result) {
+			if (this._fired === -1) {
+				this._fired = fired;
+				this._result = result;
+				this._runCallbacks();
+			}
+		};
+		
+		this._runCallbacks = function() {
+			if (this._fired !== -1) {
+				var result = this._result;
+				var queue = (this._fired === 0) ? this._errQ : this._cbQ;
+				
+				this._forEach(queue, function(cb) {
+					cb(result);
+				});			
+	
+				this._errQ = [];
+				this._cbQ = [];
+			}
+		};	
+
+		this._forEach = function(arr, onItem) {
+			if (arr && onItem) {
+				var i, len = arr.length;
+			
+				for (i = 0; i < len; i++) {
+					onItem(arr[i], i);
+				}	
+			}
+		};
+	};	 
+
+com.ibm.social.gadget.loader.bootstrapPromise = new LamePromise_();	
+com.ibm.social.gadget.loader.bootstrapHandle = function() {
+window.com.ibm.social.gadget.loader.bootstrap =
+(function() {
+		
+	// API export
+	var api_ = {};
+	
+	/**
+	 * used to store the window parent theme information if available
+	 */
+	var themeOverride_;
+	
+	/**
+	 * Resource data for connections
+	 */
+	var resData_ = opensocial.data.getDataContext().getDataSet("icResourceData");
+	resData_ = (resData_ && resData_.content ? resData_.content : {});
+	
+	/**
+	 * Version stamp
+	 */
+	var versionStamp_ = resData_.versionStamp;
+	var etag_ = versionStamp_;
+	var defaultThemeId_ = resData_.theme;
+	
+    // window.ibmConfig.versionStamp needed for etag within CKEditor requests
+    window.ibmConfig = window.ibmConfig || {};
+    window.ibmConfig.versionStamp = etag_ || 1234567890;
+	
+	/**
+	 * Protocol info
+	 */
+	var location_ = window.location.toString();
+	var isSecure_ = window.location.protocol === "https:" || resData_.isSSL;
+	var protocol_ = isSecure_ ? "https" : "http";
+	
+	/**
+	 * Script info
+	 */
+   	var firstScript = document.getElementsByTagName("script")[0];
+	
+	/**
+	 * Service urls
+	 */
+	var protocolData_ = resData_[protocol_];
+	var services_ = protocolData_.services;
+	var webResourcesUrl_ = window.webResourcesUrl = services_.webresources;
+	
+	/**
+	 * Prefs
+	 */
+	var prefs_ = new gadgets.Prefs();
+
+   var scriptUrls_;
+   /**
+   * Pass the gatekeeper config from the server into the dom to allow feature enablement checking
+   */
+   window.gatekeeperConfig = (resData_.gatekeeper) ? resData_.gatekeeper : "";
+
+	/**
+	 * IsDebug
+	 */
+	var debug_ = 
+		(function() {
+			var debugPref = prefs_.getString("debug");
+			var isDebug = false;
+			
+			if (debugPref) {
+				isDebug = debugPref === "true";
+			} else {
+				isDebug = location_.indexOf("debug=1") > 0 || location_.indexOf("debug=true") > 0;
+			}
+			
+			if (gadgets && gadgets.util && gadgets.util.isDebug) {
+			   isDebug = isDebug || gadgets.util.isDebug();
+			}
+			
+			return isDebug;
+			
+		})();
+
+	/**
+	 * Locale info:
+	 *  { locale : .., lang : .., country : .., localNorm : .., rtl : {boolean} }
+	 */
+	var locale_ = 
+		(function() {
+			function arrayContains(arr, e) {
+				if (arr) {
+					for (var i = 0; i < arr.length; i++) {
+						if (arr[i] === e) return true;
+					}
+				}
+				return false;
+			}
+		
+			var defaultLang = "en";
+			var availLangs = ["ar", "bg", "ca", "cs", "da", "de", "el", "en", "es", "eu", "fi", "fr", "he", "hr", "hu", "id","it", "iw", "ja", "kk", "ko", "nb", "nl", "no", "pl", "pt", "ro", "ru", "sl", "sr", "sk", "sv", "th", "tr", "zh" ];
+			var availCountries = { "pt" : ["br"], "zh" : ["tw"] };
+			
+			var langNorm = { "iw" : "he", "in" : "id", "no" : "nb" };
+			var langJsConvert = { "he" : "iw", "id" : "in", "nb" : "no" };
+			var langCoutryDupe = { "pt" : "pt", "nb" : "no", "zh" : "cn" }; 
+			
+			var rtlLang = ["ar", "he", "iw"];
+
+			var lang = prefs_.getLang();
+			var country = prefs_.getCountry();
+			
+			var langJs = "";
+			var countryJs = "";
+			
+			var isRtl = false;
+
+			// Handle lang
+			if (lang) {
+				lang = lang.toLowerCase();
+				lang = langNorm[lang] || lang;
+				if (!arrayContains(availLangs, lang)) {
+					lang = "en";
+					country = "";
+				} else if (langCoutryDupe[lang] && !country) {
+					country = langCoutryDupe[lang];
+				}
+				
+				langJs = langJsConvert[lang] || lang;
+				isRtl = arrayContains(rtlLang, lang);
+				locale = lang;
+			}
+			
+			// Handle country
+			if (country && country.toLowerCase() !== "all") {
+				country = country.toLowerCase();
+				
+				// special case for portugese				
+				if (langCoutryDupe[lang] && langCoutryDupe[lang] === country) {
+					countryJs = "";
+				} else {
+					countryJs = country;
+				}
+				
+				// setup locale string
+				locale = locale + "-" + country;
+			}
+			
+			return {
+				locale : locale,
+				lang : lang,
+				langJs : langJs,
+				country : country,
+				countryJs : countryJs,
+				localeNorm : langJs + (countryJs.length > 0 ? "_" + countryJs : ""),
+				rtl : isRtl
+			};
+		})();
+	
+	window.netJazzAjaxConfig = window.netJazzAjaxConfig || {};
+	window.netJazzAjaxConfig.params = "etag=" + etag_ + "&lang="+locale_.langJs + (locale_.countryJs.length>0 ? "&country=" + locale_.countryJs : "");
+	window.netJazzAjaxConfig.base = webResourcesUrl_;
+	CKEDITOR_BASEPATH = window.CKEDITOR_BASEPATH || webResourcesUrl_ + "/web/com.ibm.oneui.ckeditor/editor/"; 
+	
+
+      function getURLs_() {
+       if (!scriptUrls_) {
+         var scriptData = resData_.scripts;
+
+         var bases = scriptData.bases;
+         var etags = scriptData.etags;
+         etags = etags[locale_.localeNorm] || etags[locale_.langJs] || etags["en"];
+      
+         if(debug_) {
+            bases.unshift("include=dojo._firebug.firebug~");
+         }
+      
+         var debugParam = debug_ ? "&debug=true" : "";
+         var langParam = "&lang=" + locale_.langJs;
+         if (locale_.countryJs) {
+            langParam += "&country=" + locale_.countryJs;
+         }
+      
+         scriptUrls_ = [];
+         var excludes_ = [];
+
+         forEach_(bases, function(sBase, i) {
+            var sEtag = etags[i];
+            var ex = (excludes_.length > 0) ? "&exclude=" + excludes_.join('~') : "";
+            var scriptUrl = debug_ ?
+               webResourcesUrl_ + "/web/_js?" + sBase + ex + "&debug=true" + langParam :
+               webResourcesUrl_ + "/web/_js?" + sBase + ex + "&etag=" + sEtag + langParam;
+            var nex = sBase.substring('include='.length);
+            var nex2 = nex.substring(0,nex.length-1);
+            excludes_.push(nex2);
+            scriptUrls_.push(scriptUrl);
+         });
+
+      }
+      
+      return scriptUrls_;
+   }
+ 
+	/**
+	 * 
+	 */
+	function loadScript_(path, callback, errback) {
+		var done = false;
+		var promise = new LamePromise_();
+		var self = this;
+		
+		var head = document.getElementsByTagName("head")[0];
+		var scriptEl = document.createElement("script");
+
+		scriptEl.onload = handleLoad;
+		scriptEl.onreadystatechange = handleReadyStateChange;
+		scriptEl.onerror = handleError;
+
+		scriptEl.type = "text/javascript";		
+		scriptEl.src = path;
+		scriptEl.defer = "defer";
+		scriptEl.async = false;
+		
+		head.appendChild(scriptEl);
+
+		function resolve(error) {
+			if (!done) {
+				done = true;
+				
+				scriptEl.onload = null;
+				scriptEl.onreadystatechange = null;
+				scriptEl.onerror = null;
+				
+				if (error) {
+					promise._resolve(0);
+				} else {
+					promise._resolve(1);
+				}
+			}
+		}
+		
+		function handleLoad() {
+			resolve(false);
+		}
+		
+		function handleReadyStateChange() {
+			var state = scriptEl.readyState;
+			if (state === "complete" || state === "loaded") {
+				//134515: IE10 calls the readystate handler before finishing its processing
+				setTimeout(function() {
+					resolve.call(self, false);
+				});
+			}
+		}
+		
+		function handleError() {
+			resolve(true);
+		}
+		
+		return promise;
+	}
+	
+	/**
+	 * Ligth weight foreach function
+	 */
+	function forEach_(arr, onItem) {
+		if (arr && onItem) {
+			var i, len = arr.length;
+		
+			for (i = 0; i < len; i++) {
+				onItem(arr[i], i);
+			}	
+		}
+	}
+	
+	/**
+	 * Configure dojo
+	 */
+	function configDojo_() {		
+		window.djConfig = {
+		   isDebug: false,
+		   baseUrl: webResourcesUrl_ + "/web/dojo/",
+		   locale: locale_.locale,
+		   blankGif: webResourcesUrl_ + "/web/com.ibm.oneui.styles/css/images/blank.gif?etag=" + versionStamp_,
+		   usePlainJson: true,
+		   localizationComplete: true,
+		   isSecure: isSecure_,
+		   afterOnLoad: true,
+		   proxy: webResourcesUrl_ + "/ajaxProxy"
+		};
+	};	
+
+   /**
+    * Load the scripts
+    */
+   function loadScripts_() {
+      var inlineScripts = debug_ || !('async' in firstScript);
+      
+      var scriptUrls = getURLs_();
+            
+      var promise = new LamePromise_;
+      var queue = scriptUrls.length;
+      var execQueue = [];
+      
+      function loadCb() {
+         var execNext = execQueue.length > 0 && execQueue.pop();
+         
+         if (!(--queue)) {
+            promise._resolve(1);
+         }
+         
+         if (execNext) {
+            execNext();
+         }
+      }
+      
+      function errCb() {
+         queue = [];
+         promise._resolve(0);
+      }
+         
+      
+      forEach_(scriptUrls, function(scriptUrl, ind) {
+         function execFunc() {
+            loadScript_(scriptUrl).then(loadCb, errCb);
+         }
+         
+         if(!inlineScripts) { // modern browsers
+         	execFunc();
+         } else {
+           execQueue.push(execFunc);
+         }
+      });
+      
+      // for list based methods, kick off the queue
+      if (inlineScripts) {
+         execQueue.reverse();
+         execQueue.pop()();
+      }
+      
+      return promise;
+   }
+	
+	/**
+	 * Test if something is an array
+	 */
+	function isArray_(obj) {
+		return Object.prototype.toString.call(obj) === '[object Array]';
+	}
+	
+	/**
+	 * Load extra CSS resources
+	 */
+	function loadCssLink_(head, l, id) {
+		var isRtl = locale_.rtl;
+		var styleEl = null;
+		l = l.replace("{_rtl}", (isRtl ? "_RTL" : "")); // _RTL
+		l = l.replace("{rtl}", (isRtl ? "RTL" : ""));  // RTL
+		l = l.replace("{rtlTF}", (isRtl ? "&rtl=true" : "&rtl=false"));
+		l = l.replace("{etag}", "&etag=" + versionStamp_);		
+		//if a parent theme exists attempt to override theme template set by server
+		//this is the case where a server default is not set and the consumer sets the theme value 
+		if(themeOverride_){
+			l = l.replace("{theme}", themeOverride_);	
+		}
+			
+		
+		styleEl = document.createElement("link");
+		styleEl.href = webResourcesUrl_ + l;
+		styleEl.type = "text/css";
+		styleEl.rel = "stylesheet";
+		
+		if (id) {
+			styleEl.id = id;
+		}
+		
+		head.appendChild(styleEl);
+	}
+	
+	function loadCss_(config){	
+		setThemeOverride_();
+		/* Shindig will remove any plain conditional comments, so we javascript them in here instead. */
+        var div = document.createElement('div'),
+        all = div.getElementsByTagName('i'); // live node list
+        
+        for(var ie_ver = 6; ie_ver < 10; ie_ver ++) {
+        	div.innerHTML = '<!--[if IE ' + ie_ver + ']><i></i><![endif]-->';
+        	if(all[0]) {
+        		var ie_class = " lotusui_ie" + ie_ver;
+				if (ie_ver < 8)
+					ie_class += " lotusui_ie";
+        		document.getElementsByTagName("html")[0].className += ie_class;
+        		break;
+        	}
+        }
+        
+		var head = document.getElementsByTagName("head")[0];
+				
+		var cssLinks = config.overrideCss || resData_.css;		
+		forEach_(cssLinks, function(cssLink) {
+			if (isArray_(cssLink)) {
+				loadCssLink_(head, cssLink[0], cssLink[1]);
+			} else {
+				loadCssLink_(head, cssLink);
+			}
+		});
+		
+		var extraCss = config && config.extraCss || [];
+		forEach_(extraCss, function(cssLink) {
+			
+			loadCssLink_(head, cssLink);
+		});
+	}
+	
+	/**
+	 * Support for a consumer configured Connections theme. Check the following
+	 * 1) Verify if a gadget pref is passed
+	 * 2) Check the parent of the frame if in same domain allowed 
+	 * 3) Check for a default sent down from the server in gadget pipeline prefs
+	 * 
+	 */
+	function setThemeOverride_(){
+		var themePref = prefs_.getString("ic_theme");
+   		if(themePref){
+   			themeOverride_ = themePref;
+   		}
+   		if(!themeOverride_){
+   			try{
+   				if(window.parent && window.parent.lconn && 
+		     		window.parent.lconn.core && window.parent.lconn.core.theme){
+		     		themeOverride_ = window.parent.lconn.core.theme.getCurrentThemeId();
+     			} 
+   			} catch(e){}
+   		}
+   		if(!themeOverride_){
+   			themeOverride_ = defaultThemeId_;
+   		}
+    }
+			
+	// Used to correctly identify browser in Notes gadget container
+	var mapGeckoToFF = function() {
+		var ua = navigator.userAgent;
+		var gVer = parseFloat(ua.split("rv:")[1]);
+		
+		if ( gVer >= 5.0 ) { // from 5 up, Gecko ver == Firefox ver
+			dojo.isFF = gVer;
+		} else {
+			var map = { "1.8": 2.0, "1.9": 3.0, "2.0": 4.0};
+			dojo.isFF = map[gVer];
+		}				
+	}
+	
+	/**
+	 * Initialze the resources for this page.
+	 *
+	 * @name init
+	 * @memberOf 
+	 * @param config {Object} Configuration object for initialization.  The format is as follows
+	 *		{
+	 *			extraCss : { ltr: [...], rtl: [...] }
+	 *		}
+	 * @return {Object} A promise that will be invoked when the initialization completes
+	 * @example
+	 *	 var mCss = ['com.ibm.social.as/gadget/css/gadgetOverrideNarrow.css'];
+	 *
+	 *   var initComplete = com.ibm.social.gadget.loader.bootstrap.init({extraCss : { ltr : mCss, rtl : mCss }});
+	 *
+	 *   gadgets.util.registerOnLoadHandler(function() {
+	 *		initComplete.then(
+	 *			function_doMoreStuff() { ... }, 
+	 *			function reportError(error) { ... } );
+	 * 	 });	
+	 *
+	 * @public
+	 */
+	api_.init = function(config) {
+		config = config || {};
+
+		//
+		// exec this...
+		//
+		configDojo_();
+		loadCss_(config);
+      var returnProm;
+      returnProm = loadScripts_();
+		returnProm.then(
+			function() {
+				dojo.config.isDebug=debug_;
+				
+				// hack to identify browser correctly in Notes.
+				if ( dojo.isMoz && !dojo.isFF ) { // XulRunner or some other Gecko engine
+					mapGeckoToFF();
+				}
+				try { 
+					com.ibm.oneui.util.Url.secure = dojo.config.isSecure; 
+				} catch (e) { /* ignore */ }
+            	var currentViewer = opensocial.data.getDataContext().getDataSet('viewer');
+            	if (currentViewer) {
+                	window.currentViewer = currentViewer;
+            	}
+				// register to monitor for lconn.core.theme getting loaded
+				if(typeof cre$ !== 'undefined'){
+					cre$.util.ready(function() {
+				    	// look for lconn.core.theme loading
+						var resData_ = opensocial.data.getDataContext().getDataSet("icResourceData");
+						// incoming theme will reflect the site's configured value, but apps could be overriding this (e.g. by a Community)
+						if (resData_ && resData_.content) {
+							var _theme = lconn.core.theme.getCurrentThemeId();
+							if (_theme && _theme !== resData_.content.theme) {
+								resData_.content.theme = _theme;
+								opensocial.data.getDataContext().putDataSet("icResourceData", resData_);
+							}
+						}
+			  	    }, "lconn && lconn.core && lconn.core.theme");	// end_ready
+				}
+				
+			}
+		);
+		return returnProm;
+	};
+		
+	return api_;
+})();
+window.com.ibm.social.gadget.loader.bootstrapPromise._resolve(1);
+}; // end of bootstrapHandle
+
+__init_bootstrap = function() {
+  if (gadgets && gadgets.util) {
+    gadgets.util.registerOnLoadHandler(com.ibm.social.gadget.loader.bootstrapHandle);
+  } else {
+    setTimeout("__init_bootstrap", 50);
+  }
+}
+__init_bootstrap();
+	]]></JavaScript>
+	<!--Gadgets have to use at least one tag from a template library to access the shared template 
+		JS. Provided so gadgets can execute a no-op to get only the JS libraries  -->
+	<TemplateDef tag="lconn:importResources">
+		<Template>
+		<span></span>
+		</Template>
+	</TemplateDef>
+	  
+</Templates>

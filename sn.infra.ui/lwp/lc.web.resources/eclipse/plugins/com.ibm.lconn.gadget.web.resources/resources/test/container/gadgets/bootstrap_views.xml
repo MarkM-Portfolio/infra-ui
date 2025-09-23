@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<Module>
+	<ModulePrefs title="Sample views gadget">
+		<Require feature="views"></Require>
+		<Require feature="open-views.gadget"></Require>
+		<Require feature="open-views.url"></Require>
+		<Require feature="settitle"></Require>
+		<Require feature="dynamic-height"></Require>
+		<Require feature="dynamic-width"></Require>
+	</ModulePrefs>
+	<Content type="html"
+		view="DASHBOARD, FULL_PAGE, canvas, profile, default, home, about, window">
+<![CDATA[
+<script>
+  var open_site;
+  var navigateCallback = function(site_handler){
+  	console.log("navigate callback fired!", site_handler); open_site = site_handler;
+  };
+  var resultCallback = function(returnVal){
+  	console.log("result callback fired! return value : ", returnVal);
+  };
+  var goView = function(){
+  	var select = document.getElementById("gadgetView");
+  	var view = select.options[select.selectedIndex].value;
+  	select = document.getElementById("viewMethod");
+  	var method = select.options[select.selectedIndex].value;
+  	
+  	if(method === "openDialog") {
+  		gadgets.views.openGadget(resultCallback, navigateCallback, {"view":view, "viewTarget":"dialog"});
+  	}
+  	else { // method === "navigate"
+  		gadgets.views.requestNavigateTo(view);
+  	}
+  };
+  var closeGadget = function(){
+  	gadgets.views.close(open_site);
+  }
+</script>
+<h3>Gadgets Views & Window Functionality</h3>
+<div id="main"></div>
+
+<button onClick="goView()">go to</button>
+<select id="gadgetView">
+<option value="home">home</option>
+<option value="about">about (more views functions)</option>
+<option value="window">window (gadgets.window functions)</option>
+</select>
+ using 
+<select id="viewMethod">
+<option value="navigate">gadgets.views.requestNavigateTo</option>
+<option value="openDialog">gadgets.views.openGadget</option>
+</select>
+<br />
+<a onClick="closeGadget('dialog')">close last opened gadget</a>
+]]>
+
+</Content>
+<Content type="html" view="about">
+<![CDATA[
+<script>
+var setReturnVal = function(){
+	gadgets.views.setReturnValue({"thing":document.forms["retForm"]["myRet"].value});
+};
+var closeMe = function(){
+	gadgets.views.close();
+};
+var goUrl = function(viewTarget){
+	gadgets.views.openUrl(document.forms["urlForm"]["myUrl"].value, navigateCallback, viewTarget, {"coordinates":"fake_coords"});
+};
+</script>
+		<form name="retForm" id="retForm">
+			return val:
+			<input type="text" id="myRet" name="myRet" style="width: 60%"
+	               value="some stuff" />
+	               
+		</form><button onClick="setReturnVal();">Set</button>
+		<button onClick="closeMe();">Close gadget</button>
+		
+		
+<form name="urlForm" id="urlForm">
+			Url:
+			<input type="text" id="myUrl" name="myUrl" style="width: 60%"
+	               value="http://www.youtube.com/embed/39jtNUGgmd4" />
+		</form>
+<a onClick="goUrl(null)">open url (ibm vid by default)</a><br />
+]]>
+</Content>
+
+<Content type="html" view="window">
+<![CDATA[
+<script>
+
+function setWidth() {
+	gadgets.window.adjustWidth(document.getElementById("width").value);
+	document.getElementById("output").innerHTML = "width altered...";
+}
+
+function setHeight() {
+	gadgets.window.adjustHeight(document.getElementById("height").value);
+	document.getElementById("output").innerHTML = "height altered...";
+}
+
+function getVDims() {
+	var myDims = gadgets.window.getViewportDimensions();
+	document.getElementById("vDimWidth").value = myDims.width;
+	document.getElementById("vDimHeight").value = myDims.height;
+	document.getElementById("output").innerHTML = "Viewport dimensions were discovered";
+}
+
+function useCDims(myDims) {
+	console.log(myDims);
+	document.getElementById("cDimWidth").value = myDims.width;
+	document.getElementById("cDimHeight").value = myDims.height;
+	document.getElementById("output").innerHTML = "Container dimensions were discovered";
+}
+
+function getCDims() {
+	console.log("getting container dims");
+	console.log(gadgets.window.getContainerDimensions);
+	gadgets.window.getContainerDimensions(useCDims);
+}
+
+function setTitle() {
+	gadgets.window.setTitle(document.getElementById("newTitle").value);
+	document.getElementById("output").innerHTML = "setTitle() returned...";
+}
+
+</script>
+<div>
+<input type="text" id="width" name="width" /><input type="button" value="Set Width" onclick="setWidth()"/> <br />
+<input type="text" id="height" name="height" /><input type="button" value="Set Height" onclick="setHeight()"/> <br />
+
+<br />
+
+Viewport Width : <input type="text" id="vDimWidth" name="vDimWidth" disabled="disabled" /> <br />
+Viewport Height : <input type="text" id="vDimHeight" name="vDimHeight" disabled="disabled" /> <br />
+<input type="button" value="get Viewport Dimensions" onclick="getVDims()"/> <br />
+
+<br />
+
+Container Width : <input type="text" id="cDimWidth" name="cDimWidth" disabled="disabled" /> <br />
+Container Height : <input type="text" id="cDimHeight" name="cDimHeight" disabled="disabled" /> <br />
+<input type="button" value="get Container Dimensions" onclick="getCDims()"/> <br />
+
+<br />
+
+
+<input type="text" id="newTitle" name="newTitle" /><input type="button" value="Set Title" onclick="setTitle()"/> <br />
+<br />
+</div>
+<div id="output">
+</div>
+]]>
+</Content>
+
+</Module>
+
+
+

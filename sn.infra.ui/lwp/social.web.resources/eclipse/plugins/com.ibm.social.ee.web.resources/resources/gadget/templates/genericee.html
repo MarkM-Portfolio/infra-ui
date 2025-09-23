@@ -1,0 +1,34 @@
+<div class="lotusFlyoutInner">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+   <div class="lotusHeadingChunk eeHeading">
+      <h1 class="lotusHeading">
+         <img alt="" role="presentation" aria-hidden="true" src="${context.iconUrl}" dojoAttachPoint="iconNode" />
+         <a href="${context.itemUrl}" class="bidiAware" target="_blank" dojoAttachPoint="titleNode"></a>
+      </h1>
+   </div>
+   <span dojoAttachPoint="sharedExternally"></span>
+   <div dojoAttachPoint="contentArea" class="eeHeaderDescription"></div>
+   <div class="lotusChunk lotusTabContainer lotusTabCondensed" dojoAttachPoint="historyTabContainer">
+	  <ul role="tablist" class="lotusTabs">
+		   <li class="lotusFirst lotusSelected eeFirstTab" role="presentation">
+			   <a id="historyLink" href="javascript:;" role="tab" aria-selected="true">${nls.HISTORY.TAB_TITLE}</a>
+		   </li>
+	  </ul>
+   </div>
+   <div aria-labelledby="historyLink" role="tabpanel" tabindex="0" class="eeTabBody">
+      <div dojoAttachPoint="historyCtnr"></div>
+   </div>
+</div>

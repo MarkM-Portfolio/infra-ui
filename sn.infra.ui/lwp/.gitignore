@@ -1,0 +1,10 @@
+*.project
+*.classpath
+.factorypath
+.apt_generated
+.settings
+build.log
+/_lastcomp.gen
+/_orderdata.gen
+/build
+/logs

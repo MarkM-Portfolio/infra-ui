@@ -1,0 +1,15 @@
+<div>
+	<div class="lotusHidden" data-dojo-attach-point="recentSearchesNode"></div>
+	<div class="pfTitle historyTitle lotusHidden" data-dojo-attach-point="historyTitleNode">${HISTORY_TITLE}</div>
+	<div class="icHistoryContent lotusHidden" data-dojo-attach-point="historyContentNode"></div>
+	<div data-dojo-attach-point="loadingFrame" class="lconnApplicationLoading">
+		<img class="lotusLoading" src="${_blankGif}" role="presentation" alt="">
+		<div tabindex="0" data-dojo-attach-point="loadingFrameFocusable">${LOADING}</div>
+	</div>
+	<div class="icNoHistoryMessage" style="display: none;" data-dojo-attach-point="noHistoryMessageNode" role="alert">
+		<p style="margin: 0 auto;">${!NO_HISTORY_MESSAGE}</p>
+	</div>
+	<div class="icNoHistoryMessage" style="display: none;" data-dojo-attach-point="loginNeededNode" data-dojo-attach-event="onclick: _login" role="alert">
+		<p style="cursor: pointer; margin: 0 auto;">${!LOGIN_MESSAGE}</p>
+	</div>
+</div>

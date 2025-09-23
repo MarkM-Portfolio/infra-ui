@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>IBM Connections - Attached File and List</title>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <h1>Attached File and List</h1>
+                <p>
+                    The <code>AttachedFile</code> widget is a specialized ICS UI Filter component representing a file with icon, extension and size.
+                    The <code>AttachedFile</code> widget is normally instantiated as a child of the <code>AttachedFileList</code> widget, which overrides
+                    its <code>onClose</code> method to delete the file it represents.
+                </p>
+                <br>
+                <br>
+                <h2>Declarative</h2>
+                <!--  FIXME: we need to neuter the topic subscription, currently you can't have two AttachedFile widgets on the same page.  -->
+                <div data-dojo-type="lconn.core.widget.AttachedFileList" data-dojo-props="handleDataUri: function(){}">
+                    <div data-dojo-type="lconn.core.widget.AttachedFile" data-dojo-props="strings:STRINGS_1, filename:FILENAME_1, size:SIZE_1"></div>
+                    <div data-dojo-type="lconn.core.widget.AttachedFile" data-dojo-props="strings:STRINGS_2, filename:FILENAME_2, size:SIZE_2"></div>
+                </div>
+                <br>
+                <br>
+                <h2>Populated via topic</h2>
+                <div data-dojo-type="lconn.core.widget.AttachedFileList">
+                </div>
+                <button onclick="publish()">Publish Topic</button>
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+        
+        var FILENAME_1 = "image.png",
+        STRINGS_1 = {
+            remove_alt: "Remove",
+            title: FILENAME_1
+        }, SIZE_1 = 4096;
+        
+        var FILENAME_2 = "screenshot.jpg",
+        STRINGS_2 = {
+            remove_alt: "Remove",
+            title: FILENAME_2
+        }, SIZE_2 = 1024;
+        
+        function CB(id) {
+            console.log("You deleted:", id);
+        }
+
+        function publish() {
+            dojo.publish(lconn.core.ckplugins.icpublishBinaryData.TOPIC, [{
+                filesArr: [
+                    {
+                        id: dojox.uuid.generateRandomUuid(),
+                        name: FILENAME_1,
+                        type: "png",
+                        size: SIZE_1
+                    },
+                    {
+                        id: dojox.uuid.generateRandomUuid(),
+                        name: FILENAME_2,
+                        type: "jpg",
+                        size: SIZE_2
+                    }
+                ],
+                deleteImagecb: CB
+            }]);
+        }
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:dojo.parser}
+    ${script:dojox.uuid.generateRandomUuid}
+    ${script:lconn.core.widget.AttachedFileList}
+    ${script:lconn.core.ckplugins.icpublishBinaryData}
+</body>
+</html>

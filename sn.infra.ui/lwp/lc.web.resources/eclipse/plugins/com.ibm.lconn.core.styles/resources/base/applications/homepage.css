@@ -1,0 +1,1437 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+ 
+/************************************************************************/
+/*                 CORE STYLES              */
+/************************************************************************/
+
+/* lotusWidget namespaced styles for homepage widget contents */
+
+.lotusWidget .entry{padding:7px 0px 5px 0px; border-bottom:1px solid #ddd; overflow:hidden; clear:both; margin-bottom:3px; margin-left:10px; margin-right:10px;word-break:break-all;word-wrap:break-word; } 
+.lotusWidget .entryBody { margin:0px 0px 0px 45px;}
+.lotusWidget .wikiEntryBody { margin:0px 0px 0px 0px; }
+.lotusWidget .entry h4, .lotusDialog .entry h4 { margin:0px 1em 0px 0px; font-size:1.2em; font-weight:bold; overflow:hidden; }
+.lotusWidget .entry h6 { margin:0px 1em 0px 0px; font-size:.85em; color:#666; line-height:1.2em; } 
+.lotusWidget .entry p { margin:0px 1em 0px 0px; padding:0; line-height:1.2em; }
+.lotusWidget .widgetTitle { text-align:left; padding:0px; margin-left:10px; margin-right:10px; height:20px; }
+.lotusWidget .entry .icons { float:left; padding:0px; margin:0px; }
+.lotusWidget .widgetFooter { margin-left:10px; margin-right:10px; }
+.lotusWidget .divider { margin-left:2px; margin-right:2px; padding-left:2px; padding-right:2px; } 
+.lotusWidget .ibmDndDragHandle { padding-left:10px; padding-right:10px; }
+.lotusui30 .lotusWidget .widgetOptionScroll {width: auto;}
+
+.lotusui30 .hpNoCustomize .lotusWidget h2 { cursor: auto; }
+
+
+/* For some reason core.css has this set to overflow:none,
+   which messes up the UI. */
+.lotusui .lotusPaletteContent {
+ overflow:auto;
+}
+
+.lotusui30 .lotusPaletteWidget .lotusWidgetTitle .lotusTitle{
+  height:1.33em;
+}
+
+.lotusui_ie7 .lotusWidget h3.largeChars{
+	line-height:1.5em;
+}
+
+.lotusui a.homepageUnclickable,
+.lotusui a.homepageUnclickable:hover,
+.lotusui a.homepageUnclickable:focus,
+.lotusui a.homepageUnclickable:active{
+ text-decoration: none;
+ cursor: default;
+}
+
+/* common entry layouts for dialogs and widgets */
+.entryBodySmall { margin:0px 0px 0px 25px; }
+.entryBodyMedium { margin:0px 0px 0px 60px; }
+
+/* The next three lines are for SPR JLIT89GKGH */
+.entryBodyLarge { margin:0px 0px 0px 45px;} 
+.profilesEntryBodyLarge { margin:0px 0px 0px 90px;}
+.lotusWidget .welcomeNode  { padding-top: 1px; padding-left: 10px; }
+/* end SPR JLIT89GKGH */
+
+.entryBodyAuto { height:auto; } 
+
+/* dialog entry styles to replicate lotusWidget styles (should be name spaced to the dialog container maybe?) */
+.entry { padding:7px 0px 5px 0px; border-bottom:1px solid #ddd; overflow:hidden; clear:both; margin-bottom:3px; margin-left:10px; margin-right:10px; }
+.entry h5 { margin:0px 1em 0px 0px; font-size:1.0em; color:#666; line-height:1.2em;} 
+.entry .tags { float:right; margin-right:10px; overflow:hidden;} 
+.entry .icons { float:left; padding:0px; margin:0px; }
+.entry .divider { margin-left:2px; margin-right:2px; padding-left:2px; padding-right:2px;} 
+.noBorder{ border:none!important}
+
+/* lotusWidgetButtons namespaced styles for the homepage palette */
+.lotusWidgetButtons .lotusTitle { overflow:hidden; } 
+.lotusWidgetButtons .lotusWidgetButtonsText { margin-left:30px; margin-right:10px; height:30px;} 
+.lotusWidgetButtons .lotusWidgetButtonsIcon { margin:2px; } 
+
+.ibmDndDragHandle .dijitLeft { float:none; } 
+
+.homepage-widget div.ibmDndDragHandle {
+  padding-left: 0px;
+}
+
+.lotusWidgetTable {
+ width: 100%; 
+}
+
+.lotus2Col { 
+ width:50%;
+ overflow:hidden;
+ height:375px;
+ vertical-align:top;
+}
+
+.lotus3Col { 
+ width:33%;
+ overflow:hidden;
+ height:375px;
+ vertical-align:top;
+}
+
+.lotusui .lotusPostDetails .homepageCurrentPerson {
+ padding-right:3px;
+}
+
+.homepageUpdateStatusForm {
+ background-color:#EAECEE;
+ margin-left:10px;
+}
+
+.lotusui .lotusContent .homepageStatusUpdateBreak {
+ height: 1px;
+ margin-bottom: 5px;
+ margin-top: 5px;
+ width: 100%;
+ border-bottom: 1px solid #cccccc;
+}
+
+/* Notes */
+
+.lotusui .activitiesCalPopup .dijitPopup .dijitTooltipContainer { border: none !important; }
+.lotusui .activitiesCalPopup .dijitPopup .dijitTooltipContainer { border-style: none !important; }
+.notelist { -moz-border-radius:5px; background-color:#cfa; border:solid 1px #0b0; min-width: 20em;}
+.notelist .note .icon { display:inline; width:16px; height:16px; padding:3px; }
+.notelist .note {
+	overflow:hidden;
+	white-space: nowrap;
+}
+ 
+/* Popup help */ 
+.popup { position:absolute; z-index:200; background-color:#fff; float:none; text-align:left; } 
+ 
+/*** D O J O  C A L E N D A R  ***/ 
+
+.lotusWidget .day { text-align:left; color:#9baabc; font-size:1.2em; margin:4px 0px 7px 0px; } 
+.lotusWidget .year { color:#9BAABC; float:right; font-size:1.2em; padding-right:15px; text-align:right; width:75px; } 
+.lotusWidget .entry .overline_todo { font-weight:bold; margin-bottom:5px; } 
+.lotusWidget .previousMonthText { display: none;}
+.dijit_a11y .lotusWidget .previousMonthText { display: block;}
+.lotusWidget .nextMonthText { display: none;}
+.dijit_a11y .lotusWidget .nextMonthText { display: block;}
+
+/* Side bar activities widget */
+.lotusSection .previousMonthText { display: none;}
+.dijit_a11y .lotusSection .previousMonthText { display: block;}
+.lotusSection .nextMonthText { display: none;}
+.dijit_a11y .lotusSection .nextMonthText { display: block;}
+
+/* TSOE7THKHR */
+.lotusui_ie .dijitCalendarContainer .dijitCalendarIncrementControl {
+ width: auto !important;
+ margin: 0px 2px !important;
+}
+
+.dijitCalendarContainer.activitiesCalendar {
+  height: 212px;
+  width: 205px;
+  border-collapse: separate;
+}
+
+table.activitiesTablePadding {
+ margin: 1px;
+}
+
+.activityInfoColumn {
+ padding-left: 7px;
+ word-break: normal;
+}
+
+/* My Profiles Widget */
+
+.lotusui .entryBody .content p {
+ margin: 0;
+}
+
+/*** Drag and drop avatar **/
+
+.lotusMain .dojoDndItem {
+	-webkit-user-select: initial;
+}
+
+.idbc {
+width:400px;
+border:2px solid #cccccc;
+background-color: white;
+}
+
+.idbt {
+margin:1px;
+padding:5px 10px 3px 10px;
+background-color:#eeeeee;
+font-weight:bold;
+}
+
+.idbi {
+padding:3px 10px 5px 10px;
+}
+
+.lotusSection .ibmDndDragHandle { cursor: move; }
+
+.lotusWidgetLink {
+ width:97%;
+ display: block;
+ position: absolute;
+ overflow: hidden;
+ white-space:nowrap;
+}
+
+.lotusFrame3Col {
+ min-width:1050px;
+}
+
+/* TSOE7TJLGF */
+.removeSubscriptionAlign {
+ margin: 5px 0px; background-color: white; right: 0px; position: absolute; padding-left: 10px;
+}
+
+.readNotifications {
+ background-color: #f8f9fa;
+}
+
+.deleteNotification {
+ margin-right: 5px;
+}
+
+.recipientsPopupBox {
+ width: 200px;
+}
+
+/* TODO: OK TO REMOVE?
+.watchlistTitleDiv { position: relative;}
+
+.watchlistTitleH3  { position: absolute;}
+*/
+.updatePage span.iw-iWidget {display: block; overflow-y: auto;}
+
+.lotusHomepageDropDown {
+ background-image:url(../../images/lotusSprite-8bit.png);
+ background-position: 0 -1764px; 
+ width: 16px;
+ height: 11px;
+ font-size: 1px;
+ margin: 0px 4px 0px 5px;
+}
+
+.lotusHomepageFilterList {
+ -moz-border-radius-bottomleft: 4px;
+ -moz-border-radius-bottomright: 4px;
+ -moz-border-radius-topleft: 4px;
+ -moz-border-radius-topright: 4px;
+ margin-top: 4px;
+ padding: 7px 7px 7px 7px;
+ border-style:solid;
+ border-width:3px;
+ border-color:#B4D5FC;
+ height:150px;
+ background-color: #ffffff;
+ min-width: 100px;
+}
+
+.lotusHomepageFollowTag {
+ text-decoration: none;
+ padding:5px;
+ background-color: #F0F4F7;
+ border: 1px solid #cccccc;
+}
+
+.lotusHomepageComment {
+ background-color: #f8f8f8;
+ margin-bottom: 2px;
+}
+
+.lotusHomepageIndent5 {
+ padding-left: 5px;
+}
+
+.lotusHomepageIndent15 {
+ padding-left: 15px;
+}
+
+.lotusHomepageIndent45 {
+ padding-left: 45px;
+}
+
+.lotusHomepagePost {
+ margin-left: -5px !important;
+}
+
+/* Externalizes position:relative for AS views */
+.lconnHomepageColLeft { position: relative; }
+/* Body marker to alter padding of My Page */
+.lconnHomepageMyPage .lotusui30_layout .lotusMain .lotusContent { padding: 10px 5px 20px 5px; }
+
+.lotusui30 .lotusAccess {
+	top: auto;
+	left: -9999px;
+}
+
+/************************************************************************/
+/*                 CORE STYLES END             */
+/************************************************************************/
+
+/************************************************************************/
+/*      NEWS STYLES                                       */
+/************************************************************************/
+
+.lotusui30 .lotusTitleBar2 .lotusInner .titleBarBody {
+	display:none;
+}
+
+.storyContainerPadding { /* position:relative; */
+ /*border-bottom: #E5E5E5 solid 1px;*/
+ padding: 2px 0px 0px 0px;
+ /*margin: 0px 0px 0px 10px;*/
+}
+
+/* TODO : OK TO REMOVE?
+.watchlist-story-container .storyContainerPadding {
+ margin: 0px;
+}
+*/
+
+.lotusEntryExpended {
+ background-color: #f3f7fc;
+}
+
+.storyTitleOver {
+ background-color: #f3f7fc;
+}
+
+.storyTitleBar {
+ padding: 0px 0px 5px 0px;
+ cursor: pointer;
+ overflow: hidden;
+ /*margin-left: 2px;*/
+}
+
+.extraPadding {
+ padding: 0 3px 2px 20px !important;
+}
+
+/*
+.storyTitleBar a {
+ font-weight: bold;
+}*/
+
+.lotusContent .updatesDateBorder{
+	margin-bottom:5px;
+	margin-top:15px;
+	width:100%; 
+	border-bottom: 1px solid #cccccc;
+}
+
+.riverDetails {
+ margin: 0px 5px 5px 34px;
+ min-height: 0px; /* SPR DMCE7RLHWJ: force hasLayout in IE7 */
+}
+
+.riverHeader {
+ margin: 2px 20px;
+}
+
+.river-stories-container .lotusFeeds {
+ margin: 10px 10px 10px 10px;
+}
+
+/* TODO : OK TO REMOVE?
+.watchlist-story-container .lotusFeeds {
+ margin: 10px 10px 10px 10px;
+}
+*/
+
+li.filterAlign {
+ margin-left: 5px !important;
+}
+
+.storyTitleBar a.lotusPerson {
+ font-weight: normal;
+}
+
+.storyTitleBar .sprite {
+ padding: 0 3px 2px 2px;
+}
+
+.storyTitleBar .toggle-action {
+ font-weight: normal;
+}
+
+.storyContainerPadding .photo {
+ display: none;
+}
+
+.storyContainerPadding .entry {
+ border: none;
+ margin: 0px;
+ padding: 0px;
+}
+
+.storyContainerPadding .x-lconn-userid {
+ display: none;
+}
+
+/* TODO : OK TO REMOVE?
+.riverWelcome .storyTitleBar {
+ cursor: default !important;
+}
+
+.dj_ie6 .riverWelcome .storyContainerPadding {
+ margin-top: 5px;
+}
+
+.riverWelcome .moredetails {
+ margin: 12px 8px;
+}
+
+.dj_ie6 .riverWelcome .moredetails {
+ margin: 10px 8px 10px 8px
+}
+*/
+
+.lotusBoard .entry {
+ border: none;
+ margin: 0px;
+ padding: 0px;
+}
+
+.lotusPostAuthorInfo {
+ width: 45px; /* override width to 45px to align stuffs in HP */
+ position: static;
+}
+
+.lotusContent textarea.homeStatusTextArea {
+ overflow: auto;
+}
+
+.lotusContent .homeSavedStory {
+ font-size: 0.9em;
+}
+
+/* TODO WIDGET*/
+.lotusSection2 .lotusTable.toDoTable img.lconnTickIcon {
+	background: url("../../images/sprite10.png") no-repeat scroll -20px 0 transparent;
+	height:10px;
+	width:10px;
+	position: absolute;
+	display: block;
+}
+
+.lotusSection2 .lotusTable.toDoTable img.lconnTickIcon{    
+    float: left;
+    margin-right: 10px;
+    margin-top: 4px;
+}
+
+.lotusSection2 .lotusTable.toDoTable div.lconnHomepage-todoWidgetContent{
+    float: left;
+    padding-left: 23px;
+}
+
+.lotusSection div.homeTodoListContainerNode {
+ word-wrap: break-word;
+}
+
+.lotusSection2 .homepageNoTodos {
+ font-weight: normal;
+ padding-left: 25px;
+}
+
+.lotusSection2 .lotusTable .linkToDo{
+ color: #444444;
+ font-weight: bold;
+}
+
+.lotusSection2 .lotusTable .toDoText{
+ color: #6c6c6c;
+}
+
+.lotusSection2 .lotusTable .homepageOverdueTodo{
+ color: #C33100;
+ font-weight: bold;
+}
+
+div.lotusSectionFooter.toDoFooter{
+ margin-left: 25px;
+}
+
+.toDoText span.personToDoLink{
+ font-weight: bold;
+}
+
+.lotusui30 .lotusTable.toDoTable td{
+border-top: 0;
+}
+
+.storyTitleBar span.sprite {
+ margin-right: 6px;
+ width: 16px;
+ height: 16px;
+}
+
+.pagingAlign {
+ margin-left: 10px;
+}
+
+.localize-date {
+ white-space: nowrap;
+}
+
+.toggle-action {
+ white-space: nowrap;
+}
+
+.lotusPostContent .localize-date {
+ margin-left: 1px;
+}
+
+/* Fix alignment issue between "show" and selectors under IE */
+.river-source-selector li {
+ vertical-align: middle;
+}
+
+/* Stop Following */
+.dijitDialogPaneContent .lconnStopFollow .lotusDialogContent{
+	padding-left: 12px;
+}
+.lconnStopFollow .followingTitleDiv{
+	padding: 0 5px 0 5px;
+}
+.lotusui .lconnStopFollow h3{
+	font-size: 1.1em;
+	font-weight: bold;
+	float: none;
+	padding: 0;
+	margin: 0;
+}
+.lconnStopFollow .followingDescDiv{
+	padding: 0 5px 5px 5px;
+}
+.lconnStopFollow{
+	width: 400px;
+}
+.lconnStopFollow .followingInfo{
+	background-color: #EAECEE;
+	padding: 5px;
+	margin: 5px 5px 0 0;
+}
+.lconnStopFollow .followingInfoHeader{
+	cursor: pointer;
+}
+.lconnStopFollow .followingInfoText{
+	padding: 5px;
+}
+.lconnStopFollow .checkboxColumn{
+	vertical-align: top;
+	padding-left: 5px;
+}
+.lconnStopFollow a.cancelLink, .lconnStopFollow a.cancelLink:visited, 
+.lconnStopFollow a.cancelLink:hover, .lconnStopFollow a.cancelLink:focus, 
+.lconnStopFollow a.cancelLink:active {
+	color:gray;
+}
+
+.lotusui .lconnStopFollow label {
+	margin-bottom:0;
+}
+
+/************************************************************************/
+/*      NEWS STYLES END                                    */
+/************************************************************************/
+
+/************************************************************************/
+/*      GETTING STARTED STYLES                           */
+/************************************************************************/
+
+/* Tabs, shared classes */
+.tundra .dijitTabPaneWrapper {
+ background:#fff;
+ margin: 0;
+ padding: 10px;
+ z-index:1;
+ overflow-y: auto;
+ border: solid #eee; 
+ border-width: 1px 1px 1px 0px;
+}
+
+.tundra .dijitTabContainerLeft-tabs {
+ margin-width: 3px;
+ border-width: 1px;
+ border-color: #eee !important;
+}
+
+.tundra .dijitTabHover {
+ border-color: #eee; 
+}
+
+.tundra .dijitTab {
+ line-height:normal;
+ margin-right:-1px; /* space between one tab and the next in top/bottom mode */
+ padding:0px;
+ border:1px solid #eee;
+ color: #666666 !important;
+ background:#ffffff;
+ -moz-border-radius: 0px 0px 0px 0px;
+ z-index:0;
+}
+
+/* checked tab*/
+.tundra .dijitTabChecked {
+ /* the selected tab (with or without hover) */
+ background-color:#fff;
+ border-color: #eee;
+ border-width: 1px;
+ background-image:none;
+ color: #000000!important; 
+}
+
+/* hovered tab */
+.tundra .dijitTabContainerLeft .dijitTabHover {
+ background-image:none;
+ color: #243C5F!important;
+ border-color: #eee;
+}
+
+.tundra .dijitTabContainer .dijitTabCheckedHover {
+ color: inherit;
+ border:3px solid #eee;
+ background:#fff;
+ background-image:none;
+}
+
+
+.tundra .dijitTabContainterLeft-tabs {
+ padding-top: 0px; 
+ border-color: #eee;
+}
+
+/* ================================ */
+/* left/right tabs */
+.tundra .dijitTabContainerLeft-tabs .dijitTab,
+.tundra .dijitTabContainerRight-tabs .dijitTab {
+ margin-right:1px;
+ margin-bottom:0px; /* space between one tab and the next in left/right mode */
+ border-width: 1px;
+}
+
+.tundra .dijitTabContainerLeft-tabs .dijitTabChecked {
+ border-right-color: white !important;
+ border-right-width: 1px; 
+}
+
+.tundra .dijitTabContainerLeft-container {
+ margin-left: 1px;
+} 
+
+/* left/right tabstrip */
+.tundra .dijitTabContainerLeft-spacer,
+.tundra .dijitTabContainerRight-spacer {
+ width: 0px;
+ border-left: 1px solid #eee;
+ background: #fff;
+}
+
+.startContent .stepNum {
+ font-weight: bolder;
+}
+   
+.startContent .tabLabel {
+ font-size: 1.1em;
+ font-weight: bolder;
+}
+
+.startContent {
+ height: 390px;
+ width: auto;
+}
+
+.dijitTabContainerLeft-tabs .dijitTab { left: 3px; }
+
+.tundra .dijitTabSpacer {
+ display: none;
+}
+
+.gettingStartedHeader {
+ margin-top: 5px; 
+}
+
+.gettingStartedDontShowLabel {
+ margin-left: 4px; margin-right: 0px;
+}
+
+.lotusui .gettingStartedActionLink {
+ margin-bottom: 5px;
+ font-size: 1.1em;
+ font-weight: normal;
+} 
+
+.lotusui .gettingStartedActionLinkSelected {
+ margin-bottom: 5px;
+ font-size: 1.1em;
+ font-weight: bold;
+} 
+
+.tundra .lotusContent {
+ border: 0;
+ -moz-box-shadow: none;
+ min-height: 0;
+}
+
+.lotusui30 .exploreContent .lotusLayout {
+ width: 100%;
+ table-layout: fixed;
+}
+
+.lotusui30 .lotusLayout td.exploreAppsColumn {
+ padding-right: 20px;
+ width: 110px;
+ word-wrap: break-word;
+}
+
+.lotusui30 .lotusLayout td.exploreTextContainer {
+ padding-left: 10px;
+ padding-right: 10px;
+ word-wrap: break-word;
+}
+
+#stepOneTitle {
+ margin-bottom: 20px;
+}
+
+.exploreTextContent {
+ padding-right: 20px;
+}
+
+.iconApp {
+ padding-right: 7px;
+}
+
+.exploreTextContainerIntroduction {
+ margin-top: 10px;
+}
+
+.exploreTextContainer .lotusInactive {
+ margin-top: 30px;
+}
+
+.gettingStartedComponentInfo {
+ margin-top: 10px;
+}
+
+.gettingStartedComponentLinks {
+ margin-top: 17px;
+}
+
+.exploreComponentLinksSpan {
+ margin-right: 10px; 
+ font-weight: bolder;
+}
+
+.exploreDemoColumn {
+ width: 325px;
+}
+
+.demoThumbnailImg {
+ padding-bottom: 1px;
+ margin-right: 5px;
+}
+
+.shareContent .lotusLeft {
+ margin: 0 20px 0 0;
+}
+
+.shareContent .shareIcon {
+ margin: 0 20px 0 0;
+}
+
+.shareContent .lotusLayout {
+ margin-top: 12px;
+ width: 100%;
+}
+
+td.shareLayoutFirstColumn {
+ width: 50%;
+ padding: 10px 10px 10px 20px;
+}
+
+td.shareComponentContainer {
+ padding: 10px;
+ vertical-align: middle;
+}
+
+.shareComponentContainer .lotusInactive {
+ margin-top: 5px;
+}
+
+.shareComponentInfoValue {
+ padding: 0 7px 0 4px;
+}
+
+.stepOne .lotusLeft {
+ margin: 0px 20px 40px 0px;
+}
+
+.stepOneContent {
+	word-wrap:break-word;
+}
+
+.gettingStartedCheckboxContainer {
+ margin-top: 5px;
+}
+
+.lotusContent .gettingStartedContent {
+  min-height: 300px !important;
+  margin-right: 10px !important;
+}
+
+.lotusui30_layout .lotusMain .lotusContent .gettingStartedContent {
+  padding-top: 0px;
+}
+
+.lotusContent .dijitTabButtonIcon {
+ display: none;
+}
+
+div.lotusContent .dijitTabChecked .dijitTabInnerDiv {
+ background-color: #FFFFFF;
+}
+
+.lotusContent .dijitTab .dijitTabInnerDiv {
+ background-color: #FAFAFA;
+}
+
+.lotusui .lotusHeading1 {
+	color:#444444;
+	font-size:1.7em;
+	font-weight:normal;
+	line-height:1.2em;
+	margin:0;
+	padding:0;
+}
+
+.lotusui .lotusHeading3 {
+	font-size: 1.1em;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+
+.startContent .tabSpan{
+	font-weight: bolder;
+	margin-left: 5px;
+}
+
+.startContent .dijitTabInnerDiv{
+	padding: 15px;
+}
+
+.gettingStartedExploreDemolink {
+ margin-top: 10px;
+}
+
+/*GETTING STARTED - VISITOR*/
+.gettingStartedVisitor{
+  width: auto; 
+  background-color:#fff;
+  padding: 20px;
+  border: solid #D2D2D2;
+  border-width: 1px;
+  margin-right: 25px;
+}
+a.gettingStartedVisitorLink,
+a.gettingStartedVisitorLink:visited,
+a.gettingStartedVisitorLink:focus,
+a.gettingStartedVisitorLink:hover,
+a.gettingStartedVisitorLink:active  
+{
+  color: #444;
+  font-weight: bold; 
+}
+.gettingStartedVisitorIntro{
+  padding-bottom: 10px;
+}
+.gettingStartedVisitorComponents{
+  padding-bottom: 10px;
+}
+.gettingStartedVisitorHomepage,
+.gettingStartedVisitorComm,
+.gettingStartedVisitorFiles
+{  
+  padding-bottom: 5px;
+  display: table;
+  height: 50px;
+}
+.gettingStartedVisitorHomepage p,
+.gettingStartedVisitorComm p,
+.gettingStartedVisitorFiles p
+{  
+  overflow: hidden;
+  display: table-cell;
+  vertical-align: middle;
+}
+.gettingStartedVisitorHomepage a.gettingStartedVisitorHomepageIcon,
+.gettingStartedVisitorComm a.gettingStartedVisitorCommIcon,
+.gettingStartedVisitorFiles a.gettingStartedVisitorFilesIcon
+{ 
+  float: left;
+  padding: 12.5px 15px 0 0;
+  display: table-cell;
+  vertical-align: middle;
+}
+.lotusui30 #noImageHomepage,
+.lotusui30 #noImageCommunities,
+.lotusui30 #noImageFiles {
+  display: none;
+}
+.lotusui30.lotusImagesOff #noImageHomepage,
+.lotusui30.lotusImagesOff #noImageCommunities,
+.lotusui30.lotusImagesOff #noImageFiles {
+  display: block;
+}
+.gettingStartedVisitorOtherViews{
+  padding-bottom: 10px;
+}
+.gettingStartedVisitorLearnMore{
+  padding-bottom: 20px;
+}
+
+.tundra .dijitTabContainerTop-dijitContentPane, .tundra .dijitTabContainerLeft-dijitContentPane, .tundra .dijitTabContainerBottom-dijitContentPane, .tundra .dijitTabContainerRight-dijitContentPane, .tundra .dijitAccordionContainer-dijitContentPane {
+    padding: 0 !important;
+}
+
+/************************************************************************/
+/*      GETTING STARTED STYLES END                          */
+/************************************************************************/
+
+/************************************************************************/
+/*      HOMEPAGE IE STYLES                               */
+/************************************************************************/
+
+.lotusui_ie .lotusWidgetTable {
+ table-layout: fixed;
+}
+
+.lotusui_ie .lotusWidgetLink {
+ width:expression( document.body.clientWidth  > 991 ? (document.body.clientWidth / 2) - 114 + "px" : "395px");
+ text-overflow:ellipsis;
+}
+
+.lotusui_ie .lotusWidgetLink3Col {
+ width:expression( document.body.clientWidth  > 991 ? (document.body.clientWidth / 3) - 114 + "px" : "220px");
+ text-overflow:ellipsis; 
+}
+
+
+* html .dijitDialogPaneContent {height:380px;}
+*+html .dijitDialogPaneContent {height:expression(this.height > 379 ? "380px" : this.height + "px");}
+
+* html .dijitDialogPaneContent {width: 600px; overflow-x: auto}
+
+
+*html .lotusWidgetButtons div {width:0px;padding:0px;}
+*html .lotusWidgetButtons .dijitButtonNode {background-color:transparent; width:20px;height:28px;margin-right:0px;padding:0px;}
+*html .lotusWidgetButtons .lotusTitle {margin-left:0px;width:85px;}
+
+*html .lotusWidgetButtons .dijitButtonNode { background-color:transparent; width:20px;height:28px; margin:0px;border:0px none; padding:0px; } 
+*html .lotusWidgetButtons .dijitButtonNode img { padding:0px; margin:0px; }
+
+.lotusui_ie .dijitDialogPaneContent { overflow-y: auto !important; }
+
+.lotusui_ie  input.lotusSearchAlignHack {margin-top: 2px !important; }
+ 
+/************************************************************************/
+/*      HOMEPAGE IE STYLES END                              */
+/************************************************************************/
+ 
+ 
+/************************************************************************/
+/*      DOJO/DIJIT OVER-RIDDEN STYLES                       */
+/************************************************************************/
+
+
+/************************************************************************/
+/*      DOJO/DIJIT OVER-RIDDEN STYLES END                   */
+/************************************************************************/
+
+
+/************************************************************************/
+/*      HOMEPAGE THEME STYLES                               */
+/************************************************************************/
+
+.lotusWidget .widgetTitle {
+ color: #666;
+}
+
+.lotusWidget .dijitButtonNode {
+ background-color: transparent;
+ padding: 0px 2px 0px 2px;
+ margin-right: 5px;
+ border: 0px;
+}
+
+.lotusWidget h2 .dijitButtonNode {
+ background-color: transparent;
+ cursor: pointer;
+ margin: 0px 0px 0px 0px;
+ padding: 0px;
+ width: 20px;
+ height: 18px;
+}
+
+.lotusWidget h2 .dijitButtonNode img {
+ margin: 0px;
+ padding: 0px;
+}
+
+.lotusWidget .option-form {
+ background-color: #C7E1FA;
+ margin-bottom: 5px;
+}
+
+.lotusWidget .option-form select {
+ border: 1px solid #A7A9BB;
+ margin-left: 2px;
+}
+
+.lotusWidget .option-form input {
+ border: 1px solid #a7a9bb;
+ margin-top: 2px;
+ margin-left: 2px;
+}
+
+.lotusui30 .lotusSection2 .lotusSectionBody{
+	padding: 5px 0px 5px 0px;
+}
+
+.lotusWidget .option-form .button-save {
+ margin-top: 0;
+ margin-right: 7px;
+ margin-left: 0px;
+ clear: both;
+ padding: 0px;
+}
+
+.lotusui_ie7 .lotusWidget .option-form .button-save {
+ margin-left: -11px;
+}
+
+.lotusWidget a {
+ cursor: pointer;
+ margin-left: 1px;
+}
+
+.lotusWidget .loading {
+ text-align: center;
+ padding-top: 25px;
+ padding-bottom: 25px;
+}
+
+.lotusWidget .dijitDropDownButton {
+ margin: 0px;
+ width: 16px;
+}
+
+.lotusWidget .lotusForm2 .lotusFormBody {
+ padding-top: 10px;
+}
+
+.lotusWidget .lotusForm2 .lotusFormBody .option-caption {
+ padding-right: 5px;
+}
+
+/* lotusWidgetButtons namespaced styles for the homepage palette */
+.lotusWidgetButtons div {
+ background-position: 5px 0pt;
+ background-repeat: no-repeat;
+ cursor: move;
+ display: block;
+ line-height: 1em;
+ text-decoration: none;
+ padding: 0px;
+}
+
+.lotusWidgetButtons .dijitButtonNode {
+ background-color: transparent;
+ width: 16px;
+ margin-right: 0px;
+ border: 0px none;
+ padding: 0px;
+}
+
+.lotusWidgetButtons .dijitButtonNode img {
+ padding: 0px;
+ margin: 0px;
+}
+
+/* general styles needed for homepage, match needed so they can be namespaced properly */
+.divider {
+ color: #666;
+}
+
+.meta {
+ color: #222;
+}
+
+.dijitPopup {
+ position: absolute;
+}
+
+.widgetFeedLink {
+ padding-right: 5px;
+}
+
+.lotusTags {
+ padding-top: 1px;
+ padding-bottom: 1px;
+}
+
+/* homepage dijit.Dialog styles *//*
+.dijitDialog {
+ width: 600px;
+ overflow: hidden;
+}
+
+.dijitDialogPaneContent {
+ max-height: 380px;
+ overflow-y: auto;
+}*/
+
+/* homepage menu styles */
+.dijitA11yDownArrow {
+ color: #6794cb;
+ font-size: 1.0em;
+}
+
+.dijitMenuItem td {
+ padding: 2px;
+ font-size: 1.0em;
+ margin: 0px;
+}
+
+/* homepage search form : TODO: SHOULD THIS BE REMOVED? */
+.lotusSearchButton {
+ margin: 0px;
+}
+
+.lotusForm h2.homepageSearchAdvancedH2 {
+ margin: 25px 15px 15px 0px;
+}
+
+.lotusSearch .lotusText,.lotusSearch .dijitTextBox {
+ text-align: left;
+}
+
+/* 
+ * Style to allow for double search field. One UI no longer caters for this,
+ * instead, they use just icons in the first field. However, for Connections 4
+ * we still require this layout.
+ */
+.lotusTitleBar2 .lotusInner .lotusSearch .lotusLayout .lotusScope{
+ border-right: 1px solid #E3E3E3;
+ font-size: 13.5px;
+ line-height: 17.95px;
+ min-width: 11em;
+ padding-right: 14px;
+}
+
+.lotusui_ie7 .lotusTitleBar2 .lotusInner .lotusSearch .lotusLayout .lotusScope{
+ min-width: 0;
+}
+
+/*
+ * One UI 3.0.3 should fix this.
+ */
+.lotusui30 .lotusContent .lotusWelcomeBox p{
+ padding-right: 0;
+}
+
+/* dijit calendar homepage styles */
+.dijitCalendarBodyContainer .dayFlagPersonalTask {
+ background-color: #c7e1fa !important;
+ border-bottom: 1px solid #fff !important;
+ border-right: 1px solid #fff !important;
+ cursor: pointer;
+ cursor: hand;
+}
+
+.dijitCalendarBodyContainer .dayFlagTeamTask {
+ background-color: #ccffaa !important;
+ border-bottom: 1px solid #fff !important;
+ border-right: 1px solid #fff !important;
+ cursor: pointer;
+ cursor: hand;
+}
+
+.dijitCalendarBodyContainer .dayFlagOverdueTask {
+ background-color: #f99;
+ border-bottom: 1px solid #fff;
+ border-right: 1px solid #fff;
+ cursor: pointer;
+ cursor: hand;
+}
+
+.dijitCalendarBodyContainer .dayFlagTodayTask {
+ background-color: #ffa;
+ border-bottom: 1px solid #fff;
+ border-right: 1px solid #fff;
+ cursor: pointer;
+ cursor: hand;
+}
+
+.activitiesCalendarYear.dijitCalendarYearLabel {
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.dijitCalendarMonthLabelSpacer {
+ position: relative;
+ height: 1px;
+ overflow: hidden;
+ visibility: hidden;
+}
+
+.dijitCalendarMonthContainer th.calendarMonth {
+	padding-right: 47px;
+}
+
+.dijitCalendarMonthContainer td.dijitReset {
+ padding-top:6px;padding-bottom:5px;
+}
+
+.dijitCalendarMonthContainer td.dijitReset.calendarMonth {
+ padding-top:5px;
+}
+
+.activitiesCalPopup .dijitTooltip {
+ position: absolute;
+ z-index: 2000;
+ display: block;
+ left: 50%;
+ top: -10000px;
+ overflow: visible;
+}
+
+.activitiesCalPopup .dijitTooltipContainer {
+ border: none;
+ background: transparent;
+ color: black;
+ font-size: small;
+}
+
+.activitiesCalPopup .dijitTooltipFocusNode {
+ padding: 0px 0px 0px 0px;
+}
+
+.activitiesCalPopup .dijitTooltipConnector {
+ position: absolute;
+}
+
+.dijitCalendarDateTemplate {
+ cursor: default;
+}
+
+a:focus {
+ outline-color: invert;
+ outline-style: dotted;
+ outline-width: 1px;
+}
+
+/* Fix for IE. See links with href=javascript:; as visited */
+.lotusSort .lotusInlinelist a:visited {
+ text-decoration: underline
+}
+
+.lotusSort .lotusInlinelist a:visited .lotusActiveSort {
+ text-decoration: none
+}
+
+input.lotusSearchAlignHack {
+ margin-top: 3px !important;
+}
+
+/* The dragged widget could have a transparent background color, which does not look so great when dragged over other elements */
+ /*.dojoMoveItem { background-color: white !important; width: 190px !important} */
+ /* #lotusMain { background-color: white !important; } */
+.updatePage div.lotusContent {
+ padding-left: 10px;
+}
+
+.updatePage .lotusWidget {
+ border: none;
+ margin: 0;
+}
+
+.myPage div.lotusContent {
+ padding-left: 5px;
+ padding-right: 0px;
+}
+
+.lotusWidget2 h2 {
+ cursor: default !important;
+}
+
+.lotusWidget .option-form .button-save input {
+ margin-top: 0;
+}
+
+.gettingStartedWelcomeText { margin-left: 84px;}
+
+.tagManagerContentNode input{
+ width:340px;
+}
+
+.tagManagerContentNode{
+ width:430px;
+}
+
+.tagManagerDialog .tagManagerDesc{
+ margin-bottom:5px;
+}
+
+.removeTagCloud{
+ overflow-y: auto; 
+ max-height: 120px;
+}
+
+.tagManagerDialog .dijitDialogPaneContent .lotusDialog .lotusDialogContent{
+ max-height:100%;
+}
+
+
+.tagManagerDialog .lotusDelete{
+ cursor:pointer;
+}
+
+.confirmDialogMessageNode{
+ width:500px;
+}
+
+/* Styles for the status updates commenting UI */
+.lotusPost .commentInput {
+	padding-left: 45px;
+}
+
+.lotusui30 .lotusMenu .lotusUnreadBadge.lotusHidden{
+	display: none;
+}
+
+.lotusui30 .lotusMain .lotusBoard .lotusHeader .asHeader:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.lotusui30 .lotusMain .lotusBoard .lotusHeader a.asHeaderLink{
+	color: #444444;
+}
+
+/* Style to fix defect 62542 with Welcome note in HC mode. */
+.lotusui30.lotusImagesOff .welcomeNoteImage {
+	display: none;
+}
+
+/* Style to improve appearance of Sharebox rendering - defect 92976 */
+.lotusui30 .lotusContent.lotusBoard #shareboxContainer {
+	min-height: 40px;
+}
+	
+/************************************************************************/
+/*      HOMEPAGE THEME STYLES END                           */
+/************************************************************************/
+
+/************************************************************************/
+/*      ADMIN THEME STYLES                               */
+/************************************************************************/
+
+.editWidgetFormMainTable {
+ padding: 5px;
+}
+
+table.editWidgetFormMainTable td{
+ padding: 0;
+}
+
+.lotusui_ie .lotusSection .widgetTabField {
+ vertical-align: middle;
+}
+
+/************************************************************************/
+/*      ADMIN THEME STYLES END                              */
+/************************************************************************/
+
+.lotusui30dojo .lotusWidgetBody  .datePickerContainer  td.dijitCalendarCurrentMonth  {
+	 
+	 font-weight:normal;
+}
+.lotusui30dojo .lotusWidgetBody  .datePickerContainer  td.dijitCalendarCurrentDate.dijitCalendarCurrentMonth  {
+	 
+	 font-weight:bold;
+}
+.lotusui30dojo .lotusWidgetBody  td.dijitCalendarDateTemplate {
+	width:14%;
+	letter-spacing: 0;
+}
+.lotusui30dojo .lotusWidgetBody  .dijitCalendarDateTemplate  span.dijitCalendarDateLabel {
+	padding: 5px 3px;
+}
+
+/* Fix popup hidden issue for IE */
+.lotusui_ie .dijitPopup .activitiesCalPopup {
+        overflow: visible;
+}
+
+/***********************************************************************/
+/* 					HOMEPAGE ADMIN FORM STYLES                         	*/
+/************************************************************************/
+
+
+#adminEditForm label, #adminEditForm .lotusFormLabel
+{
+	word-break:normal;
+}
+
+#adminEditForm .lotusText
+{
+	width: 550px;
+}
+#adminEditForm .lotusMeta
+{
+	width: 550px;
+}
+
+#gadgetSettings .lotusText, #gadgetSettings select
+{
+	width: 250px;
+}
+
+#gadgetSettings .lotusMeta
+{
+	width: 550px;
+}
+
+
+/************************************************************************/
+/* 					HOMEPAGE ADMIN FORM STYLES END                     	*/
+/************************************************************************/

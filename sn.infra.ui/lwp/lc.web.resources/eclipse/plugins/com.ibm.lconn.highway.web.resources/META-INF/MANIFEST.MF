@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Lotus Connections Configuration (Highway)
+Bundle-SymbolicName: com.ibm.lconn.highway.web.resources;singleton:=true
+Bundle-Version: 3.0.0.qualifier
+Bundle-Vendor: IBM
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: _properties/, .

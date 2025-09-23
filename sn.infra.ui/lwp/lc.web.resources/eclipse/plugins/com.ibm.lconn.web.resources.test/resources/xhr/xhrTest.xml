@@ -1,0 +1,17 @@
+<?xml-stylesheet type="text/xsl" href="xhrTest.xsl"?>
+
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<Books>
+    <Item>
+      <Author>Orson Scott Card</Author>
+      <Title>ENDER'S GAME</Title>
+    </Item>
+    <Item>
+      <Author>Debbie Macomber</Author>
+      <Title>THE INN AT ROSE HARBOR</Title>
+    </Item>
+    <Item>
+      <Author>George R. R. Martin</Author>
+      <Title>A GAME OF THRONES</Title>
+    </Item>
+</Books>

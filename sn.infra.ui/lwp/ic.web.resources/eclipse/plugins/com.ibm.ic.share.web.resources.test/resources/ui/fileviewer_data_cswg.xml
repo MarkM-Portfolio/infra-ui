@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<feed xmlns:thr="http://purl.org/syndication/thread/1.0" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:snx="http://www.ibm.com/xmlns/prod/sn" xmlns:td="urn:ibm.com/td" xmlns="http://www.w3.org/2005/Atom">
+  <generator version="5.0.0.0" uri="http://www.ibm.com/xmlns/prod/sn">IBM Connections - Files</generator>
+  <id>urn:lsid:ibm.com:td:a724ce3f-0d19-4509-b7e1-ae409c4e0699</id>
+  <link href="http://connections.swg.usma.ibm.com/files/form/api/collection/a724ce3f-0d19-4509-b7e1-ae409c4e0699/feed" rel="self"/>
+  <link href="http://connections.swg.usma.ibm.com/files/form/api/collection/a724ce3f-0d19-4509-b7e1-ae409c4e0699/entry" rel="edit"/>
+  <link href="http://connections.swg.usma.ibm.com/communities/service/html/communityview?communityUuid=cfed25cf-a0e3-4d3c-8ab2-3430f91d3307" rel="alternate"/>
+  <title type="text">John Girata's Test Community</title>
+  <td:uuid>a724ce3f-0d19-4509-b7e1-ae409c4e0699</td:uuid>
+  <td:type>community</td:type>
+  <subtitle type="text"/>
+  <author>
+    <name>System User</name>
+    <snx:userid>00000000-0000-0000-0000-000000000000</snx:userid>
+  </author>
+  <td:modifier>
+    <name>JOHN GIRATA</name>
+    <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+    <email>jgirata2@us.ibm.com</email>
+    <snx:userState>active</snx:userState>
+  </td:modifier>
+  <published>2013-07-22T18:38:27.749Z</published>
+  <updated>2014-10-03T20:57:05.801Z</updated>
+  <td:created>2013-07-22T18:38:27.749Z</td:created>
+  <td:modified>2014-10-03T20:57:05.801Z</td:modified>
+  <td:visibility>shared</td:visibility>
+  <snx:isExternal>false</snx:isExternal>
+  <td:permissions>AddChild, Delete, Purge, EditProperties, EditContent, Edit, ViewProperties, ViewContent, View, GrantAccess, GrantAccessGroup, ChangeSharingIntent</td:permissions>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/item">6</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/user">0</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/group">2</snx:rank>
+  <opensearch:totalResults>6</opensearch:totalResults>
+  <td:externalContainerId>cfed25cf-a0e3-4d3c-8ab2-3430f91d3307</td:externalContainerId>
+  <snx:communityUuid>cfed25cf-a0e3-4d3c-8ab2-3430f91d3307</snx:communityUuid>
+  <link href="http://connections.swg.usma.ibm.com/communities/service/atom/community/instance?communityUuid=cfed25cf-a0e3-4d3c-8ab2-3430f91d3307" rel="http://www.ibm.com/xmlns/prod/sn/container" type="application/atom+xml"/>
+  <entry>
+    <id>urn:lsid:ibm.com:td:dad5f68e-0f53-44cf-a9f0-28f511bef5b9</id>
+    <title type="text">bahamas.jpg</title>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/dad5f68e-0f53-44cf-a9f0-28f511bef5b9/entry" rel="self"/>
+    <link href="http://connections.swg.usma.ibm.com/communities/service/html/communityview?communityUuid=cfed25cf-a0e3-4d3c-8ab2-3430f91d3307#fullpageWidgetId=We8b1d9484f1d_461d_9e56_4180ce5f0f74&amp;file=dad5f68e-0f53-44cf-a9f0-28f511bef5b9" rel="alternate" type="text/html"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/dad5f68e-0f53-44cf-a9f0-28f511bef5b9/entry" rel="edit"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/dad5f68e-0f53-44cf-a9f0-28f511bef5b9/media" rel="edit-media"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/anonymous/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/dad5f68e-0f53-44cf-a9f0-28f511bef5b9/media/bahamas.jpg" rel="enclosure" type="image/jpeg" title="bahamas.jpg" hreflang="en" length="3778919"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/anonymous/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/dad5f68e-0f53-44cf-a9f0-28f511bef5b9/thumbnail?renditionKind=mediumview&amp;pcftoken=dad5f68e-0f53-44cf-a9f0-28f511bef5b9" rel="thumbnail"/>
+    <category term="document" scheme="tag:ibm.com,2006:td/type" label="document"/>
+    <link xmlns:thr="http://purl.org/syndication/thread/1.0" href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/dad5f68e-0f53-44cf-a9f0-28f511bef5b9/feed" rel="replies" type="application/atom+xml" thr:count="0"/>
+    <td:uuid>dad5f68e-0f53-44cf-a9f0-28f511bef5b9</td:uuid>
+    <td:added>2014-10-03T20:56:59.645Z</td:added>
+    <td:created>2014-10-03T20:56:59.369Z</td:created>
+    <published>2014-10-03T20:56:59.369Z</published>
+    <updated>2014-10-03T20:57:01.846Z</updated>
+    <td:modified>2014-10-03T20:56:59.369Z</td:modified>
+    <td:addedBy>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </td:addedBy>
+    <author>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </author>
+    <td:modifier>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </td:modifier>
+    <td:label>bahamas.jpg</td:label>
+    <td:libraryId>56ef36cf-2693-4e0e-a492-877d10b79bfc</td:libraryId>
+    <td:libraryType>communityFiles</td:libraryType>
+    <td:versionUuid>7beb0aa1-c6f3-4fb4-bba7-53f5271f66e7</td:versionUuid>
+    <td:versionLabel>1</td:versionLabel>
+    <summary type="text"/>
+    <td:permissions>View, ViewContent, ViewProperties, Purge, Delete</td:permissions>
+    <td:sharePermission>View</td:sharePermission>
+    <td:objectTypeName>snx:file</td:objectTypeName>
+    <td:propagation>false</td:propagation>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/share">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/collections">1</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/attachments">3</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/versions">1</snx:rank>
+    <td:isFiledInFolder>false</td:isFiledInFolder>
+    <td:totalMediaSize>3813461</td:totalMediaSize>
+    <content type="application/atom+xml" src="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/dad5f68e-0f53-44cf-a9f0-28f511bef5b9/media"/>
+    <td:restrictedVisibility>false</td:restrictedVisibility>
+    <td:lock type="NONE"/>
+    <snx:isExternal>false</snx:isExternal>
+  </entry>
+  <entry>
+    <id>urn:lsid:ibm.com:td:f0850b0f-f068-4b9a-907b-44c23be1f394</id>
+    <title type="text">buzz.png</title>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/f0850b0f-f068-4b9a-907b-44c23be1f394/entry" rel="self"/>
+    <link href="http://connections.swg.usma.ibm.com/communities/service/html/communityview?communityUuid=cfed25cf-a0e3-4d3c-8ab2-3430f91d3307#fullpageWidgetId=We8b1d9484f1d_461d_9e56_4180ce5f0f74&amp;file=f0850b0f-f068-4b9a-907b-44c23be1f394" rel="alternate" type="text/html"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/f0850b0f-f068-4b9a-907b-44c23be1f394/entry" rel="edit"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/f0850b0f-f068-4b9a-907b-44c23be1f394/media" rel="edit-media"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/anonymous/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/f0850b0f-f068-4b9a-907b-44c23be1f394/media/buzz.png" rel="enclosure" type="image/png" title="buzz.png" hreflang="en" length="61817"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/anonymous/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/f0850b0f-f068-4b9a-907b-44c23be1f394/thumbnail?renditionKind=mediumview&amp;pcftoken=f0850b0f-f068-4b9a-907b-44c23be1f394" rel="thumbnail"/>
+    <category term="document" scheme="tag:ibm.com,2006:td/type" label="document"/>
+    <link xmlns:thr="http://purl.org/syndication/thread/1.0" href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/f0850b0f-f068-4b9a-907b-44c23be1f394/feed" rel="replies" type="application/atom+xml" thr:count="0"/>
+    <td:uuid>f0850b0f-f068-4b9a-907b-44c23be1f394</td:uuid>
+    <td:added>2014-10-03T20:57:00.191Z</td:added>
+    <td:created>2014-10-03T20:56:59.959Z</td:created>
+    <published>2014-10-03T20:56:59.959Z</published>
+    <updated>2014-10-03T20:57:01.416Z</updated>
+    <td:modified>2014-10-03T20:56:59.959Z</td:modified>
+    <td:addedBy>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </td:addedBy>
+    <author>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </author>
+    <td:modifier>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </td:modifier>
+    <td:label>buzz.png</td:label>
+    <td:libraryId>56ef36cf-2693-4e0e-a492-877d10b79bfc</td:libraryId>
+    <td:libraryType>communityFiles</td:libraryType>
+    <td:versionUuid>570ae8ac-289d-4593-912f-d17a15d439dd</td:versionUuid>
+    <td:versionLabel>1</td:versionLabel>
+    <summary type="text"/>
+    <td:permissions>View, ViewContent, ViewProperties, Purge, Delete</td:permissions>
+    <td:sharePermission>View</td:sharePermission>
+    <td:objectTypeName>snx:file</td:objectTypeName>
+    <td:propagation>false</td:propagation>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/share">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/collections">1</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/attachments">3</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/versions">1</snx:rank>
+    <td:isFiledInFolder>false</td:isFiledInFolder>
+    <td:totalMediaSize>89074</td:totalMediaSize>
+    <content type="application/atom+xml" src="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/f0850b0f-f068-4b9a-907b-44c23be1f394/media"/>
+    <td:restrictedVisibility>false</td:restrictedVisibility>
+    <td:lock type="NONE"/>
+    <snx:isExternal>false</snx:isExternal>
+  </entry>
+  <entry>
+    <id>urn:lsid:ibm.com:td:139119b7-fbb6-41b4-b249-a76bf9ba4d7f</id>
+    <title type="text">tower.jpg</title>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/139119b7-fbb6-41b4-b249-a76bf9ba4d7f/entry" rel="self"/>
+    <link href="http://connections.swg.usma.ibm.com/communities/service/html/communityview?communityUuid=cfed25cf-a0e3-4d3c-8ab2-3430f91d3307#fullpageWidgetId=We8b1d9484f1d_461d_9e56_4180ce5f0f74&amp;file=139119b7-fbb6-41b4-b249-a76bf9ba4d7f" rel="alternate" type="text/html"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/139119b7-fbb6-41b4-b249-a76bf9ba4d7f/entry" rel="edit"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/139119b7-fbb6-41b4-b249-a76bf9ba4d7f/media" rel="edit-media"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/anonymous/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/139119b7-fbb6-41b4-b249-a76bf9ba4d7f/media/tower.jpg" rel="enclosure" type="image/jpeg" title="tower.jpg" hreflang="en" length="63500"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/anonymous/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/139119b7-fbb6-41b4-b249-a76bf9ba4d7f/thumbnail?renditionKind=mediumview&amp;pcftoken=139119b7-fbb6-41b4-b249-a76bf9ba4d7f" rel="thumbnail"/>
+    <category term="document" scheme="tag:ibm.com,2006:td/type" label="document"/>
+    <link xmlns:thr="http://purl.org/syndication/thread/1.0" href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/139119b7-fbb6-41b4-b249-a76bf9ba4d7f/feed" rel="replies" type="application/atom+xml" thr:count="0"/>
+    <td:uuid>139119b7-fbb6-41b4-b249-a76bf9ba4d7f</td:uuid>
+    <td:added>2014-10-03T20:57:00.812Z</td:added>
+    <td:created>2014-10-03T20:57:00.580Z</td:created>
+    <published>2014-10-03T20:57:00.580Z</published>
+    <updated>2014-10-03T20:57:05.472Z</updated>
+    <td:modified>2014-10-03T20:57:00.580Z</td:modified>
+    <td:addedBy>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </td:addedBy>
+    <author>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </author>
+    <td:modifier>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </td:modifier>
+    <td:label>tower.jpg</td:label>
+    <td:libraryId>56ef36cf-2693-4e0e-a492-877d10b79bfc</td:libraryId>
+    <td:libraryType>communityFiles</td:libraryType>
+    <td:versionUuid>4489d548-eaa6-4f75-b83f-95770a101784</td:versionUuid>
+    <td:versionLabel>1</td:versionLabel>
+    <summary type="text"/>
+    <td:permissions>View, ViewContent, ViewProperties, Purge, Delete</td:permissions>
+    <td:sharePermission>View</td:sharePermission>
+    <td:objectTypeName>snx:file</td:objectTypeName>
+    <td:propagation>false</td:propagation>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/share">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/collections">1</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/attachments">3</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/versions">1</snx:rank>
+    <td:isFiledInFolder>false</td:isFiledInFolder>
+    <td:totalMediaSize>120054</td:totalMediaSize>
+    <content type="application/atom+xml" src="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/139119b7-fbb6-41b4-b249-a76bf9ba4d7f/media"/>
+    <td:restrictedVisibility>false</td:restrictedVisibility>
+    <td:lock type="NONE"/>
+    <snx:isExternal>false</snx:isExternal>
+  </entry>
+  <entry>
+    <id>urn:lsid:ibm.com:td:226a5b8b-fa36-4985-b665-59e7a2e55259</id>
+    <title type="text">document.odt</title>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/226a5b8b-fa36-4985-b665-59e7a2e55259/entry" rel="self"/>
+    <link href="http://connections.swg.usma.ibm.com/communities/service/html/communityview?communityUuid=cfed25cf-a0e3-4d3c-8ab2-3430f91d3307#fullpageWidgetId=We8b1d9484f1d_461d_9e56_4180ce5f0f74&amp;file=226a5b8b-fa36-4985-b665-59e7a2e55259" rel="alternate" type="text/html"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/226a5b8b-fa36-4985-b665-59e7a2e55259/entry" rel="edit"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/226a5b8b-fa36-4985-b665-59e7a2e55259/media" rel="edit-media"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/anonymous/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/226a5b8b-fa36-4985-b665-59e7a2e55259/media/document.odt" rel="enclosure" type="application/vnd.oasis.opendocument.text" title="document.odt" hreflang="en" length="154676"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/anonymous/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/226a5b8b-fa36-4985-b665-59e7a2e55259/thumbnail?renditionKind=mediumview&amp;pcftoken=226a5b8b-fa36-4985-b665-59e7a2e55259" rel="thumbnail"/>
+    <category term="document" scheme="tag:ibm.com,2006:td/type" label="document"/>
+    <link xmlns:thr="http://purl.org/syndication/thread/1.0" href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/226a5b8b-fa36-4985-b665-59e7a2e55259/feed" rel="replies" type="application/atom+xml" thr:count="0"/>
+    <td:uuid>226a5b8b-fa36-4985-b665-59e7a2e55259</td:uuid>
+    <td:added>2014-10-03T20:57:01.671Z</td:added>
+    <td:created>2014-10-03T20:57:01.318Z</td:created>
+    <published>2014-10-03T20:57:01.318Z</published>
+    <updated>2014-10-03T20:57:34.174Z</updated>
+    <td:modified>2014-10-03T20:57:01.318Z</td:modified>
+    <td:addedBy>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </td:addedBy>
+    <author>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </author>
+    <td:modifier>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </td:modifier>
+    <td:label>document.odt</td:label>
+    <td:libraryId>56ef36cf-2693-4e0e-a492-877d10b79bfc</td:libraryId>
+    <td:libraryType>communityFiles</td:libraryType>
+    <td:versionUuid>b5cf5449-52c9-463c-b365-d116a92f79c7</td:versionUuid>
+    <td:versionLabel>1</td:versionLabel>
+    <summary type="text"/>
+    <td:permissions>View, ViewContent, ViewProperties, Purge, Delete</td:permissions>
+    <td:sharePermission>View</td:sharePermission>
+    <td:objectTypeName>snx:file</td:objectTypeName>
+    <td:propagation>false</td:propagation>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">1</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/share">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/collections">1</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/attachments">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/versions">1</snx:rank>
+    <td:isFiledInFolder>false</td:isFiledInFolder>
+    <td:totalMediaSize>154676</td:totalMediaSize>
+    <content type="application/atom+xml" src="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/226a5b8b-fa36-4985-b665-59e7a2e55259/media"/>
+    <td:restrictedVisibility>false</td:restrictedVisibility>
+    <td:lock type="NONE"/>
+    <snx:isExternal>false</snx:isExternal>
+  </entry>
+  <entry>
+    <id>urn:lsid:ibm.com:td:cd1cb955-912e-4e44-a37c-9e611fad6e8f</id>
+    <title type="text">test2.mp4</title>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/cd1cb955-912e-4e44-a37c-9e611fad6e8f/entry" rel="self"/>
+    <link href="http://connections.swg.usma.ibm.com/communities/service/html/communityview?communityUuid=cfed25cf-a0e3-4d3c-8ab2-3430f91d3307#fullpageWidgetId=We8b1d9484f1d_461d_9e56_4180ce5f0f74&amp;file=cd1cb955-912e-4e44-a37c-9e611fad6e8f" rel="alternate" type="text/html"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/cd1cb955-912e-4e44-a37c-9e611fad6e8f/entry" rel="edit"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/cd1cb955-912e-4e44-a37c-9e611fad6e8f/media" rel="edit-media"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/anonymous/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/cd1cb955-912e-4e44-a37c-9e611fad6e8f/media/test2.mp4" rel="enclosure" type="video/mp4" title="test2.mp4" hreflang="en" length="1058514"/>
+    <link href="" rel="thumbnail"/>
+    <category term="document" scheme="tag:ibm.com,2006:td/type" label="document"/>
+    <link xmlns:thr="http://purl.org/syndication/thread/1.0" href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/cd1cb955-912e-4e44-a37c-9e611fad6e8f/feed" rel="replies" type="application/atom+xml" thr:count="0"/>
+    <td:uuid>cd1cb955-912e-4e44-a37c-9e611fad6e8f</td:uuid>
+    <td:added>2014-10-03T20:57:05.286Z</td:added>
+    <td:created>2014-10-03T20:57:02.259Z</td:created>
+    <published>2014-10-03T20:57:02.259Z</published>
+    <updated>2014-10-03T20:57:05.287Z</updated>
+    <td:modified>2014-10-03T20:57:02.259Z</td:modified>
+    <td:addedBy>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </td:addedBy>
+    <author>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </author>
+    <td:modifier>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </td:modifier>
+    <td:label>test2.mp4</td:label>
+    <td:libraryId>56ef36cf-2693-4e0e-a492-877d10b79bfc</td:libraryId>
+    <td:libraryType>communityFiles</td:libraryType>
+    <td:versionUuid>4c165c0e-bcdf-4001-89d6-88c5f7b0f8bc</td:versionUuid>
+    <td:versionLabel>1</td:versionLabel>
+    <summary type="text"/>
+    <td:permissions>View, ViewContent, ViewProperties, Purge, Delete</td:permissions>
+    <td:sharePermission>View</td:sharePermission>
+    <td:objectTypeName>snx:file</td:objectTypeName>
+    <td:propagation>false</td:propagation>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/share">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/collections">1</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/attachments">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/versions">1</snx:rank>
+    <td:isFiledInFolder>false</td:isFiledInFolder>
+    <td:totalMediaSize>1058514</td:totalMediaSize>
+    <content type="application/atom+xml" src="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/cd1cb955-912e-4e44-a37c-9e611fad6e8f/media"/>
+    <td:restrictedVisibility>false</td:restrictedVisibility>
+    <td:lock type="NONE"/>
+    <snx:isExternal>false</snx:isExternal>
+  </entry>
+  <entry>
+    <id>urn:lsid:ibm.com:td:e3c3a9d8-8388-4963-adc5-15e532700190</id>
+    <title type="text">results.xml.zip</title>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/e3c3a9d8-8388-4963-adc5-15e532700190/entry" rel="self"/>
+    <link href="http://connections.swg.usma.ibm.com/communities/service/html/communityview?communityUuid=cfed25cf-a0e3-4d3c-8ab2-3430f91d3307#fullpageWidgetId=We8b1d9484f1d_461d_9e56_4180ce5f0f74&amp;file=e3c3a9d8-8388-4963-adc5-15e532700190" rel="alternate" type="text/html"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/e3c3a9d8-8388-4963-adc5-15e532700190/entry" rel="edit"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/e3c3a9d8-8388-4963-adc5-15e532700190/media" rel="edit-media"/>
+    <link href="http://connections.swg.usma.ibm.com/files/form/anonymous/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/e3c3a9d8-8388-4963-adc5-15e532700190/media/results.xml.zip" rel="enclosure" type="application/zip" title="results.xml.zip" hreflang="en" length="26962"/>
+    <link href="" rel="thumbnail"/>
+    <category term="document" scheme="tag:ibm.com,2006:td/type" label="document"/>
+    <link xmlns:thr="http://purl.org/syndication/thread/1.0" href="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/e3c3a9d8-8388-4963-adc5-15e532700190/feed" rel="replies" type="application/atom+xml" thr:count="0"/>
+    <td:uuid>e3c3a9d8-8388-4963-adc5-15e532700190</td:uuid>
+    <td:added>2014-10-03T20:57:05.800Z</td:added>
+    <td:created>2014-10-03T20:57:05.715Z</td:created>
+    <published>2014-10-03T20:57:05.715Z</published>
+    <updated>2014-10-03T20:57:05.801Z</updated>
+    <td:modified>2014-10-03T20:57:05.715Z</td:modified>
+    <td:addedBy>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </td:addedBy>
+    <author>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </author>
+    <td:modifier>
+      <name>JOHN GIRATA</name>
+      <snx:userid>fba49b40-5182-1032-9393-89fbb6fdad64</snx:userid>
+      <email>jgirata2@us.ibm.com</email>
+      <snx:userState>active</snx:userState>
+    </td:modifier>
+    <td:label>results.xml.zip</td:label>
+    <td:libraryId>56ef36cf-2693-4e0e-a492-877d10b79bfc</td:libraryId>
+    <td:libraryType>communityFiles</td:libraryType>
+    <td:versionUuid>ec9d1fcb-f41c-49fc-8413-c443ccac4aaf</td:versionUuid>
+    <td:versionLabel>1</td:versionLabel>
+    <summary type="text"/>
+    <td:permissions>View, ViewContent, ViewProperties, Purge, Delete</td:permissions>
+    <td:sharePermission>View</td:sharePermission>
+    <td:objectTypeName>snx:file</td:objectTypeName>
+    <td:propagation>false</td:propagation>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/share">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/collections">1</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/attachments">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/versions">1</snx:rank>
+    <td:isFiledInFolder>false</td:isFiledInFolder>
+    <td:totalMediaSize>26962</td:totalMediaSize>
+    <content type="application/atom+xml" src="http://connections.swg.usma.ibm.com/files/form/api/library/56ef36cf-2693-4e0e-a492-877d10b79bfc/document/e3c3a9d8-8388-4963-adc5-15e532700190/media"/>
+    <td:restrictedVisibility>false</td:restrictedVisibility>
+    <td:lock type="NONE"/>
+    <snx:isExternal>false</snx:isExternal>
+  </entry>
+</feed>

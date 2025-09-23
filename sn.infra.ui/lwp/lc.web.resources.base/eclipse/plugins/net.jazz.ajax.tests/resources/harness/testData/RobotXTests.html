@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2013                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!--
+RobotXTests.html
+
+Used by the JavaScript module net.jazz.ajax.tests.harness.RobotXTests to test
+the functionality of the Jazz integration of Dojo Robot.
+-->
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Robot X Tests</title>
+	<script type="text/javascript">
+		function setValue(value) {
+			document.getElementById("testInput").value = value;
+		}
+	</script>
+</head>
+<body>
+	<div><input type="text" id="testInput"></div>
+	<div id="valueOne" onmouseover="setValue('One')">One</div>
+	<div id="valueTwo" onmouseover="setValue('Two')">Two</div>
+	<div id="valueThree" onmouseover="setValue('Three')">Three</div>
+</body>
+</html>

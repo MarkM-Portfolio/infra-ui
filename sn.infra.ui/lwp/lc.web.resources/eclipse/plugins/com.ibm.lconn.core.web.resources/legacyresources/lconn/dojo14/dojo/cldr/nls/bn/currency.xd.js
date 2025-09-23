@@ -1,0 +1,5 @@
+dojo._xdResourceLoaded(function(dojo, dijit, dojox){
+return {depends: [["provide", "dojo.cldr.nls.bn.currency"]],
+defineResource: function(dojo, dijit, dojox){dojo.provide("dojo.cldr.nls.bn.currency");dojo._xdLoadFlattenedBundle("dojo.cldr", "currency", "bn", ({"HKD_displayName":"হংকং ডলার","CHF_displayName":"সুইস ফ্রাঙ্ক","CAD_displayName":"কম্বোডিয়ান ডলার","CNY_displayName":"চীনা য়ুয়ান রেন্মিন্বি","AUD_displayName":"অস্ট্রেলিয়ান ডলার","JPY_displayName":"জাপানিজ ইয়েন","USD_displayName":"মার্কিন ডলার","GBP_displayName":"ব্রিটিশ পাউন্ড স্টার্লিং","EUR_displayName":"ইউরো","CHF_symbol":"Fr.","JPY_symbol":"JP¥","HKD_symbol":"HK$","USD_symbol":"US$","CAD_symbol":"CA$","EUR_symbol":"€","CNY_symbol":"CN¥","GBP_symbol":"£","AUD_symbol":"AU$"})
+);
+}};});

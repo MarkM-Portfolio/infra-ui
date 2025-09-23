@@ -1,0 +1,90 @@
+<html>
+<head>
+<script type="text/javascript" src="https://app.box.com/js/static/select.js"></script> 
+<script type="text/javascript" src="/connections/resources/web/_js?include=com.ibm.social.urliWidget.web.resources.box.event"></script> 
+<script>
+//Returns dom node suitable for insertion
+//
+
+var channel = null;
+
+var info = function(msg) {
+	console.info("fullpage.html:  " + msg);
+}
+
+
+var error = function(msg) {
+	console.error("fullpage.html:  " + msg);
+}
+
+var constructBoxIframe = function(boxUrl) {
+	var iframe = document.createElement("iframe");
+	iframe.src = convertUrlToEmbedUrl(boxUrl);
+	iframe.style.width="100%";
+	iframe.style.height="500";
+	return(iframe);
+}
+
+var convertUrlToEmbedUrl = function(directUrl) {
+	var result = directUrl.replace("ibm.box.com", "app.box.com/embed_widget");
+	return(result);
+}
+
+	
+var insertBoxIframe = function(iFrameNode, parentNode) {
+	info("insertBoxIframe(" + iFrameNode + "," + parentNode + ")");
+	for (var i=0; i<parentNode.childNodes.length; i++) {
+		parentNode.removeChild(parentNode.childNodes[i]);
+	}
+	info("insertBoxIframe appending iframe node");
+	parentNode.appendChild(iFrameNode);
+	info("insertBoxIframe iframe node appended");
+	
+}
+
+var handleEvent = function(event) {
+	var type = event.getEventType();
+	var value = event.getEventValue();
+	if (type == "setState") {
+		showBoxUrl(value);
+	}
+	else {
+		error("unknown action:  " + msg.action);
+	}
+}
+
+	// Wait to get URL for box
+	//
+var waitForMessage = function(event) {
+	info("waitForMessage");
+	info(com.ibm.social.urliWidget.web.resources.box.channel);
+	channel = new com.ibm.social.urliWidget.web.resources.box.channel(window, handleEvent);
+	// Notify parent that the widget is loaded and wait for url to be sent to us for display
+	var evt = new com.ibm.social.urliWidget.web.resources.box.event("loaded", "fullpage");
+	channel.sendEvent(evt, window.parent);
+}
+	
+	
+var showBoxUrl = function(boxUrl) {
+	info("showBoxUrl(" + boxUrl +")");
+	var d = document.getElementById("loadingMessage");
+	document.getElementById("loadingMessage").style.display="none";
+	var iFrameNode = constructBoxIframe(boxUrl);
+	boxIframeNode = document.getElementById("boxIframe");
+	insertBoxIframe(iFrameNode, boxIframeNode);
+	boxIframeNode.style.display="block";
+}
+
+
+document.addEventListener("DOMContentLoaded", waitForMessage);
+</script>
+</head>
+<body>
+<div id="loadingMessage">
+ Box connection not yet set...
+</div>
+
+<div id="boxIframe" style="display:none">
+</div>
+</body>
+</html>

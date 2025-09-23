@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">Датотеки</msg>
+  <msg name="description">Украсна програма за датотеки за овозможување поставување и споделување датотеки</msg>
+  <msg name="action_uploadFile_label">Датотеки</msg>
+  <msg name="action_uploadFile_tooltip">Поставете и споделете датотеки</msg>
+  <msg name="loading">Вчитување...</msg>
+  <msg name="error_msg">Содржината не може да се вчита. Обидете се повторно подоцна или контактирајте со администраторот на системот.</msg>
+  <msg name="error_alt">Грешка</msg>
+</messagebundle>

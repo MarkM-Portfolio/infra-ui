@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>IBM Connections - Sametime Proxy</title>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <h1>Sametime Proxy</h1>
+                <p>You should see the Sametime Proxy action bar at the bottom of the screen.</p>
+                <!--  Add your test DOM here -->
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+    </script>
+    ${style:lconn.test/mocks/stproxy/WebClientAll}
+    <!--  List the Dojo modules your test page requires -->
+    <!--  FIXME: ST proxy uses these modules but doesn't require them -->
+    ${script:dijit.Menu}
+    ${script:lconn.core.MenuUtility}
+    <!--  /FIXME: ST proxy uses these modules but doesn't require them -->
+    ${script:lconn.test.mocks.stproxy.greenhouse}
+    ${script:lconn.profiles.sametime.sametimeProxyAwareness}
+</body>
+</html>

@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IBM Connections OAuth Web Resources
+Bundle-SymbolicName: com.ibm.lconn.oauth.web.resources;singleton:=true
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: com.ibm.lconn.oauth.web.resources.Activator
+Bundle-Vendor: IBM
+Bundle-ActivationPolicy: lazy
+Import-Package: com.ibm.lconn.core.web.resources.map,
+ com.ibm.lconn.oauth.platform.config,
+ com.ibm.ventura.internal.config.exception;version="3.0.1",
+ com.ibm.ventura.internal.config.helper.api;version="3.0.1",
+ net.jazz.ajax.model,
+ org.osgi.framework;version="1.5.0"
+Bundle-ClassPath: _properties/, .

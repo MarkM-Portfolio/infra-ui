@@ -1,0 +1,2282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Copyright IBM Corp. 2010, 2015  All Rights Reserved.              -->
+
+  <head>
+    <title>Testing lconnSprite</title>
+    <link rel='stylesheet' href='sprite-lconn.css' type='text/css' />
+    <style type='text/css'>
+      .lconnSprite{background-image:url('sprite-lconn-8bit.png')} /* special style to correct the path to the sprite image for testing purposes */
+
+      body{font-family:sans-serif}
+      table{float:left}
+      td{background-color:#fff;white-space:nowrap}
+      .blackbg{background-color:#000}
+      .orangebg{background-color:#ff9900}
+      .greenbg{background-color:#B9DEBB}
+      .spriteExample{margin:5px 0 0 30px;float:left;text-align:left}
+      .spriteExample img {vertical-align:top;}
+      .clear{clear:both}
+    </style>
+  </head>
+  <body>
+    <h3>Sprite: lconnSprite</h3>
+    <p>
+      Dimension: 18 x 3570<br />
+      padx: 0<br />
+      pady: 8<br />
+      Number of unique colors: 3647<br />
+      Size in bytes: 31219<br />
+      Sum of all source images in bytes: 61862<br />
+    </p>
+    <table border='1' cellpadding='2'>
+      <tr><th>Name</th><th>Classes</th><th>Dimension</th><th>UniqueColors</th><th>Bytes</th><th>White</th><th>Black</th><th>Orange</th><th>Green</th></tr>
+
+      <tr>
+        <td colspan="9"><b>Components and component types</b></td>
+      </tr>
+
+      <tr>
+        <td>iconActivities16</td>
+        <td>lconnSprite lconnSprite-iconActivities16</td>
+        <td>16 x 16</td>
+        <td>13</td>
+        <td>257</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconActivities16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconActivities16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconActivities16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconActivities16'  /></td>
+      </tr>
+      <tr>
+        <td>iconActivitiesItem16</td>
+        <td>lconnSprite lconnSprite-iconActivitiesItem16</td>
+        <td>16 x 16</td>
+        <td>38</td>
+        <td>318</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconActivitiesItem16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconActivitiesItem16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconActivitiesItem16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconActivitiesItem16'  /></td>
+      </tr>
+      <tr>
+        <td>iconBlogs16</td>
+        <td>lconnSprite lconnSprite-iconBlogs16</td>
+        <td>16 x 16</td>
+        <td>14</td>
+        <td>232</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlogs16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlogs16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlogs16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlogs16'  /></td>
+      </tr>
+      <tr>
+        <td>iconBlogsItem16</td>
+        <td>lconnSprite lconnSprite-iconBlogsItem16</td>
+        <td>16 x 16</td>
+        <td>17</td>
+        <td>258</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlogsItem16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlogsItem16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlogsItem16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlogsItem16'  /></td>
+      </tr>
+      <tr>
+        <td>iconBookmarks16</td>
+        <td>lconnSprite lconnSprite-iconBookmarks16</td>
+        <td>16 x 16</td>
+        <td>8</td>
+        <td>219</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBookmarks16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBookmarks16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBookmarks16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBookmarks16'  /></td>
+      </tr>
+      <tr>
+        <td>iconBookmarksItem16</td>
+        <td>lconnSprite lconnSprite-iconBookmarksItem16</td>
+        <td>16 x 16</td>
+        <td>15</td>
+        <td>258</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBookmarksItem16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBookmarksItem16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBookmarksItem16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBookmarksItem16'  /></td>
+      </tr>
+      <tr>
+        <td>iconCommunities16</td>
+        <td>lconnSprite lconnSprite-iconCommunities16</td>
+        <td>16 x 16</td>
+        <td>13</td>
+        <td>189</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCommunities16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCommunities16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCommunities16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCommunities16'  /></td>
+      </tr>
+      <tr>
+        <td>iconCommunitiesItem16</td>
+        <td>lconnSprite lconnSprite-iconCommunitiesItem16</td>
+        <td>16 x 16</td>
+        <td>24</td>
+        <td>286</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCommunitiesItem16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCommunitiesItem16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCommunitiesItem16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCommunitiesItem16'  /></td>
+      </tr>
+      <tr>
+        <td>iconFiles16</td>
+        <td>lconnSprite lconnSprite-iconFiles16</td>
+        <td>16 x 16</td>
+        <td>20</td>
+        <td>263</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFiles16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFiles16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFiles16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFiles16'  /></td>
+      </tr>
+      <tr>
+        <td>iconForums16</td>
+        <td>lconnSprite lconnSprite-iconForums16</td>
+        <td>16 x 16</td>
+        <td>5</td>
+        <td>194</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForums16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForums16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForums16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForums16'  /></td>
+      </tr>
+      <tr>
+        <td>iconForumsItem16</td>
+        <td>lconnSprite lconnSprite-iconForumsItem16</td>
+        <td>16 x 16</td>
+        <td>13</td>
+        <td>245</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForumsItem16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForumsItem16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForumsItem16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForumsItem16'  /></td>
+      </tr>
+      <tr>
+        <td>iconHome16</td>
+        <td>lconnSprite lconnSprite-iconHome16</td>
+        <td>16 x 16</td>
+        <td>33</td>
+        <td>350</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHome16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHome16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHome16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHome16'  /></td>
+      </tr>
+      <tr>
+        <td>iconProfiles16</td>
+        <td>lconnSprite lconnSprite-iconProfiles16</td>
+        <td>16 x 16</td>
+        <td>17</td>
+        <td>252</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconProfiles16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconProfiles16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconProfiles16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconProfiles16'  /></td>
+      </tr>
+      <tr>
+        <td>iconProfilesItem16</td>
+        <td>lconnSprite lconnSprite-iconProfilesItem16</td>
+        <td>16 x 16</td>
+        <td>22</td>
+        <td>292</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconProfilesItem16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconProfilesItem16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconProfilesItem16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconProfilesItem16'  /></td>
+      </tr>
+      <tr>
+        <td>iconWikis16</td>
+        <td>lconnSprite lconnSprite-iconWikis16</td>
+        <td>16 x 16</td>
+        <td>7</td>
+        <td>195</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWikis16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWikis16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWikis16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWikis16'  /></td>
+      </tr>
+      <tr>
+        <td>iconWikisItem16</td>
+        <td>lconnSprite lconnSprite-iconWikisItem16</td>
+        <td>16 x 16</td>
+        <td>13</td>
+        <td>241</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWikisItem16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWikisItem16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWikisItem16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWikisItem16'  /></td>
+      </tr>
+              <td>iconActivitiesBlue16</td>
+        <td>lconnSprite lconnSprite-iconActivitiesBlue16</td>
+        <td>16 x 16</td>
+        <td>30</td>
+        <td>276</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconActivitiesBlue16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconActivitiesBlue16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconActivitiesBlue16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconActivitiesBlue16'  /></td>
+      </tr>
+      <tr>
+        <td>iconBlogsBlue16</td>
+        <td>lconnSprite lconnSprite-iconBlogsBlue16</td>
+        <td>16 x 16</td>
+        <td>44</td>
+        <td>325</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlogsBlue16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlogsBlue16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlogsBlue16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlogsBlue16'  /></td>
+      </tr>
+      <tr>
+        <td>iconBookmarksBlue16</td>
+        <td>lconnSprite lconnSprite-iconBookmarksBlue16</td>
+        <td>16 x 16</td>
+        <td>47</td>
+        <td>354</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBookmarksBlue16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBookmarksBlue16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBookmarksBlue16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBookmarksBlue16'  /></td>
+      </tr>
+      <tr>
+        <td>iconFilesBlue16</td>
+        <td>lconnSprite lconnSprite-iconFilesBlue16</td>
+        <td>16 x 16</td>
+        <td>26</td>
+        <td>268</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFilesBlue16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFilesBlue16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFilesBlue16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFilesBlue16'  /></td>
+      </tr>
+      <tr>
+        <td>iconForumsBlue16</td>
+        <td>lconnSprite lconnSprite-iconForumsBlue16</td>
+        <td>16 x 16</td>
+        <td>41</td>
+        <td>321</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForumsBlue16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForumsBlue16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForumsBlue16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForumsBlue16'  /></td>
+      </tr>
+      <tr>
+        <td>iconHomeBlue16</td>
+        <td>lconnSprite lconnSprite-iconHomeBlue16</td>
+        <td>16 x 16</td>
+        <td>84</td>
+        <td>527</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHomeBlue16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHomeBlue16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHomeBlue16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHomeBlue16'  /></td>
+      </tr>
+      <tr>
+        <td>iconCommunitiesBlue16</td>
+        <td>lconnSprite lconnSprite-iconCommunitiesBlue16</td>
+        <td>16 x 16</td>
+        <td>85</td>
+        <td>552</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCommunitiesBlue16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCommunitiesBlue16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCommunitiesBlue16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCommunitiesBlue16'  /></td>
+      </tr>
+      <tr>
+        <td>iconProfilesBlue16</td>
+        <td>lconnSprite lconnSprite-iconProfilesBlue16</td>
+        <td>16 x 16</td>
+        <td>71</td>
+        <td>448</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconProfilesBlue16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconProfilesBlue16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconProfilesBlue16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconProfilesBlue16'  /></td>
+      </tr>
+      <tr>
+        <td>iconWikisBlue16</td>
+        <td>lconnSprite lconnSprite-iconWikisBlue16</td>
+        <td>16 x 16</td>
+        <td>19</td>
+        <td>218</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWikisBlue16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWikisBlue16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWikisBlue16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWikisBlue16'  /></td>
+      </tr>
+      <tr>
+        <td>iconStatusUpdateBlue16</td>
+        <td>lconnSprite lconnSprite-iconStatusUpdateBlue16</td>
+        <td>16 x 16</td>
+        <td>55</td>
+        <td>400</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconStatusUpdateBlue16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconStatusUpdateBlue16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconStatusUpdateBlue16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconStatusUpdateBlue16'  /></td>
+      </tr>
+      <tr>
+        <td>iconMetricsBlue16</td>
+        <td>lconnSprite lconnSprite-iconMetricsBlue16</td>
+        <td>16 x 16</td>
+        <td>79</td>
+        <td>506</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMetricsBlue16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMetricsBlue16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMetricsBlue16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMetricsBlue16'  /></td>
+      </tr>
+      <tr>
+        <td>iconCalendarBlue16</td>
+        <td>lconnSprite lconnSprite-iconCalendarBlue16</td>
+        <td>16 x 16</td>
+        <td>34</td>
+        <td>295</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCalendarBlue16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCalendarBlue16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCalendarBlue16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCalendarBlue16'  /></td>
+      </tr>
+      <tr>
+        <td>iconMailBlue16</td>
+        <td>lconnSprite lconnSprite-iconMailBlue16</td>
+        <td>16 x 16</td>
+        <td>99</td>
+        <td>598</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMailBlue16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMailBlue16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMailBlue16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMailBlue16'  /></td>
+      </tr>
+      <tr>
+        <td>iconActivitiesWhite16</td>
+        <td>lconnSprite lconnSprite-iconActivitiesWhite16</td>
+        <td>16 x 16</td>
+        <td>23</td>
+        <td>257</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconActivitiesWhite16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconActivitiesWhite16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconActivitiesWhite16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconActivitiesWhite16'  /></td>
+      </tr>
+      <tr>
+        <td>iconBlogsWhite16</td>
+        <td>lconnSprite lconnSprite-iconBlogsWhite16</td>
+        <td>16 x 16</td>
+        <td>41</td>
+        <td>329</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlogsWhite16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlogsWhite16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlogsWhite16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlogsWhite16'  /></td>
+      </tr>
+      <tr>
+        <td>iconBookmarksWhite16</td>
+        <td>lconnSprite lconnSprite-iconBookmarksWhite16</td>
+        <td>16 x 16</td>
+        <td>31</td>
+        <td>299</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBookmarksWhite16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBookmarksWhite16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBookmarksWhite16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBookmarksWhite16'  /></td>
+      </tr>
+      <tr>
+        <td>iconFilesWhite16</td>
+        <td>lconnSprite lconnSprite-iconFilesWhite16</td>
+        <td>16 x 16</td>
+        <td>20</td>
+        <td>242</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFilesWhite16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFilesWhite16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFilesWhite16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFilesWhite16'  /></td>
+      </tr>
+      <tr>
+        <td>iconForumsWhite16</td>
+        <td>lconnSprite lconnSprite-iconForumsWhite16</td>
+        <td>16 x 16</td>
+        <td>28</td>
+        <td>275</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForumsWhite16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForumsWhite16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForumsWhite16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForumsWhite16'  /></td>
+      </tr>
+      <tr>
+        <td>iconHomeWhite16</td>
+        <td>lconnSprite lconnSprite-iconHomeWhite16</td>
+        <td>16 x 16</td>
+        <td>57</td>
+        <td>439</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHomeWhite16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHomeWhite16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHomeWhite16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHomeWhite16'  /></td>
+      </tr>
+      <tr>
+        <td>iconCommunitiesWhite16</td>
+        <td>lconnSprite lconnSprite-iconCommunitiesWhite16</td>
+        <td>16 x 16</td>
+        <td>60</td>
+        <td>469</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCommunitiesWhite16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCommunitiesWhite16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCommunitiesWhite16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCommunitiesWhite16'  /></td>
+      </tr>
+      <tr>
+        <td>iconProfilesWhite16</td>
+        <td>lconnSprite lconnSprite-iconProfilesWhite16</td>
+        <td>16 x 16</td>
+        <td>48</td>
+        <td>380</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconProfilesWhite16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconProfilesWhite16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconProfilesWhite16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconProfilesWhite16'  /></td>
+      </tr>
+      <tr>
+        <td>iconWikisWhite16</td>
+        <td>lconnSprite lconnSprite-iconWikisWhite16</td>
+        <td>16 x 16</td>
+        <td>17</td>
+        <td>213</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWikisWhite16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWikisWhite16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWikisWhite16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWikisWhite16'  /></td>
+      </tr>
+      <tr>
+        <td>iconStatusUpdateWhite16</td>
+        <td>lconnSprite lconnSprite-iconStatusUpdateWhite16</td>
+        <td>16 x 16</td>
+        <td>34</td>
+        <td>320</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconStatusUpdateWhite16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconStatusUpdateWhite16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconStatusUpdateWhite16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconStatusUpdateWhite16'  /></td>
+      </tr>
+      <tr>
+        <td>iconMetricsWhite16</td>
+        <td>lconnSprite lconnSprite-iconMetricsWhite16</td>
+        <td>16 x 16</td>
+        <td>45</td>
+        <td>389</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMetricsWhite16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMetricsWhite16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMetricsWhite16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMetricsWhite16'  /></td>
+      </tr>
+      <tr>
+        <td>iconCalendarWhite16</td>
+        <td>lconnSprite lconnSprite-iconCalendarWhite16</td>
+        <td>16 x 16</td>
+        <td>25</td>
+        <td>269</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCalendarWhite16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCalendarWhite16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCalendarWhite16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCalendarWhite16'  /></td>
+      </tr>
+      <tr>
+        <td>iconMailWhite16</td>
+        <td>lconnSprite lconnSprite-iconMailWhite16</td>
+        <td>16 x 16</td>
+        <td>68</td>
+        <td>488</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMailWhite16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMailWhite16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMailWhite16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMailWhite16'  /></td>
+      </tr>
+      <tr>
+      
+
+      <tr>
+        <td colspan="9"><b>Folder icons</b></td>
+      </tr>
+      <tr>
+        <td>iconCategory16</td>
+        <td>lconnSprite lconnSprite-iconCategory16</td>
+        <td>16 x 16</td>
+        <td>13</td>
+        <td>286</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCategory16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCategory16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCategory16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCategory16'  /></td>
+      </tr>
+      <tr>
+        <td>iconFolderClose16</td>
+        <td>lconnSprite lconnSprite-iconFolderClose16</td>
+        <td>16 x 16</td>
+        <td>18</td>
+        <td>224</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderClose16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderClose16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderClose16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderClose16'  /></td>
+      </tr>
+      <tr>
+        <td>iconFolderOpen16</td>
+        <td>lconnSprite lconnSprite-iconFolderOpen16</td>
+        <td>16 x 16</td>
+        <td>20</td>
+        <td>336</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderOpen16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderOpen16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderOpen16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderOpen16'  /></td>
+      </tr>
+      <tr>
+        <td>iconFolderClose32</td>
+        <td>lconnSprite lconnSprite-iconFolderClose32</td>
+        <td>32 x 32</td>
+        <td>18</td>
+        <td>224</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderClose32'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderClose32'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderClose32'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderClose32'  /></td>
+      </tr>
+      <tr>
+        <td>iconFolderOpen32</td>
+        <td>lconnSprite lconnSprite-iconFolderOpen32</td>
+        <td>32 x 32</td>
+        <td>20</td>
+        <td>336</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderOpen32'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderOpen32'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderOpen32'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderOpen32'  /></td>
+      </tr>
+      <tr>
+        <td>iconFolderPrivate16</td>
+        <td>lconnSprite lconnSprite-iconFolderPrivate16</td>
+        <td>16 x 16</td>
+        <td>32</td>
+        <td>352</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderPrivate16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderPrivate16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderPrivate16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderPrivate16'  /></td>
+      </tr>
+      <tr>
+        <td>iconFolderPublic16</td>
+        <td>lconnSprite lconnSprite-iconFolderPublic16</td>
+        <td>16 x 16</td>
+        <td>48</td>
+        <td>420</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderPublic16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderPublic16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderPublic16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderPublic16'  /></td>
+      </tr>
+      <tr>
+        <td>iconFolderShared16</td>
+        <td>lconnSprite lconnSprite-iconFolderShared16</td>
+        <td>16 x 16</td>
+        <td>19</td>
+        <td>281</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderShared16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderShared16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderShared16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFolderShared16'  /></td>
+      </tr>
+      <tr>
+        <td colspan="9"><b>Message icons</b></td>
+      </tr>
+
+      <tr>
+        <td>iconAttention16</td>
+        <td>lconnSprite lconnSprite-iconAttention16</td>
+        <td>16 x 16</td>
+        <td>130</td>
+        <td>753</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAttention16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAttention16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAttention16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAttention16'  /></td>
+      </tr>
+      <tr>
+        <td>iconConfirmation16</td>
+        <td>lconnSprite lconnSprite-iconConfirmation16</td>
+        <td>16 x 16</td>
+        <td>179</td>
+        <td>930</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconConfirmation16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconConfirmation16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconConfirmation16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconConfirmation16'  /></td>
+      </tr>
+      <tr>
+        <td>iconError16</td>
+        <td>lconnSprite lconnSprite-iconError16</td>
+        <td>16 x 16</td>
+        <td>183</td>
+        <td>942</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconError16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconError16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconError16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconError16'  /></td>
+      </tr>
+      <tr>
+        <td>iconWarning16</td>
+        <td>lconnSprite lconnSprite-iconWarning16</td>
+        <td>16 x 16</td>
+        <td>81</td>
+        <td>511</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWarning16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWarning16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWarning16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWarning16'  /></td>
+      </tr>
+      <tr>
+        <td colspan="9"><b>Item status icons</b></td>
+      </tr>
+
+      <tr>
+        <td>iconPriorityHigh16</td>
+        <td>lconnSprite lconnSprite-iconPriorityHigh16</td>
+        <td>16 x 16</td>
+        <td>13</td>
+        <td>197</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPriorityHigh16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPriorityHigh16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPriorityHigh16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPriorityHigh16'  /></td>
+      </tr>
+      <tr>
+        <td>iconPriorityMedium16</td>
+        <td>lconnSprite lconnSprite-iconPriorityMedium16</td>
+        <td>16 x 16</td>
+        <td>45</td>
+        <td>379</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPriorityMedium16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPriorityMedium16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPriorityMedium16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPriorityMedium16'  /></td>
+      </tr>
+      <tr>
+        <td>iconPrivate10</td>
+        <td>lconnSprite lconnSprite-iconPrivate10</td>
+        <td>9 x 12</td>
+        <td>21</td>
+        <td>305</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPrivate10'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPrivate10'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPrivate10'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPrivate10'  /></td>
+      </tr>
+      <tr>
+        <td>iconPrivate16</td>
+        <td>lconnSprite lconnSprite-iconPrivate16</td>
+        <td>16 x 16</td>
+        <td>37</td>
+        <td>334</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPrivate16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPrivate16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPrivate16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPrivate16'  /></td>
+      </tr>
+      <tr>
+        <td>iconPublic10</td>
+        <td>lconnSprite lconnSprite-iconPublic10</td>
+        <td>10 x 10</td>
+        <td>31</td>
+        <td>350</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPublic10'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPublic10'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPublic10'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPublic10'  /></td>
+      </tr>
+      <tr>
+        <td>iconPublic16</td>
+        <td>lconnSprite lconnSprite-iconPublic16</td>
+        <td>16 x 16</td>
+        <td>130</td>
+        <td>704</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPublic16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPublic16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPublic16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPublic16'  /></td>
+      </tr>
+      <tr>
+        <td>iconShared16</td>
+        <td>lconnSprite lconnSprite-iconShared16</td>
+        <td>16 x 16</td>
+        <td>7</td>
+        <td>178</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconShared16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconShared16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconShared16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconShared16'  /></td>
+      </tr>
+      <tr>
+        <td>iconExternal16</td>
+        <td>lconnSprite lconnSprite-iconExternal16</td>
+        <td>16 x 16</td>
+        <td>65</td>
+        <td>571</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExternal16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExternal16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExternal16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExternal16'  /></td>
+      </tr>
+      <tr>
+        <td colspan="9"><b>Misc icons</b></td>
+      </tr>
+      <tr>
+        <td>iconAddRating16</td>
+        <td>lconnSprite lconnSprite-iconAddRating16</td>
+        <td>11 x 11</td>
+        <td>11</td>
+        <td>273</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAddRating16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAddRating16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAddRating16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAddRating16'  /></td>
+      </tr>
+      <tr>
+        <td>iconAttachment16</td>
+        <td>lconnSprite lconnSprite-iconAttachment16</td>
+        <td>16 x 16</td>
+        <td>26</td>
+        <td>278</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAttachment16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAttachment16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAttachment16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAttachment16'  /></td>
+      </tr>
+      <tr>
+        <td>iconBlock16</td>
+        <td>lconnSprite lconnSprite-iconBlock16</td>
+        <td>14 x 14</td>
+        <td>32</td>
+        <td>383</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlock16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlock16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlock16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBlock16'  /></td>
+      </tr>
+      <tr>
+        <td>iconCalendar16</td>
+        <td>lconnSprite lconnSprite-iconCalendar16</td>
+        <td>14 x 15</td>
+        <td>24</td>
+        <td>335</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCalendar16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCalendar16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCalendar16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCalendar16'  /></td>
+      </tr>
+      <tr>
+        <td>iconChat16</td>
+        <td>lconnSprite lconnSprite-iconChat16</td>
+        <td>16 x 16</td>
+        <td>56</td>
+        <td>545</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconChat16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconChat16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconChat16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconChat16'  /></td>
+      </tr>
+      <tr>
+        <td>iconChatTranscript16</td>
+        <td>lconnSprite lconnSprite-iconChatTranscript16</td>
+        <td>16 x 16</td>
+        <td>50</td>
+        <td>500</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconChatTranscript16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconChatTranscript16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconChatTranscript16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconChatTranscript16'  /></td>
+      </tr>
+      <tr>
+        <td>iconCheckedOut</td>
+        <td>lconnSprite lconnSprite-iconCheckedOut</td>
+        <td>16 x 16</td>
+        <td>35</td>
+        <td>305</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCheckedOut'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCheckedOut'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCheckedOut'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCheckedOut'  /></td>
+      </tr>
+      <tr>
+        <td>iconCheckedOutMe</td>
+        <td>lconnSprite lconnSprite-iconCheckedOutMe</td>
+        <td>16 x 16</td>
+        <td>45</td>
+        <td>362</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCheckedOutMe'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCheckedOutMe'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCheckedOutMe'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCheckedOutMe'  /></td>
+      </tr>
+      <tr>
+        <td>iconCog16</td>
+        <td>lconnSprite lconnSprite-iconCog16</td>
+        <td>16 x 16</td>
+        <td>75</td>
+        <td>649</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCog16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCog16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCog16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCog16'  /></td>
+      </tr>
+      <tr>
+        <td>iconCollection16</td>
+        <td>lconnSprite lconnSprite-iconCollection16</td>
+        <td>16 x 16</td>
+        <td>32</td>
+        <td>430</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCollection16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCollection16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCollection16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCollection16'  /></td>
+      </tr>
+      <tr>
+        <td>iconComment16</td>
+        <td>lconnSprite lconnSprite-iconComment16</td>
+        <td>16 x 16</td>
+        <td>37</td>
+        <td>313</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconComment16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconComment16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconComment16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconComment16'  /></td>
+      </tr>
+      <tr>
+        <td>iconCompleted16</td>
+        <td>lconnSprite lconnSprite-iconCompleted16</td>
+        <td>12 x 10</td>
+        <td>7</td>
+        <td>241</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCompleted16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCompleted16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCompleted16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCompleted16'  /></td>
+      </tr>
+      <tr>
+        <td>iconConnections16</td>
+        <td>lconnSprite lconnSprite-iconConnections16</td>
+        <td>16 x 16</td>
+        <td>86</td>
+        <td>561</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconConnections16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconConnections16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconConnections16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconConnections16'  /></td>
+      </tr>
+      <tr>
+        <td>iconCopy16</td>
+        <td>lconnSprite lconnSprite-iconCopy16</td>
+        <td>16 x 16</td>
+        <td>8</td>
+        <td>178</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCopy16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCopy16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCopy16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCopy16'  /></td>
+      </tr>
+      <tr>
+        <td>iconDelete12</td>
+        <td>lconnSprite lconnSprite-iconDelete12</td>
+        <td>10 x 10</td>
+        <td>4</td>
+        <td>219</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDelete12'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDelete12'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDelete12'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDelete12'  /></td>
+      </tr>
+      <tr>
+        <td>iconDelete12-hover</td>
+        <td>lconnSprite lconnSprite-iconDelete12-hover</td>
+        <td>10 x 10</td>
+        <td>4</td>
+        <td>219</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDelete12-hover'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDelete12-hover'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDelete12-hover'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDelete12-hover'  /></td>
+      </tr>
+      <tr>
+        <td>iconDemote9</td>
+        <td>lconnSprite lconnSprite-iconDemote9</td>
+        <td>9 x 9</td>
+        <td>5</td>
+        <td>222</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDemote9'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDemote9'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDemote9'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDemote9'  /></td>
+      </tr>
+      <tr>
+        <td>iconDnd12</td>
+        <td>lconnSprite lconnSprite-iconDnd12</td>
+        <td>12 x 12</td>
+        <td>40</td>
+        <td>399</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDnd12'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDnd12'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDnd12'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDnd12'  /></td>
+      </tr>
+      <tr>
+        <td>iconDownload16</td>
+        <td>lconnSprite lconnSprite-iconDownload16</td>
+        <td>16 x 16</td>
+        <td>9</td>
+        <td>1241</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDownload16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDownload16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDownload16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDownload16'  /></td>
+      </tr>
+      <tr>
+        <td>iconDownloadedCurrent6</td>
+        <td>lconnSprite lconnSprite-iconDownloadedCurrent6</td>
+        <td>6 x 6</td>
+        <td>24</td>
+        <td>297</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDownloadedCurrent6'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDownloadedCurrent6'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDownloadedCurrent6'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDownloadedCurrent6'  /></td>
+      </tr>
+      <tr>
+        <td>iconDownloadedNever6</td>
+        <td>lconnSprite lconnSprite-iconDownloadedNever6</td>
+        <td>6 x 6</td>
+        <td>16</td>
+        <td>269</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDownloadedNever6'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDownloadedNever6'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDownloadedNever6'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDownloadedNever6'  /></td>
+      </tr>
+      <tr>
+        <td>iconDownloadedOlder6</td>
+        <td>lconnSprite lconnSprite-iconDownloadedOlder6</td>
+        <td>6 x 6</td>
+        <td>21</td>
+        <td>287</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDownloadedOlder6'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDownloadedOlder6'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDownloadedOlder6'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDownloadedOlder6'  /></td>
+      </tr>
+      <tr>
+        <td>iconDropDown5x3</td>
+        <td>lconnSprite lconnSprite-iconDropDown5x3</td>
+        <td>8 x 8</td>
+        <td>2</td>
+        <td>116</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDropDown5x3'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDropDown5x3'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDropDown5x3'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDropDown5x3'  /></td>
+      </tr>
+      <tr>
+        <td>iconExpandeeBlackLeft</td>
+        <td>lconnSprite lconnSprite-iconExpandeeBlackLeft</td>
+        <td>14 x 14</td>
+        <td>3</td>
+        <td>143</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExpandeeBlackLeft'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExpandeeBlackLeft'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExpandeeBlackLeft'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExpandeeBlackLeft'  /></td>
+      </tr>
+      <tr>
+        <td>iconExpandeeBlackRight</td>
+        <td>lconnSprite lconnSprite-iconExpandeeBlackRight</td>
+        <td>14 x 14</td>
+        <td>2</td>
+        <td>214</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExpandeeBlackRight'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExpandeeBlackRight'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExpandeeBlackRight'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExpandeeBlackRight'  /></td>
+      </tr>
+      <tr>
+        <td>iconExpandeeWhiteLeft</td>
+        <td>lconnSprite lconnSprite-iconExpandeeWhiteLeft</td>
+        <td>14 x 14</td>
+        <td>2</td>
+        <td>128</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExpandeeWhiteLeft'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExpandeeWhiteLeft'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExpandeeWhiteLeft'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExpandeeWhiteLeft'  /></td>
+      </tr>
+      <tr>
+        <td>iconExpandeeWhiteRight</td>
+        <td>lconnSprite lconnSprite-iconExpandeeWhiteRight</td>
+        <td>14 x 14</td>
+        <td>2</td>
+        <td>214</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExpandeeWhiteRight'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExpandeeWhiteRight'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExpandeeWhiteRight'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExpandeeWhiteRight'  /></td>
+      </tr>
+      <tr>
+        <td>iconEntries16</td>
+        <td>lconnSprite lconnSprite-iconEntries16</td>
+        <td>15 x 16</td>
+        <td>12</td>
+        <td>308</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconEntries16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconEntries16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconEntries16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconEntries16'  /></td>
+      </tr>
+      <tr>
+        <td>iconExportProfile16</td>
+        <td>lconnSprite lconnSprite-iconExportProfile16</td>
+        <td>16 x 16</td>
+        <td>31</td>
+        <td>389</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExportProfile16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExportProfile16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExportProfile16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconExportProfile16'  /></td>
+      </tr>
+      <tr>
+        <td>iconFavTemplate16</td>
+        <td>lconnSprite lconnSprite-iconFavTemplate16</td>
+        <td>16 x 16</td>
+        <td>25</td>
+        <td>359</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFavTemplate16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFavTemplate16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFavTemplate16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFavTemplate16'  /></td>
+      </tr>
+      <tr>
+        <td>iconFeed12</td>
+        <td>lconnSprite lconnSprite-iconFeed12</td>
+        <td>12 x 12</td>
+        <td>59</td>
+        <td>383</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFeed12'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFeed12'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFeed12'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFeed12'  /></td>
+      </tr>
+      <tr>
+        <td>iconFeed16</td>
+        <td>lconnSprite lconnSprite-iconFeed16</td>
+        <td>16 x 16</td>
+        <td>64</td>
+        <td>525</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFeed16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFeed16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFeed16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFeed16'  /></td>
+      </tr>
+      <tr>
+        <td>iconFilterActive8</td>
+        <td>lconnSprite lconnSprite-iconFilterActive8</td>
+        <td>8 x 8</td>
+        <td>20</td>
+        <td>289</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFilterActive8'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFilterActive8'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFilterActive8'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFilterActive8'  /></td>
+      </tr>
+      <tr>
+        <td>iconHelp16</td>
+        <td>lconnSprite lconnSprite-iconHelp16</td>
+        <td>12 x 12</td>
+        <td>33</td>
+        <td>341</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHelp16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHelp16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHelp16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHelp16'  /></td>
+      </tr>
+      <tr>
+        <td>iconHelp16-ar</td>
+        <td>lconnSprite lconnSprite-iconHelp16-ar</td>
+        <td>12 x 12</td>
+        <td>33</td>
+        <td>339</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHelp16-ar'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHelp16-ar'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHelp16-ar'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconHelp16-ar'  /></td>
+      </tr>
+      <tr>
+        <td>iconImage16</td>
+        <td>lconnSprite lconnSprite-iconImage16</td>
+        <td>16 x 16</td>
+        <td>43</td>
+        <td>439</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconImage16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconImage16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconImage16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconImage16'  /></td>
+      </tr>
+      <tr>
+        <td>iconIntranet16</td>
+        <td>lconnSprite lconnSprite-iconIntranet16</td>
+        <td>16 x 16</td>
+        <td>36</td>
+        <td>423</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconIntranet16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconIntranet16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconIntranet16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconIntranet16'  /></td>
+      </tr>
+      <tr>
+        <td>iconLibrary16</td>
+        <td>lconnSprite lconnSprite-iconLibrary16</td>
+        <td>16 x 16</td>
+        <td>21</td>
+        <td>999</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconLibrary16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconLibrary16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconLibrary16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconLibrary16'  /></td>
+      </tr>
+      <tr>
+        <td>iconLotusnotes16</td>
+        <td>lconnSprite lconnSprite-iconLotusnotes16</td>
+        <td>16 x 16</td>
+        <td>101</td>
+        <td>711</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconLotusnotes16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconLotusnotes16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconLotusnotes16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconLotusnotes16'  /></td>
+      </tr>
+      <tr>
+        <td>iconMail16</td>
+        <td>lconnSprite lconnSprite-iconMail16</td>
+        <td>16 x 16</td>
+        <td>14</td>
+        <td>269</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMail16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMail16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMail16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconMail16'  /></td>
+      </tr>
+      <tr>
+        <td>iconModerated16</td>
+        <td>lconnSprite lconnSprite-iconModerated16</td>
+        <td>16 x 16</td>
+        <td>46</td>
+        <td>470</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconModerated16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconModerated16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconModerated16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconModerated16'  /></td>
+      </tr>
+      <tr>
+        <td>iconNewBlog16</td>
+        <td>lconnSprite lconnSprite-iconNewBlog16</td>
+        <td>16 x 15</td>
+        <td>33</td>
+        <td>388</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconNewBlog16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconNewBlog16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconNewBlog16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconNewBlog16'  /></td>
+      </tr>
+      <tr>
+        <td>iconNewEntry16</td>
+        <td>lconnSprite lconnSprite-iconNewEntry16</td>
+        <td>18 x 18</td>
+        <td>26</td>
+        <td>390</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconNewEntry16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconNewEntry16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconNewEntry16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconNewEntry16'  /></td>
+      </tr>
+      <tr>
+        <td>iconNoComments16</td>
+        <td>lconnSprite lconnSprite-iconNoComments16</td>
+        <td>16 x 16</td>
+        <td>17</td>
+        <td>215</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconNoComments16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconNoComments16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconNoComments16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconNoComments16'  /></td>
+      </tr>
+      <tr>
+        <td>iconPageHits16</td>
+        <td>lconnSprite lconnSprite-iconPageHits16</td>
+        <td>16 x 16</td>
+        <td>18</td>
+        <td>231</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPageHits16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPageHits16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPageHits16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPageHits16'  /></td>
+      </tr>
+      <tr>
+        <td>iconPaletteAdd16</td>
+        <td>lconnSprite lconnSprite-iconPaletteAdd16</td>
+        <td>11 x 11</td>
+        <td>3</td>
+        <td>206</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPaletteAdd16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPaletteAdd16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPaletteAdd16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPaletteAdd16'  /></td>
+      </tr>
+      <tr>
+        <td>iconPaletteAdd16-Hover</td>
+        <td>lconnSprite lconnSprite-iconPaletteAdd16-Hover</td>
+        <td>11 x 11</td>
+        <td>3</td>
+        <td>206</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPaletteAdd16-Hover'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPaletteAdd16-Hover'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPaletteAdd16-Hover'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPaletteAdd16-Hover'  /></td>
+      </tr>
+      <tr>
+        <td>iconPerson16</td>
+        <td>lconnSprite lconnSprite-iconPerson16</td>
+        <td>16 x 16</td>
+        <td>16</td>
+        <td>260</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPerson16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPerson16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPerson16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPerson16'  /></td>
+      </tr>
+      <tr>
+        <td>iconPeople16</td>
+        <td>lconnSprite lconnSprite-iconPeople16</td>
+        <td>16 x 16</td>
+        <td>20</td>
+        <td>299</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPeople16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPeople16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPeople16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPeople16'  /></td>
+      </tr>
+      <tr>
+        <td>iconPopup16</td>
+        <td>lconnSprite lconnSprite-iconPopup16</td>
+        <td>13 x 13</td>
+        <td>22</td>
+        <td>318</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPopup16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPopup16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPopup16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPopup16'  /></td>
+      </tr>
+      <tr>
+        <td>iconPromote9</td>
+        <td>lconnSprite lconnSprite-iconPromote9</td>
+        <td>9 x 9</td>
+        <td>5</td>
+        <td>222</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPromote9'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPromote9'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPromote9'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPromote9'  /></td>
+      </tr>
+      <tr>
+        <td>iconQuickr16</td>
+        <td>lconnSprite lconnSprite-iconQuickr16</td>
+        <td>16 x 16</td>
+        <td>123</td>
+        <td>783</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconQuickr16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconQuickr16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconQuickr16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconQuickr16'  /></td>
+      </tr>
+      <tr>
+        <td>iconQuote16</td>
+        <td>lconnSprite lconnSprite-iconQuote16</td>
+        <td>12 x 11</td>
+        <td>20</td>
+        <td>321</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconQuote16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconQuote16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconQuote16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconQuote16'  /></td>
+      </tr>
+      <tr>
+        <td>iconRating16-off</td>
+        <td>lconnSprite lconnSprite-iconRating16-off</td>
+        <td>16 x 16</td>
+        <td>41</td>
+        <td>358</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating16-off'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating16-off'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating16-off'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating16-off'  /></td>
+      </tr>
+      <tr>
+        <td>iconRating16-on</td>
+        <td>lconnSprite lconnSprite-iconRating16-on</td>
+        <td>16 x 16</td>
+        <td>55</td>
+        <td>426</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating16-on'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating16-on'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating16-on'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating16-on'  /></td>
+      </tr>
+      <tr>
+        <td>iconRating14-off</td>
+        <td>lconnSprite lconnSprite-iconRating14-off</td>
+        <td>14 x 14</td>
+        <td>31</td>
+        <td>202</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating14-off'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating14-off'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating14-off'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating14-off'  /></td>
+      </tr>
+      <tr>
+        <td>iconRating14-on</td>
+        <td>lconnSprite lconnSprite-iconRating14-on</td>
+        <td>14 x 14</td>
+        <td>21</td>
+        <td>200</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating14-on'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating14-on'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating14-on'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating14-on'  /></td>
+      </tr>
+      <tr>
+        <td>iconRating11-off</td>
+        <td>lconnSprite lconnSprite-iconRating11-off</td>
+        <td>13 x 11</td>
+        <td>29</td>
+        <td>196</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating11-off'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating11-off'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating11-off'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating11-off'  /></td>
+      </tr>
+      <tr>
+        <td>iconRating11-on</td>
+        <td>lconnSprite lconnSprite-iconRating11-on</td>
+        <td>13 x 11</td>
+        <td>50</td>
+        <td>300</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating11-on'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating11-on'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating11-on'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating11-on'  /></td>
+      </tr>
+      <tr>
+        <td>iconRelatedActivity16</td>
+        <td>lconnSprite lconnSprite-iconRelatedActivity16</td>
+        <td>16 x 16</td>
+        <td>51</td>
+        <td>501</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRelatedActivity16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRelatedActivity16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRelatedActivity16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRelatedActivity16'  /></td>
+      </tr>
+      <tr>
+        <td>iconSecure10</td>
+        <td>lconnSprite lconnSprite-iconSecure10</td>
+        <td>10 x 10</td>
+        <td>6</td>
+        <td>212</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSecure10'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSecure10'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSecure10'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSecure10'  /></td>
+      </tr>
+      <tr>
+        <td>iconSecure16</td>
+        <td>lconnSprite lconnSprite-iconSecure16</td>
+        <td>16 x 16</td>
+        <td>111</td>
+        <td>562</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSecure16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSecure16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSecure16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSecure16'  /></td>
+      </tr>
+      <tr>
+        <td>iconSendMail16</td>
+        <td>lconnSprite lconnSprite-iconSendMail16</td>
+        <td>16 x 14</td>
+        <td>21</td>
+        <td>330</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSendMail16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSendMail16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSendMail16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSendMail16'  /></td>
+      </tr>
+      <tr>
+        <td>iconSettings16</td>
+        <td>lconnSprite lconnSprite-iconSettings16</td>
+        <td>16 x 16</td>
+        <td>25</td>
+        <td>362</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSettings16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSettings16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSettings16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSettings16'  /></td>
+      </tr>
+      <tr>
+        <td>iconSpeaker16</td>
+        <td>lconnSprite lconnSprite-iconSpeaker16</td>
+        <td>16 x 16</td>
+        <td>61</td>
+        <td>1138</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSpeaker16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSpeaker16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSpeaker16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconSpeaker16'  /></td>
+      </tr>
+      <tr>
+        <td>iconTag16</td>
+        <td>lconnSprite lconnSprite-iconTag16</td>
+        <td>16 x 16</td>
+        <td>28</td>
+        <td>269</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconTag16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconTag16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconTag16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconTag16'  /></td>
+      </tr>
+      <tr>
+        <td>iconThirdParty16</td>
+        <td>lconnSprite lconnSprite-iconThirdParty16</td>
+        <td>16 x 16</td>
+        <td>12</td>
+        <td>260</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconThirdParty16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconThirdParty16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconThirdParty16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconThirdParty16'  /></td>
+      </tr>
+      <tr>
+        <td>iconToDo16</td>
+        <td>lconnSprite lconnSprite-iconToDo16</td>
+        <td>14 x 13</td>
+        <td>16</td>
+        <td>306</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconToDo16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconToDo16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconToDo16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconToDo16'  /></td>
+      </tr>
+      <tr>
+        <td>iconToDoList16</td>
+        <td>lconnSprite lconnSprite-iconToDoList16</td>
+        <td>16 x 16</td>
+        <td>26</td>
+        <td>352</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconToDoList16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconToDoList16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconToDoList16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconToDoList16'  /></td>
+      </tr>
+      <tr>
+        <td>iconTrashCan16</td>
+        <td>lconnSprite lconnSprite-iconTrashCan16</td>
+        <td>16 x 16</td>
+        <td>8</td>
+        <td>171</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconTrashCan16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconTrashCan16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconTrashCan16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconTrashCan16'  /></td>
+      </tr>
+      <tr>
+        <td>iconTunedOut16</td>
+        <td>lconnSprite lconnSprite-iconTunedOut16</td>
+        <td>16 x 16</td>
+        <td>73</td>
+        <td>486</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconTunedOut16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconTunedOut16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconTunedOut16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconTunedOut16'  /></td>
+      </tr>
+      <tr>
+        <td>iconURL16</td>
+        <td>lconnSprite lconnSprite-iconURL16</td>
+        <td>16 x 16</td>
+        <td>128</td>
+        <td>829</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconURL16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconURL16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconURL16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconURL16'  /></td>
+      </tr>
+      <tr>
+        <td>iconWidgetClose16</td>
+        <td>lconnSprite lconnSprite-iconWidgetClose16</td>
+        <td>16 x 16</td>
+        <td>17</td>
+        <td>300</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetClose16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetClose16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetClose16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetClose16'  /></td>
+      </tr>
+      <tr>
+        <td>iconWidgetDown16</td>
+        <td>lconnSprite lconnSprite-iconWidgetDown16</td>
+        <td>16 x 16</td>
+        <td>12</td>
+        <td>267</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetDown16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetDown16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetDown16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetDown16'  /></td>
+      </tr>
+      <tr>
+        <td>iconWidgetEdit16</td>
+        <td>lconnSprite lconnSprite-iconWidgetEdit16</td>
+        <td>16 x 16</td>
+        <td>14</td>
+        <td>274</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetEdit16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetEdit16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetEdit16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetEdit16'  /></td>
+      </tr>
+      <tr>
+        <td>iconWidgetLeft16</td>
+        <td>lconnSprite lconnSprite-iconWidgetLeft16</td>
+        <td>16 x 16</td>
+        <td>11</td>
+        <td>263</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetLeft16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetLeft16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetLeft16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetLeft16'  /></td>
+      </tr>
+      <tr>
+        <td>iconWidgetRefresh16</td>
+        <td>lconnSprite lconnSprite-iconWidgetRefresh16</td>
+        <td>16 x 16</td>
+        <td>21</td>
+        <td>346</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetRefresh16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetRefresh16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetRefresh16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetRefresh16'  /></td>
+      </tr>
+      <tr>
+        <td>iconWidgetRight16</td>
+        <td>lconnSprite lconnSprite-iconWidgetRight16</td>
+        <td>16 x 16</td>
+        <td>11</td>
+        <td>261</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetRight16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetRight16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetRight16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetRight16'  /></td>
+      </tr>
+      <tr>
+        <td>iconWidgetUp16</td>
+        <td>lconnSprite lconnSprite-iconWidgetUp16</td>
+        <td>16 x 16</td>
+        <td>11</td>
+        <td>258</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetUp16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetUp16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetUp16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconWidgetUp16'  /></td>
+      </tr>
+      <tr>
+        <td>STAwnsActive9</td>
+        <td>lconnSprite lconnSprite-STAwnsActive9</td>
+        <td>9 x 9</td>
+        <td>19</td>
+        <td>284</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsActive9'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsActive9'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsActive9'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsActive9'  /></td>
+      </tr>
+      <tr>
+        <td>STAwnsActiveMobile13x14</td>
+        <td>lconnSprite lconnSprite-STAwnsActiveMobile13x14</td>
+        <td>14 x 14</td>
+        <td>47</td>
+        <td>440</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsActiveMobile13x14'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsActiveMobile13x14'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsActiveMobile13x14'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsActiveMobile13x14'  /></td>
+      </tr>
+      <tr>
+        <td>STAwnsAway9</td>
+        <td>lconnSprite lconnSprite-STAwnsAway9</td>
+        <td>9 x 9</td>
+        <td>26</td>
+        <td>323</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsAway9'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsAway9'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsAway9'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsAway9'  /></td>
+      </tr>
+      <tr>
+        <td>STAWnsAwayMobile14</td>
+        <td>lconnSprite lconnSprite-STAWnsAwayMobile14</td>
+        <td>14 x 14</td>
+        <td>52</td>
+        <td>474</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAWnsAwayMobile14'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAWnsAwayMobile14'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAWnsAwayMobile14'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAWnsAwayMobile14'  /></td>
+      </tr>
+      <tr>
+        <td>STAwnsDND9</td>
+        <td>lconnSprite lconnSprite-STAwnsDND9</td>
+        <td>9 x 9</td>
+        <td>14</td>
+        <td>272</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsDND9'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsDND9'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsDND9'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsDND9'  /></td>
+      </tr>
+      <tr>
+        <td>STAwnsDNDMobile13x14</td>
+        <td>lconnSprite lconnSprite-STAwnsDNDMobile13x14</td>
+        <td>14 x 14</td>
+        <td>42</td>
+        <td>428</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsDNDMobile13x14'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsDNDMobile13x14'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsDNDMobile13x14'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsDNDMobile13x14'  /></td>
+      </tr>
+      <tr>
+        <td>STAwnsInAMtgMobile13x14</td>
+        <td>lconnSprite lconnSprite-STAwnsInAMtgMobile13x14</td>
+        <td>14 x 14</td>
+        <td>31</td>
+        <td>371</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsInAMtgMobile13x14'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsInAMtgMobile13x14'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsInAMtgMobile13x14'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsInAMtgMobile13x14'  /></td>
+      </tr>
+      <tr>
+        <td>STAwnsInAMtng9</td>
+        <td>lconnSprite lconnSprite-STAwnsInAMtng9</td>
+        <td>9 x 9</td>
+        <td>13</td>
+        <td>264</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsInAMtng9'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsInAMtng9'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsInAMtng9'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsInAMtng9'  /></td>
+      </tr>
+      <tr>
+        <td>STAwnsOffline12</td>
+        <td>lconnSprite lconnSprite-STAwnsOffline12</td>
+        <td>12 x 12</td>
+        <td>9</td>
+        <td>271</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsOffline12'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsOffline12'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsOffline12'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsOffline12'  /></td>
+      </tr>
+      <tr>
+        <td>STAwnsOffline9</td>
+        <td>lconnSprite lconnSprite-STAwnsOffline9</td>
+        <td>9 x 9</td>
+        <td>6</td>
+        <td>242</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsOffline9'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsOffline9'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsOffline9'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-STAwnsOffline9'  /></td>
+      </tr>
+      <tr>
+        <td>iconContext</td>
+        <td>lconnSprite lconnSprite-iconContext</td>
+        <td>14 x 13</td>
+        <td>23</td>
+        <td>928</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconContext'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconContext'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconContext'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconContext'  /></td>
+      </tr>
+      <tr>
+        <td>iconContextHover</td>
+        <td>lconnSprite lconnSprite-iconContextHover</td>
+        <td>14 x 13</td>
+        <td>17</td>
+        <td>906</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconContextHover'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconContextHover'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconContextHover'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconContextHover'  /></td>
+      </tr>
+      <tr>
+        <td>iconFileStack16</td>
+        <td>lconnSprite lconnSprite-iconFileStack16</td>
+        <td>16 x 16</td>
+        <td>16</td>
+        <td>170</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFileStack16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFileStack16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFileStack16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFileStack16'  /></td>
+      </tr>
+      <tr>
+        <td>iconAnswered16</td>
+        <td>lconnSprite lconnSprite-iconAnswered16</td>
+        <td>16 x 16</td>
+        <td>7</td>
+        <td>271</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAnswered16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAnswered16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAnswered16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAnswered16'  /></td>
+      </tr>
+      <tr>
+        <td>iconQuestion16</td>
+        <td>lconnSprite lconnSprite-iconQuestion16</td>
+        <td>16 x 16</td>
+        <td>16</td>
+        <td>335</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconQuestion16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconQuestion16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconQuestion16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconQuestion16'  /></td>
+      </tr>
+      <tr>
+        <td>iconPinned16-on</td>
+        <td>lconnSprite lconnSprite-iconPinned16-on</td>
+        <td>16 x 16</td>
+        <td>12</td>
+        <td>230</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPinned16-on'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPinned16-on'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPinned16-on'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPinned16-on'  /></td>
+      </tr>
+      <tr>
+        <td>iconPinned16-off</td>
+        <td>lconnSprite lconnSprite-iconPinned16-off</td>
+        <td>16 x 16</td>
+        <td>8</td>
+        <td>214</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPinned16-off'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPinned16-off'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPinned16-off'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPinned16-off'  /></td>
+      </tr>
+      <tr>
+        <td>iconBannerShare16</td>
+        <td>lconnSprite lconnSprite-iconBannerShare16</td>
+        <td>16 x 16</td>
+        <td>73</td>
+        <td>531</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBannerShare16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBannerShare16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBannerShare16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBannerShare16'  /></td>
+      </tr>
+      <tr>
+        <td>iconBannerShare16-Hover</td>
+        <td>lconnSprite lconnSprite-iconBannerShare16-Hover</td>
+        <td>16 x 16</td>
+        <td>46</td>
+        <td>436</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBannerShare16-Hover'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBannerShare16-Hover'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBannerShare16-Hover'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconBannerShare16-Hover'  /></td>
+      </tr>
+	  <tr>
+        <td>iconRepost16</td>
+        <td>lconnSprite lconnSprite-iconRepost16</td>
+        <td>16 x 16</td>
+        <td>5</td>
+        <td>155</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRepost16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRepost16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRepost16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRepost16'  /></td>
+      </tr>
+     
+      <tr>
+        <td colspan="9"><b>File types</b></td>
+      </tr>
+      <tr>
+        <td>iconAudio16</td>
+        <td>lconnSprite lconnSprite-iconAudio16</td>
+        <td>16 x 16</td>
+        <td>16</td>
+        <td>317</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAudio16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAudio16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAudio16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconAudio16'  /></td>
+      </tr>
+      <tr>
+        <td>iconCode16</td>
+        <td>lconnSprite lconnSprite-iconCode16</td>
+        <td>16 x 16</td>
+        <td>15</td>
+        <td>303</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCode16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCode16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCode16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCode16'  /></td>
+      </tr>
+      <tr>
+        <td>iconCompressed16</td>
+        <td>lconnSprite lconnSprite-iconCompressed16</td>
+        <td>16 x 16</td>
+        <td>18</td>
+        <td>331</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCompressed16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCompressed16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCompressed16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconCompressed16'  /></td>
+      </tr>
+      <tr>
+        <td>iconContact16</td>
+        <td>lconnSprite lconnSprite-iconContact16</td>
+        <td>16 x 16</td>
+        <td>16</td>
+        <td>330</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconContact16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconContact16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconContact16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconContact16'  /></td>
+      </tr>
+      <tr>
+        <td>iconData16</td>
+        <td>lconnSprite lconnSprite-iconData16</td>
+        <td>16 x 16</td>
+        <td>16</td>
+        <td>322</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconData16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconData16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconData16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconData16'  /></td>
+      </tr>
+      <tr>
+        <td>iconDocument16</td>
+        <td>lconnSprite lconnSprite-iconDocument16</td>
+        <td>16 x 16</td>
+        <td>29</td>
+        <td>382</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDocument16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDocument16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDocument16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDocument16'  /></td>
+      </tr>
+      <tr>
+        <td>iconFile16</td>
+        <td>lconnSprite lconnSprite-iconFile16</td>
+        <td>16 x 16</td>
+        <td>11</td>
+        <td>269</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFile16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFile16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFile16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconFile16'  /></td>
+      </tr>
+      <tr>
+        <td>iconGraphic16</td>
+        <td>lconnSprite lconnSprite-iconGraphic16</td>
+        <td>16 x 16</td>
+        <td>30</td>
+        <td>371</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconGraphic16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconGraphic16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconGraphic16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconGraphic16'  /></td>
+      </tr>
+      <tr>
+        <td>iconLink16</td>
+        <td>lconnSprite lconnSprite-iconLink16</td>
+        <td>16 x 16</td>
+        <td>77</td>
+        <td>611</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconLink16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconLink16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconLink16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconLink16'  /></td>
+      </tr>
+      <tr>
+        <td>iconPage16</td>
+        <td>lconnSprite lconnSprite-iconPage16</td>
+        <td>12 x 16</td>
+        <td>13</td>
+        <td>287</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPage16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPage16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPage16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPage16'  /></td>
+      </tr>
+      <tr>
+        <td>iconPdf16</td>
+        <td>lconnSprite lconnSprite-iconPdf16</td>
+        <td>16 x 16</td>
+        <td>16</td>
+        <td>321</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPdf16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPdf16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPdf16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPdf16'  /></td>
+      </tr>      
+      <tr>
+        <td>iconPresentation16</td>
+        <td>lconnSprite lconnSprite-iconPresentation16</td>
+        <td>16 x 16</td>
+        <td>27</td>
+        <td>361</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPresentation16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPresentation16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPresentation16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPresentation16'  /></td>
+      </tr>
+      <tr>
+        <td>iconText16</td>
+        <td>lconnSprite lconnSprite-iconText16</td>
+        <td>16 x 16</td>
+        <td>13</td>
+        <td>294</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconText16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconText16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconText16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconText16'  /></td>
+      </tr>
+      <tr>
+        <td>iconVideo16</td>
+        <td>lconnSprite lconnSprite-iconVideo16</td>
+        <td>16 x 16</td>
+        <td>16</td>
+        <td>317</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconVideo16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconVideo16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconVideo16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconVideo16'  /></td>
+      </tr>
+      <tr>
+        <td>iconVisualization16</td>
+        <td>lconnSprite lconnSprite-iconVisualization16</td>
+        <td>16 x 16</td>
+        <td>31</td>
+        <td>374</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconVisualization16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconVisualization16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconVisualization16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconVisualization16'  /></td>
+      </tr>
+
+      <tr>
+        <td colspan="9"><b>Deprecated sprite classes</b><br>This section tests deprecated sprite classes to make sure they work, and indicates the correct class to use</td>
+      </tr>
+      
+      <tr>
+        <td><del>iconRating2-16</del></td>
+        <td>Use iconRating16-on</td>
+        <td>16 x 16</td>
+        <td>69</td>
+        <td>567</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating2-16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating2-16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating2-16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating2-16'  /></td>
+      </tr>
+      <tr>
+        <td><del>iconRating3-16</del></td>
+        <td>Use iconRating16-on</td>
+        <td>16 x 16</td>
+        <td>46</td>
+        <td>461</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating3-16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating3-16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating3-16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconRating3-16'  /></td>
+      </tr>
+      <tr>
+        <td><del>iconForum16</del></td>
+        <td>Use iconForums16</td>
+        <td>16 x 16</td>
+        <td>69</td>
+        <td>567</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForum16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForum16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForum16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconForum16'  /></td>
+      </tr>
+      <tr>
+        <td><del>iconDogear16</del></td>
+        <td>Use iconBookmarks16</td>
+        <td>16 x 16</td>
+        <td>46</td>
+        <td>461</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDogear16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDogear16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDogear16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDogear16'  /></td>
+      </tr>
+      <tr>
+        <td><del>iconPin16</del></td>
+        <td>Use iconPinned16-on</td>
+        <td>16 x 16</td>
+        <td>25</td>
+        <td>369</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPin16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPin16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPin16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPin16'  /></td>
+      </tr>
+      <tr>
+        <td><del>iconPhoto16</del></td>
+        <td>Use iconGraphic16</td>
+        <td>16 x 16</td>
+        <td>32</td>
+        <td>395</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPhoto16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPhoto16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPhoto16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconPhoto16'  /></td>
+      </tr>
+      <tr>
+        <td><del>iconDropDown5x3</del></td>
+        <td>Use the OneUI class "lotusArrow lotusDropDownSprite"</td>
+        <td>8 x 8</td>
+        <td>2</td>
+        <td>116</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDropDown5x3'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDropDown5x3'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDropDown5x3'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconDropDown5x3'  /></td>
+      </tr>
+      <tr>
+        <td><del>iconNote16</del></td>
+        <td>Use iconText16</td>
+        <td>16 x 16</td>
+        <td>14</td>
+        <td>214</td>
+        <td><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconNote16'  /></td>
+        <td class='blackbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconNote16'  /></td>
+        <td class='orangebg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconNote16'  /></td>
+        <td class='greenbg'><img src='sprite-lconn-test_html_Blank.gif' class='lconnSprite lconnSprite-iconNote16'  /></td>
+      </tr>
+    </table>
+    <div class='spriteExample'><b>Sprite Image</b><br /><br /><img src='sprite-lconn-8bit.png' /></div>
+    <div class='spriteExample'><b>Filetype Image</b><br /><br /><img src='lotusFtype1632Sprite-8bit.png' /></div>
+    <p class='clear'>NOTE: repeat-x and repeat-y sprite graphics are displayed at a 100px width or height to illustrate the sprite.  Extra space at the bottom of a repeat-x graphic or extra space to the right of a repeat-y graphic represents the transparent space (padx or pady) between the current graphic and the next one in the sprite.</p>
+    
+      
+    <table border='1' cellpadding='2'>
+      <tr>
+        <td colspan="3"><b>File extension types</b></td>
+      </tr>
+      <tr>
+        <td>No extension</td>
+        <td>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64'  />
+        </td>
+        <td class='blackbg'>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64'  />
+        </td>
+      </tr>
+      <tr>
+        <td>Audio</td>
+        <td>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-aac'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-aac'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-aac'  />
+        </td>
+        <td class='blackbg'>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-aac'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-aac'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-aac'  />
+        </td>
+      </tr>
+      <tr>
+        <td>Code</td>
+        <td>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-asp'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-asp'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-asp'  />
+        </td>
+        <td class='blackbg'>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-asp'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-asp'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-asp'  />
+        </td>
+      </tr>
+      <tr>
+        <td>Compressed</td>
+        <td>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-zip'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-zip'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-zip'  />
+        </td>
+        <td class='blackbg'>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-zip'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-zip'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-zip'  />
+        </td>
+      </tr>
+      <tr>
+        <td>Contact</td>
+        <td>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-vcf'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-vcf'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-vcf'  />
+        </td>
+        <td class='blackbg'>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-vcf'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-vcf'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-vcf'  />
+        </td>
+      </tr>
+      <tr>
+        <td>Data</td>
+        <td>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-123'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-123'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-123'  />
+        </td>
+        <td class='blackbg'>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-123'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-123'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-123'  />
+        </td>
+      </tr>
+      <tr>
+        <td>Flash</td>
+        <td>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-swf'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-swf'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-swf'  />
+        </td>
+        <td class='blackbg'>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-swf'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-swf'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-swf'  />
+        </td>
+      </tr>
+      <tr>
+        <td>Graphic</td>
+        <td>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-bmp'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-bmp'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-bmp'  />
+        </td>
+        <td class='blackbg'>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-bmp'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-bmp'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-bmp'  />
+        </td>
+      </tr>
+      <tr>
+        <td>Page</td>
+        <td>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-rtz'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-rtz'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-rtz'  />
+        </td>
+        <td class='blackbg'>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-rtz'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-rtz'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-rtz'  />
+        </td>
+      </tr>
+      <tr>
+        <td>Pdf</td>
+        <td>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-pdf'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-pdf'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-pdf'  />
+        </td>
+        <td class='blackbg'>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-pdf'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-pdf'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-pdf'  />
+        </td>
+      </tr>
+      <tr>
+        <td>Presentation</td>
+        <td>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-ppt'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-ppt'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-ppt'  />
+        </td>
+        <td class='blackbg'>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-ppt'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-ppt'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-ppt'  />
+        </td>
+      </tr>
+      <tr>
+        <td>Text</td>
+        <td>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-txt'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-txt'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-txt'  />
+        </td>
+        <td class='blackbg'>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-txt'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-txt'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-txt'  />
+        </td>
+      </tr>
+      <tr>
+        <td>Video</td>
+        <td>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-avi'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-avi'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-avi'  />
+        </td>
+        <td class='blackbg'>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-avi'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-avi'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-avi'  />
+        </td>
+      </tr>
+      <tr>
+        <td>Word Processing</td>
+        <td>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-doc'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-doc'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-doc'  />
+        </td>
+        <td class='blackbg'>
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype16 lconn-ftype16-doc'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype32 lconn-ftype32-doc'  />
+        	<img src='sprite-lconn-test_html_Blank.gif' class='lconn-ftype64 lconn-ftype64-doc'  />
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

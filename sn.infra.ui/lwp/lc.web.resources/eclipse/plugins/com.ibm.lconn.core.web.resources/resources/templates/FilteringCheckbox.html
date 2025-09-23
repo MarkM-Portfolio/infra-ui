@@ -1,0 +1,17 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="notifyList lotusHidden">    
+    <fieldset>
+        <legend dojoAttachPoint="notifyControlsLegend_AP" style="display:none;"></legend>
+        <div dojoAttachPoint="filteringContainer_AP">
+        <div class="lotusSearch" dojoAttachPoint="filterRow_AP">
+        <select style="display:none" dojoAttachPoint="groupSelect_AP" dojoAttachEvent="onchange: _optionChanged" aria-label="${rs_filterGroupLabel}"></select>
+        <input class="lotusInactive" type="text" id="${id}FilterTextbox" aria-label="${rs_filterListPrompt}"
+            dojoAttachPoint="filterTextbox_AP" value="${rs_filterListPrompt}"
+            dojoAttachEvent="onfocus:readySearch, onkeypress:timedFilter, onchange:timedFilter,onblur:_onBlur"></input>
+        </div>
+        <div class="peopleList" dojoAttachPoint="notifyList_AP" tabindex="-1"></div>
+        <div dojoAttachPoint="notifyPaging_AP" class="lotusTiny lotusHidden"></div>
+        </div>
+        <div class="lotusAccess" aria-relevant="all" aria-live="polite" dojoAttachPoint="access_AP"></div>
+    </fieldset>
+</div>

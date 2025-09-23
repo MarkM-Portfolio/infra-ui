@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">Fájlok</msg>
+  <msg name="description">Fájlok vezérlőelem a fájlok feltöltéséhez és megosztásához</msg>
+  <msg name="action_uploadFile_label">Fájlok</msg>
+  <msg name="action_uploadFile_tooltip">Fájlok feltöltése és megosztása</msg>
+  <msg name="loading">Betöltés...</msg>
+  <msg name="error_msg">A tartalom nem tölthető be. Próbálkozzon újra később, vagy forduljon a rendszeradminisztrátorhoz.</msg>
+  <msg name="error_alt">Hiba</msg>
+</messagebundle>

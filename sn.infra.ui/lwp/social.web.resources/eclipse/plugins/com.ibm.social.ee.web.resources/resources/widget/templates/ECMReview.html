@@ -1,0 +1,42 @@
+<div>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+   <div dojoAttachPoint="main" style="display: none;" class="eeReviewTab">
+      <div style="margin-bottom: 15px;" dojoAttachPoint="draftInfo"></div>
+      <h3>${_strings.reviewers}</h3>
+      <div class="lotusMeta eeGreyText" dojoAttachPoint="helpTxt"></div>
+	   <table role="presentation">
+         <colgroup>
+            <col style="width: 12px;"></col>
+            <col></col>
+         </colgroup>
+	      <tbody dojoAttachPoint="mainTbody"></tbody>
+	   </table>
+       <span dojoAttachPoint="addtlReviewers" style="display: none;">
+         <h3 style="margin-top: 15px;">${_strings.reviwers_addtl}</h3>
+         <div class="lotusMeta eeGreyText">${_strings.review_additional_required}</div>
+         <table role="presentation">
+            <colgroup>
+               <col style="width: 12px;"></col>
+               <col></col>
+            </colgroup>
+            <tbody dojoAttachPoint="AddtlTbody"></tbody>
+      </table>
+      </span>
+   </div>
+   <div dojoAttachPoint="empty" style="display: none;"></div>
+   <div dojoAttachPoint="error" style="display: none;"></div>
+   <div dojoAttachPoint="loading" style="display: none;"></div>
+</div>

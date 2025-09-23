@@ -1,0 +1,27 @@
+<!-- Copyright IBM Corp. 2016  All Rights Reserved.                    -->
+<div class="ics-newversionwidget-container">
+   <form method="post" enctype="multipart/form-data" data-dojo-attach-point="form" data-dojo-attach-event="reset:_onReset">
+   <label data-dojo-attach-point="uploadNodeLabel" class="lotusOffScreen"></label>
+      <input type="file" name="file" data-dojo-attach-point="formFile" data-dojo-attach-event="onchange:_onSelected" aria-required="true"><br>
+      <textarea class="lotusHidden" name="changeSummary" data-dojo-attach-point="formChangeSummary"></textarea>
+      <input type="hidden" name="nonce" data-dojo-attach-point="nonce">
+      <input type="hidden" name="label" data-dojo-attach-point="label">
+      <input type="hidden" name="title" data-dojo-attach-point="title">
+   <div data-dojo-attach-point="changeSummary"></div>
+   <ul class="ics-viewer-inlineList">
+      <li class="ics-viewer-first">
+         <a href="javascript:;" class="ics-viewer-upload-submit" data-dojo-attach-point="upload" data-dojo-attach-event="onclick:_onSubmit" role="button" tabindex="-1" aria-disabled="true">${nls.UPLOAD}</a>
+      </li>
+      <li>
+         <a href="javascript:;" data-dojo-attach-point="cancel" data-dojo-attach-event="onclick:_onCancel" role="button">${nls.CANCEL}</a>
+      </li>
+   </ul>
+   </form>
+   <div data-dojo-attach-point="uploadingVersionDiv" class="lotusHidden" style="height: 120px; position: relative;">
+      <div data-dojo-attach-point="versionEntry" class="ics-viewer-version-uploading"></div>
+      <div class="ics-viewer-upload-cancel" tabindex="0" title="${nls.CANCEL_UPLOAD}" role="button" data-dojo-attach-event="onkeydown:cancelUpload, onclick:cancelUpload">
+         <span class="lotusAltText">${nls.CANCEL_UPLOAD}</span>
+      </div>
+   </div>
+
+</div>

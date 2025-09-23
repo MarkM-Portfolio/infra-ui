@@ -1,0 +1,54 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2014                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<project name="jslint">
+	<property name="jslint.task.jar"     value="${basedir}/../imports/jslint4java-2.0.5.jar"/>
+	<!-- Set to true to skip JSLint -->
+	<property name="skip.jslint"         value="false"/>
+	<!-- Override in your component to run jslint with different options -->
+	<property name="jslint.options"      value="ass,bitwise,browser,devel,eqeq,indent=3,newcap,nomen,plusplus,regexp,sloppy,stupid,todo,unparam,vars,white"/>
+	<!-- Override in your component to run jslint with different globals -->
+	<property name="jslint.extraGlobals" value=""/>
+	<!-- Note: add any extra globals needed per file with the /*global <identifier>*/ directive in source -->
+	<property name="jslint.globals"      value="afterEach,beforeEach,com,cre$,define,describe,dijit,doh,dojo,dojox,expect,ibmConfig,it,jasmine,jasmineRequire,lconn,net,require,spyOn,ActiveXObject,CKEDITOR,${jslint.extraGlobals}"/>
+	<!-- Pattern for included resources -->
+	<property name="jslint.includes"     value="**/*.js"/>
+	<!-- Pattern for excluded resources. Callers may set this to a non empty value -->
+	<property name="jslint.excludes"     value=""/>
+	<!-- Set to true to halt the build when jslint fails -->
+	<property name="jslint.halt"         value="true"/>
+	<!-- Name of the output file of jslint errors -->
+	<property name="jslint.outfile"      value="jslint.out"/>
+
+	<taskdef name="jslint" classname="com.googlecode.jslint4java.ant.JSLintTask" classpath="${jslint.task.jar}" />
+
+	<target name="jslint" unless="${skip.jslint}">
+		<echo>Running JSLint on ${src.dir}</echo>
+		<echo>   Includes: ${jslint.includes}</echo>
+		<echo>   Excludes: ${jslint.excludes}</echo>
+		<echo>   Globals:  ${jslint.globals}</echo>
+		<echo>   Halt on failure: ${jslint.halt}</echo>
+		<echo>   Outfile (plain): ${dir.build}/${jslint.outfile}</echo>
+		<echo>   Outfile (XML): ${dir.build}/${jslint.outfile}.xml</echo>
+		<jslint options="${jslint.options}" haltOnFailure="${jslint.halt}">
+			<predef>${jslint.globals}</predef>
+			<formatter type="plain" destfile="${dir.build}/${jslint.outfile}" />
+			<formatter type="xml" destfile="${dir.build}/${jslint.outfile}.xml" />
+			<fileset dir="${src.dir}" includes="${jslint.includes}" excludes="${jslint.excludes}"/>
+		</jslint>
+	</target>
+
+	<!-- Override in your component -->
+	<target name="run_jslint" />
+</project>
+

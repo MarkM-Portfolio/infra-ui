@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:oslc="http://open-services.net/ns/core#">
+
+ <oslc:Compact
+   rdf:about="http://tapstage.swg.usma.ibm.com/profiles/html/profileView.do?key=2ca1a4b0-4d52-442f-9ba5-b5dd37529807">
+
+   <dcterms:title>Clayton Coleman</dcterms:title>
+   <oslc:shortTitle>Clayton Coleman</oslc:shortTitle>
+
+   <oslc:smallPreview>
+      <oslc:Preview>
+         <oslc:document rdf:resource="http://localhost:9085/web/com.ibm.social.personcard/test/card/person.html?render=test" />
+         <oslc:initialHeight> 165px </oslc:initialHeight>
+         <oslc:hintWidth> 420px </oslc:hintWidth>
+      </oslc:Preview>
+   </oslc:smallPreview>
+ </oslc:Compact>
+
+</rdf:RDF>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Funkcionalnost ugrađene spravice OpenSocial ranije je prikazivala dodatne detalje i radnje za događaje aplikacije Connections</msg>
+  <msg name="connectionsEE_errorTitle">Greška</msg>
+  <msg name="connectionsEE_errorDescription">Došlo je do greške tokom učitavanja resursa spravice. Uverite se da ste se povezali sa mrežom i ponovo pokušajte da učitate spravicu.</msg>
+</messagebundle>

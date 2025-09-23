@@ -1,0 +1,78 @@
+${head}
+
+<title>Authorization Screen</title>
+
+
+<style>
+    dt, dd { margin: 2px auto; }
+    dt {
+        float: ${left};
+        clear: ${left};
+        margin-${right}: 1em
+    }
+    dd {
+        float: ${left};
+    }
+</style>
+
+<script>
+</script>
+${script:dojo.dom-class}
+${script:net.jazz.ajax.xdloader}
+${script:ic-oauth.authScreenApp}
+
+<!--  add your custom modules here -->
+<script>
+   require(['dojo/dom-class', 'dojo/ready'], function(domClass, ready) {
+      ready(function() {
+         var bodyElem = document.getElementsByTagName("body")[0];
+         domClass.add(bodyElem, "lotusLogin2");
+         if (domClass.contains(bodyElem, "dijit_a11y")) {
+             domClass.add(bodyElem, "lotusImagesOff");
+         }
+     });
+   });
+   
+   function submitForm() {
+      alert('Authorized');
+   }
+   
+</script>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-oauth-test/ui/index.html?render=test">OAuth widgets and screens</a>
+    <span class="lotusDivider">&gt;</span>
+    Authorization Screen
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+
+<div class="lotusui30_layout">
+   <div id="authBanner" role="banner" class="lotusBanner"><div class="lotusRightCorner"><div class="lotusInner"><div class="lotusLogo" id="lotusLogo"><span class="lotusAltText">IBM Connections</span></div></div></div></div>
+   <div id="messageContainer"></div>
+   <div class="lotusLoginBox">
+      <div class="lotusLoginContent">
+         <form class="lotusForm2 lotusLoginForm" aria-live="assertive" role="main" method="post" onsubmit="return false">
+            
+            <h1 id="authTitle" class="lotusHeading">Access Request</h1>
+            <div>
+                <div class="permissions allow">
+                    <p id="authBlurb"><strong id="clientName"></strong> is requesting access to your IBM Connections information, including all of your content in Connections.</p>
+                    <p id="authRevokeInstructions"></p>
+                </div>
+            </div>
+            <span class="lotusRight" aria-hidden="true"><img role="presentation" src="${_blankGif}" alt="IBM" class="brandingLogos15 brandingLogos15-ibmLogoOpaque16"><span class="lotusAltText">IBM</span></span>
+            <div class="lotusBtnContainer" id="btnContainer"><input id="authBtn" type="submit" class="lotusBtn lotusBtnSpecial" value="Grant Access"><input id="denyBtn" type="button" class="lotusBtn" value="Deny Access"><span id="loadingSpan"></span></div>
+         </form>
+      </div>
+   </div>
+   <table class="lotusLegal lotusLoginBoxWide" role="contentinfo"><tr><td class="lotusLicense">Licensed Materials - Property of IBM Corp. 5724-S68 © IBM Corporation 2007, 2012. IBM, the IBM logo, ibm.com and Lotus are trademarks of IBM Corporation in the United States, other countries, or both. U.S. Government Users Restricted Rights: Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp. Please see the About page for further information.</td></tr></table>
+</div>
+<!--  This script is placed at the bottom to match the location where the WAS OAuth provider injects the client info -->
+<script>
+   var oauthFormData = {clientDisplayName:"ACME App",client_id:"61e3309b-40c7-4e44-89b8-4d2fde1ec5aa",redirect_uri:"http://www.example.com/redirect"};
+</script>
+${end}

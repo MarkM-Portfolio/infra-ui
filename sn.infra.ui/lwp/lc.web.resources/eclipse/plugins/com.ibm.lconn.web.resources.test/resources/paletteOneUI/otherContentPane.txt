@@ -1,0 +1,24 @@
+{ categories: [
+	{
+		name: "Page Layout",
+		id: "pageLayout",
+		widgets: [
+			{ 
+				id: "columns1",
+				name: "2-column layout",
+				desc: "Display todos. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. ",
+				xmlDefUrl: "http://xyz.com/activities_todos.xml",
+				previewImgUrl: "img/profiles_my_colleagues.jpg",
+				widgetType: "primary"			
+			},
+			{ 
+				id: "columns2",
+				name: "3-column layout",
+				desc: "Display todos. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. ",
+				xmlDefUrl: "http://xyz.com/activities_todos.xml",
+				previewImgUrl: "img/profiles_my_colleagues.jpg",
+				widgetType: "primary"			
+			}			
+		] 	
+	}
+]}

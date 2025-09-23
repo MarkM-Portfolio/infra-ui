@@ -1,0 +1,328 @@
+/*style of linkfrombox in ckeditor*/
+
+.lconnBoxFileLinkContainer .lconn-ftype32 {
+  display: inline-block;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  background-image: url(/connections/resources/web/lconn.box/img/boxckeditorsprite32.png);
+  background-position: -192px 0;
+}
+.lconnBoxFileLinkContainer .lconn-ftype32-aac,
+.lconnBoxFileLinkContainer .lconn-ftype32-aif,
+.lconnBoxFileLinkContainer .lconn-ftype32-aifc,
+.lconnBoxFileLinkContainer .lconn-ftype32-aiff,
+.lconnBoxFileLinkContainer .lconn-ftype32-au,
+.lconnBoxFileLinkContainer .lconn-ftype32-kar,
+.lconnBoxFileLinkContainer .lconn-ftype32-m3u,
+.lconnBoxFileLinkContainer .lconn-ftype32-m4a,
+.lconnBoxFileLinkContainer .lconn-ftype32-mid,
+.lconnBoxFileLinkContainer .lconn-ftype32-midi,
+.lconnBoxFileLinkContainer .lconn-ftype32-mp3,
+.lconnBoxFileLinkContainer .lconn-ftype32-mpga,
+.lconnBoxFileLinkContainer .lconn-ftype32-ra,
+.lconnBoxFileLinkContainer .lconn-ftype32-ram,
+.lconnBoxFileLinkContainer .lconn-ftype32-rm,
+.lconnBoxFileLinkContainer .lconn-ftype32-rmi,
+.lconnBoxFileLinkContainer .lconn-ftype32-rpm,
+.lconnBoxFileLinkContainer .lconn-ftype32-snd,
+.lconnBoxFileLinkContainer .lconn-ftype32-wav,
+.lconnBoxFileLinkContainer .lconn-ftype32-wma {
+  width: 32px;
+  height: 32px;
+  background-position: 0 0;
+}
+
+.lconnBoxFileLinkContainer .lconn-ftype32-cmx,
+.lconnBoxFileLinkContainer .lconn-ftype32-cod,
+.lconnBoxFileLinkContainer .lconn-ftype32-drw,
+.lconnBoxFileLinkContainer .lconn-ftype32-dxf,
+.lconnBoxFileLinkContainer .lconn-ftype32-eshr,
+.lconnBoxFileLinkContainer .lconn-ftype32-hgs,
+.lconnBoxFileLinkContainer .lconn-ftype32-ief,
+.lconnBoxFileLinkContainer .lconn-ftype32-jfif,
+.lconnBoxFileLinkContainer .lconn-ftype32-pcx,
+.lconnBoxFileLinkContainer .lconn-ftype32-pgl,
+.lconnBoxFileLinkContainer .lconn-ftype32-pntg,
+.lconnBoxFileLinkContainer .lconn-ftype32-psd,
+.lconnBoxFileLinkContainer .lconn-ftype32-psp6,
+.lconnBoxFileLinkContainer .lconn-ftype32-ras,
+.lconnBoxFileLinkContainer .lconn-ftype32-rgb,
+.lconnBoxFileLinkContainer .lconn-ftype32-sdw,
+.lconnBoxFileLinkContainer .lconn-ftype32-svgz,
+.lconnBoxFileLinkContainer .lconn-ftype32-tga,
+.lconnBoxFileLinkContainer .lconn-ftype32-wpg,
+.lconnBoxFileLinkContainer .lconn-ftype32-xbm,
+.lconnBoxFileLinkContainer .lconn-ftype32-xpm,
+.lconnBoxFileLinkContainer .lconn-ftype32-xwd,
+.lconnBoxFileLinkContainer .lconn-ftype32-ai {
+  width: 32px;
+  height: 32px;
+  background-position: -48px 0;
+}
+.lconnBoxFileLinkContainer .lconn-ftype32-asp,
+.lconnBoxFileLinkContainer .lconn-ftype32-axs,
+.lconnBoxFileLinkContainer .lconn-ftype32-css,
+.lconnBoxFileLinkContainer .lconn-ftype32-htc,
+.lconnBoxFileLinkContainer .lconn-ftype32-htm,
+.lconnBoxFileLinkContainer .lconn-ftype32-html,
+.lconnBoxFileLinkContainer .lconn-ftype32-java,
+.lconnBoxFileLinkContainer .lconn-ftype32-js,
+.lconnBoxFileLinkContainer .lconn-ftype32-jsp,
+.lconnBoxFileLinkContainer .lconn-ftype32-php,
+.lconnBoxFileLinkContainer .lconn-ftype32-sct,
+.lconnBoxFileLinkContainer .lconn-ftype32-stm,
+.lconnBoxFileLinkContainer .lconn-ftype32-wml,
+.lconnBoxFileLinkContainer .lconn-ftype32-xml,
+.lconnBoxFileLinkContainer .lconn-ftype32-xsl,
+.lconnBoxFileLinkContainer .lconn-ftype32-log {
+  width: 29px;
+  height: 32px;
+  background-position: -96px 0;
+}
+.lconnBoxFileLinkContainer .lconn-ftype32-crd,
+.lconnBoxFileLinkContainer .lconn-ftype32-vcard,
+.lconnBoxFileLinkContainer .lconn-ftype32-vcf,
+.lconnBoxFileLinkContainer .lconn-ftype32-vcrd {
+  width: 32px;
+  height: 32px;
+  background-position: -144px 0;
+}
+.lconnBoxFileLinkContainer .lconn-ftype32-323,
+.lconnBoxFileLinkContainer .lconn-ftype32-asc,
+.lconnBoxFileLinkContainer .lconn-ftype32-bas,
+.lconnBoxFileLinkContainer .lconn-ftype32-c,
+.lconnBoxFileLinkContainer .lconn-ftype32-etx,
+.lconnBoxFileLinkContainer .lconn-ftype32-h,
+.lconnBoxFileLinkContainer .lconn-ftype32-jw,
+.lconnBoxFileLinkContainer .lconn-ftype32-mcw,
+.lconnBoxFileLinkContainer .lconn-ftype32-msg,
+.lconnBoxFileLinkContainer .lconn-ftype32-ow,
+.lconnBoxFileLinkContainer .lconn-ftype32-pfs,
+.lconnBoxFileLinkContainer .lconn-ftype32-qa,
+.lconnBoxFileLinkContainer .lconn-ftype32-rtf,
+.lconnBoxFileLinkContainer .lconn-ftype32-sow,
+.lconnBoxFileLinkContainer .lconn-ftype32-text,
+.lconnBoxFileLinkContainer .lconn-ftype32-tsv,
+.lconnBoxFileLinkContainer .lconn-ftype32-tw,
+.lconnBoxFileLinkContainer .lconn-ftype32-txt,
+.lconnBoxFileLinkContainer .lconn-ftype32-uls,
+.lconnBoxFileLinkContainer .lconn-ftype32-vw3,
+.lconnBoxFileLinkContainer .lconn-ftype32-ws,
+.lconnBoxFileLinkContainer .lconn-ftype32-xy {
+  width: 32px;
+  height: 32px;
+  background-position: -192px 0;
+}
+.lconnBoxFileLinkContainer .lconn-ftype32- {
+  width: 32px;
+  height: 32px;
+  background-position: -240px 0;
+}
+.lconnBoxFileLinkContainer .ftype32-swf,
+.lconnBoxFileLinkContainer .lconn-ftype32-fla {
+  width: 32px;
+  height: 32px;
+  background-position: -288px 0;
+}
+.lconnBoxFileLinkContainer .ftype32_folder {
+  width: 32px;
+  height: 32px;
+  background-position: -336px -6px;
+}
+.icon-ft_layout_box {
+  width: 29px;
+  height: 32px;
+  background-position: -384px 0;
+}
+.lconnBoxFileLinkContainer .lconn-ftype32-eps,
+.lconnBoxFileLinkContainer .lconn-ftype32-ich,
+.lconnBoxFileLinkContainer .lconn-ftype32-ich6,
+.lconnBoxFileLinkContainer .lconn-ftype32-iwp,
+.lconnBoxFileLinkContainer .lconn-ftype32-pdf,
+.lconnBoxFileLinkContainer .lconn-ftype32-ps {
+  width: 32px;
+  height: 32px;
+  background-position: -432px 0;
+}
+.lconnBoxFileLinkContainer .lconn-ftype32-bmp,
+.lconnBoxFileLinkContainer .lconn-ftype32-cgm,
+.lconnBoxFileLinkContainer .lconn-ftype32-gif,
+.lconnBoxFileLinkContainer .lconn-ftype32-ico,
+.lconnBoxFileLinkContainer .lconn-ftype32-img,
+.lconnBoxFileLinkContainer .lconn-ftype32-pbm,
+.lconnBoxFileLinkContainer .lconn-ftype32-pgm,
+.lconnBoxFileLinkContainer .lconn-ftype32-pnm,
+.lconnBoxFileLinkContainer .lconn-ftype32-ppm,
+.lconnBoxFileLinkContainer .lconn-ftype32-svg,
+.lconnBoxFileLinkContainer .lconn-ftype32-wbmp,
+.lconnBoxFileLinkContainer .lconn-ftype32-djv,
+.lconnBoxFileLinkContainer .lconn-ftype32-djvu,
+.lconnBoxFileLinkContainer .lconn-ftype32-jpe,
+.lconnBoxFileLinkContainer .lconn-ftype32-jpeg,
+.lconnBoxFileLinkContainer .lconn-ftype32-jpg,
+.lconnBoxFileLinkContainer .lconn-ftype32-odi,
+.lconnBoxFileLinkContainer .lconn-ftype32-oti,
+.lconnBoxFileLinkContainer .lconn-ftype32-pic,
+.lconnBoxFileLinkContainer .lconn-ftype32-pict,
+.lconnBoxFileLinkContainer .lconn-ftype32-png,
+.lconnBoxFileLinkContainer .lconn-ftype32-tif,
+.lconnBoxFileLinkContainer .lconn-ftype32-tif6,
+.lconnBoxFileLinkContainer .lconn-ftype32-tiff {
+  width: 32px;
+  height: 32px;
+  background-position: -480px 0;
+}
+.lconnBoxFileLinkContainer .lconn-ftype32-flw,
+.lconnBoxFileLinkContainer .lconn-ftype32-key,
+.lconnBoxFileLinkContainer .lconn-ftype32-mass,
+.lconnBoxFileLinkContainer .lconn-ftype32-odp,
+.lconnBoxFileLinkContainer .lconn-ftype32-ope,
+.lconnBoxFileLinkContainer .lconn-ftype32-otc,
+.lconnBoxFileLinkContainer .lconn-ftype32-otp,
+.lconnBoxFileLinkContainer .lconn-ftype32-pot,
+.lconnBoxFileLinkContainer .lconn-ftype32-potm,
+.lconnBoxFileLinkContainer .lconn-ftype32-potx,
+.lconnBoxFileLinkContainer .lconn-ftype32-pp2,
+.lconnBoxFileLinkContainer .lconn-ftype32-pp97,
+.lconnBoxFileLinkContainer .lconn-ftype32-ppam,
+.lconnBoxFileLinkContainer .lconn-ftype32-pps,
+.lconnBoxFileLinkContainer .lconn-ftype32-ppsm,
+.lconnBoxFileLinkContainer .lconn-ftype32-ppsx,
+.lconnBoxFileLinkContainer .lconn-ftype32-ppt,
+.lconnBoxFileLinkContainer .lconn-ftype32-pptm,
+.lconnBoxFileLinkContainer .lconn-ftype32-pptx,
+.lconnBoxFileLinkContainer .lconn-ftype32-prz,
+.lconnBoxFileLinkContainer .lconn-ftype32-shw3,
+.lconnBoxFileLinkContainer .lconn-ftype32-sti,
+.lconnBoxFileLinkContainer .lconn-ftype32-sxi {
+  width: 32px;
+  height: 32px;
+  background-position: -528px 0;
+}
+.lconnBoxFileLinkContainer .lconn-ftype32-123,
+.lconnBoxFileLinkContainer .lconn-ftype32-12m,
+.lconnBoxFileLinkContainer .lconn-ftype32-acs,
+.lconnBoxFileLinkContainer .lconn-ftype32-csv,
+.lconnBoxFileLinkContainer .lconn-ftype32-dbs,
+.lconnBoxFileLinkContainer .lconn-ftype32-dez,
+.lconnBoxFileLinkContainer .lconn-ftype32-ens,
+.lconnBoxFileLinkContainer .lconn-ftype32-fcd,
+.lconnBoxFileLinkContainer .lconn-ftype32-fcs,
+.lconnBoxFileLinkContainer .lconn-ftype32-mwkd,
+.lconnBoxFileLinkContainer .lconn-ftype32-mwks,
+.lconnBoxFileLinkContainer .lconn-ftype32-odf,
+.lconnBoxFileLinkContainer .lconn-ftype32-ods,
+.lconnBoxFileLinkContainer .lconn-ftype32-oss,
+.lconnBoxFileLinkContainer .lconn-ftype32-otf,
+.lconnBoxFileLinkContainer .lconn-ftype32-ots,
+.lconnBoxFileLinkContainer .lconn-ftype32-qad,
+.lconnBoxFileLinkContainer .lconn-ftype32-smd,
+.lconnBoxFileLinkContainer .lconn-ftype32-sms,
+.lconnBoxFileLinkContainer .lconn-ftype32-stc,
+.lconnBoxFileLinkContainer .lconn-ftype32-sxc,
+.lconnBoxFileLinkContainer .lconn-ftype32-sxm,
+.lconnBoxFileLinkContainer .lconn-ftype32-wg2,
+.lconnBoxFileLinkContainer .lconn-ftype32-wk4,
+.lconnBoxFileLinkContainer .lconn-ftype32-wk6,
+.lconnBoxFileLinkContainer .lconn-ftype32-xla,
+.lconnBoxFileLinkContainer .lconn-ftype32-xlam,
+.lconnBoxFileLinkContainer .lconn-ftype32-xlc,
+.lconnBoxFileLinkContainer .lconn-ftype32-xlm,
+.lconnBoxFileLinkContainer .lconn-ftype32-xls,
+.lconnBoxFileLinkContainer .lconn-ftype32-xlsb,
+.lconnBoxFileLinkContainer .lconn-ftype32-xlsm,
+.lconnBoxFileLinkContainer .lconn-ftype32-xlsx,
+.lconnBoxFileLinkContainer .lconn-ftype32-xlt,
+.lconnBoxFileLinkContainer .lconn-ftype32-xltm,
+.lconnBoxFileLinkContainer .lconn-ftype32-xltx,
+.lconnBoxFileLinkContainer .lconn-ftype32-xlw,
+.lconnBoxFileLinkContainer .lconn-ftype32-numbers {
+  width: 32px;
+  height: 32px;
+  background-position: -576px 0;
+}
+.lconnBoxFileLinkContainer .lconn-ftype32-asf,
+.lconnBoxFileLinkContainer .lconn-ftype32-asr,
+.lconnBoxFileLinkContainer .lconn-ftype32-asx,
+.lconnBoxFileLinkContainer .lconn-ftype32-avi,
+.lconnBoxFileLinkContainer .lconn-ftype32-divx,
+.lconnBoxFileLinkContainer .lconn-ftype32-flv,
+.lconnBoxFileLinkContainer .lconn-ftype32-lsf,
+.lconnBoxFileLinkContainer .lconn-ftype32-lsx,
+.lconnBoxFileLinkContainer .lconn-ftype32-mov,
+.lconnBoxFileLinkContainer .lconn-ftype32-movie,
+.lconnBoxFileLinkContainer .lconn-ftype32-mp2,
+.lconnBoxFileLinkContainer .lconn-ftype32-mp4,
+.lconnBoxFileLinkContainer .lconn-ftype32-mpa,
+.lconnBoxFileLinkContainer .lconn-ftype32-mpe,
+.lconnBoxFileLinkContainer .lconn-ftype32-mpeg,
+.lconnBoxFileLinkContainer .lconn-ftype32-mpg,
+.lconnBoxFileLinkContainer .lconn-ftype32-mpv2,
+.lconnBoxFileLinkContainer .lconn-ftype32-qt,
+.lconnBoxFileLinkContainer .lconn-ftype32-svi,
+.lconnBoxFileLinkContainer .lconn-ftype32-wmv,
+.lconnBoxFileLinkContainer .lconn-ftype32-mv4 {
+  width: 32px;
+  height: 32px;
+  background-position: -624px 0;
+}
+.lconnBoxFileLinkContainer .lconn-ftype32-doc,
+.lconnBoxFileLinkContainer .lconn-ftype32-docm,
+.lconnBoxFileLinkContainer .lconn-ftype32-docx,
+.lconnBoxFileLinkContainer .lconn-ftype32-dot,
+.lconnBoxFileLinkContainer .lconn-ftype32-dotm,
+.lconnBoxFileLinkContainer .lconn-ftype32-dotx,
+.lconnBoxFileLinkContainer .lconn-ftype32-en4,
+.lconnBoxFileLinkContainer .lconn-ftype32-enw,
+.lconnBoxFileLinkContainer .lconn-ftype32-leg,
+.lconnBoxFileLinkContainer .lconn-ftype32-lwp,
+.lconnBoxFileLinkContainer .lconn-ftype32-lwp7,
+.lconnBoxFileLinkContainer .lconn-ftype32-manu,
+.lconnBoxFileLinkContainer .lconn-ftype32-msw,
+.lconnBoxFileLinkContainer .lconn-ftype32-mwp,
+.lconnBoxFileLinkContainer .lconn-ftype32-mwp2,
+.lconnBoxFileLinkContainer .lconn-ftype32-mwpf,
+.lconnBoxFileLinkContainer .lconn-ftype32-odc,
+.lconnBoxFileLinkContainer .lconn-ftype32-odg,
+.lconnBoxFileLinkContainer .lconn-ftype32-odt,
+.lconnBoxFileLinkContainer .lconn-ftype32-ort,
+.lconnBoxFileLinkContainer .lconn-ftype32-otg,
+.lconnBoxFileLinkContainer .lconn-ftype32-oth,
+.lconnBoxFileLinkContainer .lconn-ftype32-odm,
+.lconnBoxFileLinkContainer .lconn-ftype32-ott,
+.lconnBoxFileLinkContainer .lconn-ftype32-pages,
+.lconnBoxFileLinkContainer .lconn-ftype32-pcl,
+.lconnBoxFileLinkContainer .lconn-ftype32-rtx,
+.lconnBoxFileLinkContainer .lconn-ftype32-std,
+.lconnBoxFileLinkContainer .lconn-ftype32-stw,
+.lconnBoxFileLinkContainer .lconn-ftype32-sxd,
+.lconnBoxFileLinkContainer .lconn-ftype32-sxq,
+.lconnBoxFileLinkContainer .lconn-ftype32-sxw,
+.lconnBoxFileLinkContainer .lconn-ftype32-w6,
+.lconnBoxFileLinkContainer .lconn-ftype32-w97,
+.lconnBoxFileLinkContainer .lconn-ftype32-wm,
+.lconnBoxFileLinkContainer .lconn-ftype32-wp5,
+.lconnBoxFileLinkContainer .lconn-ftype32-wp6,
+.lconnBoxFileLinkContainer .lconn-ftype32-wpf {
+  width: 32px;
+  height: 32px;
+  background-position: -672px 0;
+}
+.lconnBoxFileLinkContainer .lconn-ftype32-cab,
+.lconnBoxFileLinkContainer .lconn-ftype32-dmg,
+.lconnBoxFileLinkContainer .lconn-ftype32-gtar,
+.lconnBoxFileLinkContainer .lconn-ftype32-gz,
+.lconnBoxFileLinkContainer .lconn-ftype32-jar,
+.lconnBoxFileLinkContainer .lconn-ftype32-rar,
+.lconnBoxFileLinkContainer .lconn-ftype32-sit,
+.lconnBoxFileLinkContainer .lconn-ftype32-sqx,
+.lconnBoxFileLinkContainer .lconn-ftype32-tar,
+.lconnBoxFileLinkContainer .lconn-ftype32-taz,
+.lconnBoxFileLinkContainer .lconn-ftype32-tgz,
+.lconnBoxFileLinkContainer .lconn-ftype32-z,
+.lconnBoxFileLinkContainer .lconn-ftype32-zip {
+  width: 32px;
+  height: 32px;
+  background-position: -720px 0;
+}

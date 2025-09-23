@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">OpenSocial-gadget Ingesloten ervaring gebruikt om aanvullende details en acties weer te geven voor Connections-events</msg>
+  <msg name="connectionsEE_errorTitle">Fout</msg>
+  <msg name="connectionsEE_errorDescription">Er is een fout opgetreden bij het laden van gadgetresources. Controleer de netwerkverbinding is en probeer de gadget opnieuw te laden.</msg>
+</messagebundle>

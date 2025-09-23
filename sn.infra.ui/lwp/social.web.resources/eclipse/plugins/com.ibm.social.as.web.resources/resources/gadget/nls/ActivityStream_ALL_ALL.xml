@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<messagebundle>
+  <msg name="as_title">Updates</msg>
+  <msg name="as_description">Updates from IBM Connections</msg>
+  <msg name="as_error">There is an error with the configuration for the Updates stream. Please contact your administrator.</msg>
+</messagebundle>

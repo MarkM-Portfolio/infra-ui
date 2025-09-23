@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="dj_gecko dj_ff3 dj_contentbox">
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+<head>
+
+<meta content="text/html;charset=UTF-8">
+<link
+	href="../../../_style?include=com.ibm.lconn.core.styles/base/package.css"
+	type="text/css" rel="stylesheet" id="lotusBaseStylesheet">
+<link
+	href="../../../_style?include=com.ibm.lconn.core.styles/default/package.css"
+	type="text/css" rel="stylesheet" id="lotusThemeStylesheet">
+<link
+	href="../../../_style?include=lconn.core/widget/templates/HoverPopup.css"
+	type="text/css" rel="stylesheet" id="lotusThemeStylesheet">
+<link
+	href="../../../_style?include=lconn.core/card/templates/ResourceLink.css"
+	type="text/css" rel="stylesheet" id="lotusThemeStylesheet">
+<!--[if IE 6]><script type="text/javascript">document.getElementsByTagName("html")[0].className+=" lotusui_ie lotusui_ie6";</script><![endif]-->
+<!--[if IE 7]><script type="text/javascript">document.getElementsByTagName("html")[0].className+=" lotusui_ie lotusui_ie7";</script><![endif]-->
+<style>
+
+.lotusui .lotusHoverWrapper {
+    -moz-border-radius: 5px 5px 5px 5px;
+    -moz-box-shadow: 0 2px 3px #666666;
+    background: #5A5C60;
+    background: -moz-linear-gradient(center top , #5A5C60 0%, #434649 100%) repeat scroll 0 0 transparent;
+    border: 1px solid #BEBEBE;
+    padding: 5px;
+    z-index: 10000;
+}
+.lotusui .lotusHover .arrow {
+	background-image: url("/web/lconn.core/widget/graphics/lotus-hp-arrows.png");
+}
+.lotusui .lotusHover .right .arrow {
+	left: -14px;
+}
+
+.lotusui .lotusHoverContentWrapper {
+    background-color: #F4F5F6;
+    //margin-left: 1px;
+    //margin-right: 1px;
+    max-height: 350px;
+    max-width: 500px;
+    overflow: auto;
+    //padding: 0.2em 0.4em;
+    position: relative;
+}
+
+.lotusui .lotusHoverContent {
+	overflow: hidden;
+}
+
+.lotusui .lotusHover .lotusClose img {
+	height: 16px; 
+	width: 16px;
+	position: absolute;
+	right: 2px;
+	top: -1px;
+}
+
+.lotusui .lotusHover .root {
+	margin: 0;
+}
+
+.lotusui .lotusHover .lotusEmptyTitle .titleBar {
+	visibility: hidden;
+	height: 16px;
+}
+.lotusui .lotusHover .lotusEmptyTitle .dividerWrapper {
+	display: none;
+}
+</style>
+<script>var net = {jazz: {ajax: {_loaded: []}}}; var djConfig = {proxy: "/ajaxProxy", baseUrl: "../../../dojo/", locale: "en", localizationComplete: true}</script>
+<script
+	src="../../../_js?include=dojo.dojo.js&amp;debug=true&amp;lang=en"></script>
+<body class="lotusui">
+<div class="lotusMain">
+<div class="lotusContent">
+
+<div><a
+	href="http://localhost:9085/web/lconn.core/test/card/personOslc1.oslccompact"
+	id="link1" class="jazz-ui-ResourceLink" widgetid="link1">Clayton
+Coleman<img class="arrow"
+	src="../../../lconn.core/card/graphics/rh-twistie.gif"></a>
+ <script>/*var navLink = new lconn.core.card.ResourceLink({lazyFetch: true}, dojo.byId('link1'));*/</script>
+</div>
+<div id="tagger2"></div>
+<div id="tagger3"></div>
+<div id="tagger4"></div>
+<div id="tagger5"></div>
+<div id="tagger6"></div>
+<div id="tagger7"></div>
+
+<script>
+</script></div>
+</div>
+<div class="jazz-ui-HoverPopup jazz-ui-ResourceHover lotusHover"
+	id="lconn_core_widget_internal__MasterPopup_0"
+	widgetid="lconn_core_widget_internal__MasterPopup_0"
+	style="display: block; left: 131px; top: 19.5px;">
+<div dojoattachpoint="wrapper" class="lotusHoverWrapper right">
+<div class="lotusHoverContentWrapper" dojoattachpoint="contentWrapper"
+	style="max-height: 364px;">
+<div class="lotusHoverContent" dojoattachpoint="content">
+<div>
+<div class="root lotusEmptyTitle" id="lconn_core_card__RichHoverPresentation_0"
+	widgetid="lconn_core_card__RichHoverPresentation_0">
+<div dojoattachpoint="titleBar" class="titleBar"><a
+	class="iconLink" dojoattachpoint="iconLink"
+	href="http://localhost:9085/web/lconn.core/test/card/personOslc1.oslccompact"><img
+	class="iconNode" dojoattachpoint="iconNode"
+	src="https://nsjazz.raleigh.ibm.com:8001/jazz/web/com.ibm.team.process.web/ui/internal/images/project.gif"></a>
+<div dojoattachpoint="titleWrapper" class="titleIndent"><a
+	dojoattachpoint="titleLink"
+	href="http://localhost:9085/web/lconn.core/test/card/personOslc1.oslccompact"></a></div>
+</div>
+<a href="#" dojoattachevent="onclick: close"
+	dojoattachpoint="_closeButton" class="lotusClose"><img src="http://localhost:9085/web/com.ibm.oneui.styles/images/blank.gif"></a>
+<div class="dividerWrapper">
+<div class="divider" dojoattachpoint="divider"></div>
+</div>
+<div class="summarySection">
+<div class="loading-wrapper"><span dojoattachpoint="loadingImage"
+	class="image-loading hidden" style="width: 300px; height: 200px;">&nbsp;</span></div>
+<iframe frameborder="0" allowtransparency="true"
+	class=""
+	style="width: 300px; height: 200px;"
+	src="http://localhost:9085/web/lconn.core/test/card/person.html"></iframe>
+</div>
+<div dojoattachpoint="bottomSection" class="hidden bottomSection">
+<div class="bottomDividerWrapper">
+<div class="divider" dojoattachpoint="bottomDivider"></div>
+</div>
+<a href="#" dojoattachevent="onclick: toggleSize"
+	dojoattachpoint="toggleLink"
+	class="j-action-secondary toggleLink showMore">Show More</a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="arrow" dojoattachpoint="arrow" style="top: 4px;"></div>
+</div>
+</div>
+</body>
+</html>

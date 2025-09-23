@@ -1,0 +1,133 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2001, 2015                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+/*
+    U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+This CSS was built on March 9 2012. (version: OneUI-3.0.3_20120309-0300)*/
+.lotusui30dojo_sharebox .lcSharebox .dijitTabContainerTop-tabs .dijitTabRtl, .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerBottom-tabs .dijitTabRtl {
+  margin-right: 0;
+  margin-left: 2px;
+}
+.lotusui30dojo_sharebox .lcSharebox .dijitTabRtl {
+  -moz-box-orient: horizontal;
+  text-align: right;
+}
+/*.dj_ie7 .lotusui30dojo_sharebox .lcSharebox .dijitTabRtl .dijitTabContent {
+	display: block;
+	left: 0;
+}*//* Not used by One UI */
+/*.dj_ie7 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerTop-tabs .dijitTabRtl,
+.dj_ie7 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerTop-tabs .dijitTabCheckedRtl {
+	top: 1px;
+}*//* Not used by One UI */
+.dj_ie7 .lotusui30dojo_sharebox .lcSharebox .tabStripButtonRtl .dijitButtonContents,
+.dj_ie8 .lotusui30dojo_sharebox .lcSharebox .tabStripButtonRtl .dijitButtonContents,
+.dj_ie6 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerTop-tabs .dijitTabRtl .dijitTabInnerDiv,
+.dj_ie6 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerBottom-tabs .dijitTabRtl .dijitTabInnerDiv,
+.dj_ie7 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerTop-tabs .dijitTabRtl .dijitTabInnerDiv,
+.dj_ie7 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerBottom-tabs .dijitTabRtl .dijitTabInnerDiv,
+.dj_iequirks .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerTop-tabs .dijitTabRtl .dijitTabInnerDiv,
+.dj_iequirks .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerBottom-tabs .dijitTabRtl .dijitTabInnerDiv {
+  float: left;
+}
+/*.dj_ie6 .lotusui30dojo_sharebox .lcSharebox .dijitTabRtl .tabLabel,
+.dj_ie6 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerRight-tabs .dijitTabRtl,
+.dj_ie6 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerLeft-tabs .dijitTabRtl,
+.dj_ie7 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerRight-tabs .dijitTabRtl .dijitTabInnerDiv,
+.dj_ie7 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerLeft-tabs .dijitTabRtl .dijitTabInnerDiv {
+	//Make the .tablabel have width in ie6 with haslayout property, fix Close icon position bug
+	zoom:1;
+}*//* Not used by One UI */
+.dj_ie6 .lotusui30dojo_sharebox .lcSharebox .dijitTabRtl .tabLabel,
+.dj_ie6 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerRight-tabs .dijitTabRtl,
+.dj_ie6 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerLeft-tabs .dijitTabRtl,
+.dj_ie7 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerRight-tabs .dijitTabRtl .dijitTabInnerDiv,
+.dj_ie7 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerLeft-tabs .dijitTabRtl .dijitTabInnerDiv {
+  /*Make the .tablabel have width in ie6 with haslayout property, fix Close icon position bug*/
+
+  zoom: 1;
+}
+/* Unique to One UI */
+/*.dj_ie6 .lotusui30dojo_sharebox .lcSharebox .dijitTabRtl .dijitTabCloseButton,
+.dj_ie7 .lotusui30dojo_sharebox .lcSharebox .dijitTabRtl .dijitTabCloseButton,
+.dj_iequirks .lotusui30dojo_sharebox .lcSharebox .dijitTabRtl .dijitTabCloseButton {
+	margin-right:5px;
+}*//* Not used by One UI */
+.dj_ie6 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerRightRtl .dijitTabContainerRight-tabs, .dj_ie6 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerLeftRtl .dijitTabContainerLeft-tabs {
+  width: 1%;
+}
+.dj_ie6 .dijitTabContainerTopStrip, .dj_ie6 .dijitTabContainerBottomStrip {
+  position: absolute;
+}
+.dj_iequirks .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerTopRtl .dijitTabContainerTopStrip {
+  padding-top: 10px;
+}
+/*.dj_ie7 .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerRight-tabs .dijitTabRtlChecked .dijitTabInnerDiv {
+	background-position:-341px -179px;
+}*//* Not used by One UI */
+.dj_ie6 .dijitTabContainerTopRtl .dijitTabStripIcon, .dj_ie6 .dijitTabContainerBottomRtl .dijitTabStripIcon {
+  position: relative;
+}
+.dj_ie6-rtl .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerTop-tabs {
+  /* this strange rule prevents IE6 bug in themeTester.html?dir=rtl upon closing
+	 * "Closable" tab, where the other tabs disappear
+	 */
+
+  padding-left: 3px;
+}
+.dj_iequirks-rtl .lotusui30dojo_sharebox .lcSharebox .dijitTabListWrapper {
+  /* this strange rule prevents IE6 bug in themeTesterQuirk.html?dir=rtl upon closing
+	 * "Closable" tab, where the other tabs disappear
+	 */
+
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+}
+.lotusui30dojo_sharebox .lcSharebox .dijitTabContainerTop-tabs .dijitTabRtl .dijitTabContent, .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerBottom-tabs .dijitTabRtl .dijitTabContent, .lotusui30dojo_sharebox .lcSharebox .dijitTabContainerTabListNested .dijitTabRtl .dijitTabContent {
+  padding-right: 4px;
+  padding-left: 8px;
+}
+/* Unique to One UI */
+.lotusui30dojo_sharebox .lcSharebox .dijitTabRtl .dijitTabCloseButton {
+  margin-right: -1px;
+  margin-left: -3px;
+}
+/* Unique to One UI */
+/* Lotus One UI tab dialog overrides */
+.dj_ie6 .lotusui30dojo_sharebox .lcSharebox .lotusTabDialog .dijitTabContainerTopRtl .dijitTabListContainer-top {
+  padding-left: 0;
+  padding-right: 20px;
+}
+.lotusui30dojo_sharebox .lcSharebox .lotusTabDialog .dijitTabContainerTop-tabs .dijitTabRtl .dijitTabContent .tabLabel {
+  border-left: 0;
+  border-right: 1px solid #666;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+.lotusui30dojo_sharebox .lcSharebox .lotusTabDialog .dijitTabRtl:first-child .tabLabel {
+  border-right: 0;
+}
+.lotusui30dojo_sharebox .lcSharebox .lotusTabDialog .dijitTabRtl .dijitTabCloseButton {
+  margin: 0 3px -1px -3px;
+}
+
+.lotusui30dojo_sharebox .lcSharebox div.dijitTabContainerTop-tabs {
+    width: 100% !important;
+}
+
+.lotusui30dojo_sharebox .lcSharebox .lotusTabDialog .dijitTabContainerTop-tabs .dijitTabContent .tabLabel {
+  padding: 0 10px;
+  color: #ccc;
+  margin-bottom: 0;
+}

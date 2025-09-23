@@ -1,0 +1,77 @@
+<html>
+<head>
+<script type="text/javascript" src="https://js.live.net/v5.0/OneDrive.js" id="onedrive-js" client-id="000000004817DDEF"></script>
+<script type="text/javascript" src="/connections/resources/web/_js?include=com.ibm.social.urliWidget.web.resources.event"></script> 
+<script>
+window.onload = function() {
+	var handleEvent = function(event) {
+		// Null op for now
+	}
+	
+	var pickerOptions = {
+	  success: function(files) {
+		// Handle returned file object(s)
+		info("pickerOptions.success url:  " + files.link);
+		channel = new com.ibm.social.urliWidget.web.resources.channel(window, handleEvent);
+		// Notify parent that we're loaded and wait for url to be sent to us for display
+		var lnk = modifyFilesLink(files.link);
+		var evt = new com.ibm.social.urliWidget.web.resources.event("persistState", lnk);
+		channel.sendEvent(evt, window.parent);
+	  },
+
+	  cancel: function() {
+		  // handle when the user cancels picking a file
+		  alert("picker canceled");
+	  },
+
+	  linkType: "webViewLink",// "downloadLink",
+	  multiSelect: false // or true
+	};
+	 var pickerButton = OneDrive.createOpenButton(pickerOptions);
+    document.getElementById("picker").appendChild(pickerButton);
+}
+
+var modifyFilesLink = function(lnk) {
+
+	var resid = getResid(lnk);
+	
+	// Get resid up to exclamation point
+	var residBeforeExclamation = "";
+	var ix = 0;
+	while (resid.charAt(ix) != '!') {
+		residBeforeExclamation += resid.charAt(ix);
+		ix++
+	} 
+	// Put together new link
+	
+	lnk = "https://onedrive.live.com/embed?";
+	lnk += "&cid=" + residBeforeExclamation;
+	lnk += "&resid=" + resid.replace("!", "%21");
+	lnk += "&authkey=ADcXq-tXocxqP3U";
+	lnk += "&em=2";
+		
+	info("modifyFilesLink returning:  " + lnk);
+	return(lnk);
+}
+
+var getResid = function(lnk) {
+	var residIx = lnk.search("resid=");
+	lnk = lnk.substr(residIx + 6);
+	var ampersandIx = lnk.search("&");
+	lnk = lnk.substr(0, ampersandIx);
+	return(lnk);
+}
+
+var info = function(msg) {
+	console.info("edit.html:  " + msg);
+}
+
+</script>
+</head>
+<body>
+
+<div id="picker"></div>
+
+
+</body>
+</html>

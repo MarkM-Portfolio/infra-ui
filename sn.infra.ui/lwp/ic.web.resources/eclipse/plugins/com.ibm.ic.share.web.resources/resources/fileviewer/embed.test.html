@@ -1,0 +1,66 @@
+<html>
+<head>
+<style>
+   #messages {
+      float: left;
+      width: 25%;
+      font-family: monospace;
+   }
+
+   iframe {
+      float: right;
+      width: 70%;
+      height: 98%;
+   }
+
+   table {
+      width: 68%;
+      height: 98%;
+      margin-left: 30%;
+      position: absolute;
+      z-index: -1;
+   }
+   
+   body {
+      display: none;
+   }
+</style>
+<script>
+   var isInIframe = function () {
+      try {
+         return window.top !== window.self;
+      } catch (e) {
+         return true;
+      }
+   }
+</script>
+</head>
+<body>
+<ul id="messages"></ul>
+<iframe id="fido" allowtransparency="true"></iframe>
+<!-- This should render a grid behind the viewer -->
+<table border="1"><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<script>
+if (!isInIframe()) {
+   document.getElementsByTagName("body")[0].style.display = "block";
+} else {
+   window.top.location = window.self.location
+}
+
+var fido = document.getElementById("fido");
+fido.setAttribute("src", "../../ic-share/fileviewer/embed.html" + window.location.hash);
+
+window.addEventListener("message", function (message) {
+   console.log("Message received:", message);
+
+   var li = document.createElement("li");
+   li.textContent = li.innerText = message.data;
+   document.getElementById("messages").appendChild(li);
+
+   if (message.data === "ic-fileviewer/resourcesLoaded") {
+      fido.contentWindow.postMessage("ic-fileviewer/init", "*");
+   }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lconnPreview" dojoAttachPoint="urlPreview">
+	<a role="button" dojoAttachPoint="closeButton" aria-label="${strings.removeUrlPreview}" class="lconnPreviewClose" href="javascript:;" dojoattachevent="onclick: closePreview">
+		<img src="${_blankGif}" alt="" role="presentation"/>
+		<span class="lotusAltText">X</span>
+	</a>
+	<div class="lconnPreviewLeft" dojoAttachPoint="leftPane">
+		<a dojoAttachPoint="thumbnailContainer" class="lconnPreviewCenter">
+			<span></span>
+			<span dojoAttachPoint="playBtn" class="lotusHidden playBtn otherHTML5Player16 otherHTML5Player16-play-overlay-sm"></span>
+			<img src="${_blankGif}" alt="" dojoAttachPoint="thumbnail" />
+		</a>
+	</div>
+	<div class="lconnPreviewContent" dojoAttachPoint="rightPane">
+		<div class="lconnPreviewContentTitle" dojoAttachPoint="titleNode"><a href="${data.url}">${data.title}</a></div>
+		<a dojoAttachPoint="linkNode" href="${data.url}">${data.provider_url}</a>
+		<p dojoAttachPoint="description"></p>
+	</div>
+	
+	<div dojoAttachPoint="footerPane" class="lconnPreviewFooter">
+		<div dojoAttachPoint="imageChooser" class="lconnPreviewImageChoose">
+			<a href="javascript:;" aria-label="${strings.previousThumbnail}" class="lconnPreviewImageChooseLeft" dojoAttachEvent="onclick: previousThumbnail" role="button">
+				<img class="otherFramework16 otherFramework16-ArrowThickLeftGray12" dojoAttachPoint="previousImage" src="${_blankGif}" alt="${strings.previousThumbnail}" />
+			</a>
+			<a href="javascript:;" aria-label="${strings.nextThumbnail}" class="lconnPreviewImageChooseRight" dojoAttachEvent="onclick: nextThumbnail" role="button">
+				<img class="otherFramework16 otherFramework16-ArrowThickRightGray12" dojoAttachPoint="nextImage" src="${_blankGif}" alt="${strings.nextThumbnail}" />
+			</a>
+		</div>
+		<div dojoAttachPoint="toggleContainer" class="lconnPreviewImageChooseToggle">
+			<input type="checkbox" dojoAttachPoint="checkBox" dojoAttachEvent="onclick: toggleImage" />
+			<label  dojoAttachPoint="checkBoxLabel" aria-label="${strings.thumbnailToggle}" >${strings.thumbnailToggle}</label>
+		</div>
+	</div>
+</div>

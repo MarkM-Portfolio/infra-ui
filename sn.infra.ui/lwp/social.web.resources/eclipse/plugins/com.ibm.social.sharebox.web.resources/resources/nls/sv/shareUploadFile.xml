@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">Filer</msg>
+  <msg name="description">Gadget för uppladdning och delning av filer</msg>
+  <msg name="action_uploadFile_label">Filer</msg>
+  <msg name="action_uploadFile_tooltip">Ladda upp och dela filer</msg>
+  <msg name="loading">Laddar...</msg>
+  <msg name="error_msg">Det gick inte att läsa in innehållet. Försök igen senare eller kontakta systemadministratören.</msg>
+  <msg name="error_alt">Fel</msg>
+</messagebundle>

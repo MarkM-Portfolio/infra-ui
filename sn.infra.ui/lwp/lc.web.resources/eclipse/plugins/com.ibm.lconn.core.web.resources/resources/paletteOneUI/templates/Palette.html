@@ -1,0 +1,25 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div role="region" class="app_palette_modal modal-wide">
+<div class="app_palette_modal_header">
+<div class="app_palette_modal_header_title">${modalTitleStr}</div>
+<ul class="app_palette_modal_tabs_ul" role="tablist" dojoAttachPoint="tabsContainerNode">
+</ul>
+<a id="closePalette" title="${_resourceBundle.CLOSE_PALETTE}" role="button" href="javascript:;" aria-label="${_resourceBundle.CLOSE_PALETTE}" 
+	  class="lotusRight lotusPaletteClose app_palette_modal_close_button" dojoAttachEvent="onclick: onClosePalette"> 
+	<img alt="${_resourceBundle.CLOSE_PALETTE}"  dojoAttachPoint="closeImageNode" aria-label="${_resourceBundle.CLOSE_PALETTE}" />
+	<span class="lotusAltText">X</span>	
+</a>
+<span class="lotusRight lotusHidden" aria-live="assertive" aria-atomic="true" dojoAttachPoint="itemAddedNode">
+			<svg class="svgIconSprite svgIconConfirm" version="1.1" id="_x21_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve">
+			<g>
+				<path fill="#144d14" d="M15,3C8.4,3,3,8.4,3,15s5.4,12,12,12s12-5.4,12-12S21.6,3,15,3z M15,25C9.5,25,5,20.5,5,15S9.5,5,15,5s10,4.5,10,10S20.5,25,15,25z"/>
+				<g>
+					<rect fill="#144d14" x="11.1" y="14.8" transform="matrix(0.5 -0.866 0.866 0.5 -9.4226 19.3544)" width="2" height="6"/>
+					<rect fill="#144d14" x="15.3" y="8.5" transform="matrix(0.866 0.5 -0.5 0.866 9.435 -6.1975)" width="2" height="12"/>
+				</g>
+			</g>
+		</svg>
+	<p dojoAttachPoint="itemAddedTextHolder" role="alert">${itemAddedStr} </p>
+</span></div>
+<div dojoAttachPoint="containerNode"></div>
+</div>

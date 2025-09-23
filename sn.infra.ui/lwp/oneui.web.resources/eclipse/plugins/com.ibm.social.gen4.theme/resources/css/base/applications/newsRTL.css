@@ -1,0 +1,11 @@
+	/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+	
+th.prefRowHeaderText {
+	font-weight: bold;
+}
+
+th.prefRowHeader {
+	font-weight: bold;
+	text-align: center;
+}
+

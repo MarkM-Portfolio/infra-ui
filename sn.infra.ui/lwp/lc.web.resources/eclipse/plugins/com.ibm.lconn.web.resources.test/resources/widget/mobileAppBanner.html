@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>IBM Connections - Mobile App Banner</title>
+        <!-- IBM Connections Mobile App for iOS -->
+        <meta content="app-id=450533489" name="apple-itunes-app" />
+        <!-- IBM Connections Mobile App for Android -->
+        <meta content="app-id=com.ibm.lotus.connections.mobile" name="google-play-app" />
+
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain">
+            <h1>Mobile App Banner</h1>
+            <p>This page demonstrates the banners to download and install the native IBM Connections app, displayed on iOS and Android devices.</p>
+            <p>Note that iOS >= 6 doesn't need a widget, because it relies on the <a href="https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html">smart app banner</a>.</p>
+            <div class="lotusBtnContainer">
+                <button id="btn_ios" class="lotusBtn" onclick="location.href='?render=test&amp;platform=ios&amp;lang='+dojo.config.locale">iOS Banner</button>
+                <button id="btn_android" class="lotusBtn" onclick="location.href='?render=test&amp;platform=android&amp;lang='+dojo.config.locale">Android Banner</button>
+                <button id="btn_unhide" class="lotusBtn lotusHidden" onclick="lconn.core.widget.MobileAppBanner.unhide(); location.reload()">Unhide</button>
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:lconn.core.url}
+    ${script:lconn.core.util.PreferenceCache}
+    ${script:lconn.core.widget.MobileAppBanner}
+    <script>
+        function showUnhideBtn() {
+            dojo.removeClass("btn_unhide", "lotusHidden");
+            dojo.addClass("btn_ios", "lotusHidden");
+            dojo.addClass("btn_android", "lotusHidden");
+        }
+        
+        function getUserAgent() {
+            return 'android';
+        }
+        
+        dojo.addOnLoad(function() {
+            var platform = lconn.core.url.parse(location.href).queryParameters['platform'];
+            
+            var isIos = dojo.isIos//, isAndroid = dojo.isAndroid;
+            switch (platform) {
+                case 'android':
+                    delete dojo.isIos;
+                    //dojo.isAndroid = 4;
+                    break;
+                case 'ios':
+                default:
+                    dojo.isIos = 5;
+                    //delete dojo.isAndroid;
+                    break;
+             }
+            var banner = new lconn.core.widget.MobileAppBanner();
+            dojo.connect(banner, "hide", showUnhideBtn);
+            dojo.isIos = isIos;
+            //dojo.isAndroid = isAndroid;
+            
+            if (lconn.core.widget.MobileAppBanner.isHidden())
+                showUnhideBtn();
+        });
+    </script>
+</body>
+</html>

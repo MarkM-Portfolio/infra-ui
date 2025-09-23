@@ -1,0 +1,18 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusDialogBorder" aria-label="${bundle.nlsStrings.downloadError} ${bundle.nlsStrings.downloadErrorMessage}">
+	<form class="lotusDialog lotusForm2" action="javascript:;" method="post">
+		<div class="lotusDialogHeader">
+			<h1 class="lotusHeading">${bundle.nlsStrings.downloadError}</h1>
+			<a class="lotusDialogClose" role="button" href="javascript:;" title="${bundle.nlsStrings.closeText}" data-dojo-attach-event="onclick: closeClicked">
+				<img src="${blankGif}" alt="${bundle.nlsStrings.closeText}" aria-label="${bundle.nlsStrings.closeText}">
+				<span class="lotusAltText">X</span>
+			</a>
+		</div>
+		<div class="lotusDialogContent lotusFormField">
+			${bundle.nlsStrings.downloadErrorMessage}
+		</div>
+		<div class="lotusDialogFooter">
+			<input value="${bundle.nlsStrings.okText}" class="lotusFormButton" type="submit" data-dojo-attach-event="onclick: closeClicked">
+		</div>
+	</form>	
+</div>

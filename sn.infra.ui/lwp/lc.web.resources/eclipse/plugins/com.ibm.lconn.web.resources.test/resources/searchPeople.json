@@ -1,0 +1,34 @@
+
+
+
+
+
+
+
+
+
+/*{"identifier":"member","label":"name","items":[
+{"name":"Claudio Procida2","userid":"d7d822c0-8396-102f-98c1-85b1e4fcc8a0","uid":"ClaudioProcida","type":"0","ext":
+{"first":"","guid":"d7d822c0-8396-102f-98c1-85b1e4fcc8a0","state":"ACTIVE","orgId":"IBM","countryCode":"IE","givenName":"Claudio","uid":"ClaudioProcida","sourceUrl":"ldaps://ghldapcl1.lotus.com:1636/dc=greenhouse,dc=ibm,dc=com?(&(objectclass=inetOrgPerson)(uid=*))","tenantKey":"00000000-0000-0000-0000-040508202233","surname":"Procida","key":"014d6f57-7e9a-4e88-97f3-39f48c2ba8bd","displayName":"Claudio Procida","distinguishedName":"uid=ClaudioProcida,cn=testusers,o=testorg,dc=greenhouse,dc=ibm,dc=com","lastUpdate":"2014-01-08 12:15:35.842"}
+},
+{"name":"David Proppe2","userid":"2f8264c0-6cf9-102c-89c7-edffeafd6e65","uid":"DavidProppe","type":"0","ext":
+{"first":"","guid":"2f8264c0-6cf9-102c-89c7-edffeafd6e65","state":"ACTIVE","orgId":"Wawanesa","countryCode":"CA","givenName":"David","uid":"DavidProppe","sourceUrl":"ldaps://ghldapcl1.lotus.com:1636/dc=greenhouse,dc=ibm,dc=com?(&(objectclass=inetOrgPerson)(uid=*))","tenantKey":"00000000-0000-0000-0000-040508202233","title":"I/T Architect/Specialist","surname":"Proppe","key":"059fea87-f4ee-439c-b6b2-bd6e1b54b8d0","displayName":"David Proppe","distinguishedName":"uid=DavidProppe,cn=testusers,o=testorg,dc=greenhouse,dc=ibm,dc=com","lastUpdate":"2010-12-10 16:15:38.702"}
+},
+{"name":"LeeP Provoost2","userid":"f41adec0-8678-102f-998e-85b1e4fcc8a0","uid":"LeePProvoost","type":"0","ext":
+{"first":"","guid":"f41adec0-8678-102f-998e-85b1e4fcc8a0","state":"ACTIVE","orgId":"Headshift","countryCode":"GB","givenName":"LeeP","jobResp":"Head of Consulting","uid":"LeePProvoost","sourceUrl":"ldaps://ghldapcl1.lotus.com:1636/dc=greenhouse,dc=ibm,dc=com?(&(objectclass=inetOrgPerson)(uid=*))","tenantKey":"00000000-0000-0000-0000-040508202233","surname":"Provoost","key":"09fb1863-bcad-4f71-b396-71403e414156","displayName":"LeeP Provoost","distinguishedName":"uid=LeePProvoost,cn=testusers,o=testorg,dc=greenhouse,dc=ibm,dc=com","timezone":"Europe/London","lastUpdate":"2011-02-16 09:57:48.666"}
+},
+{"name":"Peter Probst2","userid":"66bf79c0-3ba5-1032-956b-b1751336f433","uid":"probstp@de.ibm.com","type":"0","ext":
+{"first":"","guid":"66bf79c0-3ba5-1032-956b-b1751336f433","state":"ACTIVE","orgId":"IBM","countryCode":"DE","givenName":"Peter","uid":"probstp@de.ibm.com","sourceUrl":"ldaps://ghldapcl1.lotus.com:1636/dc=greenhouse,dc=ibm,dc=com?(&(objectclass=inetOrgPerson)(uid=*))","tenantKey":"00000000-0000-0000-0000-040508202233","surname":"Probst","key":"05a1c507-28ff-486d-9f26-7627e5e40ff1","displayName":"Peter Probst","distinguishedName":"uid=probstp@de.ibm.com,cn=testusers,o=testorg,dc=greenhouse,dc=ibm,dc=com","lastUpdate":"2013-04-17 10:28:19.564"}
+},
+{"name":"Phassakorn Promma2","userid":"ae999fc0-b7e8-102f-98c3-f98c2b382d13","uid":"PhassakornPromma","type":"0","ext":
+{"first":"","groupwareEmail":"phassakorn@vlink.co.th","guid":"ae999fc0-b7e8-102f-98c3-f98c2b382d13","floor":"16","state":"ACTIVE","orgId":"Virtual Link Solution","countryCode":"TH","givenName":"Phassakorn","jobResp":"Project Coordinator","ipTelephoneNumber":"+662-6189934-35","bldgId":"Lao Peng Nguan Tower I","uid":"PhassakornPromma","sourceUrl":"ldaps://ghldapcl1.lotus.com:1636/dc=greenhouse,dc=ibm,dc=com?(&(objectclass=inetOrgPerson)(uid=*))","tenantKey":"00000000-0000-0000-0000-040508202233","surname":"Promma","key":"05afb561-44d7-4e55-86aa-5a04ec92ec1e","displayName":"Phassakorn Promma","distinguishedName":"uid=PhassakornPromma,cn=testusers,o=testorg,dc=greenhouse,dc=ibm,dc=com","timezone":"Asia/Bangkok","lastUpdate":"2013-05-11 07:28:33.536"}
+},
+{"name":"Phylicia Proctor2","userid":"56ba9c40-7453-1031-89c0-c5b1d344620e","uid":"piprocto@us.ibm.com","type":"0","ext":
+{"first":"","guid":"56ba9c40-7453-1031-89c0-c5b1d344620e","floor":"Main Floor","state":"ACTIVE","orgId":"IBM","countryCode":"US","givenName":"Phylicia","jobResp":"Inside Federal Collaborative Solutions Software Rep","ipTelephoneNumber":"631574","bldgId":"7100 Highlands Parkway, Smyrna, GA 30082","uid":"piprocto@us.ibm.com","sourceUrl":"ldaps://ghldapcl1.lotus.com:1636/dc=greenhouse,dc=ibm,dc=com?(&(objectclass=inetOrgPerson)(uid=*))","tenantKey":"00000000-0000-0000-0000-040508202233","surname":"Proctor","key":"00503afc-37e1-4890-81e4-3dda58e6facf","displayName":"Phylicia Proctor","distinguishedName":"uid=piprocto@us.ibm.com,cn=testusers,o=testorg,dc=greenhouse,dc=ibm,dc=com","timezone":"America/New_York","lastUpdate":"2013-08-13 13:25:55.022"}
+},
+{"name":"Robert Provencal2","userid":"54ca9740-1f99-102d-9a4a-898c0c9b8e0b","uid":"RobertProvencal","type":"0","ext":
+{"first":"","guid":"54ca9740-1f99-102d-9a4a-898c0c9b8e0b","state":"ACTIVE","orgId":"Newmarket International","countryCode":"US","givenName":"Robert","uid":"RobertProvencal","sourceUrl":"ldaps://ghldapcl1.lotus.com:1636/dc=greenhouse,dc=ibm,dc=com?(&(objectclass=inetOrgPerson)(uid=*))","tenantKey":"00000000-0000-0000-0000-040508202233","title":"Engineer - Software","surname":"Provencal","key":"017b9e89-49fd-403e-b879-d4c60f3576a9","displayName":"Robert Provencal","distinguishedName":"uid=RobertProvencal,cn=testusers,o=testorg,dc=greenhouse,dc=ibm,dc=com","lastUpdate":"2010-12-10 16:14:52.314"}
+},
+{"name":"Vladimir Prokopenko2","userid":"a3ceeac0-d243-1030-936c-97596df8ae73","uid":"vprokopenko@worldbank.org","type":"0","ext":
+{"first":"","guid":"a3ceeac0-d243-1030-936c-97596df8ae73","state":"ACTIVE","orgId":"World Bank","countryCode":"FR","givenName":"Vladimir","uid":"vprokopenko@worldbank.org","sourceUrl":"ldaps://ghldapcl1.lotus.com:1636/dc=greenhouse,dc=ibm,dc=com?(&(objectclass=inetOrgPerson)(uid=*))","tenantKey":"00000000-0000-0000-0000-040508202233","surname":"Prokopenko","key":"08002f33-1a23-43fc-910a-8feb5c1fc8ac","displayName":"Vladimir Prokopenko","distinguishedName":"uid=vprokopenko@worldbank.org,cn=testusers,o=testorg,dc=greenhouse,dc=ibm,dc=com","lastUpdate":"2012-01-13 10:24:48.469"}
+}]}*/

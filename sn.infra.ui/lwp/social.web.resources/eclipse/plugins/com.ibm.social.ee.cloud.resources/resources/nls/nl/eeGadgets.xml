@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">OpenSocial-gadget Ingesloten ervaring gebruikt om aanvullende details en acties weer te geven voor Connections-events</msg>
+  <msg name="connectionsEE_errorTitle">Fout</msg>
+  <msg name="connectionsEE_errorDescription">Deze content is niet goedgekeurd door uw organisatie en is niet beschikbaar. Neem contact op met de beheerder van uw organisatie om de extensie in te schakelen.</msg>
+</messagebundle>

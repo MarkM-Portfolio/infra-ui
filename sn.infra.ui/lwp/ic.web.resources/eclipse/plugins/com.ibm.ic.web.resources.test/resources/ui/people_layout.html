@@ -1,0 +1,99 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>People Layout API</title>
+
+<style type="text/css">
+    table, td, th { border-collapse: collapse; border: 1px solid #ccc; }
+    th, td { text-align: center; padding: 2px 4px; }
+    th { white-space: nowrap; font-weight: bold; }
+</style>
+<script>
+djConfig.blankGif="";
+</script>
+${script:dojo/parser}
+${script:net.jazz.ajax.xdloader}
+${script:ic-ui/MessageBox}
+
+<script>
+    var USERS = [
+        {name: 'Andreas Berzat', userid: "49176fe8-16c8-4c36-8e29-b146e2e36dd4"},
+        {name: 'Dina Maroni', userid: "93d1ae57-2e4e-4073-86c5-5183908e7037"},
+        {name: 'Ed El-Amon', userid: "f9e1aff4-5483-4908-804f-3789be7f368b"}
+    ];
+
+    require(['ic-ui/layout/people',
+            'dojo/dom', // dom.byId
+            'dojo/_base/array', // array.forEach
+            'dojo/_base/declare',
+            'dojo/dom-construct', // domConstruct.create
+            'dojo/dom-class', // domClass.add, contains
+            'dojo/string', // string.substitute
+            'dijit/_Widget',
+            'dijit/_Templated',
+            'dojo/domReady!'], function(peopleLayout, dom, array, declare, domConstruct, domClass, string, _Widget, _Templated) {
+
+        var widget = declare([_Widget, _Templated], {
+            templateString: '<tr><td data-dojo-attach-point="nameNode"/><td data-dojo-attach-point="linkNode"/><td data-dojo-attach-point="pic32Node"/><td data-dojo-attach-point="pic64Node"/><td data-dojo-attach-point="pic128Node"/><td data-dojo-attach-point="urlNode"/><td data-dojo-attach-point="picUrlNode"/></tr>'
+        });
+        array.forEach(USERS, function(user, i) {
+            var w = new widget();
+            dom.byId('tbody1').appendChild(w.domNode);
+            w.nameNode.innerHTML = user.name
+            w.linkNode.appendChild(peopleLayout.createLink(user));
+            w.pic32Node.appendChild(peopleLayout.createImage(user, 32));
+            w.pic64Node.appendChild(peopleLayout.createImage(user, 64));
+            w.pic128Node.appendChild(peopleLayout.createImage(user, 128, true));
+            w.urlNode.innerHTML = peopleLayout.getProfileUrl(user);
+            w.picUrlNode.innerHTML = peopleLayout.getImageUrl(user, 32);
+        });
+    });
+</script>
+
+
+<style>
+input {
+	width: 200px;
+}
+div.messages { width: 900px; margin: auto; }
+</style>
+
+${endhead}
+
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-test/ui/index.html?render=test">Core UI widgets and utilities</a>
+    <span class="lotusDivider">&gt;</span>
+    People Layout API
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain">
+    <div class="lotusContent">
+
+        <h1>People Layout API</h1>
+        <dl>
+            <dt>Module ID: <code>ic-ui/layout/people</code></dt>
+            <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-ui/ic-ui.layout.people.html">JSDoc</a></dd>
+        </dl>
+
+        <table>
+            <tbody id="tbody1">
+                <tr>
+                    <th>User</th>
+                    <th>Link</th>
+                    <th>Picture (32px)</th>
+                    <th>Picture (64px)</th>
+                    <th>Picture (128px) with Link</th>
+                    <th>Profile URL</th>
+                    <th>Picture URL</th>
+                </tr>
+            </tbody>
+        </table>
+</div>
+</div>
+</body>
+${end}

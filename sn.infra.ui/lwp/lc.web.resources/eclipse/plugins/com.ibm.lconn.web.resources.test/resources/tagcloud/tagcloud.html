@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>IBM Connections - Tag Cloud</title>
+        <style type="text/css">
+            section.lotusSection2 {
+                width: 300px;
+            }
+        </style>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="Tag cloud test page">
+            <div class="lotusContent">
+                <h2>Declarative, JSON feed</h2>
+                <section class="lotusSection2 lotusSectionPlain">
+                    <div class="lotusSectionBody">
+                        <div jsid="ds1" data-dojo-type="lconn.core.TypeAheadDataStore" data-dojo-props="url:'tags.json'"></div>
+                        <div jsid="aj1" data-dojo-type="lconn.core.CommonTags.AjaxCall" data-dojo-props="TAG_URL:'tags.json',HANDLE_AS:'json'"></div>
+                        <div id="tc1" data-dojo-type="lconn.core.CommonTags.TagWidget" data-dojo-props="ajaxCall:aj1,tagStore:ds1"></div>
+                    </div><!--end section body-->
+                </section>
+
+                <h2>Programmatic, JSON feed</h2>
+                <section class="lotusSection2 lotusSectionPlain">
+                    <div class="lotusSectionBody">
+                        <div id="tc2"></div>
+                    </div><!--end section body-->
+                </section>
+
+                <h2>Programmatic, JSON feed with duplicates</h2>
+                <section class="lotusSection2 lotusSectionPlain">
+                    <div class="lotusSectionBody">
+                        <div id="tc3"></div>
+                    </div><!--end section body-->
+                </section>
+
+                <h2>Programmatic, empty</h2>
+                <section class="lotusSection2 lotusSectionPlain">
+                    <div class="lotusSectionBody">
+                        <div id="tc4"></div>
+                    </div><!--end section body-->
+                </section>
+
+                <h2>Programmatic, error response</h2>
+                <section class="lotusSection2 lotusSectionPlain">
+                    <div class="lotusSectionBody">
+                        <div id="tc5"></div>
+                    </div><!--end section body-->
+                </section>
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:dojo.parser}
+    ${script:net.jazz.ajax.xdloader}
+    ${script:lconn.core.TypeAheadDataStore}
+    ${script:lconn.core.CommonTags.TagWidget}
+    ${script:lconn.core.CommonTags.AjaxCall}
+    <script>
+        require(["dojo/domReady!"], function() {
+           var TAGS_JSON = 'tags.json';
+           new lconn.core.CommonTags.TagWidget({
+               ajaxCall : new lconn.core.CommonTags.AjaxCall({
+                   TAG_URL : TAGS_JSON,
+                   HANDLE_AS : 'json'
+               }),
+               tagStore : new lconn.core.TypeAheadDataStore({
+                   url : TAGS_JSON,
+               }, dojo.create('div'))
+           }, "tc2");
+
+           var DUPLICATE_TAGS_JSON = 'duplicate_tags.json';
+           new lconn.core.CommonTags.TagWidget({
+              ajaxCall : new lconn.core.CommonTags.AjaxCall({
+                  TAG_URL : DUPLICATE_TAGS_JSON,
+                  HANDLE_AS : 'json'
+              }),
+              tagStore : new lconn.core.TypeAheadDataStore({
+                  url : DUPLICATE_TAGS_JSON,
+              }, dojo.create('div'))
+           }, "tc3");
+
+           var NO_TAGS_JSON = 'no_tags.json';
+           new lconn.core.CommonTags.TagWidget({
+               ajaxCall : new lconn.core.CommonTags.AjaxCall({
+                   TAG_URL : NO_TAGS_JSON,
+                   HANDLE_AS : 'json'
+               }),
+               tagStore : new lconn.core.TypeAheadDataStore({
+                   url : NO_TAGS_JSON,
+               }, dojo.create('div'))
+           }, "tc4");
+
+           var ERROR_TAGS_JSON = 'idonotexist.json';
+           new lconn.core.CommonTags.TagWidget({
+              ajaxCall : new lconn.core.CommonTags.AjaxCall({
+                  TAG_URL : ERROR_TAGS_JSON,
+                  HANDLE_AS : 'json'
+              }),
+              tagStore : new lconn.core.TypeAheadDataStore({
+                  url : ERROR_TAGS_JSON,
+              }, dojo.create('div'))
+          }, "tc5");
+        });
+    </script>
+</body>
+</html>

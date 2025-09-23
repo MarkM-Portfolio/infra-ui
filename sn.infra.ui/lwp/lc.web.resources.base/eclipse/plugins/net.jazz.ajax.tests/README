@@ -1,0 +1,6 @@
+Instructions
+============
+Link the file:
+sn.infra.ui/lwp/lc.web.resources.base/eclipse/plugins/net.jazz.ajax/resources/core/internal/amd.js
+to the location:
+sn.infra.ui/lwp/lc.web.resources.base/eclipse/plugins/net.jazz.ajax.tests/src/net/jazz/ajax/tests/resources/amd.js

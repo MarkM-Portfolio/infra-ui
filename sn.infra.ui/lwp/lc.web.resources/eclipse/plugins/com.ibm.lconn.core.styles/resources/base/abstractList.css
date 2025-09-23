@@ -1,0 +1,72 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+.ic-textList-widget li {
+  display: list-item !important;
+}
+
+ul.ic-textList-widget { 
+   list-style: none;
+   margin:0;
+   padding:0;
+}
+
+ul.ic-iconList-widget{ 
+   list-style: none;
+   height:16px;
+   margin:0;
+   padding:0;
+}
+
+ul.ic-iconList-widget li{ 
+   padding-left: 10px;
+   float:left;
+}
+
+ul.ic-iconList-widget >:first-child { 
+   padding-left: 0px;
+}
+
+.ic-iconList-widget a.standIcon.hc { 
+   position:relative;
+   display:block;
+   width: 16px;
+   height: 16px;
+   background-repeat: no-repeat;
+   text-indent:100%;
+   white-space: nowrap;
+   overflow: hidden;	
+   }
+
+/* TODO: optimize HC mode and implement it in RTL*/ 
+.lotusui30.lotusImagesOff .ic-iconList-widget a.standIcon.hc { 
+   text-indent: 0;
+   text-overflow: ellipsis;
+   font-size: 1em;
+   font-weight: bold;
+}
+
+.ic-iconList-widget span.sameTime  { 
+   position:absolute;
+   width: 9px;
+   height: 9px;
+   background-repeat: no-repeat;
+   right:0px;
+   bottom:0px;
+}
+ 
+.ic-iconList-widget span.sameTime.available {
+   background-image:url('../images/businessCard/ST_Awns_Avail_03.png');
+}
+
+.ic-iconList-widget span.sameTime.away {
+   background-image:url('../images/businessCard/ST_Awns_Away_03.png');
+}
+.ic-iconList-widget span.sameTime.dnd {
+   background-image:url('../images/businessCard/ST_Awns_DND_03.png');
+}
+.ic-iconList-widget span.sameTime.inAMtng {
+   background-image:url('../images/businessCard/ST_Awns_InAMtng_03.png');
+}
+.ic-iconList-widget span.sameTime.unknown {
+   background-image:url('../images/businessCard/ST_Awns_Unknown.png');
+}

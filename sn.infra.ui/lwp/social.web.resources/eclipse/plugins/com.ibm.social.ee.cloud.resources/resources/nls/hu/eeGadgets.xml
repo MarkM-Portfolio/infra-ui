@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">A beágyazott élmény OpenSocial vezérlőelem a Connections események további részleteinek és műveleteinek megjelenítésére szolgál</msg>
+  <msg name="connectionsEE_errorTitle">Hiba</msg>
+  <msg name="connectionsEE_errorDescription">Ezt a tartalmat nem hagyta jóvá a szervezete, és nem érhető el. A bővítmény engedélyezéséhez forduljon a szervezete adminisztrátorához.</msg>
+</messagebundle>

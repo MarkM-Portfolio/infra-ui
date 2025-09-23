@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<entry xmlns="http://www.w3.org/2005/Atom" xmlns:td="urn:ibm.com/td" xmlns:wplcext="http://www.ibm.com/wplcext/atom/1.0" xmlns:snx="http://www.ibm.com/xmlns/prod/sn">
+  <title type="text">Public community</title>
+  <category term="library" scheme="tag:ibm.com,2006:td/type" label="library"></category>
+  <content type="application/atom+xml" src="http://forrestal.rtp.raleigh.ibm.com/dm/atom/library/D4C914E0-C46B-424A-A7F7-726A81B4BB74%3BB7058BF3-4BD0-4E2F-9FFF-5D7C833A8C19/feed"></content>
+  <link href="http://forrestal.rtp.raleigh.ibm.com/dm/atom/library/D4C914E0-C46B-424A-A7F7-726A81B4BB74%3BB7058BF3-4BD0-4E2F-9FFF-5D7C833A8C19/entry" rel="self"></link>
+  <link href="http://forrestal.rtp.raleigh.ibm.com/dm/atom/library/D4C914E0-C46B-424A-A7F7-726A81B4BB74%3BB7058BF3-4BD0-4E2F-9FFF-5D7C833A8C19/entry" rel="edit"></link>
+  <link href="http://forrestal.rtp.raleigh.ibm.com/dm/atom/library/D4C914E0-C46B-424A-A7F7-726A81B4BB74%3BB7058BF3-4BD0-4E2F-9FFF-5D7C833A8C19/library/D4C914E0-C46B-424A-A7F7-726A81B4BB74%3BB7058BF3-4BD0-4E2F-9FFF-5D7C833A8C19/members/feed" rel="members"></link>
+  <link href="http://forrestal.rtp.raleigh.ibm.com/dm/atom/library/D4C914E0-C46B-424A-A7F7-726A81B4BB74%3BB7058BF3-4BD0-4E2F-9FFF-5D7C833A8C19/documenttypes/feed" rel="local-doctypes"></link>
+  <link href="http://forrestal.rtp.raleigh.ibm.com/dm/atom/library/shared/documenttypes/feed" rel="shared-doctypes"></link>
+  <td:defaultDocumentTypeUuid>D4C914E0-C46B-424A-A7F7-726A81B4BB74;01A3A8C2-7AEC-11D1-A31B-0020AF9FBB1C</td:defaultDocumentTypeUuid>
+  <snx:remoteApplication id="ec5c27f6-6776-4bbd-a76f-4d46245d8b68">
+    <snx:property name="rootFeed">http://forrestal.rtp.raleigh.ibm.com/dm/atom/library/D4C914E0-C46B-424A-A7F7-726A81B4BB74%3BB7058BF3-4BD0-4E2F-9FFF-5D7C833A8C19/feed</snx:property>
+    <snx:property name="generator">Social ECM Documents: P8</snx:property>
+    <snx:property name="rootCategory">library</snx:property>
+    <snx:property name="sharedDocTypesUrl">http://forrestal.rtp.raleigh.ibm.com/dm/atom/library/shared/documenttypes/feed</snx:property>
+    <snx:property name="componentId">D4C914E0-C46B-424A-A7F7-726A81B4BB74;B7058BF3-4BD0-4E2F-9FFF-5D7C833A8C19</snx:property>
+    <snx:property name="communityType">public</snx:property>
+  </snx:remoteApplication>
+  <td:approvalType>none</td:approvalType>
+  <td:additionalApproversAllowed>false</td:additionalApproversAllowed>
+  <td:defaultRole>Contributor</td:defaultRole>
+  <td:communityOwnerGroupId>$IC-C-O-ec5c27f6-6776-4bbd-a76f-4d46245d8b68</td:communityOwnerGroupId>
+  <td:communityMemberGroupId>$IC-C-M-ec5c27f6-6776-4bbd-a76f-4d46245d8b68</td:communityMemberGroupId>
+  <td:publicGroupId>$IC-T-I-38bc6c37-5fd0-4a6d-8027-666d0eb38508</td:publicGroupId>
+  <id>urn:lsid:ibm.com:td:D4C914E0-C46B-424A-A7F7-726A81B4BB74%3BB7058BF3-4BD0-4E2F-9FFF-5D7C833A8C19</id>
+  <author>
+    <name>wasadmin</name>
+    <uri>uid%3Dwasadmin%2Co%3DdefaultWIMFileBasedRealm</uri>
+    <td:uid>48d6c0f0-c200-4b69-935b-53ce860cae37</td:uid>
+  </author>
+  <td:label>Public community</td:label>
+  <td:uuid>D4C914E0-C46B-424A-A7F7-726A81B4BB74;B7058BF3-4BD0-4E2F-9FFF-5D7C833A8C19</td:uuid>
+  <td:modifier>
+    <td:uri>uid%3Dwasadmin%2Co%3DdefaultWIMFileBasedRealm</td:uri>
+    <td:name>wasadmin</td:name>
+    <td:email></td:email>
+    <td:uid>48d6c0f0-c200-4b69-935b-53ce860cae37</td:uid>
+  </td:modifier>
+  <td:locked>false</td:locked>
+  <td:averageRating>0.0</td:averageRating>
+  <td:ratingCount>0</td:ratingCount>
+  <summary type="text"></summary>
+  <td:created>2014-07-24T19:19:02.717Z</td:created>
+  <published>2014-07-24T19:19:02.717Z</published>
+  <td:modified>2014-07-24T19:19:02.873Z</td:modified>
+  <updated>2014-07-24T19:19:02.873Z</updated>
+</entry>

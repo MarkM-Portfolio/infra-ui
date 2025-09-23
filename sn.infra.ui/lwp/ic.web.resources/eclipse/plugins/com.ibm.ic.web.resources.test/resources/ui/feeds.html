@@ -1,0 +1,67 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>Feeds</title>
+
+
+<script>
+dojoConfig.parseOnLoad=true;
+
+</script>
+${script:dojo/dom}
+${script:dojo/parser}
+${script:net.jazz.ajax.xdloader}
+${script:ic-ui/Feeds}
+
+<script>
+    var i1 = [{
+        text : 'IBM.com',
+        title : 'Feed of IBM.com',
+        type : 'application/atom+xml',
+        href : 'http://www.ibm.com/feed'
+    }, {
+        text : 'Watson',
+        title : 'Feed of Watson technologies',
+        type : 'application/atom+xml',
+        href : 'http://www.ibm.com/watson/feed'
+    }], i2 = [{
+        text : 'Jazz.net',
+        title : 'Feed of Jazz.net',
+        type : 'application/atom+xml',
+        href : 'http://jazz.net/feed'
+    }];
+</script>
+
+
+<style>
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-test/ui/index.html?render=test">Core UI widgets and utilities</a>
+    <span class="lotusDivider">&gt;</span>
+    Feeds
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain">
+<div class="lotusContent">
+<h1>Feeds</h1>
+<dl>
+    <dt>Module ID: <code>ic-ui/Feeds</code></dt>
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-ui/ic-ui.Feeds.html">JSDoc</a></dd>
+</dl>
+
+<h2>Single</h2>
+<div id="f2" data-dojo-type="ic-ui/Feeds" data-dojo-props="items:i2"></div>
+
+<h2>Multiple</h2>
+<div id="f1" data-dojo-type="ic-ui/Feeds" data-dojo-props="items:i1"></div>
+</div>
+</div>
+</body>
+${end}

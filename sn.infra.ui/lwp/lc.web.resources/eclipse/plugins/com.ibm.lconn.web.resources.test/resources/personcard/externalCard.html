@@ -1,0 +1,106 @@
+${head}
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+${script:dijit.dijit}
+
+${style:com.ibm.oneui/controls/templates/HoverPopup}
+${style:com.ibm.oneui/controls/templates/ResourceLink}
+
+<!--  
+This is an example URL to load the person card but exclude base dijit.  Embed this URL into 
+your application to enable the new person card.
+-->
+<script id="example-script" src="../../_js?include=com.ibm.lconn.personcard.standard&exclude=dijit.main&lang=en&debug=dojo"></script>
+
+${endhead}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+<p>This page demonstrates using the new person card from an external web-site.  The script tag
+in the page source (identified by the HTML comment) loads all of the JS necessary to show the 
+card.  
+
+<p>Once the script is loaded (it assumes Dojo has already been made available) it will scan
+the page DOM looking for links that appear to point to a Profiles server.  When a user mouses
+over the link, it will register a new instance of com.ibm.oneui.controls.ResourceLink that will
+show the person card.  com.ibm.lconn.personcard.link (which is included in the script above)
+registers a handler that determines the URL to show in the ResourceLink IFRAME.  The person
+card is rendered by the Profiles server as HTML and JavaScript.
+
+<p class="lotusChunk15">Enter base URL to a Profiles server here: 
+	<input type="text" id="url" style="width: 40em;" value=""> 
+	<input type="button" onclick="changeUrl();" value="Change">
+	<ul>
+		<li>http://lc30linux3.swg.usma.ibm.com/profiles
+		<li>http://lc30linux4.swg.usma.ibm.com/profiles
+	</ul>
+
+${script:lconn.test.personcard.test}
+
+
+<p>The standard person card scans for links in the page that appear to point to the Profiles 
+server listed above.  You may change which server the current page points to via the input 
+above.  The inputs below allow you to change what the person card retrieves, but you must
+move the focus off the input for the change to take effect (the link is not updated to the 
+new url until after focus leaves the input). 
+
+<table class="lotusChunk15">
+
+<tr>
+<td style="color: red;"><script>
+if (dojo.getObject("com.ibm.lconn.personcard.standard"))
+	document.write("Person card loaded");
+else
+	document.write("Business card did not load");
+</script></td>
+<td>The text to the left will display the status of the business card</td>
+</tr>
+
+
+<tr>
+<td>
+	<a id='test1' href='#' class='lotusPerson'>
+		Business Card by e-mail
+	</a>
+</td>
+<td>
+	<input class="lotusText" style="width: 30em;" type="text" data-key="email" data-for="test1" value="ajones115@janet.iris.com">
+	Enter an e-mail address to retrieve the business card.
+</td>
+</tr>
+
+<tr>
+<td>
+	<a id='test2' href='#' class='lotusPerson'>
+		Business Card by Profiles key
+	</a>
+</td>
+<td>
+	<input class="lotusText" style="width: 30em;" type="text" data-key="key" data-for="test2" value="<uuid>">
+	Enter a Profile database key (UUID of profile) to retrieve the business card.
+</td>
+</tr>
+
+<tr>
+<td>
+	<a id='test3' href='#' class='lotusPerson'>
+		Business Card by Profiles directory id (snx:userId)
+	</a>
+</td>
+<td>
+	<input class="lotusText" style="width: 30em;" type="text" data-key="uid" data-for="test3" value="ajones1">
+	Enter the directory id (snx:userId) to retrieve the business card.
+</td>
+</tr>
+
+</table>
+
+<script>
+dojo.addOnLoad(rebuildLinks);
+</script>
+
+</div>
+</div>
+</body>
+${end}

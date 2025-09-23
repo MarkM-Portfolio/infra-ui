@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Uitnodigen als connectie",
+	NDYK1:"Geen personen meer om aan te bevelen",
+	LOADING: "bezig met laden",
+	DYK_TITLE: "Personen die u mogelijk kent",
+	INVITE_TITLE: "Uitnodiging tot mijn netwerk verzenden",
+	SEND_ACTION: "Verzenden",
+	CANCEL_ACTION: "Annuleren",
+	PREV: "Vorige",
+	NEXT: "Volgende",
+	bpct: "Heeft gereageerd op uw blog",
+	bpcc: "Heeft op hetzelfde blog gereageerd",
+	lpfr: "Is een collega of bekende",
+	lm1: "U bent de manager van deze persoon",
+	le1: "Deze persoon is uw manager",
+	sdm: "U hebt dezelfde manager",
+	pt: "Deze persoon heeft u van een tag voorzien",
+	pbt: "U hebt deze persoon van een tag voorzien",
+	acm: "U hebt gemeenschappelijke activiteiten",
+	wikiCoContribution: "U hebt aan dezelfde wiki gewerkt",
+	bpcb: "U hebt op hun blog gereageerd",
+	lpcfr: "U hebt enige gemeenschappelijke collega's",
+	ccmf: "U maakt deel uit van dezelfde community",
+	ccms: "U maakt deel uit van dezelfde community",
+	filesharing: "U hebt een paar gemeenschappelijke bestanden",
+	forumthreaddiscussion: "U hebt een gemeenschappelijke forumthread",
+	ctb: "U hebt een gemeenschappelijke bladwijzer",
+	tgw: "U hebt overeenkomende tags",
+	tcu: "U hebt dezelfde tag gebruikt",
+	pctg: "U hebt beide dezelfde persoon van een tag voorzien",
+	tgb: "Dezelfde persoon heeft u beide van een tag voorzien"
+})

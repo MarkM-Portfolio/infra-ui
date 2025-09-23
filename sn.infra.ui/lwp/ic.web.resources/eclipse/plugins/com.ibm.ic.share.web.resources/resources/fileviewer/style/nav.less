@@ -1,0 +1,136 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+.ics-viewer .ics-viewer-nav {
+   position: absolute;
+   z-index: 999;
+   top: 50%;
+   margin-top: -24px;
+}
+
+.ics-viewer .ics-viewer-nav-prev {
+   float: left;
+   left: 25px;
+}
+.ics-viewer.rtl .ics-viewer-nav-prev {
+   left: 75px;
+}
+
+.ics-viewer .ics-viewer-nav-next {
+   float: right;
+   right: 75px;
+}
+.ics-viewer.rtl .ics-viewer-nav-next {
+   right: 25px;
+}
+
+.ics-viewer .ics-viewer-nav a {
+   position: absolute;
+   text-decoration: none;
+   color: #BBB;
+}
+
+.ics-viewer .ics-viewer-nav-disabled a {
+   opacity: .3;
+   cursor: default;
+   display: none;
+}
+
+.lotusui_ie8 .ics-viewer .ics-viewer-nav-disabled a {
+   visibility: hidden;
+}
+
+.ics-viewer .ics-viewer-nav .ics-viewer-nav-icon {
+   width: 36px;
+   height: 36px;
+   margin: 5px;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-color: rgba(22, 24, 26, 0.8);
+}
+
+.ics-viewer .ics-viewer-nav-prev .ics-viewer-nav-icon {
+   background-image:  ~"url(../style/images/PreviousFile_white_16.png)";
+}
+
+.ics-viewer .ics-viewer-nav-next .ics-viewer-nav-icon {
+   background-image:  ~"url(../style/images/NextFile_white_16.png)";
+}
+
+.ics-viewer .ics-viewer-nav .ics-viewer-nav-file {
+   position: absolute;
+   top: 5px;
+   color: white;
+   padding: 8px 15px;
+   
+   background-color: rgba(22, 24, 26, 0.8);
+   background-clip: padding-box;
+   white-space: nowrap;
+   /* display: none; */
+   opacity: 0;
+   transition: all .25s ease;
+   pointer-events: none;
+   
+   max-width: 200px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   
+   font-size: 13px;
+}
+
+.ics-viewer.rtl .ics-viewer-nav .ics-viewer-nav-file {
+   direction: ltr;
+   img {
+     float: right;
+   }
+   span {
+     display: block;
+     max-width: 180px;
+     margin-right: 20px;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+     overflow: hidden;
+   }
+}
+
+.lotusui_ie8 .ics-viewer .ics-viewer-nav .ics-viewer-nav-file {
+   display: none;
+   background-color: rgb(22, 24, 26);
+   filter: alpha(opacity=80);
+}
+
+.ics-viewer .ics-viewer-nav a:hover .ics-viewer-nav-file {
+   opacity: 1;
+}
+
+.ics-viewer .ics-viewer-nav a:focus .ics-viewer-nav-file {
+   opacity: 1;
+   transition: none;
+}
+
+.ics-viewer .ics-viewer-nav .ics-viewer-nav-file img {
+   position: relative;
+   margin-right: 2px;
+   height: 20px;
+}
+
+.ics-viewer.rtl .ics-viewer-nav .ics-viewer-nav-file img {
+   margin-right: 0;
+   margin-left: 2px;
+}
+
+.lotusui_ie8 .ics-viewer .ics-viewer-nav a:hover .ics-viewer-nav-file, .lotusui_ie8 .ics-viewer .ics-viewer-nav a:focus .ics-viewer-nav-file {
+   display: block;
+}
+
+.ics-viewer .ics-viewer-nav-prev .ics-viewer-nav-file {
+   left: 47px;
+}
+
+.ics-viewer .ics-viewer-nav-next .ics-viewer-nav-file {
+   right: 47px;
+}
+
+
+.ics-viewer .ics-viewer-nav-disabled .ics-viewer-nav-file, .ics-viewer .ics-viewer-nav-disabled a:hover .ics-viewer-nav-file {
+   display: none;
+}

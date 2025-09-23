@@ -1,0 +1,5 @@
+dojo._xdResourceLoaded(function(dojo, dijit, dojox){
+return {depends: [["provide", "dojox.editor.plugins.nls.ja.FindReplace"]],
+defineResource: function(dojo, dijit, dojox){dojo.provide("dojox.editor.plugins.nls.ja.FindReplace");dojo._xdLoadFlattenedBundle("dojox.editor.plugins", "FindReplace", "ja", ({"backwards":"後方","findReplace":"検索/置換の切り替え","replaceAll":"すべてのオカレンス","replaceDialogText":"${0} 個のオカレンスを置換しました。","replaceButton":"置換","findButton":"検索","findLabel":"検索内容:","matchCase":"大/小文字を区別","replaceLabel":"次で置換:"})
+);
+}};});

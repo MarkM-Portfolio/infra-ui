@@ -1,0 +1,20 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.iconsComponentsGray32-ActivitiesGray32{width:32px;height:32px;background-position:0 0}
+.iconsComponentsGray32-BlogsGray32{width:32px;height:32px;background-position:0 -40px}
+.iconsComponentsGray32-BookmarksGray32{width:32px;height:32px;background-position:0 -80px}
+.iconsComponentsGray32-CalendarGray32{width:32px;height:32px;background-position:0 -120px}
+.iconsComponentsGray32-CommunitiesGray32{width:32px;height:32px;background-position:0 -160px}
+.iconsComponentsGray32-FilesGray32{width:32px;height:32px;background-position:0 -200px}
+.iconsComponentsGray32-ForumsGray32{width:32px;height:32px;background-position:0 -240px}
+.iconsComponentsGray32-HomeGray32{width:32px;height:32px;background-position:0 -280px}
+.iconsComponentsGray32-LibraryLinkedGray32{width:32px;height:32px;background-position:0 -320px}
+.iconsComponentsGray32-MailGray32{width:32px;height:32px;background-position:0 -360px}
+.iconsComponentsGray32-MetricsGray32{width:32px;height:32px;background-position:0 -400px}
+.iconsComponentsGray32-NewsFeedGray32{width:32px;height:32px;background-position:0 -440px}
+.iconsComponentsGray32-ProfilesGray32{width:32px;height:32px;background-position:0 -480px}
+.iconsComponentsGray32-StatusUpdateGray32{width:32px;height:32px;background-position:0 -520px}
+.iconsComponentsGray32-TodoGray32{width:32px;height:32px;background-position:0 -560px}
+.iconsComponentsGray32-WikisGray32{width:32px;height:32px;background-position:0 -600px}
+
+.iconsComponentsGray32{background-image:url('./iconsComponentsGray32-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsComponentsGray32{display:none}

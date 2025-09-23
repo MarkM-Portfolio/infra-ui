@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">파일</msg>
+  <msg name="description">파일 업로드 및 공유를 사용하기 위한 파일 가젯</msg>
+  <msg name="action_uploadFile_label">파일</msg>
+  <msg name="action_uploadFile_tooltip">파일 업로드 및 공유</msg>
+  <msg name="loading">로드 중...</msg>
+  <msg name="error_msg">컨텐츠를 로드할 수 없습니다. 나중에 다시 시도하거나 시스템 관리자에게 문의하십시오.</msg>
+  <msg name="error_alt">오류</msg>
+</messagebundle>

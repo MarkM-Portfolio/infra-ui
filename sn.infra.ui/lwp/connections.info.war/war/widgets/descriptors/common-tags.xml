@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2001, 2015                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+-->
+<iw:iwidget id="commonTags" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget">
+
+	<iw:itemSet id="attributes" onItemSetChanged="changeItemSet">
+		<iw:item id="tagCloudFeedUrl" value="{dogearSvcRef}/tags"/>
+	</iw:itemSet>
+	
+    <iw:content mode="view">
+        <![CDATA[    
+            <div id="lconnTagWidget">
+              &nbsp;
+            </div>
+            <script type="text/javascript">
+				dojo.require("dojo.parser");
+				
+				if (typeof tagParameterMap == "undefined") {
+					window.tagParameterMap = {};
+					try {
+						if (location.href.indexOf("?") > -1 && location.href.split("?")[1] != "") {
+							tagParameterMap = dojo.queryToObject(location.href.split("?")[1]);
+							delete tagParameterMap.lang;
+							delete tagParameterMap.ver;
+						}
+					} catch (e) {}
+				}
+
+				document.getElementById("commonTagsSection").setAttribute("role", "complementary");
+				document.getElementById("commonTagsSection").setAttribute("aria-label", generalrs.commonTags);
+				dojo.addClass("commonTagsSubArea", "lconnTagCloudFilter");
+				dojo.addClass("commonTags", "lconnTagCloudContent");
+				document.getElementById("lconnTagWidget").innerHTML += generalrs.commonTagsLoading;
+              
+			    //create redirect url
+			    //check what type of search
+				var commonTags_redirectURL = applicationContext + "/html/"+((profileSearchType != '')?profileSearchType:"advancedSearch")+".do";
+				var removeUrl = commonTags_redirectURL;
+				
+				var tagstr = ( typeof(tagParameterMap['profileTags']) != "undefined") ? dojo.string.trim(tagParameterMap['profileTags']) : "";
+				if (tagstr && tagstr.length != 0) {
+					var tags = tagstr.split(' ');
+					if (tags.length == 1) {
+						removeUrl = applicationContext + "/html/searchProfiles.do";
+					}
+				}
+				 
+				var lconnCommonTagsArgs = {contextPath: applicationContext,
+											selectedTags:tagParameterMap['profileTags'],
+											tagUrl: applicationContext+ '/atom/forms/tagCloud.do',
+											typeAheadFeedUrl:applicationContext+ '/html/tagTypeahead.do?useJson=true',
+											urlParameters:tagParameterMap,
+											tagTemplate:'profileTags',
+											typeAheadTemplate:'tag',
+											redirectUrl:commonTags_redirectURL,
+											disableRelated:false,
+											redirectWhenClickTag:true,
+											featureName: 'profiles',
+											removeUrl: removeUrl
+				};
+              
+				if(!lconnprofilescommontagcloud){
+					var lconnprofilescommontagcloud = new lconn.profiles.ProfilesTagWidget(lconnCommonTagsArgs,dojo.byId('lconnTagWidget'));
+				}else{
+					lconnprofilescommontagcloud.destroy();
+					lconnprofilescommontagcloud = new lconn.profiles.ProfilesTagWidget(lconnCommonTagsArgs,dojo.byId('lconnTagWidget'));
+				}
+            </script>
+		]]> 
+     </iw:content>
+</iw:iwidget>

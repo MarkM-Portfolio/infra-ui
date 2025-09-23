@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "邀請以連接",
+	NDYK1:"沒有更多可建議的人員",
+	LOADING: "載入中",
+	DYK_TITLE: "您可能認識的人",
+	INVITE_TITLE: "傳送連接邀請",
+	SEND_ACTION: "傳送",
+	CANCEL_ACTION: "取消",
+	PREV: "上一步",
+	NEXT: "下一步",
+	bpct: "已對您的部落格發表評論",
+	bpcc: "您對同一個部落格發表了評論",
+	lpfr: "是您認識之人的同事",
+	lm1: "您是這個人的經理",
+	le1: "這個人是您的經理",
+	sdm: "你們的經理是同一位",
+	pt: "此人員已標記您",
+	pbt: "您已標記此人員",
+	acm: "您共用活動",
+	wikiCoContribution: "您二人都編輯相同的 Wiki",
+	bpcb: "您對其部落格發表評論",
+	lpcfr: "你們有一些相同的同事",
+	ccmf: "你們在相同的社群裡",
+	ccms: "你們在相同的社群裡",
+	filesharing: "你們共用一些檔案",
+	forumthreaddiscussion: "你們共用相同的討論區討論串",
+	ctb: "你們共用相同的書籤",
+	tgw: "你們有相符的標籤",
+	tcu: "你們使用相同的標籤",
+	pctg: "你們兩人同時標記了同一個人",
+	tgb: "同一個人標記了你們兩人"
+})

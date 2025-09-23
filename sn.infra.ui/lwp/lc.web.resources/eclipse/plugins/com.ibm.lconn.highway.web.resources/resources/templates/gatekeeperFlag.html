@@ -1,0 +1,63 @@
+<!-- Copyright IBM Corp. 2013, 2015  All Rights Reserved.              -->
+
+<div>
+
+  <!--  TODO : Create a separate CSS class for the overrides below ! -->
+  <table dojoattachpoint="tableNode" class="lotusInfoBox" style="padding: 0px !important; margin: 2px 0 1px 0 !important;" width="100%"  tabindex="0" 
+  	dojoattachevent="onfocus:onSettingFocus,onblur:onSettingBlur,onmouseover:onMouseOver,onmouseout:onMouseOut">
+
+	  <tr>
+	  	<td colspan="3">
+  			<div aria-live="assertive" dojoattachpoint="messageContainerNode"></div>
+  		</td>
+	  </tr>
+
+	  <tr>
+	  
+		<td class="lotusAlignLeft" title="${description}" dojoattachpoint="titleNode">
+			${name}
+		</td>
+		<td class="lotusAlignRight">
+			<span dojoattachpoint="valueNode">
+				${value}
+			</span>
+			<span dojoattachpoint="valueUpdatingNode" class="lotusHidden lotusInactive">
+				${_resourceBundle.settingUpdating}
+			</span>
+			<span dojoattachpoint="valueEditNode" class="lotusHidden" >
+			    <select dojoattachpoint="valueEditSelectNode" aria-required="true" class="lotusText">
+			      <option value='true'>True</option>
+			      <option value='false' selected='true'>False</option>
+			    </select>
+			</span>
+		</td>
+		
+		<!-- All actions are hidden until needed -->
+		<td class="lotusAlignRight" width="100">
+			<ul class="lotusInlinelist lotusActions" >
+				<span dojoattachpoint="editActionNode" class="lotusHidden" dojoattachevent="onclick:onEdit">
+					<li title="${_resourceBundle.settingEditActionDescription}" class="lotusFirst lotusAlignLeft">
+						<a href="javascript:;" role="button">${_resourceBundle.settingEditActionName}</a>
+					</li>
+				</span>
+				<span dojoattachpoint="saveActionNode" class="lotusHidden" dojoattachevent="onclick:onSave">
+					<li title="${_resourceBundle.settingSaveActionDescription}" class="lotusFirst lotusAlignLeft">
+						<a href="javascript:;" role="button">${_resourceBundle.settingSaveActionName}</a>
+					</li>
+				</span>
+				<span dojoattachpoint="cancelActionNode" class="lotusHidden"  dojoattachevent="onclick:onCancel">
+					<li title="${_resourceBundle.settingCancelActionDescription}" class="lotusAlignLeft">
+						| <a href="javascript:;" role="button">${_resourceBundle.settingCancelActionName}</a>  <!-- TODO : Remove bar and use style instead -->
+					</li>
+				</span>
+
+			</ul>
+		</td>
+	  </tr>
+	  
+  </table>
+
+  <div dojoattachpoint="containerNode"></div>
+  
+  
+</div>

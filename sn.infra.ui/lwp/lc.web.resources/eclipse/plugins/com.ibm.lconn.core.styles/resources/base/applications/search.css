@@ -1,0 +1,314 @@
+/* Copyright IBM Corp. 2010, 2015  All Rights Reserved.              */
+
+/** Advanced Search page **/
+
+form#advancedSearchForm1 .lotusText {
+	width: 22em;
+}
+
+form#advancedSearchForm1 strong {
+	text-decoration: underline;
+}
+
+.lconnSearchPageSection {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 20px
+}
+
+.lconnSearchColumn {
+	padding-left: 10px;
+}
+
+.lconnSearchColumnItem {
+	padding-top: 0.5em;
+}
+
+.lconnSearchInputContainer {
+	padding:15px; 
+	padding-bottom: 0px
+}
+.lconnSearchServiceLabel {
+	margin: 4px;
+}
+
+.lotusui30 .lotusTable .promotedStatusUpdate.lotusFirst td {
+	border-top-width: 1px;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lotusTable .promotedStatusUpdate.lotusFirst td {
+	border-top-width: 0px;
+}
+
+.search-global-search-restyle .lotusui30_layout .lotusMain .lotusContent.icSearchResultsPage {
+	padding: 0px 75px 20px;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lotusHeader.lconnSearchHeader {
+	padding: 0px 0 15px;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchHeader .lotusSearch {
+	border-bottom: 2px solid #167bb1;
+	display: table;
+	width: 100%;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchHeader .lotusSearch .icSearchInputBox {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 2em;
+	width: 100%
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchHeader .lotusSearch .icSearchInputBox input {
+	color: #167bb1;
+	outline: 0;
+	padding-left: 5px;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchHeader .lotusSearch .icSearchInputBox input::-ms-clear {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchHeader .lotusSearch .icSearchBarButtons {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchHeader .lotusSearch .icSubmitSearch {
+	background-color: #167bb1;
+	color: white;
+	text-shadow: none;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchDidYouMean .lotusMessage2.lotusInfo {
+	padding: 0;
+	background: none;
+	border: none;
+	font-size: 1em;
+	margin-bottom: 0px;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchDidYouMean .lotusMessage2.lotusInfo .lotusDelete {
+	display: none;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lotusFilters2 {
+	margin-top: 5px;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lotusFilters2 .lotusSearchFilterSection {
+	border: none;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage  .lotusFilters2 a.lotusFilter {
+	color: #222;
+	background-color: #efefef;
+	border-color: #e5e5e5;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults {
+	clear: both;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lotusHeader {
+	padding: 0px 5px
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .lconnPromotedStatusUpdatesContainer div.lotusHeader {
+	margin-bottom: 8px;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults div.lotusHeader.lconnSearchResultsHeading {
+	margin-top: 50px;
+	margin-bottom: 8px;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .icPageControls {
+	padding: 0px 5px;
+	margin-bottom: 8px;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable {
+	border-bottom: none;
+	border-top: 1px solid #777;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable tr {
+	cursor: pointer;
+	border-left: 5px solid transparent;
+}
+
+.search-pagination-limit-ui .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable tr.icLastPageMessage {
+	cursor: default;
+	border-left: none;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable tr:hover,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable tr.icSearchResultSelected {
+	border-color: #167BB1;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable tr:hover .lconnShowOnSelected,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable tr.icSearchResultSelected .lconnShowOnSelected {
+	display: inline;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable tr .lconnShowOnSelected,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable tr:hover .lconnHideOnSelected,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable tr.icSearchResultSelected .lconnHideOnSelected {
+	display: none;
+}
+
+.search-global-search-restyle .lotusui30_layout .lotusContent.icSearchResultsPage .lotusTable tr td:first-child {
+	padding-left: 10px;
+	vertical-align: middle;
+}
+
+.search-pagination-limit-ui .lotusui30_layout .lotusContent.icSearchResultsPage .lotusTable tr.icLastPageMessage td:first-child {
+	padding-left: 0px;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable .lconnStatusUpdateTitle .lotusPerson {
+	color: #222;
+	font-size: 1.08em;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable .lconnStatusUpdateTitle .icStatusUpdate {
+	margin-left: 5px;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .icViewAll {
+	display: inline;
+	float: right;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .icViewAll span,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .lotusSort .lotusInlinelist,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .lotusHeader .icCounts span,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchDidYouMean .lotusMessage2 .lotusMessageBody a,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lotusForm a {
+	font-weight: bold;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lotusPaging .lotusInlinelist li.icNoBorder {
+	border: none;
+}
+
+.search-pagination-limit-ui .lotusui30 .icSearchResultsPage .lotusPaging .lotusInlinelist li.icNoBorder {
+	display: none;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .icPagination {
+	margin: 0px;
+	padding: 0px;
+	float: right;
+	border: none;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .lotusSort {
+	margin: 0px;
+	float: left;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .lotusPaging,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .lotusSort,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .lotusSort a.lotusDisabled,
+.search-global-search-restyle:not(.search-pagination-limit-ui) .lotusui30 .icSearchResultsPage .lconnSearchResults .icPagination a,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .icPagination .lotusFirst,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .icPagination .icNext,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .icPagination .lotusLast,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .icViewAll,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable .lconnStatusUpdateTitle .icStatusUpdate,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lotusMeta,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lotusMeta .icGreyText,
+.search-global-search-restyle .icSearchResultsPage div.lconnSearchResults .lotusTable .icSearchDetails a {
+	color: #6F6F6F;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .icPagination .icSelected {
+	color: #167bb1;
+	font-weight: bold;
+}
+
+.search-global-search-restyle:not(.search-pagination-limit-ui) .lotusui30 .icSearchResultsPage .lconnSearchResults .icPagination .icPrev {
+	border-right: 1px solid #ccc;
+}
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .icPagination .icNext {
+	padding-right: 0px;
+	border-left: 1px solid #ccc;
+}
+.search-pagination-limit-ui .lotusui30 .icSearchResultsPage .lconnSearchResults .icPagination .icNext {
+	border: none;
+}
+.search-global-search-restyle:not(.search-pagination-limit-ui) .lotusui30 .icSearchResultsPage .lconnSearchResults .icPagination .icPrev,
+.search-global-search-restyle:not(.search-pagination-limit-ui) .lotusui30 .icSearchResultsPage .lconnSearchResults .icPagination .icPrev a,
+.search-global-search-restyle:not(.search-pagination-limit-ui) .lotusui30 .icSearchResultsPage .lconnSearchResults .icPagination .icNext,
+.search-global-search-restyle:not(.search-pagination-limit-ui) .lotusui30 .icSearchResultsPage .lconnSearchResults .icPagination .icNext a {
+	font-weight: bold;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .lotusHeader .icCounts {
+	display: inline-block;
+	margin: 0px 20px;
+	color: #6F6F6F;
+	font-size: .9em;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lotusForm .icFiltersLeft {
+	float: left;
+	margin-right: 50px;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lotusForm .icFiltersRight {
+	float: right;
+}
+
+.search-global-search-restyle .icSearchResultsPage .lconnSearchResults .lconnSearchHighlight b,
+.search-global-search-restyle .icSearchResultsPage .lconnSearchResults a.lconnSearchHighlight,
+.search-global-search-restyle .icSearchResultsPage .lconnSearchResults h4 a b {
+	background-color: transparent;
+}
+
+.search-global-search-restyle .icSearchResultsPage div.lconnSearchResults .lotusTable .icSearchTitle h4 {
+	font-weight: normal;
+}
+
+.search-global-search-restyle .icSearchResultsPage div.lconnSearchResults .lotusTable .icSearchTitle a {
+	color: #222;
+}
+
+.search-global-search-restyle .icSearchResultsPage div.lconnSearchResults .lotusTable tr:hover .icSearchTitle a,
+.search-global-search-restyle .icSearchResultsPage div.lconnSearchResults .lotusTable tr.icSearchResultSelected .icSearchTitle a,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lotusTable tr:hover:not(.icLastPageMessage) .lotusMeta,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lotusTable tr.icSearchResultSelected .lotusMeta,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lotusTable tr:hover .lotusMeta .icGreyText,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lotusTable tr.icSearchResultSelected .lotusMeta .icGreyText,
+.search-global-search-restyle .icSearchResultsPage div.lconnSearchResults .lotusTable tr:hover .icSearchDetails a,
+.search-global-search-restyle .icSearchResultsPage div.lconnSearchResults .lotusTable tr.icSearchResultSelected .icSearchDetails a,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .lotusTable tr:hover .lconnSearchBookmarkUrl,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage .lconnSearchResults .lotusTable tr.icSearchResultSelected .lconnSearchBookmarkUrl,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable tr:hover .lconnStatusUpdateTitle .lotusPerson,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable tr.icSearchResultSelected .lconnStatusUpdateTitle .lotusPerson,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable tr:hover .lconnStatusUpdateTitle .icStatusUpdate,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable tr.icSearchResultSelected .lconnStatusUpdateTitle .icStatusUpdate,
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lconnSearchBookmarkUrl {
+	color: #1970b0;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lconnSearchResults .lotusTable td {
+	padding-top: 13px;
+	padding-bottom: 13px;
+}
+
+/* Defect 177912 & 180029 */
+.lotusui30 .lotusPaging {
+	overflow: visible;
+}
+
+/* Defect 177911 & 180029 */
+.lotusui30 .lotusHeader {
+	overflow: visible;
+}

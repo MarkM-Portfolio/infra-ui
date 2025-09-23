@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2001, 2014                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+-->
+<iw:iwidget id="strucTags" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget">
+    <iw:content mode="view">
+        <![CDATA[    
+            <div id="_IWID_UIContent">
+              <div id="tagAddArea" style="display:none;">
+                <div id="tagSelectorArea">
+                  <select id="rootTag" name="rootTag" onchange="profiles_loadNewChildTags(this);"></select>
+                  <br/>
+                </div>
+                <div class="lotusBtnContainer"  style="padding-top: 5px;">
+                  <input type="button" class="lotusBtn lotusBtnSpecial lotusLeft" value="Add"  
+                      style="width: 10em;" onclick="profiles_AddStructTags(this, '_IWID_userId')"/>
+                </div>
+                <input name="_IWID_userId" id="_IWID_userId" type="hidden" value=""/>
+              </div>
+              <div id="UserStructTagsArea">&nbsp;</div>
+            </div>
+            <script type="text/javascript">
+                document.getElementById("UserStructTagsArea").innerHTML += generalrs.structTagsLoading;
+                profiles_loadAllStructTags(this.iContext);
+            </script>
+        ]]> 
+     </iw:content>
+</iw:iwidget>

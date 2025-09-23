@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>IBM Connections - Browse Groups</title>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+<!--
+
+ -->
+                <h1>Browse Groups</h1>
+                
+                <h2>With Results</h2>
+                <p>This widget will keep returning the same results for all levels.
+                <a href="#" onclick="dijit.byId('bg1').displayBrowseGroupsDialog(); return false">Pop out as dialog</a></p>
+                <div jsid="ms1" data-dojo-type="lconn.core.GroupsDataStore" url="groups.json"></div>
+                <div id="bg1" data-dojo-type="lconn.core.BrowseGroups" data-dojo-props="memberStore:ms1"></div>
+
+                <h2>No Results</h2>
+                <p>This widget shows no results.
+                <a href="#" onclick="dijit.byId('bg2').displayBrowseGroupsDialog(); return false">Pop out as dialog</a></p>
+                <div jsid="ms2" data-dojo-type="lconn.core.GroupsDataStore" url="groups_nomatches.json"></div>
+                <div id="bg2" data-dojo-type="lconn.core.BrowseGroups" data-dojo-props="memberStore:ms2"></div>
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:dojo.parser}
+    ${script:lconn.core.GroupsDataStore}
+    ${script:lconn.core.BrowseGroups}
+    <script>
+        dojo.addOnLoad(function(){
+            setTimeout(function(){
+                dojo.forEach(['bg1','bg2'], function(id) {
+                    dijit.byId(id).domNode.style.display = '';
+                });
+            }, 100);
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.iconsComponentsWhite24-ActivitiesWhite24{width:24px;height:24px;background-position:0 0}
+.iconsComponentsWhite24-BlogsWhite24{width:24px;height:24px;background-position:0 -32px}
+.iconsComponentsWhite24-BookmarksWhite24{width:24px;height:24px;background-position:0 -64px}
+.iconsComponentsWhite24-CalendarWhite24{width:24px;height:24px;background-position:0 -96px}
+.iconsComponentsWhite24-CommunitiesWhite24{width:24px;height:24px;background-position:0 -128px}
+.iconsComponentsWhite24-FilesWhite24{width:24px;height:24px;background-position:0 -160px}
+.iconsComponentsWhite24-ForumsWhite24{width:24px;height:24px;background-position:0 -192px}
+.iconsComponentsWhite24-HomeWhite24{width:24px;height:24px;background-position:0 -224px}
+.iconsComponentsWhite24-MailWhite24{width:24px;height:24px;background-position:0 -256px}
+.iconsComponentsWhite24-MetricsWhite24{width:24px;height:24px;background-position:0 -288px}
+.iconsComponentsWhite24-NewsFeedWhite24{width:24px;height:24px;background-position:0 -320px}
+.iconsComponentsWhite24-ProfilesWhite24{width:24px;height:24px;background-position:0 -352px}
+.iconsComponentsWhite24-StatusUpdateWhite24{width:24px;height:24px;background-position:0 -384px}
+.iconsComponentsWhite24-TodoWhite24{width:24px;height:24px;background-position:0 -416px}
+.iconsComponentsWhite24-WikisWhite24{width:24px;height:24px;background-position:0 -448px}
+
+.iconsComponentsWhite24{background-image:url('./iconsComponentsWhite24-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsComponentsWhite24{display:none}

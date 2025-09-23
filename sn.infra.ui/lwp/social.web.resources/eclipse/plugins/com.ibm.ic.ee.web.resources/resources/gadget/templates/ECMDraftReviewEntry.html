@@ -1,0 +1,42 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusFlyoutInner">
+   <div data-dojo-attach-point="gadgetBody">
+	   <div class="lotusFlyoutContentArea" style="display: none;" data-dojo-attach-point="msgNode"></div>   
+	   <div class="lotusHeadingChunk eeHeading" data-dojo-attach-point="headerNode">
+	      <h1 class="lotusHeading">
+	         <img class="lconn-ftype16" src="${_blankGif}" role="presentation" aria-hidden="true" alt="" data-dojo-attach-point="fileIcon">
+	         <a href="" target="_blank" data-dojo-attach-point="titleNode"></a>
+	         <span title="${nls.ecm_draft.in_review_tooltip}" class="lotusNowrap eeDraftIndicator">${nls.ecm_draft.in_review}</span>
+	      </h1>
+	   </div>
+	   <span data-dojo-attach-point="sharedExternally"></span>
+	   <div class="lotusChunk" style="display: none;" data-dojo-attach-point="imgPrev"></div>
+	   <div class="lotusChunk" style="display: none;" data-dojo-attach-point="contentArea"></div>
+	   <div class="lotusChunk" style="display: none;" data-dojo-attach-point="lockCtnr"></div>
+	   <div class="lotusChunk">
+	      <ul class="lotusInlinelist lotusMeta" data-dojo-attach-point="listCtnr">
+	         <li style="display: none;" data-dojo-attach-point="previewCtnr"><a title="${nls.file.PREVIEW.TITLE}" target="_blank" data-dojo-attach-point="prevLink">${nls.file.PREVIEW.LINK}</a></li>
+	         <li data-dojo-attach-point="downloadCtnr"><a data-dojo-attach-point="downloadLink">${nls.file.download.DOWNLOAD_ALT}</a></li>
+	         <li style="display: none;" data-dojo-attach-point="switchEELink"><a title="${nls.ecm_draft.switch_ee_tooltip}" href="javascript:;" data-dojo-attach-event="onclick:loadPublishedDocWidget">${_draftStrings.switch_ee}</a></li>
+	         <li><span data-dojo-attach-point="fileSize"></span></li>
+	      </ul>
+	   </div> 
+	   <div class="lotusBtnContainer" style="display: none;" data-dojo-attach-point="btnContainer"></div>
+	   <div class="lotusTabContainer lotusTabCondensed" id="EEtabContainer">
+	      <ul class="lotusTabs" role="tablist" data-dojo-attach-point="tabContainerNode">    
+	         <li class="lotusFirst lotusSelected eeFirstTab file-ee-tab-comments" role="presentation" data-dojo-attach-point="commentsTab">
+	            <a href="javascript:;" role="tab" aria-selected="true" id="EEcomments_link" class="file-ee-tablink" data-dojo-attach-point="commentsTabLink"></a>
+	         </li>     
+	         <li class="file-ee-tab-history" role="presentation" data-dojo-attach-point="historyTab">
+	            <a href="javascript:;" role="tab" id="EEhistory_link" aria-selected="false" class="file-ee-tablink" data-dojo-attach-point="historyTabLink">${nls.HISTORY.TAB_TITLE}</a>
+	         </li>
+	         <li class="file-ee-tab-review" role="presentation" data-dojo-attach-point="reviewTab">
+	            <a href="javascript:;" role="tab" id="EEreview_link" aria-selected="false" class="file-ee-tablink" data-dojo-attach-point="reviewTabLink">${nls.ecm_draft.review}</a>
+	         </li>
+	      </ul>
+	   </div>
+	   <div tabindex="0" role="tabpanel" aria-labelledby="EEcomments_link" class="eeTabBody file-ee-tab-comments-body file-ee-selected" data-dojo-attach-point="commentsTabBody"></div>
+	   <div tabindex="0" role="tabpanel" aria-labelledby="EEhistory_link" class="eeTabBody file-ee-tab-history-body" data-dojo-attach-point="historyTabBody"></div>
+	   <div tabindex="0" role="tabpanel" aria-labelledby="EEreview_link" class="eeTabBody file-ee-tab-review-body" data-dojo-attach-point="reviewTabBody"></div>
+   </div>
+</div>

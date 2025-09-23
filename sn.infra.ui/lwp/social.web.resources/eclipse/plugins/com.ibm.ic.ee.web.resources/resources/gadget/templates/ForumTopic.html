@@ -1,0 +1,55 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusFlyoutInner">
+   <div data-dojo-attach-point="gadgetBody">
+   <div class="lotusHeadingChunk eeHeading" data-dojo-attach-point="headerNode">
+      <h1 class="lotusHeading">
+         <img alt="" role="presentation" aria-hidden="true" src="${_blankGif}" class="lconnSprite lconnSprite-iconForumsItem16">
+         <a href="" class="bidiAware" target="_blank" data-dojo-attach-point="titleNode"></a>
+      </h1>
+   </div>
+   <span data-dojo-attach-point="sharedExternally"></span>
+   <div class="lotusChunk" data-dojo-attach-point="metaDataDiv">
+      <ul class="lotusInlinelist lotusMeta" role="presentation">
+         <li class="lotusFirst" role="presentation" data-dojo-attach-point="attachmentCountNode">
+         <li class="lotusTags" style="display:none" role="presentation" data-dojo-attach-point="tagsLi">
+            <label>${nls.generic.tags}</label> 
+            <span aria-label="tags list" data-dojo-attach-point="tagsNode"></span>
+         </li>
+      </ul>
+   </div>
+   
+   <div class="lotusChunk gadgetActions">
+   <ul class="lotusInlinelist" role="toolbar" data-dojo-attach-point="actionsToolbarNode">
+    <li class="lotusFirst">
+     <span data-dojo-attach-point="recommendationNode"></span>
+    </li>
+   </ul>
+   </div>
+   
+   <div class="lotusChunk" style="display:none" data-dojo-attach-point="messageDiv"></div>
+
+   <div class="lotusChunk eeHeaderDescription" data-dojo-attach-point="contentArea"></div>
+   <a class="lotusAction" href="javascript:;" target="_blank" data-dojo-attach-point="readMoreNode">${nls.forum.readMore}</a>
+   <div class="lotusChunk" data-dojo-attach-point="imageContainer"></div>  
+  
+  <div class="lotusClear"></div>
+   
+   <div class="lotusTabContainer lotusTabCondensed">
+      <ul class="lotusTabs" role="tablist" data-dojo-attach-point="tabContainerNode">
+         <li class="lotusFirst lotusSelected eeFirstTab" role="presentation" data-dojo-attach-point="thisReplyTab">
+           <a href="javascript:;" role="tab" aria-selected="true" id="${id}_thisReplyTabLink" data-dojo-attach-point="thisReplyTabLink">${nls.REPLIES.THIS_TAB_TITLE}</a>
+         </li>
+         <li role="presentation" data-dojo-attach-point="repliesTab">
+           <a href="javascript:;" role="tab" aria-selected="false" tabindex="-1" id="${id}_repliesTabLink" data-dojo-attach-point="repliesTabLink"></a>
+         </li>
+         <li role="presentation" data-dojo-attach-point="historyTab">
+            <a href="javascript:;" role="tab" aria-selected="false" tabindex="-1" id="${id}_historyTabLink" data-dojo-attach-point="historyTabLink">${nls.HISTORY.TAB_TITLE}</a>
+         </li>
+      </ul>
+   </div>
+   
+   <div tabindex="0" role="tabpanel" aria-labelledby="${id}_thisReplyTabLink" class="eeTabBody" data-dojo-attach-point="thisReplyTabBody"></div>
+   <div tabindex="0" role="tabpanel" aria-labelledby="${id}_repliesTabLink" style="display:none" class="eeTabBody" data-dojo-attach-point="repliesTabBody"></div>   
+   <div tabindex="0" role="tabpanel" aria-labelledby="${id}_historyTabLink" style="display:none" class="eeTabBody" data-dojo-attach-point="historyTabBody"></div>
+   </div>
+</div>

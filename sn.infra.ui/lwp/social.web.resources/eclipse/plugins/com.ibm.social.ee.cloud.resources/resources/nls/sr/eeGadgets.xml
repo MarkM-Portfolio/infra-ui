@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Funkcionalnost ugrađivanja OpenSocial gadžeta ranije je prikazivala dodatne detalje i radnje za događaje aplikacije Connections</msg>
+  <msg name="connectionsEE_errorTitle">Greška</msg>
+  <msg name="connectionsEE_errorDescription">Ovaj sadržaj nije odobren od strane vaše organizacije i nije dostupan. Kontaktirajte administratora organizacije da biste omogućili ekstenziju.</msg>
+</messagebundle>

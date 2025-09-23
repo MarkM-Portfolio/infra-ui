@@ -1,0 +1,198 @@
+/* Copyright IBM Corp. 2001, 2015  All Rights Reserved.              */
+
+/*** Included from dijit.css for testing ***/
+.dijitPopup {
+	position: absolute;
+	background-color: transparent;
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+.dijit_a11y .dijitPopup,
+.dijit_ally .dijitPopup div,
+.dijit_a11y .dijitPopup table,
+.dijit_a11y .dijitTooltipContainer {
+	background-color: white !important;
+}
+
+.dijitDialogUnderlayWrapper {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 998;
+	display: none;
+	background: transparent !important;
+}
+.dijitDialogUnderlay {
+	background: #666;
+	opacity: 0.2;
+}
+
+.dj_ie .dijitDialogUnderlay {
+	filter: alpha(opacity=20);
+}
+
+/*
+    U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+This CSS was built on February 24 2011. (version: OneUI-3.0.0_20110224-0300)*/
+
+/* Dialog
+ * Styling Dialog includes two sections:Dialog and Tooltip & TooltipDialog
+ * Dialog:
+ * 1. Dialog (default styling):
+ * 		.dijitDialog - for border, shadow
+ * 2. Dialog title
+ * 		.dijitDialogTitleBar - for background-color, border
+ * 		.dijitDialogTitle - for font
+ * 3. Dialog content
+ * 		.dijitDialogPaneContent - for background-color, border
+ * 		.dijitDialogPaneContentArea - for padding, margin
+ * 4. Dialog action bar
+ * 		.dijitDialogPaneActionBar - for background-color, border, padding
+ * 5. Dialog underlay
+ * 		.dijitDialogUnderlay - for background-color
+ * Tooltip & TooltipDialog:
+ * 1. tooltip content container:
+ * 		.dijitTooltipContainer - for background-color, border, padding
+ * 2. tooltip connector:
+ * 		.dijitTooltipConnector - for position, size, background
+ */
+.lotusui .dijitDialog {
+//    border: 1px solid #999;
+//    box-shadow: 0 3px 7px #999;
+//    -webkit-box-shadow: 0 3px 7px #999;
+//    -moz-box-shadow: 0 3px 7px #999;
+    max-width: 600px;
+    min-width: 400px;
+}
+
+/* Identical to style in HoverHelp.css */
+.lotusui .dijitDialog {position: relative;-moz-border-radius: 5px;-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 2px 3px #666666;
+   -webkit-box-shadow: 0 2px 3px #666666;
+   box-shadow: 0 2px 3px #666666;
+   background: #5A5C60;
+   background: -moz-linear-gradient(center top , #5A5C60 0%, #434649 100%) repeat scroll 0 0 transparent;
+   background-image:-webkit-gradient(linear, center top, center bottom, from(#5A5C60), to(#434649));
+   border: 1px solid #BEBEBE;
+   padding: 5px;
+}
+
+.lotusui .dijitDialogPaneContent {
+    padding: 15px 20px;
+	background: #fff;
+    position: relative;
+}
+
+.lotusui .dijitDialogPaneContentArea { /* trick to get action bar (gray bar at bottom with OK/cancel buttons) to span from left to right but still indent dialog content */
+    margin: 0px;
+    padding-bottom: 20px;
+}
+
+.lotusui .dijitDialogPaneActionBar { /* gray bar at bottom of dialog with OK/Cancel buttons */
+    margin: 0px -20px -15px -20px;
+	padding: 14px 20px 15px; /* accomodates a border */
+	background-color: #eee;
+    text-align: left;
+    border-top: 1px solid #aaa;
+}
+
+.lotusui .dijitDialogPaneActionBar .dijitButton {
+    float: none;
+}
+
+.lotusui .dijitDialogTitleBar { /* outer container for the titlebar of the dialog */
+    padding: 15px 20px;
+	border-bottom: 1px solid #ccc;
+    background-color: #eee;
+    background-image: -moz-linear-gradient(top, #ffffff 0%, #f0f0f0 100%);
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f0f0f0));
+}
+
+.lotusui .dijitDialogTitle { /* typography and styling of the dialog title */
+    font-weight: bold;
+    font-size: 1.7em;
+    line-height: 1.2;
+}
+
+.lotusui .dijitDialogCloseIcon { /* the default close icon for the dialog */
+    background: url("images/dialogCloseIcon.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    border: 1px solid #3a3a3a; 
+    width: 22px;
+    height: 22px;
+    background-position: 4px 4px;
+    right: 12px;
+    top: 12px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    opacity: .4;
+    filter: alpha(opacity=40);
+    zoom: 1;
+}
+
+.lotusui .dijitDialogCloseIconHover, .lotusui .dijitDialogCloseIconActive {
+    opacity: .5;
+    filter: alpha(opacity = 50);
+}
+
+/* Tooltip and TooltipDialog */
+.lotusui .dijitTooltip, .lotusui .dijitTooltipDialog { /* the outermost dom node, holding the connector and container */
+    background: transparent; /* make the area on the sides of the arrow transparent */
+}
+
+.lotusui .dijitTooltipDialog {
+    overflow: hidden;
+}
+
+.lotusui .dijitTooltipAbove, .lotusui .dijitTooltipBelow {
+    padding: 5px;
+	margin-left: -5px;
+}
+
+.lotusui .dijitTooltipContainer { /* the part with the text */
+    padding: 10px;
+	background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px #eee;
+    -webkit-box-shadow: 0 2px 5px #eee;
+    -moz-box-shadow: 0 2px 5px #eee;
+}
+
+.dj_ie6 .lotusui .dijitTooltipContainer {
+    background-image: none;
+}
+
+.lotusui .dijitTooltipLeft {
+    padding-right: 5px;
+}
+
+.lotusui .dijitTooltipLeft .dijitTooltipConnector { /* the arrow piece for tooltips to the left of an element, bottom borders aligned */
+    right: 0px;
+    bottom: 3px;
+    background-position: 0px 0%;
+    width: 16px;
+    height: 14px;
+}
+
+.lotusui .dijitTooltipRight {
+    padding-left: 5px;
+}
+
+.lotusui .dijitTooltipRight .dijitTooltipConnector { /* the arrow piece for tooltips to the right of an element, bottom borders aligned */
+    left: 0px;
+    bottom: 3px;
+    background-position: -48px 0%;
+    width: 16px;
+    height: 14px;
+}
+
+.lotusui .dijitDialogUnderlay {
+    background: #000;
+    opacity: 0.3;
+    filter: alpha(opacity = 30);
+    zoom: 1;
+}

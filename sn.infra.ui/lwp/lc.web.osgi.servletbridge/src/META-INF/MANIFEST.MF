@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: com.ibm.ws.runtime.jar com.ibm.ws.runtime.dist.jar com.ibm
+ .ws.emf.jar org.eclipse.emf.commonj.sdo.jar j2ee.jar
+

@@ -1,0 +1,4 @@
+/* Copyright IBM Corp. 2015  All Rights Reserved.                    */
+.lotusui30_body { background-color: #f0f0f0; }
+.lotusui30_layout .lotusMain .lotusContent { border: none; }
+.lotusui30_layout .lotusMain .lotusContent:before { background-color: transparent; }

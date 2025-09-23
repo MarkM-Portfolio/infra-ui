@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2010, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<?eclipse version="3.4"?>
+<!--
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<plugin>
+    <extension point="net.jazz.ajax.webBundles">
+        <alias value="lconn.core"/>
+    </extension>
+    <!-- Deprecated, will be replaced by com.ibm.social.communitycard -->
+    <extension point="net.jazz.ajax.webBundles">
+        <alias value="lconn.communities.bizCard"/>
+        <resource base-name="/legacyresources/lconn/communities/bizCard"/>
+    </extension>
+    <!-- Deprecated, will be replaced by com.ibm.social.personcard -->
+    <extension point="net.jazz.ajax.webBundles">
+        <alias value="lconn.profiles.bizCard"/>
+        <resource base-name="/legacyresources/lconn/profiles/bizCard"/>
+    </extension>
+    <!-- Deprecated, will be replaced by com.ibm.lconn.personcard -->
+    <extension point="net.jazz.ajax.webBundles">
+        <alias value="lconn.profiles.invite"/>
+        <resource base-name="/legacyresources/lconn/profiles/invite"/>
+    </extension>
+    <!-- Deprecated, will be replaced by com.ibm.lconn.sametime.awareness -->
+    <extension point="net.jazz.ajax.webBundles">
+        <alias value="lconn.profiles.sametime"/>
+        <resource base-name="/legacyresources/lconn/profiles/sametime"/>
+    </extension>
+    
+    <extension point="net.jazz.ajax.webBundles">
+        <alias value="lconn.dojoxd14"/>
+        <resource base-name="/legacyresources/lconn/dojo14"/>
+    </extension>
+
+    <extension point="net.jazz.ajax.webBundles">
+        <alias value="lconn.core.pdfexportIntegration"/>
+    </extension>
+    <extension point="net.jazz.ajax.dojoModuleBinding">
+        <dojoModuleBinding bind="lconn.core.pdfexportIntegration" to="lconn.core.header"/>
+    </extension>
+    
+    <extension point="net.jazz.ajax.dojoModules">
+        <dojoModule id="lconn.core.config" provider="com.ibm.lconn.core.web.resources.config.Core"/>
+        <dojoModule id="lconn.core.config.services" provider="com.ibm.lconn.core.web.resources.config.Services"/>
+        <dojoModule id="lconn.core.config.properties" provider="com.ibm.lconn.core.web.resources.config.GenericProperties"/>
+        <dojoModule id="lconn.core.config.language" provider="com.ibm.lconn.core.web.resources.config.LanguageSettings"/>
+        <dojoModule id="lconn.core.config.nls.widgetbundles" provider="com.ibm.lconn.core.web.resources.nls.MessageBundles"/>
+        <!--dojoModule id="lconn.core.nls.globalization" provider="com.ibm.lconn.core.web.resources.nls.GlobalizationBundle" /-->
+    </extension>
+    
+    <extension point="net.jazz.ajax.dojoResourceModules">
+    <!-- This bundle needs to be refactored to only include core widget messages -->
+        <dojoResourceModule package="lconn.core" name="widgets" file="/com/ibm/lconn/widgets/resources/ui_resources.properties"/>
+        <dojoResourceModule package="lconn.core" name="resources" nested="true" file="/com/ibm/lconn/core/web/ui/resources/resources.properties"/>
+        <dojoResourceModule package="lconn.core" name="globalization" nested="true" file="/com/ibm/lconn/core/strings/globalization.properties"/>
+        <dojoResourceModule package="lconn.profiles.sametime" name="awareness" file="/com/ibm/lconn/core/web/resources/stintegration.properties"/>
+        <dojoResourceModule package="lconn.communities.bizCard" name="ui" file="/com/ibm/lconn/core/web/resources/commbizcard.properties"/>
+    </extension>
+</plugin>

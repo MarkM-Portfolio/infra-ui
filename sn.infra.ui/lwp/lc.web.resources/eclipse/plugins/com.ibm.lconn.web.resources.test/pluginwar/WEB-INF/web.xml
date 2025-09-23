@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2009, 2012                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!--
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<!-- JEE deployment descriptor for Jazz Web UI Server -->
+
+<web-app id="WebApp_ID" 
+         version="2.4" 
+         xmlns="http://java.sun.com/xml/ns/j2ee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	
+	<!--
+		Configure the Equinox bridge servlet to process all incoming Web UI
+		Server requests so that all Web UI Server processing happens within the
+		OSGi environment.
+	-->
+	
+	<servlet id="bridge">
+		<description>Equinox Bridge Servlet</description>
+		<display-name>Equinox Bridge Servlet</display-name>
+		<servlet-name>equinoxbridgeservlet</servlet-name>
+		<servlet-class>org.eclipse.equinox.http.servlet.HttpServiceServlet</servlet-class>
+		<init-param>
+			<param-name>enableFrameworkControls</param-name>
+			<param-value>false</param-value>			
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>equinoxbridgeservlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- servlet>
+		<servlet-name>webproxy</servlet-name>
+		<servlet-class>com.ibm.lconn.web.resources.test.servlet.GlobalProxyServlet</servlet-class>
+		<init-param>
+			<param-name>prefix</param-name>
+			<param-value>/ajaxProxy</param-value>			
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>webproxy</servlet-name>
+		<url-pattern>/ajaxProxy/*</url-pattern>
+	</servlet-mapping> -->
+	
+	
+	<!-- set session timeouts to occur after 6 hours --> 
+	
+	<session-config>
+		<session-timeout>360</session-timeout>
+	</session-config>
+	
+	<!--
+		Specify explicit MIME mappings for extensions that otherwise generate
+		console noise
+	-->
+	
+	<mime-mapping>
+		<extension>ico</extension>
+		<mime-type>image/vnd.microsoft.icon</mime-type> 
+	</mime-mapping>
+	
+	<mime-mapping>
+		<extension>png</extension>
+        <mime-type>image/png</mime-type> 
+	</mime-mapping>
+	
+	<mime-mapping>
+		<extension>json</extension>
+		<mime-type>application/json</mime-type> 
+	</mime-mapping>
+	<mime-mapping>
+		<extension>oslccompact</extension>
+		<mime-type>application/x-oslc-compact+xml</mime-type> 
+	</mime-mapping>
+	
+	<!--
+		Note: We secure nothing in the Web UI Server because the Web UI Server's
+		proxy mechanism is designed to mediate between browsers and secure
+		downstream data servers.
+	-->
+	
+</web-app>
+         

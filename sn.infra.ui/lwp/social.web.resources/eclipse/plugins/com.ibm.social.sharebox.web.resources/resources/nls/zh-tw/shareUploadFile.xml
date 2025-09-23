@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">檔案</msg>
+  <msg name="description">可上傳及共用檔案的檔案小工具</msg>
+  <msg name="action_uploadFile_label">檔案</msg>
+  <msg name="action_uploadFile_tooltip">上傳及共用檔案</msg>
+  <msg name="loading">載入中...</msg>
+  <msg name="error_msg">無法載入內容。 請稍後重試，或與系統管理者聯絡。</msg>
+  <msg name="error_alt">錯誤</msg>
+</messagebundle>

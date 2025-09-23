@@ -1,0 +1,167 @@
+${head}
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+    <title>IBM Connections - Typeahead Test Page</title>
+${endhead}
+    <div class="lotusFrame">
+        ${pagecontrols}
+        <div role="region" aria-label="Select Theme">Theme:
+            <a href="javascript:;" onclick="lconn.core.theme.switchTheme('default')">Default</a>
+            <a href="javascript:;" onclick="lconn.core.theme.switchTheme('gen4')">Gen4</a>
+        </div>
+        <div class="lotusMain" role="main" aria-label="Typeahead Test Contents">
+            <div class="lotusContent">
+                <form class="lotusForm2 lotusLeftLabels">
+                    <header class="lotusFormTitle">
+                        <h1 class="lotusHeading" aria-describedby="formDesc">Typeaheads</h1>
+                        <div id="formDesc" class="lotusMeta">A collection of current typeaheads used throughout IBM Connections.</div>
+                    </header>
+                    <div class="lotusFormBody">
+                         <div class="lotusFormField" role="region" aria-label="Combobox">
+                            <label for="comboNode">Plain Combobox:</label>
+                            <div class="lotusFieldWrapper">
+                                <div jsid="simpleStore" data-dojo-type="dojo.data.ItemFileReadStore" data-dojo-props="data:{label:'name',items:[{name:'asingh'},{name:'eelamon'},{name:'dmaroni'},{name:'bheinz'}]}"></div>
+                                <div id="comboNode" data-dojo-type="dijit.form.ComboBox" data-dojo-props="store:simpleStore"></div>
+                                <div class="lotusMeta">This combobox uses a static <code>dojo.data.ItemFileReadStore</code> with four items.</div>
+                            </div>
+                        </div>
+                        <div class="lotusFormField" role="region" aria-label="Typeahead">
+                            <label for="typeaheadNode">Typeahead:</label>
+                            <div class="lotusFieldWrapper">
+                                <div id="typeaheadNode"></div>
+                                <div class="lotusMeta">This typeahead uses a data store requesting a static feed <code>tags.json</code> that returns a list of results.</div>
+                            </div>
+                        </div>
+                        <div class="lotusFormField" role="region" aria-label="Typeahead (IME)">
+                            <label for="typeaheadNode_IME">Typeahead (IME):</label>
+                            <div class="lotusFieldWrapper">
+                                <div id="typeaheadNode_IME"></div>
+                                <div class="lotusMeta">This typeahead uses a data store requesting a static feed <code>tagsIME.json</code> that returns a list of Japanese strings.</div>
+                            </div>
+                        </div>
+                        <div class="lotusFormField" role="region" aria-label="Tag Typeahead">
+                            <label for="commonTagsTypeaheadNode">Tag Typeahead:</label>
+                            <div class="lotusFieldWrapper">
+                                <div id="commonTagsTypeaheadNode"></div>
+                                <div class="lotusMeta">This typeahead uses a data store requesting a static feed <code>tags.json</code> that returns a list of results.</div>
+                            </div>
+                        </div>
+                        <div class="lotusFormField" role="region" aria-label="People Typeahead">
+                            <label for="peopleTypeaheadNode">People Typeahead:</label>
+                            <div class="lotusFieldWrapper">
+                                <div id="peopleTypeaheadNode"></div>
+                                <div class="lotusMeta">This typeahead uses a data store requesting a static feed <code>people.json</code> that returns a list of results.  Upon clicking the <i>Use Full Search</i> button, search results will be returned from <code>searchPeople.json</code></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div><!-- end lotusContent -->
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+        ${script:dojo.data.ItemFileReadStore}
+        ${script:lconn.core.theme}
+        ${script:lconn.core.url}
+        ${script:lconn.core.config.services}
+        ${script:lconn.core.TypeAheadDataStore}
+        ${script:lconn.core.TypeAhead}
+        ${script:lconn.core.CommonTags.CommonTagsTypeAhead}
+        ${script:lconn.core.PeopleTypeAhead}
+        ${script:lconn.core.PeopleDataStoreOpenSocial}
+        ${script:lconn.core.PeopleDataStore}
+                <script>
+                    
+                    // TagsTypeahead
+                    var tagFeed = "tags.json"; //lconn.core.url.getServiceUrl(lconn.core.config.services.activities) + "/service/json/tags";
+
+                    var tagStore = new lconn.core.TypeAheadDataStore({
+                        url : tagFeed,
+                        queryParam : "tag"
+                    });
+                    
+                    var tagTypeaheadArgs = {
+                        minChars: 1,
+                        searchDelay: 400,
+                        multipleValues: false,
+                        baseClass: "lotusText",
+                        store: tagStore
+                    };
+                    
+                    new lconn.core.TypeAhead(tagTypeaheadArgs, dojo.byId("typeaheadNode"));
+                    
+                    // TagsTypeahead IME
+                    var tagFeed_IME = "tagsIME.json";
+                    
+                    var tagStore_IME = new lconn.core.TypeAheadDataStore({
+                        url : tagFeed_IME,
+                        queryParam : "tag"
+                    });
+                    
+                    var tagTypeaheadArgs_IME = {
+                        minChars: 1,
+                        searchDelay: 400,
+                        multipleValues: false,
+                        baseClass: "lotusText",
+                        store: tagStore_IME
+                    };
+                    
+                    new lconn.core.TypeAhead(tagTypeaheadArgs_IME, dojo.byId("typeaheadNode_IME"));
+                    
+                    new lconn.core.CommonTags.CommonTagsTypeAhead(tagTypeaheadArgs, dojo.byId("commonTagsTypeaheadNode"));
+                    
+                        var osParams = {
+                            filterBy: "displayName",
+                            count: 15
+                        };
+
+                        var profilesEnabled = lconn.core.config.services["profiles"];
+
+                           if (profilesEnabled) {
+                              var peopleFeedUrl = "people.json"; //lconn.core.url.getServiceUrl(lconn.core.config.services.profiles) + "/html/nameTypeahead.do?extended=true&count=15&lang=" + dojo.config.locale;
+                              var extPeopleFeedUrl = "searchPeople.json"; //lconn.core.url.getServiceUrl(lconn.core.config.services.opensocial) + "/anonymous/rest/people/@public/@all";
+                           } else {
+                              var peopleFeedUrl = lconn.core.url.getServiceUrl(lconn.core.config.services.opensocial) + "/anonymous/rest/people/@public/@all";
+                           }
+
+                        if (profilesEnabled) {
+                           var peopleStore = new lconn.core.HybridPeopleDataStoreOpenSocial({
+                              url : peopleFeedUrl,
+                              queryParam : "name",
+                              extendedTypeAheadUrl : extPeopleFeedUrl,
+                              extendedQueryParam : "filterValue",
+                              openSocialParameters : osParams,
+                              network : null
+                           });
+                        } else {
+                           var peopleStore = new lconn.core.PeopleDataStoreOpenSocial({
+                              url : peopleFeedUrl,
+                              queryParam : "filterValue",
+                              openSocialParameters : osParams,
+                              network : null
+                           });
+                        }
+
+                     var args = {
+                        id : "peopleTypeaheadNode",
+                        minChars : 2,
+                        searchDelay : 600,
+                        multipleValues : false,
+                        store : peopleStore,
+                        isPersonAndGroup : false,
+                        NoResultsMessage : "No results",
+                        HeaderMessage : "Header message",
+                        disableSearchDirectory : false,
+                        'class' : 'typeAhead',
+                        disableBizCard : true
+                     };
+
+                     new lconn.core.PeopleTypeAhead(args, dojo.byId("peopleTypeaheadNode"));
+                    
+                    
+                </script>
+            
+        </div>
+    </div>
+</body>
+</html>

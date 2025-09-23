@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2009, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<?eclipse version="3.2"?>
+<!--
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<plugin>
+   <extension
+         point="net.jazz.ajax.webBundles">
+         <alias value="dijit"/>
+   </extension>
+
+	<extension point="net.jazz.ajax.cssBindingSets">
+		<cssBindingSet id="dijit.icons.CSSBindingSet">
+			<cssCommonModule path="/icons/commonIcons.css"/>
+			<cssCommonModule path="/icons/commonIcons_rtl.css"/>
+			<cssBinding jsModule="dijit.Editor">
+				<cssModule path="/themes/claro/Editor.css"/>
+				<cssModule path="/themes/claro/Editor_rtl.css"/>
+				<cssModule path="/icons/editorIcons.css"/>
+				<cssModule path="/icons/editorIcons_rtl.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dijit.claro.CSSBindingSet" path="/themes">
+			<cssCommonModule path="/dijit.css"/>
+			<cssCommonModule path="/dijit_rtl.css"/>
+			<cssCommonModule path="/claro/Common.css"/>
+			<cssBinding jsModule="dijit.Calendar">
+				<cssModule path="/claro/Calendar.css"/>
+				<cssModule path="/claro/Calendar_rtl.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit.ColorPalette">
+				<cssModule path="/claro/ColorPalette.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit.Dialog">
+				<cssModule path="/claro/Dialog.css"/>
+				<cssModule path="/claro/Dialog_rtl.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit.InlineEditBox">
+				<cssModule path="/claro/InlineEditBox.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit.Menu">
+				<cssModule path="/claro/Menu.css"/>
+				<cssModule path="/claro/Menu_rtl.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit.ProgressBar">
+				<cssModule path="/claro/ProgressBar.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit._TimePicker">
+				<cssModule path="/claro/TimePicker.css"/>
+				<cssModule path="/claro/TimePicker_rtl.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit.TitlePane">
+				<cssModule path="/claro/TitlePane.css"/>
+				<cssModule path="/claro/TitlePane_rtl.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit.Toolbar">
+				<cssModule path="/claro/form/Button.css"/>
+				<cssModule path="/claro/Toolbar_rtl.css"/>
+				<cssModule path="/claro/Toolbar.css"/>
+			</cssBinding>
+   			<cssBinding jsModule="dijit.TooltipDialog">
+				<cssModule path="/claro/Dialog.css"/>
+				<cssModule path="/claro/Dialog_rtl.css" />
+		   </cssBinding>
+			<cssBinding jsModule="dijit.Tree">
+				<cssModule path="/claro/Tree.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit.layout.AccordionContainer">
+				<cssModule path="/claro/layout/AccordionContainer.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit.layout.BorderContainer">
+				<cssModule path="/claro/layout/BorderContainer.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit.layout.ContentPane">
+				<cssModule path="/claro/layout/ContentPane.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit.layout.TabContainer">
+				<cssModule path="/claro/layout/TabContainer.css"/>
+				<cssModule path="/claro/layout/TabContainer_rtl.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="dijit.claro.form.CSSBindingSet" path="/themes">
+			<cssCommonModule path="/claro/form/Common.css"/>
+			<cssCommonModule path="/claro/form/Common_rtl.css"/>
+			<cssBinding jsModule="dijit.form.Button">
+				<cssModule path="/claro/form/Button.css"/>
+				<cssModule path="/claro/form/Button_rtl.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit.form.CheckBox">
+				<cssModule path="/claro/form/RadioButton.css"/>
+    			<cssModule path="/claro/form/Checkbox.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit.form.NumberSpinner">
+				<cssModule path="/claro/form/NumberSpinner.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit.form.Select">
+				<cssModule path="/claro/form/Select.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit.form.Slider">
+				<cssModule path="/claro/form/Slider.css"/>
+				<cssModule path="/claro/form/Slider_rtl.css"/>
+			</cssBinding>
+			<cssBinding jsModule="dijit.form.HorizontalSlider">
+				<cssModule path="/claro/form/Slider.css"/>
+				<cssModule path="/claro/form/Slider_rtl.css"/>
+			</cssBinding>
+		</cssBindingSet>
+	</extension>
+</plugin>

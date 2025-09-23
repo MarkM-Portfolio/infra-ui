@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "fi",
+      "Play": "Toista",
+      "Pause": "Pause",
+      "Current Time": "Nykyinen aika",
+      "Duration Time": "Kesto",
+      "Remaining Time": "Jäljellä oleva aika",
+      "Stream Type": "Tietovirran laji",
+      "LIVE": "REAALIAIKAINEN",
+      "Loaded": "Ladattu",
+      "Progress": "Edistyminen",
+      "Fullscreen": "Koko näyttö",
+      "Non-Fullscreen": "Muu kuin koko näyttö",
+      "Mute": "Mykistä",
+      "Unmute": "Poista mykistys",
+      "Unmuted": "Mykistys poistettu",
+      "Playback Rate": "Toistonopeus",
+      "Subtitles": "Tekstitys",
+      "subtitles off": "tekstitys pois käytöstä",
+      "Captions": "Kuvaileva tekstitys",
+      "captions off": "kuvaileva tekstitys pois käytöstä",
+      "Chapters": "Luvut",
+      "Volume": "Äänenvoimakkuus",
+      "You aborted the video playback.": "Olet keskeyttänyt videon toiston",
+      "A network error caused the video download to fail part-way.": "Verkkovirhe on aiheuttanut videon latauksen keskeytymisen.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "Videon lataus epäonnistui palvelin- tai verkkovirheen vuoksi tai siksi, ettei muoto ole tuettu.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "Videon toisto on keskeytetty vioittumisen vuoksi tai siksi, että video käyttää ominaisuuksia, joita selain ei tue.",
+      "No compatible source was found for this video.": "Videosta on löytynyt yhteensopimaton lähde."
+});
+

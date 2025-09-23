@@ -1,0 +1,86 @@
+<div>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+	<div class="qkrError" style="display:none" dojoAttachPoint="errorNode"></div>
+	<div dojoAttachPoint="messageContainerNode"></div>
+	<div dojoAttachPoint="loadingDiv"></div>
+	<div dojoAttachPoint="sharingInfoData" style="display:none">
+	<table border="0" summary="" class="lotusVertTable lotusChunk" dojoAttachPoint="infoTableNode">
+		<tbody>
+		   <tr>
+		      <th>${nls.READERS_LABEL}</th>
+		      <td dojoAttachPoint="fileReadersNode"></td>
+		   </tr>
+		   <tr dojoAttachPoint="addShareRow" style="display:none;">
+		      <th>&nbsp;</th>
+		      <td>
+		      <a role="button" href="javascript:;" class="lotusAction" dojoAttachEvent="onclick:showSharing" dojoAttachPoint="addShareLink" style="display:none" title="${nls.TOOLTIP}">${nls.ADD}</a>
+		      </td>		      
+		   </tr>
+		   <tr>
+		      <th>${nls.EDITORS_LABEL}</th>
+		      <td dojoAttachPoint="fileEditorsNode"></td>
+		   </tr>
+		   <tr>
+		      <th>${nls.OWNER_LABEL}</th>
+		      <td dojoAttachPoint="ownerNode"></td>
+		   </tr>
+		</tbody>
+	</table>
+	<form aria-live="assertive" action="javascript:;" method="post" class="lotusForm2" dojoAttachPoint="shareSect" style="display: none;" dojoAttachEvent="onsubmit:shareFile">
+	    <div class="lotusFormTitle">
+	       <h2 aria-describedby="formDesc" class="lotusHeading2">${nls.SHARE}</h2>
+	       <div class="lotusMeta" id="formDesc">${nls.ADD_TXT}</div>
+	    </div>
+	    <div class="lotusFormBody">
+	       <div class="lotusFormError" style="display:none" dojoAttachPoint="formError"></div>
+	       <div class="lotusFormField">
+	          <label for="${id}_sourceChooser">${nls.SHARE_WITH}</label>
+	          <div class="lotusFieldWrapper">
+	             <select style="width:102px;" id="${id}_sourceChooser" name="sourceChooser" dojoAttachPoint="sourceChooser" dojoAttachEvent="onchange:sourceChanged">
+	                <option value="person">${nls.PERSON}</option>
+	                <option value="community" id="communitySource">${nls.COMMUNITY}</option>
+                </select>
+                <input style="width:150px;" value="" class="lotusText" dojoAttachPoint="personInput"><input style="width:150px; display:none" value="" class="lotusText" dojoAttachPoint="communityInput">
+	          </div>
+	       </div>
+	       <div class="lotusFormField" dojoAttachPoint="readersRole" style="display:none">
+	          <label for="${id}_readers">${nls.READERS_LABEL}</label>
+	          <div class="lotusFieldWrapper">
+	             <div id="${id}_readers" dojoAttachPoint="readersContainer"></div>
+	          </div>
+	       </div>
+	       <div class="lotusFormError" style="display:none" dojoAttachPoint="messageError"></div>
+	       <div class="lotusFormField">
+	          <label for="${id}_message">${nls.MESSAGE}</label>
+	          <div class="lotusFieldWrapper">
+	             <a class="eeActionLinks" role="button" href="javascript:;" dojoAttachEvent="onclick:showTxtArea" dojoAttachPoint="msgLink">${nls.MESSAGE_TXT}</a>
+	             <textarea style="display:none; width:256px;" name="message" class="lotusText" id="${id}_message" dojoAttachPoint="txtArea"></textarea>
+	          </div>
+	       </div>
+	    </div>
+	    <div class="lotusFormFooter">
+	       <ul class="lotusInlinelist lotusActions eeActionLinks">
+	          <li class="lotusFirst">
+	             <a class="submitEnabled" role="button" href="javascript:;" class="lotusAction" dojoAttachPoint="shareSubmit" dojoAttachEvent="onclick:shareFile"><strong>${nls.SHARE}</strong></a>
+             </li>
+             <li>
+                <a role="button" href="javascript:;" dojoAttachEvent="onclick:hideSharing">${nls.CANCEL}</a>
+             </li>
+          </ul>
+	    </div>
+   </form>
+   </div>
+</div>

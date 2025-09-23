@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2001, 2014                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+-->
+<iw:iwidget id="connections" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget">
+    <iw:content mode="view">
+        <![CDATA[
+		<div id="multiFeedReaderContentContainer">
+    		<div class="lotusTabContainer">
+    			<ul id="multiFeedReaderLotusTabs" class="lotusInlinelist" role="tablist">
+    				&nbsp;	
+    			</ul>
+    		</div>
+		</div>
+        <script type="text/javascript">
+          lconn.profiles.MultiFeedReader.loadWidgetContent(this.iContext);
+        </script>
+        ]]> 
+     </iw:content>
+</iw:iwidget>

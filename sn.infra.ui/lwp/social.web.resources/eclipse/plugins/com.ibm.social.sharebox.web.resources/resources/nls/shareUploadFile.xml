@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">Files</msg>
+  <msg name="description">Files gadget to allow uploading and sharing files</msg>
+  <msg name="action_uploadFile_label">Files</msg>
+  <msg name="action_uploadFile_tooltip">Upload and Share Files</msg>
+  <msg name="loading">Loading...</msg>
+  <msg name="error_msg">The content cannot be loaded. Try again later or contact your system administrator.</msg>
+  <msg name="error_alt">Error</msg>
+</messagebundle>

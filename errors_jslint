@@ -1,0 +1,29 @@
+*'#'#'# *#~*Creating a dummy version to allow the build to continue.*
+*java:+{0-9}:*#~*javadoc*not found*#~* deprecated*#~*Sun proprietary API*#~*javadoc* warning*
+*LIB*: error*
+*LINK : *#~*warning LNK4077:*#~*warning LNK4089:*#~*warning LNK4098:*#~* deprecated*
+*LINK386 : *
+*Internal compiler error*
+*cannot resolve*
+*not found in import*#~*javadoc*not found*
+*Check for build failure*
+*java*Exception:*#~*s_logger.*#~*timestamp response*#~*VenturaConfigException.class*
+*Error:*#~*jdk11error:*#~*Debug.println*#~*s_logger.*#~*throw new *#~*Total/Success/Warnings/Error: */*/*/0*
+*BUILD FAILED*
+*buildAll*:
+*genFeZip*:
+* fail*#~*jslint*#~*assertEquals*#~*select failed with*#~* new Status*#~*FAILURERE*#~*FAILUREAC*#~*WARNING:*#~*kitting Failover*#~* fail*.doc *#~*No component failures.*
+* error*#~*jslint*#~* error_*#~* errors =*#~* 0 Errors*#~*Will write errors*#~* new Status*#~*jdk11error:*#~*Debug.println*#~*displayError:*#~*throw new *#~* 0 error*#~*logger.*#~*warning:*#~*public void*#~* errorStr*#~* LinkedList errors*#~*Files in ERROR =*#~*javadoc*response *#~*javadoc* error*key*#~*javadoc* errors are enabled*#~*javadoc* supports error numbers*#~*SiteXMLValidator*#~*<br>#~* successfully built*#~*error.html*#~*no critical errors.*#~*ErrorResult.cpp*#~* errorMsg*
+*Output*of dependency*not found*#~*\aix\*
+*could not find*#~*resource bundle*#~*.h.*#~*console*#~*awt*#~*MANIFEST.MF - Generating one*
+*Build fail*
+*Copy File Failed*
+*import*is never used*
+* not * valid dir*
+* Circular dependency found *
+* not enough space *
+*java.lang.NullPointerException*
+*Could not resolve*#~*Component Parser: Warning:*
+*Disabled component*
+* cannot execute *
+* exception from * JavaScript *

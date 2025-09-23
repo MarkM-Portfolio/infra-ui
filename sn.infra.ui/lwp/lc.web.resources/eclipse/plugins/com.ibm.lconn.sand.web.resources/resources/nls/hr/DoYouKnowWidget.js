@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Pozovi za povezivanje",
+	NDYK1:"Nema više osoba za preporučiti",
+	LOADING: "učitavanje",
+	DYK_TITLE: "Osobe koje možda znate",
+	INVITE_TITLE: "Pošalji pozivnicu za povezivanje",
+	SEND_ACTION: "Pošalji",
+	CANCEL_ACTION: "Otkaži",
+	PREV: "Prethodno",
+	NEXT: "Sljedeće",
+	bpct: "Komentirao je vaš blog",
+	bpcc: "Komentirali ste isti blog",
+	lpfr: "Kolega osobe koju poznajete",
+	lm1: "Vi ste upravitelj ovoj osobi",
+	le1: "Ova je osoba vaš upravitelj",
+	sdm: "Dijelite istog upravitelja",
+	pt: "Ova vas je osoba označila",
+	pbt: "Vi ste označili ovu osobu",
+	acm: "Dijelite aktivnosti",
+	wikiCoContribution: "Oboje ste uredili isti wiki",
+	bpcb: "Komentirali ste njihov blog",
+	lpcfr: "Dijelite neke od kolega",
+	ccmf: "Vi ste zajedno u zajednici",
+	ccms: "Vi ste zajedno u zajednici",
+	filesharing: "Dijelite neke od datoteka",
+	forumthreaddiscussion: "Dijelite nit foruma",
+	ctb: "Dijelite knjišku oznaku",
+	tgw: "Imate podudarne oznake",
+	tcu: "Koristili ste istu oznaku",
+	pctg: "Oboje ste označili istu osobu",
+	tgb: "Oboje su vas označile iste osobe"
+})

@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Zu Connect einladen",
+	NDYK1:"Keine Personen mehr zum Empfehlen",
+	LOADING: "Ladevorgang",
+	DYK_TITLE: "Personen, die Sie vielleicht kennen",
+	INVITE_TITLE: "Einladung zur Teilnahme senden",
+	SEND_ACTION: "Senden",
+	CANCEL_ACTION: "Abbrechen",
+	PREV: "Zurück",
+	NEXT: "Weiter",
+	bpct: "Hat Ihren Blog kommentiert.",
+	bpcc: "Sie haben denselben Blog kommentiert.",
+	lpfr: "Ist ein Kollege einer Person, die Sie kennen.",
+	lm1: "Sie sind der Manager dieser Person.",
+	le1: "Diese Person ist Ihr Manager.",
+	sdm: "Sie haben denselben Manager.",
+	pt: "Diese Person hat Sie mit einem Tag versehen.",
+	pbt: "Sie haben diese Person mit einem Tag versehen.",
+	acm: "Sie teilen Aktivitäten.",
+	wikiCoContribution: "Sie haben beide dasselbe Wiki bearbeitet.",
+	bpcb: "Sie haben ihren Blog kommentiert.",
+	lpcfr: "Sie teilen einige Kollegen.",
+	ccmf: "Sie gehören derselben Community an.",
+	ccms: "Sie gehören derselben Community an.",
+	filesharing: "Sie haben einige gemeinsame Dateien.",
+	forumthreaddiscussion: "Sie teilen einen Forenthread.",
+	ctb: "Sie teilen ein Lesezeichen.",
+	tgw: "Sie haben übereinstimmende Tags.",
+	tcu: "Sie haben dasselbe Tag verwendet.",
+	pctg: "Sie haben beide dieselbe Person mit Tags versehen.",
+	tgb: "Dieselben Personen haben Sie beide mit Tags versehen."
+})

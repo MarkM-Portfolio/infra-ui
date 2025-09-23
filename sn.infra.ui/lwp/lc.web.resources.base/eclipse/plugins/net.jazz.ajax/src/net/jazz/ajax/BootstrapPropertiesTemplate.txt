@@ -1,0 +1,20 @@
+/*******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2005, 2009. All Rights Reserved.
+ * 
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp.
+ *******************************************************************************/
+dojo.provide("net.jazz.ajax.BootstrapProperties");
+
+(function() {
+dojo.mixin(net.jazz.ajax.BootstrapProperties, {
+	FRONTSIDE_URL           : ${frontsideUrl},
+	DISCOVERYSERVICE_URL    : ${discoveryServiceUrl},	 
+	APP_NAME                : ${appName},
+	APP_ID                  : ${appIdentifier},
+	APP_DESCRIPTION         : ${appDescription},
+	APP_VERSION             : ${appVersion}
+});
+})();

@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "he",
+      "Play": "הרצה",
+      "Pause": "השהיה",
+      "Current Time": "שעה נוכחית",
+      "Duration Time": "זמן משך ",
+      "Remaining Time": "זמן שנותר",
+      "Stream Type": "סוג זרם ",
+      "LIVE": "LIVE",
+      "Loaded": "נטען",
+      "Progress": "התקדמות",
+      "Fullscreen": "מסך מלא ",
+      "Non-Fullscreen": "לא מסך מלא ",
+      "Mute": "השתקה",
+      "Unmute": "ביטול השתקה",
+      "Unmuted": "השתקה בוטלה",
+      "Playback Rate": "מהירות הרצה ",
+      "Subtitles": "כתוביות ",
+      "subtitles off": "כתוביות מושבתות",
+      "Captions": "כיתובים",
+      "captions off": "כיתובים מושבתים",
+      "Chapters": "פרקים",
+      "Volume": "עוצמה",
+      "You aborted the video playback.": "ביטלתם את הרצת הווידיאו ",
+      "A network error caused the video download to fail part-way.": "שגיאת רשת גרמה להורדת הווידיאו להיכשל באמצע התהליך. ",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "לא ניתן לטעון את הווידיאו, בגלל כשל בשרת או ברשת או מפני שהמבנה אינו נתמך. ",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "הרצת הווידיאו בוטלה בגלל בעיית נתונים פוגמים או מפני שהווידיאו משתמש במאפיינים שהדפדפן שלכם אינו תומך בהם. ",
+      "No compatible source was found for this video.": "לא נמצא מקור תואם עבור וידיאו זה."
+});
+

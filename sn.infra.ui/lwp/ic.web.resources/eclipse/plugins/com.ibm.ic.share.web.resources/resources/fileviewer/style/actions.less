@@ -1,0 +1,317 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+@import "./_definitions.less";
+
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar {
+   float: right;
+   list-style-type: none;
+   padding: 0;
+   margin-top: 0px;
+   height: @banner-height;
+}
+
+.lotusImagesOff ul.ics-viewer-toolbar {
+  margin-top: 20px !important;
+  padding: 3px !important;
+  li {
+    z-index: 150;
+  }
+}
+
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-toolbar {
+   float: left;
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action {
+   float: left;
+   font-size: 12px;
+   color: white;
+   position: relative;
+   top: 6px;
+   margin: 10px 0 0 0;
+   .marginRight(27px);
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action {
+  .ics-viewer-narrow& {
+    .marginRight(12px);
+  
+    &.ics-viewer-splitbutton {
+      .marginRight(0);
+    }
+  }
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action.divider {
+  background: @divider-color;
+  width: 1px;
+  height: 100%;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  top: 0px;
+}
+
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action {
+   float: right;
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action a {
+   color: white;
+   text-decoration: none;
+}
+
+.ics-viewer .ics-viewer-action {
+   padding: 0;
+   margin-bottom: 15px;
+   font-size: 12.8px;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action .fileViewerIconText{
+   font-size: 12px;
+   line-height: 18px;
+}
+
+.ics-viewer .viewerPanel {
+   font-size: 10px;
+   font-weight: 400;
+   line-height: 9px;
+}
+
+.ics-viewer .ics-viewer-action .dijitButtonNode {
+   border: 0px;
+}
+
+.ics-viewer .ics-viewer-action img,
+.ics-viewer .ics-viewer-action.dropdown-menu .dijitIcon {
+   width: 15px;
+   height: 15px;
+   padding: 1px;
+   background-position: center;
+   background-repeat: no-repeat;
+}
+
+.ics-viewer .ics-viewer-action.dropdown-menu .dijitToolbar .dijitDropDownButton {
+   padding-left: 0em;
+}
+
+.ics-viewer .ics-viewer-action.dropdown-menu .dijitToolbar .dijitDropDownButton .dijitButtonContents {
+   padding: 0px;
+}
+
+.ics-viewer .ics-viewer-action.dropdown-menu .dijitToolbar .dijitDropDownButton .dijitArrowButtonInner {
+   display: none;
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-splitmenu .dijitButtonText {
+   margin: 2px;
+}
+
+.ics-viewer-more-actions[role="menu"] {
+   margin-top: 15px;
+}
+
+.ics-viewer-action-splitmenu[role="menu"] {
+   margin-top: 3px;
+}
+
+.ics-viewer .ics-viewer-action.ics-viewer-action-share {
+   margin-right: 0;
+}
+
+.ics-viewer.rtl .ics-viewer-action.ics-viewer-action-share {
+   margin-left: 0;
+   .actionLink {
+     left: 0;
+   }
+   &.ics-viewer-action-multiShare .actionLink{
+     img {
+       margin-left: 8px;
+       margin-right: 0px;
+       float: right;
+     }
+   }
+}
+
+.ics-viewer .ics-viewer-action.ics-viewer-action-share {
+   padding: 0;
+   float: none;
+   position: static;
+   font-size: 12.8px;
+   .actionLink {
+     position: absolute;
+     top: 0px;
+     right: 0;
+   }
+   &.ics-viewer-action-multiShare .actionLink{
+     position: static;
+     img {
+       margin-right: 8px;
+     }
+     span {
+       top: 8px;
+       color: #292929;
+     }
+   }
+   img {
+     float: left;
+     background-image: ~"url(../style/images/Add.png)";
+   }
+}
+
+.ics-viewer .ics-viewer-action.ics-viewer-action-share .ics-editBox .hintText{
+	color: #666666;
+	font-style: italic;
+	padding-left: 10px;
+	height: 30px;
+}
+
+.ics-viewer .ics-viewer-action.ics-viewer-action-share .ics-editBox .transition{
+    transition: height 0.3s ease 0s;
+}
+
+.ics-viewer .ics-viewer-action .dropdown-menu-icon {
+   background-image: ~"url(../style/images/More_16.png)";
+   position: relative;
+   top: 2px;
+}
+
+.dj_webkit .ics-viewer .ics-viewer-action.ics-viewer-more-actions .dijitIcon {
+   top: -1px;
+}
+
+.ics-viewer .ics-viewer-action.ics-viewer-action-splitmenu {
+   .dijitButtonNode {
+      height: 16px;
+   }
+
+   .dropdown-menu-icon {
+      background-image: ~"url(../style/images/arrow.png)";
+      width: 12px;
+      height: 12px;
+      padding: 0;
+   }
+}
+
+.ics-viewer .ics-viewer-action-download img {
+   background-image: ~"url(../style/images/Download.png)"; /*TODO*/
+}
+
+.ics-viewer .ics-viewer-action-close img {
+   background-image: ~"url(../style/images/Close_View.png)";	/*TODO*/
+}
+
+.ics-viewer .ics-viewer-action-panel img {
+   background-image: ~"url(../style/images/Open_sidebar_16.png)"; /*TODO*/
+
+   .dj_webkit & {
+      position: relative;
+      top: -1px;
+   }
+}
+
+.ics-viewer.ics-viewer-details-expanded .ics-viewer-action-panel img {
+   background-image: ~"url(../style/images/Close_sidebar_16.png)"; /*TODO*/
+}
+.ics-viewer.rtl .ics-viewer-action-panel img {
+   background-image: ~"url(../style/images/Close_sidebar_16.png)"; /*TODO*/
+}
+
+.ics-viewer.ics-viewer-details-expanded.rtl .ics-viewer-action-panel img {
+   background-image: ~"url(../style/images/Open_sidebar_16.png)"; /*TODO*/
+}
+
+.ics-viewer .ics-viewer-action-like .unchecked img {
+   background-image: ~"url(../style/images/Like.png)"; /*TODO*/
+}
+
+.ics-viewer .ics-viewer-action-like .checked img {
+   background-image: ~"url(../style/images/Liked.png)"; /*TODO*/
+}
+
+.ics-viewer .ics-viewer-action-tearoff img {
+   background-image: ~"url(../style/images/TearOff.png)";
+}
+
+.ics-viewer .ics-viewer-action-favorite img {
+   background-image: ~"url(../style/images/Favorite.png)";
+   position: relative;
+   top: -1px;
+}
+
+.ics-viewer .ics-viewer-action-favorite .checked img {
+   background-image: ~"url(../style/images/Favorited.png)";
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-view a:hover {
+   text-decoration: underline;
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-splitmenu,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-roundtripedit,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-upload,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-login,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-edit,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-templateCreate {
+  top: 0;
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-splitmenu .dijitButtonNode,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-roundtripedit a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-upload a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-login a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-edit a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-templateCreate a {
+   background-color: #4178be;
+   padding: 8px 20px;
+   display: inline-block;
+   line-height: 16px;
+   top: -1px;
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-splitbutton {
+  .marginRight(0px);
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-splitmenu .dijitButtonNode {
+  .marginLeft(1px);
+  padding: 8px 10px;
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-splitmenu .dijitButtonNode,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-roundtripedit a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-view a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-upload a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-login a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-edit a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-templateCreate a {
+   font-size: 13px;
+   font-weight: 300;
+   position: relative;
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-splitmenu a>img,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-roundtripedit a>img,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-upload a>img,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-login a>img,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-edit a>img,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-templateCreate a>img {
+   display: none;  
+}
+
+.ics-viewer.ics-viewer-type-verse .ics-viewer-action-splitmenu,
+.ics-viewer.ics-viewer-type-verse .ics-viewer-action-roundtripedit,
+.ics-viewer.ics-viewer-type-verse .ics-viewer-action-edit,
+.ics-viewer.ics-viewer-type-verse .ics-viewer-action-templateCreate {
+   display: none;
+}
+
+.roundtripEditDialog.dijitDialog .promptLink {
+   a {
+     border: none !important;
+       padding: 0 !important;
+       :focus {
+          text-decoration: underline !important;
+       }
+   }
+   span {
+      position: inherit !important;
+   }
+}

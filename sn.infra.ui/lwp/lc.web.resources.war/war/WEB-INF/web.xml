@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <display-name>connections.web.resources.war</display-name>
+    
+    <context-param>
+        <param-name>service.name</param-name>
+        <param-value>webresources</param-value>
+    </context-param>
+    
+    <listener>
+        <listener-class>com.ibm.lconn.common.mbean.servlet.MBeanInitializer</listener-class>
+    </listener>
+    <listener>
+        <listener-class>com.ibm.lconn.oauth.web.servlet.ProviderInitializer</listener-class>
+    </listener>
+	
+	   <!-- i18n filter -->
+   <filter>
+       <display-name>ConnectionsI18N</display-name>
+       <filter-name>ConnectionsI18N</filter-name>
+       <filter-class>com.ibm.lconn.core.web.util.lang.I18NFilter</filter-class>
+   </filter>
+   
+       <!-- I18NFilter for Share dialog -->
+    <filter-mapping>
+        <filter-name>ConnectionsI18N</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+ 
+    <filter>
+        <display-name>JSRequestFilter</display-name>
+        <filter-name>JSRequestFilter</filter-name>
+        <filter-class>com.ibm.lconn.core.services.cre.core.jsbridge.web.JSRequestFilter</filter-class>
+    </filter>
+    
+    <filter>
+		<display-name>CSRFFilter</display-name>
+		<filter-name>CSRFFilter</filter-name>
+		<filter-class>com.ibm.lconn.core.web.atom.CSRFFilter</filter-class>
+	</filter>
+
+    <filter-mapping>
+        <filter-name>JSRequestFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <!-- CSRF Filter to be put on all API end points-->
+    <filter-mapping>
+        <filter-name>CSRFFilter</filter-name>
+        <url-pattern>/ic/forms/api/*</url-pattern>
+    </filter-mapping>
+
+    <!-- Enforce SSL Communications App wide -->
+    <filter>
+        <filter-name>ConnectionsSslProtection</filter-name>
+        <filter-class>com.ibm.lconn.core.web.auth.LCUserDataConstraintFilter</filter-class>
+        <init-param>
+            <param-name>service.name</param-name>
+            <param-value>webresources</param-value>
+        </init-param>
+    </filter>
+
+    <servlet>
+        <servlet-name>bridgeservlet</servlet-name>
+        <servlet-class>org.eclipse.equinox.servletbridge.BridgeServlet</servlet-class>
+        <init-param>
+            <param-name>enableFrameworkControls</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <init-param>
+            <param-name>commandline</param-name>
+            <param-value></param-value>
+        </init-param>
+        <init-param>
+            <param-name>frameworkLauncherClass</param-name>
+            <param-value>com.ibm.lconn.core.web.resources.servlet.FrameworkLauncher</param-value>
+        </init-param>
+        <init-param>
+            <param-name>extendedFrameworkExports</param-name>
+            <param-value>com.ibm.lconn.oauth.platform.config, com.ibm.lconn.oauth.util, com.ibm.lconn.core.services.cre.core.jsbridge; version="1.0.0", com.ibm.lconn.core.services.cre.core.config; version="1.0.0", com.ibm.lconn.core.services.cre.core.config.settings; version="1.0.0", com.ibm.websphere.management; version="1.0.0", com.ibm.websphere.naming; version="1.0.0", com.ibm.lconn.core.web.resources.remote; version="1.0.0", com.ibm.tk.rproxysvc.spi; version="1.0.0", com.ibm.wsspi.cache; version="1.0.0", com.ibm.wsspi.security.auth; version="1.0.0", com.ibm.wsspi.security.auth.callback; version="1.0.0", com.ibm.ws.security.common.auth.module.proxy; version="1.0.0", com.ibm.ws.security.auth.j2c; version="1.0.0", javax.resource.spi.security; version="1.0.0", com.ibm.lotus.connections.core.notify.impl; version="1.0.0", com.ibm.lconn.core.web.util.services,com.ibm.websphere.cache; version="1.0.0", com.ibm.websphere.security; version="1.0.0", com.ibm.websphere.security.auth; version="1.0.0", com.ibm.ws.security.core; version="1.0.0", javax.ejb</param-value>
+        </init-param>
+        <init-param>
+            <param-name>overrideAndReplaceExtensionBundle</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>versionStamp.jsp</servlet-name>
+        <jsp-file>/WEB-INF/jsps/ic/version/versionStamp.jsp</jsp-file>
+    </servlet>
+
+    <servlet>
+        <servlet-name>gadgetResourceLoader</servlet-name>
+        <servlet-class>com.ibm.lconn.core.web.resources.servlet.GadgetResourceLoader</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>CommonWidgetLauncher</servlet-name>
+        <jsp-file>/WEB-INF/jsps/widgets/launcher.jsp</jsp-file>
+    </servlet>
+
+    <servlet>
+        <description>Provide static caching for all Connections content.  Any static content should be referenced through this servlet.</description>
+        <servlet-name>static-forward</servlet-name>
+        <servlet-class>com.ibm.lconn.core.web.cache.ConnectionsStaticContentForwardServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <description>Standalone share dialog page</description>
+        <servlet-name>shareDialog</servlet-name>
+        <jsp-file>/WEB-INF/jsps/sharedialog/dialog.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>shareDialog</servlet-name>
+        <url-pattern>/sharedialog/dialog</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>Standalone activitystream page</description>
+        <servlet-name>activityStream</servlet-name>
+        <jsp-file>/WEB-INF/jsps/activitystream/activitystream.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>activityStream</servlet-name>
+        <url-pattern>/activitystream</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>bridgeservlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>versionStamp.jsp</servlet-name>
+        <url-pattern>/ic/forms/api/version/versionStamp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>gadgetResourceLoader</servlet-name>
+        <url-pattern>/ic/forms/api/resloader/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CommonWidgetLauncher</servlet-name>
+        <url-pattern>/widgets/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>static-forward</servlet-name>
+        <url-pattern>/static/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>app-login</servlet-name>
+        <servlet-class>com.ibm.lconn.core.web.login.LoginServlet</servlet-class>
+        <init-param><param-name>service.name</param-name><param-value>webresources</param-value></init-param>
+        <init-param><param-name>cookie.name</param-name><param-value>WASReqURL</param-value></init-param>
+        <init-param><param-name>login.jsp</param-name><param-value>/nav/templates/login.jsp</param-value></init-param>
+        <init-param><param-name>redirect.allowExternalUrl</param-name><param-value>true</param-value></init-param>
+    </servlet>
+    <servlet-mapping><servlet-name>app-login</servlet-name><url-pattern>/login</url-pattern></servlet-mapping>
+
+    <servlet>
+        <servlet-name>app-login-redirect</servlet-name>
+        <servlet-class>com.ibm.lconn.core.web.util.ServiceRedirectServlet</servlet-class>
+        <init-param><param-name>service.name</param-name><param-value>webresources</param-value></init-param>
+        <init-param><param-name>relative.path</param-name><param-value>true</param-value></init-param>
+    </servlet>
+    <servlet-mapping><servlet-name>app-login-redirect</servlet-name><url-pattern>/login_redirect</url-pattern></servlet-mapping>
+
+    <filter>
+        <display-name>FormAuthorizationSetup</display-name>
+        <filter-name>FormAuthorizationSetup</filter-name>
+        <filter-class>com.ibm.lconn.core.web.login.FormAuthorizationSetup</filter-class>
+        <init-param>
+            <param-name>login</param-name>
+            <param-value>/login</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping><filter-name>FormAuthorizationSetup</filter-name><url-pattern>/j_security_check</url-pattern></filter-mapping>
+
+    <filter>
+        <description>This filter will force a login on all unauthenticated users.  See /form/authenticated for more info.
+            Note: this requires that the person role be mapped to "All Authenticated Users" or more specific.  If not, 
+            the application will never authenticate.
+        </description>
+        <display-name>ForceAuthentication</display-name>
+        <filter-name>ForceAuthentication</filter-name>
+        <filter-class>com.ibm.lconn.core.web.auth.LCRestSecurityFilter</filter-class>
+        <init-param><param-name>enforce.read.role</param-name><param-value>allAuthenticated,reader</param-value></init-param>
+        <init-param><param-name>enforce.write.role</param-name><param-value>person</param-value></init-param>
+        <init-param><param-name>authentication.chooser.forward</param-name><param-value>/login</param-value></init-param>
+    </filter>
+    <filter-mapping><filter-name>ForceAuthentication</filter-name><url-pattern>/login_redirect</url-pattern></filter-mapping>
+
+    <filter>
+        <display-name>TenantLookupFilter</display-name>
+        <filter-name>TenantLookupFilter</filter-name>
+        <filter-class>com.ibm.lconn.core.web.mt.TenantLookupFilter</filter-class>
+        <init-param>
+           <param-name>application</param-name>
+           <param-value>webresources</param-value>
+        </init-param>
+	    <init-param>
+		  <param-name>support.org.param</param-name>
+		  <param-value>true</param-value>
+	    </init-param>
+    </filter>
+
+    <!-- Tenant Lookup filter -->
+    <filter-mapping>
+        <filter-name>ConnectionsSslProtection</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>TenantLookupFilter</filter-name>
+        <url-pattern>/nav/templates/menu/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>TenantLookupFilter</filter-name>
+        <url-pattern>/widgets/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>TenantLookupFilter</filter-name>
+        <url-pattern>/web/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+     <filter-mapping>
+        <filter-name>TenantLookupFilter</filter-name>
+        <url-pattern>/ic/forms/api/resloader/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login</form-login-page>
+            <form-error-page>/login?error=true</form-error-page>
+        </form-login-config>
+    </login-config>
+
+    <security-constraint>
+        <display-name>LoginRedirects</display-name>
+        <web-resource-collection>
+            <web-resource-name>LoginRedirects</web-resource-name>
+            <url-pattern>/login</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>PUT</http-method>
+            <http-method>POST</http-method>
+            <http-method>DELETE</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>LoginRedirects</description>
+            <role-name>allAuthenticated</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <error-page><error-code>400</error-code><location>/nav/templates/error.jsp</location></error-page>
+    <error-page><error-code>403</error-code><location>/nav/templates/error.jsp</location></error-page>
+    <error-page><error-code>403</error-code><location>/nav/templates/error.jsp</location></error-page>
+    <error-page><error-code>404</error-code><location>/nav/templates/error.jsp</location></error-page>
+    <error-page><error-code>500</error-code><location>/nav/templates/error.jsp</location></error-page>
+    <error-page><error-code>503</error-code><location>/nav/templates/error.jsp</location></error-page>
+</web-app>

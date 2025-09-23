@@ -1,0 +1,27 @@
+<!-- Copyright IBM Corp. 2015, 2018  All Rights Reserved.                    -->
+<div role="presentation">
+	<div class=" lconnFileUpload" dojoAttachPoint="labelRow" style="padding-bottom:2px;">
+		<img src="${_blankGif}" alt="" dojoAttachPoint="fileIcon" role="presentation" class="lconnFileUploadIcon ${_ui.fileIcon}" />
+		<div class="lconnFileUploadLabel">
+			<div>
+				<div dojoAttachPoint="nameNode" class="lconnFilenameContainer bidiSTT_FILE_PATH_SIZE">${_ui.originalName}</div>
+				<a role="button" href="javascript:;" class="lconnFilenameContainer bidiSTT_FILE_PATH_SIZE"
+					dojoAttachEvent="onclick:startRename"
+					dojoAttachPoint="nameLink,focusNode">${_ui.originalName}</a> 
+				<input type="text" class="lotusText lotusLtr"
+					style="display: none"
+					dojoAttachEvent="onkeydown:_onEditKeyPress,onblur:_onEditBlur"
+					dojoAttachPoint="nameInput" />	
+			</div>
+			<div class="lotusMeta lotusTiny" style="display:none" dojoAttachPoint="editTooltipNode">${nls.UI_EDIT_TOOLTIP}</div>
+		</div>
+		<div style="display: inline" dojoAttachPoint="actionNode" class="lconnFileUploadAction">		
+			<a role="button" href="javascript:;" dojoAttachEvent="onclick:_remove,onmouseover:_startHover,onmouseout:_stopHover" class="lconnRemoveLink" dojoAttachPoint="removeLink"
+			   ><img src="${_blankGif}" class="lotusDelete" dojoAttachPoint="removeNode"
+			   ><span class="lotusAltText">X</span></a>
+			<span dojoAttachPoint="progressNode" style="display:none" ><img src="${_blankGif}" class="lotusLoading" dojoAttachPoint="progressNodeImg"/><span class="lotusAltText" dojoAttachPoint="progressNodeA11y">&#x231b;</span></span>
+			<span dojoAttachPoint="uploadedNode" style="display:none" ><img src="${_blankGif}" class="lconnSprite lconnSprite-iconConfirmation16" dojoAttachPoint="uploadedNodeImg"/><span class="lotusAltText" dojoAttachPoint="uploadedNodeA11y">&#x2713;</span></span>
+		</div>
+	</div>
+	<div dojoAttachPoint="statusContainerNode" class="lconnFileUploadStatus lotusIndent20"></div>
+</div>

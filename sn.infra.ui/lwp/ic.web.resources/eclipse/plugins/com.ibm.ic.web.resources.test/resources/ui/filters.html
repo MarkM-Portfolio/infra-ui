@@ -1,0 +1,52 @@
+${head}
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+
+<title>Filters</title>
+
+
+<script>
+djConfig.blankGif="";
+djConfig.parseOnLoad=true;
+
+</script>
+${script:dojo/parser}
+${script:net.jazz.ajax.xdloader}
+${script:ic-ui/Filter}
+
+<script>
+</script>
+
+
+<style>
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-test/ui/index.html?render=test">Core UI widgets and utilities</a>
+    <span class="lotusDivider">&gt;</span>
+    Filters
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain">
+<div class="lotusContent">
+<h1>Filters</h1>
+<dl>
+    <dt>Module ID: <code>ic-ui/Filter</code></dt>
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-ui/ic-ui.Filter.html">JSDoc</a></dd>
+</dl>
+<!--  Filters must reside within a container with class=lotusFilters2 -->
+<div class="lotusFilters2">
+    Click to remove:
+    <div data-dojo-type="ic-ui/Filter" data-dojo-props="text:'Andreas Berzat',strings:{remove:'Remove'}"></div>
+    <div data-dojo-type="ic-ui/Filter" data-dojo-props="text:'Dina Maroni',strings:{remove:'Remove'}"></div>
+    <div data-dojo-type="ic-ui/Filter" data-dojo-props="text:'Ed El-Amon',strings:{remove:'Remove'}"></div>
+</div>
+</div>
+</div>
+</body>
+${end}

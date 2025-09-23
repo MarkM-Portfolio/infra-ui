@@ -1,0 +1,21 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusFlyoutInner">
+   <div class="lotusHeadingChunk eeHeading">
+      <h1 class="lotusHeading">
+         <img alt="" role="presentation" aria-hidden="true" src="${context.iconUrl}" data-dojo-attach-point="iconNode">
+         <a href="${context.itemUrl}" class="bidiAware" target="_blank" data-dojo-attach-point="titleNode"></a>
+      </h1>
+   </div>
+   <span data-dojo-attach-point="sharedExternally"></span>
+   <div class="eeHeaderDescription" data-dojo-attach-point="contentArea"></div>
+   <div class="lotusChunk lotusTabContainer lotusTabCondensed" data-dojo-attach-point="historyTabContainer">
+	  <ul role="tablist" class="lotusTabs">
+		   <li class="lotusFirst lotusSelected eeFirstTab" role="presentation">
+			   <a id="historyLink" href="javascript:;" role="tab" aria-selected="true">${nls.HISTORY.TAB_TITLE}</a>
+		   </li>
+	  </ul>
+   </div>
+   <div aria-labelledby="historyLink" role="tabpanel" tabindex="0" class="eeTabBody">
+      <div data-dojo-attach-point="historyCtnr"></div>
+   </div>
+</div>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+${head}
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+<!-- head-->
+<title>Dijit - Popups</title>
+${style:dijit/themes/dijit}
+${style:dijit/themes/claro/claro}
+${endhead}
+    <h1>dijit/DropDownMenu</h1>
+    <h2>Programmatic</h2>
+    <div id="progMenu"></div>
+    
+    <h2>Declarative</h2>
+    <div data-dojo-type="dijit/DropDownMenu" id="navMenu">
+    <div data-dojo-type="dijit/MenuItem" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCut',
+        onClick:function(){alert('cut!')}">Cut</div>
+    <div data-dojo-type="dijit/MenuItem" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconCopy',
+        onClick:function(){alert('copy!')}">Copy</div>
+    <div data-dojo-type="dijit/MenuItem" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconPaste',
+        onClick:function(){alert('paste!')}">Paste</div>
+    <div data-dojo-type="dijit/MenuSeparator"></div>
+    <div data-dojo-type="dijit/PopupMenuItem">
+        <span>Action</span>
+        <div data-dojo-type="dijit/DropDownMenu" id="submenu2">
+            <div data-dojo-type="dijit/MenuItem" data-dojo-props="onClick:function(){alert('nested #1!')}">Nested #1</div>
+            <div data-dojo-type="dijit/MenuItem" onclick="alert('nested #2!')">Nested #2</div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>//var netJazzAjaxConfig = {base: ""}; var djConfig = {proxy: "/ajaxProxy", isDebug: true, baseUrl: "/web/dojo/", locale: "en", localizationComplete: true}</script>
+    <script>
+        djConfig.parseOnLoad=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:dojo.parser}
+    ${script:dijit.Menu}
+    ${script:dijit.PopupMenuItem}
+    ${script:dijit.MenuItem}
+    ${script:dijit.MenuSeparator}
+    <script>
+        dojo.addOnLoad(function() {
+            var pMenu = new dijit.DropDownMenu({}, dojo.byId('progMenu'));
+            pMenu.addChild(new dijit.MenuItem({
+                iconClass: 'dijitEditorIcon dijitEditorIconCut',
+                label: 'Cut',
+                onClick: function(){alert('cut!');}
+            }));
+            pMenu.addChild(new dijit.MenuItem({
+                iconClass: 'dijitEditorIcon dijitEditorIconCopy',
+                label: 'Copy',
+                onClick: function(){alert('copy!');}
+            }));
+            pMenu.addChild(new dijit.MenuItem({
+                iconClass: 'dijitEditorIcon dijitEditorIconPaste',
+                label: 'Paste',
+                onClick: function(){alert('paste!');}
+            }));
+            pMenu.addChild(new dijit.MenuSeparator());
+            var subMenu = new dijit.Menu();
+            subMenu.addChild(new dijit.MenuItem({
+                label: 'Nested #1',
+                onClick: function(){alert('nested #1!');}
+            }));
+            subMenu.addChild(new dijit.MenuItem({
+                label: 'Nested #2',
+                onClick: function(){alert('nested #2!');}
+            }));
+            subMenu.startup();
+            var popup = new dijit.PopupMenuItem({
+                label: 'Action',
+                popup: subMenu
+            });
+            pMenu.addChild(popup);
+            pMenu.startup();
+        });
+    </script>
+</body>
+</html>

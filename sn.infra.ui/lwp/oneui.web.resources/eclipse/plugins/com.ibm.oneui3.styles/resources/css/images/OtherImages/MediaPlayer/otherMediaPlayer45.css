@@ -1,0 +1,5 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.otherMediaPlayer45-mpPlayButton45{width:45px;height:45px;background-position:0 0}
+
+.otherMediaPlayer45{background-image:url('./otherMediaPlayer45-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .otherMediaPlayer45{display:none}

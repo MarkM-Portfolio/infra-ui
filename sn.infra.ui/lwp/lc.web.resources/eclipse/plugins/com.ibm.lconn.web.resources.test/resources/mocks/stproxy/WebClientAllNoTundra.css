@@ -1,0 +1,2484 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+.stproxy_general {  
+    /*width: 100%*/     
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+.stproxy_general table {    
+    border-collapse: collapse; 
+    border-spacing: 0;  
+}
+
+.stproxy_general td, .stproxy_general tr {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.stproxy_maxSize {
+    height: 100%;
+    width: 100%;
+}
+
+/****************************************************************/
+.stproxy_adder {
+    /*display: block;*/
+}
+
+.stproxy_adderBottom {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.stproxy_collectorContainer {   
+    height: 100%;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.stproxy_chatEditor {
+    border: none;
+    position: relative;
+}
+
+.stproxy_sendButtonTrailer {    
+}
+
+.stproxy_chatMessage {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.stproxy_chatDisplayedMessageTd {
+    width: 85%;
+    word-wrap:break-word;
+}
+
+.stproxy_chatMessageTime {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 15%;
+}
+
+.stproxy_chatMessageRow {
+    vertical-align: top;
+}
+
+.stproxy_layer {    
+    z-index: 999;   
+    position: absolute; 
+    display: block;
+    top: 0px;
+    left:0px;
+}
+
+.stproxy_layerContent {
+    text-align: center;
+    position: absolute;
+}
+
+.stproxy_layerScreenBg {
+    position: absolute;
+}
+
+/**************************************************************************/
+
+.stproxy_checkboxLabel {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.stproxy_sametimeLogo {
+}
+
+.stproxy_statusIcon {   
+    text-align: center;     
+}
+
+.stproxy_comboButton {
+    width: 100%;
+}
+
+.dj_ff2 .stproxy_comboButton {
+    /*display: block;*/
+}
+
+.stproxy_comboButtonTd {
+}
+
+
+.stproxy_comboContainer {
+    padding: 0px !important;
+}
+
+.stproxy_comboContainerGroupSelect {
+    padding-bottom: 2px !important;
+}
+
+.dj_safari .stproxy_comboContainerGroupSelect, .dj_ff3 .stproxy_comboContainerGroupSelect {
+    padding-bottom: 1px !important;
+}
+
+.dj_ff3 .stproxy_comboContainerGroupSelect {
+    padding-top: 1px !important;
+}
+
+.dj_ie .stproxy_comboContainer, .dj_ff2 .stproxy_comboContainer {
+    position: relative;
+    top: 1px;
+}
+
+.dj_ff3 .stproxy_comboContainer {
+    margin-top: -1px !important;
+}
+
+.dj_ff2 .stproxy_comboContainerAdder {
+    top: 0px;
+    padding-top: 2px !important;
+}
+
+.dj_ff2 .stproxy_comboContainer {
+    vertical-align: baseline !important;
+}
+
+.dj_ie .stproxy_comboInput, .dj_ff2 .stproxy_comboInput {
+    margin-top: -1px !important;
+    margin-bottom: -1px !important;
+}
+
+.dj_ie6 .stproxy_comboInput {
+    margin-top: 1px !important;
+    margin-bottom: -5px !important;
+}
+
+.dj_ff3 .stproxy_comboInput {
+    padding-bottom: 1px !important; 
+}
+
+.stproxy_comboTitle {
+    padding: 0px !important;
+    overflow: hidden;
+}
+
+.dj_ff2 .stproxy_comboTitle {
+    vertical-align: baseline !important;
+}
+
+.stproxy_buttonAlign {
+    vertical-align: baseline !important;
+}
+
+.stproxy_comboButtonRight {
+    /*width: 5px;*/
+    padding: 0px !important;    
+}
+
+.dj_safari .stproxy_comboInput {        
+    margin: 0px !important;
+    padding: 0px !important;
+    display: block;
+}
+
+.dj_safari .stproxy_comboContainer {    
+    display: block; 
+}
+
+.dj_safari .stproxy_comboTitle {    
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+}
+
+.stproxy_comboArrow {
+    /*margin: 0px 5px !important;*/
+    margin: 0px !important;     
+}
+
+.stproxy_comboButtonLabel {
+    display: block !important;
+}
+
+.stproxy_dropDownAlign {
+    vertical-align: baseline;
+}
+
+
+/***************************************************************************/
+
+.stproxy_main {
+    position: absolute;
+    top: 0px;   
+    width: 99%;
+    height: 100%;
+}
+
+.stproxy_top {
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    right: 0px;     
+    width: 100%;    
+}
+
+.stproxy_awarenessSetter {
+    position: absolute; 
+    width: 100%;
+}
+
+.stproxy_center {
+    position: absolute;     
+    bottom: 0px; 
+    left: 0px; 
+    right: 0px;         
+    /*padding: 1px !important;*/
+}
+
+* html .stproxy_center { /*IE6, FF3 ? hack, check here later sometime TODO*/
+    /*height: 100% !important;*/
+    width: 100% !important; 
+}
+
+.stproxy_statusButton {
+}
+
+.stproxy_statusButtonInner {
+    display: inline-table;
+}
+/*****************************************************************/
+.stproxy_awarenessTableEls {
+    width: 100%;
+}
+
+.stproxy_awarenesDivNoWrap {
+    white-space: nowrap;
+}
+
+/***************************************************************/
+
+.stproxy_collectionNode {
+    margin: 0px;
+}
+
+.stproxy_collectionRowNode {    
+    margin: 0px 1px;
+}
+
+.stproxy_collectionTreeNode {
+}
+
+.stproxy_collectionUserNode {
+    /*margin-left: 0px !important; */
+}
+
+.stproxy_groupExpandoNode {
+}
+
+.stproxy_collectionNodeFocused {
+    /*outline: 1px invert dotted;*/
+}
+
+.stproxy_userExpandoNode {  
+}
+
+.stproxy_textBox {
+    margin: 0px !important;
+    padding: 0px !important;
+    width: 100% !important;
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+}
+
+.dj_ie .stproxy_quickFindTextBox {
+    padding-bottom: 0px !important;
+}
+
+.dj_gecko .stproxy_textBoxContainer, .dj_safari .stproxy_textBoxContainer {
+}
+
+.stproxy_quickFind {
+    width: 100%;
+}
+
+.stproxy_layerAlign {
+    text-align: center;
+}
+
+/***************************************************************/
+
+.stproxy_businessCardTooltip {
+    padding: 0px !important;
+}
+
+/**Buttons***************************************************************/
+.stproxy_buttonText {
+    padding: 0px !important;
+    margin: 0px !important; 
+}
+
+.stproxy_buttonNode {
+    padding: 0px !important;
+    margin: 0px;
+}
+
+.stproxy_button {
+    padding: 0px !important;
+    margin: 0px !important; 
+}
+
+.stproxy_userInfoTable {
+    width: 100%;
+}
+
+.stproxy_userInfoPicTd {
+    vertical-align: top;
+}
+
+/**************** real definitions ************************************************************************************/
+/* 
+ */
+
+.stproxy_chatDisplayName {
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 7px;
+    padding-top: 8px;
+    padding-bottom: 4px;
+}
+
+.dj_ie6 .stproxy_chatDisplayName {
+    width: 100%;
+}
+
+.stproxy_hideDisplayName {
+    display: none !important;
+}
+
+.stproxy_chatDisplayedMessage {
+    padding-left: 7px;
+    padding-right: 10px;
+}
+
+.stproxy_chatTop {
+    overflow: hidden;
+    height: 70%;
+}
+
+.dj_ie6 .stproxy_chatTop {
+    height: 70%;
+}
+
+.stproxy_chatTranscriptContainer {
+    height: 100%;
+    overflow: auto;
+}
+
+.stproxy_window {   
+    width: 20em;    
+    padding: 11px 16px 16px 16px;
+    background-position: center top;
+}
+
+.stproxy_userInfoPic {
+    height: 60px;
+    width: 60px;
+}
+
+.stproxy_userInfoPicDiv {
+    height: 60px;
+}
+
+.stproxy_userInfoPicTd {
+    width: 60px;
+}
+
+.stproxy_userInfoMoreDetails {
+    margin-top: 7px;
+    padding-top: 2px;
+}
+
+.stproxy_businessCardTooltip {
+    width: 18em;
+    position: absolute;
+    z-index: 1000;
+    top: -9999px;
+}
+
+/********* Toolbar **********************************************/
+.stproxy_toolbarButton {
+    border: 1px solid transparent;
+    padding: 0px 2px;
+}
+
+.dj_ie .stproxy_toolbarButton {
+    margin-left: 3px;
+}
+
+/* IE6 hack for transparent border */
+.dj_ie6 .stproxy_toolbarButton {
+    border-color: pink;
+    filter: chroma(color=pink);
+}
+
+.stproxy_toolbarMenu {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.dj_gecko .stproxy_toolbarMenu, .dj_safari .stproxy_toolbarMenu {
+    padding-left: 3px;
+}
+
+/********** Login **********************************************/
+
+.stproxy_loginButtonOk {
+  margin: 0;
+  border: 1px solid #AAAAAA;
+  color: #000000;
+  padding: 3px 7px;
+  background-color: #F1F1F1;
+  font-weight: bold;
+  font-size: 0.85em;
+  text-align: center;
+  cursor:pointer;
+  background-image: -moz-linear-gradient(center top , #FFFFFF 0%, #EBEBEB 100%);
+  border-radius: 2px 2px 2px 2px;
+}   
+
+.stproxy_loginButtonOk:focus,  
+.stproxy_loginButtonOk:hover
+{
+    border-color: #666666;
+}
+
+.stproxy_login .stproxy_window
+{
+    position: relative;
+}
+
+.stproxy_loginFormEntry {
+    /*width: 18em;*/
+}
+
+.dj_ie6 .stproxy_loginContent{
+    zoom: 1
+}
+
+.stproxy_loginLogoutPanel{
+    display: none;
+    text-align: left;
+}
+
+.stproxy_loginFormEntry .stproxy_labelText {
+    font-weight: normal !important; 
+}
+
+.stproxy_loginEntryBlock {
+    margin-bottom: 17px;    
+}
+
+.stproxy_loginEntryButtons {
+    padding-top: 15px;
+    text-align: left;
+}
+
+.stproxy_loginBottomLicense {
+    padding: 78px 0px 0px 0px;
+    text-align: left;
+}
+
+.stproxy_loginTitle {
+    padding-bottom: 23px;
+    padding-top: 10px;
+    text-align: left;
+}
+
+.stproxy_login .stproxy_loginTitle{
+    font-size: 157% !important;
+}
+
+.stproxy_licenseText {
+    padding-left: 3px;
+}
+
+.stproxy_ibmLogo {
+    padding-bottom: 2px;
+}
+
+/*********** Menus *********************************************/
+.stproxy_comboContainer {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    text-align: left !important;
+}
+
+.stproxy_adder .stproxy_comboContainer{
+    float: left;
+}
+
+.stproxy_adder_search {
+    float: left;
+}
+
+.stproxy_contextMenu td {
+    padding: 2px 4px !important;
+    cursor: pointer;
+}
+/************ Combobutton arrow ******************************/
+.stproxy_comboButton {
+    vertical-align: middle;
+}
+
+.dj_ff2 .stproxy_comboTitle {
+    width: 100%;
+}
+
+.stproxy_comboButtonRight {
+    width: 18px;    
+}
+
+.stproxy_comboArrow {   
+    width: 18px;
+}
+
+.stproxy_comboIcon {
+    padding: 0 6px 0px 0px !important;
+}
+
+.dj_gecko .stproxy_comboIcon {
+    vertical-align: baseline;
+}
+
+.dj_safari .stproxy_comboIcon {
+    float: left;
+}
+
+.dj_ie6 .stproxy_username_textbox{
+    height: 20px;
+}
+
+.stproxy_comboButton td.stproxy_comboTitleGroupSelect {
+    padding-left: 2px !important;
+    text-align: left !important;
+}
+
+/************* general paddings ****************************/
+.stproxy_labelText {
+    padding-bottom: 3px;
+}
+
+/*************** Buttons ************************************/
+.stproxy_buttonOk {
+    padding: 0px 7px 2px 7px;
+} 
+
+.dj_ie .stproxy_buttonOk {
+    padding: 1px 7px 2px 7px;
+} 
+
+.stproxy_buttonCancel {
+    padding: 0px 7px 2px 7px;
+} 
+
+.dj_ie .stproxy_buttonCancel {
+    padding: 1px 7px 2px 7px;
+} 
+
+.stproxy_buttonBar {
+    padding-top: 20px;
+}
+
+/**************** Livename, Group ***********************************/
+.stproxy_liveNameCollectionPadding {
+    padding-right: 9px !important;
+}
+
+.stproxy_liveNamePadding {
+    padding-left: 6px;
+}
+
+.stproxy_iconLivename {
+    margin-right: 5px;  
+}
+
+.stproxy_iconGroup {
+    margin-right: 5px;
+}
+
+.stproxy_icon {
+    padding-right: 3px;
+}
+
+.stproxy_iconImg {
+    vertical-align: baseline !important; 
+}
+
+.dj_ie .stproxy_iconImg {
+    vertical-align: middle !important; 
+}
+
+.dj_ie6 .stproxy_iconLivename {
+    margin-right: 2px;
+}
+
+.dj_ie8 .stproxy_groupExpandoNode {
+    margin-left: 4px !important;
+    margin-right: 2px !important;
+}
+
+.stproxy_groupExpandoNode {
+    margin-left: 9px !important;
+    margin-right: 7px !important;
+    float: left;
+    cursor: default;
+}
+
+.dj_ie8 .stproxy_collectionNode {
+    overflow: hidden;
+}
+
+.dj_ie6 .stproxy_groupExpandoNode {
+    margin-left: 5px !important;
+}
+
+.stproxy_liveName {
+    padding: 2px 0px;
+}
+
+.stproxy_liveNameGroup {
+    padding: 3px 0px;
+}
+
+.dj_ie6 .stproxy_liveNameGroup {
+    width: 100%;
+}
+
+.quickFindPopup .stproxy_liveNameGroup {
+    padding: 1px 0px;
+}
+
+.stproxy_displayContactCount {
+    float: right;
+    padding: 0px 9px 0px 18px;
+}
+
+.stproxy_overflowDisplayNames {
+}
+
+.dj_iequirks .stproxy_overflowDisplayNames {
+    width: 100%;
+    overflow: hidden;
+}
+
+.dj_ie .stproxy_overflowDisplayNames {
+    display: inline-block;
+}
+
+.dj_ie .stproxy_overflowDisplayNames span{
+    display: inline-block;
+}
+
+/*************** QuickFind, Status bar, Awareness *************************/
+.dijitPopup .quickFindPopup .dijitMenuItemHover
+{
+    background:#eaeaea;
+}
+
+.stproxy_arrowBottomIconParent {
+    padding-left: 3px;  
+}
+
+.dj_ie .stproxy_statusIconAlign {
+    vertical-align: middle !important;
+}
+
+.stproxy_quickFindBar {
+    padding: 4px 6px 3px !important;
+}
+
+.dj_ie7 .stproxy_quickFindBar {
+    padding: 4px 8px 3px 6px !important;
+}
+
+.stproxy_quickFindContainer {
+    
+}
+
+.stproxy_quickFindText {
+    display: none !important;
+}
+
+.stproxy_awarenessTable td.stproxy_awarenessTd {
+    padding: 3px 6px 3px 0px !important;
+}
+
+.stproxy_awarenessLabel {
+    padding-top: 15px;
+}
+
+.stproxy_awarenessContainer {
+    padding: 8px 10px 15px 10px !important;
+}
+
+.stproxy_awarenessSplitter {
+    display: block;
+    padding: 2px !important;
+}
+
+.stproxy_awarenessRow  {
+    display: table;
+    width: 100%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.dj_ie .stproxy_awarenessRow {
+    vertical-align: middle;
+}
+
+.stproxy_awarenessPad {
+    padding: 0px 5px;
+}
+
+.stproxy_statusButton td.stproxy_awarenessStatus {
+    padding-left: 3px !important;
+}
+
+.stproxy_statusButton td.stproxy_awarenessStatusArrow {
+    padding-left: 1px !important;;
+    padding-right: 3px !important;;
+}
+
+.stproxy_statusButton {
+    padding: 0px 3px;
+    float: left;
+}
+
+.stproxy_statusButtonMain {
+    padding: 3px 3px 0px 3px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.stproxy_mainStatusMessage {
+    padding-left: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.dj_ie6 .stproxy_mainStatusMessage {
+    width: 100%;
+}
+
+.stproxy_main {
+}
+
+/************************ Popup ****************************************/
+.stproxy_popup {
+    padding: 15px;
+}
+
+.stproxy_layerContentInner {
+    padding: 0px 15px;
+}
+
+.stproxy_layer {
+    overflow: hidden;
+}
+
+/****************** Slide down *******************************************/
+.stproxy_slideDownTitle {
+    padding: 7px 0px;
+    text-align: center;
+}
+
+.stproxy_slideDownTop {
+    padding-top: 15px;
+}
+
+.stproxy_slideDownPadding {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.stproxy_slideDownMargin {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+
+.stproxy_slideDownRadio {
+    padding-top: 2px;
+}
+
+.stproxy_slideDownLabel {
+    padding-top: 15px;
+}
+
+.stproxy_slideDownBottom {
+    padding-bottom: 15px;
+}
+
+.stproxy_comboButtonLabel {
+    padding: 0px 8px !important;
+}
+
+.stproxy_slideDownOverflow {
+    overflow: hidden;
+}
+
+/********************** Userinfo ****************************************/
+.stproxy_userInfoShowDetails {
+    vertical-align: bottom ;
+    width: 9px;
+}
+
+.stproxy_userInfoDetails {
+    vertical-align: top;
+}
+
+.stproxy_userInfo {
+    padding: 7px;
+}
+
+.stproxy_userDetails {
+    padding-left: 9px;
+    padding-top: 4px;
+}
+
+/************************* Collector* ********************************/
+.stproxy_collectorRow {
+    padding: 4px;
+}
+
+.stproxy_collector {
+    overflow: auto;
+}
+
+.stproxy_collectorNoResults {
+    padding: 4px 5px 4px 5px !important;
+}
+
+.stproxy_collector_container_dojo14 {
+    top: 124px; left: 0px; right: 0px; bottom: 145px;
+}
+
+
+/*********************** Chat ***************************************/
+.stproxy_chat {
+    position: relative; 
+}
+
+.stproxy_toolbarChat {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.stproxy_chatLinkEditor {
+    width: 200px;
+}
+
+.dj_gecko .stproxy_toolbarButtonPlugin, .dj_safari .stproxy_toolbarButtonPlugin {
+    margin-left: 3px;
+}
+
+.stproxy_chatEmoticonIcon {
+    padding: 3px;
+    margin-left:0 !important;
+    margin-right:0 !important;
+}
+
+.stproxy_sendButtonHeader {
+    padding: 2px 0px !important;
+    float:left;
+}
+
+.stproxy_sendButtonTrailer {
+    padding: 2px 12px 3px 0px !important;
+    float: left;
+}
+
+.stproxy_emoticons {
+    padding: 5px 5px 0px 5px !important;
+}
+
+.stproxy_linkEditorPadding {
+    padding-top: 10px !important;
+}
+
+.stproxy_pluginTextColor {
+    padding: 0px !important;
+}
+
+.stproxy_chatHistory {
+    /*padding: 0px 7px 0px 7px !important;*/
+}
+
+.stproxy_chatTranscript {
+    /*padding: 0px 7px 0px 7px !important;*/
+}
+
+.stproxy_chatTranscript_IE {
+    /*padding: 0px 7px 0px 7px !important;*/
+    overflow-x: hidden;
+}
+
+.stproxy_chatMessageSame {
+    padding-top: 3px;   
+}
+
+.stproxy_chatMessageDifferent {
+    padding-top: 5px;   
+}
+
+.stproxy_chatIsTypingBar {
+    padding: 3px 7px !important;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.dj_ie6 .stproxy_chatIsTypingBar {
+    width: 100%;
+}
+
+.stproxy_chatMessage td.stproxy_chatDisplayTimePad {
+    padding-right: 7px !important;
+}
+
+.stproxy_chatMessage td.stproxy_chatDisplayNamePad {
+    padding-left: 7px !important
+}
+
+.stproxy_float {
+    float: left;
+}
+
+.stproxy_sendButton {
+    float: right;
+}
+
+.stproxy_userExpandoNode {  
+    float: left;
+}
+
+.stproxy_textBox {
+    padding-left: 1px !important;   
+}
+
+.dj_gecko .stproxy_textBoxContainer, .dj_safari .stproxy_textBoxContainer {
+    padding-right: 3px;
+}
+
+.stproxy_collectionTreeNode {
+    margin-left: 0px !important;
+}
+
+.stproxy_popupTextLayout {
+    text-align: left;
+}
+
+.stproxy_groupSelector {
+    text-align: left;
+}
+
+.stproxy_comboButtonTd {
+    /*width: 100%;*/
+    text-align: left;
+}
+
+.stproxy_sametimeLogo {
+    text-align: left;   
+}
+
+.stproxy_chatIsTypingIcon { 
+    float: left;
+    padding: 0px 3px;
+}
+
+.stproxy_fontFamily .stproxy_chatAcceptButton {
+    float: left;
+    padding: 1px;
+    border-width:1px;
+    border-bottom-style:solid;
+}
+
+.stproxy_fontFamily .stproxy_chatDelimiter {
+    float: left;
+}
+
+.stproxy_closeBizCardIcon {
+    width: 10px;
+    height: 7px;
+    position:absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.stproxy_fontFamily .stproxy_chatDelimiter {
+    padding: 0px 4px;
+}
+
+/*********************** About Page ***************************************/
+
+.stproxy_aboutTextBuild {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.stproxy_aboutText {
+    padding-left: 3px;
+    padding-right: 3px;
+    background-color: #ffffff;
+}
+
+.stproxy_aboutTextBackground {
+    background-color: #ffffff !important;
+}
+
+.stproxy_aboutTextTitle {
+    padding-bottom: 10px !important;
+}
+
+/******* Splash screen ***************************/
+.stproxy_splashScreenCenter {
+    text-align: left;
+    padding: 40px 25px 40px 40px;
+}   
+
+.stproxy_splashScreenWindow {
+    width: 42em;    
+    padding: 13px 21px 19px 21px;
+}
+
+.stproxy_fontFamily .stproxy_splashScreenTitle {
+    font-size: 180% !important; 
+    padding-bottom: 70px;
+}
+
+.stproxy_splashScreenBottomLicense {
+    text-align: left;
+}
+
+.stproxy_splashScreenButtonOk {
+    float: left;
+    cursor: pointer;
+    margin-top: 4px;
+    border: 1px solid #AAAAAA;
+  border-radius: 2px 2px 2px 2px;
+  color: #000000;
+  padding: 3px 7px;
+  background-color: #F1F1F1;
+  background-image: -moz-linear-gradient(center top , #FFFFFF 0%, #EBEBEB 100%);
+  font-weight: bold;
+  font-size: 0.9em;
+  text-align: center;
+}   
+
+.stproxy_splashScreenButtonOk:focus,  
+.stproxy_splashScreenButtonOk:hover
+{
+    border-color: #666666;
+}
+
+.stproxy_splashScreenBubble {
+    margin-left: 60px;
+    width: 128px;
+    height: 128px;
+    background-repeat: no-repeat;
+}
+
+
+.stproxy_splashScreenTitle {
+    padding-bottom: 15px;
+}
+
+.stproxy_splashScreenIbmLogo
+{
+    float: right;
+}
+
+.stproxy_splashScreenLicenseText {
+    padding: 5px;
+}
+
+.stproxy_paddingBottomIE8 {
+    padding-bottom: 3px;
+}
+
+.stproxy_paddingBottomContainer_dojo14 {
+    bottom: 0px; left: 0px; right: 0px;
+}
+
+/* 
+ */
+ 
+/*.stproxy_fontFamily textarea .sametime_stproxy p, .sametime_stproxy blockquote, .sametime_stproxy div, .sametime_stproxy dl, .sametime_stproxy dt, .sametime_stproxy dd, .sametime_stproxy li, .sametime_stproxy h1, .sametime_stproxy h2, .sametime_stproxy h3, .sametime_stproxy h4, .sametime_stproxy h5, .sametime_stproxy h6, .sametime_stproxy pre, .sametime_stproxy form, .sametime_stproxy fieldset, */
+
+/* border colors *******************************************************/
+
+/* background styles ***************************************************/
+.stproxy_sendButtonHeader {
+    background-color: #0000FF;  
+    background-repeat: no-repeat !important;
+    background-position: center top !important;
+}
+
+.stproxy_sendButtonTrailer {
+    background-color: #0000FF;  
+    background-repeat: repeat-x;
+    background-position: center top;
+}
+
+.stproxy_groupIcon {
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.stproxy_window {       
+    background-repeat: no-repeat;       
+}
+
+.stproxy_login {    
+    background-repeat: repeat-x;    
+}
+
+.stproxy_externalLogos {
+    background-repeat: repeat-x;    
+}
+
+/***** toolbar **/
+
+.stproxy_toolbarMenu {
+    border: 0px !important;
+    line-height: 1;
+    background: none !important;
+    background-color: white !important;
+    background-position: center center;
+    background-repeat: repeat-x;;
+}
+
+.stproxy_toolbarChat {
+    border: 0px !important;
+    line-height: 1;
+    background: none !important;
+    background-color: white !important;
+    background-position: center center;
+    background-repeat: repeat-x;;
+}
+
+.stproxy_editorIcon {
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+/*********************************************************
+ * Reset new
+ */
+
+.stproxy_tickIcon {
+    background-repeat: no-repeat;   
+    background-position: center center;
+}
+
+.stproxy_arrowRightIcon {
+    background-repeat: no-repeat;   
+    background-position: center center;
+}
+
+.stproxy_arrowBottomIcon {
+    background-repeat: no-repeat;   
+    background-position: center center;
+}
+
+.stproxy_statusIcon {
+    background-repeat: no-repeat;   
+    background-position: center center;
+}
+
+.stproxy_statusIconArrow {
+    background-repeat: no-repeat;   
+    background-position: center center;
+}
+
+.stproxy_comboContainer {
+    background: none !important;
+}
+
+.stproxy_comboInput {
+    border: none !important;
+    background: none !important;
+}
+
+.dj_ie .stproxy_comboInput, .dj_ff2 .stproxy_comboInput {
+    background: none !important;
+    border: none !important;
+}
+
+.stproxy_comboTitle {
+}
+
+.stproxy_comboArrow {
+    /*margin: 0px 5px !important;*/
+    background-position: center center !important;
+    background-repeat: no-repeat !important;    
+}
+
+.stproxy_collectionTreeNode {
+    background-image: none !important;
+}
+
+.stproxy_userExpandoNode {  
+    background: none !important;
+}
+
+.stproxy_buttonNode {
+    background: none !important;
+    border: none !important;
+}
+
+.stproxy_buttonOk {
+    background: none !important;
+    border: 1px solid !important;
+    background-position: center center !important;
+    background-repeat: repeat-x !important;
+}
+
+.stproxy_buttonCancel {
+    background: none !important;
+    background-position: center center !important;
+    background-repeat: repeat-x !important;
+}
+
+.stproxy_treeExpando {
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.dj_ie8 .stproxy_treeExpandoOpened {
+    background-position: 40% bottom;
+}
+
+/*.stproxy_arrowIcon {
+    background-position: center center;
+    background-repeat: no-repeat;
+}*/
+
+.stproxy_quickFindTextBox {
+    background-image: none !important;
+}
+
+.stproxy_textBox {
+    background-image: none !important;
+}
+
+.stproxy_comboButtonRight {
+    background: none !important;
+    background-color: white !important;
+    background-repeat: repeat-x !important;
+    background-position: center !important;
+}
+
+.dj_ie6 .stproxy_collectionRowNode {
+    border-bottom: 1px solid !important;
+}
+
+.stproxy_awarenessRow {
+    border-bottom: 1px solid !important;
+}
+
+.stproxy_borderFull {
+    border: 1px solid !important;   
+}
+
+.stproxy_borderBottom {
+    border-bottom: 1px solid !important;    
+}
+
+.stproxy_borderTop {
+    border-top: 1px solid !important;   
+}
+
+.stproxy_borderLeft {
+    border-left: 1px solid !important;  
+}
+
+.stproxy_borderRight {
+    border-right: 1px solid !important; 
+}
+
+.stproxy_borderTop {
+    border-top: 1px solid !important;   
+}
+
+.stproxy_borderTopBottom {
+    border-bottom: 1px solid !important;
+    border-top: 1px solid !important;
+}
+
+.stproxy_menuSeparator {
+    font-size: 1px;
+    height: 50%;
+    margin: 3px 0px;
+}
+
+.stproxy_slideDownTitle {
+    background-position: center;
+    background-repeat: repeat-x;
+}
+
+.stproxy_quickFindBar {
+    background-position: center;
+    background-repeat: repeat-x;
+    background-color: white;
+}
+
+.stproxy_popup {
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-color: #DAD7D2;
+}
+
+.stproxy_userInfo {
+    background-position: top left;
+    background-repeat: repeat-x;
+    background-color: white;
+}
+
+.stproxy_inputBackground {
+    background: none !important;
+    background-position: left top;
+    background-repeat: repeat-x;    
+}
+.stproxy_comboButtonTitleSearch {
+    border-right: 0px !important;
+}
+
+.stproxy_comboButtonContentSearch {
+    visibility: hidden;
+}
+
+.stproxy_chatIsTypingBar {
+    background-position: center;
+    background-repeat: repeat-x;
+    background-color: white;
+}
+
+.stproxy_closeBizCardIcon {
+    background-repeat: no-repeat;   
+    background-position: center center;
+}
+/* 
+ */
+ 
+.stproxy_invisible{
+    visibility:hidden;
+}
+
+.stproxy_fontSize {
+    font-size: 0.8em !important;
+    font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif !important;  
+}
+
+.stproxy_fontFamily input, .stproxy_fontFamily table, .stproxy_fontFamily textarea,.stproxy_fontFamily div, .stproxy_fontFamily span {
+    font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif !important;  
+    font-size: 100% !important;     
+}
+
+.stproxy_tickIcon {
+    width: 10px;
+    /*height: 10px;*/
+    background-image: url(images/tick.gif);
+}
+
+.stproxy_arrowRightIcon {
+    width: 10px;
+    height: 7px;
+    background-image: url(images/arrowIconRight.gif);
+}
+
+.stproxy_arrowRightIconHC{
+    background-image: url(images/arrowIconRight.gif);
+}
+
+.stproxy_arrowBottomIcon {
+    width: 7px;
+    background-image: url(images/arrowIconBottom.gif);
+}
+
+.stproxy_groupIcon {
+    width: 17px;
+}
+
+.stproxy_groupIconPublic {
+    background-image: url(images/publicGroup.png);      
+}
+
+.stproxy_groupIconPrivate {
+    background-image: url(images/privateGroup.png);     
+}
+
+.stproxy_privateGroupLock {
+        background-image: url(images/Private_Group_16x16.png);
+        height: 16px;
+        width: 16px;
+}
+
+.stproxy_layerScreenBg {
+    background-color: #000000;
+}
+
+.stproxy_layerScreenBgIE8Quirks {
+    background-color: #7F7F7F !important;
+}
+
+.stproxy_window {       
+    background-color: #ffffff;  
+}
+
+
+.stproxy_login {
+     color: #222222;
+     background-color: #E6E9F1;
+}
+
+.stproxy_login .stproxy_borderColor {
+    border-color: #ACB9CD !important;
+}
+
+.stproxy_comboArrow {   
+    /*width: 9px;*/
+    height: 9px;
+    background-image: url(images/dropDownArrow.gif) !important;
+}
+
+.stproxy_statusIconArrow {  
+    width: 17px;
+    /*height: 9px;*/
+}
+
+.stproxy_externalLogos {
+    background-image: url(images/AOL.png);
+        height: 24px;
+        width: 68px;
+        margin-left: 10px;
+}
+
+.stproxy_statusIconAvailableArrow {
+    background-image: url(images/iconAvailableArrow.gif);
+}
+
+.stproxy_statusIconAwayArrow {
+    background-image: url(images/iconAwayArrow.gif);
+}
+
+.stproxy_statusIconMeetingArrow {
+    background-image: url(images/iconMeetingArrow.gif);
+}
+
+.stproxy_statusIconDisturbArrow {
+    background-image: url(images/iconDisturbArrow.gif);
+}
+
+.stproxy_iconYahooOffline {
+    background-image: url(images/Yahoo_Offline.gif);
+}
+
+.stproxy_iconYahooOnline {
+    background-image: url(images/Yahoo_Online.gif);
+}
+
+.stproxy_iconAolOffline {
+    background-image: url(images/AOL_Offline.gif);
+}
+
+.stproxy_iconAolOnline {
+    background-image: url(images/AOL_Online.gif);
+}
+
+.stproxy_iconGoogleOffline {
+    background-image: url(images/Google_Offline.gif);
+}
+
+.stproxy_iconGoogleOnline {
+    background-image: url(images/Google_Online.gif);
+}
+
+.stproxy_iconCommServOffline {
+    background-image: url(images/CommServer_Offline.gif);
+}
+
+.stproxy_iconCommServOnline {
+    background-image: url(images/CommServer_Online.gif);
+}
+
+.stproxy_iconCommServAway {
+    background-image: url(images/CommServer_Away.GIF);
+}
+
+.stproxy_iconCommServMeeting {
+    background-image: url(images/CommServer_Meeting.GIF);
+}
+
+.stproxy_iconCommServDnd {
+    background-image: url(images/CommServer_DND.GIF);
+}
+
+.stproxy_statusIcon {   
+    /*width: 20px;*/
+    width: 9px;
+}
+
+.stproxy_statusIconAvailable {
+    background-image: url(images/available.gif);
+}
+
+.stproxy_statusIconAway {
+    background-image: url(images/away.gif);
+}
+
+.stproxy_statusIconMeeting {
+    background-image: url(images/inAMeeting.gif);
+}
+
+.stproxy_statusIconDisturb {
+    background-image: url(images/Awns_DND_9x9.gif);
+}
+
+/*
+one UI status icons
+
+.stproxy_statusIconAvailable {
+    background-image: url(images/stAvailable9.png);
+}
+
+.stproxy_statusIconAway {
+    background-image: url(images/stAway9.png);
+}
+
+.stproxy_statusIconMeeting {
+    background-image: url(images/stInMeeting9.png);
+}
+
+.stproxy_statusIconDisturb {
+    background-image: url(images/stDND9.png);
+}
+*/
+
+
+
+.stproxy_statusIconAvailableMobile {
+    background-image: url(images/iBdStatMobActiveMed.png);
+        width: 20px !important;
+        height: 15px !important;
+}
+
+.stproxy_statusIconAwayMobile {
+    background-image: url(images/iBdStatMobAwayMed.png);
+        width: 20px !important;
+        height: 15px !important;
+}
+
+.stproxy_statusIconMeetingMobile {
+    background-image: url(images/iBdStatMobMtgMed.png);
+        width: 20px !important;
+        height: 15px !important;
+}
+
+.stproxy_statusIconDisturbMobile {
+    background-image: url(images/iBdStatMobDNDMed.png);
+        width: 20px !important;
+        height: 15px !important;
+}
+
+.stproxy_menuItemIcon {
+    width: 9px !important;
+    height: 9px !important;
+}
+
+.dj_ie .stproxy_menuItemIcon {
+    vertical-align: middle;
+}
+
+.stproxy_editorIcon {
+    height: 18px;
+    width: 18px;
+}
+
+.dijit_a11y .stproxy_editorLabelDisable{
+    font-style: italic !important;
+    text-decoration: line-through !important;
+}
+.dijit_a11y .stproxy_editorLabelEnable{
+    font-style:inherit;
+}
+
+.stproxy_editorIconBold {
+    background-image: url(images/bold.gif) !important;
+}
+.stproxy_editorIconBoldDisable {
+    background-image: url(images/bold_disable.gif) !important;
+}
+.stproxy_editorIconItalic {
+    background-image: url(images/italics.gif) !important;
+}
+.stproxy_editorIconItalicDisable {
+    background-image: url(images/italics_disable.gif) !important;
+}
+.stproxy_editorIconUnderline {
+    background-image: url(images/underline.gif) !important;
+}
+.stproxy_editorIconUnderlineDisable {
+    background-image: url(images/underline_disable.gif) !important;
+}
+.stproxy_editorIconEmoticon {
+    background-image: url(images/emoticon.gif) !important;
+}
+
+.stproxy_editorIconCreateLink {
+    background-image: url(images/Hyper_Link_18x18.png) !important;
+}
+
+.stproxy_editorIconForeColor {
+    background-image: url(images/textcolour.gif) !important;
+}
+.stproxy_editorIconForeColorDisable {
+    background-image: url(images/textcolour_disable.gif) !important;
+}
+.stproxy_treeExpando {
+    width: 9px;
+    /*height: 9px;*/
+}
+
+.dj_ie8 .stproxy_groupRowNode .stproxy_treeExpando {
+    width: 19px;
+}
+
+.stproxy_treeExpandoOpened {
+    background-image: url(images/Collapse.png) !important;
+}
+
+.stproxy_treeExpandoClosed {
+    background-image: url(images/Expand.png) !important;
+}
+
+.stproxy_treeProcessing {
+    background-image: url(images/group_loading.gif) !important;
+    width: 16px;
+    height: 16px;
+    margin-top: 4px;
+}
+/* IE6 images for transparency of expand/collapse */
+.dj_ie6 .stproxy_treeExpandoOpened {
+    background-image: url(images/Collapse.gif) !important;
+}
+
+.dj_ie6 .stproxy_treeExpandoClosed {
+    background-image: url(images/Expand.gif) !important;
+}
+
+/*.stproxy_arrowIcon {
+    width: 9px;
+}*/
+
+/**************** Web Client **********************************/
+.stproxy_webClient {
+    background-color: white;
+    overflow: auto;
+}
+
+/**************** Menu context ********************************/
+.stproxy_contextMenu {
+    background-color: #fdfdfd !important;   
+}
+
+.dj_webkit .stproxy_contextMenu {
+    border-collapse: separate;
+}
+
+.stproxy_contextMenuTitle {
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #e2e5e7;
+}
+
+.stproxy_menuItemHover {
+    background-color: #d6dbe3 !important;
+    background-image: none !important;
+}
+
+.dijit_a11y .stproxy_menuItemHover{ 
+    border: 2px solid #ffffff !important;
+}
+
+.dijit_a11y .stproxy_menuItemText{
+    border: 2px solid #ffffff !important;
+}
+
+.stproxy_collectionRowNode {    
+    border-color: #ffffff !important;
+}
+
+.stproxy_groupRowNode {
+    background-image: url(images/Group_Header_Background.png) !important;
+    border-top: 1px solid #d1d1d1 !important;
+    border-bottom: 1px solid #d1d1d1 !important;
+}
+
+.dj_gecko .stproxy_groupRowNode, .dj_safari .stproxy_groupRowNode {
+    margin-top: -1px;
+}
+
+.stproxy_collectionNodeFocused {
+    background-color: #d6dbe3 !important;
+    /*background-image: none !important;*/
+}
+
+.stproxy_userInfoHighlighted {
+    /*background-color: #d6dbe3 !important;
+    background-image: none !important;
+    */
+}
+
+.stproxy_userInfoMoreDetails .stproxy_userInfoText {
+    overflow: hidden;
+}
+
+.stproxy_collectionNodeHover {
+    /*background-image: url(images/searchBar.png) !important;*/
+    background-image: url(images/headerStripeBottom.png) !important;
+}
+
+.stproxy_slideDown {
+    background-color: #f3f6f8;
+    min-height: 100%;
+    height: 450px;
+}
+
+.stproxy_participantsColor {
+    background-color: #f3f6f8;
+}
+
+.stproxy_awarenessSetter {
+    min-height: 0;
+    height: auto;
+}
+
+.stproxy_slideDownTitle {
+    background-image: url(images/slideDownTitle.png) !important;
+}
+
+.stproxy_awarenessRow {
+    border-color: #dddddd !important;
+}
+
+.stproxy_inputBox {
+    border-color: #c9d1da !important;
+    background-color: #ffffff !important;
+}
+
+.stproxy_inputBoxSubgroupUnchecked {
+    border-color: #c9d1da !important;
+    background-color: #ebebeb !important;
+}
+
+.stproxy_inputBoxFocused {
+    border-color: #7a879b !important;
+}
+
+.stproxy_borderColor {
+    border-color: #adbace !important;
+}
+
+.stproxy_toolbarButton {
+    
+}
+
+.stproxy_toolbarButtonHover {
+    background-color: #f3f6f8;
+    border-color: #adbace !important;
+}
+
+.stproxy_toolbarButtonChecked {
+    background-color: #f3f6f8;
+    border-color: #adbace !important;
+}
+
+.stproxy_comboButtonRight {
+    background-image: url(images/dropDownBox.png) !important;
+}
+
+.stproxy_sendButtonHeader {
+    background-image: url(images/sendBtnHeader.png) !important;
+    width: 22px;
+}
+
+.stproxy_sendButtonTrailer {
+    background-image: url(images/sendBtnTrailer.png) !important;
+}
+
+.stproxy_quickFindBar {
+    background-image: url(images/headerStripeBottom.png) !important;
+    background-position: top !important;
+}
+
+.stproxy_popup {
+    background-image: url(images/popupBg.png) !important;
+}
+
+.stproxy_buttonOk {
+    background-image: url(images/Active_Btn_Stripe.png) !important;
+    border-color: #8091a5 !important;
+}
+
+.stproxy_toolbarMenu {
+    background-image: url(images/headerStripeTop.png) !important;
+    background-position: bottom !important;
+}
+
+.stproxy_toolbarChat {
+    background-image: url(images/searchBar.png) !important;
+}
+
+.stproxy_userInfo {
+    background-image: url(images/businessCard.png) !important;
+    background-color: #d8dee7 !important;
+}
+
+.stproxy_chatUserInfoContainer .stproxy_userInfo {
+    background-image: url(images/headerStripeBottom.png) !important;
+    background-position: top !important;
+}
+
+.stproxy_userInfoPicDiv {
+}
+
+.stproxy_awarenessSplitter {
+    background-color: #d1d4d6 !important;
+}
+
+.stproxy_chatHistory {
+    background-color: #dddddd;
+    border-bottom: 1px dashed !important;
+}
+
+.stproxy_inputBackground {
+    /*background-image: url(../../dijit/themes/tundra/images/validationInputBg.png) !important;*/
+}
+
+.stproxy_chat {
+    background-color: white;
+    min-height: 100%;
+}
+
+.dj_ie6 .stproxy_inputBackground {
+    /*background-image: url(../../dijit/themes/tundra/images/validationInputBg.gif) !important;*/
+}
+
+.stproxy_chatIsTypingBar {
+    background-image: url(images/searchBar.png) !important;
+}
+
+.stproxy_chatIsTypingIcon {
+    width: 13px;
+    background-image: url(images/typingMessage.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    visibility: hidden;
+}
+
+.stproxy_mozillaRoundedCorners {
+}
+
+
+/******************* Font styles ***************************************************/
+.stproxy_fontFamily .stproxy_labelText {
+    font-weight: bold;  
+}
+
+.stproxy_fontFamily .stproxy_toolbarButtonText {
+    font-size: 90% !important;
+}
+
+.stproxy_fontFamily .stproxy_quickFindTextBlur {
+    color: #747474 !important;  
+}
+
+.stproxy_fontFamily .stproxy_buttonOkText {
+    color: #606d7d !important;  
+    font-weight: bold;
+}
+
+.stproxy_fontFamily .stproxy_buttonCancelText {
+    
+}
+
+.stproxy_buttonOkDisabled {
+    background-image: url(images/Inactive_Btn_Stripe.png) !important;
+    border-color: #c3c3c3 !important;
+}
+
+.stproxy_fontFamily .stproxy_buttonOkTextDisabled {
+    color: #adacac !important;
+}
+
+.stproxy_fontFamily .stproxy_licenceText {
+    font-size: 70% !important;  
+}
+
+.stproxy_fontFamily .stproxy_menuItemText {
+    
+}
+
+.stproxy_fontFamily .stproxy_groupNamePublicText {
+    font-weight: bold;
+    font-size: 100% !important; 
+    color: #747474 !important;  
+}
+
+.stproxy_fontFamily .stproxy_groupNamePrivateText {
+    font-weight: bold;
+    font-size: 100% !important;     
+    color: #747474 !important;  
+}
+
+.stproxy_fontFamily .stproxy_userInfoText {
+    
+}
+
+.stproxy_fontFamily .stproxy_liveNameAvailableText {
+}
+
+.stproxy_fontFamily .stproxy_liveNameAwayText {
+}
+
+.stproxy_fontFamily .stproxy_liveNameInMeetingText {
+}
+
+.stproxy_fontFamily .stproxy_liveNameOfflineText {
+    color: #aaaaaa !important;
+}
+
+.stproxy_fontFamily .stproxy_liveNameDndText {
+}
+
+.stproxy_liveNameDisabledText {
+    font-style: italic;
+}
+
+.stproxy_liveNameSelected{
+    /* Define your own style here */
+    /* background-color: yellow; */
+}
+
+.stproxy_liveNameUnSelected{
+    /* Define your own style here */
+}
+
+
+.stproxy_fontFamily .stproxy_slideDownTitleText {
+    font-weight: bold;
+    color: #667586 !important;
+}
+
+.stproxy_fontFamily .stproxy_radioCheckText {
+    /*color: #a4a4a4 !important;*/  
+}
+
+.stproxy_fontFamily .stproxy_chatIsTypingText {
+    color: #3f556b !important;  
+    font-size: 90% !important;
+}
+
+.stproxy_fontFamily .stproxy_chatSendButtonText {
+    color: #ffffff !important;  
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.stproxy_fontFamily .stproxy_inputBoxText {
+    
+}
+
+.stproxy_fontFamily .stproxy_inputBoxSubgroupUncheckedText {
+    color: #c8c8c8 !important;
+}
+
+.stproxy_fontFamily .stproxy_chatDisplayNameText {
+    font-weight: bold;
+}
+
+.stproxy_fontFamily .stproxy_chatDisplayNameTextPartner {
+    color: #3683cb !important;
+}
+
+.stproxy_fontFamily .stproxy_chatMessageText {
+}
+
+.stproxy_fontFamily .stproxy_chatMessageTimeText {
+    color: #888888 !important;  
+}
+
+.stproxy_fontFamily .stproxy_chatEventMessage {
+    color: #3683cb !important;
+}
+
+.stproxy_fontFamily .stproxy_chatAcceptButton {
+    color: #3683cb !important;
+    font-weight: bold !important;
+    cursor: pointer;
+}
+
+.stproxy_fontFamily .stproxy_chatDeclineButton {
+    color: #3683cb !important;
+    font-weight: bold !important;
+    cursor: pointer;
+}
+
+.stproxy_fontFamily .stproxy_chatDelimiter {
+    color: #3683cb !important;
+}
+
+.stproxy_buttonSearchText {
+    font-weight: bold;
+}
+
+.stproxy_closeBizCardIcon { 
+    background-image: url(images/M_tab_close_normal.png) !important;
+}
+.stproxy_inputBoxText_addr{
+    width: 100% !important;
+}
+
+/************* Splash screen **************************/
+.stproxy_splashScreen {
+    text-align: center;
+    color: #222222;
+    background-color: #E6E9F1;
+}
+
+.stproxy_splashScreen .stproxy_borderColor {
+    border-color: #ACB9CD !important;
+}
+
+.stproxy_splashScreenWindow {       
+    background-color: #FFFFFF;
+    border: 1px solid #ACB9CD !important;
+    margin: 30px auto 10px;
+    padding: 0;
+    width: 485px;
+}
+
+.stproxy_splashScreenBottomLicense
+{
+    margin: auto;
+    width : 485px;
+}
+
+.stproxy_fontFamily .stproxy_splashScreenTitle {
+    color: #444444 !important;
+}
+
+.stproxy_splashScreenLicenseText{ 
+    text-align: center;
+}
+
+.stproxy_splashScreenBubble {   
+    background-image: url(images/splashBubble.png);     
+}
+
+.dj_ie6 .stproxy_splashScreenBubble {   
+    background-image: url(images/splashBubbleIE6.gif);      
+}
+/************* Accessibility **************************/
+.stproxy_mainStatusHCIconArrow{
+    display: none;
+    visibility: hidden !important;
+}
+.stproxy_awairenessHCTick{
+    display: none;
+    visibility: hidden !important;
+}
+.stproxy_collectorHCTick{
+    display: none;
+    float: left !important;
+    visibility: hidden !important;
+}
+.stproxy_collectorHCTickSelected{
+    visibility: visible !important;
+}
+.dijit_a11y .stproxy_awairenessHCTick{
+    display: inline !important;
+    visibility: visible !important;
+}
+.dijit_a11y .stproxy_mainStatusHCIconArrow{
+    display: inline !important;
+    visibility: visible !important;
+}
+.dijit_a11y .stproxy_collectorHCTick{
+    display: inline !important;
+}
+.dijit_a11y .stproxy_toolbarButtonChecked .dijitToggleButtonIconChar {
+    display: inline !important;
+    visibility: visible !important;
+}
+
+.dijit_a11y .stproxy_toolbarButtonFocused {
+    border: 4px dotted #FFFF00;
+}
+
+.dijit_a11y .stproxy_adder .stproxy_buttonFocused {
+    border: 4px dotted #FFFF00;
+}
+
+.stproxy_closeBizCardIcon_HC{
+    display: none;
+    visibility: hidden !important;
+}
+.dijit_a11y .stproxy_closeBizCardIcon_HC{
+    display: inline !important;
+    visibility: visible !important;
+}
+    
+.stproxy_userInfoShowDetailsHC{
+    display: none;
+    visibility: hidden !important;
+}
+
+.dijit_a11y .stproxy_userInfoShowDetailsHC{
+    display: inline !important;
+    visibility: visible !important;
+}
+/** Override Connections vcard styles **/
+
+div.vcard { margin: 0px !important; }
+/* 
+ */
+ 
+.dijitRtl .stproxy_chatDisplayName {
+    padding-right: 7px;
+    padding-left: 0px;
+}
+
+.dijitRtl .stproxy_chatDisplayedMessage {
+    padding-left: 10px;
+    padding-right: 7px;
+}
+
+.dijitRtl .stproxy_hideDisplayName {
+    display: none !important;
+}
+
+/********* Toolbar **********************************************/
+.dijitRtl .dj_ie .stproxy_toolbarButton {
+    margin-right: 3px;
+    margin-left: 0px;
+}
+
+.dijitRtl .dj_gecko .stproxy_toolbarMenu, .dijitRtl .dj_safari .stproxy_toolbarMenu {
+    padding-right: 3px;
+    padding-left: 0px;
+}
+
+/********** Login **********************************************/
+.dijitRtl .stproxy_loginLogoutPanel{
+    text-align: right;
+    right: 0;
+}
+
+.dijitRtl .stproxy_loginEntryButtons {
+    text-align: right;
+}
+
+.dijitRtl .stproxy_loginBottomLicense {
+    text-align: right;
+}
+
+.dijitRtl .stproxy_sametimeLogo {
+    text-align: right;  
+}
+
+.dijitRtl .stproxy_loginTitle {
+    text-align: right;  
+}
+
+.dijitRtl .stproxy_loginLogoutText {
+    text-align: right;  
+}
+
+/*********** Menus *********************************************/
+.stproxy_contextMenu td {
+    white-space:nowrap;
+}
+
+/************ Combobutton arrow ******************************/
+.dijitRtl .dj_safari .stproxy_comboIcon {
+    float: right;
+}
+
+.dijitRtl .stproxy_comboButton td.stproxy_comboTitleGroupSelect {
+    padding-right: 2px !important;
+    padding-left: 0px !important;
+    text-align: right !important;
+}
+
+/************ Combo box meeting container *******************/
+.dijitRtl .stproxy_comboContainer {
+    overflow: hidden;
+    text-align: right !important;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.dijitRtl .stproxy_adder_search {
+    float: right;
+}
+
+/*************** Buttons ************************************/
+.dijitRtl .stproxy_buttonOk {
+    padding: 0px 2px 7px 7px;
+} 
+
+.dijitRtl .dj_ie .stproxy_buttonOk {
+    padding: 1px 2px 7px 7px;
+} 
+
+.dijitRtl .stproxy_buttonCancel {
+    padding: 0px 2px 7px 7px;
+} 
+
+.dijitRtl .dj_ie .stproxy_buttonCancel {
+    padding: 1px 2px 7px 7px;
+} 
+
+/**************** Livename, Group ***********************************/
+.dijitRtl .stproxy_liveNameCollectionPadding {
+    padding-right: 0px !important;
+    padding-left: 9px !important;
+}
+
+.dijitRtl .stproxy_liveNamePadding {
+    padding-left: 0px;
+    padding-right: 6px;
+}
+
+.dijitRtl .stproxy_arrowBottomIconParent {
+    padding-right : 3px;    
+    padding-left: 0px;  
+}
+
+.dijitRtl .stproxy_iconLivename {
+    margin-left: 5px;
+    margin-right: 0px;  
+}
+
+.dijitRtl .stproxy_iconGroup {
+    margin-left: 5px;
+    margin-right: 0px;
+}
+
+.dijitRtl .dj_ie6 .stproxy_iconLivename {
+    margin-left: 2px;
+    margin-right: 0px;
+}
+
+.dijitRtl .stproxy_groupExpandoNode {
+    margin-right: 9px !important;
+    margin-left: 7px !important;
+    float: right;
+}
+
+.dijitRtl .stproxy_displayContactCount {
+    float: left !important; 
+    padding: 0px 18px 0px 9px;;
+}
+
+/*************** QuickFind, Status bar, Awareness *************************/
+.dijitRtl .stproxy_quickFindContainer {
+    padding-right: 3px;
+}
+
+.dijitRtl .stproxy_quickFindBar {
+    padding: 4px 3px 3px 6px !important;
+}
+
+.dijitRtl .stproxy_awarenessTable td.stproxy_awarenessTd {
+    padding: 3px 3px 6px 0px !important;
+}
+
+.dijitRtl .stproxy_awarenessContainer {
+    padding: 8px 15px 10px 10px !important;
+}
+
+.dijitRtl .stproxy_awarenessPad {
+    padding-left: 12px;
+    padding-right: 0px;
+}
+
+.dijitRtl .stproxy_statusButton td.stproxy_awarenessStatus {
+    padding-right: 3px !important;
+    padding-left: 0px !important;
+}
+
+.dijitRtl .stproxy_statusButton td.stproxy_awarenessStatusArrow {
+    padding-left: 3px !important;;
+    padding-right: 1px !important;;
+}
+
+.dijitRtl .stproxy_statusButton {
+    float: right;
+}
+
+.dijitRtl .stproxy_statusButtonMain {
+    padding: 3px 0px 3px 3px;
+}
+
+.dijitRtl .stproxy_mainStatusMessage {
+    padding-right: 5px;
+    padding-left: 0px;
+}
+
+/********************** Userinfo ****************************************/
+.dijitRtl .stproxy_userDetails {
+    padding-right: 9px;
+    padding-left: 0px;
+}
+
+.dj_ie6 .dijitRtl .stproxy_userInfoTable {
+    width: auto !important;
+}
+
+/************************* Collector* ********************************/
+.dijitRtl .stproxy_collectorNoResults {
+    padding: 4px 4px 5px 5px !important;
+}
+
+/*********************** Chat ***************************************/
+.dijitRtl .dj_gecko .stproxy_toolbarButtonPlugin, .dijitRtl .dj_safari .stproxy_toolbarButtonPlugin {
+    margin-right: 3px;
+    margin-left: 0px;
+}
+
+.dijitRtl .stproxy_sendButtonHeader {
+    float:right;
+}
+
+.dijitRtl .stproxy_sendButtonTrailer {
+    padding: 2px 3px 12px 0px !important;
+    float: right;
+}
+
+.dijitRtl .stproxy_emoticons {
+    padding: 5px 0px 5px 5px !important;
+}
+
+.dijitRtl .stproxy_chatHistory {
+    /*padding: 0px 0px 7px 7px !important;*/
+}
+
+.dijitRtl .stproxy_chatTranscript {
+    /*padding: 0px 0px 7px 7px !important;*/
+}
+
+.dijitRtl .stproxy_chatTranscript_IE {
+    padding: 0px 15px 7px 7px !important;
+    overflow-x: hidden;
+}
+
+.dijitRtl .stproxy_chatMessage td.stproxy_chatDisplayTimePad {
+    padding-left: 7px !important;
+    padding-right: 0px !important;
+}
+
+.dijitRtl .stproxy_chatMessage td.stproxy_chatDisplayNamePad {
+    padding-right: 7px !important;
+    padding-left: 0px !important;
+}
+
+.dijitRtl .stproxy_float {
+    float: right;
+}
+
+.dijitRtl .stproxy_sendButton {
+    float: left;
+}
+
+.dijitRtl .stproxy_userExpandoNode {    
+    float: right;
+}
+
+.dijitRtl .stproxy_textBox {
+    padding-right: 1px !important;
+    padding-left: 0px !important;       
+}
+
+.dijitRtl .dj_gecko .stproxy_textBoxContainer, .dijitRtl .dj_safari .stproxy_textBoxContainer {
+    padding-left: 3px;
+    padding-right: 0px;
+}
+
+.dijitRtl .stproxy_collectionTreeNode {
+    margin-right: 0px !important;
+}
+
+.dijitRtl .stproxy_popupTextLayout {
+    text-align: right;
+}
+
+.dijitRtl .stproxy_groupSelector {
+    text-align: right;
+}
+
+.dijitRtl .stproxy_comboButtonTd {
+    text-align: right;
+}
+
+.dijitRtl .stproxy_comboButtonTitleSearch {
+    border-right: 1px solid grey;
+    border-left: 0px;
+}
+
+.dijitRtl .stproxy_chatIsTypingIcon {   
+    float: right;
+}
+
+.dijitRtl .stproxy_fontFamily .stproxy_chatAcceptButton {
+    float: right;
+}
+
+.dijitRtl .stproxy_fontFamily .stproxy_chatDelimiter {
+    float: right;
+}
+
+.dijitRtl .stproxy_closeBizCardIcon {
+    position: absolute !important;
+    top: 5px !important;
+    right: 255px !important;
+}
+
+/************** Splash screen ***********************/
+.dijitRtl .stproxy_splashScreenCenter {
+    text-align: right;
+    padding: 40px 40px 40px 25px;
+}
+
+.dijitRtl .stproxy_splashScreenBottomLicense {
+    text-align: right;
+}
+
+.dijitRtl .stproxy_splashScreenButtonOk {
+    float: right;
+}
+
+.dijitRtl .stproxy_splashScreenIbmLogo {
+    float: left;
+}
+
+.dijitRtl .stproxy_splashScreenBubble {
+    margin-left: 0px;
+    margin-right: 60px;
+}
+
+.dijitRtl .stproxy_icon {
+    padding-right: 0px;
+    padding-left: 0px;
+}

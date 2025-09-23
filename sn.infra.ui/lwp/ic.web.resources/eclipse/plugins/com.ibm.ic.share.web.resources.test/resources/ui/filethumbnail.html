@@ -1,0 +1,53 @@
+${head}
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+
+<title>File Thumbnails</title>
+
+
+<script>
+dojoConfig.parseOnLoad=true;
+
+</script>
+${script:dojo/parser}
+${script:net.jazz.ajax.xdloader}
+${script:ic-share-test.widget.ContainerFileThumbnails}
+<!--  add your custom modules here -->
+<script>
+    // Declare your custom scripts here
+</script>
+
+
+<style>
+/* Add your custom styles here */
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-share-test/ui/index.html?render=test">Share widgets and utilities</a>
+    <span class="lotusDivider">&gt;</span>
+    File Thumbnails
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain">
+<div class="lotusContent">
+<h1>File Thumbnails</h1>
+<dl>
+    <!--  Update the module ID -->
+    <dt>Module ID: <code>ic-share/widget/FileThumbnail</code></dt>
+    <!--  Update the JSDoc page URL -->
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-share/ic-share.widget.FileThumbnail.html">JSDoc</a></dd>
+</dl>
+    <!-- TODO i18n aria-label -->
+    <div data-dojo-type="ic-share-test/widget/ContainerFileThumbnails" class="ic-thumb-widget" aria-label="Files" role="list">
+        <div>static content</div>
+    </div>
+
+</div>
+</div>
+</body>
+${end}

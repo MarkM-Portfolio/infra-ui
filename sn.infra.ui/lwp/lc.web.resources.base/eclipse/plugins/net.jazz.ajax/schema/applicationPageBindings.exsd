@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2013, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!-- Schema file written by PDE -->
+<schema targetNamespace="net.jazz.ajax" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="net.jazz.ajax" id="applicationPageBindings" name="Web UI Application Page Bindings"/>
+      </appInfo>
+      <documentation>
+         Declares Jazz Web UI Application/Page Bindings that provides an association between Applications and the Pages they contain.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="application" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="application">
+      <annotation>
+         <documentation>
+            Details of the application involved in the binding
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="page" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The ID of the application extension for the binding
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="identifier" basedOn="net.jazz.ajax.applications/application/@id"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="page">
+      <annotation>
+         <documentation>
+            Details of the page involved in the binding
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The ID of the page extension that is being bound to the application
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="identifier" basedOn="net.jazz.ajax.pages/page/@id"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="default" type="boolean">
+            <annotation>
+               <documentation>
+                  Set this to true if you want the page to be the default one selected. Only select one page as being the default. If you set mulitples only the first one encountered in the extension will be considered the default
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="defaultSearch" type="boolean">
+            <annotation>
+               <documentation>
+                  Set this to true if you want the search provider supplied by this page to be the default search provider. Only select one search provider as being the default. If you set mulitples only the first one encountered in the extension will be considered the default. If the specified page does not supply a search provider or if no default is defined, the first search provider encountered will be used as the default.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="defaultSearchScope" type="string">
+            <annotation>
+               <documentation>
+                  Set this to the &apos;id&apos; attribute of the search scope that should be used as the default for this page&apos;s search provider. If this is not defined and this page&apos;s provider is used as the default, its first scope will be used by default.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         1.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         The following example demonstrates how to declare an Application/Page bindings that associate an Application with the Pages it contains.
+
+   &lt;extension point=&quot;net.jazz.ajax.applicationPageBindings&quot;&gt;
+      &lt;application id=&quot;com.ibm.team.repository.web.admin&quot;&gt;
+         &lt;page id=&quot;com.ibm.team.process.projectAreaList&quot;/&gt;
+         &lt;page id=&quot;com.ibm.team.repository.server&quot;/&gt;
+         &lt;page id=&quot;com.ibm.team.repository.users&quot;/&gt;
+         &lt;page id=&quot;com.ibm.team.process.ProjectAreaManagement&quot;/&gt;
+         &lt;page id=&quot;com.ibm.team.process.ProcessTemplateManagement&quot;/&gt;
+      &lt;/application&gt;
+   &lt;/extension&gt;
+      </documentation>
+   </annotation>
+
+
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Licensed Materials - Property of IBM
+(c) Copyright IBM Corporation 2009. All Rights Reserved. 
+
+Note to U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+      </documentation>
+   </annotation>
+
+</schema>

@@ -1,0 +1,88 @@
+//color
+    
+    $white: #ffffff;
+    $black: #000000;
+    $whiter: #e0e0e0;
+
+    $red40: #ff5050;
+    $red60: #ad1625; 
+    $red70: #8c101c;
+    $orange30: #ff7832;
+    $teal: #00b4a0;
+    $green: #b4e051;
+    $green70: #144d14;
+
+    $blue50: #4178be;
+    $blue60: #325c80;
+    $blue80: #1d3649;
+    $gray70: #464646; 
+    $black-ongray: #292929; //15, in palette not quite black
+    $login-bgcolor: #f6f6f6; //one occorence
+    //buttons:
+
+    //Links / hover
+    //Selection Model Left Nav
+    //Primary Buttons (fill color)
+    //Secondary Button Outlines & Text
+    //All Tab styles
+    $action-color: $gray70;
+    $action-color-hover: $gray70; 
+    $action-button-hover: $gray70;
+
+    //button background Dark navy, navbar
+    $background-color: $gray70;
+    $nav-menu-text: $black-ongray;
+ 
+    
+    $login-input-bordercolor: #e5e5e5; //1 
+    $login-input-color: $black-ongray; //1
+
+    $tab-color: $action-color;
+
+    $medium-icon: #d5d5d5; //0 available in palette
+    $primary-gray: #f1f1f1; //5, in palette as lightest
+    
+
+    $gray-ongray: #676767; //7 in palette as dark gray
+    //blue80
+    $blue-page-title: #1d3649; //blue color for the page titles
+    
+    $button-pressed: #f4fcff; //2 BUT MAIN BUTTON PRESSED not on palette
+    //$main-button-pressed: #018cbc; 0
+    //$main-button-hover: #04759c; 0
+
+    $link: $blue50;//1 but useful
+    //blue60
+    $active-link: $blue60 ;//1 but useful
+    //$visited-link: #007fb1;
+
+    //$heading-color: #284b60; too similar to $background-color
+    $login-button-bgcolor: #366bb2;//1
+
+//size
+    //separator module, divides columns 
+    $larger: 50px;
+    $smaller: 20px;
+
+    $border-selected-width: 4px;
+
+    $box-shadow-width-hover: 2px;
+    $box-shadow-width: 1px;
+
+    $left-col-width: 220px;
+    $left-col-padding: 20px;
+    $left-col-outer-width: $left-col-width + $left-col-padding;
+
+
+//mixin
+
+@mixin border-radius($n) {
+    -moz-border-radius: $n;
+    -webkit-border-radius: $n;
+    border-radius: $n; }
+
+@mixin box-shadow($s) {
+    -moz-box-shadow: $s;
+    -webkit-box-shadow: $s;
+    box-shadow: $s;
+}

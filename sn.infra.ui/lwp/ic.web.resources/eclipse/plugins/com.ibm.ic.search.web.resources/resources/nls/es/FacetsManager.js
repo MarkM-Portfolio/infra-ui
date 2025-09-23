@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+define({
+		"CLOSE_HELP_DATE":"Cerrar ayuda de fechas",
+		"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Cerrar la ayuda de tipos de documento",
+		"CLOSE_HELP_PERSON":"Cerrar ayuda de personas",
+		"CLOSE_HELP_TAG":"Cerrar ayuda de etiquetas",
+		"CLOSE_HELP_TREND":"Cerrar ayuda de tendencia",
+		"COLLAPSE_DATE":"Contraer el filtro fechas",
+		"COLLAPSE_ECM_DOCUMENT_TYPE":"Contraer el filtro tipos de documento",
+		"COLLAPSE_PERSON":"Contraer el filtro personas",
+		"COLLAPSE_TAG":"Contraer el filtro etiquetas",
+		"COLLAPSE_TREND":"Contraer el filtro tendencias",
+		"DESCRIPTION_DATE":"Para ver los resultados que se han creado o actualizado en un momento determinado, expanda la flecha y filtre la información por año y mes.",
+		"DESCRIPTION_ECM_DOCUMENT_TYPE":"Un tipo de documento es una palabra clave a la que asigna archivos para hacer que sean más fáciles de encontrar. Pulse un tipo de documento para visualizar los resultados de búsqueda asignados a la palabra clave.",
+		"DESCRIPTION_PERSON":"Permite ver las personas relacionadas con los resultados de la búsqueda. Pulse un nombre para visualizar los resultados de búsqueda asociados con una persona específica.",
+		"DESCRIPTION_TAG":"Una etiqueta es una palabra clave que se asigna a contenido o a personas para facilitar su búsqueda. Pulse una etiqueta para visualizar los resultados de búsqueda asignados a la palabra clave.",
+		"DESCRIPTION_TREND":"Una tendencia es una palabra clave que ha sido generada por el sistema para facilitar las búsquedas en Actualizaciones de estado. Pulse una tendencia para visualizar los resultados de búsqueda asignados a la palabra clave.",
+		"EXPAND_DATE":"Expandir el filtro fechas",
+		"EXPAND_ECM_DOCUMENT_TYPE":"Expandir el filtro tipos de documento",
+		"EXPAND_PERSON":"Expandir el filtro personas",
+		"EXPAND_TAG":"Expandir el filtro etiquetas",
+		"EXPAND_TREND":"Expandir el filtro tendencias",
+		"HELP_DATE":"Ayuda de fechas",
+		"HELP_ECM_DOCUMENT_TYPE":"Ayuda tipos de documento",
+		"HELP_PERSON":"Ayuda de personas",
+		"HELP_TAG":"Ayuda de etiquetas",
+		"HELP_TREND":"Ayuda de tendencia",
+		"NO_DATE_CONTENT":"Las fechas no están disponibles actualmente",
+		"NO_ECM_DOCUMENT_TYPE_CONTENT":"Los tipos de documentos no están disponibles actualmente",
+		"NO_PERSON_CONTENT":"Las personas no están disponibles actualmente",
+		"NO_TAG_CONTENT":"Las etiquetas no están disponibles actualmente",
+		"NO_TREND_CONTENT":"Las tendencias no están disponibles actualmente",
+		"TITLE_DATE":"Fechas",
+		"TITLE_ECM_DOCUMENT_TYPE":"Tipos de documento",
+		"TITLE_PERSON":"Personas",
+		"TITLE_TAG":"Etiquetas",
+		"TITLE_TREND":"Tendencia"
+});
+

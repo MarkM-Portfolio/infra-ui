@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">Ficheiros</msg>
+  <msg name="description">O gadget Ficheiros para permitir a transferência e partilha de ficheiros</msg>
+  <msg name="action_uploadFile_label">Ficheiros</msg>
+  <msg name="action_uploadFile_tooltip">Transferir e partilhar ficheiros</msg>
+  <msg name="loading">A carregar...</msg>
+  <msg name="error_msg">Não é possível carregar o conteúdo. Tente novamente mais tarde ou contacte o administrador do sistema.</msg>
+  <msg name="error_alt">Erro</msg>
+</messagebundle>

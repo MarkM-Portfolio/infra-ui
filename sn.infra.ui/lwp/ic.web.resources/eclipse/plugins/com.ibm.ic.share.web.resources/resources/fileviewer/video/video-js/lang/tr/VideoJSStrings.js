@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "en",
+      "Play": "Yürüt",
+      "Pause": "Duraklat",
+      "Current Time": "Geçerli Saat",
+      "Duration Time": "Süre",
+      "Remaining Time": "Kalan Süre",
+      "Stream Type": "Akış Tipi",
+      "LIVE": "CANLI",
+      "Loaded": "Yüklendi",
+      "Progress": "İlerleme",
+      "Fullscreen": "Tam ekran",
+      "Non-Fullscreen": "Küçük ekran",
+      "Mute": "Sessiz",
+      "Unmute": "Sesi aç",
+      "Unmuted": "Sesi açık",
+      "Playback Rate": "Kayıttan Yürütme Hızı",
+      "Subtitles": "Altyazılar",
+      "subtitles off": "Altyazı kapalı",
+      "Captions": "Başlıklar",
+      "captions off": "başlık kapalı",
+      "Chapters": "Bölümler",
+      "Volume": "Ses Düzeyi",
+      "You aborted the video playback.": "Video yürütmeyi durdurdunuz",
+      "A network error caused the video download to fail part-way.": "Ağ hatası, videonun karşıdan yüklenmesini engelledi.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "Sunucu ya da ağ başarısız olduğundan ya da desteklenmeyen bir biçimde olduğundan video yüklenemedi.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "Video tarayıcınızın desteklemediği özellikleri kullandığından ya da bir bozukluk nedeniyle arkadan yürütme işlemi durduruldu.",
+      "No compatible source was found for this video.": "Bu video için uyumlu kaynak bulunamadı."
+});
+

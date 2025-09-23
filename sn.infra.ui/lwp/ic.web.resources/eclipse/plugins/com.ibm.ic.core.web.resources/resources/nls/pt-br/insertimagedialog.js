@@ -1,0 +1,45 @@
+define({
+	      /* ***************************************************************** */
+  /*                                                                   */
+  /* Copyright IBM Corp. 2011, 2018  All Rights Reserved.              */
+
+		   dialogTitle : "Incluir Imagem",
+		   newUpload : "Novo Upload",
+		   URL : "URL",
+		   imageLibrary : "Biblioteca de Imagens",
+		   description : "Descrição  :",
+		   imageFile : "Arquivos:",
+		   OK: "OK",
+		   cancel: "Cancelar",
+		   required: "Campo obrigatório",
+		   preview: "Pré-visualizar:",
+		   previewWarning: "Parece ter havido uma falha de carregamento da imagem, tem certeza de que esta é uma url de imagem válida?",
+		   alt: "Texto alternativo:",
+		   filesTab: "De Arquivos",
+		   images:"Imagens:",
+		   browse:"Procurar...",
+		   imagePickerTitle:"Inserir Imagens dos Arquivos",
+		   componentImagePickerTitle:" ${0} imagens transferidas por upload",
+		   /* New String for insert image dialog */
+		   title: "Inserir Imagem",
+		   uploadBtn: "Fazer Upload de Imagem",
+		   insertBtn: "Inserir Imagem",
+		   uploadTab: "Arquivos locais",
+		   externalTab: "URL da web",
+		   internalTab: "Imagens existentes",
+		   fileFieldTip: "Para fazer upload de imagens, arraste-as de sua área de trabalho e solte-as diretamente nessa janela.",
+		   AdditionalSection: "Opções Adicionais",
+		   ExpandSection: "Expandir as opções adicionais",
+		   CloseSection: "Reduzir as opções adicionais",
+		   webURLPrompt: "URL de imagem da web: ",
+		   previewPrompt: "Área de visualização: a exibição de imagens grandes pode demorar para acontecer. ",
+		   noExistingImage: "Ops! Nenhuma imagem foi incluída ainda. ",
+		   selectExistingImage: "Selecione uma imagem existente: ",
+		   urlMissing: "Inserir uma URL",
+		   urlInvalid: "URL inválida. Certifique-se de inserir uma URL válida e tente novamente. ",
+		   previousItem: "Voltar",
+		   nextItem: "Avançar",
+			 oneImageOneTime: "Uma imagem já foi incluída nessa janela. É possível inserir apenas uma imagem por vez. ",
+			 altTextForImgInList: "Clique para selecionar uma imagem"
+});
+

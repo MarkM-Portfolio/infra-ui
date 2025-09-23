@@ -1,0 +1,55 @@
+<!-- Copyright IBM Corp. 2013, 2015  All Rights Reserved.              -->
+
+<div dojoAttachPoint="galleryWrapper" class="lotusGallery lotusImagesOff">
+	
+	<div dojoAttachPoint="thumbnailStripWrapper" class="lotusThumbnails">
+		<a dojoAttachEvent="onclick: prevThumbs" dojoAttachPoint="navPrevThumbs" class="lotusNavControl lotusNavPrev" tabindex="0">
+		  <img src="${_blankGif}" dojoAttachPoint="navPrevImg"/>
+		  <span class="lotusAltText">&lt;</span>
+		</a>
+		<div dojoAttachPoint="thumbnailScroller" class="lotusThumbnailScroller">
+		  <div dojoAttachPoint="thumbnailWrapper" class="lotusThumbnailStrip">
+			<!--dummy is here for initial spacing and sizing-->
+			<div id="${id}__tn_dummy" class="lotusThumbnail" style="visibility: hidden; width: 10;">
+				<div class="lotusImageTrim">
+					<img src="${_blankGif}" alt="" style="visibility: hidden;"></img>
+				</div>
+				<div id="preview1__sel_dummy" class="lotusThumbOverlay"></div>
+			</div>
+		  </div>
+		</div>
+		<a dojoAttachEvent="onclick: nextThumbs" dojoAttachPoint="navNextThumbs" class="lotusNavControl lotusNavNext" tabindex="0">
+		  <img src="${_blankGif}" dojoAttachPoint="navNextImg"/>
+		  <span class="lotusAltText">&gt;</span>		  
+		</a>
+	</div>
+	<div dojoAttachPoint="itemWrapper" class="lotusItemViewer lotusLoading">
+		<a dojoAttachEvent="onclick: prevItem" dojoAttachPoint="navPrevItem" class="lotusNavPrev lotusNavControl" tabindex="0">
+			<img src="${_blankGif}" dojoAttachPoint="itemPrevImg"/>
+			<span class="lotusAltText">&lt;</span>
+		</a>
+		<div dojoAttachPoint="itemNodeWrapper" class="lotusItem">
+			<div dojoAttachPoint="itemNode"></div>
+		</div>
+		<a dojoAttachEvent="onclick: nextItem" dojoAttachPoint="navNextItem" class="lotusNavNext lotusNavControl" tabindex="0">
+			<img src="${_blankGif}" dojoAttachPoint="itemNextImg"/>
+			<span class="lotusAltText">&gt;</span>
+		</a>
+	</div>
+	
+	<div dojoAttachPoint="footerWrapper" class="lotusItemDetails">
+		<div dojoAttachPoint="footerNode" class="lotusDetails">
+			<div class="lotusInner" style="visibility: hidden;">
+				<h2 class="lotusTitle">
+					<span class="lotusCount">.</span></h2>
+				<p>.</p>
+			</div>
+			<div class="lotusMeta lotusClear" style="visibility: hidden;">
+				<span class="lotusInner">.</span>
+				<span class="lotusInner">.</span>
+				<span class="lotusInner">.</span>
+			</div>		
+		</div>
+	</div>
+	
+</div>

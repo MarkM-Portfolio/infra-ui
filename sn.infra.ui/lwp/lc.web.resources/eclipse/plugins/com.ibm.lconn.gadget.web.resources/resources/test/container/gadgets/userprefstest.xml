@@ -1,0 +1,143 @@
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<Module>
+	<ModulePrefs title="Hello World" description="Hello World gadget" height="400" width="500" >
+		<Require feature="opensocial-0.9"/>
+		<Require feature="setprefs"/>
+	</ModulePrefs>
+	<UserPref name="string" display_name="string" required="true" default_value="defaultValue"/>
+	<UserPref name="enum" display_name="enum - defaultValue: 'two'" default_value="two" datatype="enum">
+		<EnumValue value="one" display_value="one"/>
+		<EnumValue value="two" display_value="two"/>
+		<EnumValue value="three" display_value="three"/>
+	</UserPref>
+	<UserPref name="bool" display_name="bool" datatype="bool"/>
+	<UserPref name="hidden" display_name="hidden" datatype="hidden" required="true"/>
+	<UserPref name="list" display_name="list" datatype="list" required="false"/>
+
+	<Content type="html">	
+	<![CDATA[
+		
+		<input id="string_value" type="text"></input><button type="button" onclick="setString();">Set String Value.</button>
+		<br>
+		<select id="enum_value">
+			<option value="one">one</option>
+			<option value="two">two</option>
+			<option value="three">three</option>
+		</select>
+		<button type="button" onclick="setEnum();">Set Enum Value.</button>
+		<br>
+		<input id="bool_value" type="checkbox"><button type="button" onclick="setBool();">Set Boolean Value.</button>
+		<br>
+		<input id="list_value" type="text"></input><button type="button" onclick="setList();">Set List Value.</button>
+		<br>
+		<input id="hidden_value" type="text"></input><button type="button" onclick="setHidden();">Set HiddenValue.</button>
+		
+		
+		<script type="text/javascript">
+		
+		function setHidden() {
+			var prefs = new _IG_Prefs(__MODULE_ID__);
+			prefs.set("hidden", getHidden());
+		}
+		
+		function getHidden() {
+			return(document.getElementById("hidden_value").value);
+		}
+		
+		function setEnum() {
+			var prefs = new _IG_Prefs(__MODULE_ID__);
+			prefs.set("enum", getEnum());
+
+		}
+		
+		function getEnum() {
+			return(document.getElementById("enum_value").value);
+		}
+		
+		function getString() {
+			return(document.getElementById("string_value").value);
+		}
+		
+		function setString() {
+			var prefs = new _IG_Prefs(__MODULE_ID__);
+			prefs.set("string", getString());
+		};
+		
+		function getList() {
+			return(document.getElementById("list_value").value);
+		}
+		
+		function setList() {
+			var prefs = new _IG_Prefs(__MODULE_ID__);
+			prefs.set("list", getList());
+		};
+		
+		function setBool() {
+			var prefs = new _IG_Prefs(__MODULE_ID__);
+			prefs.set("bool", getBool());
+		}
+		
+		function getBool() {
+			var result = false;
+			var node = document.getElementById("bool_value");
+			if (node.checked == true) result = true;
+			return(result);
+		}
+		
+		function displayPref(name, type) {
+			var prefs = new gadgets.Prefs();
+			
+			var value = "UNDEFINED";
+			switch(type) {
+				case "string":
+				case "list":
+				case "hidden":
+					value = prefs.getString(name);
+					break;
+				case "bool":
+					value = prefs.getBool(name);
+					break;
+				default:
+					break;
+			}
+			
+			
+			switch(name) {
+				case "string":
+					var node = document.getElementById("string_value");
+					node.value = value;
+					break;
+				case "list":
+					var node = document.getElementById("list_value");
+					node.value = value;
+					break;
+				case "enum":
+					var node = document.getElementById("enum_value");
+					node.value = value;
+					break;
+				case "bool":
+					var node = document.getElementById("bool_value");
+					node.checked = value;
+					break;
+				case "hidden":
+					var node = document.getElementById("hidden_value");
+					node.value = value;
+			}
+		};
+		
+	
+		// String Pref
+			displayPref("string", "string");
+			displayPref("enum", "string");
+			displayPref("bool", "bool");
+			displayPref("list", "list");
+			displayPref("hidden", "hidden");
+		</script>
+		   ]]>
+		   
+		 
+  	</Content>
+</Module>
+
+

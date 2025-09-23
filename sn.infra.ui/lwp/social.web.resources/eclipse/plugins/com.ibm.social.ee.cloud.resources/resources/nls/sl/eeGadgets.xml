@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Pripomoček vdelane izkušnje OpenSocial za prikaz dodatnih podrobnosti in dejanj za dogodke Connections</msg>
+  <msg name="connectionsEE_errorTitle">Napaka</msg>
+  <msg name="connectionsEE_errorDescription">Vaša organizacija ni odobrila te vsebine in zato ni na voljo. Če želite omogočiti pripono, se obrnite na skrbnika organizacije.</msg>
+</messagebundle>

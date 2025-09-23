@@ -1,0 +1,70 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusDialogBorder" style="width:450px;">
+   <form id="${id}_networkInviteForm" class="lotusDialog lotusForm" dojoAttachEvent="onsubmit:formSubmitted">
+      <div class="lotusDialogHeader">
+         <h1 class="lotusHeading">${friendsInviteTitle}</h1>
+         <a title="${friendsCancelInvActionMessage}" role="button" class="lotusRight lotusDialogClose"  href="javascript:;" dojoAttachEvent="onclick:friendsCancelInvAction">
+            <img role="presentation" src="${blankGif}" alt="" />
+            <span class="lotusAltText">X</span>
+         </a>
+      </div>   
+      <div class="lotusDialogContent" style="max-height:400px;">
+         <fieldset>
+            <legend class="lotusHidden">${friendsInviteTitle}</legend>
+            <table class="lotusFormTable" cellpadding="0" cellspacing="0" border="0" role="presentation">
+               <tbody>
+               <tr class="lotusFormFieldRow">
+                  <td>
+                     <div class="profilePhoto">
+                        <img src="${profilePhotoSrc}" alt="${displayName}" height="96" width="96" style="top:5px; position: relative;" />&nbsp;
+                     </div>
+                  </td>
+                  <td style="width:3px;">
+                  </td>
+                  <td>
+                     <div>
+                        <big dojoAttachPoint="friendsColleaguesInviteMessageControl">${friendsColleaguesInviteMessage}</big>
+                     </div>
+                     <div style="margin-top:5px;">
+                        <label for="${id}_invitation_text">${invitationMessageLabel}</label>
+                        <br />
+                        <textarea id="${id}_invitation_text" dojoAttachPoint="invitationMessageControl" dojoAttachEvent="focus:_invitationMessageControlFocus, blur:_invitationMessageControlBlur" style="width:275px;" cols="40" rows="4" name="invitation_text" class="bidiAware">${invitationMessage}</textarea>
+                     </div>
+                     <div style="margin-top:5px;" dojoAttachPoint="invitationTagsControlDiv">
+                        <label for="${id}_invitation_tags" dojoAttachPoint="invitationTagsLabelControl">${invitationTagsLabel}</label>
+                        <br />
+                        <input id="${id}_invitation_tags" dojoType="lconn.core.CommonTags.CommonTagsTypeAhead" dojoAttachPoint="invitationTagsControl" multipleValues="true" token=" " minChars="2" maxChars="255" style="width:275px;" />
+                     </div>
+                     <div dojoAttachPoint="invitationFollowControlDiv">
+                     <table class="lotusTable" cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin-top:15px;">
+                     <tr>
+                        <td>
+                           <input type="checkbox" id="${id}_invitation_follow" name="invitation_follow" value="true" checked="checked" dojoAttachPoint="invitationFollowControl">
+                        </td>
+                        <td>
+                           <label for="${id}_invitation_follow">${invitationFollowLabel}</label>
+                           <br />
+                           <div style="margin-top:3px;">${invitationFollowDescription}</div>
+                           <div style="margin-top:3px;" dojoAttachPoint="invitationFollowHelpDiv"></div>
+                        </td>
+                     </tr>
+                     </table>
+                     </div>
+                  </td>
+               </tr>
+               </tbody>
+            </table>
+         </fieldset>
+      </div>
+      <div class="lotusDialogFooter">
+         <div class="lotusBtnContainer">
+            <input type="button" value="${friendsSendInvActionMessage}" class="lotusBtn lotusBtnSpecial"
+                  dojoAttachEvent="onclick:friendsSendInvAction" />
+            <span style="padding-left: 5px;">
+               <input type="button" value="${friendsCancelInvActionMessage}" class="lotusBtn"
+                     dojoAttachEvent="onclick:friendsCancelInvAction" />
+            </span>
+         </div>
+      </div>
+    </form>
+</div>

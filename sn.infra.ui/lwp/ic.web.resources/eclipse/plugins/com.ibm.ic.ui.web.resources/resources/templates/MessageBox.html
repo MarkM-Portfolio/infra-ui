@@ -1,0 +1,15 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusMessage2" role="alert" aria-live="assertive">
+	<img class="lotusIcon" src="${_blankGif}" alt="${_strings.icon_alt}" data-dojo-attach-point="imgNode">
+	<span class="lotusAltText">${_strings.a11y_label}</span>
+	<div class="lotusMessageBody"><span data-dojo-attach-point="msgBody"></span>
+	
+	<a href="javascript:;" class="${showMoreClass}" data-dojo-attach-point="showMoreNode" data-dojo-attach-event="onclick: showMoreLessClicked">${messages.showMore}</a>
+	<a href="javascript:;" class="lotusHidden" data-dojo-attach-point="showLessNode" data-dojo-attach-event="onclick: showMoreLessClicked">${messages.showLess}</a>
+	<div class="lotusHidden" data-dojo-attach-point="showMoreMessageNode">${msgMore}</div>
+	</div>
+	<a href="javascript:;" class="lotusDelete lotusHidden" role="button" title="${_strings.close_btn_title}" data-dojo-attach-point="closeBtn">
+		<img alt="" src="${_blankGif}" role="presentation">
+		<span class="lotusAltText">X</span> 
+	</a>
+</div>

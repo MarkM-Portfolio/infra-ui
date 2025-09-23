@@ -1,0 +1,7 @@
+
+;/* Generated at {0} by {1} */
+define("ic/test/map", [], function() '{' return '{'
+  "a": 1,
+  "b": "c"
+}});
+

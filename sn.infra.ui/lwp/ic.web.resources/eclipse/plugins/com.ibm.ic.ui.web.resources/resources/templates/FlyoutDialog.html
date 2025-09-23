@@ -1,0 +1,24 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div aria-labelledby="${id}_flyoutTitleNode" class="lotusFlyout">
+   <div class="lotusWrapper" style="position: relative;" data-dojo-attach-point="wrapper">
+	   <div class="lotusFlyoutHeader" data-dojo-attach-point="flyoutHeader">
+	      <ul class="lotusInlinelist">
+	         <li class="lotusFirst" id="${id}_flyoutTitleNode" data-dojo-attach-point="titleNode">${title}</li>
+	         <li class="lotusMeta" data-dojo-attach-point="timeNode">
+	      </ul>
+	      <div style="display: none;">
+	         <a style="display:none" href="#" data-dojo-attach-point="prevNode" data-dojo-attach-event="onclick:previous">${messages.previous}</a>
+	         <a style="display:none" href="#" data-dojo-attach-point="nextNode" data-dojo-attach-event="onclick:next">${messages.next}</a>
+	      </div>
+	      <span class="lotusBtnImg lotusClose" title="${messages.close}" data-dojo-attach-point="metaClose" data-dojo-attach-event="click:metaClickClose">
+	         <input type="image" src="${_blankGif}" alt="${messages.close}" data-dojo-attach-point="metaCloseInput"><a class="lotusAltText" href="javascript:;">X</a>
+	      </span>
+	   </div>
+	   <div class="lotusFlyoutContentArea" style="display:none;" data-dojo-attach-point="msgNode"></div>
+	   <div class="lotusFlyoutContent lotusStyledScroll" data-dojo-attach-point="scrollNode">
+	      <div class="lotusFlyoutContentArea">
+	        <div data-dojo-attach-point="contentNode"></div>
+	      </div>
+	   </div>
+   </div>
+</div>

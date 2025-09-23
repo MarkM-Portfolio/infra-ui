@@ -1,0 +1,290 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+
+.indent10 {padding-left:10px;}
+.indent15 {padding-left:15px;}
+.indent20 {padding-left:20px}
+.indent40 {padding-left:40px;}
+.indent60 {padding-left:60px;}
+.left{float:left;text-align:left;}
+.right{float:right;text-align:right;}
+.center {text-align:center;}
+.clear {clear:both}
+.clearLeft {clear:left}
+.clearRight {clear:right}
+*html .lotusInfoBox h3{padding-bottom:10px;}
+.contentColOne {width:45%;margin:0 0px 10px 10px;padding-right:10px;}
+.contentColTwo {width:45%;margin:0 10px 10px 0px;}
+#frame #colLeft {overflow:hidden;}
+.errorMessages {background-color:#ffff66;font-weight:bold;font-size:1.0em;margin:15px 0;-moz-border-radius:3px;padding:3px 0px 3px 5px;}
+.section .list ul li{border-bottom:none;}
+.away span a.online, .meeting span a.online, .dnd span a.online, .mobileAway span a.online, .mobileMeeting span a.online, .mobileDnd span a.online {font-weight:normal}
+.profiles form .text{width:auto;}
+.profileSearch .fieldHelp {font-size:1.0em;color:#7b7b7b;}
+.profileSearch {padding-top:5px;  margin-top:15px; border-top:1px solid #dddddd;}
+#advancedSearch p {padding-top: 10px;}
+#advancedSearch input[type="submit"] {margin-top: 10px;}
+
+.lotusWelcomeBox img{position:static; top:0px; right:0px;}
+#inLineBusinessCard img {margin-right:0px;}
+.myProfile #frame #content {min-width:500px;}
+#frame #colLeft #profileTags {padding-bottom:10px;}
+#frame #colLeft .list div.autocomplete ul li {text-align:left;}
+#frame #content #bio #bioLevel2 form.inplaceeditor-form {display: block;position: absolute;top: 0px;left: 130px;}
+#frame #content #bio h2 span {display:inline;left:0px;position:relative;}
+#frame #content #bio .imStatus span {left:0px;}
+#frame #content .moreInfo .tabContainer {margin-bottom:10px;}
+#frame #content .moreInfo .inPlaceRichTextEditor {margin-left:0px;}
+.icon_email { padding-left:20px; }
+.icon_addColeague { padding-left:20px; }
+.icon_downloadVcard { padding-left:20px; }
+#aboutMeSubArea { margin-bottom:10px !important ; }
+.lotusHeader .lotusDetails { margin-bottom:10px }
+.lotusui .lotusColLeft .lconnProfilePortrait { max-width:155px; max-height:155px; border:5px solid #fff;
+	-moz-box-shadow: 0 2px 2px #1b1b1b;
+	-webkit-box-shadow: 0 2px 2px #1b1b1b;
+	box-shadow: 0 2px 2px #1b1b1b;
+}
+#newsSubArea .newsSubAreaFilters { margin: 10px !important; }
+#newsSubArea .lotusUpdateStatus { margin-top: 10px !important;  }
+#statusMessageDiv h1 { font-size:1.3em ; margin-bottom:10px  ;}
+#wallPagingArea   .lotusFeeds  {margin:0; }
+#editInfo {padding-bottom: 10px;}
+#editProfile .subform {padding: 15px 0 15px 0;}
+#editProfile .subform h6 {background-color:#f3f3f3;font-weight:bold;font-size:1.0em;margin:5px 0;border:1px solid #e0e0e0;-moz-border-radius:3px;padding:3px 0 3px 5px;width:90%;}
+#editProfile .subform div.formSection {clear:left;margin:0;padding:0 0 5px 295px;width:900px;}
+* html #editProfile .subform div.formSection {height:1%;}
+#editProfile .disabled {background-color:white;color:black;border:0;}
+#editProfile .subform .left {float:left;margin-left:-295px;}
+#editProfile .subform .rte {border:1px solid #908f8f;min-height:150px;margin-bottom:10px;height:auto;width:750px;}
+* html #editProfile .subform .rte {border:1px solid #908f8f;height:15em;width:750px;}
+#editProfile .subform .inlinelist {padding:0;width:900px;}
+#editProfile .subform .inlinelist li {border-bottom:none;display:inline;margin:0 0 0 -4px;padding:0 10px;}
+#editProfile .subform .inlinelist li.first {margin-left:0;padding-left:0;border-left-width:0;}
+#editProfile .subform .list .addLink, #editProfile .subform .list input[type="text"] {margin-left:-500px;}
+#editProfile .clear {clear:left;}
+#editProfile .photo {margin-top:40px;}
+#editProfile .subform h6 {margin:17px 0;}
+#editProfile .photo {margin-bottom:20px;margin-top:40px;width:90%;}
+#editProfile .photo div {padding:0 0 20px 200px;}
+#editProfile .photo div .bold {font-weight:bold;}
+#editProfile .photo div p {clear:none;margin:0;padding:10px 0;width:300px;}
+#editProfile .photo div .left {float:left;margin-left:-200px;}
+.lotusProfiles .dijitEditorIcon, .lotusProfiles .editor .dijitEditorIcon {
+}
+#footer {margin: 10px 20px;height: auto;}
+#footer .left {margin:0 10px 30px 0;}
+#footer .right {margin-bottom:0 0 30px 10px;}
+div.popup {position:absolute;width:150px;display:block;margin-top:15px;}
+div.popup a:hover {background-color:#308BEE;}
+#menuPopup {float:right;border:1px solid #c2e2f4;margin-right:15px;line-height:1.2em;display:block;}
+.helpPopup {position:absolute;}
+.helpPopup .infoBox {padding:8px;border:1px solid #c2e2f4;-moz-border-radius:7px; margin:0 0 15px 10px;}
+.helpPopup .infoBox h3 {margin:0 0 5px 0;padding:0;font:bold 1.2em/1.5em Helvetica, Arial, Verdana, sans-serif;color:#43a0f6;border-bottom:1px dashed #43a0f6;text-align:right;overflow:hidden;}
+.help {width:200px;padding:3px 8px;background-color:#fff;}
+div.autocomplete {position:absolute;width:250px;background-color:white;border:1px solid #8b8b8b;margin:0 2px;padding:0px;z-index:5000;}
+div.autocomplete ul {list-style-type:none;padding:0;margin:0 2px;}
+div.autocomplete ul li {text-align:left;}
+div.autocomplete ul li.selected {background-color:#ffffd8;}
+div.autocomplete ul li.person {border-bottom:1px solid #e3e3e3;list-style-type:none;display:block;margin:0;padding:2px;height:32px;cursor:pointer;}
+div.autocomplete ul li.tag {list-style-type:none;display:block;margin:0;padding:2px;height:16px;cursor:pointer;}
+div.nameTypeaheadControl #slimCardArea {position:absolute; left:490px;}
+* html div.nameTypeaheadControl #slimCardArea {left:565px;}
+#associatedInfoSubArea .attribute { margin-top:5px; margin-bottom:5px; width:auto; word-wrap: break-word; }
+.nameTypeaheadControl .dijitTextBox, .dijitTextBox input{
+width:242px;
+}
+#frame #colRight #chain {padding-bottom: 100px;}
+#frame #colRight h3{color:black !important;font: bold 1.4em/1.6em Helvetica, Arial, Verdana, sans-serif;}
+#frame #colRight #chain .person {text-decoration:none !important;}
+#reportStructure { overflow: hidden; }
+#rptStructTable .heading th { font-size:0.8em;font-weight:bold;}
+#rptStructTable .heading .first {border-left:1px solid #e0e0e0;}
+#rptStructTable .heading .last {border-right:1px solid #e0e0e0;}
+#rptStructTable .resultRow td {padding:10px 0;font-size:0.75em;}
+#rptStructTable .resultRow .first {padding-left:10px;}
+#rptStructTable .resultRow .last {padding-right:10px;}
+.errorPage {position:relative;background:#a2d7ff top left repeat-x;border:1px solid #a5cceb;padding:20px;margin:20px;height:170px;}
+.errorPageBody {margin:20px 230px 0 20px;}
+* html .errorPageBody {margin-top:0;padding-top:3px;}
+.errorPage h2 {color:#fff;margin:0px 10px 20px 0px;font-size:2.4em}
+.errorPage p {width:60%;color:#444444;}
+.errorButton {float:left;width:170px;background:#42a1f6 top left no-repeat;color:#fff;font-weight:bold;margin:10px 10px 0 0;}
+.errorPage .errorButton a {background:transparent no-repeat bottom left;display:block;padding:5px 0 7px 0;text-align:center;margin:0;color:#fff !important;}
+.errorPage .errorButton a:hover, .errorPage a:focus {text-decoration:none !important;cursor:hand;border-bottom:0;}
+#stackTrace {background-color: #ffffff;border:1px solid #e0e0e0;-moz-border-radius:4px;padding:20px;margin:20px;width:95%}
+#content #stackTrace .errorMessages {background-color:#ffffff;font-weight:normal;margin:0px;-moz-border-radius:0px;padding:0px;width:100%;}
+.friendMinimal {
+background-color: white;
+border-width: 1px;
+border-style: solid;
+border-color: gray;
+height: 4.1em;
+padding: 3px;
+margin: 3px}
+*html #lotusContent #editProfile .subform .rte {margin-left:-147px;}
+.actions{padding-bottom:1px}
+.entry h5.left{margin-top:2px}
+.actionMenu li{height:1%}
+* html #main,
+* html .header,
+* html .entry,
+* html .entryBody,
+* html .infoBox h3,
+* html .section,
+* html .aboutBox,b
+* html .entry h4,
+* html .entry p,
+* html #entries,
+* html .welcome,
+* html .list li,
+{
+height: 1%;
+}
+* html #content{display:inline-block;padding:0;padding:16px 5px 20px 7px}
+* html .menu li.last{border-bottom:1px solid white}
+* html #frame #colRight #chain {padding-bottom: 0px;}
+* html #frame {width:expression( documentElement.clientWidth < 900 ? (documentElement.clientWidth == 0 ? (body.clientWidth < 900 ? "870px" : "auto") : "870px") : "auto" );}
+* html #banner h1 {margin:3px 0 0 7px}
+* html #welcomeBox .close{position:absolute;top:5px;right:15px}
+* html #welcomeBox .welcomeButton{position:relative}
+* html a.welcomeButtonBottom{padding-bottom:9px;}
+* html .welcome h2 {margin-top:20px;}
+* html #titleBar h2 {font-size:1.7em;}
+* html ul.tabs{bottom:-2px;}
+* html .aboutBox {padding-bottom:8px;margin-bottom:20px;}
+* html .aboutBox{margin-bottom:20px}
+* html .aboutBoxBody {float:left}
+* html .section form{margin:0}
+* html .loginContent {padding:10px 0;}
+* html form.login div {height:auto;}
+* html .myProfile #frame #main, .myProfile #frame #main #colLeft {overflow:visible;}
+* html .myProfile #frame #content {border-right:550px;}
+* html .myProfile #frame #content #businessCard {display:inline-block; position:relative; margin-right:-550px;}
+* html .myProfile #frame #content #bio .right {margin-right:550px;}
+* html #frame #content #bio .bioLevel1Text {padding-bottom:20px;}
+* html .tagCloud {width:155px;}
+* html #colLeft {position:relative;}
+* html .welcome {padding-bottom:0}
+* html .welcome .welcomeButton {position:relative}
+.lotusWidget2 .lotusSectionBody { word-wrap: break-word; width:auto; overflow:hidden; }
+.lotusWidget2 .lotusWidgetBody { word-wrap: break-word; width:auto; overflow:hidden; }
+#linkRoll li { word-wrap:normal; }
+.errorPage {position:relative;background:#a2d7ff top left repeat-x;border:1px solid #a5cceb;padding:20px;margin:20px;height:170px;}
+.errorPageBody {margin:20px 230px 0 20px;}
+* html .errorPageBody {margin-top:0;padding-top:3px;}
+.errorPage h2 {color:#fff;margin:0px 10px 20px 0px;font-size:2.4em}
+.errorPage p {width:60%;color:#444444;}
+.errorButton {float:left;width:170px;background:#42a1f6 top left no-repeat;color:#fff;font-weight:bold;margin:10px 10px 0 0;}
+.errorPage .errorButton a {background:transparent no-repeat bottom left;display:block;padding:5px 0 7px 0;text-align:center;margin:0;color:#fff !important;}
+.errorPage .errorButton a:hover, .errorPage a:focus {text-decoration:none !important;cursor:hand;border-bottom:0;}
+#stackTrace {background-color: #ffffff;border:1px solid #e0e0e0;-moz-border-radius:4px;padding:20px;margin:20px;width:95%}
+#content #stackTrace .errorMessages {background-color:#ffffff;font-weight:normal;margin:0px;-moz-border-radius:0px;padding:0px;width:100%;}
+.friendMinimal {
+background-color: white;
+border-width: 1px;
+border-style: solid;
+border-color: gray;
+height: 4.1em;
+padding: 3px;
+margin: 3px}
+#frame #colRight #chain {padding-bottom: 100px;}
+#frame #colRight h3{color:black !important;font: bold 1.4em/1.6em Helvetica, Arial, Verdana, sans-serif;}
+#frame #colRight #chain .person {text-decoration:none !important;}
+.orgChart .bottom {color:black;}
+#rptStructViews {padding:10px 0;}
+#rptStructViews ul li a {text-decoration:none !important;}
+#rptStructViews ul li a:hover {text-decoration:underline !important;}
+#rptStructViews ul li {border-left-width:0;padding:2px 10px;}
+#rptStructViews ul li.listLabel {color:#999;font-weight:bold;}
+#rptStructViews ul li.selected {background-color:#cce3fa;font-weight:bold;}
+#rptStructTable .heading th {border-top:1px solid #e0e0e0;font-size:0.8em;font-weight:bold;}
+#rptStructTable .heading .first {border-left:1px solid #e0e0e0;}
+#rptStructTable .heading .last {border-right:1px solid #e0e0e0;}
+#rptStructTable .resultRow td {padding:10px 0;font-size:0.75em;}
+#rptStructTable .resultRow .first {padding-left:10px;}
+#rptStructTable .resultRow .last {padding-right:10px;}
+#multiFeedReaderLotusTabs li.lotusSelected a {font-weight:bold; color:black;}
+.widgetBorder {
+border-color: #d7d7ff;
+border-width: thin;
+border-style: solid;
+padding: 10px;
+}
+.lotusNetworkPerson { padding: 2px 7px 4px 0px; }
+.lotusNetworkHeader { padding-bottom:3px; border-bottom:1px solid #BDC7DB; margin-bottom:5px; }
+ul.lotusList {list-style-type:none;}
+.lotusWidget h2{font-size: 1em;}
+.lotusColLeft .lotusWidget h3{line-height:0.8em; height:1.6eml border-top: 1px solid; font-weight: bold;}
+.globalSearchForm table.dijitComboButton .dijitButtonContents {text-align:left;}
+.lotusui_ie .globalSearchForm .baseIcon {display:inline;}
+.lotusui_ie .globalSearchForm .dijitInline {display: inline !important;}
+.lotusui_ie .globalSearchForm table.dijitComboButton {DISPLAY: inline;vertical-align:middle;}
+.dijit_a11y .globalSearchForm .dijitArrowButtonChar {display:inline !important;}
+.tagTypeAhead{width:99%;margin:0 1px;width:130px;border-width:1px;border-style:solid;zoom:1; padding:2px 5px;line-height:1.33em;}
+#commonTagsSubArea #tagCloud {margin-top:7px; }
+.lotusTags .lconnTagCount { margin-left: 1em; }
+.lotusProfiles .lotusWidget2 h3, .myProfile .lotusWidget2 h3 { height:auto; }
+.lotusui30 .mm_content .lotusTabContainer .lotusWidget .lotusTabTitle:focus {   border: 1px dotted black; padding: 5px 7px 2px 7px; }
+#associatedInfoSubArea ol, #associatedInfoSubArea ul{margin-left:0px !important;padding-left:40px !important;}
+.lotusPaging { overflow: hidden; }
+.lotusDim {opacity:0.5; filter:alpha(opacity=50); width:100%;}
+#divProfilesTypeaheadSearchResults {
+display: block;
+overflow: hidden;
+margin-top: 15px;
+}
+#divProfilesTypeaheadSearchResults .lotusContentColTwo {
+width: 225px;
+white-space: nowrap;
+overflow: hidden;
+margin-top: 0;
+text-overflow: ellipsis;
+}
+#divProfilesTypeaheadSearchResults .lotusContentColTwoTop {
+margin-top: 5px;
+}
+#divProfilesTypeaheadSearchResults .lotusContentColTwoTop span.vcard {
+margin: 0;
+}
+#searchResultsTable img.photo {
+line-height: 1;
+}
+.lotusui30 img.lotusForceLineHeight {
+line-height: 1;
+}
+.lotusui30dojo .dijitDialogCloseIcon {
+background-image: url("/com.ibm.lconn.core.styles.oneui3/images/lotusHSprite-8bit.png");
+background-position: -150px 0;
+}
+.lotusStream .loaderMain {
+padding-top:20px;
+padding-bottom:20px;
+text-align:center;
+}
+
+/* new theme */
+.lotusui30 .lotusTabs .lotusArrow{margin-top:5px;height:auto !important;}
+/*FLAG: to override an inline style*/
+#tableEditProfileContactInfo{background-color:transparent !important;}
+/*to keep add icon from bumping to the next line*/
+#tagInputForm{position:relative;}
+#tagInputForm .lotusBtnImg{position:absolute;right:0;top:0;}
+
+.lotusui30 .actions .lotusFormButton {margin-left:0; margin-right:0;}
+
+#social_tags .lotusTags li a.profileTag {left:20px;}
+
+
+#social_tags #tagsYouAddedList_div .lotusTags li {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.lotusui_ie #social_tags #tagsYouAddedList_div .lotusTags li {
+	padding-bottom: 5px;
+}
+
+.lotusui30 .lotusPaging .lotusInlinelist {
+	display: inline;
+}
+
+#exportVcardDialogForm table { min-width: 250px; }

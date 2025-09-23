@@ -1,0 +1,110 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+${script:lconn.test.upload.doh.SimpleFileFieldTests}
+<style type="text/css">
+	table.testContainer { margin: 15px; }
+	table.testContainer td { padding: 15px; border: 1px solid black; }
+	div.testWidget { width: 400px; }
+</style>
+<script type="text/javascript">
+	dojo.addOnLoad(function() { doh.run(); });
+</script>
+${endhead}
+<body class="lotusui lotusui30_body">
+	<h2>Simple File Field Tests</h2>
+	<h3>Once a test has finished, the next test will begin. After all tests have finished, click the button at the bottom of the page to complete the test and go to the log page.</h3>
+	<p><strong>Note:</strong> Ignore the timing from D.O.H. page for this test. It is regarded as asynchronous and will only report as a few milliseconds.</p>
+	<form class="lotusForm">
+		<table class="testContainer">
+			<thead>
+				<tr>
+					<th>Test Name</th>
+					<th>Description</th>
+					<th>Expected Result</th>
+					<th>Test Widget</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>testAddFile</td>
+					<td>After 1 second, adds a file named "myfilename.txt" to the list</td>
+					<td>You will see a browse input for 1 second, then myfilename.txt with a text file icon and an x</td>
+					<td><div class="testWidget" id="testAddFile"></div></td>
+				</tr>
+				<tr>
+					<td>testRemoveFile</td>
+					<td>Removes a file named "myfilename.txt" from the list</td>
+					<td>A file named "myfilename.txt" will be immediately added to the list (you may see a small flash as it is added). After 1 second, the file will be removed and you should see the file input again.</td>
+					<td><div class="testWidget" id="testRemoveFile"></div></td>
+				</tr>
+				<tr>
+					<td>testRename</td>
+					<td>Renames a file</td>
+					<td>A file named "myfilename.txt" will be renamed to "myNEWfilename.txt" after 500 ms</td>
+					<td><div class="testWidget" id="testRename"></div></td>
+				</tr>
+				<tr>
+					<td>testRemoteDuplicateNoActions</td>
+					<td>Creates a file that lives on the server</td>
+					<td>A file named "remoteDuplicate.txt" will be added to the list. Any files with "remote" in the name will be marked as a remote duplicate and an error message will be shown. There should be no remediation actions available.</td>
+					<td><div class="testWidget" id="testRemoteDuplicateNoActions"></div></td>
+				</tr>
+				<tr>
+					<td>testRemoteDuplicateAllowReplace</td>
+					<td>Creates a file that lives on the server</td>
+					<td>A file named "remoteDuplicate.txt" will be added to the list. The "replace" action should be available and will be executed after 1 second.</td>
+					<td><div class="testWidget" id="testRemoteDuplicateAllowReplace"></div></td>
+				</tr>
+				<tr>
+					<td>testRemoteDuplicateAllowRename</td>
+					<td>Creates a file that lives on the server</td>
+					<td>A file named "remoteDuplicate.txt" will be added to the list. The "rename" action should be available and will be executed after 1 second. An edit box will appear and after 500 ms, the name will be changed to something valid and the error message should disappear.</td>
+					<td><div class="testWidget" id="testRemoteDuplicateAllowRename"></div></td>
+				</tr>
+				<tr>
+					<td>testRemoteDuplicateAllowBoth</td>
+					<td>Creates a file that lives on the server</td>
+					<td>A file named "remoteDuplicate.txt" will be added to the list. The "rename" and "replace" actions should be available.</td>
+					<td><div class="testWidget" id="testRemoteDuplicateAllowBoth"></div></td>
+				</tr>
+				<tr>
+					<td>testInvalidCharacters</td>
+					<td>Creates a file with invalid characters in its name</td>
+					<td>A file named "i:nvalid.txt" will be added to the list. It will then be renamed to "inv>alid.txt", and then the invalid characters will be replaced. After 1 second, the original name will be reverted and the error message should reappear.</td>
+					<td><div class="testWidget" id="testInvalidCharacters"></div></td>
+				</tr>
+				<tr>
+					<td>testLongFilename</td>
+					<td>Creates a file a name which is too long for the serveer to support</td>
+					<td>Will create a file with a name that is 64 characters long for a server that only supports 40 characters or less in names. After 1 second, the name will be truncated.</td>
+					<td><div class="testWidget" id="testLongFilename"></div></td>
+				</tr>
+				<tr>
+					<td>testLongInvalidDuplicate</td>
+					<td>Creates a file a name which is too long for the serveer to support with invalid characters that is also a remote duplicate.</td>
+					<td>Will create a file with the name "remoteInvalidFile&.doc". The maxlength will be set to 10, so you should only see invalid character and max length violation errors.</td>
+					<td><div class="testWidget" id="testLongInvalidDuplicate"></div></td>
+				</tr>	
+				<tr>
+					<td>testLongDBCS</td>
+					<td>Create a file with a DBCS file name that is too long</td>
+					<td>Creates a file with less than 10 characters that takes more than 10 bytes to trigger a max length violation.</td>
+					<td><div class="testWidget" id="testLongDBCS"></div></td>
+				</tr>
+				<tr>
+					<td>testAllRTL</td>
+					<td>Tests a filename that is RTL</td>
+					<td>&nbsp;</td>
+					<td><div class="testWidget" id="testAllRTL"></div></td>
+				</tr>
+				<tr>
+					<td>testMixedDir</td>
+					<td>Tests a filename with LTR + RTL characters</td>
+					<td>&nbsp;</td>
+					<td><div class="testWidget" id="testMixedDir"></div></td>
+				</tr>
+			</tbody>
+		</table>
+		<button id="finishButton" disabled="disabled">Finish test and go to log page</button>
+	</form>
+</body>

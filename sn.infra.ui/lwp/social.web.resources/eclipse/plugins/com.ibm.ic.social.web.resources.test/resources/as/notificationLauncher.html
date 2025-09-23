@@ -1,0 +1,37 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<html><body><p>${head}
+</p><title>Notification Center Flyout</title>
+<script>
+    djConfig.blankGif="";
+    djConfig.async=true;
+    djConfig.parseOnLoad=true;
+</script>
+
+${endhead}
+<script>
+window.gatekeeperConfig = {'news-push-service':true};
+require(["ic-as/notification/NotificationCenter", "dojo/on", "dojo/dom",  "dojo/domReady!"], function(NotificationCenter, on, dom) {
+		var node = dom.byId("test");
+		var button = dom.byId("progButtonNode");
+		var nc = NotificationCenter.getInstance(node);
+	
+	    on(button, "click", function(evt){
+	        nc.toggle();
+	    });
+	
+});
+
+</script>
+<h1>Notification Center Flyout</h1>
+<div id="test">
+</div>
+<br>
+<br>
+<div>
+    <button id="progButtonNode" type="button">Start me up!</button>
+</div>
+
+
+</body><p>
+${end}
+</p></html>

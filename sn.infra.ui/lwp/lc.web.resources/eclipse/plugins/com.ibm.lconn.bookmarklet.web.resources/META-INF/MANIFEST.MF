@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Lotus Connections bookmarklet script
+Bundle-SymbolicName: com.ibm.lconn.bookmarklet.web.resources;singleton:=true
+Bundle-Version: 3.0.0.qualifier
+Bundle-Vendor: IBM
+Bundle-ActivationPolicy: lazy

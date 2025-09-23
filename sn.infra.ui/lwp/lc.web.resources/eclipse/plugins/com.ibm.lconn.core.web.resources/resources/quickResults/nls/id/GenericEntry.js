@@ -1,0 +1,140 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	UPDATED_BY: "Diperbarui oleh ${author}",
+	PREVIEW_MODE_ONLY: "(Hanya Mode Pratinjau)",
+	
+	//Community
+	COMMUNITY_VIEWED_TODAY: "Komunitas dilihat hari ini",
+	COMMUNITY_VIEWED_YESTERDAY: "Komunitas dilihat kemarin",
+	COMMUNITY_VIEWED_HOURS_AGO: "Komunitas dilihat ${hours} jam yang lalu",
+	COMMUNITY_VIEWED_MINUTES_AGO: "Komunitas dilihat ${minutes} menit yang lalu",
+	COMMUNITY_VIEWED_SECONDS_AGO: "Komunitas dilihat ${seconds} detik yang lalu",
+	COMMUNITY_VIEWED_1_HOUR_AGO: "Komunitas dilihat 1 jam yang lalu",
+	COMMUNITY_VIEWED_1_MINUTE_AGO: "Komunitas dilihat 1 menit yang lalu",
+	COMMUNITY_VIEWED_1_SECOND_AGO: "Komunitas dilihat 1 detik yang lalu",
+	COMMUNITY_VIEWED_AT_DATE: "Komunitas dilihat pada ${date}",
+	
+	//File
+	FILE_VIEWED_TODAY: "File dilihat hari ini",
+	FILE_VIEWED_YESTERDAY: "File dilihat kemarin",
+	FILE_VIEWED_HOURS_AGO: "File dilihat ${hours} jam yang lalu",
+	FILE_VIEWED_MINUTES_AGO: "File dilihat ${minutes} menit yang lalu",
+	FILE_VIEWED_SECONDS_AGO: "File dilihat ${seconds} detik yang lalu",
+	FILE_VIEWED_1_HOUR_AGO: "File dilihat 1 jam yang lalu",
+	FILE_VIEWED_1_MINUTE_AGO: "File dilihat 1 menit yang lalu",
+	FILE_VIEWED_1_SECOND_AGO: "File dilihat 1 detik yang lalu",
+	FILE_VIEWED_AT_DATE: "File dilihat pada ${date}",
+	
+	//Profile
+	PROFILE_VIEWED_TODAY: "Profil dilihat hari ini",
+	PROFILE_VIEWED_YESTERDAY: "Profil dilihat kemarin",
+	PROFILE_VIEWED_HOURS_AGO: "Profil dilihat ${hours} jam yang lalu",
+	PROFILE_VIEWED_MINUTES_AGO: "Profil dilihat ${minutes} menit yang lalu",
+	PROFILE_VIEWED_SECONDS_AGO: "Profil dilihat ${seconds} detik yang lalu",
+	PROFILE_VIEWED_1_HOUR_AGO: "Profil dilihat 1 jam yang lalu",
+	PROFILE_VIEWED_1_MINUTE_AGO: "Profil dilihat 1 menit yang lalu",
+	PROFILE_VIEWED_1_SECOND_AGO: "Profil dilihat 1 detik yang lalu",
+	PROFILE_VIEWED_AT_DATE: "Profil dilihat pada ${date}",
+	
+	//Activity
+	ACTIVITY_VIEWED_TODAY: "Aktivitas dilihat hari ini",
+	ACTIVITY_VIEWED_YESTERDAY: "Akivitas dilihat kemarin",
+	ACTIVITY_VIEWED_HOURS_AGO: "Akivitas dilihat ${hours} jam yang lalu",
+	ACTIVITY_VIEWED_MINUTES_AGO: "Aktivitas dilihat ${minutes} menit yang lalu",
+	ACTIVITY_VIEWED_SECONDS_AGO: "Aktivitas dilihat ${seconds} detik yang lalu",
+	ACTIVITY_VIEWED_1_HOUR_AGO: "Aktivitas dilihat 1 jam yang lalu",
+	ACTIVITY_VIEWED_1_MINUTE_AGO: "Aktivitas dilihat 1 menit yang lalu",
+	ACTIVITY_VIEWED_1_SECOND_AGO: "Aktivitas dilihat 1 detik yang lalu",
+	ACTIVITY_VIEWED_AT_DATE: "Aktivitas dilihat pada ${date}",
+	
+	//Bookmark
+	BOOKMARK_VIEWED_TODAY: "Markah dilihat hari ini",
+	BOOKMARK_VIEWED_YESTERDAY: "Markah dilihat kemarin",
+	BOOKMARK_VIEWED_HOURS_AGO: "Markah dilihat ${hours} jam yang lalu",
+	BOOKMARK_VIEWED_MINUTES_AGO: "Markah dilihat ${minutes} menit yang lalu",
+	BOOKMARK_VIEWED_SECONDS_AGO: "Markah dilihat ${seconds} detik yang lalu",
+	BOOKMARK_VIEWED_1_HOUR_AGO: "Markah dilihat 1 jam yang lalu",
+	BOOKMARK_VIEWED_1_MINUTE_AGO: "Markah dilihat 1 menit lalu",
+	BOOKMARK_VIEWED_1_SECOND_AGO: "Markah dilihat 1 detik lalu",
+	BOOKMARK_VIEWED_AT_DATE: "Markah dilihat pada ${date}",
+	
+	//Blog
+	BLOG_VIEWED_TODAY: "Blog dilihat hari ini",
+	BLOG_VIEWED_YESTERDAY: "Blog dilihat kemarin",
+	BLOG_VIEWED_HOURS_AGO: "Blog dilihat ${hours} jam yang lalu",
+	BLOG_VIEWED_MINUTES_AGO: "Blog dilihat ${minutes} menit yang lalu",
+	BLOG_VIEWED_SECONDS_AGO: "Blog dilihat ${seconds} detik yang lalu",
+	BLOG_VIEWED_1_HOUR_AGO: "Blog dilihat 1 jam yang lalu",
+	BLOG_VIEWED_1_MINUTE_AGO: "Blog dilihat 1 menit yang lalu",
+	BLOG_VIEWED_1_SECOND_AGO: "Blog dilihat 1 detik yang lalu",
+	BLOG_VIEWED_AT_DATE: "Blog dilihat pada ${date}",
+	
+	//Forum
+	FORUM_VIEWED_TODAY: "Forum dilihat hari ini",
+	FORUM_VIEWED_YESTERDAY: "Forum dilihat kemarin",
+	FORUM_VIEWED_HOURS_AGO: "Forum dilihat ${hours} jam yang lalu",
+	FORUM_VIEWED_MINUTES_AGO: "Forum dilihat ${minutes} menit yang lalu",
+	FORUM_VIEWED_SECONDS_AGO: "Forum dilihat ${seconds} detik yang lalu",
+	FORUM_VIEWED_1_HOUR_AGO: "Forum dilihat 1 jam yang lalu",
+	FORUM_VIEWED_1_MINUTE_AGO: "Forum dilihat 1 menit yang lalu",
+	FORUM_VIEWED_1_SECOND_AGO: "Forum dilihat 1 detik yang lalu",
+	FORUM_VIEWED_AT_DATE: "Forum dilihat pada ${date}",
+	
+	//Wiki
+	WIKI_VIEWED_TODAY: "Wiki dilihat hari ini",
+	WIKI_VIEWED_YESTERDAY: "Wiki dilihat kemarin",
+	WIKI_VIEWED_HOURS_AGO: "Wiki dilihat ${hours} jam yang lalu",
+	WIKI_VIEWED_MINUTES_AGO: "Wiki dilihat ${minutes} menit yang lalu",
+	WIKI_VIEWED_SECONDS_AGO: "Wiki dilihat ${seconds} detik yang lalu",
+	WIKI_VIEWED_1_HOUR_AGO: "Wiki dilihat 1 jam yang lalu",
+	WIKI_VIEWED_1_MINUTE_AGO: "Wiki dilihat 1 menit yang lalu",
+	WIKI_VIEWED_1_SECOND_AGO: "Wiki dilihat 1 detik yang lalu",
+	WIKI_VIEWED_AT_DATE: "Wiki dilihat pada ${date}",
+
+	//Event
+	EVENT_VIEWED_TODAY: "Peristiwa dilihat hari ini",
+	EVENT_VIEWED_YESTERDAY: "Peristiwa dilihat kemarin",
+	EVENT_VIEWED_HOURS_AGO: "Peristiwa dilihat ${hours} jam yang lalu",
+	EVENT_VIEWED_MINUTES_AGO: "Peristiwa dilihat ${minutes} menit yang lalu",
+	EVENT_VIEWED_SECONDS_AGO: "Peristiwa dilihat ${seconds} detik yang lalu",
+	EVENT_VIEWED_1_HOUR_AGO: "Peristiwa dilihat 1 jam yang lalu",
+	EVENT_VIEWED_1_MINUTE_AGO: "Peristiwa dilihat 1 menit yang lalu",
+	EVENT_VIEWED_1_SECOND_AGO: "Peristiwa dilihat 1 detik yang lalu",
+	EVENT_VIEWED_AT_DATE: "Peristiwa dilihat pada ${date}",
+	
+	//To Do
+	TODO_VIEWED_TODAY: "Tugas dilihat hari ini",
+	TODO_VIEWED_YESTERDAY: "Tugas dilihat kemarin",
+	TODO_VIEWED_HOURS_AGO: "Tugas dilihat ${hours} jam yang lalu",
+	TODO_VIEWED_MINUTES_AGO: "Tugas dilihat ${minutes} menit yang lalu",
+	TODO_VIEWED_SECONDS_AGO: "Tugas dilihat ${seconds} detik yang lalu",
+	TODO_VIEWED_1_HOUR_AGO: "Tugas dilihat 1 jam yang lalu",
+	TODO_VIEWED_1_MINUTE_AGO: "Tugas dilihat 1 menit yang lalu",
+	TODO_VIEWED_1_SECOND_AGO: "Tugas dilihat 1 detik yang lalu",
+	TODO_VIEWED_AT_DATE: "Tugas dilihat pada ${date}",
+	
+	//Survey
+	SURVEY_VIEWED_TODAY: "Survei dilihat hari ini",
+	SURVEY_VIEWED_YESTERDAY: "Survei dilihat kemarin",
+	SURVEY_VIEWED_HOURS_AGO: "Survei dilihat ${hours} yang lalu",
+	SURVEY_VIEWED_MINUTES_AGO: "Survei dilihat ${minutes} menit yang lalu",
+	SURVEY_VIEWED_SECONDS_AGO: "Survei dilihat ${seconds} detik yang lalu",
+	SURVEY_VIEWED_1_HOUR_AGO: "Survei dilihat 1 jam yang lalu",
+	SURVEY_VIEWED_1_MINUTE_AGO: "Survei dilihat 1 menit yang lalu",
+	SURVEY_VIEWED_1_SECOND_AGO: "Survei dilihat 1 detik yang lalu",
+	SURVEY_VIEWED_AT_DATE: "Survei dilihat pada ${date}",
+	
+	//Survey
+	GENERIC_VIEWED_TODAY: "Dilihat hari ini",
+	GENERIC_VIEWED_YESTERDAY: "Ditampilkan kemarin",
+	GENERIC_VIEWED_HOURS_AGO: "Dilihat ${hours} jam yang lalu",
+	GENERIC_VIEWED_MINUTES_AGO: "Dilihat ${minutes} menit yang lalu",
+	GENERIC_VIEWED_SECONDS_AGO: "dilihat ${seconds} detik yang lalu",
+	GENERIC_VIEWED_1_HOUR_AGO: "Dilihat 1 jam yang lalu",
+	GENERIC_VIEWED_1_MINUTE_AGO: "Dilihat 1 menit yang lalu ago",
+	GENERIC_VIEWED_1_SECOND_AGO: "Dilihat 1 detik yang lalu",
+	GENERIC_VIEWED_AT_DATE: "Dilihat pada ${date}"
+})
+

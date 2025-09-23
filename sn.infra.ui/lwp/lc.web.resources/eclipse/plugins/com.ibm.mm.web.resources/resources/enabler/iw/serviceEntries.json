@@ -1,0 +1,9 @@
+
+/* Copyright IBM Corp. 2008  All Rights Reserved.                    */
+{
+   "eventService":"/mashupmaker/js/com/ibm/enabler/iw/services.js",
+   "queryService":"/mashupmaker/js/com/ibm/enabler/iw/services.js",
+   "persistentAttributesFactoryService":"/mashupmaker/js/com/ibm/enabler/iw/services.js", 
+   "iwidgetFragmentService":"/mashupmaker/js/com/ibm/enabler/iw/services.js"  
+}
+

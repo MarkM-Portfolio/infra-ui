@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IBM Connections Widget Gadget Container
+Bundle-SymbolicName: com.ibm.lconn.gadget.web.resources;singleton:=true
+Bundle-Version: 4.0.0.qualifier
+Bundle-Activator: com.ibm.lconn.core.services.cre.web.resources.Activator
+Bundle-Vendor: IBM
+Disable-Bundle-ClassPath: properties/, .
+Import-Package: com.ibm.lconn.core.util,
+ com.ibm.lconn.core.services.cre.core.jsbridge,
+ com.ibm.lconn.core.services.cre.core.config,
+ com.ibm.lconn.core.services.cre.core.config.settings,
+ com.ibm.ventura.internal.config.api,
+ com.ibm.ventura.internal.config.helper.api,
+ javax.servlet,
+ javax.servlet.http,
+ net.jazz.ajax.model,
+ org.osgi.framework;version="1.3.0",
+ com.ibm.lconn.core.web.resources.map
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.apache.http.client

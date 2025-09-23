@@ -1,0 +1,232 @@
+${head}
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+
+<title>IBM Connections Common UI - CCM Libraries BasicTextBox</title>
+
+<script type="text/javascript">
+   var textBox = null;
+
+   dojo.addOnLoad(useRTE);
+
+   function getOptions(useRTE) {
+      var emptyCallback = function(empty) {
+         if (empty) {
+            dojo.addClass(dojo.byId("postLink"), "lotusPersonInactive");
+            dojo.addClass(dojo.byId("resetLink"), "lotusPersonInactive");
+         }
+         else {
+            dojo.removeClass(dojo.byId("postLink"), "lotusPersonInactive");
+            dojo.removeClass(dojo.byId("resetLink"), "lotusPersonInactive");
+         }
+      };
+
+      var limitCallback = function(limit) {
+         if (limit) {
+            dojo.style(dojo.query(".charDisplay")[0], "color", "red");
+         }
+         else {
+            dojo.style(dojo.query(".charDisplay")[0], "color", "black");
+         }
+      }
+
+      var onFocusCallback = function() {
+         dojo.style(dojo.byId("actionList"), "visibility", "visible");
+      }
+
+      var onBlurCallback = function() {
+         dojo.style(dojo.byId("actionList"), "visibility", "hidden");
+      }
+
+      var dataStore = new lconn.core.PeopleDataStore({
+         queryParam : 'name',
+         url : '../ckeditor/people.json'
+      });
+
+      return {
+         useRTE : useRTE,
+         maxLength : 100,
+         maxLengthBytes : 100,
+         textBoxRows : 4,
+         showRemainingLimit : 20,
+         charRemainingDisplay : dojo.byId("countContainer"),
+         textPopulatedCallback : emptyCallback,
+         reachedCharLimitCallback : limitCallback,
+         onFocusCallback : onFocusCallback,
+         onBlurCallback : onBlurCallback,
+         dataStore : dataStore,
+         mentionsEnabled : true
+      };
+   }
+
+   function useRTE(useAutoGrow) {
+      var options = getOptions(true);
+
+      if (textBox) {
+         textBox.destroy();
+      }
+      if (!dojo.byId("textBox")) {
+         dojo.create("div", {
+            id : "textBox"
+         }, dojo.byId("textBoxContainer"), "only");
+      }
+      textBox = new lconn.core.lcTextArea.widgets.BasicTextBox(options, dojo.byId("textBox"));
+   }
+
+   function useStandard() {
+      var options = getOptions(false);
+
+      if (textBox)
+         textBox.destroy();
+      if (!dojo.byId("textBox"))
+         dojo.create("div", {
+            id : "textBox"
+         }, dojo.byId("textBoxContainer"), "only");
+      textBox = new lconn.core.lcTextArea.widgets.BasicTextBox(options, dojo.byId("textBox"));
+
+      // Look how easy it is to override the datasource...
+      textBox._mentionsHelper._registeredTypes[0].typeaheadDataStore = new lconn.core.PeopleDataStore({
+         url : '../ckeditor/people.json',
+         queryParam : "name"
+      });
+      textBox._mentionsHelper._registeredTypes[0].initTypeaheadArgs();
+      textBox._mentionsHelper._registeredTypes[0].cleanUp();
+      textBox._mentionsHelper._registeredTypes[0].initTypeahead();
+      // ...not
+
+      // Should be:
+      // options.store = new lconn.core.PeopleDataStore({url:'../ckeditor/people.json',queryParam : "name"});
+   }
+
+   function getTextFromBTB(value) {
+      var oMentionsSupport = new lconn.core.lcTextArea.mixins.IMentionsSupport;
+      dojo.mixin(oMentionsSupport, textBox);
+      dojo.byId("ccmTextArea").value = oMentionsSupport.getValue(value);
+   }
+
+   function setTextToBTB(flag) {
+      var oMentionsSupport = new lconn.core.lcTextArea.mixins.IMentionsSupport;
+      dojo.mixin(oMentionsSupport, textBox);
+      var text = dojo.byId("ccmTextArea").value;
+      oMentionsSupport.setValue(text, flag);
+   }
+</script>
+
+<style type="text/css">
+   #textBoxContainer, #ccmTextArea {
+      width: 600px;
+      padding-${right}: 10px;
+   }
+   #ccmTextArea {
+	height: 100px;
+   }
+   #ccmTextArea, #textBox {
+      resize: both;
+   }
+   .lotusTitleBarContent nav {
+      height: 50px;
+   }
+</style>
+
+${endhead}
+
+<div class="lotusBanner">
+   <div class="lotusRightCorner">
+      <div class="lotusInner">
+         <a href="#lotusMainContent" accesskey="S" class="lotusAccess">
+            <img src="${_blankGif}" />
+         </a>
+         <div class="lotusLogo">
+            <span class="lotusAltText">IBM Connections Common UI</span>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="lotusTitleBar2 lotusTitleBar2Tabs">
+   <div class="lotusWrapper">
+      <div class="lotusInner">
+         <div class="lotusTitleBarContent">
+            <h2 class="lotusHeading">
+               <span class="lotusText">BasicTextBox + CCM</span>
+            </h2>
+            <nav aria-label="Select page width" role="navigation">
+            </nav>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="lotusFrame">
+   <div class="lotusMain">
+      <div class="lotusContent">
+
+         <form class="lotusForm2">
+            <!-- form header (use a div instead of a header tag if you aren't using html5) -->
+            <header class="lotusFormTitle">
+               <h1 class="lotusHeading" aria-describedby="formDesc">About:</h1>
+               <div id="formDesc" class="lotusMeta">This page
+                  includes a BasicTextBox widget to be used for CCM
+                  Libraries integration.</div>
+            </header>
+
+            <!-- form body -->
+            <div class="lotusFormBody">
+
+               <div class="lotusFormField">
+                  <fieldset class="lotusFieldset" role="radiogroup">
+                     <legend>Implementation (this will replace the textbox)</legend>
+                     <div class="lotusFieldWrapper">
+                        <input type="radio" id="radio1" name="impl" value="RTE" checked="checked" onclick="useRTE();" />
+                        <label class="lotusCheckbox" for="radio1">Uses CKEditor</label>
+                     </div>
+                     <div class="lotusFieldWrapper">
+                        <input type="radio" id="radio2" name="impl" value="Standard" onclick="useStandard();" />
+                        <label class="lotusCheckbox" for="radio2">Standard control</label>
+                     </div>
+                  </fieldset>
+               </div>
+
+               <div class="lotusFormField">
+                  <label for="description">Basic Text Box Area:</label>
+                  <div class="lotusFieldWrapper lotusBoard">
+                     <div id="textBoxContainer" class="lotusStreamUpdate">
+                        <div id="textBox"></div>
+                     </div>
+                     <ul id="actionList" class="lotusInlinelist lotusActions" style="visibility: hidden">
+                        <li class="lotusFirst">
+                           <a href="javascript:;" id="postLink" class="lotusAction lotusPersonInactive">Post</a>
+                        </li>
+                        <li>
+                           <a href="javascript:;" id="resetLink" class="lotusAction lotusPersonInactive" onclick="textBox.resetBox();">Reset</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+
+               <div class="lotusFormField">
+                  <label for="description">Input/Output Area:</label>
+                  <textarea id="ccmTextArea"></textarea>
+               </div>
+
+               <div class="lotusFormField lotusMeta"
+                  title="Chars remaining" id="countContainer">
+                  Chars remaining: <span class="charDisplay"></span>
+               </div>
+
+            </div>
+            <!--end form body-->
+
+            <!-- form footer -->
+            <div class="lotusFormFooter">
+               <input type="button" class="lotusBtn" value="Get BTB Content" onclick="getTextFromBTB()" />
+               <input type="button" class="lotusBtn" value="Get BTB Content (plainTextOnly)" onclick="getTextFromBTB(true)" />
+               <input type="button" class="lotusBtn" value="Set BTB Content" onclick="setTextToBTB()" />
+               <input type="button" class="lotusBtn" value="Set BTB Content (plainTextOnly)" onclick="setTextToBTB(true)" />
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+${script:lconn.core.lcTextArea.widgets.BasicTextBox}
+${script:dojo.parser}
+</html>

@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Pozvať na pripojenie",
+	NDYK1:"Žiadni ďalší ľudia na odporučenie",
+	LOADING: "načítava sa",
+	DYK_TITLE: "Ľudia, ktorých možno poznáte",
+	INVITE_TITLE: "Odoslať pozvánku na pripojenie",
+	SEND_ACTION: "Odoslať",
+	CANCEL_ACTION: "Zrušiť",
+	PREV: "Predchádzajúce",
+	NEXT: "Ďalšie",
+	bpct: "Pridal(a) komentár vo vašom blogu",
+	bpcc: "Pridali ste komentár v rovnakom blogu",
+	lpfr: "Je kolega/kolegyňa niekoho, koho poznáte",
+	lm1: "Ste manažér(ka) tejto osoby",
+	le1: "Táto osoba je váš manažér/manažérka",
+	sdm: "Zdieľate rovnakého manažéra/manažérku",
+	pt: "Táto osoba vás označila",
+	pbt: "Túto osobu ste označili",
+	acm: "Zdieľate aktivity",
+	wikiCoContribution: "Obaja ste upravili rovnakú stránku wiki",
+	bpcb: "Pridali ste komentár v blogu tejto osoby",
+	lpcfr: "Máte spoločných kolegov/kolegyne",
+	ccmf: "Ste v komunite spolu",
+	ccms: "Ste v komunite spolu",
+	filesharing: "Zdieľate súbory",
+	forumthreaddiscussion: "Zdieľate vlákno fóra",
+	ctb: "Zdieľate záložku",
+	tgw: "Máte zhodné značky",
+	tcu: "Použili ste rovnakú značku",
+	pctg: "Obaja ste označili rovnakú osobu",
+	tgb: "Oboch vás označili rovnakí ľudia"
+})

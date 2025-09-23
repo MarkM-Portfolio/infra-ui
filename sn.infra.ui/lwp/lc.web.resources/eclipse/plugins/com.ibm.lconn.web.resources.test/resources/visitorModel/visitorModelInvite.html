@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2008, 2016                                  -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+${head}
+${script:lconn.test.WikiAttachmentsDataStore}
+${script:lconn.core.visitorModel.VisitorModelInvite}
+${style:com.ibm.lconn.web.resources.test/TempTabbedDialog}
+<title>IBM Connections - Visitor Model Invitation</title>
+${endhead}
+<div class="lotusBanner">
+   <div class="lotusRightCorner">
+      <div class="lotusInner">
+         <a href="#lotusMainContent" accesskey="S" class="lotusAccess">
+            <img src="${_blankGif}" />
+         </a>
+         <div class="lotusLogo">
+            <span class="lotusAltText">IBM Connections Common UI</span>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="lotusTitleBar2 lotusTitleBar2Tabs">
+   <div class="lotusWrapper">
+      <div class="lotusInner">
+         <div class="lotusTitleBarContent">
+            <h2 class="lotusHeading">
+               <span class="lotusText">Visitor Model Invite - Inline/popUp</span>
+            </h2>
+            <nav aria-label="Select page width" role="navigation"></nav>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="lotusFrame">
+   <div class="lotusMain" role="main"
+      aria-label="Initial Instruct plugin test page">
+      <div class="lotusContent">
+         <form class="lotusForm2">
+            <div class="lotusFormBody">
+               <!-- form header (use a div instead of a header tag if you aren't using html5) -->
+               <header class="lotusFormTitle">
+               <h1 class="lotusHeading" aria-describedby="formDesc">About:</h1>
+               <div id="formDesc" class="lotusMeta">
+                  Click on the '<code>Display VM</code>' buttons to display the 'Visitor Model' Invitation.
+               </div>
+               </header>
+            </div>
+            
+            <!-- form footer -->
+            <div class="lotusFormFooter">
+            <table width="50%" align="center">
+	            <tr>
+	            <td><input id="firePopUp" type="button" class="lotusBtn"
+                  value="Display VM Dialog" onclick="showVMDialog()" />
+               		<input id="fireInline" type="button" class="lotusBtn"
+                  value="Display VM Inline" onclick="showVMInline()" /></td>
+                <td><div id='inLineTestNode'></div></td>
+	            </tr>
+            </table>
+            </div>
+            </form>
+            </div>
+      </div>
+   </div>
+</div>
+<script>
+   function showVMDialog() {
+      var invite = new lconn.core.visitorModel.VisitorModelInvite({
+    	  inviteApplication: "communities"
+      });
+      invite.show();
+   }
+   
+   function showVMInline() {
+   	  var inlineNode = dojo.byId('inLineTestNode');
+      var invite = new lconn.core.visitorModel.VisitorModelInvite({
+    	  containerNode : inlineNode
+      });
+      invite.show();
+   }
+  
+</script>
+
+<script>
+
+</script>
+
+${end}

@@ -1,0 +1,19 @@
+/* Copyright IBM Corp. 2010, 2015  All Rights Reserved.              */
+
+/*
+
+The contents of this file will be included with the Cascading Style Sheets 
+(CSS) for each Lotus Connections application for the default theme.
+
+The CSS rules in this file will be located after all of the core styles, but
+before the CSS that is part of the theme. If you need to make more extensive 
+changes or remove CSS rules, individually override the other files in this 
+directory.
+   
+This file should output CSS rules and does not need <style> tags.
+
+Example contents:
+
+   .lotusui #lotusLogo {display: none;}
+
+*/

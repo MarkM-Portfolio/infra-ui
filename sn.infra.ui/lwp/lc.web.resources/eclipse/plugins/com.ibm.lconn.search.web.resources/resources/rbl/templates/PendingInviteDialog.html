@@ -1,0 +1,29 @@
+<div class="lotusDialogBorder" style="width:600px">
+	<div class="lotusDialog">
+		<div class="lotusDialogHeader">
+			<div class="lotusHeading">${PENDING_INVITE_TITLE}</div>
+		</div>
+		<table class="lotusFormTable" cellspacing="0" cellpadding="0" border="0" role="presentation">
+			<tr>
+				<td valign="top" width="88px;" align="center">
+					<div>
+						<img class="iconsMessages48 iconsMessages48-msgInfo48" src="${_blankGif}" alt=""/>
+					</div>
+				</td>
+				<td>
+					<div>${MEMBERSHIP_REQUIRED}</div>
+					
+					<h3 style="margin-bottom: 5px;">
+						<label>${commName}</label>
+					</h3>
+					
+					<div style="margin-bottom: 15px;" dojoAttachPoint="descriptionNode">${commDescription}</div>
+				</td>
+			</tr>
+		</table>
+		<div class="lotusDialogFooter">
+			<button dojoAttachPoint="acceptInviteBttn" class="lotusBtn" dojoAttachEvent="onclick: _acceptInvite">${ACCEPT_INVITE}</button>
+			<button dojoAttachPoint="cancelBttn" class="lotusBtn" dojoAttachEvent="onclick: _cancel">${CANCEL}</button>
+		</div>
+	</div>
+</div>

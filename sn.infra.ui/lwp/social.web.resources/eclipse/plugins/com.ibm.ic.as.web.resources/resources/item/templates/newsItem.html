@@ -1,0 +1,42 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<li><div class="activityStreamNewsItemContainer lotusPost ${rootClass}" data-eeopener="true" role="article" tabindex="0" aria-describedby="${id}_openeedescription" aria-label="${titleForDescription} ${extensionDescription} ${timeSeconds}" data-dojo-attach-point="newsItemNode" data-dojo-attach-event="onclick: _onClick, onmouseover: _onFocus, onfocus: _onFocus, 
+					  onmouseout: _onBlur, onblur: _onBlur, onkeypress: _onKeyPress">
+	<label class="lotusHidden" id="${id}_openeedescription">${strings.openEEDescription}</label>
+	
+	<a class="lotusAccess" role="button" href="javascript:;" tabindex="-1" aria-label="${strings.showActionsDescription}" data-dojo-attach-event="onclick: _showActions, onkeypress: _showActions">${strings.showActionsDescription}</a>
+	
+	<div class="lotusPostAuthorInfo">
+		<div class="lotusPostAvatar">
+			<!-- TODO: Replace these classes -->
+			<img class="activityStreamPhotoOf" alt="${photoOfText}" src="${photoUrl}">
+		</div>
+	</div>
+	<div class="lotusPostContent">
+		<div class="lotusPostAction asLinkContainer" data-dojo-attach-point="contentNode">
+		<span class="bidiAware bidiSTT_AT_USER1">${!content}</span>
+	     	<span data-dojo-attach-point="sharedExternally"></span>
+		</div>		
+		<!-- The ! is added to the beginning so that the incoming string
+			 won't be escaped. -->
+		${!rollupExtension}
+		${!templateExtension}
+		<div class="lotusHidden" data-dojo-attach-point="showMoreText">
+					<span aria-hidden="true">...</span><a href="javascript:;" role="button" data-dojo-attach-event="onclick: onShowMoreLessClicked">${strings.showMoreText}<span class="lotusAccess">${strings.ariaShowMoreLabel}</span></a>
+				</div>
+		<div data-dojo-attach-point="urlPreviewNode"></div>	
+		<div class="lotusMeta lotusChunk" data-dojo-attach-point="footerSummary">
+			<ul class="lotusInlinelist lotusActions lotusLeft" role="toolbar" aria-label="${strings.ariaActionsToolbar}" data-dojo-attach-point="actionListContainer"><li class="${likeControlClass}"><span data-dojo-attach-point="likeControlContainer"></span></li><li class="${likeCountClass}"><span>${likesText}</span></li><li class="lotusHidden actionMoreLink" data-dojo-attach-point="actionMoreLink">
+					<a href="javascript:;" role="button" data-dojo-attach-event="onclick: showMoreActions">${strings.showMoreActions}</a>
+				</li>				
+			</ul><span class="lotusRight" title="${eventFromText}">
+						<abbr class="timeago" title="${time}" data-dojo-attach-point="timeagoNode">${timeString}</abbr>
+						<img src="${generatorImgSrc}" alt="${eventFromText}" class="${generatorImgClass} generatorImageSize"></span><div class="lotusHidden likeErrorMessage" role="alert" data-dojo-attach-point="likeErrorNode"></div></div>
+		<a class="lotusDelete ${xClass}" role="button" href="javascript:;" aria-label="${strings.removeNewsItemText}" title="${strings.removeNewsItemText}" alt="${strings.removeNewsItemText}" data-dojo-attach-event="onclick: onDeleteClicked"><img src="${_blankGif}" alt=""><span class="lotusAltText">X</span></a>
+		<div class="lotusHidden repostMessage" role="alert" data-dojo-attach-point="repostMessageNode"></div>
+		<div class="lotusPostIndicator">
+			<a role="button" data-eeopener="true" href="javascript:;" alt="${strings.openEEText}" title="${strings.openEEText}" data-dojo-attach-event="onclick: openEE, onkeypress: _onKeyPress"><img src="${_blankGif}" role="presentation" alt=""><span class="lotusAltText">${strings.openEEAltText}</span></a>
+		</div>
+	</div>
+	<span data-dojo-attach-point="inlineCommentsNode"></span>
+	<span data-dojo-attach-point="commentInputNode"></span>
+</div></li>

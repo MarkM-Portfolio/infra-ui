@@ -1,0 +1,53 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div style="padding: 10px 10px 10px 10px; ">
+	<div>
+		<fieldset class="lotusFieldset" role="radiogroup" style="width: 250px">
+			<legend>Select Width Mode</legend>
+			<form data-dojo-attach-point="colSelectForm">
+				<div class="lotusFieldWrapper">
+					<input class="lotusCheckbox" type="radio" id="${id}mode2col" name="colSelect" value="2col" checked>
+					<label class="lotusCheckbox" for="${id}mode2col">Widgets, 2-Column</label>
+				</div>
+				<div class="lotusFieldWrapper">
+					<input class="lotusCheckbox" type="radio" id="${id}mode3col" name="colSelect" value="3col">
+					<label class="lotusCheckbox" for="${id}mode3col">Widgets, 3-Column</label>
+				</div>
+				<div class="lotusFieldWrapper">
+					<input class="lotusCheckbox" type="radio" id="${id}modeRHcol" name="colSelect" value="updates">
+					<label class="lotusCheckbox" for="${id}modeRHcol">Updates, Right-Hand-Column</label>
+				</div>
+			</form>
+		</fieldset>
+		
+		<form>
+			<div>
+				<label for="userPrefs">User Prefs</label><br>
+				<input type="text" name="userPrefs" style="width: 250px" value="{}" data-dojo-attach-point="userPrefsField" data-dojo-type="dijit/form/TextBox">
+			</div>
+			
+			<div>	
+				<input name="loadGadgetButton" type="button" value="[Re]Load Gadget" class="lotusBtn" data-dojo-attach-point="loadGadgetButton">
+				<input name="closeGadgetButton" type="button" value="Unload Gadget" class="lotusBtn" data-dojo-attach-point="unloadGadgetButton">
+			</div>
+		</form>
+	</div>
+
+	<div data-dojo-attach-point="sizer">
+		<div class="lotusWidget" role="region" aria-label="[WIDGET TITLE]" data-dojo-attach-point="root">
+			<div role="presentation">
+				<h2 class="ibmDndDragHandle" data-dojo-attach-point="titleBar">
+					<a class="lotusLeft homepageUnclickable" tabindex="0" data-dojo-attach-point="maxNode">[WIDGET TITLE]</a>
+					<div role="menubar">
+						<a class="lotusIcon lotusActionMenu" aria-label="Click for actions" href="javascript:;" role="button" aria-haspopup="true"> <img title="Click for actions" alt="Click for actions" src="${_blankGif}"><span class="lotusAltText" style="z-index: -1">Click for actions</span> </a>
+					</div>
+				</h2>
+				<div class="lotusWidgetBody" style="padding: 3px 0px 3px 0px;" data-dojo-attach-point="body">
+					<div data-dojo-attach-point="containerNode">
+						<span class="iw-iWidget" aria-live="polite" data-dojo-attach-point="iWidgetRootNode"> 
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,29 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusGlobalSearch">
+	<div class="lotusSearch" role="search" aria-label="${_strings.REFINE_YOUR_SEARCH_RESULTS}">
+		<form dojoAttachPoint="formDomNode" method="GET" action="javascript:;">
+			<table class="lotusLayout" cellspacing="0" role="presentation" summary="">
+				<tbody>
+					<tr>
+						<td>
+							<span>
+								<input id="${id}_textBox" dojoAttachPoint="textBox" type="text" class="lotusText" 
+									name="query" title="${_strings.SEARCH_VERB}" />
+							</span>
+						</td>
+						<td>
+							<span class="lotusBtnImg">
+								<input dojoAttachPoint="inputDomNode" class="lotusSearchButton" type="image" 
+									src="${_blankGif}" alt="${_strings.SEARCH_VERB}" />
+								<a href="javascript:;" alt="${_strings.SEARCH_VERB}" class="lotusAltText">${_strings.SEARCH_VERB}</a>
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+
+	<div dojoAttachPoint="didYouMeanContainerDomNode" class="lconnSearchDidYouMean" style="display:none">
+	</div>
+</div>

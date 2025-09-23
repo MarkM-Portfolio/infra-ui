@@ -1,0 +1,51 @@
+{ label: 'name',
+  identifier: 'id',
+   items: [
+     { id:'ActivitiesId', name:'Activities', type:'widgetCategory', css:'lotusIconActivity',
+        children: [
+           {_reference: 'My Activites'},
+           {_reference:'My tasks'}
+        ]
+	 },
+	 { id:'BlogsId', name:'Blogs', type:'widgetCategory', css:'lotusIconBlogs',
+        children: [
+           {_reference: 'My Blogs'},
+           {_reference:'Latest Updated Blog Entries'}
+        ]},
+	 { id:'CommunitiesId', name:'Communities', type:'widgetCategory', css:'lotusIconCommunities',
+        children: [
+           {_reference: 'My Communities'}
+        ]},
+	 { id:'DogearId', name:'Dogear', type:'widgetCategory', css:'lotusIconBookmarks',
+        children: [
+           {_reference: 'My Bookmarks'}
+        ]},
+	 { id:'ProfilesId', name:'Profiles', type:'widgetCategory', css:'lotusIconProfiles',
+        children: [
+           {_reference: 'My Profile'},
+		   {_reference: 'My Colleagues'}
+        ]},
+	 { id:'WikiId', name:'Wiki', type:'widgetCategory', css:'lotusIconWiki',
+        children: [
+           {_reference: 'My wikis'},
+		   {_reference: 'Popular Wikis'},
+		   {_reference: 'Latest Wikis'}
+        ]},
+	 { id:'ShareId', name:'Share', type:'widgetCategory', css:'lotusIconShare',
+        children: [
+           {_reference: 'My files'}
+        ]},	
+	 { id:'My Bookmarks', name:'My Bookmarks', type:'widget'},
+     { id:'My Profile', name:'My Profile', type:'widget' },
+	 { id:'My Colleagues', name:'My Colleagues', type:'widget' },
+	 { id:'My Communities', name:'My Communities', type:'widget' },
+	 { id:'My Blogs', name:'My Blogs', type:'widget' },
+	 { id:'Latest Updated Blog Entries', name:'Latest Updated Blog Entries', type:'widget' },
+	 { id:'My Activites', name:'My Activites', type:'widget' },
+	 { id:'My tasks', name:'My tasks', type:'widget' },
+	 { id:'My wikis', name:'My wikis', type:'widget' },
+	 { id:'Popular Wikis', name:'Popular Wikis', type:'widget' },
+	 { id:'Latest Wikis', name:'Latest Wikis', type:'widget' },
+	 { id:'My files', name:'My files', type:'widget' }
+    ]
+}

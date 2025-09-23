@@ -1,0 +1,7 @@
+../../../../../prereqs.web.resources/eclipse/plugins
+../../../../../lc.web.resources.base/eclipse/plugins
+../../../../../oneui.web.resources/eclipse/plugins
+../../../../../social.web.resources/eclipse/plugins
+../../../../../lc.web.osgi/eclipse/plugins
+../../../../../lc.web.resources/eclipse/plugins
+#exclude=org.mortbay.jetty.server,org.mortbay.jetty.util,com.ibm.team.server.embedded.jetty,com.ibm.lconn.web.resources.test,org.apache.commons.logging.log4j,org.apache.log4j,log4j.settings,javax.servlet

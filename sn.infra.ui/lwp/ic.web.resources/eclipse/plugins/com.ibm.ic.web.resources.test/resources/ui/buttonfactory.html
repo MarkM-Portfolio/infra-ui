@@ -1,0 +1,80 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>Button Factory</title>
+
+
+<script>
+dojoConfig.parseOnLoad=true;
+
+</script>
+${script:dojo/dom}
+${script:net.jazz.ajax.xdloader}
+${script:ic-ui/ButtonFactory}
+
+<script>
+    require(['ic-ui/ButtonFactory', 'dojo/dom', 'dojo/domReady!'], function(ButtonFactory, dom) {
+        ButtonFactory.createButton({
+            label : 'Button'
+        }, dom.byId('b1'));
+        
+        ButtonFactory.createButton({
+            label : 'Button',
+            disabled : true
+        }, dom.byId('b2'));
+        
+        ButtonFactory.createButton({
+            label : 'Special Button',
+            special : true
+        }, dom.byId('b3'));
+        
+        ButtonFactory.createMenuButton({
+            label : 'Menu Button'
+        }, dom.byId('b4'));
+
+        ButtonFactory.createMenuButton({
+            label : 'Menu Button',
+            disabled : true
+        }, dom.byId('b5'));
+    });
+</script>
+
+
+<style>
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-test/ui/index.html?render=test">Core UI widgets and utilities</a>
+    <span class="lotusDivider">&gt;</span>
+    Button Factory
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain">
+<div class="lotusContent">
+<h1>Button Factory</h1>
+<dl>
+    <dt>Module ID: <code>ic-ui/ButtonFactory</code></dt>
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-ui/ic-ui.ButtonFactory.html">JSDoc</a></dd>
+</dl>
+
+<h2>Button</h2>
+<div id="b1"></div>
+<h2>Button, disabled</h2>
+<div id="b2"></div>
+<h2>Button, special</h2>
+<div id="b3"></div>
+<h2>Menu Button</h2>
+<div id="b4"></div>
+<h2>Menu Button, disabled</h2>
+<div id="b5"></div>
+
+</div>
+</div>
+</body>
+${end}

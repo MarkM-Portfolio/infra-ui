@@ -1,0 +1,4 @@
+/* Copyright IBM Corp. 2015  All Rights Reserved.                    */
+.dijitRtl .tundra .dijitTitlePane .dijitClosed .dijitArrowNode {
+	background-position: -7px 0px;
+}

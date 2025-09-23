@@ -1,0 +1,20 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="ics-commentbox-container">
+  <div data-dojo-attach-point="textAreaContainer">
+    <textarea data-dojo-attach-point="textarea"></textarea>
+    <div data-dojo-attach-point="textdiv"></div>
+  </div>
+  <div class="commentActions" data-dojo-attach-point="commentActionsContainer">
+  
+    <ul class="ics-viewer-inlineList">
+      <li class="ics-viewer-first">
+        <a href="javascript:;" data-dojo-attach-event="click:_save" role="button" class="save-button">${_saveText}</a></li>
+      <li>
+        <a href="javascript:;" data-dojo-attach-point="cancelButton" data-dojo-attach-event="click:_cancel" role="button" class="cancel-button">${nls.CANCEL}</a>
+      </li></ul>
+      
+    <img src="${_blankGif}" class="externalIcon" style="display: none;" data-dojo-attach-point="externalIcon" title="${nls.EXTERNAL_WARNING}" alt="${nls.EXTERNAL_WARNING}"></img>
+  </div>
+  <div data-dojo-attach-point="errorContainer"></div>
+  <div data-dojo-attach-point="warningContainer"></div>
+</div>

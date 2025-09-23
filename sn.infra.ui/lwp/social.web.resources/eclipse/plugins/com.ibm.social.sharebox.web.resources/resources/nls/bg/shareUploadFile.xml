@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">Файлове</msg>
+  <msg name="description">Притурка за файлове за позволяване на качването и споделянето на файлове</msg>
+  <msg name="action_uploadFile_label">Файлове</msg>
+  <msg name="action_uploadFile_tooltip">Качване и споделяне на файлове</msg>
+  <msg name="loading">Зареждане...</msg>
+  <msg name="error_msg">Съдържанието не може да се зареди. Опитайте отново по-късно или се свържете със системния администратор.</msg>
+  <msg name="error_alt">Грешка</msg>
+</messagebundle>

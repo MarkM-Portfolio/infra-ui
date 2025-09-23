@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+({
+	"CLOSE_HELP_DATE":"סגירת העזרה לתאריכים",
+	"CLOSE_HELP_ECM_DOCUMENT_TYPE":"סגירת העזרה לסוגי מסמכים",
+	"CLOSE_HELP_PERSON":"סגירת העזרה לאנשים",
+	"CLOSE_HELP_TAG":"סגירת העזרה לתגים",
+	"CLOSE_HELP_TREND":"סגירת העזרה למגמות",
+	"COLLAPSE_DATE":"כיווץ מסנן התאריכים",
+	"COLLAPSE_ECM_DOCUMENT_TYPE":"כיווץ מסנן סוגי המסמכים",
+	"COLLAPSE_PERSON":"כיווץ מסנן האנשים",
+	"COLLAPSE_TAG":"כיווץ מסנן התגים",
+	"COLLAPSE_TREND":"כיווץ מסנן המגמות",
+	"DESCRIPTION_DATE":"כדי להציג תוצאות שנוצרו או עודכנו במועד מסוים, הרחיבו את הפותחן וסננו את המידע לפי שנה וחודש. ",
+	"DESCRIPTION_ECM_DOCUMENT_TYPE":"סוג מסמך הוא מילת מפתח המוקצית לקבצים כדי להקל על איתורם. לחצו על סוג מסמך כדי להציג תוצאות חיפוש שמילת מפתח זו הוקצתה להן.",
+	"DESCRIPTION_PERSON":"הצגת האנשים המשויכים לתוצאות החיפוש. לחצו על שם כדי להציג את תוצאות החיפוש עבור אדם מסוים.",
+	"DESCRIPTION_TAG":"תג הוא מילת מפתח שאתם מקצים לתוכן או לאנשים כדי להקל על איתורם.  לחצו על תג כדי להציג תוצאות חיפוש שמילת מפתח זו הוקצתה להן.",
+	"DESCRIPTION_TREND":"מגמה היא מילת מפתח המופקת על ידי המערכת כדי להקל על ביצוע חיפושים בעדכוני מצב. לחצו על מגמה כדי להציג תוצאות חיפוש שמילת מפתח זו הוקצתה להן.",
+	"EXPAND_DATE":"הרחבת מסנן התאריכים",
+	"EXPAND_ECM_DOCUMENT_TYPE":"הרחבת מסנן סוגי המסמכים",
+	"EXPAND_PERSON":"הרחבת מסנן האנשים",
+	"EXPAND_TAG":"הרחבת מסנן התגים",
+	"EXPAND_TREND":"הרחבת מסנן המגמות",
+	"HELP_DATE":"עזרה לתאריכים",
+	"HELP_ECM_DOCUMENT_TYPE":"עזרה לסוגי מסמכים",
+	"HELP_PERSON":"עזרה לאנשים",
+	"HELP_TAG":"עזרה לתגים",
+	"HELP_TREND":"עזרה למגמות",
+	"NO_DATE_CONTENT":"תאריכים אינם זמינים כרגע",
+	"NO_ECM_DOCUMENT_TYPE_CONTENT":"סוגי מסמכים אינם זמינים כרגע",
+	"NO_PERSON_CONTENT":"אנשים אינם זמינים כרגע",
+	"NO_TAG_CONTENT":"תגים אינם זמינים כרגע",
+	"NO_TREND_CONTENT":"מגמות אינן זמינות כרגע",
+	"TITLE_DATE":"תאריכים",
+	"TITLE_ECM_DOCUMENT_TYPE":"סוגי מסמכים",
+	"TITLE_PERSON":"אנשים",
+	"TITLE_TAG":"תגים",
+	"TITLE_TREND":"מגמות"
+})
+

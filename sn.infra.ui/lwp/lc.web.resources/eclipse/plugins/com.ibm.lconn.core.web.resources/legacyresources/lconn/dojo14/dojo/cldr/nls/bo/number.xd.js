@@ -1,0 +1,5 @@
+dojo._xdResourceLoaded(function(dojo, dijit, dojox){
+return {depends: [["provide", "dojo.cldr.nls.bo.number"]],
+defineResource: function(dojo, dijit, dojox){dojo.provide("dojo.cldr.nls.bo.number");dojo._xdLoadFlattenedBundle("dojo.cldr", "number", "bo", ({"group":",","nan":"ཨང་མེན་","percentFormat":"#,##0%","scientificFormat":"#E0","currencySpacing-afterCurrency-currencyMatch":"[:letter:]","infinity":"∞","list":";","percentSign":"%","minusSign":"-","currencySpacing-beforeCurrency-surroundingMatch":"[:digit:]","currencySpacing-afterCurrency-insertBetween":" ","nativeZeroDigit":"0","plusSign":"+","currencySpacing-afterCurrency-surroundingMatch":"[:digit:]","currencyFormat":"¤ #,##0.00","currencySpacing-beforeCurrency-currencyMatch":"[:letter:]","perMille":"‰","decimalFormat":"#,##0.###","decimal":".","patternDigit":"#","currencySpacing-beforeCurrency-insertBetween":" ","exponential":"E"})
+);
+}};});

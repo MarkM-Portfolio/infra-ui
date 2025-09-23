@@ -1,0 +1,34 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lconnPreview" data-dojo-attach-point="urlPreview">
+	<a role="button" aria-label="${strings.removeUrlPreview}" class="lconnPreviewClose" href="javascript:;" data-dojo-attach-point="closeButton" data-dojo-attach-event="onclick: closePreview">
+		<img src="${_blankGif}" alt="" role="presentation">
+		<span class="lotusAltText">X</span>
+	</a>
+	<div class="lconnPreviewLeft" data-dojo-attach-point="leftPane">
+		<a class="lconnPreviewCenter" data-dojo-attach-point="thumbnailContainer">
+			<span></span>
+			<span class="lotusHidden playBtn otherHTML5Player16 otherHTML5Player16-play-overlay-sm" data-dojo-attach-point="playBtn"></span>
+			<img src="${_blankGif}" alt="" data-dojo-attach-point="thumbnail">
+		</a>
+	</div>
+	<div class="lconnPreviewContent" data-dojo-attach-point="rightPane">
+		<div class="lconnPreviewContentTitle" data-dojo-attach-point="titleNode"><a href="${data.url}">${data.title}</a></div>
+		<a href="${data.url}" data-dojo-attach-point="linkNode">${data.provider_url}</a>
+		<p data-dojo-attach-point="description"></p>
+	</div>
+	
+	<div class="lconnPreviewFooter" data-dojo-attach-point="footerPane">
+		<div class="lconnPreviewImageChoose" data-dojo-attach-point="imageChooser">
+			<a href="javascript:;" aria-label="${strings.previousThumbnail}" class="lconnPreviewImageChooseLeft" role="button" data-dojo-attach-event="onclick: previousThumbnail">
+				<img class="otherFramework16 otherFramework16-ArrowThickLeftGray12" src="${_blankGif}" alt="${strings.previousThumbnail}" data-dojo-attach-point="previousImage">
+			</a>
+			<a href="javascript:;" aria-label="${strings.nextThumbnail}" class="lconnPreviewImageChooseRight" role="button" data-dojo-attach-event="onclick: nextThumbnail">
+				<img class="otherFramework16 otherFramework16-ArrowThickRightGray12" src="${_blankGif}" alt="${strings.nextThumbnail}" data-dojo-attach-point="nextImage">
+			</a>
+		</div>
+		<div class="lconnPreviewImageChooseToggle" data-dojo-attach-point="toggleContainer">
+			<input type="checkbox" data-dojo-attach-point="checkBox" data-dojo-attach-event="onclick: toggleImage">
+			<label aria-label="${strings.thumbnailToggle}" data-dojo-attach-point="checkBoxLabel">${strings.thumbnailToggle}</label>
+		</div>
+	</div>
+</div>

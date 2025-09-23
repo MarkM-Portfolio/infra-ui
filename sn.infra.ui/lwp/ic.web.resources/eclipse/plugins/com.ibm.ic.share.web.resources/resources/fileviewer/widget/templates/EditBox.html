@@ -1,0 +1,30 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="ics-editBox" data-dojo-attach-point="editBoxContainer">
+  <div data-dojo-attach-point="textContainer">
+    <label data-dojo-attach-point="textBoxNodeLabel" class="lotusOffScreen"></label>
+    <input type="text" data-dojo-attach-point="singleLineInput"></input>
+    <textarea data-dojo-attach-point="multiLineInput"></textarea>
+  </div>
+  
+  <div class="commentActions descriptionBox lotusHidden" data-dojo-attach-point="descriptionControlsContainer">
+    <ul class="ics-viewer-inlineList">
+      <li class="ics-viewer-first">
+        <a href="javascript:;" data-dojo-attach-event="click:_save" role="button" class="save-button">${saveText}</a></li>
+      <li>
+        <a href="javascript:;" data-dojo-attach-point="closeButtonlink" data-dojo-attach-event="click:_cancel,blur:_delayedEventHandler" role="button" class="cancel-button">${closeButton.altText}</a>
+    </li></ul>
+  </div>
+  
+  <a class="ics-viewer-cancel lotusHidden" href="javascript:;" title="${closeButton.altText}" data-dojo-attach-point="closeButtonlink" data-dojo-attach-event="click:_cancel,blur:_delayedEventHandler" aria-describedby="${closeButton.id}_describe" role="button">
+    <span data-dojo-attach-point="closeButtonLinkText">${closeButton.linkText}</span>
+    <img src="${_blankGif}" alt="" data-dojo-attach-point="img" />
+    <span data-dojo-attach-point="closeButtonAltText" class="lotusAltText fileViewerIconText">${closeButton.altText}</span>
+  </a>
+  <span class="lotusAccess" id="${closeButton.id}_describe" data-dojo-attach-point="closeButtonDescribedBy">${closeButton.a11y}</span>
+  <div class="commentActions" data-dojo-attach-point="actionsContainer">
+    <ul class="ics-viewer-inlineList" data-dojo-attach-point="actions"><li class="ics-viewer-first"><a href="javascript:;" data-dojo-attach-event="click:_save" role="button">${saveText}</a></li><li><a href="javascript:;" data-dojo-attach-event="click:_cancel" role="button">${cancelText}</a></li></ul>
+    <img src="${_blankGif}" class="externalIcon" style="display: none;" data-dojo-attach-point="externalIcon" title=""></img>
+  </div>
+  <div data-dojo-attach-point="errorContainer"></div>
+  <div data-dojo-attach-point="warningContainer"></div>
+</div>

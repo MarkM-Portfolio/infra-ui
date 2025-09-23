@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<messagebundle>
+  <msg name="connectionsEE_title">Povezivanja</msg>
+  <msg name="connectionsEE_description">Embedded Experience OpenSocial gadget koja se koristi za prikaz dodatnih detalja i akcija za događaje povezivanja</msg>
+  <msg name="connectionsEE_errorTitle">Greška</msg>
+  <msg name="connectionsEE_errorDescription">Dogodila se greška prilikom učitavanja resursa gadgeta. Uvjerite se da ste povezani na mrežu i ponovno pokušajte s učitavanjem gadgeta.</msg>
+</messagebundle>

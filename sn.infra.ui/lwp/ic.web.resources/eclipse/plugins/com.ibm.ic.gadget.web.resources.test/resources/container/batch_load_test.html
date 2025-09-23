@@ -1,0 +1,159 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<html><body><p>${head} ${script:com.ibm.lconn.gadget.container.Handle}
+${script:com.ibm.lconn.gadget.container._Accessor}
+${script:com.ibm.lconn.gadget.container._Container}
+${script:com.ibm.lconn.gadget.container.iContainer2}
+
+<!-- Redirect to &render=test -->
+<script type="text/javascript">
+   var loc = location + '';
+   if (loc.indexOf('render=test') < 0) {
+      if (loc.indexOf('?') > 0) {
+         location = loc + "&render=test";
+      } else {
+         location = loc + "?render=test";
+      }
+   }
+</script>
+
+<script type="text/javascript">
+   dojo.require('lconn.core.config.services');
+   dojo.require("com.ibm.oneui.util.proxy");
+   dojo.require("lconn.core.url");
+
+   var web_resources_url = lconn.core.config.services['webresources'].url;
+   var page_url_dotdot_dotdot = lconn.core.url.parse(
+         window.location.toString(), '../..').toString();
+   page_url_dotdot_dotdot = page_url_dotdot_dotdot.substring(0,
+         page_url_dotdot_dotdot.length - 1);
+
+</script>
+
+<script type="text/javascript">
+   var mContainer = null;
+
+   //dojo.registerModulePath("com.ibm.lconn.gadget", page_url_dotdot_dotdot);
+</script>
+
+
+<style>
+#attach_point1 {
+	width: 500px;
+	height: 100px;
+}
+
+#attach_point2 {
+	width: 500px;
+}
+
+#attach_point3 {
+	width: 500px;
+	height: 100px;
+}
+</style>
+
+${endhead}
+
+</p><h1>Demonstrates the batch loading functionality of iContainer2
+API.</h1>
+<!-- BODY -->
+<table width="100%">
+	<tr>
+		<td>
+		<h1>Multiple widget test</h1>
+
+		<script type="text/javascript">
+   var handles = [];
+   function load_widgets() {
+      var defs = [];
+      //try {
+      if (handles.length)
+         close_widgets();
+
+      
+      var def1 = {
+         definitionUrl : dojo.byId("iWidget1URL").value,
+         componentType : "iWidget",
+         placement : 'attach_point1'
+      };
+      defs.push(def1);
+      
+      var def2 = {
+            definitionUrl : dojo.byId("iWidget2URL").value,
+            componentType : "iWidget",
+            placement : 'attach_point2'
+         };
+      defs.push(def2);
+
+      var def3 = {
+            definitionUrl : dojo.byId("GadgetURL").value,
+			componentType : 'gadget',
+            placement : 'attach_point3'
+         };
+      defs.push(def3);
+
+      
+      dojo.empty("attach_point1");
+      dojo.empty("attach_point2");
+      dojo.empty("attach_point3");
+      
+      handles = mContainer.loadWidgets(defs);
+
+
+      return false;
+   }
+
+
+   function refresh_widgets() {
+      dojo.forEach(handles, function(h) {
+         h.refresh();
+      });
+   }
+
+   function close_widgets() {
+      dojo.forEach(handles, function(h) {
+         h.close();
+      });
+   }
+
+   function fillWidgetURLs() {
+		dojo.byId("iWidget1URL").value = web_resources_url+"/web/com.ibm.lconn.gadget/test/container/helloworld.xml";
+		dojo.byId("iWidget2URL").value = web_resources_url+"/web/com.ibm.lconn.gadget/test/container/iwidgets/simple_stock/stock3.xml"; 
+		dojo.byId("GadgetURL").value = "http://hosting.gmodules.com/ig/gadgets/file/109810496796399416248/timedate2.xml"; 
+   }
+</script>
+
+		<div>
+		<form name="widgetBootstrapper" id="widgetBootstrapper">
+		<div>First iWidget URL: <input type="text" id="iWidget1URL" name="IWidget1" style="width: 60%" value="/web/com.ibm.lconn.gadget/test/container/helloworld.xml"></div>
+		<div>Second iWidget URL: <input type="text" id="iWidget2URL" name="IWidget2" style="width: 60%" value="/web/com.ibm.lconn.gadget/test/container/iwidgets/simple_stock/stock3.xml">
+		</div>
+				<div>Gadget URL: <input type="text" id="GadgetURL" name="Gadget" style="width: 60%">
+		</div>
+		</form>
+
+		<br>
+		<br>
+		<button onclick="load_widgets();">Load widgets</button>
+		<button onclick="refresh_widgets();">Refresh</button>
+		<button onclick="close_widgets();">Close</button>
+		</div>
+
+		<h3>Attach Points</h3>
+		<div id="attach_point1" style="">First iWidget Goes Here...</div>
+		<div id="attach_point2" style="">Second iWidget Goes Here...</div>
+		<div id="attach_point3" style="">Gadget Goes Here...</div>
+		</td>
+	</tr>
+</table>
+
+<script type="text/javascript">
+   dojo.addOnLoad(function() {
+      mContainer = com.ibm.lconn.gadget.container.iContainer2;
+      mContainer.init();
+      fillWidgetURLs();
+   });
+</script>
+
+${end}
+</body></html>

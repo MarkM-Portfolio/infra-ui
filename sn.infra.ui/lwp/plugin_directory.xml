@@ -1,0 +1,24 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2004, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<plugin_directory build-type="pde">
+   <plugin_path directory="prereqs.web.resources/eclipse"/>
+   <plugin_path directory="ic.web.resources/eclipse"/>
+   <plugin_path directory="lc.web.resources.base/eclipse"/>
+   <plugin_path directory="lc.web.osgi/eclipse"/>
+   <plugin_path directory="lc.web.resources/eclipse"/>
+   <plugin_path directory="oneui.web.resources/eclipse"/>
+   <plugin_path directory="oauth.web.resources/eclipse"/>
+   <plugin_path directory="social.web.resources/eclipse"/>
+</plugin_directory>

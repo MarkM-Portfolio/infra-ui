@@ -1,0 +1,142 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>BizCard List Widgets</title>
+
+
+<script>
+dojoConfig.parseOnLoad=true;
+
+</script>
+${script:dojo/parser}
+${script:net.jazz.ajax.xdloader}
+${script:dojo.parser}
+${script:ic-ui.bizCard.TextList}
+${script:ic-ui.bizCard.IconList}
+
+<script>
+    // TODO: move to mock
+    var LIST_1 = [{
+        type: 'link',
+        text: 'Click me',
+        ariaText: 'aria Click me',
+        linkUrl: 'http://www.ibm.com',
+        target: '_blank'
+    }, {
+        type: 'link',
+        text: 'Click me instead',
+        linkUrl: 'http://www.google.com'
+    }, {
+        type: 'toggle',
+        textStatusTrue: 'Stop following',
+        textStatusFalse: 'Follow',
+        ariaTextStatusTrue: 'Following Status',
+        ariaTextStatusFalse: 'Following Status',
+        urlStatusTrue: '../data/abstractListUnfollow.json',
+        urlStatusFalse: '../data/abstractListFollow.json',
+        status: true
+    }, {
+        type: 'toggle',
+        textStatusTrue: 'pressed',
+        textStatusFalse: 'unpressed',
+        urlStatusTrue: '../data/abstractListUnfollow.json',
+        urlStatusFalse: '../data/abstractListFollow.json',
+        status: false
+    }],
+    LIST_2 = [{
+        type: 'link',
+        text: 'Invite to meeting',
+        ariaText: 'aria invite to meeting',
+        iconUrl: '../../com.ibm.lconn.core.styles/images/businessCard/e-meeting_new.png',
+        linkUrl: 'http://www.ibm.com',
+    }, {
+        type: 'link',
+        text: 'Invite to meeting',
+        iconUrl: '../../com.ibm.lconn.core.styles/images/businessCard/e-meeting_new.png',
+        linkUrl: 'http://www.ibm.com',
+        disabled: true,
+    }, {
+        type: 'link',
+        text: 'Start Chat, I am Available',
+        ariaText: 'aria I am available',
+        iconUrl: '../../com.ibm.lconn.core.styles/images/businessCard/chat_new.png',
+        linkUrl: 'http://www.ibm.com',
+        parameters: {
+            squareSametime: 'available'
+        }
+    }, {
+        type: 'toggle',
+        textStatusTrue: 'Stop Following',
+        textStatusFalse: 'Follow',
+        iconStatusTrue: 'http://icons.iconarchive.com/icons/graphicloads/colorful-long-shadow/16/Check-3-icon.png',
+        iconStatusFalse: 'http://icons.iconarchive.com/icons/graphicloads/colorful-long-shadow/16/Check-2-icon.png',
+        urlStatusTrue: '../data/abstractListUnfollow.json',
+        urlStatusFalse: '../data/abstractListFollow.json',
+        status: true
+    }, {
+        type: 'toggle',
+        textStatusTrue: 'Stop Following',
+        textStatusFalse: 'Follow',
+        ariaTextStatusTrue: 'aria Stop following',
+        ariaTextStatusFalse: 'aria follow',
+        iconStatusTrue: 'http://icons.iconarchive.com/icons/graphicloads/colorful-long-shadow/16/Check-3-icon.png',
+        iconStatusFalse: 'http://icons.iconarchive.com/icons/graphicloads/colorful-long-shadow/16/Check-2-icon.png',
+        urlStatusTrue: '../data/abstractListUnfollow.json',
+        urlStatusFalse: '../data/abstractListFollow.json',
+        status: true
+    }];
+
+</script>
+
+
+<style>
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-test/ui/index.html?render=test">Core UI widgets and utilities</a>
+    <span class="lotusDivider">&gt;</span>
+    BizCard List Widgets
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain">
+<div class="lotusContent">
+<h1>BizCard List Widgets</h1>
+
+<h2>Text List</h2>
+<dl>
+    <dt>Module ID: <code>ic-ui/bizCard/TextList</code></dt>
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-ui/ic-ui.bizCard.TextList.html">JSDoc</a></dd>
+</dl>
+<p>
+    A list of textual links for the BizCard.
+</p>
+<br>
+<div>
+   <div data-dojo-type="ic-ui/bizCard/TextList" data-dojo-props="list:LIST_1"></div>
+</div>
+<br>
+
+<h2>Icon List</h2>
+<dl>
+    <dt>Module ID: <code>ic-ui/bizCard/IconList</code></dt>
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-ui/ic-ui.bizCard.IconList.html">JSDoc</a></dd>
+</dl>
+<p>
+    A list of icon buttons for the BizCard.
+</p>
+<br>
+<div>
+   <div  data-dojo-id="iconList" data-dojo-type="ic-ui/bizCard/IconList"  data-dojo-props="list:LIST_2"></div>
+</div>
+
+</div>
+</div>
+</div>
+</body>
+${end}

@@ -1,0 +1,248 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <!-- ***************************************************************** -->
+    <!--                                                                   -->
+    <!-- IBM Confidential                                                  -->
+    <!--                                                                   -->
+    <!-- OCO Source Materials                                              -->
+    <!--                                                                   -->
+    <!-- Copyright IBM Corp. 2014                                          -->
+    <!--                                                                   -->
+    <!-- The source code for this program is not published or otherwise    -->
+    <!-- divested of its trade secrets, irrespective of what has been      -->
+    <!-- deposited with the U.S. Copyright Office.                         -->
+    <!--                                                                   -->
+    <!-- ***************************************************************** -->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.ibm.maven</groupId>
+        <artifactId>mantis-super-pom</artifactId>
+        <version>1.0</version>
+        <relativePath></relativePath>
+    </parent>
+
+    <name>lc.bookmarklet</name>
+
+    <groupId>com.ibm.lconn.infra.ui</groupId>
+    <artifactId>lc.bookmarklet</artifactId>
+    <version>1.0</version>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ibm.connections.highway</groupId>
+            <artifactId>highway.client</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.connections.highway</groupId>
+            <artifactId>highway.common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.abdera</groupId>
+            <artifactId>abdera</artifactId>
+            <version>0.4.0</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.juru</groupId>
+            <artifactId>juru</artifactId>
+            <version>4.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.abdera</groupId>
+            <artifactId>xlxpScanner</artifactId>
+            <version>0.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.abdera</groupId>
+            <artifactId>xlxpScannerUtils</artifactId>
+            <version>0.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.abdera</groupId>
+            <artifactId>xlxpWASParsers</artifactId>
+            <version>0.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.lconn.tk</groupId>
+            <artifactId>tk.rproxysvc.transport</artifactId>
+            <version>3.0</version>
+        </dependency>
+<dependency>
+    <groupId>com.ibm.abdera</groupId>
+    <artifactId>stax-api</artifactId>
+    <version>0.4.0</version>
+</dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.35</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jdk14</artifactId>
+            <version>1.7.35</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.lconn.util</groupId>
+            <artifactId>lc.util.jndi</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.lconn</groupId>
+            <artifactId>AjaxProxy</artifactId>
+            <version>2.5</version>
+        </dependency>
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-codec</artifactId>
+    <version>1.1</version>
+</dependency>        
+<dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.icu4j</groupId>
+            <artifactId>icu4j</artifactId>
+            <version>55.1</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.abdera</groupId>
+            <artifactId>jaxen</artifactId>
+            <version>0.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.lconn</groupId>
+            <artifactId>lc.proxy</artifactId>
+            <version>1.0</version>
+        </dependency>
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.11</version>
+</dependency>
+    
+</dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.10</version>
+                <executions>
+
+                    <execution>
+                        <id>unpack</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.ibm.lconn</groupId>
+                                    <artifactId>sn.coreui</artifactId>
+                                    <version>1.3-SNAPSHOT</version>
+                                    <type>zip</type>
+                                    <outputDirectory>${project.build.directory}/nav</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>${project.basedir}/Web Content</directory>
+                        </resource>
+                        <resource>
+                            <directory>${project.build.directory}/nav/Web Content/nav</directory>
+                            <targetPath>nav</targetPath>
+                        </resource>
+                    </webResources>
+                    <webXml>Web Content/WEB-INF/web.xml</webXml>
+                    <archiveClasses>true</archiveClasses>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathLayoutType>custom</classpathLayoutType>
+                            <customClasspathLayout>$${artifact.artifactId}.$${artifact.extension}</customClasspathLayout>
+                        </manifest>
+                    </archive>
+                    <outputFileNameMapping>@{artifactId}@.@{extension}@</outputFileNameMapping>
+                    <packagingIncludes>
+                        tools/**,
+                        style/**,
+                        script/**,
+                        nav/**,
+                        jsp/**,
+                        images/**,
+                        auth/**,
+                        WEB-INF/**/*.xmi,
+                        WEB-INF/tlds/**/*.*,
+                        WEB-INF/lib/lc.util.web*.jar,
+                        WEB-INF/lib/lc.util.cache*.jar,
+                        WEB-INF/lib/lc.util.base*.jar,
+                        WEB-INF/lib/lc.config.svc*.jar,
+                        WEB-INF/lib/commons-pool*.jar,
+                        WEB-INF/lib/commons-lang*.jar,
+                        WEB-INF/lib/commons-httpclient*.jar,
+                        WEB-INF/lib/commons-dbcp*.jar,
+                        WEB-INF/lib/commons-configuration*.jar,
+                        WEB-INF/lib/commons-collections*.jar,
+                        WEB-INF/lib/axiom*.jar,
+                        WEB-INF/lib/abdera*.jar,
+                        WEB-INF/lib/xlxp*.jar,
+                        WEB-INF/lib/tk.rproxysvc*.jar,
+                        WEB-INF/lib/stax*.jar,
+                        WEB-INF/lib/slf4j*.jar,
+                        WEB-INF/lib/rxjava-core*.jar,
+                        WEB-INF/lib/log4j*.jar,
+                        WEB-INF/lib/lc.bookmarklet*.jar,
+                        WEB-INF/lib/lc.util.jse*.jar,
+                        WEB-INF/lib/lc.proxy*.jar,
+                        WEB-INF/lib/lc.mtconfig.svc*.jar,
+                        WEB-INF/lib/lc.mtconfig.engine*.jar,
+                        WEB-INF/lib/lc.events*.jar,
+                        WEB-INF/lib/juru*.jar,
+                        WEB-INF/lib/jaxen*.jar,
+                        WEB-INF/lib/icu4j*.jar,
+                        WEB-INF/lib/hystrix-metrics-event-stream-*.jar,
+                        WEB-INF/lib/hystrix-core*.jar,
+                        WEB-INF/lib/html-parser*.jar,
+                        WEB-INF/lib/highway.service*.jar,
+                        WEB-INF/lib/highway.common*.jar,
+                        WEB-INF/lib/highway.client*.jar,
+                        WEB-INF/lib/commons-lang*.jar,
+                        WEB-INF/lib/commons-io*.jar,
+                        WEB-INF/lib/commons-fileupload*.jar,
+                        WEB-INF/lib/commons-digester*.jar,
+                        WEB-INF/lib/commons-codec*.jar,
+                        WEB-INF/lib/commons-beanutils*.jar,
+                        WEB-INF/lib/com.ibm.connections*.jar,
+                        WEB-INF/lib/archaius-core*.jar,
+                        WEB-INF/lib/AjaxProxy*.jar,
+                        WEB-INF/lib/acf*.jar
+                    </packagingIncludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

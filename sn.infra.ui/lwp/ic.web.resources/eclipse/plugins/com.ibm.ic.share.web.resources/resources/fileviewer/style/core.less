@@ -1,0 +1,696 @@
+/* Copyright IBM Corp. 2014, 2015, 2016 All Rights Reserved.              */
+
+@import "./_definitions.less";
+
+.ics-viewer-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: .9;
+  background-color: @header-background;
+  z-index: 998;
+}
+
+.lotusui_ie8 .ics-viewer-overlay {
+  filter: ~"alpha(opacity = 90)";
+}
+
+.ics-viewer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  color: white;
+}
+
+body.ics-viewer-open {
+  overflow: hidden;
+}
+
+.lotusImagesOff .ics-viewer-banner {
+  height: 200px !important;
+}
+
+.ics-viewer .ics-viewer-banner {
+  background-color: @header-background;
+  color: #fff;
+  height: @banner-height;
+  overflow: hidden;
+  margin-right: 0;
+}
+
+.ics-viewer.ics-viewer-details-expanded .ics-viewer-banner {
+  margin-right: 285px;
+  position: relative;
+}
+
+.fileviewer-panels-textnav .ics-viewer.ics-viewer-details-expanded .ics-viewer-banner {
+   margin-left: 0 !important;
+   margin-right: 0 !important;
+}
+
+.ics-viewer.ics-viewer-details-expanded.rtl .ics-viewer-banner {
+  margin-right: 0;
+  margin-left: 285px;
+}
+
+
+// File header icon rules
+
+.ics-viewer .ics-viewer-banner .ics-viewer-icon {
+  float: left;
+  margin: 14px 0 16px 27px;
+}
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-icon {
+  float: right;
+  margin: 14px 27px 16px 0;
+}
+.lotusui_ie9 .ics-viewer .ics-viewer-banner .ics-viewer-icon {
+  margin-top: 14px;
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-icon.externalIcon {
+  margin-left: 10px;
+  margin-top: 3px;
+}
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-icon.externalIcon {
+  margin-top: 2px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  margin-left: 0px;
+}
+.lotusui_ie9 .ics-viewer .ics-viewer-banner .ics-viewer-icon.externalIcon {
+   margin-top: 2px;
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-icon.myFileSyncIcon {
+  margin-left: 10px;
+  margin-top: 3.5px;
+}
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-icon.myFileSyncIcon {
+  margin-top: 2px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  margin-left: 0px;
+}
+.lotusui_ie9 .ics-viewer .ics-viewer-banner .ics-viewer-icon.myFileSyncIcon {
+   margin-top: 2px;
+}
+
+
+// Header title text / file name rules
+
+.ics-viewer .ics-viewer-banner .ics-viewer-title {
+  font-size: 15px;
+  margin: 3px 0;
+  font-weight: 300;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 350px;
+}
+
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-title {
+  left: 150px;
+  right: 0;
+}
+
+.lotusImagesOff .ics-viewer .ics-viewer-banner .ics-viewer-title-name-container {
+  max-width: 900px;
+  display: flex;
+    > div {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-title-name-container {
+  position: relative;
+  padding-top: 12px;
+  padding-left: 12px;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 600px;
+
+  .rtl& {
+    margin-left: 225px;
+  }
+}
+
+.ics-viewer .ics-editBox .ics-viewer-cancel img {
+  background-image: ~"url(../style/images/Cancel.png)"; /*TODO*/
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  float: left;
+}
+
+.ics-viewer .ics-editBox .ics-viewer-cancel {
+  margin-left: 6px;
+  color: white;
+}
+
+.ics-viewer.rtl .ics-editBox .ics-viewer-cancel {
+  float: right;
+  margin-left: 0px;
+  margin-right: 16px;
+}
+
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-title-name-container {
+  padding-right: 15px;
+}
+
+.lotusImagesOff .ics-viewer .ics-viewer-banner .ics-viewer-title .ics-viewer-title-name-container a.ics-viewer-title-name {
+  max-width: 500px;
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-title .ics-viewer-title-name-container a.ics-viewer-title-name {
+  color: white;
+  text-decoration: none;
+  float: left;
+  max-width: calc(100% ~"-" 50px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@-moz-document url-prefix() {
+  .ics-viewer .ics-viewer-banner .ics-viewer-title .ics-viewer-title-name-container a.ics-viewer-title-name {
+    margin-bottom: 1px;
+  }
+}
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-title .ics-viewer-title-name-container a.ics-viewer-title-name {
+  float: right;
+  direction: ltr;
+}
+.lotusui_ie8 .ics-viewer .ics-viewer-banner .ics-viewer-title a {
+   max-width: 200px; // TODO: 151939: Temporary, arbitrary fix for screens as low as 1024x768, until all of the header elements interact more appropriately by implementing the fix in this item: 153850
+}
+
+.ics-viewer .ics-viewer-title-name.preview {
+  cursor: default;
+}
+
+// Main content area rules
+
+.ics-viewer .ics-viewer-content {
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: @banner-height;
+  /* transition: all 0.4s ease 0s; */
+  z-index: 100;
+  &.videojs-fullScreen {
+    z-index: 151;
+  }
+}
+
+.ics-viewer.ics-viewer-details-expanded .ics-viewer-content {
+  margin-right: 285px;
+}
+
+.ics-viewer.ics-viewer-details-expanded.rtl .ics-viewer-content {
+  margin-right: 0;
+  margin-left: 285px;
+}
+
+
+// Sidebar rules
+
+.ics-viewer .ics-viewer-details {
+  background-color: #FFF;
+  bottom: 0;
+  box-shadow: -5px 0 5px -5px #000000;
+  color: #fff;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  /* transition: width 0.4s ease 0s; */
+  width: 285px;
+  z-index: 150;
+}
+
+.ics-viewer.ltr .ics-viewer-details {
+  right: 0;
+}
+
+.ics-viewer.rtl .ics-viewer-details {
+  left: 0;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf {
+  top: 0;
+  display: none;
+
+  .ics-viewer-details-expanded& {
+    display: block;
+  }
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf {
+  color: #676767;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12.8px;
+  font-weight: 300;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  padding: 0;
+  position: absolute;
+  right: 0;
+}
+
+.ics-viewer .ics-viewer-details .ics-shelf.selected {
+  display: block;
+  height: 100%;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0;
+  padding: 14px 27px;
+  line-height: 21px;
+  background-color: #325c80;
+  color: #ffffff;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.tableDiv {
+  display: inline-block;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.moreButtonDisplay {
+  display: inline-flex;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.moreButtonDisplayIE {
+  display: inline-block;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.moreButtonHide {
+  display: none;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.moreButton {
+  margin: 15px;
+  margin-right: 27px;
+  margin-top: 18px;
+  right: 0;
+  position: fixed;
+  white-space: nowrap;
+  font-size: 11px; 
+  font-weight: 500; 
+  text-decoration: none; 
+  text-transform: uppercase;
+
+     &.select {
+         border-bottom: 6px solid #5AAAFA;
+         padding: 0 0 12px;
+         background-position: 100% 10%;
+     }
+
+  .dijitArrowButtonInner {
+    background-image: ~"url(../style/images/dropdown_white_12.png)";
+    background-repeat: no-repeat;
+    margin: 0 -2px 0 2px;
+  }
+}
+
+@-moz-document url-prefix() {
+  .ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.moreButton.select {
+    padding: 0 0 10px;
+  }
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div span.dijitReset.dijitInline {
+    &.dijitButtonNode {
+        border: none;
+    }
+    &.dijitButtonText {
+       padding-right: 3px;
+       height: 13px;
+    }
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3.active-panels {
+  padding: 0;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section {
+  margin: 0 27px;
+  padding: 32px 0 0;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section p {
+  margin: 0;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section-updated {
+  padding: 20px 0 0;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section .ics-info-filesize {
+  text-transform: capitalize;
+}
+
+.ics-viewer-type-verse .ics-viewer-details .ics-viewer-details-shelf .info-section-updated {
+  display: none;
+}
+
+.ics-viewer.ics-viewer-type-verse .info-section-detailsLink {
+  display: none;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section-detailsLink {
+  padding: 20px 0 0;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section a {
+  color: #3e76c0;
+  text-decoration: none;
+}
+
+.lotusui .ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section a {
+  color: #3e76c0;
+}
+
+.lotusui .ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section a:hover {
+  color: #05386b;
+  text-decoration: underline;
+}
+
+.ics-viewer .ics-viewer-details .ics-info {
+  position: relative;
+}
+
+.ics-viewer .ics-viewer-details .ics-info .ics-info-filename {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ics-viewer .ics-viewer-content {
+  text-align: center;
+}
+
+.ics-viewer .align-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.ics-viewer .lotusAccess {
+  display: none;
+}
+
+.ics-viewer .lotusAltText {
+  display: none;
+}
+
+.ics-viewer .lotusHidden {
+  display: none;
+}
+
+.ics-viewer .ics-viewer-validation {
+  font-weight: bold;
+  color: rgb(248, 80, 80);
+  padding-bottom: 4px;
+}
+
+.ics-viewer .ics-viewer-validation a {
+  padding-left: 6px;
+}
+
+.ics-viewer img.externalIcon {
+  background-image: ~"url(../style/images/External.png)"; /*TODO*/
+  width: 16px;
+  height: 16px;
+}
+
+.ics-viewer img.panelFeedIcon {
+  background-image: ~"url(../style/images/Feed_gray_10.png)"; /*TODO*/
+  width: 10px;
+  height: 10px;
+  margin-right: 4px;
+}
+
+.ics-viewer img.myFileSyncIcon {
+  background-image: ~"url(../style/images/myFileSync_16.png)"; /*TODO*/
+  width: 16px;
+  height: 16px;
+}
+
+.ics-viewer .ics-viewer-title-name-container .ics-editBox input {
+  padding: 6px 10px;
+  margin-top: -6px;
+  margin-left: -11px;
+  background: #272727;
+  border-width: 0;
+  width: 200px;
+  color: white;
+  border:1px solid black;
+  outline: none;
+  float: left;
+  max-width: calc(100% ~"-" 50px);
+}
+.ics-viewer.rtl .ics-viewer-title-name-container .ics-editBox input {
+  float: right;
+}
+
+.ics-viewer .ics-viewer-title-name-container .ics-editBox.error input {
+  border-color: #FF5050;
+}
+
+.ics-viewer .ics-viewer-title-name-container .ics-editBox .inlineError {
+  background: #FF5050;
+  color: white;
+  padding: 2px 10px;
+  font-size: 14px;
+  margin-left: 8px;
+  float: left;
+  max-width: calc(100% ~"-" 50px);
+  position: absolute;
+  top: 10px;
+}
+
+.ics-viewer .ics-viewer-inlineList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.ics-viewer .ics-viewer-inlineList li {
+  border-left: 1px solid rgb(200, 214, 236);
+  padding: 0 7px;
+  font-size: 12px;
+  display: inline;
+}
+
+.dijitRtl .ics-viewer .ics-viewer-inlineList li {
+  border-right: 1px solid rgb(200, 214, 236);
+  border-left: none;
+}
+
+.ics-viewer .ics-viewer-inlineList li.ics-viewer-first {
+  border-left: none;
+  padding-left: 0;
+}
+
+.dijitRtl .ics-viewer .ics-viewer-inlineList li.ics-viewer-first {
+  border-right: none;
+  padding-right: 0;
+  padding-left: 7px;
+}
+
+.ics-viewer-open .dijitPopup .dijitMenu {
+  background: white;
+  border-color: #DDDDDD;
+  color: #292929;
+}
+
+.ics-viewer-open .dijitPopup .dijitMenu .dijitMenuItemHover,
+.ics-viewer-open .dijitPopup .dijitMenu .dijitMenuItemSelected {
+  background: #F1F1F1;
+}
+
+.ics-viewer .dijitProgressBar.dijitProgressBarEmpty {
+  width: 200px;
+  left: 20px;
+}
+.dijitRtl .ics-viewer .dijitProgressBar.dijitProgressBarEmpty {
+  width: 200px;
+  right: 20px;
+}
+
+.ics-viewer-version-uploading {
+  margin-top: 20px;
+  position: absolute;
+}
+
+.ics-viewer-upload-cancel {
+  position: absolute;
+  left: 334px;
+  top: 35px;
+  width: 20px;
+  height: 20px;
+  background-image: ~"url(../style/images/Cancel_gray_16.png)";
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.dijitRtl .ics-viewer-upload-cancel {
+  right: 334px;
+}
+
+.lotusImagesOff .ics-viewer-dragbar {
+   border: 1px dotted yellow;
+   margin-top: -100px;
+}
+
+@dragbar-width: 15px;
+@dragbar-icon-height: 35px;
+
+.ics-viewer-dragbar {
+   cursor: col-resize;
+   height: 100%;
+   position: absolute;
+   width: @dragbar-width;
+   z-index: 1711;
+}
+
+.ics-viewer-dragbar .icon {
+   height: @dragbar-icon-height;
+
+   @top-offset: floor((@dragbar-icon-height + @banner-height) / 2) - 2;
+   @top-bottom-padding: 2px;
+   margin: -(@top-offset + @top-bottom-padding * 2) 2px 0 6px;
+   padding: @top-bottom-padding 0;
+
+   background-image: ~"url(../style/images/Expand_sidebar_gray.png)";
+   background-repeat: no-repeat;
+   background-position: center;
+
+   position: absolute;
+   top: 50%;
+
+   width: @dragbar-width - 4px;
+
+   /* Help Firefox compute the color of the focus indicator */
+   color: black;
+}
+
+.ics-viewer-locked-by-you-icon, .ics-viewer-locked-by-other-icon {
+   display: none;
+   width: 16px;
+   height: 16px;
+   float: left;
+   margin: 14px 0 16px 27px;
+}
+
+.ics-viewer.rtl .ics-viewer-locked-by-you-icon, .ics-viewer.rtl .ics-viewer-locked-by-other-icon {
+  float: right;
+  margin-right: 27px;
+  margin-left: 0px;
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-file-type-icon > * {
+   padding-right: 1px;
+   
+   .ics-viewer-narrow& {
+     .marginLeft(12px);
+   }
+}
+.ics-viewer-locked-by-you {
+   .ics-viewer-locked-by-you-icon {
+      display: inherit;
+      background-image: ~"url(../style/images/LockedByYou.png)";
+   }
+
+   .ics-viewer-icon {
+      display: none;
+   }
+}
+
+.ics-viewer-locked-by-other {
+   .ics-viewer-locked-by-other-icon {
+      display: inherit;
+      background-image: ~"url(../style/images/Locked.png)";
+   }
+
+   .ics-viewer-icon {
+      display: none;
+   }
+}
+
+.lotusImagesOff .ics-message-container {
+  top: 15px;
+}
+
+.ics-message-container {
+   position: absolute;
+   left: 20px;
+   right: 20px;
+   top: 10px;
+   z-index: 1709;
+   
+   text-align: left;
+   .dijitRtl & {
+     text-align: right;
+   }
+   
+   .ics-viewer-messagebox {
+      display: table;
+      margin: 0 auto;
+   }
+   
+   .ics-viewer-messagebox-table {
+      min-width: 250px;
+   }
+}
+
+.ics-viewer-event-interceptor {
+   bottom: 0;
+   display: none;
+   left: 0;
+   position: absolute;
+   right: 0;
+   top: 0;
+   z-index: 1712;
+   cursor: col-resize;
+
+   &.ics-viewer-event-interceptor-active {
+      display: inherit;
+   }
+}
+
+.fileviewer-panels-textnav .lotusImagesOff .ics-viewer .ics-viewer-details {
+  margin-top: 50px;
+}
+
+.fileviewer-panels-textnav .ics-viewer .ics-viewer-details {
+   top: @banner-height !important;
+
+   .ics-viewer-details-shelf h3 {
+      border-top: 1px solid @divider-color;
+      background-color: @header-background !important;
+   }
+}
+
+.ics-viewer-open #lotusBannerNotifications_dropdown {
+   z-index: 800 !important;
+}
+
+.lotusui30dojo .lconnContentTitleDropdownBody.ics-viewer-dropdown-menu .dijitMenuItem td.dijitMenuItemLabel {
+   min-width: 0;
+}

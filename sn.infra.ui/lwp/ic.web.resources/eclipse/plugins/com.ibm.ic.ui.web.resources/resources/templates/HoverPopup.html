@@ -1,0 +1,13 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="dijitPopup" style="display: none;" role="presentation">
+	<div class="lotusPopup" role="dialog" aria-hidden="true" data-dojo-attach-point="wrapper">
+		<div data-dojo-attach-point="documentWrapper">
+			<a class="lotusPopupClose" href="#" role="button" title="${messages.close}" aria-describedby="${id}_content" data-dojo-attach-point="closeNode" data-dojo-attach-event="click:clickClose"><img src="${_blankGif}" alt="${messages.close}"><span class="lotusAltText">X</span></a>
+			<div role="presentation" data-dojo-attach-point="contentWrapper">
+				<div class="lotusPopupContent" id="${id}_content" data-dojo-attach-point="content">
+				</div>
+			</div>
+		</div>
+		<div class="lotusPopupConnector" role="presentation" data-dojo-attach-point="arrow"></div>
+	</div>
+</div>

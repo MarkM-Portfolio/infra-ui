@@ -1,0 +1,40 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<widgetDef defId="Box" 
+   bundleRefId="lc_box"
+   description="Box.description"
+   helpLink="{helpSvcRef}/topic/com.ibm.cloud.communities.doc/community_box_frame.html"
+   modes="view fullpage edit" 
+   themes="wpthemeWide wpthemeBanner wpthemeNarrowPlus" 
+   showInPalette="true" 
+   showIfGatekeeperSet="CONNECTIONS_ENABLE_BOX"
+   uniqueInstance="false" 
+   iconUrl="{webresourcesSvcRef}/web/lconn.box/img/Box_16.svg"   
+   url="{webresourcesSvcRef}/web/lconn.urlwidget/descriptor/SingleIframeWidget.xml?version={version}">
+   <itemSet>
+      <item name="url" value="{webresourcesSvcRef}/web/lconn.box/community/home.html?render=html-template" />
+      <item name="width" value="100%" />
+      <item name="height" value="600px" />
+      <item name="fullpageHeight" value="700px" />
+      <item name="clientId" value="pttmlzu911ctqzi20r6lfrkbe8em6xy7" />
+      <item name="edit_saveBeforeLeave" value="true" />
+      <item name="LeftNaviationLayout" value='{"communityActions": "none", "searchAction":"none"}' />
+      <item name="TabbedNavigationLayout" value='{"communityActions": "none", "searchAction":"none", "leftPane":"none"}' />
+      <!-- item name="embedHostname" value="app.box.com" /-->
+      <!-- item name="embedContextRoot" value="/embed_widget" /-->
+      <!-- item name="embedTheme" value="gray" /-->
+   </itemSet>
+</widgetDef>  
+      

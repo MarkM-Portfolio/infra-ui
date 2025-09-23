@@ -1,0 +1,1199 @@
+/* Copyright IBM Corp. 2011, 2015  All Rights Reserved.              */
+
+.lotusui .lotusPost a.lotusHidden {
+	display: none;
+}
+
+.lotusui .lotusPost li.lotusHidden {
+	display: none;
+}
+
+.lotusStream .lotusPostContent abbr, .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostContent acronym {
+	border:0;
+}
+
+/** Should be able to remove both these lotusDelete styles */
+.lotusStream .lotusWidgetBody#activityStreamMain .lotusPost .lotusDelete {
+	visibility: hidden;
+}
+
+.lotusStream .lotusWidgetBody#activityStreamMain .lotusPostHover .lotusDelete {
+	visibility: visible;
+}
+
+.activityStreamImageUpload {
+	max-height: 250px;
+	max-width: 100%;
+}
+
+.activityStreamPhotoOf {
+	width: 48px; 
+	height: 48px;
+}
+
+.activityStreamSummary .activityStreamPhotoOf,
+.lotusCommentList .activityStreamPhotoOf {
+	width: 32px; 
+	height: 32px;
+}
+
+.lotusui_ie .lotusPaging .lotusLeft .asFilterMenu {
+	margin-right: 4px;
+	margin-left: 0;
+}
+
+.lotusui30 .lotusStream .filterArea select.maxWidth{
+	max-width: 120px;
+    text-overflow: ellipsis;
+}
+
+.lotusui30 .lotusStream .asNoTopPaging {
+	 display:none;
+}
+
+.lotusui30 .lotusStream .filterArea .asFilterMenu{
+	position: relative;
+	z-index: 1;
+}
+
+.lotusPaging .lotusLeft .activityStreamFilterMenu {
+	margin-left: 4px;
+}
+
+.lotusui30 .pagingHandler .lotusFeeds {
+	margin: 10px 10px 5px 10px;
+}
+
+.lotusui30 .pagingHandler .lotusFeeds .lotusFeed {
+	margin-right: 0px;
+}
+
+/* Should be removable with One UI 3.0.3 */
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .activityStreamSummary .lotusPostAuthorInfo {
+	padding: 0 10px 0 0;
+	margin-bottom: 5px;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostAuthorInfo {
+	padding: 0 15px 0 0;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusCommentList .lotusPostAuthorInfo {
+	padding: 0 8px;
+}
+
+.lotusui30 .lotusBoard .lotusStream .lotusWidgetBody#activityStreamMain ul.lotusCommentList .lotusPost {
+	padding: 5px 0;
+}
+
+.lotusui30 .lotusPostContent .lotusPostAction.lotusTitle {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 7px;
+	padding-bottom: 7px;
+}
+
+.lotusui30 .lotusPostHover .lotusPostContent .lotusPostAction.lotusTitle {
+	border-bottom: 1px solid #dadada;
+}
+
+.lotusui30 .lotusPostContent .lotusPostAction .vcard {
+	font-size:13px;
+	font-weight:bold;
+}
+
+.lotusui30 .lotusPostContent .lotusPostAction .activityStreamSummary .vcard,
+ .lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusCommentList .lotusCommentItem .lotusPostContent .vcard * {
+	font-size:12px;
+	font-weight:bold;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain div.lotusChunk {
+	margin-top:7px;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain div.lotusPostDetails.lotusChunk {
+	margin-bottom:8px;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain ul.lotusCommentList li.lotusCommentItem.lotusHidden {
+	display: none;
+}
+
+/* Needed to override the lotusPostAuthorInfo setting of 'display:block' */
+.lotusui30 div.lotusHidden {
+    display: none;
+}
+
+.activityStreamHeader {
+	margin-bottom: 10px;
+}
+.lotusStream .lotusWidgetBody#activityStreamMain .streamHeaderWrapper {
+    position: relative;
+	background-color: transparent;
+	background-color: rgba(0,0,0,0);
+}
+.lotusStream .lotusWidgetBody#activityStreamMain .streamHeaderInner {
+    position: relative;
+    z-index: inherit;
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .streamHeaderWrapper .lotusPaging {
+    border:0;
+    border-bottom:0 !important;
+    margin-bottom:-9px;
+    padding-bottom:0px;
+    padding-right:0px;
+    background: #FAFAFA; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#F3F3F3'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#FAFAFA), to(#F3F3F3)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #FAFAFA,  #F3F3F3); /* for firefox 3.6+ */
+    border-color: #D2D2D2 #D2D2D2;
+    border-image: none;
+    border-radius: 5px 5px 0 0;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    position: relative;
+}
+.activityStreamPage .sharebox .lotusStatusField {
+	-moz-box-shadow: 0 1px 5px #DDDDDD inset;
+	-webkit-box-shadow: 0 1px 5px #DDDDDD;
+	box-shadow: 0 1px 5px #DDDDDD;
+	color: #444444;
+}
+
+.activityStreamNoThumbnailTable {
+	width: 78px;
+	height: 78px;
+	background-color: #F2F2F2;
+	border: 1px dotted #B3B2AB;
+}
+
+.lotusui30.lotusImagesOff .activityStreamNoThumbnailTable {
+	display:none;
+}
+
+.activityStreamNoThumbnailCell {
+	border: 0 none;
+	color: #000000;
+	font-weight: normal;
+	padding: 0;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+.lotusui30 .lotusBoard .lotusStream .lotusWidgetBody#activityStreamMain .lotusPost.activityStreamEEDisabled{
+	cursor: default;
+}
+
+.lotusui30 .lotusBoard .lotusStream .lotusWidgetBody#activityStreamMain .lotusPost.activityStreamEEDisabled .lotusPostIndicator{
+	display: none;
+}
+
+.loaderMain {
+	padding-top:60px;
+	padding-bottom:60px;
+	text-align:center;
+}
+
+.loaderPaging {
+	padding-top:10px;
+	padding-bottom:10px;
+	text-align:center;
+}
+
+.noContentItem {
+	border-bottom: 1px solid #E3E2E2;
+}
+.noContentItem div{
+	padding : 10px 0;
+	text-align:left;
+	font: 0.9em Arial,Helvetica,sans-serif;
+	color: #555
+}
+
+/* Connections Communities Activity Stream iWidget Styles */
+
+.lotusui .mm_iWidget .asCommunitiesBoard {
+	margin-top: 15px;
+}
+
+.lotusui .mm_iWidget .lotusWidgetBody{
+	border-width: 0;
+}
+
+.lotusui .mm_iWidget .lotusSection2 {
+	width: 100%;
+}
+
+.lotusui .mm_iWidget .lotusFieldHeader {
+	margin-bottom:5px;
+}
+
+/* Fix for IE so the top AS item can be highlighted. */
+.lotusui_ie .lotusui30 .lotusBoard.asCommunitiesBoard {
+	zoom: 0;
+}
+
+/**************************************/
+/***** F I L T E R   S T Y L E S ******/
+/**************************************/
+
+/* TODO: One UI should provide these styles */
+
+.lotusui .lotusContent .lotusStream .lotusWidgetBody#activityStreamMain .lotusPaging
+.lotusInlinelist a{
+	color: #444444;
+}
+
+.lotusui .lotusContent .lotusStream .lotusWidgetBody#activityStreamMain .lotusPaging
+.lotusInlinelist a.filterSelected{
+	color: #000000;
+	font-weight: bold;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPagingTop.lotusPaging {
+	height:auto;
+	padding-left:0px;
+	padding-top:0px;
+}
+
+/**************************************/
+/*** C O M M E N T S   S T Y L E S ****/
+/**************************************/
+
+.lotusui .lotusCommentList .lotusPostDetails{
+	padding-top: 0;
+}
+
+.lotusui .lotusCommentList .lotusPostDetails p{
+	margin-top: 0;
+}
+
+.lotusui .lotusStream .lotusWidgetBody#activityStreamMain .lotusCommentList {
+	padding-bottom:5px;
+}
+
+.lotusui .lotusStream .lotusWidgetBody#activityStreamMain .lotusCommentList .lotusPost .lotusPerson{
+	font-weight: normal;
+}
+
+.lotusui .lotusStream .lotusWidgetBody#activityStreamMain .lotusPost .lotusMentionsDiv .lotusPerson {
+    font-weight: normal;
+}
+
+.lotusui .lotusStream .lotusWidgetBody#activityStreamMain .lotusCommentList .ariaCharCountLabel {
+	height: 0px;
+	width: 0px;
+	overflow: hidden;
+	position: absolute;
+}
+
+
+/**************************************/
+/*** 		   S A V E D 		   ****/
+/**************************************/
+
+.lotusui30 .lotusContent .lotusPost .lotusInlinelist .activityStreamActionInactive a{	
+	text-decoration: none;
+	color: #767676;
+	cursor: default;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain ul > li.pagingHandler {
+    border-top: 1px solid #E3E2E2;
+}
+
+/** Following styles included to ensure line height is consistent
+	for ActivityStream entry expand/collapse not exhaustive and 
+	catches the main ckeditor included html */
+.lotusui30 .asLinkContainer p{
+	margin: 0 0 0;
+}
+
+.lotusui30 .asLinkContainer dd{
+	margin: 0 0 0;
+	padding: 0 0 0;
+}
+
+.lotusui30 .asLinkContainer dt{
+	margin: 0 0 0;
+	padding: 0 0 0;
+}
+.lotusui30 .asLinkContainer sub{
+	vertical-align:text-bottom; 
+	font-size:75%;
+}
+
+.lotusui30 .asLinkContainer sup{
+	vertical-align:text-top; 
+	font-size:75%;
+}
+
+.lotusui30 .lotusBoard .lotusStream .lotusCommentList .lotusAddComment .lotusStreamUpdate .lotusTextCollapsed.lotusText {
+	height:25px;
+	padding: 4px 10px;
+}
+
+/* Support for mentions in rich text editors */
+.lotusui30 .lotusBoard .lotusStreamUpdate .lconnRTE { 
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.lotusui30 .lotusBoard .lotusAddComment .lotusStreamUpdate .lconnRTE { 
+    margin-top: 0px; 
+}
+
+.lotusui30 .lotusBoard .lotusStreamUpdate .lconnRTE .cke {
+    border: 1px solid #ccc !important;
+    border-radius: 4px 4px 4px 4px;
+    overflow: hidden;
+}
+
+.lotusui30 .lotusBoard .lotusStreamUpdate .lconnRTE .cke.cke_focus {
+    border: 1px solid #A0C5D5 !important;
+    box-shadow: 0 0 3px rgba(120, 181, 209, 0.9);
+}
+
+.lotusui30 .lotusBoard .lotusStreamUpdate .lconnRTE .cke_contents {
+    border: none !important;
+    background: #fff;
+    transition: all 0.2s ease 0s;
+}
+
+.lotusui30 .lotusBoard .lotusStreamUpdate .lconnRTE .cke_contents.lotusTextCollapsed  {
+    height: 36px !important;
+}
+
+.lotusui30 .lotusBoard .lotusStreamUpdate .lconnRTE .cke_contents.lotusTextExpanded {
+    height: 72px !important;
+}
+
+.lotusui30 .lotusBoard .lotusAddComment .lotusStreamUpdate .lconnRTE .cke_contents.lotusTextCollapsed { 
+    height: 26px !important;
+}
+
+.lotusui30 .lotusBoard .lotusAddComment .lotusStreamUpdate .lconnRTE .cke_contents.lotusTextExpanded { 
+    height: 56px !important;
+}
+
+/** Table styles applied to tables included within the
+	ActivityStream summary/comment sections */
+.lotusui30 .asLinkContainer table{
+	border: 1px solid #E3E2E2;
+	border-collapse: collapse;
+	max-width: 100%;
+}
+
+.lotusui30 .asLinkContainer table tr td{
+	border: 1px solid #E3E2E2;
+	border-collapse: collapse;
+}
+
+/** Scroll horizontal on overflow x ActivityStream summary/comments */
+.lotusui30 .asLinkContainer{
+	overflow-y: hidden;
+	max-height:126px;
+	overflow-x: hidden;
+	word-wrap: break-word;
+	position: relative;
+}
+
+/** ensure all images scale to activitystream view */
+.lotusui30 .asLinkContainer img{
+	border: 0 none;
+    line-height: 0;
+    vertical-align: middle;
+	max-width:100%;
+	width:auto;
+	display: block;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostContent .lotusPostObject img.activityStreamImageUpload {
+	border: 1px solid #b2b2b2;
+	border: 1px solid rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 0 8px rgba(0,0,0,0.18);
+	-webkit-box-shadow: 0 0 8px rgba(0,0,0,0.18);
+	box-shadow: 0 0 8px rgba(0,0,0,0.18);
+	margin:5px;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostContent .file {
+	background: none repeat scroll 0 0 #f6f6f6;
+	border: 1px solid #DADADA;
+	margin-top: 1px;
+	position: relative;
+	height: 48px;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostContent .file.video {
+    height: inherit;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostContent .fileBody {
+	-moz-box-sizing: border-box;
+	background: none repeat scroll 0 0 #f6f6f6;
+    border-left: none;
+	margin-left: 40px;
+	min-height: 3em;
+	padding: 6px;
+    height: 48px;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostContent .previewable .fileBody {
+    height: 48px;
+    border-left: none
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostContent .previewable .lotusPostObject {
+    border: 1px solid #dadada;
+    background: none repeat scroll 0 0 #f6f6f6;
+    max-width:350px;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostContent .previewable .lotusPostObject img.activityStreamImageUpload {
+    margin: auto;
+    box-shadow: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #dadada;
+    display: block;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostContent .fileIcon{
+	position: relative;
+	left: -43px;
+	top: 1px;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostContent .fileBody .fileDetails {
+	font-weight: bold;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	top: -32px;
+	position: relative;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostContent .fileBody .fileName {
+	position: relative;
+	top: 0px;
+	left: 1px;
+}
+.lotusHeader .shareSome-desc i, .lotusHeader .shareSome-desc .shareSome-title {
+	color: #000000;
+}
+
+.lotusHeader .shareSome-desc .shareSome-title {
+	font-size: 1.1666666666666667em;
+	font-weight: bold;
+}
+.lotusHeader .shareSome-desc .shareSome-title .shareSome-titleSep {
+	color: #484848;
+}
+
+.lotusui30 .lotusStream .filterArea .icStream-labelInner {
+   padding-right: 10px;
+   padding-top: 1px;
+   color: #444444;
+   font-size: 12px;
+}
+
+.lotusui30 .lotusStream .filterArea .placeholderHeaderRightSub {
+    margin-left: 5px;
+    margin-top: 2px;
+    position: relative;
+}
+
+.lotusui30 .lotusStream .filterArea .placeholderHeaderRight {
+    margin-left: 5px;
+}
+
+.lotusui30 .lotusStream .filterAreaInner {
+	overflow:hidden;
+	border-width: 0 0 1px 0;
+	padding: 7px 0px;
+	border-style: solid;
+	border-color: #d2d2d2;
+}
+/* */
+.lotusui30 .lotusContent .lotusStream .lotusWidgetBody#activityStreamMain .lotusPagingTop.lotusPaging ul.lotusInlinelist li a{
+	color: #717171;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 2;
+    margin-bottom: -9px;
+    padding: 8px 10px 8px;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+}
+/*********************************** START SEARCH ****************************************/
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchIcon {
+    height: 16px;
+    width: 16px;
+    -webkit-opacity:.8;
+    -moz-opacity:.8;
+    opacity:.8;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchIcon:focus.img, .lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchIcon:hover.img {
+    -webkit-opacity:1;
+    -moz-opacity:1;
+    opacity:1;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchIcon.img {
+    border: 0 none;
+    line-height: 0;
+    vertical-align: middle;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-search {
+    position:absolute;
+    width:100%;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    z-index:2;
+    background:#edeeef;
+    border:1px solid #d2d2d2;
+    border-width:0 1px 1px;
+    padding:15px 5px 5px;
+    margin-top:-9px;
+    visibility:hidden;
+    -webkit-transform:scaley(0);
+    -moz-transform:scaley(0);
+    -ms-transform:scaley(0);
+    -o-transform:scaley(0);
+    -webkit-transform-origin:top;
+    -o-transform-origin:top;
+    -ms-transform-origin:top;
+    transform-origin:top;
+    -webkit-transition:-webkit-transform .1s cubic-bezier(0.42,0,.58,1);
+    -moz-transition:-moz-transform .1s cubic-bezier(0.42,0,.58,1);
+    transition:transform .1s cubic-bezier(0.42,0,.58,1);
+
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-search.isOpen {
+    visibility:visible;
+    -webkit-transform:scaley(1);
+    -moz-transform:scaley(1);
+    -ms-transform:scaley(1);
+    -o-transform:scaley(1)
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-headerWrapper.isSticky .icStream-search {
+    border-width: 0 0 1px;
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchForm {
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    padding-right:30px;
+    width:100%
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchInner {  
+    border:1px solid #dadada;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+    -moz-background-clip:padding;
+    -webkit-background-clip:padding-box;
+    background-clip:padding-box;
+    background:#fff;
+    width:100%  
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchInner.icStream-searchInnerHighContrast {  
+    width:75%  
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchInner td {
+    line-height: 0.5;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 3;
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchTextTd {
+    width: 100%;
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchTextTd.icStream-searchTextTd-HighContrast {
+    width: 70%;
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchSubmitTd {
+    width: 0;
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchSubmitTd:after {
+    background: none repeat scroll 0 0 #E8E8E8;
+    content: "";
+    height: 12px;
+    left: 0;
+    position: absolute;
+    top: 8px;
+    width: 1px;   
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchText {   
+    border:0;
+    background:0;
+    line-height:1.5;
+    font-size:1em;
+    margin:0;
+    padding:5px 10px;
+    width:100%;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    position:relative;
+    z-index:1;
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchText::-webkit-input-placeholder{
+	color:#767676;
+	font-style:italic;
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchText:-moz-placeholder{
+	color:#767676;
+	font-style:italic;
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchText::-moz-placeholder{
+	color:#767676;
+	font-style:italic;
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchText:-ms-input-placeholder{
+	color:#767676;
+	font-style:italic;
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchSubmit {
+    background-color: #ffffff;
+    padding-right:8px;
+    padding-bottom:3px;
+    -webkit-opacity:.4;
+    -moz-opacity:.4;
+    opacity:.4;
+    -ms-filter: alpha(opacity=40);
+    filter: alpha(opacity=40);
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchSubmit:hover, .ic0 .icStream-searchSubmit:focus {
+    background-color: #ffffff;
+    -webkit-opacity:.6;
+    -moz-opacity:.6;
+    opacity:.6;
+    -ms-filter: alpha(opacity=60);
+    filter: alpha(opacity=60);
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchClose {
+    line-height: 1;
+    margin: 5px;
+    padding: 8px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchClose > img {
+    background-color: #edeeef;
+    -webkit-opacity:.7;
+    -moz-opacity:.7;
+    opacity:.7;
+    -ms-filter: alpha(opacity=70);
+    filter: alpha(opacity=70);
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .icStream-searchClose:hover > img, .ic0 .icStream-searchClose:focus > img {
+    background-color: #edeeef;
+    -webkit-opacity:.9;
+    -moz-opacity:.9;
+    opacity:.9;
+    -ms-filter: alpha(opacity=90);
+    filter: alpha(opacity=90);
+}
+
+/*********************************** END SEARCH ****************************************/
+
+
+.lotusui30 .lotusContent .lotusStream .lotusWidgetBody#activityStreamMain .lotusPagingTop.lotusPaging ul.lotusInlinelist li a.filterSelected {
+	font-weight: bold;
+	color: #444;
+}
+
+.lotusStream .lotusWidgetBody#activityStreamMain .headerFins {
+	clear: both;
+	height: 9px;
+	overflow: hidden;
+	position: relative;
+	border: 1px solid #d2d2d2;
+	border-width: 0 1px;
+	z-index: 3;
+}
+
+.lotusStream .lotusWidgetBody#activityStreamMain .stream-finWrapper {
+	position: relative;
+	left: -950px;
+	width: 2215px;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+}
+
+.lotusImagesOff .lotusStream .lotusWidgetBody#activityStreamMain .stream-finWrapper .lotusAltText {
+    display: block;
+}
+
+.lotusStream .lotusWidgetBody#activityStreamMain .stream-finLeft {
+	height: 8px;
+	width: 1000px;
+	background: #f3f3f3;
+	float: left;
+	border-bottom: 1px solid #d2d2d2;
+}
+
+.lotusStream .lotusWidgetBody#activityStreamMain .stream-finLeft.stream-finLeftHighContrast {
+	border-bottom: 0;
+}
+
+.lotusStream .lotusWidgetBody#activityStreamMain .stream-finMiddle {
+	float: left;
+	vertical-align: top;
+}
+
+.lotusStream .lotusWidgetBody#activityStreamMain .stream-finRight {
+	height: 8px;
+	width: 1200px;
+	background: #f3f3f3;
+	float: left;
+	border-bottom: 1px solid #d2d2d2;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusFilters2 .lotusSearchFilterSection {
+    border-bottom: 1px solid #EEEEEE;
+    padding-bottom: 8px;
+    margin: 0;
+}
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusFilters2 {
+    border-left: 1px solid #D6D6D6;
+    border-right: 1px solid #D6D6D6;
+    padding-left: 15px;
+    padding-top: 8px;
+    margin: 0;
+}
+
+/* */
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostContent .fileMeta .inlineSepList {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostContent .fileMeta .inlineSepList li {
+	font-weight: normal;
+	border-left-color: #C1C1C1;
+	display: inline;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostContent .fileBody .fileAuthor {
+	font-weight: bold;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostContent .fileMeta .fileTags {
+	font-size: 0.916667em;
+	padding-left: 4px;
+	border-left: 1px solid #ccc;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostContent .fileMeta .lotusHidden {
+	visibility: hidden;
+}
+
+.lotusui30 .asLinkContainer .repostIcon img{
+	display: inline;
+}
+
+.lotusPostContent .repostMessage {
+    clear: both;
+    padding-top: 5px;
+}
+
+.lotusui30 .lotusInlinelist img.generatorImageSize {
+	margin-left:2px;
+	margin-bottom:4px;
+}
+
+.lotusui30  .lotusInlinelist li.lotusRight{
+	border-left-width: 0;
+	margin-top : 1px;
+	padding-right: 8px;
+	font-size: 1.0em
+}
+
+.preHorizontalWipe {
+	max-width:0px;
+	overflow:hidden;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist li.moreActions {
+	padding:0;
+	border:none;
+}
+
+.lotusui_ie7 .preHorizontalWipe, .lotusui_ie8 .preHorizontalWipe, .lotusui_ie9 .preHorizontalWipe {
+	max-width:1px;
+	visibility:hidden;
+}
+
+.lotusui_ie7 .horizontalWipeIn, .lotusui_ie8 .horizontalWipeIn, .lotusui_ie9 .horizontalWipeIn {
+	display:inherit;
+	visibility:visible;
+	max-width:200px;
+}
+
+.horizontalWipeIn {
+	max-width:200px;
+	transition:max-width 0.2s ease 0s;
+	-o-transition:max-width 0.2s ease 0s;
+	-webkit-transition:max-width 0.2s ease 0s;
+	-moz-transition:max-width 0.2s ease 0s;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist.lotusActions li{
+	display:inline-block;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist.lotusActions>* {
+	display:inline-block;
+	white-space: nowrap;
+	vertical-align: top;
+}
+
+.lotusui_ie7 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist.lotusActions li, .lotusui_ie7 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist.lotusActions>*{
+	zoom:1;
+	display:inline;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist.lotusActions li.lotusHidden {
+	display:none;
+}
+
+.lotusui30  .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist.lotusActions li.lotusFirst>* {
+	margin-left:0px;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist.lotusActions a {
+	color: #767676;
+	font-weight:bold;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist.lotusActions .vcard a, .lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusCommentList .lotusInlinelist .lotusLike a{
+	color: #1970b0;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist.lotusActions .vcard a:focus, 
+ .lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist.lotusActions .vcard a:hover,
+ .lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist.lotusActions .vcard a:active, 
+ .lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist.lotusActions .lotusLike a:focus,
+ .lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist.lotusActions .lotusLike a:hover, 
+ .lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist.lotusActions .lotusLike a:active {
+	color: #05386b;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusCommentList .lotusCommentItem .lotusInlinelist * {
+	font-weight:normal;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostHover .lotusInlinelist a {
+	color: #1970b0;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostHover .lotusInlinelist a.lotusPersonInactive {
+	color: #767676;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist .timeago, .lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist a.timeago {
+	font-weight:normal;
+	color: #767676;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusCommentList abbr {
+	color: #6e6e6e;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .pagingHandler div.lotusAction.lotusHidden {
+	display : none;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusCommentList li.additionalComments {
+	border:none;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusCommentList li.additionalComments>ul {
+	padding-left:0;
+	margin-left:0;
+	list-style-type:none;
+}
+
+/** Defect in One UI also where comments overlapped profiles pic.
+	May be fixed in One UI 3.0.4 */
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusCommentList{
+	clear: both;
+	margin-right: 20px;
+	margin-top:15px;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusCommentList .lotusDelete{
+	position:relative; 
+	float:right;
+	padding-top:0;
+	padding-right:0;
+	top: 3px
+}
+
+.lotusui30 .lotusStream .lotusCommentList .lotusDeleteFileAttach{
+	padding-top:0;
+	padding-right:0;
+}
+
+.lotusui30 .lotusStream .lotusCommentList .lotusDeleteFileAttach img{
+	width:12px;
+	height:12px;
+	background-image: url("/com.ibm.lconn.core.styles.oneui3/images/lotusHSprite-8bit.png");
+	background-position: -557px -10px;
+	opacity:0.25;
+	filter:alpha(opacity=25);
+}
+
+.lotusui30 .lotusBoard .lotusStream .lotusWidgetBody#activityStreamMain .lotusCommentList:after {
+	width:13px;
+	height:7px;
+	background-position:0 -66px;
+	top:-7px;
+	left:19px;
+	background-image:url('../../images/OtherImages/ActivityStream/otherActivityStream14-8bit.png');
+}
+
+.lotusStream .lotusCommentList .lotusMessage .asCommentError {
+	display: inline-block;
+}
+
+.lotusui_ie .lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusCommentList div.lotusPostContent{
+	position:static;
+}
+
+/** Temporary fix to align with One UI.
+	Should be replaced by next version of One UI styles */
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPaging.lotusPagingTop {
+	margin-bottom: 0;
+	margin-top: 10px;
+	height: 40px;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPaging.lotusPagingTop.noSubFilterView {
+	height: auto;
+}
+
+.lotusui30 .lotusPagingBottom {
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+}
+
+.lotusui30 .streamMore {
+  background: #f6f6f6;
+  border: 1px solid #e3e2e2;
+  border-width: 0 0 1px 0;
+  padding: 15px 5px;
+  margin: 0 1px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #6e6e6e;
+  display: block;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+.lotusui30 .streamMore.lotusHidden {
+	display:none;
+}
+.lotusui30 .streamMore:hover, .lotusui30 .streamMore a:hover,
+.lotusui30 .streamMore:focus, .lotusui30 .streamMore a:focus,
+.lotusui30 .streamMore:active, .lotusui30 .streamMore a:active {
+  color: #1d6bac;
+  background: #e8e8e8;
+  text-decoration: none;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain ul.lotusStream > li{
+	 padding: 0;
+}
+.lotusui30 .lotusBoard .lotusStream .lotusWidgetBody#activityStreamMain .lotusPost {
+	border: 0 none;
+	padding: 20px;
+}
+
+.lotusui_ie7  .lotusui30 .lotusBoard .lotusStream .lotusWidgetBody#activityStreamMain  .activityStreamNewsItemContainer.lotusPost {
+	vertical-align: bottom;
+}
+
+.verticalWipeOut {
+	transition: all 0.7s ease-in-out;
+	height:0px;
+}
+
+/* Activity Stream Error Message */
+.lotusui30 .lotusBoard .lotusStream .lotusWidgetBody#activityStreamMain .activityStreamErrorMessage{
+	text-align: center;
+}
+
+.lotusui30 .lotusBoard .lotusStream .lotusWidgetBody#activityStreamMain .activityStreamErrorMessage .lotusMessage2{
+	margin-bottom: 0;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusMeta .lotusMessage2{
+	font-size:1em;
+}
+
+.lotusui30 .lotusPost .lotusPostIndicator {
+	top: 0;
+	display: none;
+}
+
+.lotusui30 .lotusPostHover .lotusPostIndicator {
+	display: inline-block;
+}
+
+/* Temporary fix until we move up to OneUI 3.0.4 that allows tabbing to EE Opener. */
+.lotusui30 .lotusPost .lotusPostIndicator a {
+	height: 14px;
+	width: 14px;
+}
+
+/* Used for the ActivityStream gadget */
+.activityStreamGadgetContainer#lotusContent {
+	padding-top: 5px;
+	margin-top:0;
+}
+
+/* Used to highlight the current Activity Stream item in High Contrast mode. */
+.dijit_a11y .lotusBoard .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostHover {
+	border: 1px solid;
+}
+
+/* Used to highlight the current selected Activity Stream item in High Contrast mode. */
+.dijit_a11y .lotusBoard .lotusStream .lotusWidgetBody#activityStreamMain .lotusPostSelected {
+	border: 1px solid;
+}
+
+/* Increase font size of Like control in AS - defaults to 0.9em */
+.lotusStream .lotusWidgetBody#activityStreamMain .activityStreamNewsItemContainer .lotusLike {
+	font-size: 1em;
+}
+
+/* Increase font size of action links in AS - defaults to 0.9em */
+.lotusStream .lotusWidgetBody#activityStreamMain .activityStreamNewsItemContainer .lotusActions {
+	font-size: 1em;
+}
+
+/* Remove "You like this -" text to make space for other actions etc. */
+.lotusStream .lotusWidgetBody#activityStreamMain .activityStreamNewsItemContainer .lotusLike .lotusLikeDescription,
+.lotusStream .lotusWidgetBody#activityStreamMain .activityStreamNewsItemContainer .lotusLike .lotusDivider {
+	display:none;
+}
+
+.lotusStream .lotusWidgetBody#activityStreamMain .activityStreamNewsItemContainer .lotusLike .lotusLikeCount .lotusIconLike {
+	left:0px;
+}
+
+.lotusStream .lotusWidgetBody#activityStreamMain .activityStreamNewsItemContainer .lotusLike .lotusLikeCount {
+	padding: 0 1px 2px 22px;
+}
+
+/* Hide border around Like count for status updates and comments */
+.lotusStream .lotusWidgetBody#activityStreamMain .activityStreamNewsItemContainer .lotusLikeCount {
+	background: none repeat scroll 0 0 transparent;
+    border-radius: 0 0 0 0;
+    border-width: 0;
+    margin-right: 0;
+}
+
+.lotusStream .lotusWidgetBody#activityStreamMain .activityStreamNewsItemContainer .lotusLikeConnector {
+	display: none;
+}
+
+.lotusui_ie .lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .activityStreamNewsItemContainer .lotusLike .lotusLikeAction {
+	padding-bottom:0;
+}
+
+.lotusui_ie .lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .activityStreamNewsItemContainer .lotusLike .lotusLikeCount {
+	padding-bottom:0;
+	padding-top:0;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist .lotusLikeCount .lotusLikeText {
+	border-right:1px solid #ccc;
+	padding-right:7px;
+	margin-right:3px
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusInlinelist .lotusLikeCount.lotusDisabled .lotusLikeText {
+	border-right:none;
+	padding-right:0;
+	margin-right:0;
+}
+
+/* Prevent commentList styles from messing up likeErrorMessage */
+.lotusStream .lotusCommentList .asCommentLikeError .lotusDelete {
+	position: absolute;
+	top: 10px;
+}
+
+.lotusPostContent .likeErrorMessage {
+    padding-top: 5px;
+    clear: both;
+}
+
+.lotusui30 .lotusBoard .lotusCommentList {
+	margin: 3px 0 0 65px;
+	max-width: 700px;
+}
+
+/* Prevent mentions from appearing incorrectly positioned. */
+.lotusui_ie .lotusCommentList li.lotusAddComment .lotusMentionsDiv a {
+    padding-bottom: 0px;
+}
+
+.lotusui30 .lotusBoard .lotusStream .lotusWidgetBody#activityStreamMain ul.lotusCommentList>li.lotusAddComment {
+	margin-bottom:-26px;
+}
+
+.generatorImageSize {
+	height: 14px;
+	width: 14px;
+}
+
+.asCommentLoading {
+	margin-left: 10px;
+}
+
+.expandCommentsError .lotusMessage2 {
+	margin-bottom: 0;
+}
+
+.lotusCommentList .expandCommentsError .lotusMessage2 .lotusDelete {
+	position: absolute;
+	top: 10px;
+}
+
+.lotusui30 .lotusAccess {
+	top: auto;
+	left: -9999px;
+}
+
+#activityStream .lotusAddComment .lotusMessage2 {
+    padding: 6px 6px;
+    margin: 2px 2px;
+    width: 97%;
+    top: 0;
+}

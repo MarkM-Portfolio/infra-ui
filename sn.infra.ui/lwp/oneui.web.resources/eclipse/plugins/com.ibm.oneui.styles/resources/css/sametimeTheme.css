@@ -1,0 +1,40 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+/*** added by Joe S for Sametime Advanced 11/06/2007***/
+
+/
+
+/*** highlight text in table rows ***/
+.rowhighlight2{color:#993333;}
+.rowhighlight{color:#000000;font-weight:bold;}
+.rownohighlight{color:#666666;}
+
+/*** A C T I O N   M E N U ***/
+/*
+ul.lotusActionMenu{background-color:#edeff4;margin:0;padding:0;list-style-type:none;border:1px solid #000;width:15em;position: absolute;left:-9999px;z-index:200;}
+.lotusActionMenu li{border-top:1px solid #edeff4;}
+.lotusActionMenu li.lotusMenuSeparator{border-top:1px solid #97a5bd !important}
+.lotusActionMenu a, .lotusActionMenu a:visited{padding:3px 3px 5px 5px;color:#000;text-decoration:none;display:block;}
+.lotusActionMenu a:hover{background-color:#8d8cb6;color:#fff}
+*/
+/*** END JOE'S ADDITIONS ***/
+
+/*** tips box content when no heading ***/
+.lotusInfoBox h5, .portlet-msg h5{padding:0px 5px 5px 5px; font-weight:normal}
+
+/*** tab paging ***/
+#lotusTitleBar .lotusTabs, .portlet-tab{left:5px}
+/*** spacing above tables ***/
+.lotusSection, .portlet-section{margin:0px 0 0 0;padding:3px 0px 0px 0px;overflow:hidden;clear:both}
+
+/*** table margin alignment ***/
+.lotusTable .lotusDetails td{padding-left:10px;}
+
+
+/*** M E S S A G E S ***/
+/*** M E S S A G E S ***/
+.lotusMessage{background-color:#fff799;border-color:#ffcd04;}
+/***********************************************************/
+
+
+/***********************************************************/

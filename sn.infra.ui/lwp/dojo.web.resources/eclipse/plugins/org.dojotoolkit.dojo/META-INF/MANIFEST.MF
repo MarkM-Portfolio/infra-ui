@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-Description: From build 1.10.4-20150621-IBM
+Bundle-Name: Dojo Plug-in
+Bundle-SymbolicName: org.dojotoolkit.dojo;singleton:=true
+Bundle-Version: 1.10.4.v20150621_IBM
+Bundle-ManifestVersion: 2
+

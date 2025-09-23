@@ -1,0 +1,32 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2014                                          */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+.foo '{'
+background-image: url("{0}path/to/image.png?etag={1}");
+'}'
+.bar '{'
+background-image: url("{0}path/to/another/image.png?etag={1}");
+'}'
+@font-face '{'
+font-family: Delicious;
+src: url("{0}Delicious-Roman.otf?etag={1}");
+'}'
+@font-face '{'
+font-family: Delicious;
+font-weight: bold;
+src: url("{0}Delicious-Bold.otf?etag={1}");
+'}'
+h3 '{'
+font-family: Delicious, sans-serif;
+'}'

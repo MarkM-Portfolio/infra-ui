@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang=en xml:lang="en" class="dj_webkit dj_chrome dj_contentbox">
+
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+	<head>
+		<script>var netJazzAjaxConfig = {base: "/connections/resources"}; var djConfig = {proxy: "/connections/resources/ajaxProxy", isDebug: true, baseUrl: "/connections/resources/web/dojo/", locale: "en", localizationComplete: true}</script>
+		${script:lconn.core.theme}
+		${script:lconn.core.url}
+		${script:lconn.core.config.services}
+		${script:lconn.core.HelpLauncher}
+		<link rel="stylesheet" type="text/css" id="lotusBaseStylesheet" href="${contextRoot}/web/_style?include=com.ibm.lconn.core.styles.oneui3/base/package3.css&etag=arbitrary" theme="default" appName="test" base="${contextRoot}/web/" query="?version=oneui3&rtl=false&etag=arbitrary" oneui="3"></link>
+		<link rel="stylesheet" type="text/css" id="lotusThemeStylesheet" href="${contextRoot}/web/_lconntheme/default.css?version=oneui3&rtl=false&etag=arbitrary"></link>
+		<link rel="stylesheet" type="text/css" id="lotusAppStylesheet" href="${contextRoot}/web/_lconnappstyles/default/test.css?version=oneui3&rtl=false&etag=arbitrary"></link>
+	
+		<title>IBM Connections - HelpLauncher Test Page</title>
+	${endhead}
+
+<body class="lotusui lotusui30dojo lotusui30_body lotusui30_fonts lotusui30  lotusSpritesOn">
+	
+	<div class="lotusFrame">
+	
+		<div role="region" aria-label="Select page width">
+			<a onclick="dojo.query('.lotusContent')[0].style.width = '1000px'; return false;" href="javascript:;">Page width 1000px</a> |
+			<a onclick="dojo.query('.lotusContent')[0].style.width = '800px'; return false;" href="javascript:;">Page width 800px</a> |
+			<a onclick="dojo.query('.lotusContent')[0].style.width = '600px'; return false;" href="javascript:;">Page width 600px</a> |
+			<a onclick="dojo.query('.lotusContent')[0].style.width = '400px'; return false;" href="javascript:;">Page width 400px</a>
+		</div>
+		
+		<div role="region" aria-label="Select Theme">Theme:
+			<a href="javascript:;" onclick="lconn.core.theme.switchTheme('default')">Default</a>
+			<a href="javascript:;" onclick="lconn.core.theme.switchTheme('gen4')">Gen4</a>
+		</div>
+		<div class="lotusMain" role="main" aria-label="Help Launcher">
+			<div class="lotusContent">
+				<label class="lotusLeft" for="helpLauncherNode">Help Launcher Node:</label>
+				<a id="helpLauncherNode" class="lotusLeft"></a>
+				<script>
+         			
+					lconn.core.HelpLauncher.createHelpLink(dojo.byId("helpLauncherNode"), "Standalone Test Header", "This is a standalone test page for the HelpLauncher widget. Use this page for AVT/RPT tests." );
+					
+				</script>
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>

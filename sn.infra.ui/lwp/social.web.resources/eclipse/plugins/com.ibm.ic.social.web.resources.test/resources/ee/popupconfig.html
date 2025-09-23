@@ -1,0 +1,46 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<html><body><p>${head}
+</p><title>Configure EE Popup</title>
+${script:dojo.cookie}
+${script:com.ibm.social.eeconfig.config}
+<script type="text/javascript">
+(function() {
+  function t(txt) {
+     return dojo.doc.createTextNode(txt);
+  }
+  
+  function n(id) {
+     return dojo.byId(id);
+  }
+
+  var cookieName = "_eePopupResizingEnabled";
+  var resizingEnabledValue = dojo.cookie(cookieName);
+  var resizingEnabled = resizingEnabledValue ? resizingEnabledValue === "true" : com.ibm.social.eeconfig.config.popupResizing;
+  var msgTxt = resizingEnabled ? "EE Popup resizing is enabled" : "EE Popup resizing is not enabled";
+  var actionTxt = resizingEnabled ? "Disable" : "Enable";          
+  
+  function toggleState() {
+     if (resizingEnabled)
+        dojo.cookie(cookieName, "false", { path: "/", expires: 1 });
+     else
+        dojo.cookie(cookieName, "true", { path: "/", expires: 1 });
+     
+     window.location.reload();
+  }
+  
+  function initUI() {
+     var msg = dojo.create("h3", { }, n("main"));
+     dojo.place(t(msgTxt), msg);
+     var btn = dojo.create("button", { }, n("main"));
+     dojo.place(t(actionTxt), btn);
+     dojo.connect(btn, "onclick", toggleState);
+  }
+    
+  dojo.addOnLoad(initUI);
+})();
+</script>
+${endhead}
+<div id="main"></div>
+</body><p>
+${end}
+</p></html>

@@ -1,0 +1,366 @@
+/* *************************************************************** */
+/*                                                                 */
+/* HCL Confidential                                                */
+/*                                                                 */
+/* OCO Source Materials                                            */
+/*                                                                 */
+/* Copyright HCL Technologies Limited 2008, 2019                   */
+/*                                                                 */
+/* The source code for this program is not published or otherwise  */
+/* divested of its trade secrets, irrespective of what has been    */
+/* deposited with the U.S. Copyright Office.                       */
+/*                                                                 */
+/* *************************************************************** */
+
+// NLS_CHARSET=UTF-8
+({
+   'rs_close' : "閉じる",
+   'rs_loading' : "ロード中...",
+   'rs_at' : "時刻",
+
+   'rs_searchDirectory' : "対象ユーザーがリストに表示されない場合は、 全検索を使用してください...",
+   'rs_searchGroupDirectory' : "対象グループがリストに表示されない場合は、 全検索を使用してください...",
+   'rs_searchPersonAndGroupDirectory' : "対象ユーザーまたはグループがリストに表示されない場合は、 全検索を使用してください...",
+   'rs_searchCommunityDirectory' : "対象コミュニティーがリストに表示されない場合は、 全検索を使用してください...",
+
+   'rs_shadowText_searchDirectory' : "入力してユーザーを検索",
+   'rs_shadowText_searchGroupDirectory' : "入力してグループを検索",
+   'rs_shadowText_searchPersonAndGroupDirectory' : "入力してユーザーまたはグループを検索",
+   'rs_shadowText_searchCommunityDirectory' : "入力してコミュニティーを検索",
+
+   'rs_listItem' : "リスト項目",
+   'rs_noResults' : "'${0}' の結果はありません",
+   'rs_today' : "今日",
+   'rs_tomorrow' : "明日",
+   'rs_yesterday' : "昨日",
+
+   /* Activity List Widget */
+   'rs_activityFeedLink' : "アクティビティーのフィード",
+   'rs_externalText' : "このアクティビティーは、組織外のメンバーを含むことができます。",
+   'rs_moveActivitySuccess' : '\"${activityTitle}\" が \"${destCommName}\" サブコミュニティーに正常に移動されました。',
+   // copy 'rs_moreInfo' and 'rs_hideInfo' from activity's strings.js
+   'rs_moreInfo' : 'このアクティビティーの詳細を表示する',
+   'rs_hideInfo' : '詳細を非表示にする',
+   'rs_more' : "詳細",
+   'rs_hide' : "非表示",
+   'rs_edit' : "編集",
+   'rs_restore' : "復元",
+   'rs_deleteEntry' : "削除",
+   'rs_prioritize' : "優先度付け",
+   'rs_markComplete' : "完了としてマーク",
+   'rs_markIncomplete' : "復元",
+   'rs_linkMore' : "... [詳細表示]",
+   'rs_linkLess' : "... [詳細非表示]",
+   'rs_actUpdatedByDate' : "更新者: ${0} ${1}",// Updated by (author name) (date)
+   'rs_actUpdatedBy' : "更新者: ${0}",// Updated by (author name)
+   'rs_actDue' : "期限 ${0}",// Due (date)
+   'rs_actTags' : "タグ: ",
+   'rs_actTagsDelim' : ", ",
+   'rs_startFromTemplate' : "このテンプレートからアクティビティーを開始",
+   'rs_favoriteTemplate' : "お気に入りのテンプレートとしてマーク",
+   'rs_normalTemplate' : "通常のテンプレートとしてマーク",
+   'rs_tunedOutPri' : "関心対象から外す",
+   'rs_pagepos' : "${0} - ${1}/${2}", // pagination - e.g. 1 - 10 of 100
+   'rs_navPrevLabel' : "前へ",
+   'rs_navNextLabel' : "次へ",
+   'rs_noActivities' : "このコミュニティーで開始されているアクティビティーはありません。",
+   'rs_feedError' : "フィードのロードに失敗しました。",
+   'rs_highPri' : "高優先度",
+   'rs_medPri' : "中優先度",
+   'rs_normalPri' : "通常優先度 (デフォルト)",
+   'rs_tuneOut' : "関心対象から外すものとしてマーク",
+   'rs_startActivity' : "アクティビティーの開始",
+   'rs_startFirstActivity' : "最初のアクティビティーを作成",
+   'rs_navNextLabel' : "次へ",
+   'rs_viewAll' : "すべて表示",
+   'rs_activityWidgetTitle' : "アクティビティー",
+   'rs_activityWidgetBriefDescription' : "コミュニティーの目標を追跡します。To Do を作成してリソースを共有します。",
+   'rs_activityWidgetDescription' : "コミュニティー・アクティビティーを使用して、共同作業を行ったり、コミュニティー・プロジェクトまたはイニシアチブの進捗を追跡したりすることができます。",
+   'rs_completedActivityLink' : "完了したアクティビティーの表示",
+   'rs_activitiesUnavailable' : "アクティビティー・サービスは利用できません。",
+   'rs_errorPersists' : "問題が解決しない場合は、システム管理者にお問い合わせください。",
+   'rs_shared' : "共有",
+   'rs_removeActFromComm' : "コミュニティーから削除",
+   'rs_externalLabel' : "外部",
+
+   // for ActivityForm
+   'rs_templateOptions' : "テンプレート・オプション",
+   'rs_template' : "テンプレート",
+   'rs_tagsLabel' : "タグ",
+   'rs_peopleLabel' : "ユーザー",
+   'rs_aboutThisTemplate' : "テンプレートの説明",
+   'rs_activity' : "アクティビティー",
+   'rs_copyOf' : "${0} のコピー",// copy of (activity name)
+   'rs_activityFormGoal' : "アクティビティーの目標",
+   'rs_noTemplate' : "なし",
+   'rs_copyActivityMembers' : "アクティビティーのメンバーを使用",
+   'rs_copyTemplateMembers' : "テンプレートのメンバーを使用",
+
+   /* Forum Widget */
+   'rs_noTopics' : "このコミュニティーにはトピックがありません。",
+   'rs_noTopicsLoggedIn' : "質問の投稿やブレインストーミングなどのほかに、各自のアイデアを共有する場として利用できます。",
+   'rs_postedBy' : "最終投稿者",
+   'rs_topics' : "トピック",
+   'rs_noTopicsShort' : "トピックなし",
+   'rs_topic' : "トピック",
+   'rs_replies' : "返信",
+   'rs_noReplies' : "返信なし",
+   'rs_reply' : "返信",
+   'rs_startTopic' : "トピックの開始",
+   'rs_startFirstTopic' : "最初のトピックの開始",
+   'rs_ok' : "OK",
+   'rs_locked' : "[ロック済み]",
+   'rs_manageForumSetting' : "フォーラム設定の管理",
+   'rs_forumSettingCommunityOverviewPage' : "コミュニティーの概要ページ:",
+   'rs_defaultForumList' : "デフォルトでフォーラム・リストを表示する",
+   'rs_defaultTopicList' : "デフォルトでトピック・リストを表示する",
+   'rs_forumSettingApplicationView' : "フォーラム・アプリケーションのデフォルト・ビュー:",
+   'rs_forumSettingNote' : "注: 存在するフォーラムが 1 つだけの場合は、デフォルトでトピックが表示されます。",
+   'rs_forumSettingSubmit' : "送信",
+   'rs_forumSettingSave' : "保存",
+   'rs_forumSettingSaveAndClose' : "保存して閉じる",
+   'rs_forumSettingConfirm' : "フォーラムに対して行った変更が保存されました。",
+   'rs_forumSettingError' : "エラーが発生しました。 管理者にお問い合わせください。",
+   'rs_formSettingHideMessage' : "このメッセージの非表示",
+   'rs_forumSettingCancel' : "キャンセル",
+   'rs_forumAnsweredQuestion' : "回答済みの質問",
+   'rs_forumUnAnsweredQuestion' : "回答されていない質問",
+   'rs_forumSortBy' : "ソート順:",
+   'rs_forumSortByDate' : "日付",
+   'rs_forumSortByReplies' : "返信",
+   'rs_forumSortByTopic' : "トピック",
+   'rs_forumSortByTopicsAndReplies' : "トピックと返信",
+   'rs_sortByReplies' : "返信でソート",
+   'rs_sortbyTopicsAndReplies' : "トピックと返信でソート",
+   'rs_forumOpenQuestions' : "未解決の質問",
+   'rs_feedOpenQuestions' : "未解決の質問のフィード",
+   'rs_feedAnsweredQuestions' : "回答済みの質問のフィード",
+   'rs_forumMessages' : "${0} メッセージ",
+   'rs_forumLastAddedPost' : "最終投稿者: ${0}",
+   'rs_forumTopics' : "${0} トピック",
+   /* End discussion forum */
+
+   /* Editor plugins -- some for a possible one we haven't implemented yet */
+   'rs_createPersonLink' : "ユーザー・リンクの作成",
+   'rs_quote' : "引用",
+   'rs_labelColon' : "ラベル: ",
+   'rs_personColon' : "ユーザー: ",
+   'rs_personLink' : "ユーザー・リンク",
+   'rs_replace' : "置換",
+   'rs_inactivePerson' : "${0} (非アクティブ)", // person's name (inactive)
+   'rs_PersonPicture' : "${0} の写真", // person name's picture
+
+   /*Visitor mode -- external user name decoration use cases */
+   'rs_PersonExternalLabel' : "外部ユーザー", // A label for the visitor model use cases.
+   'rs_PersonExternal' : "${0} (外部ユーザー)", //'{0}' is the person's name. This will be used for the user profile name and profile photo tooltip
+   'rs_PersonPictureExternal' : "${0} の写真 (外部ユーザー)", // Alt text for the external user's profile photo
+   'rs_personExternalDesc' : "このユーザーは、外部と共有されているファイルとコミュニティーにアクセスできます。",
+   /* End editor plugins */
+
+   /* Notification Form */
+   'rs_notifyOthers' : "他のユーザーに通知",
+   'rs_messageColon' : "メッセージ: ",
+   'rs_notifyColon' : "通知: ",
+   'rs_notificationConfirm' : "通知メッセージが正常に送信されました。 ",
+   'rs_notificationFail' : "通知メッセージが送信されませんでした。 後で再試行するか、問題が解決しない場合はシステム管理者にお問い合わせください。",
+   'rs_pickCommunity' : "コミュニティー・リストから選択",
+   'rs_typeName' : "名前の入力",
+   'rs_typeToFilter' : "このリストをフィルターするテキストを入力してください",
+   /* End Notification Form */
+
+   /* FilteringCheckbox */
+   'rs_filterListPrompt' : "このリストをフィルターするテキストを入力してください",
+   'rs_filterGroupLabel' : "グループの選択",
+   'rs_noResults' : "検索結果はありません",
+   // ${0} will be replaced with a number
+   'rs_numResults' : "${1}件中 ${0} 件目の結果を表示しています",
+
+   /* PeopleFilterList */
+   'rs_removeFilter' : "削除",
+
+   /* Language Selector */
+   'rs_browser_setting' : "ブラウザー設定",
+   'rs_customLangaugeLinkLabel' : "カスタム言語",
+
+   /* Paging controls */
+   // 0 and 1 are page numbers
+   'rs_jumpPage' : "${0}/${1} ページへジャンプ",
+   "rs_jumpPageLabel" : "ページへジャンプ",
+   'rs_pageNumLabel' : "ページ番号",
+   'rs_pageLabel' : "ページ:",
+
+   /* Common Tags Widget */
+   'rs_tagCloudNavigationLabel' : 'タグ',
+   'rs_tagCloudToggleHint' : "非表示と表示を切り替えるにはクリック",
+   'rs_tagCloudHelpAlt' : "タグのヘルプを表示",
+   'rs_tagCloudNoTags' : "まだタグはありません",
+   'rs_tagCloudNoRecentTags' : "最近のタグが見つかりません",
+   'rs_tagCloudNoTagsProfiles' : "ディレクトリーを検索します。 検索によって返されたプロフィールに関連付けられているタグがここに表示されます。",
+   'rs_tagLoadingTags' : "コンテンツのロード",
+   'rs_tagCloudSelectedTags' : "選択済みのタグ",
+   'rs_tagCloudSeachDesc' : "タグの検索",
+   'rs_tagCloudSeach' : "検索",
+   'rs_tagCloudRelatedTags' : "関連タグ",
+   'rs_tagCloudRelatedTagsDescription' : "関連タグを追加してさらに検索範囲を絞り込みます",
+   'rs_tagCloudError' : 'エラーがあります',
+
+   'rs_viewAsCloud' : "クラウド",
+   'rs_viewAsCloudTitle' : "タグ・クラウドとしてタグをリスト",
+   'rs_viewAsCloudDescription' : "タグ・クラウドとしてタグを表示",
+   'rs_viewAsList' : "リスト",
+   'rs_viewAsListTitle' : "タグの順次リストとしてタグをリスト",
+   'rs_viewAsListDescription' : "タグの順次リストとしてタグを表示",
+   'rs_tagCloudViewAll' : "参照",
+   'rs_tagCloudViewAllTitle' : "すべてのタグを参照",
+
+   'rs_normalTags' : "アクティブ・タグ",
+
+   'rs_removeTag' : "選択したフィルター・タグからタグを削除します",
+   'rs_clearAll' : "すべてクリア",
+   'rs_searchInputDefault' : "入力してタグを検索",
+   'rs_searchInputTagSelected' : "追加のタグを入力",
+   'rs_relatedTagTitle' : "タグ ${0}、カウント ${1} の検索結果を表示します",
+   'rs_removeTagTitle' : "選択したフィルター・タグからタグ ${0} を削除します",
+   'rs_addTagTitle' : "${1} 箇所で使用されているタグ ${0} を使用してフィルター",
+
+   'rs_tagDialogCloseTile' : "閉じる",
+   'rs_tagDialogTitle' : "全タグ",
+   'rs_tagDialogPageInfo' : "${0} - ${1}/${2} タグ",
+
+   /* Group Selection (Picker) Widget */
+   'rs_group_browse_groups' : "グループの参照",
+   'rs_group_browse_groups_dialog_title' : "グループの参照",
+   'rs_group_browse_find_groups' : "グループの検索",
+   'rs_group_browse_add_button' : "追加",
+   'rs_group_browse_cancel_button' : "キャンセル",
+   'rs_group_browse_enter_string' : "入力してグループを検索",
+   'rs_group_browse_group_typeahead_label' : "グループ名を入力:",
+   'rs_group_browse_group_name' : "グループ名:",
+   'rs_group_browse_results_label' : "照合対象グループの選択:",
+   'rs_group_browse_parent_group_label' : "現在の位置:",
+   'rs_group_browse_next_page' : "次のページ",
+   'rs_group_browse_previous' : "前へ",
+   'rs_group_browse_next' : "次へ",
+   'rs_group_browse_paging' : "ページング",
+   'rs_group_browse_previous_page' : "前のページ",
+   'rs_group_browse_group_selected' : "選択されたグループ:",
+   'rs_group_browse_group_no_groups' : "このグループにはグループが含まれていません",
+   'rs_group_browse_page_info' : "${0} - ${1}/${2}",
+   'rs_group_browse_page_info_alt' : "${0} から ${1} まで (${2} 中) のグループをマッチングしています",
+   'rs_group_browse_remove_selection' : 'ネストされたグループ選択を削除: ${0}',
+   'rs_group_browse_paging' : "ページング",
+   'rs_member_groups' : "グループ",
+   'rs_member_members' : "メンバー",
+   'rs_member_no_results' : "検索結果はありません",
+   'rs_member_remove_group' : "${0} の削除",
+   'rs_member_add_to_community' : "クリックしてメンバーを追加する",
+   'rs_member_remove_name' : "クリックしてメンバーを削除する",
+   'rs_group_add_to_community' : "クリックしてグループを追加する",
+   'rs_group_remove_name' : "クリックしてグループを削除する",
+   'rs_group_name' : "グループ名",
+   'rs_group_role' : "グループの役割",
+
+   'rs_warning' : "警告",
+   'rs_a11y_warning' : "警告:",
+
+   'rs_messagebox_close_btn_title' : "閉じる",
+   'rs_messagebox_close_btn_alt' : "閉じる",
+   'rs_messagebox_error_icon_alt' : "エラー",
+   'rs_messagebox_error_a11y_label' : "エラー:",
+   'rs_messagebox_warning_icon_alt' : "警告",
+   'rs_messagebox_warning_a11y_label' : "警告:",
+   'rs_messagebox_info_icon_alt' : "情報",
+   'rs_messagebox_info_a11y_label' : "情報:",
+   'rs_messagebox_success_icon_alt' : "完了",
+   'rs_messagebox_success_a11y_label' : "成功:",
+
+   /* Document Picker CK Plugin */
+   'rs_docpicker_title' : "ファイルへのリンクを挿入",
+   'rs_docpicker_label' : "Connections ファイルへのリンク",
+   // '{0}' is a filename
+   'rs_docpicker_download_title' : "${0} のダウンロード",
+   'rs_docpicker_viewdetails_text' : "詳細の表示",
+   // '{0}' is a filename
+   'rs_docpicker_viewdetails_title' : "${0} の詳細の表示",
+
+   /* AttachedFileList widget */
+   'rs_attachedfile_remove_alt' : "削除",
+   'rs_attachedfile_filename' : "イメージ ${0}",
+
+   'rs_feedreader_warning' : "警告: このリンクはフィード・リーダー用のものであり、ご使用のブラウザーでは正しく表示されない可能性があります。 続行するには「OK」をクリックしてください。ページに戻るには「キャンセル」をクリックしてください。",
+
+   'rs_search' : "検索",
+   'rs_all_connections' : "Connections 全体",
+   'rs_advanced' : "詳細検索",
+   'rs_select_scope' : "検索範囲の選択",
+
+   'rs_icfixlayout' : {
+      button_label : "再フォーマット",
+      dialog_title : "コンテンツの再フォーマット",
+      warning : "警告",
+      reformat_save : "再フォーマットして保存",
+      save_as_is : "現状のまま保存",
+      cancel : "キャンセル",
+      warn_layout : "コンテンツが最大表示幅を超えています。  使用可能なスペースに合うように自動的に再フォーマットしますか?",
+      remember_decision : "この選択を保存"
+   },
+
+   //The following error messages are used by icdocpicker when private files are shared with a Community.
+   'rs_sharefile_constraint_violation' : "選択されたファイルを共有するときにエラーが発生しました。",
+   'rs_sharefile_access_denied' : "このファイルは削除されたか、あなたとの共有が解除されました。",
+   'rs_sharefile_invalid_request' : "選択されたファイルを共有するときにエラーが発生しました。",
+   'rs_sharefile_sharing_intent_restriction' : "ファイルは組織内でのみ共有できます。",
+   'rs_sharefile_error_title' : "エラー",
+
+   /* Strings for the native mobile app banners */
+   'rs_mobileBanner_title' : 'HCL Connections',
+   'rs_mobileBanner_inAppStore' : 'App Store 上',
+   'rs_mobileBanner_inGooglePlay' : 'Google Play 内',
+   'rs_mobileBanner_author' : 'HCL Software',
+   'rs_mobileBanner_open' : '開く',
+   'rs_mobileBanner_view' : '表示',
+   'rs_mobileBanner_hide' : '非表示',
+
+   'rs_empty_column_placeholder' : 'アプリをここにドラッグします。',
+   'rs_widget_loading_error_title' : 'ウィジェットを表示できません',
+   'rs_widget_loading_error_message' : '後で再試行するか、問題が解決しない場合はシステム管理者にお問い合わせください。',
+   'rs_widgets_loading_error_title' : 'このコミュニティー内のウィジェットを表示できません',
+   'rs_widget_misplacement_warning' : 'アプリケーションがこの列に適合しません。 コミュニティー所有者はこれを別の列に移動するか、ページから削除することができます。',
+
+   'rs_widget_title_change_fail_message' : {
+      title_too_long : '入力したタイトルが長すぎます。',
+      empty_new_title : 'タイトルを空にすることはできません。',
+      default_message : 'この ${0} アプリケーションのタイトルを変更できません。'
+   },
+
+   /* Strings for change title dialog */
+   'rs_widget_title_change_label' : 'タイトル:  ',
+   'rs_widget_title_change_direction' : 'この「${0}」アプリケーションのタイトルを変更します。',
+   'rs_widget_title_change_title' : 'タイトルの変更',
+
+   /* Strings for Visitor Model Invite dialog */
+	'rs_vmmainContentTitle' : "メンバーの招待または追加",
+	'rs_vmmainContentDesc' : "コミュニティーに参加するかどうかをユーザーに選択させる場合は「メンバーの招待」を行います。 ユーザーを自動的に参加させるには「メンバーの追加」を行います。",
+	'rs_vmtypeAheadLabel' : "名前またはメール: ",
+	'rs_vmgroupTypeAheadLabel' : "名前: ",
+	'rs_vmtypeAheadRoleLabel' : " メンバーの役割: ",
+	'rs_vmgroupTypeAheadRoleLabel' : " メンバーとして ",
+	'rs_vmtaNoResults' : "検索結果はありません。",
+	'rs_vmtaHeader' : "ヘッダー",
+	'rs_vmaddUser' : "追加",
+	'rs_vmradioSectionTitle' : "メンバー・オプション:",
+	'rs_vmradioOne' : "コミュニティーへの参加の招待を送信",
+	'rs_vmradioTwo' : "ユーザーを自動的にコミュニティーに追加",
+	'rs_vmtwistyA' : "オプションのメッセージの追加",
+	'rs_vmtwistyB' : "追加テキストの削除",
+	'rs_vmmessage' : "メッセージ:",
+	'rs_vmtextAreaStartText' : "書き込んでください...",
+	'rs_vmcheckboxLabel' : "コピーを自分に送信",
+	'rs_vmsave' : "保存",
+	'rs_vminvite' : "招待",
+	'rs_vmcancel' : "キャンセル",
+	'rs_userContentTitle' : "情報の入力",
+	'rs_vmaddUser' : "ユーザーの作成",
+	'rs_vmback'	 : "戻る",
+	'rs_vmvisitor'	 : "ビジター"
+})

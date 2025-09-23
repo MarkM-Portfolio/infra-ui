@@ -1,0 +1,366 @@
+/* *************************************************************** */
+/*                                                                 */
+/* HCL Confidential                                                */
+/*                                                                 */
+/* OCO Source Materials                                            */
+/*                                                                 */
+/* Copyright HCL Technologies Limited 2008, 2019                   */
+/*                                                                 */
+/* The source code for this program is not published or otherwise  */
+/* divested of its trade secrets, irrespective of what has been    */
+/* deposited with the U.S. Copyright Office.                       */
+/*                                                                 */
+/* *************************************************************** */
+
+// NLS_CHARSET=UTF-8
+({
+   'rs_close' : "Stäng",
+   'rs_loading' : "Laddar...",
+   'rs_at' : "",
+
+   'rs_searchDirectory' : "Visas inte personen? Använd de fullständiga sökfunktionerna...",
+   'rs_searchGroupDirectory' : "Visas inte gruppen? Använd de fullständiga sökfunktionerna...",
+   'rs_searchPersonAndGroupDirectory' : "Visas inte personen eller gruppen? Använd de fullständiga sökfunktionerna...",
+   'rs_searchCommunityDirectory' : "Visas inte gemenskapen? Använd de fullständiga sökfunktionerna...",
+
+   'rs_shadowText_searchDirectory' : "Ange den person du vill söka efter",
+   'rs_shadowText_searchGroupDirectory' : "Ange den grupp du vill söka efter",
+   'rs_shadowText_searchPersonAndGroupDirectory' : "Ange den person eller grupp du vill söka efter",
+   'rs_shadowText_searchCommunityDirectory' : "Ange den gemenskap du vill söka efter",
+
+   'rs_listItem' : "Listobjekt",
+   'rs_noResults' : "Det gick inte att hitta några resultat för ${0}",
+   'rs_today' : "I dag",
+   'rs_tomorrow' : "I morgon",
+   'rs_yesterday' : "I går",
+
+   /* Activity List Widget */
+   'rs_activityFeedLink' : "Flöde för de här aktiviteterna",
+   'rs_externalText' : "Personer utanför företaget får vara medlemmar av den här aktiviteten.",
+   'rs_moveActivitySuccess' : '\"${activityTitle}\" flyttades till undergemenskapen \"${destCommName}\".',
+   // copy 'rs_moreInfo' and 'rs_hideInfo' from activity's strings.js
+   'rs_moreInfo' : 'Visa mer information om den här aktiviteten',
+   'rs_hideInfo' : 'Dölj extra information',
+   'rs_more' : "Mer",
+   'rs_hide' : "Dölj",
+   'rs_edit' : "Redigera",
+   'rs_restore' : "Återställ",
+   'rs_deleteEntry' : "Ta bort",
+   'rs_prioritize' : "Ange prioritet",
+   'rs_markComplete' : "Markera som slutförd",
+   'rs_markIncomplete' : "Återställ",
+   'rs_linkMore' : "... [mer]",
+   'rs_linkLess' : "... [mindre]",
+   'rs_actUpdatedByDate' : "Uppdaterades av ${0} ${1}",// Updated by (author name) (date)
+   'rs_actUpdatedBy' : "Uppdaterades av ${0}",// Updated by (author name)
+   'rs_actDue' : "Slutdatum: ${0}",// Due (date)
+   'rs_actTags' : "Taggar: ",
+   'rs_actTagsDelim' : ", ",
+   'rs_startFromTemplate' : "Starta en aktivitet från den här mallen",
+   'rs_favoriteTemplate' : "Markera som favoritmall",
+   'rs_normalTemplate' : "Markera som mall med normal prioritet",
+   'rs_tunedOutPri' : "Avaktiverad",
+   'rs_pagepos' : "${0} - ${1} av ${2}", // pagination - e.g. 1 - 10 of 100
+   'rs_navPrevLabel' : "Föregående",
+   'rs_navNextLabel' : "Nästa",
+   'rs_noActivities' : "Det finns inga startade aktiviteter för den här gemenskapen.",
+   'rs_feedError' : "Det gick inte att läsa in flödet.",
+   'rs_highPri' : "Hög prioritet",
+   'rs_medPri' : "Medelhög prioritet",
+   'rs_normalPri' : "Normal prioritet (standard)",
+   'rs_tuneOut' : "Markera som avaktiverad",
+   'rs_startActivity' : "Starta en aktivitet",
+   'rs_startFirstActivity' : "Lägg till en aktivitet",
+   'rs_navNextLabel' : "Nästa",
+   'rs_viewAll' : "Visa alla",
+   'rs_activityWidgetTitle' : "Aktiviteter",
+   'rs_activityWidgetBriefDescription' : "Håll reda på gemenskapsmål. Skapa Att göra-uppgifter och dela resurser.",
+   'rs_activityWidgetDescription' : "Du kan använda gemenskapsaktiviteter till att samarbeta och hålla reda på status för gemenskapsprojekt eller -initiativ.",
+   'rs_completedActivityLink' : "Visa slutförda aktiviteter",
+   'rs_activitiesUnavailable' : "Aktivitetstjänsten är inte tillgänglig.",
+   'rs_errorPersists' : "Om problemet kvarstår kontaktar du systemadministratören.",
+   'rs_shared' : "Delad",
+   'rs_removeActFromComm' : "Ta bort från gemenskapen",
+   'rs_externalLabel' : "Extern",
+
+   // for ActivityForm
+   'rs_templateOptions' : "Mallalternativ",
+   'rs_template' : "Mall",
+   'rs_tagsLabel' : "Taggar",
+   'rs_peopleLabel' : "Personer",
+   'rs_aboutThisTemplate' : "Om den här mallen",
+   'rs_activity' : "Aktivitet",
+   'rs_copyOf' : "Kopia av ${0}",// copy of (activity name)
+   'rs_activityFormGoal' : "Aktivitetsmål",
+   'rs_noTemplate' : "Inget",
+   'rs_copyActivityMembers' : "Använd medlemmar från aktiviteten",
+   'rs_copyTemplateMembers' : "Använd medlemmar från mallen",
+
+   /* Forum Widget */
+   'rs_noTopics' : "Det finns inga ämnen för den här gemenskapen.",
+   'rs_noTopicsLoggedIn' : "Ställ en fråga eller utbyt idéer.",
+   'rs_postedBy' : "Senaste inlägg av",
+   'rs_topics' : "ämnen",
+   'rs_noTopicsShort' : "Inga ämnen",
+   'rs_topic' : "ämne",
+   'rs_replies' : "svar",
+   'rs_noReplies' : "Inga svar",
+   'rs_reply' : "svar",
+   'rs_startTopic' : "Lägg till ett ämne",
+   'rs_startFirstTopic' : "Lägg till ett ämne",
+   'rs_ok' : "OK",
+   'rs_locked' : "(låst)",
+   'rs_manageForumSetting' : "Hantera foruminställningarna",
+   'rs_forumSettingCommunityOverviewPage' : "Översiktssida för gemenskap:",
+   'rs_defaultForumList' : "Visa forumlistan som standard",
+   'rs_defaultTopicList' : "Visa ämneslistan som standard",
+   'rs_forumSettingApplicationView' : "Standardvy för applikationen Forum:",
+   'rs_forumSettingNote' : "Anm. Om det endast finns ett forum visas ämnen som standard.",
+   'rs_forumSettingSubmit' : "Skicka in",
+   'rs_forumSettingSave' : "Spara",
+   'rs_forumSettingSaveAndClose' : "Spara och stäng",
+   'rs_forumSettingConfirm' : "Dina ändringar för Forum sparades.",
+   'rs_forumSettingError' : "Det uppstod ett fel. Kontakta administratören.",
+   'rs_formSettingHideMessage' : "Dölj meddelandet",
+   'rs_forumSettingCancel' : "Avbryt",
+   'rs_forumAnsweredQuestion' : "Besvarad fråga",
+   'rs_forumUnAnsweredQuestion' : "Obesvarad fråga",
+   'rs_forumSortBy' : "Sortera efter:",
+   'rs_forumSortByDate' : "Datum",
+   'rs_forumSortByReplies' : "Svar",
+   'rs_forumSortByTopic' : "Ämnen",
+   'rs_forumSortByTopicsAndReplies' : "Ämnen och svar",
+   'rs_sortByReplies' : "Sortera efter svar",
+   'rs_sortbyTopicsAndReplies' : "Sortera efter ämnen och svar",
+   'rs_forumOpenQuestions' : "Öppna frågor",
+   'rs_feedOpenQuestions' : "Flöde för de här öppna frågorna",
+   'rs_feedAnsweredQuestions' : "Flöde för de här besvarade frågorna",
+   'rs_forumMessages' : "${0} meddelanden",
+   'rs_forumLastAddedPost' : "Senaste inlägg av ${0}",
+   'rs_forumTopics' : "${0} ämnen",
+   /* End discussion forum */
+
+   /* Editor plugins -- some for a possible one we haven't implemented yet */
+   'rs_createPersonLink' : "Skapa personlänk",
+   'rs_quote' : "Citera",
+   'rs_labelColon' : "Etikett: ",
+   'rs_personColon' : "Person: ",
+   'rs_personLink' : "Personlänk",
+   'rs_replace' : "Ersätt",
+   'rs_inactivePerson' : "${0} (inaktiv)", // person's name (inactive)
+   'rs_PersonPicture' : "Bild av ${0}", // person name's picture
+
+   /*Visitor mode -- external user name decoration use cases */
+   'rs_PersonExternalLabel' : "Extern användare", // A label for the visitor model use cases.
+   'rs_PersonExternal' : "${0} (extern användare)", //'{0}' is the person's name. This will be used for the user profile name and profile photo tooltip
+   'rs_PersonPictureExternal' : "Bild av ${0} (extern användare)", // Alt text for the external user's profile photo
+   'rs_personExternalDesc' : "Den här användaren har åtkomst till filer och gemenskaper som delas externt.",
+   /* End editor plugins */
+
+   /* Notification Form */
+   'rs_notifyOthers' : "Meddela andra personer",
+   'rs_messageColon' : "Meddelande: ",
+   'rs_notifyColon' : "Meddela: ",
+   'rs_notificationConfirm' : "Meddelandet sändes. ",
+   'rs_notificationFail' : "Aviseringsmeddelandet sändes inte. Försök igen senare. Kontakta systemadministratören om problemet kvarstår.",
+   'rs_pickCommunity' : "Välj i gemenskapslistan",
+   'rs_typeName' : "Ange ett namn",
+   'rs_typeToFilter' : "Filtrera den här listan genom att skriva",
+   /* End Notification Form */
+
+   /* FilteringCheckbox */
+   'rs_filterListPrompt' : "Filtrera den här listan genom att skriva",
+   'rs_filterGroupLabel' : "Välj grupp",
+   'rs_noResults' : "Det gick inte att hitta några resultat",
+   // ${0} will be replaced with a number
+   'rs_numResults' : "Visar ${0} av ${1} resultat",
+
+   /* PeopleFilterList */
+   'rs_removeFilter' : "Ta bort",
+
+   /* Language Selector */
+   'rs_browser_setting' : "Webbläsarinställningen",
+   'rs_customLangaugeLinkLabel' : "Anpassat språk",
+
+   /* Paging controls */
+   // 0 and 1 are page numbers
+   'rs_jumpPage' : "Gå till sidan ${0} av ${1}",
+   "rs_jumpPageLabel" : "Gå till sidan",
+   'rs_pageNumLabel' : "Sidnummer",
+   'rs_pageLabel' : "Sida:",
+
+   /* Common Tags Widget */
+   'rs_tagCloudNavigationLabel' : 'Taggar',
+   'rs_tagCloudToggleHint' : "Klicka här om du vill visa eller dölja",
+   'rs_tagCloudHelpAlt' : "Hjälp för taggar",
+   'rs_tagCloudNoTags' : "Det finns inga taggar",
+   'rs_tagCloudNoRecentTags' : "Det finns inga senaste taggar",
+   'rs_tagCloudNoTagsProfiles' : "Sök i katalogen. De taggar som är associerade med de profiler som returneras vid sökningen visas här.",
+   'rs_tagLoadingTags' : "Läser in innehåll",
+   'rs_tagCloudSelectedTags' : "Valda taggar",
+   'rs_tagCloudSeachDesc' : "Sök efter en tagg",
+   'rs_tagCloudSeach' : "Sök",
+   'rs_tagCloudRelatedTags' : "Relaterade taggar",
+   'rs_tagCloudRelatedTagsDescription' : "Om du vill begränsa sökresultatet lägger du till en relaterad tagg",
+   'rs_tagCloudError' : 'Det uppstod ett fel',
+
+   'rs_viewAsCloud' : "Moln",
+   'rs_viewAsCloudTitle' : "Lista taggar om ett taggmoln",
+   'rs_viewAsCloudDescription' : "Visar taggar i ett taggmoln",
+   'rs_viewAsList' : "Lista",
+   'rs_viewAsListTitle' : "Visa taggar som en lista över taggar",
+   'rs_viewAsListDescription' : "Visar taggar som en lista över taggar",
+   'rs_tagCloudViewAll' : "Bläddra",
+   'rs_tagCloudViewAllTitle' : "Bläddra efter alla taggar",
+
+   'rs_normalTags' : "Aktiva taggar",
+
+   'rs_removeTag' : "Ta bort taggen från valda filtertaggar",
+   'rs_clearAll' : "Rensa allt",
+   'rs_searchInputDefault' : "Ange den text du vill söka efter",
+   'rs_searchInputTagSelected' : "Skriv en tagg till",
+   'rs_relatedTagTitle' : "Visa sökresultat för taggen ${0}, antal ${1}",
+   'rs_removeTagTitle' : "Ta bort taggen ${0} från valda filtertaggar",
+   'rs_addTagTitle' : "Filtrera efter taggen ${0} (${1} förekomster)",
+
+   'rs_tagDialogCloseTile' : "Stäng",
+   'rs_tagDialogTitle' : "Alla taggar",
+   'rs_tagDialogPageInfo' : "${0} - ${1} av ${2} taggar",
+
+   /* Group Selection (Picker) Widget */
+   'rs_group_browse_groups' : "Bläddra efter grupper",
+   'rs_group_browse_groups_dialog_title' : "Bläddra efter grupper",
+   'rs_group_browse_find_groups' : "Sök efter grupper",
+   'rs_group_browse_add_button' : "Lägg till",
+   'rs_group_browse_cancel_button' : "Avbryt",
+   'rs_group_browse_enter_string' : "Ange den text du vill söka efter",
+   'rs_group_browse_group_typeahead_label' : "Ange ett gruppnamn:",
+   'rs_group_browse_group_name' : "Gruppnamn:",
+   'rs_group_browse_results_label' : "Välj en matchande grupp:",
+   'rs_group_browse_parent_group_label' : "Du befinner dig i:",
+   'rs_group_browse_next_page' : "Nästa sida",
+   'rs_group_browse_previous' : "Föregående",
+   'rs_group_browse_next' : "Nästa",
+   'rs_group_browse_paging' : "Sidkontroller",
+   'rs_group_browse_previous_page' : "Föregående sida",
+   'rs_group_browse_group_selected' : "Vald grupp:",
+   'rs_group_browse_group_no_groups' : "Den här gruppen innehåller inte några grupper",
+   'rs_group_browse_page_info' : "${0} - ${1} av ${2}",
+   'rs_group_browse_page_info_alt' : "Matchande grupper ${0} - ${1} av ${2}",
+   'rs_group_browse_remove_selection' : 'Ta bort val av kapslade grupper: ${0}',
+   'rs_group_browse_paging' : "Sidkontroller",
+   'rs_member_groups' : "Grupper",
+   'rs_member_members' : "Medlemmar",
+   'rs_member_no_results' : "Det gick inte att hitta några resultat",
+   'rs_member_remove_group' : "Ta bort ${0}",
+   'rs_member_add_to_community' : "Klicka här om du vill lägga till en medlem",
+   'rs_member_remove_name' : "Klicka här om du vill ta bort en medlem",
+   'rs_group_add_to_community' : "Klicka här om du vill lägga till en grupp",
+   'rs_group_remove_name' : "Klicka här om du vill ta bort gruppen",
+   'rs_group_name' : "Gruppnamn",
+   'rs_group_role' : "Grupproll",
+
+   'rs_warning' : "Varning",
+   'rs_a11y_warning' : "Varning!",
+
+   'rs_messagebox_close_btn_title' : "Stäng",
+   'rs_messagebox_close_btn_alt' : "Stäng",
+   'rs_messagebox_error_icon_alt' : "Fel",
+   'rs_messagebox_error_a11y_label' : "Fel:",
+   'rs_messagebox_warning_icon_alt' : "Varning",
+   'rs_messagebox_warning_a11y_label' : "Varning!",
+   'rs_messagebox_info_icon_alt' : "Information",
+   'rs_messagebox_info_a11y_label' : "Information:",
+   'rs_messagebox_success_icon_alt' : "Slutfördes",
+   'rs_messagebox_success_a11y_label' : "Slutfördes:",
+
+   /* Document Picker CK Plugin */
+   'rs_docpicker_title' : "Infoga länkar till filer",
+   'rs_docpicker_label' : "Länk till Connections Filer",
+   // '{0}' is a filename
+   'rs_docpicker_download_title' : "Ladda ned ${0}",
+   'rs_docpicker_viewdetails_text' : "Visa detaljer",
+   // '{0}' is a filename
+   'rs_docpicker_viewdetails_title' : "Visa detaljerna för ${0}",
+
+   /* AttachedFileList widget */
+   'rs_attachedfile_remove_alt' : "Ta bort",
+   'rs_attachedfile_filename' : "Bild: ${0}",
+
+   'rs_feedreader_warning' : "Varning! Den här länken är avsedd för flödesläsare och visas eventuellt inte på rätt sätt i webbläsaren. Om du vill fortsätta klickar du på OK, om du vill gå tillbaka till sidan klickar du på Avbryt.",
+
+   'rs_search' : "Sök",
+   'rs_all_connections' : "Hela Connections",
+   'rs_advanced' : "Avancerat",
+   'rs_select_scope' : "Välj sökomfång",
+
+   'rs_icfixlayout' : {
+      button_label : "Formatera om",
+      dialog_title : "Formatera om innehållet",
+      warning : "Varning",
+      reformat_save : "Formatera om och spara",
+      save_as_is : "Spara utan att formatera om",
+      cancel : "Avbryt",
+      warn_layout : "Innehållet är bredare än den största tillåtna visningsbredden. Vill du att innehållet ska formateras om automatiskt så att det får plats på det tillgängliga utrymmet?",
+      remember_decision : "Spara den här inställningen"
+   },
+
+   //The following error messages are used by icdocpicker when private files are shared with a Community.
+   'rs_sharefile_constraint_violation' : "Det uppstod ett fel när de valda filerna skulle delas.",
+   'rs_sharefile_access_denied' : "Den här filen har tagits bort eller delas inte längre med dig.",
+   'rs_sharefile_invalid_request' : "Det uppstod ett fel när de valda filerna skulle delas.",
+   'rs_sharefile_sharing_intent_restriction' : "Det går endast att dela filen i företaget.",
+   'rs_sharefile_error_title' : "Fel",
+
+   /* Strings for the native mobile app banners */
+   'rs_mobileBanner_title' : 'HCL Connections',
+   'rs_mobileBanner_inAppStore' : 'I App Store',
+   'rs_mobileBanner_inGooglePlay' : 'I Google Play',
+   'rs_mobileBanner_author' : 'HCL Software',
+   'rs_mobileBanner_open' : 'Öppna',
+   'rs_mobileBanner_view' : 'Visa',
+   'rs_mobileBanner_hide' : 'Dölj',
+
+   'rs_empty_column_placeholder' : 'Dra appar hit.',
+   'rs_widget_loading_error_title' : 'Det går inte att visa widgeten',
+   'rs_widget_loading_error_message' : 'Försök igen senare. Kontakta systemadministratören om problemet kvarstår.',
+   'rs_widgets_loading_error_title' : 'Det går inte att visa widgetarna i den här gemenskapen',
+   'rs_widget_misplacement_warning' : 'Appen får inte plats i den här kolumnen. En gemenskapsägare kan flytta den till en annan kolumn eller ta bort den från sidan.',
+
+   'rs_widget_title_change_fail_message' : {
+      title_too_long : 'Titeln innehåller för många tecken.',
+      empty_new_title : 'Titelfältet får inte vara tomt.',
+      default_message : 'Det går inte att byta titel på den här ${0}-appen.'
+   },
+
+   /* Strings for change title dialog */
+   'rs_widget_title_change_label' : 'Titel:  ',
+   'rs_widget_title_change_direction' : 'Ändra titeln på appen ${0}',
+   'rs_widget_title_change_title' : 'Ändra titel',
+
+   /* Strings for Visitor Model Invite dialog */
+	'rs_vmmainContentTitle' : "Bjud in eller lägg till medlemmar",
+	'rs_vmmainContentDesc' : "Bjud in medlemmar så att de får möjlighet att delta i gemenskapen. Lägg till medlemmar så tas de med automatiskt.",
+	'rs_vmtypeAheadLabel' : "Namn eller mejladress: ",
+	'rs_vmgroupTypeAheadLabel' : "Namn: ",
+	'rs_vmtypeAheadRoleLabel' : " som ",
+	'rs_vmgroupTypeAheadRoleLabel' : " som medlemmar ",
+	'rs_vmtaNoResults' : "Inga resultat hittades.",
+	'rs_vmtaHeader' : "huvud",
+	'rs_vmaddUser' : "Lägg till",
+	'rs_vmradioSectionTitle' : "Medlemsalternativ:",
+	'rs_vmradioOne' : "Sänd inbjudan att delta i gemenskapen",
+	'rs_vmradioTwo' : "Lägg automatiskt till användare i gemenskapen",
+	'rs_vmtwistyA' : "Lägg till ett meddelande",
+	'rs_vmtwistyB' : "Ta bort ytterligare text",
+	'rs_vmmessage' : "Meddelande:",
+	'rs_vmtextAreaStartText' : "Skriv något...",
+	'rs_vmcheckboxLabel' : "Sänd en kopia till mig",
+	'rs_vmsave' : "Spara",
+	'rs_vminvite' : "Bjud in",
+	'rs_vmcancel' : "Avbryt",
+	'rs_userContentTitle' : "Fyll i information",
+	'rs_vmaddUser' : "Lägg till användare",
+	'rs_vmback'	 : "Föregående",
+	'rs_vmvisitor'	 : "Besökare"
+})

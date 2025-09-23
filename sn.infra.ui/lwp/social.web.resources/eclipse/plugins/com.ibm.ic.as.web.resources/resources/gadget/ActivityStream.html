@@ -1,0 +1,202 @@
+<html>
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--[if IE 6]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie lotusui_ie6";</script><![endif]-->
+    <!--[if IE 7]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie lotusui_ie7";</script><![endif]-->
+    <!--[if IE 8]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie8";</script><![endif]-->
+    <!--[if IE 9]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie9";</script><![endif]-->
+
+    <!-- pipeline in the resources needed by the template -->
+    <script type="text/os-data" xmlns:os="http://ns.opensocial.org/2008/markup">
+       <os:HttpRequest key="icResourceData" method="GET" href="../../../ic/forms/api/resloader/ConnectionsAS"/>
+       <os:ViewerRequest key="viewer" />
+    </script>
+    <!-- Load in the gadget template that will load/cache our CSS & JS -->
+    <script type="text/os-template" xmlns:lconn="http://www.ibm.com/ibm/connections">
+       <lconn:importResources/>
+    </script>  
+    
+	<script type="text/javascript">
+		
+		var asc = {};
+		
+		(function(){
+			var hasOpenViews = gadgets.util.hasFeature("open-views");
+			
+			// for userPrefs, use getString when datatype=="hidden"
+			prefs = new gadgets.Prefs();
+			asc.isDebug = prefs.getBool("debug");
+			asc.isDebugFF = prefs.getString("debugFF") === "true";
+			asc.useOAuth = gadgets.views.getParams().useOAuth !== "false";
+			asc.showSharebox = prefs.getString("showSharebox") !== "false";
+			asc.shareboxBoardId = prefs.getString("shareboxBoardId");
+			asc.shareboxPostType = prefs.getString("shareboxPostType");
+			asc.showFeedLink = prefs.getString("showFeedLink") !== "false";
+			asc.showHeader = prefs.getString("showHeader") !== "false";
+			asc.asMaxWidth = prefs.getString("asMaxWidth");
+			asc.asMinWidth = prefs.getString("asMinWidth");
+			asc.isCommunityStream = prefs.getString("isCommunityStream") === "true";
+			asc.asFeed = hasOpenViews ? gadgets.views.getParams().asFeed : null;
+			asc.asMode = hasOpenViews ? gadgets.views.getParams().asMode : null;
+			asc.asConfig = hasOpenViews ? gadgets.views.getParams().asConfig : null;
+			
+			//
+			// utility functions
+			//
+			function isFunction(func) {
+				return func && asc.toString.call(func) === '[object Function]';
+			}
+			
+			var stringIfy = window.JSON && window.JSON.stringIfy ?
+				function(v) { return JSON.stringIfy(v); } :
+				function(v) { return '' + v; };	// dojo.toJSON chokes on circular objects, so avoiding
+					
+			function noOp() {}
+			
+			//
+			// logging
+			//
+			asc.log = (function(undef) {
+					var global = this, 
+						debugFF = null;
+					
+					// debug gadget function
+					function debugGadget() {
+						var msg = [], i = arguments.length;
+						while (i--) { msg.push(stringIfy(arguments[i])); }
+						gadgets.log( msg.reverse().join(' '));
+					}
+					
+					var gadgetAvail = global.gadgets && gadgets.log,
+						consoleAvail = global.console && console.log;
+					
+					// create mconsole.debugFF 
+					if (consoleAvail) {
+						var logf = console.debug || console.log;
+						
+						debugFF = (isFunction(logf) && logf.apply) ?
+							function() { logf.apply(console, arguments); } :
+							function() { logf(Array.prototype.slice.call(arguments)); };	// handle IE weirdness
+							
+					} else if (gadgetAvail) {
+						debugFF = debugGadget;
+					} else {
+						debugFF = noOp;
+					}					
+					
+					// choose debug method
+					if (asc.isDebugFF) {
+						return debugFF;
+					} else if (asc.isDebug) {
+						if (gadgetAvail) {
+							return debugGadget;
+						} else {
+							return debugFF;
+						}
+					} else {
+						return noOp;
+					}
+				})();
+				
+			asc.log("ActivityStream.html - gettin' goin'. asc: ", asc);
+			
+			if ( !hasOpenViews ) {
+				asc.log("ActivityStream.html - open-views features not available. Some functionality will not work.");
+			}
+			
+			/**
+			 * Check what gadget type we want... wide or narrow
+			 * wide includes side-view-nav
+			 * narrow includes top-view-nav
+			 * narrow also overrides some CSS to squeeze things
+			 */
+			var curViewName = hasOpenViews ? gadgets.views.getCurrentView().getName() : "default";
+			asc.log("ActivityStream.html - curViewName: ", curViewName);
+			if ( curViewName == "profile" ) {
+				asc.type = "narrow";
+			} else { // curViewName == "canvas" or "profile"
+				asc.type = "wide";
+			}
+			asc.log("ActivityStream.html - asc.type = ", asc.type);
+			
+			asc.isRTL = (!(document.dir || document.documentElement.dir || "ltr").toLowerCase() == "ltr");
+			asc.log("ActivityStream.html - asc.isRTL = ", asc.isRTL);
+	
+			var bootAS = function() {
+				asc.log("ActivityStream.html - bootAS - entering");
+				
+				asc.util = new com.ibm.social.as.gadget.ASGadgetUtil();
+				asc.util.initLogger(); // must be first.. things will be starting to call as_console_debug
+				
+				// Hack for SmartCloud - cannot use OS APIs when gadget in SmartCloud
+				var useOSXhrApis = gadgets.util.hasFeature('smartcloud3') ? false : true;
+
+ 				com.ibm.social.as.util.xhr.XhrHandler.init({isGadget:useOSXhrApis, useOauth: asc.useOAuth}); // we need xhr to know its context
+				asc.util.initAS();
+				asc.log("ActivityStream.html - bootAS - exiting, asc: ", asc);
+			};
+					
+			// before we call the bootloader, check if we want extra css
+			var config = {};
+			if ( asc.type === "narrow" ) {
+				config.extraCss = [
+					"\/web\/_style?include=com.ibm.social.as\/gadget\/css\/gadgetOverrideNarrow" + 
+							( asc.isRTL ? "RTL" : "" ) + ".css{etag}"
+				];
+			}
+			
+	        gadgets.util.registerOnLoadHandler(function() {
+	        	asc.log("ActivityStream.html - beginning fetch of AS JS");
+		        var initComplete = com.ibm.social.gadget.loader.bootstrap.init(config);
+		        		         
+				initComplete.then(bootAS, function(){
+				    var errorDiv = document.getElementById("errorDiv"),
+				        loadingDiv = document.getElementById("loadingDiv"),
+				        prefs = new gadgets.Prefs();
+				    errorDiv.innerHTML = prefs.getMsg("as_error");
+					loadingDiv.className="lotusHidden";
+					errorDiv.className="";
+				});
+			});
+		})();
+	</script> 
+</head>
+<body class="lotusui lotusui30dojo lotusui30_body asGadget lotusui30_fonts lotusui30  lotusSpritesOn" aria-labelledby="needAuth">
+	<div id="lotusFrame" class="lotusFrame lotusui30_layout">
+		<div id="gadgetMainContent">
+			<div id="loadingDiv" style="width: 100%; height: 100%; margin-top: 40px; text-align: center;">
+				<img src="../../com.ibm.lconn.core.styles.oneui3/images/loading.gif">
+			</div>
+			<div id="errorDiv" class="lotusHidden" style="width: 100%; height: 100%; margin-top: 40px; text-align: center;">
+				
+			</div>
+			<div id="lotusMain" class="lotusMain lotusHidden">
+				<div id="lotusColLeft" class="lotusColLeft lotusHidden">
+					<div id="viewsidenav"></div>
+				</div>
+				<div id="lotusContent" class="lotusContent lotusBoard activityStreamGadgetContainer" role="main">
+					<div><div id="asheader"></div></div>
+					<div><div id="inputForm"></div></div>
+					<div><div id="messageContainer"></div></div>
+					<div><div id="activityStream" class="lotusStream"></div></div>
+				</div>
+			</div>
+		</div>
+		<div id="needAuth" style="display:none">
+			<img class="eeOAuthImg" role="presentation" aria-hidden="true">
+			<div class="eeOAuthBodyContent">
+	  			<div class="eeOAuthInfo"></div>
+	  			<div id="oAuthQuestion" class="lotusChunk"></div>
+	   		</div>
+		</div>
+		<div id="waiting" style="display:none">
+			<img class="eeOAuthImg" role="presentation" aria-hidden="true">
+			<div class="eeOAuthBodyContent">
+				<div class="eeOAuthInfo"></div>
+				<div id="oAuthQuestionWait" class="lotusChunk"></div>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

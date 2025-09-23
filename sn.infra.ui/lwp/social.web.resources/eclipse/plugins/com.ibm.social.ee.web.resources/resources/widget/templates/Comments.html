@@ -1,0 +1,59 @@
+<div >
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+   <div class="lotusBoard">
+   <div dojoAttachPoint="messageLocation" tabindex="0" style="display: none;"></div>
+      <div dojoAttachPoint="addCommentLink" class="lotusActions" style="display:none;">
+         <a href="javascript:;" dojoAttachEvent="onclick:createComment" title="${_strings.ADD_COMMENT_TOOLTIP}" role="button">${_strings.ADD_COMMENT}</a>
+     </div>
+     <div dojoAttachPoint="empty" style="display: none;" class="lconnEmpty">${_strings.EMPTY}</div>
+     <div dojoAttachPoint="loading" style="display: none;"></div>
+     <ul class="lotusCommentList" dojoAttachPoint="cmtList" aria-label="${_strings.ARIA_LABEL}" style="display: none;" role="article">
+	     <li class="lotusCommentItem showMore" dojoAttachPoint="showMoreLink" id="moreLink">
+	        <a role="button" class="lotusMeta keepFocus" title="${_strings.PREV_COMMENTS}" href="javascript:;" dojoAttachEvent="onclick:_getMoreComments">${_strings.PREV_COMMENTS}</a>
+	        <div dojoAttachPoint="showMoreLoadingNode" class="lotusLoading" style="display:none"></div>
+	        <span dojoAttachPoint="commentCountNode" class="commentCount"></span>
+	        <div class="lotusClear"></div>
+	     </li>
+	     <li dojoAttachPoint="sharedExternallyComments" role="presentation"></li>
+         <li class="lotusAddComment" dojoAttachPoint="addCommentCtnr" id="addCmt" style="display: none;" role="presentation">
+	         <div tabindex="0" dojoAttachEvent="onfocus:_focusNewCmt" dojoAttachPoint="addCmtNode">		         
+		            <form class="lotusForm2 lotusStreamUpdate" dojoAttachPoint="addCommentNode">
+		               <div class="lotusFieldEmphasis" >
+		                  <div dojoAttachPoint="textCtnr"></div>
+		               </div>
+		               <div class="lotusActions eeActions" dojoAttachPoint="actionBtns" style="position: relative; top: -9999px;">
+		                  <ul class="lotusInlinelist lotusLeft">
+		                     <li class="lotusFirst">
+		                        <a dojoAttachPoint="newCmtBtn" class="submitEnabled keepFocus" role="button" href="javascript:;" dojoAttachEvent="onclick:performCreate"><strong>${_strings.POST}</strong></a>
+		                     </li>
+		                     <li>
+		                        <a role="button" href="javascript:;" dojoAttachEvent="onclick:cancelCreate" class="keepFocus">${_strings.CANCEL}</a>
+		                     </li>
+		                  </ul>
+		                  <ul class="lotusInlinelist lotusRight" dojoAttachPoint="commentCountdownContainer">
+		                   <li class="lotusFirst" aria-relevant="text" role="status" aria-live="polite" aria-atomic="true">
+		                      <span  class="lotusMeta charDisplay" dojoattachpoint="commentCountdownNode"></span>
+		                      <div class="ariaCharCountLabel lotusAccess">${_asStrings.charactersRemaining}</div>
+		                   </li>
+		                  </ul>
+		               </div>
+		               <div dojoAttachPoint="atMentionsMessages"></div>
+		            </form>
+	         </div>
+         </li>
+      </ul>
+   </div>
+</div>

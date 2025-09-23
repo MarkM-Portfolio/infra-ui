@@ -1,0 +1,7 @@
+define({
+	root: /* ***************************************************************** */
+		/*                                                                   */
+		/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+		
+		dojo.provide("com.ibm.mm.enabler.nls.enabler_it-it");dojo.provide("com.ibm.mm.enabler.nls.iwStr");com.ibm.mm.enabler.nls.iwStr._built=true;dojo.provide("com.ibm.mm.enabler.nls.iwStr.it_it");com.ibm.mm.enabler.nls.iwStr.it_it={"LOAD":"Caricamento in corso....."};dojo.provide("com.ibm.mm.enabler.nls.iwMessages");com.ibm.mm.enabler.nls.iwMessages._built=true;dojo.provide("com.ibm.mm.enabler.nls.iwMessages.it_it");com.ibm.mm.enabler.nls.iwMessages.it_it={"E_IWIDGETDEF_CONTENTNOTAVAILABLE_1":"BMWIW0002E:impossibile trovare contenuto per la modalità -- ${0}.","E_IWIDGETDEF_NOTAVAILABLE_1":"BMWIW0001E:Impossibile caricare iWidget ${0}."};dojo.provide("com.ibm.mm.data.nls.dataTypeStrings");com.ibm.mm.data.nls.dataTypeStrings._built=true;dojo.provide("com.ibm.mm.data.nls.dataTypeStrings.it_it");com.ibm.mm.data.nls.dataTypeStrings.it_it={"countrycode":"Codice paese","languagecode":"Codice lingua","date":"Data","boolean":"Booleano","json":"JSON","table":"Tabella","rss":"RSS","email":"E-mail","image":"Immagine","any":"Tutti i dati","text":"Testo","html":"HTML","modeldata":"Dati modello","time":"Ora","phone":"Telefono","url":"URL","currency":"Divisa","address":"Indirizzo","postalcode":"Codice postale","xml":"XML","timestamp":"Data/ora","person":"Persona","number":"Numero","atom":"ATOM"};
+		});

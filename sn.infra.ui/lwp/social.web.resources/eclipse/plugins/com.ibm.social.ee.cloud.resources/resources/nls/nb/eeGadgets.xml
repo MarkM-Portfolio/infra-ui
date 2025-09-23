@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Embedded Experience OpenSocial-gadget som brukes til å vise flere detaljer og handlinger for Connections-hendelser</msg>
+  <msg name="connectionsEE_errorTitle">Feil</msg>
+  <msg name="connectionsEE_errorDescription">Dette innholdet er ikke godkjent av organisasjonen din og er ikke tilgjengelig. Kontakt organisasjonens administrator for å aktivere utvidelsen.</msg>
+</messagebundle>

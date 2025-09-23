@@ -1,0 +1,71 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+${script:com.ibm.lconn.layout.track}
+${script:net.jazz.ajax.xdloader}
+${endhead}
+
+<script>
+	if (!dojo.exists("com.ibm.lconn.layout.track")) 
+		throw "Connections Tracking API not defined";
+	dojo.addOnLoad(function() {console.log("Loaded")});
+	var track = com.ibm.lconn.layout.track;
+</script>
+
+<table cellpadding="1" cellspacing="1" border="1">
+<thead><tr>
+<th>Test case</th><th>Description</th>
+</tr></thead><tbody>
+
+<tr><td valign="top">
+	<div><a href="javascript:; track.read('1', 'blog')">Track blog entry 1</a></div>
+	<div><a href="javascript:; track.read('1', 'blog')">Track blog entry 1</a></div>
+	<div><a href="javascript:; track.read('2', 'blog')">Track blog entry 2</a></div>
+</td><td valign="top">
+	When clicked, these links generate tracking beacons on the page.
+	<ol>
+	<li>Each click results in one beacon event.
+	<li>Subsequent clicks should add separate beacons  
+	<li>The beacon should not be cached by the browser
+	<li>Verify that Internet Explorer fires repeat beacons
+	<li>After the beacon has been successfully loaded, it is removed from the DOM.
+	<li>If the beacon cannot be loaded (due to a missing server) the IMG element remains in the DOM forever.
+	</ol>
+</td></tr>
+
+<tr><td valign="top">
+	<div><a href="javascript:; track.read('1', 'blog', {extra: 'viewingpage'})">Track blog entry 1 with custom data</a></div>
+	<div><a href="javascript:; track.read('1', 'blog', {extra: {param: 'tourl'}})">Track blog entry 1 and pass 'param'='tourl' to the metrics servlet.</a></div>
+	<div><a href="javascript:; track.read('1', 'blog', {communityId: '123'})">Track blog entry 1 with override community</a></div>
+	<div><a href="javascript:; track.read('1', 'blog', {source: 'unknown'})">Track blog entry 1 with override source</a></div>
+</td><td valign="top">
+	Add tracking beacons that:
+	<ol>
+	<li>Mix in extra data as a string
+	<li>Mix in extra data as a map
+	<li>Send community id
+	<li>Send a custom source value
+	</ol>
+</td></tr>
+
+<tr><td valign="top">
+	<div><a href="javascript:; track.read('1', 'file', {extra: 'viewingpage'})">Track file</a></div>
+	<div><a href="javascript:; track.read('1', 'community', {extra: {param: 'tourl'}})">Track community</a></div>
+	<div><a href="javascript:; track.read('1', 'wiki.page', {communityId: '123'})">Track wiki page</a></div>
+	<div><a href="javascript:; track.read('1', 'wiki', {source: 'unknown'})">Track wiki</a></div>
+	<div><a href="javascript:; track.read('1', 'activity', {})">Track activity</a></div>
+	<div><a href="javascript:; track.read('1', 'activity.entry', {})">Track activity entry</a></div>
+	<div><a href="javascript:; track.read('1', 'statusupdate', {})">Track status update</a></div>
+	<div><a href="javascript:; track.read('1', 'bookmark', {})">Track bookmark</a></div>
+	<div><a href="javascript:; track.read('1', 'forum.post', {})">Track forum post</a></div>
+	<div><a href="javascript:; track.read('1', 'forum', {})">Track forum</a></div>
+	<div><a href="javascript:; track.read('1', 'folder', {})">Track folder</a></div>
+</td><td valign="top">
+	Add tracking beacons with different types of data
+	<ol>
+	<li>
+	</ol>
+</td></tr>
+</tbody></table>
+</body>
+
+${end}

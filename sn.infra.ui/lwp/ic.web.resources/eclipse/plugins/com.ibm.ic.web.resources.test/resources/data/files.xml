@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<feed xmlns:thr="http://purl.org/syndication/thread/1.0"
+	xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:snx="http://www.ibm.com/xmlns/prod/sn"
+	xmlns:td="urn:ibm.com/td" xmlns="http://www.w3.org/2005/Atom">
+	<generator version="4.5.0.0" uri="http://www.ibm.com/xmlns/prod/sn">IBM Connections - Files
+	</generator>
+	<id>urn:lsid:ibm.com:td:myshares</id>
+	<title type="text">All Shares for Amy Jones2</title>
+	<link
+		href="https://dubxpcvm3078.mul.ie.ibm.com:9445/files/form/api/myshares/feed"
+		rel="self"></link>
+	<author>
+		<name>Amy Jones2</name>
+		<snx:userid>4fda6cc0-0101-102e-88dd-f78755f7e0ed</snx:userid>
+		<email>ajones2@janet.iris.com</email>
+		<snx:userState>active</snx:userState>
+	</author>
+	<updated>2013-10-30T13:15:58.818Z</updated>
+	<opensearch:totalResults>0</opensearch:totalResults>
+	<app:collection
+		href="https://dubxpcvm3078.mul.ie.ibm.com:9445/files/form/api/myshares/feed"
+		xmlns:app="http://www.w3.org/2007/app">
+		<title type="text">myshares</title>
+	</app:collection>
+</feed>

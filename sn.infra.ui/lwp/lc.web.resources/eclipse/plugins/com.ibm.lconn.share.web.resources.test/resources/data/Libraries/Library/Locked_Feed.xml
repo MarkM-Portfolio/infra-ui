@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:td="urn:ibm.com/td" xmlns:wplcext="http://www.ibm.com/wplcext/atom/1.0" xmlns:snx="http://www.ibm.com/xmlns/prod/sn">
+  <generator uri="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/feed" version="2.0.0.0">Social ECM Documents: P8</generator>
+  <id>urn:lsid:ibm.com:td:B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170</id>
+  <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/feed" rel="self"></link>
+  <title type="text">Coconut</title>
+  <collection xmlns="http://www.w3.org/2007/app" href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/feed">
+    <atom:title xmlns:atom="http://www.w3.org/2005/Atom" type="text">Coconut</atom:title>
+    <accept>application/*</accept>
+    <accept>image/*</accept>
+    <accept>*/*</accept>
+  </collection>
+  <author>
+    <name>wasadmin</name>
+    <uri>uid%3Dwasadmin%2Co%3DdefaultWIMFileBasedRealm</uri>
+    <td:uid>41d7cb37-5fb5-4934-ae0a-9bc2438885ee</td:uid>
+  </author>
+  <updated>2014-09-12T14:42:55.176Z</updated>
+  <td:created>2014-09-12T14:42:55.138Z</td:created>
+  <td:capabilities>
+    <td:CreateFolder>true</td:CreateFolder>
+    <td:CreateTAG>true</td:CreateTAG>
+    <td:CreateRating>false</td:CreateRating>
+    <td:CreateDocumentLink>true</td:CreateDocumentLink>
+    <td:CreateDocumentShare>false</td:CreateDocumentShare>
+    <td:CreateComment>true</td:CreateComment>
+    <td:CreateRecommendation>true</td:CreateRecommendation>
+    <td:DownloadCount>true</td:DownloadCount>
+    <td:DownloadRecord>true</td:DownloadRecord>
+    <td:FollowFolder>false</td:FollowFolder>
+    <td:FollowDocument>true</td:FollowDocument>
+    <td:AnonymousAccess>true</td:AnonymousAccess>
+    <td:RecycleBin>true</td:RecycleBin>
+    <td:AccessControl>true</td:AccessControl>
+    <td:DraftApproval>true</td:DraftApproval>
+    <td:CopyAndMoveDocument>true</td:CopyAndMoveDocument>
+    <td:CopyAndMoveFolder>false</td:CopyAndMoveFolder>
+    <td:RecommendCount>true</td:RecommendCount>
+    <td:CommentCount>true</td:CommentCount>
+    <td:ECMSearch>false</td:ECMSearch>
+    <td:Teamspace>true</td:Teamspace>
+    <td:SharedDrafts>false</td:SharedDrafts>
+  </td:capabilities>
+  <td:permissions>ViewContent,viewcontent,AddFolder,addfolder,AddChild,add,GrantAccess,grantaccess,Delegate,delegate,Edit,edit,EditContent,editcontent,LockOverride,lockoverride,ViewProperties,viewproperties,Delete,delete,EditProperties,editproperties,View,view,Purge,purge,ViewTrash,viewtrash</td:permissions>
+  <td:defaultDocumentTypeUuid>{01A3A8C2-7AEC-11D1-A31B-0020AF9FBB1C}</td:defaultDocumentTypeUuid>
+  <td:allowedSortKeys>size,downloaded,modified,creator,fname,desc,label,modifier,title,anonymous_downloaded,updated,recommended,commented</td:allowedSortKeys>
+  <snx:remoteApplication id="5c6c4d38-ee63-49bf-8704-0cd256b607f8">
+    <snx:property name="rootFeed">http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/feed</snx:property>
+    <snx:property name="generator">Social ECM Documents: P8</snx:property>
+    <snx:property name="rootCategory">library</snx:property>
+    <snx:property name="sharedDocTypesUrl">http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/documenttypes/feed</snx:property>
+    <snx:property name="componentId">B7B345E7-3F5C-4303-9C7B-D96EE774EF4F;B812054C-9B93-4DB8-8AE5-4E3D626CA170</snx:property>
+    <snx:property name="communityType">public</snx:property>
+  </snx:remoteApplication>
+  <td:modifier>
+    <td:uri>uid%3Dwasadmin%2Co%3DdefaultWIMFileBasedRealm</td:uri>
+    <td:name>wasadmin</td:name>
+    <td:email></td:email>
+    <td:uid>41d7cb37-5fb5-4934-ae0a-9bc2438885ee</td:uid>
+  </td:modifier>
+  <entry xml:lang="en">
+    <title type="text">baby-seal-2.jpg</title>
+    <category term="document" scheme="tag:ibm.com,2006:td/type" label="document"></category>
+    <td:documenttype>B7B345E7-3F5C-4303-9C7B-D96EE774EF4F;01A3A8C2-7AEC-11D1-A31B-0020AF9FBB1C</td:documenttype>
+    <td:nexusId>Document;{B7B345E7-3F5C-4303-9C7B-D96EE774EF4F};{E9215482-691C-46F7-9640-F594D9D2A940}</td:nexusId>
+    <td:versionLabel>1.0</td:versionLabel>
+    <link href="" rel="via"></link>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+    <td:notifications>
+      <td:media>on</td:media>
+      <td:comment>on</td:comment>
+    </td:notifications>
+    <td:approvalType>none</td:approvalType>
+    <td:updateToken>1</td:updateToken>
+    <content type="image/jpeg" xml:lang="en" src="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7B05BF19FC-D7F5-40C3-837B-54CD6009BF00%7D/media/%62%61%62%79%2d%73%65%61%6c%2d%32%2e%6a%70%67?follow=true">baby-seal-2.jpg</content>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7B05BF19FC-D7F5-40C3-837B-54CD6009BF00%7D/entry" rel="self"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7B05BF19FC-D7F5-40C3-837B-54CD6009BF00%7D/entry" rel="edit"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7B05BF19FC-D7F5-40C3-837B-54CD6009BF00%7D/media/%62%61%62%79%2d%73%65%61%6c%2d%32%2e%6a%70%67?follow=true" rel="edit-media"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7B05BF19FC-D7F5-40C3-837B-54CD6009BF00%7D/feed" rel="replies"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/anonymous/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7B05BF19FC-D7F5-40C3-837B-54CD6009BF00%7D/media" rel="anonymous"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7B05BF19FC-D7F5-40C3-837B-54CD6009BF00%7D/downloadedby/feed" rel="downloaders"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7B05BF19FC-D7F5-40C3-837B-54CD6009BF00%7D/recommendedby/feed" rel="recommenders"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7B05BF19FC-D7F5-40C3-837B-54CD6009BF00%7D/members/feed" rel="members"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7B05BF19FC-D7F5-40C3-837B-54CD6009BF00%7D/feed?category=comment" rel="commenters"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7B05BF19FC-D7F5-40C3-837B-54CD6009BF00%7D/media/%62%61%62%79%2d%73%65%61%6c%2d%32%2e%6a%70%67?follow=true" rel="enclosure" type="image/jpeg" title="baby-seal-2.jpg" language="en" length="69694"></link>
+    <td:cmisVersionSeriesID>idv_05BF19FC-D7F5-40C3-837B-54CD6009BF00</td:cmisVersionSeriesID>
+    <id>urn:lsid:ibm.com:td:%7B05BF19FC-D7F5-40C3-837B-54CD6009BF00%7D</id>
+    <author>
+      <email>vhanley@renovations.com</email>
+      <name>Vivian Hanley</name>
+      <uri>uid%3Dvhanley%2Ccn%3Dusers%2CO%3DRENOVATIONS</uri>
+      <td:uid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</td:uid>
+    </author>
+    <td:label>baby-seal-2.jpg</td:label>
+    <td:uuid>{05BF19FC-D7F5-40C3-837B-54CD6009BF00}</td:uuid>
+    <td:modifier>
+      <td:uri>uid%3Dvhanley%2Ccn%3Dusers%2CO%3DRENOVATIONS</td:uri>
+      <td:name>Vivian Hanley</td:name>
+      <td:email>vhanley@renovations.com</td:email>
+      <td:uid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</td:uid>
+    </td:modifier>
+    <td:locked>false</td:locked>
+    <td:averageRating>0.0</td:averageRating>
+    <td:ratingCount>0</td:ratingCount>
+    <summary type="text"></summary>
+    <td:created>2014-10-19T21:36:32.804Z</td:created>
+    <published>2014-10-19T21:36:32.804Z</published>
+    <td:modified>2014-10-19T21:36:33.486Z</td:modified>
+    <updated>2014-10-19T21:36:33.486Z</updated>
+  </entry>
+  <entry xml:lang="en">
+    <title type="text">Mango-01.jpg</title>
+    <category term="draft" scheme="tag:ibm.com,2006:td/type" label="draft"></category>
+    <td:documenttype>B7B345E7-3F5C-4303-9C7B-D96EE774EF4F;01A3A8C2-7AEC-11D1-A31B-0020AF9FBB1C</td:documenttype>
+    <td:nexusId>Document;{B7B345E7-3F5C-4303-9C7B-D96EE774EF4F};{578933C1-D7F2-40BB-AFBC-907AB9B6DCD2}</td:nexusId>
+    <td:versionLabel>1.1</td:versionLabel>
+    <link href="" rel="via"></link>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+    <td:notifications>
+      <td:media>on</td:media>
+      <td:comment>on</td:comment>
+    </td:notifications>
+    <td:approvalType>none</td:approvalType>
+    <td:updateToken>1</td:updateToken>
+    <content type="application/octet-stream" xml:lang="en" src="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/draft/%7B578933C1-D7F2-40BB-AFBC-907AB9B6DCD2%7D/media/%4d%61%6e%67%6f%2d%30%31%2e%6a%70%67?follow=true">Mango-01.jpg</content>
+    <td:documentUuid>{80169D01-CEF1-4424-A607-E49AB2746A8C}</td:documentUuid>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/draft/%7B578933C1-D7F2-40BB-AFBC-907AB9B6DCD2%7D/entry" rel="self"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/draft/%7B578933C1-D7F2-40BB-AFBC-907AB9B6DCD2%7D/entry" rel="edit"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/draft/%7B578933C1-D7F2-40BB-AFBC-907AB9B6DCD2%7D/media/%4d%61%6e%67%6f%2d%30%31%2e%6a%70%67?follow=true" rel="edit-media"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/draft/%7B578933C1-D7F2-40BB-AFBC-907AB9B6DCD2%7D/feed" rel="replies"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7B80169D01-CEF1-4424-A607-E49AB2746A8C%7D/downloadedby/feed" rel="downloaders"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7B80169D01-CEF1-4424-A607-E49AB2746A8C%7D/recommendedby/feed" rel="recommenders"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7B578933C1-D7F2-40BB-AFBC-907AB9B6DCD2%7D/feed?category=comment" rel="commenters"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/draft/%7B578933C1-D7F2-40BB-AFBC-907AB9B6DCD2%7D/members/feed" rel="members"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/view/CheckedOut/document/%7B80169D01-CEF1-4424-A607-E49AB2746A8C%7D/entry" rel="checked-out"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/draft/%7B578933C1-D7F2-40BB-AFBC-907AB9B6DCD2%7D/media/%4d%61%6e%67%6f%2d%30%31%2e%6a%70%67?follow=true" rel="enclosure" type="application/octet-stream" title="Mango-01.jpg" language="en" length="150442"></link>
+    <td:cmisDocumentID>idd_578933C1-D7F2-40BB-AFBC-907AB9B6DCD2</td:cmisDocumentID>
+    <td:cmisVersionSeriesID>idv_80169D01-CEF1-4424-A607-E49AB2746A8C</td:cmisVersionSeriesID>
+    <id>urn:lsid:ibm.com:td:%7B578933C1-D7F2-40BB-AFBC-907AB9B6DCD2%7D</id>
+    <author>
+      <email>vhanley@renovations.com</email>
+      <name>Vivian Hanley</name>
+      <uri>uid%3Dvhanley%2Ccn%3Dusers%2CO%3DRENOVATIONS</uri>
+      <td:uid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</td:uid>
+    </author>
+    <td:label>Mango-01.jpg</td:label>
+    <td:uuid>{578933C1-D7F2-40BB-AFBC-907AB9B6DCD2}</td:uuid>
+    <td:modifier>
+      <td:uri>uid%3Daalain%2Ccn%3Dusers%2CO%3DRENOVATIONS</td:uri>
+      <td:name>Amadou Alain</td:name>
+      <td:email>aalain@renovations.com</td:email>
+      <td:uid>81e18b48-1378-4850-b758-7212d0f6f479</td:uid>
+    </td:modifier>
+    <td:locked>true</td:locked>
+    <td:lockOwner>
+      <td:uri>uid%3Daalain%2Ccn%3Dusers%2CO%3DRENOVATIONS</td:uri>
+      <td:name>Amadou Alain</td:name>
+      <td:email>aalain@renovations.com</td:email>
+      <td:uid>81e18b48-1378-4850-b758-7212d0f6f479</td:uid>
+    </td:lockOwner>
+    <td:averageRating>0.0</td:averageRating>
+    <td:ratingCount>0</td:ratingCount>
+    <summary type="text"></summary>
+    <td:created>2014-10-16T02:01:11.606Z</td:created>
+    <published>2014-10-16T02:01:11.606Z</published>
+    <td:modified>2014-10-17T03:07:06.095Z</td:modified>
+    <updated>2014-10-17T03:07:06.095Z</updated>
+  </entry>
+  <entry xml:lang="en">
+    <title type="text">Lamb0.jpeg</title>
+    <category term="draft" scheme="tag:ibm.com,2006:td/type" label="draft"></category>
+    <td:documenttype>B7B345E7-3F5C-4303-9C7B-D96EE774EF4F;01A3A8C2-7AEC-11D1-A31B-0020AF9FBB1C</td:documenttype>
+    <td:nexusId>Document;{B7B345E7-3F5C-4303-9C7B-D96EE774EF4F};{A5EA7779-E8EB-4D6A-BC73-742749D720B1}</td:nexusId>
+    <td:versionLabel>1.1</td:versionLabel>
+    <link href="" rel="via"></link>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">1</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+    <td:notifications>
+      <td:media>on</td:media>
+      <td:comment>on</td:comment>
+    </td:notifications>
+    <td:approvalType>none</td:approvalType>
+    <td:updateToken>1</td:updateToken>
+    <content type="application/octet-stream" xml:lang="en" src="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/draft/%7BA5EA7779-E8EB-4D6A-BC73-742749D720B1%7D/media/%4c%61%6d%62%30%2e%6a%70%65%67?follow=true">Lamb0.jpeg</content>
+    <td:documentUuid>{9396C00D-5253-42D7-B809-C8C63C36D707}</td:documentUuid>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/draft/%7BA5EA7779-E8EB-4D6A-BC73-742749D720B1%7D/entry" rel="self"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/draft/%7BA5EA7779-E8EB-4D6A-BC73-742749D720B1%7D/entry" rel="edit"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/draft/%7BA5EA7779-E8EB-4D6A-BC73-742749D720B1%7D/media/%4c%61%6d%62%30%2e%6a%70%65%67?follow=true" rel="edit-media"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/draft/%7BA5EA7779-E8EB-4D6A-BC73-742749D720B1%7D/feed" rel="replies"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7B9396C00D-5253-42D7-B809-C8C63C36D707%7D/downloadedby/feed" rel="downloaders"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7B9396C00D-5253-42D7-B809-C8C63C36D707%7D/recommendedby/feed" rel="recommenders"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/document/%7BA5EA7779-E8EB-4D6A-BC73-742749D720B1%7D/feed?category=comment" rel="commenters"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/draft/%7BA5EA7779-E8EB-4D6A-BC73-742749D720B1%7D/members/feed" rel="members"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/view/CheckedOut/document/%7B9396C00D-5253-42D7-B809-C8C63C36D707%7D/entry" rel="checked-out"></link>
+    <link href="http://aries.rtp.raleigh.ibm.com/dm/atom/library/B7B345E7-3F5C-4303-9C7B-D96EE774EF4F%3BB812054C-9B93-4DB8-8AE5-4E3D626CA170/draft/%7BA5EA7779-E8EB-4D6A-BC73-742749D720B1%7D/media/%4c%61%6d%62%30%2e%6a%70%65%67?follow=true" rel="enclosure" type="application/octet-stream" title="Lamb0.jpeg" language="en" length="68835"></link>
+    <td:cmisDocumentID>idd_A5EA7779-E8EB-4D6A-BC73-742749D720B1</td:cmisDocumentID>
+    <td:cmisVersionSeriesID>idv_9396C00D-5253-42D7-B809-C8C63C36D707</td:cmisVersionSeriesID>
+    <id>urn:lsid:ibm.com:td:%7BA5EA7779-E8EB-4D6A-BC73-742749D720B1%7D</id>
+    <author>
+      <email>vhanley@renovations.com</email>
+      <name>Vivian Hanley</name>
+      <uri>uid%3Dvhanley%2Ccn%3Dusers%2CO%3DRENOVATIONS</uri>
+      <td:uid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</td:uid>
+    </author>
+    <td:label>Lamb0.jpeg</td:label>
+    <td:uuid>{A5EA7779-E8EB-4D6A-BC73-742749D720B1}</td:uuid>
+    <td:modifier>
+      <td:uri>uid%3Dvhanley%2Ccn%3Dusers%2CO%3DRENOVATIONS</td:uri>
+      <td:name>Vivian Hanley</td:name>
+      <td:email>vhanley@renovations.com</td:email>
+      <td:uid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</td:uid>
+    </td:modifier>
+    <td:locked>true</td:locked>
+    <td:lockOwner>
+      <td:uri>uid%3Dvhanley%2Ccn%3Dusers%2CO%3DRENOVATIONS</td:uri>
+      <td:name>Vivian Hanley</td:name>
+      <td:email>vhanley@renovations.com</td:email>
+      <td:uid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</td:uid>
+    </td:lockOwner>
+    <td:averageRating>0.0</td:averageRating>
+    <td:ratingCount>0</td:ratingCount>
+    <summary type="text"></summary>
+    <td:created>2014-10-16T02:02:36.507Z</td:created>
+    <published>2014-10-16T02:02:36.507Z</published>
+    <td:modified>2014-10-17T03:02:52.142Z</td:modified>
+    <updated>2014-10-17T03:02:52.142Z</updated>
+  </entry>
+</feed>

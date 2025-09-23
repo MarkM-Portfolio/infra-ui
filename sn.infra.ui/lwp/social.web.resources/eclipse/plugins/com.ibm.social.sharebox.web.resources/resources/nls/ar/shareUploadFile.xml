@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">الملفات</msg>
+  <msg name="description">الملفات تسمح بتحميل ومشاركة الملفات</msg>
+  <msg name="action_uploadFile_label">الملفات</msg>
+  <msg name="action_uploadFile_tooltip">تحميل ومشاركة الملفات</msg>
+  <msg name="loading">‏تحميل...‏</msg>
+  <msg name="error_msg">لا يمكن تحميل المحتويات. حاول مرة أخرى فيما بعد أو قم بالاتصال بمسؤول النظام الخاص بك.</msg>
+  <msg name="error_alt">‏خطأ‏</msg>
+</messagebundle>

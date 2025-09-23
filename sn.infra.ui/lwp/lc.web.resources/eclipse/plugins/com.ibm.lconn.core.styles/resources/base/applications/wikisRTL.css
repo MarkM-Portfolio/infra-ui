@@ -1,0 +1,715 @@
+/*
+ Copyright IBM Corp. 2009, 2015  All Rights Reserved.              
+*/
+
+
+
+/*   Styles for Page View
+-------------------------------------------------------*/
+/*---- FIXME: replace with class --*/
+#wikiHeader p{margin:0px;padding:0px;}
+
+/*   Do not wrap list items in ul.lotusEditable
+-------------------------------------------------------*/
+#mostRecommendedWikis ul.lotusEditable li a, #mostVisitedWikis ul.lotusEditable li a, #mostCommentedWikis ul.lotusEditable li a{width:99% !important;white-space:nowrap !important;overflow:hidden !important;text-overflow:ellipsis;}
+
+/* PageEdit tags add action */
+.lotusui30 .lotusForm .lotusTags .lotusText {width: auto;}
+
+/*   added by Claudio P for ConfirmNewPage 19/09/2008
+-------------------------------------------------------*/
+.lotusForm p{margin:0 25px;}
+.lotusForm .lotusLast .lotusFormFieldRow{padding-bottom: 15px;}
+/*---- Forward links which never worked --*/
+.redLink{color:#009911 !important;text-decoration:none !important;border-bottom-width:1px !important;border-bottom-style:dashed !important;}
+/*---- FIXME: namespace with lconnWikis --*/
+input.wikiPageTitle{font-size:1.7em;font-weight:normal;line-height:1.2em;margin-left:0.5em;}
+table.wikiPageTable{background-color:#ffffff;border-spacing:0pt 5px;}
+/*---- FIXME: change to something less cryptic --*/
+.wikiSelect{margin-right:7px;margin-left:7px;}
+/*---- FIXME: find an elegant solution for More links in the Attachments widget --*/
+.qkrAttachment{overflow:hidden !important;text-overflow:ellipsis !important;white-space:nowrap !important;}
+.qkrAttachmentExpanded{word-wrap:break-word;}
+
+/*   Get rid of blue bar on the left side of drop-down menus
+-------------------------------------------------------*/
+.dijitMenuTable{background-image:none;}
+.dijitProgressBar{margin:2px 0px 2px 0px;}
+
+/*   Tweaks to make drop-down buttons the same height as lotusButton links
+-------------------------------------------------------*/
+.lotusBtn a img.lotusDropDownSprite{margin-left:0 !important;}
+.dj_ff2 .lotusBtn{position:relative;}
+
+/*   Resize bar
+   TODO: push to OneUI
+-------------------------------------------------------*/
+.lotusResizable{float:right;width:6px;cursor:w-resize;height:100px;margin-right:-5px !important;}
+.lotusResizableHover{background-color:#cccccc;}
+.lotusui30 .lotusResizable .lconnResizeBar:focus {background:url(../../images/lotusHSprite-8bit.png) no-repeat scroll -463px 8px transparent;height:48px;position:relative;top:50%;}
+
+/*---------------------------------------------------------
+   Undocumented fix for Profiles business card
+-------------------------------------------------------*/
+span.personinlinemenu div.lotusInlineVCard{margin:0 0 10px 0 !important;}
+.wikiHeader .lotusDivider{padding:0 5px;}
+/*---------------------------------------------------------
+   Tweak fixed table layout styles for IE
+-------------------------------------------------------*/
+.lotusui_ie .lotusFixedTable th, .lotusui_ie .lotusFixedTable td{overflow:visible;}
+/*---------------------------------------------------------
+   Fix for lotusphere spr
+-------------------------------------------------------*/
+.qkrInlineSelection{line-height:2em;margin-bottom:2px;overflow:hidden;}
+.qkrInlineSelection  li.lotusFirst{border-right:1px solid #96CAFF !important;padding:2px;!important;}
+.qkrInlineSelection li{color:#105CB6;border:1px solid #96CAFF;padding:2px;background-color:#EFF7FF;text-decoration:none;white-space:nowrap;}
+.qkrInlineSelection a .qkrInfo{color:#AAAAAA;margin:0 6px;}
+.qkrInlineSelection li.qkrDisabled a{color:#AAAAAA;border:1px solid #CCCCCC;background-color:#F7F7F7;cursor:default;}
+.qkrInlineSelection a IMG{cursor:pointer;}
+.qkrInlineSelectionRow{line-height:2em;}
+.dj_ie .qkrInlineSelection{line-height:auto;}
+.dj_ie .qkrInlineSelection a{white-space:normal;height:1%;}
+.dj_ie6 .qkrInlineSelection li{padding-bottom:4px;padding-top:2px;margin-top:2px;position:relative;height:1%;float:right;}
+.dj_ie7 .qkrInlineSelection li{padding-bottom:1px;padding-top:1px;margin-top:2px;position:relative;height:1%;}
+/*---------------------------------------------------------
+   Fix for long wiki names in IE
+-------------------------------------------------------*/
+.lotusui_ie .lotusPlaceBar .lotusInner h2 {word-wrap:break-word;}
+/*---------------------------------------------------------
+   Fix for transparent lotusForm2 in dojo dialog
+-------------------------------------------------------*/
+.lotusForm2 .lotusDialogContent{background-color:#ffffff;}
+/*---------------------------------------------------------
+   Fix for long names in settings dialog
+-------------------------------------------------------*/
+.lotusDialog .lotusDialogContent{overflow-x:hidden;}
+/*---------------------------------------------------------
+   Fix for long comments
+-------------------------------------------------------*/
+#pageDetails .lotusPostDetails p{overflow:auto;}
+.lotusui_ie #pageDetails .lotusPostDetails p{word-wrap:break-word;}
+/*-----------------------------------------------------------
+   Tooltips
+---------------------------------------------------------*/
+/*---- FIXME: Needs an SPR and resolution --*/
+.dijitPopup .lotusHelp, .dijitTooltipDialog .lotusHelp, .lotusTooltipDialog .lotusHelp{position:relative;lef:0;top:0;width:auto;}
+.lotusui .dijitTooltipContainer{font-size:1em;}
+/*---- dijitTooltip sets font-size:small --*/
+.lotusHelp .lotusChunk{margin:5px 0 0;}
+.lotusHelp .lotusInfoBox h3{float:none;margin-right:0;padding-right:0;}
+.lotusTooltipDialog .dijitTooltipContainer{background-image:none;background-color:transparent;border:0;padding:0;}
+.lotusTooltipDialog .dijitTooltipConnector{display:none;}
+/*-----------------------------------------------------------
+   Spriting
+---------------------------------------------------------*/
+/*---- Center the drop-down vertically --*/
+img.lconnSprite-iconDropDown5x3{margin-bottom:2px;}
+/*---- Center help icon in 16x16 area --*/
+.lotusSection h2 img.lconnSprite-iconHelp16, .lotusForm .lotusFormFieldRow img.lconnSprite-iconHelp16{margin-top:2px;}
+/*---- Center comment icons in 16x16 area --*/
+img.lconnSprite-iconComment16{margin-top:1px;margin-bottom:1px;}
+img.lconnSprite-iconNoComments16{margin-top:1px;margin-bottom:1px;}
+/*---- Center rating icons in 16x16 area --*/
+.lconnSprite-iconRating16-off{margin-bottom:1px;}
+.lconnSprite-iconRating16-on{margin-bottom:1px;}
+/*---- Center delete icon in 16x16 area --*/
+.lconnSprite-iconDelete12{margin-top:3px !important;margin-bottom:3px !important;}
+
+/*---- Pad remove icon --*/
+.qkrRemove{margin-right:3px;margin-left:3px;}
+.lotusHeader .qkrRemove img{margin:0;}
+.lotusui a.qkrRemove, .lotusui a.qkrRemove:hover, .lotusui a.qkrRemove:focus, .lotusui a.qkrRemove:active{border:none;text-decoration:none;}
+/*---- Pad alt text replacement for status icon in message container --*/
+.lotusui .lotusMessage span.lotusAltText{margin-right:10px;margin-left:10px;}
+.lotusui .lotusMessage img.lconnSprite-iconDelete12{margin-right:5px;margin-left:5px;}
+.lotusui .lotusMessage table{border-collapse:collapse;width:100%;}
+/*---- Refloat the message icon for search results, since they don't use our markup --*/
+.lotusui .lconnSearchResultContainer .lotusMessage img{float:right;}
+/*---- Sprites for Move Page dialog --*/
+.qkrSprite-arrowUp{width:16px;height:16px;background-image:url(../../images/wikis/tb_16_previous_n.png);}
+.qkrSprite-arrowDown{width:16px;height:16px;background-image:url(../../images/wikis/tb_16_next_n.png);}
+.qkrSprite-arrowUpDisabled{width:16px;height:16px;background-image:url(../../images/wikis/tb_16_previous_d.png);}
+.qkrSprite-arrowDownDisabled{width:16px;height:16px;background-image:url(../../images/wikis/tb_16_next_d.png);}
+.lotusImagesOff .qkrSprite{display:none;}
+/*---------------------------------------------------------
+   IBM Connections 2.5 styles
+------------------------------------------------------*/
+.qkrHideAdmin .lconnFooterToolsCell, .qkrHideAdmin .lconnFooterToolsHeader{display:none;}
+/*---------------------------------------------------------
+   Position the menu icons
+------------------------------------------------------*/
+.lotusSearch .lotusScope .lotusIcon{margin-left:5px;}
+/*---------------------------------------------------------
+   Styles for date filters on search results page
+------------------------------------------------------*/
+ul.lotusYearTree{list-style:none;list-style-position:outside;margin-right:0;padding-right:0;}
+ul.lotusYearTree ul.lotusMonthTree{list-style:none;list-style-position:outside;margin-right:30px;}
+/*---------------------------------------------------------
+   Quota display
+------------------------------------------------------*/
+.qkrQuota{margin:5px 10px;float:left;font-size:.9em;}
+/*---------------------------------------------------------
+   Tree
+------------------------------------------------------*/
+.lotusNavTree{margin:0 0 5px 0;}
+/*---------------------------------------------------------
+   Drag and Drop
+------------------------------------------------------*/
+/*---- Start requested additions to dijit OneUI -*/
+.lotusMenu .dijitTreeRow a{font-weight:bold !important;}
+.dojoDndItem{padding:3px;}
+/*---- IE8 onmouseover not being called  ----*/
+.lotusui_ie .lotusMenu .dijitTreeRow {zoom:1;}
+/*---- TODO: Needs theming -*/
+.dojoDndItemOver{/*- background:#cae8b3;-*/background-color:#cccccc !important;}
+.dojoDndItemSelected{color:#cccccc;}
+/*--
+.dojoDndItemAnchor, .dojoDndItemAnchor a{color:#cccccc !important;}*/
+/*---- TODO: Needs theming
+.dojoDndItemOver .dojoDndSelected, .dojoDndItemOver .dojoDndSelected a{background-color:#cae8b3 !important;background-color:#cccccc !important;}-*//*- 
+---- TODO: Needs theming
+.dojoDndItemOver.dojoDndItemAnchor, .dojoDndItemOver.dojoDndItemAnchor a{background-color:#cae8b3 !important;background-color:#cccccc !important;}-*/
+/*---- TODO: Needs theming -*/
+.dojoDndAvatar{
+/*   background:rgb(113,190,88);border:1px solid #71be58;
+-*/background:#cccccc;border:1px solid #bbbbbb;color:#ffffff !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0.6)";filter:alpha(opacity=60);opacity:0.6;zoom:1;}
+.dojoDndAvatar table, .dojoDndAvatar td{margin:0 5px;color:#ffffff !important;}
+.dojoDndAvatar .dijitTreeRow, .dojoDndAvatar .dijitTreeRow span, .dojoDndAvatar .dijitTreeRow img{margin:0 !important;padding:1px 0 !important;color:#ffffff !important;}
+.dojoDndAvatar .dojoDndItemAnchor, .dojoDndItemAnchor a{color:#000000 !important;font-weight:bold !important;}
+/*---- End requested additions to dijit OneUI -*/
+/*---- Start requested additions to core OneUI -*/
+.dijitTreeRow .lotusDragHandle{background-image:url(../../images/lotusSprite-8bit.png);background-position:2px -2129px;visibility:hidden;width:8px;height:12px;cursor:move;padding-left:2px;padding-top:1px;margin-top:-2px;padding-bottom:2px;display:none;}
+.lotusui30 .dijitTreeRow .lotusDragHandle{background-image:url("/com.ibm.oneui3.styles/imageLibrary/OtherImages/Framework/dndHandle.png");margin-top:1px;margin-right:-3px;}
+.lotusui30 .lotusMenu .lotusTree .dijitTreeRow a{color:#000 !important; font-weight: lighter !important;}
+.lotusui30 .lotusMenu .lotusTree .dijitTreeRow.lotusSelected a { color: #000 !important; font-weight: bolder !important;}
+.lotusui30 .lotusMenu .lotusTree .dijitTreeRow:hover, .lotusui30 .lotusMenu .lotusTree .dijitTreeRow:focus, .lotusui30 .lotusMenu .lotusTree .dijitTreeRow:active{background-color:#E1F4F9;}
+.lotusui30 .lotusMenu .lotusTree .dijitTreeExpando {margin-left: 0px;}
+.lotusui30 .lotusMenu .lotusTree .lotusSelected .dijitTreeExpando {margin-left: 0px;}
+.lotusMenu .lotusTree .dijitTreeExpandoOpened{background-position:0 -412px;}
+.lotusMenu .lotusTree .dijitTreeExpandoClosed{background-position:0 -509px}
+.lotusMenu .lotusTree .dijitTreeExpando{width:8px;margin-right:8px;}
+.lotusMenu .lotusTree .lotusSelected .dijitTreeExpando{margin-right:8px;}
+/*---- TODO: needs theming -*/
+.dijitTree .lotusDivider{background:#cccccc;padding:2px;margin:-2px 5px;}
+/*---- Fixes negative margin bug in drop target -*/
+.lotusui_ie .lotusNavTree{padding-top:2px;}
+.dijitTreeNodeHover .lotusDragHandle{visibility:visible;}
+/*---- End requested additions into core OneUI -*/
+.qkrDnd .lotusDragHandle{position:relative;display:inline;}
+/*----
+.navDiv{width:180px;background:#EEFEE1;/*#edfee1;
+   border:1px solid #CCEBB5;/*#aad789;
+   padding:5px 0;margin-bottom:15px;-moz-border-radius:4px;}
+-*/
+/*---- FIXME: rename, namespace with lconnWikis -*/
+.navDivDragging{-moz-user-select:none;}
+/*---- Move Page -*/
+.reorderDiv{}
+/*---- FIXME: rename, namespace with lconnWikis -*/
+.reorderLabelDiv{width:400px;overflow:hidden;text-overflow:ellipsis;}
+/*---- FIXME: rename, namespace with lconnWikis -*/
+.reorderArrow{padding-bottom:4px;margin-left:0px !important;float:none;clear:both;}
+/*---- FIXME: rename, namespace with lconnWikis -*/
+.moveCheckBox{margin-right:0px !important;margin-left:2px !important;}
+/*---- FIXME: is this really, really the right thing to do ? -*/
+.qkrMarginBottom1px{margin-bottom:1px;}
+.qkrMarginRight0px{margin-left:0px !important;}
+.qkrPaddingRight1px{padding-left:1px !important;}
+.qkrPaddingBottom3px{padding-bottom:3px !important;}
+.qkrMarginLeft10px{margin-right:10px;}
+/*---- FIXME: rename, namespace with lconnWikis -*/
+.liItem{padding-right:2px;}
+/*---- FIXME: rename, namespace with lconnWikis -*/
+.liItem:hover{cursor:pointer;}
+/*---- FIXME: rename, namespace with lconnWikis -*/
+.liItemSelected{cursor:pointer;background-color:#eeeeee;padding-right:2px;}
+div[role="listbox"] { overflow: auto; cursor: default; border: 1px solid gray;}
+div[role="listbox"] > div[role="option"].liItemSelected { color: black; background-color: beige; }
+div[role="listbox"].focus > div[role="option"].liItemSelected { color: white; background-color: #222222; }
+/*---- FIXME: rename, namespace with lconnWikis -*/
+.liItemSelected:hover{cursor:pointer;}
+/*---------------------------------------------------------
+   NEW FOR ONE UI
+   These are classes added to the new One UI stylesheets
+   to perform Quickr Files specific items, or to fill
+   gaps in the OneUI styles.
+------------------------------------------------------*/
+/*---------------------------------------------------------
+   Fixes search boxes to be the same height as their submit buttons
+------------------------------------------------------*/
+.lotusSearch .lotusText{height:1.33em;}
+.lotusui_ie .lotusSearch .lotusText{height:1.33em;}
+.lotusColLeft .lotusSection .lotusSearch .lotusText{height:1.25em;}
+.lotusColRight .lotusSection .lotusSearch .lotusText{height:1.25em;}
+/*---------------------------------------------------------
+   Fix for cut-off feed icon, RTL padding issue in IE
+------------------------------------------------------*/
+/*.lotusFeeds a.lotusFeed{padding-top:2px;padding-bottom:2px}-*/
+.lotusFeeds{display:block;margin:5px 0px;}
+/*----- addition for stream feeds (e.g. my wikis)--*/
+.lotusStreamFeeds{padding-right:10px !important;}
+#lotusColLeft .lotusSection .lotusChunk p, #lotusColRight .lotusSection .lotusChunk p{margin-bottom:5px;line-height:1.4em;}/*- separate text inside chunks -*/
+.lotusInfoBox h3{margin-bottom:5px}/*- 15px was excessive -*/
+.lotusReferenceBox{font-size:.9em;line-height:1.4em;padding-right:5px;}
+body.files table.layout td{vertical-align:middle;}/*- specifically for files, we want there to be a middle layout style table -*/
+.section input{color:black;}/*- we have an input that sits in our main section.  should we be using a different style? -*/
+#lotusContent .lotusSection P{margin-bottom:5px;}/*- no separation between paragraphs in a standard page -*/
+#lotusContent .lotusSection OL{list-style-type:decimal;margin-bottom:5px;}/*- ordered lists have no styles -*/
+#lotusContent .lotusSection OL LI{margin-right:3em;}
+.lotusVertTable th{vertical-align:top;}/*-- the Tags: <th> was not vertical aligned in a vertTable, is this intentional? --*/
+textarea{font:normal 1em/1.2em Arial, Helvetica, sans-serif;}/*- Textareas default to monospace, make them look like rest of elements -*/
+.lotusMenu li hr{margin:3px 15px;border:0;height:1px;}/*- add spacing between items in the menu -*/
+.lotusMenu li.qkrLevelOne{margin-right:10px;}/*- indent menu items -*/
+.lotusPivotNavOpen .lotusPivotNavToggle{padding-bottom:4px}/*- when the person card is expanded, the border is removed which causes the element to lose a single pixel in height -*/
+.lotusSection p.lotusChunk{margin:5px 0 0 0;clear:both;display:inline-block;}
+#lotusColRight p.lotusChunk{margin:5px 2px 0 10px;}
+/*----.lotusSection input{color:inherit;}-*/
+/*---------------------------------------------------------
+   Add spacing to the left of the page number input
+------------------------------------------------------*/
+#lotusContent .lotusPaging input{margin-right:2px;margin-left:2px;}
+/*---------------------------------------------------------
+   Hide overflow for tag clouds
+------------------------------------------------------*/
+.lotusTagCloud ul{width:100%;overflow:hidden;text-overflow:ellipsis;}
+.lotusSort .lotusAscending{padding-left:14px;}
+.lotusSort .lotusDescending{padding-left:14px;}
+.lotusui_ie .lotusSort th a{word-wrap:break-word;}
+tr.lotusSort{font-size:1.0em;margin:0;}
+.lotusChunk .qkrEmpty, .lotusChunk .qkrLoading, .lotusChunk .qkrError{font-style:italic;}
+/*---------------------------------------------------------
+   use lotusCheckbox if necessary
+------------------------------------------------------*/
+.lotusInfoBox .lotusInlinelist{margin-right:0;}
+ul.lotusList li input.qkrCheckbox, ul.lotusList li label{vertical-align:middle;}
+.lotusSection ul.lotusList li.lotusMenuSeparator hr{margin:0;padding:1px;border:0;}
+.lotusLoginBox{margin:0px auto;text-align:right;}
+.lotusLogin{text-align:center;margin:20px auto;}
+.lotusLoginContent img.lotusIcon{margin-left:4px;}
+.lotusDetails .lotusTags{margin-top:5px;}
+td.lotusFormError UL{margin-bottom:0;}
+td.lotusFormHelp{width:20px;vertical-align:top;}
+/*---------------------------------------------------------
+   Workaround for clipped logo
+------------------------------------------------------*/
+.lotusAboutBox{min-height:200px;}
+/*---------------------------------------------------------
+   Workaround for clipped "Enter name or email" text in translations
+------------------------------------------------------*/
+.lotusSearch .lotusText{width:13em;}
+/*---------------------------------------------------------
+   TDs inside TDs shouldn't have duplicate padding
+------------------------------------------------------*/
+.lotusForm tr.lotusFormFieldRow td td{padding-bottom:0;}
+/*---------------------------------------------------------
+   The entry feed doesn't provide us with space for
+   ratings, and tags aren't included in the "more"
+   which is a necessity.  Copied from old css for now
+------------------------------------------------------*/
+.lotusStream{clear:both;}
+.lotusStream .qkrEmpty{margin:20px 10px;font-style:italic;}
+.lotusStream .qkrError{margin:20px 10px;font-style:italic;color:#666;}
+.lotusStream .qkrLoading{margin:20px 10px;}
+.lotusStream .qkrLoading IMG{margin-left:5px;}
+.lotusStream .lotusRecommend{margin-top:5px;}
+.lotusStream .lotusActions{margin-top:5px;}
+/*---------------------------------------------------------
+   Workaround for browsers not honoring overflow:hidden on table cells
+------------------------------------------------------*/
+html.dj_safari table.qkrFixedWidth, html.dj_ff3 table.qkrFixedWidth{table-layout:fixed;}
+/*---------------------------------------------------------
+   Workaround for Safari not showing vertical scrollbars on short textareas
+------------------------------------------------------*/
+html.dj_safari textarea{min-height:75px;}
+table.qkrFixedWidth TD, .lotusStream .lotusTable TD{overflow:hidden;text-overflow:ellipsis;}
+.qkrMoveable{cursor:move;}
+/*---------------------------------------------------------
+   Selectable list widget
+------------------------------------------------------*/
+.qkrThin{padding:0;margin:0;}
+div.qkrFormFieldRow{padding-bottom:3px;margin-bottom:0;margin-left:0;}
+/*---------------------------------------------------------
+   Sortable list widget
+------------------------------------------------------*/
+div.qkrSortArrows{margin:0;margin-right:5px;margin-left:0 !important;}
+/*---------------------------------------------------------
+   Tweaks for tabbed editor area
+------------------------------------------------------*/
+html.dj_safari .qkrPageEditor, .qkrPageEditor{border-top-width:0px;border-bottom:1px solid #CCCCCC;border-right:1px solid #CCCCCC;border-left:1px solid #CCCCCC;min-height:425px;height:auto;resize:none;}
+textarea.qkrPageEditor{margin-top:0px;width:99%;height:425px;}
+.lotusui_ie textarea.qkrPageEditor{margin-top:-1px;}
+form div#pageDetails .lotusTabContainer{padding-left:2px;}
+form.qkrEdit{background-color:#ffffff;}
+/*---------------------------------------------------------
+   This is the smaller vcard controller on the file
+   summary page.  This could potentially be replaced
+   completely with a new design.
+------------------------------------------------------*/
+.lotusVCardControllerSmall{white-space:nowrap;margin-left:5px;position:relative;top:0;left:0;border-width:2px;border-style:solid;padding:3px;z-index:3;-moz-border-radius:2px;-webkit-border-radius:2px;}
+.lotusVCardControllerSmall img{margin:0;padding-left:3px;}
+.lotusVCardControllerSmall a{margin-left:2px;width:10px;height:50px;display:block;float:left;background-position:center center;background-repeat:no-repeat;text-decoration:none;}
+.lotusVCardOpen .lotusVCardControllerSmall{border-bottom-width:0;}
+.lotusVCardControllerSmall{background-color:#fff;border-color:#e0e0e0;}
+.lotusVCardControllerSmall a{background-color:#dee2eb;}
+/*---------------------------------------------------------
+   Preliminary comments work.  Should be replaced by the
+   appropriate OneUI markup and CSS.
+------------------------------------------------------*/
+.qkrComments .lotusComment{margin-right:0;}
+.qkrComments .lotusCommentBody FORM{margin:5px 0 0;}
+.qkrComments .lotusCommentBody TEXTAREA{width:100%;height:6em;}
+.qkrComments .lotusComment .lotusActions{margin-bottom:5px;margin-right:0;}
+.qkrComments .lotusComment div.lotusActions A{margin-right:10px;}
+.qkrComments .qkrAddComment div.lotusActions A{margin-right:10px;}
+.qkrComments .qkrAddComment textarea{width:100%;height:6em;}
+.qkrAddComment .lotusFormFieldRow td, .qkrAddComment .lotusFormFooter td, .qkrAddComment td.lotusFormError{padding-right:10px;}
+.qkrAddComment .lotusFormFooter td{padding-bottom:10px;}
+.qkrComments .lotusCommentDeleted IMG{padding-right:3px;padding-left:2px;}
+.qkrComments .lotusCommentDeleted .lotusCommentBody{font-style:italic;}
+.qkrComments .lotusCommentDeleted .lotusCommentHeader{background-image:none;}
+/*---------------------------------------------------------
+   Wide content must be in nested DIVs with these styles
+   to prevent breaks
+------------------------------------------------------*/
+.qkrWide{width:100%;overflow:hidden;text-overflow:ellipsis;}
+.qkrWide .qkrWideInner{width:100%;overflow:hidden;text-overflow:ellipsis;}
+.lotusFixedTable h4{overflow:hidden;text-overflow:ellipsis;}
+/*---------------------------------------------------------
+   Dialogs for sharing files with other users
+------------------------------------------------------*/
+.lotusDialog h2{font-weight:bold;padding:12px 12px 12px 20px;border-bottom-width:1px;border-bottom-style:solid;background-position:left bottom;background-repeat:repeat-x;}
+.lotusDialog h2{border-bottom-color:#d1dfef;}
+.lotusDialog hr{padding:0;border:0;border-top:1px solid #d1dfef;margin:0;height:1px;}
+.qkrDialogSidebar{background-color:white;padding:10px;border-right:1px solid #d1dfef;vertical-align:top;}
+.qkrDialogSidebar .qkrEmpty{font-style:italic;margin-right:0;margin-left:0;}
+.lotusDialog .lotusFormFieldRow TD{vertical-align:top;}/*- force cells in a dialog form table to top align -*/
+/*---- Undo autoscrolling rules in OneUI -*/
+.lotusui .lotusDialogBorder{max-width:none;}
+.lotusui .lotusDialog .lotusDialogContent{max-height:none;max-width:none;overflow-x:hidden;overflow-y:visible;padding-left:17px;}
+.lotusui_ie .lotusDialog .lotusDialogContent{position:static;}
+.qkrDialogScrolledY{overflow-y:scroll;}
+.lotusui .lotusDialog .qkrDialogScrolledY .lotusDialogContent{padding-left:1px;}
+.dj_safari .lotusui .lotusDialog .qkrDialogScrolledY .lotusDialogContent{padding-left:2px;}
+.lotusui_ie .qkrDialogScrolledY{position:relative;}
+.qkrDialogScrolledX{overflow-x:auto;}
+.lotusForm .lotusCheckbox{padding:0;vertical-align:middle;}
+/*---------------------------------------------------------
+   Recommendation tag
+------------------------------------------------------*/
+.lotusRecommend IMG{margin-left:2px;}
+.lotusRecommend LABEL{vertical-align:middle;}
+.lotusCommentCount IMG{margin-left:2px;}
+.lotusCommentCount LABEL{vertical-align:middle;}
+/*---------------------------------------------------------
+   Backporting lotus tags
+------------------------------------------------------*/
+.lotusTags FORM{display:inline;}
+.lotusTags a.qkrAdd, .lotusTags a.qkrAdd:visited{margin-right:8px;}
+.lotusTags .qkrEmpty{font-style:italic;margin-right:0;margin-left:0;}
+.lotusTags FORM INPUT{margin:0 5px;}
+.lotusTags form input.lotusText{width:auto;}
+.lotusTags img{margin-left:0px;}
+.lotusDetails .lotusTags{margin-top:0;padding-right:18px;background-image:none;}
+/*---------------------------------------------------------
+   fix for lotusTags tag list
+------------------------------------------------------*/
+.lotusTags ul.qkrInline{margin-right:0px;margin-left:0px;padding-right:0px;padding-left:0px;display:inline;}
+.lotusTags .qkrInline li{display:inline;border-right:0px;padding-right:0px;padding-left:0px;}
+/*---------------------------------------------------------
+   Styles for Pages/Wiki preview
+------------------------------------------------------*/
+#wikiContentDiv{overflow-x:auto;overflow-y:visible;width:100%;position:relative;margin-bottom:2em;}
+.qkrWikiPreview{background-color:#FFFFFF;line-height:normal;} 
+.qkrWikiPreview P{margin-bottom:5px;margin-top:5px;padding-top:2px;padding-bottom:2px;} 
+.qkrWikiPreview SUP{vertical-align:super;} 
+.qkrWikiPreview SUB{vertical-align:sub;} 
+.qkrWikiPreview u a{text-decoration:underline;}
+.qkrWikiPreview ul{list-style-position:outside !important;margin-top:0px !important;margin-bottom:0px;}
+.qkrWikiPreview ul ul{list-style-type:circle !important;}
+.qkrWikiPreview ul ul ul{list-style-type:square !important;}
+.qkrWikiPreview ol{list-style-position:outside !important;margin-top:0px !important;margin-bottom:0px;}
+.qkrWikiPreview li{margin:0px !important;}
+.qkrWikiPreview I{font-style:italic;}
+.qkrWikiPreview EM{font-style:italic;}
+.qkrWikiPreview BLOCKQUOTE{margin-right:3em;}
+.qkrWikiPreview TABLE{border-collapse:collapse !important;margin:4px;}
+.qkrWikiPreview TABLE[cellspacing]{border-collapse:unset !important;}
+.qkrWikiPreview TABLE[style*='border-collapse'] TD, .qkrWikiPreview TABLE[style*='border-collapse'] TH {padding: 4px;}
+.qkrWikiPreview TH{background-color:#D8D8D8;font-weight:bold;}
+.qkrWikiPreview div{word-wrap:break-word;}
+.qkrWikiPreview h1, .qkrWikiPreview h2, .qkrWikiPreview h3, .qkrWikiPreview h4, .qkrWikiPreview h5, .qkrWikiPreview h6{color:#000000 !important;padding:2px !important;font-weight:bold !important;border:none !important;}
+/*-----------------------------------------------------------
+   SPR #DCHA88MDAK: Paste from word heading margins being overrided and not providing desired output. 
+   Override oneUI .lotusForm stylings to provide consistant feedback in preview & actual page view.
+--------------------------------------------------------*/
+.lotusForm .qkrWikiPreview h1, .lotusForm .qkrWikiPreview h2, .lotusForm .qkrWikiPreview h3, 
+.lotusForm .qkrWikiPreview h4, .lotusForm .qkrWikiPreview h5, .lotusForm .qkrWikiPreview h6{margin:0;}
+.qkrWikiPreview h1{font-size:1.8em;}
+.qkrWikiPreview h2{font-size:1.6em;}
+.qkrWikiPreview h3{font-size:1.4em;}
+.qkrWikiPreview h4{font-size:1.2em;}
+.qkrWikiPreview h5{font-size:1.1em;}
+.qkrWikiPreview h6{font-size:1em;}
+.qkrWikiVersion{background-color:#FFFFDD;border:1px dashed;padding:10px;}
+.qkrWikiVersion .qkrWikiPreview, .qkrWikiComparison .qkrWikiPreview{padding-right:10px;padding-left:10px;margin-top:5px;}
+.qkrWikiVersion .qkrVersionInfo{padding-right:3px;}
+.qkrWikiVersion .qkrVersionActions{padding:5px 0px 5px 3px;}
+.qkrWikiComparison{background-color:#FFFFDD;padding:10px;}
+.qkrWikiComparison .qkrVersionInsertedExample{background-color:#D5FFBD;padding:2px;margin-right:15px;}
+.qkrWikiComparison .qkrVersionDeletedExample{text-decoration:line-through;background-color:#FFD08E;padding:2px;margin-right:25px;}
+.lotusui_ie .qkrWikiComparison .qkrVersionInsertedExample{margin:0 10px;}
+.lotusui_ie .qkrWikiComparison .qkrVersionDeletedExample{margin:0 15px;}
+.qkrWikiComparison .qkrVersionInserted,
+.qkrWikiComparison .diff-html-added,
+.qkrWikiComparison .diff-html-changed{background-color:#D5FFBD;padding:2px;}
+.qkrWikiComparison .qkrVersionDeleted,
+.qkrWikiComparison .diff-html-removed{text-decoration:line-through;background-color:#FFD08E;padding:2px;}
+.dijit_a11y .qkrWikiComparison .qkrVersionInserted{border:2px dashed #ffffff;}
+.dijit_a11y .qkrWikiComparison .diff-html-added,
+.dijit_a11y .qkrWikiComparison .diff-html-changed{border:2px dashed #ffffff;}
+.dijit_a11y .qkrWikiComparison .qkrVersionInsertedExample{border:2px dashed #ffffff;padding:2px;margin-right:14px;}
+.qkrWikiComparison TD{border:0px;padding:5px;text-align:center;}
+.qkrWikiComparison TD.qkrVersionInfoBox{width:45%;border-width:1px;border-style:solid;border-color:#CCCCBB;}
+.qkrWikiComparison .qkrVersionInfoNoBold{font-weight:normal;}
+.qkrWikiComparison TD.qkrVersionKeyBox{border-width:1px;}
+.qkrWikiComparison TABLE.qkrComparisonInfo{line-height:170%;width:100%;border-width:0px;margin-right:-2px;margin-bottom:1px;}
+.qkrWikiComparison .qkrCenter{text-align:center;}
+.qkrWikiComparison .qkrVert{vertical-align:middle;}
+/*---------------------------------------------------------
+   Version table
+------------------------------------------------------*/
+.lotusVersions TABLE{margin-bottom:5px;}
+.lotusVersions TABLE TD{padding:2px 4px;}
+.lotusVersions TABLE TD.qkrRevision{}
+.lotusVersions TABLE TD.lotusActions{}
+.lotusVersions TABLE TD.qkrSummary{}
+.lotusVersions .qkrVersionSelect{margin-right:7px;margin-left:7px;}
+/*---------------------------------------------------------
+   Collapsable sidebar
+------------------------------------------------------*/
+.lotusCollapsable{position:absolute;left:0;top:0;bottom:0;width:10px;cursor:pointer;}
+.lotusCollapseHover{background-color:#f7f7ff;}
+#lotusCollapseArrow{display:none;height:12px;position:absolute;width:4px;z-index:5;margin-top:-6px;}
+#lotusCollapseArrow.right{background:transparent no-repeat scroll left top;margin-right:-6px;}
+#lotusCollapseArrow.left{background:transparent no-repeat scroll left top;margin-right:17px;}
+/*---------------------------------------------------------
+   Class for displaying important messages with popup tips.
+------------------------------------------------------*/
+.qkrInlineWarning{color:#FF0000;padding-right:5px;font-weight:bold;cursor:pointer;}
+/*---------------------------------------------------------
+   These styles support the item and attachment picker dialogs.
+------------------------------------------------------*/
+.lotusTable TR.qkrSelected{background-color:#6e9fe0;color:#ffffff;}
+.lotusTable TR.qkrHover{background-color:#cfecff;cursor:pointer;}
+/*---------------------------------------------------------
+   About page tweaks
+------------------------------------------------------*/
+.lotusContentColOne{float:right;}
+.lotusContentColTwo{float:left;}
+#lotusMain.lotusAbout{background:white;}
+/*---------------------------------------------------------
+   Override tagCloud style for selected elements
+------------------------------------------------------*/
+.lotusTagCloud .lotusSelected{background-color:#CFECFF;margin-right:2px;margin-left:2px;}
+/*---------------------------------------------------------
+   Status
+------------------------------------------------------*/
+.qkrStatus .dijitProgressBar{width:175px;overflow:hidden;}
+/*---------------------------------------------------------
+   Moved welcome box image further to the right to make
+   room for more text, also set margin so the text would
+   wrap 
+------------------------------------------------------*/
+.lotusWelcomeBox img{left:20px;}
+.lotusWelcomeBox h2{margin-left:158px;}
+/*---------------------------------------------------------
+   Build number hard to see
+------------------------------------------------------*/
+.lotusLegal .lotusBuild{margin-top:5px;}
+/*---------------------------------------------------------
+   Styles for tabs in the editor
+------------------------------------------------------*/
+#pageDetails ul.lotusTabs#qkrEditorTabs, .wikiPageTable ul.lotusTabs#qkrEditorTabs{left:10px;right:auto;width:70%;position:absolute;}
+#pageDetails ul.lotusTabs#qkrEditorTabs li, .wikiPageTable ul.lotusTabs#qkrEditorTabs li{float:left;}
+/*---- Aligns style guide with editor pane -*/
+#qkrReferenceTd .lotusInfoBox{margin-top:36px;}
+/*---------------------------------------------------------
+   Styles for tabs in dialogs
+------------------------------------------------------*/
+.lotusDialog .lotusTabs{margin-right:10px;}
+/*---------------------------------------------------------
+   Styles for typeahead
+------------------------------------------------------*/
+ul.dijitMenu{list-style-type:none;}
+/*---------------------------------------------------------
+   Styles for member avatars
+------------------------------------------------------*/
+.qkrInlineSelection li{margin-left:4px !important;padding:2px 4px !important;border:1px solid #96CAFF !important;}
+.qkrInlineSelection li img._qkrMemberAvatar{margin-left:4px !important;padding-bottom:4px !important;}
+.qkrFormFieldBig{font-size:1.7em;}
+.qkrFormLabelAtop td{padding-bottom:0px !important;}
+.qkrFormHasLabelAtop td{padding-top:0px !important;}
+.lotusTable .lotusType{margin-right:5px;padding:0 0 6px 0;padding-right:20px;font-weight:normal;font-size:.75em;background-position:right top;background-repeat:no-repeat;position:absolute;}
+.lotusCommunityWiki{color:#578CCA !important;font-style:italic;}
+/*---------------------------------------------------------
+   Dialogs for CKeditor
+------------------------------------------------------*/
+.dj_ie .lotusDialogBorder{max-width:700px;}
+/*---------------------------------------------------------
+   Wiki Search
+------------------------------------------------------*/
+.lotusui_ie #resultContainer{min-height:250px;}
+/*---- Fixes FF2-only crash when printing -*/
+@media print{
+.dj_ff2 .lotusBtnImg, .dj_ff2 .lotusBtnSpecial, .dj_ff2 .lotusFormButton{color:#000;background:none !important;}
+}
+/*---------------------------------------------------------
+   Restyle "New Page" link in nav to have more margin
+------------------------------------------------------*/
+.lotusNavTree div.lotusChunk.lotusTiny{margin:10px 0;margin-left:15px;}
+/*---------------------------------------------------------
+   Give the currently active tag style bold text as per OneUI
+------------------------------------------------------*/
+.qkrActiveTagView{font-weight:bold;}
+.lotusBreadcrumbs{margin-bottom:8px;word-wrap:break-word;}
+#qkrRefHide li{background:#fff;}
+li#qkrRefHide{background:#fff;border:0px;}
+#qkrAutosaveContainer{margin-right:15px;line-height:2.4em;}
+/*---------------------------------------------------------
+   Members Summary widget
+   TODO: Push this to One UI for Membership C9y
+------------------------------------------------------*/
+.lotusColLeft .lotusSectionBody .lotusGrid{margin-right:2px;margin-left:0;}
+.lconnWikisMembersSummary img{width:35px;height:35px;}.lconnWikisMembersSummary img{width:35px;height:35px;}
+/*---------------------------------------------------------
+   Fix for GAD defect 141842
+------------------------------------------------------*/
+#lconnWikisNavTree{overflow-y:hidden;}
+/*---------------------------------------------------------
+   Members list
+------------------------------------------------------*/
+.lconnWikisMembersList .lconnWikisMemberPicture img{width:45px;height:45px;}
+.lconnWikisMembersList td.lconnWikisMemberPicture{width:65px;}
+.lotusui_ie .lconnWikisMembersList td.lconnWikisMemberPicture{width:68px;}
+/*---------------------------------------------------------
+   Fix for first comment having top border in tabbed view
+------------------------------------------------------*/
+.lotusui30 .lotusBoard .lotusFirst{border-top:none;}
+/*---------------------------------------------------------
+   Fix for large dijit tooltips
+------------------------------------------------------*/
+.dijitTooltipContents{background-image:none;}
+/*---------------------------------------------------------
+   Move page dialog
+------------------------------------------------------*/
+ul#childList li{padding:0;}
+HTML.dj_ff3 .qkrMovePageList{overflow-x:hidden;}
+/*---------------------------------------------------------
+   Fixes unnecessary scrollbars in IE
+------------------------------------------------------*/
+HTML.lotusui_ie{overflow:auto;}
+/*-----------------------------------------------------------
+   Working...
+--------------------------------------------------------*/
+.qkrWorking{font-weight:bold;border-top:0;text-align:center;margin:0;padding:4px 0;width:100px;margin-right:-50px;position:fixed;top:0;left:50%;z-index:100;}
+/*---------------------------------------------------------
+   Style guide for editor
+------------------------------------------------------*/
+#htmlRefDiv, #htmlRefDiv{margin-bottom:0px;margin-left:10px;margin-top:3em;width:260px;}
+/*---------------------------------------------------------
+   Fixes clipped buttons in action bars above lists
+------------------------------------------------------*/
+.lotusContent .lotusBtnContainer{overflow:visible;} 
+.lotusContent .lotusActionBar{float:none;}
+/*---------------------------------------------------------
+   Print view
+------------------------------------------------------*/
+.qkrPrint{background-color:#ffffff !important;margin:2em 3em !important;} 
+.qkrPrint .lotusAction, .qkrPrint .lotusActions{display:none !important;}
+.qkrPrint .qkrAdd, .qkrPrint .lotusDelete{display:none !important;}
+.qkrPrint .lotusPostAvatar{padding-top:0 !important;}
+.qkrPrint .lotusBtnContainer{display:none !important;}
+.qkrPrint #qkrPageHeader{}
+.qkrPrint #qkrPageContent{margin-bottom:2em;}
+.qkrPrint #qkrPageFooter{}
+.qkrPrint .lotusMessage{display:none !important;}
+/*---------------------------------------------------------
+   Confirm New Page needs this
+------------------------------------------------------*/
+#qkrLight{color:#999999;} 
+/*---------------------------------------------------------
+   Consolidated feed links
+------------------------------------------------------*/
+.qkrTabBody .lotusFeeds{margin-right:-10px;margin-top:20px;}
+.qkrTabBody .lotusFeeds a.lotusFeed{margin-left:0;}
+/*---------------------------------------------------------
+   Sets width of icon column in lists, with fix for WebKit browsers 
+------------------------------------------------------*/
+.lotusFixedTable .lotusFirstCell{width:20px;}
+.dj_webkit .lotusFixedTable .lotusFirstCell{width:30px;}
+
+/*   Adds padding for versions widget rows with dropdowns 
+------------------------------------------------------*/
+#pageVersions div.lotusActions{padding-top:5px;}
+.lotusFormTable .qkrInlineTC1{width:19%;}
+.lotusFormTable .qkrInlineTC3{width:5%;}
+/*---------------------------------------------------------
+   Add padding for wiki page warning before links   
+------------------------------------------------------*/
+span.lotusLeftWarning{margin-right:0px;margin-left:10px;}
+/*---------------------------------------------------------
+   Our DOM changes to oneUI standard for a11y require some custom CSS
+   Fixes to paging links   
+------------------------------------------------------*/
+.lotusPaging li.lotusFirst{padding-right:0px !important;}
+.lotusPaging .qkrPagingShow{padding-right:5px;padding-left:3px;}
+#qkrSortControlsLabel{padding-left:8px;}
+.qkrInlineList, .qkrInlineList ul, .qkrInlineList li, .qkrInlineList a, .lotusui .lotusInlinelist .qkrInlineList li{list-style:none;display:inline;border:0px none !important;padding:0px;margin:0px;}
+.qkrInlineList span{direction:rtl;unicode-bidi:embed;}
+.qkrStreamBorder{padding-right:7px;border-right:1px solid #CCCCCC;}
+/*---------------------------------------------------------
+   Fixes ALEE89DDAV
+------------------------------------------------------*/
+.lotusui_ie #comments .lotusPerson{padding-left:0px !important;zoom:1;}
+
+/*---------------------------------------------------------
+   Fixes for OneUI 3 styles
+------------------------------------------------------*/
+
+/*---------------------------------------------------------
+   *Required label in dialogs/forms
+------------------------------------------------------*/
+.lotusui30 .lotusFormField {clear:both;margin-bottom: 10px;overflow:hidden;}
+
+/*---------------------------------------------------------
+   *Help dialog
+------------------------------------------------------*/
+.lotusTooltipDialog .dijitTooltipContainer {background-color: transparent;background-image: none;border: 0 none;padding: 0;}
+
+/*---------------------------------------------------------
+   Restore close icon in Comment Board control
+------------------------------------------------------*/
+.lotusui30 .lotusBoard .lotusStatus .lotusDelete { top: 0; }
+.lotusui30 a.lotusDelete { text-decoration: none !important; }
+.lotusui30 .lotusPost .lotusDelete { left: 5px; }
+.lotusui30 .lotusPost .lotusDelete { display: block; position: absolute; }
+
+/*---------------------------------------------------------
+   Move Wiki Page dialog
+------------------------------------------------------*/
+.lotusui30 div.lconnMovePage { margin: 0 5px 5px 0; }
+.lotusui30 div.lconnMovePageColLeft { float: left; width: 300px; right: 20px; }
+.lotusui30 div.lconnMovePageColRight { margin-right: 330px; margin-left: 0; width: 325px; }
+.lotusui_ie .lotusui30 div.lconnMovePageColRight { width: 330px; }
+
+/*---------------------------------------------------------
+   Long filter names - potential OneUI bug
+------------------------------------------------------*/
+.lotusui30 .lotusFilters2 a.lotusFilter { white-space: normal; }
+
+#renameContentTd {padding-bottom: 15px;padding-top: 10px;}
+.renameContentDiv{color: #4178BE;font-size: 12px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;width: 58%;}
+.renameTitleDivStyle{color: #292929;font-size: 16px;}
+.renameTitleSpanStyle{font-weight: bold;}
+
+.lconnWikis .tabNavBar{margin-bottom: 25px;}

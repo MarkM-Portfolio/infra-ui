@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>IBM Connections - Test Page Template</title>
+${endhead}
+    <div class="lotusFrame">
+        <div role="region" aria-label="Select page width">
+            <a onclick="dojo.query('.lotusContent')[0].style.width = '1000px'; return false;" href="javascript:;">Page width 1000px</a> |
+            <a onclick="dojo.query('.lotusContent')[0].style.width = '800px'; return false;" href="javascript:;">Page width 800px</a> |
+            <a onclick="dojo.query('.lotusContent')[0].style.width = '600px'; return false;" href="javascript:;">Page width 600px</a> |
+            <a onclick="dojo.query('.lotusContent')[0].style.width = '400px'; return false;" href="javascript:;">Page width 400px</a>
+        </div>
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <!--  Add your test DOM here -->
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:dojo.parser}
+    ${script:lconn.core.url}
+    ${script:lconn.core.config.services}
+</body>
+</html>

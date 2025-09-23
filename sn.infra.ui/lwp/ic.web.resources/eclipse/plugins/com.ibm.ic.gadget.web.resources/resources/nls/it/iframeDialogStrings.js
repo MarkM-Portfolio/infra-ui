@@ -1,0 +1,6 @@
+define(
+	({
+		dialogTitle: "Autorizzazione OAuth "
+	})
+	
+);

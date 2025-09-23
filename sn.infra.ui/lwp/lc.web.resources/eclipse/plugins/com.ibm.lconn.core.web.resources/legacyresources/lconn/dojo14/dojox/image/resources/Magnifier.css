@@ -1,0 +1,6 @@
+/* Copyright IBM Corp. 2015  All Rights Reserved.                    */
+.glassNode {
+	overflow:hidden;
+	position:absolute;
+	visibility:hidden;
+}

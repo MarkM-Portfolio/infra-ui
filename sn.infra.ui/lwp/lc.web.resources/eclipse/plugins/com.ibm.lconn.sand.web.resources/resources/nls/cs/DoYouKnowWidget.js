@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Pozvat k připojení",
+	NDYK1:"Pro pozvání nejsou k dispozici další osoby.",
+	LOADING: "načítání",
+	DYK_TITLE: "Lidé, které možná znáte",
+	INVITE_TITLE: "Odeslat pozvánku k připojení",
+	SEND_ACTION: "Odeslat",
+	CANCEL_ACTION: "Storno",
+	PREV: "Předchozí",
+	NEXT: "Další",
+	bpct: "Přidal komentář k vašemu blogu",
+	bpcc: "Přidali jste komentář k témuž blogu",
+	lpfr: "Je kolegou osoby, kterou znáte",
+	lm1: "Jste nadřízeným této osoby",
+	le1: "Tato osoba je vaším nadřízeným",
+	sdm: "Máte stejného nadřízeného",
+	pt: "Tato osoba vás označila",
+	pbt: "Tuto osobu jste označili",
+	acm: "Sdílíte aktivity",
+	wikiCoContribution: "Oba jste upravovali tentýž wikiweb",
+	bpcb: "Přidali jste komentář k jejich blogu",
+	lpcfr: "Máte několik společných kolegů",
+	ccmf: "Jste členy stejné komunity.",
+	ccms: "Jste členy stejné komunity.",
+	filesharing: "Sdílíte některé soubory.",
+	forumthreaddiscussion: "Sdílíte diskusi ve fóru",
+	ctb: "Sdílíte záložku",
+	tgw: "Máte shodné značky",
+	tcu: "Použili jste stejnou značku",
+	pctg: "Oba jste označili tutéž osobu",
+	tgb: "Oba vás označili titíž lidé"
+})

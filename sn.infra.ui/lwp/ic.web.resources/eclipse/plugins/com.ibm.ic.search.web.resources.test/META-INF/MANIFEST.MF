@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IBM Connections Search Web Resources Tests
+Bundle-SymbolicName: com.ibm.ic.search.web.resources.test;singleton:=true
+Bundle-Version: 3.0.0.qualifier
+Bundle-Vendor: IBM
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,295 @@
+${head}
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+${script:com.ibm.social.sharebox.dialog}
+${script:com.ibm.lconn.gadget.container.iContainer2}
+${script:com.ibm.lconn.gadget.test.lib.bootstrap}
+${script:com.ibm.lconn.gadget.config.settings}
+${script:dijit.Dialog}
+
+${style:com.ibm.social.sharebox/css/Dialog}
+${style:com.ibm.social.sharebox/css/TabContainer}
+
+<script type="text/javascript">
+(function() {
+	var loc = location + '';
+	if (loc.indexOf('render=test') < 0) {
+		if (loc.indexOf('?') > 0) {
+			location = loc + "&render=test";
+		}
+		else {
+			location = loc + "?render=test";
+		}
+	} else if (loc.indexOf('oneui=3') < 0) {
+		location = loc + "&oneui=3";
+	}
+})();
+netJazzAjaxConfig.params = "etag=20110614.112610&lang=en";
+</script>
+
+<style>
+.icTestGadgetUrl {
+	width: 600px
+}
+
+#pseudo_console {
+	width:600px;
+	height:200px;
+	overflow:auto;
+}
+
+.errorDiv {
+	color:red;
+}
+.logDiv {
+	color:green;
+}
+
+/*#attach_point {
+  width: auto;
+  height: auto;
+}
+#ee_attach_point {
+  width: 600px;
+  height: 80px;
+}
+#attach_point2 {
+  width: 500px;
+  height: 100px;
+}*/
+div#ux_controls {
+	position: static;
+}
+
+</style>
+
+<script type="text/javascript">	
+	dojo.require('lconn.core.config.services');
+	dojo.require("com.ibm.oneui.util.proxy");
+	dojo.require("lconn.core.url");
+	
+	var web_resources_url = lconn.core.config.services['webresources'].url;
+	var page_url_dotdot_dotdot = lconn.core.url.parse(window.location.toString(), '../..').toString();
+	page_url_dotdot_dotdot = page_url_dotdot_dotdot.substring(0, page_url_dotdot_dotdot.length - 1);
+	
+	var mContainer = com.ibm.lconn.gadget.container.iContainer2;
+	//dojo.registerModulePath("com.ibm.lconn.gadget", page_url_dotdot_dotdot);
+
+	var mHandle = null;
+
+	function load_widget() {
+		
+	}
+	
+	function refresh_widget() {
+		if (mHandle) {
+			mHandle.refresh();
+		}
+	}
+	
+	function close_widget() {
+		if (mHandle) {
+			mHandle.unload();
+		}
+	}
+</script>
+
+<script type="text/javascript">
+var devSettings_ = com.ibm.lconn.gadget.config.settings.developer;
+var devEnabled_ = devSettings_.enabled;
+
+dojo.addOnLoad(function(){
+	window.bootstrapForm = new com.ibm.lconn.gadget.test.lib.BootstrapForm({}, "bootstrap2");
+	bootstrapForm.startup();
+	
+	window.bootstrapView = new com.ibm.lconn.gadget.test.lib.BootstrapView({}, "bootstrapView");
+	bootstrapView.startup();
+	
+	bootstrapView.connect(bootstrapForm._gadgetUrlFormated, 'onChange', 'setDefinitionUrl');
+	bootstrapView.connect(bootstrapForm, 'setRenderMode', 'setRenderMode');
+	
+	var trace_ = com.ibm.lconn.gadget.util.trace;
+	var oTrace = {"log":null,"debug":null, "error":null, "warn":null};
+	var replace_func = function(func_to_replace){
+		var oFunc = trace_[func_to_replace];
+		
+		trace_[func_to_replace] = function(message){
+			var messageDiv = dojo.byId("pseudo_console");
+			oFunc(message);
+			
+			// special case so that we do not overwelm logging
+			if ("Existing token data is valid." === message) {
+				return;
+			}
+			
+			if(func_to_replace==="error") {
+				dojo.create("div", {innerHTML:message, "class":"errorDiv"}, messageDiv, "last");
+			}
+			else {
+				dojo.create("div", {innerHTML:message, "class":"logDiv"}, messageDiv, "last");
+			}
+			messageDiv.scrollTop = messageDiv.scrollHeight;
+		};
+	};
+	
+	for (var funcname in oTrace) {
+		replace_func(funcname);
+	}
+	
+	
+	window.sample_gadgets = [
+						{
+							"display_string" : "Views/Window Gadget",
+							"url" : web_resources_url
+									+ "/web/com.ibm.lconn.gadget/test/container/gadgets/bootstrap_views.xml",
+							"checkBoxIds" : [ "proxyAccessExternalOnly",
+									"featureAccessTrusted",
+									"renderModeHomepage" ]
+						},
+						{
+							"display_string" : "People/Pipeline Gadget",
+							"url" : web_resources_url
+									+ "/web/com.ibm.lconn.gadget/test/container/gadgets/people_and_pipeline.xml",
+							"checkBoxIds" : [ "proxyAccessExternalOnly",
+									"featureAccessRestricted",
+									"renderModeHomepage" ]
+						},
+						{
+							"display_string" : "UserPrefs Gadget",
+							"url" : web_resources_url
+									+ "/web/com.ibm.lconn.gadget/test/container/gadgets/userprefstest.xml",
+							"checkBoxIds" : [ "proxyAccessExternalOnly",
+									"featureAccessTrusted",
+									"renderModeHomepage" ],
+							"options" : {"userPrefsField":"{\"string\":\"This string represents a user preference\"}"}
+						},
+						{
+							"display_string" : "Embedded Experience Gadget",
+							"url" : web_resources_url
+									+ "/web/com.ibm.lconn.gadget/test/container/gadgets/EEHelloWorld.xml",
+							"checkBoxIds" : [ "proxyAccessExternalOnly",
+									"featureAccessRestricted", "renderModeEE" ],
+							"options" : {"eeDataModel":"{\"EE data models\" : [\"can\", \"be\", \"JSON\"]}"}
+						},
+						{
+							"display_string" : "Sharebox Gadget",
+							"url" : web_resources_url
+									+ "/web/com.ibm.lconn.gadget/test/container/gadgets/ShareboxExample.xml",
+							"checkBoxIds" : [ "proxyAccessExternalOnly",
+									"featureAccessRestricted",
+									"renderModeSharedialog" ]
+						} ];
+						
+				// populate the select this way so the data doesn't exist in two places.		
+				var sample_select = dojo.byId("sample_gadget_select");
+				dojo.forEach(sample_gadgets, function(sample_gadget) {
+					dojo.create("option", {
+						"innerHTML" : sample_gadget["display_string"],
+						"value" : sample_gadget["url"] // unnecessary but useful in case anyone inspects the DOM
+					}, sample_select, "last");
+				});
+});	// END onLoad
+	
+	function pre_fill_gadget(gadgetObj) {
+		// set the url
+		bootstrapForm._gadgetUrl.attr("value", gadgetObj.url);
+
+		// set the access params
+		dojo.forEach(gadgetObj.checkBoxIds, function(id) {
+			document.getElementById(id).checked = "checked";
+		});
+		
+		// set the render mode specific options when appropriate (wait a while to let the render dijit load)
+		if(gadgetObj.options) {
+			window.setTimeout(function(){bootstrapView.oldForm.setOptions(gadgetObj.options);}, 50);
+		}
+	}
+
+	function pre_fill_sample_gadget() {
+		var url_select = dojo.byId("sample_gadget_select");
+
+		// find our gadget Object
+		var chosen_sample = window.sample_gadgets[url_select.selectedIndex];
+
+		pre_fill_gadget(chosen_sample);
+	}
+	
+	function safe_refresh() {
+		
+		var savedGadgetObj = {
+			"url" : bootstrapForm._gadgetUrl.attr("value"),
+			"checkBoxIds" : [],
+			"options" : bootstrapView.oldForm.getOptions()
+		};
+		
+		// this cannot be the best way to do this...
+		var elems = bootstrapForm._gadgetAccessForm.domNode.elements;
+		for(var i=0;i<elems.length;i++) {
+			if(elems[i].checked==true) {
+				savedGadgetObj.checkBoxIds.push(elems[i].id);
+			}
+		}
+
+		// we could URL encode this, but localStorage + JSON seems easier...
+		localStorage.setItem("previousSettings", dojo.toJson(savedGadgetObj));
+		location.reload(true);
+	}
+
+	function load_refresh() {
+		if (localStorage.getItem("previousSettings") !== null) {
+			var gadgetObj = localStorage.getItem("previousSettings");
+			localStorage.removeItem("previousSettings");
+			try {
+				gadgetObj = dojo.fromJson(gadgetObj);
+			} catch (e) {
+				trace_.log("problem loading gadget from refresh, aborting.");
+				return;
+			}
+			pre_fill_gadget(gadgetObj);
+		}
+	}
+	
+	dojo.addOnLoad(load_refresh);
+	
+	if (!devEnabled_) {
+		alert(devEnabled_);
+		function maybe_disable_page() {
+			new dijit.Dialog({
+	            content: "<div class='dijitDialogPaneContentArea'><h1>This feature is not enabled on your system.</h1></div>",
+	            style: "width: 300px",
+	            closable: false,
+	            draggable: false,
+	            style: "background: red"
+	        }).show();
+		}
+		
+		dojo.addOnLoad(maybe_disable_page);
+	}
+
+</script>
+
+${endhead}
+
+<h1>Developer boostrap test page</h1>
+<div>Pre-fill Sample <select id="sample_gadget_select" name="sample_gadget_select">
+</select><button onClick="pre_fill_sample_gadget();" class="lotusBtn">Apply</button><button style="margin-left:4em;" onClick="safe_refresh();" class="lotusBtn">Refresh Page While Persisting Current Settings</button></div>
+
+
+<!-- BODY -->
+<table>
+	<tr>
+		<td width="600px" style="vertical-align: top">
+			<div id="bootstrap2"></div>
+			<div>
+				<h1>Pseudo Console : </h1>
+				<div id="pseudo_console"></div>
+			</div>
+		</td>
+		<td width="100px">
+			&nbsp;
+		</td>
+		<td width="500px" style="vertical-align: top">
+			<div id="bootstrapView" ></div>
+		</td>
+	</tr>
+</table>	
+${end}

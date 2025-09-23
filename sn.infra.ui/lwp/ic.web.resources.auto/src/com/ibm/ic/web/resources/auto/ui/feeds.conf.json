@@ -1,0 +1,19 @@
+{
+	"multiple": [{
+		"text": "IBM.com",
+		"title": "Feed of IBM.com",
+		"type": "application/atom+xml",
+		"href": "http://www.ibm.com/feed"
+	}, {
+		"text": "Watson",
+		"title": "Feed of Watson technologies",
+		"type": "application/atom+xml",
+		"href": "http://www.ibm.com/watson/feed"
+	}],
+	"single": [{
+		"text": "Jazz.net",
+		"title": "Feed of Jazz.net",
+		"type": "application/atom+xml",
+		"href": "http://jazz.net/feed"
+	}]
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">File-File</msg>
+  <msg name="description">Gadget file untuk memungkinkan pengunggahan dan berbagi file</msg>
+  <msg name="action_uploadFile_label">File-File</msg>
+  <msg name="action_uploadFile_tooltip">Unggah dan Berbagi File</msg>
+  <msg name="loading">Memuat...</msg>
+  <msg name="error_msg">Konten tidak dapat dimuat. Coba lagi nanti atau hubungi administrator sistem Anda.</msg>
+  <msg name="error_alt">Terjadi Kesalahan</msg>
+</messagebundle>

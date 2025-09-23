@@ -1,0 +1,31 @@
+<html>
+<!-- Copyright IBM Corp. 2013, 2015  All Rights Reserved.              -->
+<!--                                                                   -->
+<!-- ***************************************************************** --><body><p>
+
+${head}
+</p><title>Sharebox Dialog Launcher Test Page</title>
+${endhead}
+<div class="lotusFrame">
+<h3>Sharebox Dialog Launcher Test Page</h3>
+
+<div>
+   <a href="javascript:;" onclick="com.ibm.social.sharebox.DialogLauncher.open()">Open Share Dialog</a>
+</div>
+<div class="lotusMain">
+   <div class="lotusContent">
+   <h3>This is the content area</h3>
+   </div>
+</div>
+</div>
+<script>
+        djConfig.blankGif="${_blankGif}";
+        djConfig.parseOnLoad=true;
+        djConfig.isDebug=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+
+    ${script:dijit.Dialog}
+    ${script:com.ibm.social.sharebox.DialogLauncher}
+</body>
+</html>

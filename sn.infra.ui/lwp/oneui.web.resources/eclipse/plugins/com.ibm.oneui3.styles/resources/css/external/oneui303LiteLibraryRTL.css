@@ -1,0 +1,167 @@
+/* Copyright IBM Corp. 2013, 2015  All Rights Reserved.              */
+
+/***************************************/
+/*** D I S P L A Y   C O N T R O L S ***/
+/***************************************/
+
+.lotusui30 .icWidgetPortletsCommon .lotusViewControl{display:table;}
+.lotusui30 .icWidgetPortletsCommon .lotusViewControl span{margin:5px 10px 0 0;float:right;}/*styles for the text preceeding the control*/
+.lotusui30 .icWidgetPortletsCommon .lotusViewControl div{padding:1px;border:1px solid #ccc;display:table;background-color:#f1f1f1;
+    background-image:-moz-linear-gradient(top, #ffffff 0%, #ebebeb 100%);background-image:-webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ebebeb));background-position:top left;zoom:1;}
+.lotusui30.lotusImagesOff .icWidgetPortletsCommon .lotusViewControl div, .lotusImagesOff .lotusui30 .icWidgetPortletsCommon .lotusViewControl div{border-width:0;}
+.lotusui30 .icWidgetPortletsCommon .lotusViewControl td{vertical-align:middle;padding:0 2px 0 0;}
+.lotusui30 .icWidgetPortletsCommon .lotusViewControl td div{display:-moz-inline-box;display:inline-block;overflow:hidden;}
+.lotusui30.lotusImagesOff .icWidgetPortletsCommon .lotusViewControl td div, .lotusImagesOff .lotusui30 .icWidgetPortletsCommon .lotusViewControl td div{overflow:visible;}
+.lotusui30 .icWidgetPortletsCommon .lotusViewControl .lotusView{padding:0;width:18px;height:18px;display:block;float:right;background-image:url(../images/lotusHSprite-8bit.png);background-repeat:no-repeat;}
+
+.lotusui30 .icWidgetPortletsCommon .lotusDetailsOff {background-position:-351px -7px;margin:1px;border-width:0;}
+.lotusui30 .icWidgetPortletsCommon .lotusDetailsOn {background-position:-351px -7px;background-color:#fff;margin:0;border:1px solid #444;}
+.lotusui30 .icWidgetPortletsCommon .lotusSummaryOff {background-position:-395px -7px;margin:1px;border-width:0;}
+.lotusui30 .icWidgetPortletsCommon .lotusSummaryOn {background-position:-395px -7px;background-color:#fff;margin:0;border:1px solid #444;}
+.lotusui30 .icWidgetPortletsCommon .lotusTreeOff {background-position:-439px -7px;margin:1px;border-width:0;}
+.lotusui30 .icWidgetPortletsCommon .lotusTreeOn {background-position:-439px -7px;background-color:#fff;margin:0;border:1px solid #444;}
+.lotusui30 .icWidgetPortletsCommon .lotusTileOff {background-position:-417px -7px;margin:1px;border-width:0;}
+.lotusui30 .icWidgetPortletsCommon .lotusTileOn {background-position:-417px -7px;background-color:#fff;margin:0;border:1px solid #444;}
+.lotusui30 .icWidgetPortletsCommon .lotusFolderOff {background-position:-373px -7px;margin:1px;border-width:0;}
+.lotusui30 .icWidgetPortletsCommon .lotusFolderOn {background-position:-373px -7px;background-color:#fff;margin:0;border:1px solid #444;}
+/*accessibility*/
+.lotusui30.lotusImagesOff .icWidgetPortletsCommon .lotusViewControl .lotusView, .lotusImagesOff .lotusui30 .icWidgetPortletsCommon .lotusViewControl .lotusView{width:auto;height:auto;}
+.lotusui30.lotusImagesOff .icWidgetPortletsCommon .lotusViewControl .lotusView span, .lotusImagesOff .lotusui30 .icWidgetPortletsCommon .lotusViewControl .lotusView span{margin:0 5px;}
+.lotusui30.lotusImagesOff .icWidgetPortletsCommon .lotusViewControl a.lotusSelected:hover, .lotusImagesOff .lotusui30 .icWidgetPortletsCommon .lotusViewControl a.lotusSelected:hover, .lotusui30.lotusImagesOff .icWidgetPortletsCommon .lotusViewControl a.lotusSelected:focus, .lotusImagesOff .lotusui30 .icWidgetPortletsCommon .lotusViewControl a.lotusSelected:focus{cursor:default;text-decoration:none;}
+.lotusui30.lotusImagesOff .icWidgetPortletsCommon .lotusViewControl .lotusSelected .lotusAltText, .lotusImagesOff .lotusui30 .icWidgetPortletsCommon .lotusViewControl .lotusSelected .lotusAltText{font-weight:bold;}
+
+
+/*** L I K E ***/
+
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike {display:inline-block; color:#222; font-size:0.9em;}
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeCount {padding:2px 22px 2px 4px; margin-left:7px; position:relative; display:inline-block; background:#f2f2f2; border:1px solid #ddd;
+	-moz-border-radius: 2px;
+	border-radius: 2px;}
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeCount .lotusIconLike {position:absolute; right:3px;}
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusDivider {margin:0 2px; color:#ccc;}
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeConnector {background-image:url(../images/lotusHSprite-8bit.png); background-position:-1117px -13px; width:7px; height:6px; position:absolute; bottom:4px; left:-7px;}
+
+.lotusui_ie .lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeCount {display:inline; zoom:1; margin-left:8px;} /* inline-block fix and spacing */
+.lotusui_ie .lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike, .lotusui_ie .lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeText {display:inline; zoom:1;} /* inline-block fix */
+.lotusui_ie .lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeDescription, .lotusui_ie .lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusDivider, .lotusui_ie .lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeAction {padding-bottom:3px; zoom:1;} /* match the bubble padding and border to make the text align */
+
+/* when there are no likes */
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusNoLikes {padding-right:10px; padding-left:9px; text-decoration:none;}
+
+/* when only you like it */
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusDisabled {text-decoration:none; color:#222;}
+
+/* when it is the simple, clickable, control */
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeSimple {background:none; border:0; margin:0; padding:0 19px 0 0;}
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeSimple .lotusIconLike {right:0; top:1px/*to align with count only*/;}
+.lotusui_ie .lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeSimple .lotusIconLike, .lotusui_ie9 .lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeSimple .lotusIconLike {top:0;} /*IE tweeks to align with count only*/
+
+.lotusui30.lotusImagesOff .icWidgetPortletsCommon .icLibrary .lotusLike .lotusIconLike, .lotusImagesOff .lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusIconLike {display:none;} /*hide the icon*/
+.lotusui30.lotusImagesOff .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeCount, .lotusImagesOff .lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeCount {padding-right:5px;} /* remove icon placeholder space */
+.lotusui30.lotusImagesOff .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeSimple, .lotusImagesOff .lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeSimple {padding-right:0;} /* order in this file is important */
+.lotusui30.lotusImagesOff .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeText, .lotusImagesOff .lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusLikeText {display:inline;} /* make this inline with lotusAltText */
+.lotusui30.lotusImagesOff .icWidgetPortletsCommon .icLibrary .lotusLike .lotusNoLikes, .lotusImagesOff .lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike .lotusNoLikes {display:none;} /* don't even show the link when it provides no context */
+
+/* light box */
+.lotusui30 .icWidgetPortletsCommon .lotusLikeLightBox {width:300px;}
+.lotusui30 .icWidgetPortletsCommon .lotusLikeLightBox .lotusLike {float:right; margin-left:5px;} /* needed for IE6/7 */
+.lotusui30 .icWidgetPortletsCommon .lotusLikeLightBox .lotusLikeHeader {border-bottom:1px solid #ccc; padding:8px 10px; overflow:hidden; zoom:1;}
+.lotusui30 .icWidgetPortletsCommon .lotusLikeLightBox .lotusLikeHeaderText {padding:3px 0; font-size:0.9em; color:#222;}
+.lotusui30.lotusImagesOff .icWidgetPortletsCommon .lotusLikeLightBox .lotusLikeHeaderText, .lotusImagesOff .lotusui30 .icWidgetPortletsCommon .lotusLikeLightBox .lotusLikeHeaderText {padding-left:10px;} /*allow room for the dialog close icon*/
+.lotusui30 .icWidgetPortletsCommon .lotusLikeLightBox ul.lotusList {overflow:auto; height:360px;}
+.lotusui30 .icWidgetPortletsCommon .lotusLikeLightBox ul.lotusList li {/*margin:0; padding:0; */border-bottom:1px solid #ededed; overflow:hidden;}
+.lotusui30 .icWidgetPortletsCommon .lotusLikeLightBox ul.lotusList li a {/*margin:1px; padding:5px 10px; display:block;*/}
+.lotusui30 .icWidgetPortletsCommon .lotusLikeLightBox .lotusLikeAvatar {display:block; cursor:pointer/*for IE6 and IE7*/;}
+.lotusui30 .icWidgetPortletsCommon .lotusLikeLightBox .lotusLikeAvatar img {float:right;} /*float has to be on img not lotusLikeAvatar for IE6/7*/
+.lotusui30 .icWidgetPortletsCommon .lotusLikeLightBox .lotusPerson {overflow:hidden; padding:7px 10px 7px 0; font-weight:bold; display:block; cursor:pointer/*for IE6 and IE7*/;}
+
+/******************************************************************************/
+
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusMeta {color:#222222;}
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusPaging {color:#222222;}
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusPaging ul li {color:#222222;}
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusSort {color:#222222;}
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusTabs a {color:#666666;font-size:.9em;}
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusTabs a:hover {color:#000000;}
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusTabs li.lotusSelected a, .lotusui30 .icWidgetPortletsCommon .icLibrary .lotusTabs li.lotusSelected a:visited {font-weight: bold;color:#000;}
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusLike {color:#222222;}
+.lotusui30 .icWidgetPortletsCommon .icLibrary .qkrGreyText {color: #666666;}
+.lotusui30 .icWidgetPortletsCommon .lotusDialog .lotusDialogContent {padding: 0;}
+.lotusui30 .icWidgetPortletsCommon .icLibrary .lotusForm tr.lotusFormFieldRow td {padding: 0 0 10px 3px;}
+
+/* Begin Upload Files dialog */
+
+.lotusui30 .icWidgetPortletsCommon .lotusDialog .lotusDialogContent .lotusFormTable {padding: 0;}
+.lotusui30 .icWidgetPortletsCommon .lotusDialog .lotusFormTable td {padding: 0 0 10px 3px;}
+.lotusui30 .icWidgetPortletsCommon .lotusDialog .lotusFormTable, .lotusui30 .lotusDialog .lotusFormTable td, .lotusui30 .icWidgetPortletsCommon .lotusDialog .lotusDialogContent {padding: 15px 20px;}
+.lotusui30 .lotusWarning {background-color: #FDF4C8;border-color: #E48617;}
+.lotusui30 .icWidgetPortletsCommon .lotusDialog .qkrMessage td { padding: 0; }
+
+/* End Upload Files dialog */
+
+/* Begin message box ("Submit this draft for review...") */
+
+.lotusui30 .icWidgetPortletsCommon .lotusMessage {font-size:.9em;padding:10px;}
+.lotusui30 .icWidgetPortletsCommon .lotusMessage .lotusDelete {left:5px;top:10px;}
+.lotusui30 .icWidgetPortletsCommon .lotusMessage img {margin-left: 7px;margin-top: 0;}
+
+/* End message box */
+
+/* Begin welcome box */
+
+.lotusui30 .icWidgetPortletsCommon .lotusWelcomeBox h2 {color: #FFFFFF;font-size: 1.7em;font-weight: normal;line-height: 1;margin: 0 0 10px 25px;padding: 0;}
+.lotusui30 .icWidgetPortletsCommon .lotusWelcomeBox {padding:25px;}
+.lotusui30 .icWidgetPortletsCommon .lotusWelcomeBox .lconnDemoThumbnail {float:left;}
+.lotusui30 .icWidgetPortletsCommon .lotusWelcomeBox a, .lotusui30 .icWidgetPortletsCommon .lotusAboutBox a {text-decoration:underline;}
+.lotusui30 .icWidgetPortletsCommon .lotusWelcomeBox .lconnDemoThumbnail div {text-align:center;}
+.lotusui30 .icWidgetPortletsCommon .lotusWelcomeBox .lconnDemoThumbnail div a {text-decoration:none}
+.lotusui30 .icWidgetPortletsCommon .lotusWelcomeBox a.lotusClose img {background-image: url(../images/lotusHSprite-8bit.png);background-position: -573px -8px;opacity:.75;}
+.lotusui30 .icWidgetPortletsCommon .lotusWelcomeBox {position:relative;}
+
+/* End welcome box */
+
+/* Begin loading box */
+
+.lotusui30 .icWidgetPortletsCommon .lotusLoading {background-image: url(../images/loading.gif);background-repeat: no-repeat;height: 16px;width: 16px;}
+.lotusui30 .icWidgetPortletsCommon .lotusLoadingBox {background: #5E5E5E;border-radius: 0 0 0 0;color: #FFFFFF;font-size: 1em;padding: 4px 5px;display: inline-block;position: relative;left: 48%;z-index: 2;}
+.lotusui30 .icWidgetPortletsCommon .lotusLoadingLabel {padding: 4px 5px;}
+.lotusui_ie .lotusui30 .icWidgetPortletsCommon .lotusLoadingBox {background: none;}
+.lotusui_ie .lotusui30 .icWidgetPortletsCommon .lotusLoadingLabel {background: #444;padding-left: 23px;margin-left: -22px;}
+
+/* End loading box */
+
+/* Begin more actions menu */
+
+.lotusui30.icWidgetPortletsCommon.icLibrary .dijitMenuItemSelected { background: #E1F4F9; }
+.lotusui_ie .lotusui30 .icWidgetPortletsCommon .icLibrary span.lotusBtn { padding: 0; }
+.lotusui_ie .lotusui30 .icWidgetPortletsCommon .icLibrary span.lotusBtn { margin-left: 5px; margin-right: 0px; }
+
+/* End more actions menu */
+
+/* Begin typeahead menu */
+
+.lotusui30 .icWidgetPortletsCommon.dijitComboBoxMenu .dijitMenuItemSelected { background: #E1F4F9; }
+
+/* End typeahead menu */
+
+/* Begin document picker */
+
+/* Fix sprites */
+.lotusui30.icWidgetPortletsCommon .documentPicker .otherFramework16{background-image:url(../images/OtherImages/Framework/otherFramework16-8bit.png);background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusui30.icWidgetPortletsCommon .documentPicker .otherFramework16-TriangleMediumGrayDown12{width:12px;height:12px;background-position:0 -1497px}
+.lotusui30.icWidgetPortletsCommon .documentPicker .otherFramework16-TriangleMediumGrayLeft12{width:12px;height:12px;background-position:0 -1517px}
+.lotusui30.icWidgetPortletsCommon .documentPicker .otherFramework16-TriangleMediumGrayRight12{width:12px;height:12px;background-position:0 -1537px}
+.lotusui30.icWidgetPortletsCommon .documentPicker .otherFramework16-TriangleMediumGrayUp12{width:12px;height:12px;background-position:0 -1557px}
+
+/* Remove some styles that are added by Portal */
+.lotusui30.icWidgetPortletsCommon .dijitTreeExpando { background: none; }
+.lotusui30.icWidgetPortletsCommon .documentPicker .dijitTreeRow { padding: 0; margin: 0; }
+.lotusui30.icWidgetPortletsCommon .documentPicker .dijitTreeRowHover { background: none; border: none; padding: 0; margin: 0; }
+.lotusui30.icWidgetPortletsCommon .documentPicker .dijitTreeRowActive { background: none; border: none; padding: 0; margin: 0; }
+.lotusui30.icWidgetPortletsCommon .documentPicker .dijitTreeRowSelected { background: #E1F4F9; border: none; padding: 0; }
+
+/* Some fixes for IE RTL */
+.dijitRtl.lotusui_ie .lotusui30.icWidgetPortletsCommon .documentPicker .hideRootTwisty.dijitTreeIsRoot > .dijitTreeRow > .dijitTreeExpando { display: none; }
+.dijitRtl.lotusui_ie .lotusui30.icWidgetPortletsCommon .documentPicker .hideRootTwisty.dijitTreeIsRoot > .dijitTreeContainer > .dijitTreeNode { margin-right: 0px; }
+
+/* End document picker */

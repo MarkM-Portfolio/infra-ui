@@ -1,0 +1,78 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2014, 2015                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+/**
+ * Jasmine spec for {@link lconn.core.widget.mentions.URLMentionsNode}
+ *
+ */
+dojo.provide("com.ibm.social.test.unit.jasmine.as.util.hashtag.HashTagUtilSpec");
+
+dojo.require("com.ibm.social.as.util.hashtag.HashtagUtil");
+dojo.require("dojox.validate.web");
+
+(function(HashtagUtil) {
+
+	
+	var commId=101;
+	var regExCommId = new RegExp(commId);
+	var regExUrl = /href="(.*?)\?(.*?)"/;
+	var regExTagText = new RegExp(">(.*)</a>");
+	var hashtag="#hashtag";
+	var tagText=" dennis carey ";
+	var orig="##hashtag";
+	var hashtags=["hashtag1", "hashtag2", "F$hash1t/ag", "#hash"];
+	var htmlContent="this is #hashtag1 and this is #hashtag2, another #F$hash1t/ag, finally ##hash: wonder will they be linkified";
+	
+   var node;
+   beforeEach(function() {
+      util = new HashtagUtil();
+   });
+
+   describe("the com.ibm.social.as.util.hashtag.HashtagUtil class", function() {
+      it("implements the expected methods", function() {
+         expect(util.getSearchHashtagUrl).toEqual(jasmine.any(Function));
+         expect(util.linkifyHashtags).toEqual(jasmine.any(Function));
+         expect(util.linkifyHashtag).toEqual(jasmine.any(Function));
+         expect(util.createAnchorLink).toEqual(jasmine.any(Function));
+         
+      });
+   });
+   
+   describe("the com.ibm.social.as.util.hashtag.HashtagUtil linkifyHashTag", function() {
+      it("correctly linkifys hashtags", function() {
+    	  var output = util.linkifyHashtag(hashtag, tagText, commId, orig);
+    	  var urlResult = regExUrl.exec(output); //if valid link urlResult[1] gives url, urlResult[2] gives param list (e.g. "communityUuid=101&filter=all#tag=%23%23dennis&tab=StatusUpdates")
+    	  var tagTextResult = regExTagText.exec(output);
+    	  expect(tagText).toBe(tagTextResult[1]);
+    	  expect(dojox.validate.isUrl(urlResult[1])).toBe(true);
+    	  expect(regExCommId.test(urlResult[2])).toBe(true);
+      });
+   });
+   
+   describe("the com.ibm.social.as.util.hashtag.HashtagUtil linkifyHashTags", function() {
+      it("correctly linkifys hashtags, multiple", function() {
+    	  var urlResultArr, hrefCount=0;
+    	  var regExUrl = /href="(.*?)\?(.*?)"/g;
+
+    	  var output = util.linkifyHashtags(htmlContent, hashtags, commId);
+
+    	  while ((urlResultArr = regExUrl.exec(output)) !== null)
+    	  {
+    	       hrefCount++;
+    	  }
+    	  expect(hrefCount).toBe(4);
+      });
+   });
+}(com.ibm.social.as.util.hashtag.HashtagUtil));
+

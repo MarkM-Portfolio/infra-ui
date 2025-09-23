@@ -1,0 +1,296 @@
+<html>
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+<body><p>${head}
+</p><title>Status Update Test</title>
+${script:lconn.core.config.services}
+${script:com.ibm.social.ee.test.util.serviceutil}
+${script:com.ibm.social.ee.test.util.personlookup}
+${script:com.ibm.social.incontext.util.html}
+${script:com.ibm.lconn.gadget.container.iContainer2}
+${script:net.jazz.ajax.xdloader}
+${script:dojo.cookie}
+
+<script>
+(function () {
+	dojo.config.blankGif = "${_blankGif}";
+   var util = com.ibm.social.ee.test.util.serviceutil;
+   var lookup = com.ibm.social.ee.test.util.personlookup;
+   var isSecure = util.isSecure();
+   var profilesCfg = lconn.core.config.services.profiles;
+   var profilesUrl = (isSecure) ? profilesCfg.secureUrl : profilesCfg.url;  
+   var newsCfg = lconn.core.config.services.news;
+   var newsUrl = (isSecure) ? newsCfg.secureUrl : newsCfg.url;
+   var openSocialCfg = lconn.core.config.services.opensocial;
+   var openSocialUrl = (isSecure) ? openSocialCfg.secureUrl : openSocialCfg.url;
+   var webResourcesCfg = lconn.core.config.services.webresources;
+   var webResourcesUrl = (isSecure) ? webResourcesCfg.secureUrl : webResourcesCfg.url;
+   var selectedUser = null;
+   var inlineWidget = null;
+   var iContainer = null;
+   var gadgetHandle = null;
+   
+   var boardUrl;
+
+   window.viewSUStandalone = function(updateId) {
+      window.location.href = newsUrl + "/web/statusUpdateEE.action?id=" + updateId + "&type=standalone&width=500";
+   };
+   
+   function resetInlineWidget() {
+	   if (inlineWidget) {
+		   inlineWidget.destroy();
+		   inlineWidget = null;
+		   var container = dojo.byId("inlineStatusUpdate");
+		   dojo.empty(container);
+		   dojo.create("center", { innerHTML: "Inline gadget goes here" }, container);
+	   }
+   }
+   
+   function resetGadget() {
+	   if (gadgetHandle) {
+		   gadgetHandle.close();
+		   gadgetHandle = null;
+		   var container = dojo.byId("gadgetStatusUpdate");
+         dojo.empty(container);
+         dojo.create("center", { innerHTML: "iFrame gadget goes here" }, container);		   
+	   }
+   }
+   
+   window.viewSUInline = function (updateId) {
+	   resetInlineWidget();
+	   resetGadget();
+	   net.jazz.ajax.xdloader.batch_load_async(["com.ibm.social.ee.widget.StatusUpdateLoader", "com.ibm.social.incontext.NetworkDojo"], function () {
+		   var clz = dojo.getObject("com.ibm.social.ee.widget.StatusUpdateLoader");
+		   var container = dojo.byId("inlineStatusUpdate");
+		   dojo.empty(container);
+		   var div = dojo.create("div", { }, container);
+		   inlineWidget = new clz({ isGadget: false, context: { id: updateId } }, div);
+	   });
+   };
+   
+   window.viewSUOpenSocial = function (updateId) {
+	   resetInlineWidget();
+	   resetGadget();
+	   if(!iContainer) {
+		   iContainer = com.ibm.lconn.gadget.container.iContainer2;
+		   iContainer.init();
+	   }
+       var context = {
+          "id": updateId,
+          eventType: "profiles.status.updated"
+       };
+       var container = dojo.byId("gadgetStatusUpdate");
+       dojo.empty(container);
+       var oauthEnabled = "false";
+       if (dojo.cookie("_oauthEnabled") === "true") {
+         oauthEnabled = "true";
+       }       
+       var gadgetUrl = webResourcesUrl + "/web/com.ibm.social.ee/ConnectionsEE.xml";
+       if (!oauthEnabled)
+         gadgetUrl += ("?preventCache=" + (new Date()).getTime());
+         
+       var div = dojo.create("div", { id: registry.getUniqueId("test.statusUpdate_gadget") }, container);       
+       var def = {
+          definitionUrl: gadgetUrl,          
+          placement: dojo.attr(div, "id"),
+          componentType: "gadget",
+          instanceData: {
+        	    renderParams: { userPrefs: { "debug": "true" }  },
+        	    eeDataModel: {
+        	    	context: context
+        	    },
+        	    viewParams: { useOAuth: oauthEnabled }
+          }
+       };
+       gadgetHandle = iContainer.loadWidget(def);	   
+   }
+
+   
+   window.deleteSU = function (updateId) {
+	   var entryUrl = boardUrl + "/" + updateId;
+	   dojo.xhrDelete({
+		   url: entryUrl,
+		   headers: { "Content-Type" : "application/json; charset=utf-8" },
+		   load: function (data) {
+			   refreshMyBoard();
+		   },
+		   error: function (error) {
+			   alert("Could not delete post: " + error);
+		   }
+	   })
+   }
+   
+   window.submitMyBoardPost = function() {
+	   var data = { summary: dojo.byId("myBoardPost").value };
+	   dojo.xhrPost({
+		   postData: dojo.toJson(data),
+		   url: boardUrl,
+		   handleAs: "json",
+		   headers: { "Content-Type": "application/json; charset=utf-8" },
+		   load: function(data) {
+			   dojo.byId("myBoardPost").value = "";
+			   refreshMyBoard();
+		   },
+		   error: function(error) {
+			   alert("An error occurred creating your post: " + error);
+		   }
+	   
+	   });
+   }
+   
+   window.submitOtherBoardPost = function() {
+      var data = { summary: dojo.byId("otherBoardPost").value };
+      var url = openSocialUrl + "/rest/ublog/" + selectedUser + "/@all"
+      dojo.xhrPost({
+         postData: dojo.toJson(data),
+         url: url,
+         handleAs: "json",
+         headers: { "Content-Type": "application/json; charset=utf-8" },
+         load: function(data) {
+            dojo.byId("otherBoardPost").value = "";
+            showOtherUserPosts();
+         },
+         error: function(error) {
+            alert("An error occurred creating your post: " + error);
+         }      
+      });	   
+   }
+   
+   function t (s, e) {
+   	 e.appendChild(dojo.doc.createTextNode(s));
+   }
+   
+   function refreshMyBoard() {
+	    dojo.empty("boardPosts");
+	    var url = boardUrl + "?sortBy=published&sortOrder=descending";
+       try {
+           util.getJson (url, function (result) {
+              var div = dojo.byId("boardPosts");
+              var ul = dojo.create("ul", {}, div);
+              dojo.forEach(result.list, function (e) {
+            	  var clippedText = e.summary;
+            	  if (clippedText && clippedText.length > 50) {
+            		  clippedText = clippedText.substring(0,50);
+            	  }
+                 var li = dojo.create("li", { style: { marginBottom: "5px" }}, ul);
+                 var img = dojo.create("img", { src: profilesUrl + "/photo.do?userid=" + e.author.id, style: { width: "32px", height: "32px", marginRight: "10px" }}, li);
+                 var sp = dojo.create("span", { style: { maxWidth: "200px", textOverflow: "ellipsis" }}, li);
+                 var id = e.id;
+                 t(clippedText, sp);
+                 var a = dojo.create("a", { href: "javascript:deleteSU('" + id + "')", style: { marginLeft: "5px" }}, li);
+                 t("Delete", a);                 
+                 a = dojo.create("a", { href: "javascript:viewSUStandalone('" + id + "')", style: { marginLeft: "10px" } }, li);
+                 t("Standalone (Dojo)", a);
+                 a = dojo.create("a", { href: "javascript:viewSUInline('" + id + "')", style: { marginLeft: "10px"}}, li);
+                 t("Inline (Dojo)", a);
+                 a = dojo.create("a", { href: "javascript:viewSUOpenSocial('" + id + "')", style: { marginLeft: "10px"}}, li);
+                 t("Standalone (Open Social)", a);                 
+              });
+              if (!result.list.length) {
+                  dojo.create("span", { innerHTML: "<i>No board posts found"}, div);
+              }              
+           });
+       } catch (e) {
+        console.log("error", e);            
+       }	   
+   }
+   
+   function showOtherUserPosts() {
+	   dojo.empty("otherBoardPosts");
+       var url = openSocialUrl + "/rest/ublog/" + selectedUser + "/@all" + "?sortBy=published&sortOrder=descending";
+       try {
+           util.getJson (url, function (result) {
+              var div = dojo.byId("otherBoardPosts");
+              var ul = dojo.create("ul", {}, div);
+              dojo.forEach(result.list, function (e) {
+                 var clippedText = e.summary;
+                 if (clippedText && clippedText.length > 50) {
+                    clippedText = clippedText.substring(0,50);
+                 }
+                 var li = dojo.create("li", { style: { marginBottom: "5px" }}, ul);
+                 var img = dojo.create("img", { src: profilesUrl + "/photo.do?userid=" + e.author.id, style: { width: "32px", height: "32px", marginRight: "10px" }}, li);
+                 var sp = dojo.create("span", { style: { maxWidth: "200px", textOverflow: "ellipsis" }}, li);
+                 sp.appendChild(dojo.doc.createTextNode(clippedText));
+                 a = dojo.create("a", { href: "javascript:viewSUStandalone('" + e.id + "')", style: { marginLeft: "5px" } }, li);
+                 t("Standalone (Dojo)", a);
+                 a = dojo.create("a", { href: "javascript:viewSUInline('" + e.id + "')", style: { marginLeft: "10px"}}, li);
+                 t("Inline (Dojo)", a);
+                 a = dojo.create("a", { href: "javascript:viewSUOpenSocial('" + e.id + "')", style: { marginLeft: "10px"}}, li);
+                 t("Standalone (Open Social)", a);                 
+              });
+              if (!result.list.length) {
+            	  dojo.create("span", { innerHTML: "<i>No board posts found"}, div);
+              }
+           });
+       } catch (e) {
+           console.log("error", e);            
+       }	   
+   }
+
+   dojo.addOnLoad(function () {
+     util.getXml(profilesUrl + "/atom/profileService.do", function (svcdoc) {      
+         // Get the current user
+         var currentUser = util.evalXPathString(svcdoc, "//app:workspace/atom:title/text()", { app: "http://www.w3.org/2007/app"});
+         var userId = util.evalXPathString(svcdoc, "//app:collection/snx:userid/text()", {app: "http://www.w3.org/2007/app"});
+         dojo.place("<strong>" + currentUser + "", dojo.byId("currentUser"));
+         
+         boardUrl = openSocialUrl + "/rest/ublog/@me/@all";
+         refreshMyBoard();
+     });   
+      
+     // Create people lookup
+     lookup.createPersonTypeahead("otherUser", profilesUrl, function (item) {
+    	  selectedUser = item.userid;
+    	  dojo.byId("otherUserName").innerHTML = "<b>" + item.name + "";
+    	  dojo.byId("otherUserSection").style.display = "";
+    	  dojo.byId("otherUser").value = "";
+    	  showOtherUserPosts();
+     }); 
+      
+   });
+})();
+
+</script>
+${endhead}
+<div class="" style="min-height:0px;">
+<div class="lotusContent" style="width: 1500px; height: 2000px;">
+<table>
+<tbody>
+<tr>
+<td style="vertical-align:top">
+<h1>EE Status Update Test Page</h1>
+<h3>My Board</h3>
+<p>Current user: <span id="currentUser"></span></p>
+<div id="boardPosts"></div>
+<p>Create post: </p>
+<textarea style="width:250px" id="myBoardPost"></textarea><br>
+<button class="lotusButton" onclick="submitMyBoardPost()">Submit</button>
+<p></p>
+<h3>Other User's Board</h3>
+<p>Select user: <input id="otherUser" type="text" value="" style="width:200px">
+ </p>
+<div id="otherUserSection" style="display:none">
+<p>Selected user: <span id="otherUserName"></span></p>
+<div id="otherBoardPosts"></div>
+<p>Create post: </p>
+<textarea style="width:250px" id="otherBoardPost"></textarea><br>
+<button class="lotusButton" onclick="submitOtherBoardPost()">Submit</button>
+</div>
+</td>
+<td width="500" style="vertical-align:top">
+<div id="inlineStatusUpdate" style="width:380px; overflow: auto; top: 50px; margin-left:50px;border-style:solid;border-width:1px;border-color:#aaa;padding:20px">
+<center>Inline gadget goes here</center>
+</div>
+<div id="gadgetStatusUpdate" style="width:380px; margin-top: 10px; margin-left:50px;border-style:solid;border-width:1px;border-color:#aaa;padding:20px; overflow:auto">
+<center>iFrame gadget goes here</center>
+</div>
+
+
+</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+</div></body><p>
+${end}</p></html>

@@ -1,0 +1,471 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2002, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="com.ibm.oneui3.styles" default="all" basedir=".">
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+	<property name="oneui.dir" value="${basedir}/resources" />
+	<property name="srcDir" value="${oneui.dir}/imageLibrary" />
+	<property name="outDir" value="${oneui.dir}/css/images" />
+
+	<!-- Macro for Sprite Generation -->
+	<macrodef name="spritegen">
+		<attribute name="srcPath" />
+		<attribute name="srcProperties" />
+		<attribute name="outPath" />
+		<attribute name="outName" />
+		<sequential>
+			<!-- Sprite the images defined in the srcProperties file at the srcPath, and create the sprite output at outPath with outName -->
+			<java dir="@{srcPath}" fork="true" jvm="${java.home}/bin/java" classpath="${basedir}/tools/spritegen/oneuiSpriteGenerator.jar" classname="com.ibm.oneui.spritegen.tool.SpriteGeneratorTool">
+				<arg value="name=@{outName}" />
+				<arg value="srcdir=@{srcPath}" />
+				<arg value="srclist=@{srcPath}/@{srcProperties}" />
+				<arg value="outdir=@{outPath}" />
+				<arg value="outpng32=@{outName}-8bit.png" />
+				<arg value="rtimgpath=." />
+				<arg value="outcss=@{outName}.css" />
+				<arg value="outhtml=@{outName}-test.html" />
+				<arg value="outdim=@{outName}.properties" />
+				<arg value="pady=8" />
+				<arg value="verbose=false" />
+				<arg value="copyright=${basedir}/copyright.txt" />
+			</java>
+
+			<!-- If Windows run the NPNGQuant.exe tool to quantize the 32-bit sprite output to an 8-bit sprite -->
+			<!--<if>
+ 				<os family="windows" />
+ 				<then>
+					<move file="@{outPath}/@{outName}-8bit.png" tofile="@{outPath}/@{outName}-32bit.png" />
+					<exec executable="${basedir}/tools/NPNGQuant.exe" dir="@{outPath}">
+						<arg value="-split" />
+						<arg value="-force" />
+						<arg value="-nofs" />
+						<arg value="-verbose" />
+						<arg value="256" />
+						<arg value="@{outName}-32bit.png" />
+					</exec>
+					<move file="@{outPath}/@{outName}-32bit-or8.png" tofile="@{outPath}/@{outName}-8bit.png" />
+				</then>
+				Placeholder for Unix systems, once a similar tool has been approved add it below
+ 				<else>
+   					<echo message="Image Quantization only supported on Windows." />
+ 				</else>
+			</if> -->
+		</sequential>
+	</macrodef>
+
+	<!-- Helper targets to build subsets of sprites -->
+	<target name="all" depends="branding, icons, other"/>
+
+	<target name="branding" depends="brandingLogos, brandingOther" />
+	<target name="brandingLogos" depends="brandingLogos15, brandingLogos23, brandingLogos30" />
+	<target name="brandingOther" depends="brandingOther16, brandingOther24, brandingOther32, brandingOther128" />
+
+	<target name="icons" depends="iconsActions, iconsComponents, iconsComponentsBlue, iconsComponentsGray, iconsComponentsWhite, 
+								  iconsComponentTypes, iconsDisplayControls, iconsFileTypes, iconsMessages, iconsOther, iconsStates, iconsPicker, iconsPickerGen4" />
+	<target name="iconsActions" depends="iconsActions16, iconsCKActions16" />
+	<target name="iconsComponents" depends="iconsComponents16, iconsComponents32, iconsComponents64, iconsComponents128" />
+	<target name="iconsComponentsBlue" depends="iconsComponentsBlue16, iconsComponentsBlue24, iconsComponentsBlue32, iconsComponentsBlue48, iconsComponentsBlue64" />
+	<target name="iconsComponentsGray" depends="iconsComponentsGray16, iconsComponentsGray24, iconsComponentsGray32, iconsComponentsGray48, iconsComponentsGray64" />
+	<target name="iconsComponentsWhite" depends="iconsComponentsWhite16, iconsComponentsWhite24, iconsComponentsWhite32, iconsComponentsWhite48, iconsComponentsWhite64, iconsComponentsWhite128" />
+	<target name="iconsComponentTypes" depends="iconsComponentTypes16" />
+	<target name="iconsDisplayControls" depends="iconsDisplayControls16" />
+	<target name="iconsFileTypes" depends="iconsFileTypes12, iconsFileTypes16, iconsFileTypes24, iconsFileTypes32, iconsFileTypes64, iconsFileTypes128, iconsFileTypes256, iconsFileTypes202" />
+	<target name="iconsMessages" depends="iconsMessages16, iconsMessages32, iconsMessages48, iconsMessages64" />
+	<target name="iconsOther" depends="iconsOther16, iconsOther48" />
+	<target name="iconsStates" depends="iconsStates16" />
+	<target name="iconsPicker" depends="iconsPicker16" />
+	<target name="iconsPickerGen4" depends="iconsPicker16Gen4" />
+	
+	<target name="other" depends="otherActivityStream, otherColumnHeadings, otherFramework, otherMediaPlayer, otherPeople, otherStatus, otherTree, otherVoting" />
+	<target name="otherActivityStream" depends="otherActivityStream12, otherActivityStream14" />
+	<target name="otherColumnHeadings" depends="otherColumnHeadings16" />
+	<target name="otherFramework" depends="otherFramework16, otherFramework32" />
+	<target name="otherMediaPlayer" depends="otherMediaPlayer16, otherMediaPlayer32, otherMediaPlayer45, otherMediaPlayer75" />
+	<target name="otherPeople" depends="otherPeople16, otherPeople24, otherPeople32, otherPeople48, otherPeople64, otherPeople128, otherPeople155" />
+	<target name="otherStatus" depends="otherStatus9" />
+	<target name="otherTree" depends="otherTree16" />
+	<target name="otherVoting" depends="otherVoting12" />
+	
+	<!-- Individual targets to build a specific directory of images into sprites -->
+	
+	<!-- Branding/Logos -->
+	<property name="brandingLogosSrc" value="${srcDir}/Branding/Logos" />
+	<property name="brandingLogosOut" value="${outDir}/Branding/Logos" />
+	
+	<target name="brandingLogos15">
+		<spritegen srcPath = "${brandingLogosSrc}" srcProperties = "sprite15.properties" outPath = "${brandingLogosOut}" outName = "brandingLogos15" />
+	</target>
+	
+	<target name="brandingLogos23">
+		<spritegen srcPath = "${brandingLogosSrc}" srcProperties = "sprite23.properties" outPath = "${brandingLogosOut}" outName = "brandingLogos23" />
+	</target>
+	
+	<target name="brandingLogos30">
+		<spritegen srcPath = "${brandingLogosSrc}" srcProperties = "sprite30.properties" outPath = "${brandingLogosOut}" outName = "brandingLogos30" />
+	</target>
+	
+	<!-- Branding/Other -->
+	<property name="brandingOtherSrc" value="${srcDir}/Branding/Other" />
+	<property name="brandingOtherOut" value="${outDir}/Branding/Other" />
+	
+	<target name="brandingOther16">
+		<spritegen srcPath = "${brandingOtherSrc}" srcProperties = "brandingOther16.properties" outPath = "${brandingOtherOut}" outName = "brandingOther16" />
+	</target>
+	
+	<target name="brandingOther24">
+		<spritegen srcPath = "${brandingOtherSrc}" srcProperties = "brandingOther24.properties" outPath = "${brandingOtherOut}" outName = "brandingOther24" />
+	</target>
+	
+	<target name="brandingOther32">
+		<spritegen srcPath = "${brandingOtherSrc}" srcProperties = "brandingOther32.properties" outPath = "${brandingOtherOut}" outName = "brandingOther32" />
+	</target>
+	
+	<target name="brandingOther128">
+		<spritegen srcPath = "${brandingOtherSrc}" srcProperties = "brandingOther128.properties" outPath = "${brandingOtherOut}" outName = "brandingOther128" />
+	</target>
+	
+	<!-- Icons/Actions -->
+	<property name="iconsActionsSrc" value="${srcDir}/Icons/Actions" />
+	<property name="iconsActionsOut" value="${outDir}/Icons/Actions" />
+	
+	<target name="iconsActions16">
+		<spritegen srcPath = "${iconsActionsSrc}" srcProperties = "actions16.properties" outPath = "${iconsActionsOut}" outName = "iconsActions16" />
+	</target>
+
+	<!-- Icons/CKActions -->
+	<property name="iconsCKActionsSrc" value="${srcDir}/Icons/CKActions" />
+	<property name="iconsCKActionsOut" value="${outDir}/Icons/CKActions" />
+	
+	<target name="iconsCKActions16">
+		<spritegen srcPath = "${iconsCKActionsSrc}" srcProperties = "ckactions16.properties" outPath = "${iconsCKActionsOut}" outName = "iconsCKActions16" />
+	</target>
+	
+	<!-- Icons/Components -->
+	<property name="iconsComponentsSrc" value="${srcDir}/Icons/Components" />
+	<property name="iconsComponentsOut" value="${outDir}/Icons/Components" />
+	
+	<target name="iconsComponents16">
+		<spritegen srcPath = "${iconsComponentsSrc}" srcProperties = "components16.properties" outPath = "${iconsComponentsOut}" outName = "iconsComponents16" />
+	</target>
+	
+	<target name="iconsComponents32">
+		<spritegen srcPath = "${iconsComponentsSrc}" srcProperties = "components32.properties" outPath = "${iconsComponentsOut}" outName = "iconsComponents32" />
+	</target>
+	
+	<target name="iconsComponents64">
+		<spritegen srcPath = "${iconsComponentsSrc}" srcProperties = "components64.properties" outPath = "${iconsComponentsOut}" outName = "iconsComponents64" />
+	</target>
+	
+	<target name="iconsComponents128">
+		<spritegen srcPath = "${iconsComponentsSrc}" srcProperties = "components128.properties" outPath = "${iconsComponentsOut}" outName = "iconsComponents128" />
+	</target>
+	
+	<!-- Icons/ComponentsBlue -->
+	<property name="iconsComponentsBlueSrc" value="${srcDir}/Icons/ComponentsBlue" />
+	<property name="iconsComponentsBlueOut" value="${outDir}/Icons/ComponentsBlue" />
+	
+	<target name="iconsComponentsBlue16">
+		<spritegen srcPath = "${iconsComponentsBlueSrc}" srcProperties = "ComponentsBlue16.properties" outPath = "${iconsComponentsBlueOut}" outName = "iconsComponentsBlue16" />
+	</target>
+	
+	<target name="iconsComponentsBlue24">
+		<spritegen srcPath = "${iconsComponentsBlueSrc}" srcProperties = "ComponentsBlue24.properties" outPath = "${iconsComponentsBlueOut}" outName = "iconsComponentsBlue24" />
+	</target>
+	
+	<target name="iconsComponentsBlue32">
+		<spritegen srcPath = "${iconsComponentsBlueSrc}" srcProperties = "ComponentsBlue32.properties" outPath = "${iconsComponentsBlueOut}" outName = "iconsComponentsBlue32" />
+	</target>
+	
+	<target name="iconsComponentsBlue48">
+		<spritegen srcPath = "${iconsComponentsBlueSrc}" srcProperties = "ComponentsBlue48.properties" outPath = "${iconsComponentsBlueOut}" outName = "iconsComponentsBlue48" />
+	</target>
+	
+	<target name="iconsComponentsBlue64">
+		<spritegen srcPath = "${iconsComponentsBlueSrc}" srcProperties = "ComponentsBlue64.properties" outPath = "${iconsComponentsBlueOut}" outName = "iconsComponentsBlue64" />
+	</target>
+	
+	<!-- Icons/ComponentsGray -->
+	<property name="iconsComponentsGraySrc" value="${srcDir}/Icons/ComponentsGray" />
+	<property name="iconsComponentsGrayOut" value="${outDir}/Icons/ComponentsGray" />
+	
+	<target name="iconsComponentsGray16">
+		<spritegen srcPath = "${iconsComponentsGraySrc}" srcProperties = "ComponentsGray16.properties" outPath = "${iconsComponentsGrayOut}" outName = "iconsComponentsGray16" />
+	</target>
+	
+	<target name="iconsComponentsGray24">
+		<spritegen srcPath = "${iconsComponentsGraySrc}" srcProperties = "ComponentsGray24.properties" outPath = "${iconsComponentsGrayOut}" outName = "iconsComponentsGray24" />
+	</target>
+	
+	<target name="iconsComponentsGray32">
+		<spritegen srcPath = "${iconsComponentsGraySrc}" srcProperties = "ComponentsGray32.properties" outPath = "${iconsComponentsGrayOut}" outName = "iconsComponentsGray32" />
+	</target>
+	
+	<target name="iconsComponentsGray48">
+		<spritegen srcPath = "${iconsComponentsGraySrc}" srcProperties = "ComponentsGray48.properties" outPath = "${iconsComponentsGrayOut}" outName = "iconsComponentsGray48" />
+	</target>
+	
+	<target name="iconsComponentsGray64">
+		<spritegen srcPath = "${iconsComponentsGraySrc}" srcProperties = "ComponentsGray64.properties" outPath = "${iconsComponentsGrayOut}" outName = "iconsComponentsGray64" />
+	</target>
+	
+	
+	<!-- Icons/ComponentsBlue -->
+	<property name="iconsComponentsWhiteSrc" value="${srcDir}/Icons/ComponentsWhite" />
+	<property name="iconsComponentsWhiteOut" value="${outDir}/Icons/ComponentsWhite" />
+		
+	<target name="iconsComponentsWhite16">
+		<spritegen srcPath = "${iconsComponentsWhiteSrc}" srcProperties = "ComponentsWhite16.properties" outPath = "${iconsComponentsWhiteOut}" outName = "iconsComponentsWhite16" />
+	</target>
+	
+	<target name="iconsComponentsWhite24">
+		<spritegen srcPath = "${iconsComponentsWhiteSrc}" srcProperties = "ComponentsWhite24.properties" outPath = "${iconsComponentsWhiteOut}" outName = "iconsComponentsWhite24" />
+	</target>
+	
+	<target name="iconsComponentsWhite32">
+		<spritegen srcPath = "${iconsComponentsWhiteSrc}" srcProperties = "ComponentsWhite32.properties" outPath = "${iconsComponentsWhiteOut}" outName = "iconsComponentsWhite32" />
+	</target>
+	
+	<target name="iconsComponentsWhite48">
+		<spritegen srcPath = "${iconsComponentsWhiteSrc}" srcProperties = "ComponentsWhite48.properties" outPath = "${iconsComponentsWhiteOut}" outName = "iconsComponentsWhite48" />
+	</target>
+	
+	<target name="iconsComponentsWhite64">
+		<spritegen srcPath = "${iconsComponentsWhiteSrc}" srcProperties = "ComponentsWhite64.properties" outPath = "${iconsComponentsWhiteOut}" outName = "iconsComponentsWhite64" />
+	</target>
+	
+	<target name="iconsComponentsWhite128">
+		<spritegen srcPath = "${iconsComponentsWhiteSrc}" srcProperties = "ComponentsWhite128.properties" outPath = "${iconsComponentsWhiteOut}" outName = "iconsComponentsWhite128" />
+	</target>
+	
+	<!-- Icons/ComponentTypes -->
+	<property name="iconsComponentTypesSrc" value="${srcDir}/Icons/ComponentTypes" />
+	<property name="iconsComponentTypesOut" value="${outDir}/Icons/ComponentTypes" />
+	
+	<target name="iconsComponentTypes16">
+		<spritegen srcPath = "${iconsComponentTypesSrc}" srcProperties = "ComponentTypes16.properties" outPath = "${iconsComponentTypesOut}" outName = "iconsComponentTypes16" />
+	</target>
+	
+	<!-- Icons/DispalyControls -->
+	<property name="iconsDisplayControlsSrc" value="${srcDir}/Icons/DisplayControls" />
+	<property name="iconsDisplayControlsOut" value="${outDir}/Icons/DisplayControls" />
+	
+	<target name="iconsDisplayControls16">
+		<spritegen srcPath = "${iconsDisplayControlsSrc}" srcProperties = "DisplayControls16.properties" outPath = "${iconsDisplayControlsOut}" outName = "iconsDisplayControls16" />
+	</target>
+	
+	<!-- Icons/FileTypes -->
+	<property name="iconsFileTypesSrc" value="${srcDir}/Icons/FileTypes" />
+	<property name="iconsFileTypesOut" value="${outDir}/Icons/FileTypes" />
+
+	<target name="iconsFileTypes12">
+		<spritegen srcPath = "${iconsFileTypesSrc}" srcProperties = "FileTypes12.properties" outPath = "${iconsFileTypesOut}" outName = "iconsFileTypes12" />
+	</target>
+
+	<target name="iconsFileTypes16">
+		<spritegen srcPath = "${iconsFileTypesSrc}" srcProperties = "FileTypes16.properties" outPath = "${iconsFileTypesOut}" outName = "iconsFileTypes16" />
+	</target>
+	
+	<target name="iconsFileTypes24">
+		<spritegen srcPath = "${iconsFileTypesSrc}" srcProperties = "FileTypes24.properties" outPath = "${iconsFileTypesOut}" outName = "iconsFileTypes24" />
+	</target>
+
+	<target name="iconsFileTypes32">
+		<spritegen srcPath = "${iconsFileTypesSrc}" srcProperties = "FileTypes32.properties" outPath = "${iconsFileTypesOut}" outName = "iconsFileTypes32" />
+	</target>
+	
+	<target name="iconsFileTypes64">
+		<spritegen srcPath = "${iconsFileTypesSrc}" srcProperties = "FileTypes64.properties" outPath = "${iconsFileTypesOut}" outName = "iconsFileTypes64" />
+	</target>
+	
+	<target name="iconsFileTypes128">
+		<spritegen srcPath = "${iconsFileTypesSrc}" srcProperties = "FileTypes128.properties" outPath = "${iconsFileTypesOut}" outName = "iconsFileTypes128" />
+	</target>
+
+	<target name="iconsFileTypes202">
+		<spritegen srcPath = "${iconsFileTypesSrc}" srcProperties = "FileTypes202.properties" outPath = "${iconsFileTypesOut}" outName = "iconsFileTypes202" />
+	</target>
+
+	<target name="iconsFileTypes256">
+		<spritegen srcPath = "${iconsFileTypesSrc}" srcProperties = "FileTypes256.properties" outPath = "${iconsFileTypesOut}" outName = "iconsFileTypes256" />
+	</target>
+
+	<!-- Icons/Messages -->
+	<property name="iconsMessagesSrc" value="${srcDir}/Icons/Messages" />
+	<property name="iconsMessagesOut" value="${outDir}/Icons/Messages" />
+	
+	<target name="iconsMessages16">
+		<spritegen srcPath = "${iconsMessagesSrc}" srcProperties = "Messages16.properties" outPath = "${iconsMessagesOut}" outName = "iconsMessages16" />
+	</target>
+
+	<target name="iconsMessages32">
+		<spritegen srcPath = "${iconsMessagesSrc}" srcProperties = "Messages32.properties" outPath = "${iconsMessagesOut}" outName = "iconsMessages32" />
+	</target>
+
+	<target name="iconsMessages48">
+		<spritegen srcPath = "${iconsMessagesSrc}" srcProperties = "Messages48.properties" outPath = "${iconsMessagesOut}" outName = "iconsMessages48" />
+	</target>
+	
+	<target name="iconsMessages64">
+		<spritegen srcPath = "${iconsMessagesSrc}" srcProperties = "Messages64.properties" outPath = "${iconsMessagesOut}" outName = "iconsMessages64" />
+	</target>
+
+	<!-- Icons/Other -->
+	<property name="iconsOtherSrc" value="${srcDir}/Icons/Other" />
+	<property name="iconsOtherOut" value="${outDir}/Icons/Other" />
+	
+	<target name="iconsOther16">
+		<spritegen srcPath = "${iconsOtherSrc}" srcProperties = "Other16.properties" outPath = "${iconsOtherOut}" outName = "iconsOther16" />
+	</target>
+	
+	<target name="iconsOther48">
+		<spritegen srcPath = "${iconsOtherSrc}" srcProperties = "Other48.properties" outPath = "${iconsOtherOut}" outName = "iconsOther48" />
+	</target>
+	
+	<!-- Icons/States -->
+	<property name="iconsStatesSrc" value="${srcDir}/Icons/States" />
+	<property name="iconsStatesOut" value="${outDir}/Icons/States" />
+	
+	<target name="iconsStates16">
+		<spritegen srcPath = "${iconsStatesSrc}" srcProperties = "States16.properties" outPath = "${iconsStatesOut}" outName = "iconsStates16" />
+	</target>
+	
+	<!-- Icons/Picker -->
+	<property name="iconsPickerSrc" value="${srcDir}/Icons/Picker" />
+	<property name="iconsPickerOut" value="${outDir}/Icons/Picker" />
+
+	<target name="iconsPicker16">
+		<spritegen srcPath = "${iconsPickerSrc}" srcProperties = "Picker16.properties" outPath = "${iconsPickerOut}" outName = "iconsPicker16" />
+	</target>
+
+	<!-- Icons/PickerGen4 -->
+	<property name="iconsPickerGen4Src" value="${srcDir}/Icons/PickerGen4" />
+	<property name="iconsPickerGen4Out" value="${outDir}/Icons/PickerGen4" />
+
+	<target name="iconsPicker16Gen4">
+		<spritegen srcPath = "${iconsPickerGen4Src}" srcProperties = "Picker16Gen4.properties" outPath = "${iconsPickerGen4Out}" outName = "iconsPicker16Gen4" />
+	</target>
+
+	<!-- Other/ActivityStream -->
+	<property name="otherActivityStreamSrc" value="${srcDir}/OtherImages/ActivityStream" />
+	<property name="otherActivityStreamOut" value="${outDir}/OtherImages/ActivityStream" />
+
+	<target name="otherActivityStream12">
+		<spritegen srcPath = "${otherActivityStreamSrc}" srcProperties = "activityStream12.properties" outPath = "${otherActivityStreamOut}" outName = "otherActivityStream12" />
+	</target>
+
+	<target name="otherActivityStream14">
+		<spritegen srcPath = "${otherActivityStreamSrc}" srcProperties = "activityStream14.properties" outPath = "${otherActivityStreamOut}" outName = "otherActivityStream14" />
+	</target>
+
+	<!-- Other/ColumnHeadings -->
+	<property name="otherColumnHeadingsSrc" value="${srcDir}/OtherImages/ColumnHeadings" />
+	<property name="otherColumnHeadingsOut" value="${outDir}/OtherImages/ColumnHeadings" />
+	
+	<target name="otherColumnHeadings16">
+		<spritegen srcPath = "${otherColumnHeadingsSrc}" srcProperties = "ColumnHeadings16.properties" outPath = "${otherColumnHeadingsOut}" outName = "otherColumnHeadings16" />
+	</target>
+	
+	<!-- Other/Framework -->
+	<property name="otherFrameworkSrc" value="${srcDir}/OtherImages/Framework" />
+	<property name="otherFrameworkOut" value="${outDir}/OtherImages/Framework" />
+	
+	<target name="otherFramework16">
+		<spritegen srcPath = "${otherFrameworkSrc}" srcProperties = "Framework16.properties" outPath = "${otherFrameworkOut}" outName = "otherFramework16" />
+	</target>
+	
+	<target name="otherFramework32">
+		<spritegen srcPath = "${otherFrameworkSrc}" srcProperties = "Framework32.properties" outPath = "${otherFrameworkOut}" outName = "otherFramework32" />
+	</target>
+	
+	<!-- Other/MediaPlayer -->
+	<property name="otherMediaPlayerSrc" value="${srcDir}/OtherImages/MediaPlayer" />
+	<property name="otherMediaPlayerOut" value="${outDir}/OtherImages/MediaPlayer" />
+	
+	<target name="otherMediaPlayer16">
+		<spritegen srcPath = "${otherMediaPlayerSrc}" srcProperties = "MediaPlayer16.properties" outPath = "${otherMediaPlayerOut}" outName = "otherMediaPlayer16" />
+	</target>
+	
+	<target name="otherMediaPlayer32">
+		<spritegen srcPath = "${otherMediaPlayerSrc}" srcProperties = "MediaPlayer32.properties" outPath = "${otherMediaPlayerOut}" outName = "otherMediaPlayer32" />
+	</target>
+	
+	<target name="otherMediaPlayer45">
+		<spritegen srcPath = "${otherMediaPlayerSrc}" srcProperties = "MediaPlayer45.properties" outPath = "${otherMediaPlayerOut}" outName = "otherMediaPlayer45" />
+	</target>
+	
+	<target name="otherMediaPlayer75">
+		<spritegen srcPath = "${otherMediaPlayerSrc}" srcProperties = "MediaPlayer75.properties" outPath = "${otherMediaPlayerOut}" outName = "otherMediaPlayer75" />
+	</target>
+	
+	<!-- Other/People -->
+	<property name="otherPeopleSrc" value="${srcDir}/OtherImages/People" />
+	<property name="otherPeopleOut" value="${outDir}/OtherImages/People" />
+	
+	<target name="otherPeople16">
+		<spritegen srcPath = "${otherPeopleSrc}" srcProperties = "People16.properties" outPath = "${otherPeopleOut}" outName = "otherPeople16" />
+	</target>
+	
+	<target name="otherPeople24">
+		<spritegen srcPath = "${otherPeopleSrc}" srcProperties = "People24.properties" outPath = "${otherPeopleOut}" outName = "otherPeople24" />
+	</target>
+	
+	<target name="otherPeople32">
+		<spritegen srcPath = "${otherPeopleSrc}" srcProperties = "People32.properties" outPath = "${otherPeopleOut}" outName = "otherPeople32" />
+	</target>
+	
+	<target name="otherPeople48">
+		<spritegen srcPath = "${otherPeopleSrc}" srcProperties = "People48.properties" outPath = "${otherPeopleOut}" outName = "otherPeople48" />
+	</target>
+	
+	<target name="otherPeople64">
+		<spritegen srcPath = "${otherPeopleSrc}" srcProperties = "People64.properties" outPath = "${otherPeopleOut}" outName = "otherPeople64" />
+	</target>
+	
+	<target name="otherPeople128">
+		<spritegen srcPath = "${otherPeopleSrc}" srcProperties = "People128.properties" outPath = "${otherPeopleOut}" outName = "otherPeople128" />
+	</target>
+	
+	<target name="otherPeople155">
+		<spritegen srcPath = "${otherPeopleSrc}" srcProperties = "People155.properties" outPath = "${otherPeopleOut}" outName = "otherPeople155" />
+	</target>
+	
+	<!-- Other/ProgressIndicators -->
+	<property name="otherProgressIndicatorsSrc" value="${srcDir}/OtherImages/ProgressIndicators" />
+	<property name="otherProgressIndicatorsOut" value="${outDir}/OtherImages/ProgressIndicators" />
+	
+	<!-- Other/Status -->
+	<property name="otherStatusSrc" value="${srcDir}/OtherImages/Status" />
+	<property name="otherStatusOut" value="${outDir}/OtherImages/Status" />
+	
+	<target name="otherStatus9">
+		<spritegen srcPath = "${otherStatusSrc}" srcProperties = "Status9.properties" outPath = "${otherStatusOut}" outName = "otherStatus9" />
+	</target>
+	
+	<!-- Other/Tree -->
+	<property name="otherTreeSrc" value="${srcDir}/OtherImages/Tree" />
+	<property name="otherTreeOut" value="${outDir}/OtherImages/Tree" />
+		
+	<target name="otherTree16">
+		<spritegen srcPath = "${otherTreeSrc}" srcProperties = "Tree16.properties" outPath = "${otherTreeOut}" outName = "otherTree16" />
+	</target>
+	
+	<!-- Other/Voting -->
+	<property name="otherVotingSrc" value="${srcDir}/OtherImages/Voting" />
+	<property name="otherVotingOut" value="${outDir}/OtherImages/Voting" />
+		
+	<target name="otherVoting12">
+		<spritegen srcPath = "${otherVotingSrc}" srcProperties = "Voting12.properties" outPath = "${otherVotingOut}" outName = "otherVoting12" />
+	</target>
+	
+</project>

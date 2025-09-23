@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+
+<!-- "Pretty" version of /files/form/api/library/${library}/feed -->
+<!--                                                             -->
+<feed xmlns:thr="http://purl.org/syndication/thread/1.0" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:snx="http://www.ibm.com/xmlns/prod/sn" xmlns:td="urn:ibm.com/td" xmlns="http://www.w3.org/2005/Atom">
+  <generator version="5.0.0.0" uri="http://www.ibm.com/xmlns/prod/sn">IBM Connections - Files</generator>
+  <id>urn:lsid:ibm.com:td:06a5ed2d-fa61-4201-b522-ba57ea45a28d</id>
+  <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/feed" rel="self"/>
+  <link href="http://dreadnought.rtp.raleigh.ibm.com/files/app/person/d8a42d71-bdb9-46bd-a71c-1fe1226897b4/" rel="alternate" type="text/html"/>
+  <title type="text">Vivian Hanley</title>
+  <td:uuid>06a5ed2d-fa61-4201-b522-ba57ea45a28d</td:uuid>
+  <author>
+    <name>Vivian Hanley</name>
+    <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+    <email>vhanley@renovations.com</email>
+    <snx:userState>active</snx:userState>
+  </author>
+  <updated>2014-09-25T19:35:01.104Z</updated>
+  <td:librarySize>3175820</td:librarySize>
+  <td:totalRemovedSize>1632447</td:totalRemovedSize>
+  <td:libraryQuota>524288000</td:libraryQuota>
+  <opensearch:totalResults>7</opensearch:totalResults>
+  <app:collection xmlns:app="http://www.w3.org/2007/app" href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/feed">
+    <title type="text">Vivian Hanley</title>
+    <app:accept>application/*</app:accept>
+    <app:accept>image/*</app:accept>
+    <app:accept>*/*</app:accept>
+  </app:collection>
+  <entry>
+    <id>urn:lsid:ibm.com:td:37c0692a-0b54-4d68-a13d-aa496dbff1dd</id>
+    <td:uuid>37c0692a-0b54-4d68-a13d-aa496dbff1dd</td:uuid>
+    <td:label>buzz.png</td:label>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/37c0692a-0b54-4d68-a13d-aa496dbff1dd/entry" rel="self"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/app/file/37c0692a-0b54-4d68-a13d-aa496dbff1dd" rel="alternate" type="text/html"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/37c0692a-0b54-4d68-a13d-aa496dbff1dd/entry" rel="edit"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/37c0692a-0b54-4d68-a13d-aa496dbff1dd/media" rel="edit-media"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/anonymous/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/37c0692a-0b54-4d68-a13d-aa496dbff1dd/media/buzz.png" rel="enclosure" type="image/png" title="buzz.png" hreflang="en" length="61817"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/anonymous/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/37c0692a-0b54-4d68-a13d-aa496dbff1dd/thumbnail?renditionKind=mediumview" rel="thumbnail"/>
+    <category term="document" scheme="tag:ibm.com,2006:td/type" label="document"/>
+    <link xmlns:thr="http://purl.org/syndication/thread/1.0" href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/37c0692a-0b54-4d68-a13d-aa496dbff1dd/feed" rel="replies" type="application/atom+xml" thr:count="0"/>
+    <author>
+      <name>Vivian Hanley</name>
+      <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+      <email>vhanley@renovations.com</email>
+      <snx:userState>active</snx:userState>
+    </author>
+    <title type="text">buzz.png</title>
+    <published>2014-09-28T23:21:24.677Z</published>
+    <updated>2014-09-28T23:21:25.569Z</updated>
+    <td:created>2014-09-28T23:21:24.677Z</td:created>
+    <td:modified>2014-09-28T23:21:24.677Z</td:modified>
+    <td:lastAccessed/>
+    <td:modifier>
+      <name>Vivian Hanley</name>
+      <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+      <email>vhanley@renovations.com</email>
+      <snx:userState>active</snx:userState>
+    </td:modifier>
+    <td:visibility>private</td:visibility>
+    <snx:isExternal>false</snx:isExternal>
+    <td:libraryId>06a5ed2d-fa61-4201-b522-ba57ea45a28d</td:libraryId>
+    <td:libraryType>personalFiles</td:libraryType>
+    <td:versionUuid>704c5c87-20bc-4eb6-9c5d-5a35998a9103</td:versionUuid>
+    <td:versionLabel>1</td:versionLabel>
+    <td:propagation>true</td:propagation>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/share">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/collections">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/attachments">3</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/versions">1</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/references">0</snx:rank>
+    <td:totalMediaSize>89074</td:totalMediaSize>
+    <summary type="text"/>
+    <content type="image/png" src="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/37c0692a-0b54-4d68-a13d-aa496dbff1dd/media"/>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+    <td:restrictedVisibility>false</td:restrictedVisibility>
+    <td:objectTypeName>snx:file</td:objectTypeName>
+    <td:lock type="NONE"/>
+    <snx:isExternal>false</snx:isExternal>
+  </entry>
+  <entry>
+    <id>urn:lsid:ibm.com:td:d3d3829d-20eb-4ac7-aaf9-875791e6dd18</id>
+    <td:uuid>d3d3829d-20eb-4ac7-aaf9-875791e6dd18</td:uuid>
+    <td:label>tower.jpg</td:label>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/d3d3829d-20eb-4ac7-aaf9-875791e6dd18/entry" rel="self"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/app/file/d3d3829d-20eb-4ac7-aaf9-875791e6dd18" rel="alternate" type="text/html"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/d3d3829d-20eb-4ac7-aaf9-875791e6dd18/entry" rel="edit"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/d3d3829d-20eb-4ac7-aaf9-875791e6dd18/media" rel="edit-media"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/anonymous/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/d3d3829d-20eb-4ac7-aaf9-875791e6dd18/media/tower.jpg" rel="enclosure" type="image/jpeg" title="tower.jpg" hreflang="en" length="63500"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/anonymous/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/d3d3829d-20eb-4ac7-aaf9-875791e6dd18/thumbnail?renditionKind=mediumview" rel="thumbnail"/>
+    <category term="document" scheme="tag:ibm.com,2006:td/type" label="document"/>
+    <link xmlns:thr="http://purl.org/syndication/thread/1.0" href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/d3d3829d-20eb-4ac7-aaf9-875791e6dd18/feed" rel="replies" type="application/atom+xml" thr:count="0"/>
+    <author>
+      <name>Vivian Hanley</name>
+      <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+      <email>vhanley@renovations.com</email>
+      <snx:userState>active</snx:userState>
+    </author>
+    <title type="text">tower.jpg</title>
+    <published>2014-09-28T23:21:24.035Z</published>
+    <updated>2014-09-28T23:21:24.271Z</updated>
+    <td:created>2014-09-28T23:21:24.035Z</td:created>
+    <td:modified>2014-09-28T23:21:24.035Z</td:modified>
+    <td:lastAccessed/>
+    <td:modifier>
+      <name>Vivian Hanley</name>
+      <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+      <email>vhanley@renovations.com</email>
+      <snx:userState>active</snx:userState>
+    </td:modifier>
+    <td:visibility>private</td:visibility>
+    <snx:isExternal>false</snx:isExternal>
+    <td:libraryId>06a5ed2d-fa61-4201-b522-ba57ea45a28d</td:libraryId>
+    <td:libraryType>personalFiles</td:libraryType>
+    <td:versionUuid>fd650e95-b38b-4fb7-a180-ae131614be0b</td:versionUuid>
+    <td:versionLabel>1</td:versionLabel>
+    <td:propagation>true</td:propagation>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/share">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/collections">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/attachments">3</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/versions">1</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/references">0</snx:rank>
+    <td:totalMediaSize>120054</td:totalMediaSize>
+    <summary type="text"/>
+    <content type="image/jpeg" src="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/d3d3829d-20eb-4ac7-aaf9-875791e6dd18/media"/>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+    <td:restrictedVisibility>false</td:restrictedVisibility>
+    <td:objectTypeName>snx:file</td:objectTypeName>
+    <td:lock type="NONE"/>
+    <snx:isExternal>false</snx:isExternal>
+  </entry>
+  <entry>
+    <id>urn:lsid:ibm.com:td:3b51d9d3-74f2-41bc-916c-ed1166381ee9</id>
+    <td:uuid>3b51d9d3-74f2-41bc-916c-ed1166381ee9</td:uuid>
+    <td:label>wreck.jpg</td:label>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/3b51d9d3-74f2-41bc-916c-ed1166381ee9/entry" rel="self"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/app/file/3b51d9d3-74f2-41bc-916c-ed1166381ee9" rel="alternate" type="text/html"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/3b51d9d3-74f2-41bc-916c-ed1166381ee9/entry" rel="edit"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/3b51d9d3-74f2-41bc-916c-ed1166381ee9/media" rel="edit-media"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/anonymous/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/3b51d9d3-74f2-41bc-916c-ed1166381ee9/media/wreck.jpg" rel="enclosure" type="image/jpeg" title="wreck.jpg" hreflang="en" length="50180"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/anonymous/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/3b51d9d3-74f2-41bc-916c-ed1166381ee9/thumbnail?renditionKind=mediumview" rel="thumbnail"/>
+    <category term="document" scheme="tag:ibm.com,2006:td/type" label="document"/>
+    <link xmlns:thr="http://purl.org/syndication/thread/1.0" href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/3b51d9d3-74f2-41bc-916c-ed1166381ee9/feed" rel="replies" type="application/atom+xml" thr:count="0"/>
+    <author>
+      <name>Vivian Hanley</name>
+      <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+      <email>vhanley@renovations.com</email>
+      <snx:userState>active</snx:userState>
+    </author>
+    <title type="text">wreck.jpg</title>
+    <published>2014-09-28T23:21:23.383Z</published>
+    <updated>2014-09-28T23:21:23.734Z</updated>
+    <td:created>2014-09-28T23:21:23.383Z</td:created>
+    <td:modified>2014-09-28T23:21:23.383Z</td:modified>
+    <td:lastAccessed/>
+    <td:modifier>
+      <name>Vivian Hanley</name>
+      <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+      <email>vhanley@renovations.com</email>
+      <snx:userState>active</snx:userState>
+    </td:modifier>
+    <td:visibility>private</td:visibility>
+    <snx:isExternal>false</snx:isExternal>
+    <td:libraryId>06a5ed2d-fa61-4201-b522-ba57ea45a28d</td:libraryId>
+    <td:libraryType>personalFiles</td:libraryType>
+    <td:versionUuid>719ee9b9-4374-4de1-b757-4b7233aecea1</td:versionUuid>
+    <td:versionLabel>1</td:versionLabel>
+    <td:propagation>true</td:propagation>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/share">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/collections">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/attachments">3</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/versions">1</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/references">0</snx:rank>
+    <td:totalMediaSize>94093</td:totalMediaSize>
+    <summary type="text"/>
+    <content type="image/jpeg" src="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/3b51d9d3-74f2-41bc-916c-ed1166381ee9/media"/>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+    <td:restrictedVisibility>false</td:restrictedVisibility>
+    <td:objectTypeName>snx:file</td:objectTypeName>
+    <td:lock type="NONE"/>
+    <snx:isExternal>false</snx:isExternal>
+  </entry>
+  <entry>
+    <id>urn:lsid:ibm.com:td:1ae40510-8d34-4ecf-ad49-f678e944e42d</id>
+    <td:uuid>1ae40510-8d34-4ecf-ad49-f678e944e42d</td:uuid>
+    <td:label>test2.mp4</td:label>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/1ae40510-8d34-4ecf-ad49-f678e944e42d/entry" rel="self"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/app/file/1ae40510-8d34-4ecf-ad49-f678e944e42d" rel="alternate" type="text/html"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/1ae40510-8d34-4ecf-ad49-f678e944e42d/entry" rel="edit"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/1ae40510-8d34-4ecf-ad49-f678e944e42d/media" rel="edit-media"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/anonymous/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/1ae40510-8d34-4ecf-ad49-f678e944e42d/media/test2.mp4" rel="enclosure" type="video/mp4" title="test2.mp4" hreflang="en" length="1058514"/>
+    <link href="" rel="thumbnail"/>
+    <category term="document" scheme="tag:ibm.com,2006:td/type" label="document"/>
+    <link xmlns:thr="http://purl.org/syndication/thread/1.0" href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/1ae40510-8d34-4ecf-ad49-f678e944e42d/feed" rel="replies" type="application/atom+xml" thr:count="0"/>
+    <author>
+      <name>Vivian Hanley</name>
+      <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+      <email>vhanley@renovations.com</email>
+      <snx:userState>active</snx:userState>
+    </author>
+    <title type="text">test2.mp4</title>
+    <published>2014-09-28T23:21:22.860Z</published>
+    <updated>2014-09-28T23:21:22.888Z</updated>
+    <td:created>2014-09-28T23:21:22.860Z</td:created>
+    <td:modified>2014-09-28T23:21:22.860Z</td:modified>
+    <td:lastAccessed/>
+    <td:modifier>
+      <name>Vivian Hanley</name>
+      <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+      <email>vhanley@renovations.com</email>
+      <snx:userState>active</snx:userState>
+    </td:modifier>
+    <td:visibility>private</td:visibility>
+    <snx:isExternal>false</snx:isExternal>
+    <td:libraryId>06a5ed2d-fa61-4201-b522-ba57ea45a28d</td:libraryId>
+    <td:libraryType>personalFiles</td:libraryType>
+    <td:versionUuid>5760e11a-1f0c-4448-a94e-a16b637eb019</td:versionUuid>
+    <td:versionLabel>1</td:versionLabel>
+    <td:propagation>true</td:propagation>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/share">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/collections">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/attachments">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/versions">1</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/references">0</snx:rank>
+    <td:totalMediaSize>1058514</td:totalMediaSize>
+    <summary type="text"/>
+    <content type="video/mp4" src="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/1ae40510-8d34-4ecf-ad49-f678e944e42d/media"/>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+    <td:restrictedVisibility>false</td:restrictedVisibility>
+    <td:objectTypeName>snx:file</td:objectTypeName>
+    <td:lock type="NONE"/>
+    <snx:isExternal>false</snx:isExternal>
+  </entry>
+  <entry>
+    <id>urn:lsid:ibm.com:td:5a86f51f-9b23-40ff-b33b-837ee4e8c6a7</id>
+    <td:uuid>5a86f51f-9b23-40ff-b33b-837ee4e8c6a7</td:uuid>
+    <td:label>document.odt</td:label>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/5a86f51f-9b23-40ff-b33b-837ee4e8c6a7/entry" rel="self"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/app/file/5a86f51f-9b23-40ff-b33b-837ee4e8c6a7" rel="alternate" type="text/html"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/5a86f51f-9b23-40ff-b33b-837ee4e8c6a7/entry" rel="edit"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/5a86f51f-9b23-40ff-b33b-837ee4e8c6a7/media" rel="edit-media"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/anonymous/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/5a86f51f-9b23-40ff-b33b-837ee4e8c6a7/media/document.odt" rel="enclosure" type="application/vnd.oasis.opendocument.text" title="document.odt" hreflang="en" length="154676"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/anonymous/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/5a86f51f-9b23-40ff-b33b-837ee4e8c6a7/thumbnail?renditionKind=mediumview" rel="thumbnail"/>
+    <category term="document" scheme="tag:ibm.com,2006:td/type" label="document"/>
+    <link xmlns:thr="http://purl.org/syndication/thread/1.0" href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/5a86f51f-9b23-40ff-b33b-837ee4e8c6a7/feed" rel="replies" type="application/atom+xml" thr:count="0"/>
+    <author>
+      <name>Vivian Hanley</name>
+      <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+      <email>vhanley@renovations.com</email>
+      <snx:userState>active</snx:userState>
+    </author>
+    <title type="text">document.odt</title>
+    <published>2014-09-28T23:21:14.294Z</published>
+    <updated>2014-09-28T23:21:14.326Z</updated>
+    <td:created>2014-09-28T23:21:14.294Z</td:created>
+    <td:modified>2014-09-28T23:21:14.294Z</td:modified>
+    <td:lastAccessed/>
+    <td:modifier>
+      <name>Vivian Hanley</name>
+      <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+      <email>vhanley@renovations.com</email>
+      <snx:userState>active</snx:userState>
+    </td:modifier>
+    <td:visibility>private</td:visibility>
+    <snx:isExternal>false</snx:isExternal>
+    <td:libraryId>06a5ed2d-fa61-4201-b522-ba57ea45a28d</td:libraryId>
+    <td:libraryType>personalFiles</td:libraryType>
+    <td:versionUuid>c9f4e3d3-f96f-4dae-b57f-49a1ea5f707e</td:versionUuid>
+    <td:versionLabel>1</td:versionLabel>
+    <td:propagation>true</td:propagation>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/share">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/collections">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/attachments">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/versions">1</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/references">0</snx:rank>
+    <td:totalMediaSize>154676</td:totalMediaSize>
+    <summary type="text"/>
+    <content type="application/vnd.oasis.opendocument.text" src="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/5a86f51f-9b23-40ff-b33b-837ee4e8c6a7/media"/>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+    <td:restrictedVisibility>false</td:restrictedVisibility>
+    <td:objectTypeName>snx:file</td:objectTypeName>
+    <td:lock type="NONE"/>
+    <snx:isExternal>false</snx:isExternal>
+  </entry>
+  <entry>
+    <id>urn:lsid:ibm.com:td:14c55720-ede7-4619-91aa-78f50df1d45f</id>
+    <td:uuid>14c55720-ede7-4619-91aa-78f50df1d45f</td:uuid>
+    <td:label>results.xml.zip</td:label>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/14c55720-ede7-4619-91aa-78f50df1d45f/entry" rel="self"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/app/file/14c55720-ede7-4619-91aa-78f50df1d45f" rel="alternate" type="text/html"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/14c55720-ede7-4619-91aa-78f50df1d45f/entry" rel="edit"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/14c55720-ede7-4619-91aa-78f50df1d45f/media" rel="edit-media"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/anonymous/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/14c55720-ede7-4619-91aa-78f50df1d45f/media/results.xml.zip" rel="enclosure" type="application/zip" title="results.xml.zip" hreflang="en" length="26962"/>
+    <link href="" rel="thumbnail"/>
+    <category term="document" scheme="tag:ibm.com,2006:td/type" label="document"/>
+    <link xmlns:thr="http://purl.org/syndication/thread/1.0" href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/14c55720-ede7-4619-91aa-78f50df1d45f/feed" rel="replies" type="application/atom+xml" thr:count="0"/>
+    <author>
+      <name>Vivian Hanley</name>
+      <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+      <email>vhanley@renovations.com</email>
+      <snx:userState>active</snx:userState>
+    </author>
+    <title type="text">results.xml.zip</title>
+    <published>2014-09-28T23:21:12.914Z</published>
+    <updated>2014-09-28T23:21:12.947Z</updated>
+    <td:created>2014-09-28T23:21:12.914Z</td:created>
+    <td:modified>2014-09-28T23:21:12.914Z</td:modified>
+    <td:lastAccessed/>
+    <td:modifier>
+      <name>Vivian Hanley</name>
+      <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+      <email>vhanley@renovations.com</email>
+      <snx:userState>active</snx:userState>
+    </td:modifier>
+    <td:visibility>private</td:visibility>
+    <snx:isExternal>false</snx:isExternal>
+    <td:libraryId>06a5ed2d-fa61-4201-b522-ba57ea45a28d</td:libraryId>
+    <td:libraryType>personalFiles</td:libraryType>
+    <td:versionUuid>974c075e-0084-4d63-a141-48d1ed9b9a14</td:versionUuid>
+    <td:versionLabel>1</td:versionLabel>
+    <td:propagation>true</td:propagation>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/share">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/collections">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/attachments">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/versions">1</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/references">0</snx:rank>
+    <td:totalMediaSize>26962</td:totalMediaSize>
+    <summary type="text"/>
+    <content type="application/zip" src="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/14c55720-ede7-4619-91aa-78f50df1d45f/media"/>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+    <td:restrictedVisibility>false</td:restrictedVisibility>
+    <td:objectTypeName>snx:file</td:objectTypeName>
+    <td:lock type="NONE"/>
+    <snx:isExternal>false</snx:isExternal>
+  </entry>
+  <entry>
+    <id>urn:lsid:ibm.com:td:7d662574-4a29-453d-aae3-25c2ca00f82f</id>
+    <td:uuid>7d662574-4a29-453d-aae3-25c2ca00f82f</td:uuid>
+    <td:label>long_video.mp4</td:label>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/7d662574-4a29-453d-aae3-25c2ca00f82f/entry" rel="self"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/app/file/7d662574-4a29-453d-aae3-25c2ca00f82f" rel="alternate" type="text/html"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/7d662574-4a29-453d-aae3-25c2ca00f82f/entry" rel="edit"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/7d662574-4a29-453d-aae3-25c2ca00f82f/media" rel="edit-media"/>
+    <link href="http://dreadnought.rtp.raleigh.ibm.com/files/form/anonymous/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/7d662574-4a29-453d-aae3-25c2ca00f82f/media/long_video.mp4" rel="enclosure" type="video/mp4" title="long_video.mp4" hreflang="en" length="92831747"/>
+    <link href="" rel="thumbnail"/>
+    <category term="document" scheme="tag:ibm.com,2006:td/type" label="document"/>
+    <link xmlns:thr="http://purl.org/syndication/thread/1.0" href="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/7d662574-4a29-453d-aae3-25c2ca00f82f/feed" rel="replies" type="application/atom+xml" thr:count="0"/>
+    <author>
+      <name>Vivian Hanley</name>
+      <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+      <email>vhanley@renovations.com</email>
+      <snx:userState>active</snx:userState>
+    </author>
+    <title type="text">long_video.mp4</title>
+    <published>2014-10-04T18:27:27.657Z</published>
+    <updated>2014-10-04T18:27:27.694Z</updated>
+    <td:created>2014-10-04T18:27:27.657Z</td:created>
+    <td:modified>2014-10-04T18:27:27.657Z</td:modified>
+    <td:lastAccessed/>
+    <td:modifier>
+      <name>Vivian Hanley</name>
+      <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+      <email>vhanley@renovations.com</email>
+      <snx:userState>active</snx:userState>
+    </td:modifier>
+    <td:visibility>public</td:visibility>
+    <snx:isExternal>false</snx:isExternal>
+    <td:libraryId>06a5ed2d-fa61-4201-b522-ba57ea45a28d</td:libraryId>
+    <td:libraryType>personalFiles</td:libraryType>
+    <td:versionUuid>e4f5acfd-442f-48eb-90d5-08dfd802b0b2</td:versionUuid>
+    <td:versionLabel>1</td:versionLabel>
+    <td:propagation>true</td:propagation>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/share">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/collections">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/attachments">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/versions">1</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/references">0</snx:rank>
+    <td:totalMediaSize>92831747</td:totalMediaSize>
+    <summary type="text"/>
+    <content type="video/mp4" src="http://dreadnought.rtp.raleigh.ibm.com/files/form/api/library/06a5ed2d-fa61-4201-b522-ba57ea45a28d/document/7d662574-4a29-453d-aae3-25c2ca00f82f/media"/>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+    <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+    <td:restrictedVisibility>false</td:restrictedVisibility>
+    <td:objectTypeName>snx:file</td:objectTypeName>
+    <td:lock type="NONE"/>
+    <snx:isExternal>false</snx:isExternal>
+  </entry>
+</feed>

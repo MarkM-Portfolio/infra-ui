@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Kapsulatutako esperientziaren OpenSocial gailuak Connections gunearen xehetasun eta ekintza gehigarriak erakusten ditu</msg>
+  <msg name="connectionsEE_errorTitle">Errorea</msg>
+  <msg name="connectionsEE_errorDescription">Eduki hau ez du zure erakundeak onetsi eta ez dago erabilgarri. Mesedez, jarri harremanetan zure erakundeko administratzailearekin luzapena gaitzeko.</msg>
+</messagebundle>

@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+define({
+		"CLOSE_HELP_DATE":"Zatvori pomoć za datume",
+		"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Zatvori pomoć za tipove dokumenata",
+		"CLOSE_HELP_PERSON":"Zatvori pomoć za osobe",
+		"CLOSE_HELP_TAG":"Zatvori pomoć za oznake",
+		"CLOSE_HELP_TREND":"Zatvori pomoć za trend",
+		"COLLAPSE_DATE":"Skupi filter za datume",
+		"COLLAPSE_ECM_DOCUMENT_TYPE":"Skupi filter za tipove dokumenata",
+		"COLLAPSE_PERSON":"Skupi filter osoba",
+		"COLLAPSE_TAG":"Skupi filter oznaka",
+		"COLLAPSE_TREND":"Sruši filter trendova",
+		"DESCRIPTION_DATE":"Za prikaz rezultata koji su kreirani ili ažurirani u određeno vrijeme, proširite twistie i filtrirajte informacije po godini i mjesecu.",
+		"DESCRIPTION_ECM_DOCUMENT_TYPE":"Tip dokumenta je ključna riječ koju dodjeljujete datotekama radi njihovog lakšeg pronalaženja. Kliknite tip dokumenta za prikaz rezultata pretraživanja kojima je dodijeljena ta ključna riječ.",
+		"DESCRIPTION_PERSON":"Pogledajte osobe pridružene vašim rezultatima pretraživanja. Kliknite na ime za prikaz rezultata pretraživanja za određenu osobu.",
+		"DESCRIPTION_TAG":"Oznaka je ključna riječ koju dodjeljujete sadržaju ili osobi radi njihovog lakšeg pronalaženja. Kliknite oznaku za prikaz rezultata pretraživanja koji imaju ovu ključnu riječ.",
+		"DESCRIPTION_TREND":"Trend je ključna riječ koju generiše sistem radi lakšeg izvođenja pretraživanja u Ažuriranjima statusa. Kliknite trend za prikaz rezultata pretraživanja koji imaju ovu ključnu riječ.",
+		"EXPAND_DATE":"Proširi filter datuma",
+		"EXPAND_ECM_DOCUMENT_TYPE":"Proširi filter tipova dokumenta",
+		"EXPAND_PERSON":"Proširi filter osoba",
+		"EXPAND_TAG":"Proširi filter oznaka",
+		"EXPAND_TREND":"Proširi filter trendova",
+		"HELP_DATE":"Pomoć za datume",
+		"HELP_ECM_DOCUMENT_TYPE":"Pomoć za tipove dokumenata",
+		"HELP_PERSON":"Pomoć za osobe",
+		"HELP_TAG":"Pomoć za oznake",
+		"HELP_TREND":"Pomoć za trend",
+		"NO_DATE_CONTENT":"Datumi trenutno nisu dostupni",
+		"NO_ECM_DOCUMENT_TYPE_CONTENT":"Tipovi dokumenata trenutno nisu dostupni",
+		"NO_PERSON_CONTENT":"Osobe trenutno nisu dostupne",
+		"NO_TAG_CONTENT":"Oznake trenutno nisu dostupne",
+		"NO_TREND_CONTENT":"Trendovi trenutno nisu dostupni",
+		"TITLE_DATE":"Datumi",
+		"TITLE_ECM_DOCUMENT_TYPE":"Tipovi dokumenata",
+		"TITLE_PERSON":"Osobe",
+		"TITLE_TAG":"Oznake",
+		"TITLE_TREND":"Trend"
+});
+

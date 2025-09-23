@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+define({
+		"CLOSE_HELP_DATE":"關閉日期說明",
+		"CLOSE_HELP_ECM_DOCUMENT_TYPE":"關閉文件類型說明",
+		"CLOSE_HELP_PERSON":"關閉人員說明",
+		"CLOSE_HELP_TAG":"關閉標籤說明",
+		"CLOSE_HELP_TREND":"關閉趨勢說明",
+		"COLLAPSE_DATE":"收合「日期」過濾器",
+		"COLLAPSE_ECM_DOCUMENT_TYPE":"收合文件類型過濾器",
+		"COLLAPSE_PERSON":"收合「人員」過濾器",
+		"COLLAPSE_TAG":"收合「標籤」過濾器",
+		"COLLAPSE_TREND":"收合「趨勢」過濾器",
+		"DESCRIPTION_DATE":"若要顯示在特定時間建立或更新的結果，請展開小三角形，並依年和月過濾資訊。",
+		"DESCRIPTION_ECM_DOCUMENT_TYPE":"文件類型是您指派給檔案的關鍵字，以方便尋找檔案。 按一下文件類型可顯示已獲指派該關鍵字的搜尋結果。",
+		"DESCRIPTION_PERSON":"檢視與搜尋結果相關聯的人員。 按一下名稱，以顯示與特定人員相關聯的搜尋結果。",
+		"DESCRIPTION_TAG":"標籤是您指派給內容或人員的關鍵字，以方便尋找。 按一下某標籤可顯示已指派該關鍵字的搜尋結果。",
+		"DESCRIPTION_TREND":"趨勢是系統所產生的關鍵字，以便於在「狀態更新」中執行搜尋。 按一下趨勢可顯示已指派該關鍵字的搜尋結果。",
+		"EXPAND_DATE":"展開「日期」過濾器",
+		"EXPAND_ECM_DOCUMENT_TYPE":"展開文件類型過濾器",
+		"EXPAND_PERSON":"展開「人員」過濾器",
+		"EXPAND_TAG":"展開「標籤」過濾器",
+		"EXPAND_TREND":"展開「趨勢」過濾器",
+		"HELP_DATE":"日期說明",
+		"HELP_ECM_DOCUMENT_TYPE":"文件類型說明",
+		"HELP_PERSON":"人員說明",
+		"HELP_TAG":"標籤說明",
+		"HELP_TREND":"趨勢說明",
+		"NO_DATE_CONTENT":"目前無法使用「日期」",
+		"NO_ECM_DOCUMENT_TYPE_CONTENT":"目前無法使用「文件類型」",
+		"NO_PERSON_CONTENT":"目前無法使用「人員」",
+		"NO_TAG_CONTENT":"目前無法使用「標籤」",
+		"NO_TREND_CONTENT":"目前無法使用「趨勢」",
+		"TITLE_DATE":"日期",
+		"TITLE_ECM_DOCUMENT_TYPE":"文件類型",
+		"TITLE_PERSON":"人員",
+		"TITLE_TAG":"標籤",
+		"TITLE_TREND":"趨勢"
+});
+

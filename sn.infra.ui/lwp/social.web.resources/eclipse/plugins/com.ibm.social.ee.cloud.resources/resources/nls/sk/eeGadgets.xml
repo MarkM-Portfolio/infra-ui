@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Lotus Connections</msg>
+  <msg name="connectionsEE_description">Gadget OpenSocial s vloženou skúsenosťou sa používa na zobrazenie ďalších podrobností a akcií pre udalosti Connections</msg>
+  <msg name="connectionsEE_errorTitle">Chyba</msg>
+  <msg name="connectionsEE_errorDescription">Tento obsah nie je schválený vašou organizáciou a nie je k dispozícii. Kontaktujte administrátora organizácie a požiadajte o povolenie rozšírenia.</msg>
+</messagebundle>

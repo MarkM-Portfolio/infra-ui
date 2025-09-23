@@ -1,0 +1,15 @@
+<div class="icNotification-post asLinkContainer" tabindex="0" data-dojo-attach-event="onmouseover: _onFocus, onfocus: _onFocus, onmouseout: _onBlur, onblur: _onBlur,  onclick: onClick, onkeypress: _onKeyPress" role="article" aria-label="${ariaSummary} ${timeString}">
+        <div class="icNotification-post-inner">
+            <img class="icNote-authorImg" data-dojo-attach-point="authorImage" src="" alt="">
+            <div class="icNote-body selected" data-dojo-attach-point="notificationContent">
+                <div class="icNote-message">
+                <div class="icNote-title">${!activityTitle}</div>            
+                    <span title="${strings.markUnread}" data-dojo-attach-point="bluedot" role="button" tabindex="0" class="bluedot lotusHidden"></span>
+              		<span data-dojo-attach-point="highContrastTextRead" role="button" tabindex="0" class="lotusHidden">${strings.markUnread}</span>
+              		<span data-dojo-attach-point="highContrastTextUnread" role="button" tabindex="0" class="lotusHidden">${strings.markRead}</span>
+                </div>
+                <div class="icNote-summary">${!activitySummary}</div>
+                <div class="icNote-time"><abbr class="timeago" data-dojo-attach-point="timeagoNode" title="${time}">${timeString}</abbr></div>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="125px" height="125px" viewBox="0 0 125 125" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="logo_connection-background" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(1.000000, 1.000000)">
+        <circle id="oval_1" stroke="#ffffff" transform="translate(32.500000, 32.500000) rotate(-180.000000) translate(-32.500000, -32.500000) " cx="32.5" cy="32.5" r="32.5"></circle>
+        <circle id="oval_4" stroke="#ffffff" cx="32.5" cy="100.5" r="22.5"></circle>
+        <circle id="oval_3" stroke="#ffffff" cx="105" cy="76" r="18"></circle>
+        <circle id="oval_2" stroke="#ffffff" cx="103" cy="13" r="11"></circle>
+        <path d="M33.5,65.5 L33.5,77.869317" id="line_3" stroke="#ffffff"></path>
+        <path d="M62.5,47.5 L90.5,64.5" id="line_2" stroke="#ffffff"></path>
+        <path d="M63.5,22.5 L91.5,16.5" id="line_1" stroke="#ffffff"></path>
+    </g>
+    <g id="logo_connection-filled" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(1.000000, 1.000000)">
+        <circle id="oval_1" stroke="#4178BE" transform="translate(32.500000, 32.500000) scale(-1, 1) rotate(-90.000000) translate(-32.500000, -32.500000) " cx="32.5" cy="32.5" r="32.5"></circle>
+        <circle id="oval_4" stroke="#4178BE" transform="translate(32.500000, 100.500000) scale(-1, 1) rotate(-90.000000) translate(-32.500000, -100.500000) " cx="32.5" cy="100.5" r="22.5"></circle>
+        <circle id="oval_3" stroke="#4178BE" transform="translate(105.000000, 76.000000) scale(-1, 1) rotate(-90.000000) translate(-105.000000, -76.000000) " cx="105" cy="76" r="18"></circle>
+        <circle id="oval_2" stroke="#4178BE" transform="translate(103.000000, 13.000000) scale(-1, 1) rotate(-90.000000) translate(-103.000000, -13.000000) " cx="103" cy="13" r="11"></circle>
+        <path d="M33.5,65.5 L33.5,77.869317" id="line_3" stroke="#4178BE"></path>
+        <path d="M62.5,47.5 L90.5,64.5" id="line_2" stroke="#4178BE"></path>
+        <path d="M63.5,22.5 L91.5,16.5" id="line_1" stroke="#4178BE"></path>
+    </g>
+</svg>

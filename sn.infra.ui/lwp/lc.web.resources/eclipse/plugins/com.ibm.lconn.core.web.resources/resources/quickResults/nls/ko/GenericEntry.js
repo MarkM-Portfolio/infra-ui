@@ -1,0 +1,140 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	UPDATED_BY: "업데이트한 사용자: ${author}",
+	PREVIEW_MODE_ONLY: "(미리보기 모드 전용)",
+	
+	//Community
+	COMMUNITY_VIEWED_TODAY: "오늘 본 커뮤니티",
+	COMMUNITY_VIEWED_YESTERDAY: "어제 본 커뮤니티",
+	COMMUNITY_VIEWED_HOURS_AGO: "${hours}시간 전에 본 커뮤니티",
+	COMMUNITY_VIEWED_MINUTES_AGO: "${minutes}분 전에 본 커뮤니티",
+	COMMUNITY_VIEWED_SECONDS_AGO: "${seconds}초 전에 본 커뮤니티",
+	COMMUNITY_VIEWED_1_HOUR_AGO: "1시간 전에 본 커뮤니티",
+	COMMUNITY_VIEWED_1_MINUTE_AGO: "1분 전에 본 커뮤니티",
+	COMMUNITY_VIEWED_1_SECOND_AGO: "1초 전에 본 커뮤니티",
+	COMMUNITY_VIEWED_AT_DATE: "${date}에 본 커뮤니티",
+	
+	//File
+	FILE_VIEWED_TODAY: "오늘 본 파일",
+	FILE_VIEWED_YESTERDAY: "어제 본 파일",
+	FILE_VIEWED_HOURS_AGO: "${hours}시간 전에 본 파일",
+	FILE_VIEWED_MINUTES_AGO: "${minutes}분 전에 본 파일",
+	FILE_VIEWED_SECONDS_AGO: "${seconds}초 전에 본 파일",
+	FILE_VIEWED_1_HOUR_AGO: "1시간 전에 본 파일",
+	FILE_VIEWED_1_MINUTE_AGO: "1분 전에 본 파일",
+	FILE_VIEWED_1_SECOND_AGO: "1초 전에 본 파일",
+	FILE_VIEWED_AT_DATE: "${date}에 본 파일",
+	
+	//Profile
+	PROFILE_VIEWED_TODAY: "오늘 본 프로파일",
+	PROFILE_VIEWED_YESTERDAY: "어제 본 프로파일",
+	PROFILE_VIEWED_HOURS_AGO: "${hours}시간 전에 본 프로파일",
+	PROFILE_VIEWED_MINUTES_AGO: "${minutes}분 전에 본 프로파일",
+	PROFILE_VIEWED_SECONDS_AGO: "${seconds}초 전에 본 프로파일",
+	PROFILE_VIEWED_1_HOUR_AGO: "1시간 전에 본 프로파일",
+	PROFILE_VIEWED_1_MINUTE_AGO: "1분 전에 본 프로파일",
+	PROFILE_VIEWED_1_SECOND_AGO: "1초 전에 본 프로파일",
+	PROFILE_VIEWED_AT_DATE: "${date}에 본 프로파일",
+	
+	//Activity
+	ACTIVITY_VIEWED_TODAY: "오늘 본 활동",
+	ACTIVITY_VIEWED_YESTERDAY: "어제 본 활동",
+	ACTIVITY_VIEWED_HOURS_AGO: "${hours}시간 전에 본 활동",
+	ACTIVITY_VIEWED_MINUTES_AGO: "${minutes}분 전에 본 활동",
+	ACTIVITY_VIEWED_SECONDS_AGO: "${seconds}초 전에 본 활동",
+	ACTIVITY_VIEWED_1_HOUR_AGO: "1시간 전에 본 활동",
+	ACTIVITY_VIEWED_1_MINUTE_AGO: "1분 전에 본 활동",
+	ACTIVITY_VIEWED_1_SECOND_AGO: "1초 전에 본 활동",
+	ACTIVITY_VIEWED_AT_DATE: "${date}에 본 활동",
+	
+	//Bookmark
+	BOOKMARK_VIEWED_TODAY: "오늘 본 책갈피",
+	BOOKMARK_VIEWED_YESTERDAY: "어제 본 책갈피",
+	BOOKMARK_VIEWED_HOURS_AGO: "${hours}시간 전에 본 책갈피",
+	BOOKMARK_VIEWED_MINUTES_AGO: "${minutes}분 전에 본 책갈피",
+	BOOKMARK_VIEWED_SECONDS_AGO: "${seconds}초 전에 본 책갈피",
+	BOOKMARK_VIEWED_1_HOUR_AGO: "1시간 전에 본 책갈피",
+	BOOKMARK_VIEWED_1_MINUTE_AGO: "1분 전에 본 책갈피",
+	BOOKMARK_VIEWED_1_SECOND_AGO: "1초 전에 본 책갈피",
+	BOOKMARK_VIEWED_AT_DATE: "${date}에 본 책갈피",
+	
+	//Blog
+	BLOG_VIEWED_TODAY: "오늘 본 블로그",
+	BLOG_VIEWED_YESTERDAY: "어제 본 블로그",
+	BLOG_VIEWED_HOURS_AGO: "${hours}시간 전에 본 블로그",
+	BLOG_VIEWED_MINUTES_AGO: "${minutes}분 전에 본 블로그",
+	BLOG_VIEWED_SECONDS_AGO: "${seconds}초 전에 본 블로그",
+	BLOG_VIEWED_1_HOUR_AGO: "1시간 전에 본 블로그",
+	BLOG_VIEWED_1_MINUTE_AGO: "1분 전에 본 블로그",
+	BLOG_VIEWED_1_SECOND_AGO: "1초 전에 본 블로그",
+	BLOG_VIEWED_AT_DATE: "${date}에 본 블로그",
+	
+	//Forum
+	FORUM_VIEWED_TODAY: "오늘 본 포럼",
+	FORUM_VIEWED_YESTERDAY: "어제 본 포럼",
+	FORUM_VIEWED_HOURS_AGO: "${hours}시간 전에 본 포럼",
+	FORUM_VIEWED_MINUTES_AGO: "${minutes}분 전에 본 포럼",
+	FORUM_VIEWED_SECONDS_AGO: "${seconds}초 전에 본 포럼",
+	FORUM_VIEWED_1_HOUR_AGO: "1시간 전에 본 포럼",
+	FORUM_VIEWED_1_MINUTE_AGO: "1분 전에 본 포럼",
+	FORUM_VIEWED_1_SECOND_AGO: "1초 전에 본 포럼",
+	FORUM_VIEWED_AT_DATE: "${date}에 본 포럼",
+	
+	//Wiki
+	WIKI_VIEWED_TODAY: "오늘 본 위키",
+	WIKI_VIEWED_YESTERDAY: "어제 본 위키",
+	WIKI_VIEWED_HOURS_AGO: "${hours}시간 전에 본 위키",
+	WIKI_VIEWED_MINUTES_AGO: "${minutes}분 전에 본 위키",
+	WIKI_VIEWED_SECONDS_AGO: "${seconds}초 전에 본 위키",
+	WIKI_VIEWED_1_HOUR_AGO: "1시간 전에 본 위키",
+	WIKI_VIEWED_1_MINUTE_AGO: "1분 전에 본 위키",
+	WIKI_VIEWED_1_SECOND_AGO: "1초 전에 본 위키",
+	WIKI_VIEWED_AT_DATE: "${date}에 본 위키",
+
+	//Event
+	EVENT_VIEWED_TODAY: "오늘 본 이벤트",
+	EVENT_VIEWED_YESTERDAY: "어제 본 이벤트",
+	EVENT_VIEWED_HOURS_AGO: "${hours}시간 전에 본 이벤트",
+	EVENT_VIEWED_MINUTES_AGO: "${minutes}분 전에 본 이벤트",
+	EVENT_VIEWED_SECONDS_AGO: "${seconds}초 전에 본 이벤트",
+	EVENT_VIEWED_1_HOUR_AGO: "1시간 전에 본 이벤트",
+	EVENT_VIEWED_1_MINUTE_AGO: "1분 전에 본 이벤트",
+	EVENT_VIEWED_1_SECOND_AGO: "1초 전에 본 이벤트",
+	EVENT_VIEWED_AT_DATE: "${date}에 본 이벤트",
+	
+	//To Do
+	TODO_VIEWED_TODAY: "오늘 본 작업관리",
+	TODO_VIEWED_YESTERDAY: "어제 본 작업관리",
+	TODO_VIEWED_HOURS_AGO: "${hours}시간 전에 본 작업관리",
+	TODO_VIEWED_MINUTES_AGO: "${minutes}분 전에 본 작업관리",
+	TODO_VIEWED_SECONDS_AGO: "${seconds}초 전에 본 작업관리",
+	TODO_VIEWED_1_HOUR_AGO: "1시간 전에 본 작업관리",
+	TODO_VIEWED_1_MINUTE_AGO: "1분 전에 본 작업관리",
+	TODO_VIEWED_1_SECOND_AGO: "1초 전에 본 작업관리",
+	TODO_VIEWED_AT_DATE: "${date}에 본 작업관리",
+	
+	//Survey
+	SURVEY_VIEWED_TODAY: "오늘 본 설문조사",
+	SURVEY_VIEWED_YESTERDAY: "어제 본 설문조사",
+	SURVEY_VIEWED_HOURS_AGO: "${hours}시간 전에 본 설문조사",
+	SURVEY_VIEWED_MINUTES_AGO: "${minutes}분 전에 본 설문조사",
+	SURVEY_VIEWED_SECONDS_AGO: "${seconds}초 전에 본 설문조사",
+	SURVEY_VIEWED_1_HOUR_AGO: "1시간 전에 본 설문조사",
+	SURVEY_VIEWED_1_MINUTE_AGO: "1분 전에 본 설문조사",
+	SURVEY_VIEWED_1_SECOND_AGO: "1초 전에 본 설문조사",
+	SURVEY_VIEWED_AT_DATE: "${date}에 본 설문조사",
+	
+	//Survey
+	GENERIC_VIEWED_TODAY: "오늘 봄",
+	GENERIC_VIEWED_YESTERDAY: "어제 봄",
+	GENERIC_VIEWED_HOURS_AGO: "${hours}시간 전에 봄",
+	GENERIC_VIEWED_MINUTES_AGO: "${minutes}분 전에 봄",
+	GENERIC_VIEWED_SECONDS_AGO: "${seconds}초 전에 봄",
+	GENERIC_VIEWED_1_HOUR_AGO: "1시간 전에 봄",
+	GENERIC_VIEWED_1_MINUTE_AGO: "1분 전에 봄",
+	GENERIC_VIEWED_1_SECOND_AGO: "1초 전에 봄",
+	GENERIC_VIEWED_AT_DATE: "${date}에 봄"
+})
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<Module>
+<ModulePrefs title="SSO Reauth gadget" height="400">
+	<Require feature="cre.service.sso" />
+</ModulePrefs>
+<Content type="html">
+<![CDATA[
+
+<script type="text/javascript">
+        var params = {};
+        params[gadgets.io.RequestParameters.AUTHORIZATION] = gadgets.io.AuthorizationType.SSO;
+        params[gadgets.io.RequestParameters.SSO_REAUTH_DETECTOR] = function(text, rc, headers){return true;};
+        
+        var makeRequestCallback = function(returnObject) {
+        	console.log("makeRequest callback fired!", arguments);
+        	if(returnObject.ssoReauthNeeded) {
+        		var reauthHandler = new cre$.sso.ReauthHandler(); // pass in nothing for NAVIGATE behaviour
+        		
+        		var outputDiv = document.getElementById("output");
+        		outputDiv.innerHTML = '<a id="reauthLink">click link to perform reauth</a>';
+        		
+        		document.getElementById("reauthLink").onclick = reauthHandler.createHandlerOnClick();
+        	}
+        };
+        
+        gadgets.io.makeRequest("http://some.url.com/", makeRequestCallback, params);
+        
+</script>
+<div>
+test
+</div>
+<div id="output">
+</div>
+]]>
+</Content>
+</Module>

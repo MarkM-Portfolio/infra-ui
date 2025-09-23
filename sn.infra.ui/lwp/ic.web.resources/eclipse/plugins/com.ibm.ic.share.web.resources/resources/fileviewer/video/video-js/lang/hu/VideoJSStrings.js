@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "hu",
+      "Play": "Lejátszás",
+      "Pause": "Pause",
+      "Current Time": "Jelenlegi idő",
+      "Duration Time": "Időtartam",
+      "Remaining Time": "Hátralévő idő",
+      "Stream Type": "Adatfolyam típusa",
+      "LIVE": "ÉLŐ",
+      "Loaded": "Betöltve",
+      "Progress": "Előrehaladás",
+      "Fullscreen": "Teljes képernyős",
+      "Non-Fullscreen": "Nem teljes képernyős",
+      "Mute": "Némítás",
+      "Unmute": "Némítás vége",
+      "Unmuted": "Nem némított",
+      "Playback Rate": "Lejátszási sebesség",
+      "Subtitles": "Feliratok",
+      "subtitles off": "felirat ki",
+      "Captions": "Képaláírások",
+      "captions off": "képaláírások ki",
+      "Chapters": "Fejezetek",
+      "Volume": "Hangerő",
+      "You aborted the video playback.": "Megszakította a videó lejátszását",
+      "A network error caused the video download to fail part-way.": "A videó letöltése hálózati hiba miatt megszakadt.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "A videót nem sikerült betölteni a szerver vagy a hálózat hibája miatt, vagy mert a formátuma nem támogatott.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "A videó lejátszása megszakadt, mert az adatok megsérültek vagy a videó a böngésző által nem támogatott szolgáltatásokat használt.",
+      "No compatible source was found for this video.": "Nem található kompatibilis forrás ehhez a videóhoz."
+});
+

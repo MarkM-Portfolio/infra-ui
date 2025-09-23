@@ -1,0 +1,36 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="example.web.resources" default="development" basedir=".">
+	<!-- Import helpers for property builds, do not change -->
+	<locateComponent component="prereqs.web.resources" property="eclipseBuildDir" locateBuildDir="false"/>
+	<import file="${eclipseBuildDir}/build_utils.xml" />
+
+	<locateComponent component="prereqs.sn/jsdoc3" property="jsdoc.basedir" locateBuildDir="false"/>
+	<import file="${jsdoc.basedir}/jsdoc3.xml" />
+
+	<import file="${env.WPLC_IMPORT}/pde_build.xml"/>  
+
+	<target name="custom_init"/>
+
+	<target name="custom_complete" depends="generate_jsdoc" />
+	
+	<target name="generate_jsdoc">
+		<mkdir dir="${dir.build}/jsdoc"/>
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.example.web.resources/resources/" />
+			<param name="docs.topic.dir" value="com.ibm.example" />
+		</antcall>
+	</target>
+</project>

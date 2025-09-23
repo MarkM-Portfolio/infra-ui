@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "da",
+      "Play": "Afspil",
+      "Pause": "Pause",
+      "Current Time": "Aktuel tid",
+      "Duration Time": "Varighed",
+      "Remaining Time": "Resterende tid",
+      "Stream Type": "Strømtype",
+      "LIVE": "LIVE",
+      "Loaded": "Indlæst",
+      "Progress": "Status",
+      "Fullscreen": "Fuldskærm",
+      "Non-Fullscreen": "Ikke-fuldskærm",
+      "Mute": "Lyd fra",
+      "Unmute": "Skru op",
+      "Unmuted": "Skruet op",
+      "Playback Rate": "Afspilningshastighed",
+      "Subtitles": "Undertitler",
+      "subtitles off": "undertitler fra",
+      "Captions": "Billedtekster",
+      "captions off": "billedtekster fra",
+      "Chapters": "Kapitler",
+      "Volume": "Lydstyrke",
+      "You aborted the video playback.": "Du har afbrudt videoafspilningen",
+      "A network error caused the video download to fail part-way.": "Pga. en netværksfejl blev videoen ikke downloadet.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "Videoen kunne ikke indlæses, fordi der er en fejl på serveren eller netværket, eller fordi formatet ikke understøttes.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "Videoafspilningen blev afbrudt pga. en filfejl, eller fordi videoen anvender funktioner, som din browser ikke understøtter.",
+      "No compatible source was found for this video.": "Der er ikke fundet en kompatibel kilde til denne video."
+});
+

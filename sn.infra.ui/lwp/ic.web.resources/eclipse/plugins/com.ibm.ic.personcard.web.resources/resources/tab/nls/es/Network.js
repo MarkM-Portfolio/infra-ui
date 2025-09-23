@@ -1,0 +1,29 @@
+define(
+	/* ***************************************************************** */
+	/*                                                                   */
+	/* IBM Confidential                                                  */
+	/*                                                                   */
+	/* OCO Source Materials                                              */
+	/*                                                                   */
+	/* Copyright IBM Corp. 2011, 2012                                    */
+	/*                                                                   */
+	/* The source code for this program is not published or otherwise    */
+	/* divested of its trade secrets, irrespective of what has been      */
+	/* deposited with the U.S. Copyright Office.                         */
+	/*                                                                   */
+	/* ***************************************************************** */
+	
+	({
+		error: "El estado de su invitado de red no está disponible.  Vuelva a intentarlo más adelante.",
+		loading: "Cargando invitados de red...",
+		inNetwork: "${0} es un miembro de su red.",
+		pendingNetwork: "${0} ha sido invitado a unirse a su red.",
+		removeNetwork: "¿Eliminar? ",
+		defaultMessage: "Me gustaría invitarle a unirse a mi red.",
+		notLoggedIn: "Debe iniciar sesión para invitar a personas a su red.",
+		labelMessage: "Invite ${0} a su red:",
+		labelFollow: "También siga y reciba actualizaciones",
+		btnInvite: "Enviar invitación"
+	})
+	
+);

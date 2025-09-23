@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<head>
+<title>File Picker Sample without OneUI</title>
+<script>var netJazzAjaxConfig = {base: "${contextRoot}"}; var djConfig = {proxy: "${contextRoot}/ajaxProxy", isDebug: true, baseUrl: "${contextRoot}/web/dojo/", locale: "en", localizationComplete: true}</script>
+<script>var CKEDITOR_BASEPATH="${contextRoot}/web/com.ibm.oneui.ckeditor/editor/";</script>
+${script:lconn.files.picker.config}
+${script:lconn.core.config}
+${script:lconn.core.config.services}
+${script:dijit._Templated}
+${script:dijit.Dialog}
+${script:dojo.string}
+${script:dijit.form.ValidationTextBox}
+${script:com.ibm.ajax.auth}
+${script:com.ibm.oneui.util.proxy}
+${script:lconn.files.picker.config}
+${script:lconn.files.picker.external}
+<script type="text/javascript">
+dojo.addOnLoad(function() {
+	var auth = com.ibm.ajax.auth;
+	
+	window.onbeforeunload = function(event) {
+		console.log("onBeforeUnload triggered!");
+	};
+	
+	var service = dojo.getObject("lconn.core.config.services.files");	
+	
+	var forceSSL = dojo.getObject("lconn.core.config.forceConfidentialCommunications");
+	forceSSL = forceSSL || ('https:' == window.location.protocol);
+	
+	var baseUrl = forceSSL ? service.secureUrl : service.url;
+	
+	dojo.xhrGet({
+		url: com.ibm.oneui.util.proxy(baseUrl + "/form/api/people/feed?self=true&format=json"),
+		handleAs: "json",
+		handle: function (r, i) { 
+			if (auth.isAuthenticationRequired(r, i)) {
+				dojo.byId('login').style.display = '';
+				dojo.byId('picker').style.display = 'none';
+			} else {
+				dojo.byId('login').style.display = 'none';
+				dojo.byId('picker').style.display = '';
+			}
+		},
+		
+		sync: true
+	});
+	
+	dojo.connect(dojo.byId('loginBtn'), 'onclick', function(e) {
+		dojo.stopEvent(e);
+		
+		var en = dojo.byId('err');
+		en.style.display = 'none';
+		
+		dojo.xhrPost({
+			url: com.ibm.oneui.util.proxy(baseUrl + "/j_security_check"),
+			content: {
+				'j_username': dojo.byId('user').value,
+				'j_password': dojo.byId('pass').value
+			},
+			
+			handle: function(r,i) {
+				dojo.xhrGet({
+					url: com.ibm.oneui.util.proxy(baseUrl + "/form/api/people/feed?self=true&format=json"),
+					handleAs: "json",
+					handle: function (r, i) { 
+						if (auth.isAuthenticationRequired(r, i)) {
+							dojo.byId('login').style.display = '';
+							dojo.byId('picker').style.display = 'none';
+						} else {
+							en.style.display = '';
+							dojo.byId('login').style.display = 'none';
+							dojo.byId('picker').style.display = '';
+						}
+					},
+					
+					sync: true
+				});
+			},
+			
+			sync: true
+		});		
+	});
+
+	dojo.connect(dojo.byId('logout'), 'onclick',function (e){
+		dojo.stopEvent(e);
+		dojo.xhrGet({
+			url: com.ibm.oneui.util.proxy(baseUrl + "/ibm_security_logout"),
+			sync: true,
+			handle: function(r,i) {
+				dojo.byId('login').style.display = '';
+				dojo.byId('picker').style.display = 'none';
+				dojo.byId('selectedFiles').innerHTML = '';
+			}
+		});
+	});
+
+	dojo.connect(dojo.byId('showBrowseLink'), 'onclick', function(e) {   
+	   var s = dojo.byId('browseInfo').style;
+	   
+	   s.display = dojo.byId('showBrowseLink').checked ? '' : 'none';
+	});
+
+	dojo.connect(dojo.byId('pickFiles'), 'onclick', function (e) {
+		dojo.stopEvent(e);
+		try {
+		
+		var mtString = dojo.string.trim(dojo.byId('allowedMimeTypes').value);
+		
+		var mimeTypes = null;
+		if (mtString.length > 0)
+			mimeTypes = dojo.map(mtString.split("\n"), function (mt) { return dojo.string.trim(mt); });
+		
+		lconn.core.filepicker.open({
+			title: dojo.attr(dojo.byId('title'), 'value'),
+			externalOnly: !!dojo.byId('external').checked,
+			publicOnly: !!dojo.byId('public').checked,
+			shareableOnly: !!dojo.byId('shareable').checked,
+			showVisibility: !!dojo.byId('showVis').checked,
+			showExternal: !!dojo.byId('showIntent').checked,
+			oneuiVersion: !!dojo.byId('oneuiVersion').checked ? 3 : null, 
+			browse: {
+			   show: !!dojo.byId('showBrowseLink').checked,
+			   title: dojo.attr(dojo.byId('browseTitle'), 'value'),
+			   link: dojo.attr(dojo.byId('browseLink'), 'value'),
+			   showShare: false
+			},
+			allowedMimeTypes: mimeTypes,
+			filesService: dojo.getObject("lconn.core.config.services.files"),
+			onSave: function (fileArray) {
+				var div = dojo.byId('selectedFiles');
+				
+				dojo.forEach(fileArray, function(file) {
+					var a = div.appendChild(document.createElement('a'));
+					a.href = file.getUrlDownload();
+					a.appendChild(document.createTextNode(file.getName()));
+					div.appendChild(document.createElement('br'));
+				});
+			}
+		});
+		} catch (ex) {
+			alert(ex.message);
+		}
+	});
+});
+</script>
+<style type="text/css">
+	#pickerForm { width: 500px; }
+</style>
+</head>
+<body>
+<h3>Connections Files Picker</h3>
+<p>This Javascript API will allow you to select from a list of files stored in the Connections Files application, and use those files and their metadata in a callback function.</p>
+<p>To call the picker, you need to include a small bit of Javascript in your JSPs, and call the API with the appropriate arguments.</p>
+<p><strong>Note:</strong> The picker will not work if it is opened by an unauthenticated user. If the user is unauthenticated, calling <code>lconn.core.filepicker.open()</code> will throw an exception.</p>
+<p>To include the Javascript in your JSP, include the following URL:<br/>
+<code>&lt;script src="${files}/picker/file/script.js" type="text/javascript"&gt;&lt;/script&gt;</code> Where <code>${files}</code> is the base path to your Files deployment, like <code>http://myfilesserver:9080/files</code> or <code>http://w3.ibm.com/connections/files</code></p>
+<h4>Picker arguments</h4>
+<p>Required:
+<ul>
+	<li><code>title</code>: The title of the Dialog</li>
+	<li><code>filesService</code>: The javascript from <code>lconn.core.config.services</code> representing the files application. You should retrieve the object with <code>dojo.getObject("lconn.core.config.services.files")</code></li>
+	<li><code>onSave</code>: The callback function that is called when the user clicks "OK". The function takes an array of file objects (see descriptions below). If the function returns <code>false</code>, it will keep the dialog open. If it returns any other value (or no value at all), the dialog will close.</li>
+</ul>
+</p>
+<p>Optional:
+<ul>
+	<li><code>scope</code>: The object that will be considered the <code>this</code> scope when the callback is called.</li>
+	<li><code>publicOnly</code>: If <code>true</code>, the picker will only let the user choose public files. Defaults to <code>false</code>.</li>
+	<li><code>externalOnly</code>: If <code>true</code>, the picker will only let the user choose externally available files. Defaults to <code>false</code>.</li>
+	<li><code>shareableOnly</code>: If <code>true</code>, the picker will only let the user choose files that they can share. Defaults to <code>false</code>.</li>
+</ul>
+</p>
+<h4>Callback values</h4>
+<p>The array that is returned is an array of items of type <code>lconn.share.bean.File</code>. Please view the source of that file for full documentation. Some methods you may find useful:
+<ul>
+	<li><code>getId()</code>: Returns the id of the file</li>
+	<li><code>getName() / getLabel()</code>: Returns the name of the file. These methods are equivalent.</li>
+	<li><code>getLibraryId()</code>: Returns the ID of the file's containing library.</li>
+	<li><code>getLibraryAuthor()</code>: Returns a User bean with <code>id</code>, <code>name</code>, and <code>email</code> member variables.</li>
+	<li><code>getUrlAlternate()</code>: Returns the URL of the file's details page</li>
+	<li><code>getUrlDownload()</code>: Returns the URL to download the file</li>
+</ul>
+</p>
+<p>Use the example below to test the picker. View the page source to see the javascript used to instantiate it and an example callback.</p>
+<table style="padding-top: 25px;">
+<tr>
+<td style="width:50%">
+<div id="login">
+You're not logged in. You must log in for the picker to work.
+<form class="lotusForm2" id="loginForm">
+	<div class="lotusError" id="err" style="display:none">Login incorrect</div>
+	<div class="lotusFormBody">
+	<label for="user">Username</label>
+	<input type="text" id="user" /><br/>
+	<label for="pass">Password</label>
+	<input type="password" id="pass" /><br/><br/>
+	</div>
+	<div class="lotusFormFooter"><button id="loginBtn" class="lotusBtn">Log In</button></div>
+</form>
+</div>
+<div id="picker" style="display:none;">
+<form class="lotusForm" id="pickerForm">
+	<div class="lotusFormTitle"><h2>Sample File Picker</h2></div>
+	<div class="lotusFormBody">
+		<label for="title">Enter Dialog Title:</label><input type="text" id="title" value="Select Files" size="32" /><br/>
+		<input type="checkbox" id="public" /><label for="public">Show Public Files Only</label><br/>
+		<input type="checkbox" id="shareable" /><label for="shareable">Show Shareable Files Only</label><br/>
+		<input type="checkbox" id="external" /><label for="external">Show Externally Shareable Files Only</label><br/>
+		<input type="checkbox" id="showVis" /><label for="showVis">Show file&apos;s visibility</label><br/>
+		<input type="checkbox" id="showIntent" /><label for="showIntent">Show file&apos;s sharing intent</label><br/>
+		<input type="checkbox" id="oneuiVersion" /><label for="oneuiVersion">Use OneUI 3</label><br/>
+		<input type="checkbox" id="showBrowseLink" /><label for="showBrowseLink">Allow users to upload documents</label><br/>
+		<div id="browseInfo" style="display:none">
+			<label for="browseLink">Enter Browse Link Title:</label><input type="text" id="browseLink" value="Browse files on my computer..." size="32" /><br/>
+			<label for="browseTitle">Enter Browse Dialog Title:</label><input type="text" id="browseTitle" value="Upload Files" size="32" /><br/>
+		</div>
+		<label for="allowedMimeTypes">Allowed Mime Types (one per line):</label><br/>
+		<textarea id="allowedMimeTypes" rows="8" cols="40"></textarea> 
+		<br/><br/>
+		<div class="lotusFormFooter">
+			<button id="pickFiles" class="lotusBtn">Open File Picker</button>
+			<a id="logout" href="#">Log out</a>
+		</div>
+	</div>
+</form>
+</div>
+</td>
+<td style="vertical-align: top; width: 50%;padding-top: 15px;">
+<div id="selectedFiles"></div>
+</td>
+</tr>
+</table>
+</body>
+</html>

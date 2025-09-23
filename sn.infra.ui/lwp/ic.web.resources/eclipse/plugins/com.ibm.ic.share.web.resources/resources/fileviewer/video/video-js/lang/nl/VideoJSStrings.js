@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "nl",
+      "Play": "Afspelen",
+      "Pause": "Pauze",
+      "Current Time": "Huidige tijd",
+      "Duration Time": "Tijdsduur",
+      "Remaining Time": "Resterende tijd",
+      "Stream Type": "Stroomtype",
+      "LIVE": "LIVE",
+      "Loaded": "Geladen",
+      "Progress": "Voortgang",
+      "Fullscreen": "Volledig scherm",
+      "Non-Fullscreen": "Geen volledig scherm",
+      "Mute": "Geluid uit",
+      "Unmute": "Geluid aan",
+      "Unmuted": "Geluid aan",
+      "Playback Rate": "Afspeelsnelheid",
+      "Subtitles": "Ondertiteling",
+      "subtitles off": "Geen ondertiteling",
+      "Captions": "Bijschriften",
+      "captions off": "Bijschriften uit",
+      "Chapters": "Hoofdstukken",
+      "Volume": "Volume",
+      "You aborted the video playback.": "U hebt de video afgebroken",
+      "A network error caused the video download to fail part-way.": "Het downloaden van de video is door een netwerkprobleem deels mislukt.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "De video kan niet worden geladen, hetzij vanwege een server- of netwerkstoring of omdat de indeling niet wordt ondersteund.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "De videoweergave is afgebroken vanwege een storing of omdat de video features gebruikt die niet door uw browser worden ondersteund.",
+      "No compatible source was found for this video.": "Er is geen compatibele bron voor deze video gevonden."
+});
+

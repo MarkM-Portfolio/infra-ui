@@ -1,0 +1,4 @@
+{
+	dojoType: "cancel",
+	code: "unauthenticated"
+}

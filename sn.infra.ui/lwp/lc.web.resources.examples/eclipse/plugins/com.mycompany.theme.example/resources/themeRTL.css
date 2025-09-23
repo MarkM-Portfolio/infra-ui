@@ -1,0 +1,25 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2011, 2012                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+/*
+This is the right-to-left version of the custom theme registered via plugin.xml.  The contents of this 
+file will be served whenever the theme "com.mycompany.theme.example" is rendered and the user is in a 
+right to left locale (Arabic, Hebrew).
+
+You may include additional files through the CSS @import declaration and they will be inlined.
+*/
+
+.mycompany .custom { float: right; }
+
+@import url(shared.css)

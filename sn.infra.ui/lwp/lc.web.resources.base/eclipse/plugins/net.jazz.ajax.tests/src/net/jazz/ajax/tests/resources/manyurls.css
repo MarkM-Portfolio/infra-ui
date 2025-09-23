@@ -1,0 +1,34 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2013, 2014                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+.foo {
+    background-image: url('path/to/image.png');
+}
+.bar {
+    background-image: url('/path/to/another/image.png');
+}
+/* Now a web font */
+@font-face {
+    font-family: Delicious;
+    src: url('Delicious-Roman.otf');
+}
+@font-face {
+    font-family: Delicious;
+    font-weight: bold;
+    src: url('/Delicious-Bold.otf');
+}
+/* Then call it using font-family: */
+h3 {
+    font-family: Delicious, sans-serif;
+}

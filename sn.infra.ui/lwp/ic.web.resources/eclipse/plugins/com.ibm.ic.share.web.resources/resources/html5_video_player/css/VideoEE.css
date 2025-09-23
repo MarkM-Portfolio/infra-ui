@@ -1,0 +1,225 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.HTML5VideoWrapper {
+   position: relative;
+   /*z-index:1000;*/
+   top: 0;
+   left: 0;
+}
+
+.HTML5Video {
+   position: absolute;
+   top: 0;
+   left: 0;
+   -webkit-border-radius: 1px;
+   -moz-border-radius: 1px;
+   border-radius: 1px;
+   /*z-index:1001;*/
+}
+
+.HTML5VideoControlWrapper {
+   left: 0;
+   bottom: 0;
+   height: 30px;
+   background-color: #222222;
+   /*z-index:1002;*/
+   width: 100%;
+   position: absolute;
+   opacity: 0;
+   -webkit-border-radius: 1px;
+   -moz-border-radius: 1px;
+   border-radius: 1px;
+}
+
+.HTML5VideoColumn {
+   height: 30px;
+}
+
+.HTML5VideoControlsLeft {
+   width: 24px;
+   float: left;
+}
+
+.HTML5VideoControlsCenter {
+   float: left;
+   width: 0px;
+}
+
+.HTML5VideoControlsRight {
+   width: 144px;
+   float: right;
+}
+
+.HTML5VideoControls {
+   margin-top: 7px;
+   margin-left: 8px;
+   float: left;
+   cursor: pointer;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   -o-user-select: none;
+   user-select: none;
+   display: block;
+   white-space: normal;
+}
+.html5HighContrast {
+   margin-top: -44px;
+   display:block;
+}
+.html5HighContrastThreeLine {
+   margin-top: -26px;
+   display:block;
+}
+.HTML5VideoPlay {
+   height: 16px;
+   width: 16px;
+   display: inline-block;
+}
+
+.HTML5VideoPause {
+   height: 16px;
+   width: 16px;
+   display: none;
+}
+
+.HTML5VideoSlider {
+   background-color: #3F4648;
+   height: 8px;
+   width: 100%;
+   position: relative;
+   margin-top: 11px;
+   margin-left: 0;
+   -webkit-border-radius: 1px;
+   -moz-border-radius: 1px;
+   border-radius: 1px;
+}
+
+.HTML5VideoKnob {
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 0%;
+   height: 8px;
+   background-color: #459AC8;
+   -webkit-border-radius: 1px;
+   -moz-border-radius: 1px;
+   border-radius: 1px;
+}
+
+.HTML5VideoBuffer {
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 0%;
+   height: 8px;
+   background-color: #666666;
+   -webkit-border-radius: 1px;
+   -moz-border-radius: 1px;
+   border-radius: 1px;
+}
+
+.HTML5VideoFullScreen {
+   height: 16px;
+   width: 16px;
+   float: left;
+   margin-left: 8px;
+   margin-right: 0px;
+}
+
+.HTML5VideoCollapse {
+   height: 16px;
+   width: 16px;
+   float: right;
+   margin-right: 8px;
+   display: none;
+   margin-left: 0px;
+}
+
+.HTML5VideoVolume {
+   height: 16px;
+   width: 16px;
+   float: left;
+   display: inline-block;
+}
+
+.HTML5VideoMute {
+   height: 16px;
+   width: 16px;
+   float: left;
+   display: none;
+}
+
+.HTML5VideoCurrentTime {
+   color: #F0F0F0;
+   float: left;
+   /*margin-left:10px;*/
+}
+
+.HTML5VideoDuration {
+   color: #BBBBBB;
+   float: left;
+   margin-left: 4px;
+}
+
+.HTML5VideoControlsLineBreak {
+   background-color: #459AC8;
+   height: 12px;
+   width: 2px;
+   margin-left: 4px;
+   margin-top: 9px;
+   float: left;
+}
+
+.HTML5VideoText {
+   font-family: Helvetica, Arial, Sans-Serif;
+   font-size: 11px;
+   font-weight: bold;
+   display: inline-block;
+   margin-top: 9px;
+   text-align: right;
+   height: 14px;
+   line-heigh: 14px;
+   margin-left: 8px;
+}
+
+.HTML5VideoVolumeBar {
+   height: 30px;
+   width: 28px;
+   background-color: #222222;
+   float: left;
+   margin-left: 8px;
+}
+
+.HTML5VideoVolSlide {
+   height: 10px;
+   width: 28px;
+   background-color: #F0F0F0;
+   margin-top: 10px;
+   position: absolute;
+   cursor: pointer;
+   /*z-index:0;*/
+}
+
+.HTML5VideoVolumeKnob {
+   height: 10px;
+   width: 0%;
+   background-color: #459AC8;
+   /*z-index:999;*/
+   position: absolute;
+}
+
+.HTML5VideoVolumeDivider {
+   position: absolute;
+   height: 10px;
+   width: 2px;
+   background-color: #222222;
+   /*z-index:1000;*/
+}
+
+.HTML5VideoVolumeWindow {
+   position: absolute;
+   height: 10px;
+   width: 3px;
+   /*z-index:1;*/
+}

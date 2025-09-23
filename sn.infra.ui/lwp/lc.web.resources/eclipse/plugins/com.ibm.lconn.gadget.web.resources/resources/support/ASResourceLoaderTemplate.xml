@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+<Templates xmlns:lconn="http://www.ibm.com/ibm/connections" xmlns:os="http://ns.opensocial.org/2008/markup">
+	<Namespace prefix="lconn" url="http://www.ibm.com/ibm/connections" />
+	<JavaScript><![CDATA[
+
+(function() {
+	var generateEtag_ = function(){
+		//if we have a versionstamp, use it, allows maximum cachability, only changes on product update
+		var versionStamp = gadgets.views.getParams().versionStamp;
+		if(versionStamp)
+			return versionStamp;
+		
+		//if the versionstamp hasn't been passed in at gadget init, generate an etag that will be shared by all gadgets for 15 min increments
+		var minsSinceEpoch = (Math.floor((((new Date()).getTime())/(1000*60))));
+		var timeEtag = minsSinceEpoch - (minsSinceEpoch%15);
+		return timeEtag;
+	};
+	
+	
+	var etag_ = generateEtag_();
+	
+	
+	var loadScript_ = function(url, params, callback){
+		var scriptUrl = url+((params)?"?":"");
+		for (p in params){
+			scriptUrl += (p + "=" + params[p] + "&");
+		}
+		if(params)
+			scriptUrl = scriptUrl.slice(0,scriptUrl.length-1);
+	
+		var head = document.getElementsByTagName("head")[0];
+		var element = document.createElement("script");
+		element.type = "text/javascript";
+		element.src = scriptUrl;
+		element.onload = function _onload() {
+			console.debug("loadScript_ - onLoad, element: ", element);
+			if (element) {
+				element.onload = element.onreadystatechange = null;
+				element = null;
+				console.debug("loadScript_ - onLoad, callback: ", callback);
+				if(callback)
+					callback();
+			}
+		}
+		
+		element.onreadystatechange = function () {
+			if ("loaded" === element.readyState || "complete" === element.readyState)
+				_onload();
+		};
+		
+		head.appendChild(element);
+	};
+	
+	var loadScripts_ = function(webResourcesUrl, modules, debug, callback){
+		var jsEndpoint = webResourcesUrl+"/web/_js";
+		var params = {};
+		params.etag = etag_;
+		params.lang = (new gadgets.Prefs()).getLang();
+		if(debug)
+			params.debug = debug;
+		
+		if(!modules)
+			return;
+		var i = modules.length;
+		for(i = 0; i < modules.length; i++){
+			modules[i] = modules[i]+".js";
+		}
+		params.include = modules.join("~");
+		loadScript_(jsEndpoint, params, callback);
+	};
+	
+	var loadCss_ = function(webResourcesUrl, styleSheets){
+		var etagParam = "etag="+etag_;
+		var head = document.getElementsByTagName("head")[0];
+		var element, i;
+		for(i = 0; i < styleSheets.length; i++){
+			element = document.createElement("link");
+			element.href = webResourcesUrl+"/web"+styleSheets[i]+((styleSheets[i].indexOf("?") != -1)?"&":"?")+etagParam;
+			element.type = "text/css";
+			element.rel = "stylesheet";
+			head.appendChild(element);
+		}
+	};
+	
+	/**
+	 * Executes before dojo is available, provides namespace creation similar to dojo.provide()
+	 * @name createNS_
+	 * @function
+	 * @param stringRep {String} Dotted notation representation of the desired namespace e.g. com.ibm.lconn.example
+	 * @returns {Object} The created namespace object 
+	 * @private
+	 */
+	var createNS_ = function(stringRep){
+		var namespaces = stringRep.split(".");
+		var i;
+		var parent = window;
+		for(i = 0; i < namespaces.length; i++){
+			parent[namespaces[i]] = parent[namespaces[i]] || {};
+			parent = parent[namespaces[i]];
+		}
+		return parent;
+	};
+	
+	var ASResourceLoader = createNS_("com.ibm.lconn.gadget.support.ASResourceLoader");
+	/**
+	 * Loads the resources for an EE in a way that maximises the caching of shared js/css resources
+	 * @memberOf com.ibm.lconn.gadget.support.EEResourceLoader
+	 * @name load
+	 * @function
+	 * @param webResourcesUrl {String} The absolute url of the web resources component
+	 * @param modules {Array} An array of module names (e.g. "com.ibm.social.ee.widget.StatusUpdateLoader") required by the gadget
+	 * @param isDebug {Boolean} whether resources should be loaded in debug mode
+	 * @param callback {Function} the function to call once script resources have been loaded	
+	 * @param styleSheets {Array} An array of css file urls relative to the web resources component 
+	 * (e.g. "/_style?include=com.ibm.lconn.core.styles.oneui3/base/package3.css") required by the gadget
+	 * @public
+	 */
+	ASResourceLoader.load = function(webResourcesUrl, modules, isDebug, callback, styleSheets){
+		loadScripts_(webResourcesUrl, modules, isDebug, callback);
+		loadCss_(webResourcesUrl, styleSheets);
+	};
+})();
+	
+	
+	
+	  ]]></JavaScript>
+
+	<!-- Should be used once template variable substitution is usable -->
+	<TemplateDef tag="lconn:sharedResources">
+		<Template>					
+		<os:If condition="${useSharedResources == true}">		
+			<script type="text/javascript">
+				loadScripts("${My.modules}".split(","), "${My.debug}"=="true", "${My.callback}");
+				loadCss("${My.styleSheets}".split(","));
+			</script>
+		</os:If>
+		<os:If condition="${useSharedResources == false}">
+			<os:Render content="fallback"/> 
+		</os:If>
+		</Template>
+	</TemplateDef>
+	
+	<!--Gadgets have to use at least one tag from a template library to access the shared template 
+		JS. Provided so gadgets can execute a no-op to get only the JS libraries  -->
+	<TemplateDef tag="lconn:importJS">
+		<Template>					
+		<span></span>
+		</Template>
+	</TemplateDef>
+	
+</Templates>

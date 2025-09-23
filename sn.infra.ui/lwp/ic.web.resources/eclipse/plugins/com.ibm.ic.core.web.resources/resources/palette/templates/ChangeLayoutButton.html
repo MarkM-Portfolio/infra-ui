@@ -1,0 +1,23 @@
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+<div class="lotusPaletteWidget">
+	<div class="lotusInner">
+		<div class="lotusIcon" data-dojo-attach-point="widgetIconNode"></div>
+		<div class="lotusTitle">
+			<h4 data-dojo-attach-point="titleContainerNode" style="padding: 2px;">
+				<a href="javascript:;" role="button" data-dojo-attach-point="titleNode"></a>
+				<a href="javascript:;" role="button" data-dojo-attach-point="titleNodeAdded" class="homepageUnclickable lotusHidden" aria-pressed="true">
+					<span href="javascript:;" data-dojo-attach-point="titleNodeSpan" class="titleNodeSpanSelected"></span>
+					<span class="lotusAltText" data-dojo-attach-point="layoutAddedDescNode"></span>
+				</a>
+				<span data-dojo-attach-point="defaultWidgetLabelNode" class="lotusHidden" style="font-size:1em;color:#777777;font-weight:normal;">${_resourceBundle.DEFAULT}</span>
+				<br />
+				<span data-dojo-attach-point="addedWidgetLabelNode" class="lotusAdded lotusHidden">${_resourceBundle.ADDED_WIDGET}</span>
+			</h4>
+		</div>
+		<a style="display: none" class="lotusIcon lotusHidden" href="javascript:;" title="${_resourceBundle.ADD_INFO}" data-dojo-attach-point="plusIconNode">
+			<img data-dojo-attach-point="blankImageNode" title="${_resourceBundle.ADD_INFO}" width="16" height="16" alt="+" />
+			<span class="lotusAltText">+</span>
+		</a>
+	</div>
+</div>

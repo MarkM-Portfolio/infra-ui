@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">A beágyazott élmény OpenSocial vezérlőelem a Connections események további részleteinek és műveleteinek megjelenítésére szolgál</msg>
+  <msg name="connectionsEE_errorTitle">Hiba</msg>
+  <msg name="connectionsEE_errorDescription">Hiba történt a vezérlőelem erőforrásainak betöltése közben. Győződjön meg róla, hogy kapcsolódott a hálózathoz, és próbálja meg újra betölteni a vezérlőelemet.</msg>
+</messagebundle>

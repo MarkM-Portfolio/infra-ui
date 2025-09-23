@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+define({
+		"CLOSE_HELP_DATE":"Închideţi ajutor dată",
+		"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Închidere Ajutor tipuri de document",
+		"CLOSE_HELP_PERSON":"Închidere Ajutor persoane",
+		"CLOSE_HELP_TAG":"Închidere Ajutor taguri",
+		"CLOSE_HELP_TREND":"Închideţi ajutor tendinţe",
+		"COLLAPSE_DATE":"Restrângeţi filtrul Date",
+		"COLLAPSE_ECM_DOCUMENT_TYPE":"Restrângeţi filtrul Tipuri de documente",
+		"COLLAPSE_PERSON":"Restrângeţi filtrul Persoane",
+		"COLLAPSE_TAG":"Restrângeţi filtrul Taguri",
+		"COLLAPSE_TREND":"Restrângeţi filtrul Tendinţe",
+		"DESCRIPTION_DATE":"Pentru a afişa rezultate care au fost create sau actualizate la o anumită oră, expandaţi twistie-ul şi filtraţi informaţiile după an şi lună.",
+		"DESCRIPTION_ECM_DOCUMENT_TYPE":"Un tip de document este un cuvânt cheie pe care dumneavoastră îl alocaţi fişierelor pentru a le face mai uşor de găsit. Faceţi clic pe un tip de document pentru a afişa rezultatele de căutare cărora le-a fost alocat acel cuvânt cheie.",
+		"DESCRIPTION_PERSON":"Vizualizaţi persoanele asociate cu rezultatele dumneavoastră de căutare. Faceţi clic pe un nume pentru a afişa rezultatele de căutare asociate cu o anumită persoană.",
+		"DESCRIPTION_TAG":"Un tag este un cuvânt cheie pe care îl alocaţi conţinutului sau persoanelor pentru a le face mai uşor de găsit. Faceţi clic pe un tag pentru a afişa rezultatele de căutare cărora le-a fost alocat acel cuvânt cheie.",
+		"DESCRIPTION_TREND":"O tendinţă este un cuvânt cheie care este generat de sistem pentru a simplifica realizarea căutării în Actualizări de status. Faceţi clic pe o tendinţă pentru a afişa rezultatele căutării care au fost alocate acelui cuvânt cheie.",
+		"EXPAND_DATE":"Expandaţi filtrul Date",
+		"EXPAND_ECM_DOCUMENT_TYPE":"Expandaţi filtrul Tipuri de documente",
+		"EXPAND_PERSON":"Expandaţi filtrul Persoane",
+		"EXPAND_TAG":"Expandaţi filtrul Taguri",
+		"EXPAND_TREND":"Expandaţi filtrul Tendinţe",
+		"HELP_DATE":"Ajutor Dată",
+		"HELP_ECM_DOCUMENT_TYPE":"Ajutor Tipuri de document",
+		"HELP_PERSON":"Ajutor persoane",
+		"HELP_TAG":"Ajutor taguri",
+		"HELP_TREND":"Ajutor tendinţe",
+		"NO_DATE_CONTENT":"Datele nu sunt acum disponibile",
+		"NO_ECM_DOCUMENT_TYPE_CONTENT":"Tipurile de documente nu sunt acum disponibile",
+		"NO_PERSON_CONTENT":"Persoanele nu sunt acum disponibile",
+		"NO_TAG_CONTENT":"Tagurile nu sunt acum disponibile",
+		"NO_TREND_CONTENT":"Tendinţele nu sunt acum disponibile",
+		"TITLE_DATE":"Date calendaristice",
+		"TITLE_ECM_DOCUMENT_TYPE":"Tipuri de document",
+		"TITLE_PERSON":"Persoane",
+		"TITLE_TAG":"Taguri",
+		"TITLE_TREND":"Tendinţe"
+});
+

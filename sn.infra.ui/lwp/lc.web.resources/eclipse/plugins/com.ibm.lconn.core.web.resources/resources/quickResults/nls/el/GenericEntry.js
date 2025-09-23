@@ -1,0 +1,140 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	UPDATED_BY: "Ενημερώθηκε από τον χρήστη ${author}",
+	PREVIEW_MODE_ONLY: "(Μόνο κατάσταση προεπισκόπησης)",
+	
+	//Community
+	COMMUNITY_VIEWED_TODAY: "Η κοινότητα προβλήθηκε σήμερα",
+	COMMUNITY_VIEWED_YESTERDAY: "Η κοινότητα προβλήθηκε χθες",
+	COMMUNITY_VIEWED_HOURS_AGO: "Η κοινότητα προβλήθηκε πριν από ${hours} ώρες",
+	COMMUNITY_VIEWED_MINUTES_AGO: "Η κοινότητα προβλήθηκε πριν από ${minutes} λεπτά",
+	COMMUNITY_VIEWED_SECONDS_AGO: "Η κοινότητα προβλήθηκε πριν από ${seconds} δευτερόλεπτα",
+	COMMUNITY_VIEWED_1_HOUR_AGO: "Η κοινότητα προβλήθηκε πριν από 1 ώρα",
+	COMMUNITY_VIEWED_1_MINUTE_AGO: "Η κοινότητα προβλήθηκε πριν από 1 λεπτό",
+	COMMUNITY_VIEWED_1_SECOND_AGO: "Η κοινότητα προβλήθηκε πριν από 1 δευτερόλεπτο",
+	COMMUNITY_VIEWED_AT_DATE: "Η κοινότητα προβλήθηκε στις ${date}",
+	
+	//File
+	FILE_VIEWED_TODAY: "Το αρχείο προβλήθηκε σήμερα",
+	FILE_VIEWED_YESTERDAY: "Το αρχείο προβλήθηκε χθες",
+	FILE_VIEWED_HOURS_AGO: "Το αρχείο προβλήθηκε πριν από ${hours} ώρες",
+	FILE_VIEWED_MINUTES_AGO: "Το αρχείο προβλήθηκε πριν από ${minutes} λεπτά",
+	FILE_VIEWED_SECONDS_AGO: "Το αρχείο προβλήθηκε πριν από ${seconds} δευτερόλεπτα",
+	FILE_VIEWED_1_HOUR_AGO: "Το αρχείο προβλήθηκε πριν από 1 ώρα",
+	FILE_VIEWED_1_MINUTE_AGO: "Το αρχείο προβλήθηκε πριν από 1 λεπτό",
+	FILE_VIEWED_1_SECOND_AGO: "Το αρχείο προβλήθηκε πριν από 1 δευτερόλεπτο",
+	FILE_VIEWED_AT_DATE: "Το αρχείο προβλήθηκε στις ${date}",
+	
+	//Profile
+	PROFILE_VIEWED_TODAY: "Το προφίλ προβλήθηκε σήμερα",
+	PROFILE_VIEWED_YESTERDAY: "Το προφίλ προβλήθηκε χθες",
+	PROFILE_VIEWED_HOURS_AGO: "Το προφίλ προβλήθηκε πριν από ${hours} ώρες",
+	PROFILE_VIEWED_MINUTES_AGO: "Το προφίλ προβλήθηκε πριν από ${minutes} λεπτά",
+	PROFILE_VIEWED_SECONDS_AGO: "Το προφίλ προβλήθηκε πριν από ${seconds} δευτερόλεπτα",
+	PROFILE_VIEWED_1_HOUR_AGO: "Το προφίλ προβλήθηκε πριν από 1 ώρα",
+	PROFILE_VIEWED_1_MINUTE_AGO: "Το προφίλ προβλήθηκε πριν από 1 λεπτό",
+	PROFILE_VIEWED_1_SECOND_AGO: "Το προφίλ προβλήθηκε πριν από 1 δευτερόλεπτο",
+	PROFILE_VIEWED_AT_DATE: "Το προφίλ προβλήθηκε στις ${date}",
+	
+	//Activity
+	ACTIVITY_VIEWED_TODAY: "Η δραστηριότητα προβλήθηκε σήμερα",
+	ACTIVITY_VIEWED_YESTERDAY: "Η δραστηριότητα προβλήθηκε χθες",
+	ACTIVITY_VIEWED_HOURS_AGO: "Η δραστηριότητα προβλήθηκε πριν από ${hours} ώρες",
+	ACTIVITY_VIEWED_MINUTES_AGO: "Η δραστηριότητα προβλήθηκε πριν από ${minutes} λεπτά",
+	ACTIVITY_VIEWED_SECONDS_AGO: "Η δραστηριότητα προβλήθηκε πριν από ${seconds} δευτερόλεπτα",
+	ACTIVITY_VIEWED_1_HOUR_AGO: "Η δραστηριότητα προβλήθηκε πριν από 1 ώρα",
+	ACTIVITY_VIEWED_1_MINUTE_AGO: "Η δραστηριότητα προβλήθηκε πριν από 1 λεπτό",
+	ACTIVITY_VIEWED_1_SECOND_AGO: "Η δραστηριότητα προβλήθηκε πριν από 1 δευτερόλεπτο",
+	ACTIVITY_VIEWED_AT_DATE: "Η δραστηριότητα προβλήθηκε στις ${date}",
+	
+	//Bookmark
+	BOOKMARK_VIEWED_TODAY: "Ο σελιδοδείκτης προβλήθηκε σήμερα",
+	BOOKMARK_VIEWED_YESTERDAY: "Ο σελιδοδείκτης προβλήθηκε χθες",
+	BOOKMARK_VIEWED_HOURS_AGO: "Ο σελιδοδείκτης προβλήθηκε πριν από ${hours} ώρες",
+	BOOKMARK_VIEWED_MINUTES_AGO: "Ο σελιδοδείκτης προβλήθηκε πριν από ${minutes} λεπτά",
+	BOOKMARK_VIEWED_SECONDS_AGO: "Ο σελιδοδείκτης πριν από ${seconds} δευτερόλεπτα",
+	BOOKMARK_VIEWED_1_HOUR_AGO: "Ο σελιδοδείκτης προβλήθηκε πριν από 1 ώρα",
+	BOOKMARK_VIEWED_1_MINUTE_AGO: "Ο σελιδοδείκτης προβλήθηκε πριν από 1 λεπτό",
+	BOOKMARK_VIEWED_1_SECOND_AGO: "Ο σελιδοδείκτης προβλήθηκε πριν από 1 δευτερόλεπτο",
+	BOOKMARK_VIEWED_AT_DATE: "Ο σελιδοδείκτης προβλήθηκε στις ${date}",
+	
+	//Blog
+	BLOG_VIEWED_TODAY: "Το ιστολόγιο προβλήθηκε σήμερα",
+	BLOG_VIEWED_YESTERDAY: "Το ιστολόγιο προβλήθηκε χθες",
+	BLOG_VIEWED_HOURS_AGO: "Το ιστολόγιο προβλήθηκε πριν από ${hours} ώρες",
+	BLOG_VIEWED_MINUTES_AGO: "Το ιστολόγιο προβλήθηκε πριν από ${minutes} λεπτά",
+	BLOG_VIEWED_SECONDS_AGO: "Το ιστολόγιο προβλήθηκε πριν από ${seconds} δευτερόλεπτα",
+	BLOG_VIEWED_1_HOUR_AGO: "Το ιστολόγιο προβλήθηκε πριν από 1 ώρα",
+	BLOG_VIEWED_1_MINUTE_AGO: "Το ιστολόγιο προβλήθηκε πριν από 1 λεπτό",
+	BLOG_VIEWED_1_SECOND_AGO: "Το ιστολόγιο προβλήθηκε πριν από 1 δευτερόλεπτο",
+	BLOG_VIEWED_AT_DATE: "Το ιστολόγιο προβλήθηκε στις ${date}",
+	
+	//Forum
+	FORUM_VIEWED_TODAY: "Το φόρουμ προβλήθηκε σήμερα",
+	FORUM_VIEWED_YESTERDAY: "Το φόρουμ προβλήθηκε χθες",
+	FORUM_VIEWED_HOURS_AGO: "Το φόρουμ προβλήθηκε πριν από ${hours} ώρες",
+	FORUM_VIEWED_MINUTES_AGO: "Το φόρουμ προβλήθηκε πριν από ${minutes} λεπτά",
+	FORUM_VIEWED_SECONDS_AGO: "Το φόρουμ προβλήθηκε πριν από ${seconds} δευτερόλεπτα",
+	FORUM_VIEWED_1_HOUR_AGO: "Το φόρουμ προβλήθηκε πριν από 1 ώρα",
+	FORUM_VIEWED_1_MINUTE_AGO: "Το φόρουμ προβλήθηκε πριν από 1 λεπτό",
+	FORUM_VIEWED_1_SECOND_AGO: "Το φόρουμ προβλήθηκε πριν από 1 δευτερόλεπτο",
+	FORUM_VIEWED_AT_DATE: "Το φόρουμ προβλήθηκε στις ${date}",
+	
+	//Wiki
+	WIKI_VIEWED_TODAY: "Το wiki προβλήθηκε σήμερα",
+	WIKI_VIEWED_YESTERDAY: "Το wiki προβλήθηκε χθες",
+	WIKI_VIEWED_HOURS_AGO: "Το wiki προβλήθηκε πριν από ${hours} ώρες",
+	WIKI_VIEWED_MINUTES_AGO: "Το wiki προβλήθηκε πριν από ${minutes} λεπτά",
+	WIKI_VIEWED_SECONDS_AGO: "Το wiki προβλήθηκε πριν από ${seconds} δευτερόλεπτα",
+	WIKI_VIEWED_1_HOUR_AGO: "Το wiki προβλήθηκε πριν από 1 ώρα",
+	WIKI_VIEWED_1_MINUTE_AGO: "Το wiki προβλήθηκε πριν από 1 λεπτό",
+	WIKI_VIEWED_1_SECOND_AGO: "Το wiki προβλήθηκε πριν από 1 δευτερόλεπτο",
+	WIKI_VIEWED_AT_DATE: "Το wiki προβλήθηκε στις ${date}",
+
+	//Event
+	EVENT_VIEWED_TODAY: "Το συμβάν προβλήθηκε σήμερα",
+	EVENT_VIEWED_YESTERDAY: "Το συμβάν προβλήθηκε χθες",
+	EVENT_VIEWED_HOURS_AGO: "Το συμβάν προβλήθηκε πριν από ${hours} ώρες",
+	EVENT_VIEWED_MINUTES_AGO: "Το συμβάν προβλήθηκε πριν από ${minutes} λεπτά",
+	EVENT_VIEWED_SECONDS_AGO: "Το συμβάν προβλήθηκε πριν από ${seconds} δευτερόλεπτα",
+	EVENT_VIEWED_1_HOUR_AGO: "Το συμβάν προβλήθηκε πριν από 1 ώρα",
+	EVENT_VIEWED_1_MINUTE_AGO: "Το συμβάν προβλήθηκε πριν από 1 λεπτό",
+	EVENT_VIEWED_1_SECOND_AGO: "Το συμβάν προβλήθηκε πριν από 1 δευτερόλεπτο",
+	EVENT_VIEWED_AT_DATE: "Το συμβάν προβλήθηκε στις ${date}",
+	
+	//To Do
+	TODO_VIEWED_TODAY: "Η εκκρεμής εργασία προβλήθηκε σήμερα",
+	TODO_VIEWED_YESTERDAY: "Η εκκρεμής εργασία προβλήθηκε χθες",
+	TODO_VIEWED_HOURS_AGO: "Η εκκρεμής εργασία προβλήθηκε πριν από ${hours} ώρες",
+	TODO_VIEWED_MINUTES_AGO: "Η εκκρεμής εργασία προβλήθηκε πριν από ${minutes} λεπτά",
+	TODO_VIEWED_SECONDS_AGO: "Η εκκρεμής εργασία προβλήθηκε πριν από ${seconds} δευτερόλεπτα",
+	TODO_VIEWED_1_HOUR_AGO: "Η εκκρεμής εργασία προβλήθηκε πριν από 1 ώρα",
+	TODO_VIEWED_1_MINUTE_AGO: "Η εκκρεμής εργασία προβλήθηκε πριν από 1 λεπτό",
+	TODO_VIEWED_1_SECOND_AGO: "Η εκκρεμής εργασία προβλήθηκε πριν από 1 δευτερόλεπτο",
+	TODO_VIEWED_AT_DATE: "Η εκκρεμής εργασία προβλήθηκε στις ${date}",
+	
+	//Survey
+	SURVEY_VIEWED_TODAY: "Η έρευνα προβλήθηκε σήμερα",
+	SURVEY_VIEWED_YESTERDAY: "Η έρευνα προβλήθηκε χθες",
+	SURVEY_VIEWED_HOURS_AGO: "Η έρευνα προβλήθηκε πριν από ${hours} ώρες",
+	SURVEY_VIEWED_MINUTES_AGO: "Η έρευνα προβλήθηκε πριν από ${minutes} λεπτά",
+	SURVEY_VIEWED_SECONDS_AGO: "Η έρευνα προβλήθηκε πριν από ${seconds} δευτερόλεπτα",
+	SURVEY_VIEWED_1_HOUR_AGO: "Η έρευνα προβλήθηκε πριν από 1 ώρα",
+	SURVEY_VIEWED_1_MINUTE_AGO: "Η έρευνα προβλήθηκε πριν από 1 λεπτό",
+	SURVEY_VIEWED_1_SECOND_AGO: "Η έρευνα προβλήθηκε πριν από 1 δευτερόλεπτο",
+	SURVEY_VIEWED_AT_DATE: "Η έρευνα προβλήθηκε στις ${date}",
+	
+	//Survey
+	GENERIC_VIEWED_TODAY: "Προβλήθηκε σήμερα",
+	GENERIC_VIEWED_YESTERDAY: "Προβλήθηκε χθες",
+	GENERIC_VIEWED_HOURS_AGO: "Προβλήθηκε πριν από ${hours} ώρες",
+	GENERIC_VIEWED_MINUTES_AGO: "Προβλήθηκε πριν από ${minutes} λεπτά",
+	GENERIC_VIEWED_SECONDS_AGO: "Προβλήθηκε πριν από ${seconds} δευτερόλεπτα",
+	GENERIC_VIEWED_1_HOUR_AGO: "Προβλήθηκε πριν από 1 ώρα",
+	GENERIC_VIEWED_1_MINUTE_AGO: "Προβλήθηκε πριν από 1 λεπτό",
+	GENERIC_VIEWED_1_SECOND_AGO: "Προβλήθηκε πριν από 1 δευτερόλεπτο",
+	GENERIC_VIEWED_AT_DATE: "Προβλήθηκε στις ${date}"
+})
+

@@ -1,0 +1,58 @@
+<html>
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <script type="text/javascript">
+      var config = {};
+      var dojo = {provide: function(){return {};},mixin: function(p1, p2){ config = p2;}};
+   </script>
+   <script src="../../_js?include=lconn.core.config.services&amp;exclude=dojo.main"></script>
+   <style>
+      #container { 
+         position: relative;
+         width: 100%;
+         height: 100%;
+      }
+      #container img { 
+         max-height: 100%;
+         max-width: 100%;
+      }
+   </style>
+   <script type="text/javascript">
+      function parseParams() {
+         var p = { }, params = window.location.search.substring(1).split("&"), i, parts;
+         for (i = 0; i < params.length; i++) { parts = params[i].split("="); p[parts[0]] = decodeURIComponent(parts[1]); }
+         return p;
+      }
+      
+      var filesUrl, fileId;
+      
+      function onImageError() {
+         window.open("", "_self");
+         window.close();
+      }
+      
+      function init() {
+         var params = parseParams(), isSecure, imageUrl, authScheme, anonymous, title, img, div;
+         if (params.fileId) {
+            fileId = params.fileId;
+            isSecure = (window.location.protocol || "http").replace(':','') === "https";
+            filesUrl = config.files[isSecure ? "secureUrl" : "url"];
+            authScheme = params.auth ? params.auth : "form";
+            anonymous = params.anonymous && params.anonymous === "true";
+            title = params.title ? "/" + encodeURIComponent(params.title) : "";
+            imageUrl = filesUrl + (anonymous ? "/form/anonymous" : "/" + authScheme) + 
+                       "/api/document/" + fileId + "/media" + title + "?logDownload=false&preventCache=" + 
+                       (new Date()).getTime();
+            img = document.getElementById("image");
+               img.src = imageUrl;
+         }
+      }
+   </script>
+</head>
+<body onload="init()">
+   <div id="container">
+      <img id="image" role="presentation" alt="">
+   </div>
+</body>
+</html>

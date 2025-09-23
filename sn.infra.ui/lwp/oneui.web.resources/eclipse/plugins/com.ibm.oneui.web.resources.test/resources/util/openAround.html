@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>IBM Connections - Menu utility</title>
+        <style>
+        #container { position: relative; border: 2px solid #ccc; padding: 4px; width: 600px; margin: 2em auto; }
+        #s_tl_br { position: absolute; left: 0; top: 0; }
+        #s_tl_bl { position: absolute; left: 100px; top: 0; }
+        #s_tr_br { position: absolute; right: 100px; top: 0; }
+        #s_tr_bl { position: absolute; right: 0; top: 0; }
+        #s_bl_tr { position: absolute; left: 0; bottom: 0; }
+        #s_bl_tl { position: absolute; left: 100px; bottom: 0; }
+        #s_br_tr { position: absolute; right: 100px; bottom: 0; }
+        #s_br_tl { position: absolute; right: 0; bottom: 0; }
+        #s_link { margin: 20px 0 20px 96px; }
+        </style>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <h1>Menu utility</h1>
+                <p>Opens a dijit pointed by menuId (typically a <code>dijit.Menu</code>) in a popup placed around the node in <code>event.target</code>.
+                <p>Typically called on a onclick event in the page, es: <code>&lt;a onclick=&quot;com.ibm.oneui.util.openAround('id of your menu', this, null, event)&quot;&gt;Click me&lt;/a&gt;</code>
+                <p>Use dojo.connect to bind it programmatically to a DOM node.</p>
+
+                <div id="container">
+                <form id="frm">
+                    <div id="s_tl_br"><input type="radio" name="orient" value="{'TL':'BR'}"><label for="tl_br">{'TL':'BR'}</label></div>
+                    <div id="s_tl_bl"><input type="radio" name="orient" value="{'TL':'BL'}"><label for="tl_bl">{'TL':'BL'}</label></div>
+                    <div id="s_tr_br"><input type="radio" name="orient" value="{'TR':'BR'}"><label for="tr_br">{'TR':'BR'}</label></div>
+                    <div id="s_tr_bl"><input type="radio" name="orient" value="{'TR':'BL'}"><label for="tr_bl">{'TR':'BL'}</label></div>
+                    <div id="s_link"><a href="javascript:;" onclick="com.ibm.oneui.util.openAround('menu1', this, {orient: dojo.fromJson(dojo.byId('frm').elements.orient.value)}, event)">Clicking here will pop up a menu with the chosen orientation.</a></div>
+                    <div id="s_bl_tr"><input type="radio" name="orient" value="{'BL':'TR'}"><label for="bl_tr">{'BL':'TR'}</label></div>
+                    <div id="s_bl_tl"><input type="radio" name="orient" value="{'BL':'TL'}" checked><label for="tr_br">{'BL':'TL'}</label></div>
+                    <div id="s_br_tr"><input type="radio" name="orient" value="{'BR':'TR'}"><label for="br_tr">{'BR':'TR'}</label></div>
+                    <div id="s_br_tl"><input type="radio" name="orient" value="{'BR':'TL'}"><label for="br_tl">{'BR':'TL'}</label></div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+        
+        dojo.addOnLoad(function() {
+            var m1 = new dijit.Menu({
+                id: 'menu1'
+            });
+            m1.addChild(new dijit.MenuItem({
+                label: 'One',
+                onClick: function(){alert(this.label + ' was clicked')}
+            }));
+            m1.addChild(new dijit.MenuItem({
+                label: 'Two',
+                onClick: function(){alert(this.label + ' was clicked')}
+            }));
+        });
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:com.ibm.oneui.util.openAround}
+    ${script:dijit.Menu}
+    ${script:dijit.MenuItem}
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+	<div class="ic-thumb-widget-flip-card" data-dojo-attach-event="onmouseout: onBlur">
+		<div class="card-front" data-dojo-attach-point="cardFront">
+			<div><img data-dojo-type="lconn.share.widget.FilePreview" data-dojo-attach-point="imageThumb" data-dojo-props="type: this.value.fileType, alt: this.altThumbnail, size: 'medium', imagePath: this.value.fileImagePath, iconPath: this.value.fileTypeIconPath, iconClass: this.value.fileTypeIconClass, draftLabel: this.draftLabel, hcModeText: false, fileImageBinary: this.value.fileImageBinary, disableVideoPreviewIcon: this.value.disableVideoPreviewIcon, widgetData: this.value" src="${_blankGif}" /></div>
+			<span class="iconsOther48 ${pinTriangleClass} trianglePin"></span>
+			<span class="check ${hcClass} ${spriteCheckOn}" data-dojo-attach-point="frontCheck" aria-hidden="true"></span>
+			<span class="pin ${hcClass} ${spritePinOn}" data-dojo-attach-point="frontPin" aria-hidden="true"></span>
+			<div class="summary" data-dojo-attach-point="folderSummary"><span data-dojo-attach-point="frontFileName" class="text"></span><span data-dojo-type="lconn.share.widget.Icon" data-dojo-props="type: (this.value.isFolder ? null : this.value.fileVisibilityLocking), alt: this.altStatusImage" class="icon ${hcClass}" data-dojo-attach-point="thumbnailIcon"></span></div>
+		</div>
+		<div class="card-back" data-dojo-attach-event="onclick: previewCardBack">
+			<span class="iconsOther48 ${pinTriangleClass} trianglePin" data-dojo-attach-event="onclick: pinToggleTriangle" data-dojo-attach-point="backTriangle"></span>
+			<a href="javascript:;" class="check ${hcClass}" data-dojo-attach-event="ondijitclick: checkToggle" role="button" data-dojo-attach-point="backCheck"></a>
+			<a href="javascript:;" class="pin ${hcClass}" data-dojo-attach-event="ondijitclick: pinToggle" role="button" data-dojo-attach-point="backPin"></a>
+			<h4 class="title"><a href="${ft_href}" data-dojo-attach-point="backFileName" title="${ft_summary}"></a></h4>
+			<span data-dojo-type="lconn.share.widget.FileDateFormatter" class="desc"
+				data-dojo-props="profileName: this.value.fileModifier, date: this.value.fileDateModified, isUpdated: (this.value.fileDatePublished !== this.value.fileDateModified), showBizCard: this.showBizCard, suppressUserLink: this.suppressUserLink, i18n: this.nlsProfileDateFormatter"
+			></span>
+			<div class="actions" data-dojo-attach-point="backActions"></div>
+		</div>
+	</div>

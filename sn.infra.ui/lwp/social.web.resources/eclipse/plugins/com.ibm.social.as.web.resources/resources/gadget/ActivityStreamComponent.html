@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">   
+<html>
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.         -->
+
+<head>
+    <!--[if IE 6]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie lotusui_ie6";</script><![endif]-->
+    <!--[if IE 7]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie lotusui_ie7";</script><![endif]-->
+    <!--[if IE 8]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie8";</script><![endif]-->
+    <!--[if IE 9]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie9";</script><![endif]-->
+
+<script type="text/javascript">
+if(window.location.search){
+	var urlParams = window.location.search.substring(1,  window.location.search.length);	
+}
+if(urlParams && urlParams.indexOf("debug=true")>-1){
+	var debugEnabled = true;
+}
+
+var dojoConfig = djConfig = {
+async: true,
+isDebug: debugEnabled,
+locale: "ja",
+baseUrl: "/connections/resources/web/dojo/"
+}; 
+</script>
+
+<script type="text/javascript" src="/connections/resources/web/_js?include=dojo.main~com.ibm.social.as.gadget.activityStreamComponentModule~com.ibm.social.as.gadget.activityStreamShareBoxModule~&lang=ja"></script>
+
+<script type="text/javascript">
+		
+		var prefs = {
+				getString: function(key, defaultParam){
+					return (this[key]) ? this[key] : defaultParam;
+				},
+				
+				getBool: function(key, defaultParam){
+					var param = this.getString(key);
+					if(param && param === "true"){
+						return true;
+					} else if (defaultParam) {
+						return defaultParam;
+					} else {
+						return false;
+					}						
+				}
+		}	
+		if(urlParams){
+			dojo.mixin(prefs, dojo.queryToObject(urlParams));	
+		}
+		
+		var asc = {};
+		var bootAS;
+		
+		(function(){
+			var hasOpenViews = false;
+			asc.isDebug = prefs.getBool("debug", false);
+			asc.isDebugFF = prefs.getBool("debugFF", false);
+			asc.showSharebox = prefs.getBool("showSharebox", false);
+			asc.isInlineCommentingEnabled = prefs.getBool("isInlineCommentingEnabled", false);
+			asc.shareboxBoardId = prefs.getString("shareboxBoardId", "");
+			asc.shareboxPostType = prefs.getString("shareboxPostType", "");
+			asc.showFeedLink = prefs.getBool("showFeedLink", false);
+			asc.showHeader = prefs.getBool("showHeader", false);
+			asc.asMaxWidth = prefs.getString("asMaxWidth", "");
+			asc.asMinWidth = prefs.getString("asMinWidth", "");
+			asc.isCommunityStream = prefs.getBool("isCommunityStream", false);
+			asc.asFeed = prefs.getString("asFeed", null);
+			asc.asMode = prefs.getString("asMode", null);
+			asc.userEmail = prefs.getString("actionEmail", null);
+			asc.asConfig = prefs.getString("asConfig", null);
+			asc.getProxiedUrl = function(url){return url;};
+			asc.currentView = prefs.getString("currentView", "narrow");
+			asc.isRTL = prefs.getBool("isRTL", false);
+			asc.theme = prefs.getString("asTheme", "gen4");
+			asc.count = prefs.getString("count", null);
+			
+			var versionStamp_ = (lconn.core.config.versionStamp)? lconn.core.config.versionStamp : "1234567890";
+			asc.versionStampe = versionStamp_;
+			var webResourcesUrl_ = "/connections/resources";
+			var config = {};
+			//
+			// utility functions
+			//
+			function isFunction(func) {
+				return func && asc.toString.call(func) === '[object Function]';
+			}
+			
+			
+			/**
+			 * Load the CSS resources
+			 */
+			function loadCss_(){				
+				var head = document.getElementsByTagName("head")[0];
+				
+				var extraCss = config && config.activityStreamCss || [];
+				forEach_(extraCss, function(cssLink) {					
+					loadCssLink_(head, cssLink);
+				});
+			}
+			
+			/**
+			 * Ligth weight foreach function
+			 */
+			function forEach_(arr, onItem) {
+				if (arr && onItem) {
+					var i, len = arr.length;
+				
+					for (i = 0; i < len; i++) {
+						onItem(arr[i], i);
+					}	
+				}
+			}
+			
+			/**
+			 * Load extra CSS resources
+			 */
+			function loadCssLink_(head, l, id) {
+				var isRtl = asc.isRTL;
+				var styleEl = null;
+				
+				l = l.replace("{_rtl}", (isRtl ? "_RTL" : "")); // _RTL
+				l = l.replace("{rtl}", (isRtl ? "RTL" : ""));  // RTL
+				l = l.replace("{rtlTF}", (isRtl ? "&rtl=true" : "&rtl=false"));
+				l = l.replace("{theme}", asc.theme);
+				l = l.replace("{etag}", "&etag=" + versionStamp_);
+				
+				styleEl = document.createElement("link");
+				styleEl.href = webResourcesUrl_ + l;
+				styleEl.type = "text/css";
+				styleEl.rel = "stylesheet";
+				
+				if (id) {
+					styleEl.id = id;
+				}
+				
+				head.appendChild(styleEl);
+			}
+			
+			var stringIfy = window.JSON && window.JSON.stringIfy ?
+				function(v) { return JSON.stringIfy(v); } :
+				function(v) { return '' + v; };	// dojo.toJSON chokes on circular objects, so avoiding
+					
+			function noOp() {}
+			
+			//
+			// logging
+			//
+			asc.log = (function(undef) {								
+				var logf = console.debug || console.log;
+				
+				return (isFunction(logf) && logf.apply) ?
+					function() { logf.apply(console, arguments); } :
+					function() { logf(Array.prototype.slice.call(arguments)); };	//
+				})();
+				
+			asc.log("ActivityStream.html - gettin' goin'. asc: ", asc);
+			
+			if ( !hasOpenViews ) {
+				asc.log("ActivityStream.html - open-views features not available. Some functionality will not work.");
+			}
+			
+			/**
+			 * Check what view type we want... wide or narrow
+			 * wide includes side-view-nav
+			 * narrow includes top-view-nav
+			 * narrow also overrides some CSS to squeeze things
+			 */
+			asc.type = asc.currentView;
+			asc.log("ActivityStream.html - curViewName: ", asc.currentView);			
+			asc.log("ActivityStream.html - asc.isRTL = ", asc.isRTL);
+			
+			bootAS = function() {
+				asc.log("ActivityStream.html - bootAS - entering");
+				
+				asc.util = new com.ibm.social.as.gadget.ASComponentUtil();
+				asc.util.initLogger(); // must be first.. things will be starting to call as_console_debug
+
+ 				com.ibm.social.as.util.xhr.XhrHandler.init({isGadget:false, useOauth: asc.useOAuth}); // we need xhr to know its context
+				asc.util.initAS();
+				asc.log("ActivityStream.html - bootAS - exiting, asc: ", asc);
+			};
+			
+			config.activityStreamCss = [
+				"\/web\/_style?include=com.ibm.lconn.core.styles.oneui3\/base\/package3" + ( asc.isRTL ? "RTL" : "" ) + ".css{etag}",
+				"\/web\/_style?include=com.ibm.lconn.core.styles.oneui3\/sprites" + ( asc.isRTL ? "RTL" : "" ) + ".css{etag}",						
+				"\/web\/_lconntheme\/{theme}"+( asc.isRTL ? "RTL" : "" )+".css?{etag}&version=oneui3",              
+				"\/web\/_lconnappstyles\/{theme}\/homepage"+( asc.isRTL ? "RTL" : "" )+".css?{etag}&version=oneui3",
+				"\/web\/_lconnappstyles\/{theme}\/activityStream"+( asc.isRTL ? "RTL" : "" )+".css?{etag}&version=oneui3",
+				"\/web\/_style?include=com.ibm.social.as\/gadget\/css\/gadgetOverride" + ( asc.isRTL ? "RTL" : "" ) + ".css{etag}"               				                   								
+			];
+			
+			// before we call the bootloader, check if we want extra css			
+			if ( asc.type === "narrow" ) {
+				config.activityStreamCss.push("\/web\/_style?include=com.ibm.social.as\/gadget\/css\/gadgetOverrideNarrow" + ( asc.isRTL ? "RTL" : "" ) + ".css{etag}");				
+			}
+			
+			loadCss_();
+			dojo.addOnLoad(bootAS);
+			asc.log("ActivityStream.html - beginning fetch of AS JS");	        		      	
+		})();
+	</script> 
+</head>
+<body class="lotusui lotusui30dojo lotusui30_body asGadget lotusui30_fonts lotusui30  lotusSpritesOn" aria-labelledby="needAuth">
+	<div id="lotusFrame" class="lotusFrame lotusui30_layout">
+		<div id="gadgetMainContent">
+			<div id="loadingDiv" style="width: 100%; height: 100%; margin-top: 40px; text-align: center;">
+				<img src="../../com.ibm.lconn.core.styles.oneui3/images/loading.gif"/>
+			</div>
+			<div id="errorDiv" class="lotusHidden" style="width: 100%; height: 100%; margin-top: 40px; text-align: center;">
+				
+			</div>
+			<div id="lotusMain" class="lotusMain lotusHidden">
+				<div id="lotusColLeft" class="lotusColLeft lotusHidden">
+					<div id="viewsidenav"></div>
+				</div>
+				<div id="lotusContent" class="lotusContent lotusBoard activityStreamGadgetContainer" role="main">
+					<div><div id="asheader"></div></div>
+					<div><div id="inputForm"></div></div>
+					<div><div id="messageContainer"></div></div>
+					<div><div id="activityStream" class="lotusStream"></div></div>
+				</div>
+			</div>
+		</div>
+		<div id="waiting" style="display:none">
+			<img class="eeOAuthImg" role="presentation" aria-hidden="true"/>
+			<div class="eeOAuthBodyContent">
+				<div class="eeOAuthInfo"></div>
+				<div id="oAuthQuestionWait" class="lotusChunk"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

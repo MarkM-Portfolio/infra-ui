@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "ar",
+      "Play": "تشغيل",
+      "Pause": "‏ايقاف-مؤقت‏",
+      "Current Time": "الوقت الحالي",
+      "Duration Time": "المدة الزمنية",
+      "Remaining Time": "الوقت المتبقي",
+      "Stream Type": "نوع التسلسل",
+      "LIVE": "بث حي",
+      "Loaded": "تم التحميل",
+      "Progress": "التقدم",
+      "Fullscreen": "الشاشة بالكامل",
+      "Non-Fullscreen": "شاشة بعرض غير كامل",
+      "Mute": "كاتم الصوت",
+      "Unmute": "الغاء كاتم الصوت",
+      "Unmuted": "تم الغاء كاتم الصوت",
+      "Playback Rate": "معدل استرجاع التسجيل",
+      "Subtitles": "العناوين الفرعية",
+      "subtitles off": "ايقاف عرض العناوين الفرعية",
+      "Captions": "المسميات",
+      "captions off": "ايقاف عرض المسميات",
+      "Chapters": "الفصول",
+      "Volume": "الحجم",
+      "You aborted the video playback.": "لقد أحبط اعادة تشغيل الفيديو",
+      "A network error caused the video download to fail part-way.": "تسبب خطأ بالشبكة الاتصال في فشل تنزيل الفيديو بعد بدء التحميل.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "تعذر تحميل الفيديو، اما بسبب فشل وحدة الخدمة أو شبكة الاتصال أو لأنه لا يتم دعم النسق.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "تم احباط اعادة تشغيل الفيديو بسبب مشكلة تلف أو لأن الفيديو قد استخدم خصائص لا يقوم المتصفح الخاص بك بدعمها.",
+      "No compatible source was found for this video.": "لم يتم العثور على مصدر متوافق لهذا الفيديو."
+});
+

@@ -1,0 +1,1391 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+
+.flushLeft  {margin-right: 0px !important; padding-right: 0px !important;}
+.flushRight {margin-left:0px !important; padding-left:0px !important;}
+
+/*don't want white background for stream widgets*/
+.lotusui30 .lotusContent #RecentUpdatesSection, 
+.lotusui30 .lotusContent #widget-container-col2statusposts .lotusWidget2{margin-top:-10px;border:0;}
+.lotusui30 .lotusContent #RecentUpdatesSection h2, 
+/*make these headings looks like the others (in a community)*/
+.lotusui30 .lotusContent #widget-container-col2statusposts .lotusWidget2 h2{font-size:1.5em;line-height:1.2;color:#444;}
+/*FLAG: this is to make the wiki widget consistent with the other widgets who are putting the view all links in the content area (a table) instead of the widget footer*/
+.lotusui30 .lotusContent .lotusWidget2 .lotusWidgetFooter{border-top-color:#eee;padding-right:15px;padding-left:10px;}
+.lotusui30 .lotusContent #_RecentUpdates_activityStreamNode, 
+.lotusui30 .lotusContent #widget-container-col2statusposts .asCommunitiesBoard > .lotusStream {background-color:transparent;}
+.lotusui30 .lotusContent #activityStream{background-color:transparent;}
+
+.lotusui30 .lotusForm .commFormText {line-height:normal;}
+.commFormBottomRow {padding-bottom:15px !important;}
+.commFormFooter {border-color: #AAAAAA !important; border-style:solid !important; border-width: 1px 0 0 !important; padding: 15px 0 0 0 !important;}
+.filterSpacing {margin: 0px 5px 5px 0px !important; }
+.commAccess {left: -5000px;}
+
+.lotusDim {opacity:0.5; filter:alpha(opacity=50);}
+img{border:0;vertical-align:middle}
+.indent10 {padding-right:10px;}
+.indent15 {padding-right:15px;}
+.indent20 {padding-right:20px}
+.indent40 {padding-right:40px;}
+.indent60 {padding-right:60px;}
+.left{float:left;text-align:left;}
+.right{float:right;text-align:right;}
+.center {text-align:center;}
+.clear {clear:both}
+.clearLeft {clear:left}
+.clearRight {clear:right}
+.inlinelist{margin:0;padding:0}
+.inlinelist li{display:inline;margin:0 0 0 -4px;padding:0 10px;border-right:1px solid #ccc;}
+.inlinelist li.first{margin-right:0;padding-right:0;border-right-width:0;}
+.inlinelist li.first, .inlinelist li.last{margin-right:-5px;padding-right:0;border-right-width:0;}
+span.date{color:#666}
+.highlight{}
+.selected{}
+.inactive{color:#ccc !important}
+.alternate{}
+#postMenu li{border-top:1px solid #edeff4}
+#postMenu a{padding:5px 3px 7px 35px;background-position:7px center;background-repeat:no-repeat;text-decoration:none;display:block}
+.comments h4{background-color:#ccc;padding:3px;text-align:right;overflow:hidden;}
+.comments h4 .action{font-size:.7em;}
+.comments h5{font-size:.9em;border-bottom:1px solid #ccc;margin-bottom:3px}
+.comments h5 a.person{margin:0 8px}
+.comments h5 span{padding:0 3px}
+.comments h5 span.highlight{background-color:#f6cb26;}
+.comments p{margin-top:0}
+.entry{padding:5px 0;border-bottom:1px solid #ddd;overflow:hidden;clear:both;}
+.entry input{margin:0}
+.singleLine h4, .singleLine .divider{float:left;}
+.singleLine h5{padding-top:2px}
+.entry h4 input, .entry h4 img{vertical-align:middle;margin-left:3px;float:left}
+.entry h4 input{margin-top:2px}
+.entryBody {margin:0 0 0 20px;}
+.entry h4{margin:0 3em 0 0;font-size:1.2em;font-weight:bold;overflow:hidden}
+.entry h4.alternate{margin-right:20px}
+.entry h4 div{float:left}
+.entry h4 a{text-decoration:none;vertical-align:middle;}
+.entry h4 a:hover {text-decoration:underline;}
+.entry .icons{float:left;}
+.entry .icons img{display:block}
+.entry h5{margin:0 0 0 0px;font-size:1.0em;color:#666;line-height:1.2em;}
+.entry h6{margin:0 0 0 0px;font-size:.85em;color:#666;}
+.entry p{margin:5px 0 0 0px}
+.entry .tags{float:right;margin-left:10px;overflow:hidden}
+.entry ul.actions{margin: 5px 0 0 0px;padding:0 10px 0 0;font-size:.9em}
+.entry ul.actions li{display:inline;margin: 0 0 -4px;padding:0 10px;border-right:1px solid #ccc}
+.entry ul.actions li.first{margin-right:0;padding-right:0;border-right-width:0}
+.entry .divider{margin:0 8px}
+form div{}
+form label{}
+.lotusForm td label.lotusDisabled {color:gray}
+form .text{}
+form .checkBox{}
+form .radio{}
+form .button{}
+form .image{}
+form textarea{}
+form p{}
+form .indent{}
+.infoBox {padding:5px;border:1px solid #c2e2f4; -moz-border-radius:2px; margin-top:15px;background-color:#f5f9fe;}
+.infoBox h3{margin:0 0 5px 0;padding:0 0 0 5px;font:bold 1.2em/1.5em Helvetica, Arial, Verdana, sans-serif;color:#43a0f6;border-bottom:1px solid #c2e2f4;text-align:right;overflow:hidden}
+.infoBox p {padding:5px;margin:0;}
+.help{width:200px;padding:3px 8px;background-color:#fff}
+.list h3{margin:10px 0 5px 0;font-size:1.2em;font-weight:bold}
+.list h3.alternate{color:#ff9523;}
+.list h3.icons{text-align:right;overflow:hidden}
+.list h3.icons img{margin-right:3px}
+.list .label{color:#666}
+.list ul{list-style:none;margin:0;padding: 0;clear:both}
+.list ul li {padding:2px 0}
+.list ul.editable li{text-align:right;overflow:hidden;clear:both;border-bottom:1px solid #b4b4b4}
+.list .editable .icon img{width:10px;height:10px;}
+.list .description {padding:0;margin:0;margin-bottom:7px;color:#595959;}
+.alternate h3{color:#333f06;border-bottom:2px dotted #333f06}
+.alternate ul li{background-image:none}
+div.alternate a, div.alternate a:visited{}
+.paging{height:2em;line-height:2em;text-align:center;border:1px solid #e0e0e0;-moz-border-radius:2px;margin-top:.2em;color:#848484;padding:0 5px;clear:both;font-size:.9em;background-color:#f0f0f0;}
+.paging ul li, .paging div{color:#848484;}
+.paging a, .paging a:visited{font-weight:bold !important;}
+.paging input{width:20px;text-align:center;color:#848484;}
+.paging .inlinelist{padding-right:5px}
+.paging .inlinelist li {padding:0 6px;}
+.table .paging, .caption .paging{background-image:none;background-color:#fdfdfd}
+.table .paging td{border:1px solid #e0e0e0;padding:0 5px}
+.caption .paging, .caption .paging td{margin-top:0;border-top-width:0;border-right-width:0;border-left-width:0;background-color:transparent}
+.searchTab{background-color:#fff;filter: Alpha(opacity=65);-moz-opacity:.65;opacity:.65;border:1px solid #ccc;-moz-border-radius:4px;padding:.3em 5px;z-index:100;height:1.5em}
+.searchTab:hover, .tabExpanded{filter: Alpha(opacity=100);-moz-opacity:1;opacity:1;color:#414546}
+.tabExpanded{border-bottom-color:#fff;-moz-border-radius:4px 4px 0 0}
+.searchTab a, .searchTab a:visited{display:block;padding-left:18px;color:#000;text-decoration:none;font-weight:bold}
+#searchForm{padding:12px 10px;border:1px solid #ccc;background-color:#fff;-moz-border-radius:4px 0 4px 4px;position:absolute;top:2.5em;right:15px;display:none}
+#searchForm input, #searchForm select{vertical-align:middle;margin-right:3px;color:#999}
+#searchForm option{color:black}
+#searchForm .text{color:#999}
+.section{margin:15px 0px 0 10px;background-color:#f5f9fe;border:1px solid #e0e0e0;-moz-border-radius:7px;padding:2px 5px 10px 5px;}
+.section h3{margin:0}
+.section h4{margin:7px 0 5px 0;font-size:1.1em;font-weight:normal;padding:0px 0px 2px 2px;border-bottom:1px dotted #ccc;clear:both;color:#000}
+.section h4.icons{text-align:right;overflow:hidden}
+.section h4.icons img{margin-right:3px}
+.section h6{margin:0 0 2px 0;color:gray;clear:both;}
+.section .tag{color:#000 !important}
+.tabSection .tabContainer{border-bottom-width:0;margin:5px 0px 0 10px}
+.tabSection .tabcontent{margin-top:0;z-index:-100;-moz-border-radius:0 2px 2px 2px; }
+.section .list h3{color:#000;text-align:right;}
+.section .list img {vertical-align:middle;padding:0px 1px 3px 1px;}
+.section .list ul{margin-top:0;}
+.section .list ul li{border-bottom:1px solid #dbdbdb;text-align:right;clear:both;padding:0px 2px 0px 4px}
+.section .list h6{margin:5px 0 0 8px;padding-top:3px;color:#666;color:#84b2d8;border-top:2px dotted #84b2d8;}
+.section .list a, .section .list a:visited{color:#327EBE;border-bottom:0;}
+.section .list h6 a, .section .list h6 a:visited{color:#4f9cef}
+.section .alternate li{border-bottom-width:0 !important;text-align:right !important}
+.message {background-color:#fff799;border:1px solid #ffcd04;padding:5px 10px;margin-bottom:10px;-moz-border-radius:7px;}
+.table caption, .caption h4{text-align:right;font-weight:bold;background-color:#f3f3f3;border:1px solid #e0e0e0;padding:3px 5px;margin-bottom:0;-moz-border-radius:2px;}
+.table th, .table td{padding:3px 5px;border-collapse:collapse}
+.table th{text-align:right;border-bottom:1px solid #e0e0e0;}
+.table td{border-bottom:1px solid #e0e0e0}
+.table tr.last td{border-bottom-width:0}
+.tabContainer{position:relative;height:3em;border-bottom:1px solid #e0e0e0; z-index: 1;}
+ul.tabs{position:absolute;bottom:-1px;overflow:hidden;margin:0;padding:0;list-style:none;}
+.tabs li{float:left;margin-left:2px;padding-right:3px;border-bottom:1px solid #e0e0e0}
+.tabs a, .tabs a:visited{display:block;padding:5px 15px 4px 10px;text-decoration:none;line-height:1.2em;color:#999;}
+.narrow a, .narrow a:visited {display:block;padding:5px 10px 4px 5px;}
+.tabs a:hover, .tabs a:focus{color:#000;}
+li.notatab:hover, li.notatab:focus{background-image:none}
+li.notatab:hover a, li.notatab:focus a{background-image:none}
+#titleBar .tabs{left:200px;background-image:none}
+#titleBar .tabs li{background-image:none;border-bottom-width:0;}
+#titleBar .tabs a, #titleBar .tabs a:visited{padding:7px 15px 10px 10px;}
+#titleBar .tabs li a{background-image:none;}
+.vCardHover:hover, .vCardHover:focus{text-decoration:none}
+.popup {position: absolute;
+left: -9999px;
+z-index: 200;
+background-color: #fff;
+width: 20em;
+float: none;
+text-align: left;
+}
+.baseIcon {
+width:16px; height:16px; border: 0; padding: 0px; display:inline-block; width:20px; float:left;
+}
+#simpleSearchForm .dijitMenu {
+border-width:1px !important;border-style:solid !important; background-color:white;
+}
+#simpleSearchForm #searchFormCombo .dijitMenuTable{background-position:left top;background-repeat:repeat-y;}
+#simpleSearchForm #searchFormCombo .dijitMenuItem td{white-space:nowrap;padding:2px 0;}
+#simpleSearchForm #searchFormCombo .dijitMenuItemIcon{width:25px;height:16px;background-position:center center}
+#simpleSearchForm #searchFormCombo .dijitMenuItemLabel{padding-right:5px !important;padding-left:5px !important;}
+#simpleSearchForm #searchFormCombo .dijitMenuSeparatorTop{margin-top:0;border-bottom-width:1px;border-bottom-style:solid}
+#simpleSearchForm #searchFormCombo .dijitMenuSeparatorBottom{margin-bottom:0;border:0;}
+#simpleSearchForm #searchFormCombo .dijitButtonText {
+padding-left:4px; padding-right:4px; font-weight:bold; font-size:.9em;
+}
+#simpleSearchForm #searchFormCombo .dijitReset {
+font-family: inherit; font-size: inherit; font-size-adjust: inherit; font-stretch: inherit;
+font-style: inherit; font-variant: inherit; font-weight: inherit;
+}
+#simpleSearchForm #searchFormCombo .dijitArrowButtonChar {
+display:none !important;
+}
+#simpleSearchForm #searchFormCombo .dijitComboButton .dijitDownArrowButton {
+padding:4px;
+}
+#simpleSearchForm #searchFormCombo .dijitArrowButton {
+color:#111;
+}
+#simpleSearchForm #searchFormCombo .dijitInline {
+display:inline-block;
+}
+#simpleSearchForm .dijitComboButton {
+background-color:white; border: #999 solid 1px;
+}
+#simpleSearchForm #searchFormCombo .dijitButtonNode {
+border:none; cursor:pointer; line-height:normal; margin:0; vertical-align:middle;
+white-space:nowrap; text-align:right;
+}
+#simpleSearchForm #searchFormCombo .dijitButtonContents {
+width:150px;
+}
+#simpleSearchForm #searchFormCombo .dijitButtonNode * {
+vertical-align: middle;
+}
+.linkAlignRight {text-align: right;}
+.idbc {
+width:400px;
+border:2px solid #cccccc;
+background-color: white;
+}
+.idbt {
+margin:1px;
+padding:5px 10px 3px 10px;
+background-color:#eeeeee;
+font-weight:bold;
+}
+.idbi {
+padding:3px 10px 5px 10px;
+}
+.target {min-height: 400px; min-width: 100px;}
+.target .dndOther{cursor: move;}
+#widget-container-banner .target {min-height: 25px;}
+#lotusColBanner {min-height: 25px;}
+.commThemePalette {height:400px; min-height:400px; overflow:auto; padding-right:20px; padding-left:20px;}
+.lotusTwoColFloater{margin:10px 10px 0 10px;overflow:auto;}
+#lotusMain{background-image:none}
+.lotusPalette td{padding:0 25px;width:33%;vertical-align:top}
+.lotusMenuPlain{margin:0 0 15px 0;padding-top:5px;background-color:#fff;border:1px solid #BDC1C4;padding:10px;height:12em;overflow:auto}
+.lotusMenuPlain h2{margin:0 0 7px 13px;padding:0;font-size:1em}
+.lotusMenuPlain .lotusSectionHeader{font-weight:bold}
+.lotusMenuPlain ul{margin:0;padding:0;list-style-type:none;}
+.lotusMenuPlain li{zoom:1}
+.lotusMenuPlain li img{margin:0 3px 0 0}
+.lotusMenuPlain li a, .lotusMenuPlain li a:visited{padding:5px 0 5px 13px;display:block;text-decoration:none;font-weight:normal;line-height:1.0em}
+.lotusMenuPlain ul.lotusIcons img{vertical-align:text-bottom}
+.lotusMenuPlain ul.lotusIcons a{padding:5px 0 5px 19px}
+.lotusMenuPlain li a:hover, .lotusMenu li a:focus{text-decoration:underline}
+.lotusMenuPlain li.lotusSelected a, .lotusMenuPlain li.lotusSelected a:visited{margin:0 -10px;padding:5px 5px 5px 29px;text-decoration:none;cursor:default;background-color:#cfecff;color:#000}
+.communityOverview {
+overflow-x: auto;
+overflow-y: visible;
+width:100%;
+position: relative;
+text-align:start;
+line-height: normal;
+}
+
+body .login {left:50%;margin-right:-320px;position:relative;width:640px;}
+.login #titleBar, .login #banner ul li, .login #menuBar ul li{display:none}
+.login h2{margin:20px 0 0 20px;font-size:1.9em;}
+.login p{margin:5px 0 0 20px}
+#loginFooter{margin:70px 20px 20px 20px;}
+#loginFooter p{font-size:.8em;color:#666;margin:0 0px 0 120px;}
+.loginBox {padding:4px;background:#fff;border:1px solid #aaa;-moz-border-radius:5px;overflow:hidden;margin-top:15px;padding-bottom:25px;}
+.loginContent {padding:25px 0 20px 0;overflow:hidden;}
+.loginText {margin:22px 20px 20px 225px;}
+.loginContent img {float:left;padding-right:10px}
+.loginContent h1 {color:#fff;margin:0;font-size:3em !important;padding:0;line-height:1.0em;}
+.loginContent h2 {font-size:1.4em;line-height:1.3em;color:#333333;padding:0;padding-left:15px;margin:15px 0}
+.loginContent h2 .emphasis {font-weight:bold;color:#000;}
+.loginContent input {margin-bottom:5px;}
+.loginButton {padding-top:10px;}
+.rte {border:1px solid #908f8f;min-height:150px;margin-bottom:10px;height:auto;width:750px;line-height:1.2em;}
+.commForm {vertical-align: top !important; }
+.noSpacing {padding:0; margin:0;}
+.verticalSpacing {padding:2px 0 2px 0 !important; margin:0 !important; ; }
+.commWelcome {padding: 0px 18px 0px 18px;}
+.privateCommunity {background-color:#d2d2d2}
+.privateCommunityInfo {margin-right:23px;color:#a2a2a2;font-size:.8em}
+.privateCommunityInlineInfo {margin-right:0px;color:#626262;font-size:.8em}
+.lotusDiscussion .commFlatComment {margin:10px 0px 0px 0px; border-width:1px !important;border-color:#E7E8EA; border-style:solid;}
+.replyContainer {border-width: 0px 1px 1px 1px; border-color:#E7E8EA; border-style:solid; padding: 0px 10px 10px 10px;}
+.replyContainerThreaded {border-width: 0px 1px 1px 1px; border-color:#E7E8EA; border-style:solid; padding: 0px 10px 10px 0px;}
+.lotusDiscussion .commCommentBody {margin:0;padding:0 0 0 30px;position:static;-moz-border-radius:0;}
+.lotusDiscussion ul {list-style-type:none; margin:0px;}
+.lotusDiscussion li {margin-right:0px; margin-left:0px; margin-top:0px; overflow:hidden; }
+.commCommentBody ul{list-style-type:disc;margin-right:20px;margin-top:5px;padding-right:0;}
+.commCommentBody ol{list-style-type:decimal;margin-right:20px;margin-top:5px;padding-right:.2em;}
+.commCommentBody ul li{overflow:visible}
+.commCommentBody ol li {overflow:visible;}
+.commCommentBody blockquote{margin:5px 20px}
+.commCommentBody ul ul, .commCommentBody ol ul {list-style-type:circle;}
+.commCommentBody ul ul ul, .commCommentBody ol ul ul, .commCommentBody ol ol ul{list-style-type:square}
+}
+*/
+.commBidiLink {display:inline-block;}
+#frame #content .errorMessages {background-color:#ffff66;font-weight:bold;font-size:1.0em;margin:10px 0px 10px 0px;-moz-border-radius:3px;padding:3px 0px 3px 0px; width:100%;}
+.communities h1 {font-size:1.9em;padding:0;margin:0;}
+.X-person-display-inline {margin-bottom:10px}
+a.startButton, a.startButton:hover, a.startButton:focus, a.startButton:active {display:block;margin:0 0 10px 10px;text-decoration:none;}
+.startButtonTop {width:190px;}
+.startButtonTop span, .startButtonTop span:hover, .startButtonTop span:focus { display:block; color:#515151; text-decoration:none; }
+.startButtonTextTop {margin:0 0 0 55px; padding:5px 0 0 0; font-size:1.5em; font-weight:bold; cursor:hand;}
+.startButtonTextBottom {margin:-4px 0 0px 55px; padding:0 0 5px 0px;  font-size:1.1em; cursor:hand;}
+.startButtonText {padding:14px 6px 13px 63px; font-size:1.2em; cursor:hand;}
+.startButtonBottom {width:190px;margin:auto;padding:0;line-height:5px;}
+.communityButton {border-top:1px solid #e0e0e0;margin:0 3px!important;padding:0 !important;}
+#profile .communityButton img {border:0;margin:5px 3px 5px 10px;}
+a.communityButtonBottom, a.communityButtonBottom:hover, a.communityButtonBottom:focus {display:inline-block;padding:5px 0px 7px 0px !important;margin:0;text-decoration:underline;}
+#frame #colLeft #profile a.button, #frame #colLeft #profile a.button:visited {display:block;margin:5px 10px 0px 10px;color:#6A791D;text-align:center;padding:5px 1px;border:1px solid #C5CE95;cursor:pointer;}
+#frame #colLeft #service{
+border: 1px solid #e0e0e0;
+-moz-border-radius:2px;
+margin: 0 0 0 10px;
+}
+#frame #colLeft #service img{
+margin: 10px 0 0px 20px;
+padding:2px;
+border:1px solid #9d9c9c;
+}
+#frame #colLeft #service ul {
+list-style: none;
+padding: 10px 3px 5px 3px;
+margin: 0 0 3px 0;
+background: #fff;
+}
+* html #frame #colLeft #service ul {margin-bottom:0;padding-bottom:0;}
+#frame #colLeft #service ul li {
+padding: 0;
+margin: 0;
+height: 2.0em;
+}
+#frame #colLeft #service ul li a{
+display: block;
+padding: 5px 0 0px 10px;
+font: normal 1.1em/1.2em Helvetica, Arial, Verdana, sans-serif;
+text-decoration: none; }
+#frame #colLeft #service ul li.selected {background: #cce3fa;border:1px solid #a5d8fe;}
+#frame #colLeft #service ul li.selected a {color: #000;font-weight:bold; }
+#frame #colLeft #service ul li.selected a:hover {color: #000; font-weight:bold; }
+#frame #content #communityProfile img {
+padding: 15px 20px 10px 0;
+}
+#frame #content #communityProfile h2{
+color: #000;
+margin: 0;
+font-size: 1.1em;
+padding: 0;
+}
+#frame #content #communityProfile h3{
+color: #7da1bc;
+font-size: 1.1em;
+margin: 0;
+padding: 0;
+}
+#frame #content #communityProfile h4{
+margin: 0;
+font-size: 1.1em;
+padding: 0;
+color: #7e7978;
+}
+#frame #content #communityProfile h5{
+color: #ff9523;
+margin: 0;
+font-size: 1.1em;
+padding: 10px 0 0 0;
+}
+#frame #content #communityProfile h6{
+color: #4f4e53;
+margin: 0;
+font-size: 1.1em;
+padding: 0;
+position: relative;
+}
+#frame #content #communityProfile span{
+color: #7da1bc;
+display: block;
+position: absolute;
+top: 0px;
+left: 80px;
+}
+#frame #content #communityProfile span.available{
+padding-right: 18px;
+}
+#frame #content #communityProfile #time{
+float: right;
+padding-top: 15px;
+}
+#frame #content #communityProfile #time h3{
+color: #4f4e53;
+font-size: 1.0em;
+margin: 0;
+padding: 75px 0 0 20px;
+}
+#frame #content #communityProfile #time h4{
+color: #ff9523;
+font-size: 1.0em;
+margin: 0;
+padding: 0;
+}
+#frame #content #communityProfile #bioLevel1 {
+padding-top:15px;
+}
+#frame #content #communityProfile #bioLevel2 {
+margin:0;
+margin-left: 15em;
+padding: 7px 0;
+border-top: 1px dashed #ff9523;
+border-bottom: 1px dashed #ff9523;
+}
+.formTable { width: 100%; padding-right:5px; padding-left:5px;}
+.formTable a{ text-decoration:none; }
+.formTable a:hover{ text-decoration:underline; background-color:#f2f2f2}
+.formTable tr {padding:0;margin:0;}
+.formTable td {padding-top:1px;}
+.formTable .column1 {text-align:right; width:10em; vertical-align:top;}
+.formTable .column2 { vertical-align:top;}
+.formTable .submitArea input { width:90px; margin-top:15px; margin-bottom:10px; }
+.formTable .formFooter {width:100%; margin:0px; padding: 0px;}
+.formTable .formFooter .notifyArea { text-align:right; margin-top:15px; margin-bottom:10px; margin-left:10px; padding-left:10px; }
+.formTable .formFooter .submitArea { padding-right:0px; margin-right:-15px; }
+.formTitle {font-size: 1.7em; font-family:Trebuchet MS, Verdana, Arial, Helvetica, sans-serif; margin-bottom:4px; color:rgb(102, 102, 102); }
+.formTable .labelCell { color:#000000; text-align: right !important; vertical-align: top; padding-top: .5em;}
+.formTable select { max-width: 20em; }
+.formTable .entryField {width:90%;}
+.formTable .pickerCell {vertical-align:bottom}
+.formTable .noSpacing {padding:0; margin:0;}
+.formTable .helpText {font-style:italic;}
+.formInfo { background-color:#ffffff;border:1px solid #e0e0e0; text-align:right;padding-right:.5em;padding-left:.5em;}
+#frame #colLeft #profile ul .listButton img{
+position:relative;
+left:-53px;
+padding-top:0px;
+margin-top:0px;
+border:0px;
+}
+.memberList {margin:0em 0em 0em 0em;border-collapse:collapse;width:100%;font-size:1.1em;}
+.memberList .memberEntry {}
+.memberEntry .person {border-left:0;padding-right:1em;color:#578cca}
+.memberEntry .person a, .memberEntry .person a:visited{border-right:0;border-top:0;padding:0;}
+.memberEntry .person a:hover, .memberEntry .person a:focus {color:#05386b;text-decoration:none;border-bottom:1px dotted #05386b;}
+.memberEntry .role {padding-right:6em;color:#000000}
+.memberEntry .action {border-right:0;text-align:right;padding-left:5em;}
+#communityMemberTable tr.highlight{background:#d2d2d2;color:#ccc;}
+#tagThisAction {
+text-decoration:underline;
+margin-right:3px;
+}
+.message {}
+.message img {position:absolute;margin-top:20px;margin-right:20px;z-index:100}
+.messageArea {
+position:absolute;
+top:20px;
+width:60% ;
+margin:25px 25px 0px 25px;
+background-color:#ffffff;
+z-index:50;
+border:1px solid #e3e3e3;
+-moz-border-radius:7px;
+}
+.messageArea .headline {font-size:2em;line-height:1.5em;margin-top:33px;margin-right:50px; 85px;margin-left:25px;color:#2d5289;text-align:right}
+.messageArea .details {font-size:1.2em;margin-top:30px;margin-right:50px;margin-left:50px;color:#2d5289}
+.messageArea .context {font-size:1.1em;margin-right:50px;margin-left:25px;margin-top:10px;vertical-align:text-bottom;color:#2d5289}
+.messageArea .context img{vertical-align:text-bottom}
+.messageArea .actionsArea {font-size:1.1em;margin-top:20px;margin-right:50px;margin-left:25px}
+.messageArea .action {margin-top:5px;}
+.messageArea .footer { float: right; margin: 10px 10px 10px 10px; padding: 0; }
+.messageArea #exception { height: 30em; overflow: auto; background-color: white; color: black; border-style: inset; }
+#feedListing {
+margin-top:9px;
+margin-bottom:8px
+}
+.feedHeading{
+padding:3px 0;
+border:1px solid #e0e0e0;
+overflow:hidden;
+background-color: #F2F2F2;
+margin-bottom:2px;
+color: #105CB6;
+}
+.feedMargin{
+margin-top: 20px;
+}
+* html .feedHeading {height:1%;}
+.feedHeading input, .feedHeading img{margin:5px 4px 0 5px;float:left}
+.feedHeading h4{margin:0 11em 0 0;font-size:1.3em;font-weight:bold;}
+.feedHeading h4.left, .entry h5.left{padding-left:10px;}
+.feedHeading h4 a{text-decoration:none;vertical-align:middle}
+.feedHeading h5{margin:0 11em 0 0px;font-size:1.0em;color:#666;line-height:1.2em;}
+.feedHeading h6{margin:0 11em 0 0px;font-size:.85em;color:#666;}
+.feedHeading p{margin:5px 11em 0 0px}
+.feedHeading .tags{float:right;margin-left:10px;overflow:hidden;}
+.feedHeading ul.actions{margin: 5px 0 0 0px;padding:0 10px 0 0;font-size:.9em}
+.feedHeading ul.actions li{display:inline;margin: 0 0 -4px;padding:0 10px;border-right:1px solid #ccc}
+.feedHeading ul.actions li.first{margin-right:0;padding-right:0;border-right-width:0}
+.feedHeading .divider{margin:0 8px}
+.feedHeading .entryBody .description {color: black}
+.feedSourceActions {
+font-size:.8em;
+margin-right:0px;
+border:1px solid #ff9000;
+}
+.feedEntriesPaging {height:2em;line-height:2em;text-align:center;border-top:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;margin-top:.2em;color:#848484;padding:0 5px;}
+.feedEntriesPaging ul li{font-size:0.9em;color:#848484;}
+.feedEntriesPaging a, .paging a:visited{font-weight:bold !important;}
+.feedEntriesPaging a:hover, .paging a:focus {border-bottom:1px dotted #244064;}
+.feedEntriesPaging input{width:20px; text-align:center; font-size:0.9em; color:#848484;}
+.feedEntriesPaging .inlinelist{padding-right:5px;}
+.feedEntriesPaging .inlinelist li {padding:0 6px;}
+.feedEntriesPaging .inlinelist li.first{background:transparent}
+.feedEntriesPaging .left {margin-right:1.4em;}
+div.feedEntriesList {
+background-color: #ffffff;
+}
+div.feedEntriesList ul {
+list-style-type:none;
+margin-top:0px;
+margin-bottom:0px;
+}
+div.feedEntriesList li {
+margin-right:0em;
+margin-left: 0em;
+margin-top:.2em;
+overflow:hidden;
+}
+div.feedEntriesList li .moreAction {
+float:right;
+margin-left:.5em;
+}
+div.feedEntriesList li p{
+margin-top:2px;
+margin-bottom:2px;
+font-size:.9em;
+}
+div.feedEntriesList li .bookmarkThisAction {
+float:left;
+font-size:.85em;
+margin-right:.1em;
+}
+div.feedEntriesList .first{
+margin-top:.5em;
+}
+div.feedEntriesList .last{
+margin-bottom:.5em;
+}
+div.feedEntriesList a {
+}
+.feedEntriesList ul li .feedBookmarkAction {
+float:left;
+text-align::left;
+font-size:.9em;
+}
+.feedEntryInfo {
+margin-right:.5em;
+}
+.authorInfo {
+font-size:.85em;
+color: #848383;
+}
+.feedView {
+margin-right:1.9em;
+}
+.feedViewActions {
+list-style-type:none;
+}
+.feedViewActions li {
+display:inline;
+}
+.feedViewActions li .selected {}
+.actionButton {
+margin-right:1.7em;
+padding: 0 0 0 0;
+font-size:.9em;
+}
+.indent22 {
+margin-right:22px;
+}
+.indent24{
+margin-right:24px;
+}
+.topicHeading {color: #105CB6; font-weight:bold;}
+.discussionEntry {
+border-top:  1px solid #DDDDDD;
+border-right: 1px solid #DDDDDD;
+border-left:1px solid #DDDDDD;
+padding-right:  5px;
+padding-left: 5px;
+}
+div.auto_complete {
+width: 350px;
+background: #fff;
+position: relative;
+z-index: 100;
+}
+div.auto_complete ul {
+border:1px solid #888;
+margin:0;
+padding:0;
+width:100%;
+list-style-type:none;
+}
+div.auto_complete ul li {
+margin:0;
+padding:3px;
+}
+div.auto_complete ul li.selected {
+background-color: #ffb;
+}
+div.auto_complete ul strong.highlight {
+color: #800;
+margin:0;
+padding:0;
+}
+#banner #popup {
+float: left;
+color: #fff;
+font:Verdana, Arial, Helvetica, sans-serif;
+text-align:right;
+font-size:2em;
+margin-right:1em;
+line-height:1.6em;
+}
+.hide{display: none;}
+.show{display: block;}
+a.acButton {text-decoration:none; cursor:pointer;}
+.acButtonTop span { display:block; color:#000; text-decoration:none; }
+.acButtonText { margin:0 0 0 30px; padding:7px 0 5px 0; font-size:1.1em; }
+.acButtonBottom {width:140px;}
+.toolBMtext {color:#FDCC65;font-size:1.2em;font-weight:bold;line-height:1em;margin-right:10px;margin-top:5px;overflow:hidden;}
+.toolBMImage {float:left;margin-top:5px;padding-left:10px;}
+.bulletList {margin-right:23px;}
+.lotusCommunities .lotusTable .lotusDivider {display: -moz-inline-box; display: inline-block;}
+.lotusCommunities .lotusTable .lotusType {display: -moz-inline-box; display: inline-block;}
+.lotusCommunities .lotusHeader .lotusTable .lotusType {font-size: 1em;}
+.lotusCommunities .lotusDiscussion .lotusCommentHeader{position:static;margin:0;padding:4px 4px 0px 4px;height:auto;overflow:hidden;background-position:left top;background-repeat:repeat-x}
+.lotusCommunities .lotusDiscussion .lotusTable td{border-style:none;}
+.lotusCommunities .lotusDiscussion .lotusTable .lotusDetails td{padding: 0px 0px 5px 0px;}
+.lotusCommunities .lotusDiscussion .lotusCommentBody{margin:0;padding:0 38px 0 38px;position:static;-moz-border-radius:0;-webkit-border-radius:0;border-width:0}
+.lotusCommunities .lotusDiscussion .lotusTable .lotusDetails TD DIV.lotusChunk {margin-right: 0px; margin-left: 0px}
+.dijitDialog {
+padding: 0px !important;
+}
+.dijitDialogTitleBar {
+padding: 5px 5px 0px 5px !important;
+}
+.dijitDialogCloseIcon {
+margin: 5px;
+}
+*html .fadedOut {
+visibility: hidden;
+}
+.fadedOut {
+opacity: 0.3;
+}
+.displayNone { display: none; }
+.EventLog                { padding:         5px; }
+.EventLog .log           { list-style-type: none; }
+.EventLog .log div       { margin:          3px 3px 3px 5px; }
+.EventLog .log .logEntry { margin-right:     10px; }
+.EventLog .nav           { padding:         0px 3px 0px 3px; }
+.ConfirmDeleteForm .field { margin:1em; }
+.ConfirmDeleteForm .footer { padding-bottom:5px; padding-right:1em; padding-top:5px; }
+.ConfirmNotifyForm .field { margin:1em; }
+.ConfirmNotifyForm .footer { padding-bottom:5px; padding-right:1em; padding-top:5px; }
+.a11yLabel                   { display: none; }
+.dijit_a11y .a11yLabel       { display: inline; }
+.AddMembers .memberList {
+visibility: hidden;
+}
+.AddMembers .scroll {
+overflow: auto;
+}
+.AddMembers .memberList .member {
+padding: 3px;
+}
+.AddMembers .memberList .member .P {
+float: left;
+}
+.AddMembers .memberList .member .G {
+float: left;
+}
+.AddMembers .memberList .member .C {
+float: left;
+}
+.AddMembers .memberList .member .nameContent {
+padding-right: 20px;
+}
+.AddMembers .memberList .member .fieldDel {
+}
+.AddMembers .typeAhead {
+width: 350px !important;
+}
+.AddMembers .field {
+padding:5px 5px 5px 5px;
+}
+#addMembersSelect {
+vertical-align: bottom;
+}
+.AddMembers .field input {
+vertical-align: bottom;
+}
+.NodeForm .content {
+display: none;
+}
+.EntryForm {
+padding: 0px;
+}
+.footer .entrySpinner {
+display: none;
+float: left;
+}
+.AddMembersForm .field {
+clear: both;
+overflow: hidden;
+}
+.dj_ie .AddMembersForm .field {
+display: inline-block;
+}
+.field .fieldHeader {
+display: block;
+float: left;
+width: 130px;
+text-align: right;
+padding: 5px;
+}
+.fieldHeaderComboBox {padding-top:10px;}
+.field .lotusMeta strong {padding-left:20px;}
+.field .fieldData {
+padding: 5px 5px 5px 140px;
+font-size: 14px;
+}
+.field .fieldDel {
+cursor: pointer;
+}
+.field .fieldAdd {
+cursor: pointer;
+}
+.field .fieldData .fieldNode {
+font-size: 0.9em;
+width: 411px;
+}
+.field .fieldData .fieldDateNode {
+font-size: 0.9em;
+width: 200px;
+}
+.field .fieldData .fieldFileNode {
+font-size: 0.9em;
+size: 100px;
+width: 225px;
+}
+.field .fieldData .hiddenFieldFileNode {
+font-size: 0.9em;
+size: 100px;
+visibility: hidden;
+}
+.field .fieldData .bookmarkTitle {
+width: 150px;
+margin-left: 5px;
+}
+.field .fieldData .bookmarkUrl {
+width: 245px;
+}
+.ActivityForm  .extraFields {
+padding-top:5px;
+margin-top: 5px;
+}
+.ActivityForm textarea {
+height: 75px;
+}
+.ActivityForm .templateDescription {
+width: 411px;
+margin-top: 10px;
+}
+.AddMembersForm .content {
+padding: 5px;
+}
+.AddMembersForm .footer {
+padding: 5px;
+}
+.EntryTypeForm .icon {
+width: 16px;
+height: 16px;
+margin-left: 4px;
+}
+.EntryTypeForm .field .fieldData img {
+margin: 0px 3px;
+}
+.EditEntryTypes .typesList {
+width: 411px;
+height: 200px;
+overflow: auto;
+margin: 5px;
+}
+.EditEntryTypes .typesList .type .actions {
+float: right;
+}
+.EditEntryTypes .typesList .type {
+padding: 2px 2px 2px 24px;
+background-position: 4px 50%;
+background-repeat: no-repeat;
+overflow: hidden;
+clear: both;
+}
+.EditEntryTypes .typesList .type .label {
+margin-top: 5px;
+}
+*html .ActivityButtons .NodeForm {
+display: inline-block;
+}
+.fieldData table {
+width: 411px;
+border-collapse: collapse;
+}
+.fieldData table th,
+.fieldData table td {
+padding: 3px;
+}
+.nodeHandle {
+cursor: move;
+float: left;
+width: 9px;
+height: 17px;
+visibility: hidden;
+background-repeat: no-repeat;
+background-position: center left;
+}
+.handleVisible {
+visibility: visible;
+}
+.nodeHandleDragging {
+background-color: #efefef;
+border: 1px solid #cccccc;
+padding: 2px 2px 2px 30px;
+width: 300px;
+}
+.Node {
+display: none;
+}
+.Node .miniPerson {
+display: none;
+}
+.nodeChildren {
+}
+.Node .entryHeader {
+padding:5px 5px 5px 10px;
+}
+.Node .entryHeader .hideLink {
+float: right;
+}
+.Node .entryIcon, .MiniNode .entryIcon {
+width: 16px;
+height: 16px;
+float: left;
+}
+.Node .entryHeader h1, .MiniNode h1{
+padding-right: 20px;
+display: block;
+background-position: left center;
+background-repeat: no-repeat;
+}
+.Node .entryHeader .meta {
+padding-right: 20px;
+}
+.Node .entryContent {
+padding: 5px;
+margin-right: 25px;
+}
+.Node .entryContent .fields {
+padding-bottom: 5px;
+margin-bottom: 5px;
+}
+.Node .entryContent .fields .field {
+overflow: hidden;
+}
+.dj_ie .Node .entryContent .fields .field {
+display: inline-block;
+}
+.Node .entryContent .fields .field .fieldName {
+float: left;
+width: 150px;
+clear: both;
+padding-top: 3px;
+}
+.Node .entryContent .fields .field .fieldValue {
+padding-bottom:3px;
+padding-right:155px;
+padding-top:3px;
+}
+.Node .entryContent .description blockquote {
+margin-right: 35px;
+}
+.Node .entryContent .description ul {
+margin-right: 35px;
+}
+.nodeContainer {
+clear: both;
+}
+.Node .entryFooter {
+margin-right: 30px;
+}
+.Node .entryFooter .tags {
+display: none;
+padding: 5px 0px 5px 0px;
+font-size: 0.9em;
+margin-right: 10px;
+}
+.MiniNode {
+overflow: hidden;
+padding: 2px;
+cursor: pointer;
+}
+.MiniNode .entryTitleBar, .Node .entryTitleBar {
+cursor: pointer;
+}
+.MiniNode h1.comment {
+font-weight: normal;
+font-style: italic;
+color: #7f7f7f;
+}
+.MiniNode .miniExpand {
+float: right;
+width: 20px;
+height: 20px;
+background-repeat: no-repeat;
+background-position: center center;
+}
+.dijit_a11y .MiniNode .miniExpand {
+width: 60px;
+}
+.MiniNode .miniExpand .a11yLabel
+.MiniNode .miniExpand a {
+width: 20px;
+height: 20px;
+background-position: center center;
+background-repeat: no-repeat;
+}
+.MiniNode .miniIndicator {
+float: right;
+width: 20px;
+height: 20px;
+background-position: center center;
+background-repeat: no-repeat;
+}
+.MiniNode .miniPerson {
+float: right;
+font-size: 0.9em;
+width: 160px;
+overflow: hidden;
+}
+.MiniNode .miniDate {
+float: right;
+font-size: 0.9em;
+width: 100px;
+overflow: hidden;
+}
+.nodeChildren {
+padding-right: 20px;
+}
+.ResponseForm {
+padding-top: 10px;
+}
+.ResponseForm .contents {
+opacity: 0;
+}
+.ResponseForm .responseFormFooter {
+padding: 5px;
+}
+.SectionForm .content .sectionInput {
+width: 200px;
+}
+.SectionForm .content .field .fieldHeader,
+.EditEntryTypes .content .field .fieldHeader {
+width: auto;
+}
+.SectionForm .content .field .fieldData,
+.EditEntryTypes .content .field .fieldData {
+padding-right: 10px;
+}
+.Section .actionsMenu {
+float: right;
+}
+.MemberList .list {
+margin-right:17px;
+}
+.MemberList h3 {
+font-size:1em;
+font-weight:bold;
+padding:6px 0px 4px 0px;
+}
+.MemberList li {
+padding: 4px 0px;
+}
+.NotifyForm .field {
+clear: left;
+margin: 0pt;
+padding: 5px 0pt 8px 10em;
+}
+form.NotifyForm .indent {padding-right: 10em; }
+.NotifyForm .bottomarea {
+padding-bottom: 3px;
+paddding-left: 5%;
+position: relative;
+text-align: right;
+}
+.NotifyForm .basicForm {
+margin:2px 0;
+padding:3px 0 5px 0;
+}
+.NotifyForm .saveArea { float: left; }
+form.NotifyForm  label{
+text-align: right;
+font-weight: bold;
+float: left;
+padding-top: 3px;
+margin-right: -10em;
+width: 9em;
+}
+.IconPalette table {
+border: none;
+border-collapse: collapse;
+width: auto;
+}
+.IconPalette table tr {
+border: none;
+}
+.IconPalette table td {
+border: none;
+}
+.IconPalette .icon {
+width: 16px;
+height: 16px;
+padding: 3px;
+margin: 1px;
+background-repeat: no-repeat;
+background-position: center center;
+cursor: pointer;
+}
+.IconPalette .selected {
+padding: 2px;
+}
+.buttonIcon {
+width: 20px;
+height: 16px;
+background-repeat: no-repeat;
+background-position: center left;
+background-attachment: scroll;
+}
+.iconPlaceholder {
+background-repeat: no-repeat;
+background-position: center left;
+background-attachment: scroll;
+}
+.CopyMoveEntry .content { width: 560px}
+.CopyMoveEntry .footer { background-color:#D9E7F4; padding-bottom:5px; padding-right:1em; padding-top:5px; }
+.CopyMoveEntry .lotusBlue {
+background-color:#eff4f7;
+}
+.CopyMoveEntry .description {
+margin-right: 1em;
+margin-left: 1em;
+padding-top: 5px;
+}
+.CopyMoveEntry .selection {
+margin-right: 1em;
+margin-left: 1em;
+padding-bottom: 5px;
+}
+a:hover {
+text-decoration: underline;
+}
+.activeTarget {
+border: 1px solid black;
+}
+.EventLog h1                   { font-size:       14px; }
+.EventLog .log .dateHeader     { font-weight:     bold; }
+.EventLog .log .logEntry .date { font-style:      italic;
+color:           gray; }
+.AddMembers .memberList {
+border: 1px solid #9a9a9a;
+border-bottom: none;
+background-color: white;
+}
+.AddMembers .scroll {
+border-bottom: 1px solid #9a9a9a;
+}
+.AddMembers .memberList .member {
+border-bottom: 1px solid #9a9a9a;
+}
+.AddMembers .memberList .member .P {
+height: 16px;
+width: 16px;
+}
+.AddMembers .memberList .member .G {
+height: 16px;
+width: 16px;
+}
+.AddMembers .memberList .member .C {
+height: 16px;
+width: 16px;
+}
+.AddMembers .memberList .member .type {
+color: #afafaf;
+font-style: italic;
+}
+.AddMembers .memberList .member .fieldDel {
+}
+.AddMembers .typeAhead {
+border: 1px solid #9a9a9a;
+}
+.footer .entrySpinner {
+width: 16px;
+height: 16px;
+}
+.field .fieldHeader {
+color: black;
+font-weight: bold;
+font-size: 14px;
+}
+.field .dijitClickableRegion {
+background-color: #ffffcc;
+}
+.field .fieldHeader .editableHeader {
+border-bottom: 1px dashed #105CB6;
+}
+.field .fieldDel {
+height: 16px;
+width: 16px;
+border: none;
+}
+.field .fieldDelText {
+height: 16px;
+width: 16px;
+border: none;
+display: none;
+}
+.dijit_a11y  .field .fieldDelText {
+height: 16px;
+width: 16px;
+border: none;
+cursor: pointer;
+display: inline;
+}
+.dijit_a11y  .field .fieldDel {
+height: 16px;
+width: 16px;
+border: none;
+cursor: pointer;
+display: none;
+}
+.field .fieldAdd {
+height: 16px;
+width: 16px;
+border: none;
+}
+.field .fieldAddText {
+height: 16px;
+width: 16px;
+border: none;
+display: none;
+}
+.dijit_a11y  .field .fieldAddText {
+height: 16px;
+width: 16px;
+border: none;
+cursor: pointer;
+display: inline;
+}
+.dijit_a11y  .field .fieldAdd {
+height: 16px;
+width: 16px;
+border: none;
+cursor: pointer;
+display: none;
+}
+.NodeForm .editor,
+.EntryForm .editor,
+.ActivityForm .editor,
+.PublishForm .editor {
+border: 1px solid #cccccc;
+background-color: white;
+}
+.ActivityForm  .extraFields {
+border-top: 1px solid #C9D8E9;
+}
+.AddMembersForm .content {
+background-color: #eff4f7;
+}
+.AddMembersForm .footer {
+border-top: 1px solid #666666;
+background-color: #d9e7f4;
+}
+.EditEntryTypes .typesList {
+background-color: white;
+border: 1px solid #cccccc;
+}
+.EditEntryTypes .typesList .type {
+border-bottom: 1px solid #cccccc;
+font-weight: bold;
+}
+.entryFormBody {
+background-color: #eff4f7 !important;
+}
+.fieldData div.dijitInlineTable {
+border: 1px solid #cccccc;
+}
+.fieldData div th {
+background-color: white;
+border-bottom: 1px solid #cccccc;
+}
+.fieldData div.dijitInlineTable div.dijitInputField {
+font-style: italic;
+border-bottom: 1px solid #cccccc;
+}
+.Node, .MiniNode {
+border-bottom: 1px solid #CFE6FF;
+}
+.MiniNode {
+padding: 0 0 0 6px;
+}
+.nodeChildren .Node {
+border-right: 1px solid #cfe6ff;
+}
+.Node .entryHeader h1 {
+font-weight: bold;
+font-size: 1.2em;
+}
+.Node .entryHeader .meta {
+color: #666666;
+}
+.Node .entryContent .fields .field {
+color: #666666;
+border-bottom:1px dotted #CFE6FF;
+}
+.Node .entryContent .fields .field .fieldValue {
+color:black;
+}
+.Node .entryFooter .actions {
+color: #666666;
+}
+.Node .entryFooter .actions a {
+text-decoration: none;
+}
+.Node .addNew a {
+font-style: italic;
+}
+.MiniNode h1 {
+font-size: 1em;
+padding:2px 0px 0px 24px;
+font-weight: bold;
+}
+.ResponseForm {
+background-color: #eef4f7;
+border-top: 1px dashed #CFE6FF;
+}
+.ResponseForm .responseFormFooter {
+background-color: #d9e7f4;
+}
+.NotifyForm .basicForm {
+border-top:2px dotted #A0A0A0;
+border-bottom:2px dotted #A0A0A0;
+background-color:#DFDFDF;
+}
+form.NotifyForm  label{
+color: #999999;
+}
+.NotifyForm .notifyTop {border-bottom: 1px solid #999999; }
+.NotifyForm .notifyBottom {border-top: 1px solid #999999; }
+.nobordertable tr td { border-style: none }
+.help {
+padding-top: 5px;
+padding-left: 4px;
+}
+.IconPalette td .icon:hover {
+background-color: #fcde81;
+}
+.IconPalette .selected {
+border-top: 1px solid #898989;
+border-left: 1px solid #d7d7d7;
+border-bottom: 1px solid #d7d7d7;
+border-right: 1px solid #898989;
+background-color: #d9e7f4;
+}
+.feedContainer {font-size:.9em; margin-top:10px;}
+.feedIcon {padding-right: 20px;}
+.lotusui_ie .dijitPopup .lotusActionMenu {position: static;}
+.lotusui_ie .lotusDialogBorder { width: 500px; }
+#membersListId img { line-height:1; }
+.lotusui30 img.lotusForceLineHeight { line-height: 1; }
+.lotusui30 .lotusFilters2 .fieldDelText { margin: 0 5px; }
+.lotusui30 .lotusHeader .cnxnsType {margin-right: 5px; margin-left: 5px;}
+#addMembersWidgetPeopleTypeAhead { height: 1.25em; }
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+.lotusui30_layout .lotusMain .lotusContent {
+overflow: auto!important;
+}
+}
+/*new theme*/
+/*MENU*/
+.lotusui30 .lotusMenu .lotusMenuSubsection li a {
+  font-weight:bold; 
+  text-shadow: 0 1px 1px #121212;
+}
+.lotusui30.lotusImagesOff .lotusMenu .lotusMenuSubsection li a {
+  font-weight: normal;
+}
+.lotusui30 .lotusMenu li a:active,
+.lotusui30 .lotusMenu li.lotusSelected a,
+.lotusui30 .lotusMenu li.lotusSelected a:visited,
+.lotusui30 .lotusMenu li.lotusSelected a:hover,
+.lotusui30 .lotusMenu li.lotusSelected a:focus,
+.lotusui30 .lotusMenu li.lotusSelected a:active, 
+.lotusui30 .lotusMenu .lotusHeaderSelected {
+  text-shadow: 0 -1px 0 #121212;
+}
+.lotusui30 #lotusColLeft .communityImgLink a:hover {
+  /*override something in the original communities.css*/
+  background:#2c2c2c;
+}
+/*CENTER COL*/
+.lotusui30 #blogEntries .lotusTable {
+  /*fixes odd icon padding in the community overview blogs widget*/
+  table-layout: auto !important;
+}
+/*CUSTOMIZE PALETTE*/
+.lotusui30 #widget-container-palette {
+  display: block;
+  margin: 11px -5px;
+}
+/*ABOUT*/
+/* Push right column up to cope with extraneous div */
+.lotusui30.lotusAbout #contentArea .lotusColRight {
+  margin-top: -25px;
+}
+/* RTC 94658 */
+.lotusui30 .lotusMenu .lotusBottomCorner .lotusInner .lotusIndent10 td {
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.lotusui30 .lotusPaletteWidget .lotusTitle h4{
+  overflow: visible; 
+}
+.lotusui30 .lotusGlobalActionBarMenu {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+}
+/* FILES TREE WIDGET */
+.lotusui30 #navTreeMain {
+  font-size: 13px;
+}
+
+/* left navigation community files header */
+.lotusui30 .lotusColLeft .lconnNavTreeOuter {
+  border: 2px solid transparent;
+}
+
+.lotusui30 .lotusColLeft .lconnNavTreeSelector {
+  border-right: 0px;
+}
+
+.lotusui30 .lotusColLeft .lconnNavTreeSelector.lotusSelected {
+  background-color: #1F7CAE;
+  box-shadow: 0px 1px 1px #52ACDB inset, 0px -1px 0px #000 inset;
+  text-shadow: 0px -1px 0px #121212;
+  border-left: 1px solid #222;
+}
+
+.lotusui30 .lotusColLeft .lconnNavCommunityFiles {
+  padding-right: 15px;
+  line-height: 25px; 
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* Style for single iframe widget */
+.lconnSingleIframeWidgetFullpage .lotusPlaceBar {
+    display: block;
+}
+.lconnInsertImage.forum .dropfilesVerticalPrompt{display:block;}
+.lconnInsertImage.forum .dropfilesVerticalPrompt .browserContainer .lotusBtn{margin-top:16px;margin-bottom:8px}
+.lconnInsertImage.forum .pickerDropfilesList,.lotusui30dojo .lconnInsertImage.forum .lotusMessage2{margin-bottom:0}
+.lconnInsertImage.forum .pickerDnDLabelRow{margin-top:8px}
+.lconnInsertImage.forum .lotusLeftLabels .lotusFormField .lotusMeta{width:100%}
+.lconnInsertImage.forum .dropfilesVerticalPrompt>div:nth-child(2){margin-bottom:16px}
+.lotusui30dojo .lconnInsertImage.forum .lotusDialog{width:645px}
+.lotusui30dojo .lconnInsertImage.forum .lotusDialog .lotusDialogContent{max-height:none}
+.lotusui30dojo .lconnInsertImage.forum .lotusDialog .dijitTabContainerTop-dijitContentPane{max-height:none}
+.lotusui30dojo .lconnInsertImage.forum .lotusDialog .lconnLocalFilesTab .dijitTabContainerTop-dijitContentPane{padding:0;}
+.lotusui30dojo .lconnInsertImage.forum .lotusDialog .dijitTabListContainer-top{background:no-repeat #fff;padding:0;border-bottom: 1px solid #ccc;margin-top: 8px;}
+.lotusui30dojo .lconnInsertImage.forum .lotusDialog .dijitTabContainerTop-tabs{margin: 0 0 0 10px;}
+.lotusui30dojo .lconnInsertImage.forum .lotusDialog .dijitTabContainerTop-tabs .dijitTabContent{color:#000;border-left:0;border-color: #ccc;
+border-width: 1px;border-style: solid;bottom: -3px;margin: 0 2px 2px 0;font-size: 0.9em;padding: 6px 8px;}
+.lotusui30dojo .lconnInsertImage.forum .lotusDialog .dijitTabContainerTop-tabs .dijitTabContent.dijitTabChecked{font-weight:bold;border-color: #aaa #aaa #fff;}
+.lotusui30dojo .lconnInsertImage.forum .lotusDialog .lotusMessage2{margin-right:0;margin-top:0}
+.lotusui30dojo .lconnInsertImage.forum .lotusDialog .dijitTabListWrapper{position:relative}
+.lotusui30dojo .lconnInsertImage.forum .lotusDialog .lconnWebUrlTab,.lotusui30dojo .lconnInsertImage.forum .lotusDialog .lconnWebUrlTab .lconnWebUrlInput{margin-bottom:0}
+.lotusui30dojo .lconnInsertImage.forum .lotusDialog .lconnWebUrlTab .lconnWebUrlInput label{margin-left:0;width:inherit}
+.lconnInsertImage.forum .lconnFileUploadLabel .lotusText{width:98%}

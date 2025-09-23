@@ -1,0 +1,15 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div dojoattachpoint="subjectArea" style="display: none; clear: both" role="presentation">
+	<div dojoattachpoint="twistyArea">
+		<a href="javascript:;" dojoAttachPoint="twisty" aria-labelledby="${id}_twistyTitle"
+				 aria-expanded="false" role="button">
+			<span class="lotusAltText" dojoAttachPoint="twistySymbol" role="presentation"> &gt;</span> 
+			<img class="lotusSprite lotusArrow lotusTwistyClosed" dojoAttachPoint="twistyImg" src="${_blankGif}" role="presentation" alt=""/>
+			<b dojoAttachPoint="twistyTitle" id="${id}_twistyTitle"></b>
+		</a>
+	</div>
+	<div style="display: none;" dojoAttachPoint="subjectItemsArea">
+		<ul dojoAttachPoint="subjectItems" class="lotusList" style="margin-top: 0px; margin-left: 1.5em" ></ul>
+		<ul dojoAttachPoint="restSubjectItems" class="lotusList" style="display: none; margin-top: 0px; margin-left: 1.5em" ></ul>
+	</div>
+</div>

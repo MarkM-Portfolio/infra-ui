@@ -1,0 +1,273 @@
+.ics-viewer img.externalIcon {
+    background-image: url(./sprites.png) !important;
+    background-position: -0px -0px !important;
+}
+.ics-viewer .ics-viewer-action-download img {
+    background-image: url(./sprites.png) !important;
+    background-position: -34px -0px !important;
+}
+.ics-viewer .ics-viewer-action-close img {
+    background-image: url(./sprites.png) !important;
+    background-position: -51px -0px !important;
+}
+/*.ics-viewer .ics-viewer-action-panel img {
+    background-image: url(./sprites.png) !important;
+    background-position: -68px -0px !important;
+}*/
+.ics-viewer .ics-viewer-action-like .unchecked img {
+    background-image: url(./sprites.png) !important;
+    background-position: -85px -0px;
+}
+.ics-viewer .ics-viewer-action-like .checked img {
+    background-image: url(./sprites.png) !important;
+    background-position: -102px -0px;
+}
+.ics-viewer .ics-viewer-action-like-smiley .unchecked img {
+    background-image: url(./sprites.png) !important;
+    background-position: -85px -0px !important;
+}
+.ics-viewer .ics-viewer-action-like-smiley .checked img {
+    background-image: url(./sprites.png) !important;
+    background-position: -102px -0px !important;
+}
+
+/* These have known issues */
+
+.ics-viewer .ics-viewer-action .dropdown-menu-icon {
+    background-image: url(./sprites.png) !important;
+    background-position: -17px -0px !important;
+}
+/*
+.ics-viewer .ics-zoom-buttons .ics-zoomIn-button {
+    background-image: url(./sprites.png) !important;
+    background-position: -119px -0px !important;
+}
+.ics-viewer .ics-zoom-buttons .ics-zoomOut-button {
+    background-image: url(./sprites.png) !important;
+    background-position: -136px -0px !important;
+}
+.ics-viewer .ics-zoom-buttons .ics-restore-button {
+    background-image: url(./sprites.png) !important;
+    background-position: -153px -0px !important;
+}
+*/
+
+/* These have not been tested */
+
+/*
+.ics-viewer .ics-viewer-messagebox .ics-viewer-messagebox-icon.warning {
+    background-image: url(./sprites.png) !important;
+    background-position: -255px -0px !important;
+}
+.ics-viewer .ics-viewer-messagebox .ics-viewer-messagebox-icon.error {
+    background-image: url(./sprites.png) !important;
+    background-position: -336px -0px !important;
+}
+.ics-viewer .ics-viewer-messagebox .ics-viewer-messagebox-icon.success {
+    background-image: url(./sprites.png) !important;
+    background-position: -417px -0px !important;
+}
+.ics-viewer .ics-viewer-messagebox .ics-viewer-messagebox-icon.info {
+    background-image: url(./sprites.png) !important;
+    background-position: -498px -0px !important;
+}
+*/
+.ics-viewer .ics-viewer-tagwidget .ics-viewer-tag img {
+    background-image: url(./sprites.png) !important;
+    background-position: -177px -0px !important;
+}
+.ics-viewer .ics-viewer-tagwidget img.addTagImg {
+    background-image: url(./sprites.png) !important;
+    background-position: -194px -0px !important;
+}
+
+/* These have not been tested */
+
+/*
+.ics-viewer-open  .dijitDialog.versionDialog .dijitDialogTitleBar .dijitDialogCloseIcon, .ics-viewer-open  .dijitDialog.commentDialog .dijitDialogTitleBar .dijitDialogCloseIcon, .ics-viewer-open  .dijitDialog.sharingDialog .dijitDialogTitleBar .dijitDialogCloseIcon, .ics-viewer-open  .dijitDialog.linkDialog .dijitDialogTitleBar .dijitDialogCloseIcon, .ics-viewer-open  .dijitDialog.confirmationDialog .dijitDialogTitleBar .dijitDialogCloseIcon {
+    background-image: url(./sprites.png) !important;
+    background-position: -211px -0px !important;
+}
+*/
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer .panelContent .ics-typeaheadbox-container.active .actionContainer img {
+    background-image: url(./sprites.png) !important;
+    background-position: -228px -0px !important;
+}
+.ics-viewer .ics-panel-entry.share .remove .removeIcon {
+    background-image: url(./sprites.png) !important;
+    background-position: -245px -0px !important;
+}
+.ics-viewer .ics-panel-entry.share .remove .removeIcon:hover, .ics-viewer .ics-panel-entry.share .remove .removeIcon:focus {
+    background-image: url(./sprites.png) !important;
+    background-position: -262px -0px !important;
+}
+.ics-viewer .ics-panel-entry.share.community .icon img {
+    background-image: url(./sprites.png) !important;
+    background-position: -279px -0px !important;
+}
+
+/* These have not been tested */
+
+/*
+.ics-viewer .ics-panel-entry.share.folder .icon img {
+    background-image: url(./sprites.png) !important;
+    background-position: -310px -0px !important;
+}
+.ics-viewer .ics-panel-entry.share.folder.shared .icon img {
+    background-image: url(./sprites.png) !important;
+    background-position: -335px -0px !important;
+}
+.ics-viewer .ics-panel-entry.share.folder.public .icon img {
+    background-image: url(./sprites.png) !important;
+    background-position: -360px -0px !important;
+}
+*/
+.ics-viewer .ics-panel-entry.tags .header1Action img, .ics-viewer .ics-panel-entry.description .header1Action img {
+    background-image: url(./sprites.png) !important;
+    background-position: -385px -0px !important;
+}
+.ics-viewer .ics-panel-entry.tags .header1Action:hover img, .ics-viewer .ics-panel-entry.description .header1Action:hover img, .ics-viewer .ics-panel-entry.tags .header1Action:focus img, .ics-viewer .ics-panel-entry.description .header1Action:focus img {
+    background-image: url(./sprites.png) !important;
+    background-position: -402px -0px !important;
+}
+.ics-viewer .ics-panel-entry.dropdownStream > .icon img {
+    background-image: url(./sprites.png) !important;
+    background-position: -419px -0px !important;
+}
+.ics-viewer .ics-panel-entry.dropdownStream > .icon img.open, .dijitRtl .ics-viewer .ics-panel-entry.dropdownStream > .icon img.open {
+    background-image: url(./sprites.png) !important;
+    background-position: -429px -0px !important;
+}
+.ics-viewer .ics-panel-entry .actions .restore a img {
+    background-image: url(./sprites.png) !important;
+    background-position: -439px -0px !important;
+}
+.ics-viewer .ics-panel-entry .actions .restore a:hover img, .ics-viewer .ics-panel-entry .actions .restore a:focus img {
+    background-image: url(./sprites.png) !important;
+    background-position: -456px -0px !important;
+}
+.ics-viewer .ics-panel-entry .actions .edit a img {
+    background-image: url(./sprites.png) !important;
+    background-position: -473px -0px !important;
+}
+.ics-viewer .ics-panel-entry .actions .edit a:hover img, .ics-viewer .ics-panel-entry .actions .edit a:focus img {
+    background-image: url(./sprites.png) !important;
+    background-position: -490px -0px !important;
+}
+.ics-viewer .ics-panel-entry .actions .delete a img {
+    background-image: url(./sprites.png) !important;
+    background-position: -507px -0px !important;
+}
+.ics-viewer .ics-panel-entry .actions .delete a:hover img, .ics-viewer .ics-panel-entry .actions .delete a:focus img {
+    background-image: url(./sprites.png) !important;
+    background-position: -524px -0px !important;
+}
+.ics-viewer .ics-panel-entry .actions .download a img {
+    background-image: url(./sprites.png) !important;
+    background-position: -541px -0px !important;
+}
+.ics-viewer .ics-panel-entry .actions .download a:hover img, .ics-viewer .ics-panel-entry .actions .download a:focus img {
+    background-image: url(./sprites.png) !important;
+    background-position: -558px -0px !important;
+}
+.ics-viewer ul.ics-viewer-tabs .about img {
+    background-image: url(./sprites.png) !important;
+    background-position: -575px -0px !important;
+}
+.ics-viewer ul.ics-viewer-tabs .comments img {
+    background-image: url(./sprites.png) !important;
+    background-position: -596px -0px !important;
+}
+.ics-viewer ul.ics-viewer-tabs .share img {
+    background-image: url(./sprites.png) !important;
+    background-position: -617px -0px !important;
+}
+.ics-viewer ul.ics-viewer-tabs .version img {
+    background-image: url(./sprites.png) !important;
+    background-position: -638px -0px !important;
+}
+
+/* These have not been tested */
+
+/*
+.ics-viewer .ics-viewer-tags .ics-viewer-tag img {
+    background-image: url(./sprites.png) !important;
+    background-position: -659px -0px !important;
+}
+.ics-viewer .viewer-folder-stream .ics-panel-entry.share.community .icon img {
+    background-image: url(./sprites.png) !important;
+    background-position: -676px -0px !important;
+}
+ */
+.ics-viewer .ics-viewer-action-favorite img {
+    background-image: url(./sprites.png) !important;
+    background-position: -701px -0px !important;
+}
+.ics-viewer .ics-viewer-action-favorite .checked img {
+    background-image: url(./sprites.png) !important;
+    background-position: -718px -0px !important;
+}
+.ics-viewer-locked-by-you .ics-viewer-locked-by-you-icon {
+    background-image: url(./sprites.png) !important;
+    background-position: -735px -0px !important;
+}
+.ics-viewer-locked-by-other .ics-viewer-locked-by-other-icon {
+    background-image: url(./sprites.png) !important;
+    background-position: -752px -0px !important;
+}
+.ics-viewer img.myFileSyncIcon {
+    background-image: url(./sprites.png) !important;
+    background-position: -769px -0px !important;
+}
+.ics-viewer img.panelFeedIcon {
+    background-image: url(./sprites.png) !important;
+    background-position: -786px -0px !important;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer .panelContent .ics-typeaheadbox-container.active .actionContainer img {
+    background-image: url(./sprites.png) !important;
+    background-position: -797px -0px !important;
+}
+.ics-viewer .ics-viewer-action-panel img {
+    background-image: url(./sprites.png) !important;
+    background-position: -810px -0px !important;
+}
+.ics-viewer.rtl .ics-viewer-action-panel img {
+    background-image: url(./sprites.png) !important;
+    background-position: -827px -0px !important;
+}
+.ics-viewer.ics-viewer-details-expanded .ics-viewer-action-panel img {
+    background-image: url(./sprites.png) !important;
+    background-position: -827px -0px !important;
+}
+.ics-viewer.rtl.ics-viewer-details-expanded .ics-viewer-action-panel img {
+    background-image: url(./sprites.png) !important;
+    background-position: -810px -0px !important;
+}
+.ics-viewer .ics-viewer-action.ics-viewer-action-splitmenu .dropdown-menu-icon {
+    background-image: url(./sprites.png) !important;
+    background-position: -844px -0px !important;
+}
+.ics-viewer .ics-viewer-action-tearoff img {
+    background-image: url(./sprites.png) !important;
+    background-position: -857px -0px !important;
+}
+.ics-viewer .ics-zoom-buttons .ics-zoomIn-button {
+    background-image: url(./sprites.png) !important;
+    background-position: -874px -0px !important;
+}
+.ics-viewer .ics-zoom-buttons .ics-zoomOut-button {
+    background-image: url(./sprites.png) !important;
+    background-position: -903px -0px !important;
+}
+.ics-viewer .ics-zoom-buttons .ics-restore-button {
+    background-image: url(./sprites.png) !important;
+    background-position: -932px -0px !important;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.moreButton .dijitArrowButtonInner {
+    background-image: url(./sprites.png) !important;
+    background-position: -962px -0px !important;
+}
+.ics-viewer-dragbar .icon {
+    background-image: url(./sprites.png) !important;
+    background-position: -975px -0px !important;
+}

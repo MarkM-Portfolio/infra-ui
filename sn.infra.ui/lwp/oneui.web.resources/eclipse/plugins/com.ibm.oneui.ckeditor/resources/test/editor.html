@@ -1,0 +1,36 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+${script:dijit._Widget}
+${script:lconn.core.ckeditorstatic}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+
+<a onclick="document.body.style.width = '1200px'; return false;" href="#">Page width 1000px</a> |
+<a onclick="document.body.style.width = '400px'; return false;" href="#">Page width 400px</a>
+<br>
+
+<table style="width: 100%;" cellpadding="1" cellspacing="1" border="1">
+<thead><tr>
+<th>Test case</th><th>Description</th>
+</tr></thead><tbody>
+
+<tr><td>
+    <div id="ckdiv">
+</td><td>
+    Simple static include of CK source and direct instantiation
+</td></tr>
+
+
+</tbody></table>
+</div>
+</div>
+</body>
+<script>
+    CKEDITOR.replace("ckdiv");
+</script>
+
+${end}
+

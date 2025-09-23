@@ -1,0 +1,396 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- Copyright IBM Corp. 2015, 2017  All Rights Reserved.                    -->
+<style type="text/css">
+.fatalError {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.orientFatalError {
+    color: #ffffff;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Helvetica Neue', Helvetica, Roboto, Arial;
+    font-size: 17px;
+}
+</style>
+<script type="text/os-data"
+	xmlns:os="http://ns.opensocial.org/2008/markup">
+	<os:DataRequest key="selfPerson" method="people.get" userId="@me" groupId="@self" />
+</script>
+<script type="text/javascript">
+   var contextMessage;
+   //Global Context which is dispatched to the iframe
+   var stringContext;
+   var personData;
+   var userData;
+   var source;
+   var extensionData = "[]";
+   var csrfToken;
+   var extensionUrl = "*";
+   var url = "";
+   var extWidth = "";
+   var extHeight = "";
+   var isOrient = false;
+
+   /*
+    * Should only be true during development, otherwise default.
+    */
+   var debug = true; 
+
+   /**
+    * init() -> void
+    *
+    * PRE: gadget infra and page should be fully loaded
+    * POST: source of iframe should be loaded, and the context should be sent to the third party
+    *		SmartCloud User ID (Not Email is sent) and If Activiated From Community, the Community ID is sent. 
+    * 
+    * TEST: 
+    * Use the following to test and show the contents via debug 
+    * There should be robust error handling in this code
+    * {'should not': 'be empty', "url" : "https://host.com:8443/sbt.sample.web/test_com.html", "debug" : true}
+    */
+   function init() {
+      if (!isHtml5()) {
+         sendError();
+         console.log("non-html5 based browser");
+      }
+      else {
+         /**
+          * Gets the CSRF Token and value to make the extension request
+          */
+         var cookies = document.cookie.split(";");
+
+         if (debug) {
+            console.log(cookies.length);
+         }
+
+         for ( var cIndex in cookies) {
+            var cookie = cookies[cIndex];
+            var c = cookie.split("=");
+            var cookieName = c[0];
+            var cookieValue = c[1];
+            if (cookie.trim().lastIndexOf("token") === 0) {
+               if (debug) {
+                  console.log("FOUND: " + cookieName + " " + cookieValue);
+               }
+               csrfToken = cookieValue;
+            }
+            else {
+               if (debug) {
+                  console.log("NOT FOUND: " + cookieName + " " + cookieValue + " " + cookieValue.length);
+               }
+            }
+         }
+
+         /**
+          * Gets the Embeded Experience Context 
+          */
+         opensocial.data.getDataContext().registerListener('org.opensocial.ee.context',
+            function(key) {
+               /*
+                * getDataSet 
+                * - org.opensocial.ee.context
+                * - selfPerson
+                */
+               context = opensocial.data.getDataContext().getDataSet(key);
+               personData = opensocial.data.getDataContext().getDataSet('selfPerson');
+               
+               userData = {
+               				"orgId" : personData.appData.connections.organizationId, 
+                            "userId" : personData.id, 
+                            "email" : personData.emails[0].value, 
+                            "displayName" : personData.displayName };
+		 		 		
+			   source = {
+			   				 "resourceId":"activityStreamsInCloud",
+			   				 "resourceName":"Activity Streams in Cloud",
+			   				 "resourceOrganizationId": personData.displayName,
+			   				 "resourceType":"activityStreamsInCloud", 
+			   				 "resourceContext":context };
+               
+              contextMessage = { 
+              					userData : userData, 
+              					source : source, 
+              					context : context,
+              					personData : personData	};
+
+               stringContext = JSON.stringify(context);
+
+               // Outputs the Debug Comments based on JSON in context 
+               if (context['debug'] == true) {
+                  console.debug("Context: " + stringContext);
+                  console.log('personData:' + JSON.stringify(personData));
+                  console.log('contextMessage:' + JSON.stringify(contextMessage));
+                  debug = true;
+               }
+               
+               isOrient = context['isOrient'] == true; 
+
+               // URL for the Request 
+               // "url" : "https://host.com:8443/sbt.sample.web/test_com.html"
+               url = context['url'];
+               console.log('url ' + url);
+               extHeight = context['height'];
+               extWidth = context['width'];
+
+               /**
+                * Makes a request to the gadget endpoint using the csrfToken from above
+                * iterate over the as_event's and then check the gadgets
+                * URL: https://<serverUrl>/manage/extensions/getExtensions/byExtensionPoint/as_event?extensionTypes=gadget&csrfToken=c0d30319b5671f7a71c2642bb6dee8e1
+                * Return Body 
+                * [{"tooltip":"","mime_type":"","icon":"https:\/\/test.com","type":"gadget","id":"1426554179498_67986","menu_text":"Test","url":"https:\/\/sdkdemo.swg.usma.ibm.com\/myapp?logo"}]
+                * XHR to the endpoint 
+                * Parse the JSON Object
+                * Also sets the extensionUrl to post the message to
+                */
+                var urlExt = "https://" + window.location.hostname + "/appregistry/api/v3/extensions?type=gadget";
+
+               if (debug) {
+                  console.log(urlExt);
+               }
+
+               var params = {};
+               params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
+               params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.GET;
+
+               // Change from makeRequest to makeNonProxiedRequest
+               gadgets.io.makeNonProxiedRequest(urlExt, getExtensionDataCallBack, params);
+
+            });
+      }
+   }
+
+   /**
+    * getExtensionDataCallBack(boolean) -> execute function
+    * parses the extension data in the callback method
+    */
+   function getExtensionDataCallBack(result) {
+
+      if (debug) {
+         console.log("byExtensionPoint : " + result.text);
+      }
+      extensionData = result.text;
+      checkValidUrl(url, extensionData, executeValidUrl);
+   };
+
+   /**
+    * executeValidUrl -> callback
+    * callback url and executes branches based on the callback
+    */
+   function executeValidUrl(validUrl) {
+
+      if (validUrl) {
+         /**
+          * configures the third party frame per the settings
+          * default back to get if the browser is one of the unsupported browsers
+          */
+
+         // add allowfullscreen attribute to the gadget parent iframe, otherwise contents within the
+         // thirdPartyFrame cannot go full screen (e.g. Youtube video)
+         window.frameElement.setAttribute("allowfullscreen", "");
+
+         var oldFrame = document.getElementById('thirdPartyFrame');
+         var remFrame = document.createElement('iframe');
+         remFrame.id = 'thirdPartyFrame';
+         remFrame.style = "border:none; overflow: hidden;";
+         remFrame.width = extWidth || "100%";
+         remFrame.height = extHeight || "100%";
+         remFrame.scrolling = "no";
+         remFrame.sandbox = "allow-same-origin allow-scripts allow-popups allow-forms allow-modals";
+
+         // add the allowfullscreen attribute to the thirdPartyFrame iframe
+         remFrame.setAttribute("allowfullscreen", "");
+
+         // Uses the HTML5 Send Message Feature 
+         // https://developer.mozilla.org/en-US/docs/Web/API/window.postMessage
+         // Order of attributes being set is important
+         remFrame.src = url;
+         remFrame.setAttribute("seamless", "");
+		 remFrame.setAttribute("style", "border: 0 none; overflow: hidden;");
+         remFrame.setAttribute("onload", "sendMessage()");
+         remFrame.setAttribute("onerror", "sendError()");
+
+         var wrapper = document.getElementById('iframeWrapper');
+         wrapper.replaceChild(remFrame, oldFrame);
+      }
+      else {
+         sendError();
+      }
+
+   }
+
+   /**
+    * checks to see if sandboxing is supported
+    */
+   function isHtml5() {
+      var res = false;
+      var cvs = document.createElement('canvas');
+      
+      if (typeof cvs.getContext != "undefined") {
+         res = true;
+      }
+      return res;
+   }
+
+   /**
+    * sendError() -> void
+    * reveals the error 
+    */
+   function sendError() {
+
+      // Present Forbidden Error
+      var errorDivId = isOrient ? 'orientFatalError' : 'fatalError';
+	  var titleId = isOrient ? 'orientErrorTitle' : 'errorTitle';
+      var descId = isOrient ? 'orientErrorDesc' : 'errorDesc';
+
+	  document.getElementById(errorDivId).style.display = "";
+      document.getElementById(errorDivId).style.display = "inline";
+
+      document.getElementById('iframeWrapper').style.display = "none";
+
+      var prefs = new gadgets.Prefs();
+      var msgTitle = prefs.getMsg('connectionsEE_errorTitle');
+      var msgDesc = prefs.getMsg('connectionsEE_errorDescription');
+
+      document.getElementById(titleId).innerHTML = msgTitle;
+      document.getElementById(descId).innerHTML = msgDesc + "<br/><br/> " + url;
+
+   }
+
+   /**
+    * checkValidUrl(url,extensionData) -> void 
+    * validates the URL 
+    * extensionData is the extensionData from the BSS Extensions Framework 
+    * url is the url from the context
+    * runs the callback at the end
+    */
+   function checkValidUrl(url, extensionData, callback) {
+
+      var response = false;
+      if (typeof url == "undefined") {
+         if (debug) {
+            console.log("url is undefined");
+         }
+      }
+      else {
+         if (typeof extensionData == "undefined") {
+            if (debug) {
+               console.log("extensionData is undefined");
+            }
+         }
+         else {
+            //Data is good
+            var jsonObj = JSON.parse(extensionData);
+            var arrExtensions = jsonObj.items;
+
+            for ( var extIdx in arrExtensions) {
+               var extension = arrExtensions[extIdx];
+               var extUrl = extension.payload['url'].toLowerCase();
+
+               console.log(extUrl + " " + url.toLowerCase());
+               if (url.toLowerCase() == extUrl) {
+                  response = true;
+               }
+            }
+         }
+
+      }
+      callback(response);
+   }
+
+   /**
+    * sendMessage() -> void
+    * send message uses the post function in HTML5
+    * only sends to the extensionUrl and the contentWindow
+    *
+    */
+   function sendMessage() {
+
+      var remoteFrame = document.getElementById('thirdPartyFrame').contentWindow;
+      var ctx = contextMessage;
+	  ctx["context"] = stringContext;
+	  ctx["personData"] = personData;
+      var message =  JSON.stringify(ctx);
+
+      if (debug) {
+         console.log("Message Posted to Content Window: " + message);
+      }
+
+      remoteFrame.postMessage(message, extensionUrl);
+
+      gadgets.window.adjustHeight();
+      gadgets.window.adjustWidth();
+      remoteFrame.parent.addEventListener("message", processMessage, false);
+
+      /**
+       * Since the frame is loaded, we should change the height to scroll height
+       */
+      try{
+	      f = remoteFrame;
+	      var hFrame = f.contentDocument.body.scrollHeight + (f.contentDocument.body.offsetHeight - f.contentDocument.body.clientHeight) + 20;
+	      var wFrame = f.contentDocument.body.scrollWidth + (f.contentDocument.body.offsetWidth - f.contentDocument.body.clientWidth) + 10;
+	      console.log(hFrame + " " + wFrame);
+	      f.width = wFrame;
+	      f.height = hFrame;
+	      f.style = "border:none; overflow: hidden;";
+	      f.scrolling = "yes";	// setting scrolling to yes, since the content in the EE gadget can go beyond the height of the screen,
+ 								// or elements can be added (e.g. an error message), which would increase the height
+      }
+      catch(e){
+      	console.log("ActivityStreams in Cloud: "+e);
+      }
+
+   }
+   
+ 
+   function processMessage(event) {
+
+      // Process the Event Data
+      if (event.data) {
+         console.log("event received from origin: " + event.origin);
+
+         var payload = event.data;
+         var iframe = document.getElementById("thirdPartyFrame");
+
+         if (payload.command == "adjustHeight") {// adjust height in case of adjustHeight event
+            iframe.height = payload.height;
+            gadgets.window.adjustHeight();
+         }
+         else if (payload.command == "adjustWidth") { // adjust width in case of adjustHeight event
+            iframe.width = payload.width;
+            gadgets.window.adjustWidth();
+         }
+         else if (payload.command == "applicationReady") { // if applicationReady event is recieved, call semdMessage() again
+            sendMessage();
+         }
+      }
+
+   }
+
+   function addEventHandler() {
+      document.addEventListener("message", processMessage, false);
+   }
+   gadgets.util.registerOnLoadHandler(init);
+</script>
+
+<div id="mainContainer">
+	<div id="iframeWrapper">
+		<iframe style="border: 0 none; overflow-x: hidden;" width="100%"
+			height="100%" id="thirdPartyFrame" src="" seamless="seamless">
+			<p id='summary'>Your browser does not support iframes, or the
+				third party provider's experience is not available.</p>
+		</iframe>
+	</div>
+</div>
+
+<div class="fatalError" id="fatalError" style="display: none">
+	<h3 id="errorTitle">__MSG_connectionsEE_errorTitle__</h3>
+	<p id="errorDesc">__MSG_connectionsEE_errorDescription__</p>
+</div>
+
+<div class="orientFatalError" id="orientFatalError" style="display: none">
+	<h3 id="orientErrorTitle">__MSG_connectionsEE_errorTitle__</h3>
+	<p id="orientErrorDesc">__MSG_connectionsEE_errorDescription__</p>
+</div>

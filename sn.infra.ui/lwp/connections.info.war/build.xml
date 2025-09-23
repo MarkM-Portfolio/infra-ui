@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2013                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="connections.info.war" default="package" basedir=".">
+
+	<import file="${env.WPLC_IMPORT}/std_props.xml"/>
+	<import file="${env.WPLC_IMPORT}/std_dirs.xml"/>
+
+	<property name="output.jar" value="${dir.lib}/connections.info.jar"/>
+	<property name="output.war" value="${dir.lib}/connections.info.war"/>
+	
+	<property name="override.websrc.dir" value="${basedir}/war" />
+	<property name="web.xml" value="${basedir}/war/WEB-INF/web.xml" />
+	<property name="tld.dependency.component" value="connections.info.war" />
+	<property name="war.exclude.pattern" value="WEB-INF/debug.props/**"/>
+	<property name="cr.excludes.list" value="WEB-INF${file.separator}tlds${file.separator}*" />
+	
+	<property name="war_package.optional" value="collect_middleware_ui"/>
+	<locateComponent component="middleware-ui" locateBuildDir="true" property="middleware-ui.resources" />
+	<target name="collect_middleware_ui">
+		<echo message="Running collect_middleware_ui target"/>
+		<mkdir dir="${dir.war.tmpout}/ui"/>
+		<copy todir="${dir.war.tmpout}/ui" includeEmptyDirs="true">
+			<fileset dir="${middleware-ui.resources}/lib" includes="**" />
+		</copy>
+	</target>
+
+	<locateComponent component="lc.web.common" locateBuildDir="false" property="comp.mantis.src" />
+	<import file="${comp.mantis.src}/package_connections.xml" />
+	<import file="${env.WPLC_IMPORT}/check.xml"/>
+	<import file="${env.WPLC_IMPORT}/compile.xml"/>
+	<import file="${env.WPLC_IMPORT}/rmic.xml"/>
+	<import file="${env.WPLC_IMPORT}/package_extra.xml"/>
+	<import file="${env.WPLC_IMPORT}/javadoc.xml"/>
+	<import file="${env.WPLC_IMPORT}/jdepend.xml"/>
+	<import file="${env.WPLC_IMPORT}/clean.xml"/>
+	<import file="${env.WPLC_IMPORT}/comp_zip.xml"/>
+	<import file="${env.WPLC_IMPORT}/std_targets.xml"/>
+	<import file="${env.WPLC_IMPORT}/process_nls.xml"/>
+	<import file="${env.WPLC_IMPORT}/performance.xml"/>
+</project>

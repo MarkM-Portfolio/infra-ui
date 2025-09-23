@@ -1,0 +1,14 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<li><div class="activityStreamErrorMessage">
+	<div class="lotusMessage2" role="alert" >
+		<img class="lotusIcon lotusIconMsgError" src="${_blankGif}" alt="${strings.errorAlt}" />
+		<span class="lotusAltText">${strings.errorAlt}</span
+		><div class="lotusMessageBody">${errorMessage}
+			<a href="javascript:;" class="${showMoreClass}" dojoAttachPoint="showMoreNode" 
+			   dojoAttachEvent="onclick: showMoreLessClicked">${strings.errorShowMore}</a
+			><a href="javascript:;" class="lotusHidden" dojoAttachPoint="showLessNode" 
+				dojoAttachEvent="onclick: showMoreLessClicked">${strings.errorShowLess}</a
+		></div>
+		<div dojoAttachPoint="showMoreMessageNode" class="lotusHidden">${showMoreMessage}</div>
+	</div>
+</div></li>

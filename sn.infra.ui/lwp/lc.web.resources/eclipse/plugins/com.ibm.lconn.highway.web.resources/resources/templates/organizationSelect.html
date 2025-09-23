@@ -1,0 +1,53 @@
+<!-- Copyright IBM Corp. 2013, 2015  All Rights Reserved.              -->
+
+<div>
+
+  <!--  TODO : Create a separate CSS class for the overrides below ! -->
+  <table dojoattachpoint="tableNode" width="100%" class="lotusTitleBar" tabindex="0">
+
+	  <tr>
+	  	<td colspan="3">
+  			<div aria-live="assertive" dojoattachpoint="messageContainerNode"></div>
+  		</td>
+	  </tr>
+
+	  <tr>
+	  
+		<td class="lotusAlignLeft" title="${title}" dojoattachpoint="titleNode">
+			<span class="lotusBig lotusBold" >${title}</span>
+		</td>
+		<td class="lotusAlignRight">
+			<span dojoattachpoint="valueNode" class="lotusBig lotusBold">
+				${value}
+			</span>
+			<span dojoattachpoint="valueEditNode" class="lotusHidden lotusBig lotusBold" >
+				<input type="text" class="lotusText" value="${value}" title="${title}" size="50" dojoattachpoint="valueEditTextBox" />
+			</span>
+		</td>
+		
+		<!-- All actions are hidden until needed -->
+		<td class="lotusAlignRight" width="100">
+			<ul class="lotusInlinelist lotusActions" >
+				<span dojoattachpoint="editActionNode" class="lotusHidden" dojoattachevent="onclick:onEdit">
+					<li title="${_resourceBundle.orgEditActionDescription}" class="lotusFirst lotusAlignLeft">
+						<a href="javascript:;" role="button">${_resourceBundle.orgEditActionName}</a>
+					</li>
+				</span>
+				<span dojoattachpoint="saveActionNode" class="lotusHidden" dojoattachevent="onclick:onUpdate">
+					<li title="${_resourceBundle.orgUpdateActionDescription}" class="lotusFirst lotusAlignLeft">
+						<a href="javascript:;" role="button">${_resourceBundle.orgUpdateActionName}</a>
+					</li>
+				</span>
+				<span dojoattachpoint="cancelActionNode" class="lotusHidden"  dojoattachevent="onclick:onCancel">
+					<li title="${_resourceBundle.orgCancelActionDescription}" class="lotusAlignLeft">
+						<a href="javascript:;" role="button">${_resourceBundle.orgCancelActionName}</a>
+					</li>
+				</span>
+
+			</ul>
+		</td>
+	  </tr>
+	  
+  </table>
+  
+</div>

@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "en",
+      "Play": "Redare",
+      "Pause": "Pauză",
+      "Current Time": "Ora curentă",
+      "Duration Time": "Durată",
+      "Remaining Time": "Timp rămas",
+      "Stream Type": "Tip flux",
+      "LIVE": "LIVE",
+      "Loaded": "Încărcat",
+      "Progress": "Progres",
+      "Fullscreen": "Ecran complet",
+      "Non-Fullscreen": "Nu ecran complet",
+      "Mute": "Amuţire",
+      "Unmute": "Dezamuţire",
+      "Unmuted": "Dezamuţit",
+      "Playback Rate": "Rată redare",
+      "Subtitles": "Subtitluri",
+      "subtitles off": "dezactivare subtitluri",
+      "Captions": "Titluri",
+      "captions off": "dezactivare titluri",
+      "Chapters": "Capitole",
+      "Volume": "Volum",
+      "You aborted the video playback.": "Aţi renunţat la redarea înregistrării video",
+      "A network error caused the video download to fail part-way.": "O eroare de reţea a determinat eşuarea parţială a descărcării înregistrării video.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "Nu a putut fi încărcată înregistrarea video, fie deoarece serverul sau reţeaua a eşuat, fie deoarece  or network formatul nu este suportat.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "Redarea video a fost abandonată din cauza unei probleme de corupţie sau deoarece erau utilizate caracteristici video pe care browser-ul dumneavoastră nu le suportă.",
+      "No compatible source was found for this video.": "Nu a fost găsită nicio sursă compatibilă pentru acest video."
+});
+

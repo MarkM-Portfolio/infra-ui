@@ -1,0 +1,19 @@
+<!-- Copyright IBM Corp. 2015, 2017  All Rights Reserved. -->
+<div class="ics-thumbnailwidget-container">
+   <form method="post" enctype="multipart/form-data" data-dojo-attach-point="form" data-dojo-attach-event="reset:_onReset">
+      <label data-dojo-attach-point="uploadNodeLabel" class="lotusOffScreen"></label>
+      <input type="file" name="file" data-dojo-attach-point="formFile" data-dojo-attach-event="onchange:_onSelected" aria-required="true"><br>
+      <input type="hidden" name="nonce" data-dojo-attach-point="nonce">
+      <input type="hidden" name="label" data-dojo-attach-point="label">
+      <input type="hidden" name="title" data-dojo-attach-point="title">
+      <input type="hidden" name="renditionKind" data-dojo-attach-point="renditionKind">
+   </form>
+   <ul class="ics-viewer-inlineList">
+      <li class="ics-viewer-first">
+         <a href="javascript:;" data-dojo-attach-point="upload" data-dojo-attach-event="onclick:_onSubmit" role="button" tabindex="-1" aria-disabled="true">${nls.UPLOAD}</a>
+      </li>
+      <li>
+         <a href="javascript:;" data-dojo-attach-point="cancel" data-dojo-attach-event="onclick:_onCancel" role="button">${nls.CANCEL}</a>
+      </li>
+   </ul>
+</div>

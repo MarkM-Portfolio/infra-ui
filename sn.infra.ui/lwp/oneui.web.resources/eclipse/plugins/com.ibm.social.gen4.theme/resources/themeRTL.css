@@ -1,0 +1,10 @@
+/* Copyright IBM Corp. 2010, 2015  All Rights Reserved.              */
+
+/*
+
+Import the default theme cause we don't support bidi just yet
+
+@import url(/com.ibm.lconn.core.styles.oneui3/base/package3RTL.css)
+*/
+@import url(css/defaultTheme/defaultThemeRTL.css)
+@import url(css/defaultTheme/dojoThemeRTL.css)

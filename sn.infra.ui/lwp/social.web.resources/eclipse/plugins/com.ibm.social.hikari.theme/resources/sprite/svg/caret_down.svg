@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   class="MuiSvgIcon-root"
+   fill="#01539B"
+   focusable="false"
+   viewBox="0 0 14 8"
+   aria-hidden="true"
+   role="presentation"
+   data-mui-test="caret--downIcon"
+   style="font-size:36px"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="103009492294f36fa8e9c4f164aea19c.svg"
+   width="14"
+   height="8"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0" />
+  <path
+     d="M 14,0 7,8 0,0 Z"
+     id="path2" />
+</svg>

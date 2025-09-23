@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2007, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<feature
+      id="com.ibm.lconn.core.web.feature"
+      label="Core Connections Web"
+      version="4.7.0.qualifier"
+      provider-name="IBM">
+
+
+   <description url="http://www.example.com/description">
+      This feature includes the PDE mantis example.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin id="com.ibm.lconn.core.web" version="0.0.0" unpack="true" />
+   <plugin id="com.ibm.lconn.core.web.eclipse" version="0.0.0" unpack="true" />
+   <plugin id="com.ibm.lconn.core.web.was" version="0.0.0" unpack="true" />
+</feature>

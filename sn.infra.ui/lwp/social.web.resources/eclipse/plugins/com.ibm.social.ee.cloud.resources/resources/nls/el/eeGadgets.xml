@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Μικροεφαρμογή ενσωματωμένης εμπειρίας OpenSocial που χρησιμοποιείται για την εμφάνιση πρόσθετων λεπτομερειών και ενεργειών για συμβάντα του Connections</msg>
+  <msg name="connectionsEE_errorTitle">Σφάλμα</msg>
+  <msg name="connectionsEE_errorDescription">Αυτό το περιεχόμενο δεν έχει εγκριθεί από τον οργανισμό σας και δεν είναι διαθέσιμο. Επικοινωνήστε με το διαχειριστή του οργανισμού σας και ζητήστε του να ενεργοποιήσει αυτή την επέκταση.</msg>
+</messagebundle>

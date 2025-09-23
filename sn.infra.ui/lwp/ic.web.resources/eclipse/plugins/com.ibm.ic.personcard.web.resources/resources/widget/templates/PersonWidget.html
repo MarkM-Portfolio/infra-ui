@@ -1,0 +1,31 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lconn_personContainer">
+	<div class="lconn_profileImage">
+		<img alt="" role="presentation" src="${photoUrl}" style="max-width: ${_normalSize}px; max-height: ${_normalSize}px;" data-dojo-attach-point="photoNode">
+	</div>
+	<div class="lconn_profileInfo">
+		<div class="vcard">
+			<a href="${profileUrl}" class="fn url lotusPerson bidiAware" title="${displayNameEscaped}" data-dojo-attach-point="linkNode">${!displayNameString}</a>
+			<span style="display: none;" class="email">${_escapedMail}</span>
+			<span style="display: none;" class="x-lconn-userid">${userId}</span>
+		</div>
+		<div>
+			<span data-dojo-attach-point="jobResponsibilityNode">${!jobResponsibility}</span>
+		</div>
+		<div>
+			<span data-dojo-attach-point="addressNode">${!address}</span>
+		</div>
+		<div class="lconn_additionalInfo lotusHidden" data-dojo-attach-point="additionalInfo">
+			<div>
+				<a href="mailto:${_escapedMail}" data-dojo-attach-point="mailNode" data-dojo-attach-event="onclick: _mailClicked">${!mail}</a>
+			</div>
+			<div>
+				<span data-dojo-attach-point="phoneNode">${!phone}</span>
+			</div>
+		</div>
+		<div class="lotusHidden" data-dojo-attach-point="tagsContainer">
+			<span class="lconn_highlightedTagsTitle">${TAGS_L}</span>
+			<div class="lconn_highlightedTags" data-dojo-attach-point="highlightedTags">${!tagString}</div>
+		</div>
+	</div>
+</div>

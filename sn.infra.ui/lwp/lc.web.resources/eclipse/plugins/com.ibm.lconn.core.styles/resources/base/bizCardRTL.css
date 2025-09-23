@@ -1,0 +1,214 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+/* Copyleft IBM Corp. 2014                                          */
+/* deposited with the U.S. Copyleft Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+.lotusui30dojo .ic-bizCard .dijitTooltipContainer {
+  box-shadow: none;
+}
+
+.lotusui30dojo .ic-bizCard {
+  margin: 0;
+  padding: 20px;
+  border: none;
+  width: 310px;
+  
+  height: auto; /* it could be expanded and collapsed */
+  position: relative;
+  border-top: 1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  border-right: 4px solid #008ABF;
+  background-color: #fff;
+}
+
+.lotusui30dojo .ic-bizCard div {
+  margin: 0;
+  padding: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue",Helvetica,Arial,Sans-Serif;
+}
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/*    TOP    */
+/* 
+.lotusui30dojo .ic-bizCard .ic-bizCard-front {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+*/
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-top {
+  position: relative;
+  margin: 0;
+  padding-bottom: 8px;
+  width: inherit; /* inherits 350px from parent */
+  /*min-height: 60px;*/
+}
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-top .ic-bizCard-front-top-avatar {
+  margin: 0;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  float: right;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+}
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-top .ic-bizCard-front-data,
+.lotusui30dojo .ic-bizCard .ic-bizCard-front-bottom .ic-bizCard-front-data {
+  margin: 0 80px 0 26px; /*  60+20=80 */
+}
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-data,
+.lotusui30dojo .ic-bizCard .ic-bizCard-back {
+  font-size: 0.75em;
+  line-height: 1.125em;
+}
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-data *,
+.lotusui30dojo .ic-bizCard .ic-bizCard-back * {
+  display: inline-block;
+  padding-top: 3px;
+  color: #222;
+}
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-data a,
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-data a:hover,
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-data a:focus,
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-data a:active,
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-data a:visited,
+.lotusui30dojo .ic-bizCard .ic-bizCard-back a,
+.lotusui30dojo .ic-bizCard .ic-bizCard-back a:hover,
+.lotusui30dojo .ic-bizCard .ic-bizCard-back a:focus,
+.lotusui30dojo .ic-bizCard .ic-bizCard-back a:active,
+.lotusui30dojo .ic-bizCard .ic-bizCard-back a:visited  {
+  color: #008abf;
+}
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-data .ic-bizCard-front-data-mail {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* For :first-child to work in IE8 and earlier, a <!DOCTYPE> must be declared. */
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-data > :first-child,
+.lotusui30dojo .ic-bizCard .ic-bizCard-back > :first-child {
+  padding-top: 0;
+}
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-data > a:first-child,
+.lotusui30dojo .ic-bizCard .ic-bizCard-back > a:first-child {
+  font-weight: bold;
+  color: #222;
+}
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-data .ic-bizCard-frontIcon {
+  margin-right: 10px;
+  padding: 0;
+}
+
+.lotusui30dojo .ic-bizCard .hc {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.lotusui30.lotusImagesOff .ic-bizCard .hc, .lotusImagesOff .lotusui30 .ic-bizCard .hc {
+  text-indent: 0;
+  text-overflow: ellipsis;
+  font-weight: bold;
+}
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-actions {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-top .ic-bizCard-front-top-expandCollapse {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 16px;
+  height: 6px;
+  background-repeat: no-repeat;
+}
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-top .ic-bizCard-front-top-expandCollapse.collapsed {
+  background-image: url('../images/businessCard/click-to-open.png');
+}
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-front .ic-bizCard-front-top .ic-bizCard-front-top-expandCollapse.expanded {
+  background-image: url('../images/businessCard/click-to-close.png');
+}
+
+/* 
+OLD ICON FOR COLLAPSE / EXPAND
+/com.ibm.lconn.core.styles/images/businessCard/
+
+expand/collapse
+.otherFramework16
+url("/common/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/Framework/otherFramework16-8bit.png?etag=20140829.040712")
+.otherFramework16-HideMore12
+.otherFramework16-ShowMore12
+12x12
+ */
+
+/*    BOTTOM    */
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-front-bottom {
+  margin: 0;
+  padding-top: 8px;
+  width: inherit; /* inherits 350px from parent */
+  position: relative;
+}
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-front-bottom .ic-bizCard-goToBackSide {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: url('../images/businessCard/flip_card_back.png');
+  background-repeat: no-repeat;
+}
+
+/*    BACK    */
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-back {
+  margin: 0;
+  padding: 0;
+  width: inherit; /* inherits 350px from parent */
+  position: relative;
+  top: 0; /* height and top will be set dynamically, based on the front-side height*/
+  right: 0;
+}
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-back div {
+  display: block;
+}
+
+.lotusui30dojo .ic-bizCard .ic-bizCard-back .ic-bizCard-goToFrontSide {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: url('../images/businessCard/flip_card_forward.png');
+  background-repeat: no-repeat;
+}

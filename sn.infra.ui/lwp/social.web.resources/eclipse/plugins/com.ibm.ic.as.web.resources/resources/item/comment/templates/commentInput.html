@@ -1,0 +1,33 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<li class="lotusAddComment" data-dojo-attach-point="addCommentAP">
+	<form class="lotusForm2 lotusStreamUpdate">
+		<div class="lotusFieldEmphasis" data-notopenee="true">
+			<textarea placeholder="${strings.addCommentText}" aria-label="${strings.ariaCommentText}" data-commentinput="true" maxlength="${maxCount}" name="description" class="bidiAware lotusText lotusTextCollapsed" data-dojo-attach-point="commentTextAP" data-dojo-attach-event="oninput:onInput, onpropertychange:onInput, onfocus: expand, onclick:expand, onkeypress:expandKey"></textarea>
+		</div>
+		<div data-dojo-attach-point="mentionsWarningPlaceholder"></div>
+		<div class="lotusActions lotusHidden" data-dojo-attach-point="commentActionsAP">
+			<ul class="lotusInlinelist lotusRight">
+				<li style="border: 0;">
+					<span data-dojo-attach-point="commentFileAttachContainer"></span>
+				</li>
+				<li class="lotusHidden" aria-atomic="true" aria-live="polite" role="status" aria-relevant="text" data-dojo-attach-point="commentCountdownContainer">
+						<span class="lotusMeta" data-dojo-attach-point="commentCountdownAP">${maxCount}</span>
+						<div class="ariaCharCountLabel lotusAccess">${strings.charactersRemaining}</div>
+					
+				</li>
+			</ul>
+			<ul class="lotusInlinelist lotusLeft">
+				<li class="lotusFirst"><a tabindex="0" href="javascript:;" role="button" data-skipdirtycheck="true" data-dojo-attach-point="commentPostActoin" data-dojo-attach-event="onclick:post"><strong>${strings.commentPostText}</strong></a></li>
+				<li><a tabindex="0" href="javascript:;" role="button" data-skipdirtycheck="true" data-dojo-attach-point="commentCancelBtn" data-dojo-attach-event="onclick:cancel">${strings.commentCancelText}</a></li>
+			</ul>
+		</div>
+		<div class="lotusMessage2 lotusHidden" role="alert" data-dojo-attach-point="commentErrorAP">
+			<img class="lconnSprite lconnSprite-iconError16" alt="${strings.errorText}" src="${_blankGif}">
+			<span class="asCommentError" data-dojo-attach-point="commentFailureTextAP"></span>
+			<a href="javascript:;" class="lotusDelete" data-dojo-attach-point="closeBtn" data-dojo-attach-event="onclick:clearErrorMsg">
+				<img alt="${strings.msgCloseAlt}" src="${_blankGif}">
+				<span class="lotusAltText">X</span>
+			</a>
+		</div>
+	</form>
+</li>

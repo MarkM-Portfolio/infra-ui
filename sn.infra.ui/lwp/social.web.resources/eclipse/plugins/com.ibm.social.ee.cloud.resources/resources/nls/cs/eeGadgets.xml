@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Modul gadget vestavěného rozhraní OpenSocial používaný k zobrazení dalších podrobností a akcí pro události produktu Connections</msg>
+  <msg name="connectionsEE_errorTitle">Chyba</msg>
+  <msg name="connectionsEE_errorDescription">Tento obsah není schválen vaší organizací a není k dispozici. Obraťte se na administrátora organizace se žádostí o povolení rozšíření.</msg>
+</messagebundle>

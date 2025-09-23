@@ -1,0 +1,46 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>File Viewer</title>
+
+<script>
+dojoConfig.parseOnLoad=true;
+</script>
+
+${script:dojox.xml.parser~net.jazz.ajax.xdloader~lconn.core.bundle_common~lconn.share.bean.File~com.ibm.lconn.layout.people~lconn.core.util.html~lconn.share.util.DateFormat~ic-share-test.ui.fileviewer}
+${style:ic-share.fileviewer.css.fileviewer}
+
+<style>
+   .module-id {
+      margin-bottom: 1em;
+   }
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-share-test/ui/index.html?render=test">Share widgets and utilities</a>
+    <span class="lotusDivider">&gt;</span>
+    File Viewer
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain" role="main">
+<div class="lotusContent">
+<h1>File Viewer</h1>
+
+<div class="module-id">Module ID: <code>ic-share/fileviewer/FileViewer</code></div>
+
+Data from connections.swg.usma.ibm.com:
+<ul id="file-list-cswg"></ul>
+
+Data from dreadnought.rtp.raleigh.ibm.com:
+<ul id="file-list-dreadnought"></ul>
+
+</div>
+</div>
+</body>
+${end}

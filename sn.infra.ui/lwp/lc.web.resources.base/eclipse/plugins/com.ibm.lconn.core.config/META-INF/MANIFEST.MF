@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: com.ibm.lconn.core.config;singleton:=true
+Bundle-ManifestVersion: 2
+Bundle-Name: IBM Connections Core Configuration
+Bundle-Version: 4.7.0.qualifier
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: IBM
+Bundle-Activator: com.ibm.lconn.core.config.Activator
+Export-Package: com.ibm.lconn.core.config,
+ com.ibm.lconn.core.config.services
+Require-Bundle: com.ibm.lconn.core.web;bundle-version="4.7.0",
+ org.apache.commons.configuration;bundle-version="1.5.0"
+Import-Package: com.ibm.ventura.internal.config.api;version="3.0.1",
+ com.ibm.ventura.internal.config.exception;version="3.0.1",
+ com.ibm.ventura.internal.config.helper.api;version="3.0.1",
+ com.ibm.ventura.internal.config.util,
+ org.apache.commons.configuration;version="1.5.0",
+ org.osgi.framework;version="1.5.0",
+ com.ibm.sistdase.json

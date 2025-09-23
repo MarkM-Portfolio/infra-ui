@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015, 2016  All Rights Reserved.                    -->
+<messagebundle>
+  <msg name="as_title">Atualizações</msg>
+  <msg name="as_description">Atualizações do IBM Connections</msg>
+  <msg name="as_error">Há um erro com a configuração do fluxo de Atualizações. Entre em contato com o seu administrador.</msg>
+</messagebundle>

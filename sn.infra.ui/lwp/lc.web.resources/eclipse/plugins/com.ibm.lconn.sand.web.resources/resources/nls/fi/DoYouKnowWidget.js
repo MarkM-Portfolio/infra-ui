@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Kutsu pitämään yhteyttä",
+	NDYK1:"Ei muita suositeltavia henkilöitä",
+	LOADING: "ladataan",
+	DYK_TITLE: "Ihmisiä, jotka saatat tuntea",
+	INVITE_TITLE: "Lähetä yhteydenottokutsu",
+	SEND_ACTION: "Lähetä",
+	CANCEL_ACTION: "Peruuta",
+	PREV: "Edellinen",
+	NEXT: "Seuraava",
+	bpct: "On kommentoinut blogiasi",
+	bpcc: "Olette kommentoineet samaa blogia",
+	lpfr: "On jonkun tuntemasi henkilön kollega",
+	lm1: "Olet tämän henkilön esimies",
+	le1: "Tämä henkilö on esimiehesi",
+	sdm: "Teillä on sama esimies",
+	pt: "Tämä henkilö on lisännyt sinuun tunnisteen",
+	pbt: "Olet lisännyt tunnisteen tähän henkilöön",
+	acm: "Teillä on samoja aktiviteetteja",
+	wikiCoContribution: "Olette muokanneet samaa wikiä",
+	bpcb: "Olet kommentoinut hänen blogiaan",
+	lpcfr: "Teillä on yhteisiä kollegoita",
+	ccmf: "Olette samassa yhteisössä",
+	ccms: "Olette samassa yhteisössä",
+	filesharing: "Jaatte joitain tiedostoja",
+	forumthreaddiscussion: "Teillä on yhteinen keskusteluketju",
+	ctb: "Teillä on yhteinen kirjanmerkki",
+	tgw: "Tunnisteenne vastaavat toisiaan",
+	tcu: "Olette käyttäneet samaa tunnistetta",
+	pctg: "Olette lisänneet tunnisteen samaan henkilöön",
+	tgb: "Samat henkilöt ovat lisänneet tunnisteen molempiin teistä"
+})

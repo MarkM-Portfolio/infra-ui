@@ -1,0 +1,21 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusDialogBorder">
+	<div class="lotusDialog" style="zoom: 1" role="dialog"
+		aria-labelledby="${titleID}" aria-describedby="${contentID}"
+		waistate="${titleID}">
+		<div class="lotusDialogHeader">
+			<h1 class="lotusHeading">
+				<span id="${titleID}" class="title"></span>
+			</h1>
+			<a class="lotusDialogClose" role="button" href="javascript:;"
+				title="${rs_close}"><img src="${blankGif}" alt="${rs_close}"
+				aria-label="${rs_close}" /><span class="lotusAltText">X</span>
+			</a>
+		</div>
+		<div id="${contentID}" class="lotusDialogContent" role="presentation"></div>
+		<div class="lotusDialogFooter" role="presentation">
+			<input type="button" class="lotusFormButton submit" /> <input
+				type="button" class="lotusFormButton cancel" />
+		</div>
+	</div>
+</div>

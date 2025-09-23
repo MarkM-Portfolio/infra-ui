@@ -1,0 +1,31 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusSection" role="region" aria-expanded="true" aria-labelledby="trend_label">
+	<h2 dojoAttachPoint="headingNode" class="lotusHeading">
+		<span class="lotusLeft">
+			<a dojoAttachPoint="twistyNode" title="${bundle.nlsStrings.expandTrend}" role="button" 
+				class="lotusSprite lotusArrow lotusTwistyOpen" href="javascript:;">
+				<span class="lotusAltText">+/-</span>
+			</a>
+			<span id="trend_label">${bundle.nlsStrings.trendTitle}</span>
+		</span>
+		<a role="button" class="lotusRight" href="javascript:;" dojoAttachPoint="helpLink"></a>
+	</h2>
+	<div dojoAttachPoint="bodyNode" class="lconnTagCloudContent">
+		<div dojoAttachPoint="noTags" class="lconnEmpty" style="display:none">${bundle.nlsStrings.noTrends}</div>
+		<div style="display:none" dojoAttachPoint="selectedNode">
+			<div>
+				<h3 style="border-bottom:0px;font-weight: bold;margin:0;padding:2px 0 0;">${bundle.nlsStrings.selectedTrends}</h3>
+				<ul class="lotusEditable lotusList lotusMeta" dojoAttachPoint="selectedListNode" role="listbox" aria-live="polite"></ul>
+			</div>
+		</div>
+		<div dojoAttachPoint="availableNode">
+			<div dojoAttachPoint="availableDesc" style="display:none;">
+				<h3 style="border-bottom: 0px; font-weight: bold; margin:0; padding:2px 0 0;">${bundle.nlsStrings.relatedTrends}</h3>
+				<div>${bundle.nlsStrings.relatedTrendsDesc}</div>
+			</div>
+			<ul dojoAttachPoint="availableListNode" class="lotusList lotusEditable lotusMeta lotusTags lotusRelatedTags" role="listbox" aria-live="polite"></ul>
+		</div>
+		<div dojoAttachPoint="loadingTags" class="loaderPaging">${bundle.nlsStrings.loadingText}</div>
+		
+	</div>
+</div>

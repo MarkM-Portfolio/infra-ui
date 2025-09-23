@@ -1,0 +1,203 @@
+${head}
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+<title>BasicTextBox</title>
+
+<script type="text/javascript">
+   var textBox = null;
+
+   dojo.addOnLoad(useRTE);
+
+   function getOptions(rte) {
+      var emptyCallback = function(empty) {
+         if (empty) {
+            dojo.addClass(dojo.byId("postLink"), "lotusPersonInactive");
+            dojo.addClass(dojo.byId("resetLink"), "lotusPersonInactive");
+         }
+         else {
+            dojo.removeClass(dojo.byId("postLink"), "lotusPersonInactive");
+            dojo.removeClass(dojo.byId("resetLink"), "lotusPersonInactive");
+         }
+      };
+
+      var limitCallback = function(limit) {
+         if (limit) {
+            dojo.style(dojo.query(".charDisplay")[0], "color", "red");
+         }
+         else {
+            dojo.style(dojo.query(".charDisplay")[0], "color", "black");
+         }
+      }
+
+      var onFocusCallback = function() {
+         dojo.style(dojo.byId("actionList"), "visibility", "visible");
+      }
+
+      var onBlurCallback = function() {
+         dojo.style(dojo.byId("actionList"), "visibility", "hidden");
+      }
+
+      var keyDownCallback = function(){
+         console.log("Key has been pressed");
+      }
+
+      var dataStore = new lconn.core.PeopleDataStore({
+         queryParam : 'name',
+         url : '../ckeditor/people.json'
+      });
+
+      return {
+         //height : 100,
+         useRTE : rte,
+         //isEE : true,
+         maxLength : 100,
+         maxLengthBytes : 100,
+         textBoxRows : 4,
+         showRemainingLimit : 20,
+         charRemainingDisplay : dojo.byId("countContainer"),
+         textPopulatedCallback : emptyCallback,
+         keyDownCallback: keyDownCallback,
+         reachedCharLimitCallback : limitCallback,
+         onFocusCallback : onFocusCallback,
+         onBlurCallback : onBlurCallback,
+         //customCSS: 'myOwnClass',
+         //disableURLPreview: true,
+         dataStore: dataStore
+      };
+   }
+
+   function useRTE(useAutoGrow) {
+      var options = getOptions(true);
+
+      if (textBox) {
+         textBox.destroy();
+      }
+      if (!dojo.byId("textBox")) {
+         dojo.create("div", {
+            id : "textBox"
+         }, dojo.byId("textBoxContainer"), "only");
+      }
+      textBox = new lconn.core.lcTextArea.widgets.BasicTextBox(options, dojo
+            .byId("textBox"));
+   }
+
+   function useStandard() {
+      var options = getOptions(false);
+      options.mentionsEnabled = true;
+      if (textBox)
+         textBox.destroy();
+      if (!dojo.byId("textBox"))
+         dojo.create("div", {
+            id : "textBox"
+         }, dojo.byId("textBoxContainer"), "only");
+      textBox = new lconn.core.lcTextArea.widgets.BasicTextBox(options, dojo.byId("textBox"));
+
+      // Look how easy it is to override the datasource...
+      textBox._mentionsHelper._registeredTypes[0].typeaheadDataStore = new lconn.core.PeopleDataStore(
+            {
+               url : '../ckeditor/people.json',
+               queryParam : "name"
+            });
+      textBox._mentionsHelper._registeredTypes[0].initTypeaheadArgs();
+      textBox._mentionsHelper._registeredTypes[0]._typeahead.destroy();
+      textBox._mentionsHelper._registeredTypes[0].initTypeahead();
+      // ...not
+
+      // Should be:
+      // options.store = new lconn.core.PeopleDataStore({url:'../ckeditor/people.json',queryParam : "name"});
+   }
+   
+   addTAHeader = function() {
+      textBox.setTypeAheadHeader('TypeAhead Header...');
+   }
+
+   printResults = function(message){
+      var message = new com.ibm.oneui.controls.MessageBox({
+         canClose: true,
+         type: com.ibm.oneui.controls.MessageBox.TYPE.SUCCESS,
+         msg: message
+         }, "results");
+      setTimeout(function(){ message.destroy() }, 6000);
+   }
+   
+   formatTrackedMentions = function(data){
+      var formatter = new lconn.core.widget.mentions.MentionsDataFormatter();
+      printResults(formatter.formatData(data));
+   }
+</script>
+<style type="text/css">
+#textBoxContainer {
+	width: 600px;
+	padding-${right}: 10px;
+}
+</style>
+${endhead}
+
+    <div class="lotusBanner">
+        <div class="lotusRightCorner">
+            <div class="lotusInner">
+                <a href="#lotusMainContent" accesskey="S" class="lotusAccess"> <img
+                    src="${_blankGif}" />
+                </a>
+                <div class="lotusLogo">
+                    <span class="lotusAltText">IBM Connections Common UI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="lotusTitleBar2 lotusTitleBar2Tabs">
+       <div class="lotusWrapper">
+          <div class="lotusInner">
+             <div class="lotusTitleBarContent">
+                <h2 class="lotusHeading">
+                   <span class="lotusText">BasicTextBox Widget</span>
+                </h2>
+                <nav aria-label="Select page width" role="navigation"></nav>
+             </div>
+          </div>
+       </div>
+    </div>
+    
+<div class="lotusFrame">
+   <div class="lotusMain">
+      <div class="lotusContent">
+
+         <form class="lotusForm2">
+            <!-- form header (use a div instead of a header tag if you aren't using html5) -->
+            <header class="lotusFormTitle">
+               <h1 class="lotusHeading" aria-describedby="formDesc">About:</h1>
+               <div id="formDesc" class="lotusMeta">This form
+                  includes a BasicTextBox widget and a rich text control
+                   for mentions. You can add more users from this file: /ckeditor/people.json'.</div>
+            </header>
+
+            <!-- form body -->
+            <div class="lotusFormBody">
+               <div class="lotusFormField">
+                  <label for="description">Textbox:</label>
+                  <div class="lotusFieldWrapper lotusBoard">
+                     <div id="textBoxContainer" class="lotusStreamUpdate">
+                        <div id="textBox"></div>
+                     </div>
+                     <ul id="actionList" class="lotusInlinelist lotusActions" style="visibility: hidden">
+                        <li class="lotusFirst">
+                           <a href="javascript:;" id="postLink" class="lotusAction lotusPersonInactive">Post</a>
+                        </li>
+                        <li>
+                           <a href="javascript:;" id="resetLink" class="lotusAction lotusPersonInactive" onclick="textBox.resetBox();">Reset</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <!--end form body-->
+         </form>
+         <div id='results'></div>
+      </div>
+   </div>
+</div>
+${script:lconn.core.lcTextArea.widgets.BasicTextBox}
+${script:dojo.parser}
+${script:com.ibm.oneui.controls.MessageBox}
+${script:lconn.core.widget.mentions.MentionsDataFormatter}
+</html>

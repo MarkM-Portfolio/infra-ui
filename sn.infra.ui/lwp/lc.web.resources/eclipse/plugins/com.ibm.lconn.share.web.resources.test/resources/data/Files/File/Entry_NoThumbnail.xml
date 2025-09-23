@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<entry xmlns:thr="http://purl.org/syndication/thread/1.0" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:snx="http://www.ibm.com/xmlns/prod/sn" xmlns:td="urn:ibm.com/td" xmlns="http://www.w3.org/2005/Atom">
+  <id>urn:lsid:ibm.com:td:0e520ee3-6146-4585-ae5c-eb090b66670d</id>
+  <td:uuid>0e520ee3-6146-4585-ae5c-eb090b66670d</td:uuid>
+  <td:label>aphid.jpg</td:label>
+  <link href="http://garner.rtp.raleigh.ibm.com/files/form/api/library/73fba047-9982-49c9-be7c-a593dd32dd9b/document/0e520ee3-6146-4585-ae5c-eb090b66670d/entry" rel="self"/>
+  <link href="http://garner.rtp.raleigh.ibm.com/files/app/file/0e520ee3-6146-4585-ae5c-eb090b66670d" rel="alternate" type="text/html"/>
+  <link href="http://garner.rtp.raleigh.ibm.com/files/form/api/library/73fba047-9982-49c9-be7c-a593dd32dd9b/document/0e520ee3-6146-4585-ae5c-eb090b66670d/entry" rel="edit"/>
+  <link href="http://garner.rtp.raleigh.ibm.com/files/form/api/library/73fba047-9982-49c9-be7c-a593dd32dd9b/document/0e520ee3-6146-4585-ae5c-eb090b66670d/media" rel="edit-media"/>
+  <link href="http://garner.rtp.raleigh.ibm.com/files/form/anonymous/api/library/73fba047-9982-49c9-be7c-a593dd32dd9b/document/0e520ee3-6146-4585-ae5c-eb090b66670d/media/aphid.jpg" rel="enclosure" type="image/jpeg" title="aphid.jpg" hreflang="en" length="304963"/>
+  <link href="" rel="thumbnail"/>
+  <category term="document" scheme="tag:ibm.com,2006:td/type" label="document"/>
+  <link href="http://garner.rtp.raleigh.ibm.com/files/form/api/library/73fba047-9982-49c9-be7c-a593dd32dd9b/document/0e520ee3-6146-4585-ae5c-eb090b66670d/feed" rel="replies" type="application/atom+xml" thr:count="0" xmlns:thr="http://purl.org/syndication/thread/1.0"/>
+  <td:notifications>
+    <td:media>on</td:media>
+    <td:comment>on</td:comment>
+  </td:notifications>
+  <author>
+    <name>Amadou Alain</name>
+    <snx:userid>81e18b48-1378-4850-b758-7212d0f6f479</snx:userid>
+    <email>aalain@renovations.com</email>
+    <snx:userState>active</snx:userState>
+  </author>
+  <title type="text">aphid.jpg</title>
+  <published>2014-11-04T19:49:20.502Z</published>
+  <updated>2014-11-04T19:49:21.034Z</updated>
+  <td:created>2014-11-04T19:49:20.502Z</td:created>
+  <td:modified>2014-11-04T19:49:20.502Z</td:modified>
+  <td:lastAccessed/>
+  <td:modifier>
+    <name>Amadou Alain</name>
+    <snx:userid>81e18b48-1378-4850-b758-7212d0f6f479</snx:userid>
+    <email>aalain@renovations.com</email>
+    <snx:userState>active</snx:userState>
+  </td:modifier>
+  <td:visibility>private</td:visibility>
+  <snx:isExternal>false</snx:isExternal>
+  <td:libraryId>73fba047-9982-49c9-be7c-a593dd32dd9b</td:libraryId>
+  <td:libraryType>personalFiles</td:libraryType>
+  <td:libraryTitle>Amadou Alain</td:libraryTitle>
+  <td:libraryAuthor>
+    <name>Amadou Alain</name>
+    <snx:userid>81e18b48-1378-4850-b758-7212d0f6f479</snx:userid>
+    <email>aalain@renovations.com</email>
+    <snx:userState>active</snx:userState>
+  </td:libraryAuthor>
+  <td:downloadInfo/>
+  <td:versionUuid>838125a3-b340-4eba-8172-fb4389d1e011</td:versionUuid>
+  <td:versionLabel>1</td:versionLabel>
+  <td:propagation>true</td:propagation>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/share">0</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/collections">0</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/attachments">3</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/versions">1</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/references">0</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/microblogs">0</snx:rank>
+  <td:totalMediaSize>341738</td:totalMediaSize>
+  <summary type="text"/>
+  <content type="image/jpeg" src="http://garner.rtp.raleigh.ibm.com/files/form/api/library/73fba047-9982-49c9-be7c-a593dd32dd9b/document/0e520ee3-6146-4585-ae5c-eb090b66670d/media"/>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+  <td:permissions>AddChild, Delete, Purge, EditProperties, EditContent, Edit, ViewProperties, ViewContent, View, GrantAccess, Lock, ChangeSharingIntent, GrantAccessView, GrantAccessEdit</td:permissions>
+  <td:restrictedVisibility>false</td:restrictedVisibility>
+  <td:objectTypeName>snx:file</td:objectTypeName>
+  <td:lock type="NONE"/>
+  <snx:isExternal>false</snx:isExternal>
+</entry>

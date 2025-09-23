@@ -1,0 +1,19 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<ul class="lotusInlinelist lotusRight">
+	<li class="lotusFirst" data-dojo-attach-point="fileAttachmentSectionNode">
+		<a role="button" aria-label="${resourceStrings.attachFile}" href="javascript:void(0);" tabindex="0" class="share-attachAction" data-dojo-attach-point="attachActionButtonNode" data-dojo-attach-event="onclick:_onAttachFile">
+			${resourceStrings.attachFile}
+		</a>
+		<span style="display:none;" data-dojo-attach-point="fileAttachmentNode">
+			<img class="lconnSprite lconnSprite-iconAttachment16" src="${_blankGif}" alt="">
+			<span style="display:inline;" dir="ltr" data-dojo-attach-point="fileAttachmentDetailsNode"></span>
+			<a href="javascript:void(0);" title="${resourceStrings.removeFileAttachment}" aria-label="${resourceStrings.removeFileAttachment}" class="lotusDeleteFileAttach" role="button" tabindex="0" data-dojo-attach-point="removeAttachmentNode" data-dojo-attach-event="onclick:_onRemoveAttachment">
+				<img alt="${resourceStrings.removeFileAttachment}" src="${_blankGif}">
+				<span class="lotusAltText">X</span>
+			</a>
+		</span>
+	</li>
+	<li class="lotusFirst" style="display: none;" data-dojo-attach-point="uploadProgressContainer">
+		<div style="display: inline;" class="ublogFileUploadProgress" data-dojo-attach-point="uploadProgressNode"></div>
+	</li>
+</ul>

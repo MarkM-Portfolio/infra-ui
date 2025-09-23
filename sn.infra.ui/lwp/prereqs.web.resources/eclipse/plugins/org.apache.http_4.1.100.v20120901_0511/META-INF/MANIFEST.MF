@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ClassPath: lib/httpcore-4.1.3.jar,lib/httpcore-nio-4.1.3.jar
+Bundle-Vendor: The Apache Software Foundation
+Bundle-Name: Apache HttpCore
+Bundle-SymbolicName: org.apache.http
+Export-Package: org.apache.http,org.apache.http.entity,org.apache.http
+ .impl,org.apache.http.impl.entity,org.apache.http.impl.io,org.apache.
+ http.impl.nio,org.apache.http.impl.nio.codecs,org.apache.http.impl.ni
+ o.reactor,org.apache.http.io,org.apache.http.message,org.apache.http.
+ nio,org.apache.http.nio.entity,org.apache.http.nio.params,org.apache.
+ http.nio.protocol,org.apache.http.nio.reactor,org.apache.http.nio.uti
+ l,org.apache.http.params,org.apache.http.protocol,org.apache.http.uti
+ l
+Bundle-Version: 4.1.100.v20120901_0511
+Bundle-ManifestVersion: 2
+

@@ -1,0 +1,35 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<navbar></navbar>
+<div class="lotusMain">
+<div class="lotusContent">
+<h1>Angular for IBM Connections</h1>
+<helloworld></helloworld>
+<h2>Data Binding</h2>
+<p>Model objects are bound to views in both ways. You can update the models or the views, and changes will be reflected in both.</p>
+<p>Type your hane here: <input type="text" data-ng-model="name"/></p>
+<br>
+<p>Checking a radio button causes the navbar to update the selected menu.</p>
+<form>
+    <input id="s_h" class="lotusCheckbox" type="radio" data-ng-model="service" value="homepage"/> <label class="lotusCheckbox" for="s_h">Homepage</label>
+    <input id="s_p" class="lotusCheckbox" type="radio" data-ng-model="service" value="profiles"/> <label class="lotusCheckbox" for="s_p">Profiles</label>
+    <input id="s_c" class="lotusCheckbox" type="radio" data-ng-model="service" value="communities"/> <label class="lotusCheckbox" for="s_c">Communities</label>
+    <input id="s_w" class="lotusCheckbox" type="radio" data-ng-model="service" value="wikis"/> <label class="lotusCheckbox" for="s_w">Wikis</label>
+</form>
+<p>Toggling a checkbox causes the navbar to show or hide menus.</p>
+<form>
+    <input id="a_h" class="lotusCheckbox" type="checkbox" data-ng-model="services.homepage" value="true"/> <label class="lotusCheckbox" for="a_h">Homepage</label>
+    <input id="a_p" class="lotusCheckbox" type="checkbox" data-ng-model="services.profiles" value="true"/> <label class="lotusCheckbox" for="a_p">Profiles</label>
+    <input id="a_c" class="lotusCheckbox" type="checkbox" data-ng-model="services.communities" value="true"/> <label class="lotusCheckbox" for="a_c">Communities</label>
+    <input id="a_w" class="lotusCheckbox" type="checkbox" data-ng-model="services.wikis" value="true"/> <label class="lotusCheckbox" for="a_w">Wikis</label>
+</form>
+
+<h2>Services</h2>
+<p>This button shows how to fetch data using the <code>$http</code> service.</p>
+<button data-ng-click="fetch()">Fetch Data</button>
+
+<h2>Interoperability with Dojo</h2>
+<p>This button shows how Angular and Dojo can easily interoperate.</p>
+<button data-ng-click="switchTheme()">Switch Theme</button>
+
+</div>
+</div>

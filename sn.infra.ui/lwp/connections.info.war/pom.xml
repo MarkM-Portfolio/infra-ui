@@ -1,0 +1,190 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <!-- ***************************************************************** -->
+    <!--                                                                   -->
+    <!-- IBM Confidential                                                  -->
+    <!--                                                                   -->
+    <!-- OCO Source Materials                                              -->
+    <!--                                                                   -->
+    <!-- Copyright IBM Corp. 2014                                          -->
+    <!--                                                                   -->
+    <!-- The source code for this program is not published or otherwise    -->
+    <!-- divested of its trade secrets, irrespective of what has been      -->
+    <!-- deposited with the U.S. Copyright Office.                         -->
+    <!--                                                                   -->
+    <!-- ***************************************************************** -->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.ibm.maven</groupId>
+        <artifactId>mantis-super-pom</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <groupId>com.ibm.lconn.infra.ui.connections</groupId>
+    <artifactId>connections.info</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <dependencies>
+ <!--       <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>5.0</version>
+        </dependency>-->
+        <dependency>
+            <groupId>com.ibm.lconn</groupId>
+            <artifactId>directory.services</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.json4j</groupId>
+            <artifactId>json4j</artifactId>
+            <version>1.0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.lconn.util</groupId>
+            <artifactId>lc.util.web</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.lconn</groupId>
+            <artifactId>lc.userPreferences</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.abdera</groupId>
+            <artifactId>abdera</artifactId>
+            <version>0.4.0</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.lconn</groupId>
+            <artifactId>lc.following.api</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.lconn</groupId>
+            <artifactId>lc.following.ejbClient</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.lconn</groupId>
+            <artifactId>lc.following.internal</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>jaxen</groupId>
+            <artifactId>jaxen</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.lconn</groupId>
+            <artifactId>AjaxProxy</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.lconn.core</groupId>
+            <artifactId>lc.core.mobile.url.resolver</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.abdera</groupId>
+            <artifactId>xlxpScanner</artifactId>
+            <version>0.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.abdera</groupId>
+            <artifactId>xlxpScannerUtils</artifactId>
+            <version>0.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.abdera</groupId>
+            <artifactId>xlxpWASParsers</artifactId>
+            <version>0.4.0</version>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>${project.basedir}/war</directory>
+                        </resource>
+                    </webResources>
+                    <webXml>war/WEB-INF/web.xml</webXml>
+                    <archiveClasses>true</archiveClasses>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathLayoutType>custom</classpathLayoutType>
+                            <customClasspathLayout>$${artifact.artifactId}.$${artifact.extension}</customClasspathLayout>
+                        </manifest>
+                    </archive>
+                    <outputFileNameMapping>@{artifactId}@.@{extension}@</outputFileNameMapping>
+                    <packagingIncludes>
+                        META-INF/**/*.*,
+                        nav/**/*.*,
+                        WEB-INF/pages/**/*.*,
+                        WEB-INF/tlds/**/*.*,
+                        WEB-INF/lib/xlxp*.jar,
+                        WEB-INF/lib/tk.rproxysvc*.jar,
+                        WEB-INF/lib/tiles*.jar,
+                        WEB-INF/lib/stax-api*.jar,
+                        WEB-INF/lib/spring*.jar,
+                        WEB-INF/lib/slf4j*.jar,
+                        WEB-INF/lib/search.searchInterface*.jar,
+                        WEB-INF/lib/rxjava-core*.jar,
+                        WEB-INF/lib/protostuff*.jar,
+                        WEB-INF/lib/notify.client*.jar,
+                        WEB-INF/lib/mybatis*.jar,
+                        WEB-INF/lib/log4j*.jar,
+                        WEB-INF/lib/lc.web.resources.remote*.jar,
+                        WEB-INF/lib/lc.util*.jar,
+                        WEB-INF/lib/lc.userPreferences*.jar,
+                        WEB-INF/lib/lc.spi*.jar,
+                        WEB-INF/lib/lc.proxy*.jar,
+                        WEB-INF/lib/lc.mtconfig*.jar,
+                        WEB-INF/lib/lc.mobile*.jar,
+                        WEB-INF/lib/lc.following*.jar,
+                        WEB-INF/lib/lc.events*.jar,
+                        WEB-INF/lib/lc.dynacache*.jar,
+                        WEB-INF/lib/lc.customAuthClient*.jar,
+                        WEB-INF/lib/lc.content.review*.jar,
+                        WEB-INF/lib/lc.config.svc*.jar,
+                        WEB-INF/lib/lc.appext.core*.jar,
+                        WEB-INF/lib/lc.admin*.jar,
+                        WEB-INF/lib/jsoup*.jar,
+                        WEB-INF/lib/json4j*.jar,
+                        WEB-INF/lib/jaxen*.jar,
+                        WEB-INF/lib/jackson*.jar,
+                        WEB-INF/lib/icu4j*.jar,
+                        WEB-INF/lib/hystrix*.jar,
+                        WEB-INF/lib/html-parser*.jar,
+                        WEB-INF/lib/home.news*.jar,
+                        WEB-INF/lib/freemarker-ibmcs*.jar,
+                        WEB-INF/lib/connections.info*.jar,
+                        WEB-INF/lib/commons-*.jar,
+                        WEB-INF/lib/com.ibm.connections.directory.services*.jar,
+                        WEB-INF/lib/cglib-nodep*.jar,
+                        WEB-INF/lib/axiom-*.jar,
+                        WEB-INF/lib/archaius-*.jar,
+                        WEB-INF/lib/aopalliance*.jar,
+                        WEB-INF/lib/AjaxProxy*.jar,
+                        WEB-INF/lib/acf*.jar,
+                        WEB-INF/lib/abdera*.jar
+                    </packagingIncludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

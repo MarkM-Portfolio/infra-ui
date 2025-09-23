@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Connections 이벤트에 대한 추가 세부사항 및 조치를 표시하는 데 사용되는 Embedded Experience OpenSocial 가젯입니다.</msg>
+  <msg name="connectionsEE_errorTitle">오류</msg>
+  <msg name="connectionsEE_errorDescription">이 컨텐츠는 조직에 의해 승인되지 않았으며 사용할 수 없습니다. 확장을 사용하려면 조직의 관리자에게 문의하십시오.</msg>
+</messagebundle>

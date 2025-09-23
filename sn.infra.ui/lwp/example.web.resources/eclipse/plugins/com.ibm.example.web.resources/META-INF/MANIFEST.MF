@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IBM Connections Web Resources Extensions Examples
+Bundle-SymbolicName: com.ibm.example.web.resources;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.ibm.example.web.resources.Activator
+Bundle-Vendor: IBM
+Bundle-ActivationPolicy: lazy
+Import-Package: net.jazz.ajax,
+ net.jazz.ajax.model,
+ org.osgi.framework;version="1.5.0"
+Bundle-ClassPath: .

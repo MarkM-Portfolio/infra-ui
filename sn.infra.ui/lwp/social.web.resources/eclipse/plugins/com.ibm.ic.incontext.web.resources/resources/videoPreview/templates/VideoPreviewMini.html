@@ -1,0 +1,27 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lconnPreviewMini" data-dojo-attach-point="urlPreview">
+	<div class="lconnPreviewLeftMini" data-dojo-attach-point="leftPlane">
+		<a class="lconnPreviewCenter" data-dojo-attach-point="thumbnailContainer">
+			<span></span>
+			<span class="lotusHidden playBtn otherMediaPlayer32 otherMediaPlayer32-mpPlayButton30" data-dojo-attach-point="playBtn"></span>
+			<img data-dojo-attach-point="thumbnail">
+		</a>
+		<div class="lconnPreviewImageChoose lotusHidden" data-dojo-attach-point="imageChooser">
+			<img title="${strings.previousThumbnail}" class="otherFramework16 otherFramework16-ArrowThickLeftGray12" data-dojo-attach-point="previousImage" data-dojo-attach-event="onclick: previousThumbnail">
+			<img title="${strings.nextThumbnail}" class="otherFramework16 otherFramework16-ArrowThickRightGray12" data-dojo-attach-point="nextImage" data-dojo-attach-event="onclick: nextThumbnail">
+		</div>
+	</div>
+	<div class="lconnPreviewContent" data-dojo-attach-point="rightPlane">
+		<span title="${strings.removeUrlPreview}" class="lotusClose">
+			<input type="image" aria-label="${strings.removeUrlPreview}" alt="${strings.removeUrlPreview}" src="${blankGif}" class="welcomeNoteImage" data-dojo-attach-event="onclick: closePreview">
+		 	<a class="lotusAltText" href="javascript:;" data-dojo-attach-event="onclick: closePreview">X</a>
+		</span>
+		<div class="lotusBold" data-dojo-attach-point="titleNode"></div>
+		<a href="${url}" target="_blank" data-dojo-attach-point="linkNode">${url}</a>
+		<p class="lotusHidden" data-dojo-attach-point="description"></p>
+		<div class="lotusHidden" style="position: absolute; bottom: 8px;" data-dojo-attach-point="toggleContainer">	
+			<input class="lotusCheckbox" type="checkbox" aria-label="${strings.thumbnailToggle}" title="${strings.thumbnailToggle}" id="box1" data-dojo-attach-point="checkBox" data-dojo-attach-event="onchange: toggleImage">
+			<label id="box1">${strings.thumbnailToggle}</label>
+		</div>
+	</div>
+</div>

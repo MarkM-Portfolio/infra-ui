@@ -1,0 +1,17 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusPostAction asLinkContainer ${rollupRootClass}" data-dojo-attach-point="rollupContent">
+	<div class="lotusPostDetails ${rollupContentClass}">
+		${!rollupNewsContent}
+	</div>
+	<div class="activityStreamSummary ${rollupSummaryStyle}">
+		<div class="lotusPostAuthorInfo ${rollupUser.photoClass}">
+			<div class="lotusPostAvatar">
+				<img class="activityStreamPhotoOf" src="${rollupPhotoUrl}" alt="${rollupUser.photoOfText}">
+			</div>
+		</div>
+		<div class="lotusPostContent bidiAware ${rollupSummaryClass}">
+			${!rollupUser.html}
+			${!summary}			
+		</div>
+	</div>
+</div>

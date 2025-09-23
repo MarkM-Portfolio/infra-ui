@@ -1,0 +1,12 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusSection" role="region" aria-expanded="true" aria-labelledby="${id}_label">
+	<h2 class="lotusHeading" data-dojo-attach-point="headingDomNode">
+		<span class="lotusLeft">
+			<a title="${strings.twistyCollapse}" role="button" class="lotusSprite lotusArrow lotusTwistyOpen" href="javascript:;" data-dojo-attach-point="twistyDomNode"></a>
+			<span id="${id}_label">${strings.title}</span>
+		</span>
+		<a role="button" class="lotusRight" href="javascript:;" data-dojo-attach-point="helpLink"></a>
+	</h2>
+	<div class="lotusSectionBody lconnFacet" data-dojo-attach-point="bodyDomNode"></div>
+	<div class="lconnEmpty" style="display:none;" data-dojo-attach-point="noContentDomNode">${strings.noContent}</div>
+</div>

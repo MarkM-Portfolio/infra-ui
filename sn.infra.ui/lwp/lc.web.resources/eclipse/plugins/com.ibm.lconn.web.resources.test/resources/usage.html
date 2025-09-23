@@ -1,0 +1,109 @@
+${head}
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<-- @author Cameron Bosnic - cjbosnic@us.ibm.com                          -->
+<-- Usage example for WebServletBundle html template pages                -->
+<-- Template starts with the head tag above.                              -->
+<-- To use the template, browse to the url of the file and add the        -->
+<-- required parameter render=test                                        -->
+<-- The lang=XX parameter is also optional, and can be useful for testing -->
+<-- RTL languages like Hebrew or Arabic.  If left blank will default to   -->
+<-- en.                                                                   -->
+<-- The debug=XX parameter is also optional.  The value can be either     -->
+<-- dojo or true.                                                         -->
+<-- This file viewed with the optional lang=en and test parameters and    -->
+<-- debug set to dojo                                                     -->
+<-- usage.html?render=test&lang=en&debug=true                             -->
+
+
+<!--Above is the head of the document that includes the html tag, dojo 
+includes and oneuistyle includes-->
+${script:lconn.test.card.TestResourceLink}
+<!--The above script is some script I would like to test-->
+${script:lconn.test.card.inlinecard}
+<!--The above script is a second script I would like to test-->
+${script:lconn.test.card.expandedcard}
+<!--The above script is a third script I would like to test-->
+${style:lconn.core/card/templates/ResourceLink.css}
+<!--The above is a style sheet I would like to include-->
+${endhead}
+<!--Above is the tag that creates a </head> for us-->
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+<div>
+<a id="link1" href="person.oslccompact">Compact (same domain)</a>
+<script>new lconn.core.card.ResourceLink({lazyFetch: true}, dojo.byId('link1'));</script>
+</div>
+<div>
+<a id="link2" href="person_xd.oslccompact">Compact (cross domain)</a>
+<script>new lconn.core.card.ResourceLink({lazyFetch: true}, dojo.byId('link2'));</script>
+</div>
+<div>
+<a id="link3" href="person_legacy.oslccompact">Legacy browsers (same domain)</a>
+<script>new lconn.core.card.ResourceLink({lazyFetch: true}, dojo.byId('link3'));</script>
+</div>
+
+<script>
+</script>
+</div>
+</div>
+</body>
+${end}
+<!--Above is the tag that creates an </html> tag for us-->
+
+
+
+<!-- -----------------------------------------------------------------------
+
+The following is the current output of the source after opening the file through the servlet with the ?render=test option
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html dir="ltr" lang="en">
+<head>
+<meta content="text/html;charset=UTF-8"></meta>
+<link id="lotusBaseStylesheet" rel="stylesheet" type="text/css" href="/web/_style?include=com.ibm.lconn.core.styles/base/package.css">
+<link id="lotusThemeStylesheet" rel="stylesheet" type="text/css" href="/web/_style?include=com.ibm.lconn.core.styles/default/package.css">
+[if IE 6]><script type="text/javascript">document.getElementsByTagName("html")[0].className+=" lotusui_ie lotusui_ie6";</script><![endif]
+[if IE 7]><script type="text/javascript">document.getElementsByTagName("html")[0].className+=" lotusui_ie lotusui_ie7";</script><![endif]
+[if IE 8]><script type="text/javascript">document.getElementsByTagName("html")[0].className+=" lotusui_ie";</script><![endif]
+<script>var net = {jazz: {ajax: {_server: "", _contextRoot: "", _loaded: []}}}; var djConfig = {proxy: "/ajaxProxy", baseUrl: "/web/dojo/", locale: "en", localizationComplete: true}</script>
+<script src="/web/_js?include=dojo.dojo.js&debug=true&lang=en"></script>
+
+<script src="/web/_js?include=lconn.test.card.TestResourceLink.js~&debug=true&lang=en&exclude=dojo.dojo.js~"></script>
+<script src="/web/_js?include=lconn.test.card.inlinecard.js~&debug=true&lang=en&exclude=dojo.dojo.js~lconn.test.card.TestResourceLink.js~"></script>
+<script src="/web/_js?include=lconn.test.card.expandedcard.js~&debug=true&lang=en&exclude=dojo.dojo.js~lconn.test.card.TestResourceLink.js~lconn.test.card.inlinecard.js~"></script>
+
+<link rel="stylesheet" type="text/css" href="/web/_style?include=lconn.core/card/templates/ResourceLink.css.css">
+
+</head>
+
+
+<body class="lotusui">
+<div class="lotusMain">
+<div class="lotusContent">
+
+<div>
+<a id="link1" href="person.oslccompact">Compact (same domain)</a>
+
+<script>new lconn.core.card.ResourceLink({lazyFetch: true}, dojo.byId('link1'));</script>
+</div>
+<div>
+<a id="link2" href="person_xd.oslccompact">Compact (cross domain)</a>
+<script>new lconn.core.card.ResourceLink({lazyFetch: true}, dojo.byId('link2'));</script>
+</div>
+<div>
+<a id="link3" href="person_legacy.oslccompact">Legacy browsers (same domain)</a>
+<script>new lconn.core.card.ResourceLink({lazyFetch: true}, dojo.byId('link3'));</script>
+</div>
+
+<script>
+
+</script>
+</div>
+</div>
+</body>
+</html>
+
+-->

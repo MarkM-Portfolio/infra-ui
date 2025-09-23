@@ -1,0 +1,107 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+${script:dijit.dijit}
+${script:com.ibm.social.layout.test.actionbar.TestActionBar}
+${endhead}
+
+<div class="lotusFrame lotusui30 lotusui30_layout">
+	<div class="lotusMain">
+		<div class="lotusContent">
+
+Preloaded:
+<div id="actionBarPreloaded1" class="lotusBtnContainer"></div>
+<script>
+new com.ibm.social.layout.widget.ActionBar({
+	actions: [
+		new com.ibm.social.layout.test.MyAction(),
+		new com.ibm.social.layout.test.MyActionMenu(),
+		new com.ibm.social.layout.test.MyActionWithError()
+	]
+}, dojo.byId("actionBarPreloaded1"));
+</script>
+
+<hr>
+
+Deferred:
+<div id="actionBarDeferred1" class="lotusBtnContainer"></div>
+<script>
+new com.ibm.social.layout.widget.ActionBar({
+	actions: [
+		new com.ibm.social.layout.DeferredAction().mixin({name: "Example (deferred)", actionClass: "com.ibm.social.layout.test.MyDeferredAction"}),
+		new com.ibm.social.layout.DeferredAction().mixin({name: "BundleAction1 (deferred)", actionClass: "com.ibm.social.layout.test.MyDeferredBundleAction1", actionBundle: "com.ibm.social.layout.test.MyActionBundle"}),
+		new com.ibm.social.layout.DeferredAction().mixin({name: "BundleAction2 (deferred)", actionClass: "com.ibm.social.layout.test.MyDeferredBundleAction2", actionBundle: "com.ibm.social.layout.test.MyActionBundle"}),
+		new com.ibm.social.layout.DeferredAction().mixin({name: "Menu (deferred)", actionClass: "com.ibm.social.layout.test.MyDeferredActionMenu"}),
+		new com.ibm.social.layout.DeferredAction().mixin({name: "Missing (deferred)", actionClass: "com.ibm.social.layout.test.MissingAction"}),
+		new com.ibm.social.layout.DeferredAction().mixin({name: "Error (deferred)", actionClass: "com.ibm.social.layout.test.MyDeferredActionWithError"})
+	]
+}, dojo.byId("actionBarDeferred1"));
+</script>
+
+<hr>
+
+Testing insertion order:
+<div id="actionBar2" class="lotusBtnContainer"></div>
+<script>
+var actionBar2 = new com.ibm.social.layout.widget.ActionBar({
+	actions: [
+		new com.ibm.social.layout.test.MyAction().mixin({name:"Original #1"}),
+		new com.ibm.social.layout.test.MyAction().mixin({name:"Original #2"}),
+		new com.ibm.social.layout.test.MyAction().mixin({name:"Original #3"})
+	]
+}, dojo.byId("actionBar2"));
+actionBar2.addAction(new com.ibm.social.layout.test.MyAction().mixin({name: "Append #1"}));
+actionBar2.addAction(new com.ibm.social.layout.test.MyAction().mixin({name: "Prepend #3"}), true);
+actionBar2.addAction(new com.ibm.social.layout.test.MyAction().mixin({name: "Append #2"}));
+actionBar2.addAction(new com.ibm.social.layout.test.MyAction().mixin({name: "Prepend #2"}), true);
+actionBar2.addAction(new com.ibm.social.layout.test.MyAction().mixin({name: "Append #3"}));
+actionBar2.addAction(new com.ibm.social.layout.test.MyAction().mixin({name: "Prepend #1"}), true);
+</script>
+
+<hr>
+
+Preloaded enablement:
+<div id="actionBarEnabled1" class="lotusBtnContainer"></div>
+<script>
+var actionBarEnabled1 = new com.ibm.social.layout.widget.ActionBar({
+	actions: [
+		new com.ibm.social.layout.test.MyAction(),
+		new com.ibm.social.layout.test.MyActionEnabledForOne(),
+		new com.ibm.social.layout.test.MyActionEnabledForMany(),
+		new com.ibm.social.layout.test.MyActionVisibleForOne(),
+		new com.ibm.social.layout.test.MyActionVisibleForMany()
+	]
+}, dojo.byId("actionBarEnabled1"));
+</script>
+Select:
+<a href="javascript:actionBarEnabled1.selectionChanged([]);">none</a>,
+<a href="javascript:actionBarEnabled1.selectionChanged([1]);">one</a>,
+<a href="javascript:actionBarEnabled1.selectionChanged([1,2]);">two</a>,
+<a href="javascript:actionBarEnabled1.selectionChanged([1,2,3,4,5]);">many</a>
+
+<hr>
+
+Enablement from script:
+<div id="actionBarEnabled2" class="lotusBtnContainer"></div>
+<script>
+var actionBarEnabled2 = new com.ibm.social.layout.widget.ActionBar({
+	actions: [
+		new com.ibm.social.layout.DeferredAction().mixin({name: "Example (deferred)", actionClass: "com.ibm.social.layout.test.MyDeferredAction"}),
+		new com.ibm.social.layout.DeferredAction().mixin({name: "EnabledForOne (deferred)", actionClass: "com.ibm.social.layout.test.MyDeferredActionEnabledForOne", actionBundle: "com.ibm.social.layout.test.MyDeferredAction"}),
+		new com.ibm.social.layout.DeferredAction().mixin({name: "EnabledForMany (deferred)", actionClass: "com.ibm.social.layout.test.MyDeferredActionEnabledForMany", actionBundle: "com.ibm.social.layout.test.MyDeferredAction"}),
+		new com.ibm.social.layout.DeferredAction().mixin({name: "VisibleForOne (deferred)", actionClass: "com.ibm.social.layout.test.MyDeferredActionVisibleForOne", actionBundle: "com.ibm.social.layout.test.MyDeferredAction"}),
+		new com.ibm.social.layout.DeferredAction().mixin({name: "VisibleForMany (deferred)", actionClass: "com.ibm.social.layout.test.MyDeferredActionVisibleForMany", actionBundle: "com.ibm.social.layout.test.MyDeferredAction"})
+	]
+}, dojo.byId("actionBarEnabled2"));
+</script>
+Select:
+<a href="javascript:actionBarEnabled2.selectionChanged([]);">none</a>,
+<a href="javascript:actionBarEnabled2.selectionChanged([1]);">one</a>,
+<a href="javascript:actionBarEnabled2.selectionChanged([1,2]);">two</a>,
+<a href="javascript:actionBarEnabled2.selectionChanged([1,2,3,4,5]);">many</a>
+		</div>
+	</div>
+</div>
+
+</body>
+
+${end}

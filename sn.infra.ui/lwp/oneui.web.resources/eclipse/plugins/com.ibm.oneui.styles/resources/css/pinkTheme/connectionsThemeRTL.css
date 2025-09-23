@@ -1,0 +1,31 @@
+/* Copyright IBM Corp. 2009, 2015  All Rights Reserved.              */
+
+/* OneUI bug LIT87SSH8 */
+.lotusLogin2 .lotusBanner .lotusLogo {padding-bottom:6px;}
+
+/* SPR #LMZO87ZDBC.  Items in the footer should gracefully wrap as they exceed the width of the browser */
+.lotusFooter table {text-align: center;}
+
+/* Inline elements in RTL mode in IE do not put padding/margins in the correct location without hasLayout */ 
+.lotusui_ie .lotusFooter table td ul li a {display: inline-block;}
+
+.lconnSTBtn { 
+	border-left:0px !important;margin-left:-1px !important; height:24px !important;
+	margin:0 0 0 -1px;padding:3px 10px;outline:1px solid #000;border:1px solid #444;-moz-border-radius:2px;
+	color:#fff !important;background-color:#333;background-image:none;
+}
+.lconnSTActionBarContainer {
+	margin:0;padding:0;position:fixed;bottom:0; right:0;width:100%;
+}
+.lconnSTActionBar{
+	margin:0 !important;overflow:hidden;float:left;width:auto;
+}
+.lconnSTBtn:hover{
+	border-color:#444;
+} 
+.lotusui .lconnSTActionBar .lconnSTBtn .lotusDropDownSprite{
+	background-position:0 -656px
+}
+
+/* style for LL "External" indicator */
+.lconnExternalAccess{background-color:#105CB6;}

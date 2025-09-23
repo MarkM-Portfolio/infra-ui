@@ -1,0 +1,6 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div data-sbw-bind="isLocked:class!_getLockClass" class="ics-viewer-file-type-icon">
+   <img src="${_blankGif}" data-dojo-attach-point="fileTypeIcon" class="ics-viewer-icon" data-sbw-bind="type:class!_getFileTypeClass" role="presentation" alt="" />
+   <img src="${_blankGif}" data-dojo-attach-point="lockedByYouIcon" class="ics-viewer-locked-by-you-icon" data-sbw-bind="isLocked:title!_getLockString, isLocked:alt!_getLockString"/>
+   <img src="${_blankGif}" data-dojo-attach-point="lockedByOtherIcon" class="ics-viewer-locked-by-other-icon" data-sbw-bind="isLocked:title!_getLockString, isLocked:alt!_getLockString"/>
+</div>

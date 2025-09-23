@@ -1,0 +1,11 @@
+/* Copyright IBM Corp. 2015  All Rights Reserved.                    */
+
+@import url("ic-share/fileviewer/css/fileviewer.css");
+@import url("ic-share/fileviewer/style/FileTypes/iconsFileTypes256.css");
+@import url("ic-share/fileviewer/style/FileTypes/iconsFileTypes128.css");
+@import url("ic-share/fileviewer/style/FileTypes/iconsFileTypes64.css");
+@import url("ic-share/fileviewer/style/FileTypes/iconsFileTypes32.css");
+@import url("ic-share/fileviewer/style/FileTypes/iconsFileTypes16.css");
+@import url("ic-share/fileviewer/video/html5_video_player/css/VideoStyles.css");
+@import url("ic-share/fileviewer/css/sprites.css");
+@import url("ic-share/fileviewer/video/video-js/video-js.css");

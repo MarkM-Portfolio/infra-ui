@@ -1,0 +1,19 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="form-section">
+<div class="lotusSection" data-dojo-attach-point="loadingNode"><img class="lotusLoading" src="${_blankGif}"> Loading...</div>
+<div style="display: none;" class="lotusSection" data-dojo-attach-point="networkNode"><span dojofirstfocus="true" tabindex="0">${_m_inNetwork}</span></div>
+<div style="display: none;" class="lotusSection" data-dojo-attach-point="pendingNode"><span dojofirstfocus="true" tabindex="0">${_m_pendingNetwork}</span></div>
+<form style="display: none;" class="lotusForm2" data-dojo-attach-point="formNode" data-dojo-attach-event="onInvited:_loaded" data-dojo-type="ic-personcard/tab/network/InviteForm">
+	<div class="lotusFormBody">
+	<div class="lotusFormField">
+		<label for="${id}_msg">${_m_labelMessage}</label>
+		<div><textarea dojofirstfocus="true" name="message" id="${id}_msg" class="lotusText" rows="4">${_strings.defaultMessage}</textarea></div>
+	</div>
+	<div class="lotusFormField">
+		<input type="checkbox" id="${id}_flw" name="follow" value="true" class="lotusCheckbox">
+		<label class="lotusCheckbox" for="${id}_flw">${_strings.labelFollow}</label>
+	</div>
+	</div>
+	<div class="lotusFormFooter"><input class="lotusFormButton" type="submit" value="${_strings.btnInvite}"></div>
+</form>
+</div>

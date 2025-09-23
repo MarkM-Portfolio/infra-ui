@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>Synchronous dojo.require()</title>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="Synchronous dojo.require()">
+            <div class="lotusContent">
+                <h1 id="hdr1"></h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        dojo.addOnLoad(function() {
+            dojo.require("lconn.test.dojo.module1");
+            if (dojo.exists("lconn.test.dojo.module1")) {
+                dojo.html.set(dojo.byId("hdr1"), new lconn.test.dojo.module1().title);
+            } else {
+                dojo.html.set(dojo.byId("hdr1"), "dojo.require() didn't work :-(");
+            }
+        });
+    </script>
+    ${script:dojo.html}
+</body>
+</html>

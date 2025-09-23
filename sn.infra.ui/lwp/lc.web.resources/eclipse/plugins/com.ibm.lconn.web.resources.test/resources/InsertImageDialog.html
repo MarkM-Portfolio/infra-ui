@@ -1,0 +1,61 @@
+${head}
+<!-- Copyright IBM Corp. 2013, 2015  All Rights Reserved.              -->
+
+${script:lconn.test.WikiAttachmentsDataStore}
+${script:lconn.core.InsertImageDialog}
+${style:com.ibm.lconn.web.resources.test/TempTabbedDialog}
+
+<!--$_{style:com.ibm.oneui3.styles/dojoTheme/lotusui30dojo/lotusui30dojo} -->
+<div class="lotusMain">
+<div class="lotusContent"><a
+	onclick="document.body.style.width = '1200px'; return false;" href="#">Page
+width 1000px</a> | <a
+	onclick="document.body.style.width = '400px'; return false;" href="#">Page
+width 400px</a> <br>
+
+<table style="width: 100%;" cellpadding="1" cellspacing="1" border="1">
+	<thead>
+		<tr>
+			<th>Test case</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+
+		<tr>
+			<td><a id="link1" href="javascript:showDialog();"> Displays
+			Dialog</a>
+			<div id="imageArea" />
+			<script>
+   function showDialog() {
+      var dialog = new lconn.core.InsertImageDialog({
+         onImagesAvailable : function(urls) {
+            dojo.create("img", {
+               src : urls[0].src, alt:urls[0].alt
+            }, "imageArea");
+         },
+         dataStore: new lconn.test.WikiAttachmentsDataStore({url: "WikiAttachmentTest.xml"})
+      });
+      dialog.show();
+   }
+</script></td>
+			<td>
+			<ol>
+				<li>Click link to display insert image dialog.
+			</ol>
+			</td>
+		</tr>
+
+
+	</tbody>
+</table>
+</div>
+</div>
+<script>
+dojo.addClass(document.body,
+"lotusui30_body lotusui30_fonts lotusui30 lotusui30dojo lotusui30dojo_sharebox");
+
+</script>
+
+</body>
+${end}

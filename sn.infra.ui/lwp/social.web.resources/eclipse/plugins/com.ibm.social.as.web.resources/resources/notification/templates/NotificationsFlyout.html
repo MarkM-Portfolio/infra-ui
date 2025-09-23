@@ -1,0 +1,24 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusHidden" id="notificationsFlyout" aria-label="${strings.ariaNotificationCenter}" aria-labelledby="headerPopupNode" role="region">
+    <div class="icBanner-popover-inner">
+        <div id="headerPopupNode" class="icBanner-popover-header" data-dojo-attach-point="headerNode" tabindex="-1">${strings.notificationsTitle}          
+             <a class="icBanner-popover-notificationSettings" href="${settingsUrl}" aria-label="${strings.ariaNotificationsSettings}" target="_blank">
+                ${strings.notificationsSettings}
+                <!--<img alt="${strings.notificationsSettings}" class="icBanner-settingsImg" src="${_blankGif}">-->
+            </a>
+        </div>
+        <div class="icBanner-popover-content" data-dojo-attach-event="onscroll: checkScroll" data-dojo-attach-point="contentNode">
+            <div class="icBanner-popover-newNotifications lotusHidden">${newNotifications}</div>
+            <div data-dojo-attach-point="notificationItem">
+            </div>
+            <div data-dojo-attach-point="loadingNode" class="lotusLoading icBanner-popover-loader lotusHidden"></div>
+        </div>
+       
+        <div class="icBanner-popover-footer">
+            <ul class="l-icFloatList">
+                <li class="lotusFirst"><a class="icBanner-footer-link" href="${allNotificationsUrl}" aria-label="${strings.ariaSeeAllNotifications}" target="_blank">${strings.seeAllNotifications}</a></li>
+            </ul>
+            <div class="l-icClear"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<atom:feed xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	xmlns:ibmsc="http://www.ibm.com/search/content/2010" xmlns:snx="http://www.ibm.com/xmlns/prod/sn">
+	<atom:id>https://connections.swg.usma.ibm.com/communities/service/atom/catalog/owned?results=10&amp;start=0&amp;sortKey=update_date&amp;sortOrder=desc&amp;facet=%7B%22id%22%3A%22tag%22%2C%22count%22%3A%2030%7D&amp;format=XML&amp;userCacheKey=1a4d1cc0-8301-1032-9a44-89fbb6fdad64&amp;dojo.preventCache=1383055971551
+	</atom:id>
+	<atom:title><![CDATA[Communities I Own]]></atom:title>
+	<atom:author>
+		<atom:name>Communities Catalog REST Services</atom:name>
+	</atom:author>
+	<atom:link
+		href="https://connections.swg.usma.ibm.com/communities/service/atom/catalog/owned?results=10&amp;start=0&amp;sortKey=update_date&amp;sortOrder=desc&amp;facet=%7B%22id%22%3A%22tag%22%2C%22count%22%3A%2030%7D&amp;format=XML&amp;userCacheKey=1a4d1cc0-8301-1032-9a44-89fbb6fdad64&amp;dojo.preventCache=1383055971551"
+		rel="self" type="application/atom+xml" />
+	<atom:updated>2013-10-29T14:12:50.751Z</atom:updated>
+	<opensearch:Query role="request" searchTerms="*" />
+	<opensearch:startIndex>0</opensearch:startIndex>
+	<opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+	<opensearch:totalResults exact="true">0
+	</opensearch:totalResults>
+	<ibmsc:facets taxonomyId="facets" />
+</atom:feed>

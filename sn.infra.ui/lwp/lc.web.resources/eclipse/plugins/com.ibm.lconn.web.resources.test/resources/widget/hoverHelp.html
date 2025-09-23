@@ -1,0 +1,136 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+${script:lconn.core.widget.HoverHelp}
+
+${style:com.ibm.oneui/controls/templates/Dialog}
+${style:com.ibm.oneui/controls/templates/HoverPopup}
+${style:com.ibm.oneui/controls/templates/HoverHelp}
+
+${endhead}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+<a onclick="document.body.style.width = '1200px'; return false;" href="#">Page width 1000px</a> |
+<a onclick="document.body.style.width = '400px'; return false;" href="#">Page width 400px</a>
+<br>
+
+<table style="width: 100%;" cellpadding="1" cellspacing="1" border="1">
+<thead><tr>
+<th>Test case</th><th>Description</th>
+</tr></thead><tbody>
+
+<tr><td>
+    <a id="link1" href="#"> Contents will be replaced</a>
+    <script>
+    lconn.core.widget.HoverHelp.createHelpLink(dojo.byId("link1"), "Very long title with the possibility of wrapping", "This is a useful bit of help text that explains some information about the product.  It might be multiline", {});
+    </script>
+</td><td>
+    <ol>
+    <li>Hover over link will open help popup.
+    <li>Popup contains a heading
+    <li>Popup contains a plain text message.
+    <li>Click link to invoke the popup immediately, which should transfer focus to the close button in the popup.
+    <li>When the popup is closed, focus will be returned to the element that opened the popup.
+    <li>Popup contains a close button in the upper right
+    <li>Clicking close button will close the popup.
+    <li>Clicking outside of the dialog (on any node) will close the popup
+    <li>Hitting the ESC key while focus is anywhere in the page will close the popup
+    <li>The contents of the link are replaced with a standard OneUI help icon
+    </ol>        
+</td></tr>
+
+
+<tr><td>
+    <a id="link2" href="#"> Contents will be replaced</a>
+    <script>
+    lconn.core.widget.HoverHelp.createHelpLink(dojo.byId("link2"), null, "This is a useful bit of help text that explains some information about the product.  It might be multiline", {});
+    </script>
+</td><td>
+    <ol>
+    <li>Hover over link will open help popup.
+    <li>Popup does not contain a heading
+    <li>Popup contains a plain text message.
+    <li>Click link to invoke the popup immediately, which should transfer focus to the close button in the popup.
+    <li>When the popup is closed, focus will be returned to the element that opened the popup.
+    <li>Popup contains a close button in the upper right
+    <li>Clicking close button will close the popup.
+    <li>Clicking outside of the dialog (on any node) will close the popup
+    <li>Hitting the ESC key while focus is anywhere in the page will close the popup
+    </ol>        
+</td></tr>
+
+<tr><td>
+    <a id="link3" href="#"> Contents will be replaced</a>
+    <script>
+    var div = document.createElement("div");
+    div.innerHTML = "This is a DomNode and so can contain things like <a href='#'> links </a>";
+    lconn.core.widget.HoverHelp.createHelpLink(dojo.byId("link3"), null, div, {});
+    </script>
+</td><td>
+    <ol>
+    <li>Hover over link will open help popup.
+    <li>Popup does not contain a heading
+    <li>Popup contains a message which includes a link.
+    <li>Click link to invoke the popup immediately, which should transfer focus to the close button in the popup.
+    <li>When the popup is closed, focus will be returned to the element that opened the popup.
+    <li>Popup contains a close button in the upper right
+    <li>Clicking close button will close the popup.
+    <li>Clicking outside of the dialog (on any node) will close the popup
+    <li>Hitting the ESC key while focus is anywhere in the page will close the popup
+    </ol>        
+</td></tr>
+
+<tr><td>
+    <a id="link4" href="#"> Contents will be replaced</a>
+    <script>
+    var fakeFetch = function(callback){
+       var div = document.createElement("div");
+       div.innerHTML = "This is a DomNode and so can contain things like <a href='#'> links </a>";
+
+       window.setTimeout(dojo.partial(callback, div), 2000);
+    }
+    lconn.core.widget.HoverHelp.createHelpLink(dojo.byId("link4"), null, fakeFetch, {});
+    </script>
+</td><td>
+    <ol>
+    <li>Hover over link will open help popup.
+    <li>Popup does not contain a heading
+    <li>Popup contains a message which includes a link.
+    <li>Click link to invoke the popup after a 2 second delay, simulating network loading of contents, after which focus should transfer to the close button in the popup.
+    <li>When the popup is closed, focus will be returned to the element that opened the popup.
+    <li>Popup contains a close button in the upper right
+    <li>Clicking close button will close the popup.
+    <li>Clicking outside of the dialog (on any node) will close the popup
+    <li>Hitting the ESC key while focus is anywhere in the page will close the popup
+    </ol>        
+</td></tr>
+
+<tr><td>
+    <a id="link5" href="#"> Contents should not replaced</a>
+    <script>
+    lconn.core.widget.HoverHelp.createHelpLink(dojo.byId("link5"), "Very long title with the possibility of wrapping", "This is a useful bit of help text that explains some information about the product.  It might be multiline", {}, true);
+    </script>
+</td><td>
+    <ol>
+    <li>Hover over link will open help popup.
+    <li>Popup contains a heading
+    <li>Popup contains a plain text message.
+    <li>Click link to invoke the popup immediately, which should transfer focus to the close button in the popup.
+    <li>When the popup is closed, focus will be returned to the element that opened the popup.
+    <li>Popup contains a close button in the upper right
+    <li>Clicking close button will close the popup.
+    <li>Clicking outside of the dialog (on any node) will close the popup
+    <li>Hitting the ESC key while focus is anywhere in the page will close the popup
+    <li>The contents of the link are not replaced with a standard OneUI help icon
+    </ol>        
+</td></tr>
+
+
+
+</tbody></table>
+</div>
+</div>
+</body>
+${end}

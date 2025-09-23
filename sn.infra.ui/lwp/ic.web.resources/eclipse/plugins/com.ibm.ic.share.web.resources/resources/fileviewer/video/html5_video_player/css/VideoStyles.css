@@ -1,0 +1,245 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+.ics-viewer .HTML5VideoWrapper {
+   position: relative;
+   /*z-index:1000;*/
+   top: 0;
+   left: 0;
+}
+
+.ics-viewer .HTML5Video {
+   position: absolute;
+   top: 0;
+   left: 0;
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+   /*z-index:1001;*/
+}
+
+.ics-viewer .HTML5VideoControlWrapper {
+   left: 0;
+   bottom: 0;
+   height: 40px;
+   background-color: #222222;
+   /*z-index:1002;*/
+   width: 100%;
+   position: absolute;
+   opacity: 0;
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+}
+
+.ics-viewer .HTML5VideoColumn {
+   height: 40px;
+}
+
+.ics-viewer .HTML5VideoControlsLeft {
+   width: 34px;
+   float: left;
+}
+
+.ics-viewer .HTML5VideoControlsCenter {
+   float: left;
+   width: 0px;
+   margin-right:0;
+   margin-left:0;
+}
+
+.ics-viewer .HTML5VideoControlsRight {
+   width: 189px;
+   float: right;
+}
+
+.ics-viewer .HTML5VideoControls {
+   margin-top: 12px;
+   margin-left: 10px;
+   float: left;
+   cursor: pointer;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   -o-user-select: none;
+   user-select: none;
+   display: block;
+   white-space: normal;
+}
+.ics-viewer .html5HighContrast {
+   margin-top: -44px;
+   display:block;
+}
+.ics-viewer .html5HighContrastThreeLine {
+   margin-top: -26px;
+   display:block;
+}
+
+.ics-viewer .HTML5VideoPlay {
+   height: 24px;
+   width: 24px;
+   display: inline-block;
+}
+
+.ics-viewer .HTML5VideoPause {
+   height: 24px;
+   width: 24px;
+   display: none;
+}
+
+.ics-viewer .HTML5VideoSlider {
+   background-color: #3F4648;
+   height: 10px;
+   width: 100%;
+   position: relative;
+   margin-top: 15px;
+   margin-left: 0;
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+}
+
+.ics-viewer .HTML5VideoKnob {
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 0%;
+   height: 10px;
+   background-color: #459AC8;
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+}
+
+.ics-viewer .HTML5VideoBuffer {
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 0%;
+   height: 10px;
+   background-color: #666666;
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+}
+
+.ics-viewer .HTML5VideoFullScreen {
+   height: 24px;
+   width: 24px;
+   float: left;
+   margin-left: 10px;
+   margin-right: 0px;
+}
+
+.ics-viewer .HTML5VideoCollapse {
+   height: 24px;
+   width: 24px;
+   float: right;
+   margin-right: 10px;
+   display: none;
+   margin-left: 0px;
+}
+
+.ics-viewer .HTML5VideoVolume {
+   height: 24px;
+   width: 24px;
+   float: left;
+   display: inline-block;
+}
+
+.ics-viewer .HTML5VideoMute {
+   height: 24px;
+   width: 24px;
+   float: left;
+   display: none;
+}
+
+.ics-viewer .HTML5VideoCurrentTime {
+   color: #F0F0F0;
+   float: left;
+   /*margin-left:10px;*/
+}
+
+.ics-viewer .HTML5VideoDuration {
+   color: #BBBBBB;
+   float: left;
+   margin-left: 10px;
+}
+
+.ics-viewer .HTML5VideoControlsLineBreak {
+   background-color: #459AC8;
+   height: 14px;
+   width: 2px;
+   margin-left: 10px;
+   margin-top: 13px;
+   float: left;
+}
+
+.ics-viewer .HTML5VideoText {
+   font-family: Helvetica, Arial, Sans-Serif;
+   font-size: 13px;
+   font-weight: bold;
+   display: inline-block;
+   margin-top: 12px;
+   text-align: right;
+   height: 16px;
+   line-height: 16px;
+   margin-left: 10px;
+}
+
+.ics-viewer .HTML5VideoVolumeBar {
+   height: 40px;
+   width: 28px;
+   background-color: #222222;
+   float: left;
+   margin-left: 10px;
+}
+
+.ics-viewer .HTML5VideoVolSlide {
+   height: 14px;
+   width: 28px;
+   background-color: #F0F0F0;
+   margin-top: 13px;
+   position: absolute;
+   cursor: pointer;
+   /*z-index:0;*/
+}
+
+.ics-viewer .HTML5VideoVolumeKnob {
+   height: 14px;
+   width: 0%;
+   background-color: #459AC8;
+   /*z-index:999;*/
+   position: absolute;
+}
+
+.ics-viewer .HTML5VideoVolumeDivider {
+   position: absolute;
+   height: 14px;
+   width: 2px;
+   background-color: #222222;
+   /*z-index:1000;*/
+}
+
+.ics-viewer .HTML5VideoVolumeWindow {
+   position: absolute;
+   height: 14px;
+   width: 3px;
+   /*z-index:1;*/
+}
+
+.ics-viewer .otherHTML5Player24-collapse-16{width:16px;height:16px;background-position:0 0}
+.ics-viewer .otherHTML5Player24-collapse-hover-16{width:16px;height:16px;background-position:0 -24px}
+.ics-viewer .otherHTML5Player24-fullscreen-16{width:16px;height:16px;background-position:0 -48px}
+.ics-viewer .otherHTML5Player24-fullscreen-hover-16{width:16px;height:16px;background-position:0 -72px}
+.ics-viewer .otherHTML5Player24-mute-16{width:16px;height:16px;background-position:0 -96px}
+.ics-viewer .otherHTML5Player24-mute-hover-16{width:16px;height:16px;background-position:0 -120px}
+.ics-viewer .otherHTML5Player24-pause-16{width:16px;height:16px;background-position:0 -144px}
+.ics-viewer .otherHTML5Player24-pause-hover-16{width:16px;height:16px;background-position:0 -168px}
+.ics-viewer .otherHTML5Player24-play-16{width:16px;height:16px;background-position:0 -192px}
+.ics-viewer .otherHTML5Player24-play-hover-16{width:16px;height:16px;background-position:0 -216px}
+.ics-viewer .otherHTML5Player24-volume-16{width:16px;height:16px;background-position:0 -240px}
+.ics-viewer .otherHTML5Player24-volume-hover-16{width:16px;height:16px;background-position:0 -264px}
+.ics-viewer .otherHTML5Player24-play-overlay-lg{width:64px;height:64px;background-position:0 -288px}
+.ics-viewer .otherHTML5Player24-play-overlay-lg-hover{width:64px;height:64px;background-position:0 -360px}
+.ics-viewer .otherHTML5Player24{background-image:url('./HTML5Player/otherHTML5Player24-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.ics-viewer .lotusImagesOff .otherHTML5Player24{display:none}

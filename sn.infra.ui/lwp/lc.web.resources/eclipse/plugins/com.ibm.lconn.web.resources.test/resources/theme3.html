@@ -1,0 +1,27 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<html><head>
+${script:lconn.core.theme}
+<link rel="stylesheet" type="text/css" id="lotusBaseStylesheet" href="${contextRoot}/web/_style?include=com.ibm.lconn.core.styles.oneui3/base/package3.css&etag=arbitrary" theme="pink" appName="test" base="${contextRoot}/web/" query="?version=oneui3&rtl=false&etag=arbitrary" oneui="3"></link>
+<link rel="stylesheet" type="text/css" id="lotusThemeStylesheet" href="${contextRoot}/web/_lconntheme/pink.css?version=oneui3&rtl=false&etag=arbitrary"></link>
+<link rel="stylesheet" type="text/css" id="lotusAppStylesheet" href="${contextRoot}/web/_lconnappstyles/pink/test.css?version=oneui3&rtl=false&etag=arbitrary"></link>
+${endhead}
+<div class="lotusFrame">
+
+<div class="lotusTitleBar" id="lotusTitleBar"><div class="lotusRightCorner"><div class="lotusInner"><ul class="lotusTabs" role="navigation toolbar"><li class="lotusSelected"><a href="" >Tab</a></li></ul></div></div></div>
+
+<div class="lotusContent">
+<button onclick="lconn.core.theme.switchTheme('default')">Default</button>
+<button onclick="lconn.core.theme.switchTheme('')">Empty</button>
+<button onclick="lconn.core.theme.switchTheme()">Undefined</button>
+<button onclick="lconn.core.theme.switchTheme('purple')">Purple</button>
+<button onclick="lconn.core.theme.switchTheme('com.ibm.lotuslive.theme')">com.ibm.lotuslive.theme</button>
+
+<p>Default, Empty, and Undefined should always revert the user back to the theme configured when the page loaded.  The other buttons
+should switch to the theme.  Toggling should continue to show the right theme.
+
+<p><img id="1"><script>dojo.byId('1').src = lconn.core.theme.getUrl("images/loading.gif");</script> The loading image
+<p><img id="2"><script>dojo.byId('2').src = lconn.core.theme.getUrl("images/msgErrorInField.png");</script> An error image
+
+</div></div>
+</body>
+${end}

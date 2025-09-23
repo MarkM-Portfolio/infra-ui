@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015, 2016  All Rights Reserved.                    -->
+<messagebundle>
+  <msg name="as_title">Aktualisierungen</msg>
+  <msg name="as_description">Aktualisierungen von IBM Connections</msg>
+  <msg name="as_error">Bei der Konfiguration für den Aktualisierungsdatenstrom ist ein Fehler aufgetreten. Wenden Sie sich an den zuständigen Administrator.</msg>
+</messagebundle>

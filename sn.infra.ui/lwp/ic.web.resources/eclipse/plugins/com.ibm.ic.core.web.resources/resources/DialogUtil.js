@@ -1,0 +1,29 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2008, 2015                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+define([
+   "dojo/_base/kernel",
+   "ic-ui/DialogUtil"
+], function (kernel, CoreUIDialogUtil) {
+
+   /**
+    * This class is just a proxy for ic-ui/DialogUtil
+    * 
+    * @see coreui.DialogUtil
+    * 
+    */
+   kernel.deprecated("ic-core/DialogUtil", "Use ic-ui/DialogUtil instead", "5.0");
+
+   return CoreUIDialogUtil;
+});

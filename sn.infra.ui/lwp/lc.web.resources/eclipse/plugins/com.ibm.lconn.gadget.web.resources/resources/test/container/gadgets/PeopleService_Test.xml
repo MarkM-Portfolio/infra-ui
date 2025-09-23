@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+<Module>
+<ModulePrefs title="People Service Test Gadget" description="Open social gadget to test People Service API" height="400" width="500">
+<Require feature="cre.service.people"/>
+<Require feature="cre.service.logging"/>
+<Require feature="core.context"/>
+<Require feature="inline"/>
+</ModulePrefs>
+<Content type="html" view="default"><![CDATA[
+     <script type="text/javascript">
+     	function init(){
+     		console.debug("People Service Test Gadget - init - entering");
+			getServiceManager().getService(cre$.services.PEOPLE).then(function(peopleService){
+			try{
+				console.debug("inside PeopleService");
+				var myDiv = document.getElementById("multiple");
+				var personArray = [{"uid":"user2","displayName":"user2 test"}, {"uid":"user3","displayName":"user3 test"}, {"uid":"user4","displayName":"user4 test"}];
+				var promise = peopleService.createPeople(personArray);
+				promise.then(function(people){
+					var paramArray = [];
+					for(var i=0; i<people.length; i++) {
+						paramArray.push({"person":people[i], "refNode":myDiv});
+					}
+					peopleService.renderPeople(paramArray).then(function(nodes){
+						console.log("people created");
+					});
+				});
+			}catch(e){
+					console.debug("Exception in init:");
+					console.dir(e);
+				}
+				
+			},function(e){alert("People Service is not loaded!!!");});
+			
+     		console.debug("People Service Test Gadget - init - exiting");
+     	}
+		function load_profile_link(){
+			getServiceManager().getService(cre$.services.PEOPLE).then(function(peopleService){
+				var id = document.getElementById("userId").value;
+				var name = document.getElementById("displayName").value;
+				var promise = peopleService.createPerson({"uid":id,"displayName":name});
+				promise.then(function(person){
+					peopleService.renderPerson(person, "simple");
+				});
+			},function(e){alert("People Service is not loaded!!!");});
+		}
+     	gadgets.util.registerOnLoadHandler(init);
+  	 </script>
+	 <div id="displayArea">
+		<h5>Display node for a single person</h5>
+		<table>
+		<tr>
+			<td>User Id:</td><td><input id="userId" /><td/>
+		</tr>
+		<tr>
+			<td>Display Name:</td><td><input id="displayName" /><td/>
+		</tr>	 
+		</table>
+	 	<div id="simple"></div>
+		<div><button onClick="load_profile_link();">Load Profile Link</button></div>
+		<h5>Display node for a list of persons</h5>
+		<div id="multiple">
+	 </div>
+  ]]></Content>
+</Module>

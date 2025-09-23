@@ -1,0 +1,40 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+
+.labelForBookmark {
+font-weight: normal !important;
+padding-right: 5px;
+}
+.lotusFormFooter {
+border-top: solid #AAA 1px;
+padding:10px 25px !important;
+}
+.lotusRteDiv {background:white none repeat scroll 0%;   border:2px ridge gray;width:99%;}
+.checked{height:10px;border:0;margin-left:0.5em;}
+#pageTitleField {margin:10px 10px 0px 10px;}
+.lotusBookmarklet .lotusDialogContent td {padding-top: 5px;}
+.lotusBookmarklet .lotusFormTabContentFirst td {padding-top:20px;}
+.lotusBookmarklet .lotusTabContainer {margin-bottom:0px !important;height:100%;}
+.dj_gecko .lotusBookmarklet ul.lotusTabs{bottom: -5px;}
+.dj_webkit .lotusBookmarklet ul.lotusTabs{bottom: -5px;}
+body.lotusBookmarklet {background-image:none;}
+.lotusFormTabContentFirst td, .lotusFormTabContent td {background-color:#fff !important;}
+.lotusForm hr {background-color:#CCCBCB;border:0pt none;height:1px;width:98%;}
+ul li.both table tr td div{color: #719e0d;  font-weight: bold;}
+ul li div.tagcount {width: 3em;color: #7a7;}
+.lotusui ul {list-style-type:none;margin-right:0px !important;}
+ul#recentTags li {white-space:normal !important;float:left;padding:0 5px;}
+ul#recommendedTags li {white-space:normal !important;float:left;padding:0 5px;}
+ul#popularTags li {white-space:normal !important;float:left;padding:0 5px;}
+ul.lotusTabs{height:100%;width:98%;}
+.bookmarkletSection{border-width:0px;margin-bottom:0px;margin-top:5px;}
+.lotusFixedTable{table-layout:fixed;width:100%;vertical-align:top;}.lotusTabContainer{height:13.5pt;}ul.lotusTabs{position:relative;}ul.lotusTabs li{position:relative;}
+.discussThis .lotusForm2 .lotusFormTitle {background: none repeat scroll 0 0 #000000;   }
+.discussThis .lotusForm2 .lotusFormTitle .lotusHeading2 {color: white;}
+.discussThis .lotusForm2 textarea {width: 98%;}
+.discussThis .lotusForm2 fieldset {width: 98%;}
+.discussThis .lotusForm2 #typeahead {width: 98%;}
+.discussThis .lotusForm2 #name {width: 98%;}
+
+/*THEMING*/
+.lotusBookmarklet .lotusDialog{background-color:#fff;}
+.lotusBookmarklet .lotusDialog .lotusFormFooter {text-align: right;}

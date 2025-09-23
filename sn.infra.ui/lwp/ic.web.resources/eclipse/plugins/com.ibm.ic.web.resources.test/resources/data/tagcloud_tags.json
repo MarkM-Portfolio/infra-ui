@@ -1,0 +1,33 @@
+[{
+	"displayName": "social-business",
+	"name": "social-business",
+	"frequency": 1
+}, {
+	"displayName": "ibm-connections",
+	"name": "ibm-connections",
+	"frequency": 2
+}, {
+	"displayName": "smarter-workforce",
+	"name": "smarter-workforce",
+	"frequency": 3
+}, {
+	"displayName": "watson",
+	"name": "watson",
+	"frequency": 4
+}, {
+	"displayName": "bigdata",
+	"name": "bigdata",
+	"frequency": 3
+}, {
+	"displayName": "social-analytics",
+	"name": "social-analytics",
+	"frequency": 2
+}, {
+	"displayName": "cloud",
+	"name": "cloud",
+	"frequency": 5
+}, {
+	"displayName": "softlayer",
+	"name": "softlayer",
+	"frequency": 1
+}]

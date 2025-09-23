@@ -1,0 +1,52 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2013                                          */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+.lotusui30 .lotusIndent10 {
+padding-left: 10px !important;
+}
+.lotusui30_fonts {
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+-webkit-font-smoothing:antialiased;
+}
+.lotusui30 a,
+.lotusui30 a:visited {
+color: #1970b0;
+}
+.lotusui30 a:hover,
+.lotusui30 a:focus,
+.lotusui30 a:active {
+color: #05386b;
+}
+.lotusui30_layout .lotusColLeft a,
+.lotusui30_layout .lotusColLeft a:visited {
+color: #f1f1f1;
+}
+.lotusui30_layout .lotusColLeft a:hover,
+.lotusui30_layout .lotusColLeft a:focus,
+.lotusui30_layout .lotusColLeft a:active {
+color: #fff;
+}
+.lotusui30 .lotusColRight .lotusMeta{
+color:#6c6c6c;
+font-size: 1em;
+}
+.lotusui30 .lotusActionBar {
+height: 2.5em;
+}
+.lotusui30 .lotusActionBar2 {
+margin-top: -15px;
+}
+.lotusui30 .lotusActionMenu li {
+padding: 1px;
+}

@@ -1,0 +1,32 @@
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<div class="AddMembers" dojoAttachPoint="addGroups_AP" style="display:inline;">
+    <input type="hidden" name="authors_GRP" dojoAttachPoint="authors_GRP_AP" />
+
+    <div class="BrowseGroups" dojoAttachPoint="addGroupsTA_AP">
+        <span dojoAttachPoint="groupSelect1_AP">
+            <label class="lotusHidden" for="groupSelect" >${rs_group_select}</label>
+            <label class="lotusAccess" for="addGroupsWidgetPeopleTypeAhead" >${rs_group_typeahead}</label>
+            <select id="groupSelect" dojoAttachPoint="aclLevel_AP">
+                <option dojoAttachPoint="authors_AP" value="authors">${rs_members}</option>
+            </select>
+        </span>
+
+        <input dojoAttachPoint="membersCombo_AP" ></input>
+        <span dojoAttachPoint="addButton_AP" aria-disabled="true">
+            <button title="${rs_addMember_title}" role="button" class="fieldAddDisabled" dojoAttachEvent="onclick: noProcessing"> </button>
+            <span title="${rs_addMember_title}" role="button" class="fieldAddText" style="display:none" dojoAttachEvent="onclick: noProcessing">+</span>
+        </span>
+
+        <div dojoAttachPoint="groupSelect2_AP"><div class="field" /></div></div>
+            <div class="browseLink" dojoAttachPoint="browserGroupsTA_AP">
+                <a class="lotusAction" role="button" href="javascript:void();" dojoAttachEvent="onclick: browseGroups, onkeypress: keyListener" >${rs_browseGroups}</a>
+                <div dojoAttachPoint="browseGroups_AP" style="display:none;"></div>
+            </div>
+        </div>
+
+        <div class="field groupListContainer" style="display:none;" dojoAttachPoint="groupListContainer_AP">
+        <div id="groupList" dojoAttachPoint="groupList_AP" class="memberList" aria-labeledby="addGroupsWidget" role="listbox"></div>
+    </div>
+</div>
+

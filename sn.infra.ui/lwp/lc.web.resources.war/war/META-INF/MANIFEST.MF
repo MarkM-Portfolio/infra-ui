@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Class-Path: lc.web.resources.remote.jar lc.web.osgi.servletbridge.jar 
+ notify.client.jar com.ibm.ws.bootstrap.jar com.ibm.ws.admin.client_7.
+ 0.0.jar j2ee.jar com.ibm.ws.emf.jar com.ibm.ws.runtime.jar org.eclips
+ e.emf.commonj.sdo.jar com.ibm.ws.admin.core.jar com.ibm.ws.prereq.com
+ monj-twm.jar com.ibm.ws.prereq.xlxp.jar lc.util.cache-3.0.jar lc.util
+ .web-3.0.jar lc.oauth.platform.jar lc.oauth.messages.jar
+

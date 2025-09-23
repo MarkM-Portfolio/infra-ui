@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<Module>
+	<ModulePrefs title="Sample views gadget" height="500">
+		<Require feature="views"></Require>
+		<Require feature="inline"></Require>
+		<Require feature="selection"></Require>
+		<Require feature="open-views"></Require>
+		<Require feature="embedded-experiences"></Require>
+		<Require feature="settitle"></Require>
+		<Require feature="dynamic-height"></Require>
+	</ModulePrefs>
+	<Content type="html"
+		view="DASHBOARD, FULL_PAGE, canvas, profile, default, home">
+<![CDATA[
+<script>
+  /** 
+   * Create the list of links to the other views 
+   */
+  function createLinks() {  
+    //Get the environment, current view and an object containing the supported views  
+    var views = gadgets.views.getSupportedViews();  
+    var currentview = gadgets.views.getCurrentView();  
+    var text = [ "You are currently on the ", 
+        currentview.getName(), 
+      " view.  Other views: " ].join("");  
+
+    //Set up some DOM  
+    var outputdom = document.getElementById("main");  
+    outputdom.appendChild(document.createTextNode(text));  
+    var ol = document.createElement("ol"); 
+    outputdom.appendChild(ol);  
+    //Iterate over each view  
+    for (var viewname in views) {    
+      var view = views[viewname];    
+      // Make some DOM to present each link    
+      var li = document.createElement("li");    
+      var a = document.createElement("a");    
+      ol.appendChild(li);    
+      li.appendChild(a);    
+      a.href = "javascript:void(0);";    
+      //Put the name of the view in the link    
+      a.appendChild(document.createTextNode("Link to " + viewname + " - " + view.getName()));    
+      //Handle when the user clicks a link to the other server    
+      a.onclick = getNavigateClosure(view);  
+    }
+  };
+  /** 
+   * Returns a function that navigates to the supplied view 
+   */
+    function getNavigateClosure(view) {  
+      return function() { gadgets.views.requestNavigateTo(view); };
+    };
+
+  //Execute createLinks when the page is done loading
+  gadgets.util.registerOnLoadHandler(createLinks);  // leave it out until navigateTo works...
+  var open_site;
+  var navigateCallback = function(site_handler){
+  	console.log("navigate callback fired!", site_handler); open_site = site_handler;
+  };
+  var resultCallback = function(returnVal){
+  	console.log("result callback fired! return value : ", returnVal);
+  };
+  var goDialog = function(){
+  	gadgets.views.openGadget(resultCallback, navigateCallback, {"view":"about", "viewTarget":"dialog"});
+  };
+  var goEmbedded = function(){
+  var item = {
+  "summary":"test 7 ",
+  "connectionsContentUrl":"https://dubxpcvm799.mul.ie.ibm.com:9445/profiles/atom/mv/theboard/entry.do?entryId=cb147478-f753-498b-aa2a-de2d6f0919fa",
+  "published":"2012-02-21T08:39:09.609Z",
+  "isPublic":"true",
+  "eventType":"profiles.status.updated",
+  "actor":{"id":"253aa593-0bc5-43c3-8b77-7ec1be384858","displayName":"David McMullin"},
+  "iconUrl":"https://dubxpcvm799.mul.ie.ibm.com:9445/connections/resources/web/com.ibm.oneui3.styles/imageLibrary/Icons/ComponentsGray/ProfilesGray16.png",
+  "numLikes":"0",
+  "title":"David McMullin",
+  "numComments":"0",
+  "updated":"false",
+  "id":"cb147478-f753-498b-aa2a-de2d6f0919fa",
+  "itemUrl":"https://dubxpcvm799.mul.ie.ibm.com:9445/profiles/html/profileView.do?userid=253aa593-0bc5-43c3-8b77-7ec1be384858&entryid=cb147478-f753-498b-aa2a-de2d6f0919fa",
+  "eventTitle":"David McMullin test 7 ",
+  "cookie":"lconn.sand.lastmod=1329839550342; ConnectionsHomepageActivityStreamState=allUpdates%2Fall; card.popup.slim=1; ConnectionsHomepageActivityStreamState=allUpdates/all; UnicaNIODID=DpBQiRWTZKH-XTEp2lZ; IBM_W3SSO_ACCESS=w3.ibm.com; bprememberme=DMCMULLI@ie.ibm.com; __qca=P0-884314270-1329216578193; ibmSurvey=1329904434943; JSESSIONID_LC_Cell01=0000YIgrmSsH0CKPpqAmoj22Sch:1632h8t9q:1632g4lbo:1632gpjrq; JSESSIONID=0000sSajO8bFKNO5mz4TNmccg0N:-1; LtpaToken2=quCxScMLWhtDsuIq7HQPh64Fl67zwHZ1NOi+8Q0HVQIodbxdXwxrvvbCQ+tVkSUgZmxciPUALZTXgapKqRVa6hXREvYagJesOgwStXGxauqBAUFGjNOkbd9AmNO4s0lniiyLNaEn5aMoVx/rzaFZmwYYcCfTSJoxstEc98wtrgtHcThJ0ixTM+GcxADdhcr/l6Z+ZivqfibXjKTqxW00pSWAUbItgy9JctPGLDgHTrhGyrGfyLhQXdIYILTYyt7pA7u6NLR9bTrCeWjSkUwyDojpX8jrKA4IyLJ2Qrpz8b9SeW8SGS9TLBjGh4fqn7s6jcMa4oEHaL2wHzMCXd6BmnSuS+7fbxeFapmAcBc71AfIwfbVKY+5f0gMgNqEMrTb+m8FhoM5AiMz3TWIzLFFu/8piNpynDdML9yUD1D8T/1nXOSV3DxFGEcFZZd6E36yvxkt6mlTP9uKAJCsmuDsbzTllH3sEkK/d3KYeCe0lvna+1opElHiwYhZcT3t0CKUqZfWFVCzObFS9EeYBKmOIRwHzeXzb+UFkr3EB4U4reeqzvf8A4J+DSJb0e0D+ZrhlcDrbsV1WqXQC6bVpdLjwiCzPj4beWQUDzrW/AvNWiMKkpQz5MsYlLhqjeHBBtHacB7MIfMR+og7uwnL9pDrMHBZ0z/t5S7tGpPOmC38aD43SVUkXGE6YeIvYfVBIciqtJGc6s1Rrp72mH6cuk5wADOAlrHtltLRGWd68uIEuRaML7+r/twttP/LNSJPtV80; LtpaToken=mXNESIdDICWsF2y8IXruOct1mdNrXxnBHvj8eue9icvBRma0gB5FCVgmftAe+XInQGyt2fYs5GbT826irYbgZVF5WGymyicz2amM6xXwLc2wbDKmm7OcbESQ0B8ka+LXP3JGnm0KbjNNkzlNtX2FtR0eqRkR/huZd6fW5Nu//zIpzLPffQwl+LVh0Y7l4+YotFFgndSZOyqP1DuuqAPi4vUdG8XDyzoenKmY0dQHaWErLypMQS3DJMqLkCHq9QMuBH12vuQ1UBUthIMuoG0Ly/eg5QuemroaAmadj8NPtNIXB+B7/isqn8n3c8n4vkvl3YNc41HEXwi30V0M0UurJtioWNpughoE9irjUDLOFDjnE4Nod+YIU68xtUtf3GIh"
+  };
+	gadgets.selection.setSelection(item);
+  	gadgets.views.openEmbeddedExperience(resultCallback, navigateCallback, {"gadget":"http://dubxpcvm799.mul.ie.ibm.com:9082/connections/resources/web/com.ibm.social.ee/StatusUpdate.xml", "context":item}, {"coordinates":"fake_coords", "viewParams":{"some_views":"hooray!"}});
+  };
+  var goUrl = function(viewTarget){
+  	gadgets.views.openUrl(document.forms[0]["myUrl"].value, navigateCallback, viewTarget, {"coordinates":"fake_coords"});
+  };
+  var closeGadget = function(){
+  	gadgets.views.close(open_site);
+  }
+</script>
+<h3>test your gadgets.views functionality here, yay!</h3>
+<div id="main"></div>
+<a onClick="goDialog()">click here to open about dialog =)</a><br />
+<a onClick="goEmbedded()">click here to open Embedded Experience status update view!</a><br />
+<form name="urlForm" id="urlForm">
+			Url:
+			<input type="text" id="myUrl" name="myUrl" style="width: 60%"
+	               value="http://www.youtube.com/embed/39jtNUGgmd4" />
+		</form>
+<a onClick="goUrl(null)">click here to open url(ibm vid by default) using gadgets.views.openUrl!</a><br />
+<a onClick="goUrl('modaldialog')">click here to open url(ibm vid by default) using gadgets.views.openUrl in a dialog!</a>
+<a onClick="closeGadget('dialog')">click here to close last opened gadget!</a>
+]]>
+
+	</Content>
+	<Content type="html" view="DASHBOARD">
+		confirmed DASHBOARD content
+</Content>
+	<Content type="html" view="FULL_PAGE">
+		confirmed FULL_PAGE content
+</Content>
+	<Content type="html" view="canvas">
+		confirmed canvas content
+</Content>
+	<Content type="html" view="home">
+		confirmed home content
+</Content>
+	<Content type="html" view="profile">
+		confirmed profile content
+</Content>
+	<Content type="html" view="embedded">
+		confirmed embedded content
+</Content>
+<Content type="html" view="about">
+<![CDATA[
+<script>
+var setReturnVal = function(){
+	gadgets.views.setReturnValue({"thing":document.forms[0]["myRet"].value});
+};
+var closeMe = function(){
+	gadgets.views.close();
+};
+</script>
+		confirmed about content
+		<form name="retForm" id="retForm">
+			return val:
+			<input type="text" id="myRet" name="myRet" style="width: 60%"
+	               value="some stuff" />
+	               
+		</form><button onClick="setReturnVal();">Set</button>
+		<button onClick="closeMe();">Close gadget</button>
+<table width="1000px" border="1">
+<tr>
+<td align="right">
+Wayyyyy out there!
+</td>
+</tr>
+</table>
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+		<p>7</p>
+		<p>8</p>
+		<p>9</p>
+		<p>10</p>
+		<p>11</p>
+		<p>12</p>
+		<p>13</p>
+]]>
+</Content>
+
+</Module>
+
+
+

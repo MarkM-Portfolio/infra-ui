@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">OpenSocial-gadgeten med det inbäddade gränssnittet används till att visa ytterligare detaljer och åtgärder för Connections-händelser</msg>
+  <msg name="connectionsEE_errorTitle">Fel</msg>
+  <msg name="connectionsEE_errorDescription">Det här innehållet har inte godkänts av ditt företag och är inte tillgängligt. Kontakta företagsadministratören för aktivering av tillägget.</msg>
+</messagebundle>

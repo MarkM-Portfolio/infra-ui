@@ -1,0 +1,365 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+${script:dijit._Widget}
+${script:dijit._Templated}
+${script:com.ibm.oneui.util.xhrintercept}
+${script:com.ibm.oneui.util.xhrproxy}
+${script:lconn.core.PeopleTypeAhead}
+${script:lconn.core.TypeAhead}
+${script:lconn.core.TypeAheadDataStore}
+${script:lconn.core.widget.autocomplete.Tags}
+${script:com.ibm.oneui.controls.AutocompleteDataStore}
+${script:lconn.core.widget.autocomplete.ShareTagDataStore}
+${script:lconn.core.widget.autocomplete.ProfilesTagDataStore}
+
+<style>
+	ul.dijitMenu {border: 1px solid #aaa !important; list-style: none; background-color: white; width: 400px !important; margin: 0; padding: 0; -moz-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3)}
+	ul.dijitMenu li {list-style-image: none; zoom:1; cursor: pointer; margin: 0; padding: 0;}
+	ul.testVisible {border: 2px solid green !important;}
+	td {vertical-align: top;}
+	td:first-child {background-color: #aeaeae; padding: 20px;}
+	.dijitMenuItemSelected {background-color: yellow;}
+	.lotusui input { padding-right: 18px; border: 1px solid black;}
+	.lotusui input.lotusLoading {height: auto; width: auto; background-position: right center;}
+	.dijitPopup {position: absolute; z-index: 1000;}
+	
+	ul.dijitMenu .lotusSearchScope {border-bottom: 1px solid #aaa; padding: 4px; padding-top: 0;}
+	ul.dijitMenu .lotusSearchScope div {margin-left: 10px;}
+	ul.dijitMenu h4 {font-size: 1.0em; font-weight: bold; padding: 2px 4px; margin: 0;}
+	
+	.dijitBackgroundIframe {
+		/* iframe used to prevent problems with PDF or other applets overlaying menus etc */
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		border: 0;
+		padding: 0;
+		margin: 0;
+	}
+</style>
+
+${endhead}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+<script>
+
+function GeneratingTestStore(f, c) {
+	this.createItem = c || function(i) {
+		return {value: "test "+(i+1)};		
+	};
+	this.fetch = function(kwArgs) {
+		var testStoreTimer;
+		kwArgs.abort = function() {clearTimeout(testStoreTimer);};
+		var time = 2000;
+		if (kwArgs.queryOptions && kwArgs.queryOptions.immediate)
+			time = 50 * kwArgs.query.length;
+		testStoreTimer = setTimeout(dojo.hitch(this, f, kwArgs), time);
+		return kwArgs;
+	}
+	this.getValue = function(item, attr, defaultValue) {
+		return item[attr] || defaultValue;
+	}
+};
+
+function responseGenerator(kwArgs) {
+	var scope = kwArgs.scope || window;
+	var query = kwArgs.query;
+	if (query == "error") {
+		kwArgs.onError.apply(scope, [{message: "An error has occurred"}, kwArgs]);
+		return;
+	}
+	var arr = [];
+	var start = kwArgs.start || 0;
+	var total = 0, pageSize = kwArgs.count || 5;
+	if (query != "none") {
+		if (/^[0-9]+$/.exec(query)) {
+			total = parseInt(query);
+			for (var i=start,l=Math.min(start+pageSize,total); i<l; i++)
+				arr.push(this.createItem(i));
+		}
+		else {
+		}
+	}
+	if (kwArgs.onBegin)
+		kwArgs.onBegin.apply(scope, [total, kwArgs]);
+	if (kwArgs.onItem)
+		for (var i=0; i<arr.length; i++)
+			kwArgs.onItem.apply(scope, [arr[i], kwArgs]);
+	if (kwArgs.onComplete)
+		kwArgs.onComplete.apply(scope, [arr, kwArgs]);
+}
+
+</script>
+<a onclick="document.body.style.width = '1200px'; return false;" href="#">Page width 1000px</a> |
+<a onclick="document.body.style.width = '400px'; return false;" href="#">Page width 400px</a>
+<br>
+
+<table style="width: 100%;" cellpadding="1" cellspacing="1" border="1">
+<thead><tr>
+<th>Test case</th><th>Description</th>
+</tr></thead><tbody>
+
+<tr><td>
+	<input id="input1" autocomplete="off" name="value">
+	<script>
+	var store1 = new GeneratingTestStore(responseGenerator, function(i) {
+		return "test_"+i;
+	});
+	var w1 = new lconn.core.TypeAhead({
+		token: " ", // FIXME: bug, shouldn't require a default token
+		store: store1
+	}, dojo.byId("input1"));
+	dojo.connect(w1, "onSelect", function(item) {alert("Selected "+item);})
+	</script>
+</td><td>
+	Basic Connections typeahead
+	<ol>
+	<li>Search for 'error' to trigger an error condition
+	<li>Search for 'none' to return no results
+	<li>Search for a number to return that number of results
+	<li>Clicking an item should popup an alert that displays the name of the selected tag
+	</ol>
+</td></tr>
+
+<tr><td>
+	<input id="input3" autocomplete="off" name="value">
+	<script>
+	var store3 = new GeneratingTestStore(responseGenerator, function(i) {
+		return {name: "test_"+i, count: Math.floor(Math.random()*100)};
+	});
+	var w3 = new lconn.core.widget.autocomplete.Tags({
+		store: store3
+	}, dojo.byId("input3"));
+	dojo.connect(w3, "onSelect", function(item, store) {alert("Selected "+store.getValue(item, "name"));})
+	</script>
+</td><td>
+	New Connections tag typeahead
+	<ol>
+	<li>Search for 'error' to trigger an error condition
+	<li>Search for 'none' to return no results
+	<li>Search for a number to return that number of results
+	<li>Clicking an item should popup an alert that displays the name of the selected tag
+	</ol>
+</td></tr>
+
+
+<tr><td>
+	<input id="input4" autocomplete="off" name="value">
+	<script>
+	var store4 = new GeneratingTestStore(responseGenerator, function(i) {
+		return {name: "test_"+i, count: Math.floor(Math.random()*100)};
+	});
+	var w4 = new lconn.core.widget.autocomplete.Tags({
+		multipleValues: true,
+		store: store4
+	}, dojo.byId("input4"));
+	dojo.connect(w4, "onSelect", function(item, store) {alert("Selected "+store.getValue(item, "name"));})
+	</script>
+</td><td>
+	New Connections tag typeahead (multi-value)
+	<ol>
+	<li>Search for 'error' to trigger an error condition
+	<li>Search for 'none' to return no results
+	<li>Search for a number to return that number of results
+	<li>Clicking an item should popup an alert that displays the name of the selected tag
+	<li>Tags are separated by spaces
+	</ol>
+</td></tr>
+
+<tr><td>
+	<input id="input5" autocomplete="off" name="value">
+	<script>
+
+	var testTags5 = [
+		{name: "atag", count: 1},
+		{name: "aatag", count: 5},
+		{name: "both", count: 3},
+		{name: "special", count: 10},
+		{name: "a-tag", count: 4},
+		{name: "never", count: 6},
+		{name: "12atag", count: 2},
+		{name: "zeta", count: 4}
+   ];
+	
+	var store5 = new com.ibm.oneui.controls.AutocompleteDataStore();
+	store5.requestDelay = 200;
+	store5.cachedRequestDelay = 50;
+	store5.maximumResultsDelay = 10000;
+	store5.cache = {};
+	store5.getQueryResults = function(kwArgs) {
+		var timer;
+		var deferred = new dojo.Deferred(function() {clearTimeout(timer);});
+		timer = setTimeout(dojo.hitch(deferred, "callback", testTags5), 100);
+		deferred.addCallback(this, "filter", kwArgs.query, kwArgs);
+		return deferred;
+	};
+	store5.getValue = function(item, attr, defaultValue) {
+		return item[attr] || defaultValue;
+	};
+	store5.filter = function(query, kwArgs, results) {
+		query = query.toLowerCase();
+		var filtered = [];
+		for (var i=0,l=results.length; i<l; i++)
+			if (results[i].name.substr(0, query.length).toLowerCase() == query)
+				filtered.push(results[i]);
+		filtered.sort(function(a,b) {return b.count - a.count});
+		return filtered;
+	}
+	var w5 = new lconn.core.widget.autocomplete.Tags({
+		store: store5
+	}, dojo.byId("input5"));
+	</script>
+</td><td>
+	Connections typeahead with real values
+	<ol>
+	<li>Search for 'error' to trigger an error condition
+	<li>Search for 'none' to return no results
+	<li>Search for a number to return that number of results
+	<li>Clicking on a tag should set that tag into the input and move the cursor to the end
+	</ol>
+</td></tr>
+
+<tr><td>
+	<input id="input6" autocomplete="off" name="value">
+	<script>
+
+	var w6 = new lconn.core.widget.autocomplete.Tags({
+		multipleValues: true,
+		store: store5
+	}, dojo.byId("input6"));
+	</script>
+</td><td>
+	Connections typeahead with real values (multi-value)
+	<ol>
+	<li>Search for 'error' to trigger an error condition
+	<li>Search for 'none' to return no results
+	<li>Search for a number to return that number of results
+	<li>Clicking on a tag in the menu should complete the current tag and move the cursor past the last entry (with a separator)
+	</ol>
+</td></tr>
+
+
+<tr><td>
+	<input id="input7" autocomplete="off" name="value">
+	<script>
+
+	dojo.declare("RealTagStore", com.ibm.oneui.controls.AutocompleteDataStore, {
+		handleAs: "json-comment-optional",
+		countProperty: "count",
+		getQueryResults: function(kwArgs) {
+			var url = dojo.byId("input7_url").value.replace("{0}", encodeURIComponent(kwArgs.query));
+			var deferred = dojo.xhrGet({url: url, handleAs: this.handleAs});
+			deferred.addCallback(this, "convertItems");
+			return deferred;
+		},
+		convertItems: function(response) {
+			var results;
+			if (dojo.isArray(response)) {
+				results = (response.length > 0 && typeof response[0] == "string") 
+					? dojo.map(response, function(name) {return {name: name}})
+					: response;
+			}
+			else
+				results = response.items;
+			
+			// normalize weight to "count"
+			var first = results[0]
+			if (first) {
+				if (typeof first.weight == "number")
+					this.countProperty = "weight";
+				else if (typeof first.frequency == "number")
+					this.countProperty = "frequency";
+			}
+			
+			return results;
+		},
+		getValue: function(item, attr, defaultValue) {
+			if (attr == "count")
+				attr = this.countProperty;
+			var value = item[attr];
+			return (typeof value == "undefined") ? defaultValue : value;
+		},
+		filter: function(query, kwArgs, results) {
+			query = query.toLowerCase();
+			var filtered = [];
+			for (var i=0,l=results.length; i<l; i++)
+				if (results[i].name.substr(0, query.length).toLowerCase() == query)
+					filtered.push(results[i]);
+			filtered.sort(function(a,b) {return b.count - a.count});
+			return filtered;
+		}		
+	});
+	
+	var store7 = new RealTagStore();
+	store7.cache = {};
+	
+	var w7 = new lconn.core.widget.autocomplete.Tags({
+		multipleValues: true,
+		store: store7
+	}, dojo.byId("input7"));
+	</script>
+</td><td>
+	Connections typeahead against tapstage <input id="input7_url" style="width: 300px;" value="http://tapstage.swg.usma.ibm.com/files/form/anonymous/api/tags/feed?format=json&scope=document&pageSize=16&sK=cloud&sO=dsc&filter={0}">
+	<ol>
+	<li>This executes typeahead against a real server.  Use the {0} token to replace with the keyword arguments.
+	<li>Normalizes count when provided by different services<li>
+	<li><a href="#" onclick="dojo.byId('input7_url').value='http://tapstage.swg.usma.ibm.com/files/form/anonymous/api/tags/feed?format=json&scope=document&pageSize=16&sK=cloud&sO=dsc&filter={0}'; return false;">Search against Files on Tapstage</a>
+	<li><a href="#" onclick="dojo.byId('input7_url').value='http://tapstage.swg.usma.ibm.com/profiles/html/tagTypeahead.do?useJson=true&tag={0}&lang=en_us'; return false;">Search against Profiles Organization on Tapstage</a>
+	<li><a href="#" onclick="dojo.byId('input7_url').value='http://tapstage.swg.usma.ibm.com/communities/service/html/community/autoCompleteTags.do?format=v2&tag={0}'; return false;">Search against Communities on Tapstage</a>
+	<li><a href="#" onclick="dojo.byId('input7_url').value='http://tapstage.swg.usma.ibm.com/activities/service/json/tags?tag={0}'; return false;">Search against Activities on Tapstage (log in first)</a>
+	<li><a href="#" onclick="dojo.byId('input7_url').value='http://tapstage.swg.usma.ibm.com/dogear/tagslike?format=json&isTypeAhead=true&limit=10&prefix={0}'; return false;">Search against Bookmarks public on Tapstage</a>
+	<li><a href="#" onclick="dojo.byId('input7_url').value='http://tapstage.swg.usma.ibm.com/forums/ajax/tags/get?tagType=typeahead&containerType=CATEGORY&containerUuid=00000000-0000-000000000-000000000005&nodeType=FORUM&partialTagName={0}'; return false;">Search against Forums on Tapstage</a>
+	</ol>
+</td></tr>
+
+<tr><td>
+	<input id="input8" autocomplete="off" name="value">
+	<script>
+
+	var store8 = new lconn.core.widget.autocomplete.ShareTagDataStore();
+	store8.cache = {};
+	store8.url = "http://tapstage.swg.usma.ibm.com/files/form/anonymous/api/tags/feed?format=json&scope=document&pageSize={count}&sK=cloud&sO=dsc&filter={query}";
+	
+	var w8 = new lconn.core.widget.autocomplete.Tags({
+		multipleValues: true,
+		store: store8
+	}, dojo.byId("input8"));
+	</script>
+</td><td>
+	Share typeahead against tapstage
+	<ol>
+	<li>This executes typeahead against a real server.
+	</ol>
+</td></tr>
+
+<tr><td>
+	<input id="input9" autocomplete="off" name="value">
+	<script>
+
+	var store9 = new lconn.core.widget.autocomplete.ProfilesTagDataStore();
+	store9.cache = {};
+	store9.url = "http://tapstage.swg.usma.ibm.com/profiles/html/tagTypeahead.do?useJson=true&tag={query}&lang=en_us";
+	
+	var w9 = new lconn.core.widget.autocomplete.Tags({
+		multipleValues: true,
+		store: store9
+	}, dojo.byId("input9"));
+	</script>
+</td><td>
+	Profiles typeahead against tapstage
+	<ol>
+	<li>This executes typeahead against a real server.
+	</ol>
+</td></tr>
+
+</tbody></table>
+</div>
+</div>
+</body>
+${end}

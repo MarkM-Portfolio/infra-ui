@@ -1,0 +1,5 @@
+This bundle contains the Jazz Ajax Test Client that can be told to launch web
+browsers to run web UI test cases and report results to the test result servlet.
+For more information, see this wiki page on Jazz.net:
+
+https://jazz.net/wiki/bin/view/WebUIBook/AutomatedTests

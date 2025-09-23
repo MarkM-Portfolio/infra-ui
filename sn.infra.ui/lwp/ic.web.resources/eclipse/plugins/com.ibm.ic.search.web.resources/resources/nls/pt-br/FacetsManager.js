@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+define({
+		"CLOSE_HELP_DATE":"Fechar Ajuda de Datas",
+		"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Fechar Ajuda de Tipos de Documentos",
+		"CLOSE_HELP_PERSON":"Fechar Ajuda para Pessoas",
+		"CLOSE_HELP_TAG":"Fechar Ajuda para Marcações",
+		"CLOSE_HELP_TREND":"Fechar Ajuda de Tendência",
+		"COLLAPSE_DATE":"Reduzir o filtro Datas",
+		"COLLAPSE_ECM_DOCUMENT_TYPE":"Reduzir o filtro de Tipos de Documentos",
+		"COLLAPSE_PERSON":"Reduzir o filtro Pessoas",
+		"COLLAPSE_TAG":"Reduzir o filtro Marcações",
+		"COLLAPSE_TREND":"Reduzir o filtro Tendências",
+		"DESCRIPTION_DATE":"Para exibir resultados que foram criados ou atualizados em um horário específico, expanda a seta e filtre as informações por ano e mês.",
+		"DESCRIPTION_ECM_DOCUMENT_TYPE":"Um tipo de documento é uma palavra-chave à qual você designa arquivos para facilitar sua localização. Clique em um tipo de documento para exibir os resultados da procura que foram designados com essa palavra-chave.",
+		"DESCRIPTION_PERSON":"Visualize as pessoas associadas aos resultados da pesquisa. Clique em um nome para exibir os resultados da procura associados a uma pessoa específica.",
+		"DESCRIPTION_TAG":"Uma marcação é uma palavra-chave que você designa ao conteúdo ou às pessoas para tornar mais fácil encontrá-los. Clique em uma marcação para exibir os resultados da procura que foram designados a essa palavra-chave.",
+		"DESCRIPTION_TREND":"Tendência é uma palavra-chave gerada pelo sistema para tornar mais fácil a execução de procura em Atualizações de Status. Clique em uma tendência para exibir os resultados da procura que foram designados a essa palavra-chave.",
+		"EXPAND_DATE":"Expandir o filtro Datas",
+		"EXPAND_ECM_DOCUMENT_TYPE":"Expandir o filtro de Tipos de Documentos",
+		"EXPAND_PERSON":"Expandir o filtro Pessoas",
+		"EXPAND_TAG":"Expandir o filtro Marcações",
+		"EXPAND_TREND":"Expandir o filtro Tendências",
+		"HELP_DATE":"Ajuda de Datas",
+		"HELP_ECM_DOCUMENT_TYPE":"Ajuda de Tipos de Documentos",
+		"HELP_PERSON":"Ajuda para Pessoas",
+		"HELP_TAG":"Ajuda para Marcações",
+		"HELP_TREND":"Ajuda de Tendência",
+		"NO_DATE_CONTENT":"As Datas não estão disponíveis no momento",
+		"NO_ECM_DOCUMENT_TYPE_CONTENT":"Os Tipos de Documentos não estão disponíveis no momento",
+		"NO_PERSON_CONTENT":"As Pessoas não estão disponíveis no momento",
+		"NO_TAG_CONTENT":"As Marcações não estão disponíveis no momento",
+		"NO_TREND_CONTENT":"As Tendências não estão disponíveis no momento",
+		"TITLE_DATE":"Datas",
+		"TITLE_ECM_DOCUMENT_TYPE":"Tipos de Documento",
+		"TITLE_PERSON":"Pessoas",
+		"TITLE_TAG":"Marcações",
+		"TITLE_TREND":"Tendência"
+});
+

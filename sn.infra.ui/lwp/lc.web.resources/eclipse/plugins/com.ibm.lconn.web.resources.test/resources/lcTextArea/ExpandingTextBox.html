@@ -1,0 +1,83 @@
+${head}
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+<title>ExpandingTextBox</title>
+
+    <script type="text/javascript">
+        var textBox = null;
+        
+        dojo.addOnLoad(function() {
+            var emptyCallback = function(empty) {
+                if (empty) {
+                    dojo.addClass(dojo.byId("postLink"),"lotusPersonInactive");
+                    dojo.addClass(dojo.byId("resetLink"),"lotusPersonInactive");
+                } else {
+                    dojo.removeClass(dojo.byId("postLink"),"lotusPersonInactive");
+                    dojo.removeClass(dojo.byId("resetLink"),"lotusPersonInactive");
+                }
+            };
+            
+            var limitCallback = function(limit) {
+                if (limit) {
+                    dojo.style(dojo.query(".charDisplay")[0],"color","red");
+                } else {
+                    dojo.style(dojo.query(".charDisplay")[0],"color","black");
+                }
+            }
+            
+            var options = {maxLength: 100,
+                           maxLengthBytes: 100,
+                           mentionsEnabled: true,
+                           textBoxRows: 3,
+                           memberStore: {network: null},
+                           showRemainingLimit: 20,
+                           charRemainingDisplay: dojo.byId("countContainer"),
+                           textPopulatedCallback: emptyCallback,
+                           reachedCharLimitCallback: limitCallback
+            };
+        
+            textBox = new lconn.core.lcTextArea.widgets.ExpandingTextBox(options,dojo.byId("textBoxContainer"));
+            textBox.startup();
+        });
+    </script>
+    <style type="text/css">
+       #textBoxContainer {
+           width: 275px;
+       }
+    </style>
+${endhead}
+    <div class="lotusFrame">
+    <div class="lotusMain">
+    <div class="lotusContent">
+        
+        <h1>ExpandingTextBox widget</h1>
+        <form class="lotusForm2 lotusStreamUpdate">
+            <div id="textBoxContainer"></div>
+            <div class="lotusLeft">
+                <ul class="lotusInlinelist lotusActions" style="visibility: visible">
+                    <li class="lotusFirst">
+                        <a href="javascript:;" id="postLink" class="lotusAction lotusPersonInactive">Post</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" id="resetLink" class="lotusAction lotusPersonInactive" onclick="textBox.resetBox();">Reset</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="lotusBtnContainer lotusClear">
+                <input type="button" class="lotusBtn" value="Get No. Chars" onclick="alert('Chars:' + textBox.getTextLength());"/>
+                <input type="button" class="lotusBtn" value="Get UTF Length" onclick="alert(textBox.getUtfLength());"/>
+                <input type="button" class="lotusBtn" value="Get Untruncated" onclick="alert(textBox.getTextOutput(false));"/>
+                <input type="button" class="lotusBtn" value="Get Truncated" onclick="alert(textBox.getTextOutput(true))"/>
+                <input type="button" class="lotusBtn" value="Text too long?" onclick="alert(textBox.isTextTooLong())"/>
+            </div>
+            <div id="countContainer">
+                <div>Chars remaining:
+                    <span class="charDisplay"/>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+    </div>
+    ${script:lconn.core.lcTextArea.widgets.ExpandingTextBox}
+    ${script:dojo.parser}
+</html>

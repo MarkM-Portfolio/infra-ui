@@ -1,0 +1,15 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2008, 2012                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+({"E_LOAD_NAVNODE_1":"BMWMF0002E:Could not load the navigation node ${0}.","E_COMNODE_NOTFOUND_1":"BMWMF0011E:Can not find node ${0}.","E_CATNODE_NOTFOUND_1":"BMWMF0010E:Can not find node ${0}.","E_ELEMENT_NOT_FOUND_2":"BMWMF0013E:Can not find element ${0} in ${1}.","E_NO_PREFNAME_0":"BMWMF0007E:No preference name is specified.","E_NO_PREFTYPE_0":"BMWMF0006E:No preference type is specified.","E_UNSUPPORTED_OP_0":"BMWMF0003E:This is an unsupported operation.","E_CCATNODE_NOTFOUND_1":"BMWMF0012E:Can not find node ${0}.","E_CREATEPREF_NO_CONTEXT_0":"BMWMF0008E:No context is specified when creating a new preference entry.","E_NODE_ISNULL_0":"BMWMF0001E:Node must not be null.","E_NAVNODE_NOTFOUND_1":"BMWMF0004E:Can not find node ${0}.","E_READONLY_PREF_0":"BMWMF0009E:Values cannot be set on a read-only preference node."})

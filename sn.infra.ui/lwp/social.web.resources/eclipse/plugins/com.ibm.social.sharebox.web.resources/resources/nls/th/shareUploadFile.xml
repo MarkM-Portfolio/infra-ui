@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">ไฟล์</msg>
+  <msg name="description">เครื่องมือไฟล์ ที่อนุญาตให้อัพโหลดและแชร์ไฟล์</msg>
+  <msg name="action_uploadFile_label">ไฟล์</msg>
+  <msg name="action_uploadFile_tooltip">อัพโหลดและแบ่งใช้ไฟล์</msg>
+  <msg name="loading">กำลังโหลด...</msg>
+  <msg name="error_msg">เนื้อหาไม่สามารถโหลดได้ ลองอีกครั้งหรือติดต่อผู้ดูแลระบบของคุณ</msg>
+  <msg name="error_alt">ข้อผิดพลาด</msg>
+</messagebundle>

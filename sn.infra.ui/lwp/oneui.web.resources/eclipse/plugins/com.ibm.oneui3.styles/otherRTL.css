@@ -1,0 +1,20 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2012                                          */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+/* DO NOT MODIFY */
+@import url(/com.ibm.lconn.core.styles/base/semanticTagStyles.css);
+@import url(/com.ibm.lconn.core.styles/base/sametimeProxyRTL.css);
+@import url(/com.ibm.lconn.core.styles/base/connectionsCoreRTL.css);
+@import url(/com.ibm.lconn.socialmail/css/SocialMail.css);
+@import url(/com.ibm.social.sharebox/css/shareDialog.css);
+/* DO NOT MODIFY */

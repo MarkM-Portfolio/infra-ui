@@ -1,0 +1,48 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusDialogBorder" widgetid="${id}_dialogTitle">
+	<div class="lotusDialog" style="overflow: hidden;" role="dialog" aria-labelledby="${id}_dialogTitle" aria-description="${_resourceBundle.settingDefinitionDialogDescription}">
+
+		<div style="width:592px; overflow:hidden;">
+			<div class="lotusDialogHeader" style="overflow:hidden; white-space:nowrap;">
+				<h1 id="${id}_dialogTitle" class="lotusHeading"><div dojoAttachPoint="dialogTitleNode" style="overflow-x:hidden;"></div></h1>
+				<a class="lotusDialogClose" role="button" 
+					dojoAttachEvent="onclick: closeDialog" href="javascript:;" title="${_resourceBundle.dialogClose}">
+					<img src="${blankIcon}" alt="${_resourceBundle.dialogClose}" role="presentation" />
+					<span class="lotusAltText" aria-label="${_resourceBundle.dialogClose}">X</span>
+				</a>
+			</div>
+			
+			<div class="lotusDialogContent" style="border-bottom-style: none; overflow-y: auto; overflow-x: hidden;">
+ 
+				<table role="presentation" class="lotusFormTableBill" width="100%" cellpadding="0">
+					<colgroup><col width="20%"><col width="80%"></colgroup>
+					<tbody dojoAttachPoint="containerNode">
+						<tr><td colspan="2">
+								<div aria-live="assertive" style="display: none;" dojoAttachPoint="messageContainerNode">
+								</div>
+						</td></tr>
+					</tbody>
+				</table>
+				
+			</div>
+
+			<div class="lotusDialogFooter" style="padding:0">
+				<br/>&nbsp;&nbsp;&nbsp;
+				<span class="${createButtonClass}">
+					<a dojoAttachEvent="onclick: createDefinition" 
+						role="button" href="javascript:;" title="${_resourceBundle.dialogCreate}">${_resourceBundle.dialogCreate}</a>
+				</span>
+				<span class="${saveButtonClass}">
+					<a dojoAttachEvent="onclick: saveDefinition" 
+						role="button" href="javascript:;" title="${_resourceBundle.dialogSave}">${_resourceBundle.dialogSave}</a>
+				</span>
+				<span class="lotusBtn lotusBtnSpecial">
+					<a dojoAttachEvent="onclick: closeDialog" 
+						role="button" href="javascript:;" title="${_resourceBundle.dialogClose}">${_resourceBundle.dialogClose}</a>
+				</span>
+				<br/><br/>
+			</div>
+			
+		</div>
+	</div>
+</div>

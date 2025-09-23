@@ -1,0 +1,265 @@
+/* Copyright IBM Corp. 2010, 2015  All Rights Reserved.              */
+
+.grid-ics-grid {
+    width: 98%;
+    padding-left: 20px;
+    -moz-box-sizing: border-box;
+}
+
+.grid-ics-tile {
+    background-color: #F6F6F6;
+    border: 1px solid #E8E8E8;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0);
+    float: left;
+    margin: 10px 20px 10px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.grid-ics-wrapper {
+}
+
+.grid-ics-tile-front {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+    background-color: #F6F6F6;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  -webkit-transform: perspective(200) rotateY(0);
+  -moz-transform: perspective(200) rotateY(0);
+  -ms-transform: perspective(200) rotateY(0);
+  -o-transform: perspective(200) rotateY(0);
+  transform: perspective(200) rotateY(0);
+  -webkit-transition: -webkit-transform 700ms;
+  -moz-transition: -moz-transform 700ms;
+  -o-transition: -o-transform 700ms;
+  transition: transform 700ms;
+}
+
+.grid-ics-tile-back{
+   -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+    position: absolute;
+    text-align: center;
+    top: 0;
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  word-wrap:break-word;
+  -webkit-transition: -webkit-transform 700ms;
+  -moz-transition: -moz-transform 700ms;
+  -o-transition: -o-transform 700ms;
+  transition: transform 700ms;
+}
+.grid-ics-tile-back-show{
+  z-index:9;
+}
+.grid-ics-tile-img {
+}
+.grid-img {
+    bottom:0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 0 none;
+    line-height: 0;
+    vertical-align: middle;
+    -moz-box-sizing: border-box;
+}
+
+.grid-ics-tile-summary {
+    background-color:#F0F0F0;
+    border-top: 1px solid #E8E8E8;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+
+}
+.grid-ics-tile-summary-text{
+   overflow: hidden;
+   text-overflow: ellipsis;
+   -o-text-overflow: ellipsis;
+    white-space: nowrap;
+   }
+
+.grid-h4-padding-left{
+   height:25px;
+      padding-top: 20px;
+    margin: 0;
+}
+
+.grid-ics-tile-icon {
+    bottom: 0;
+    height: 64px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 64px;
+}
+.grid-ics-is-selected {
+    border-color: #047CBD;
+    box-shadow: 0 0 0 2px #047CBD;
+}
+.grid-ics-grid .grid-ics-tile.grid-ics-hover .grid-ics-inner .grid-ics-tile-front{
+ -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-transform: perspective(200) rotateY(180deg);
+  -moz-transform: perspective(200) rotateY(180deg);
+  -ms-transform: perspective(200) rotateY(180deg);
+  -o-transform: perspective(200) rotateY(180deg);
+  transform: perspective(200) rotateY(180deg);
+}
+.grid-ics-grid .grid-ics-tile.grid-ics-hover .grid-ics-inner .grid-ics-tile-back{
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform: perspective(200) rotateY(0deg);
+  -moz-transform: perspective(200) rotateY(0deg);
+  -ms-transform: perspective(200) rotateY(0deg);
+  -o-transform: perspective(200) rotateY(0deg);
+  transform: perspective(200) rotateY(0deg);
+}
+
+.grid-ics-grid .grid-ics-tile.grid-ics-is-selected .grid-ics-tile-check {
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 0.5s linear 0s;
+    visibility: visible;
+}
+.grid-ics-grid .grid-ics-tile.grid-ics-is-selected .grid-ics-wrapper .grid-ics-inner .grid-ics-tile-back .grid-ics-tile-uncheck {
+   
+    visibility: hidden;
+    display:none;
+}
+
+.grid-bottom{
+    bottom:20px;
+    left: 15px;
+    margin: 0 auto;
+    position: absolute;
+    right: 20px;
+}
+.grid-span-right{
+    right: 4px;
+    position:absolute;
+}
+
+.grid-a-pinned .lconnSprite-iconPinned16-on {
+   z-index:9;
+   position: absolute;
+    top: 0;
+    right:0;
+}
+.grid-a-pinned .lconnSprite-iconPinned16-off {
+   visibility:hidden;
+}
+
+
+
+.grid-a-back-pinned .lconnSprite-iconPinned16-on {
+   visibility:hidden;
+}
+.grid-a-back-pinned .lconnSprite-iconPinned16-off {
+   position: absolute;
+    top: 0;
+    right:0;
+}
+
+.grid-pinned-show {
+  position: absolute;
+  top: 0;
+  right:0;
+  visibility:visible
+}
+.grid-pinned-hidden {
+  visibility:hidden;
+}
+.grid-div-pading-left{
+   padding-left: 5px;
+   padding-right: 5px;
+
+}
+
+.file-preview-background{
+    height:400px;
+    width:400px;
+    border: 0 none;
+    line-height: 0;
+    margin: auto;
+    vertical-align: middle;
+    background:#EEEEEE;
+}
+.file-preview-icon-span{
+    top:200px;
+    display:block;
+    position:relative;
+    font-weight:bold;
+    
+}
+.file-preview-ics-icon {
+    top:150px;
+    height: 64px;
+    margin: auto;
+    position: relative;
+    width: 64px;
+}
+.file-preview{background-image:url('../images/preview/sprite-files-preview-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.file-preview-back-arrow-lg-hover{width:32px;height:32px;background-position:0 -336px}
+.file-preview-back-arrow-lg{width:32px;height:32px;background-position:0 -368px}
+.file-preview-next-arrow-lg-hover{width:32px;height:32px;background-position:0 -400px}
+.file-preview-next-arrow-lg{width:32px;height:32px;background-position:0 -432px}
+
+.lotusui .qkrDialog .lotusDialog .lotusDialogContent {max-height:none; max-width: none;overflow-x: hidden; overflow-y: visible;}
+.previewThumbnail{top:0px;right:0px;left:0px;margin:auto;position:absolute;bottom: 0px;}
+.noThumbnailPlayIcon{top:174px;right:172px;}
+.lconn-ftype256-middle{top:72px;right:72px;position:absolute;}
+.lotusui .qkrDialog .lotusDialogBorder{max-width:none;}
+.lotusui .qkrDialog .dijitProgressBar {
+   margin:2px 0px 2px 0px;
+}
+
+.lotusui .qkrDialog .dijitProgressBarEmpty{
+   /* outer container and background of the bar that's not finished yet*/
+   border-color: #8ba0bd;
+}
+
+.lotusui .qkrDialog .dijitProgressBarFull {
+   border-right:1px solid #8ba0bd;
+}
+.dijitRtl .lotusui .qkrDialog .dijitProgressBarFull {
+   border-right:0px;
+   border-left:1px solid #8ba0bd;
+}
+
+.lotusui .qkrDialog .dijitProgressBarLabel {
+   /* Set to a color that contrasts with both the "Empty" and "Full" parts. */
+   color:#293a4b;
+}
+.qkrDialogScrolledY {overflow-y: scroll;}
+.lotusui .lotusDialog .qkrDialogScrolledY .lotusDialogContent {padding-right:1px;}
+.dijitRtl .lotusui .lotusDialog .qkrDialogScrolledY .lotusDialogContent {padding-right:1px;}
+.lotusui_ie .qkrDialogScrolledY {position: relative;}
+/* .grid-ics-tile-img { */
+/*     height: 10.9333em; */
+/*     position: relative; */
+/*     background:#eeeeee; */
+/* } */

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>Asynchronous require()</title>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="Asynchronous require()">
+            <div class="lotusContent">
+                <h1 id="hdr1"></h1>
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        require(['dojo/html', 'dojo/dom', 'dojo/domReady!'], function(html, dom) {
+            // FIXME: Note we MUST use lconn.test - this sucks
+            require(['lconn.test/dojo/module2'], function(module2) {
+                if (module2 && module2.title) {
+                    html.set(dom.byId("hdr1"), module2.title);
+                } else {
+                    html.set(dom.byId("hdr1"), "It didn't work :-(");
+                }
+            });
+        });
+    </script>
+    ${script:dojo.dom}
+    ${script:dojo.html}
+</body>
+</html>

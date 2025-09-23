@@ -1,0 +1,85 @@
+<!-- Copyright IBM Corp. 2007, 2015  All Rights Reserved.              -->
+
+<!-- 5724-U69                                                          -->
+<iw:iwidget id="simple_stock" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" xmlns:xml="http://www.w3.org/XML/1998/namespace" 
+iScope="simple_stock" allowInstanceContent="true" supportedModes="view edit personalize print help" mode="edit" lang="en">
+    <!-- default style value, it can be overwritten-->
+    <iw:itemSet id="attributes" onItemSetChanged="handleAttributeChange" >
+        <iw:item id="symbol" readOnly="false" value="IBM" />
+        <iw:item id="broker"  readOnly="false" value="Etrade" />
+   </iw:itemSet>
+   
+   <iw:itemSet id="idescriptor" onItemSetChanged="handleIDescriptorChange" >
+   		<iw:item id="title" value="Stock" lang="en">
+   			<iw:alt lang="en" value="Stock" />
+   			<iw:alt lang="de" value="Wartezeit" />
+   		</iw:item>
+		<iw:item id="messageLocale" value="de en" />
+        <iw:item id="author" value="IBM" />
+		<iw:item id="version" value="1.0" />
+		<iw:item id="email" value="ibmcredeveloper@cn.ibm.com" />
+   </iw:itemSet>
+   
+   <iw:resource uri="stock.js" globalid="simple_stock_js" />
+    <iw:content mode="view">
+        <![CDATA[    
+			<div><span>Widget Title : </span><span id="title"></span>
+				<span>
+					<select id="titleLocale">
+						<option value="en">en</option>
+						<option value="de" selected>de</option>
+						<option value="zh">zh</option>
+					</select>
+				</span>
+			</div>
+			<div>Change widget title : <input type="text" id="titleInput"> <button id="changeTitleButton">Change Title</button></div> 
+			<div><span>Widget Version : </span><span id="version"></span></div>
+			<div><span>Widget Author: </span><span id="author"></span></div>
+			<div>Change read only (Author) : <input type="text" id="authorInput"> <button id="changeAuthorButton">Change Author</button></div> 
+        	<div>User Info : <span id="username"></span></div>
+            <div><span>Stock symbol : </span><span id="symbol"></span></div>
+            <div>Change stock symbol : <input type="text" id="symbolInput"> <button id="changeSymbolButton">Change</button></div> 
+            <div><img id="chartImage"></div>
+			
+            ]]> 
+     </iw:content>
+    <iw:content mode="edit">
+       <![CDATA[ 
+       <div><span>Broker : </span> <select class="brokerSelection"  size="1">
+                 <option value="Etrade">Etrade</option>
+                 <option selected value="Ameritrade">Ameritrade</option>
+             </select>
+             <span id="brokerMsg"></span>
+       </div>
+ 	  <div> <span>Company : </span><select class="companySelection"  size="1">
+                 <option selected value="IBM">IBM</option>
+                 <option value="Yahoo">Yahoo</option>
+                 <option value="MSFT">MSFT</option>
+             </select>
+             <span id="symbolMsg"></span>
+       </div>
+       <input class="lotusFormButtonShort"  type="button" id="done" value="Done" onclick="iContext.iScope().save();"/>   
+       <div class="message">   </div>
+   		]]> 
+    </iw:content>
+    
+    <iw:content mode="personalize">
+       <![CDATA[ 
+       <div><span>Broker : </span> <select class="p_brokerSelection"  size="1">
+                 <option value="Etrade">Etrade</option>
+                 <option selected value="Ameritrade">Ameritrade</option>
+             </select>
+             <span class="p_brokerMsg"></span>
+       </div>
+ 	  <div> <span>Company : </span><select class="p_companySelection"  size="1">
+                 <option selected value="IBM">IBM</option>
+                 <option value="Yahoo">Yahoo</option>
+                 <option value="MSFT">MSFT</option>
+             </select>
+             <span class="p_symbolMsg"></span>
+       </div>
+       <input class="lotusFormButtonShort"  type="button" id="done" value="Done" onclick="iContext.iScope().p_save();"/>   
+       <div class="p_message">   </div>
+   		]]> 
+    </iw:content>
+</iw:iwidget>

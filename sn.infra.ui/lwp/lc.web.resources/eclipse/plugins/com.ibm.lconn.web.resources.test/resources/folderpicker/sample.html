@@ -1,0 +1,303 @@
+${head}
+<!-- Copyright IBM Corp. 2013, 2015  All Rights Reserved.              -->
+${script:lconn.core.config}
+${script:lconn.core.config.features}
+${script:lconn.core.config.services}
+${script:dijit._Templated}
+${script:dijit.Dialog}
+${script:dijit.form.ValidationTextBox}
+${script:com.ibm.ajax.auth}
+${script:com.ibm.oneui.util.proxy}
+${script:lconn.files.picker.config}
+${script:lconn.files.picker.external}
+<script type="text/javascript">
+dojo.addOnLoad(function() {
+	var auth = com.ibm.ajax.auth;
+	
+   // fake gatekeeper feature values
+   //    default values
+   var gatekeeperFilesNestedFolder = false;
+   dojo.byId('treeview').checked = gatekeeperFilesNestedFolder;
+   {
+      if ( !window.gatekeeperConfig )
+      {
+         window.gatekeeperConfig = { 'files-nested-folder': gatekeeperFilesNestedFolder };
+      }
+   }
+
+	var service = dojo.getObject("lconn.core.config.services.files");	
+	
+	var forceSSL = dojo.getObject("lconn.core.config.forceConfidentialCommunications");
+	forceSSL = forceSSL || ('https:' == window.location.protocol);
+	
+	var baseUrl = forceSSL ? service.secureUrl : service.url;
+	
+	/* Removed by Ruby(guohongy@cn.ibm.com), there are some errors before they are not removed
+	dojo.xhrGet({
+		url: com.ibm.oneui.util.proxy(baseUrl + "/picker/script.js"),
+		content: { 
+			'exclude': ['com.ibm.ajax.auth', 'com.ibm.oneui.util.proxy', 'lconn.core.config.services'], 
+			'lang': dojo.config.locale,
+			'debug': 'true'
+		},
+		handleAs: "javascript",
+		sync: true
+	});
+	*/
+		
+	dojo.xhrGet({
+		url: com.ibm.oneui.util.proxy(baseUrl + "/form/api/people/feed?self=true&format=json"),
+		handleAs: "json",
+		handle: function (r, i) { 
+			if (auth.isAuthenticationRequired(r, i)) {
+				dojo.byId('login').style.display = '';
+				dojo.byId('picker').style.display = 'none';
+			} else {
+				dojo.byId('login').style.display = 'none';
+				dojo.byId('picker').style.display = '';
+			}
+		},
+		
+		sync: true
+	});
+	
+	
+	dojo.connect(dojo.byId('loginBtn'), 'onclick', function(e) {
+		dojo.stopEvent(e);
+		
+		var en = dojo.byId('err');
+		en.style.display = 'none';
+		
+		dojo.xhrPost({
+			url: com.ibm.oneui.util.proxy(baseUrl + "/j_security_check"),
+			content: {
+				'j_username': dojo.byId('user').value,
+				'j_password': dojo.byId('pass').value
+			},
+			
+			handle: function(r,i) {
+				dojo.xhrGet({
+					url: com.ibm.oneui.util.proxy(baseUrl + "/form/api/people/feed?self=true&format=json"),
+					handleAs: "json",
+					handle: function (r, i) { 
+						if (auth.isAuthenticationRequired(r, i)) {
+							dojo.byId('login').style.display = '';
+							dojo.byId('picker').style.display = 'none';
+						} else {
+							en.style.display = '';
+							dojo.byId('login').style.display = 'none';
+							dojo.byId('picker').style.display = '';
+						}
+					},
+					
+					sync: true
+				});
+			},
+			
+			sync: true
+		});		
+	});
+
+	dojo.connect(dojo.byId('logout'), 'onclick',function (e){
+		dojo.stopEvent(e);
+		dojo.xhrGet({
+			url: com.ibm.oneui.util.proxy(baseUrl + "/ibm_security_logout"),
+			sync: true,
+			handle: function(r,i) {
+				dojo.byId('login').style.display = '';
+				dojo.byId('picker').style.display = 'none';
+				dojo.byId('selectedFolders').innerHTML = '';
+			}
+		});
+	});
+
+	dojo.connect(dojo.byId('pickFolders'), 'onclick', function (e) {
+		dojo.stopEvent(e);
+		try {
+		/* update by guohongy, I don't know why I can't get the value of fileService from the following codes
+		lconn.core.folderpicker.open({
+			title: dojo.attr(dojo.byId('title'), 'value'),
+			filesService: dojo.getObject("lconn.core.config.services.files"),
+			onSave: function (fileArray) {
+				var div = dojo.byId('selectedFiles');
+				
+				dojo.forEach(fileArray, function(file) {
+					var a = div.appendChild(document.createElement('a'));
+					a.href = file.getUrlAlternate();
+					a.target = "_blank";
+					a.appendChild(document.createTextNode(file.getName()));
+					div.appendChild(document.createElement('br'));
+				});
+			},
+			linkOnly: !!dojo.byId("linkOnly").value
+		});
+		*/
+
+      // fake gatekeeper feature values
+      {
+         // set FILES_NESTED_FOLDER to enable/disable the new UI style for the Picker dialogs
+         window.gatekeeperConfig['files-nested-folder'] = !!dojo.byId('treeview').checked;
+      }
+
+		var opts = {
+			title: dojo.attr(dojo.byId('title'), 'value'),
+			filesService: dojo.getObject("lconn.core.config.services.files"),
+			/* add by guohongy, in the FolderPikerAssy.js, args.mode should be provided */
+			mode: dojo.byId('mode').value,
+			externalOnly: !!dojo.byId('external').checked,
+			publicOnly: !!dojo.byId('public').checked,
+			useCompact: !!dojo.byId('useCompact').checked,
+			linkOnly: !!dojo.byId('linkOnly').checked,
+			width: dojo.attr(dojo.byId('dialogWidth'), 'value'),
+			
+			
+			onSave: function (fileArray) {
+				var div = dojo.byId('selectedFolders');
+				
+				dojo.forEach(fileArray, function(file) {
+					var a = div.appendChild(document.createElement('a'));
+					a.href = file.getUrlAlternate();
+					a.target = "_blank";
+					a.appendChild(document.createTextNode(file.getName()));
+					div.appendChild(document.createElement('br'));
+				});
+			},
+/*			
+		onOpen: function(widget){
+            widget = widget.dialog.picker;
+            console.log("folder picker widget created: ", widget);
+            dojo.connect(widget, "onSelectionChange", this, function(){
+               console.log("onSelectionChange", arguments);
+            });
+         },
+         onSourceChange: function(){
+            console.log("onSourceChange", arguments);
+         },
+         onSourceLoaded: function(){
+            console.log("onSourceLoaded", arguments);
+         },
+		 onMenuSelectionChange: function(){
+            console.log("onMenuSelectionChange", arguments);
+         },
+		 */
+			};
+		lconn.core.folderpicker.open(opts);
+		} catch (ex) {
+			alert(ex.message);
+		}
+	});
+});
+</script>
+
+
+<style type="text/css">
+   code { font-size:120% }
+   td { vertical-align: top }
+</style>
+${endhead}
+
+<body class="lotusui lotusui30_body">
+ <h1>Connections Folders Picker</h1>
+ <p>Use the example below to test the picker. View the page source to see the javascript used to instantiate it and an example callback.</p>
+ <p>Details on the JavaScript API are found below.</p>
+ <div id="login">
+  You're not logged in. You must log in for the picker to work.
+  <form class="lotusForm2" id="loginForm">
+   <div class="lotusError" id="err" style="display:none">Login incorrect</div>
+    <div class="lotusFormBody">
+     <label for="user">Username</label>
+     <input type="text" id="user" /><br/>
+     <label for="pass">Password</label>
+     <input type="password" id="pass" /><br/><br/>
+    </div>
+    <div class="lotusFormFooter"><button id="loginBtn" class="lotusBtn">Log In</button></div>
+   </form>
+ </div>
+
+  <div id="picker" style="display:none;">
+  <form class="lotusForm3" id="pickerForm">
+   <div class="lotusFormTitle"><h2>Sample Folder Picker</h2></div>
+   <div class="lotusFormBody">
+    <table>
+     <tr>
+      <td style="border-right: solid">
+      <h3>general options</h3>
+      <label for="title">Enter Dialog Title:</label><input type="text" id="title" value="Select Folders" size="32" /><br/>
+      <label for="dialogWidth">Dialog Width (number)</label><input type="text" id="dialogWidth" value="400" size="12" /><br/>
+      <h3>file selection pane options</h3>
+		<label for="mode">Mode:(dialog || inline)</label><input type="text" id="mode" value="dialog" size="50" /><br/>
+      <input type="checkbox" id="treeview" /><label for="treeview">Use tree view (for nested Folder feature)</label><br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Gatekeeper feature flag will be faked!!</span><br/>
+		<input type="checkbox" id="linkOnly" checked="true"/><label for="linkOnly">Show all folders I can see: (linkOnly)</label><br/> 
+		
+		<input type="checkbox" id="public" /><label for="public">Show message "...Public Folders Only..."</label><br/>
+		<input type="checkbox" id="external" /><label for="external">Show Externally Shareable Folders Only (relevant for SmartCloud environments)</label><br/>
+		<input type="checkbox" id="useCompact" checked="true"/><label for="useCompact">Use compact mode folder picker</label><br/>  
+      </td>
+      <td style="border-right: solid">
+      <h3>community pane options</h3>
+      <label for="community">Community ID:</label><input type="text" id="communityId" value="" size="50" /><br/>
+      <label for="repositoryJson">Repository:</label><br/>
+      <textarea id="repositoryJson" rows="8" cols="40"></textarea><br/>
+      <br/>
+      </td>
+      <!-- input type="checkbox" id="disableShareEditor" checked='false'/><label for="showShare">Disable share editor message</label><br/ -->
+      <!--label for="shareEditorString">Share editr label</label><input type="text" id="shareEditorString" value="Allow Community members to edit selected files" size="50" /><br/-->
+
+      <td>
+      <div class="lotusFormTitle"><h3>Selected Folders</h3></div>
+      <div id="selectedFolders"></div>
+      <br/>
+      <hr/>
+      <div id="compactfilecontainer"></div>
+      <br/>
+
+         <br/><div id="externalProgressNode"></div>
+         <div id="message"></div>
+         <br/>
+      </div>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <div class="lotusFormFooter">
+     <button id="pickFolders" class="lotusBtn">Open Folder Picker</button>
+     <button id="logout" class="lotusBtn">Log out</button>
+   </div>
+  </form>
+ </div>
+ 
+<h2>Connections Folder Picker</h2>
+<p>This Javascript API will allow you to select from a list of folders stored in the Connections Files application, and use those folders and their metadata in a callback function.</p>
+<p>To call the picker, you need to include a small bit of Javascript in your JSPs, and call the API with the appropriate arguments.</p>
+<p><strong>Note:</strong> The picker will not work if it is opened by an unauthenticated user. If the user is unauthenticated, calling <code>lconn.core.folderpicker.open()</code> will throw an exception.</p>
+<p>To include the Javascript in your JSP, include the following URL:<br/>
+<code>&lt;script src="${files}/picker/script.js" type="text/javascript"&gt;&lt;/script&gt;</code> Where <code>${files}</code> is the base path to your Files deployment, like <code>http://myfilesserver:9080/files</code> or <code>http://w3.ibm.com/connections/files</code></p>
+<h4>Picker arguments</h4>
+<p>Required:
+<ul>
+	<li><code>title</code>: The title of the Dialog</li>
+	<li><code>filesService</code>: The javascript from <code>lconn.core.config.services</code> representing the files application. You should retrieve the object with <code>dojo.getObject("lconn.core.config.services.files")</code></li>
+	<li><code>onSave</code>: The callback function that is called when the user clicks "OK". The function takes an array of file objects (see descriptions below). If the function returns <code>false</code>, it will keep the dialog open. If it returns any other value (or no value at all), the dialog will close.</li>
+</ul>
+</p>
+<p>Optional:
+<ul>
+	<li><code>scope</code>: The object that will be considered the <code>this</code> scope when the callback is called.</li>
+	<li><code>publicOnly</code>: If <code>true</code>, the picker will only let the user choose public folders. Defaults to <code>false</code>.</li>
+	<li><code>externalOnly</code>: If <code>true</code>, the picker will only let the user choose externally available folders. Defaults to <code>false</code>.</li>
+	<li><code>useCompact</code>: If <code>true</code>, the picker will be rendered with the compact way. Defaults to <code>false</code>.</li>	
+</ul>
+</p>
+<h4>Callback values</h4>
+<p>The array that is returned is an array of items of type <code>lconn.share.bean.Collection</code>. Please view the source of that file for full documentation. Some methods you may find useful:
+<ul>
+	<li><code>getId()</code>: Returns the id of the folder</li>
+	<li><code>getName() / getLabel()</code>: Returns the name of the folder. These methods are equivalent.</li>
+	<li><code>getUrlAlternate()</code>: Returns the URL of the folder's details page</li>	
+</ul>
+</p>
+
+</body>
+</html>

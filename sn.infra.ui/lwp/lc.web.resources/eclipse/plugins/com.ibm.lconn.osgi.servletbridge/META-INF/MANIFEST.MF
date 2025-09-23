@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: Lotus Connections Bundles Servlet
+Bundle-SymbolicName: com.ibm.lconn.osgi.servletbridge;singleton=true
+Bundle-Version: 3.0.0.qualifier
+Bundle-Vendor: IBM
+Import-Package: 
+ javax.servlet;version="2.5.0",
+ javax.servlet.http;version="2.5.0",
+ net.jazz.ajax.internal.util,
+ org.osgi.framework;version="1.5.0"
+Bundle-ClassPath: .
+Bundle-Activator: com.ibm.lconn.osgi.servletbridge.Activator
+Bundle-ActivationPolicy: lazy

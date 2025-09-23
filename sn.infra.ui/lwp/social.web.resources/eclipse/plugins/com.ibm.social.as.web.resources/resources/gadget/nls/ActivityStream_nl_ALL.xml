@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015, 2016  All Rights Reserved.                    -->
+<messagebundle>
+  <msg name="as_title">Updates</msg>
+  <msg name="as_description">Updates van IBM Connections</msg>
+  <msg name="as_error">Er is een fout in de configuratie voor de updategegevensstroom. Neem contact op met de beheerder.</msg>
+</messagebundle>

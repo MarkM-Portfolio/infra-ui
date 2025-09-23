@@ -1,0 +1,8 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div>
+	<ul class="lotusPagingBottom" data-dojo-attach-point="bottomScrollerNode"> 
+		<li class="pagingHandler">
+			<a href="javascript:;" class="streamMore lotusHidden" role="button" aria-label="${strings.ariaShowMore}" data-dojo-attach-point="showMoreNode" data-dojo-attach-event="onclick: showNextPage, onkeypress: showNextPageKey">${strings.showMoreText}</a><div class="lotusLeft lotusAction lotusHidden" role="presentation" data-dojo-attach-point="backToTopNode"><a href="javascript:;" role="button" aria-label="${strings.ariaBackToTop}" class="lotusAction" data-dojo-attach-event="onclick: goBackToTop, onkeypress: backToTopKey">${strings.backToTopText}<img class="lotusBackToTop" src="${_blankGif}" alt=""></a></div><div data-dojo-attach-point="feedLinkNode"></div>
+		</li>
+	</ul>
+</div>

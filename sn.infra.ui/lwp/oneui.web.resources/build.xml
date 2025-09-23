@@ -1,0 +1,182 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2003, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="oneui.web.resources" default="development" basedir=".">
+	<!-- Import helpers for property builds, do not change -->
+	<locateComponent component="prereqs.web.resources" property="eclipseBuildDir" locateBuildDir="false"/>
+	<import file="${eclipseBuildDir}/build_utils.xml" />
+
+	<locateComponent component="prereqs.sn/jsdoc3" property="jsdoc.basedir" locateBuildDir="false"/>
+	<import file="${jsdoc.basedir}/jsdoc3.xml" />
+
+	<locateComponent component="prereqs.sn/jslint4java" property="jslint.basedir" locateBuildDir="false"/>
+	<import file="${jslint.basedir}/jslint.xml" />
+
+	<import file="${env.WPLC_IMPORT}/pde_build.xml"/> 
+	
+	<locateComponent component="prereqs.sn/ant-contrib" property="ant-contrib.basedir" locateBuildDir="false"/>
+	<taskdef name="for_each" classname="net.sf.antcontrib.logic.ForEach" classpath="${ant-contrib.basedir}/ant-contrib-1.0b3.jar" />
+
+	<import file="${basedir}/../imports/jscover.xml" />
+	<property name="jscover.bundles" value="com.ibm.oneui.web.resources" />
+
+	<target name="custom_init" depends="instrument-for-jscover">
+
+		<property name="ckjsdir" value="${basedir}/eclipse/plugins/com.ibm.oneui.ckeditor/resources" />
+
+		<property name="ckeditor.version" value="4.7.2.2" />
+		<locateComponent component="ckeditor" locateBuildDir="true" property="ckeditor.build" />
+
+		<delete dir="${ckjsdir}/editor"/>
+		<mkdir dir="${ckjsdir}/editor" />
+
+		<copy todir="${ckjsdir}/editor" includeEmptyDirs="true" overwrite="true">
+			<fileset dir="${ckeditor.build}/${ckeditor.version}/ckeditor">
+				<include name="**/*"/> 
+			</fileset>
+		</copy>
+
+		<concat destfile="${ckjsdir}/editor/dojoconfig.js" encoding="UTF-8" eol="dos">
+			<header trimleading="yes">
+dojo.provide("com.ibm.oneui.ckeditor.editor.dojoconfig");
+com.ibm.oneui.ckeditor.editor.dojoconfig.execCustomConfig = function (){
+			</header>
+
+			<footer trimleading="yes">
+};
+			</footer>
+
+			<fileset file="${ckjsdir}/editor/config.js" />
+
+			<filterchain>
+				<!-- Ensure consistent line endings no matter what platform the build is run on -->
+				<tokenfilter delimoutput="\r\n"/>
+				<!-- Remove the unicode BOM at the start of CK files  -->
+				<tokenfilter>
+					<replacestring from="&#xFEFF;/*" to="/*"/>
+				</tokenfilter>
+			</filterchain>
+		</concat>
+
+		<concat destfile="${ckjsdir}/editor/dojo.js" fixlastline="true" encoding="UTF-8" eol="dos">
+			<header trimleading="yes">
+dojo.provide("com.ibm.oneui.ckeditor.editor.dojo");
+			</header>
+			
+			<fileset file="${ckjsdir}/editor/ckeditor.js" />
+		
+			<filterchain>
+				<tokenfilter delimoutput="\r\n"/>
+				<!-- Remove the unicode BOM at the start of CK files  -->
+				<tokenfilter>
+					<replacestring from="&#xFEFF;/*" to="/*"/>
+				</tokenfilter>
+				<!-- Convert assorted unprintable characters to unicode literals -->
+				<tokenfilter>
+					<replacestring from="&#xFEFF;" to="\ufeff"/>
+				</tokenfilter>
+				<tokenfilter>
+					<replacestring from="&#x200B;" to="\u200b"/>
+				</tokenfilter>
+				<tokenfilter>
+					<replacestring from="&#x00A0;" to="\u00a0"/>
+				</tokenfilter>
+			</filterchain>
+		</concat>
+
+		<copy file="${ckjsdir}/custom/_source/skins/lite.css" tofile="${ckjsdir}/editor/contentsLite.css" encoding="UTF-8">
+			<filterchain>
+				<!-- Ensure consistent line endings no matter what platform the build is run on -->
+				<tokenfilter delimoutput="\r\n"/>
+				<!-- Remove the unicode BOM at the start of CK files  -->
+				<tokenfilter>
+					<replacestring from="&#xFEFF;/*" to="/*"/>
+				</tokenfilter>
+			</filterchain>
+		</copy>
+
+		<!-- Compress LC custom editor CSS -->
+		<copy file="${ckjsdir}/custom/_source/skins/oneui3/connectionsEditor.css" tofile="${ckjsdir}/editor/skins/oneui3/connectionsEditor.css" encoding="UTF-8">
+			<filterchain>
+				<filterreader classname="org.apache.tools.ant.filters.StripJavaComments"/>
+				<deletecharacters chars="\n\t\r"/>
+			</filterchain>
+		</copy>
+		
+		<!-- Compress LC custom editor CSS for ibmdesign-->
+		<copy file="${ckjsdir}/custom/_source/skins/ibmdesign/connectionsEditor.css" tofile="${ckjsdir}/editor/skins/ibmdesign/connectionsEditor.css" encoding="UTF-8">
+			<filterchain>
+				<filterreader classname="org.apache.tools.ant.filters.StripJavaComments"/>
+				<deletecharacters chars="\n\t\r"/>
+			</filterchain>
+		</copy>
+
+		<property name="ck.cssfiles" value="editor_gecko.css,editor_ie.css,editor_ie7.css,editor_ie8.css,editor_iequirks.css,editor_opera.css,editor_webkit.css,editor.css" />
+		<for_each list="${ck.cssfiles}" param="ck.cssfile" target="append_connections_styles" inheritall="true"/>
+	</target>
+
+	<target name="append_connections_styles">
+		<!-- Merge source editor.css and LC custom styling -->
+		<concat destfile="${ckjsdir}/editor/skins/oneui3/${ck.cssfile}" encoding="UTF-8" eol="dos" append="true">
+			<header trimleading="yes">
+/** BEGIN: LC custom CKEditor styling **/
+			</header>
+			<fileset file="${ckjsdir}/editor/skins/oneui3/connectionsEditor.css"/>
+			<footer trimleading="yes">
+/** END: LC custom CKEditor styling **/ 
+			</footer>
+		</concat>
+		<concat destfile="${ckjsdir}/editor/skins/ibmdesign/${ck.cssfile}" encoding="UTF-8" eol="dos" append="true">
+			<header trimleading="yes">
+/** BEGIN: LC custom CKEditor styling for ibmdesign**/
+			</header>
+			<fileset file="${ckjsdir}/editor/skins/ibmdesign/connectionsEditor.css"/>
+			<footer trimleading="yes">
+/** END: LC custom CKEditor styling **/ 
+			</footer>
+		</concat>
+	</target>
+
+	<target name="custom_complete" depends="generate_jsdoc" />
+	
+	<target name="generate_jsdoc">
+		<mkdir dir="${dir.build}/jsdoc"/>
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.oneui.web.resources/resources/" />
+			<param name="docs.topic.dir" value="com.ibm.oneui" />
+		</antcall>
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.oneui.web.resources.test/resources/" />
+			<param name="docs.topic.dir" value="com.ibm.oneui.test" />
+		</antcall>
+		<!--antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.oneui.ckeditor/resources/" />
+			<param name="docs.topic.dir" value="com.ibm.oneui.ckeditor" />
+		</antcall-->
+	</target>
+
+	<target name="run_jslint">
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.oneui.web.resources/resources/" />
+			<param name="jslint.outfile" value="jslint.com.ibm.oneui.out" />
+			<param name="jslint.halt" value="false"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.oneui.web.resources.test/resources/" />
+			<param name="jslint.outfile" value="jslint.com.ibm.oneui.test.out" />
+			<param name="jslint.halt" value="false"/>
+		</antcall>
+	</target>
+</project>

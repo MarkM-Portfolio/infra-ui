@@ -1,0 +1,27 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+	<div class="ic-thumb-widget-flip-card" data-dojo-attach-event="onmouseout: onBlur">
+		<div class="card-front">
+			<img src="${_blankGif}" class="check" data-dojo-attach-point="frontCheck" alt="" />
+			<img src="${_blankGif}" class="pin" data-dojo-attach-point="frontPin" alt="" />
+			<div class="thumb"><img data-dojo-attach-point="imageThumb" src="${_blankGif}" /></div>
+			<div class="summary"><span data-dojo-attach-point="frontFileName"></span><img data-dojo-attach-point="imageStatus" src="${_blankGif}"></div>
+		</div>
+		<div class="card-back" data-dojo-attach-event="onclick: preview">
+			<a href="javascript:;" class="check" data-dojo-attach-event="ondijitclick: checkToggle" role="button"><img src="${_blankGif}" data-dojo-attach-point="backCheck" /></a>
+			<a href="javascript:;" class="pin" data-dojo-attach-event="ondijitclick: pinToggle" role="button"><img src="${_blankGif}" data-dojo-attach-point="backPin" /></a>
+			<h4 class="title"><a href="javascript:;" data-dojo-attach-point="backFileName" data-dojo-attach-event="onclick: summary" title="${ft_summary}"></a></h4>
+			<span><a href="javascript:;" data-dojo-attach-point="backAuthor" data-dojo-attach-event="onclick: showProfile"></a></span>
+			<div class="actions">
+				<a href="javascript:;" data-dojo-attach-point="backEdit" title="${ft_edit}" class="edit" role="button" data-dojo-attach-event="onclick: edit"><img src="${_blankGif}" alt="${ft_edit}" /></a>
+				<a href="javascript:;" data-dojo-attach-point="backDownload" title="${ft_download}" class="download" role="button" data-dojo-attach-event="onclick: download"><img src="${_blankGif}" alt="${ft_download}" /></a>
+				<a href="javascript:;" title="${ft_preview}" class="preview" role="button"><img src="${_blankGif}" alt="${ft_preview}" /></a>
+				<a href="javascript:;" title="${ft_summary}" class="summary" role="button" data-dojo-attach-event="onclick: summary"><img src="${_blankGif}" alt="${ft_summary}" /></a>
+			</div>
+		</div>
+	</div>
+	
+	
+
+
+
+ 

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=7">
+<script src="http://www.google.com/jsapi"></script>
+<script>
+djConfig = {
+      lang: "en-us",
+      isDebug: true,
+      blankGif: "${_blankGif}"
+}
+</script>
+<script>
+ google.load("dojo", "1.5.0");
+</script>
+<script>
+dojo.require("dijit.Dialog");
+dojo.require("dojo.i18n");
+</script>
+<script>
+dojo.addOnLoad(function() {
+   dojo.requireLocalization = function() { };
+   dojo.create("script", { src: "${contextRoot}/web/_js?include=com.ibm.social.sharebox.DialogLauncher.js&exclude=dojo.dojo.js~dojo.i18n.js&debug=true" }, dojo.doc.head);
+});
+</script>
+<link rel="stylesheet" href="${contextRoot}/web/_style?include=com.ibm.lconn.core.styles.oneui3/base/package3.css"></link>
+<link rel="stylesheet" href="${contextRoot}/web/_style?include=com.ibm.lconn.core.styles.oneui3/sprites.css"></link>
+<link rel="stylesheet" href="${contextRoot}/web/_lconntheme/default.css?version=oneui3&rtl=false"></link>
+</head>
+<body class="lotusui lotusLogin2 lotusui30_body lotusui30_fonts lotusui30 lotusui30dojo">
+<div class="lotusFrame">
+<h3>Dialog Launcher Test Page</h3>
+
+<div>
+   <a href="javascript:;" onclick="com.ibm.social.sharebox.DialogLauncher.open()">Open Share Dialog</a>
+</div>
+<div class="lotusMain">
+   <div class="lotusContent">
+   <h3>This is the content area</h3>
+   </div>
+</div>
+</div>
+</body>
+</html>

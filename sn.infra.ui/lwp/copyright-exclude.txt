@@ -1,0 +1,24 @@
+;; Build, Logs, Msg IDs
+[ROOT]/sn.infra.ui/lwp/build/**
+[ROOT]/sn.infra.ui/lwp/logs/**
+[ROOT]/sn.infra.ui/lwp/msgids/**
+
+;; Binary prereqs in prereqs.web.resources
+[ROOT]/sn.infra.ui/lwp/prereqs.web.resources/eclipse/plugins/**
+
+;; CKEditor resources extracted from sn.infra/lwp/ckeditor
+[ROOT]/sn.infra.ui/lwp/oneui.web.resources/eclipse/plugins/com.ibm.oneui.ckeditor/resources/editor/**
+[ROOT]/sn.infra.ui/lwp/ic.web.resources/eclipse/plugins/com.ibm.ic.ui.web.resources/resources/ckeditor/editor/**
+
+;; Dojo toolkit
+[ROOT]/sn.infra.ui/lwp/dojo.web.resources/eclipse/plugins/org.dojotoolkit.dojo/resources/**
+[ROOT]/sn.infra.ui/lwp/dojo.web.resources/eclipse/plugins/org.dojotoolkit.dijit/resources/**
+[ROOT]/sn.infra.ui/lwp/dojo.web.resources/eclipse/plugins/org.dojotoolkit.dojox/resources/**
+[ROOT]/sn.infra.ui/lwp/dojo.web.resources/eclipse/plugins/org.dojotoolkit.doh/resources/**
+
+;; Legacy Dojo sources
+[ROOT]/sn.infra.ui/lwp/lc.web.resources/eclipse/plugins/com.ibm.lconn.core.web.resources/legacyresources/lconn/dojo14/**
+
+;; Nav folders copied to web modules
+[ROOT]/sn.infra.ui/lwp/connections.info.war/war/nav/**
+[ROOT]/sn.infra.ui/lwp/lc.web.resources.war/war/nav/** 

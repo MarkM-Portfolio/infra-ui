@@ -1,0 +1,34 @@
+<div class="">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<div class="eeLogin">
+<form role="main" class="" dojoAttachEvent="onsubmit:authenticate">  
+   <h1 class="lotusHeading eeHeading">${_strings.welcome}</h1>
+   <input type="hidden" value="" name="secure" id="secure" />
+   <input type="hidden" value="" name="fragment" id="fragment" />
+   <div dojoAttachPoint="error" class="eeFormError" id="loginError" role="alert" style="display: none;">${_strings.error}</div>
+   <p class="eeLoginFormField">
+      <label for="username">${_strings.user}</label>
+      <input type="text" name="j_username" class="lotusText" aria-required="true" id="username" />
+   </p>
+   <p class="eeLoginFormField">
+      <label for="password">${_strings.password}</label>
+      <input type="password" name="j_password" class="lotusText" aria-required="true" id="password" />
+   </p>
+   <span aria-hidden="true" class="lotusRight"><img class="lotusIBMLogo" alt="IBM" src="${blankGif}" role="presentation"><span class="lotusAltText">IBM</span></span>
+   <div class="eeSubmitBtn"><input type="submit" value="${_strings.logIn}" class="lotusBtn lotusBtnSpecial" /></div>
+</form>
+</div>
+</div>

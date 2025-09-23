@@ -1,0 +1,34 @@
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<iw:iwidget name="activityStream" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget"
+			iScope="(lconn.core.dynamiciwidget.create('com.ibm.social.as.lconn.widgets.CommunitiesActivityStreamClass'))" 
+			supportedModes="view fullpage edit search" id="activityStream">
+	<iw:event id="onRefreshNeeded" handled="true" onEvent="onRefresh" />	
+	<iw:content mode="view">
+		<![CDATA[
+			<div class="lotusBoard asCommunitiesBoard">
+				<div id="_IWID_shareboxContainer"></div>
+				<div id="activityStream"></div>
+			</div>
+		]]>
+	</iw:content>
+	<iw:content mode="fullpage">
+		<![CDATA[
+			<div class="lotusBoard asCommunitiesBoard">
+				<div id="_IWID_shareboxContainer"></div>
+				<div id="activityStream"></div>
+			</div>
+		]]>
+	</iw:content>
+	<iw:content mode="edit">
+		<![CDATA[
+			<div id="_IWID_activityStreamEditNode"></div>
+		]]>
+	</iw:content>
+	<iw:content mode="search">
+		<![CDATA[
+			<div id="_IWID_activityStreamSearchNode"></div>
+		]]>
+	</iw:content>
+	
+</iw:iwidget>

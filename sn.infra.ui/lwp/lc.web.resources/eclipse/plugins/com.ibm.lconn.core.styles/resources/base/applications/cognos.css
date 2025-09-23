@@ -1,0 +1,25 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+
+/*-------------------------------------------------------
+   Cognos Report
+-------------------------------------------------------*/
+.xt .xm, 
+.xt .ml, 
+.xt .mv {border: 1px solid #999;}
+
+.xt .xm, 
+.xt .ml {background-color: #ECECEC; background-image: none;}
+
+.lotusui30_body {
+	background-color: #ffffff;
+}
+
+.lotusui_ie .lotusui30 .lotusVCardHover {
+    background-color: #003f69;
+    background-repeat: no-repeat;
+}
+
+/*  Minimize the padding on the report  */
+.lotusui_ie td.mainViewerHeader3 {
+    font-size:1px;
+}

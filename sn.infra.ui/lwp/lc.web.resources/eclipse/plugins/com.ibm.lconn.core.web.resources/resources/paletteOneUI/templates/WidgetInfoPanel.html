@@ -1,0 +1,31 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div>
+<div dojoAttachPoint="welcomeModeNode">
+	<h4 class="paletteTitle"><img dojoAttachPoint="paletteLogoNode" class="paletteIcon" alt="" title="" />${_resourceBundle.WELCOME_MODE_TITLE}</h4>
+	<div class="paletteDescription lotusMeta">${_resourceBundle.WELCOME_MODE}</div>
+</div>
+<table dojoAttachPoint="widgetInfoPanelNode" width="100%">
+	<tr>
+		<td width="60%">
+		<h4 dojoAttachPoint="titleNode"></h4>
+		<p class="lotusMeta" dojoAttachPoint="descNode"></p>
+		<p><img style="margin-top: 10px;" dojoAttachPoint="layoutImgNode"
+			alt="${_resourceBundle.PREVIEW_LAYOUT_ALT}" title="${_resourceBundle.PREVIEW_LAYOUT_ALT}" /></p>
+		</td>
+		<td width="50%">
+		<h4 class="lotusMeta">${_resourceBundle.EXAMPLE}</h4>
+		<div><img style="margin-top: 10px;"
+			alt="${_resourceBundle.PREVIEW_WIDGET_ALT}"
+			title="${_resourceBundle.PREVIEW_WIDGET_ALT}" dojoAttachPoint="previewImgNode" /></div>
+		</td>
+	</tr>
+</table>
+<table dojoAttachPoint="categoryInfoPanelNode">
+	<tr>
+		<td>
+		<h4 dojoAttachPoint="categoryTitleNode"></h4>
+		<p class="lotusMeta">${_resourceBundle.WIDGET_CATEGORY}</p>
+		</td>
+	</tr>
+</table>
+</div>

@@ -1,0 +1,7 @@
+/* Copyright IBM Corp. 2009, 2015  All Rights Reserved.              */
+
+/* SPR #LMZO87ZDBC.  Items in the footer should gracefully wrap as they exceed the width of the browser */
+.lotusFooter table {text-align: center;}
+
+/* Fixes styles for messages */
+.lotusui30 .lotusMessage {font-weight:normal;}

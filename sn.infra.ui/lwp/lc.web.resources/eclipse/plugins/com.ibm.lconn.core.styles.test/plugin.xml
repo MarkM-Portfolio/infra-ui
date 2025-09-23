@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2010, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<?eclipse version="3.4"?>
+<!--
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<plugin>
+   <extension point="net.jazz.ajax.webBundles" />
+   
+   <extension point="com.ibm.lconn.core.styles.cssBinding">
+      <!-- without .css extension -->
+      <cssBinding bind="com.ibm.lconn.core.styles.test/css/custom" to="com.ibm.lconn.core.styles.oneui3/base/package3" />
+      <cssBinding bind="com.ibm.lconn.core.styles.test/css/customRTL" to="com.ibm.lconn.core.styles.oneui3/base/package3RTL" />
+      <!-- with .css extension -->
+      <cssBinding bind="com.ibm.lconn.core.styles.test/css/other.css" to="com.ibm.lconn.core.styles/base/connectionsCore.css" />
+      <cssBinding bind="com.ibm.lconn.core.styles.test/css/otherRTL.css" to="com.ibm.lconn.core.styles/base/connectionsCoreRTL.css" />
+   </extension>
+   
+   <extension point="com.ibm.lconn.core.styles.themes">
+       <theme 
+           id="test_theme" 
+           resource="/css/theme.css"
+           resource-rtl="/css/themeRTL.css"
+           application-path="/css/applications/" 
+           version="oneui3"
+       />
+   </extension>
+</plugin>

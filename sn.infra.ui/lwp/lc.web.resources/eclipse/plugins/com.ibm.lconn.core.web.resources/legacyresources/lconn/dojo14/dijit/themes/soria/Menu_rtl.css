@@ -1,0 +1,11 @@
+/* Copyright IBM Corp. 2015  All Rights Reserved.                    */
+/* Menu */
+
+.dijitRtl .soria .dijitMenuItem .dijitMenuItemIcon {
+	padding-left: 3px;
+	padding-right: 0px;
+}
+
+.dijitRtl .soria .dijitMenuItem .dijitMenuExpand {
+	background-position: left top;
+}

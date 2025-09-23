@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Zaproś w celu nawiązania kontaktu",
+	NDYK1:"Nie ma już więcej osób do zarekomendowania",
+	LOADING: "ładowanie",
+	DYK_TITLE: "Osoby, które możesz znać",
+	INVITE_TITLE: "Wyślij zaproszenie do nawiązania kontaktu",
+	SEND_ACTION: "Wyślij",
+	CANCEL_ACTION: "Anuluj",
+	PREV: "Wstecz",
+	NEXT: "Dalej",
+	bpct: "Ta osoba dodała komentarz w Twoim blogu",
+	bpcc: "Został przez Was skomentowany ten sam blog",
+	lpfr: "Jest to znajoma osoba kogoś, kogo znasz",
+	lm1: "Jesteś menedżerem tych osób",
+	le1: "Ta osoba jest Twoim menedżerem",
+	sdm: "Macie tego samego menedżera",
+	pt: "Ta osoba oznaczyła Cię",
+	pbt: "Ta osoba została przez Ciebie oznaczona",
+	acm: "Współużytkujecie działania",
+	wikiCoContribution: "Została przez Was edytowana ta sama strona wiki",
+	bpcb: "Blog tej osoby został przez Ciebie skomentowany",
+	lpcfr: "Macie niektórych wspólnych znajomych",
+	ccmf: "Jesteście razem w społeczności",
+	ccms: "Jesteście razem w społeczności",
+	filesharing: "Współużytkujecie niektóre pliki",
+	forumthreaddiscussion: "Współużytkujecie wątek forum",
+	ctb: "Współużytkujecie zakładkę",
+	tgw: "Macie zgodne znaczniki",
+	tcu: "Został przez Was użyty ten sam znacznik",
+	pctg: "Została przez Was oznaczona ta sama osoba",
+	tgb: "Oznaczyły Was te same osoby"
+})

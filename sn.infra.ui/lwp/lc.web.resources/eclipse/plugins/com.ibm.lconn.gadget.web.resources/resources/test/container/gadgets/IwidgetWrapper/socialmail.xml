@@ -1,0 +1,38 @@
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+<iw:iwidget name="myWidget" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" 
+supportedModes="view edit" mode="view">
+    <iw:content mode="view">
+	<![CDATA[ 
+	<center>
+<a href="http://eichorn.notesdev.ibm.com/mail/pclemmon.nsf" target="_blank">INotes</a>
+<br>
+<div id="gadgetHolder">Hello World, I'm still here!</div>
+	</center>
+	
+	<script>
+	
+	var mContainer = null;
+	mContainer = com.ibm.lconn.gadget.container.iContainer;			
+	mContainer.init();
+
+	// Find dnd2 column, add div and load gadget.
+
+	var dnd2 = dojo.byId("gadgetHolder");
+	
+	var loc = document.location;
+	var host = loc.protocol + "//" + loc.hostname + ":" + loc.port;
+	var gadgetUrl = host + "/connections/resources/web/com.ibm.lconn.gadget/test/container/gadgets/sm.xml";
+	var def = [{
+		placement: 'gadgetHolder',
+		definitionUrl:  gadgetUrl,
+		componentType: "gadget"
+	}];
+
+	mContainer.renderWidget(def);
+
+	</script>
+	]]> 
+	</iw:content>
+    <iw:content mode="edit">Configure me.</iw:content>
+</iw:iwidget>

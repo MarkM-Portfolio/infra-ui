@@ -1,0 +1,131 @@
+
+${head}
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+
+<title>Tag Cloud</title>
+
+<style>
+.lotusContent .lconnPreview {
+    margin-bottom: 15px
+}
+</style>
+
+${endhead}
+
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-test/ui/index.html?render=test">Core UI widgets and utilities</a>
+    <span class="lotusDivider">&gt;</span>
+    Tag Cloud
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+    <div class="lotusMain" role="main" aria-label="Tag Cloud Test content">
+        <div class="lotusContent">
+<h1>Tag Cloud</h1>
+<dl>
+    <dt>Module ID: <code>ic-ui/TagCloud</code></dt>
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-ui/ic-ui.TagCloud.html">JSDoc</a></dd>
+</dl>
+
+                <h2>Declarative, JSON feed</h2>
+                <section class="lotusSection2 lotusSectionPlain">
+                    <div class="lotusSectionBody">
+                        <div jsid="ds1" data-dojo-type="ic-core/TypeAheadDataStore" data-dojo-props="url:&quot;../data/tagcloud_tags.json&quot;"></div>
+                        <div jsid="aj1" data-dojo-type="ic-ui/tagcloud/AjaxCall" data-dojo-props="TAG_URL:&quot;../data/tagcloud_tags.json&quot;,HANDLE_AS:&quot;json&quot;"></div>
+                        <div id="tc1" data-dojo-type="ic-ui/TagCloud" data-dojo-props="ajaxCall:aj1,tagStore:ds1"></div>
+                    </div><!--end section body-->
+                </section>
+
+                <h2>Programmatic, JSON feed</h2>
+                <section class="lotusSection2 lotusSectionPlain">
+                    <div class="lotusSectionBody">
+                        <div id="tc2"></div>
+                    </div><!--end section body-->
+                </section>
+
+                <h2>Programmatic, JSON feed with duplicates</h2>
+                <section class="lotusSection2 lotusSectionPlain">
+                    <div class="lotusSectionBody">
+                        <div id="tc3"></div>
+                    </div><!--end section body-->
+                </section>
+
+                <h2>Programmatic, empty</h2>
+                <section class="lotusSection2 lotusSectionPlain">
+                    <div class="lotusSectionBody">
+                        <div id="tc4"></div>
+                    </div><!--end section body-->
+                </section>
+
+                <h2>Programmatic, error response</h2>
+                <section class="lotusSection2 lotusSectionPlain">
+                    <div class="lotusSectionBody">
+                        <div id="tc5"></div>
+                    </div><!--end section body-->
+                </section>
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:dojo.parser}
+    ${script:net.jazz.ajax.xdloader}
+    ${script:ic-core.TypeAheadDataStore}
+    ${script:ic-ui.TagCloud}
+    ${script:ic-ui.tagcloud.AjaxCall}
+    <script>
+        require(["ic-ui/TagCloud", "ic-ui/tagcloud/AjaxCall", "ic-core/TypeAheadDataStore", "dojo/dom-construct", "dojo/domReady!"], function(TagCloud, AjaxCall, TypeAheadDataStore, domConstruct) {
+           var TAGS_JSON = '../data/tagcloud_tags.json';
+           new TagCloud({
+               ajaxCall : new AjaxCall({
+                   TAG_URL : TAGS_JSON,
+                   HANDLE_AS : 'json'
+               }),
+               tagStore : new TypeAheadDataStore({
+                   url : TAGS_JSON,
+               }, domConstruct.create('div'))
+           }, "tc2");
+
+           var DUPLICATE_TAGS_JSON = '../data/tagcloud_duplicate_tags.json';
+           new TagCloud({
+              ajaxCall : new AjaxCall({
+                  TAG_URL : DUPLICATE_TAGS_JSON,
+                  HANDLE_AS : 'json'
+              }),
+              tagStore : new TypeAheadDataStore({
+                  url : DUPLICATE_TAGS_JSON,
+              }, domConstruct.create('div'))
+           }, "tc3");
+
+           var NO_TAGS_JSON = '../data/tagcloud_no_tags.json';
+           new TagCloud({
+               ajaxCall : new AjaxCall({
+                   TAG_URL : NO_TAGS_JSON,
+                   HANDLE_AS : 'json'
+               }),
+               tagStore : new TypeAheadDataStore({
+                   url : NO_TAGS_JSON,
+               }, domConstruct.create('div'))
+           }, "tc4");
+
+           var ERROR_TAGS_JSON = '../data/tagcloud_idonotexist.json';
+           new TagCloud({
+              ajaxCall : new AjaxCall({
+                  TAG_URL : ERROR_TAGS_JSON,
+                  HANDLE_AS : 'json'
+              }),
+              tagStore : new TypeAheadDataStore({
+                  url : ERROR_TAGS_JSON,
+              }, domConstruct.create('div'))
+          }, "tc5");
+       });
+    </script>
+</body>
+</html>

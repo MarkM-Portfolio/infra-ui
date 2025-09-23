@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Gadget Embedded Experience OpenSocial usado para exibir detalhes e ações adicionais para eventos de conexão</msg>
+  <msg name="connectionsEE_errorTitle">Erro</msg>
+  <msg name="connectionsEE_errorDescription">Ocorreu um erro ao carregar os recursos do dispositivo. Certifique-se de que esteja conectado à rede e tente carregar o dispositivo novamente.</msg>
+</messagebundle>

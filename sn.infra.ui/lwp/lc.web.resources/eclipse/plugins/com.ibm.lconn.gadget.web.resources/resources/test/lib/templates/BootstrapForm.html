@@ -1,0 +1,97 @@
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<div style="${style}">
+	<!-- Gadget URL Form --> 
+	<div dojoType="dijit.form.Form" encType="multipart/form-data" dojoAttachPoint="_gadgetUrlForm" action="" method="">
+		<table>
+			<tr>
+				<td><label for="gadgetUrl">${_nls.gadgetUrl}</label></td>
+			</tr>
+			<tr>
+				<td><input type="text" class="icTestGadgetUrl" name="gadgetUrl" required="true" intermediateChanges="true" dojoAttachPoint="_gadgetUrl"
+					dojoType="dijit.form.TextBox" /></td>
+			</tr>
+			<tr>
+				<td><label for="name">${_nls.formattedGadgetUrl}</label></td>
+			</tr>
+			<tr>
+				<td><input type="text" class="icTestGadgetUrl" name="gadgetUrlFormated" dojoAttachPoint="_gadgetUrlFormated" readonly="readonly"
+					dojoType="dijit.form.TextBox" /></td>
+			</tr>
+		</table>
+	</div>
+	
+	<!-- Form for Access -->
+	<div dojoType="dijit.form.Form" encType="multipart/form-data" dojoAttachPoint="_gadgetAccessForm" action="" method="">
+		<table>
+			<!-- 
+				Proxy Access
+			  -->
+			<tr>
+				<td>
+					<fieldset class="lotusFieldset" role="radiogroup">
+						<legend>${_nls.proxy_access_label}</legend>
+						<div class="lotusFieldWrapper">
+							<input class="lotusCheckbox" type="radio" id="proxyAccessIntranet" name="__dev_proxyPolicy__" value="intranet_access" checked="checked" dojoAttachPoint="_proxyAccessIntranet"/>
+							<label class="lotusCheckbox" for="proxyAccessIntranet" dojoAttachPoint="_proxyAccessIntranetText">${_nls.proxy_intranetAccess}</label>
+						</div>
+						<div class="lotusFieldWrapper">
+							<input class="lotusCheckbox" type="radio" id="proxyAccessExternalOnly" name="__dev_proxyPolicy__" value="external_only" dojoAttachPoint="_proxyAccessExternalOnly"/>
+							<label class="lotusCheckbox" for="proxyAccessExternalOnly">${_nls.proxy_externalOnly}</label>
+						</div>
+					</fieldset>
+				</td>
+			</tr>
+			
+			<!-- 
+				Feature Access
+			  -->
+			<tr>
+				<td>
+					<fieldset class="lotusFieldset" role="radiogroup">
+						<legend>${_nls.feature_access_label}</legend>
+						<div class="lotusFieldWrapper">
+							<input class="lotusCheckbox" type="radio" id="featureAccessRestricted" name="__dev_policySet__" value="GADGET_BASE" checked="checked" />
+							<label class="lotusCheckbox" for="featureAccessRestricted">${_nls.feature_restricted}</label>
+						</div>
+						<div class="lotusFieldWrapper">
+							<input class="lotusCheckbox" type="radio" id="featureAccessTrusted" name="__dev_policySet__" value="GADGET_TRUSTED" />
+							<label class="lotusCheckbox" for="featureAccessTrusted">${_nls.feature_trusted}</label>
+						</div>
+						<div class="lotusFieldWrapper">
+							<input class="lotusCheckbox" type="radio" id="featureAccessSSO" name="__dev_policySet__" value="GADGET_TRUSTED,GADGET_SSO" dojoAttachPoint="_featureAccessSSO"/>
+							<label class="lotusCheckbox" for="featureAccessSSO" dojoAttachPoint="_featureAccessSSOText">${_nls.feature_sso}</label>
+						</div>
+						<div class="lotusFieldWrapper">
+							<input class="lotusCheckbox" type="radio" id="featureAccessKitchenSink" name="__dev_policySet__" value="GADGET_BUILTIN_INTERNAL" dojoAttachPoint="_featureAccessKitchenSink" />
+							<label class="lotusCheckbox" for="featureAccessKitchenSink" dojoAttachPoint="_featureAccessKitchenSinkText">${_nls.feature_everything}</label>
+						</div>
+					</fieldset>
+				</td>
+			</tr>
+			
+			<!-- 
+				Render Mode: 
+			 -->
+			<tr>
+				<td>
+					<fieldset class="lotusFieldset" role="radiogroup">
+						<legend>${_nls.renderMode_label}</legend>
+						<div class="lotusFieldWrapper">
+							<input class="lotusCheckbox" type="radio" name="__dev_appContexts__" checked="checked" id="renderModeEE" value="EMBEDXP"/> 
+		    				<label class="lotusCheckbox" for="renderModeEE">${_nls.render_ee}</label> <br />
+		    			</div>
+		    			<div class="lotusFieldWrapper">
+			    			<input class="lotusCheckbox" type="radio" name="__dev_appContexts__" id="renderModeSharedialog" value="SHAREDIALOG"/> 
+			    			<label class="lotusCheckbox" for="renderModeSharedialog">${_nls.render_share}</label> <br />
+			    		</div>
+			    		<div class="lotusFieldWrapper">
+							<input class="lotusCheckbox" type="radio" name="__dev_appContexts__" id="renderModeHomepage" value="WIDGET"/> 
+							<label class="lotusCheckbox" for="renderModeHomepage">${_nls.render_homepage}</label>
+						</div>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+	</div> <!-- End form -->
+</div>

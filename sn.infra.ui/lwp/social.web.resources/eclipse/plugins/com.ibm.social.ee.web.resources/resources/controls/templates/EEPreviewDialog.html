@@ -1,0 +1,48 @@
+<div aria-labelledby="${id}_flyoutTitleNode" class="lotusFlyout">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+   <div class="lotusWrapper" dojoAttachPoint="wrapper" style="position: relative;">
+	   <div class="lotusFlyoutHeader" dojoAttachPoint="flyoutHeader">
+	      <table class="flyoutTitleContainer" role="presentation">
+	        <tbody>
+	          <tr>
+	            <td class="flyoutTitle">
+	               <div class="flyoutTitleOuter">
+	                  <div class="flyoutTitleInner" dojoAttachPoint="titleNode" id="${id}_flyoutTitleNode">
+	                    ${title}
+	                  </div>
+	               </div>
+	            </td>
+	            <td dojoAttachPoint="timeNode" class="lotusMeta flyoutTime">
+	            </td>
+	          </tr>
+	        </tbody>
+	      </table>
+	      <div style="display: none;">
+	         <a style="display:none" href="#" dojoAttachPoint="prevNode" dojoAttachEvent="onclick:previous">${messages.previous}</a>
+	         <a style="display:none" href="#" dojoAttachPoint="nextNode" dojoAttachEvent="onclick:next">${messages.next}</a>
+	      </div>
+	      <span class="lotusBtnImg lotusClose" title="${messages.close}" dojoAttachPoint="metaClose" dojoAttachEvent="click:metaClickClose">
+	         <input dojoAttachPoint="metaCloseInput" type="image" src="${_blankGif}" alt="${messages.close}"><a class="lotusAltText" href="javascript:;">X</a></input>
+	      </span>
+	   </div>
+	   <div class="lotusFlyoutContentArea" dojoAttachPoint="msgNode" style="display:none;"></div>
+	   <div class="lotusFlyoutContent lotusStyledScroll" dojoAttachPoint="scrollNode">
+	      <div class="lotusFlyoutContentArea">
+	        <div dojoAttachPoint="contentNode"></div>
+	      </div>
+	   </div>
+   </div>
+</div>

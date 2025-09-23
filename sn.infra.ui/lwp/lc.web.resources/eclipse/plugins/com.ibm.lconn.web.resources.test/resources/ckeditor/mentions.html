@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2008, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+${head}
+<title>IBM Connections - CKEditor mentions plugin</title>
+${endhead}
+<div class="lotusBanner">
+   <div class="lotusRightCorner">
+      <div class="lotusInner">
+         <a href="#lotusMainContent" accesskey="S" class="lotusAccess">
+            <img src="${_blankGif}" />
+         </a>
+         <div class="lotusLogo">
+            <span class="lotusAltText">IBM Connections Common UI</span>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="lotusTitleBar2 lotusTitleBar2Tabs">
+   <div class="lotusWrapper">
+      <div class="lotusInner">
+         <div class="lotusTitleBarContent">
+            <h2 class="lotusHeading">
+               <span class="lotusText">Rich Text Editor (Full Version)</span>
+            </h2>
+            <nav aria-label="Select page width" role="navigation"></nav>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="lotusFrame">
+   <div class="lotusMain" role="main"
+      aria-label="CKEditor mentions plugin test page">
+      <div class="lotusContent">
+         <form class="lotusForm2">
+            <div class="lotusFormBody">
+               <!-- form header (use a div instead of a header tag if you aren't using html5) -->
+               <header class="lotusFormTitle">
+               <h1 class="lotusHeading" aria-describedby="formDesc">About:</h1>
+               <div id="formDesc" class="lotusMeta">
+                  You can mention people by typing the
+                  <code>@</code>
+                  character followed by the person's name (mentions), or introduce a new URL (URLDetect)
+               </div>
+               </header>
+               <textarea id="editor1" rows="10" cols="80"
+                  class="lotusTextCollapsed"></textarea>
+            </div>
+            <!-- form footer -->
+            <div class="lotusFormFooter">
+               <input id="TANoResults" type="button" class="lotusBtn"
+                  value="TA Returns No Results" onclick="noResultsTA()" />
+               <input id="HTMLSource" type="button" class="lotusBtn"
+                  value="HTML Source" onclick="switchToSource()" />
+               <input id="RichText" type="button" class="lotusBtn"
+                  value="Rich Text" onclick="switchToRichText()" />
+               <div id='message'></div>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+
+<!--  Add your dojo config flags here -->
+<script>
+   djConfig.parseOnLoad = true;
+</script>
+<!--  List the Dojo modules your test page requires -->
+${script:lconn.core.ckeditor}
+${script:lconn.core.ckplugins.mentions.PersonHandler}
+${script:lconn.core.PeopleDataStore}
+${script:com.ibm.oneui.controls.MessageBox}
+
+<script>
+   function noResultsTA() {
+      var newDS = new lconn.core.PeopleDataStore({
+         queryParam : 'name',
+         url : './peopleNoResults.json'
+      });
+      lconn.core.ckplugins.mentions.PersonHandler.setStore(newDS);
+   }
+
+   function switchToSource() {
+      CKEDITOR.instances.editor1.setMode("source");
+   }
+
+   function switchToRichText() {
+      CKEDITOR.instances.editor1.setMode("wysiwyg");
+   }
+
+   function initialState() {
+      var newDS = new lconn.core.PeopleDataStore({
+         queryParam : 'name',
+         url : './people.json'
+      });
+      lconn.core.ckplugins.mentions.PersonHandler.setStore(newDS);
+      var options = {
+         //height : "20em",
+         width : '95%',
+         useRTE : true,
+         //isEE : true,
+         //maxLength : 100,
+         //maxLengthBytes : 100,
+         //textBoxRows : 4,
+         //disableURLDetect : true,
+         //customConfigMethod : function(opts) {
+            //opts.height = '0px'
+         //   lconn.core.ckeditor.addExtraPlugin('autogrow', opts);
+         //},
+         //on: {
+         //   instanceReady: function(){console.log('Instance ready...')}
+         //}
+      };
+      lconn.core.ckeditor.addCustomPlugin('lconn.core.ckplugins.urlDetect');
+      lconn.core.ckeditor.replace("editor1", options);
+      //var textBox = new lconn.core.lcTextArea.widgets.BasicTextBox(options, dojo.byId("txt2"));
+      //textBox.addMentionsCallback('onCreateMention', function(){console.log("mention created in ONE...")});
+   }
+
+   var printMessage = function(text) {
+      var message = new com.ibm.oneui.controls.MessageBox({
+         canClose : true,
+         type : com.ibm.oneui.controls.MessageBox.TYPE.SUCCESS,
+         msg : text
+      }, "message");
+      setTimeout(function() {
+         message.destroy()
+      }, 6000);
+   }
+
+   dojo.subscribe("lconn/microblogging/mention/removed", function(mention) {
+      printMessage("Mention Removed: " + mention.mention + " (" + mention.getUserId() + ")");
+   });
+   dojo.subscribe("lconn/core/ckeditor/url/entered", function(url) {
+      printMessage("URL introduced:  " + url.url);
+   });
+   dojo.subscribe("lconn/microblogging/mention/completed", function(info) {
+      //info.removeSymbol();
+   });
+   dojo.subscribe("lconn/core/mentions/started", function(mention) {
+      //mention.cancel();
+      printMessage("Mention started...");
+   });
+   dojo.addOnLoad(initialState);
+</script>
+</body>
+</html>

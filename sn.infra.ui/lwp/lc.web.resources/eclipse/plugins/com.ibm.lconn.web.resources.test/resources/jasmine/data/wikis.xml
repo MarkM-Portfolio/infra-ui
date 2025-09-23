@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<feed xmlns:thr="http://purl.org/syndication/thread/1.0"
+	xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:snx="http://www.ibm.com/xmlns/prod/sn"
+	xmlns:td="urn:ibm.com/td" xmlns="http://www.w3.org/2005/Atom">
+	<id>urn:lsid:ibm.com:td:wikis</id>
+	<link
+		href="https://dubxpcvm3078.mul.ie.ibm.com:9445/wikis/form/api/wikis/public"
+		rel="self"></link>
+	<title type="text">Public Wikis Feed</title>
+	<updated>2013-10-30T13:15:58.714Z</updated>
+	<generator version="4.5.0.0" uri="http://www.ibm.com/xmlns/prod/sn">IBM Connections - Wikis
+	</generator>
+	<opensearch:totalResults>1</opensearch:totalResults>
+	<entry>
+		<id>urn:lsid:ibm.com:td:3022c48b-d9b4-42b9-84e6-95ef5c092785</id>
+		<td:uuid>3022c48b-d9b4-42b9-84e6-95ef5c092785</td:uuid>
+		<td:label>wiki #1</td:label>
+		<link
+			href="https://dubxpcvm3078.mul.ie.ibm.com:9445/wikis/form/api/wiki/wiki%20%231/entry"
+			rel="self"></link>
+		<link
+			href="https://dubxpcvm3078.mul.ie.ibm.com:9445/wikis/home/wiki/wiki%20%231"
+			rel="alternate" type="text/html"></link>
+		<link
+			href="https://dubxpcvm3078.mul.ie.ibm.com:9445/wikis/form/api/wiki/wiki%20%231/entry"
+			rel="edit"></link>
+		<category term="wiki" scheme="tag:ibm.com,2006:td/type"
+			label="wiki"></category>
+		<author>
+			<name>Amy Jones2</name>
+			<snx:userid>4fda6cc0-0101-102e-88dd-f78755f7e0ed</snx:userid>
+			<email>ajones2@janet.iris.com</email>
+			<snx:userState>active</snx:userState>
+		</author>
+		<td:modifier>
+			<name>Amy Jones2</name>
+			<snx:userid>4fda6cc0-0101-102e-88dd-f78755f7e0ed</snx:userid>
+			<email>ajones2@janet.iris.com</email>
+			<snx:userState>active</snx:userState>
+		</td:modifier>
+		<td:themeName></td:themeName>
+		<title type="text">wiki #1</title>
+		<published>2013-10-30T12:23:53.980Z</published>
+		<updated>2013-10-30T12:23:54.206Z</updated>
+		<td:created>2013-10-30T12:23:53.980Z</td:created>
+		<td:modified>2013-10-30T12:23:53.980Z</td:modified>
+		<td:totalRemovedSize>0</td:totalRemovedSize>
+		<category term="wiki" label="wiki"></category>
+		<summary type="text"></summary>
+		<content type="application/atom+xml"></content>
+	</entry>
+</feed>

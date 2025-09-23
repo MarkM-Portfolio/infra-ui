@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<entry xmlns="http://www.w3.org/2005/Atom" xmlns:td="urn:ibm.com/td" xmlns:wplcext="http://www.ibm.com/wplcext/atom/1.0" xmlns:snx="http://www.ibm.com/xmlns/prod/sn" xml:lang="en" xml:base="http://taco.rtp.raleigh.ibm.com/dm/atom/library/2D1B9F77-401D-4E57-8D8F-594F9A1E13DD%3BBEB956D0-6BAA-4E52-A5D8-51F81128235B/">
+  <title type="text">gallery_accessibility_issues.odp</title>
+  <category term="draft" scheme="tag:ibm.com,2006:td/type" label="draft"></category>
+  <td:documenttype>2D1B9F77-401D-4E57-8D8F-594F9A1E13DD;01A3A8C2-7AEC-11D1-A31B-0020AF9FBB1C</td:documenttype>
+  <td:nexusId>Document;{2D1B9F77-401D-4E57-8D8F-594F9A1E13DD};{D00B8C3F-A83C-4AF1-8BC3-5D5A77CF6E30}</td:nexusId>
+  <td:versionLabel>1.1</td:versionLabel>
+  <link href="" rel="via"></link>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">0</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">0</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+  <td:downloadInfo></td:downloadInfo>
+  <td:notifications>
+    <td:media>on</td:media>
+    <td:comment>on</td:comment>
+  </td:notifications>
+  <td:isSecurityInherited>false</td:isSecurityInherited>
+  <td:approvalProcess>BasicApproval</td:approvalProcess>
+  <td:approvalType>none</td:approvalType>
+  <td:updateToken>1</td:updateToken>
+  <td:IBMDocsState>none</td:IBMDocsState>
+  <content type="application/octet-stream" xml:lang="en" src="http://taco.rtp.raleigh.ibm.com/dm/atom/library/2D1B9F77-401D-4E57-8D8F-594F9A1E13DD%3BBEB956D0-6BAA-4E52-A5D8-51F81128235B/draft/%7BD00B8C3F-A83C-4AF1-8BC3-5D5A77CF6E30%7D/media/%67%61%6c%6c%65%72%79%5f%61%63%63%65%73%73%69%62%69%6c%69%74%79%5f%69%73%73%75%65%73%2e%6f%64%70?follow=true">gallery_accessibility_issues.odp</content>
+  <td:documentUuid>{6BF3C6AC-4940-4547-B0F2-20AFA01CE339}</td:documentUuid>
+  <link href="http://taco.rtp.raleigh.ibm.com/dm/atom/library/2D1B9F77-401D-4E57-8D8F-594F9A1E13DD%3BBEB956D0-6BAA-4E52-A5D8-51F81128235B/draft/%7BD00B8C3F-A83C-4AF1-8BC3-5D5A77CF6E30%7D/entry" rel="self"></link>
+  <link href="http://taco.rtp.raleigh.ibm.com/dm/atom/library/2D1B9F77-401D-4E57-8D8F-594F9A1E13DD%3BBEB956D0-6BAA-4E52-A5D8-51F81128235B/draft/%7BD00B8C3F-A83C-4AF1-8BC3-5D5A77CF6E30%7D/entry" rel="edit"></link>
+  <link href="http://taco.rtp.raleigh.ibm.com/dm/atom/library/2D1B9F77-401D-4E57-8D8F-594F9A1E13DD%3BBEB956D0-6BAA-4E52-A5D8-51F81128235B/draft/%7BD00B8C3F-A83C-4AF1-8BC3-5D5A77CF6E30%7D/media/%67%61%6c%6c%65%72%79%5f%61%63%63%65%73%73%69%62%69%6c%69%74%79%5f%69%73%73%75%65%73%2e%6f%64%70?follow=true" rel="edit-media"></link>
+  <link href="http://taco.rtp.raleigh.ibm.com/dm/atom/library/2D1B9F77-401D-4E57-8D8F-594F9A1E13DD%3BBEB956D0-6BAA-4E52-A5D8-51F81128235B/draft/%7BD00B8C3F-A83C-4AF1-8BC3-5D5A77CF6E30%7D/feed" rel="replies"></link>
+  <link href="http://taco.rtp.raleigh.ibm.com/dm/atom/library/2D1B9F77-401D-4E57-8D8F-594F9A1E13DD%3BBEB956D0-6BAA-4E52-A5D8-51F81128235B/document/%7B6BF3C6AC-4940-4547-B0F2-20AFA01CE339%7D/downloadedby/feed" rel="downloaders"></link>
+  <link href="http://taco.rtp.raleigh.ibm.com/dm/atom/library/2D1B9F77-401D-4E57-8D8F-594F9A1E13DD%3BBEB956D0-6BAA-4E52-A5D8-51F81128235B/document/%7B6BF3C6AC-4940-4547-B0F2-20AFA01CE339%7D/recommendedby/feed" rel="recommenders"></link>
+  <link href="http://taco.rtp.raleigh.ibm.com/dm/atom/library/2D1B9F77-401D-4E57-8D8F-594F9A1E13DD%3BBEB956D0-6BAA-4E52-A5D8-51F81128235B/document/%7BD00B8C3F-A83C-4AF1-8BC3-5D5A77CF6E30%7D/feed?category=comment" rel="commenters"></link>
+  <link href="http://taco.rtp.raleigh.ibm.com/dm/atom/library/2D1B9F77-401D-4E57-8D8F-594F9A1E13DD%3BBEB956D0-6BAA-4E52-A5D8-51F81128235B/draft/%7BD00B8C3F-A83C-4AF1-8BC3-5D5A77CF6E30%7D/members/feed" rel="members"></link>
+  <link href="http://taco.rtp.raleigh.ibm.com/dm/atom/library/2D1B9F77-401D-4E57-8D8F-594F9A1E13DD%3BBEB956D0-6BAA-4E52-A5D8-51F81128235B/view/CheckedOut/document/%7B6BF3C6AC-4940-4547-B0F2-20AFA01CE339%7D/entry" rel="checked-out"></link>
+  <link href="http://taco.rtp.raleigh.ibm.com/dm/atom/library/2D1B9F77-401D-4E57-8D8F-594F9A1E13DD%3BBEB956D0-6BAA-4E52-A5D8-51F81128235B/draft/%7BD00B8C3F-A83C-4AF1-8BC3-5D5A77CF6E30%7D/media/%67%61%6c%6c%65%72%79%5f%61%63%63%65%73%73%69%62%69%6c%69%74%79%5f%69%73%73%75%65%73%2e%6f%64%70?follow=true" rel="enclosure" type="application/octet-stream" title="gallery_accessibility_issues.odp" language="en" length="127217"></link>
+  <td:cmisDocumentID>idd_D00B8C3F-A83C-4AF1-8BC3-5D5A77CF6E30</td:cmisDocumentID>
+  <td:cmisVersionSeriesID>idv_6BF3C6AC-4940-4547-B0F2-20AFA01CE339</td:cmisVersionSeriesID>
+  <id>urn:lsid:ibm.com:td:%7BD00B8C3F-A83C-4AF1-8BC3-5D5A77CF6E30%7D</id>
+  <td:permissions>Delete,delete,Delegate,delegate,View,view,ViewProperties,viewproperties,LockOverride,lockoverride,EditContent,editcontent,AddChild,add,GrantAccess,grantaccess,ViewContent,viewcontent,EditProperties,editproperties,AddFolder,addfolder,Edit,edit</td:permissions>
+  <author>
+    <email>aalain@renovations.com</email>
+    <name>Amadou Alain</name>
+    <uri>uid%3Daalain%2Ccn%3Dusers%2CO%3DRENOVATIONS</uri>
+    <td:uid>81e18b48-1378-4850-b758-7212d0f6f479</td:uid>
+  </author>
+  <td:label>gallery_accessibility_issues.odp</td:label>
+  <td:uuid>{D00B8C3F-A83C-4AF1-8BC3-5D5A77CF6E30}</td:uuid>
+  <td:modifier>
+    <td:uri>uid%3Daalain%2Ccn%3Dusers%2CO%3DRENOVATIONS</td:uri>
+    <td:name>Amadou Alain</td:name>
+    <td:email>aalain@renovations.com</td:email>
+    <td:uid>81e18b48-1378-4850-b758-7212d0f6f479</td:uid>
+  </td:modifier>
+  <td:locked>true</td:locked>
+  <td:lockOwner>
+    <td:uri>uid%3Daalain%2Ccn%3Dusers%2CO%3DRENOVATIONS</td:uri>
+    <td:name>Amadou Alain</td:name>
+    <td:email>aalain@renovations.com</td:email>
+    <td:uid>81e18b48-1378-4850-b758-7212d0f6f479</td:uid>
+  </td:lockOwner>
+  <td:averageRating>0.0</td:averageRating>
+  <td:ratingCount>0</td:ratingCount>
+  <summary type="text"></summary>
+  <td:created>2014-11-04T19:45:31.886Z</td:created>
+  <published>2014-11-04T19:45:31.886Z</published>
+  <td:modified>2014-11-22T21:06:44.482Z</td:modified>
+  <updated>2014-11-22T21:06:44.482Z</updated>
+</entry>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<Module>
+	<ModulePrefs title="Sample Selection Listener" height="250" width="700">
+		<Require feature="selection"></Require>
+	</ModulePrefs>
+	<Content type="html">
+<![CDATA[
+<script>
+function setSelection(){
+ 		var mySelection =document.getElementById('setSelection').value;
+	if (mySelection.charAt(0) == '{'|| mySelection.charAt(0)== '[') {
+		mySelection = JSON.parse(mySelection);
+	}
+	console.log("(gadget) setting selection to : " + JSON.stringify(mySelection));
+	gadgets.selection.setSelection(mySelection);
+}
+
+function preFillSelection() {
+	document.getElementById("setSelection").value = '{"thing1":"thingummy", "thing2": "something else"}';
+}
+
+function preFillAsSelection() {
+	document.getElementById("setSelection").value = '[{"type":"opensocial.Activity", "dataObject" : {\
+	    "published": "2011-02-10T15:04:55Z",\
+	    "actor": {\
+	      "url": "http://example.org/martin",\
+	      "objectType" : "person",\
+	      "id": "tag:example.org,2011:martin",\
+	      "image": {\
+	        "url": "http://example.org/martin/image",\
+	        "width": 250,\
+	        "height": 250\
+	      },\
+	      "displayName": "Martin Smith"\
+	    },\
+	    "verb": "post",\
+	    "object" : {\
+	      "url": "http://example.org/blog/2011/02/entry",\
+	      "id": "tag:example.org,2011:abc123/xyz"\
+	    },\
+	    "target" : {\
+	      "url": "http://example.org/blog/",\
+	      "objectType": "blog",\
+	      "id": "tag:example.org,2011:abc123",\
+	      "displayName": "Martin\'s Blog"\
+	    }\
+	  }}]';
+}
+  	
+function getSelection() {
+	alert(JSON.stringify(gadgets.selection.getSelection()));
+}
+   	
+
+
+function selectionListener(selection) {
+  document.getElementById("output").innerHTML =
+    "selection: " + gadgets.util.escapeString(JSON.stringify(selection) + "") + "<br/>";
+}
+
+function addListener() {
+  gadgets.selection.addListener(selectionListener);
+  document.getElementById("output").innerHTML = "Selection listener added...";
+}
+
+function removeListener() {
+  gadgets.selection.removeListener(selectionListener);
+  document.getElementById("output").innerHTML = "";
+}
+
+</script>
+<div>
+		<input type="text" id="setSelection" name="setSelection" style="width : 60%" />
+		<button onClick="setSelection();">Set gadgets.selection</button>
+		<br />
+		<button onClick="preFillSelection();">Pre-fill sample selection</button>
+		<button onClick="preFillAsSelection();">Pre-fill sample Activity Stream selection</button>
+		<br />
+		<br />
+		<button onclick="alert(JSON.stringify(gadgets.selection.getSelection()));">Alert Selection (by gadgets.selection.getSelection())</button>
+		<br />
+		<br />
+		<br />
+
+<input type="button" value="Add Selection Listener" onclick="addListener()"/>
+<input type="button" value="Remove Selection Listener" onclick="removeListener()"/>
+</div>
+<div id="output">
+</div>
+]]>
+	</Content>
+</Module>

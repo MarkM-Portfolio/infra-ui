@@ -1,0 +1,194 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+/* Notifications Flyout */
+
+.icBanner-notif-center{
+	 display: block;
+	 position: absolute;
+	 width: 340px;
+	 z-index: 1000;
+	 top: 49px;
+	 right: 40px;
+}
+
+.icBanner-notif-center-frame{
+	width: 100%;
+	height: 100%;
+}
+
+.icBanner-badge{
+	background: none repeat scroll 0 0 #C83912;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    color: #FFFFFF;
+    font-size: 0.9em;
+    left: 50%;
+    padding: 0 3px;
+    position: absolute;
+    top: 15%;
+    opacity:0;
+    transition: all 2s ease;
+}
+
+.icBanner-display{
+    opacity: 1;
+}
+
+.icBanner-popover-loader{
+	top: 45%;
+	left: 50%;
+	position: absolute;
+	z-index: 9999;
+}
+
+.icBanner-badge-alt {
+    background-color: #469CCA;
+    border: 1px solid #469CCA;
+    border-radius: 5px;
+    display: block;
+    height: 7px;
+    left: 55%;
+    position: absolute;
+    top: 25%;
+    width: 7px;
+}
+
+.icBanner-popover-inner{
+    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    width: 340px;
+}
+
+.icBanner-popover-header{
+    background: #f4f4f4;
+    color: #6e6e6e;
+    font-size: 12px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 8px 10px;
+}
+
+.lotusui30 a.icBanner-popover-notificationSettings{
+    float: right;
+    cursor: pointer;
+    color: #6e6e6e;
+    font-size: 12px;
+}
+
+.icBanner-settingsImg {
+	background: url("com.ibm.social.as/notification/css/settings-manage_32.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 16px;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+    width: 16px;
+}
+
+.icBanner-popover-content{
+    background: #ffffff;
+    height: 330px;
+    overflow: auto;
+}
+
+.icBanner-popover-newNotifications{
+    height:30px;
+    background: #2fCE79;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.icBanner-popover-footer{
+    background: #f4f4f4;
+    border-top: 1px solid #ffffff;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.lotusui30 a.icBanner-footer-link{
+    color: #6e6e6e;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.lotusui30 a.icBanner-footer-link:hover, .lotusui30 a.icBanner-footer-link:active {
+    /*color: #05386b;*/
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.l-icFloatList {
+    list-style-type: none;
+    margin: 0;
+    padding: 8px;
+}
+
+.l-icFloatList li {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Notifications Flyout */
+
+.icNotification-post{
+    float: none;
+    padding: 4px 10px;
+    height: 58px;
+    position: relative;
+    z-index: 1;
+}
+
+.icNotification-post:hover, .icNotification-post:focus, .icNotification-post:active{
+    background: #e9f1f3;
+}
+
+.icNotification-post:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    width: 87%;  /* or 100px */
+    border-bottom: 1px solid #eeeeee;
+}
+
+.icNotification-post-inner{
+    padding: 6px 10px 6px 0px;
+}
+
+.icNote-authorImg{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    margin-top: 4px;
+}
+
+.icNote-body{
+    margin-left: 34px;
+}
+
+.icNote-message{
+    font-size: 1em;
+}
+
+.icNote-time{
+    font-size: 0.9em;
+}
+
+a.icPost-timestamp{
+    color: #767676;
+}
+
+.bluedot {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border: 4px solid #469cca;
+    border-radius: 4px;
+}

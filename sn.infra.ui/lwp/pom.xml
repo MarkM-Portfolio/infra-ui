@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mantis-super-pom</artifactId>
+        <groupId>com.ibm.maven</groupId>
+        <version>1.0</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ibm.lconn.infra.ui</groupId>
+    <artifactId>infra.ui</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>connections.info.war</module>
+<!--        <module>dojo.web.resources</module> needs lc.web.res.base/net.jazz-->
+<!--        <module>ic.web.resources</module>-->
+        <module>lc.bookmarklet</module>
+<!--       <module>lc.common.ear</module> -->
+        <module>lc.web.osgi</module>
+<!--        <module>lc.web.resources</module>-->
+        <module>lc.web.resources.base</module>
+<!--        <module>lc.web.resources.war</module> -->
+<!--       <module>oneui.web.resources</module>-->
+        <module>prereqs.web.resources</module>
+<!--        <module>social.web.resources</module>-->
+    </modules>
+
+</project>
+

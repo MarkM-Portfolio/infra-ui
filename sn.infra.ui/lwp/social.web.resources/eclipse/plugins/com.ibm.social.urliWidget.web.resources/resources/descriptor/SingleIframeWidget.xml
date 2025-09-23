@@ -1,0 +1,65 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<iw:iwidget name="UrliWidget" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" supportedModes="view edit fullpage" mode="" lang="en"
+	iScope="(lconn.core.dynamiciwidget.create('lconn.urlwidget.widget.SingleIframeWidget'))">
+	<!-- 
+	  Customizable item sets.
+	  
+     url url of the widget.
+     width  width of the widget
+     height height of the widget
+     editUrl URL for edit mode
+     
+     fullpageUrl  URL for fullpage mode
+     fullpageHeight  height of widget in fullpage mode
+     
+     embedHostname   hostname for embed widget. The 3rd party could provide different hostname for embed widget vs normal page.
+     embedContextRoot context root for embed widget. The 3rd party could provide different context root for embed widget vs normal page.
+     embedTheme   theme of embed widget. This is to be sent to 3rd party as parameter, 'theme'
+
+     iframeSandbox set to be value iframe.sandbox. Default is "allow-same-origin allow-scripts allow-popups allow-forms"
+
+	 -->
+	<iw:content mode="view">
+        <![CDATA[        
+         <div id="mainContainer"/>
+
+         <div class="fatalError" id="fatalError" style="display: none">
+            <h3 id="errorTitle">errorTitle</h3>
+            <p id="errorDesc"></p>
+         </div>
+        ]]>
+	</iw:content>
+	<iw:content mode="edit">
+        <![CDATA[        
+         <div id="mainContainer"/>
+
+         <div class="fatalError" id="fatalError" style="display: none">
+            <h3 id="errorTitle">errorTitle</h3>
+            <p id="errorDesc"></p>
+         </div>
+        ]]>
+   </iw:content>
+   <iw:content mode="fullpage">
+        <![CDATA[        
+         <div id="mainContainer"/>
+
+         <div class="fatalError" id="fatalError" style="display: none">
+            <h3 id="errorTitle">errorTitle</h3>
+            <p id="errorDesc"></p>
+         </div>
+        ]]>
+   </iw:content>
+</iw:iwidget>

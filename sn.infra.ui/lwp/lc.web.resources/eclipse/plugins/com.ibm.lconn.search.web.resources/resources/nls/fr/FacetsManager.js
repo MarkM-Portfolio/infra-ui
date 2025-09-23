@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+({
+	"CLOSE_HELP_DATE":"Fermer l'aide sur les dates",
+	"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Fermer l'aide sur les types de document",
+	"CLOSE_HELP_PERSON":"Fermer l'aide sur les personnes",
+	"CLOSE_HELP_TAG":"Fermer l'aide relative aux étiquettes",
+	"CLOSE_HELP_TREND":"Fermer l'aide sur l'étude des tendances",
+	"COLLAPSE_DATE":"Réduire le filtre de date",
+	"COLLAPSE_ECM_DOCUMENT_TYPE":"Réduire le filtre de type de document",
+	"COLLAPSE_PERSON":"Réduire le filtre de personne",
+	"COLLAPSE_TAG":"Réduire le filtre d'étiquette",
+	"COLLAPSE_TREND":"Réduire le filtre de tendances",
+	"DESCRIPTION_DATE":"Pour afficher les résultats créés ou mis à jour sur une période précise, cliquez sur le bouton de développement et filtrez les informations par année et par mois.",
+	"DESCRIPTION_ECM_DOCUMENT_TYPE":"Un type de document est un mot clé auquel vous attribuez des fichiers pour en faciliter la recherche. Cliquez sur un type de document pour afficher les résultats de la recherche auxquels ce mot clé a été affecté.",
+	"DESCRIPTION_PERSON":"Affichez les personnes associées aux résultats de votre recherche. Cliquez sur un nom pour afficher les résultats de la recherche associés à une personne spécifique.",
+	"DESCRIPTION_TAG":"Une étiquette est un mot clé que vous attribuez à un contenu ou à des personnes pour faciliter leur localisation. Cliquez sur une étiquette pour afficher les résultats de la recherche auxquels ce mot clé a été affecté.",
+	"DESCRIPTION_TREND":"Une tendance est un mot clé qui est généré par le système pour faciliter la recherche dans les mises à jour de statut. Cliquez sur une tendance pour afficher les résultats de recherche auxquels ce mot clé a été affecté.",
+	"EXPAND_DATE":"Développer le filtre de date",
+	"EXPAND_ECM_DOCUMENT_TYPE":"Développer le filtre de type de document",
+	"EXPAND_PERSON":"Développer le filtre de personne",
+	"EXPAND_TAG":"Développer le filtre d'étiquette",
+	"EXPAND_TREND":"Développer le filtre de tendances",
+	"HELP_DATE":"Aide sur les dates",
+	"HELP_ECM_DOCUMENT_TYPE":"Aide sur les types de document",
+	"HELP_PERSON":"Aide sur les personnes",
+	"HELP_TAG":"Aide sur les étiquettes",
+	"HELP_TREND":"Aide sur Etude des tendances",
+	"NO_DATE_CONTENT":"Les dates ne sont pas disponibles actuellement",
+	"NO_ECM_DOCUMENT_TYPE_CONTENT":"Les types de document ne sont pas disponibles actuellement",
+	"NO_PERSON_CONTENT":"Les personnes ne sont pas disponibles actuellement",
+	"NO_TAG_CONTENT":"Les étiquettes ne sont pas disponibles actuellement",
+	"NO_TREND_CONTENT":"Les tendances ne sont pas disponibles actuellement",
+	"TITLE_DATE":"Dates",
+	"TITLE_ECM_DOCUMENT_TYPE":"Types de document",
+	"TITLE_PERSON":"Personnes",
+	"TITLE_TAG":"Etiquettes",
+	"TITLE_TREND":"Etude des tendances"
+})
+

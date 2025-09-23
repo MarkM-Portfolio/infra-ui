@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+<title>Test palette content area</title>
+${endhead}
+<script type="text/javascript">
+	
+function buildMockCategoryItem(){
+	var catItem = {children: []};
+	
+	for(var i=0; i<25; i++){
+		catItem.children.push({
+			// FIXME: ?
+			item: {
+				id: i,
+				name: ["widget " + i]
+			}
+		});
+	}
+		
+	return catItem;
+}
+
+function populateWithMockItem(){
+	var catItem = buildMockCategoryItem();
+	
+	var widgetUnderTest = dijit.byId("widgetUnderTest");
+	
+	widgetUnderTest.setItems(catItem.children);	
+}
+
+
+dojo.addOnLoad(function(){
+
+doh.registerGroup("palette tree",
+				[																																
+				]
+			);			
+			doh.run();
+});
+
+</script>
+
+<div class="lotusPalette">
+<div class="lotusPaletteBody">
+		<div dojoType="lconn.core.paletteOneUI.PaletteContentPanel" id="widgetUnderTest"></div>
+</div>
+</div>
+
+<button onclick="populateWithMockItem()">Populate with mock items</button>
+
+    <script>
+        djConfig.parseOnLoad=true;
+        djConfig.isDebug=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+
+    ${script:dojo.parser}
+    ${script:net.jazz.ajax.xdloader}
+    ${script:lconn.core.paletteOneUI.PaletteContentPanel}
+    ${script:doh.runner}
+</body>
+</html>

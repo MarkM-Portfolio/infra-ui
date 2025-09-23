@@ -1,0 +1,47 @@
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+<div dojoAttachPoint="root" class="topContainer">
+	<!-- error -->
+	<div class="lotusTable" dojoAttachPoint="recommendErrorNode" style="display:none">
+		<img class="lconnSprite lconnSprite-iconWarning16" 
+			src="${blankIcon}" role="presentation" 
+			alt=""/>&nbsp;&nbsp;<span class="lotusMeta">${_resourceBundle.GENERIC_ERROR}</span>	
+	</div>
+	<!-- loading -->
+	<div dojoAttachPoint="recommendLoading">
+		<center>${_resourceBundle.LOADING}</center>
+	</div>
+	<!-- caching for paging -->
+	<div dojoAttachPoint="boardingNode" style="display:none"></div>
+	<!-- No content -->
+	<div dojoAttachPoint="welcomeNode" style="display:none;">
+			<span>${_resourceBundle.NR1}</span>
+	</div>
+	<span class="lotusAccess" id="lconnRecommendLinkDescription" dojoAttachPoint="recommendLinkDescription">${_resourceBundle.LINKACCESSDESCRIPTION}</span>
+	<!-- main content container -->
+	<div dojoAttachPoint="recommendContainer">
+	</div>
+	<div class="lotusSectionFooter" dojoAttachPoint="pagingFooter">
+		<div class="lotusPaging" aria-label="${_resourceBundle.ARIA_PAGING}" role="navigation">
+			<div class="lotusLeft" aria-label="${_resourceBundle.ARIA_PAGE_POSITION}" 
+						title="${_resourceBundle.ARIA_PAGE_POSITION}" 
+						dojoAttachPoint="pagePositionDiv">${_resourceBundle.PAGE_POSITION}</div>
+			<ul class="lotusRight lotusInlinelist">
+				<li class="lotusFirst">
+					<a href="javascript:void(0);" 
+						alt="${_resourceBundle.PREVIOUS}" title="${_resourceBundle.PREVIOUS}" 
+						dojoAttachEvent="onclick:pagePrevious" 
+						dojoAttachPoint="prevLink">${_resourceBundle.PREVIOUS}</a>
+					<span class="meta" dojoAttachPoint="prevLinkText">${_resourceBundle.PREVIOUS}</span>
+				</li>
+				<li>
+					<a href="javascript:void(0);"  
+						alt="${_resourceBundle.NEXT}" title="${_resourceBundle.NEXT}" 
+						dojoAttachEvent="onclick:pageNext"  
+						dojoAttachPoint="nextLink">${_resourceBundle.NEXT}</a>
+					<span class="meta" dojoAttachPoint="nextLinkText">${_resourceBundle.NEXT}</span>
+				</li>
+			</ul> 
+		</div>
+	</div>
+</div>

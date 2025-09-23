@@ -1,0 +1,61 @@
+${head}
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<title>User Typeahead Test</title>
+${script:lconn.core.config.services}
+${script:com.ibm.social.incontext.typeahead.UserSearchQCSAdapter}
+${script:com.ibm.social.incontext.NetworkDojo}
+${script:com.ibm.social.incontext.util.proxy}
+<script>
+
+function personSelected(user) {
+	dojo.byId("userSelection").innerHTML = "Selected user: <strong>" + user.name + "</strong>";
+	personInput.attr("value", "");
+}
+
+function login(isSecure, callback) {
+   var profilesUrl = lconn.core.config.services.profiles[isSecure ? "secureUrl" : "url"];
+   var profilesSvcUrl = profilesUrl + "/atom/profileService.do";
+   var dfd = dojo.xhrGet({
+      url: profilesSvcUrl,
+      handleAs: "xml"      
+   });
+   dfd.addCallback(callback);
+}
+
+dojo.addOnLoad(function() {
+	var isSecure = (window.location.protocol || "http").replace(':','') === "https";
+	login(isSecure, function() {
+		var filesUrl = lconn.core.config.services.files[isSecure ? "secureUrl" : "url"];
+		var network = new com.ibm.social.incontext.NetworkDojo();
+		var adapter = new com.ibm.social.incontext.typeahead.UserSearchQCSAdapter(filesUrl, network, function(url) {
+			return com.ibm.social.incontext.util.proxy(url);
+		});
+		var opt = {
+	            id: "userInput",
+	            name: "userInput"
+	         };	
+		var personInput = adapter.createTypeAhead(dojo.byId("userInput"), opt);
+		personInput.domNode.style.width = "300px";
+		adapter.connectOnSelect(personInput, dojo.global, "personSelected");
+		window.personInput = personInput;
+	});
+});
+</script>
+${endhead}
+
+Select a user: <input type="text" id="userInput" value=""><br />
+<span id="userSelection"></span>
+</body>
+${end}

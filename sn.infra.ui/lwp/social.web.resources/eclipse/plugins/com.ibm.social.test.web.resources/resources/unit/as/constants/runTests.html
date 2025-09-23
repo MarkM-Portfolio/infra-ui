@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2012, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+	<head>
+		<title>Activity Stream Event Constants JavaScript Unit Test Runner</title>
+		
+		<script type="text/javascript">
+			// Redirect to the D.O.H. runner HTML page
+			function redirect(){
+				// Initialize all the necessary params and URLs
+				var runnerHtmlUrl = "/connections/resources/web/com.ibm.social.test/runner.html",
+					dojoUrl = "../dojo/dojo.js",
+					testUrl = "../com.ibm.social.test/as/constants/module",
+					testModule = "com.ibm.social.test.as.constants.module";
+				
+				// Redirect to the runner.html
+				window.location = runnerHtmlUrl 
+					+ "?dojoUrl=" + dojoUrl 
+					+ "&testUrl=" + testUrl 
+					+ "&testModule=" + testModule;
+			}
+		</script>
+	</head>
+	
+	<body onload="redirect()">
+		Redirecting to D.O.H runner.
+	</body>
+</html>

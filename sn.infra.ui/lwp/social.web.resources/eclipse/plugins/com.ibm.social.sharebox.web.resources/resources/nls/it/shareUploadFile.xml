@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">File</msg>
+  <msg name="description">Gadget File per consentire il caricamento e la condivisione di file</msg>
+  <msg name="action_uploadFile_label">File</msg>
+  <msg name="action_uploadFile_tooltip">Carica e condividi file</msg>
+  <msg name="loading">Caricamento...</msg>
+  <msg name="error_msg">Impossibile caricare il contenuto. Provare di nuovo o contattare un amministratore di sistema.</msg>
+  <msg name="error_alt">Errore</msg>
+</messagebundle>

@@ -1,0 +1,41 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+
+<div>
+	<div class="lotusTabContainer" role="tablist" id='tabContainer'>
+			<ul class="lotusTabs" id = "tabs">
+				<li class="lotusSelected" id = "tabOne">
+					<a id="settingsTab" class="defaultSelection" style="display: block; font-weight: bold;" role="tab" selected="true" href="javascript:;" dojoAttachEvent="onclick: selectTab">
+						${SERVER_STATUS}
+					</a>
+				</li>
+				<li id='tabTwo'>
+					<a id="initialIndexBuildTab" role="tab" href="javascript:;" style="display: block; font-weight: bold;" dojoAttachEvent="onclick: selectTab">
+						${INITIAL_INDEXING_EXCEPTIONS}
+					</a>
+				</li>
+				<li id='tabThree'>
+					<a id="logsValidationTab" role="tab" href="javascript:;" style="display: block; font-weight: bold;" dojoAttachEvent="onclick: selectTab">
+						${SYS_OUT_EXCEPTIONS}
+					</a>
+				</li>
+				<li id='tabFour'>
+					<a id="seedlistValidation" role="tab" href="javascript:;" style="display: block; font-weight: bold;" dojoAttachEvent="onclick: selectTab">
+						${SEEDLIST_VALIDATE}
+					</a>
+				</li>
+				<li id='tabFive'>
+					<a id="sandValidationTab" role="tab" href="javascript:;" style="display: block; font-weight: bold;" dojoAttachEvent="onclick: selectTab">
+						${SAND_VALIDATE}
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div role="tabpanel" aria-labelledby="settingsValidation" aria-hidden="true" id ='contentForTab'>
+			<div dojoType="lconn.search.searchValidation" dojoAttachPoint="serverStatus"></div>
+			<div dojoType="lconn.search.searchInitialIndexBuildValidation" dojoAttachPoint="initialIndexBuild" class="lotusHidden"></div>
+			<div dojoType="lconn.search.searchSystemOutValidation" dojoAttachPoint="logs" class="lotusHidden"></div>
+			<div dojoType="lconn.search.searchSeedlistValidation" dojoAttachPoint="seedlist" class="lotusHidden"></div>
+			<div dojoType="lconn.search.sandValidation" dojoAttachPoint="sand" class="lotusHidden"></div>
+		</div>
+</div>

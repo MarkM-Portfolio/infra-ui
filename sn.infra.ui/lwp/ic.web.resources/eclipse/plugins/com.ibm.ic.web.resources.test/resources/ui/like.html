@@ -1,0 +1,119 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>Like widget</title>
+
+
+<script>
+dojoConfig.parseOnLoad=true;
+
+</script>
+${script:dojo/parser}
+${script:net.jazz.ajax.xdloader}
+${script:ic-ui/Like}
+${script:ic-test/mocks/LikeDataStore}
+
+<script>
+    // TODO: move to mock
+    var ITEMS_1 = [{
+        id :        '56e3b1a8-efbe-49c8-8137-873f99af489d',
+        name :      'Andreas Berzat',
+        userState : 'active'
+    }, {
+        id :        '6e20f96a-c82a-4ba8-8c9e-d49a61add9bd',
+        name :      'Ed El-Amon',
+        userState : 'active'
+    }, {
+        id :        '29381672-4174-4f96-8472-912f5f727160',
+        name :      'Dina Maroni',
+        status:     'inactive'
+    }], ITEMS_2 = [{
+        id :        'c96fd246-36ab-4eaa-8bf5-6a57da130b4a',
+        name :      'Anna Bauer',
+        userState : 'active'
+    }, {
+        id :        'ffd67d57-86e3-4f0d-8858-930906f4944f',
+        name :      'Frank Adams',
+        userState : 'active'
+    }, {
+        id :        '67169758-2b46-46c1-8c44-8a886dd4d3f3',
+        name :      'Susan Adams',
+        userState : 'active'
+    }];
+    /*
+     * We're using a variable instead of a literal UUID string to work around a
+     * dojo/parser bug where a single quotes-enclosed string in data-dojo-props
+     * is interpreted as an attribute name (using &quot; or &apos; is fine).
+     * By using a variable we kill two birds with a stone, as we also avoid
+     * writing the value more than once.
+     */
+    var MY_ID = ITEMS_2[0].id;
+    var LikeDataStore = require('ic-test/mocks/LikeDataStore');
+    var ds1 = new LikeDataStore({items:ITEMS_1, backupItems:ITEMS_2});
+    var ds2 = new LikeDataStore({items:ITEMS_2, backupItems:ITEMS_1});
+</script>
+
+
+<style>
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-test/ui/index.html?render=test">Core UI widgets and utilities</a>
+    <span class="lotusDivider">&gt;</span>
+    Like widget
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain">
+<div class="lotusContent">
+<h1>Like widget</h1>
+<dl>
+    <dt>Module ID: <code>ic-ui/Like</code></dt>
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-ui/ic-ui.Like.html">JSDoc</a></dd>
+</dl>
+<p>
+    The signature Like widget used throughout Connections. It is backed
+    by a
+    <code>dojo.data</code>
+    API compliant data store. It has three operating modes, anonymous,
+    editable, and read only, all of them with or without a popup. The
+    popup shows a list of people who liked the item. Callers can also choose to &ldquo;unbox&rdquo; it and show it without the gray background.
+</p>
+<div>
+    <h2>Anonymous</h2>
+    <div data-dojo-type="ic-ui/Like" data-dojo-props="dataStore:ds1"></div>
+
+    <h2>Anonymous, no popup</h2>
+    <div data-dojo-type="ic-ui/Like" data-dojo-props="dataStore:ds1,disablePopup:true"></div>
+
+    <h2>Anonymous, no popup, unboxed</h2>
+    <div data-dojo-type="ic-ui/Like" data-dojo-props="dataStore:ds1,disableBackground:true,disablePopup:true"></div>
+
+    <h2>Read only</h2>
+    <div data-dojo-type="ic-ui/Like" data-dojo-props="dataStore:ds1,editable:false,currentUserId:MY_ID"></div>
+
+    <h2>Read only, no popup</h2>
+    <div data-dojo-type="ic-ui/Like" data-dojo-props="dataStore:ds1,editable:false,currentUserId:MY_ID,disablePopup:true"></div>
+
+    <h2>Read only, liked</h2>
+    <div data-dojo-type="ic-ui/Like" data-dojo-props="dataStore:ds2,editable:false,currentUserId:MY_ID"></div>
+
+    <h2>Editable</h2>
+    <div data-dojo-type="ic-ui/Like" data-dojo-props="dataStore:ds1,editable:true,currentUserId:MY_ID"></div>
+
+    <h2>Editable, no popup</h2>
+    <div data-dojo-type="ic-ui/Like" data-dojo-props="dataStore:ds1,editable:true,currentUserId:MY_ID,disablePopup:true"></div>
+
+    <h2>Editable, liked</h2>
+    <div data-dojo-type="ic-ui/Like" data-dojo-props="dataStore:ds2,editable:true,currentUserId:MY_ID"></div>
+
+</div>
+</div>
+</div>
+</body>
+${end}

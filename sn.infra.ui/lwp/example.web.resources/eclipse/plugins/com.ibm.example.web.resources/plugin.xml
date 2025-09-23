@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2013                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="net.jazz.ajax.webBundles">
+      <alias
+            value="com.ibm.example">
+      </alias>
+   </extension>
+   <extension point="net.jazz.ajax.dojoModuleBinding">
+        <dojoModuleBinding bind="com.ibm.example.ClassExtendExample" to="lconn.core.aria.Toolbar" />
+        <dojoModuleBinding bind="com.ibm.example.ClassOverrideExample" to="lconn.core.widget.Feeds" />
+        <dojoModuleBinding bind="com.ibm.example.ObjectExtendExample" to="lconn.core.util.html" />
+        <!-- CKEditor -->
+        <dojoModuleBinding bind="com.ibm.example.ckeditor.AddExtraFonts" to="lconn.core.ckeditor" />
+        <dojoModuleBinding bind="com.ibm.example.ckeditor.OverrideWikiToolbar" to="lconn.wikis.ckeditor" />
+        <!-- Forums -->
+        <dojoModuleBinding bind="com.ibm.example.forums.AddStartForumButton" to="lconn.forums.widgets.TopicListImpl" />
+   </extension>
+</plugin>

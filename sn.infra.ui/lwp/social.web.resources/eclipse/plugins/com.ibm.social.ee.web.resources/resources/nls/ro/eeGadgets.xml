@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Gadgetul Embedded Experience OpenSocial utilizat pentru a afişa detalii suplimentare şi acţiuni ale evenimentelor Conexiuni</msg>
+  <msg name="connectionsEE_errorTitle">Eroare</msg>
+  <msg name="connectionsEE_errorDescription">A apărut o eroare la încărcarea resurselor gadget. Asiguraţi-vă că sunteţi conectat la reţea şi încercaţi încărcarea gadgetului din nou.</msg>
+</messagebundle>

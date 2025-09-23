@@ -1,0 +1,39 @@
+{
+    "categories": [{
+        "name": "Activities",
+        "id": "activitiesCat",
+        "css": "lotusIconActivity",
+        "widgets": [{
+            "id": "idTodo",
+            "name": "Todos widget",
+            "desc": "Display todos. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. This is a very long text. ",
+            "xmlDefUrl": "http://xyz.com/activities_todos.xml",
+            "previewImgUrl": "img/profiles_my_colleagues.jpg",
+            "widgetType": "primary"
+        }, {
+            "id": "idCalendar",
+            "name": "Calendar widget",
+            "desc": "Display calendar",
+            "xmlDefUrl": "http://xyz.com/activities_calendar.xml",
+            "previewImgUrl": "http://xyz.com/calendarWidgetSnapshot.png",
+            "widgetType": "primary"
+        }]
+    }, {
+        "name": "Profiles",
+        "id": "profilesCat",
+        "widgets": [{
+            "id": "idProfiles",
+            "name": "My Profile",
+            "iconUrl": "img/2col.jpg",
+            "desc": "My Profile widget",
+            "xmlDefUrl": "http://xyz.com/my_profile.xml"
+        }, {
+            "id": "colleages",
+            "name": "My colleagues",
+            "desc": "My colleagues widget",
+            "xmlDefUrl": "http://xyz.com/my_colleagues.xml",
+            "previewImgUrl": "http://xyz.com/colleaguesWidgetSnapshot.png",
+            "widgetType": "primary"
+        }]
+    }]
+}

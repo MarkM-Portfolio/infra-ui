@@ -1,0 +1,55 @@
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+
+<div class="lotusGallery lotusImagesOff" data-dojo-attach-point="galleryWrapper">
+	
+	<div class="lotusThumbnails" data-dojo-attach-point="thumbnailStripWrapper">
+		<a class="lotusNavControl lotusNavPrev" tabindex="0" data-dojo-attach-point="navPrevThumbs" data-dojo-attach-event="onclick: prevThumbs">
+		  <img src="${_blankGif}" data-dojo-attach-point="navPrevImg">
+		  <span class="lotusAltText">&lt;</span>
+		</a>
+		<div class="lotusThumbnailScroller" data-dojo-attach-point="thumbnailScroller">
+		  <div class="lotusThumbnailStrip" data-dojo-attach-point="thumbnailWrapper">
+			<!--dummy is here for initial spacing and sizing-->
+			<div id="${id}__tn_dummy" class="lotusThumbnail" style="visibility: hidden; width: 10;">
+				<div class="lotusImageTrim">
+					<img src="${_blankGif}" alt="" style="visibility: hidden;">
+				</div>
+				<div id="preview1__sel_dummy" class="lotusThumbOverlay"></div>
+			</div>
+		  </div>
+		</div>
+		<a class="lotusNavControl lotusNavNext" tabindex="0" data-dojo-attach-point="navNextThumbs" data-dojo-attach-event="onclick: nextThumbs">
+		  <img src="${_blankGif}" data-dojo-attach-point="navNextImg">
+		  <span class="lotusAltText">&gt;</span>		  
+		</a>
+	</div>
+	<div class="lotusItemViewer lotusLoading" data-dojo-attach-point="itemWrapper">
+		<a class="lotusNavPrev lotusNavControl" tabindex="0" data-dojo-attach-point="navPrevItem" data-dojo-attach-event="onclick: prevItem">
+			<img src="${_blankGif}" data-dojo-attach-point="itemPrevImg">
+			<span class="lotusAltText">&lt;</span>
+		</a>
+		<div class="lotusItem" data-dojo-attach-point="itemNodeWrapper">
+			<div data-dojo-attach-point="itemNode"></div>
+		</div>
+		<a class="lotusNavNext lotusNavControl" tabindex="0" data-dojo-attach-point="navNextItem" data-dojo-attach-event="onclick: nextItem">
+			<img src="${_blankGif}" data-dojo-attach-point="itemNextImg">
+			<span class="lotusAltText">&gt;</span>
+		</a>
+	</div>
+	
+	<div class="lotusItemDetails" data-dojo-attach-point="footerWrapper">
+		<div class="lotusDetails" data-dojo-attach-point="footerNode">
+			<div class="lotusInner" style="visibility: hidden;">
+				<h2 class="lotusTitle">
+					<span class="lotusCount">.</span></h2>
+				<p>.</p>
+			</div>
+			<div class="lotusMeta lotusClear" style="visibility: hidden;">
+				<span class="lotusInner">.</span>
+				<span class="lotusInner">.</span>
+				<span class="lotusInner">.</span>
+			</div>		
+		</div>
+	</div>
+	
+</div>

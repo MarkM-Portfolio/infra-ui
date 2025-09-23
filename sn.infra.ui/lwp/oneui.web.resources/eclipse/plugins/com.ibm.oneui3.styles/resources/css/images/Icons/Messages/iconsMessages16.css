@@ -1,0 +1,14 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.iconsMessages16-msgError16{width:16px;height:16px;background-position:0 0}
+.iconsMessages16-msgErrorInField{width:9px;height:9px;background-position:0 -24px}
+.iconsMessages16-msgInfo16{width:16px;height:16px;background-position:0 -41px}
+.iconsMessages16-msgSuccess16{width:16px;height:16px;background-position:0 -65px}
+.iconsMessages16-msgWarning16{width:16px;height:16px;background-position:0 -89px}
+.iconsMessages16-msgExternal16{width:16px;height:16px;background-position:0 -113px}
+.iconsMessages16-msgExternal12{width:13px;height:13px;background-position:0 -137px}
+.iconsMessages16-externalFolder16{width:16px;height:16px;background-position:0 -158px}
+.iconsMessages16-myFileSync16{width:8px;height:7px;background-position:0 -182px}
+.iconsMessages16-myFileSync-16{width:16px;height:16px;background-position:0 -197px}
+
+.iconsMessages16{background-image:url('./iconsMessages16-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsMessages16{display:none}

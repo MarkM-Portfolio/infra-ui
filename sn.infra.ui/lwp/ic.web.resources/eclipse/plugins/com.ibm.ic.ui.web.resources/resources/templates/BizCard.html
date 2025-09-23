@@ -1,0 +1,44 @@
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+
+<div class="ic-bizCard" role="alertdialog" tabIndex="-1">
+	<div class="dijitTooltipContainer" role="presentation">
+		<div class="dijitTooltipContents dijitTooltipFocusNode" data-dojo-attach-point="containerNode">
+			<div class="ic-bizCard-loading" data-dojo-attach-point="loading">${bc_loading}</div>
+			<div class="ic-bizCard-front" data-dojo-attach-point="front">
+				<div class="ic-bizCard-front-top">
+					<a href="#" class="ic-bizCard-front-top-avatar" data-dojo-attach-point="avatar" title="${bc_viewProfile}"></a>
+					<div class="ic-bizCard-front-data">
+							<a href="#" data-dojo-attach-point="frontFullName" title="${bc_viewProfile}"></a>
+							<span data-dojo-attach-point="frontIcon" data-dojo-type="ic-ui/Icon" data-dojo-props="type: 'sharedExternally', alt: '${bc_visitorTooltip}'"
+									title="${bc_visitorTooltip}" class="ic-bizCard-frontIcon ${hcClass}"></span>
+						<!--</span>-->
+						<span data-dojo-attach-point="frontCompanyRole"></span>
+						<span data-dojo-attach-point="frontCompanyName"></span>
+					</div>
+					<a href="javascript:;" class="ic-bizCard-front-top-expandCollapse" data-dojo-attach-point="expandCollapse" data-dojo-attach-event="onclick: toggleExpandCollapse"></a>
+				</div>
+				<div class="ic-bizCard-front-bottom" data-dojo-attach-point="frontBottom">
+					<div class="ic-bizCard-front-data">
+						<span data-dojo-attach-point="frontCompanyLocationTime"></span>
+						<span data-dojo-attach-point="frontCompanyBuildingFloorOffice"></span>
+						<a href="#" data-dojo-attach-point="frontEmail" class="ic-bizCard-front-data-mail"></a>
+						<span data-dojo-attach-point="frontTelephone"></span>
+					</div>
+					<a href="javascript:;" class="ic-bizCard-goToBackSide" data-dojo-attach-event="onclick: toggleFrontBack" title="${bc_moreActions}"></a>
+				</div>
+			</div>
+			<div class="ic-bizCard-back" data-dojo-attach-point="back">
+				<a href="#" data-dojo-attach-point="backFullName" title="${bc_viewProfile}"></a>
+				<div data-dojo-attach-point="backTextListActions" data-dojo-type="ic-ui/bizCard/TextList"></div>
+				<div data-dojo-attach-point="backTextListViews" data-dojo-type="ic-ui/bizCard/TextList"></div>
+				<a href="javascript:;" class="ic-bizCard-goToFrontSide" data-dojo-attach-event="onclick: toggleFrontBack" title="${bc_return}"></a>
+			</div>
+			<div class="ic-bizCard-actions" data-dojo-attach-point="iconListActions" data-dojo-type="ic-ui/bizCard/IconList"></div>
+		</div>
+	</div>
+	<div class="dijitTooltipConnector" role="presentation" data-dojo-attach-point="connectorNode"></div>
+</div>
+
+
+
+ 

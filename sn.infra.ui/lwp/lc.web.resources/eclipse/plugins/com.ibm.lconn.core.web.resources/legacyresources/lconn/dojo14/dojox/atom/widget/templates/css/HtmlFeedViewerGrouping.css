@@ -1,0 +1,9 @@
+/* Copyright IBM Corp. 2015  All Rights Reserved.                    */
+.feedViewerGrouping {
+}
+.feedViewerGroupingTitle {
+	font-weight: bold;
+	color:#606060;
+	border-bottom:1px solid #909090;
+	padding-top: 4px;
+}

@@ -1,0 +1,39 @@
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<div aria-labelledby="editAccessHeading"><div dojoAttachPoint="errorMessageSection" class="lotusMessage2 lotusHidden" 
+	role="alert" id="aclErrorMsg">
+		<img class="lotusIcon lotusIconMsgError" src="${_blankGif}" alt="${strings.errorAlt}" />
+		<span class="lotusAltText">${strings.errorAlt}</span
+		><div class="lotusMessageBody" dojoAttachPoint="errorMessage">${strings.ACLSettingsUpdateError}</div>
+	</div>
+
+	<form dojoAttachPoint="accessForm" class="lotusForm2 lotusLeftLabels">
+		<div class="lotusFormTitle">
+			<h2 id="editAccessHeading">${strings.CommunityEditHeader}</h2>
+		</div>
+		<div class="lotusFormBody">
+			<div class="lotusFormField">
+				<div id="optLabel" class="lotusFormLabel">${strings.CommunityEditSubHeader} </div>
+					<fieldset role="radiogroup" aria-labelledby="optLabel">
+						<div class="lotusFieldHeader">${strings.CommunityEditAccessLevel}</div>	
+						<legend class="lotusAccess">${strings.CommunityEditRadioButtonLegend}</legend>
+						<div class="lotusFieldWrapper"><input type="radio" id="communityEditOwnerMember" 
+							name="accessACL" class="lotusCheckbox" value="OWNER_MEMBER"  dojoAttachPoint="owner_member"/>
+							<label class="lotusCheckbox" for="communityEditOwnerMember">${strings.OwnerMember}</label></div>
+						<div class="lotusFieldWrapper"><input type="radio" id="communityEditOwner" 
+							name="accessACL" class="lotusCheckbox" value="OWNER"  dojoAttachPoint="owner" />
+							<label class="lotusCheckbox" for="communityEditOwner">${strings.Owner}</label></div>
+						<div class="lotusFieldWrapper"><input type="radio" id="communityEditNone" 
+							name="accessACL" class="lotusCheckbox" value="NONE"  dojoAttachPoint="none" />
+							<label class="lotusCheckbox" for="communityEditNone">${strings.None}</label></div>
+					</fieldset>
+				</div>	
+		</div><!--end form body-->
+		<!-- form footer -->
+		<div class="lotusFormFooter">
+			<input id="btnSave" type="button" dojoAttachEvent="onclick:submitAccessForm" class="lotusBtn" value="${strings.Save}">
+			<input id="btnSaveClose" type="button" dojoAttachEvent="onclick:submitAccessForm" class="lotusBtn" value="${strings.SaveClose}">
+			<input id="btnCancel" type="button" dojoAttachEvent="onclick:cancelAccessForm" class="lotusBtn" value="${strings.Cancel}">
+		</div>
+	</form>	
+</div>

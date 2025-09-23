@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<feed xmlns:app="http://www.w3.org/2007/app" xmlns:thr="http://purl.org/syndication/thread/1.0"
+	xmlns:fh="http://purl.org/syndication/history/1.0" xmlns:snx="http://www.ibm.com/xmlns/prod/sn"
+	xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns="http://www.w3.org/2005/Atom">
+	<id>tag:profiles.ibm.com,2006:feed</id>
+	<generator version="4.5.0.0" uri="http://www.ibm.com/xmlns/prod/sn">IBM Connections - Profiles
+	</generator>
+	<title type="text">Connections of Amy Jones2</title>
+	<author>
+		<name>IBM Connections - Profiles</name>
+	</author>
+	<updated>2013-10-30T13:15:58.869Z</updated>
+	<opensearch:totalResults>0</opensearch:totalResults>
+	<opensearch:startIndex>1</opensearch:startIndex>
+	<opensearch:itemsPerPage>3</opensearch:itemsPerPage>
+	<snx:pendingInvitations>0</snx:pendingInvitations>
+	<link
+		href="https://dubxpcvm3078.mul.ie.ibm.com:9445/profiles/atom/connections.do?userid=4fda6cc0-0101-102e-88dd-f78755f7e0ed&amp;connectionType=colleague&amp;forceRefresh=1383138963903&amp;ps=3&amp;inclPendingCount=true&amp;outputType=profile"
+		rel="self" type="application/atom+xml"></link>
+</feed>

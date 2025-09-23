@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<Module>
+	<ModulePrefs title="__MSG_connectionsEE_title__"
+		description="__MSG_connectionsEE_description__">
+		<Require feature="opensocial-0.9"/>
+		<Require feature="osapi" />
+		<Require feature="embedded-experiences" />
+		<Require feature="dynamic-height"/>
+		<Require feature="oauthpopup" />
+		<Require feature="open-views"/>
+        <Require feature="opensocial-templates">
+           <Param name="requireLibrary">../com.ibm.social.gadget/loader/ResourceLoaderTemplate.xml</Param>
+        </Require>
+        <Require feature="opensocial-data"/>
+      <Optional feature="settitle" />
+      <Optional feature="content-rewrite">
+         <Param name="exclude-url">*</Param>
+      </Optional>
+      <Optional feature="cre.services.oauth.Popup"/>
+      <Optional feature="sso-domain" />      
+      <Optional feature="com.ibm.connections.ee" />
+      <Optional feature="ibm.connections.ee" />
+      <Optional feature="cre.service.sso" />
+      <Optional feature="smartcloud3"/>
+		<Locale messages="./nls/eeGadgets.xml"/>
+      <Locale lang="ar" messages="./nls/ar/eeGadgets.xml" language_direction="rtl"/>
+	  <Locale lang="bg" messages="./nls/bg/eeGadgets.xml"/>
+      <Locale lang="ca" messages="./nls/ca/eeGadgets.xml"/>
+      <Locale lang="cs" messages="./nls/cs/eeGadgets.xml"/>
+      <Locale lang="da" messages="./nls/da/eeGadgets.xml"/>
+      <Locale lang="de" messages="./nls/de/eeGadgets.xml"/>
+      <Locale lang="el" messages="./nls/el/eeGadgets.xml"/>
+      <Locale lang="es" messages="./nls/es/eeGadgets.xml"/>
+      <Locale lang="fi" messages="./nls/fi/eeGadgets.xml"/>
+      <Locale lang="fr" messages="./nls/fr/eeGadgets.xml"/>
+      <Locale lang="he" messages="./nls/he/eeGadgets.xml"  language_direction="rtl"/>
+      <Locale lang="hu" messages="./nls/hu/eeGadgets.xml"/>
+	  <Locale lang="hr" messages="./nls/hr/eeGadgets.xml"/>
+      <Locale lang="id" messages="./nls/id/eeGadgets.xml"/>
+      <Locale lang="it" messages="./nls/it/eeGadgets.xml"/>
+      <Locale lang="iw" messages="./nls/iw/eeGadgets.xml" language_direction="rtl"/>
+      <Locale lang="ja" messages="./nls/ja/eeGadgets.xml"/>
+      <Locale lang="kk" messages="./nls/kk/eeGadgets.xml"/>
+      <Locale lang="ko" messages="./nls/ko/eeGadgets.xml"/>
+      <Locale lang="nb" messages="./nls/nb/eeGadgets.xml"/>
+      <Locale lang="nl" messages="./nls/nl/eeGadgets.xml"/>
+      <Locale lang="no" messages="./nls/no/eeGadgets.xml"/>
+      <Locale lang="pl" messages="./nls/pl/eeGadgets.xml"/>
+      <Locale lang="pt" messages="./nls/pt/eeGadgets.xml"/>
+      <Locale lang="pt" country="br" messages="./nls/pt-br/eeGadgets.xml"/>
+	  <Locale lang="ro" messages="./nls/ro/eeGadgets.xml"/>
+      <Locale lang="ru" messages="./nls/ru/eeGadgets.xml"/>
+      <Locale lang="sl" messages="./nls/sl/eeGadgets.xml"/>
+      <Locale lang="sr" messages="./nls/sr/eeGadgets.xml"/>
+	  <Locale lang="sk" messages="./nls/sk/eeGadgets.xml"/>
+      <Locale lang="sv" messages="./nls/sv/eeGadgets.xml"/>
+      <Locale lang="th" messages="./nls/th/eeGadgets.xml"/>
+      <Locale lang="tr" messages="./nls/tr/eeGadgets.xml"/>
+      <Locale lang="zh" messages="./nls/zh/eeGadgets.xml"/>
+      <Locale lang="zh" country="tw" messages="./nls/zh-tw/eeGadgets.xml"/>
+      <OAuth2>
+        <Service name="connections_service" scope="Connections" />
+      </OAuth2>
+	</ModulePrefs>
+	<UserPref name="debug" required="false" type="hidden" default_value="false" datatype="bool"/>
+
+   <Content view="default" type="html">
+   <![CDATA[
+      <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+      <style type="text/css">
+         .fatalError { 
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+         }
+         .orientFatalError {
+		    color: #ffffff;
+		    position: absolute;
+		    top: 40%;
+		    left: 50%;
+		    transform: translate(-50%, -50%);
+		    font-family: 'Helvetica Neue', Helvetica, Roboto, Arial;
+		    font-size: 17px;
+		}
+      </style>
+      <script type="text/os-data" xmlns:os="http://ns.opensocial.org/2008/markup">
+         <os:HttpRequest key="icResourceData" method="GET" href="../../ic/forms/api/resloader/ConnectionsEE"/>
+         <os:ViewerRequest key="viewer" />
+      </script>
+      <script type="text/javascript">
+         // Determine if debug is on and trace start of loading
+         (function() {
+            var prefs = new gadgets.Prefs();
+            var isDebug = false;
+            var debugPref = prefs.getString("debug");
+            isDebug = (debugPref == "true");            
+            if (gadgets && gadgets.util && gadgets.util.isDebug) {
+               isDebug = isDebug || gadgets.util.isDebug();
+            }              
+            if (isDebug) {
+               gadgets.log((new Date()).getTime() + " -- Begin loading EE gadget");
+            }
+         })();
+      </script>
+      <script type="text/os-template" xmlns:lconn="http://www.ibm.com/ibm/connections" >
+         <lconn:importResources/>
+      </script>   
+         
+      <!-- Conditionally add Cnx8 CSS -->
+      <script type="text/javascript">
+         try {
+            var frameParent = window.parent;
+            if (frameParent) {
+               if (frameParent.ui && frameParent.ui._check_ui_enabled()) {
+                  var contextRoot = frameParent.ICS_ASSET_PATH;
+                  if (contextRoot) {
+                     var styles = document.createElement('link');
+                     styles.id = 'cnx8_ee_css';
+                     styles.setAttribute('type', 'text/css');
+                     styles.setAttribute('rel', 'stylesheet');
+                     styles.href = contextRoot + '../../cnx8-react/eeStyles.css';
+                     document.getElementsByTagName('body')[0].prepend(styles);
+                  }
+               }
+            }
+         } catch (e) {}
+      </script>
+   
+      <!-- Initialize the gadget -->
+      <script type="text/javascript">
+         function isPreload(context) {
+            if (context && context.eventType) {
+               return context.eventType.indexOf("PRELOAD") === 0;
+            }
+            return false;
+         }
+
+         function _addScriptBase(base) {
+			   var resData_ = opensocial.data.getDataContext().getDataSet("icResourceData");
+			   var resData_Content = (resData_ && resData_.content ? resData_.content : {});
+			   resData_Content.scripts.bases.push(base);
+			   opensocial.data.DataContext.putDataSet("icResourceData", resData_);
+         }
+      
+         function addPocUtils() {
+            _addScriptBase("include=com.ibm.social.as.portlet.PortletUrlUtil~&exclude=dojo.main~com.ibm.social.gadget.layers.gadgetIncontextCommon~");
+         }
+         
+         function isECM(context) {
+            if (context && context.eventType) {
+               return context.eventType.indexOf("ecm.") === 0;
+            }
+            return false;
+         }
+         
+         function isOrient(context) {
+            return context && context.isOrient == true;
+         }
+         
+         function addECMEntry() {
+            _addScriptBase("include=com.ibm.social.ee.widget.ECMEntryLoader&exclude=dojo.main~com.ibm.social.gadget.layers.gadgetIncontextCommon~com.ibm.social.ee.gadget.Bootstrap");         
+         }
+         
+         function fatalErrorOccurred(context) {
+         	var errorDivId= isOrient(context) ? 'orientFatalError' : 'fatalError';
+            document.getElementById(errorDivId).style.display = "";
+         }
+
+         function initEEContent(context) {
+            if (isPreload(context)) {
+                addPocUtils();
+                addECMEntry();
+            } else {
+               if(context.portletUrlSettings) {
+                  addPocUtils();
+               }
+               if (isECM(context)) {
+                  addECMEntry();
+               }
+            }
+            var initComplete;
+            var errorOccurred = false;
+            try {
+               initComplete = com.ibm.social.gadget.loader.bootstrap.init();
+            } 
+            catch (e) { 
+               fatalErrorOccurred(context);
+            }
+            if ((initComplete) && (!isPreload(context))) {
+               initComplete.then(
+               // Success callback
+               function(){
+                  if (dojo && dojo.getObject && dojo.getObject("com.ibm.social.ee.gadget.Bootstrap")) {
+                     window.currentViewer = opensocial.data.getDataContext().getDataSet('viewer');
+                     com.ibm.social.ee.gadget.Bootstrap.loadGadget(context);
+                     com.ibm.social.ee.gadget.Bootstrap.setTitle(context);
+                  }
+                  else {
+                     fatalErrorOccurred(context);
+                  }
+               },
+               // Error callback
+               function() {
+                  fatalErrorOccurred(context);
+               });
+            }
+         }
+         function onLoadEE() {
+		     opensocial.data.getDataContext().registerListener('org.opensocial.ee.context', function(key){
+     		      initEEContent(opensocial.data.getDataContext().getDataSet(key));
+     		  });     		  
+         }
+         
+         gadgets.util.registerOnLoadHandler(function() {
+         	onLoadEE();
+         });
+
+     </script>
+<div id="gadgetDiv" style="margin: 2px;">
+<div class="lotusContent" style="border-style:none">
+<div id="needAuth" style="display:none">
+   <img class="eeOAuthImg" role="presentation" aria-hidden="true">
+	<div class="eeOAuthBodyContent">
+	   <div id="oAuthQuestion"></div>
+   </div>
+</div>
+<div id="waiting" style="display:none">
+   <img class="eeOAuthImg" role="presentation" aria-hidden="true">
+   <div class="eeOAuthBodyContent">      
+      <div id="oAuthQuestionWait"></div>
+   </div>
+</div>
+<div id="gadgetBody"></div>
+</div>
+  <div class="fatalError" id="fatalError" style="display:none">
+    <h3>__MSG_connectionsEE_errorTitle__</h3>
+    <p>__MSG_connectionsEE_errorDescription__</p>
+  </div>
+  <div class="orientFatalError" id="orientFatalError" style="display:none">
+    <h3>__MSG_connectionsEE_errorTitle__</h3>
+    <p>__MSG_connectionsEE_errorDescription__</p>
+  </div>
+</div>
+   ]]>
+   </Content>
+</Module>

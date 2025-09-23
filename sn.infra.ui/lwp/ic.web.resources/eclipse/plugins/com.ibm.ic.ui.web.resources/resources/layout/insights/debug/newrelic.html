@@ -1,0 +1,47 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>New Relic Debug</title>
+
+<script>
+   if (location.href.indexOf("render=test") === -1) {
+      location.href = location.href.replace("newrelic.html", "newrelic.html?render=test#");
+   }
+</script>
+<script>
+dojoConfig.parseOnLoad=true;
+</script>
+
+${script:dojox.xml.parser~net.jazz.ajax.xdloader~lconn.core.bundle_common~}
+${style:dojox.grid.resources.Grid}
+${style:dojox.grid.resources.claroGrid}
+
+<style>
+   .module-id {
+      margin-bottom: 1em;
+   }
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain" role="main">
+<div class="lotusContent">
+<h1>New Relic Debug</h1>
+
+<div id="dataContainer" style="height: 580px"></div>
+
+<script>
+   require([
+      "ic-ui/layout/insights/debug/newrelic",
+   ], function (newrelic) {
+      newrelic.render("dataContainer");
+   });
+</script>
+</div>
+</div>
+</body>
+${end}

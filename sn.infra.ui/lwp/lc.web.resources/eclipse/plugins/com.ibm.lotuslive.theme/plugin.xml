@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2010, 2012                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<?eclipse version="3.4"?>
+<!--
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<plugin>
+    <extension point="net.jazz.ajax.webBundles">
+		<!-- 
+		Defining an extension to webBundles exposes the contents of this bundle (com.mycompany.theme.example)
+		to external consumers.  The resources/ folder is the default folder for serving the contents of the 
+		bundle.  The file theme.css will then be visible at 
+		
+			&lt;server&gt;/web/com.mycompany.theme.example/theme.css
+		
+		To have a different bundle name and base package, add an <alias> element to this extension.
+		
+	      <extension point="net.jazz.ajax.webBundles">
+			   <alias value="mycompany.theme.example" />
+			</extension> 
+			
+			would make the file theme.css be visible at:
+				
+				&lt;server&gt;/web/mycompany.theme.example/theme.css
+			
+		-->
+    </extension>
+    <extension point="com.ibm.lconn.core.styles.themes">
+		<!-- 
+		
+		-->
+		<theme 
+			id="com.ibm.lotuslive.theme" 
+			resource="/theme.css" 
+			resource-rtl="/themeRTL.css" 
+			version="oneui2"
+			/>
+    </extension>
+</plugin>

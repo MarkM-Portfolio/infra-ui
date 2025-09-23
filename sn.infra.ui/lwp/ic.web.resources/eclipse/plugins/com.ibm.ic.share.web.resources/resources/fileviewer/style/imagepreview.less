@@ -1,0 +1,104 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+.ics-viewer .ics-zoom-buttons {
+	position: relative;
+	z-index: 500;
+	background-clip: padding-box;
+	background-color: rgba(0, 0, 0, 0.6);
+	padding: 3px 5px;
+	height: 35px;
+	width: 135px;
+	border-radius: 2px;
+}
+
+.ics-viewer .ics-zoom-buttons > a {
+   text-decoration: none;
+}
+
+.lotusui_ie8 .ics-viewer .ics-zoom-buttons {
+   background-color: black;
+   filter: alpha(opacity=60);
+}
+
+.ics-viewer .ics-zoom-buttons-helper {
+	position: absolute;
+	bottom: 2%;
+	width: 100%;
+}
+
+.ics-viewer .ics-zoom-buttons {
+   margin: auto;
+}
+
+.ics-viewer .ics-zoom-buttons  a a:visited{
+	padding: 4px;
+	color: none;
+}
+
+.ics-viewer .ics-zoom-buttons img {
+   background-position: center;
+   background-repeat: no-repeat;
+   color: white;
+   padding: 4px;
+   margin-right: 10px;
+   width: 20px;
+   top: 3px;
+   position: relative;
+}
+
+.ics-viewer.rtl .ics-zoom-buttons img {
+   margin-right: 0;
+   margin-left: 16px;
+}
+
+.ics-viewer .ics-zoom-buttons .ics-zoomIn-button {
+	background-image: ~"url(../style/images/Zoom-in.png)"; /*TODO*/
+   margin-right: 0;
+}
+
+.ics-viewer.rtl .ics-zoom-buttons .ics-zoomIn-button {
+   margin-left: 0;
+}
+
+.ics-viewer .ics-zoom-buttons .ics-zoomOut-button {
+	background-image:  ~"url(../style/images/Zoom-out.png)"; /*TODO*/
+}
+
+.ics-viewer .ics-zoom-buttons .ics-restore-button {
+	background-image:  ~"url(../style/images/Restore_default.png)"; /*TODO*/
+	margin-right: 11px;
+}
+
+.ics-viewer .ics-viewer-image-preview {
+	height: 100%;
+	overflow: auto;
+	text-align: center;
+}
+
+.ics-viewer .ics-zoom-img {
+	vertical-align: middle;
+	position: relative;
+}
+
+.ics-viewer .ics-zoom-widget {
+	position: absolute;
+	white-space: nowrap;
+	z-index: 149;
+	height: calc(100vh ~"-" @banner-height);
+	width: 100%;
+}
+
+.ics-viewer .align-helper {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.ics-viewer .ics-viewer-expandable-reduce {
+	width: 76%;
+}
+
+.ics-viewer .ics-zoomToFit {
+	max-width: 95%;
+	max-height: 95%;
+}

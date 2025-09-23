@@ -1,0 +1,14 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="ics-dialog-action">
+	<div class="panelTitle" data-dojo-attach-point="titleNode"></div>
+   <div class="prompt-container" data-dojo-attach-point="promptContainer">${nls.PROMPT}</div>
+	<div class="panelContent deleteOption prompt-container" data-dojo-attach-point="content">
+		<input type="checkbox" name="deleteFrom" value="true" data-dojo-attach-point="deleteFromOption">${nls.DELETE_PRIOR}<br>
+	</div>
+	<div class="button-container">
+		<a class="confirm bad" href="javascript:;"
+			data-dojo-attach-event="onclick:clickLink" id="ok" role="button">${nls.OK}</a> 
+			<a class="cancel neutral" href="javascript:;"
+			data-dojo-attach-event="onclick:clickLink" id="cancel" role="button">${nls.CANCEL}</a>
+	</div>
+</div>

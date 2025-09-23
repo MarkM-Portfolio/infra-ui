@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2013, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!-- Schema file written by PDE -->
+<schema targetNamespace="net.jazz.ajax" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="net.jazz.ajax" id="cssBindingSets" name="Web UI CSS Binding Sets"/>
+      </appInfo>
+      <documentation>
+         Declares a Jazz Web UI CSS Binding Set that provides an association between CSS resources and Javascript Modules.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="cssBindingSet" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="cssBindingSet">
+      <complexType>
+         <sequence>
+            <element ref="cssCommonModule" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="cssBinding" minOccurs="0" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="path" type="string">
+            <annotation>
+               <documentation>
+                  An optional base path to be prepended to any children elements which have a path.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="cssBinding">
+      <complexType>
+         <sequence>
+            <element ref="cssModule" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="jsModule" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The id of the javascript module which will be bound with the CSS modules.  For example, &lt;code&gt;dijit.form.Button&lt;/code&gt;.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="cssModule">
+      <complexType>
+         <attribute name="path" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="url" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="cssCommonModule">
+      <complexType>
+         <attribute name="path" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         1.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         The following example demonstrates how to declare a set of CSS bindings that associate CSS modules with javascript modules.
+The full path to the CSS module is a combination of the containing webBundle namespace and base + cssBindingSet path + cssModule path.
+ &lt;extension point=&quot;net.jazz.ajax.cssBindingSets&quot;&gt;
+  &lt;cssBindingSet id=&quot;jazz.ui.CSSBindingSet&quot; path=&quot;/templates&quot;&gt;
+   &lt;cssBinding jsModule=&quot;jazz.ui.Button&quot;&gt;
+    &lt;cssModule path=&quot;/Button.css&quot;/&gt;
+    &lt;cssModule path=&quot;/Button_ltr.css&quot;/&gt;       
+   &lt;/cssBinding&gt;
+   &lt;cssBinding jsModule=&quot;jazz.ui.FilterBox&quot;&gt;
+    &lt;cssModule path=&quot;/FilterBox.css&quot;/&gt;
+   &lt;/cssBinding&gt;
+   &lt;cssBinding jsModule=&quot;jazz.ui.HoverPopup&quot;&gt;
+    &lt;cssModule path=&quot;/HoverPopup.css&quot;/&gt;
+   &lt;/cssBinding&gt;
+  &lt;/cssBindingSet&gt;
+ &lt;/extension&gt;
+      </documentation>
+   </annotation>
+
+
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Licensed Materials - Property of IBM
+(c) Copyright IBM Corporation 2009. All Rights Reserved. 
+
+Note to U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+      </documentation>
+   </annotation>
+
+</schema>

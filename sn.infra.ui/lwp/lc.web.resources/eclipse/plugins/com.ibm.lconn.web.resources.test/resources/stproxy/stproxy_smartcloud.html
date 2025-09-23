@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>IBM Connections - Sametime Proxy (SmartCloud)</title>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <h1>Sametime Proxy (SmartCloud)</h1>
+                <p>You should see the Sametime Proxy action bar at the bottom of the screen.</p>
+                <div data-dojo-type="com.ibm.oneui.controls.MessageBox" data-dojo-props="type:1, msg:'Note: this page must be accessed over HTTPS. You must be authenticated to the Sametime server'"></div>
+                <!--  Add your test DOM here -->
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+    </script>
+    ${style:lconn.test/mocks/stproxy/WebClientAll}
+    <!--  List the Dojo modules your test page requires -->
+    ${script:dijit._Widget}
+    ${script:dijit._Templated}
+    ${script:dijit.Menu}
+    ${script:dijit.MenuItem}
+    ${script:dojo.dnd.Mover}
+    ${script:dijit.Editor}
+    ${script:dijit._editor._Plugin}
+    ${script:com.ibm.oneui.controls.MessageBox}
+    <script>
+    var navigation_noHub = typeof navigation_navLoadedCre!='undefined' && navigation_navLoadedCre;
+    var loc = location.href.split('/');
+    loc.splice(-1, 1);
+    var stproxyConfig = {
+        server: 'https://webchat.stsandbox1.swg.usma.ibm.com',
+        tunnelURI: loc.join('/') + '/stproxy_tunnel.html',
+        isConnectClient: false
+    }
+    var _getIncludeArgs = function(){
+        var args = [];
+        try{
+            if((typeof(dojo) !== "undefined") && dojo){
+                //if((dojo.config && dojo.config.useXDomain) || (dojo.version && dojo.version.major == 1 && dojo.version.minor == 5)){
+                if((dojo.config && dojo.config.useXDomain)){
+                    args.push("widget=widgets");
+                }else{
+                    args.push("widget=widgetsLight");
+                }
+            }
+            if(navigation_noHub)
+                args.push("noHub=true");
+            args.push("lang=en_US");
+            var d = new Date();
+            d.setMinutes(0);
+            d.setSeconds(0);
+            d.setMilliseconds(0);
+            args.push("cacheTimestamp="+d.getTime()); //hourly
+        }catch(e){}
+        return (args.length > 0)?("?"+args.join("&")):"";
+    }
+    
+    var navigation_stUrl = 'https://webchat.stsandbox1.swg.usma.ibm.com/stwebclient/include.js'+_getIncludeArgs();
+    function navigation_footer_includeScript(path) {
+        var el = document.createElement('script');
+        el.setAttribute('type', 'text/javascript');
+        el.setAttribute('src', path);
+        document.getElementsByTagName("head")[0].appendChild(el);
+    }   
+    function navigation_waitForCreHub(wait) {
+        try {
+            if (typeof OpenAjax.gadgets.rpc.setUpRpcIdsForNonGadgetIframe == "function") {
+                navigation_footer_includeScript(navigation_stUrl);
+                return;
+            }
+        } catch(err){}
+        wait = typeof wait == "undefined" ? 40000 : wait; 
+        if (wait > 0)
+            setTimeout(function(){navigation_waitForCreHub(wait-100);}, 100);
+    }
+    
+    function navigation_footer_cookieExists(name) {
+        var ck = document.cookie.split(";");
+        var key = name+'=';
+        for (i=0;i < ck.length; i++) {
+            var c = ck[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(key) == 0)
+                return true;
+        }   
+        return false;
+    }
+    var navigation_st_first = !navigation_footer_cookieExists('footer_st_first');
+    if (navigation_st_first) 
+        document.cookie = "footer_st_first=false; path=/;secure";
+    var navigation_onLoadTriggered = false;
+    var navigation_isIe8 = false;
+    if (typeof navigation_ieVer == 'undefined') {
+        if (navigator.appName == 'Microsoft Internet Explorer') {
+            var ua = navigator.userAgent;
+            var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+            if (re.exec(ua) != null)
+                navigation_isIe8 =  RegExp.$1.charAt(0)=='8';
+        }
+    } else 
+        navigation_isIe8 =  navigation_ieVer>=8.0 && navigation_ieVer<9.0;
+        
+    function navigation_load_st() {
+        if (!navigation_onLoadTriggered) {
+            navigation_onLoadTriggered = true;
+            if(navigation_noHub) {
+                if (typeof navigation_navLoadedCre!="undefined" && navigation_navLoadedCre)
+                    navigation_initForWebChat();        
+                navigation_waitForCreHub();
+            } else 
+                navigation_footer_includeScript(navigation_stUrl);
+        }
+    }
+    function navigation_ensureStLoad() {
+        if(!navigation_onLoadTriggered) {
+            navigation_onLoadTriggered = true;
+            navigation_footer_includeScript(navigation_stUrl);
+        }
+    }
+    var navigation_st_load_delay = navigation_st_first || navigation_isIe8 ? 10000 : 3000;
+    if (window.addEventListener)
+        window.addEventListener("load", function(){setTimeout(navigation_load_st,navigation_st_load_delay);}, false);
+    else if (window.attachEvent) { //only ie8 does this
+        window.attachEvent("onload", function(){setTimeout(navigation_load_st,navigation_st_load_delay);});
+        if (navigation_isIe8) 
+            setTimeout(navigation_ensureStLoad,navigation_st_load_delay+5000);          
+    }
+    </script>
+</body>
+</html>

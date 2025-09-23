@@ -1,0 +1,201 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-us" dir="ltr">
+
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<head>
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+   <meta http-equiv="pragma" content="no-cache">
+   <meta http-equiv="cache-control" content="no-cache">
+
+   <title>Globalization</title>
+
+   
+<!--[if IE 6]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie lotusui_ie6";</script><![endif]-->
+<!--[if IE 7]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie lotusui_ie7";</script><![endif]-->
+<!--[if IE 8]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie8";</script><![endif]-->
+<!--[if IE 9]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie9";</script><![endif]-->
+<link rel="stylesheet" type="text/css" id="lotusBaseStylesheet" href="/web/_style?include=com.ibm.lconn.core.styles.oneui3/base/package3.css&etag=20141015.053149" appName="deploymentConfig" base="/web/" query="?version=oneui3&rtl=false&etag=20141015.053149" theme="hikari" defaultTheme="hikari" oneui="3"></link>
+<link rel="stylesheet" type="text/css" id="lotusSpritesStylesheet" href="/web/_style?include=com.ibm.lconn.core.styles.oneui3/sprites.css&etag=20141015.053149"></link>
+<link rel="stylesheet" type="text/css" id="lotusThemeStylesheet" href="/web/_lconntheme/hikari.css?version=oneui3&rtl=false&etag=20141015.053149"></link>
+
+<link rel="stylesheet" type="text/css" id="lotusAppStylesheet" href="/web/_lconnappstyles/hikari/deploymentConfig.css?version=oneui3&rtl=false&etag=20141015.053149"></link>
+
+<!-- IBM Connections Mobile App for iOS -->
+<meta content="app-id=450533489" name="apple-itunes-app" />
+<!-- IBM Connections Mobile App for Android -->
+<meta content="app-id=com.ibm.lotus.connections.mobile" name="google-play-app" />
+
+   
+<link rel="shortcut icon" href="/web/com.ibm.oneui3.styles/imageLibrary/Branding/Other/ConnectionsBlue16.ico?etag=20141015.053149" type="image/x-icon">
+
+
+   <script type="text/javascript">
+      // TODO: check at application startup
+      // javascript to check for high contrast/images off mode, and add body.lotusImagesOff if necessary
+      function checkHighContrast() {
+      //create test case element
+      var vTestHC = document.createElement("div");
+      vTestHC.style.border          = '1px solid';
+      vTestHC.style.borderColor     = 'red green';
+      vTestHC.style.position        = 'absolute';
+      vTestHC.style.height          = '5px';
+      vTestHC.style.top             = '-999px';
+
+      vTestHC.style.backgroundImage = 'url(/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20141015.053149)';
+
+      document.body.appendChild(vTestHC);
+      
+      //do the tests
+      var vStyle = null;
+      try{
+         vStyle = document.defaultView.getComputedStyle(vTestHC, "");
+      }catch(e){
+         vStyle = vTestHC.currentStyle;
+      }
+      if (vStyle) {
+         var vTestImg = vStyle.backgroundImage;
+         if ((vStyle.borderTopColor==vStyle.borderRightColor) || (vTestImg != null && (vTestImg == "none" || vTestImg == "url(invalid-url:)" ))){
+            document.getElementsByTagName("body")[0].className+=" lotusImagesOff";
+         }
+      }
+      }
+   </script>
+</head>
+
+<body class="lotusui lotusui30dojo lotusui30_body lotusui30_fonts lotusui30 ">
+   
+   <div id="lotusFrame" class="lotusFrame lotusui30_layout">
+      <div id="lotusBanner" class="lotusBanner lotusHidden" role="banner">
+         <script type="text/javascript">
+if (self != top) {
+   try {
+      // Reset location if in different host.
+      // per Same Origin Policy, try to get top location attributes,
+      // will get permission denied if in different origin.
+      if (self.location.hostname != top.location.hostname)
+         top.location=self.location;
+   }catch(e){
+      // reset location if in different origin
+      top.location=self.location;
+   }
+}
+</script>
+<div class="lotusRightCorner">
+   <div class="lotusInner"><div class="lotusLogo" id="lotusLogo"><span class="lotusAltText">IBM Connections</span></div><ul class="lotusInlinelist lotusUtility lotusNowrap" id="headerMenuContainer"><li class="lotusFirst" id="lotusPerson"><span id="logoutLabel" aria-label="Log in / log out"><a class="lotusUser" id="headerUserName"
+                      onmouseover="dojo.require('lconn.core.header'); lconn.core.header.menuMouseover(this);"
+                      onclick="dojo.require('lconn.core.header'); lconn.core.header.menuClick(this);"
+                      onfocus="dojo.require('lconn.core.header'); lconn.core.header.menuFocus(this);"
+                      role="button" 
+                      _lconn_menuid="lconnheadermenu-user"
+                      aria-label="Current user Amy Jones1"
+                      src="/connections/static/20141015.053149!en_us/nav/templates/menu/user.jsp?appName=deploymentConfig&username=Amy+Jones1&userid=4cbc45c0-16a7-1033-9239-95472f45d54f"
+                      href="javascript:;"><img alt="Amy Jones1" src="http://lcauto11.swg.usma.ibm.com/profiles/photo.do?userid=4cbc45c0-16a7-1033-9239-95472f45d54f&small=true" width=26 height=26></img> <img role="presentation" alt="" src="/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20141015.053149" class="lotusArrow lotusDropDownSprite"><span class="lotusAltText">&#9660;</span></a></span></li><li id="logoutLi" class="lotusHidden" style="display:none"><span id="loginLabel" role="region" aria-label="Log in / log out"><a id="logoutLink" href="logout_app_replace" >Log Out</a></span></li><li class="shareboxLi" id="headerSharebox" ><a class="lotusBannerBtn" href="javascript:;" onclick="dojo.stopEvent(event);dojo.require('net.jazz.ajax.xdloader');net.jazz.ajax.xdloader.load_async('com.ibm.social.sharebox.dialog', dojo.hitch(this, function() {com.ibm.social.sharebox.show();}));" role="button">Share</a></li><li id="languageSelectorText" style="display: none;"></li><li id="headerHelpLi" ><a role="button" aria-label="Open help window" href="help_app_replace" id="headerHelpLink"><img role="presentation" alt="" src="/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20141015.053149" class="iconsOther16 iconsOther16-bannerHelpNormal16" /><span class="lotusAltText">?</span></a></li><li><span class="lotusBranding"><img src="/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20141015.053149" alt="IBM" class="lotusIBMLogo" /><span class="lotusAltText">IBM</span></span></li></ul><ul class="lotusInlinelist lotusLinks" role="navigation" aria-label="Connections"><li id="lotusBannerHomepage" class="lotusFirst "><a href="http://lcauto11.swg.usma.ibm.com/homepage/" title="Home" aria-label="Home"><img alt="" role="presentation" src="/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20141015.053149" class="lconnBannerIcon lconnSprite lconnSprite-iconHomeBlue16"><span id="lconnBannerHomepageLabel">Home</span></a></li><li id="lotusBannerProfiles" class=" "><a onmouseover="dojo.require('lconn.core.header'); lconn.core.header.menuMouseover(this);" 
+                      onclick="dojo.require('lconn.core.header'); lconn.core.header.menuClick(this);" 
+                      onfocus="dojo.require('lconn.core.header'); lconn.core.header.menuFocus(this);" 
+                      role="button" 
+                      _lconn_menuid="lconnheadermenu-people"
+                      aria-label="Profiles" 
+                      src="/connections/static/20141015.053149!en_us/nav/templates/menu/people.jsp"
+                      href="http://lcauto11.swg.usma.ibm.com/profiles/"
+                      errormessage="Profiles is not available"><img alt="" role="presentation" src="/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20141015.053149" class="lconnBannerIcon lconnSprite lconnSprite-iconProfilesBlue16">Profiles <img role="presentation" alt="" src="/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20141015.053149" class="lotusArrow lotusDropDownSprite"><span class="lotusAltText">&#9660;</span></a></li><li id="lotusBannerCommunities" class=" "><a id="lotusBannerCommunitiesLink" 
+                      onmouseover="dojo.require('lconn.core.header'); lconn.core.header.menuMouseover(this);" 
+                      onclick="dojo.require('lconn.core.header'); lconn.core.header.menuClick(this);" 
+                      onfocus="dojo.require('lconn.core.header'); lconn.core.header.menuFocus(this);" 
+                      role="button" 
+                      _lconn_menuid="lconnheadermenu-communities"
+                      aria-label="Communities" 
+                      src="/connections/static/20141015.053149!en_us/nav/templates/menu/communities.jsp?authenticated=true"
+                      href="http://lcauto11.swg.usma.ibm.com/communities/"
+                      errormessage="Communities is not available"><img alt="" role="presentation" src="/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20141015.053149" class="lconnBannerIcon lconnSprite lconnSprite-iconCommunitiesBlue16">Communities <img role="presentation" alt="" src="/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20141015.053149" class="lotusArrow lotusDropDownSprite"><span class="lotusAltText">&#9660;</span></a></li><li id="lotusBannerApps" class=" lotusSelected"><a onmouseover="dojo.require('lconn.core.header'); lconn.core.header.menuMouseover(this);" 
+                   onclick="dojo.require('lconn.core.header'); lconn.core.header.menuClick(this);" 
+                   onfocus="dojo.require('lconn.core.header'); lconn.core.header.menuFocus(this);" 
+                   role="button" 
+                   _lconn_menuid="lconnheadermenu-apps"
+                   aria-label="Apps" 
+                   src="/connections/static/20141015.053149!en_us/nav/templates/menu/apps.jsp"
+                   href="javascript:;"
+                   errormessage="Settings are not available">Apps <img role="presentation" alt="" src="/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20141015.053149" class="lotusArrow lotusDropDownSprite"><span class="lotusAltText">&#9660;</span></a></li><li id="lotusBannerHeaderMetrics" style="display:none" class=""><a href="http://lcauto11.swg.usma.ibm.com/metrics/">Metrics</a></li><li id="lotusBannerModeration" style="display:none" class=""><a href="http://lcauto11.swg.usma.ibm.com/moderation/">Moderation</a></li></ul><div class="lotusClear"><!-- IE --></div></div></div>
+
+      </div>
+
+      <noscript>
+         <style type="text/css">.lconnApplicationLoading {display: none;}</style>
+         <div class="lotusErrorBox lotusError">
+            <div class="lotusErrorContent" role="main">
+               <img class="iconsMessages48 iconsMessages48-msgError48" src="/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20141015.053149" alt="">
+               <div class="lotusErrorForm">
+                  <h1>Turn on JavaScript</h1>
+                  <p>JavaScript has been disabled in your web browser.  IBM Connections requires JavaScript in order to function.  Once you have turned it on, please refresh the page.</p>
+                  <p>Refresh the page to continue.</p>
+               </div>
+            </div>
+         </div>
+      </noscript>
+      <div id="lconnApplicationLoading" class="lconnApplicationLoading">Loading...</div>
+
+   <script type="text/javascript">
+      var icUser = {
+        id: "4cbc45c0-16a7-1033-9239-95472f45d54f",
+        displayName: "Amy Jones1",
+
+        email: "ajones1@janet.iris.com",
+
+        isExternal: false
+      };
+      document.getElementById("lotusFrame").style.display = "";
+   </script>
+
+   
+   
+<script type="text/javascript">
+var ibmConfig = {
+   serviceName: "deploymentConfig",
+   proxyURL: "/connections/ajaxProxy/",
+   contextRootEnabler: "/connections",
+   versionStamp: "20141015.053149"
+};
+var baseProtocol = "http";
+var baseHost = "localhost:52450";
+var basePath = "";
+var needProxy = (baseHost != window.location.host || baseProtocol+":" != window.location.protocol);
+var dojoConfig = djConfig = {
+   async: true,
+   isDebug: false,
+   baseUrl: (needProxy ? (ibmConfig.proxyURL + encodeURIComponent(baseProtocol) + "/" + encodeURIComponent(baseHost)) : (baseProtocol + "://" + baseHost)) + basePath + "/web/dojo/",
+   locale: "en-us",
+   dojoBlankHtmlUrl: "/connections/static/20141015.053149/nav/blankIE.html",
+   blankGif: "/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20141015.053149",
+   useCommentedJson: true,  
+   proxy: "/connections/ajaxProxy",
+   localizationComplete: true
+};
+</script>
+<script type="text/javascript">
+var netJazzAjaxConfig = {
+    base: "",
+    skipStyles: true,
+    params: "etag=20141015.053149&lang=en&country=US"
+};
+CKEDITOR_BASEPATH = window.CKEDITOR_BASEPATH || "/web/com.ibm.oneui.ckeditor/editor/"; 
+</script>
+<!-- local script service: /web/_xdloader2?etag=20141015.053149&lang=en&country=US&_proxyURL=https%3A%2F%2Fdubxpcvm803.mul.ie.ibm.com%3A9444%2Fconnections%2Fresources&include=lconn.core.globalization.preferencesApp%7E&html=true -->
+<script type="text/javascript" src="/web/_js/?include=dojo.main~&etag=20141015.053149&_proxyURL=https%3A%2F%2Fdubxpcvm803.mul.ie.ibm.com%3A9444%2Fconnections%2Fresources&ss=20141015.053149&lang=en&country=US&variant=&debug=true"></script>
+<script type="text/javascript" src="/web/_js/?include=net.jazz.ajax.xdloader~&etag=20140620.101248&exclude=dojo.main~&_proxyURL=https%3A%2F%2Fdubxpcvm803.mul.ie.ibm.com%3A9444%2Fconnections%2Fresources&ss=20140620.101248&lang=en&country=US&variant=&debug=true"></script>
+<script type="text/javascript" src="/web/_js/?include=ic-core.globalization.preferencesApp~&etag=20141015.053149&exclude=dojo.main~net.jazz.ajax.xdloader~&_proxyURL=https%3A%2F%2Fdubxpcvm803.mul.ie.ibm.com%3A9444%2Fconnections%2Fresources&ss=20141015.053149&lang=en&country=US&variant=&debug=true"></script>
+
+
+   <div id="lotusFooter" class="lotusFooter lotusHidden" role="contentinfo">
+      <ul><li><a href="http://dubxpcvm803.mul.ie.ibm.com:9081/homepage/">Home</a></li><li><a href="javascript:;" onclick="javascript:openHelpWindow(); return false;" class="">Help</a></li><li><a href="http://www-10.lotus.com/ldd/lcforum.nsf">IBM Support Forums</a></li> <li id="lotusBannerFooterMetrics" style="display:none"><a class="lotusMetricsReaderLink" href="http://lcauto11.swg.usma.ibm.com/metrics/">Server Metrics</a></li><li id="lconnFooterMobile" class="lotusHidden"><a id="lconnMobileRedirectLink" href="javascript:;">Mobile UI</a></li><li><a href="http://www-306.ibm.com/software/lotus/products/connections/">IBM Connections on ibm.com</a></li><li><a href="http://www.lotus.com/ldd/doc/cct/nextgen.nsf/feedback_choice?OpenForm&amp;Context=footer+ventura+NoTitle+4.5">Submit Feedback</a></li></ul><script type="text/javascript">
+      require([
+               "ic-core/header/apps",
+               "ic-core/auth",
+               "dojo/domReady!"
+               ], function(apps, auth) {
+         apps.updateLoginRegion();
+         apps.updateBannerByRoles();
+      });
+      </script>
+   </div>
+</body>
+</html>

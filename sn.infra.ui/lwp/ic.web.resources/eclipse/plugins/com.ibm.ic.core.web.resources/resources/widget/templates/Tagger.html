@@ -1,0 +1,15 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusTags ${additionalClasses}" id="${id}">
+<div class="lotusFormError" style="display:none;" data-dojo-attach-point="errorNode"></div>
+<label data-dojo-attach-point="labelNode">${_strings.label}</label>
+<span role="list" data-dojo-attach-point="tagsNode"></span> 
+<span role="listitem" style="display:none;" data-dojo-attach-point="tagTemplateNode"><a href="javascript:;"></a></span>
+<span style="display:none;" role="separator" aria-hidden="true" data-dojo-attach-point="separatorTemplateNode">${_strings.separator}</span>
+<a style="display:none;" role="button" class="lotusDelete" href="javascript:;" title="${_strings.remove}" data-dojo-attach-point="deleteTemplateNode"><img alt="${_strings.remove}" title="${_strings.remove}" src="${_blankGif}" role="presentation"><span class="lotusAltText">${_strings.removeAlt}</span></a>
+<a style="display:none;" href="javascript:;" role="button" title="${_strings.addTooltip}" class="lotusIndent10" data-dojo-attach-point="addNode" data-dojo-attach-event="click:edit">${_strings.addLabel}</a>
+<form style="display: none;" data-dojo-attach-point="formNode" data-dojo-attach-event="submit:submit">
+<input type="text" size="${size}" id="${id}_tag" name="${id}_tag" autocomplete="off" aria-expanded="false" tabindex="0" value="" class="lotusText" title="${_strings.label}" aria-invalid="false" data-dojo-attach-point="inputNode">
+<input type="submit" style="margin-right: 5px; margin-left: 5px;" value="${_strings.save}">
+<a role="button" href="javascript:;" title="${_strings.cancelTooltip}" data-dojo-attach-event="click:cancelEdit">${_strings.cancel}</a>
+</form>
+</div>

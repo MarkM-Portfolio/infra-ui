@@ -1,0 +1,122 @@
+//size
+    //separator module, divides columns 
+    $larger: 50px;
+    $smaller: 20px;
+
+    $border-selected-width: 4px;
+
+    $box-shadow-width-hover: 2px;
+    $box-shadow-width: 1px;
+
+    $left-col-width: 220px;
+    $left-col-padding: 20px;
+    $left-col-margin: 10px;
+    $left-col-outer-width: $left-col-width + $left-col-padding;
+    $left-col-outer-after-width: $left-col-width + $left-col-padding + $left-col-margin + 5;
+
+
+//mixin
+
+@mixin border-radius($n) {
+    -moz-border-radius: $n;
+    -webkit-border-radius: $n;
+    border-radius: $n; }
+
+@mixin box-shadow($s) {
+    -moz-box-shadow: $s;
+    -webkit-box-shadow: $s;
+    box-shadow: $s;
+}
+
+/*this mixin avoid inheritance in small button*/
+@mixin colorLightButton {
+    border-width: 0;
+    background-color: #fff;
+    color: $action-color;
+    text-align: center;
+    @include border-radius(0);
+    background-image: none;
+    box-shadow: 0 0 0 $box-shadow-width $action-color inset;
+    transform: translateZ(0px);
+    transition-duration: 0.3s;
+    transition-property: box-shadow; 
+    font-family: "Helvetica Neue Regular", Helvetica, Arial;
+}
+
+@mixin colorLightButtonGray {
+    border-width: 0;
+    background-color: #fff;
+    color: $gray-ongray;
+    text-align: center;
+    @include border-radius(0);
+    background-image: none;
+    box-shadow: 0 0 0 $box-shadow-width $gray-ongray inset;
+    transform: translateZ(0px);
+    transition-duration: 0.3s;
+    transition-property: box-shadow; 
+    font-family: "Helvetica Neue Regular", Helvetica, Arial;
+}
+
+
+@mixin lightButton {
+    @include colorLightButton;
+    margin: 0 4px 3px 1px;
+    padding: 10px 20px; /*this button always has border*/
+    font-size: 1em;
+    font-weight: normal;
+        &:hover, &:focus{
+            box-shadow: 0 0 0 $box-shadow-width-hover $action-color inset;
+            background: none #fff;
+            color: $action-color;
+        }
+        &:active {
+           box-shadow: 0 0 0 $box-shadow-width $action-color inset;
+           background-color: $button-pressed;
+        }
+        &.lotusBtnDisabled, &.lotusBtnDisabled:hover {
+            background: none repeat scroll 0 0 $white;
+            box-shadow: 0 0 0 $box-shadow-width $medium-icon inset;
+            color: $medium-icon;
+            outine: none;
+        }
+}
+@mixin LightBottonSmall {
+    @include colorLightButton;
+    padding: 5px 10px; /*this button always has border*/
+    font-size: 1em;
+    line-height: 1em;
+    font-weight: normal;
+}
+@mixin LightBottonSmallGray {
+    @include colorLightButtonGray;
+    padding: 5px 10px; /*this button always has border*/
+    font-size: 1em;
+    line-height: 1em;
+    font-weight: normal;
+}
+
+@mixin blueButton {
+    background: none repeat scroll 0 0 $action-color;
+    text-align: center;
+    margin: 0 4px 3px 1px;
+    padding: 10px 20px;
+    border: 0 none;
+    @include border-radius(0);
+    box-shadow: none;
+    color: #fff;
+    font-family: "Helvetica Neue Bold",Helvetica,Arial;
+    font-size: 1em;
+    font-weight: normal;
+    &:hover {
+        background: none repeat scroll 0 0 $action-button-hover;
+        transform: translateZ(0px);
+        transition-duration: 0.3s;
+        transition-property: box-shadow;
+    }
+    &:active {
+        background: $action-button-hover;    
+        transform: translateZ(0px);
+        transition-duration: 0.3s;
+        transition-property: box-shadow;
+    }
+}

@@ -1,0 +1,230 @@
+<html>
+<!-- Copyright IBM Corp. 2010, 2015  All Rights Reserved.              -->
+<body>
+   <script src="../../../dojo/dojo.js.uncompressed.js"></script>
+   <script src="auth.js"></script>
+   <script>
+      dojo.require("com.ibm.ajax.auth");
+      dojo.require("dojo.cookie");
+      
+      dojo.declare("MockXhr",null,{
+         constructor: function(opts) {
+            if (opts) dojo.mixin(this, opts);
+            this.headers = this.headers || {};
+            if (this.contentType)
+               this.headers["Content-Type"] = this.contentType;
+         },
+         getResponseHeader: function(s) {
+            return this.headers[s];
+         }
+      });
+      
+      dojo.declare("XmlResponse",null,{
+         constructor: function(opts) {
+            this.documentElement = {};
+            if (opts) dojo.mixin(this, opts);
+         }
+      });
+      function assertTrue(bool, s) {if (!bool) throw s || "Condition was false";}
+      function assertFalse(bool, s) {if (bool) throw s || "Condition was true";}
+       
+      var ciaa = com.ibm.ajax.auth;
+      var origBrowser = {isIE: dojo.isIE, isFF: dojo.isFF, isMoz: dojo.isMoz, isSafari: dojo.isSafari};
+      function browser(type, ver) {
+         dojo.isIE = false;
+         dojo.isFF = false;
+         dojo.isSafari = false;
+         dojo["is"+type] = ver;
+      }
+      function browserReset() {
+         dojo.mixin(dojo, origBrowser);
+      }
+      var context = {};
+      function authenticationHandler(response, ioArgs, onauthenticated) {
+         context.auth = {called: true, args: arguments};
+      }
+      ciaa.setAuthenticationHandler(authenticationHandler);
+      
+      function test(testCase) {
+         context = {};
+         var m = testCase.toString().match(/^\s*function\s+([^\s\(]+)/);
+         var name = m ? m[1] : "";
+         try {
+            testCase.apply({});
+            document.writeln("["+name+"] success<br>");
+         } catch (e) {
+            document.writeln("["+name+"] failed: "+e+"<br>");
+            console.error(e);
+         }
+      }
+      
+      function assertNormalCall(handleAs, response, xhr, mix) {
+         context = {};
+         var handled = false;
+         var args = ciaa.prepareSecure({url: "/test/1", handleAs:handleAs,handle: function() {handled = true}});
+         dojo.mixin(args, mix || {});
+         args.handle(response, {xhr: xhr, args: args});
+         assertTrue(handled);
+         assertFalse(context.auth, "Authentication was detected");
+      }
+      function assertAuthDetect(handleAs, response, xhr, mix) {
+         context = {};
+         var handled = false;
+         var args = ciaa.prepareSecure({url: "/test/1", handleAs:handleAs,handle: function() {handled = true}});
+         dojo.mixin(args, mix || {});
+         args.handle(response, {xhr: xhr, args: args});
+         assertTrue(handled);
+         assertTrue(context.auth, "Authentication was not detected");
+      }
+      
+      Error.prototype.makeType = function(type) {this.dojoType = type; return this;};
+      
+      test(function simpleTests() {
+         // standard requests succeed
+         assertNormalCall("xml", new XmlResponse(), new MockXhr());
+         assertNormalCall("xml", new XmlResponse(), new MockXhr({status:200}));
+         assertNormalCall("xml", new XmlResponse(), new MockXhr({status:299}));
+         assertNormalCall("xml", new XmlResponse(), new MockXhr({status:300}));
+         
+         // if no content type is set, detection will not happen
+         assertNormalCall("xml", "<html></html>", new MockXhr({status:300}));
+         assertNormalCall("xml", "<html></html>", new MockXhr({status:199}));
+         assertNormalCall("xml", "<html></html>", new MockXhr({status:null}));
+         assertNormalCall("xml", {}, new MockXhr({status:null}));
+         assertAuthDetect("xml", null, new MockXhr({contentType: "text/html",status:200}));
+
+         // a 302 status code always trigger auth detection
+         assertAuthDetect("xml", "<html></html>", new MockXhr({status:302}));
+         assertAuthDetect("xml", "<html></html>", new MockXhr({status:302, contentType: "text/html"}));
+         assertAuthDetect("xml", "<html></html>", new MockXhr({status:302, contentType: "application/xml"}));
+
+         // The content type must be "text/html" or a variant thereof in order to trigger login
+         assertAuthDetect("xml", "<html></html>", new MockXhr({contentType: "text/html",status:200}));
+         assertAuthDetect("xml", "<html></html>", new MockXhr({contentType: "text/html;charset=UTF-8",status:200}));
+         assertNormalCall("xml", "<html></html>", new MockXhr({contentType: "text/xml",status:200}));
+         assertNormalCall("xml", "<html></html>", new MockXhr({contentType: "application/xhtml+xml",status:200}));
+
+         // if the body content is missing this is a login redirect
+         assertAuthDetect("xml", null, new MockXhr({contentType: "text/html",status:200}));
+
+         // HTML returned as HTML and text requested is impossible to tell
+         assertNormalCall("text", "<html></html>", new MockXhr({contentType: "text/html",status:200}));
+         assertNormalCall("text", "<html></html>", new MockXhr({contentType: "text/html;charset=UTF-8",status:200}));
+         
+         // Unknown content types cause no login detection
+         assertNormalCall("xml", "<html></html>", new MockXhr({contentType: "application/json",status:200}));
+         assertNormalCall("xml", "<html></html>", new MockXhr({contentType: "image/png",status:200}));
+
+         // dojo errors are assumed not to be login redirects unless 
+         assertNormalCall("xml", new Error().makeType("cancel"), new MockXhr({contentType: "text/html",status:200}));
+         assertNormalCall("xml", new Error().makeType("timeout"), new MockXhr({contentType: "text/html",status:200}));
+         assertAuthDetect("xml", new Error().makeType("unknown"), new MockXhr({contentType: "text/html",status:200}));
+      });
+      
+      test(function all401TriggersAuthDetect() {
+         // xml responses with 401 are assumed to be logins
+         assertAuthDetect("xml", new XmlResponse(), new MockXhr({contentType: "application/xml",status:401}));
+         assertAuthDetect("xml", null, new MockXhr({contentType: "application/xml",status:401}));
+         assertAuthDetect("xml", null, new MockXhr({status:401}));
+
+         // json responses with 401 are assumed to be logins
+         assertAuthDetect("json", {}, new MockXhr({contentType: "application/json",status:401}));
+         assertAuthDetect("json", null, new MockXhr({contentType: "application/json",status:401}));
+         assertAuthDetect("json", null, new MockXhr({status:401}));
+
+         // text responses with 401 are unknown
+         assertNormalCall("text", "", new MockXhr({contentType: "text/html",status:401}));
+         assertNormalCall("text", null, new MockXhr({contentType: "text/html",status:401}));
+         assertNormalCall("text", null, new MockXhr({status:401}));
+      });
+
+      test(function statusCodeZeroOnIE() {
+         // the status code may be 0 or "unknown" if a redirect happens across security domains
+         browser("IE",6);
+         assertAuthDetect("xml", new XmlResponse(), new MockXhr({contentType: "application/xml",status:0}));
+         assertAuthDetect("xml", new XmlResponse(), new MockXhr({contentType: "application/xml",status:"unknown"}));
+         browser("IE",7);
+         assertAuthDetect("xml", new XmlResponse(), new MockXhr({contentType: "application/xml",status:0}));
+         assertAuthDetect("xml", new XmlResponse(), new MockXhr({contentType: "application/xml",status:"unknown"}));
+         browser("IE",8);
+         assertAuthDetect("xml", new XmlResponse(), new MockXhr({contentType: "application/xml",status:0}));
+         assertAuthDetect("xml", new XmlResponse(), new MockXhr({contentType: "application/xml",status:"unknown"}));
+         browser("FF",2);
+         assertNormalCall("xml", new XmlResponse(), new MockXhr({contentType: "application/xml",status:0}));
+         assertNormalCall("xml", new XmlResponse(), new MockXhr({contentType: "application/xml",status:"unknown"}));
+      });
+      browserReset();
+
+      test(function handleStatusCodeThrows() {
+         var mock = new MockXhr({contentType: "application/xml",status:0});
+         mock.__defineGetter__("status", function() {throw "Unable to get status";});
+         assertNormalCall("xml", new XmlResponse(), mock);
+         assertNormalCall("xml", null, mock);
+
+         var mock = new MockXhr({contentType: "text/html",status:0});
+         mock.__defineGetter__("status", function() {throw "Unable to get status";});
+         assertNormalCall("text", new XmlResponse(), mock);
+         assertNormalCall("xml", "", mock);
+      });
+
+      test(function isExpectedResponseCalled() {
+         context = {};
+         var handled = false;
+         var args = ciaa.prepareSecure({url: "/test/1", handleAs: "text", handle: function() {handled = true}}, function() {context.isExpected = true; return false;});
+         args.handle({}, {xhr: new MockXhr(), args: args});
+         assertTrue(handled);
+         assertTrue(context.isExpected, "isExpected was not invoked");
+         assertFalse(context.auth, "Authentication was detected");
+
+         context = {};
+         var handled = false;
+         var args = ciaa.prepareSecure({url: "/test/1", handleAs: "text", handle: function() {handled = true}}, function() {context.isExpected = true; return true;});
+         args.handle({}, {xhr: new MockXhr(), args: args});
+         assertTrue(handled);
+         assertTrue(context.isExpected, "isExpected was not invoked");
+         assertTrue(context.auth, "Authentication was not detected");
+      });
+      
+      test(function isExpectedContentTypeRespected() {
+         assertNormalCall("text", "<html></html>", new MockXhr({contentType: "text/html",status:200}));
+         assertAuthDetect("text", "<html></html>", new MockXhr({contentType: "text/html",status:200}), {expectedContentType: "xml"});
+      });
+            
+      test(function dojoErrorTypeReturned() {
+         context = {};
+         var handled = false;
+         var args = ciaa.prepareSecure({url: "/test/1", handleAs: "text", handle: function(response) {
+            handled = true;
+            assertTrue(response instanceof Error, "Response must be of type Error");
+            assertTrue(response.dojoType == "unauthenticated", "dojoType must be \"unauthenticated\"");
+         }}, function() {return true;});
+         args.handle({}, {xhr: new MockXhr(), args: args});
+         assertTrue(handled);
+         assertTrue(context.auth, "Authentication was not detected");
+      });
+            
+      test(function isCustomAuthCheckCalled() {
+         assertAuthDetect("xml", "<html></html>", new MockXhr({contentType: "text/html",status:200}));
+         assertNormalCall("xml", "<html></html>", new MockXhr({contentType: "text/xml",status:200}));
+         ciaa.addAuthenticationCheck(function() {return false;});
+         assertAuthDetect("xml", "<html></html>", new MockXhr({contentType: "text/html",status:200}));
+         assertNormalCall("xml", "<html></html>", new MockXhr({contentType: "text/xml",status:200}));
+         ciaa.addAuthenticationCheck(function() {return true;});
+         assertAuthDetect("xml", "<html></html>", new MockXhr({contentType: "text/html",status:200}));
+         assertAuthDetect("xml", "<html></html>", new MockXhr({contentType: "text/xml",status:200}));
+      });
+      ciaa.authenticationChecks = [];
+                  
+      browser("FF",3.5);
+
+      browser("FF",3.0);
+
+      browser("FF",2.0);
+      browser("IE",6.0);
+      browser("IE",7.0);
+      browser("IE",8.0);
+      browser("Safari",4.0);
+      
+   </script>
+</body>
+</html>

@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- HCL Technologies Inc. Confidential                                -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright HCL Technologies. 2022                                  -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<Module>
+   <ModulePrefs title="__MSG_title__" description="__MSG_description__">
+      <Require feature="dynamic-height" />
+      <Require feature="dynamic-width" />
+      <Require feature="selection" />
+      <Require feature="views" />
+      <Require feature="opensocial-templates">
+           <Param name="requireLibrary">../com.ibm.social.gadget/loader/ResourceLoaderTemplate.xml</Param>  
+      </Require>
+      <Require feature="opensocial-data"/>
+      <Require feature="ibm.connections.sharedialog" />
+      <Require feature="com.ibm.connections.sharedialog" />
+      <Require feature="sso-domain" />
+      <Require feature="cre.service.sso" />
+      <Locale messages="./nls/shareUploadFile.xml"/>
+      <Locale lang="ar" messages="./nls/ar/shareUploadFile.xml" language_direction="rtl"/>
+      <Locale lang="bg" messages="./nls/bg/shareUploadFile.xml"/>
+      <Locale lang="bs" messages="./nls/bs/shareUploadFile.xml"/>
+      <Locale lang="ca" messages="./nls/ca/shareUploadFile.xml"/>
+      <Locale lang="cs" messages="./nls/cs/shareUploadFile.xml"/>
+      <Locale lang="da" messages="./nls/da/shareUploadFile.xml"/>
+      <Locale lang="de" messages="./nls/de/shareUploadFile.xml"/>
+      <Locale lang="el" messages="./nls/el/shareUploadFile.xml"/>
+      <Locale lang="eu" messages="./nls/eu/shareUploadFile.xml"/>
+      <Locale lang="es" messages="./nls/es/shareUploadFile.xml"/>
+      <Locale lang="fi" messages="./nls/fi/shareUploadFile.xml"/>
+      <Locale lang="fr" messages="./nls/fr/shareUploadFile.xml"/>
+      <Locale lang="he" messages="./nls/he/shareUploadFile.xml"  language_direction="rtl"/>
+      <Locale lang="hu" messages="./nls/hu/shareUploadFile.xml"/>
+      <Locale lang="hr" messages="./nls/hr/shareUploadFile.xml"/>
+      <Locale lang="id" messages="./nls/id/shareUploadFile.xml"/>
+      <Locale lang="it" messages="./nls/it/shareUploadFile.xml"/>
+      <Locale lang="iw" messages="./nls/iw/shareUploadFile.xml" language_direction="rtl"/>
+      <Locale lang="ja" messages="./nls/ja/shareUploadFile.xml"/>
+      <Locale lang="kk" messages="./nls/kk/shareUploadFile.xml"/>
+      <Locale lang="ko" messages="./nls/ko/shareUploadFile.xml"/>
+      <Locale lang="mk" messages="./nls/mk/shareUploadFile.xml"/>
+      <Locale lang="nb" messages="./nls/nb/shareUploadFile.xml"/>
+      <Locale lang="nl" messages="./nls/nl/shareUploadFile.xml"/>
+      <Locale lang="no" messages="./nls/no/shareUploadFile.xml"/>
+      <Locale lang="pl" messages="./nls/pl/shareUploadFile.xml"/>
+      <Locale lang="pt" messages="./nls/pt/shareUploadFile.xml"/>
+      <Locale lang="pt" country="br" messages="./nls/pt-br/shareUploadFile.xml"/>
+      <Locale lang="ro" messages="./nls/ro/shareUploadFile.xml"/>
+      <Locale lang="ru" messages="./nls/ru/shareUploadFile.xml"/>
+      <Locale lang="sl" messages="./nls/sl/shareUploadFile.xml"/>
+      <Locale lang="sr" messages="./nls/sr/shareUploadFile.xml"/>
+      <Locale lang="sk" messages="./nls/sk/shareUploadFile.xml"/>
+      <Locale lang="sv" messages="./nls/sv/shareUploadFile.xml"/>
+      <Locale lang="th" messages="./nls/th/shareUploadFile.xml"/>
+      <Locale lang="tr" messages="./nls/tr/shareUploadFile.xml"/>
+      <Locale lang="zh" messages="./nls/zh/shareUploadFile.xml"/>
+      <Locale lang="zh" country="tw" messages="./nls/zh-tw/shareUploadFile.xml"/>
+       <Optional feature="content-rewrite">
+         <Param name="exclude-url">*</Param>
+      </Optional>
+      <Optional feature="actions">
+         <Param name="action-contributions">
+               <![CDATA[
+                  <actions>
+                  <action id="uploadFile" path="container/sharebox" label="__MSG_action_uploadFile_label__" 
+                     tooltip="__MSG_action_uploadFile_tooltip__" />
+                  </actions>
+               ]]>
+            </Param>
+         </Optional>
+      <Optional feature="smartcloud3" />
+   </ModulePrefs>
+   <UserPref name="debug" required="false" type="hidden" default_value="false" datatype="bool"/>
+   <UserPref name="highContrast" required="false" type="hidden" default_value="false" datatype="bool"/>
+   <UserPref name="loadingGifUrl" required="false" type="hidden" default_value="" datatype="string"/>
+   <UserPref name="blankGifUrl" required="false" type="hidden" default_value="" datatype="string"/>
+   <Content  view="default" type="html">
+      <![CDATA[
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+      <style type="text/css">
+         .uploadFileGadgetDiv div.lotusLoading {
+            background-repeat: no-repeat;
+            min-height: 60px;
+            width: 100%;
+            background-position: center center;
+         }
+         .lotusui30 .uploadFileGadgetDiv .lotusDialog .lotusDialogFooter {
+            margin-left: 0px;
+            margin-right: 0px;
+         }
+         /*the next two lines are for providing alternate text for background images when images are turned off - requires javascript to test for this and assign the lotusuixx_imagesOff class to the html tag*/
+         .uploadFileGadgetDiv .lotusAltText{display:none;}
+         .uploadFileGadgetDiv .lotusImagesOff .lotusAltText, .lotusImagesOff .uploadFileGadgetDiv .lotusAltText{display:inline;}         
+      </style>
+
+      <div id="__MODULE_ID__gadgetDiv" class="uploadFileGadgetDiv">
+         <div id="__MODULE_ID__gadgetWaiting" class="lotusLoading"><span id="__MODULE_ID__loadingAltTxt" class="lotusAltText">__MSG_loading__</span></div>
+         <div id="__MODULE_ID__gadgetError" style="display:none">
+            <div class="lotusMessage2" role="alert">
+               <img class="lotusIcon lotusIconMsgError" src="" alt="__MSG_error_alt__" /><span class="lotusAltText"></span> <div class="lotusMessageBody">__MSG_error_msg__</div>
+            </div>
+         </div>
+         <div id="__MODULE_ID__gadgetBody" style="display:none"></div>
+      </div>
+
+      <script type="text/javascript">
+	      function getBoolean(value) {
+	         if (!value)
+	            return false;
+	            
+	         return "TRUE" == value.toUpperCase();
+	      }
+      
+	      function isValidURL(value) {
+	         if (!value) 
+	            return false;
+	            
+	         console.debug("isValidURL(" + value + ")");
+	         
+	         var targetHost = null;
+	         
+	         try {
+	         if (URL) {
+	            var url = new URL(value);
+	            targetHost = url.host;
+	         } 
+	         else {
+	            var url = document.createElement(value);
+	               url.style.display = "none";
+	               url.href = value;
+	               
+	            targetHost = url.hostname;
+	         }}
+			  catch (e){
+				console.debug("exception occur when parse " + value + " as url " + e);
+			 }
+			 
+	         
+	         return targetHost && targetHost == window.location.host; // In the future, we can check whitelist of CORS. 
+	      }
+      
+         (function() {
+            try {        
+               if(getBoolean("__UP_highContrast__")) {
+                  //If in high contrast mode, show alt text
+                  document.getElementById("__MODULE_ID__loadingAltTxt").className = "";
+               }
+            
+               if (isValidURL("__UP_loadingGifUrl__")) {
+                  document.getElementById("__MODULE_ID__gadgetWaiting").style.backgroundImage = "url(__UP_loadingGifUrl__)";
+               }
+             
+               if (isValidURL("__UP_blankGifUrl__")) {
+                  document.getElementsByClassname("lotusIcon lotusIconMsgError")[0].src = "url(__UP_blankGifUrl__)";
+               }
+            }
+    		catch (e){
+    			console.debug("exception processing UP parms  " + e);
+			}
+         })();
+      </script>
+
+      <script type="text/os-data" xmlns:os="http://ns.opensocial.org/2008/markup">
+         <os:HttpRequest key="icResourceData" method="GET" href="../../ic/forms/api/resloader/UploadFileGadget"/>
+         <os:ViewerRequest key="viewer" />
+      </script>
+      <script type="text/os-template" xmlns:lconn="http://www.ibm.com/ibm/connections" >
+         <lconn:importResources/>
+      </script>
+
+      <script type="text/javascript">
+         var widget__MODULE_ID__, loaded__MODULE_ID__, errorLoading__MODULE_ID__;
+         
+         gadgets.util.registerOnLoadHandler(function() {
+             if (gadgets.actions) {
+                var uploadFileAction = {
+                 id: "uploadFile",
+                   callback: updateContext
+                };
+                gadgets.actions.updateAction(uploadFileAction);
+             }
+         });
+
+         function initFileContent(context) {
+            if(!loaded__MODULE_ID__)
+               return;
+            var widget__openHelpLauncher;
+            if(!widget__MODULE_ID__) {
+               //Add connects to cancel closes when tooltip is open and enable when closed
+               if(dojo.getObject("lconn.share.scenehelper.applyTipPopup")) {
+                  var tipPopupFunc = lconn.share.scenehelper.applyTipPopup;
+
+                  lconn.share.scenehelper.applyTipPopup = function(app, el, a, topicId) {
+                     var helpLauncher = tipPopupFunc.apply(this, arguments);
+                        dojo.connect(helpLauncher, "onOpen", dojo.hitch(null, function(currentLauncher) {
+                           widget__openHelpLauncher = currentLauncher;
+                        }, helpLauncher));                     
+                        dojo.connect(helpLauncher, "focusMenu", dojo.hitch(null, function(currentLauncher) {
+                           ibm.connections.sharedialog.preventCloseOnEsc()
+                        }, helpLauncher));
+                        dojo.connect(helpLauncher, "onClose", function() { 
+                           ibm.connections.sharedialog.enableCloseOnEsc();
+                        });
+                     return helpLauncher;
+                  };
+               }
+
+               var gadgetBody = dojo.byId("__MODULE_ID__gadgetBody");
+               var div = dojo.create("div", {style:{minWidth: "450px"}}, gadgetBody);
+               
+               // Create/reset internal app
+               var filesCfg = lconn.core.config.services.files;
+               var app = new lconn.files.uploadfile.UploadFileApp({ service: filesCfg, login: function() {
+                     var handler = new cre$.sso.ReauthHandler().createHandlerOnClick()();
+                  }});
+               app.start(); 
+               var uiEnabled = dojo.cookie('cnx8-ui') == 1;
+               var opts =
+               {
+                  app: app,
+                  showTags: true,
+                  inviteUnregisteredUser: false,
+                  showShare: (app.authenticatedUser && app.authenticatedUser.isExternal) ? {
+                     "private": true,
+                     "people": true,
+                     "public": false,
+                     "communities": false
+                  } : {
+                     "private": true,
+                     "people": true,
+                     "public": true,
+                     "communities": false
+                  },
+                  setFocus: false,
+                  showExternal: true,
+                  showProgressBar: true,
+                  allowReplace: true,
+                  showActionButtons: true,
+                  onLoaded: function () {
+                     var gadgetDiv = dojo.byId("__MODULE_ID__gadgetDiv");
+                     dojo.style(dojo.byId("__MODULE_ID__gadgetWaiting"), "display", "none");
+                     dojo.style(dojo.byId("__MODULE_ID__gadgetError"), "display", "none");
+                     dojo.style(dojo.byId("__MODULE_ID__gadgetBody"), "display", "");
+                     var height = gadgetDiv.offsetHeight;
+                     var width = gadgetDiv.offsetHeight;
+                     if (gadgets.window.adjustHeight)
+                        gadgets.window.adjustHeight();
+                     if (gadgets.window.adjustWidth)
+                        gadgets.window.adjustWidth(500);
+                  },
+                  resize: function () {
+                     if (gadgets.window.adjustHeight)
+                        gadgets.window.adjustHeight();
+                  },
+                  onCancel: function() {
+                     this.clear();
+                     if(!this.skipClose) {
+                        ibm.connections.sharedialog.close();
+                        if (uiEnabled) {
+                           parent.dijit.byId('dijit_Dialog').hide();
+                        } 
+                     }
+                  },                  
+                  onUploadComplete: function(uploadedFiles, allFiles) {
+                     if(!uploadedFiles) {
+                        this.resize();
+                        return;
+                     }
+                     this.clear();
+                     ibm.connections.sharedialog.close();
+                     if (uiEnabled) {
+                           parent.dijit.byId('dijit_Dialog').hide();
+                     } 
+                  },
+                  onUploadSuccess: function(file) {
+                     if(file && file.getId)
+                        ibm.connections.sharedialog.onActivityEntryAddition(file.getId());
+                  },
+                  setMessage:function(opts) {
+                     var messageHtml, span;
+                     if(!opts)
+                        return;
+
+                     if(opts.message) {
+                        ibm.connections.sharedialog.displayMainPageMessage(opts.type,opts.message);
+                     } else if(opts.messageNode && opts.messageNode.nodeType) {
+                        if(opts.messageNode.nodeType == 11) {
+                           span = dojo.create("span");
+                           span.appendChild(opts.messageNode);
+                           messageHtml = span.innerHTML; 
+                        }
+                        else {
+                           messageHtml = opts.messageNode.innerHTML;
+                        }
+
+                        if (uiEnabled) {
+                           this.displayMessage(opts.type, messageHtml);
+                        } else {
+                           com.ibm.connections.sharedialog.displayMainPageMessageHtml(opts.type,messageHtml);
+                        }
+                     }
+                  },
+                  onDirty: function(isDirty) {
+                     ibm.connections.sharedialog.setDirty("uploadFile", isDirty);
+                  }
+               };
+
+               var width = 450;
+               if (gadgetBody.parentElement) {
+                  width = dojo.contentBox(gadgetBody.parentElement).w - 20;
+               }
+               opts.width = width;
+
+               widget__MODULE_ID__ = new lconn.files.widget.UploadFile(opts, div);
+               dojo.subscribe("lconn/event/widget/resize", function(event){
+                  var gadgetIframe = window.frameElement;
+                  if(!gadgetIframe)
+                     return;
+                  if(event && event.src && event.size) {
+                     var orginalSize = dojo.position(gadgetIframe);
+                     var height = event.size.height > orginalSize.h ? event.size.height + 30 : event.size.height;
+                     var width = event.size.width + 30;
+                     dojo.setStyle(gadgetIframe, {"height": height + "px", "width": width + "px"});
+                  }
+               });
+               ibm.connections.sharedialog.registerCloseListener(dojo.hitch(widget__MODULE_ID__, function() {
+                  this.skipClose = true;
+                  this.sbForcedCancel = this.isActing();
+                  this.cancel();
+
+                  //Additional cancel is required to actually close and reset Files widget 
+                  //if original cancel was done while a request was in progress.  Reason:If request in progress, then cancel
+                  //will only stop submission and will not reset widget
+                  if(this.sbForcedCancel) {
+                     this.cancel();
+                  }
+
+                  this.skipClose = this.sbForcedCancel = false;
+               }));
+
+            } else {
+               if(widget__MODULE_ID__.updateContext){
+                  widget__MODULE_ID__.updateContext(context);
+               }
+               //If re-opening when a tooltip was previously opened, close the tooltip
+               if(widget__openHelpLauncher && widget__openHelpLauncher._closeMenu)
+                  widget__openHelpLauncher._closeMenu();
+               widget__MODULE_ID__.resize();
+            }
+         }
+         
+         function updateContext(selection) {
+            if(selection.type == "com.ibm.social.sharebox.context") {
+               if(loaded__MODULE_ID__)
+                  initFileContent(selection.dataObject);
+               else if(errorLoading__MODULE_ID__) {
+                  dojo.style(dojo.byId("__MODULE_ID__gadgetError"), "display", "none");
+                  dojo.style(dojo.byId("__MODULE_ID__gadgetWaiting"), "display", "");                  
+                  initUploadFileContent();
+               }
+            }
+         }
+         function initUploadFileContent() {
+            var errback= function() {
+               errorLoading__MODULE_ID__ = true;
+               dojo.style(dojo.byId("__MODULE_ID__gadgetWaiting"), "display", "none");
+               dojo.style(dojo.byId("__MODULE_ID__gadgetError"), "display", "");
+            };
+         
+            var callback = function() {
+               if(dojo.getObject("lconn.files.config")) {
+                  loaded__MODULE_ID__ = true;
+                  errorLoading__MODULE_ID__ = false;
+                  initFileContent();
+               } else {
+                  errback();
+               }
+            };
+         
+            //load Files configuration
+            if (!dojo.getObject("lconn.core.filesutil.loadConfig")) {
+               net.jazz.ajax.xdloader.load_async("com.ibm.social.sharebox.gadget.UploadFileBootstrap",function(){
+                  lconn.core.filesutil.loadConfig({
+                     callback: callback, 
+                     errback: errback
+                  });
+               });
+            } 
+            else {
+               lconn.core.filesutil.loadConfig({
+                  callback: callback, 
+                  errback: errback
+               });
+            }
+         }
+         
+         function onLoadUploadFile() {
+            com.ibm.social.sharebox.gadget.UploadFileBootstrap.loadGadget({});
+            initUploadFileContent();
+         }
+
+	      __init_uploadFile = function() {
+	          if (gadgets && gadgets.util) {              
+	              gadgets.util.registerOnLoadHandler(function(){
+	               var initComplete = com.ibm.social.gadget.loader.bootstrap.init();
+	                  initComplete.then(onLoadUploadFile);
+	               });
+	            } else {
+	            // retry until gadgets namespace is there 
+	            setTimeout("__init_uploadFile();", 50); 
+	           }    
+	      }  
+	      __init_uploadFile();
+
+         // TODO: Take this out when we can get a fix for the broken logic in this method.
+         //   The problem is that when you call adjustWidth not passing an opt_width value, 
+         //   you get into the if statement (using IE) that has the comment about quirks 
+         //   mode.  Here it will reset the newWidth to be 1 and then when it calls 
+         //   resize_iframe_width it sets the width to 1, then calls the callback function 
+         //   and recalls the adjustWidth method again passing no value for new width.  What 
+         //   it needs to do is to save the value of newWidth to a separate variable before 
+         //   newWidth gets reset to 1.  Then pass that new variable into the adjustWidth 
+         //   call in the callback.
+         // CRE defect: https://csnext.ibm.com/ccm6/resource/itemName/com.ibm.team.workitem.WorkItem/28411
+         // Connections defect: todo
+         gadgets.window.adjustWidth = function(opt_width) {
+            opt_width = parseInt(opt_width, 10);
+            var widthAutoCalculated = false;
+            var viewportWidth = gadgets.window.getViewportDimensions().width;
+            var newWidth = opt_width || gadgets.window.getWidth();
+            if (navigator.userAgent.indexOf('AppleWebKit') >= 0) {
+               viewportWidth++; // Adjust for 1px inaccuracy in Webkit browsers
+            }
+            var callback = null;
+            if (isNaN(opt_width) && viewportWidth >= newWidth) {
+               // Due to quirks in the width property, the auto-calculated width will
+               // never be smaller than the size of the viewport. In order to decrease
+               // the width to a fit size, we must first make the viewport too small (1px),
+               // then callback a function that increases the frame to the right width.
+               var savedWidth = newWidth;
+               callback = function() {
+                 gadgets.window.adjustWidth(savedWidth);
+               };
+               newWidth = 1;
+            }
+            gadgets.rpc.call(null, 'resize_iframe_width', callback, newWidth);
+         };         
+         </script>
+
+   ]]>
+</Content>  
+
+</Module>

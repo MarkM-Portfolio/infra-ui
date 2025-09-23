@@ -1,0 +1,84 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>MessageBox control</title>
+
+
+<script>
+djConfig.blankGif="";
+
+</script>
+${script:dojo.parser}
+${script:com.ibm.oneui.controls.MessageBox}
+
+<script>
+	dojo.addOnLoad(function() {
+		var bodyElem = document.getElementsByTagName("body")[0];
+		if (dojo.hasClass(bodyElem, "dijit_a11y")) {
+			dojo.addClass(bodyElem, "lotusImagesOff");
+		}
+		dojo.parser.parse();
+
+		// Creates a MessageBox with a string argument
+		new com.ibm.oneui.controls.MessageBox({
+			msg: "This MessageBox was created with a string argument"
+		}, dojo.byId('msg1'));
+		// Creates a MessageBox with a DOM node
+		new com.ibm.oneui.controls.MessageBox({
+			type: com.ibm.oneui.controls.MessageBox.TYPE.INFO,
+			msg: dojo.create('span', {innerHTML: "This MessageBox was created with a DOM node argument"})
+		}, dojo.byId('msg2'));
+		// Creates a MessageBox with a function returning a DOM node
+		new com.ibm.oneui.controls.MessageBox({
+			type: com.ibm.oneui.controls.MessageBox.TYPE.SUCCESS,
+			msg: function(d) {
+				var strong = dojo.create('strong', { innerHTML: "a function returning a DOM node" });
+				var span = dojo.create('span', {innerHTML: dojo.string.substitute("This MessageBox was created with ${0} as argument", [strong.outerHTML])});
+				return span;
+			}
+		}, dojo.byId('msg3'));
+		// Creates a MessageBox with a literal HTML snippet
+		new com.ibm.oneui.controls.MessageBox({
+			type: com.ibm.oneui.controls.MessageBox.TYPE.WARNING,
+			msg: '<strong>Note that you cannot inject HTML markup to prevent <img src="${_blankGif}" onload="alert(\'XSS\')"> XSS attacks!</strong>'
+		}, dojo.byId('msg4'));
+		// Creates a MessageBox with a string
+		new com.ibm.oneui.controls.MessageBox({
+			type: com.ibm.oneui.controls.MessageBox.TYPE.SHARED_EXTERNAL,
+			msg: 'This community is shared externally'
+		}, dojo.byId('msg5'));
+	});
+</script>
+
+
+<style>
+input {
+	width: 200px;
+}
+div.messages { width: 900px; margin: auto; }
+.lotusui30_body {background-color:#ffffff;}
+</style>
+
+${endhead}
+
+<h1>MessageBox Control</h1>
+<h2>Templated</h2>
+<div class="messages">
+	<div dojoType="com.ibm.oneui.controls.MessageBox" type="0" msg="This is an error message"></div>
+	<div dojoType="com.ibm.oneui.controls.MessageBox" type="1" msg="This is a warning message"></div>
+	<div dojoType="com.ibm.oneui.controls.MessageBox" type="2" msg="This is an informational message"></div>
+	<div dojoType="com.ibm.oneui.controls.MessageBox" type="3" msg="This is a success message"></div>
+	<div dojoType="com.ibm.oneui.controls.MessageBox" type="4" msg="This is externally shared content"></div>
+	<div dojoType="com.ibm.oneui.controls.MessageBox" type="0" msg="This is an error message. Yes, you can close it." canClose="true"></div>
+	<div dojoType="com.ibm.oneui.controls.MessageBox" type="0" msg="This is another error message" msgMore="This is some extra information, maybe an error code."></div>
+</div>
+<h2>Programmatic</h2>
+<div class="messages">
+	<div id="msg1"></div>
+	<div id="msg2"></div>
+	<div id="msg3"></div>
+	<div id="msg4"></div>
+	<div id="msg5"></div>
+</div>
+</body>
+${end}

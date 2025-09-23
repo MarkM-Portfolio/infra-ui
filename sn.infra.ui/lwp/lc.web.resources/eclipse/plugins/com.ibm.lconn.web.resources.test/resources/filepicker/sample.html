@@ -1,0 +1,540 @@
+${head}
+<!-- Copyright IBM Corp. 2013, 2015  All Rights Reserved.              -->
+${script:lconn.core.config}
+${script:lconn.core.config.features}
+${script:lconn.core.config.services}
+${script:dijit._Templated}
+${script:dijit.Dialog}
+${script:dojo.string}
+${script:dijit.form.ValidationTextBox}
+${script:com.ibm.ajax.auth}
+${script:com.ibm.oneui.util.proxy}
+${script:lconn.files.picker.external}
+<script type="text/javascript">
+
+dojo.addOnLoad(function() {
+   var auth = com.ibm.ajax.auth;
+
+   // fake gatekeeper feature values
+   //    default values
+   var gatekeeperFilesNestedFolder = false;
+   dojo.byId('newuistyle').checked = gatekeeperFilesNestedFolder;
+   {
+      if ( !window.gatekeeperConfig )
+      {
+         window.gatekeeperConfig = { 'files.nestedFolder': gatekeeperFilesNestedFolder };
+      }
+   }
+
+   window.onbeforeunload = function(event) {
+      console.log("onBeforeUnload triggered!");
+   };
+   
+   var service = dojo.getObject("lconn.core.config.services.files");   
+   
+   var forceSSL = dojo.getObject("lconn.core.config.forceConfidentialCommunications");
+   forceSSL = forceSSL || ('https:' == window.location.protocol);
+   
+   var baseUrl = forceSSL ? service.secureUrl : service.url;
+   
+   dojo.xhrGet({
+      url: com.ibm.oneui.util.proxy(baseUrl + "/form/api/people/feed?self=true&format=json"),
+      handleAs: "json",
+      handle: function (r, i) { 
+         if (auth.isAuthenticationRequired(r, i)) {
+            dojo.byId('login').style.display = '';
+            dojo.byId('picker').style.display = 'none';
+         } else {
+            dojo.byId('login').style.display = 'none';
+            dojo.byId('picker').style.display = '';
+         }
+      },
+      
+      sync: true
+   });
+
+   dojo.connect(dojo.byId('showVis'), 'onclick', function() {
+      if ( dojo.byId('showVis').checked ) {
+         dojo.byId('showIntent').removeAttribute("disabled");
+      }
+      else {
+         dojo.byId('showIntent').setAttribute("disabled", "true");
+         dojo.byId('showIntent').checked = false;
+      }
+   });
+   
+   dojo.connect(dojo.byId('dndUpload'), 'onclick', function() {
+      if ( dojo.byId('dndUpload').checked ) {
+         window.gatekeeperConfig["files-picker-dnd"] = true;
+      }
+      else {
+         window.gatekeeperConfig["files-picker-dnd"] = false;
+      }
+   });
+
+   dojo.connect(dojo.byId('loginBtn'), 'onclick', function(e) {
+      dojo.stopEvent(e);
+      
+      var en = dojo.byId('err');
+      en.style.display = 'none';
+      
+      dojo.xhrPost({
+         url: com.ibm.oneui.util.proxy(baseUrl + "/j_security_check"),
+         content: {
+            'j_username': dojo.byId('user').value,
+            'j_password': dojo.byId('pass').value
+         },
+         
+         handle: function(r,i) {
+            dojo.xhrGet({
+               url: com.ibm.oneui.util.proxy(baseUrl + "/form/api/people/feed?self=true&format=json"),
+               handleAs: "json",
+               handle: function (r, i) { 
+                  if (auth.isAuthenticationRequired(r, i)) {
+                     dojo.byId('login').style.display = '';
+                     dojo.byId('picker').style.display = 'none';
+                  } else {
+                     en.style.display = '';
+                     dojo.byId('login').style.display = 'none';
+                     dojo.byId('picker').style.display = '';
+                  }
+               },
+               
+               sync: true
+            });
+         },
+         
+         sync: true
+      });      
+   });
+
+   dojo.connect(dojo.byId('logout'), 'onclick',function (e){
+      dojo.stopEvent(e);
+      dojo.xhrGet({
+         url: com.ibm.oneui.util.proxy(baseUrl + "/ibm_security_logout"),
+         sync: true,
+         handle: function(r,i) {
+            dojo.byId('login').style.display = '';
+            dojo.byId('picker').style.display = 'none';
+            dojo.byId('selectedFiles').innerHTML = '';
+         }
+      });
+   });
+
+   //save method will return true|false, false means upload is not allowed currently, while true means everything's ready
+   dojo.connect(dojo.byId('save'), 'onclick', function (e) {
+     dojo.stopEvent(e);
+     window.upload.save();
+   });
+   //if delayUpload is ON, 3rd party needs to call startUpload to proceed the actual upload
+   dojo.connect(dojo.byId('upload'), 'onclick', function (e) {
+     dojo.stopEvent(e);
+     var opt = {};
+        var externalResourceId = dojo.byId('externalResourceId').value;
+        var externalResourceType = dojo.byId('externalResourceType').value;
+        var externalResourceUrl = dojo.byId('externalResourceUrl').value;
+        var communityId = dojo.byId('uploadcommunity').value;
+        var visibility = !!dojo.byId('uploadvisibilitypublic').checked ? "public": "private";
+        
+        if(externalResourceId && externalResourceType && externalResourceUrl){
+           opt.externalContainer = {
+              id: externalResourceId,
+              type: externalResourceType,
+              url: externalResourceUrl
+           }
+        }
+        if(communityId)
+           opt.community = communityId;
+        opt.visibility = visibility;        
+     window.upload.startUpload(opt);
+   });
+
+   //Create a compact file picker widget
+   dojo.connect(dojo.byId('compactwidget'), 'onclick', function(e){
+      dojo.stopEvent(e);
+
+      // fake gatekeeper feature values
+      {
+         // set FILES_NESTED_FOLDER to enable/disable the new UI style for the Picker dialogs
+         window.gatekeeperConfig['files.nestedFolder'] = !!dojo.byId('newuistyle').checked;
+      }
+
+      var communityId = dojo.byId('communityId').value;
+      var repository = undefined;
+      if ( !!communityId && communityId.length > 0 )
+      {
+         var repositoryJsonTxt = dojo.string.trim(dojo.byId("repositoryJson").value);
+         if (repositoryJsonTxt) eval("var repository = " + repositoryJsonTxt);
+         if ( !repository ) {
+           repository = {};
+         }
+         if ( !repository.communityId ) {
+           repository.communityId = communityId;
+         }
+      }
+
+      var mtString = dojo.string.trim(dojo.byId('allowedMimeTypes').value);
+      var excludeMenu = {"myfiles": !!dojo.byId('myfiles').checked, "pinnedFiles": !!dojo.byId('pinnedFiles').checked, "recentFiles": !!dojo.byId('pinnedFiles').checked,
+    	"sharedFiles": !!dojo.byId('myfiles').checked, "otherFiles": !!dojo.byId('otherFiles').checked, "publicFiles": !!dojo.byId('publicFiles').checked };
+
+      var mimeTypes = null;
+      if (mtString.length > 0)
+         mimeTypes = dojo.map(mtString.split("\n"), function (mt) { return dojo.string.trim(mt); });
+      if(!dojo.byId('compactfilecontainer').firstChild){
+         net.jazz.ajax.xdloader.load_async("lconn.core.filepickerwidget", function() {
+            lconn.core.filepickerwidget.create({
+               filesService: dojo.getObject("lconn.core.config.services.files"),
+               container: dojo.byId('compactfilecontainer'),
+               externalProgressNode: dojo.byId('externalProgressNode'),
+               externalOnly: !!dojo.byId('external').checked,
+               showExternal: !!dojo.byId('showIntent').checked,
+               publicOnly: !!dojo.byId('public').checked,
+               community: communityId,
+               uploadToCommunity: !!dojo.byId('uploadToCommunity').checked,
+               shareableOnly: !!dojo.byId('shareable').checked,
+               showVisibility: !!dojo.byId('showVis').checked,
+               showActionButtons: !!dojo.byId('showUploadButton').checked,
+               allowedMimeTypes: mimeTypes,
+               repository: repository,
+               showShareEditor: false,
+               oneuiVersion: 3,
+               delayUpload: !!dojo.byId('delayUpload').checked,
+               showActionButtons: !!dojo.byId('showUploadButton').checked,
+               showShare: !!dojo.byId('showShareTrue').checked || (!dojo.byId('showShareFalse').checked && {
+                  "private": !!dojo.byId('showPrivate').checked,
+                  people: !!dojo.byId('showPeople').checked,
+                  "public": !!dojo.byId('showPublic').checked
+               }),
+               showTags: !!dojo.byId('showTags').checked,
+               multi: !!dojo.byId('multi').checked,
+               defaultSourceId: dojo.byId('defaultSourceId').value,
+               excludeMenu:excludeMenu,
+
+               onUploadOpen: function(upload){
+                  window.upload = upload;
+                  var saveBtn = dojo.byId('save');
+                  var uploadBtn = dojo.byId('upload');
+                  dojo.connect(upload, 'setSubmitButtonEnabled', null, function(obj, set){
+                     if(set){
+                        dojo.removeClass(saveBtn, 'lotusBtnDisabled');
+                        if(dojo.byId('delayUpload').checked) //upload should not be called, when we disable delayUpload
+                           dojo.removeClass(uploadBtn, 'lotusBtnDisabled');
+                     }else{
+                        dojo.addClass(saveBtn, 'lotusBtnDisabled');
+                        dojo.addClass(uploadBtn, 'lotusBtnDisabled');
+                     }
+                  });
+               }, 
+               postCreate: function(widget){
+                  console.log("File picker widget created: ", widget);
+                  dojo.connect(widget, "onSelectionChange", this, function(){
+                     console.log("onSelectionChange", arguments);
+                  });
+               }, 
+               onUploadError: function(file, error){
+                  console.log("Upload got an error", file, error);
+               },
+               onUploadSuccess: function(file){
+                  console.log("Upload file success", file);
+               },
+               onUploadComplete: function(uploadedFiles, allFiles){
+                  console.log("Upload file complte", uploadedFiles, allFiles);
+               },
+               onSourceChange: function(){
+                  console.log("onSourceChange", arguments);
+               },
+               onSourceLoaded: function(){
+                  console.log("onSourceLoaded", arguments);
+               },
+               setMessage: function(){
+                  console.log("setMessage", arguments);
+               }
+            });
+         });
+      }
+   });
+
+   //Get the upload success message
+   dojo.subscribe('lconn/share/action/completed', function(e){ 
+      if(e.fileUpload){
+         var m = dojo.byId('message');
+         m.appendChild(e.messages.message(document));
+         m.appendChild(document.createElement('br'));
+      }
+   });
+
+   //File picker test
+   var onUploadOpen = function(){
+      console.log("Upload widget loaded", arguments)
+   };
+
+   dojo.connect(dojo.byId('pickFiles'), 'onclick', function (e) {
+      dojo.stopEvent(e);
+      try {
+
+      // fake gatekeeper feature values
+      {
+         // set FILES_NESTED_FOLDER to enable/disable the new UI style for the Picker dialogs
+         window.gatekeeperConfig['files.nestedFolder'] = !!dojo.byId('newuistyle').checked;
+      }
+
+      var communityId = dojo.byId('communityId').value;
+      var repository = undefined;
+      if ( !!communityId && communityId.length > 0 )
+      {
+	      var repositoryJsonTxt = dojo.string.trim(dojo.byId("repositoryJson").value);
+	      if (repositoryJsonTxt) eval("var repository = " + repositoryJsonTxt);
+	      if ( !repository ) {
+	        repository = {};
+	      }
+	      if ( !repository.communityId ) {
+	        repository.communityId = communityId;
+	      }
+      }
+      var mtString = dojo.string.trim(dojo.byId('allowedMimeTypes').value);
+      var excludeMenu = {"myfiles": !!dojo.byId('myfiles').checked, "pinnedFiles": !!dojo.byId('pinnedFiles').checked, "recentFiles": !!dojo.byId('recentFiles').checked,
+    	    	"sharedFiles": !!dojo.byId('sharedFiles').checked, "otherFiles": !!dojo.byId('otherFiles').checked, "publicFiles": !!dojo.byId('publicFiles').checked };
+      var mimeTypes = null;
+      if (mtString.length > 0)
+         mimeTypes = dojo.map(mtString.split("\n"), function (mt) { return dojo.string.trim(mt); });
+      var opts = {
+         title: dojo.attr(dojo.byId('title'), 'value'),
+         externalOnly: !!dojo.byId('external').checked,
+         publicOnly: !!dojo.byId('public').checked,
+         community: dojo.byId('communityId').value,
+         uploadToCommunity: !!dojo.byId('uploadToCommunity').checked,
+         shareableOnly: !!dojo.byId('shareable').checked,
+         showVisibility: !!dojo.byId('showVis').checked,
+         showExternal: !!dojo.byId('showIntent').checked,
+         useCompact: !!dojo.byId('useCompact').checked,
+         delayUpload: !!dojo.byId('delayUpload').checked,
+         showActionButtons: !!dojo.byId('showUploadButton').checked,
+         allowedMimeTypes: mimeTypes,
+         repository: repository,
+         showShare: !!dojo.byId('showShareTrue').checked || (!dojo.byId('showShareFalse').checked && {
+            "private": !!dojo.byId('showPrivate').checked,
+            people: !!dojo.byId('showPeople').checked,
+            "public": !!dojo.byId('showPublic').checked
+         }),
+         showTags: !!dojo.byId('showTags').checked,
+         multi: !!dojo.byId('multi').checked,
+         filesService: dojo.getObject("lconn.core.config.services.files"),
+         community: communityId,
+         /*shareEditorNLS: {
+            LABEL: dojo.byId('shareEditorString').value,
+            TITLE: dojo.byId('shareEditorString').value
+         },*/
+         showShareEditor: false,
+         excludeMenu: excludeMenu,
+         defaultSourceId: dojo.byId('defaultSourceId').value,
+         oneuiVersion: 3,
+         width: dojo.attr(dojo.byId('dialogWidth'), 'value'),
+         onSave: function (fileArray) {
+            var div = dojo.byId('selectedFiles');
+            
+            dojo.forEach(fileArray, function(file) {
+               if(file.getUrlDownload){
+                  var a = div.appendChild(document.createElement('a'));
+                     a.href = file.getUrlDownload();
+                     a.appendChild(document.createTextNode(file.getName()));
+               }else{
+                  div.appendChild(document.createTextNode(file.getName()));
+               }
+               div.appendChild(document.createElement('br'));
+            });
+         }, 
+         onUploadError: function(file, error){
+            console.log("Upload got an error", file, error);
+         },
+         onUploadSuccess: function(file){
+            console.log("Upload file success", file);
+         },
+         onUploadComplete: function(uploadedFiles, allFiles){
+            console.log("Upload file complte", uploadedFiles, allFiles);
+         }, 
+         onOpen: function(widget){
+            widget = widget.dialog.picker;
+            console.log("File picker widget created: ", widget);
+            dojo.connect(widget, "onSelectionChange", this, function(){
+               console.log("onSelectionChange", arguments);
+            });
+         },
+         onSourceChange: function(){
+            console.log("onSourceChange", arguments);
+         },
+         onSourceLoaded: function(){
+            console.log("onSourceLoaded", arguments);
+         }
+      };
+      if(opts.delayUpload){
+         opts.externalProgressNode = dojo.byId('externalProgressNode');
+      }
+      if(!!dojo.byId('enableOnUploadOpen').checked){
+         opts.onUploadOpen = onUploadOpen;
+      }
+      
+      lconn.core.filepicker.open(opts);
+      
+      console.log("from local");
+      } catch (ex) {
+         alert(ex.message);
+      }
+   });
+});
+</script>
+
+<style type="text/css">
+   code { font-size:120% }
+   td { vertical-align: top }
+</style>
+${endhead}
+
+<body style="margin-left: 20px;" class="lotusui lotusui30_body">
+ <h1>Connections Files Picker</h1>
+ <p>Use the example below to test the picker. View the page source to see the javascript used to instantiate it and an example callback.</p>
+ <p>Details on the JavaScript API are found below.</p>
+ <div id="login">
+  You're not logged in. You must log in for the picker to work.
+  <form class="lotusForm2" id="loginForm">
+   <div class="lotusError" id="err" style="display:none">Login incorrect</div>
+    <div class="lotusFormBody">
+     <label for="user">Username</label>
+     <input type="text" id="user" /><br/>
+     <label for="pass">Password</label>
+     <input type="password" id="pass" /><br/><br/>
+    </div>
+    <div class="lotusFormFooter"><button id="loginBtn" class="lotusBtn">Log In</button></div>
+   </form>
+ </div>
+
+ <div id="picker" style="display:none;">
+  <form class="lotusForm3" id="pickerForm">
+   <div class="lotusFormTitle"><h2>Sample File Picker</h2></div>
+   <div class="lotusFormBody">
+    <table>
+     <tr>
+      <td style="padding: 5px; border-right: solid">
+      <h3>general options</h3>
+      <input type="checkbox" id="newuistyle" /><label for="newuistyle">Use new UI style (for nested Folder feature)</label><br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Gatekeeper feature flag will be faked!!</span><br/>
+      <label for="title">Enter Dialog Title:</label><input type="text" id="title" value="Select Files" size="32" /><br/>
+      <label for="defaultSourceId">Default source ID:(myfiles || mycomputer)</label><input type="text" id="defaultSourceId" value="" size="50" /><br/>
+      <label for="dialogWidth">Dialog Width (number)</label><input type="text" id="dialogWidth" value="400" size="12" /><br/>
+      <h3>file selection pane options</h3>
+      <input type="checkbox" id="public" /><label for="public">Show message "...Public Files Only..."</label><br/>
+      <input type="checkbox" id="shareable" /><label for="shareable">Show Shareable Files Only - non-shareable files are shown, but will not be selectable.</label><br/>
+      <input type="checkbox" id="external" /><label for="external">Show Externally Shareable Files Only (relevant for SmartCloud environments)</label><br/>
+      <input type="checkbox" id="showVis" /><label for="showVis">Show file&apos;s visibility</label><br/>
+      &nbsp;&nbsp;<input type="checkbox" id="showIntent" disabled="true"/><label for="showIntent">Show file&apos;s sharing intent (relevant, if file&apos;s visibility is shown in SmartCould environments) </label><br/>
+      <input type="checkbox" id="useCompact" checked="true"/><label for="useCompact">Use compact mode file picker - need refresh to make this option take effect</label><br/>
+      <input type="checkbox" id="uploadToCommunity" /><label for="uploadToCommunity">Upload to community(Community id needs to be set)</label><br/>
+      <input type="checkbox" id="delayUpload" /><label for="delayUpload">Delay the upload when user click Save</label><br/>
+      <input type="checkbox" id="showUploadButton" /><label for="showUploadButton">Display the upload button</label><br/>
+      <input type="checkbox" id="multi" checked="true"/><label for="multi">Allow multi selection</label><br/>
+      <label for="allowedMimeTypes">Allowed Mime Types (one per line):</label><br/>
+      <textarea id="allowedMimeTypes" rows="8" cols="40"></textarea><br/>
+      </td>
+      <td style="padding: 5px; border-right: solid">
+      <h3>community pane options</h3>
+      <label for="community">Community ID:</label><input type="text" id="communityId" value="" size="50" /><br/>
+      <label for="repositoryJson">Repository:</label><br/>
+      <textarea id="repositoryJson" rows="8" cols="40">{ communityName: "[fill-in name]" }</textarea>
+      <br/>
+      <br/>
+      <h3>upload pane options</h3>
+      <input type="checkbox" id="dndUpload" checked="false"/><label for=""dndUpload"">Enable DnD Upload</label><br/>
+      <input type="checkbox" id="showTags" checked="true"/><label for=""showTags"">Display Tags in upload file</label><br/>
+      Set show share with
+         <input type="radio" id="showShareTrue" name="showShare" checked='true'/><label for="showShareTrue">true</label>
+         <input type="radio" id="showShareFalse" name="showShare" /><label for="showShareFalse">false</label>
+         <input type="radio" id="showShareDetail" name="showShare" /><label for="enableShowShareDetail">Detail as following</label><br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="showPrivate" checked='true'/><label for="showPrivate">Private</label>
+         <input type="checkbox" id="showPeople" checked='true'/><label for="showPeople">People</label>
+         <input type="checkbox" id="showPublic" checked='true'/><label for="showPublic">Public</label><br/>
+          <h4>Please Choose Exclude Menu:</h4>
+      <input type="checkbox" id="myfiles"     value="myfiles"/><label for="myfiles">My Files</label><br/>
+      <input type="checkbox" id="pinnedFiles" value="pinnedFiles"/><label for="pinnedFiles">Pinned Files</label><br/>
+      <input type="checkbox" id="recentFiles" value="recentFiles"/><label for="recentFiles">Recent Files</label><br/>
+      <input type="checkbox" id="sharedFiles" value="sharedFiles"/><label for="sharedFiles">Shared With Me</label><br/>
+      <input type="checkbox" id="otherFiles"  value="otherFiles"/><label for="otherFiles">Other People's Files</label><br/>
+      <input type="checkbox" id="publicFiles" value="publicFiles"/><label for="publicFiles">Public Files</label><br/>
+      <input type="checkbox" id="enableOnUploadOpen" checked='true'/><label for="showShare">Console.log(arguments) when Upload dialog open</label><br/>
+      </td>
+      <!-- input type="checkbox" id="disableShareEditor" checked='false'/><label for="showShare">Disable share editor message</label><br/ -->
+      <!--label for="shareEditorString">Share editr label</label><input type="text" id="shareEditorString" value="Allow Community members to edit selected files" size="50" /><br/-->
+
+      <td style="padding: 5px;" >
+      <div class="lotusFormTitle"><h3>Selected Files</h3></div>
+      <div id="selectedFiles"></div>
+      <br/>
+      <div id="uploadparameter">
+            <button id="save" class="lotusBtn lotusBtnDisabled">Save</button>
+            <button id="upload" class="lotusBtn lotusBtnDisabled">Start Upload</button> <br/>
+            <label>startUpload parameters: </label><br/>
+         &nbsp;&nbsp;&nbsp;<label>* externalContainer: </label><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="externalResourceId">id: </label><input type="text" id="externalResourceId" value="" size="50" /><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="externalResourceType">type: </label><input type="text" id="externalResourceType" value="" size="50" /><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="externalResourceUrl">url: </label><input type="text" id="externalResourceUrl" value="" size="50" /><br/>
+         &nbsp;&nbsp;&nbsp;<label for="uploadcommunity">* CommunityId:</label><input type="text" id="uploadcommunity" value="" size="50" /><br/>
+         &nbsp;&nbsp;&nbsp;<label>* Visibility</label> 
+               <input type="radio" id="uploadvisibilityprivate" name="uploadvisibility" checked='true'/><label for="showShareTrue">private</label>
+               <input type="radio" id="uploadvisibilitypublic" name="uploadvisibility" /><label for="enableShowShareDetail">public</label><br/>
+         </div>
+         <br/><div id="externalProgressNode"></div>
+         <div id="message"></div>
+         <br/>
+      </div>
+      <br/>
+      <hr/>
+      <div class="lotusFormTitle"><h3>Container for inline loaded compact file picker</h3></div>
+      <span>currentcommunity source not yet supported</span><br/>
+      <div id="compactfilecontainer" style="border: solid;"></div>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <div class="lotusFormFooter">
+     <button id="pickFiles" class="lotusBtn">Open File Picker</button>
+     <button id="compactwidget" class="lotusBtn">Load Compact File Picker Widget</button>
+     <button id="logout" class="lotusBtn">Log out</button>
+   </div>
+  </form>
+ </div>
+
+<h2>File Picker JavaScript API</h2>
+<p>This Javascript API will allow you to select from a list of files stored in the Connections Files application, and use those files and their metadata in a callback function.</p>
+<p>To call the picker, you need to include a small bit of Javascript in your JSPs, and call the API with the appropriate arguments.</p>
+<p><strong>Note:</strong> The picker will not work if it is opened by an unauthenticated user. If the user is unauthenticated, calling <code>lconn.core.filepicker.open()</code> will throw an exception.</p>
+<p>To include the Javascript in your JSP, include the following URL:<br/>
+<code>&lt;script src="${files}/picker/file/script.js" type="text/javascript"&gt;&lt;/script&gt;</code> Where <code>${files}</code> is the base path to your Files deployment, like <code>http://myfilesserver:9080/files</code> or <code>http://w3.ibm.com/connections/files</code></p>
+<h4>Picker arguments</h4>
+<p>Required:
+<ul>
+   <li><code>title</code>: The title of the Dialog</li>
+   <li><code>filesService</code>: The javascript from <code>lconn.core.config.services</code> representing the files application. You should retrieve the object with <code>dojo.getObject("lconn.core.config.services.files")</code></li>
+   <li><code>onSave</code>: The callback function that is called when the user clicks "OK". The function takes an array of file objects (see descriptions below). If the function returns <code>false</code>, it will keep the dialog open. If it returns any other value (or no value at all), the dialog will close.</li>
+</ul>
+</p>
+<p>Optional:
+<ul>
+   <li><code>scope</code>: The object that will be considered the <code>this</code> scope when the callback is called.</li>
+   <li><code>publicOnly</code>: If <code>true</code>, the picker will only let the user choose public files. Defaults to <code>false</code>.</li>
+   <li><code>externalOnly</code>: If <code>true</code>, the picker will only let the user choose externally available files. Defaults to <code>false</code>.</li>
+   <li><code>shareableOnly</code>: If <code>true</code>, the picker will only let the user choose files that they can share. Defaults to <code>false</code>.</li>
+</ul>
+</p>
+<h4>Callback values</h4>
+<p>The array that is returned is an array of items of type <code>lconn.share.bean.File</code>. Please view the source of that file for full documentation. Some methods you may find useful:
+<ul>
+   <li><code>getId()</code>: Returns the id of the file</li>
+   <li><code>getName() / getLabel()</code>: Returns the name of the file. These methods are equivalent.</li>
+   <li><code>getLibraryId()</code>: Returns the ID of the file's containing library.</li>
+   <li><code>getLibraryAuthor()</code>: Returns a User bean with <code>id</code>, <code>name</code>, and <code>email</code> member variables.</li>
+   <li><code>getUrlAlternate()</code>: Returns the URL of the file's details page</li>
+   <li><code>getUrlDownload()</code>: Returns the URL to download the file</li>
+</ul>
+</p>
+
+</body>
+</html>

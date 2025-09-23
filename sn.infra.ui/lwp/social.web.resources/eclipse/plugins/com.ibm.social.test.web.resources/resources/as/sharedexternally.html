@@ -1,0 +1,54 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+${head}
+
+<title>SharedExternally item</title>
+
+
+<script>
+djConfig.blankGif="";
+
+</script>
+${script:com.ibm.social.as.item.SharedExternally}
+
+<script>
+    dojo.addOnLoad(function() {
+        var bodyElem = document.getElementsByTagName("body")[0];
+        if (dojo.hasClass(bodyElem, "dijit_a11y")) {
+            dojo.addClass(bodyElem, "lotusImagesOff");
+        }
+
+        // Creates a Shared Externally message
+        new com.ibm.social.as.item.SharedExternally({}, dojo.byId('msg'));
+    });
+</script>
+
+
+<style>
+input {
+    width: 200px;
+}
+div.messages { width: 900px; margin: auto; }
+.lotusui30_body {background-color:#ffffff;}
+</style>
+
+${endhead}
+
+<h1>SharedExternally item</h1>
+<div class="messages">
+    <div id="msg"></div>
+</div>
+</body>
+${end}

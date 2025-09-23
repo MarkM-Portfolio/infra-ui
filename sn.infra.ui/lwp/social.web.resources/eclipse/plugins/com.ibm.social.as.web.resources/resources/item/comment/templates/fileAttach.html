@@ -1,0 +1,22 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<ul class="lotusInlinelist lotusRight">
+	<li dojoAttachPoint="fileAttachmentSectionNode" class="lotusFirst">
+		<a dojoAttachPoint="attachActionButtonNode" dojoattachevent="onclick:_onAttachFile" role="button"
+		   aria-label="${resourceStrings.attachFile}" href="javascript:void(0);" tabindex="0" class="share-attachAction">
+			${resourceStrings.attachFile}
+		</a>
+		<span dojoAttachPoint="fileAttachmentNode" style="display:none;">
+			<img class="lconnSprite lconnSprite-iconAttachment16" src="${_blankGif}" alt="">
+			<span dojoAttachPoint="fileAttachmentDetailsNode" style="display:inline;" dir="ltr"></span>
+			<a dojoAttachPoint="removeAttachmentNode" dojoattachevent="onclick:_onRemoveAttachment" href="javascript:void(0);"
+				title="${resourceStrings.removeFileAttachment}" aria-label="${resourceStrings.removeFileAttachment}"
+				class="lotusDeleteFileAttach" role="button" tabindex="0">
+				<img alt="${resourceStrings.removeFileAttachment}" src="${_blankGif}">
+				<span class="lotusAltText">X</span>
+			</a>
+		</span>
+	</li>
+	<li dojoAttachPoint="uploadProgressContainer" class="lotusFirst" style="display: none;">
+		<div dojoAttachPoint="uploadProgressNode" style="display: inline;" class="ublogFileUploadProgress"></div>
+	</li>
+</ul>

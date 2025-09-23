@@ -1,0 +1,135 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="ng.web.resources" default="development" basedir=".">
+	<!-- Import helpers for property builds, do not change -->
+	<locateComponent component="prereqs.web.resources" property="eclipseBuildDir" locateBuildDir="false"/>
+	<import file="${eclipseBuildDir}/build_utils.xml" />
+
+	<locateComponent component="prereqs.sn/jsdoc3" property="jsdoc.basedir" locateBuildDir="false"/>
+	<import file="${jsdoc.basedir}/jsdoc3.xml" />
+
+	<locateComponent component="prereqs.sn/jslint4java" property="jslint.basedir" locateBuildDir="false"/>
+	<import file="${jslint.basedir}/jslint.xml" />
+
+	<import file="${env.WPLC_IMPORT}/pde_build.xml"/>
+
+	<locateComponent component="prereqs.sn/ant-contrib" property="ant-contrib.basedir" locateBuildDir="false"/>
+	<taskdef name="for_each" classname="net.sf.antcontrib.logic.ForEach" classpath="${ant-contrib.basedir}/ant-contrib-1.0b3.jar" />
+
+	<property name="ngdir" value="${basedir}/eclipse/plugins/org.angularjs/resources/angular" />
+	<property name="ngroutedir" value="${basedir}/eclipse/plugins/org.angularjs/resources/angular-route" />
+	<property name="ngmocksdir" value="${basedir}/eclipse/plugins/org.angularjs/resources/angular-mocks" />
+
+	<target name="check_ng">
+		<available file="${ngdir}" property="ng.present"/>
+	</target>
+	
+	<target name="create_ng_main" depends="check_ng" if="ng.present">
+		<concat destfile="${ngdir}/main.js" encoding="UTF-8" eol="dos">
+			<header trimleading="yes">define([], function() {
+/*
+ AngularJS v1.3.0
+ (c) 2010-2014 Google, Inc. http://angularjs.org
+ License: MIT
+*/
+			</header>
+
+			<footer trimleading="yes">
+	return angular;
+});
+////# sourceMappingURL=ng/angular.min.js.map
+			</footer>
+
+			<fileset file="${ngdir}/angular.safe.js" />
+
+			<filterchain>
+				<!-- Ensure consistent line endings no matter what platform the build is run on -->
+				<tokenfilter delimoutput="\r\n"/>
+				<!-- Remove the unicode BOM at the start of files  -->
+				<tokenfilter>
+					<replacestring from="&#xFEFF;/*" to="/*"/> 
+				</tokenfilter>
+			</filterchain>
+		</concat>
+
+		<concat destfile="${ngroutedir}/main.js" encoding="UTF-8" eol="dos">
+			<header trimleading="yes">define(['ng/main'], function(angular) {
+/*
+ AngularJS v1.3.0
+ (c) 2010-2014 Google, Inc. http://angularjs.org
+ License: MIT
+*/
+			</header>
+
+			<footer trimleading="yes">
+	return angular;
+});
+			</footer>
+
+			<fileset file="${ngroutedir}/angular-route.safe.js" />
+
+			<filterchain>
+				<!-- Ensure consistent line endings no matter what platform the build is run on -->
+				<tokenfilter delimoutput="\r\n"/>
+				<!-- Remove the unicode BOM at the start of files  -->
+				<tokenfilter>
+					<replacestring from="&#xFEFF;/*" to="/*"/> 
+				</tokenfilter>
+			</filterchain>
+		</concat>
+
+		<concat destfile="${ngmocksdir}/main.js" encoding="UTF-8" eol="dos">
+			<header trimleading="yes">define(['ng/main'], function(angular) {
+/*
+ AngularJS v1.3.0
+ (c) 2010-2014 Google, Inc. http://angularjs.org
+ License: MIT
+*/
+			</header>
+
+			<footer trimleading="yes">
+	return angular.mock;
+});
+			</footer>
+
+			<fileset file="${ngmocksdir}/angular-mocks.safe.js" />
+
+			<filterchain>
+				<!-- Ensure consistent line endings no matter what platform the build is run on -->
+				<tokenfilter delimoutput="\r\n"/>
+				<!-- Remove the unicode BOM at the start of files  -->
+				<tokenfilter>
+					<replacestring from="&#xFEFF;/*" to="/*"/> 
+				</tokenfilter>
+			</filterchain>
+		</concat>
+
+	</target>
+
+	<import file="${basedir}/../imports/jscover.xml" />
+	<property name="jscover.bundles" value="com.ibm.ic.ng.web.resources" />
+
+	<target name="custom_init" depends="create_ng_main, instrument-for-jscover" />
+
+	<target name="custom_complete" depends="generate_jsdoc" />
+	
+	<target name="generate_jsdoc">
+		<mkdir dir="${dir.build}/jsdoc"/>
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.ng.web.resources/resources/" />
+			<param name="docs.topic.dir" value="ic-ng" />
+		</antcall>
+	</target>
+</project>

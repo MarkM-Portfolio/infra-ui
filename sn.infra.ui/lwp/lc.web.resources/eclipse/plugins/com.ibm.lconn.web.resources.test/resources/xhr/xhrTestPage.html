@@ -1,0 +1,87 @@
+${head}
+<!-- Copyright IBM Corp. 2013, 2015  All Rights Reserved.              -->
+
+<title>XHR Test Page</title>
+
+${script:lconn.core.xslt}
+${script:lconn.core.xpath}
+${script:lconn.core.util.dojoPatches}
+${script:dojo.parser}
+${script:dojo._base.xhr}
+
+<link rel="stylesheet" href="style.css">
+
+<script>
+	dojo.addOnLoad(function() {
+		dojo.parser.parse();
+	});
+
+	testTransform = function(){
+		dojo.byId('expected').innerHTML = "<table><tbody><tr><th></th><th>Author</th><th>Title</th></tr><tr><td>1</td><td>Orson Scott Card</td><td>ENDER'S GAME</td></tr><tr><td>2</td><td>Debbie Macomber</td><td>THE INN AT ROSE HARBOR</td></tr><tr><td>3</td><td>George R. R. Martin</td><td>A GAME OF THRONES</td></tr></tbody></table>";
+		var args = {
+			url: 'xhrTest.xml',
+			handleAs: 'xml',
+			sync: false,
+			load: function(response, ioArgs){
+				dojo.byId('responseDiv').innerHTML = lconn.core.xslt.transform(response, 'xhrTest.xsl', null, null, true);
+			}
+		}
+		dojo.xhr("GET", args);
+	}
+
+	testSelectNodes = function(){
+		dojo.byId('expected').innerHTML = '<div class="message confirm">xpath.selectNodes Test Passed</div>';
+		var args = {
+			url: 'xhrTest.xml',
+			handleAs: 'xml',
+			sync: false,
+			load: function(response, ioArgs){
+				var nodes = lconn.core.xpath.selectNodes("FetchDocumentList.Response", response);
+				if (typeof nodes == 'undefined'){
+					dojo.byId('responseDiv').innerHTML = '<div class="message error">xpath.selectNodes Test NOT passed</div>';
+				}
+				else{
+					dojo.byId('responseDiv').innerHTML = '<div class="message confirm">xpath.selectNodes Test Passed</div>';
+				}
+			}
+		}
+		dojo.xhr("GET", args);
+	}
+
+</script>
+
+${endhead}
+
+<div class="lotusBanner"><div class="lotusRightCorner"><div class="lotusInner">
+	<a href="#lotusMainContent" accesskey="S" class="lotusAccess">
+    <img src="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif" />
+  </a>
+  <div class="lotusLogo">
+    <span class="lotusAltText">IBM Connections Common UI</span>
+  </div>
+</div></div></div>
+
+<div class="lotusTitleBar2 lotusTitleBar2Tabs"><div class="lotusWrapper"><div class="lotusInner">
+	<div class="lotusTitleBarContent">
+		<h2 class="lotusHeading"><span class="lotusText">XHR Tests</span></h2>
+		<nav aria-label="[Application]" role="navigation">
+			<ul class="lotusNavTabs" role="toolbar">
+				<!--put class="lotusSelected" on the li element of the selected tab-->
+				<li role="presentation"><div class="lotusTabWrapper"><a class="lotusTab" href="javascript:;" role="button" onCLick='testTransform()'><span class="lotusTabInner">xsl.transform</span></a></div></li>
+				<li role="presentation"><div class="lotusTabWrapper"><a class="lotusTab" href="javascript:;" role="button" onCLick='testSelectNodes()'><span class="lotusTabInner">xpath.SelecNodes</span></a></div></li>
+			</ul>
+			<div class="lotusClear"></div>
+		</nav>
+	</div>
+</div></div></div>
+
+<div class="lotusMain"><div class="lotusContent">
+    <h3>Expected</h3>
+      <div id="expected"></div>
+    <h3>Results</h3>
+      <div id="responseDiv"></div>
+</div></div>
+
+</body>
+
+${end}

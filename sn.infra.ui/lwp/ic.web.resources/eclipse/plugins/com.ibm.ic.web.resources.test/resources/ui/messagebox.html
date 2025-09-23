@@ -1,0 +1,110 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>Message Box</title>
+
+
+<script>
+djConfig.blankGif="";
+
+</script>
+${script:dojo/parser}
+${script:net.jazz.ajax.xdloader}
+${script:ic-ui/MessageBox}
+
+<script>
+	require(['ic-ui/MessageBox',
+			'dojo/dom', // dom.byId
+			'dojo/dom-construct', // domConstruct.create
+			'dojo/dom-class', // domClass.add, contains
+			'dojo/string', // string.substitute
+			'dojo/parser', // parser.parse
+			'dojo/domReady!'], function(MessageBox, dom, domConstruct, domClass, string, parser) {
+		var bodyElem = document.getElementsByTagName("body")[0];
+		if (domClass.contains(bodyElem, "dijit_a11y")) {
+			domClass.add(bodyElem, "lotusImagesOff");
+		}
+		parser.parse();
+
+		// Creates a MessageBox with a string argument
+		new MessageBox({
+			msg: "This MessageBox was created with a string argument"
+		}, dom.byId('msg1'));
+		// Creates a MessageBox with a DOM node
+		new MessageBox({
+			type: MessageBox.TYPE.INFO,
+			msg: domConstruct.create('span', {innerHTML: "This MessageBox was created with a DOM node argument"})
+		}, dom.byId('msg2'));
+		// Creates a MessageBox with a function returning a DOM node
+		new MessageBox({
+			type: MessageBox.TYPE.SUCCESS,
+			msg: function(d) {
+				var strong = domConstruct.create('strong', { innerHTML: "a function returning a DOM node" });
+				var span = domConstruct.create('span', {innerHTML: string.substitute("This MessageBox was created with ${0} as argument", [strong.outerHTML])});
+				return span;
+			}
+		}, dom.byId('msg3'));
+		// Creates a MessageBox with a literal HTML snippet
+		new MessageBox({
+			type: MessageBox.TYPE.WARNING,
+			msg: '<strong>Note that you cannot inject HTML markup to prevent <img src="${_blankGif}" onload="alert(\'XSS\')"> XSS attacks!</strong>'
+		}, dom.byId('msg4'));
+		// Creates a MessageBox with a string
+		new MessageBox({
+			type: MessageBox.TYPE.SHARED_EXTERNAL,
+			msg: 'This community is shared externally'
+		}, dojo.byId('msg5'));
+	});
+</script>
+
+
+<style>
+input {
+	width: 200px;
+}
+div.messages { width: 900px; margin: auto; }
+</style>
+
+${endhead}
+
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-test/ui/index.html?render=test">Core UI widgets and utilities</a>
+    <span class="lotusDivider">&gt;</span>
+    Message Box
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain">
+    <div class="lotusContent">
+
+<h1>MessageBox</h1>
+<dl>
+    <dt>Module ID: <code>ic-ui/MessageBox</code></dt>
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-ui/ic-ui.MessageBox.html">JSDoc</a></dd>
+</dl>
+<h2>Templated</h2>
+<div class="messages">
+	<div data-dojo-type="ic-ui/MessageBox" data-dojo-props="type:0, msg:'This is an error message'"></div>
+	<div data-dojo-type="ic-ui/MessageBox" data-dojo-props="type:1, msg:'This is a warning message'"></div>
+	<div data-dojo-type="ic-ui/MessageBox" data-dojo-props="type:2, msg:'This is an informational message'"></div>
+	<div data-dojo-type="ic-ui/MessageBox" data-dojo-props="type:3, msg:'This is a success message'"></div>
+	<div data-dojo-type="ic-ui/MessageBox" data-dojo-props="type:4, msg:'This is externally shared content'"></div>
+	<div data-dojo-type="ic-ui/MessageBox" data-dojo-props="type:0, msg:'This is an error message. Yes, you can close it.', canClose:true"></div>
+	<div data-dojo-type="ic-ui/MessageBox" data-dojo-props="type:0, msg:'This is another error message', msgMore:'This is some extra information, maybe an error code.'"></div>
+</div>
+<h2>Programmatic</h2>
+<div class="messages">
+	<div id="msg1"></div>
+	<div id="msg2"></div>
+	<div id="msg3"></div>
+	<div id="msg4"></div>
+	<div id="msg5"></div>
+</div>
+</div>
+</div>
+</body>
+${end}

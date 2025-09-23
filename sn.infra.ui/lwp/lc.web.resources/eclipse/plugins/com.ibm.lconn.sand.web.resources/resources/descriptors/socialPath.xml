@@ -1,0 +1,13 @@
+<!-- Copyright IBM Corp. 2010, 2015  All Rights Reserved.              -->
+
+<iw:iwidget name="socialPath" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" useHomepageEnhancedFeatures="true" iScope="lconn.sand.socialPathWrapped">
+<!--	<iw:resource uri="../js_src/lconn/sand/socialPathWrapped.js" /> 
+	<iw:resource uri="../js_build/sand_ui.js" />-->
+	<iw:resource uri="../templates/sand_ui.css" />
+	<iw:content mode="view">
+		<![CDATA[
+			<div id="_IWID_root">
+			</div>
+		]]>
+	</iw:content>
+</iw:iwidget>

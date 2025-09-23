@@ -1,0 +1,32 @@
+{
+  "name": "com.ibm.social.hikari.theme",
+  "version": "1.0.0",
+  "description": "Mail Next theme for HCL Connections",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hikari",
+    "theme",
+    "sass",
+    "css"
+  ],
+  "author": "Cecilia Bollini <ceciliab@ie.ibm.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "css-flip": "^0.5.0",
+    "gulp": "^3.8.0",
+    "gulp-css-flip": "",
+    "gulp-eol": "^0.1.1",
+    "gulp-inject-string": "0.0.2",
+    "gulp-minify-css": "1.2.1",
+    "gulp-plumber": "",
+    "gulp-rename": "",
+    "gulp-replace": "^0.5.3",
+    "gulp-rework": "^1.0.3",
+    "gulp-sass": "^2.0.4",
+    "gulp-watch": "^4.2.4",
+    "merge-stream": "^0.1.7"
+  }
+}

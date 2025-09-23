@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015, 2016  All Rights Reserved.                    -->
+<messagebundle>
+  <msg name="as_title">Frissítések</msg>
+  <msg name="as_description">Frissítések az IBM Connections alkalmazásból</msg>
+  <msg name="as_error">Hiba van a Frissítések adatfolyam konfigurációjával. Lépjen kapcsolatba az adminisztrátorral.</msg>
+</messagebundle>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="no-top-bar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-143.000000, -2.000000)">
+            <g id="icon-x" transform="translate(141.000000, 0.000000)">
+                <rect id="box" x="0" y="0" width="16" height="16"></rect>
+                <polygon id="x" fill="#777677" points="3.25 2 2 3.25 6.75 8 2 12.75 3.25 14 8 9.25 12.75 14 14 12.75 9.25 8 14 3.25 12.75 2 8 6.75"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

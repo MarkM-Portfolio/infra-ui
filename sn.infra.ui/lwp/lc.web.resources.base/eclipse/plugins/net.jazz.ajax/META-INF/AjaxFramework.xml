@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2013                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!--
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+		name="net.jazz.ajax.internal.AjaxFramework"
+		immediate="true"
+		activate="activate"
+		deactivate="deactivate">
+	<implementation class="net.jazz.ajax.internal.AjaxFramework"/>
+	<reference
+			interface="com.ibm.team.jfs.app.distributed.IDistributedDataService"
+			cardinality="1..1"
+			name="IDistributedDataService"
+			policy="static"
+			bind="setDistributedDataService"
+			unbind="unsetDistributedDataService"/>
+	<reference
+			interface="org.eclipse.osgi.service.localization.BundleLocalization"
+			cardinality="1..1"
+			name="BundleLocalization"
+			policy="static"
+			bind="setBundleLocalization"
+			unbind="unsetBundleLocalization"/>
+	<reference
+			interface="org.osgi.service.http.HttpService"
+			name="HttpService"
+			cardinality="1..1"
+			policy="static"
+			bind="setHttpService"
+			unbind="unsetHttpService"/>
+</scr:component>

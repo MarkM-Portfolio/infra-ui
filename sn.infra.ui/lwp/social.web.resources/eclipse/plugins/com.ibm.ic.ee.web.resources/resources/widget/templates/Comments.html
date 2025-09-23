@@ -1,0 +1,46 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div>
+   <div class="lotusBoard">
+   <div tabindex="0" style="display: none;" data-dojo-attach-point="messageLocation"></div>
+      <div class="lotusActions" style="display:none;" data-dojo-attach-point="addCommentLink">
+         <a href="javascript:;" title="${_strings.ADD_COMMENT_TOOLTIP}" role="button" data-dojo-attach-event="onclick:createComment">${_strings.ADD_COMMENT}</a>
+     </div>
+     <div style="display: none;" class="lconnEmpty" data-dojo-attach-point="empty">${_strings.EMPTY}</div>
+     <div style="display: none;" data-dojo-attach-point="loading"></div>
+     <ul class="lotusCommentList" aria-label="${_strings.ARIA_LABEL}" style="display: none;" role="article" data-dojo-attach-point="cmtList">
+	     <li class="lotusCommentItem showMore" id="moreLink" data-dojo-attach-point="showMoreLink">
+	        <a role="button" class="lotusMeta keepFocus" title="${_strings.PREV_COMMENTS}" href="javascript:;" data-dojo-attach-event="onclick:_getMoreComments">${_strings.PREV_COMMENTS}</a>
+	        <div class="lotusLoading" style="display:none" data-dojo-attach-point="showMoreLoadingNode"></div>
+	        <span class="commentCount" data-dojo-attach-point="commentCountNode"></span>
+	        <div class="lotusClear"></div>
+	     </li>
+	     <li role="presentation" data-dojo-attach-point="sharedExternallyComments">
+         <li class="lotusAddComment" id="addCmt" style="display: none;" role="presentation" data-dojo-attach-point="addCommentCtnr">
+	         <div tabindex="0" data-dojo-attach-point="addCmtNode" data-dojo-attach-event="onfocus:_focusNewCmt">		         
+		            <form class="lotusForm2 lotusStreamUpdate" data-dojo-attach-point="addCommentNode">
+		               <div class="lotusFieldEmphasis">
+		                  <div data-dojo-attach-point="textCtnr"></div>
+		               </div>
+		               <div class="lotusActions eeActions" style="position: relative; top: -9999px;" data-dojo-attach-point="actionBtns">
+		                  <ul class="lotusInlinelist lotusLeft">
+		                     <li class="lotusFirst">
+		                        <a class="submitEnabled keepFocus" role="button" href="javascript:;" data-dojo-attach-point="newCmtBtn" data-dojo-attach-event="onclick:performCreate"><strong>${_strings.POST}</strong></a>
+		                     </li>
+		                     <li>
+		                        <a role="button" href="javascript:;" class="keepFocus" data-dojo-attach-event="onclick:cancelCreate">${_strings.CANCEL}</a>
+		                     </li>
+		                  </ul>
+		                  <ul class="lotusInlinelist lotusRight" data-dojo-attach-point="commentCountdownContainer">
+		                   <li class="lotusFirst" aria-relevant="text" role="status" aria-live="polite" aria-atomic="true">
+		                      <span class="lotusMeta charDisplay" data-dojo-attach-point="commentCountdownNode"></span>
+		                      <div class="ariaCharCountLabel lotusAccess">${_asStrings.charactersRemaining}</div>
+		                   </li>
+		                  </ul>
+		               </div>
+		               <div data-dojo-attach-point="atMentionsMessages"></div>
+		            </form>
+	         </div>
+         </li>
+      </ul>
+   </div>
+</div>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2001, 2013                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+-->
+<iw:iwidget id="profileDetails" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget"
+	supportedModes="view fullpage" mode="view" lang="en"
+	iScope="lconn.profiles.profileDetails.instance" allowInstanceContent="true">
+	<iw:content mode="view">
+		<![CDATA[
+            <h1 id="_IWID_pageSubTitle"></h1>
+            <div id="_IWID_profileDetails_widget_container">&nbsp;
+            </div>
+		]]>
+	</iw:content>
+	<iw:content mode="fullpage">
+		<![CDATA[
+		<div><h1 id="_IWID_pageSubTitle"></h1></div>
+        <div id="_IWID_profileDetails_fullpage_container">&nbsp;
+        </div>
+		]]>
+	</iw:content>
+</iw:iwidget>

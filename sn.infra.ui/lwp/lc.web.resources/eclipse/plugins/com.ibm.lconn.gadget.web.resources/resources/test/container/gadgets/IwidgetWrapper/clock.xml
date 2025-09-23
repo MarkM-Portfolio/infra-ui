@@ -1,0 +1,29 @@
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+<iw:iwidget name="myWidget" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" 
+supportedModes="view edit" mode="view">
+    <iw:content mode="view">
+	<![CDATA[ 
+	<center>
+	<div id="clockGadgetHolder">Hello World, I'm still here!</div>
+	</center>
+	<script>
+	var mContainer = null;
+	mContainer = com.ibm.lconn.gadget.container.iContainer;			
+	mContainer.init();
+
+	// Find dnd2 column, add div and load gadget.
+	
+	var dnd2 = dojo.byId("clockGadgetHolder");
+	
+	var def = [{
+		placement: 'clockGadgetHolder',
+		definitionUrl: "http://hosting.gmodules.com/ig/gadgets/file/109810496796399416248/timedate2.xml",
+		componentType: "gadget"
+	}];
+	mContainer.renderWidget(def);
+	</script>
+	]]> 
+	</iw:content>
+    <iw:content mode="edit">Configure me.</iw:content>
+</iw:iwidget>

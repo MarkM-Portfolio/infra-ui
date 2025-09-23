@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+define({
+		"CLOSE_HELP_DATE":"Luk hjælpen til Datoer",
+		"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Luk hjælp til dokumenttyper",
+		"CLOSE_HELP_PERSON":"Luk hjælp til personer",
+		"CLOSE_HELP_TAG":"Luk hjælp til emneord",
+		"CLOSE_HELP_TREND":"Luk hjælpen til tendenser",
+		"COLLAPSE_DATE":"Skjul datofilter",
+		"COLLAPSE_ECM_DOCUMENT_TYPE":"Skjul dokumenttypefilter",
+		"COLLAPSE_PERSON":"Skjul personfilter",
+		"COLLAPSE_TAG":"Skjul emneordsfilter",
+		"COLLAPSE_TREND":"Skjul tendensfilter",
+		"DESCRIPTION_DATE":"Hvis du vil vise resultater, som er oprettet eller opdateret på et bestemt tidspunkt, skal du udvide trekanten og filtrere oplysningerne efter år og måned.",
+		"DESCRIPTION_ECM_DOCUMENT_TYPE":"En dokumenttype er et nøgleord, som du knytter til et filer for at gøre det nemmere at finde. Klik på en dokumenttype for at få vist søgeresultater, som er knyttet til nøgleordet.",
+		"DESCRIPTION_PERSON":"Få vist de personer, der er knyttet til søgeresultaterne. Klik på et navn for at få vist søgeresultater, som er knyttet til en bestemt person.",
+		"DESCRIPTION_TAG":"Et emneord er et nøgleord, som du tildeler til indhold eller personer for at gøre det eller dem lettere at finde. Klik på et emneord for at få vist søgeresultater, som er knyttet til nøgleordet.",
+		"DESCRIPTION_TREND":"En tendens er et nøgleord, som er genereret af systemet, og som gør det lettere at søge i statusopdateringer. Klik på en tendens for at få vist søgeresultater, som er knyttet til nøgleordet.",
+		"EXPAND_DATE":"Udvid datofilter",
+		"EXPAND_ECM_DOCUMENT_TYPE":"Udvid dokumenttypefilter",
+		"EXPAND_PERSON":"Udvid personfilter",
+		"EXPAND_TAG":"Udvid emneordsfilter",
+		"EXPAND_TREND":"Udvid tendensfilter",
+		"HELP_DATE":"Hjælp til Datoer",
+		"HELP_ECM_DOCUMENT_TYPE":"Hjælp til dokumenttyper",
+		"HELP_PERSON":"Hjælp til personer",
+		"HELP_TAG":"Hjælp til emneord",
+		"HELP_TREND":"Hjælp til tendenser",
+		"NO_DATE_CONTENT":"Datoer er ikke tilgængelige i øjeblikket",
+		"NO_ECM_DOCUMENT_TYPE_CONTENT":"Dokumenttyper er ikke tilgængelige i øjeblikket",
+		"NO_PERSON_CONTENT":"Personer er ikke tilgængelige i øjeblikket",
+		"NO_TAG_CONTENT":"Emneord er ikke tilgængelige i øjeblikket",
+		"NO_TREND_CONTENT":"Tendenser er ikke tilgængelige i øjeblikket",
+		"TITLE_DATE":"Datoer",
+		"TITLE_ECM_DOCUMENT_TYPE":"Dokumenttyper",
+		"TITLE_PERSON":"Personer",
+		"TITLE_TAG":"Emneord",
+		"TITLE_TREND":"Tendenser"
+});
+

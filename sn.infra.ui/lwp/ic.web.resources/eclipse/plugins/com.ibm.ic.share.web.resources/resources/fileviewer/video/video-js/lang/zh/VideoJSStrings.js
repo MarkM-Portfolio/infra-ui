@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "zh_CN",
+      "Play": "播放",
+      "Pause": "Pause 键",
+      "Current Time": "当前时间",
+      "Duration Time": "持续时间",
+      "Remaining Time": "剩余时间",
+      "Stream Type": "流类型",
+      "LIVE": "实时",
+      "Loaded": "已加载",
+      "Progress": "进度",
+      "Fullscreen": "全屏",
+      "Non-Fullscreen": "非全屏",
+      "Mute": "静音",
+      "Unmute": "取消静音",
+      "Unmuted": "取消静音",
+      "Playback Rate": "回放率",
+      "Subtitles": "副标题",
+      "subtitles off": "关闭副标题",
+      "Captions": "文字说明",
+      "captions off": "关闭文字说明",
+      "Chapters": "章节",
+      "Volume": "音量",
+      "You aborted the video playback.": "您异常中止了视频回放",
+      "A network error caused the video download to fail part-way.": "网络错误导致视频下载中途失败。",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "无法加载视频，可能是服务器或网络发生故障，或因为格式不受支持。",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "由于视频出现问题或因视频使用了您的浏览器不支持的功能而导致视频回放异常中止。",
+      "No compatible source was found for this video.": "未找到该视频的任何可兼容源代码。"
+});
+

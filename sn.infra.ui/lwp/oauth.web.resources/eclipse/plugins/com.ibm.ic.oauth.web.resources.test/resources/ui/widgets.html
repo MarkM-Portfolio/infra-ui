@@ -1,0 +1,204 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>OAuth Widgets</title>
+
+
+<script>
+djConfig.blankGif="";
+
+</script>
+${script:dojo.cache}
+${script:dojo.dom-class}
+${script:dojo.parser}
+${script:net.jazz.ajax.xdloader}
+${script:ic-oauth.widget.RevokeInstructions}
+${script:ic-oauth.widget.ApplicationListGridRenderer}
+${script:ic-oauth.action.RevokeToken}
+${script:ic-ui.Grid}
+${script:ic-ui.MessageBox}
+${script:ic-core.util.html}
+
+<script>
+    require(['dojo/_base/lang', 'dojo/dom', 'dojo/dom-class', 'dojo/dom-construct', 'dojo/on', 'dojo/parser', 'dojo/topic', 'dijit/registry', 'dojo/ready'], function(lang, dom, domClass, domConstruct, on, parser, topic, registry, ready) {
+       ready(function() {
+          var bodyElem = document.getElementsByTagName("body")[0];
+          if (domClass.contains(bodyElem, "dijit_a11y")) {
+              domClass.add(bodyElem, "lotusImagesOff");
+          }
+
+          var revoke_instructions = new lconn.oauth.widget.RevokeInstructions(null, dojo.byId('revoke_instructions'));
+          revoke_instructions.update({
+              strings: r_strings,
+              url: 'http://www.example.com'
+          });
+
+          var a = domConstruct.create("a", {
+              "class": "lotusAction",
+              href: "javascript:;",
+              innerHTML: revoke_action.getName(item_stub),
+              title: revoke_action.getTooltip(item_stub)
+          }, dom.byId('revoke_action'));
+          dijit.setWaiRole(a, "button");
+          dijit.setWaiState(a, "label", revoke_action.getTooltip(item_stub));
+          on(a, "click", lang.hitch(revoke_action, revoke_action.execute, item_stub, {}));
+
+          topic.subscribe("ic-oauth/action/completed", actionCompleted);
+       });
+
+       parser.parse();
+
+       registry.byId('list').update();
+    });
+
+    var app_stub = {
+        nls: {
+            'revoke_token': {
+                'confirm': 'Revoke this application\'s access to your IBM Connections information? ',
+                'dialog_title': 'Revoke Access',
+                'success': 'The application was removed.',
+                'action': 'Revoke',
+                'error': 'An error occurred. Please try again later.',
+                'action_tooltip': 'Revoke access to application ${0}',
+                'cancel': 'Cancel',
+                'ok': 'OK'
+            }
+        },
+        routes: {
+            getAuthzEntryServiceUrl: function() {
+                return '';
+            }
+        }
+    };
+    var scene_stub = {};
+    var item_stub = {
+        clientDisplayName: 'SBTK Gadget',
+        client_id: 'sbtk_gadget',
+        redirect_uri: 'https://www.example.com'
+    };
+
+    var grid_data = {
+        json: [{
+            clientDisplayName: 'SBTK Gadget',
+            createdAt: new Date().getTime(),
+            expiresAt: new Date().getTime()
+        }, {
+            clientDisplayName: 'iNotes Gadget',
+            createdAt: new Date().getTime(),
+            expiresAt: new Date().getTime()
+        }, {
+            clientDisplayName: 'IBM Connections EE Gadget',
+            createdAt: new Date().getTime(),
+            expiresAt: new Date().getTime()
+        }, {
+            clientDisplayName: 'Sales Connect Gadget',
+            createdAt: new Date().getTime(),
+            expiresAt: new Date().getTime()
+        }]
+    };
+
+    var g_strings = {
+        'summary': 'List of applications with access to your IBM Connections information.',
+        'reverse_sort': 'Reverse Sort',
+        'loading': 'Loading...',
+        'empty': 'No applications found.'
+    };
+    var r_strings = {
+        'blurb': 'You can revoke access at any time through Connections Settings > {0}. Connections may periodically ask you to re-authorize.',
+        'link': 'Application Access',
+        'link_title': 'Application Access'
+    };
+    var l_strings = {
+        'empty': 'No items'
+    };
+    var m_strings = {
+        'info': 'Info:',
+        'error': 'Error:',
+        'success': 'Success:',
+        'warning': 'Warning:'
+    };
+
+    var revoke_action = new lconn.oauth.action.RevokeToken(app_stub, scene_stub, {});
+    var application_list_renderer = new lconn.oauth.widget.ApplicationListGridRenderer({
+        nls: g_strings,
+        revokeAction: revoke_action
+    });
+
+    function actionCompleted(obj) {
+        require(['dojo/_base/lang', 'dojo/_base/array'], function(lang, array) {
+           if (lang.isArray(obj.messages)) {
+              array.forEach(obj.messages, renderMessage);
+           }
+           else {
+              renderMessage(obj.messages);
+           }
+        });
+    }
+
+    function renderMessage(m) {
+       require(['dojo/dom', 'ic-ui/MessageBox'], function(dom, MessageBox) {
+          var _t = MessageBox.TYPE.INFO,
+          _l = m_strings.info;
+          if (m.error) {
+             _t = MessageBox.TYPE.ERROR;
+             _l = m_strings.error;
+          } else if (m.warning) {
+             _t = MessageBox.TYPE.WARNING;
+             _l = m_strings.warning;
+          } else if (m.success) {
+             _t = MessageBox.TYPE.SUCCESS;
+             _l = m_strings.success;
+          }
+          clearMessages();
+          new MessageBox({
+             _strings: _l,
+             msg: m.message,
+             type: _t
+          }, dom.byId('messages'));
+       });
+    }
+
+    function clearMessages() {
+       require(['dojo/dom', 'ic-core/util/html'], function(dom, html) {
+          html.removeChildren(dom.byId('messages'));
+       });
+    }
+
+</script>
+
+
+<style>
+input {
+   width: 200px;
+}
+div#messages { position: fixed; top: 0; right: 0; margin: 10px auto; white-space: nowrap; }
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-oauth-test/ui/index.html?render=test">OAuth widgets and screens</a>
+    <span class="lotusDivider">&gt;</span>
+    OAuth Widgets
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+
+<div class="lotusMain">
+    <div class="lotusContent">
+
+        <h1>OAuth Widgets</h1>
+        
+        <h2>Revoke Instructions</h2>
+        <div id="revoke_instructions"></div>
+        
+        <h2>Application List</h2>
+        <div id="list" data-dojo-type="ic-ui/Grid" data-dojo-props="strings:l_strings,renderer:application_list_renderer,data:grid_data"></div>
+        
+        <h2>Revoke Token</h2>
+        <div id="revoke_action"></div>
+        
+        <div id="messages"></div>
+</div></div>
+${end}

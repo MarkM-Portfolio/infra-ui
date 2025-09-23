@@ -1,0 +1,366 @@
+/* *************************************************************** */
+/*                                                                 */
+/* HCL Confidential                                                */
+/*                                                                 */
+/* OCO Source Materials                                            */
+/*                                                                 */
+/* Copyright HCL Technologies Limited 2008, 2019                   */
+/*                                                                 */
+/* The source code for this program is not published or otherwise  */
+/* divested of its trade secrets, irrespective of what has been    */
+/* deposited with the U.S. Copyright Office.                       */
+/*                                                                 */
+/* *************************************************************** */
+
+// NLS_CHARSET=UTF-8
+({
+   'rs_close' : "Жабу",
+   'rs_loading' : "Жүктелуде...",
+   'rs_at' : "сағатта",
+
+   'rs_searchDirectory' : "Кісі тізімде жоқ па? Толық іздеуді қосу...",
+   'rs_searchGroupDirectory' : "Топ тізімде жоқ па? Толық іздеуді қосу...",
+   'rs_searchPersonAndGroupDirectory' : "Кісі не топ тізімде жоқ па? Толық іздеуді қосу...",
+   'rs_searchCommunityDirectory' : "Қауымдастык тізімде жоқ па? Толық іздеуді қосу...",
+
+   'rs_shadowText_searchDirectory' : "Кісіні табу үшін теру",
+   'rs_shadowText_searchGroupDirectory' : "Топты табу үшін теру",
+   'rs_shadowText_searchPersonAndGroupDirectory' : "Кісіні не топты табу үшін теру",
+   'rs_shadowText_searchCommunityDirectory' : "Қауымдастықты табу үшін теру",
+
+   'rs_listItem' : "Тізім элементі",
+   'rs_noResults' : "'${0}' үшін нәтижелер жоқ",
+   'rs_today' : "Бүгін",
+   'rs_tomorrow' : "Ертең",
+   'rs_yesterday' : "Кеше",
+
+   /* Activity List Widget */
+   'rs_activityFeedLink' : "Осы әрекеттер арнасы",
+   'rs_externalText' : "Бұл әрекетте ұйымыңыздан сырттай мүшелер бар.",
+   'rs_moveActivitySuccess' : '\"${activityTitle}\" әрекеті \"${destCommName}\" ішкі қауымдастығына жылжытылды.',
+   // copy 'rs_moreInfo' and 'rs_hideInfo' from activity's strings.js
+   'rs_moreInfo' : 'Осы әрекет туралы қосымша ақпаратты көрсету',
+   'rs_hideInfo' : 'Қосымша мәліметті жасырыңыз',
+   'rs_more' : "Қосымша",
+   'rs_hide' : "Жасыру",
+   'rs_edit' : "Өңдеу",
+   'rs_restore' : "Қалпына келтіру",
+   'rs_deleteEntry' : "Жою",
+   'rs_prioritize' : "Басымдылығын белгілеу",
+   'rs_markComplete' : "Аяқталды деп белгілеу",
+   'rs_markIncomplete' : "Қалпына келтіру",
+   'rs_linkMore' : "... [Қосымша]",
+   'rs_linkLess' : "... [азырақ]",
+   'rs_actUpdatedByDate' : "Мынау Жаңартқан: ${0} ${1}",// Updated by (author name) (date)
+   'rs_actUpdatedBy' : "жаңартқан: ${0}",// Updated by (author name)
+   'rs_actDue' : "Мерзімі: ${0}",// Due (date)
+   'rs_actTags' : "Тегтер: ",
+   'rs_actTagsDelim' : ", ",
+   'rs_startFromTemplate' : "Әрекетті осы үлгіден бастау",
+   'rs_favoriteTemplate' : "Таңдаулы үлгі ретінде белгілеу",
+   'rs_normalTemplate' : "Қалыпты үлгі ретінде белгілеу",
+   'rs_tunedOutPri' : "Ажыратылған",
+   'rs_pagepos' : "${0} - ${1}/${2}", // pagination - e.g. 1 - 10 of 100
+   'rs_navPrevLabel' : "Алдыңғы",
+   'rs_navNextLabel' : "Келесі",
+   'rs_noActivities' : "Бұл қауымдастық үшін басталған әрекеттер жоқ.",
+   'rs_feedError' : "Арнаны қотару орындалмады.",
+   'rs_highPri' : "Жоғарғы басымдылық",
+   'rs_medPri' : "Орташа басымдылық",
+   'rs_normalPri' : "Қалыпты басымдылық (әдепкі)",
+   'rs_tuneOut' : "Ажыратылған деп белгілеу",
+   'rs_startActivity' : "Әрекетті бастау",
+   'rs_startFirstActivity' : "Алғашқы әрекетт жасау",
+   'rs_navNextLabel' : "Келесі",
+   'rs_viewAll' : "Барлығын қарау",
+   'rs_activityWidgetTitle' : "Әрекеттер",
+   'rs_activityWidgetBriefDescription' : "Қауымдастық мақсаттарын қадағалау. Істер тізімін жасау және ресурстарды ортақтасу.",
+   'rs_activityWidgetDescription' : "Қауымдастық әрекеттері бірлесіп жұмыс істеу үшін және қауымдастық жобаларындағы немесе ынталылықтардағы үрдісті қадағалау үшін пайдалануы мүмкін.",
+   'rs_completedActivityLink' : "Аяқталған әрекеттерді көрсету",
+   'rs_activitiesUnavailable' : "Әрекеттер қызметі қолжеткізгісіз.",
+   'rs_errorPersists' : "Мәселе шешілмесе, жүйелік әкімшіңізбен хабарласыңыз.",
+   'rs_shared' : "Ортақтандырылған",
+   'rs_removeActFromComm' : "Қауымдастықтан алып тастау",
+   'rs_externalLabel' : "Сыртқы",
+
+   // for ActivityForm
+   'rs_templateOptions' : "Үлгі параметрлері",
+   'rs_template' : "Үлгі",
+   'rs_tagsLabel' : "Тегтер",
+   'rs_peopleLabel' : "Адамдар",
+   'rs_aboutThisTemplate' : "Осы үлгі туралы",
+   'rs_activity' : "Әрекет",
+   'rs_copyOf' : "${0} көшірмесі",// copy of (activity name)
+   'rs_activityFormGoal' : "Әрекет мақсаты",
+   'rs_noTemplate' : "Ешбір",
+   'rs_copyActivityMembers' : "Әрекеттегі мүшелерді пайдалану",
+   'rs_copyTemplateMembers' : "Үлгідегі мүшелерді пайдалану",
+
+   /* Forum Widget */
+   'rs_noTopics' : "Бұл қауымдастық үшін әлі тақырыптар жоқ.",
+   'rs_noTopicsLoggedIn' : "Сұрақ қойыңыз, топпен талқылаңыз немесе ойларыңызбен бөлісіңіз.",
+   'rs_postedBy' : "Ең соңғы рет орналастырған",
+   'rs_topics' : "тақырыптар",
+   'rs_noTopicsShort' : "Бөлімдер жоқ",
+   'rs_topic' : "тақырып",
+   'rs_replies' : "жауаптар",
+   'rs_noReplies' : "Жауаптар жоқ",
+   'rs_reply' : "жауап беру",
+   'rs_startTopic' : "Тақырыпты бастау",
+   'rs_startFirstTopic' : "Бірінші бөлімді бастау",
+   'rs_ok' : "OK",
+   'rs_locked' : "[Құрсауланған]",
+   'rs_manageForumSetting' : "Форум параметрлерін басқару",
+   'rs_forumSettingCommunityOverviewPage' : "Қауымдастықты шолу беті:",
+   'rs_defaultForumList' : "Форум тізімін әдепкі бойынша көрсету",
+   'rs_defaultTopicList' : "Бөлім тізімін әдепкі бойынша көрсету",
+   'rs_forumSettingApplicationView' : "Форум бағдарламасының әдепкі көрінісі:",
+   'rs_forumSettingNote' : "Есертпе: егер тек бір форум болса, бөлімдер әдепкі бойынша көрсетіледі.",
+   'rs_forumSettingSubmit' : "Жіберу",
+   'rs_forumSettingSave' : "Сақтау",
+   'rs_forumSettingSaveAndClose' : "Сақтау және жабу",
+   'rs_forumSettingConfirm' : "Форумдар өзгертулеріңіз сақталды.",
+   'rs_forumSettingError' : "Қате орын алды. Әкімшіңізге хабарласыңыз.",
+   'rs_formSettingHideMessage' : "Осы хабарды жасыру",
+   'rs_forumSettingCancel' : "Болдырмау",
+   'rs_forumAnsweredQuestion' : "Жауап берілген сұрақ",
+   'rs_forumUnAnsweredQuestion' : "Жауап берілмеген сұрақ",
+   'rs_forumSortBy' : "Сұрыптау жолы:",
+   'rs_forumSortByDate' : "Күн",
+   'rs_forumSortByReplies' : "Жауаптар",
+   'rs_forumSortByTopic' : "Тақырыптар",
+   'rs_forumSortByTopicsAndReplies' : "Тақырыптар және жауаптар",
+   'rs_sortByReplies' : "Жауаптар бойынша сұрыптау",
+   'rs_sortbyTopicsAndReplies' : "Бөлімдер және жауаптар бойынша сұрыптау",
+   'rs_forumOpenQuestions' : "Сұрақтарды ашу",
+   'rs_feedOpenQuestions' : "Ашық сұрақтар арнасы",
+   'rs_feedAnsweredQuestions' : "Жауап берілген сұрақтар арнасы",
+   'rs_forumMessages' : "${0} хабарламалары",
+   'rs_forumLastAddedPost' : "Ең соңғы рет орналастырған ${0}",
+   'rs_forumTopics' : "${0} тақырыптары",
+   /* End discussion forum */
+
+   /* Editor plugins -- some for a possible one we haven't implemented yet */
+   'rs_createPersonLink' : "Жеке сілтеме жасау",
+   'rs_quote' : "Тырнақша",
+   'rs_labelColon' : "Жапсырма: ",
+   'rs_personColon' : "Жеке: ",
+   'rs_personLink' : "Жеке сілтеме",
+   'rs_replace' : "Ауыстыру",
+   'rs_inactivePerson' : "${0} (белсенді емес)", // person's name (inactive)
+   'rs_PersonPicture' : "${0} суреті", // person name's picture
+
+   /*Visitor mode -- external user name decoration use cases */
+   'rs_PersonExternalLabel' : "Сыртқы пайдаланушы", // A label for the visitor model use cases.
+   'rs_PersonExternal' : "${0} (сыртқы пайдаланушы)", //'{0}' is the person's name. This will be used for the user profile name and profile photo tooltip
+   'rs_PersonPictureExternal' : "${0} суреті (сыртқы пайдаланушы)", // Alt text for the external user's profile photo
+   'rs_personExternalDesc' : "Бұл пайдаланушыда сырттай ортақ пайдаланылған файлдар мен қауымдастықтарды ашу рұқсаты бар.",
+   /* End editor plugins */
+
+   /* Notification Form */
+   'rs_notifyOthers' : "Басқа адамдарға хабарлау",
+   'rs_messageColon' : "Хабар: ",
+   'rs_notifyColon' : "Хабарлау: ",
+   'rs_notificationConfirm' : "Құлақтандыру хабарламасы сәтті жіберілді. ",
+   'rs_notificationFail' : "Құлақтандыру хабары жіберілмеген. Егер мәселе шешілмесе, кейінірек қайтадан орындаңыз және жүйелік әкімшіңізбен хабарласыңыз.",
+   'rs_pickCommunity' : "Қауымдастық тізімінен таңдау",
+   'rs_typeName' : "Атын енгізу",
+   'rs_typeToFilter' : "Осы тізімді сүзу үшін теру",
+   /* End Notification Form */
+
+   /* FilteringCheckbox */
+   'rs_filterListPrompt' : "Осы тізімді сүзу үшін теру",
+   'rs_filterGroupLabel' : "Топты таңдау",
+   'rs_noResults' : "Нәтижелер табылмады",
+   // ${0} will be replaced with a number
+   'rs_numResults' : "${1}ішінен ${0} нәтижелерді көрсету",
+
+   /* PeopleFilterList */
+   'rs_removeFilter' : "Жою",
+
+   /* Language Selector */
+   'rs_browser_setting' : "Шолғыш баптауы",
+   'rs_customLangaugeLinkLabel' : "Пайдаланушы тілі",
+
+   /* Paging controls */
+   // 0 and 1 are page numbers
+   'rs_jumpPage' : "Бетке өту ${0} ішінде ${1}",
+   "rs_jumpPageLabel" : "Бетке секіріп өту",
+   'rs_pageNumLabel' : "Бет нөмірі",
+   'rs_pageLabel' : "Беті:",
+
+   /* Common Tags Widget */
+   'rs_tagCloudNavigationLabel' : 'Тегтер',
+   'rs_tagCloudToggleHint' : "Жасыру немесе көрсету үшін нұқу",
+   'rs_tagCloudHelpAlt' : "Тегтермен анықтама алу",
+   'rs_tagCloudNoTags' : "Тегтер әлі жоқ",
+   'rs_tagCloudNoRecentTags' : "Соңғы тегтер жоқ",
+   'rs_tagCloudNoTagsProfiles' : "Каталогті іздеңіз. Профильдерге қатысты тегтер іздеу арқылы қайтарылып осында көрсетіледі.",
+   'rs_tagLoadingTags' : "Мазмұнды жүктеп алу",
+   'rs_tagCloudSelectedTags' : "Таңдалған тегтер",
+   'rs_tagCloudSeachDesc' : "Тегті табу",
+   'rs_tagCloudSeach' : "Іздеу",
+   'rs_tagCloudRelatedTags' : "Байланысты тегтер",
+   'rs_tagCloudRelatedTagsDescription' : "Келешектегі іздеуді анықтау үшін қатысты тегті қосу",
+   'rs_tagCloudError' : 'Қате болды',
+
+   'rs_viewAsCloud' : "Бұлт",
+   'rs_viewAsCloudTitle' : "Тэгтерді тэг топтамасы ретінде тізімдеу",
+   'rs_viewAsCloudDescription' : "Тегтерді тег бұлты ретінде көру",
+   'rs_viewAsList' : "Тізім",
+   'rs_viewAsListTitle' : "Тегтерді дәйекті тізім ретінде тізімдеу",
+   'rs_viewAsListDescription' : "Тегтерді дәйекті тізім ретінде көру",
+   'rs_tagCloudViewAll' : "Шолу",
+   'rs_tagCloudViewAllTitle' : "Барлық тегтерді шолу",
+
+   'rs_normalTags' : "Белсенді тегтер",
+
+   'rs_removeTag' : "Тегті таңдалған сүзгі тегтерінен алып тастау",
+   'rs_clearAll' : "Барлығын тазалау",
+   'rs_searchInputDefault' : "Тегті табу үшін теру",
+   'rs_searchInputTagSelected' : "Басқа тег теру",
+   'rs_relatedTagTitle' : "${0} тегінің, ${1} санның іздеу нәтижелерін көрсету",
+   'rs_removeTagTitle' : "${0} тегті таңдалған сүзгі тегтерінен алып тастау",
+   'rs_addTagTitle' : "${1} есебі бар ${0} тег бойынша сүзу",
+
+   'rs_tagDialogCloseTile' : "Жабу",
+   'rs_tagDialogTitle' : "Барлық тегтер",
+   'rs_tagDialogPageInfo' : "${2} ішінен ${0}-${1} тегтер",
+
+   /* Group Selection (Picker) Widget */
+   'rs_group_browse_groups' : "Шолу топтары",
+   'rs_group_browse_groups_dialog_title' : "Шолу топтары",
+   'rs_group_browse_find_groups' : "Табу топтары",
+   'rs_group_browse_add_button' : "Қосу",
+   'rs_group_browse_cancel_button' : "Болдырмау",
+   'rs_group_browse_enter_string' : "Топтарды табу үшін теру",
+   'rs_group_browse_group_typeahead_label' : "Топ атын енгізіңіз:",
+   'rs_group_browse_group_name' : "Топ аты:",
+   'rs_group_browse_results_label' : "Сәйкес топты таңдау:",
+   'rs_group_browse_parent_group_label' : "Сіз келесідесіз:",
+   'rs_group_browse_next_page' : "Келесі бет",
+   'rs_group_browse_previous' : "Алдыңғы",
+   'rs_group_browse_next' : "Келесі",
+   'rs_group_browse_paging' : "Беттелуде",
+   'rs_group_browse_previous_page' : "Алдыңғы бет",
+   'rs_group_browse_group_selected' : "Таңдалған топ:",
+   'rs_group_browse_group_no_groups' : "Бұл топ кез келген топтардан тұрмайды",
+   'rs_group_browse_page_info' : "${0} - ${1}/${2}",
+   'rs_group_browse_page_info_alt' : "Топтарды ${0} ${2} ішінің ${1} арқылы салыстыру",
+   'rs_group_browse_remove_selection' : 'Кірістірілген топ таңдауын жойыңыз: ${0}',
+   'rs_group_browse_paging' : "Беттелуде",
+   'rs_member_groups' : "Топтар",
+   'rs_member_members' : "Мүшелер",
+   'rs_member_no_results' : "Нәтижелер табылмады",
+   'rs_member_remove_group' : "${0} рөлін жою",
+   'rs_member_add_to_community' : "Мүше қосу үшін басу",
+   'rs_member_remove_name' : "Мүшені жою үшін басу",
+   'rs_group_add_to_community' : "Топ қосу үшін басу",
+   'rs_group_remove_name' : "Топты жою үшін басу",
+   'rs_group_name' : "Топ аты",
+   'rs_group_role' : "Топ рөлі",
+
+   'rs_warning' : "Ескерту",
+   'rs_a11y_warning' : "Ескерту:",
+
+   'rs_messagebox_close_btn_title' : "Жабу",
+   'rs_messagebox_close_btn_alt' : "Жабу",
+   'rs_messagebox_error_icon_alt' : "Қате",
+   'rs_messagebox_error_a11y_label' : "Қате:",
+   'rs_messagebox_warning_icon_alt' : "Ескерту",
+   'rs_messagebox_warning_a11y_label' : "Ескерту:",
+   'rs_messagebox_info_icon_alt' : "Ақпарат",
+   'rs_messagebox_info_a11y_label' : "Ақпарат:",
+   'rs_messagebox_success_icon_alt' : "Сәтті",
+   'rs_messagebox_success_a11y_label' : "Сәттілік:",
+
+   /* Document Picker CK Plugin */
+   'rs_docpicker_title' : "Файлдар сілтемесін кірістіру",
+   'rs_docpicker_label' : "Connections файлдарына сілтеме",
+   // '{0}' is a filename
+   'rs_docpicker_download_title' : "${0} жүктеп алу",
+   'rs_docpicker_viewdetails_text' : "Мәліметтерді қарау",
+   // '{0}' is a filename
+   'rs_docpicker_viewdetails_title' : "${0} мәліметтерін қарау",
+
+   /* AttachedFileList widget */
+   'rs_attachedfile_remove_alt' : "Жою",
+   'rs_attachedfile_filename' : "${0} кескіні",
+
+   'rs_feedreader_warning' : "Ескерту: Осы сілтеме арнаны оқырмандарына арналған және шолғышта қате көрсетуі мүмкін. Жалғастыру үшін OK түймешігін немесе бетке қайта оралу үшін Болдырмау түймешігін басыңыз.",
+
+   'rs_search' : "Іздеу",
+   'rs_all_connections' : "Барлық байланыстар",
+   'rs_advanced' : "Жетілдірілген",
+   'rs_select_scope' : "Іздеу ауқымын таңдау",
+
+   'rs_icfixlayout' : {
+      button_label : "Қайта пішімдеу",
+      dialog_title : "Мазмұндарды қайта пішімдеу",
+      warning : "Ескерту",
+      reformat_save : "Қайта пішімдеу және сақтау",
+      save_as_is : "Келесідегідей сақтау",
+      cancel : "Болдырмау",
+      warn_layout : "Мазмұн дисплейдің ең үлкен енінен асады.  Қол жетімді кеңістікті сәйкестендіру үшін автоматты түрде қайта пішімдегіңіз келе ме?",
+      remember_decision : "Шешімімді есте сақтаңыз"
+   },
+
+   //The following error messages are used by icdocpicker when private files are shared with a Community.
+   'rs_sharefile_constraint_violation' : "Таңдалған файлдарды ортақ пайдалану кезінде қате пайда болды.",
+   'rs_sharefile_access_denied' : "Осы файл жойылды немесе ендігәрі сізбен ортақ пайдаланылмайды.",
+   'rs_sharefile_invalid_request' : "Таңдалған файлдарды ортақ пайдалану кезінде қате пайда болды.",
+   'rs_sharefile_sharing_intent_restriction' : "Файлды тек ұйым ішінде ортақ пайдалануға болады.",
+   'rs_sharefile_error_title' : "Қате",
+
+   /* Strings for the native mobile app banners */
+   'rs_mobileBanner_title' : 'HCL Connections',
+   'rs_mobileBanner_inAppStore' : 'App Store қызметінде',
+   'rs_mobileBanner_inGooglePlay' : 'Google Play қызметінде',
+   'rs_mobileBanner_author' : 'HCL Software',
+   'rs_mobileBanner_open' : 'Ашу',
+   'rs_mobileBanner_view' : 'Көрініс',
+   'rs_mobileBanner_hide' : 'Жасыру',
+
+   'rs_empty_column_placeholder' : 'Осында бағдарламаны апарыңыз',
+   'rs_widget_loading_error_title' : 'Виджетті көрсету мүмкін емес',
+   'rs_widget_loading_error_message' : 'Егер мәселе шешілмесе, кейінірек қайтадан орындаңыз және жүйелік әкімшіңізбен хабарласыңыз.',
+   'rs_widgets_loading_error_title' : 'Осы қауымдастықтағы виджет(тер) көрсетілмейді',
+   'rs_widget_misplacement_warning' : 'Бұл бағдарлама бұл бағанға сыймайды. Қауымдастық иесі оны басқа бағанға жылжыта немесе оны беттен алып тастай алады.',
+
+   'rs_widget_title_change_fail_message' : {
+      title_too_long : 'Енгізілген тақырып тым ұзақ.',
+      empty_new_title : 'Енгізілген тақырып бос болуы мүмкін емес.',
+      default_message : 'Мына ${0} бағдарламаға арналған тақырып өзгертілмейді.'
+   },
+
+   /* Strings for change title dialog */
+   'rs_widget_title_change_label' : 'Тақырыбы:  ',
+   'rs_widget_title_change_direction' : 'Мына ${0} бағдарламаға арналған тақырыпты өзгертіңіз.',
+   'rs_widget_title_change_title' : 'Атауды өзгерту',
+
+   /* Strings for Visitor Model Invite dialog */
+	'rs_vmmainContentTitle' : "Мүшелерді шақыру немесе қосу",
+	'rs_vmmainContentDesc' : "Мүшелерді қауымдастыққа қосылу үшін мүмкіндік беру үшін шақырыңыз. Мүшелерді автоматты түрде енгізу үшін қосыңыз.",
+	'rs_vmtypeAheadLabel' : "Ат немесе Электрондық хабарлама: ",
+	'rs_vmgroupTypeAheadLabel' : "Аты: ",
+	'rs_vmtypeAheadRoleLabel' : " сияқты ",
+	'rs_vmgroupTypeAheadRoleLabel' : " Мүшелер ретінде ",
+	'rs_vmtaNoResults' : "Нәтижелер табылған жоқ.",
+	'rs_vmtaHeader' : "үстіңгі деректеме",
+	'rs_vmaddUser' : "Қосу",
+	'rs_vmradioSectionTitle' : "Мүше параметрлері:",
+	'rs_vmradioOne' : "Қауымдастыққа қосылу үшін шақыруларды жіберу",
+	'rs_vmradioTwo' : "Пайдаланушыларды қауымдастыққа автоматты түрде қосыңыз",
+	'rs_vmtwistyA' : "Міндетті емес хабарды қосу",
+	'rs_vmtwistyB' : "Қосымша мәтінді жойыңыз",
+	'rs_vmmessage' : "Хабар:",
+	'rs_vmtextAreaStartText' : "Бір нәрсе айтыңыз...",
+	'rs_vmcheckboxLabel' : "Маған көшірмесін жіюеру",
+	'rs_vmsave' : "Сақтау",
+	'rs_vminvite' : "Шақыру",
+	'rs_vmcancel' : "Болдырмау",
+	'rs_userContentTitle' : "Ақпаратты енгізіңіз",
+	'rs_vmaddUser' : "Пайдаланушыны құрыңыз",
+	'rs_vmback'	 : "Артқа",
+	'rs_vmvisitor'	 : "Кіруші"
+})

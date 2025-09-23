@@ -1,0 +1,199 @@
+/* Copyright IBM Corp. 2013, 2015  All Rights Reserved.              */
+/*  fix input padding on the board */
+.icWidgetPortletsCommon .lotusBoard #wallInput .lotusPostContent { padding: 0; }
+.icWidgetPortletsCommon .lotusBoard .lotusPostContent .lotusForm textarea { margin-bottom: 0; }
+
+.lotusui_ie7 .lotusui30 .icWidgetPortletsCommon ul.lotusCommentList li.lotusCommentItem ol>li { display: list-item; }
+
+/* dojo menu adjustments */
+.icWidgetPortletsCommon .dijitMenuItem td.dijitMenuItemLabel { padding: 4px 5px 4px 20px !important; }
+.icWidgetPortletsCommon .dijitMenuItem .dijitMenuItemIcon { margin: 2px; vertical-align: top; }
+/* Fix for #DJOS822QR: no outline appears in firefox in high-contrast mode */
+.icWidgetPortletsCommon .dijit_a11y .dijitMenuItem td.dijitMenuItemLabel { position: static; }
+
+/* Utility class for message indicating there is no content */
+.lotusui .lconnEmpty { font-style: italic; color: #666; }
+.lotusui .lotusContent .lconnEmpty { margin-top: 20px; margin-bottom: 20px; }
+
+/* Consistent styles for the "Search Directory" item in typeaheads */
+.lotusui30dojo .dijitMenu.icWidgetPortletsCommon  .searchDirectory { font-weight: bold; background-image: url(../../images/iconSearchDark16.png); background-repeat: no-repeat; background-position: right center; padding-right: 18px; color: #105CB6; }
+
+/* OneUI request LIT86HL5L */
+.icWidgetPortletsCommon .lotusDivider { padding: 0 5px; }
+
+/* OneUI request LIT86YHX6 */
+.lotusui .icWidgetPortletsCommon a.lotusDelete { text-decoration: none !important; }
+
+/* Allow download icons to have an overlay that is displayed when the lconnOver class is applied to a parent node. */
+.lconnDownloadableIcon { position: relative; display: block; }
+.lconnDownloadableIcon .lconnDownloadOverlay { position: absolute; right: 0; bottom: -1px; }
+
+/* Common accessible connections help tooltip */
+.icWidgetPortletsCommon .dijitPopup .lotusHelp,
+.icWidgetPortletsCommon .dijitTooltipDialog .lotusHelp,
+.icWidgetPortletsCommon .lotusTooltipDialog .lotusHelp { position: relative; left: 0; top: 0; width: auto; } /* Fixes horizontal scrollbars in IE RTL once help tooltip closes */
+.lotusui .icWidgetPortletsCommon .dijitTooltipContainer { font-size: 1em; } /* Fixes large header text */
+.lotusHelp .lotusInfoBox h3 { float: none; margin-right: 0; padding-right: 0} /* Fixes inline header text */
+.icWidgetPortletsCommon .lotusTooltipDialog .dijitTooltipContainer { background-image: none; background-color: transparent; border: 0; padding: 0; } /* Fixes border/background */
+.icWidgetPortletsCommon .lotusTooltipDialog .dijitTooltipConnector { display: none; }
+
+/* Common Upload styles */
+.lconnFileUpload { position: relative; padding: 0 20px; z-index: 1}
+.lconnFileUploadIcon { position: absolute; right: 0; top: 0; }
+.dj_iequirks .lconnFileUploadIcon { left: -20px; }
+.lconnFileUploadLabel { width: 100%;  }
+.lconnFileUploadLabel .lconnFilenameContainer { overflow: hidden; text-overflow: ellipsis; width: 100%; display: block; white-space: nowrap; }
+.lconnFileUploadAction { position: absolute; left: 0; top: 0; }
+
+.lconnFileUploadDisabled a { color: #000 !important; text-decoration: none !important; cursor: text !important; }
+.lconnFileUploadDisabled .lconnFileUploadAction a { display: none !important; }
+.lconnFileUploadDisabled .lconnFileUploadIcon,
+.lconnFileUploadDisabled .lconnFileUploadLabel,
+.lconnFileUploadDisabled .lconnFileUploadStatus { opacity: 0.5; filter: alpha(opacity=50); }
+.lconnFileUploadDisabled .lconnFileUploadStatus .lotusInlinelist { display: none; }
+.lconnFileUploadDisabled .lconnFileUploadStatus_IsDuplicate,
+.lconnFileUploadDisabled .lconnFileUploadStatus_FileRenamed,
+.lconnFileUploadDisabled .lconnUploadContainer { display: none; }
+
+.lconnFileUploadEditing .lconnFileUploadStatus_IsDuplicate { display: none; }
+
+.lconnFileUploadStatus { padding-top: 1px; padding-bottom: 2px; }
+.lconnFileUploadStatus .lotusMessage { border: none; padding: 3px; margin-bottom: 2px; }
+.lconnFileUploadStatus .lotusInlinelist { display: inline; }
+
+.lconnFocusHelper { z-index: 2; position: relative; }
+.lconnInvisibleMovie { background-color: transparent; opacity: 0; position: absolute; top: 0; right: 0; z-index: 3; cursor: crosshair; }
+.lconnUploadContainer { display: inline-block; position: relative; z-index: 2; }
+.lconnUploadMultiple .lconnUploadHover { background-color: #f0f0f0; }
+.lconnFileUploadAction .lconnRemoveLink { padding: 0 4px; }
+
+/* There's a bug in flash and IE where it doesn't respect z-index on a transparent-mode flash movie. Therefore, just set
+the element to be transparent in CSS, and it works. */
+.lotusui_ie .lconnInvisibleMovie { filter: alpha(opacity=0); }
+.lconnFileInput { z-index: 1; overflow: hidden; }
+
+/* Select checkbox styles */
+.lotusui .lconnSelectAllContainer { padding-right: 10px; padding-left: 5px; }
+.lotusui_ie .lconnSelectAllContainer { padding-top: 1px; }
+
+.lotusui .lotusTable .lconnSelectAllContainer input.lotusCheckbox,
+.lotusui .lotusTable .lotusFirstCell input.lotusCheckbox { margin-left: 1px; }
+
+.lotusui .qkrIcon32  .lconnSelectAllContainer input.lotusCheckbox,
+.lotusui .qkrIcon32  .lotusFirstCell input.lotusCheckbox { margin-left: 2px; }
+.lotusui .qkrIcon32  td.lotusFirstCell input.lotusCheckbox { margin-top: 10px; }
+.lotusui_ie .qkrIcon32  td.lotusFirstCell input.lotusCheckbox { margin-top: 6px; }
+
+/* Compact message styles */
+.lconnCompactMessage .lotusMessage { margin: 0; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px; }
+
+/* Put margins on either side of the content to allow for the message level and close icons */
+.icWidgetPortletsCommon .lotusMessage span { margin: 0px 20px; }
+
+/* Fix for textareas shown in IE8 getting scrollbars when not needed. */
+.lotusui_ie .lotusui30 .icWidgetPortletsCommon .lotusBoard .lotusStreamUpdate .lotusText { overflow: auto; }
+
+/* Remove double border around Dijit dialogs */
+.lotusui30dojo .dijitDialog.icWidgetPortletsCommon { border: 0px; -webkit-box-shadow: 0 0 0px rgba(0, 0, 0, 0.4); -moz-box-shadow: 0 0 0px rgba(0, 0, 0, 0.4); box-shadow: 0 0 0px rgba(0, 0, 0, 0.4); }
+.lotusui30dojo .icWidgetPortletsCommon .dijitDialogPaneContent { background: none; padding: 0px; position: static; }
+.lotusui30dojo .icWidgetPortletsCommon .dijitTooltipContainer { padding: 0px; }
+
+/* Fixes keyboard selection in typeaheads */
+.lotusui30dojo .icWidgetPortletsCommon .dijitMenuItemHover { background-color: #E1F4F9; }
+
+
+/* Extend support for deprecated table based forms */
+.icWidgetPortletsCommon .lotusForm td label { font-weight: normal; }
+.icWidgetPortletsCommon .lotusForm td.lotusFormLabel { font-weight: normal; text-align: right; }
+
+/* Support for inactive users */
+.icWidgetPortletsCommon .lotusDim { opacity: 0.5; filter: alpha(opacity=50); }
+
+/* for high contrast mode*/
+.lotusImagesOff.lotusui30 .lotusBtnDisabled{ opacity: 0.50 !important; filter: alpha(opacity=50) !important; }
+
+/* Show border on textarea in high contrast. */
+.lotusui30.lotusImagesOff .icWidgetPortletsCommon .lotusBoard .lotusStreamUpdate .lotusText,
+.lotusImagesOff .lotusui30 .icWidgetPortletsCommon .lotusBoard .lotusStreamUpdate .lotusText{ background: #fff; }
+
+/* Fixes for actions menu spacing */
+.lotusui_ie .icWidgetPortletsCommon .dijitMenuItem { border: 1px solid transparent; }
+.lotusui_ie .lotusui30dojo .icWidgetPortletsCommon .dijitMenuTable { border-collapse: collapse; }
+
+/* Fix overflowing input fields in WebKit browsers */
+.dj_webkit .icWidgetPortletsCommon .lotusForm.lotusDialog .lotusText { width: 97%; margin: 0; }
+.dj_webkit .icWidgetPortletsCommon .lotusForm.lotusDialog textarea { margin: 0; }
+
+/* Fix unnecessary horizontal scrollbar in IE due to Recommendations widget */
+.lotusui30.icWidgetPortletsCommon .lotusAccess { width: auto; }
+
+/* Handle fix for Like widget Popup padding */
+.lotusui30 .lotusLikeLightBox ul.lotusList li { padding: 5px; }
+
+/* Fix dijit mega menu border style */
+.lotusui30dojo .dijitMenuSeparatorTop { border-bottom: 1px dotted #ccc; }
+
+/* Fix list box selection highlight is black when it should be blue */
+.lconnHighlight .dijitMenuItemSelected { background-color: #E1F4F9; color: black; }
+
+/* Added style to remove like count background for like widget */
+.lotusui30 .lotusLike .lconnLikeCountNoBackground { padding: 2px 22px 2px 4px; margin-left: 7px; position: relative; display: inline-block; }
+.lotusui30 .lotusLike .lconnLikeCountNoBackground .lotusIconLike { position: absolute; right: 3px; }
+.lotusui_ie .lotusui30 .lotusLike .lconnLikeCountNoBackground { display: inline; zoom: 1; margin-left: 8px; } /* inline-block fix and spacing */
+.lotusui30.lotusImagesOff .lotusLike .lconnLikeCountNoBackground,
+.lotusImagesOff .lotusui30 .lotusLike .lconnLikeCountNoBackground { padding-right: 5px; } /* remove icon placeholder space */
+
+/* Fix for defect 62071 */
+.lotusui_ie .lotusui30 .icWidgetPortletsCommon .lotusBoard .lotusStreamUpdate .lotusText { background-color: #FFF; }
+
+/* Fix for defect 71423 - Anchor nodes in Like widget adds extraneous spacing */
+.lotusui30.icWidgetPortletsCommon .lotusLikeLightBox .lotusLikeAvatar { vertical-align: middle; }
+.lotusui30.icWidgetPortletsCommon .lotusLikeLightBox .lotusLikeAvatarLink { vertical-align: middle; margin-right: 32px; padding: 7px; }
+.lotusui30.icWidgetPortletsCommon .lotusLikeLightBox ul.lotusList li a { margin: 0px; padding: 0px; display: inline; }
+.lotusui30.icWidgetPortletsCommon .lotusLikeLightBox ul.lotusList li:hover,
+.lotusui30.icWidgetPortletsCommon .lotusLikeLightBox ul.lotusList li:focus,
+.lotusui30.icWidgetPortletsCommon .lotusLikeLightBox ul.lotusList li:active { background-color: #E1F4F9; }
+
+/* Fixes styles for messages */
+.lotusui30 .icWidgetPortletsCommon .lotusMessage { font-weight: normal; }
+
+/* Style for oauth grant/deny access loading */
+.lconnOAuthLoading { display: inline-block; width: 16px; height: 16px; margin: 4px; }
+
+/*Style for EE flyout for 72160*/
+.lotusui30 .icWidgetPortletsCommon .lotusFlyoutInner { padding: 0 10px; }
+
+/* Style to fix width for like widget for 98980 */
+.lotusui30.icWidgetPortletsCommon .lotusLikeLightBox { width: 200px; }
+.lotusui30.icWidgetPortletsCommon .lotusLikeLightBox ul.lotusList li { padding: 5px; padding-left: 35px; }
+.lotusui30.icWidgetPortletsCommon .lotusOffScreen { top: auto; right: -9999px; }
+
+/* Style for mentions editable div to appear as textarea */
+.icWidgetPortletsCommon .lotusMentionsDiv { -webkit-user-select: text; -moz-appearance: textfield-multiline; white-space: pre-wrap; word-wrap: break-word; border: 1px solid gray; overflow: auto; padding: 5px; width: auto; }
+.icWidgetPortletsCommon .lotusMentionsTypeaheadField { position: absolute; visibility: hidden; height: 0px; width: 0px; }
+
+/* RTC 83154 - Unnecessary horizontal scrollbar when typeahead displays for first time in IE */
+.lotusui_ie .lconnTypeAhead { overflow: hidden; padding-top: 1px; }
+
+/* Fix for Chrome mentions having scrollbar when in collapsed state */
+.lotusui30 .icWidgetPortletsCommon .lotusBoard .lotusStreamUpdate .lotusTextCollapsed.lotusText { overflow: hidden; }
+.lotusui_ie .lotusui30 .icWidgetPortletsCommon .lotusBoard .lotusStreamUpdate div.lotusTextCollapsed.lotusText{ height: 1.5em; }
+.lotusui_ie .lotusui30 .icWidgetPortletsCommon .lotusBoard .lotusStreamUpdate .lotusText { padding-top: inherit; padding-bottom: inherit; }
+
+/* RTC 86032 for OneUI issue with avatar pictures in comment sections in HC mode */
+.lotusui30.lotusImagesOff .icWidgetPortletsCommon .lotusPostAvatar, .lotusImagesOff .lotusui30 .icWidgetPortletsCommon .lotusPostAvatar{display:inline;}
+
+/* RTC 86071 */
+.lotusui30 .icWidgetPortletsCommon .lotusBoard .lotusPost .lotusText .lotusPerson {padding-left:0px;}
+
+/* RTC 87435 for typeahead missing highliht in HC mode */
+.lotusui30dojo.lotusImagesOff .icWidgetPortletsCommon .dijitMenuItemHover {border: 1px dotted; padding: 0em .1em;}
+.lotusui30dojo.lotusImagesOff .icWidgetPortletsCommon .dijitMenuItem.searchDirectory {padding: .1em .3em;}
+.lotusui30dojo.lotusImagesOff .icWidgetPortletsCommon .dijitMenuItemHover.searchDirectory {padding: 0em .2em;}
+
+/* RTC 88955 - Darken the colour of lotusPersonInactive as an intermediate fix for the defect. */
+.lotusui30 .icWidgetPortletsCommon .ublogPost.lotusPersonInactive,
+.lotusui30 .icWidgetPortletsCommon a:hover.ublogPost.lotusPersonInactive,
+.lotusui30 .icWidgetPortletsCommon a:focus.ublogPost.lotusPersonInactive,
+.lotusui30 .icWidgetPortletsCommon a:active.ublogPost.lotusPersonInactive,
+.lotusui30 .icWidgetPortletsCommon a:visited.ublogPost.lotusPersonInactive  {color: #767676;}

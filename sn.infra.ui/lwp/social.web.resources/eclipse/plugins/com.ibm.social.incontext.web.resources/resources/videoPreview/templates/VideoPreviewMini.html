@@ -1,0 +1,40 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<div class="lconnPreviewMini" dojoAttachPoint="urlPreview">
+	<div class="lconnPreviewLeftMini" dojoAttachPoint="leftPlane">
+		<a dojoAttachPoint="thumbnailContainer" class="lconnPreviewCenter">
+			<span></span>
+			<span dojoAttachPoint="playBtn" class="lotusHidden playBtn otherMediaPlayer32 otherMediaPlayer32-mpPlayButton30"></span>
+			<img dojoAttachPoint="thumbnail" />
+		</a>
+		<div dojoAttachPoint="imageChooser" class="lconnPreviewImageChoose lotusHidden">
+			<img title="${strings.previousThumbnail}" class="otherFramework16 otherFramework16-ArrowThickLeftGray12" dojoAttachPoint="previousImage" dojoAttachEvent="onclick: previousThumbnail"/>
+			<img title="${strings.nextThumbnail}" class="otherFramework16 otherFramework16-ArrowThickRightGray12" dojoAttachPoint="nextImage" dojoAttachEvent="onclick: nextThumbnail"/>
+		</div>
+	</div>
+	<div class="lconnPreviewContent" dojoAttachPoint="rightPlane">
+		<span title="${strings.removeUrlPreview}" class="lotusClose">
+			<input type="image" aria-label="${strings.removeUrlPreview}" alt="${strings.removeUrlPreview}" dojoattachevent="onclick: closePreview" src="${blankGif}" class="welcomeNoteImage">
+		 	<a dojoattachevent="onclick: closePreview" class="lotusAltText" href="javascript:;">X</a>
+		</span>
+		<div class="lotusBold" dojoAttachPoint="titleNode"></div>
+		<a dojoAttachPoint="linkNode" href="${url}" target="_blank">${url}</a>
+		<p dojoAttachPoint="description" class="lotusHidden"></p>
+		<div dojoAttachPoint="toggleContainer" class="lotusHidden" style="position: absolute; bottom: 8px;">	
+			<input class="lotusCheckbox" type="checkbox" aria-label="${strings.thumbnailToggle}" title="${strings.thumbnailToggle}" id="box1" dojoAttachPoint="checkBox" dojoAttachEvent="onchange: toggleImage" />
+			<label id="box1">${strings.thumbnailToggle}</label>
+		</div>
+	</div>
+</div>

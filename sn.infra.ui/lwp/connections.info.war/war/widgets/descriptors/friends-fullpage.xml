@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2014                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<iw:iwidget id="MyNetwork" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget"
+	supportedModes="fullpage" mode="fullpage" lang="en"
+	iScope="lconn.profiles.Friending.instance" allowInstanceContent="true">
+	<iw:content mode="view">
+		<![CDATA[
+            <div id="recent_colleagues_widgetId_container">
+              &nbsp;
+            </div>
+		]]>
+	</iw:content>
+	<iw:content mode="fullpage">
+		<![CDATA[
+		<div class="lotusHeader"><h1 id="pageSubTitle"></h1></div>
+        <div id="recent_colleagues_widgetId_fullpage_container">
+          &nbsp;
+        </div>
+		]]>
+	</iw:content>
+</iw:iwidget>

@@ -1,0 +1,68 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>Browse Groups</title>
+
+
+<script>
+dojoConfig.parseOnLoad=true;
+
+</script>
+${script:dijit.registry}
+${script:ic-ui.BrowseGroups}
+${script:ic-core.GroupsDataStore}
+${script:net.jazz.ajax.xdloader}
+<!--  add your custom modules here -->
+<script>
+require(['dojo/_base/array', 'dijit/registry', 'dojo/domReady!'], function(array, registry){
+   setTimeout(function(){
+       array.forEach(['bg1','bg2'], function(id) {
+           registry.byId(id).domNode.style.display = '';
+       });
+   }, 100);
+});
+
+</script>
+
+
+<style>
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-test/ui/index.html?render=test">Core UI widgets and utilities</a>
+    <span class="lotusDivider">&gt;</span>
+    Browse Groups
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain">
+<div class="lotusContent">
+<h1>Browse Groups</h1>
+<dl>
+    <!--  Update the module ID -->
+    <dt>Module ID: <code>ic-ui/BrowseGroups</code></dt>
+    <!--  Update the JSDoc page URL -->
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-ui/ic-ui.BrowseGroups.html">JSDoc</a></dd>
+</dl>
+<div>
+    <h2>With Results</h2>
+    <p>This widget will keep returning the same results for all levels.
+    <a href="#" onclick="require(['dijit/registry'],function(registry){registry.byId('bg1').displayBrowseGroupsDialog();});return false">Pop out as dialog</a></p>
+    <div jsid="ms1" data-dojo-type="ic-core/GroupsDataStore" data-dojo-props="url:&quot;../data/groups.json&quot;"></div>
+    <div id="bg1" data-dojo-type="ic-ui/BrowseGroups" data-dojo-props="memberStore:ms1"></div>
+    
+    <h2>No Results</h2>
+    <p>This widget shows no results.
+    <a href="#" onclick="require(['dijit/registry'],function(registry){registry.byId('bg2').displayBrowseGroupsDialog();});return false">Pop out as dialog</a></p>
+    <div jsid="ms2" data-dojo-type="ic-core/GroupsDataStore" data-dojo-props="url:&quot;../data/groups_nomatches.json&quot;"></div>
+    <div id="bg2" data-dojo-type="ic-ui/BrowseGroups" data-dojo-props="memberStore:ms2"></div>
+</div>
+</div>
+</div>
+</body>
+${end}

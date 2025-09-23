@@ -1,0 +1,25 @@
+<!-- Copyright IBM Corp. 2013, 2015  All Rights Reserved.              -->
+
+
+<div aria-labelledby="section_${sectionName}" aria-expanded="false" role="region" class="Section"
+   id="section_${sectionName}" widgetid="section_${sectionName}" > 
+  
+  <!-- TODO Use a class here instead--> 
+  <div style="background:#f8f8f8 !important; border: 1px solid #eeeeee !important; padding: 5px 3px 3px 9px !important;">
+  		
+	<div tabindex="0" dojoattachpoint="titlePanel" dojoattachevent="onclick:toggle"
+    	role="button" aria-controls="sectionNode_${sectionName}" aria-pressed="true">
+     	
+     	<img role="presentation" class="lotusSprite lotusArrow lotusTwistyClosed" dojoattachpoint="arrowNode" alt="" src="${blankIcon}"> 
+		<span aria-level="3" role="heading" class="lotusBold" dojoattachpoint="titleNode" id="sectionTitleNode_${sectionName}" style="-moz-user-select: none;">
+       ${sectionTitle}</span>
+	</div>
+  		
+    <div tabindex="-1" dojoattachpoint="containerNode" id="containerNode_${sectionName}" class="lotusHidden" aria-hidden="true">  
+
+    </div> 
+  </div> 
+  
+  <br/>
+
+</div>

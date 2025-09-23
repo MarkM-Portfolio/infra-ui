@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+define({
+		"CLOSE_HELP_DATE":"Fechar ajuda de datas",
+		"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Fechar ajuda de tipos de documentos",
+		"CLOSE_HELP_PERSON":"Fechar ajuda de pessoas",
+		"CLOSE_HELP_TAG":"Fechar ajuda de etiquetas",
+		"CLOSE_HELP_TREND":"Fechar ajuda de tendências",
+		"COLLAPSE_DATE":"Contrair o filtro Datas",
+		"COLLAPSE_ECM_DOCUMENT_TYPE":"Contrair o filtro Tipos de documentos",
+		"COLLAPSE_PERSON":"Contrair o filtro Pessoas",
+		"COLLAPSE_TAG":"Contrair o filtro Etiquetas",
+		"COLLAPSE_TREND":"Contrair o filtro Tendências",
+		"DESCRIPTION_DATE":"Para apresentar os resultados criados ou actualizados num período de tempo específico, expanda o alternador e filtre as informações por ano e mês.",
+		"DESCRIPTION_ECM_DOCUMENT_TYPE":"Um tipo de documento consiste numa palavra-chave atribuída a ficheiros, de modo a facilitar a respectiva localização. Faça clique num tipo de documento para apresentar os resultados da procura aos quais essa palavra-chave foi atribuída.",
+		"DESCRIPTION_PERSON":"Visualize as pessoas associadas aos resultados da procura. Faça clique num nome para apresentar os resultados da procura associados a uma determinada pessoa.",
+		"DESCRIPTION_TAG":"Uma etiqueta consiste numa palavra-chave atribuída a conteúdo ou a pessoas, de modo a facilitar a respectiva localização. Faça clique numa etiqueta para apresentar os resultados da procura aos quais essa palavra-chave foi atribuída.",
+		"DESCRIPTION_TREND":"Uma tendência consiste numa palavra-chave gerada pelo sistema para facilitar a procura nas Actualizações de estado. Faça clique numa tendência para apresentar os resultados da procura com essa palavra-chave atribuída.",
+		"EXPAND_DATE":"Expandir o filtro Datas",
+		"EXPAND_ECM_DOCUMENT_TYPE":"Expandir o filtro Tipos de documentos",
+		"EXPAND_PERSON":"Expandir o filtro Pessoas",
+		"EXPAND_TAG":"Expandir o filtro Etiquetas",
+		"EXPAND_TREND":"Expandir o filtro Tendências",
+		"HELP_DATE":"Ajuda de datas",
+		"HELP_ECM_DOCUMENT_TYPE":"Ajuda de tipos de documentos",
+		"HELP_PERSON":"Ajuda de pessoas",
+		"HELP_TAG":"Ajuda de etiquetas",
+		"HELP_TREND":"Ajuda de tendências",
+		"NO_DATE_CONTENT":"Datas actualmente não disponíveis",
+		"NO_ECM_DOCUMENT_TYPE_CONTENT":"Tipos de documentos actualmente não disponíveis",
+		"NO_PERSON_CONTENT":"Pessoas actualmente não disponíveis",
+		"NO_TAG_CONTENT":"Etiquetas actualmente não disponíveis",
+		"NO_TREND_CONTENT":"Tendências actualmente não disponíveis",
+		"TITLE_DATE":"Datas",
+		"TITLE_ECM_DOCUMENT_TYPE":"Tipos de documentos",
+		"TITLE_PERSON":"Pessoas",
+		"TITLE_TAG":"Etiquetas",
+		"TITLE_TREND":"Tendência"
+});
+

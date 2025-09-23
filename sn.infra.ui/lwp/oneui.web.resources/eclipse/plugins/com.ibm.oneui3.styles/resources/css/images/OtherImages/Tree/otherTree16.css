@@ -1,0 +1,12 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.otherTree16-iconCollapseTree{width:14px;height:14px;background-position:0 0}
+.otherTree16-iconExpandTree{width:14px;height:14px;background-position:0 -22px}
+.otherTree16-orgBottomNode-rtl{width:17px;height:36px;background-position:0 -44px}
+.otherTree16-orgBottomNode{width:17px;height:36px;background-position:0 -88px}
+.otherTree16-orgParentNode-rtl{width:17px;height:36px;background-position:0 -132px}
+.otherTree16-orgParentNode{width:17px;height:36px;background-position:0 -176px}
+.otherTree16-orgTopNode-rtl{width:17px;height:36px;background-position:0 -220px}
+.otherTree16-orgTopNode{width:17px;height:36px;background-position:0 -264px}
+
+.otherTree16{background-image:url('./otherTree16-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .otherTree16{display:none}

@@ -1,0 +1,663 @@
+${head}
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+${script:dijit._Widget}
+${script:dijit._Templated}
+${script:com.ibm.oneui.controls.AutocompleteInput}
+${script:com.ibm.oneui.controls.AutocompleteMenu}
+${script:com.ibm.oneui.controls.AutocompleteDataStore}
+${script:com.ibm.oneui.controls.InlineAutocompleteMenu}
+<!-- Included because Dijit does not properly expose focus mgmt -->
+${script:com.ibm.oneui.controls._caret}
+
+<style>
+	ul.dijitMenu {border: 2px solid red !important; list-style: none; background-color: white;}
+	ul.dijitMenu li {list-style-image: none; zoom:1; cursor: pointer;}
+	ul.testVisible {border: 2px solid green !important;}
+	td {vertical-align: top;}
+	.dijitMenuItemSelected {background-color: yellow;}
+	.lotusui input { padding-right: 18px;}
+	.lotusui input.lotusLoading {background-color: yellow; height: auto; width: auto; background-position: right center;}
+	.dijitPopup {position: absolute; z-index: 1000;}
+	
+	.dijitBackgroundIframe {
+		/* iframe used to prevent problems with PDF or other applets overlaying menus etc */
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		border: 0;
+		padding: 0;
+		margin: 0;
+	}
+</style>
+
+${endhead}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+<script>
+/*dojo.declare("TestPopup", [com.ibm.oneui.controls.HoverPopup, com.ibm.oneui.controls._HoverDialogMixin], {
+});*/
+var timer;
+function pause(id) {
+	if (timer)
+		clearTimeout(timer);
+	timer = setTimeout(function() {dojo.place(document.createTextNode("** PAUSE **\r\n"), dojo.byId(id), "first");}, 500);
+}
+function display(id, message) {
+	dojo.place(document.createTextNode(message+"\r\n"), dojo.byId(id), "first");
+	pause(id);
+}
+function onSearch(w, id) {
+	display(id, "search: "+w.domNode.value);
+}
+function onSearchImmediate(w, id) {
+	display(id, "searchImmediately: "+w.domNode.value);
+}
+function onFetch(w, id, value) {
+	display(id, "fetch("+value+")");
+}
+function link(widget, outputId) {
+	dojo.connect(widget, "onBlur", dojo.partial(display, outputId, "blur"));
+}
+
+function TestStore(output) {
+	this.fetch = function(kwArgs) {
+		display(output, "store.fetch('"+kwArgs.query+"', isImmediate="+kwArgs.queryOptions.immediate+")");
+		kwArgs.abort = function() {
+			display(output, "store.fetch.abort('"+kwArgs.query+"', isImmediate="+kwArgs.queryOptions.immediate+")");
+		};
+		setTimeout(function() {kwArgs.onComplete.apply(kwArgs.scope || dojo.global(), [[], kwArgs])}, 500);
+		return kwArgs;
+	};
+}
+
+function GeneratingTestStore(f, c) {
+	this.createItem = c || function(i) {
+		return {value: "test "+(i+1)};		
+	};
+	this.fetch = function(kwArgs) {
+		var testStoreTimer;
+		kwArgs.abort = function() {
+			console.log("fetch aborted"); 
+			clearTimeout(testStoreTimer);
+		};
+		var time = 2000;
+		if (kwArgs.queryOptions && kwArgs.queryOptions.immediate)
+			time = 50 * kwArgs.query.length;
+		testStoreTimer = setTimeout(dojo.hitch(this, f, kwArgs), time);
+		return kwArgs;
+	}
+	this.getValue = function(item, attr, defaultValue) {
+		return item[attr] || defaultValue;
+	}
+};
+
+function responseGenerator(kwArgs) {
+	console.log("response");
+	var scope = kwArgs.scope || window;
+	var query = kwArgs.query;
+	if (query == "error") {
+		kwArgs.onError.apply(scope, [{message: "An error has occurred"}, kwArgs]);
+		return;
+	}
+	var arr = [];
+	var start = kwArgs.start || 0;
+	var total = 0, pageSize = kwArgs.count || 5;
+	if (query != "none") {
+		if (/^[0-9]+$/.exec(query)) {
+			total = parseInt(query);
+			for (var i=start,l=Math.min(start+pageSize,total); i<l; i++)
+				arr.push(this.createItem(i, query, kwArgs));
+		}
+		else {
+		}
+	}
+	if (kwArgs.onBegin)
+		kwArgs.onBegin.apply(scope, [total, kwArgs]);
+	if (kwArgs.onItem)
+		for (var i=0; i<arr.length; i++)
+			kwArgs.onItem.apply(scope, [arr[i], kwArgs]);
+	if (kwArgs.onComplete)
+		kwArgs.onComplete.apply(scope, [arr, kwArgs]);
+}
+
+function inlineShow() {
+	this.showing = true; 
+	this.domNode.style.display = "";
+	dojo.addClass(this.domNode, "testVisible");
+}
+function inlineHide() {
+	this.showing = false; 
+	this.clearSelect(); 
+	dojo.removeClass(this.domNode, "testVisible")
+}
+
+
+</script>
+<a onclick="document.body.style.width = '1200px'; return false;" href="#">Page width 1000px</a> |
+<a onclick="document.body.style.width = '400px'; return false;" href="#">Page width 400px</a>
+<br>
+
+<table style="width: 100%;" cellpadding="1" cellspacing="1" border="1">
+<thead><tr>
+<th>Test case</th><th>Description</th>
+</tr></thead><tbody>
+
+<tr><td>
+	<input id="input1" autocomplete="off" name="value">
+	<script>
+	var w = new com.ibm.oneui.controls.AutocompleteInput({
+		searchDelay: 2000,
+		store: new TestStore("output1"),
+		onComplete: function(items, request) {display("output1", "onComplete invoked "+request.query);}
+	}, dojo.byId("input1"));
+	link(w, "output1");
+	</script>
+	<pre id="output1" style="height: 150px; overflow: auto;"></pre>
+</td><td>
+	Simple input control
+	<ol>
+	<li>Logs when methods on the data store are invoked.
+	<li>Demonstrates inflight request abort logic, and call batching.  Multiple keystrokes should trigger only a single search.
+	</ol>
+</td></tr>
+
+<tr><td>
+	<input id="input1a" autocomplete="off" name="value">
+	<script>
+	var w1a = new com.ibm.oneui.controls.AutocompleteInput({
+		searchDelay: 2000,
+		multipleValues: true,
+		store: new TestStore("output1a"),
+		onComplete: function(items, request) {display("output1a", "onComplete invoked "+request.query);}
+	}, dojo.byId("input1a"));
+	link(w1a, "output1a");
+	</script>
+	<pre id="output1a" style="height: 150px; overflow: auto;"></pre>
+</td><td>
+	Simple input control with multiple value support
+	<ol>
+	<li>Logs when methods on the data store are invoked.
+	<li>Demonstrates inflight request abort logic, and call batching.  Multiple keystrokes should trigger only a single search.
+	<li>If you type a "," in the text, searches after that point only include everything after the comma.
+	<li>If you move your cursor immediately before a comma and then type a character, the data store will be queried.
+	<li>If you move your cursor anywhere except the last character or before a comma, and then type a character no search will occur.
+	<li>If you press the down arrow, your cursor should be moved to the end of the current token (to end of string or to just before the next comma) and a search should start.
+	<li>Moving your cursor left and right should not start a search.
+	</ol>
+</td></tr>
+
+
+<tr><td>
+	<input id="input2" autocomplete="off" name="value">
+	<script>
+	function generateResponse2(kwArgs) {
+		var arr = [{i:1,value:"test1"},{i:2,value:"test2"},{i:3,value:"test3"}];
+		var scope = kwArgs.scope || dojo.global();
+		kwArgs.onBegin.apply(scope, [arr.length, kwArgs]);
+		for (var i=0; i<arr.length; i++)
+			kwArgs.onItem.apply(scope, [arr[i], kwArgs]);
+		kwArgs.onComplete.apply(scope, [arr, kwArgs]);
+	}
+	
+	var testStore2 = {
+		fetch: function(kwArgs) {
+			var testStoreTimer;
+			kwArgs.abort = function() {clearTimeout(testStoreTimer);};
+			var time = 2000;
+			if (kwArgs.queryOptions && kwArgs.queryOptions.immediate)
+				time = 1;
+			testStoreTimer = setTimeout(dojo.partial(generateResponse2, kwArgs), time);
+			return kwArgs;
+		}
+	};
+	var w2 = new com.ibm.oneui.controls.AutocompleteInput({
+		searchDelay: 2000,
+		store: testStore2,
+		onComplete: function(items, request) {
+			if (this.inflight) {
+				debugger;
+				throw "Item is still inflight";
+			}
+			display("output2", "onComplete invoked "+request.query);
+		},
+		onItem: function(items, request) {display("output2", "onItem invoked "+request.query);},
+		onBegin: function(items, request) {display("output2", "onBegin invoked "+request.query);}
+	}, dojo.byId("input2"));
+	link(w2, "output2");
+	</script>
+	<pre id="output2" style="height: 150px; overflow: auto;"></pre>
+</td><td>
+	Test moderately complex input control
+	<ol>
+	<li>Prints out when methods on the fetch object are invoked.
+	</ol>
+</td></tr>
+
+<tr><td>
+	<input id="input3" autocomplete="off" name="value">
+	<script>
+	var r3 = {
+		onInputKeypress: function() {return false;},
+		getPreferredPageSize: function() {return 10;},
+		onBlur: function() {},
+		onBegin: function() {
+			dojo.empty(dojo.byId("output3"));
+		},
+		onInputClick: function() {},
+		onItem: function() {},
+		onError: function(errorData) {
+			var node = dojo.byId("output3");
+			dojo.empty(node);
+			dojo.create("li", {style: {color: "red"}, innerHTML: errorData.message || "Error"}, node);
+		},
+		onComplete: function(items, request) {
+			var node = dojo.byId("output3");
+			dojo.forEach(items, function(item) {
+				dojo.create("li", {innerHTML: item.value}, node);
+			});
+		}
+	};
+	var w3 = new com.ibm.oneui.controls.AutocompleteInput({
+		searchDelay: 2000,
+		store: new GeneratingTestStore(responseGenerator, function(i, query, request) {
+			return "test_"+i;
+		}),
+		renderer: r3
+	}, dojo.byId("input3"));
+	link(w3, "output3");
+	</script>
+	<ul id="output3"></ul>
+</td><td>
+	Demonstrate basic renderer widget callbacks connected to the input.
+	<ol>
+	</ol>
+</td></tr>
+
+<tr><td>
+	<input id="input4" autocomplete="off" name="value">
+	<ul id="output4"></ul>
+	
+	<script>
+	var store4 = new GeneratingTestStore(responseGenerator, function(i, query, request) {
+		return "test_"+i;
+	});
+	var r4 = new com.ibm.oneui.controls.AutocompleteMenu({
+		show: inlineShow,
+		hide: inlineHide,
+		store: store4
+	}, dojo.byId("output4"));
+	r4.domNode.style.display = "";
+	var w4 = new com.ibm.oneui.controls.AutocompleteInput({
+		searchDelay: 2000,
+		store: store4,
+		renderer: r4
+	}, dojo.byId("input4"));
+	</script>
+</td><td>
+	Basic test widget for autocomplete menu
+	<ol>
+	<li>Search for 'error' to trigger an error condition
+	<li>The number of results returned by the query will be equal to the length of the query.
+	</ol>
+</td></tr>
+
+
+<tr><td>
+	<input id="input5" autocomplete="off" name="value" onblur="console.log('blur');">
+	<ul id="output5"></ul>
+	<script>
+	var store5 = new GeneratingTestStore(responseGenerator, function(i, query, request) {
+		return "test_"+i;
+	});
+	var r5 = new com.ibm.oneui.controls.AutocompleteMenu({
+		store: store5,
+		show: inlineShow,
+		hide: inlineHide
+	}, dojo.byId("output5"));
+	var w5 = new com.ibm.oneui.controls.AutocompleteInput({
+		searchDelay: 2000,
+		store: store5,
+		renderer: r5
+	}, dojo.byId("input5"));
+	dojo.attr(r5.domNode, "dijitPopupParent", "input5");
+	</script>
+</td><td>
+	Paging test control.
+	<ol>
+	<li>The output widget will have a green border if it should be "showing", and the input will have a yellow background when a search is in progress
+	<li>Entering a number will return the specified number of results
+	<li>Up and down arrow will move the highlighted item (if the menu is open and no current search is executing)
+	<li>Page up and down will hit next or previous (if the menu is open and no current search is executing)
+	<li>Paging should not be possible beyond the limits (hit PAGE_DOWN on the last item)
+	<li>Any key input that triggers a search will disable the highlight - when the search completes if it was an "immediate" search (triggered by DOWN) it will highlight the first item
+	<li>Searches, blur, and changes to values should reset the paging position (search for '10', page to next, then type '1' should reset to page 1)
+	<li>Clicking anywhere within the output widget should NOT cause the input to lose focus.
+	<li>Type "error" to trigger an error result.
+	</ol>
+</td></tr>
+
+<tr><td>
+	<input id="input6" autocomplete="off" name="value">
+	<ul id="output6"></ul>
+	<script>
+	
+	var users = [
+	         {"name":"Elisabeth J. Woody","email":"lwoody@us.ibm.com","hasEmail":true,"inactive":true,"id":"0c2ac240-8f0a-1028-82e3-db07163b51b2"},
+				{"name":"Stephen Baber","email":"scbaber@us.ibm.com","id":"00d796c0-8f0a-1028-9348-db07163b51b2", title: "Feature lead"},
+				{"name":"Prabhakar Bugga","email":"pbugga@us.ibm.com","id":"e6ea83c0-8f0a-1028-87b8-db07163b51b2"},
+				{"name":"Alain Rabenandrasana","email":"arabenandrasana@fr.ibm.com","id":"eb626cc0-8f09-1028-98a2-db07163b51b2"},
+				{"name":"RISHAB SHARMA","email":"rishab.sharma@in.ibm.com","id":"a9d1c1c0-8f09-1028-9cbd-db07163b51b2"},
+				{"name":"AZITA M. HABIBI","email":"habibi@us.ibm.com","inactive":true,"id":"aa2550c0-8953-1029-88e3-99152617a2b4", title: "Technical assistant"},
+				{"name":"Gabriela Avram","email":"GAVRAM@ie.ibm.com","inactive":true,"id":"110986c0-46ff-102b-9712-836dfc9048bb"},
+				{"name":"Patricia Labrie","email":"plabrie@ca.ibm.com","id":"c110af40-8f09-1028-831e-db07163b51b2"},
+				{"name":"Roberto Chiabra Valera","email":"rchiabra@pe.ibm.com","id":"e7a52dc0-ec14-1029-87ed-c42918266d42", title: "Design consultant"}
+			];
+
+	var store6 = new GeneratingTestStore(responseGenerator, function(i, query, request) {
+		var user = dojo.clone(users[i % users.length]);
+		user.id = user.id;
+		return user;
+	});
+	var map6 = {"id":"id","name":"name","user1":"title","user2":"email"};
+	store6.getValue = function(item, attr, defaultValue) {
+		if (attr == "photo")
+			return "http://w3.ibm.com/connections/profiles/photo.do?userid="+encodeURIComponent(item.id);
+		attr = map6[attr];
+		return item[attr] || defaultValue;
+	}
+
+	var r6 = new com.ibm.oneui.controls.AutocompleteMenu({
+		store: store6,
+		updateItem: function(item, node, store) {
+			node.lastChild.lastChild.data = store.getValue(item, "user1", "");
+			node.lastChild.firstChild.firstChild.data = store.getValue(item, "name");
+			node.lastChild.firstChild.nextSibling.firstChild.data = store.getValue(item, "user2", "");
+			var photo = store.getValue(item, "photo");
+			if (photo)
+				node.firstChild.src = photo;
+			else
+				node.firstChild.style.display = "none";
+		}
+	}, dojo.byId("output6"));
+	r6.templateNode.innerHTML = "<img style='float: left; width: 32px; height: 32px; padding: 4px;'><div style='height: 40px; margin-left: 41px; position: relative;'><div>&nbsp;</div><div style='position: absolute; top: 0px; right: 4px;'>&nbsp;</div>&nbsp;</div>";
+	dojo.connect(r6, "show", r6, function() {dojo.addClass(this.domNode, "testVisible")});
+	dojo.connect(r6, "hide", r6, function() {dojo.removeClass(this.domNode, "testVisible")});
+	var w6 = new com.ibm.oneui.controls.AutocompleteInput({
+		searchDelay: 2000,
+		store: store6,
+		initRenderer: function() {
+			r6.parent = w6;
+			r6.around = w6.domNode;
+			return r6;
+		}
+	}, dojo.byId("input6"));
+	dojo.attr(r6.domNode, "dijitPopupParent", "input6");
+	r6.domNode.style.width = "400px";
+	</script>
+</td><td>
+	Person output test control
+	<ol>
+	</ol>
+</td></tr>
+
+<tr><td>
+	<input id="input7" autocomplete="off" name="value" onblur="console.log('blur');">
+	<ul id="output7"></ul>
+	<script>
+	var store7 = new com.ibm.oneui.controls.AutocompleteDataStore();
+	store7.requestDelay = 200;
+	store7.cachedRequestDelay = 50;
+	store7.maximumResultsDelay = 1000;
+	store7.cache = {};
+	store7.getQueryResults = function(kwArgs) {
+		var timer;
+		var deferred = new dojo.Deferred(function() {clearTimeout(timer);});
+		timer = setTimeout(dojo.hitch(deferred, "callback", ["remote1", "remote2"]), 4000);
+		return deferred;
+	};
+	store7.getLocalResults = function() {
+		var deferred = this._localDfd;
+		if (!deferred) {
+			var timer;
+			deferred = this._localDfd = new dojo.Deferred(function() {clearTimeout(timer);});
+			timer = setTimeout(dojo.hitch(deferred, "callback", ["local1", "local2"]), 2000);
+		}
+		return deferred;
+	};
+	var r7 = new com.ibm.oneui.controls.AutocompleteMenu({
+		store: store7,
+		show: inlineShow,
+		hide: inlineHide
+	}, dojo.byId("output7"));
+	var w7 = new com.ibm.oneui.controls.AutocompleteInput({
+		searchDelay: 2000,
+		store: store7,
+		renderer: r7
+	}, dojo.byId("input7"));
+	dojo.attr(r7.domNode, "dijitPopupParent", "input7");
+	</script>
+</td><td>
+	AutocompleteDataStore test example.
+	<ol>
+	<li>This datastore should return two results after 1 second, and then two more results 1 second after that.
+	<li>If maximumResultsDelay is set below 1000 (if the second request takes longer than 1s) an error should be displayed
+	<li>The loading node should be shown while incremental results are being loaded
+	</ol>
+</td></tr>
+
+<tr><td>
+	<input id="input8" autocomplete="off" name="value" onblur="console.log('blur');">
+	<ul id="output8"></ul>
+	<script>
+	var store8 = new com.ibm.oneui.controls.AutocompleteDataStore();
+	store8.requestDelay = 200;
+	store8.cachedRequestDelay = 50;
+	store8.maximumResultsDelay = 10000;
+	store8.cache = {};
+	store8.getQueryResults = function(kwArgs) {
+		var timer;
+		var deferred = new dojo.Deferred(function() {clearTimeout(timer);});
+		timer = setTimeout(dojo.hitch(deferred, "callback", ["both_r1", "remote1", "remote2"]), 4000);
+		deferred.addCallback(this, "filter", kwArgs.query, kwArgs);
+		return deferred;
+	};
+	store8.filter = function(query, kwArgs, results) {
+		query = query.toLowerCase();
+		var filtered = [];
+		for (var i=0,l=results.length; i<l; i++)
+			if (results[i].substr(0, query.length).toLowerCase() == query)
+				filtered.push(results[i]);
+		return filtered;
+	}
+	store8.getLocalResults = function(kwArgs) {
+		var timer;
+		deferred = this._localDfd = new dojo.Deferred(function() {clearTimeout(timer);});
+		timer = setTimeout(dojo.hitch(deferred, "callback", ["both_l1", "local1", "local2"]), 2000);
+		deferred.addCallback(this, "filter", kwArgs.query, kwArgs);
+		return deferred;
+	};
+	var r8 = new com.ibm.oneui.controls.AutocompleteMenu({
+		store: store8,
+		show: inlineShow,
+		hide: inlineHide
+	}, dojo.byId("output8"));
+	var w8 = new com.ibm.oneui.controls.AutocompleteInput({
+		searchDelay: 2000,
+		store: store8,
+		renderer: r8
+	}, dojo.byId("input8"));
+	dojo.attr(r8.domNode, "dijitPopupParent", "input8");
+	</script>
+</td><td>
+	AutocompleteDataStore test example.
+	<ol>
+	<li>This datastore should return two results after 1 second, and then two more results 1 second after that.
+	<li>If maximumResultsDelay is set below 1000 (if the second request takes longer than 1s) an error should be displayed
+	<li>The loading node should be shown while incremental results are being loaded
+	<li>The results should be filtered down to the text specified in the input box
+	<li>If "rem" is specified as a query, the loading node should be visible immediately until the remote items are returned
+	</ol>
+</td></tr>
+
+<tr><td>
+	<input id="input9" autocomplete="off" name="value" onblur="console.log('blur');">
+	<ul id="output9"></ul>
+	<script>
+	var store9 = new com.ibm.oneui.controls.AutocompleteDataStore();
+	store9.requestDelay = 200;
+	store9.cachedRequestDelay = 50;
+	store9.maximumResultsDelay = 10000;
+	store9.cache = {};
+	store9.getQueryResults = function(kwArgs) {
+		if (this.hasComplexity(kwArgs, 3)) {
+			var timer;
+			var deferred = new dojo.Deferred(function() {clearTimeout(timer);});
+			timer = setTimeout(dojo.hitch(deferred, "callback", ["both_r1", "remote1", "remote2"]), 4000);
+			deferred.addCallback(this, "filter", kwArgs.query, kwArgs);
+			return deferred;
+		}
+	};
+	store9.filter = function(query, kwArgs, results) {
+		query = query.toLowerCase();
+		var filtered = [];
+		for (var i=0,l=results.length; i<l; i++)
+			if (results[i].substr(0, query.length).toLowerCase() == query)
+				filtered.push(results[i]);
+		return filtered;
+	}
+	/*store9.getLocalResults = function() {
+		var deferred = this._localDfd;
+		if (!deferred) {
+			var timer;
+			deferred = this._localDfd = new dojo.Deferred(function() {clearTimeout(timer);});
+			timer = setTimeout(dojo.hitch(deferred, "callback", ["both_l1", "local1", "local2"]), 2000);
+		}
+		return deferred;
+	};*/
+	var r9 = new com.ibm.oneui.controls.AutocompleteMenu({
+		store: store9,
+		show: inlineShow,
+		hide: inlineHide,
+		empty: function(query, hasPrevious) {
+			var validQuery = this.store.hasComplexity({query: query}, this.complexity);
+			if (!validQuery) {
+				var msg = (query.length > 0) 
+					? "Too many results to display, please be more specific."
+					: "Type a name or e-mail address to see matching people.";
+				this.emptyNode.firstChild.data = dojo.string.substitute(msg, [query]);
+				this._hideExcept("emptyNode", hasPrevious ? "previousNode" : null);
+			}
+			else
+				this.inherited(arguments);
+		}
+	}, dojo.byId("output9"));
+	var w9 = new com.ibm.oneui.controls.AutocompleteInput({
+		searchDelay: 2000,
+		store: store9,
+		renderer: r9
+	}, dojo.byId("input9"));
+	dojo.attr(r9.domNode, "dijitPopupParent", "input9");
+	</script>
+</td><td>
+	AutocompleteDataStore that requires minimum characters
+	<ol>
+	<li>This datastore has no local results
+	<li>This datastore requires a minimum query complexity of 3 before it will invoke a remote search.
+	<li>Entering no query will pop open the menu with text indicating that the user should enter a name or e-mail
+	<li>Entering one or two English or Latin/Cyrillic/Dravidian characters will result in the user seeing a message that too many results are available and the query must be more specific.
+	<li>Entering three or more Latin/Cyrillic/Dravidian characters will perfom a fake remote request (delay of 1000ms)
+	<li>Entering a single Chinese, Kanji, or other ideograph will perform a remote request.  Entering one english character and then one Chinese character will also perform a request.
+	<li>Spaces before or after the text are not considered.  Spaces within text are considered
+	</ol>
+</td></tr>
+
+
+<tr><td>
+	<input id="input10" autocomplete="off" name="value" onblur="console.log('blur');">
+	<ul id="output10"></ul>
+	<script>
+	var store10 = new com.ibm.oneui.controls.AutocompleteDataStore();
+	store10.requestDelay = 200;
+	store10.cachedRequestDelay = 50;
+	store10.maximumResultsDelay = 10000;
+	store10.cache = {};
+	store10.getQueryResults = function(kwArgs) {
+		var timer;
+		var deferred = new dojo.Deferred(function() {clearTimeout(timer);});
+		var results = [];
+		var query = kwArgs.query.split(":");
+		if (query.length > 1) {
+			var length = parseInt(query[1]);
+			for (var i=0; i<length; i++)
+				results.push("remote_"+i);
+		}
+		timer = setTimeout(dojo.hitch(deferred, "callback", results), 2000);
+		return deferred;
+	};
+	store10.filter = function(results, query, kwArgs) {
+		return results;
+	}
+	store10.getLocalResults = function(kwArgs) {
+		var timer;
+		deferred = this._localDfd = new dojo.Deferred(function() {clearTimeout(timer);});
+		var results = [];
+		var query = kwArgs.query.split(":");
+		if (query.length > 1) {
+			var length = parseInt(query[0]);
+			for (var i=0; i<length; i++)
+				results.push("local_"+i);
+		}
+		timer = setTimeout(dojo.hitch(deferred, "callback", results), 1000);
+		return deferred;
+	};
+	var r10 = new com.ibm.oneui.controls.AutocompleteMenu({
+		store: store10,
+		pageSize: 10,
+		show: inlineShow,
+		hide: inlineHide
+	}, dojo.byId("output10"));
+	var w10 = new com.ibm.oneui.controls.AutocompleteInput({
+		searchDelay: 2000,
+		store: store10,
+		renderer: r10
+	}, dojo.byId("input10"));
+	dojo.attr(r10.domNode, "dijitPopupParent", "input10");
+	</script>
+</td><td>
+	AutocompleteDataStore with combined paging on local and remote searches
+	<ol>
+	</ol>
+</td></tr>
+
+<tr><td>
+	<input id="input11" autocomplete="off" name="value">
+	<ul id="output11"></ul>
+	<script>
+	
+	var r11 = new com.ibm.oneui.controls.InlineAutocompleteMenu({
+		store: store10,
+		pageSize: 10
+	}, dojo.byId("output11"));
+	var w11 = new com.ibm.oneui.controls.AutocompleteInput({
+		searchDelay: 2000,
+		store: store10,
+		renderer: r11
+	}, dojo.byId("input11"));
+	</script>
+</td><td>
+	AutocompleteDataStore with combined paging on local and remote searches
+	<ol>
+	</ol>
+</td></tr>
+
+</tbody></table>
+</div>
+</div>
+</body>
+${end}

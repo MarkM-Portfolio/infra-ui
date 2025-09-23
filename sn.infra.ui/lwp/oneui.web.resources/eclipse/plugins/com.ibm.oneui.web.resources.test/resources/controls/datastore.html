@@ -1,0 +1,310 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+${script:com.ibm.oneui.controls.AutocompleteDataStore}
+
+<style>
+</style>
+
+${endhead}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+<script>
+var timer;
+function pause(id) {
+	if (timer)
+		clearTimeout(timer);
+	timer = setTimeout(function() {dojo.place(document.createTextNode("** PAUSE **\r\n"), dojo.byId(id), "first");}, 500);
+}
+function display(id, message) {
+	dojo.place(document.createTextNode(message+"\r\n"), dojo.byId(id), "first");
+	pause(id);
+}
+function onSearch(w, id) {
+	display(id, "search: "+w.domNode.value);
+}
+function onSearchImmediate(w, id) {
+	display(id, "searchImmediately: "+w.domNode.value);
+}
+function onFetch(w, id, value) {
+	display(id, "fetch("+value+")");
+}
+function link(widget, outputId) {
+	dojo.connect(widget, "onBlur", dojo.partial(display, outputId, "blur"));
+}
+
+function TestStore(output) {
+	this.fetch = function(kwArgs) {
+		display(output, "store.fetch('"+kwArgs.query+"', isImmediate="+kwArgs.queryOptions.immediate+")");
+		kwArgs.abort = function() {
+			display(output, "store.fetch.abort('"+kwArgs.query+"', isImmediate="+kwArgs.queryOptions.immediate+")");
+		};
+		setTimeout(function() {kwArgs.onComplete.apply(kwArgs.scope || dojo.global(), [[], kwArgs])}, 500);
+		return kwArgs;
+	};
+}
+
+function GeneratingTestStore(f, c) {
+	this.createItem = c || function(i) {
+		return {value: "test "+(i+1)};		
+	};
+	this.fetch = function(kwArgs) {
+		var testStoreTimer;
+		kwArgs.abort = function() {clearTimeout(testStoreTimer);};
+		var time = 2000;
+		if (kwArgs.queryOptions && kwArgs.queryOptions.immediate)
+			time = 50 * kwArgs.query.length;
+		testStoreTimer = setTimeout(dojo.hitch(this, f, kwArgs), time);
+		return kwArgs;
+	}
+	this.getValue = function(item, attr, defaultValue) {
+		return item[attr] || defaultValue;
+	}
+};
+
+function responseGenerator(kwArgs) {
+	var scope = kwArgs.scope || window;
+	var query = kwArgs.query;
+	if (query == "error") {
+		kwArgs.onError.apply(scope, [{message: "An error has occurred"}, kwArgs]);
+		return;
+	}
+	var arr = [];
+	var start = kwArgs.start || 0;
+	var total = 0, pageSize = kwArgs.count || 5;
+	if (query != "none") {
+		if (/^[0-9]+$/.exec(query)) {
+			total = parseInt(query);
+			for (var i=start,l=Math.min(start+pageSize,total); i<l; i++)
+				arr.push(this.createItem(i, query, kwArgs));
+		}
+		else {
+		}
+	}
+	if (kwArgs.onBegin)
+		kwArgs.onBegin.apply(scope, [total, kwArgs]);
+	if (kwArgs.onItem)
+		for (var i=0; i<arr.length; i++)
+			kwArgs.onItem.apply(scope, [arr[i], kwArgs]);
+	if (kwArgs.onComplete)
+		kwArgs.onComplete.apply(scope, [arr, kwArgs]);
+}
+
+function MockRequest(query, options) {
+	this.query = query;
+	this.options = options;
+}
+MockRequest.prototype = {
+	onBegin: function(size, request) {
+		if (!request == this)
+			throw "Request does not match";
+		this._onBegin = [size];
+		this._items = [];
+	},
+	onItem: function(item, request) {
+		if (!request == this)
+			throw "Request does not match";
+		if (!this._onBegin)
+			throw "onItem invoked before onBegin";
+		this._items.push(item);
+	},
+	onComplete: function(items, request) {
+		if (!request == this)
+			throw "Request does not match";
+		if (!this._onBegin)
+			throw "onComplete invoked before onBegin";
+		if (items.length != this._items.length)
+			throw "onComplete was passed a different number of items than onItem calls";
+		for (var i=0; i<items.length; i++)
+			if (items[i] !== this._items[i])
+				throw "Item #"+i+" was different between request and invocation";
+		this._onComplete = [items];
+	},
+	onError: function(errorData, request) {
+		if (!request == this)
+			throw "Request does not match";
+	}
+};
+
+function invokeSimpleCallbacks(request, items) {
+	request.onBegin(items.length, request);
+	for (var i=0; i<items.length; i++)
+		request.onItem(items[i], request);
+	request.onComplete(items, request);
+}
+
+function pass(id) {
+	var node = dojo.byId(id);
+	if (node._handled)
+		throw "pass invoked on test that has already finished";
+	node._handled = true;
+	node.style.color = "green";
+	node.innerHTML = "PASS";
+	console.log("test: "+id+" successful");
+	run();
+}
+function fail(id, message) {
+	var node = dojo.byId(id);
+	if (node._handled)
+		throw "fail invoked on test that has already finished";
+	node._handled = true;
+	node.style.color = "red";
+	node.innerHTML = "FAIL";
+	throw message;
+}
+
+var tests = [];
+
+</script>
+<a onclick="document.body.style.width = '1200px'; return false;" href="#">Page width 1000px</a> |
+<a onclick="document.body.style.width = '400px'; return false;" href="#">Page width 400px</a>
+<br>
+
+<table style="width: 100%;" cellpadding="1" cellspacing="1" border="1">
+<thead><tr>
+<th>Test case</th><th>Description</th>
+</tr></thead><tbody>
+
+<tr><td>
+	<div id="test1"></div>
+	<script>
+	tests.push(function() {
+		
+		var store = new com.ibm.oneui.controls.AutocompleteDataStore();
+		store.requestDelay = 100;
+		store.dispatch = function(kwArgs) {
+			kwArgs.onBegin(0, kwArgs);
+			kwArgs.onComplete([], kwArgs);
+		}
+		
+		var request = new MockRequest("test");
+		store.fetch(request);
+		setTimeout(response1, 150);
+		
+		if (request._onComplete || request._onBegin)
+			fail("test1", "Fetch invoked immediately");
+		
+		function response1() {
+			if (!request._onComplete || request._items.length != 0)
+				fail("test1", "Fetch did not complete correctly");
+			request = new MockRequest();
+			store.fetch(request);
+			setTimeout(response2, 50);
+		}
+		function response2() {
+			if (request._onComplete || request._onBegin)
+				fail("test1", "Fetch should still be running");
+			try {request.abort();} catch (e) {throw "Abort should never throw";}
+			setTimeout(response3, 100);
+		}
+		function response3() {
+			if (request._onComplete || request._onBegin)
+				fail("test1", "Fetch should have been terminated");
+			// duplicate abort does not throw
+			try {request.abort();} catch (e) {throw "Abort should not throw when invoked twice";}
+			pass("test1");
+		}
+	});
+	
+	</script>
+</td><td>
+	Test 'fetch'
+	<ol>
+	<li>Requests are automatically delayed
+	<li>abort() is added to request
+	<li>abort() prevents delayed request
+	<li>abort() does not throw an exception when invoked
+	</ol>
+</td></tr>
+
+<tr><td>
+	<div id="test2"></div>
+	<script>
+	tests.push(function() {
+		
+		var store = new com.ibm.oneui.controls.AutocompleteDataStore();
+		store.requestDelay = 100;
+		store.getLocal = function(kwArgs) {
+			return ["test"];
+		}
+		store.respond = invokeSimpleCallbacks;
+		
+		var request = new MockRequest("test");
+		store.fetch(request);
+		
+		if (!request._onComplete || request._items.length != 1)
+			fail("test2", "Fetch did not complete immediately");
+		if (request._items[0] != "test")
+			fail("test2", "Did not return same object as from cache");
+		pass("test2");		
+	});
+	
+	</script>
+</td><td>
+	Test cache behavior
+	<ol>
+	<li>A local result is passed to respond, which is passed to onComplete
+	</ol>
+</td></tr>
+
+<tr><td>
+	<div id="test3"></div>
+	<script>
+	tests.push(function() {
+		
+		var store = new com.ibm.oneui.controls.AutocompleteDataStore();
+		store.requestDelay = 100;
+		store.getLocal = function(kwArgs) {
+			return ["test"];
+		}
+		store.respond = function(kwArgs, cached) {
+			var dfd = new dojo.Deferred();
+			dfd.addCallback(function() {fail("test3", "Deferred was not cancelled");});
+			kwArgs._store = {deferred: dfd};
+			setTimeout(dojo.hitch(dfd, "callback"), 100);
+		}
+
+		var request = new MockRequest("test");
+		store.fetch(request);
+		if (request._onComplete || request._onBegin)
+			fail("test3", "Fetch invoked immediately");
+		setTimeout(response1, 50);
+
+		function response1() {
+			if (request._onComplete || request._onBegin)
+				fail("test3", "Fetch invoked too early");
+			request.abort();
+			setTimeout(response2, 100);
+		}
+		function response2() {
+			if (request._onComplete || request._onBegin)
+				fail("test3", "Fetch should be stopped");
+			pass("test3");
+		}
+	});
+	
+	</script>
+</td><td>
+	Advanced abort()
+	<ol>
+	<li>Abort() should cancel a deferred
+	</ol>
+</td></tr>
+
+</tbody></table>
+</div>
+</div>
+<script>
+	function run() {
+		var test = tests.shift();
+		if (test)
+			test();
+		else
+			console.log("done");
+	}
+	run();
+</script>
+</body>
+${end}

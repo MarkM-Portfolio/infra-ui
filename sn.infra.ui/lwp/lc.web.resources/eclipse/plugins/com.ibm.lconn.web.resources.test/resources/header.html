@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+${head}
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+<style>
+.lotusui30 .lotusBanner {
+    background: -moz-linear-gradient(center top , #BEBEBE 0%, #858585 100%) repeat scroll 0 0 transparent;
+    padding: 0 15px;
+}
+.lotusui_ie6 .lotusui30 .lotusBanner {
+    margin-bottom: -3px;
+}
+.lotusui_ie7 .lotusui30 .lotusBanner {
+    margin-bottom: -1px;
+}
+.lotusui30 .lotusBanner .lotusLogo {
+    margin-left: 5px;
+    margin-top: 11px;
+}
+.lotusui_ie6 .lotusui30 .lotusBanner .lotusLogo {
+    margin-left: 0;
+}
+.lotusui_ie .lotusui30 .lotusBanner .lotusLogo {
+    margin-top: 10px;
+}
+.lotusui30 .lotusBanner ul li a {
+    padding: 10px;
+}
+.lotusui30 .lotusBanner ul.lotusInlinelist li {
+    margin: 0;
+}
+.lotusui30 .lotusBanner ul.lotusInlinelist li {
+    display: block;
+    float: left;
+}
+.lotusui30 .lotusBanner ul.lotusInlinelist li.lotusUser a {
+    font-weight: normal;
+    margin: 0;
+    padding: 11px 7px 11px 44px;
+    position: relative;
+}
+.lotusui30 .lotusBanner ul.lotusInlinelist li.lotusUser a .lotusName {
+    font-weight: bold;
+}
+.lotusui30 .lotusBanner ul.lotusUtility li a .lotusPhoto {
+    left: 10px;
+    position: absolute;
+    top: 7px;
+}
+.lotusui_ie6 .lotusui30 .lotusBanner ul.lotusUtility li a .lotusPhoto {
+    left: -34px;
+}
+.lotusui30 .lotusBanner ul.lotusInlinelist li a, .lotusui30 .lotusBanner ul li span.lotusUser {
+    border-color: transparent;
+    border-style: solid;
+    border-width: 1px 1px 0;
+    color: #222222;
+    display: block;
+    font-weight: bold;
+}
+.lotusui30 .lotusBanner ul.lotusLinks li a, .lotusui30 .lotusBanner ul.lotusLinks li a:visited, .lotusui30 .lotusBanner ul.lotusLinks li a:hover, .lotusui30 .lotusBanner ul.lotusLinks li a:active, .lotusui30 .lotusBanner .lotusLogo {
+    color: #222222;
+}
+.lotusui_ie6 .lotusui30 .lotusBanner ul.lotusInlinelist li a, .lotusui_ie6 .lotusui30 .lotusBanner ul li span.lotusUser {
+    border-color: #858585;
+}
+.lotusui30 .lotusBanner ul.lotusLinks li.lotusSelected a {
+    text-decoration: none;
+}
+.lotusui30 .lotusBanner ul li a {
+    border-bottom-width: 0;
+}
+.lotusui30 .lotusBanner ul.lotusUtility li a, .lotusui30 .lotusBanner ul li span.lotusUser {
+    border-bottom-width: 0;
+    font-weight: normal;
+    padding: 11px 10px;
+}
+.lotusui_ie .lotusui30 .lotusBanner ul.lotusInlinelist li a, .lotusui_ie .lotusui30 .lotusBanner ul li span.lotusUser {
+    line-height: 1.25em;
+}
+.lotusui30 .lotusBanner .lotusDropDownSprite {
+    background-position: 0 -656px;
+}
+.lotusImagesOff .lotusui30 .lotusBanner ul.lotusInlinelist li a, .lotusImagesOff .lotusui30 .lotusBanner ul li span.lotusUser {
+    border-width: 0;
+}
+.lotusui30 .lotusBanner .lotusUnreadBadge {
+    background: none repeat scroll 0 0 #666666;
+    color: #FFFFFF;
+    text-shadow: 0 1px 2px #666666;
+}
+.lotusui30 .lotusBanner ul.lotusLinks a, .lotusui30 .lotusBanner ul.lotusLinks a:visited, .lotusui30 .lotusBanner ul.lotusLinks a:hover, .lotusui30 .lotusBanner ul.lotusLinks a:active {
+    text-decoration: none;
+}
+.lotusui30 .lotusBanner ul.lotusInlinelist a {
+    text-shadow: 0 1px 2px #CCCCCC;
+}
+.lotusui30 .lotusBanner ul.lotusLinks li.lotusHover a, .lotusui30 .lotusBanner ul.lotusLinks li a:hover {
+    background: -moz-linear-gradient(#858585, #5F5F5F) repeat scroll 0 0 transparent;
+    border-top-color: #858585;
+    color: #FFFFFF;
+    text-shadow: 0 1px 1px #000000;
+}
+.lotusui_ie .lotusui30 .lotusBanner ul.lotusLinks li.lotusHover a, .lotusui_ie .lotusui30 .lotusBanner ul.lotusLinks li a:hover {
+    border-top-color: #5F5F5F;
+    color: #FFFFFF;
+}
+.lotusui30 .lotusBanner ul.lotusLinks li a:hover .lotusUnreadBadge {
+    background: none repeat scroll 0 0 #333333;
+    color: #FFFFFF;
+    text-shadow: 0 1px 2px #333333;
+}
+.lotusui30 .lotusBanner ul.lotusUtility li a, .lotusui30 .lotusBanner ul li span.lotusUser {
+    margin: 9px 0;
+    padding: 2px 10px;
+}
+.lotusui30 .lotusBanner ul.lotusUtility li.lotusLast a, .lotusui_ie6 .lotusui30 .lotusBanner ul.lotusUtility li.lotusLast a {
+    border-right: 1px solid #777777;
+}
+.lotusui30 .lotusNavMenu {
+    border-top-width: 0;
+}
+</style>
+${script:lconn.test.HeaderDialog}
+${style:com.ibm.oneui/controls/templates/HoverPopup}
+${style:com.ibm.oneui/controls/templates/ResourceLink}
+${endhead}
+
+<div class="lotusFrame lotusui30 lotusui30_layout">
+<div role="banner" class="lotusBanner">
+		<div class="lotusRightCorner">
+			<div class="lotusInner">
+				<a class="lotusAccess" accesskey="S" href="#lotusMainContent"><img alt="Skip to main content link. Accesskey S" src="images/blank.gif"></a>	
+				
+				<!-- Top Nav Links -->
+				<div id="bannerNav"><ul role="navigation" class="lotusInlinelist lotusLinks">
+					<li id="bannerLogo"><img src="images/ibmLogo_45.png"></li>
+					<li class="lotusFirst"><a id="menuLink_home" href="javascript:;">Home</a></li>
+					<li><a id="menuLink_mail" href="javascript:;" aria-haspopup="true" role="button">Mail <span class="lotusUnreadBadge">4</span></a></li>
+					<li><a id="menuLink_calendar" href="javascript:dijit.byId('calendar').open();" aria-haspopup="true" role="button">Calendar</a></li>
+					<li><a id="menuLink_people" href="javascript:;" aria-haspopup="true" role="button">People </a></li>
+					<li><a id="menuLink_communities" href="javascript:;" aria-haspopup="true" role="button">Communities </a></li>
+					<li><a href="javascript:;" id="menuLink_apps" aria-haspopup="true" role="button">Apps </a></li>
+				</ul>
+</div>
+				
+				<!-- User Name + Create Box -->
+				<ul id="frankAdams" class="lotusInlinelist lotusUtility"><li id="shareButton" class="lotusLast"><a role="button" aria-haspopup="true" href="javascript:;"><img class="shareIcon" src="images/blank.gif" alt=""><span class="lotusAltText">+</span>Share</a></li>
+<li class="lotusUser"><a role="button" aria-haspopup="true" href="javascript:;"><img class="lotusPhoto" alt="Person name goes here" src="images/avatars/SamanthaDaryn.jpg">Welcome back <span class="lotusName">Samantha </span><img class="lotusArrow lotusDropDownSprite" src="images/blank.gif" alt="" aria-label="show menu"><span class="lotusAltText"></span></a></li></ul>
+			
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script>
+	new lconn.test.HeaderDialog({id: "calendar", around: "menuLink_calendar"});
+</script>
+${end}

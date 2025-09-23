@@ -1,0 +1,140 @@
+${head}
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+
+<title>Banner</title>
+
+
+<script>
+dojoConfig.parseOnLoad=true;
+
+</script>
+${script:dojo.parser}
+${script:dojo._base.lang}
+${script:dojo.query}
+${script:dojo.dom}
+${script:dojo.dom-class}
+${script:dijit.registry}
+${script:ic-core.widget.Banner}
+${script:ic-core.config.services}
+${script:net.jazz.ajax.xdloader}
+<!--  add your custom modules here -->
+<script>
+        ibmConfig={serviceName:'homepage'};
+        
+        require(['dojo/query', 'dojo/dom', 'ic-core/widget/Banner', 'ic-core/config/services', 'dojo/domReady!'], function(query, dom, Banner, services) {
+            query('input[type=checkbox]', dojo.byId('banner2_controls')).map(function(el) {
+                el.checked = services[el.id.substring('banner2_'.length)];
+            });
+            new Banner({}, dom.byId('banner2'));
+            new Banner({appName: 'homepage'}, dom.byId('banner3'));
+        });
+        
+        function toggle(jsid, menu) {
+            var registry = require('dijit/registry'),
+                domClass = require('dojo/dom-class');
+            domClass.toggle(registry.byId(jsid)[menu+'Menu'], 'lotusHidden');
+        }
+        function enable(div, e) {
+            var registry = require('dijit/registry'),
+                services = require('ic-core/config/services'),
+                query = require('dojo/query'),
+                lang = require('dojo/_base/lang'),
+                Banner = require('ic-core/widget/Banner'),
+                dom = require('dojo/dom'),
+                _services = lang.clone(services);
+            registry.byId('banner2').destroy(true);
+            // Mock services
+            query('input[type=checkbox]', div).map(function(el) {
+                services[el.id.substring('banner2_'.length)] = el.checked;
+            });
+            new Banner({}, dom.byId('banner2'));
+            // Restore services
+            lang.mixin(services, _services);
+        }
+        function choose(div, e) {
+            var registry = require('dijit/registry'),
+                dom = require('dojo/dom'),
+                query = require('dojo/query'),
+                Banner = require('ic-core/widget/Banner');
+            registry.byId('banner3').destroy(true);
+            var current = query('input[type=radio]', div).filter(function(el) {
+                return el.checked;
+            })[0];
+            new Banner({appName: current && current.value}, dom.byId('banner3'));
+        }
+</script>
+
+
+<style>
+.lotusui30_body .lotusMain .lotusContent .lotusMain, .lotusui30_body .lotusMain .lotusContent .lotusMain .lotusContent { min-height: 120px }
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-test/ui/index.html?render=test">Core UI widgets and utilities</a>
+    <span class="lotusDivider">&gt;</span>
+    Banner
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain">
+<div class="lotusContent">
+<h1>Banner</h1>
+<dl>
+    <!--  Update the module ID -->
+    <dt>Module ID: <code>ic-ui/Banner</code></dt>
+    <!--  Update the JSDoc page URL -->
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-ui/ic-ui.Banner.html">JSDoc</a></dd>
+</dl>
+<div>
+        <div id="banner1" data-dojo-type="ic-core/widget/Banner" data-dojo-props="megaMenuMap:{profiles:&quot;megamenu.html&quot;,communities:&quot;megamenu.html&quot;,apps:&quot;megamenu.html&quot;}"></div>
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <h3>Toggle menus</h3>
+                <div>
+                    <button onclick="toggle('banner1', 'homepage')">Homepage</button>
+                    <button onclick="toggle('banner1', 'profiles')">Profiles</button>
+                    <button onclick="toggle('banner1', 'communities')">Communities</button>
+                    <button onclick="toggle('banner1', 'apps')">Apps</button>
+                    <button onclick="toggle('banner1', 'share')">Share</button>
+                    <button onclick="toggle('banner1', 'mail')">Mail</button>
+                    <button onclick="toggle('banner1', 'calendar')">Calendar</button>
+                    <button onclick="toggle('banner1', 'help')">Help</button>
+                </div>
+            </div>
+        </div>
+        <div id="banner2"></div>
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <h3>Enabled services</h3>
+                <div id="banner2_controls">
+                    <input onclick="enable(this.parentNode, event)" class="lotusCheckbox" type="checkbox" id="banner2_homepage" /><label class="lotusCheckbox" for="banner2_homepage">Homepage</label> 
+                    <input onclick="enable(this.parentNode, event)" class="lotusCheckbox" type="checkbox" id="banner2_profiles" /><label class="lotusCheckbox" for="banner2_profiles">Profiles</label> 
+                    <input onclick="enable(this.parentNode, event)" class="lotusCheckbox" type="checkbox" id="banner2_communities" /><label class="lotusCheckbox" for="banner2_communities">Communities</label> 
+                    <input onclick="enable(this.parentNode, event)" class="lotusCheckbox" type="checkbox" id="banner2_connectionsmail" /><label class="lotusCheckbox" for="banner2_connectionsmail">Connections Mail</label> 
+                    <input onclick="enable(this.parentNode, event)" class="lotusCheckbox" type="checkbox" id="banner2_help" /><label class="lotusCheckbox" for="banner2_help">Help</label> 
+                </div>
+            </div>
+        </div>
+        <div id="banner3"></div>
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <h3>Current application</h3>
+                <div id="banner3_controls" onclick="choose(this, event)">
+                    <input class="lotusCheckbox" type="radio" id="banner3_homepage" name="appName" value="homepage" /><label class="lotusCheckbox" for="banner3_homepage">Homepage</label> 
+                    <input class="lotusCheckbox" type="radio" id="banner3_profiles" name="appName" value="profiles" /><label class="lotusCheckbox" for="banner3_profiles">Profiles</label> 
+                    <input class="lotusCheckbox" type="radio" id="banner3_communities" name="appName" value="communities" /><label class="lotusCheckbox" for="banner3_communities">Communities</label> 
+                    <input class="lotusCheckbox" type="radio" id="banner3_wikis" name="appName" value="wikis" /><label class="lotusCheckbox" for="banner3_wikis">Wikis</label> 
+                    <input class="lotusCheckbox" type="radio" id="banner3_activities" name="appName" value="activities" /><label class="lotusCheckbox" for="banner3_activities">Activities</label> 
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+</div>
+</body>
+${end}

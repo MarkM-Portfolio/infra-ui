@@ -1,0 +1,65 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2006, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="sn.infra.ui" default="development" basedir=".">
+
+<!-- 
+    WARNING: The following property allows a single switch for pseudo-translation properties. However,
+             this is a non-documented, non-supported setting. This actually adds a new link between
+             this component and sn.infra and assumes that it has sn.infra in its fe_element.xml.
+             Before modifying this, ask zhling@cn.ibm.com or jay_boyd@us.ibm.com 
+-->
+	<property file="${env.WPLC_HOME}/prereq_fes/sn.infra/lwp/build/globalization.test/pseudo/pseudo.properties" />
+	<property file="${env.WPLC_HOME}/socnet.03/sn.infra/lwp/build/globalization.test/pseudo/pseudo.properties" />
+  
+	<import file="${env.WPLC_IMPORT}/std_props.xml"/>
+	<import file="${env.WPLC_IMPORT}/root_build.xml"/>
+	<import file="${env.WPLC_IMPORT}/translations.xml"/>
+
+<!-- JSDoc targets -->
+
+	<!-- Set this property to the comma separated list of components that must be scanned for JSDoc comments -->
+	<property name="jsdoc.projects" value="appext.web.resources,example.web.resources,ic.web.resources,lc.web.resources,lc.web.resources.base,oneui.web.resources,oauth.web.resources,social.web.resources"/>
+
+	<!-- This target executes the generate_jsdoc target on each component configured through the jsdoc.projects property -->
+	<target name="generate_jsdoc">
+		<executeComponent includes="${jsdoc.projects}" rootDir="${basedir}" target="generate_jsdoc" excludes="${root.exclude}"/>
+	</target>
+
+	<!-- This target executes the collect_jsdoc target on each component configured through the jsdoc.projects property -->
+	<target name="collect_jsdoc">
+		<executeComponent includes="${jsdoc.projects}" rootDir="${basedir}" target="collect_jsdoc" excludes="${root.exclude}"/>
+	</target>
+
+	<!-- This is the main JSDoc target. Execute it to generate and produce documentation for JavaScript -->
+	<target name="jsdoc" depends="generate_jsdoc, collect_jsdoc"/>
+
+<!-- JSLint targets -->
+
+	<!-- Set this property to the comma separated list of components that must be tested by JSLint -->
+	<property name="jslint.projects" value="ic.web.resources,lc.web.resources,lc.web.resources.base,oneui.web.resources,oauth.web.resources,social.web.resources"/>
+
+	<!-- This target executes the run_jslint target on each component configured through the jslint.projects property -->
+	<target name="run_jslint">
+		<executeComponent includes="${jslint.projects}" rootDir="${basedir}" target="run_jslint" excludes="${root.exclude}"/>
+	</target>
+
+	<!-- This target executes the collect_jslint.out target on each component configured through the jslint.projects property -->
+	<target name="collect_jslint.out">
+		<!--executeComponent includes="${jslint.projects}" rootDir="${basedir}" target="collect_jslint.out" excludes="${root.exclude}"/-->
+	</target>
+
+	<!-- This is the main JSLint target. Execute it to perform static code analysis on JavaScript sources -->
+	<target name="jslint" depends="run_jslint, collect_jslint.out"/>
+</project>

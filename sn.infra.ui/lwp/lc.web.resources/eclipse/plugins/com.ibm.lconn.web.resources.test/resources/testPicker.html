@@ -1,0 +1,38 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+${script:lconn.core.config.services}
+${script:lconn.files.action.impl.FilePicker}
+${script:lconn.files.picker.app.PickerApp}
+${script:lconn.core.filepicker}
+<script type="text/javascript">
+dojo.registerModulePath("net.jazz.ajax", "../net.jazz.ajax");
+dojo.registerModulePath("lconn.core", "../lconn.core");
+dojo.registerModulePath("lconn.files", "../lconn.files");
+dojo.require("lconn.core.picker");
+var i = 0;
+dojo.addOnLoad(function() {
+	dojo.connect(dojo.byId('test'), 'onclick', function(e) {
+		dojo.stopEvent(e);
+		
+		var args = {
+			filesService: dojo.getObject("lconn.core.config.services.files"),
+			title: "Picker open time #" + (++i),
+			onSave: function(files) {
+				var msg = dojo.map(files, function(f) { return f.getTitle() }).join('\n');
+				dojo.byId('foo').innerHTML = msg;
+				
+				return true;
+			}
+		};
+		
+		lconn.core.filepicker.open(args);
+	});
+});
+
+</script>
+${endhead}
+<body class="lotusui lotusui30_body">
+<button id="test">Test Picker</button>
+<pre id="foo"></pre>
+</body>
+${end}

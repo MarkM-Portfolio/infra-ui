@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+({
+	"CLOSE_HELP_DATE":"Itxi datei buruzko laguntza",
+	"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Itxi 'Dokumentu motak laguntza'",
+	"CLOSE_HELP_PERSON":"Itxi jendeari buruzko laguntza",
+	"CLOSE_HELP_TAG":"Itxi etiketei buruzko laguntza",
+	"CLOSE_HELP_TREND":"Itxi 'Joera laguntza'",
+	"COLLAPSE_DATE":"Tolestu daten iragazkia",
+	"COLLAPSE_ECM_DOCUMENT_TYPE":"Tolestu dokumentu moten iragazkia",
+	"COLLAPSE_PERSON":"Tolestu jendearen iragazkia",
+	"COLLAPSE_TAG":"Tolestu etiketen iragazkia",
+	"COLLAPSE_TREND":"Tolestu joeren iragazkia",
+	"DESCRIPTION_DATE":"Une jakin batean sortutako edo eguneratutako emaitzak bistaratzeko, zabaldu twistie-a eta iragazi informazioa urtearen eta hilaren arabera.",
+	"DESCRIPTION_ECM_DOCUMENT_TYPE":"Dokumentu mota fitxategiei esleitzen diezun gako-hitza da, horiek errazago aurkitzeko. Egin klik dokumentu mota batean hitz-gako hura jasotako bilaketaren emaitzak bistaratzeko.",
+	"DESCRIPTION_PERSON":"Ikusi zure bilaketa-emaitzekin erlazionatutako jendea. Egin klik izen batean pertsona jakin batekin erlazionatutako bilaketa-emaitzak ikusteko.",
+	"DESCRIPTION_TAG":"Etiketa bat edukiari nahiz pertsonei errazago aurkitzeko esleitzen dizkiezun gako-hitzak dira. Egin klik etiketa batean gako-hitz hori jaso duten emaitzak ikusteko.",
+	"DESCRIPTION_TREND":"Joera bat sistemak sortutako gako-hitza da, egoera-eguneratzeetako bilaketak errazagoak izan daitezen. Egin klik joera batean gako-hitz hori duten bilaketa-emaitzak ikusteko.",
+	"EXPAND_DATE":"Zabaldu daten iragazkia",
+	"EXPAND_ECM_DOCUMENT_TYPE":"Zabaldu dokumentu moten iragazkia",
+	"EXPAND_PERSON":"Zabaldu jendearen iragazkia",
+	"EXPAND_TAG":"Zabaldu etiketen iragazkia",
+	"EXPAND_TREND":"Zabaldu joeren iragazkia",
+	"HELP_DATE":"Datak laguntza",
+	"HELP_ECM_DOCUMENT_TYPE":"Dokumentu motak laguntza",
+	"HELP_PERSON":"Jendea laguntza",
+	"HELP_TAG":"Etiketak laguntza",
+	"HELP_TREND":"Joerak laguntza",
+	"NO_DATE_CONTENT":"Datak ez daude une honetan erabilgarri",
+	"NO_ECM_DOCUMENT_TYPE_CONTENT":"Dokumentu motak ez daude une honetan erabilgarri",
+	"NO_PERSON_CONTENT":"Jendea ez dago une honetan erabilgarri",
+	"NO_TAG_CONTENT":"Etiketak ez daude une honetan erabilgarri",
+	"NO_TREND_CONTENT":"Joerak ez daude une honetan erabilgarri",
+	"TITLE_DATE":"Datak",
+	"TITLE_ECM_DOCUMENT_TYPE":"Dokumentu motak",
+	"TITLE_PERSON":"Jendea",
+	"TITLE_TAG":"Etiketak",
+	"TITLE_TREND":"Joerak"
+})
+

@@ -1,0 +1,18 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div id="configPanel">
+	<div class="lotusHeader" id="configPanelHeader" widgetid="configPanel">
+	    <h1 class="lotusHeading" data-dojo-attach-point="configTitleNode">
+	        ${configTitle}
+	    </h1>
+	    <div class="lotusDetails" data-dojo-attach-point="configDescNode">
+	        <p>${configDescription}</p>
+	    </div>
+	</div>
+    <div class="lotusActionBar lotusBtnContainer ${createButtonClass}">
+		<span aria-label="${_resourceBundle.createSettingTitle}" title="${_resourceBundle.createSettingDescription}" id="createSettingButton" class="lotusBtn lotusBtnAction lotusLeft" data-dojo-attach-event="onclick:onNewSetting">
+			<a href="javascript:;" role="button">${_resourceBundle.createSettingTitle}</a>
+		</span>
+	</div>
+	&amp;nbsp
+    <div data-dojo-attach-point="containerNode"></div>
+</div>

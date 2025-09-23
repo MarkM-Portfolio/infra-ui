@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+<title>Test palette data store class</title>
+${endhead}
+
+<script type="text/javascript">
+
+var paletteJson = "{ categories: [ {  id: '0', name: 'Activities', css: 'http://xyz.com/activitiesLogo.png', widgets: [{ id:'1', name: 'Todos widget', desc: 'Display todos', xmlDefUrl: 'http://xyz.com/activities_todos.xml', previewImgUrl: 'http://xyz.com/todosWidgetSnapshot.png', widgetType: 'primary'},	{id:'2', name: 'Calendar widget', desc: 'Display calendar',	xmlDefUrl: 'http://xyz.com/activities_calendar.xml', previewImgUrl: 'http://xyz.com/calendarWidgetSnapshot.png', widgetType: 'primary'}	]}]}";
+
+var builder = "";
+
+dojo.addOnLoad(function(){
+
+doh.registerGroup("palette data store",
+				[	{
+						// fetch the item with type=widget in the store
+						name: "test widgets store",
+						setUp: function(t){
+							builder = new lconn.core.paletteOneUI.PaletteDataStoreBuilder();
+						},
+						runTest: function(t){
+							var deferred = builder.buildDataStore(paletteJson);	
+							var dohDeferred = new doh.Deferred();	
+							
+							deferred.addCallback(function(dataStore){
+								var expectedItemNumber = 2; // 2 widgets in paletteJson
+							
+								// called adsynchronously by dataStore.fetch onComplete. We test the returned items here
+								var callbackFct = function(items, request){
+									try{														
+										doh.assertEqual(expectedItemNumber, items.length);								
+										doh.assertEqual("Todos widget", dataStore.getLabel(items[0]));	
+										doh.assertEqual("Calendar widget", dataStore.getLabel(items[1]));			
+    									// test that the callback was actually called (ie: there are some results)
+										dohDeferred.callback(true);
+    								} catch(e){
+    									dohDeferred.errback(e);
+    								}
+								};
+							
+								var errbackFct = function(e){
+									console.log("errback called while fetching widgets items");
+									console.log(e);
+									dohDeferred.errback(new Error("errback called while fetching widgets items"));
+								};
+							
+								dataStore.fetch({query: {type:"widget"}, queryOptions: {ignoreCase: true}, onComplete: callbackFct, onError: errbackFct});							
+							});											
+							
+							return dohDeferred;
+						}
+					},	
+					{
+						// fetch the item with type=widgetCategory in the store
+						name: "test categories in store",
+						setUp: function(t){
+							builder = new lconn.core.paletteOneUI.PaletteDataStoreBuilder();
+						},
+						runTest: function(t){
+							var deferred = builder.buildDataStore(paletteJson);							
+							var dohDeferred = new doh.Deferred();
+							
+							deferred.addCallback(function(dataStore){
+								var expectedItemNumber = 1; // 1 category in paletteJson
+								var expectedChildren = 2; // 2 widgets in activities category
+							
+								// called adsynchronously by dataStore.fetch onComplete. We test the returned items here
+								var callbackFct = function(items, request){
+									try{														
+										doh.assertEqual(expectedItemNumber, items.length);								
+										doh.assertEqual("Activities", dataStore.getLabel(items[0]));
+										
+										// test children of the category (2 widgets) 											
+										doh.assertEqual(expectedChildren, items[0].children.length);
+										doh.assertEqual("Todos widget", dataStore.getLabel(items[0].children[0]));	
+										doh.assertEqual("Calendar widget", dataStore.getLabel(items[0].children[1]));		
+																				
+													
+    									// test that the callback was actually called (ie: there are some results)
+										dohDeferred.callback(true);
+    								} catch(e){
+    									dohDeferred.errback(e);
+    								}
+								};
+							
+								var errbackFct = function(){
+									dohDeferred.errback(new Error("errback called while fetching widgets items"));
+								};
+							
+								dataStore.fetch({query: {type:"widgetCategory"}, queryOptions: {ignoreCase: true}, onComplete: callbackFct, onError: errbackFct});
+							});
+							
+							
+							return dohDeferred;
+						}
+					},
+					{
+						// fetch json from file
+						name: "fetch widgetJSON and test categories in store",
+						setUp: function(t){
+							builder = new lconn.core.paletteOneUI.PaletteDataStoreBuilder();
+						},
+						runTest: function(t){
+							var deferred = builder.buildDataStore("widgetJSON.txt", true);							
+							var dohDeferred = new doh.Deferred();
+							
+							deferred.addCallback(function(dataStore){
+								var expectedItemNumber = 2; // 1 category in paletteJson
+							
+								// called adsynchronously by dataStore.fetch onComplete. We test the returned items here
+								var callbackFct = function(items, request){
+									try{														
+										doh.assertEqual(expectedItemNumber, items.length);								
+										doh.assertEqual("Activities", dataStore.getLabel(items[0]));
+										doh.assertEqual("Profiles", dataStore.getLabel(items[1]));	
+													
+    									// test that the callback was actually called (ie: there are some results)
+										dohDeferred.callback(true);
+    								} catch(e){
+    									dohDeferred.errback(e);
+    								}
+								};
+							
+								var errbackFct = function(){
+									dohDeferred.errback(new Error("errback called while fetching widgets items"));
+								};
+							
+								dataStore.fetch({query: {type:"widgetCategory"}, queryOptions: {ignoreCase: true}, onComplete: callbackFct, onError: errbackFct});
+							});
+							
+							
+							return dohDeferred;
+						}
+					}																															
+				]
+			);			
+			doh.run();
+});
+
+
+</script>
+
+    <script>
+        djConfig.parseOnLoad=true;
+        djConfig.isDebug=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+
+    ${script:dojo.parser}
+    ${script:net.jazz.ajax.xdloader}
+    ${script:lconn.core.paletteOneUI.PaletteDataStoreBuilder}
+    ${script:doh.runner}
+</body>
+</html>

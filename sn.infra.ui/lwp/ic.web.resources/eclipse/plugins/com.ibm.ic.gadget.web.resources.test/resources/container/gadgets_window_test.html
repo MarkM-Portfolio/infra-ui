@@ -1,0 +1,126 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<html><body><p>${head}
+
+<!-- Redirect to &render=test -->
+<script type="text/javascript">	
+	var loc = location + '';
+	if (loc.indexOf('render=test') < 0) {
+		if (loc.indexOf('?') > 0) {
+			location = loc + "&render=test";
+		}
+		else {
+			location = loc + "?render=test";
+		}
+	}
+	
+	dojo.config.isDebug = true;
+	
+	dojo.require('lconn.core.config.services');
+	dojo.require("com.ibm.oneui.util.proxy");
+	
+	var web_resources_url = lconn.core.config.services['webresources'].url;
+	
+	if (loc.indexOf('creScriptTag=true') > 0) {
+		
+		var os_path = lconn.core.config.services['opensocial'].url;
+		var base_path = com.ibm.oneui.util.proxy(os_path);
+	
+		document.write('\x3Cscript src=\"' + base_path + '/gadgets/js/cre.iruntime:cre.iwidget:cre.iwidget.itemset:cre.util.stringify:cre.service.event:core:container:rpc:views:embedded-experiences:selection:inline:actions:shared-script-frame:shindig.sha1:open-views.js?c=1\&debug=true\&noCache=true\"\x3E\x3C\x2Fscript\x3E');
+	} else {
+		console.log('To use a script tag to load CRE this to the URL: &creScriptTag=true');
+	}
+</script>
+
+<script type="text/javascript">
+	var mContainer = null;
+	var mHandle = null;
+	var mEEHandle = null;
+	var iWidgetHandle = null;
+</script>
+
+<script src="../../container/iContainer2.js"></script>
+
+
+<style>
+#attach_point {
+  width: 500px;
+  height: 80px;
+}
+
+</style>
+
+${endhead}
+
+<!-- BODY -->
+	
+</p><h1>gadgets.window tests</h1>
+<script type="text/javascript">
+
+	
+
+	function preFillGadget() {
+		var gadgetUrlInput = dojo.byId("gadgetUrl");
+		gadgetUrlInput.value = web_resources_url + "/web/com.ibm.lconn.gadget/test/container/gadgets/window.xml";
+	}
+	
+	function load_gadget() {
+			try {
+				var def = {
+						definitionUrl: dojo.formToObject('gadgetForm')['gadgetUrl'],
+						placement: 'attach_point',
+						componentType: 'gadget'
+					};
+					
+				if (mHandle) {
+					mHandle.close();
+					mHandle = null;
+				}
+				mHandle = mContainer.loadWidget(def);
+			} catch ( e ) {
+				console.debug("Caught exception: " + e);
+			}
+			
+			return false;
+		}
+		
+		function refresh_gadget() {
+			if (mHandle) {
+				mHandle.refresh();
+			}
+		}
+		
+		function close_gadget() {
+			if (mHandle) {
+				mHandle.close();
+			}
+		}
+		
+		function parse_action() {
+			return false;
+		}
+</script>
+<div id="windowDiv">
+<form name="gadgetForm" id="gadgetForm">
+Gadget Url : <input type="text" id="gadgetUrl" name="gadgetUrl" style="width : 60%">
+</form>
+<button onclick="load_gadget();" name="submitButton" value="submit">Load Gadget</button>
+		<button onclick="refresh_gadget();">Refresh</button>
+		<button onclick="close_gadget();">Close</button>
+<br>
+<button onclick="preFillGadget();">Pre-fill window get/setting gadget</button>
+</div>
+
+<h3>Attach Point</h3>
+<div id="attach_point">gadget goes here</div>
+<br>
+
+	
+	<script type="text/javascript">
+		dojo.addOnLoad(function() {
+			mContainer = com.ibm.lconn.gadget.container.iContainer2;			
+			mContainer.init();
+		});
+	</script>
+
+${end}
+</body></html>

@@ -1,0 +1,29 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2008, 2015                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+.fmMenu {
+border:1px solid #0063dc;background-color:#f1f4f9;z-index:2099;display:block;
+}
+
+.fmMenuItem {
+display:block;
+margin-right:20px;
+padding:2px 5px 2px 5px;
+background-color:#fff;
+text-decoration:none;
+}
+
+.fmMenuItem:hover {
+	background-color:#cce0f8;
+}

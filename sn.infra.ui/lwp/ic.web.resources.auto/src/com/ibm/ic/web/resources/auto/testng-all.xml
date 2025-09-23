@@ -1,0 +1,35 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Core UI Automation" verbose="1">
+	<test name="Core UI Automation (AMD)">
+		<groups>
+			<define name="_current_">
+				<include name="amd" />
+			</define>
+			<run>
+				<include name="_current_" />
+			</run>
+		</groups>
+		<packages>
+			<package name="com.ibm.ic.web.resources.auto.aria.*" />
+			<package name="com.ibm.ic.web.resources.auto.ckeditor.*" />
+			<package name="com.ibm.ic.web.resources.auto.globalization.*" />
+			<package name="com.ibm.ic.web.resources.auto.oauth.*" />
+			<package name="com.ibm.ic.web.resources.auto.ui.*" />
+		</packages>
+	</test>
+
+	<test name="Core UI Automation (Legacy)">
+		<groups>
+			<define name="_current_">
+				<include name="legacy" />
+			</define>
+			<run>
+				<include name="_current_" />
+			</run>
+		</groups>
+		<packages>
+			<package name="com.ibm.ic.web.resources.auto.legacy.*" />
+		</packages>
+	</test>
+</suite>

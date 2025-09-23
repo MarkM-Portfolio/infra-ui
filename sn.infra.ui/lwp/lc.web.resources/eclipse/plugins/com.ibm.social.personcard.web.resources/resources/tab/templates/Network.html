@@ -1,0 +1,19 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="form-section">
+<div dojoAttachPoint="loadingNode" class="lotusSection"><img class="lotusLoading" src="${_blankGif}"> Loading...</div>
+<div dojoAttachPoint="networkNode" style="display: none;" class="lotusSection"><span dojoFirstFocus="true" tabindex="0">${_m_inNetwork}</span></div>
+<div dojoAttachPoint="pendingNode" style="display: none;" class="lotusSection"><span dojoFirstFocus="true" tabindex="0">${_m_pendingNetwork}</span></div>
+<form dojoAttachPoint="formNode" dojoType="com.ibm.social.personcard.tab.network.InviteForm" dojoAttachEvent="onInvited:_loaded" style="display: none;" class="lotusForm2">
+	<div class="lotusFormBody">
+	<div class="lotusFormField">
+		<label for="${id}_msg">${_m_labelMessage}</label>
+		<div><textarea dojoFirstFocus="true" name="message" id="${id}_msg" class="lotusText" rows="4" >${_strings.defaultMessage}</textarea></div>
+	</div>
+	<div class="lotusFormField">
+		<input type="checkbox" id="${id}_flw" name="follow" value="true" class="lotusCheckbox">
+		<label class="lotusCheckbox" for="${id}_flw">${_strings.labelFollow}</label>
+	</div>
+	</div>
+	<div class="lotusFormFooter"><input class="lotusFormButton" type="submit" value="${_strings.btnInvite}"></div>
+</form>
+</div>

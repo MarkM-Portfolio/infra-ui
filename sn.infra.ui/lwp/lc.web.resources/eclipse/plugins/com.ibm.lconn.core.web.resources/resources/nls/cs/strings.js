@@ -1,0 +1,366 @@
+/* *************************************************************** */
+/*                                                                 */
+/* HCL Confidential                                                */
+/*                                                                 */
+/* OCO Source Materials                                            */
+/*                                                                 */
+/* Copyright HCL Technologies Limited 2008, 2019                   */
+/*                                                                 */
+/* The source code for this program is not published or otherwise  */
+/* divested of its trade secrets, irrespective of what has been    */
+/* deposited with the U.S. Copyright Office.                       */
+/*                                                                 */
+/* *************************************************************** */
+
+// NLS_CHARSET=UTF-8
+({
+   'rs_close' : "Zavřít",
+   'rs_loading' : "Načítání...",
+   'rs_at' : "v",
+
+   'rs_searchDirectory' : "Není zde hledaná osoba uvedena? Použijte úplné hledání...",
+   'rs_searchGroupDirectory' : "Není zde hledaná skupina uvedena? Použijte úplné hledání...",
+   'rs_searchPersonAndGroupDirectory' : "Není zde hledaná osoba nebo skupina uvedena? Použijte úplné hledání...",
+   'rs_searchCommunityDirectory' : "Není zde hledaná komunita uvedena? Použijte úplné hledání...",
+
+   'rs_shadowText_searchDirectory' : "Začněte zadávat jméno hledané osoby. ",
+   'rs_shadowText_searchGroupDirectory' : "Začněte zadávat text pro hledání skupiny. ",
+   'rs_shadowText_searchPersonAndGroupDirectory' : "Začněte zadávat jméno hledané osoby nebo skupiny. ",
+   'rs_shadowText_searchCommunityDirectory' : "Začněte zadávat název hledané komunity. ",
+
+   'rs_listItem' : "Položka seznamu",
+   'rs_noResults' : "Pro položku '${0}' nebyly nalezeny žádné výsledky. ",
+   'rs_today' : "Dnes",
+   'rs_tomorrow' : "Zítra",
+   'rs_yesterday' : "Včera",
+
+   /* Activity List Widget */
+   'rs_activityFeedLink' : "Kanál pro tyto aktivity",
+   'rs_externalText' : "Tato aktivita může také zahrnovat členy mimo organizaci.",
+   'rs_moveActivitySuccess' : 'Aktivita \"${activityTitle}\" byla úspěšně přesunuta do subkomunity \"${destCommName}\".',
+   // copy 'rs_moreInfo' and 'rs_hideInfo' from activity's strings.js
+   'rs_moreInfo' : 'Zobrazit další informace o této aktivitě',
+   'rs_hideInfo' : 'Skrýt další informace',
+   'rs_more' : "Více",
+   'rs_hide' : "Skrýt",
+   'rs_edit' : "Upravit",
+   'rs_restore' : "Obnovit",
+   'rs_deleteEntry' : "Odstranit",
+   'rs_prioritize' : "Nastavit prioritu",
+   'rs_markComplete' : "Označit jako dokončené",
+   'rs_markIncomplete' : "Obnovit",
+   'rs_linkMore' : "... [více]",
+   'rs_linkLess' : "... [méně]",
+   'rs_actUpdatedByDate' : "Aktualizováno uživatelem ${0} ${1}",// Updated by (author name) (date)
+   'rs_actUpdatedBy' : "Aktualizováno uživatelem ${0}",// Updated by (author name)
+   'rs_actDue' : "Termín: ${0}",// Due (date)
+   'rs_actTags' : "Značky: ",
+   'rs_actTagsDelim' : ", ",
+   'rs_startFromTemplate' : "Zahájit aktivitu podle této šablony",
+   'rs_favoriteTemplate' : "Označit jako oblíbenou šablonu",
+   'rs_normalTemplate' : "Označit jako normální šablonu",
+   'rs_tunedOutPri' : "Odložené jako nedůležité",
+   'rs_pagepos' : "${0}-${1} z ${2}", // pagination - e.g. 1 - 10 of 100
+   'rs_navPrevLabel' : "Předchozí",
+   'rs_navNextLabel' : "Další",
+   'rs_noActivities' : "Neexistují žádné zahájené aktivity pro tuto komunitu.",
+   'rs_feedError' : "Kanál se nepodařilo načíst.",
+   'rs_highPri' : "Vysoká priorita",
+   'rs_medPri' : "Střední priorita",
+   'rs_normalPri' : "Normální priorita (Výchozí)",
+   'rs_tuneOut' : "Označit jako nedůležité",
+   'rs_startActivity' : "Zahájit aktivitu",
+   'rs_startFirstActivity' : "Vytvořit první aktivitu",
+   'rs_navNextLabel' : "Další",
+   'rs_viewAll' : "Zobrazit vše",
+   'rs_activityWidgetTitle' : "Aktivity",
+   'rs_activityWidgetBriefDescription' : "Můžete sledovat cíle komunity, vytvářet úkoly a sdílet prostředky.",
+   'rs_activityWidgetDescription' : "Prostřednictvím aktivit komunity lze spolupracovat a sledovat průběh realizace projektů či iniciativ komunity.",
+   'rs_completedActivityLink' : "Zobrazit dokončené aktivity",
+   'rs_activitiesUnavailable' : "Služba Aktivity není k dispozici.",
+   'rs_errorPersists' : "Pokud problém přetrvává, obraťte se na administrátora systému.",
+   'rs_shared' : "Sdíleno",
+   'rs_removeActFromComm' : "Odebrat z komunity",
+   'rs_externalLabel' : "Externí",
+
+   // for ActivityForm
+   'rs_templateOptions' : "Volby šablony",
+   'rs_template' : "Šablona",
+   'rs_tagsLabel' : "Značky",
+   'rs_peopleLabel' : "Lidé",
+   'rs_aboutThisTemplate' : "Informace o této šabloně",
+   'rs_activity' : "Aktivita",
+   'rs_copyOf' : "Kopie položky ${0}",// copy of (activity name)
+   'rs_activityFormGoal' : "Cíl aktivity",
+   'rs_noTemplate' : "Žádná",
+   'rs_copyActivityMembers' : "Použít členy z aktivity",
+   'rs_copyTemplateMembers' : "Použít členy ze šablony",
+
+   /* Forum Widget */
+   'rs_noTopics' : "Dosud neexistují žádná témata pro tuto komunitu.",
+   'rs_noTopicsLoggedIn' : "Ptejte se, společně hledejte řešení nebo jednoduše sdílejte nápady.",
+   'rs_postedBy' : "Poslední příspěvek uživatele:",
+   'rs_topics' : "témata",
+   'rs_noTopicsShort' : "Žádná témata",
+   'rs_topic' : "téma",
+   'rs_replies' : "odpovědi",
+   'rs_noReplies' : "Žádné odpovědi",
+   'rs_reply' : "odpověď",
+   'rs_startTopic' : "Zahájit téma",
+   'rs_startFirstTopic' : "Zahájit první téma",
+   'rs_ok' : "OK",
+   'rs_locked' : "[Uzamknuto]",
+   'rs_manageForumSetting' : "Spravovat nastavení fóra",
+   'rs_forumSettingCommunityOverviewPage' : "Přehledová stránka komunity:",
+   'rs_defaultForumList' : "Zobrazovat standardně seznam fór",
+   'rs_defaultTopicList' : "Zobrazovat standardně seznam témat",
+   'rs_forumSettingApplicationView' : "Výchozí zobrazení aplikace fóra:",
+   'rs_forumSettingNote' : "Poznámka: Témata se standardně zobrazují, pokud existuje pouze jedno fórum.",
+   'rs_forumSettingSubmit' : "Odeslat",
+   'rs_forumSettingSave' : "Uložit",
+   'rs_forumSettingSaveAndClose' : "Uložit a zavřít",
+   'rs_forumSettingConfirm' : "Změny provedené v aplikaci Fóra byly uloženy.",
+   'rs_forumSettingError' : "Došlo k chybě. Kontaktujte administrátora.",
+   'rs_formSettingHideMessage' : "Skrýt tuto zprávu",
+   'rs_forumSettingCancel' : "Storno",
+   'rs_forumAnsweredQuestion' : "Zodpovězená otázka",
+   'rs_forumUnAnsweredQuestion' : "Nezodpovězená otázka",
+   'rs_forumSortBy' : "Řadit podle:",
+   'rs_forumSortByDate' : "Datum",
+   'rs_forumSortByReplies' : "Odpovědi",
+   'rs_forumSortByTopic' : "Témata",
+   'rs_forumSortByTopicsAndReplies' : "Témata a odpovědi",
+   'rs_sortByReplies' : "Řadit podle odpovědí",
+   'rs_sortbyTopicsAndReplies' : "Řadit podle témat a odpovědí",
+   'rs_forumOpenQuestions' : "Nezodpovězené otázky",
+   'rs_feedOpenQuestions' : "Kanál pro tyto nezodpovězené otázky",
+   'rs_feedAnsweredQuestions' : "Kanál pro tyto zodpovězené otázky",
+   'rs_forumMessages' : "Počet zpráv: ${0}",
+   'rs_forumLastAddedPost' : "Poslední příspěvek uživatele: ${0}",
+   'rs_forumTopics' : "Počet témat: ${0}",
+   /* End discussion forum */
+
+   /* Editor plugins -- some for a possible one we haven't implemented yet */
+   'rs_createPersonLink' : "Vytvořit odkaz na osobu",
+   'rs_quote' : "Citovat",
+   'rs_labelColon' : "Popisek: ",
+   'rs_personColon' : "Osoba: ",
+   'rs_personLink' : "Odkaz na osobu",
+   'rs_replace' : "Nahradit",
+   'rs_inactivePerson' : "${0} (neaktivní)", // person's name (inactive)
+   'rs_PersonPicture' : "Obrázek uživatele ${0}", // person name's picture
+
+   /*Visitor mode -- external user name decoration use cases */
+   'rs_PersonExternalLabel' : "Externí uživatel", // A label for the visitor model use cases.
+   'rs_PersonExternal' : "${0} (Externí uživatel)", //'{0}' is the person's name. This will be used for the user profile name and profile photo tooltip
+   'rs_PersonPictureExternal' : "Obrázek uživatele ${0} (Externí uživatel)", // Alt text for the external user's profile photo
+   'rs_personExternalDesc' : "Tento uživatel má přístup k souborům a komunitám, která jsou sdíleny externě.",
+   /* End editor plugins */
+
+   /* Notification Form */
+   'rs_notifyOthers' : "Odeslat oznámení dalším lidem",
+   'rs_messageColon' : "Zpráva: ",
+   'rs_notifyColon' : "Oznámení: ",
+   'rs_notificationConfirm' : "Oznamovací zpráva byla úspěšně odeslána. ",
+   'rs_notificationFail' : "Oznamovací zpráva nebyla odeslána. Zkuste akci zopakovat později nebo se obraťte na administrátora, pokud problém přetrvává.",
+   'rs_pickCommunity' : "Vybrat ze seznamu komunity",
+   'rs_typeName' : "Zadat jméno",
+   'rs_typeToFilter' : "Začněte zadávat text pro filtrování tohoto seznamu. ",
+   /* End Notification Form */
+
+   /* FilteringCheckbox */
+   'rs_filterListPrompt' : "Začněte zadávat text pro filtrování tohoto seznamu. ",
+   'rs_filterGroupLabel' : "Výběr skupiny",
+   'rs_noResults' : "Nebyly nalezeny žádné výsledky.",
+   // ${0} will be replaced with a number
+   'rs_numResults' : "Zobrazeno: ${0} výsledků z ${1}",
+
+   /* PeopleFilterList */
+   'rs_removeFilter' : "Odebrat",
+
+   /* Language Selector */
+   'rs_browser_setting' : "Nastavení prohlížeče",
+   'rs_customLangaugeLinkLabel' : "Vlastní jazyk",
+
+   /* Paging controls */
+   // 0 and 1 are page numbers
+   'rs_jumpPage' : "Přejít na stránku ${0} z ${1}",
+   "rs_jumpPageLabel" : "Přejít na stránku",
+   'rs_pageNumLabel' : "Číslo stránky",
+   'rs_pageLabel' : "Stránka:",
+
+   /* Common Tags Widget */
+   'rs_tagCloudNavigationLabel' : 'Značky',
+   'rs_tagCloudToggleHint' : "Klepnutím sem lze přepnout skrytí a zobrazení.",
+   'rs_tagCloudHelpAlt' : "Otevření nápovědy ke značkám",
+   'rs_tagCloudNoTags' : "Dosud žádné značky",
+   'rs_tagCloudNoRecentTags' : "Nebyly nalezeny žádné nedávno použité značky",
+   'rs_tagCloudNoTagsProfiles' : "Hledat v adresáři. Na tomto místě se zobrazí značky přidružené k profilům vráceným operací hledání.",
+   'rs_tagLoadingTags' : "Načítání obsahu",
+   'rs_tagCloudSelectedTags' : "Vybrané značky",
+   'rs_tagCloudSeachDesc' : "Najít značku",
+   'rs_tagCloudSeach' : "Hledat",
+   'rs_tagCloudRelatedTags' : "Související značky",
+   'rs_tagCloudRelatedTagsDescription' : "Chcete-li hledání dále zúžit, přidejte související značku.",
+   'rs_tagCloudError' : 'Došlo k chybě',
+
+   'rs_viewAsCloud' : "Shluk",
+   'rs_viewAsCloudTitle' : "Zobrazit značky jako shluk značek",
+   'rs_viewAsCloudDescription' : "Zobrazení značek jako shluku značek",
+   'rs_viewAsList' : "Seznam",
+   'rs_viewAsListTitle' : "Zobrazit značky v seznamu jako posloupnost",
+   'rs_viewAsListDescription' : "Zobrazení značek v seznamu jako posloupnost",
+   'rs_tagCloudViewAll' : "Procházet",
+   'rs_tagCloudViewAllTitle' : "Procházet všechny značky",
+
+   'rs_normalTags' : "Aktivní značky",
+
+   'rs_removeTag' : "Odebrat značku z vybraných značek filtru",
+   'rs_clearAll' : "Vymazat vše",
+   'rs_searchInputDefault' : "Začněte zadávat text hledané značky. ",
+   'rs_searchInputTagSelected' : "Zadejte další značku. ",
+   'rs_relatedTagTitle' : "Zobrazit výsledky hledání značky ${0} (počet: ${1})",
+   'rs_removeTagTitle' : "Odebrat značku ${0} z vybraných značek filtru",
+   'rs_addTagTitle' : "Filtrovat podle značky ${0} (počet: ${1})",
+
+   'rs_tagDialogCloseTile' : "Zavřít",
+   'rs_tagDialogTitle' : "Všechny značky",
+   'rs_tagDialogPageInfo' : "${0} až ${1} z celkového počtu ${2} značek",
+
+   /* Group Selection (Picker) Widget */
+   'rs_group_browse_groups' : "Procházet skupiny",
+   'rs_group_browse_groups_dialog_title' : "Procházet skupiny",
+   'rs_group_browse_find_groups' : "Najít skupiny",
+   'rs_group_browse_add_button' : "Přidat",
+   'rs_group_browse_cancel_button' : "Storno",
+   'rs_group_browse_enter_string' : "Začněte zadávat text pro hledání skupin. ",
+   'rs_group_browse_group_typeahead_label' : "Zadejte název skupiny:",
+   'rs_group_browse_group_name' : "Název skupiny:",
+   'rs_group_browse_results_label' : "Vyberte odpovídající skupinu:",
+   'rs_group_browse_parent_group_label' : "Nacházíte se v umístění:",
+   'rs_group_browse_next_page' : "Další stránka",
+   'rs_group_browse_previous' : "Předchozí",
+   'rs_group_browse_next' : "Další",
+   'rs_group_browse_paging' : "Stránkování",
+   'rs_group_browse_previous_page' : "Předchozí stránka",
+   'rs_group_browse_group_selected' : "Vybraná skupina:",
+   'rs_group_browse_group_no_groups' : "Tato skupina neobsahuje žádné skupiny.",
+   'rs_group_browse_page_info' : "${0}-${1} z ${2}",
+   'rs_group_browse_page_info_alt' : "Odpovídající skupiny ${0}–${1} z ${2}",
+   'rs_group_browse_remove_selection' : 'Odebrat výběr vnořené skupiny: ${0}',
+   'rs_group_browse_paging' : "Stránkování",
+   'rs_member_groups' : "Skupiny",
+   'rs_member_members' : "Členové",
+   'rs_member_no_results' : "Nebyly nalezeny žádné výsledky.",
+   'rs_member_remove_group' : "Odebrat ${0}",
+   'rs_member_add_to_community' : "Po klepnutí můžete přidat člena.",
+   'rs_member_remove_name' : "Klepnutím odeberete člena.",
+   'rs_group_add_to_community' : "Po klepnutí můžete přidat skupinu.",
+   'rs_group_remove_name' : "Klepnutím odeberete skupinu.",
+   'rs_group_name' : "Název skupiny",
+   'rs_group_role' : "Role skupiny",
+
+   'rs_warning' : "Varování",
+   'rs_a11y_warning' : "Varování:",
+
+   'rs_messagebox_close_btn_title' : "Zavřít",
+   'rs_messagebox_close_btn_alt' : "Zavřít",
+   'rs_messagebox_error_icon_alt' : "Chyba",
+   'rs_messagebox_error_a11y_label' : "Chyba:",
+   'rs_messagebox_warning_icon_alt' : "Varování",
+   'rs_messagebox_warning_a11y_label' : "Varování:",
+   'rs_messagebox_info_icon_alt' : "Informace",
+   'rs_messagebox_info_a11y_label' : "Informace:",
+   'rs_messagebox_success_icon_alt' : "Úspěch",
+   'rs_messagebox_success_a11y_label' : "Úspěch:",
+
+   /* Document Picker CK Plugin */
+   'rs_docpicker_title' : "Vložit odkaz na komponentu Soubory",
+   'rs_docpicker_label' : "Odkaz na komponentu Soubory produktu Connections",
+   // '{0}' is a filename
+   'rs_docpicker_download_title' : "Stáhnout ${0}",
+   'rs_docpicker_viewdetails_text' : "Zobrazit podrobnosti",
+   // '{0}' is a filename
+   'rs_docpicker_viewdetails_title' : "Zobrazit podrobnosti pro ${0}",
+
+   /* AttachedFileList widget */
+   'rs_attachedfile_remove_alt' : "Odebrat",
+   'rs_attachedfile_filename' : "Obrázek ${0}",
+
+   'rs_feedreader_warning' : "Varování: Tento odkaz je určen pro čtečky informačních kanálů a v prohlížeči se nemusí zobrazovat správně. Chcete-li pokračovat, klepněte na tlačítko OK. Chcete-li se vrátit na příslušnou stránku, klepněte na volbu Storno.",
+
+   'rs_search' : "Hledat",
+   'rs_all_connections' : "Celý produkt Connections",
+   'rs_advanced' : "Rozšířené",
+   'rs_select_scope' : "Vybrat rozsah hledání",
+
+   'rs_icfixlayout' : {
+      button_label : "Přeformátovat",
+      dialog_title : "Přeformátovat obsah",
+      warning : "Varování",
+      reformat_save : "Přeformátovat a uložit",
+      save_as_is : "Uložit bez úpravy",
+      cancel : "Storno",
+      warn_layout : "Obsah překročil maximální šířku displeje. Chcete provést automatické přeformátování, aby odpovídal dostupnému místu?",
+      remember_decision : "Zapamatovat si rozhodnutí"
+   },
+
+   //The following error messages are used by icdocpicker when private files are shared with a Community.
+   'rs_sharefile_constraint_violation' : "Při sdílení vybraných souborů došlo k chybě.",
+   'rs_sharefile_access_denied' : "Tento soubor byl odstraněn nebo již s vámi není sdílen.",
+   'rs_sharefile_invalid_request' : "Při sdílení vybraných souborů došlo k chybě.",
+   'rs_sharefile_sharing_intent_restriction' : "Soubor lze sdílet pouze v rámci vaší organizace.",
+   'rs_sharefile_error_title' : "Chyba",
+
+   /* Strings for the native mobile app banners */
+   'rs_mobileBanner_title' : 'HCL Connections',
+   'rs_mobileBanner_inAppStore' : 'Na webu App Store',
+   'rs_mobileBanner_inGooglePlay' : 'Na webu Google Play',
+   'rs_mobileBanner_author' : 'HCL Software',
+   'rs_mobileBanner_open' : 'Otevřít',
+   'rs_mobileBanner_view' : 'Zobrazit',
+   'rs_mobileBanner_hide' : 'Skrýt',
+
+   'rs_empty_column_placeholder' : 'Přetáhněte aplikace do této oblasti.',
+   'rs_widget_loading_error_title' : 'Nelze zobrazit modul widget',
+   'rs_widget_loading_error_message' : 'Zkuste akci zopakovat později nebo se obraťte na administrátora, pokud problém přetrvává.',
+   'rs_widgets_loading_error_title' : 'Nelze zobrazit moduly widget v této komunitě.',
+   'rs_widget_misplacement_warning' : 'Tato aplikace se do tohoto sloupce nevejde. Vlastník komunity ji může přesunout do jiného sloupce nebo ji může ze stránky odebrat.',
+
+   'rs_widget_title_change_fail_message' : {
+      title_too_long : 'Zadaný název je příliš dlouhý.',
+      empty_new_title : 'Zadaný název nemůže být prázdný.',
+      default_message : 'Pro tuto aplikaci ${0} nelze změnit název.'
+   },
+
+   /* Strings for change title dialog */
+   'rs_widget_title_change_label' : 'Nadpis:  ',
+   'rs_widget_title_change_direction' : 'Můžete změnit název pro tuto aplikaci ${0}.',
+   'rs_widget_title_change_title' : 'Změnit název',
+
+   /* Strings for Visitor Model Invite dialog */
+	'rs_vmmainContentTitle' : "Pozvat nebo přidat členy",
+	'rs_vmmainContentDesc' : "Pozvěte členy, aby se mohli připojit ke komunitě. Přidejte členy, kteří mají být automaticky přidáni.",
+	'rs_vmtypeAheadLabel' : "Jméno nebo e-mailová adresa: ",
+	'rs_vmgroupTypeAheadLabel' : "Jméno: ",
+	'rs_vmtypeAheadRoleLabel' : " jako ",
+	'rs_vmgroupTypeAheadRoleLabel' : " jako členové ",
+	'rs_vmtaNoResults' : "Nebyly nalezeny žádné výsledky.",
+	'rs_vmtaHeader' : "záhlaví",
+	'rs_vmaddUser' : "Přidat",
+	'rs_vmradioSectionTitle' : "Volby pro členy:",
+	'rs_vmradioOne' : "Odeslat pozvání k připojení se ke komunitě",
+	'rs_vmradioTwo' : "Automaticky přidat uživatele do komunity",
+	'rs_vmtwistyA' : "Přidat volitelnou zprávu",
+	'rs_vmtwistyB' : "Odebrat další text",
+	'rs_vmmessage' : "Zpráva:",
+	'rs_vmtextAreaStartText' : "Řekněte něco...",
+	'rs_vmcheckboxLabel' : "Poslat mi kopii",
+	'rs_vmsave' : "Uložit",
+	'rs_vminvite' : "Pozvat",
+	'rs_vmcancel' : "Storno",
+	'rs_userContentTitle' : "Zadat informace",
+	'rs_vmaddUser' : "Vytvořit uživatele",
+	'rs_vmback'	 : "Zpět",
+	'rs_vmvisitor'	 : "Návštěvník"
+})

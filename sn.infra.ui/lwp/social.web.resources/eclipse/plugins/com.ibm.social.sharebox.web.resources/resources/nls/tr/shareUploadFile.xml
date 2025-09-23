@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">Dosyalar</msg>
+  <msg name="description">Dosyaların karşıya yüklenmesine ve paylaşılmasına olanak tanıyan Dosyalar aracı</msg>
+  <msg name="action_uploadFile_label">Dosyalar</msg>
+  <msg name="action_uploadFile_tooltip">Dosyaları Karşıya Yükle ve Paylaş</msg>
+  <msg name="loading">Yükleniyor...</msg>
+  <msg name="error_msg">İçerik yüklenemiyor. Daha sonra yeniden deneyin ya da yöneticinize başvurun.</msg>
+  <msg name="error_alt">Hata</msg>
+</messagebundle>

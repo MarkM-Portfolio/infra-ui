@@ -1,0 +1,29 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div id="configPanel">
+	<div class="lotusHeader" id="configPanelHeader" widgetid="configPanel">
+	    <h1 class="lotusHeading" dojoattachpoint="configTitleNode">
+	        ${configTitle}
+	    </h1>
+	    <div class="lotusDetails" dojoattachpoint="configDescNode">
+	        <p>${configDescription}</p>
+	    </div>
+	</div>
+    <div class="lotusActionBar lotusBtnContainer ${createButtonClass}">
+		<span aria-label="${_resourceBundle.createSettingTitle}" title="${_resourceBundle.createSettingDescription}" 
+		 	id="createSettingButton" class="lotusBtn lotusBtnAction lotusLeft" dojoattachevent="onclick:onNewSetting">
+			<a href="javascript:;" role="button">${_resourceBundle.createSettingTitle}</a>
+		</span>
+	</div>
+	<div dojoattachpoint="orgNode"></div>
+	<div>
+	    <table style="background:#eef0ff !important; padding: 0px !important; margin: 5px 0 5px 10px !important;" class="lotusInfoBox"> 
+	        <tbody>
+	            <tr>  
+	              <td>${_resourceBundle.orgReceived} : <span  dojoattachpoint="orgReceivedNode"></span> </td>
+	            </tr> 
+	        </tbody>
+	    </table>
+	</div>
+	<br/>
+    <div dojoattachpoint="containerNode"></div>
+</div>

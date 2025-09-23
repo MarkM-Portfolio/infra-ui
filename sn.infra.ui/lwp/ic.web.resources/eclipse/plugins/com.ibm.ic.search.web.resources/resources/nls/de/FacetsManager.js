@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+define({
+		"CLOSE_HELP_DATE":"Hilfe zu Datumsangaben schließen",
+		"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Hilfe zu Dokumenttypen schließen",
+		"CLOSE_HELP_PERSON":"Hilfe zu Personen schließen",
+		"CLOSE_HELP_TAG":"Hilfe zu Tags schließen",
+		"CLOSE_HELP_TREND":"Hilfe zur Trendermittlung schließen",
+		"COLLAPSE_DATE":"Datumsfilter ausblenden",
+		"COLLAPSE_ECM_DOCUMENT_TYPE":"Dokumenttypenfilter ausblenden",
+		"COLLAPSE_PERSON":"Personenfilter ausblenden",
+		"COLLAPSE_TAG":"Tagfilter ausblenden",
+		"COLLAPSE_TREND":"Trendfilter ausblenden",
+		"DESCRIPTION_DATE":"Um Ergebnisse anzuzeigen, die zu einer bestimmten Uhrzeit erstellt oder aktualisiert wurden, erweitern Sie das Pfeilsymbol und filtern Sie die Informationen nach Jahr und Monat.",
+		"DESCRIPTION_ECM_DOCUMENT_TYPE":"Ein Dokumenttyp ist ein Schlüsselwort, das Sie Dateien zuordnen, damit diese leichter zu finden sind. Klicken Sie auf einen Dokumenttyp, um Suchergebnisse anzuzeigen, die diesem Suchbegriff zugewiesen wurden.",
+		"DESCRIPTION_PERSON":"Personen anzeigen, die mit Ihren Suchergebnissen verbunden sind. Klicken Sie auf einen Namen, um die Suchergebnisse zu der jeweiligen Person anzuzeigen.",
+		"DESCRIPTION_TAG":"Bei einem Tag handelt es sich um einen Suchbegriff, den Sie Inhalt oder Personen zuordnen, um die Suche zu erleichtern. Klicken Sie auf einen Tag, um Suchergebnisse anzuzeigen, die diesem Suchbegriff zugewiesen wurden.",
+		"DESCRIPTION_TREND":"Ein Trend ist ein Suchbegriff, der vom System generiert wird, um Suchvorgänge in Statusaktualisierungen zu vereinfachen. Klicken Sie auf einen Trend, um Suchergebnisse anzuzeigen, die diesem Suchbegriff zugewiesen wurden.",
+		"EXPAND_DATE":"Datumsfilter einblenden",
+		"EXPAND_ECM_DOCUMENT_TYPE":"Dokumenttypenfilter einblenden",
+		"EXPAND_PERSON":"Personenfilter einblenden",
+		"EXPAND_TAG":"Tagfilter einblenden",
+		"EXPAND_TREND":"Trendfilter einblenden",
+		"HELP_DATE":"Hilfe zu Datumsangaben",
+		"HELP_ECM_DOCUMENT_TYPE":"Hilfe zu Dokumenttypen",
+		"HELP_PERSON":"Hilfe zu Personen",
+		"HELP_TAG":"Hilfe zu Tags ",
+		"HELP_TREND":"Hilfe zur Trendermittlung",
+		"NO_DATE_CONTENT":"'Datumsangaben' ist derzeit nicht verfügbar",
+		"NO_ECM_DOCUMENT_TYPE_CONTENT":"'Dokumenttypen' ist derzeit nicht verfügbar",
+		"NO_PERSON_CONTENT":"'Personen' ist derzeit nicht verfügbar",
+		"NO_TAG_CONTENT":"'Tags' ist derzeit nicht verfügbar",
+		"NO_TREND_CONTENT":"'Trends' ist derzeit nicht verfügbar",
+		"TITLE_DATE":"Datumsangaben",
+		"TITLE_ECM_DOCUMENT_TYPE":"Dokumenttypen",
+		"TITLE_PERSON":"Personen",
+		"TITLE_TAG":"Tags",
+		"TITLE_TREND":"Trendermittlung"
+});
+

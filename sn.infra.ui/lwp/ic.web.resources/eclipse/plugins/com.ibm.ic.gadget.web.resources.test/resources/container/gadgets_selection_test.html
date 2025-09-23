@@ -1,0 +1,207 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<html><body><p>${head}
+
+<!-- Redirect to &render=test -->
+<script type="text/javascript">	
+	var loc = location + '';
+	if (loc.indexOf('render=test') < 0) {
+		if (loc.indexOf('?') > 0) {
+			location = loc + "&render=test";
+		}
+		else {
+			location = loc + "?render=test";
+		}
+	}
+	
+	dojo.config.isDebug = true;
+	
+	dojo.require('lconn.core.config.services');
+	dojo.require("com.ibm.oneui.util.proxy");
+	
+	var web_resources_url = lconn.core.config.services['webresources'].url;
+	
+	if (loc.indexOf('creScriptTag=true') > 0) {
+		
+		var os_path = lconn.core.config.services['opensocial'].url;
+		var base_path = com.ibm.oneui.util.proxy(os_path);
+	
+		document.write('\x3Cscript src=\"' + base_path + '/gadgets/js/cre.iruntime:cre.iwidget:cre.iwidget.itemset:cre.util.stringify:cre.service.event:core:container:rpc:views:embedded-experiences:selection:inline:actions:shared-script-frame:shindig.sha1:open-views.js?c=1\&debug=true\&noCache=true\"\x3E\x3C\x2Fscript\x3E');
+	} else {
+		console.log('To use a script tag to load CRE this to the URL: &creScriptTag=true');
+	}
+</script>
+
+<script type="text/javascript">
+	var mContainer = null;
+	var mHandle = new Array();
+	mHandle[1] = null;
+	mHandle[2] = null;
+	var mEEHandle = null;
+	var iWidgetHandle = null;
+</script>
+
+<script src="../../container/iContainer2.js"></script>
+
+
+<style>
+#attach_point {
+  width: 500px;
+  height: 80px;
+}
+
+</style>
+
+${endhead}
+
+<!-- BODY -->
+	
+</p><h1>gadgets.selection tests</h1>
+<script type="text/javascript">
+
+	function setSelection() {
+		var mySelection = dojo.formToObject('selectionForm')['setSelection'];
+		if (dojo.trim(mySelection).charAt(0) == '{'|| dojo.trim(mySelection.charAt(0))== '[') {
+			mySelection = dojo.fromJson(mySelection);
+		}
+		console.log("(container) setting selection to : " + dojo.toJson(mySelection));
+		mContainer.getCommonContainer().then(
+			function(Container) {
+				Container.selection.setSelection(mySelection);
+			}
+		);
+		// gadgets.selection.setSelection(mySelection);
+	}
+	function preFillSelection() {
+		dojo.byId("setSelection").value = '{"thing1":"thingummy", "thing2": "something else"}';
+	}
+	function preFillAsSelection() {
+		dojo.byId("setSelection").value = '[{type:"opensocial.Activity", dataObject : {\
+    "published": "2011-02-10T15:04:55Z",\
+    "actor": {\
+      "url": "http://example.org/martin",\
+      "objectType" : "person",\
+      "id": "tag:example.org,2011:martin",\
+      "image": {\
+        "url": "http://example.org/martin/image",\
+        "width": 250,\
+        "height": 250\
+      },\
+      "displayName": "Martin Smith"\
+    },\
+    "verb": "post",\
+    "object" : {\
+      "url": "http://example.org/blog/2011/02/entry",\
+      "id": "tag:example.org,2011:abc123/xyz"\
+    },\
+    "target" : {\
+      "url": "http://example.org/blog/",\
+      "objectType": "blog",\
+      "id": "tag:example.org,2011:abc123",\
+      "displayName": "Martin\'s Blog"\
+    }\
+  }}]';
+	}
+
+	function preFillGadget(gadget) {
+		var gadgetUrlInput = dojo.byId("gadgetUrl"+gadget);
+		gadgetUrlInput.value = web_resources_url + "/web/com.ibm.lconn.gadget/test/container/gadgets/selection.xml";
+	}
+	
+	function load_gadget(gadget) {
+			try {
+				var def = {
+						definitionUrl: dojo.formToObject('gadgetForm' + gadget)['gadgetUrl' + gadget],
+						placement: 'attach_point'+gadget,
+						componentType: 'gadget'
+					};
+					
+				if (mHandle[gadget]) {
+					mHandle[gadget].close();
+					mHandle[gadget] = null;
+				}
+				mHandle[gadget] = mContainer.loadWidget(def);
+			} catch ( e ) {
+				console.debug("Caught exception: " + e);
+			}
+			
+			return false;
+		}
+		
+		function refresh_gadget(gadget) {
+			if (mHandle[gadget]) {
+				mHandle[gadget].refresh();
+			}
+		}
+		
+		function close_gadget(gadget) {
+			if (mHandle[gadget]) {
+				mHandle[gadget].close();
+			}
+		}
+		
+		function parse_action() {
+			return false;
+		}	
+
+	function updateSelectionDisplay(selection) {
+		dojo.byId("currentSelection").value = dojo.toJson(selection);
+	}
+</script>
+<div id="selectionDiv">
+<form name="selectionForm" id="selectionForm">
+<input type="text" id="setSelection" name="setSelection" style="width : 60%"></form>
+<button onclick="setSelection();">Set gadgets.selection</button>
+<br>
+<button onclick="preFillSelection();">Pre-fill sample selection</button>
+<button onclick="preFillAsSelection();">Pre-fill sample Activity Stream selection</button>
+<br>
+<br>
+Current Selection (by listener) : <input type="text" id="currentSelection" name="currentSelection" disabled style="width : 60%">
+<br>
+<br>
+<form name="gadgetForm1" id="gadgetForm1">
+Gadget 1 Url : <input type="text" id="gadgetUrl1" name="gadgetUrl1" style="width : 60%">
+</form>
+<button onclick="load_gadget(1);" name="submitButton" value="submit">Load Gadget</button>
+		<button onclick="refresh_gadget(1);">Refresh</button>
+		<button onclick="close_gadget(1);">Close</button>
+<br>
+<button onclick="preFillGadget(1);">Pre-fill selection get/setting gadget</button>
+</div>
+
+<h3>Attach Point 1</h3>
+<div id="attach_point1">gadget 1 goes here</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form name="gadgetForm2" id="gadgetForm2">
+Gadget 2 Url : <input type="text" id="gadgetUrl2" name="gadgetUrl2" style="width : 60%">
+</form>
+<button onclick="load_gadget(2);" name="submitButton" value="submit">Load Gadget</button>
+		<button onclick="refresh_gadget(2);">Refresh</button>
+		<button onclick="close_gadget(2);">Close</button>
+<br>
+<button onclick="preFillGadget(2);">Pre-fill selection get/setting gadget</button>
+
+
+<h3>Attach Point 2</h3>
+<div id="attach_point2">gadget 2 goes here</div>
+
+	
+	<script type="text/javascript">
+		dojo.addOnLoad(function() {
+			mContainer = com.ibm.lconn.gadget.container.iContainer2;			
+			mContainer.init();
+			
+			mContainer.getCommonContainer().then(
+				function(Container) {
+					Container.selection.addListener(updateSelectionDisplay);
+				}
+			);
+		});
+	</script>
+
+${end}
+</body></html>

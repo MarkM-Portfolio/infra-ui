@@ -1,0 +1,2187 @@
+/* Copyright IBM Corp. 2011, 2015  All Rights Reserved.              */
+
+/*--------------------------------------------------------
+     File Picker styles for hikari theme
+--------------------------------------------------------*/
+/*FONT*/
+
+/*LINKS*/
+.lconnPicker a, .lconnPicker a:visited {
+  color: #4178be; }
+
+.lconnPicker a:hover, .lconnPicker a:focus, .lconnPicker a:active {
+  color: #325c80; }
+
+/*listing these up here so they don't trump other link styles, like tags*/
+.lotusui30_layout .lotusColLeft a, .lotusui30_layout .lotusColLeft a:visited {
+  color: #292929; }
+
+.lotusui30_layout .lotusColLeft a:hover, .lotusui30_layout .lotusColLeft a:focus, .lotusui30_layout .lotusColLeft a:active {
+  color: #292929; }
+
+/*BUTTONS*/
+.lconnPicker .lotusBtn {
+  border-width: 0;
+  background-color: #fff;
+  color: #4178be;
+  text-align: center;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-image: none;
+  box-shadow: 0 0 0 1px #4178be inset;
+  transform: translateZ(0px);
+  transition-duration: 0.3s;
+  transition-property: box-shadow;
+  font-family: "Helvetica Neue Regular", Helvetica, Arial;
+  margin: 0 4px 3px 1px;
+  padding: 10px 20px;
+  /*this button always has border*/
+  font-size: 1em;
+  font-weight: normal; }
+
+.lconnPicker .lotusBtn:hover, .lconnPicker .lotusBtn:focus {
+  box-shadow: 0 0 0 2px #4178be inset;
+  background: none #fff;
+  color: #4178be; }
+
+.lconnPicker .lotusBtn:active {
+  box-shadow: 0 0 0 1px #4178be inset;
+  background-color: #f4fcff; }
+  
+.lconnPicker .lotusBtn.lotusBtnDisabled, .lconnPicker .lotusBtn.lotusBtnDisabled:hover {
+  background: none repeat scroll 0 0 #ffffff;
+  box-shadow: 0 0 0 1px #d5d5d5 inset;
+  color: #d5d5d5;
+  outine: none; }
+  
+
+.lconnPicker span.lotusBtn, .lconnPicker span.lotusBtn:hover, .lconnPicker span.lotusBtn:focus, .lconnPicker span.lotusBtn:active{
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: none; }
+
+.lconnPicker .lotusBtnSmall {
+  border-width: 0;
+  background-color: #fff;
+  color: #4178be;
+  text-align: center;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-image: none;
+  box-shadow: 0 0 0 1px #4178be inset;
+  transform: translateZ(0px);
+  transition-duration: 0.3s;
+  transition-property: box-shadow;
+  font-family: "Helvetica Neue Regular", Helvetica, Arial;
+  padding: 5px 10px;
+  /*this button always has border*/
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: normal; }
+
+.lconnPicker .lotusBtnSmallGray {
+  border-width: 0;
+  background-color: #fff;
+  color: #676767;
+  text-align: center;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-image: none;
+  box-shadow: 0 0 0 1px #676767 inset;
+  transform: translateZ(0px);
+  transition-duration: 0.3s;
+  transition-property: box-shadow;
+  font-family: "Helvetica Neue Regular", Helvetica, Arial;
+  padding: 5px 10px;
+  /*this button always has border*/
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: normal; }
+
+.lconnPicker a.lotusBtnSmallGray {
+  color: #676767; }
+
+.lconnPicker .lotusBtn .lotusArrow.lotusDropDownSprite {
+  margin-left: 3px; }
+
+.lconnPicker .lotusBtnImg {
+  border: 0;
+  background: none;
+  color: #4178be;
+  font-weight: bold;
+  text-align: center; }
+
+.lconnPicker .lotusBtnImg {
+  padding: 5px; }
+
+.lconnPicker .lotusBtnImg:hover, .lconnPicker .lotusBtnImg:focus, .lconnPicker .lotusBtnImg:active {
+  color: #000; }
+
+/*BUTTONS (DEPRECATED)*/
+.lconnPicker .lotusButton a, .lconnPicker .lotusButton a:visited {
+  color: #222; }
+
+.lconnPicker .lotusButton {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0px 1px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 1px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 0 rgba(0, 0, 0, 0.3);
+  background-color: #d7d7d7;
+  background-image: none;
+  color: #222;
+  text-decoration: none;
+  border-width: 0;
+  margin-left: 1px;
+  margin-right: 1px; }
+
+.lotusui_ie .lconnPicker .lotusButton{
+  border: 1px solid #ccc; }
+
+.lotusui_ie .lconnPicker .lotusButton{
+  margin-left: 0;
+  margin-right: 0; }
+
+.lconnPicker .lotusButton a, .lconnPicker .lotusButton a:visited {
+  color: #222; }
+
+.lconnPicker .lotusButton:hover, .lconnPicker .lotusButton:focus, .lconnPicker .lotusButton:active {
+  color: #000;
+  border-width: 0;
+  -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+  background-image: none; }
+
+.lconnPicker .lotusButton a:hover, .lconnPicker .lotusButton a:focus, .lconnPicker .lotusButton a:active {
+  color: #000; }
+
+.lotusui_ie .lconnPicker .lotusButton:hover, .lotusui_ie .lconnPicker .lotusButton:focus, .lotusui_ie .lconnPicker .lotusButton:active{
+  border: 1px solid #ccc; }
+
+.lconnPicker .lotusBtnImg {
+  padding: 5px; }
+
+.lconnPicker span.lotusBtn {
+  margin-right: 4px; }
+
+.lconnPicker button.lotusFormButton, .lconnPicker input.lotusFormButton {
+  border-width: 0;
+  background-color: #fff;
+  color: #4178be;
+  text-align: center;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-image: none;
+  box-shadow: 0 0 0 1px #4178be inset;
+  transform: translateZ(0px);
+  transition-duration: 0.3s;
+  transition-property: box-shadow;
+  font-family: "Helvetica Neue Regular", Helvetica, Arial;
+  margin: 0 4px 3px 1px;
+  padding: 10px 20px;
+  /*this button always has border*/
+  font-size: 1em;
+  font-weight: normal; }
+  
+.lconnPicker button.lotusFormButton:hover, .lconnPicker button.lotusFormButton:focus, .lconnPicker input.lotusFormButton:hover, .lconnPicker input.lotusFormButton:focus {
+  box-shadow: 0 0 0 2px #4178be inset;
+  background: none #fff;
+  color: #4178be; }
+.lconnPicker button.lotusFormButton:active, .lconnPicker input.lotusFormButton:active {
+  box-shadow: 0 0 0 1px #4178be inset;
+  background-color: #f4fcff; }
+.lconnPicker button.lotusFormButton.lotusBtnDisabled, .lconnPicker button.lotusFormButton.lotusBtnDisabled:hover, .lconnPicker input.lotusFormButton.lotusBtnDisabled, .lconnPicker input.lotusFormButton.lotusBtnDisabled:hover {
+  background: none repeat scroll 0 0 #ffffff;
+  box-shadow: 0 0 0 1px #d5d5d5 inset;
+  color: #d5d5d5;
+  outine: none; }
+
+.lconnPicker .lconnUploadContainer .lotusBtn {
+  background: none repeat scroll 0 0 #4178be;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  color: #fff;
+  font-family: "Helvetica Neue Bold", Helvetica, Arial;
+  font-size: 1.16em; }
+
+.lconnPicker .lconnUploadContainer .lotusBtn:hover {
+  box-shadow: 0 0 0 1px #3765a0 inset;
+  transform: translateZ(0px);
+  transition-duration: 0.3s;
+  transition-property: box-shadow; }
+
+.lconnPicker .lconnUploadContainer .lotusBtn:active {
+  background: #3765a0; }
+
+.lconnPicker span.lotusBtnDisabled {
+  box-shadow: none; }
+
+.lconnPicker span.lotusBtnDisabled a {
+  color: #676767;
+  background-color: #e7e7e7; }
+
+.lconnPicker span.lotusBtnDisabled a:hover, .lconnPicker span.lotusBtnDisabled a:focus, .lconnPicker span.lotusBtnDisabled a:active {
+  background-color: #e7e7e7;
+  border-width: 0;
+  -moz-box-shadow: 0px 1px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 1px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 0 rgba(0, 0, 0, 0.5);
+  background-image: none; }
+
+/*DIALOG*/
+.lconnPicker .lotusDialogBorder {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f1f1f1;
+  box-shadow: none; }
+
+.lconnPicker .lotusDialog .lotusDialogHeader {
+  background: none no-repeat scroll 0 0 #325c80;
+  border-bottom: 0;
+  padding: 15px 20px; }
+
+.lotusui_ie .lconnPicker .lotusDialog .lotusDialogHeader {
+  background: none no-repeat scroll 0 0 #325c80 !important;}
+
+.lconnPicker .lotusDialog .lotusHeading {
+  margin-right: 0;
+  display: block;
+  color: #fff;
+  font-size: 1.25em;
+  font-weight: normal;
+  font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif; }
+
+.lotusui30.lotusImagesOff .lotusDialog .lotusHeading, .lotusImagesOff .lconnPicker .lotusDialog .lotusHeading {
+  margin-right: 15px; }
+
+.lconnPicker .lotusDialog .lotusDialogHeader .lotusDialogClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 0;
+  border: 0; }
+
+.lotusui30.lotusImagesOff .lotusDialog .lotusDialogHeader .lotusDialogClose, .lotusImagesOff .lconnPicker .lotusDialog .lotusDialogHeader .lotusDialogClose {
+  padding: 3px;
+  border: 1px solid #000;
+  top: 15px;
+  right: 15px; }
+
+.lconnPicker .lotusDialog .dijitDialogCloseIconHover {
+  cursor: pointer;
+  cursor: hand; }
+
+.lconnPicker .lotusDialogFooter .lotusBtn {
+  margin-left: 9px;
+  margin-right: 1px; }
+
+.lotusui_ie .lconnPicker .lotusDialogFooter .lotusBtn {
+  margin-left: 10px;
+  margin-right: 0; }
+
+.lconnPicker .lotusOverlay {
+  filter: alpha(opacity=40);
+  opacity: 0.4; }
+
+/*FORMS*/
+.lconnPicker .lotusForm2 .lotusFormFooter {
+  border: 0;
+  background: none; }
+
+.lconnPicker .lotusForm2 .lotusFormFooter .lotusBtn {
+  margin-right: 9px; }
+
+.lotusui_ie .lconnPicker .lotusForm2 .lotusFormFooter .lotusBtn{
+  margin-right: 10px; }
+
+.lconnPicker .lotusForm2 .lotusFieldEmphasis {
+  -moz-box-shadow: 0 3px 3px #F3F3F3 inset;
+  -webkit-box-shadow: 0 3px 3px #F3F3F3 inset;
+  box-shadow: 0 3px 3px #F3F3F3 inset; }
+
+/*HELP*/
+.lconnPicker .lotusHelp {
+  background-color: #fff;
+  box-shadow: none; }
+
+/*LISTS*/
+.lconnPicker .lotusColLeft .lotusSectionBody {
+  margin-left: 0; }
+
+.lconnPicker .lotusColLeft ul.lotusList li {
+  padding: 3px 0; }
+
+.lconnPicker .lotusColLeft ul.lotusList li.lotusSelected {
+  background-color: #e0e0e0; }
+
+.lconnPicker .lotusColLeft ul.lotusList li.lotusSelected a, .lconnPicker .lotusColLeft ul.lotusList li.lotusSelected a:visited {
+  color: #292929; }
+
+/*MENUS*/
+.lconnPicker .lotusMenu {
+  width: 100%;
+  margin: 0 0 15px;
+  padding: 0;
+  color: #292929;
+  font-size: 1.08333em;
+  /*13px*/
+  background-color: transparent;
+  border-width: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0; }
+
+.lconnPicker .lotusColLeft li.lotusBorderBottom:before {
+  background: none repeat scroll 0 0 #2B2D30;
+  border-bottom: 1px solid #434B4D;
+  content: '';
+  height: 1px;
+  left: 0;
+  position: absolute;
+  bottom: 2px;
+  width: 155px; }
+
+.lconnPicker .lotusColLeft li.lotusBorderBottom.lotusLast:before {
+  border: none;
+  background: none; }
+
+.lconnPicker .lotusColLeft ul.lotusList li.lotusBorderBottom {
+  padding: 3px 2px 10px 2px; }
+
+.lconnPicker .lotusColLeft ul.lotusList .lotusBorderBottom {
+  border-bottom: none;
+  position: relative; }
+
+.lconnPicker .lotusMenu div.lotusChunk {
+  margin: 5px 5px 0 15px; }
+
+.lconnPicker .lotusMenu .lotusMenuSection {
+  border-width: 0;
+  position: relative; }
+
+.lconnPicker .lotusMenu li a, .lconnPicker .lotusMenu li a:visited {
+  margin: 14px 0;
+  padding: 0 10px;
+  line-height: 1.5;
+  font-size: 1.07692em;
+  border-width: 0;
+  color: #000000;
+  background-color: transparent;
+  outline: none;
+  text-decoration: none; }
+
+.dijit_a11y.lconnPicker .lotusMenu li a:focus {
+  outline: 1px dotted; }
+
+.lconnPicker .lotusMenu li a:hover, .lconnPicker .lotusMenu li a:focus, .lconnPicker .lotusMenu li:focus a, .lotusui_ie .lconnPicker .lotusMenu li a:active {
+  background-color: #e0e0e0; }
+
+.lotusui30.lotusImagesOff .lotusMenu li a, .lotusui30.lotusImagesOff .lotusMenu li a:visited {
+  font-weight: normal; }
+
+.lconnPicker .lotusMenu .lotusMenuHeader a.lotusArrow {
+  left: 14px;
+  top: 12px; }
+
+.lconnPicker .lotusMenu .lotusMenuHeader a.lotusArrow {
+  z-index: 10; }
+
+.lconnPicker .lotusMenu .lotusTwistyOpenMenu {
+  /*@noflip*/
+  background-position: 4px -1016px;
+  filter: alpha(opacity=100);
+  opacity: 1; }
+
+.lconnPicker .lotusMenu .lotusTwistyClosedMenu {
+  /*@replace: 4px -1112px*/ background-position: 4px -1160px;
+  filter: alpha(opacity=100);
+  opacity: 1; }
+
+.lconnPicker .lotusMenu .lotusHeaderSelected .lotusTwistyOpenMenu {
+  /*@noflip*/
+  background-position: 4px -1016px;
+  filter: alpha(opacity=100);
+  opacity: 1; }
+
+.lconnPicker .lotusMenu .lotusHeaderSelected .lotusTwistyClosedMenu {
+  /*@replace: 4px -1112px*/ background-position: 4px -1160px;
+  filter: alpha(opacity=100);
+  opacity: 1; }
+
+.lconnPicker .lotusMenu .lotusMenuHeader .lotusHeading a {
+  margin: 0;
+  display: block; }
+
+.lconnPicker .lotusMenu .lotusMenuHeader.lotusSelected .lotusArrow .lotusAltText {
+  color: #dd731c; }
+
+.lconnPicker .lotusMenu .lotusAction {
+  margin-left: 20px;
+  margin-bottom: 5px; }
+
+.lconnPicker .lotusMenu li.lotusSelected a, .lconnPicker .lotusMenu li.lotusSelected a:visited, .lconnPicker .lotusMenu li.lotusSelected a:hover, .lconnPicker .lotusMenu li.lotusSelected a:focus, .lconnPicker .lotusMenu li.lotusSelected a:active, .lconnPicker .lotusMenu .lotusHeaderSelected {
+  position: relative;
+  margin: 15px 0;
+  padding: 0 20px 0 6px;
+  background-color: transparent;
+  border: 0;
+  color: #000000;
+  border-left: 4px solid #4178be; }
+
+.lconnPicker .lotusMenu li.subNavItem.lotusSelected a, .lconnPicker .lotusMenu li.subNavItem.lotusSelected a:visited, .lconnPicker .lotusMenu li.subNavItem.lotusSelected a:hover, .lconnPicker .lotusMenu li.subNavItem.lotusSelected a:focus, .lconnPicker .lotusMenu li.subNavItem.lotusSelected a:active {
+  margin: 15px -5px; }
+
+.lconnPicker .lotusMenu li:first-child a, .lconnPicker .lotusMenu li.lotusSelected:first-child a {
+  margin-top: 0px; }
+
+.lconnPicker .lotusMenu li:focus {
+  outline: none; }
+
+.lotusui30.lotusImagesOff .lotusMenu li.lotusSelected a, .lotusui30.lotusImagesOff .lotusMenu .lotusHeaderSelected {
+  border-right: 0;
+  font-weight: bold; }
+
+.lconnPicker .lotusMenu .lotusHeaderSelected {
+  padding-top: 10px; }
+
+.lconnPicker .lotusMenu .lotusHeaderSelected .lotusHeading a {
+  color: #222 !important;
+  /*important needed for dojo style*/
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4); }
+
+.lconnPicker .lotusMenu .lotusMenuSubsection {
+  margin: 0;
+  padding: 0; }
+
+.lconnPicker .lotusMenu .lotusMenuSubsection li a {
+  /*padding-left: 34px;*/ }
+
+.lconnPicker .lotusMenu .lotusMenuSubsection li a:before {
+  content: "\25A0";
+  color: #676767;
+  text-shadow: none;
+  margin-right: 5px;
+  position: relative;
+  bottom: 3px;
+  font-size: 9px; }
+
+.lconnPicker .lotusMenu .lotusMenuSubsection li.lotusSelected a {
+  margin-left: 0;
+  padding-left: 6px; }
+
+.lconnPicker .lotusMenu .lotusMenuSubsection li.lotusSelected a:before {
+  color: #292929; }
+
+/*menu with icons*/
+.lconnPicker .lotusMenu ul.lotusIcons img, .lconnPicker .lotusMenu ul.lotusIcons .lotusSelected img {
+  top: 2px;
+  left: 7px; }
+
+.lconnPicker .lotusMenu ul.lotusIcons a {
+  padding-left: 30px; }
+
+.lconnPicker .lotusMenu ul.lotusIcons .lotusSelected a {
+  padding-left: 30px; }
+
+.lconnPicker .lotusMenu .lotusMenuSubsection ul.lotusIcons a {
+  padding-left: 30px; }
+
+.lconnPicker .lotusMenu .lotusMenuSubsection ul.lotusIcons .lotusSelected a {
+  padding-left: 30px; }
+
+.lotusui30.lotusImagesOff .lotusMenu .lotusMenuSubsection ul.lotusIcons a, .lotusImagesOff .lconnPicker .lotusMenu .lotusMenuSubsection ul.lotusIcons a, .lotusui30.lotusImagesOff .lotusMenu .lotusMenuSubsection ul.lotusIcons .lotusSelected a, .lotusImagesOff .lconnPicker .lotusMenu .lotusMenuSubsection ul.lotusIcons .lotusSelected a {
+  padding-left: 10px; }
+
+.lconnPicker .lotusMenu .lotusUnreadBadge {
+  display: inline-block;
+  margin-left: 5px;
+  top: 7px;
+  padding: 0px 3px;
+  background-color: transparent;
+  font-size: 1em;
+  /*10px*/
+  text-shadow: none;
+  color: #ad1625;
+  font-weight: 500; }
+
+/*MESSAGES*/
+.lconnPicker .lotusMessage2, .lconnPicker .lotusMessage, .lconnPicker .lotusMessage2.lconnSharedExternal {
+  background-color: #f1f1f1;
+  border: 0;
+  border-radius: 0;
+  color: #292929;
+  padding: 0; }
+
+.lconnPicker .lotusMessage2 .lotusMessageBody, .lconnPicker .lotusMessage span, .lconnPicker .lotusMessage .lotusMessageBody {
+  padding: 11px 40px 11px 45px;
+  margin: 0; }
+
+.lconnPicker .lotusMessage2 .lotusIcon, .lconnPicker .lotusMessage .lotusIcon, .lconnPicker .lotusMessage .lconnSprite-iconConfirmation16, .lconnPicker .lotusMessage .lconnSprite-iconError16, .lconnPicker .lotusMessage .lconnSprite-iconWarning16 {
+  margin: 5px 10px 5px 5px; }
+
+.lconnPicker .lotusMessage2 .lotusDelete {
+  right: 16px;
+  top: 14px; }
+
+/*PAGING*/
+.lconnPicker .lotusPaging, .lconnPicker .lotusPaging ul li, .lconnPicker .lotusPaging div, .lconnPicker .lotusPaging input {
+  color: #676767; }
+
+.lconnPicker .lotusPaging {
+  font-size: inherit;
+  margin: 10px 0;
+  background: none;
+  border-width: 0;
+  padding-left: 0;
+  padding-right: 0; }
+
+.lconnPicker .lotusStream .lotusPagingTop.lotusPaging, .lconnPicker .lotusStream .lotusPaging {
+  margin: 0;
+  padding: 15px 10px 10px 15px; }
+
+.lotusImagesOff .lconnPicker .lotusStream .lotusPaging {
+  background: none; }
+
+.lconnPicker .lotusPaging a, .lconnPicker .lotusPaging a:visited {
+  font-weight: normal; }
+
+.lconnPicker .lotusPaging div, .lconnPicker .lotusPaging .lotusInlinelist li.lotusFirst {
+  padding-left: 0; }
+
+.lconnPicker .lotusPaging .lotusRight li {
+  padding: 0 0 0 6px;
+  margin-left: 5px; }
+
+/*PALETTE (CUSTOMIZE)*/
+.lconnPicker #paletteWrapper {
+  margin: 0 -5px;
+  /*use here instead of .lotusPalette to avoid a slide-down oddity*/ }
+
+.lconnPicker .lotusPalette {
+  position: relative;
+  z-index: 1;
+  /*to cover the customize link*/
+  background-color: #f0f0f0;
+  /*covers up the selection indicator on customize link underneath the palette*/
+  border: 1px solid #d2d2d2;
+  border-width: 0 1px 1px;
+  -moz-box-shadow: inset 0 -2px 4px #ccc;
+  -webkit-box-shadow: inset 0 -2px 4px #ccc;
+  box-shadow: inset 0 -2px 4px #ccc;
+  margin-top: 9px; }
+
+.lconnPicker .lotusPaletteHeader {
+  overflow: visible;
+  color: #222;
+  background: none;
+  border-top-width: 0;
+  border-bottom: 1px solid #ccc;
+  padding: 2px 10px 0; }
+
+.lconnPicker .lotusPaletteHeader span.lotusRight {
+  float: none;
+  position: absolute;
+  top: 7px;
+  right: 35px;
+  margin-top: 0;
+  background: #ecf9df;
+  border: 1px solid #108f53;
+  font-size: 0.9em;
+  padding: 0 5px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px; }
+
+.lconnPicker .lotusPalette .lotusAdded, .lconnPicker .lotusPalette .lotusAdded a {
+  color: #222; }
+
+.lconnPicker .lotusPaletteHeader .lotusPaletteClose {
+  float: none;
+  position: absolute;
+  top: 9px;
+  right: 7px; }
+
+.lconnPicker .lotusPalette .lotusPaletteHeader a, .lconnPicker .lotusPalette .lotusPaletteHeader a:visited, .lconnPicker .lotusPalette .lotusPaletteHeader a:hover, .lconnPicker .lotusPalette .lotusPaletteHeader a:focus, .lconnPicker .lotusPalette .lotusPaletteHeader a:active {
+  color: #222; }
+
+.lconnPicker .lotusPaletteHeader ul.lotusTabs {
+  float: none;
+  margin-top: 5px;
+  margin-left: 15px; }
+
+.lconnPicker .lotusPaletteHeader ul.lotusTabs li {
+  border: 1px solid #ccc;
+  background: none; }
+
+.lconnPicker .lotusPaletteHeader ul.lotusTabs li.lotusSelected {
+  background: #f0f0f0;
+  border-bottom-color: #f0f0f0; }
+
+.lconnPicker .lotusPaletteHeader ul.lotusTabs li a, .lconnPicker .lotusPaletteHeader ul.lotusTabs li a:visited {
+  display: block;
+  margin: 0;
+  padding: 9px 10px;
+  background: none; }
+
+.lconnPicker .lotusPaletteHeader ul.lotusTabs li.lotusSelected a, .lconnPicker .lotusPaletteHeader ul.lotusTabs li.lotusSelected a:visited {
+  background: none;
+  color: #000; }
+
+.lconnPicker .lotusPaletteNav {
+  width: 215px;
+  height: auto;
+  margin: 20px -20px 0;
+  padding: 0 20px;
+  background: none;
+  border: 0; }
+
+.lconnPicker .lotusPaletteNav h3, .lconnPicker .lotusPaletteNav .lotusPaletteNavHeader .lotusHeading2 {
+  color: #444;
+  font-size: 1em;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  font-weight: normal; }
+
+.lconnPicker .lotusSearch .lotusScope .lotusIcon {
+  display: none; }
+
+.lconnPicker .lotusPalette .lotusSearch input.lotusText {
+  margin: 0 4px 0 0;
+  width: 158px;
+  border-color: #ccc;
+  padding-left: 8px;
+  width: 155px;
+  background: -moz-linear-gradient(top, #f2f2f2 0%, #ffffff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f2f2f2), color-stop(100%, #ffffff));
+  background: -webkit-linear-gradient(top, #f2f2f2 0%, #ffffff 100%);
+  background: linear-gradient(top, #f2f2f2 0%, #ffffff 100%);
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px; }
+
+.lconnPicker .lotusPalette .lotusChunk, .lconnPicker .lotusPalette .lotusPaletteNavHeader {
+  margin: 10px 0;
+  width: auto; }
+
+.lconnPicker .lotusPalette .lotusPaletteNav .lotusMenu {
+  margin: 0;
+  background: none;
+  height: 16em;
+  width: auto; }
+
+.lotusui_ie .lconnPicker .lotusPalette .lotusPaletteNav .lotusMenu {
+  /*TODO: test IE*/
+  height: 15em; }
+
+.lconnPicker .lotusPalette .lotusPaletteNav .lotusMenu li a, .lconnPicker .lotusPalette .lotusPaletteNav .lotusMenu li a:visited, .lconnPicker .lotusPalette .lotusPaletteNav .lotusMenu li a:hover, .lconnPicker .lotusPalette .lotusPaletteNav .lotusMenu li a:focus, .lconnPicker .lotusPalette .lotusPaletteNav .lotusMenu li a:active {
+  color: #444;
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  padding-left: 20px;
+  margin: 0; }
+
+.lconnPicker .lotusPalette .lotusPaletteNav .lotusMenu li.lotusSelected a, .lconnPicker .lotusPalette .lotusPaletteNav .lotusMenu li.lotusSelected a:visited, .lconnPicker .lotusPalette .lotusPaletteNav .lotusMenu li.lotusSelected a:hover, .lconnPicker .lotusPalette .lotusPaletteNav .lotusMenu li.lotusSelected a:focus, .lconnPicker .lotusPalette .lotusPaletteNav .lotusMenu li.lotusSelected a:active {
+  color: #fff; }
+
+.lconnPicker .lotusPaletteBody {
+  margin-bottom: 0;
+  border: 0;
+  background: none; }
+
+.lconnPicker .lotusPaletteContent {
+  background: none;
+  padding: 20px 25px;
+  height: 19.2em; }
+
+.lconnPicker .lotusPaletteWidget {
+  background: #fff;
+  border-color: #ccc;
+  color: #222; }
+
+.lconnPicker .lotusPaletteContent .lotusPaletteWidget a, .lconnPicker .lotusPaletteContent .lotusPaletteWidget a:visited, .lconnPicker .lotusPaletteContent .lotusPaletteWidget a:hover, .lconnPicker .lotusPaletteContent .lotusPaletteWidget a:focus, .lconnPicker .lotusPaletteContent .lotusPaletteWidget a:active {
+  color: #222; }
+
+.lconnPicker .lotusPaletteWidget a.lotusIcon {
+  /*@noflip*/
+  background-position: 0 -4119px;
+  filter: alpha(opacity=45);
+  opacity: 0.45; }
+
+.lconnPicker .lotusPaletteWidget a.lotusIcon:hover, .lconnPicker .lotusPaletteWidget a.lotusIcon:focus, .lconnPicker .lotusPaletteWidget a.lotusIcon:active {
+  filter: alpha(opacity=55);
+  opacity: 0.55; }
+
+.lconnPicker .lotusPaletteWidgetHover {
+  border-color: #00b0da; }
+
+.lconnPicker .lotusPaletteContent .lotusPaging[dojoattachpoint="noWidgetNode"] {
+  /*"There are no widgets available" text is in lotusPaging for some reason. this is a work-around.*/
+  font-size: 1em;
+  margin: 0;
+  padding: 0; }
+
+.lconnPicker .lotusPalette .lotusMeta[dojoattachpoint="loadingNode"] {
+  /*workaround to position the "Loading..." text*/
+  margin: 0 20px !important;
+  font-size: 1em; }
+
+.lconnPicker .lotusPaletteContent .lotusPaging {
+  margin-bottom: 0; }
+
+.lconnPicker .lotusPaletteContent .lotusPaging ul li, .lconnPicker .lotusPaletteContent .lotusPaging div {
+  color: #222; }
+
+.lconnPicker .lotusPalette .lotusPaging a, .lconnPicker .lotusPalette .lotusPaging a:visited {
+  color: #4178be; }
+
+.lconnPicker .lotusPalette .lotusPaging a:hover, .lconnPicker .lotusPalette .lotusPaging a:focus, .lconnPicker .lotusPalette .lotusPaging a:active {
+  color: #325c80; }
+
+/*SEARCH*/
+.lconnPicker .lotusSearch .lotusScope, .lconnPicker .lotusSearch .lotusText, .lconnPicker .lotusSearch .dijitTextBox {
+  border-color: #aaa; }
+
+.lconnPicker .lotusSearch .lotusText {
+  padding-top: 3px;
+  padding-bottom: 4px; }
+
+.lconnPicker .lotusSearch .lotusScope {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background: #fff url("../../../sprite/sprite-lconn-32bit.png") 100% -1910px no-repeat; }
+
+.lconnPicker .lotusSearch .lotusSearchButton {
+  color: #000; }
+
+.lconnPicker .lotusSearch .lotusText, .lconnPicker .lotusSearch .dijitTextBox {
+  border-color: #ccc; }
+
+.lconnPicker .lotusSearch a.lotusScope:hover, .lconnPicker .lotusSearch a.lotusScope:focus, .lconnPicker .lotusSearch a.lotusScope:active {
+  color: #000;
+  background-color: #e9f1f3;
+  /*@noflip*/
+  background-position: 100% -1680px; }
+
+.lconnPicker .lotusSearchForm .lotusSearchButton {
+  color: #000; }
+
+.lconnPicker .lotusSearchTab {
+  padding: 2px 6px 4px 8px;
+  border-color: #aaa;
+  background-color: #f1f1f1;
+  background-image: -moz-linear-gradient(top, #fff 0%, #ebebeb 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ebebeb));
+  background-image: -webkit-linear-gradient(top, #fff 0%, #ebebeb 100%);
+  background-image: linear-gradient(top, #fff 0%, #ebebeb 100%);
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px; }
+
+.lconnPicker .lotusTabExpanded {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-topleft: 2px;
+  -webkit-border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px; }
+
+.lconnPicker .lotusSearchTab a, .lconnPicker .lotusSearchTab a:visited {
+  padding-right: 12px;
+  font-size: 0.9em;
+  line-height: 1.7; }
+
+.lconnPicker .lotusSearchTab a, .lconnPicker .lotusSearchTab a:visited, .lconnPicker .lotusSearchTab a:hover, .lconnPicker .lotusSearchTab a:focus, .lconnPicker .lotusSearchTab a:active {
+  text-decoration: none; }
+
+.lconnPicker form.lotusSearchForm {
+  z-index: 1;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  -moz-box-shadow: 0px 2px 5px #eee;
+  -webkit-box-shadow: 0px 2px 5px #eee;
+  box-shadow: 0px 2px 5px #eee; }
+
+.lconnPicker .lotusSearchForm .lotusBtnImg {
+  padding: 3px; }
+
+.lconnPicker .lotusSearchForm input.lotusText {
+  padding-top: 3px;
+  padding-bottom: 4px; }
+
+/*SECTIONS*/
+.lconnPicker .lotusSection2 {
+  margin: 0 -25px;
+  padding: 0;
+  border: 0; }
+
+.lconnPicker .lotusSection, .lconnPicker .lotusWidget, .lconnPicker .lotusWidget2 {
+  margin: 0 0 20px;
+  padding: 0;
+  border-width: 0;
+  width: auto; }
+
+.lconnPicker .lotusColLeft .lotusWidget2 h3 {
+  margin: 0;
+  border-bottom-color: #484848;
+  padding: 7px 0 10px; }
+
+.lconnPicker .lotusPortlet .lotusSectionHeader {
+  border-width: 0;
+  margin: 0;
+  background-image: none;
+  background-color: transparent; }
+
+.lconnPicker .lotusSectionPlain .lotusSectionHeader {
+  border-width: 0;
+  background-image: none; }
+
+/* #95695 - Remove top borders from homepage widgets on the right */
+.lconnPicker .lotusSection2 .lotusSectionHeader {
+  border-top: none; }
+
+.lconnPicker .lotusSection2 .lotusSectionHeader .lotusIcon {
+  padding: 5px 0 5px 5px;
+  width: 16px; }
+
+.lconnPicker .lotusSection h2 a.lotusIcon {
+  height: 16px;
+  margin-top: 2px; }
+
+.lconnPicker .lotusSection2 .lotusSectionHeader .lotusFirst {
+  padding-left: 0; }
+
+.lconnPicker .lotusSection2 .lotusSectionHeader a.lotusArrow, .lconnPicker .lotusSection2 .lotusSectionHeader a.lotusArrow:visited, .lconnPicker .lotusSection2 .lotusSectionHeader a.lotusArrow:hover, .lconnPicker .lotusSection2 .lotusSectionHeader a.lotusArrow:focus, .lconnPicker .lotusSection2 .lotusSectionHeader a.lotusArrow:active {
+  padding: 5px 0; }
+
+.lconnPicker .lotusSection2 .lotusDraggable a.lotusArrow, .lconnPicker .lotusSection2 .lotusDraggable a.lotusArrow:visited, .lconnPicker .lotusSection2 .lotusDraggable a.lotusArrow:hover, .lconnPicker .lotusSection2 .lotusDraggable a.lotusArrow:focus, .lconnPicker .lotusSection2 .lotusDraggable a.lotusArrow:active {
+  padding: 5px 0 5px 5px; }
+
+.lconnPicker .lotusSection .lotusDraggable .lotusArrow {
+  margin-left: 5px; }
+
+.lconnPicker .lotusSection2 .lotusDragHandle, .lconnPicker .lotusSection .lotusDragHandle {
+  left: 0;
+  top: 7px; }
+
+.lconnPicker .lotusSection h2.lotusDraggable span.lotusLeft, .lconnPicker .lotusSection h3.lotusDraggable span.lotusLeft {
+  width: 75%; }
+
+.lconnPicker .lotusSection2 .lotusSubheader, .lconnPicker .lotusSection h3, .lconnPicker .lotusWidget h3, .lconnPicker .lotusWidget2 h3 {
+  padding: 7px 0; }
+
+.lconnPicker .lotusSection2 .lotusSubheader .lotusIcon {
+  padding-right: 0; }
+
+.lconnPicker .lotusSection2 .lotusHeading, .lconnPicker .lotusSection2 .lotusHeading2 {
+  font-size: 1.15em;
+  color: #484848; }
+
+.lconnPicker .lotusColRight .lotusSection2 .lotusHeading, .lconnPicker .lotusColRight .lotusSection2 .lotusHeading2 {
+  font-size: 1.16666em; }
+
+/*this is a combo of lotusSectionHeader and lotusHeading (the h2 functions as both)*/
+.lconnPicker .lotusSection h2, .lconnPicker .lotusWidget h2, .lconnPicker .lotusWidget2 h2, .lconnPicker .dijitTitlePaneTitle {
+  padding: 5px 0;
+  font-family: "Helvetica Neue Bold", Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
+  color: #292929;
+  background: none;
+  border-width: 0;
+  min-height: 19px; }
+
+.lconnPicker .lotusColRight .lotusSection h2, .lconnPicker .lotusColRight .lotusWidget h2, .lconnPicker .lotusColRight .lotusWidget2 h2, .lconnPicker .lotusColRight .dijitTitlePaneTitle {
+  font-size: 1.15em;
+  margin-left: 0; }
+
+.lconnPicker .lotusSection2 .lotusHeading a, .lconnPicker .lotusSection h2 a, .lconnPicker .lotusWidget h2 a, .lconnPicker .lotusWidget2 h2 a {
+  color: inherit !important; }
+
+.lconnPicker .lotusColLeft .lotusSection2 .lotusHeading, .lconnPicker .lotusColLeft .lotusSection h2, .lconnPicker .lotusColLeft .lotusWidget h2, .lconnPicker .lotusColLeft .lotusWidget2 h2, .lconnPicker .lotusColLeft .dijitTitlePaneTitle {
+  font-size: 1.16667em;
+  /*14px*/ }
+
+.lconnPicker .lotusColLeft .lotusSection2 .lotusHeading .lotusArrow, .lconnPicker .lotusColLeft .lotusSection h2 .lotusArrow, .lconnPicker .lotusColLeft .lotusWidget h2 .lotusArrow, .lconnPicker .lotusColLeft .lotusWidget2 h2 .lotusArrow, .lconnPicker .lotusColLeft h3 .lotusArrow {
+  margin-left: -18px; }
+
+.lconnPicker .lotusSection div.lotusChunk h3 {
+  margin-top: 5px; }
+
+/*footer paging*/
+.lconnPicker .lotusSection2 .lotusSectionFooter .lotusPaging, .lconnPicker .lotusSection .lotusSectionFooter .lotusPaging, .lconnPicker .lotusWidget .lotusSectionFooter .lotusPaging, .lconnPicker .lotusWidget2 .lotusSectionFooter .lotusPaging {
+  margin: 0;
+  padding: 0;
+  border-width: 0; }
+
+/*PORTLET (SECTION VARIATION)*/
+/*we're only considering the older widget style as a portlet if it is in the content area*/
+.lconnPicker .lotusPortlet, .lconnPicker .lotusContent .lotusWidget {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #dadada; }
+
+.lconnPicker .lotusWidget .widgetFooter {
+  padding-top: 5px; }
+
+/*but not the first one*/
+.lconnPicker .lotusContent .lotusWidget2:first-child {
+  border-top: 0; }
+
+/*icon overrides*/
+/*the action menu button for a portlet*/
+.lconnPicker .lotusSection2 .lotusSectionHeader .lotusActionIcon img, .lconnPicker .lotusWidget h2 a.lotusActionMenu, .lconnPicker .lotusWidget2 h2 a.lotusActionMenu {
+  margin-top: 2px;
+  width: 16px;
+  height: 16px;
+  background-image: url("../../../sprite/sprite16.png");
+  /*@noflip*/
+  background-position: -656px 0;
+  background-repeat: no-repeat;
+  filter: alpha(opacity=55);
+  opacity: 0.55; }
+
+.lconnPicker .lotusSection2 .lotusSectionHeader .lotusActionIcon:hover img, .lconnPicker .lotusSection2 .lotusSectionHeader .lotusActionIcon:focus img, .lconnPicker .lotusWidget h2 a.lotusActionMenu:hover, .lconnPicker .lotusWidget2 h2 a.lotusActionMenu:hover {
+  filter: alpha(opacity=75);
+  opacity: .75; }
+
+.lconnPicker .lotusColLeft .lotusSection2 .lotusSectionHeader .lotusActionIcon img, .lconnPicker .lotusColLeft .lotusWidget h2 a.lotusActionMenu, .lconnPicker .lotusColLeft .lotusWidget2 h2 a.lotusActionMenu {
+  /*@noflip*/
+  background-position: -656px 0;
+  padding-left: 2px; }
+
+/*SORT*/
+.lconnPicker .lotusSort {
+  font-size: 0.95em;
+  margin: 5px 0;
+  color: #676767;
+  background-color: transparent; }
+
+.lconnPicker .lotusSort .lotusInlinelist li {
+  padding: 0 5px; }
+
+/*TABLES*/
+.lconnPicker .lotusInfoTable {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #fff;
+  -moz-box-shadow: 0px 2px 5px #eee;
+  -webkit-box-shadow: 0px 2px 5px #eee;
+  box-shadow: 0px 2px 5px #eee; }
+
+.lconnPicker .lotusInfoTable td, .lconnPicker .lotusInfoTable th {
+  border-width: 0; }
+
+.lconnPicker .lotusTable .lotusAltRow td, .lconnPicker .lotusTable .lotusAltRow th.lotusRowHeader {
+  background-color: transparent; }
+
+.lconnPicker .lotusTable .lotusForm2 {
+  background: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-width: 5px 0;
+  border-color: #f0f0f0;
+  border-style: solid; }
+
+.lconnPicker .lotusTable .lotusForm2 .lotusFormTitle .lotusHeading {
+  margin-top: 0; }
+
+.lconnPicker .lotusTable .lotusForm2 .lotusFormFooter {
+  border: 0;
+  padding-top: 0;
+  padding-bottom: 15px; }
+
+.lconnPicker .lotusTable .lotusForm2 .lotusMessage2 {
+  top: 0;
+  margin-bottom: 0; }
+
+/*TABS*/
+.lconnPicker .lotusTabContainer {
+  border-bottom: 1px solid #4178be;
+  margin-bottom: 10px;
+  margin-top: 8px;
+  position: relative;
+  z-index: 1; }
+
+.lconnPicker .filesReader .lotusTabContainer {
+  border-bottom: 0; }
+
+.lconnPicker ul.lotusTabs {
+  bottom: -1px;
+  list-style: none outside none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative; }
+
+.lconnPicker .lotusTabs li.lotusSelected {
+  background-color: #fff;
+  border-bottom: 2px solid #4178be;
+  font-weight: normal; }
+
+.lconnPicker .lotusTabs li {
+  background-color: transparent;
+  border-color: #ccc;
+  padding: 0;
+  border-width: 0;
+  text-transform: uppercase;
+  margin-right: 15px;
+  margin-bottom: 0; }
+
+.lconnPicker .lotusTabs li a {
+  padding: 6px 0;
+  color: #292929; }
+
+.lconnPicker .lotusTabs li.lotusSelected a {
+  padding-bottom: 4px; }
+
+.lconnPicker .lotusTabCondensed .lotusTabs li.lotusSelected {
+  background-color: transparent; }
+
+/*TAGS*/
+.lconnPicker .lotusTagCloud {
+  margin-left: -15px;
+  padding: 10px; }
+
+.lconnPicker a.lotusF5, .lconnPicker a.lotusF5:visited {
+  color: #0498d2; }
+
+.lconnPicker a.lotusF4, .lconnPicker a.lotusF4:visited {
+  color: #0498d2; }
+
+.lconnPicker a.lotusF3, .lconnPicker a.lotusF3:visited {
+  color: #0498d2; }
+
+.lconnPicker a.lotusF2, .lconnPicker a.lotusF2:visited {
+  color: #0498d2; }
+
+.lconnPicker a.lotusF1, .lconnPicker a.lotusF1:visited {
+  color: #0498d2; }
+
+/*TIPS*/
+.lconnPicker .lotusTips {
+  padding: 15px;
+  color: #fff;
+  background-color: #1D6784;
+  border-color: #25586C;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px; }
+
+.lconnPicker .lotusTips .lotusClose {
+  right: 4px; }
+
+.lconnPicker .lotusTips .lotusClose input {
+  filter: alpha(opacity=45);
+  opacity: 0.45; }
+
+.lconnPicker .lotusTips .lotusClose input:hover, .lconnPicker .lotusTips .lotusClose input:focus, .lconnPicker .lotusTips .lotusClose input:active {
+  filter: alpha(opacity=75);
+  opacity: 0.75; }
+
+/*VCARD / PERSON CARD*/
+.lconnPicker .lotusVCard a:link, .lconnPicker .lotusVCard a:visited, .lconnPicker .lotusVCard a:hover, .lconnPicker .lotusVCard a:focus, .lconnPicker .lotusVCard a:active {
+  color: #1970b0; }
+
+.lconnPicker .lotusVCard .lotusAppLinks td {
+  background-color: #f1f1f1;
+  background-image: -moz-linear-gradient(top, #fff 0%, #ebebeb 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ebebeb));
+  background-image: -webkit-linear-gradient(top, #fff 0%, #ebebeb 100%);
+  background-image: linear-gradient(top, #fff 0%, #ebebeb 100%);
+  /*@noflip*/
+  background-position: top left; }
+
+.lconnPicker .lotusVCard .lotusActionMenu a, .lconnPicker .lotusVCard .lotusActionMenu a:visited {
+  color: #000; }
+
+.lconnPicker .lotusVCard .lotusPhoto {
+  border-color: #ccc;
+  background-color: #fff; }
+
+.lconnPicker .lotusVCard .lotusAppLinks td {
+  border-color: #ccc; }
+
+.lconnPicker .lotusVCard .lotusDetails {
+  background-color: #fafafa;
+  border-top-width: 0; }
+
+.lconnPicker .lotusVCard .lotusActionMenu a:hover, .lconnPicker .lotusVCard .lotusActionMenu a:focus, .lconnPicker .lotusVCard .lotusActionMenu a:active {
+  color: #000;
+  background-color: #e9f1f3; }
+
+.lconnPicker .lotusVCardHover {
+  padding: 6px 10px 6px 25px;
+  border-width: 0;
+  font-size: 0.9em;
+  background-color: #0072a7;
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); }
+
+.lconnPicker a.lotusVCardHover, .lconnPicker a.lotusVCardHover:visited {
+  color: #fff; }
+
+/*ICONS*/
+.lconnPicker .lotusIconMsgSuccess, .lconnPicker .lotusIconMsgError, .lconnPicker .lotusIconMsgInfo, .lconnPicker .lotusIconMsgWarning, .lconnPicker .lconnIconMsgSharedExternal, .lconnPicker .lconnSprite-iconConfirmation16, .lconnPicker .lconnSprite-iconError16, .lconnPicker .lconnSprite-iconWarning16 {
+  background-image: url('../../../sprite/lotusHSprite-8bit.png');
+  width: 30px;
+  height: 30px;
+  display: -moz-inline-box;
+  display: inline-block; }
+
+.lconnPicker .lotusIconLike {
+  background-image: url('../../../sprite/lotusHSprite-8bit.png');
+  /*@noflip*/
+  background-position: -88px -8px;
+  width: 17px;
+  height: 17px;
+  display: -moz-inline-box;
+  display: inline-block; }
+
+.lconnPicker .lotusIconMsgSuccess, .lconnPicker .lconnSprite-iconConfirmation16 {
+  /*@noflip*/
+  background-position: -1320px 0px; }
+
+.lconnPicker .lotusIconMsgError, .lconnPicker .lconnSprite-iconError16 {
+  /*@noflip*/
+  background-position: -41px 0; }
+
+.lconnPicker .lotusIconMsgInfo {
+  /*@noflip*/
+  background-position: 0px 0; }
+
+.lconnPicker .lotusIconMsgWarning, .lconnPicker .lconnIconMsgSharedExternal, .lconnPicker .lconnSprite-iconWarning16 {
+  /*@noflip*/
+  background-position: -1274px 0; }
+
+/*LAYOUT*/
+.lotusui30_body .lotusFrame {
+  max-width: none; }
+
+.lotusui30_body {
+  color: #292929;
+  background-color: #fff; }
+
+.lconnPicker .lotusTitleBarExt .lotusWrapper {
+  position: relative; }
+
+/*COLUMNS and COLUMN OVERRIDES*/
+.lotusui30_layout .lotusColLeft, .lotusui30_layout .lotusColRight {
+  padding: 0; }
+
+.lotusui30_layout .lotusColLeft {
+  margin-right: 20px;
+  margin-left: -10px;
+  padding-top: 0;
+  padding-right: 20px;
+  width: 220px;
+  background: #f1f1f1;
+  min-height: 10px; }
+
+.lconnPicker .lotusColLeft .lotusMenu .lotusInner {
+  overflow: visible; }
+
+.lconnPicker .lotusColLeft .lotusMenu .lotusInner .lotusMenuSubsection {
+  overflow: hidden; }
+
+.lotusui_ie .lotusui30_layout .lotusColLeft{
+  background: #f1f1f1; }
+
+.lotusui30_layout .lotusColLeft .lconnEmpty, .lotusui30_layout .lotusColLeft .lotusMeta {
+  color: inherit;
+  clear: both; }
+
+.lotusui_ie .lotusui30_layout .lotusColLeft .lconnEmpty, .lotusui_ie .lotusui30_layout .lotusColLeft .lotusMeta {
+  color: #fafafa; }
+
+.lotusui30_layout .lotusColLeft .lotusSection2 .lotusPhoto {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  -moz-box-shadow: 0px 3px 5px #eee;
+  -webkit-box-shadow: 0px 3px 5px #eee;
+  box-shadow: 0px 3px 5px #eee; }
+
+.lotusui30_layout .lotusColLeft .lotusPhoto {
+  width: 146px;
+  height: 146px; }
+
+.lotusui30_layout .lotusColLeft .lotusPhoto img {
+  margin: 9px; }
+
+.lotusui30_layout .lotusColLeft .lotusForm2 .lotusFormFooter, .lotusui30_layout .lotusColRight .lotusForm2 .lotusFormFooter {
+  background-color: transparent;
+  border-width: 0; }
+
+.lotusui30_layout .lotusColRight {
+  width: 250px;
+  margin-left: 20px;
+  -webkit-transition: width 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: width 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  -ms-transition: width 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: width 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: width 500ms cubic-bezier(0.42, 0, 0.58, 1); }
+
+.lotusui30_layout .lotusColLeft .lotusSection2, .lotusui30_layout .lotusColLeft .lotusSection, .lotusui30_layout .lotusColLeft .lotusWidget, .lotusui30_layout .lotusColLeft .lotusWidget2, .lotusui30_layout .lotusColLeft .lotusTips {
+  margin: 0 0 20px 10px; }
+
+.lotusui30_layout .lotusColRight .lotusSection2, .lotusui30_layout .lotusColRight .lotusSection, .lotusui30_layout .lotusColRight .lotusWidget, .lotusui30_layout .lotusColRight .lotusWidget2, .lotusui30_layout .lotusColRight .lotusTips, .lotusui30_layout .lotusColRight .lotusInfoBox {
+  margin: 0 0 15px 0; }
+
+.lotusui30_layout .lotusColLeft .lotusSection2 .lotusSearch .lotusText, .lotusui30_layout .lotusColRight .lotusSection2 .lotusSearch .lotusText {
+  width: 76%; }
+
+/* #94903 - Removing table borders from right column widgets*/
+.lotusui30_layout .lotusColRight .lotusTable td, .lotusui30_layout .lotusColRight .lotusTable th.lotusRowHeader, .lotusui30_layout .lotusColRight .lotusTable th.lotusSubHeader {
+  border-top: none; }
+
+/* #94903 - Bold font for widgets in the right column */
+.lotusui30_layout .lotusColRight .lotusTable th, .lotusui30_layout .lotusColRight .lotusTable td > a {
+  font-weight: bold; }
+
+.lotusui30_layout .lotusColLeft .lotusTwistyOpen {
+  margin-top: 2px;
+  /*@noflip*/
+  background-position: 2px -258px;
+  filter: alpha(opacity=100);
+  opacity: 1; }
+
+.lotusui30_layout .lotusColLeft .lotusTwistyClosed {
+  margin-top: 2px;
+  /*@replace: 2px -310px*/ background-position: 2px -362px;
+  filter: alpha(opacity=100);
+  opacity: 1; }
+
+.lotusui30_layout .lotusColLeft a.lotusDelete img {
+  /*@noflip*/
+  background-position: -557px -10px;
+  filter: alpha(opacity=55);
+  opacity: 0.55;
+  vertical-align: middle; }
+
+.lotusui30_layout .lotusColLeft a.lotusDelete:hover img, .lotusui30_layout .lotusColLeft a.lotusDelete:focus img {
+  filter: alpha(opacity=75);
+  opacity: 0.75; }
+
+.lotusui30_layout .lotusColLeft .lotusSearch .lotusSearchButton:hover {
+  filter: alpha(opacity=75);
+  opacity: 0.75; }
+
+.lotusui30_layout .lotusColLeft .lotusAdd img {
+  margin-left: 5px;
+  /*@noflip*/
+  background-position: -521px -8px;
+  filter: alpha(opacity=55);
+  opacity: 0.55; }
+
+.lotusui30_layout .lotusColLeft .lotusAdd:hover img {
+  filter: alpha(opacity=75);
+  opacity: 0.75; }
+
+.lotusui30_layout .lotusContent .lotusTable tr td:first-child {
+  padding-left: 0; }
+
+/*TODO: there are tables (like on the search page) that aren't using lotusFirstCell and lotusLastCell*/
+.lotusui30_layout .lotusContent .lotusTable tr td:last-child {
+  padding-right: 0; }
+
+.lotusui30_layout .lotusContent .lotusTable tr td.eventDiv {
+  padding-left: 0px; }
+
+.lotusui30_layout .lotusContent .lotusTable .eventDiv a {
+  font-weight: bold; }
+
+/*TAG CLOUDS*/
+.lconnPicker .lotusColLeft .lotusTagCloud {
+  margin: 5px 0 0;
+  padding: 0; }
+
+.lconnPicker .lotusColLeft a.lotusF5, .lconnPicker .lotusColLeft a.lotusF5:visited {
+  color: #007fb1; }
+
+.lconnPicker .lotusColLeft a.lotusF4, .lconnPicker .lotusColLeft a.lotusF4:visited {
+  color: #007fb1; }
+
+.lconnPicker .lotusColLeft a.lotusF3, .lconnPicker .lotusColLeft a.lotusF3:visited {
+  color: #007fb1; }
+
+.lconnPicker .lotusColLeft a.lotusF2, .lconnPicker .lotusColLeft a.lotusF2:visited {
+  color: #007fb1; }
+
+.lconnPicker .lotusColLeft a.lotusF1, .lconnPicker .lotusColLeft a.lotusF1:visited {
+  /*color: Link Blue on Gray Background*/
+  color: #366bb2; }
+
+/*CLOUD | LIST PICKER*/
+.lconnPicker .lotusColLeft .lotusInlinelist li {
+  border-left-color: #6e6e6e; }
+
+/*COLUMN OVERRIDES (DEPRECATED)*/
+.lotusui30_layout .lotusColLeft .lotusSection .lotusSearch .lotusText, .lotusui30_layout .lotusColRight .lotusSection .lotusSearch .lotusText, .lotusui30_layout .lotusColLeft .lotusWidget2 .lotusSearch .lotusText, .lotusui30_layout .lotusColRight .lotusWidget2 .lotusSearch .lotusText {
+  width: 76%; }
+
+/*LEFT COLUMN BACKGROUND*/
+.lotusui30_layout .lotusColLeft:after {
+  /*adds the full height left column background, and the background to the left*/
+  border-left: 1000px solid #f1f1f1;
+  /*left of left column*/
+  /*left vertical rule*/
+  background: #f1f1f1;
+  width: 2px;
+  border-right: 240px solid #f1f1f1;
+  /*left column, 1px less than the column width*/
+  content: "";
+  margin-left: -1001px;
+  position: fixed;
+  bottom: 0;
+  height: 100%;
+  z-index: -2;
+  /*one less than the declaration below*/ }
+
+.lotusImagesOff .lotusui30_layout .lotusColLeft:after {
+  border-right: 0;
+  border-left: 0; }
+
+.lconnPicker .lotusPaging ul li {
+  border-left: 0; }
+
+.lotusUtility .iconsComponents16-Help {
+  background: url("../../../sprite/iconsOther16-8bit.png") 0 -56px;
+  width: 16px;
+  height: 16px; }
+
+/*calendar icon*/
+.iconsComponentsWhite16-CalendarWhite16 {
+  background-image: url(../../../sprite/sprite16.png);
+  /*@noflip*/
+  background-position: -608px 0; }
+
+#headerLanguageSelectorMenu_popup .lotusui30dojo .dijitMenuItemHover {
+  background: transparent; }
+
+
+.lotusui30.lotusImagesOff #lconnheadermenu-apps tr th a {
+  padding-left: 10px; }
+
+/*inline list (not currently used)*/
+.lconnPicker .lotusNavMenu tr .lotusInlinelist {
+  padding: 10px;
+  white-space: normal; }
+
+.lconnPicker .lotusNavMenu tr .lotusInlinelist a {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  font-weight: normal;
+  color: #222; }
+
+.lconnPicker .lotusNavMenu .lotusMenuFooter .lotusInlinelist {
+  color: #222; }
+
+.lconnPicker .lotusNavMenu .lotusMenuFooter .lotusInlinelist a, .lconnPicker .lotusNavMenu .lotusMenuFooter .lotusInlinelist a:visited {
+  color: #1970B0; }
+
+.lconnPicker .lotusNavMenu .lotusMenuFooter .lotusInlinelist a:hover, .lconnPicker .lotusNavMenu .lotusMenuFooter .lotusInlinelist a:focus, .lconnPicker .lotusNavMenu .lotusMenuFooter .lotusInlinelist a:active {
+  color: #05386b; }
+
+.lconnPicker .lotusNavMenu tr .lotusInlinelist a:hover, .lconnPicker .lotusNavMenu tr .lotusInlinelist a:focus, .lconnPicker .lotusNavMenu tr .lotusInlinelist a:active {
+  background-color: #fff;
+  text-decoration: underline; }
+
+/*search (not currently used)*/
+.lconnPicker .lotusNavMenu .lotusSearch {
+  position: relative;
+  clear: both;
+  padding: 0 10px 10px; }
+
+.lconnPicker .lotusNavMenu .lotusSearch .lotusText {
+  padding: 4px 25px 4px 8px;
+  margin: 0;
+  border: 1px solid #ececec;
+  width: 480px;
+  font-size: 0.9em;
+  color: #666;
+  background: #ffffff;
+  background: -moz-linear-gradient(center top, #f4f4f4 25%, #f1f1f1 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), color-stop(25%, #f4f4f4), to(#f1f1f1));
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px; }
+
+.lconnPicker .lotusNavMenu .lotusSearch .lotusSearchButton {
+  color: #fff;
+  background-image: url(../../../sprite/lotusHSprite-8bit.png);
+  /*@noflip*/
+  background-position: -591px -8px;
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  right: 16px;
+  top: 4px; }
+
+.lconnPicker .lotusNavMenu .lotusSearch .lotusAltText {
+  display: none; }
+
+/*loading*/
+.lconnPicker .lotusNavMenu tr img.lotusLoading {
+  margin: 0 5px 0 0; }
+
+/*FOOTER*/
+.lconnPicker .lotusFooter {
+  margin: 0 auto;
+  padding: 0 5px;
+  background: none;
+  border-width: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  min-width: 980px;
+  max-width: 1290px; }
+
+.lconnPicker .lotusFooter ul {
+  margin: 0 210px;
+  padding: 15px 0;
+  background: transparent; }
+
+.lconnPicker .lotusFooter a {
+  display: inline-block;
+  color: #666; }
+
+.lconnPicker .lotusFooter a:hover, .lconnPicker .lotusFooter a:focus, .lconnPicker .lotusFooter a:active {
+  color: #05386b; }
+
+/*TITLE BAR*/
+.lconnPicker .lotusTitleBar2, .lconnPicker .lotusTitleBar {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  /*z-index: 2;   #94885-z-index breaking header menu's in SC */ }
+
+.lconnPicker div.lotusTitleBar2 .lotusInner {
+  padding: 25px 0 0;
+  height: 4em; }
+
+.lconnPicker div.lotusTitleBar .lotusInner {
+  position: relative;
+  padding: 25px 0 0;
+  height: 4em;
+  /*72px*/ }
+
+.lconnPicker div.lotusTitleBar h2 {
+  padding: 0;
+  font-size: 1.6em; }
+
+.lconnPicker .lotusTitleBar2 .lotusTitleBarContent {
+  /*margin-top: 30px*/ }
+
+.lconnPicker .lotusTitleBar2 .lotusHeading, .lconnPicker div.lotusTitleBar h2, .lconnPicker .lotusTitleBar2 .lotusHeading a {
+  color: #676767;
+  font-family: "Helvetica Neue Light", Helvetica, Arial, Roboto;
+  font-weight: normal; }
+
+.lconnPicker .lotusTitleBar h2.lotusEllipsis {
+  width: 220px; }
+
+/*app icon*/
+.lconnPicker .lotusTitleBar2 .lotusHeading .lotusIcon, .lconnPicker .lotusTitleBar h2.lotusHeading img {
+  display: none;
+  background: none; }
+
+.lotusui_ie .lconnPicker .lotusTitleBar2 .lotusHeading .lotusIcon, .lotusui_ie .lconnPicker .lotusTitleBar h2.lotusHeading img {
+  margin-bottom: -3px; }
+
+.lconnPicker .lotusTitleBar h2.lotusHeading img {
+  vertical-align: middle; }
+
+.lconnPicker .lotusTitleBar2 .lotusHeading .lotusText, .lconnPicker .lotusTitleBar2 .lotusHeading .lotusText:visited, .lconnPicker .lotusTitleBar2 .lotusHeading .lotusText:hover, .lconnPicker .lotusTitleBar2 .lotusHeading .lotusText:focus, .lconnPicker .lotusTitleBar2 .lotusHeading .lotusText:active {
+  color: #1d3649; }
+
+.lconnPicker .lotusTitleBar2.lotusTitleBar2Tabs .lotusInner {
+  border: 0;
+  padding: 10px 0 0 0; }
+
+.lconnPicker .lotusTitleBar2.lotusTitleBar2Tabs .lotusHeading {
+  padding-top: 13px;
+  float: left;
+  width: 205px; }
+
+.lconnPicker .lotusTitleBar2.lotusTitleBar2Tabs .lotusHeading .lotusIcon {
+  vertical-align: baseline; }
+
+.lconnPicker .lotusTitleBar2.lotusTitleBar2Tabs .lotusSearch {
+  margin: 0; }
+
+.lconnPicker .lotusTitleBar2 .lotusNavTabs {
+  padding-top: 17px;
+  bottom: -3px; }
+
+.lotusui_ie .lconnPicker .lotusTitleBar2 ul.lotusNavTabs {
+  padding-top: 13px;
+  bottom: -1px; }
+
+.lconnPicker .lotusTitleBar2 .lotusNavTabs li {
+  margin-right: 15px;
+  border: 0;
+  background: none; }
+
+.lconnPicker .lotusTitleBar2 .lotusNavTabs li a.lotusTab, .lconnPicker .lotusTitleBar2 .lotusNavTabs li a.lotusTab:visited {
+  padding: 5px 0 0 0;
+  zoom: 1; }
+
+.lconnPicker .lotusTitleBar2 .lotusNavTabs .lotusTabInner {
+  text-transform: uppercase;
+  padding: 2px 0;
+  margin: 0;
+  color: #292929;
+  zoom: 1; }
+
+.lconnPicker .lotusTitleBar2 .lotusNavTabs li.lotusSelected {
+  background: none;
+  border: 0; }
+
+.lconnPicker .lotusTitleBar2 .lotusNavTabs li.lotusSelected .lotusTab {
+  border-bottom: 2px solid #4178be;
+  font-weight: normal; }
+
+.lconnPicker .lotusTitleBar2 .lotusNavTabs li a.lotusTab, .lconnPicker .lotusTitleBar2 .lotusNavTabs li a.lotusTab:visited {
+  color: #292929; }
+
+/*gives the next tab a different left border because it overlaps the selected border. should work in everything but IE6.*/
+.lotusui30.lotusImagesOff .lotusTitleBar2 .lotusNavTabs li.lotusSelected a.lotusTab, .lotusImagesOff .lconnPicker .lotusTitleBar2 .lotusNavTabs li.lotusSelected a.lotusTab {
+  border-bottom-width: 0; }
+
+/*close icon*/
+.lconnPicker .lotusTitleBar2 .lotusNavTabs li.lotusTabClosable .lotusTabInner {
+  padding-right: 32px; }
+
+.lconnPicker .lotusTitleBar2 .lotusNavTabs .lotusTabClose {
+  top: 0.75em;
+  right: 13px; }
+
+.lconnPicker .lotusTitleBar2 .lotusTabClose:hover, .lconnPicker .lotusTitleBar2 .lotusTabClose:focus, .lconnPicker .lotusTitleBar2 .lotusTabClose:active {
+  outline: none; }
+
+/*because the icon looks off-centered at 14px*/
+.lconnPicker .lotusTitleBar2 .lotusTabClose:hover img, .lconnPicker .lotusTitleBar2 .lotusTabClose:focus img, .lconnPicker .lotusTitleBar2 .lotusTabClose:active img {
+  /*@noflip*/
+  background-position: -130px -9px; }
+
+.lconnPicker div.lotusTitleBar2 .lotusSearch, .lconnPicker div.lotusTitleBar .lotusSearch {
+  margin-top: 0;
+  top: 21px;
+  right: 0; }
+
+.lconnPicker .lotusTitleBar2 .lotusSearch .lotusLayout, .lconnPicker .lotusTitleBar .lotusSearch .lotusLayout {
+  padding: 5px;
+  background: #f1f1f1;
+  border: 1px solid #ececec;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0; }
+
+.lconnPicker .lotusTitleBar2 .lotusInner .lotusSearch .lotusScope, .lconnPicker .lotusTitleBar .lotusSearch .lotusScope {
+  border-width: 0 1px 0 0;
+  border-color: #e3e3e3;
+  padding-right: 14px;
+  margin: 0 0 0 4px;
+  background-color: transparent; }
+
+.lotusui_ie .lconnPicker .lotusTitleBar2 .lotusSearch .lotusScope, .lotusui_ie .lconnPicker .lotusTitleBar .lotusSearch .lotusScope{
+  margin: 0; }
+
+.lconnPicker .lotusTitleBar2 .lotusSearch a.lotusScope:hover, .lconnPicker .lotusTitleBar .lotusSearch a.lotusScope:hover, .lconnPicker .lotusTitleBar2 .lotusSearch a.lotusScope:focus, .lconnPicker .lotusTitleBar .lotusSearch a.lotusScope:focus, .lconnPicker .lotusTitleBar2 .lotusSearch a.lotusScope:active, .lconnPicker .lotusTitleBar .lotusSearch a.lotusScope:active {
+  background-color: transparent;
+  /*@noflip*/
+  background-position: 100% -1910px; }
+
+.lconnPicker .lotusTitleBar2 .lotusSearch .lotusScope .lotusAltText, .lconnPicker .lotusTitleBar .lotusSearch .lotusScope .lotusAltText {
+  top: -5px; }
+
+.lconnPicker .lotusTitleBar2 .lotusSearch .lotusText, .lconnPicker .lotusTitleBar .lotusSearch .lotusText {
+  border: 0;
+  padding: 4px 0 3px 4px;
+  background: none;
+  color: #676767;
+  width: 117px; }
+
+@media screen and (max-width: 1084px) {
+  .lconnPicker .lotusTitleBar2 .lotusSearch .lotusText, .lconnPicker .lotusTitleBar .lotusSearch .lotusText {
+    width: 80px; } }
+
+.lconnPicker .lotusTitleBar2 .lotusInner .lotusSearch .lotusLayout .lotusScope {
+  min-width: 145px; }
+
+.lconnPicker .lotusTitleBar2 .lotusSearch .lotusText:focus, .lconnPicker .lotusTitleBar .lotusSearch .lotusText:focus, .lconnPicker .lotusTitleBar2 .lotusSearch .lotusText:active, .lconnPicker .lotusTitleBar .lotusSearch .lotusText:active {
+  color: #676767; }
+
+.lconnPicker .lotusTitleBar2 .lotusSearch .lotusBtnImg, .lconnPicker .lotusTitleBar .lotusSearch .lotusBtnImg {
+  border: 0;
+  margin: 1px 4px 1px 2px;
+  background: none;
+  padding: 2px; }
+
+.lconnPicker .lotusTitleBar2 img.lotusIcon {
+  display: none; }
+
+.lconnPicker .lotusTitleBarExt {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+.lconnPicker .lotusTitleBarExt .lotusInlinelist {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1; }
+
+/*TITLE BAR (DEPRECATED)*/
+.lotusui30.lotusImagesOff .lotusTitleBar .lotusBtnImg .lotusAltText, .lotusImagesOff .lconnPicker .lotusTitleBar .lotusBtnImg .lotusAltText {
+  color: #fff; }
+
+.lconnPicker .lotusTitleBar .lotusTabs {
+  overflow: visible;
+  left: 220px;
+  bottom: -1px; }
+
+.lotusui30.lotusImagesOff .lotusTitleBar ul.lotusTabs, .lotusImagesOff .lconnPicker .lotusTitleBar ul.lotusTabs {
+  bottom: -2px; }
+
+.lconnPicker .lotusTitleBar .lotusTabsIndented {
+  left: 220px; }
+
+.lconnPicker .lotusTitleBar .lotusTabs li {
+  border: 0;
+  background: none;
+  margin: 0 -1px 0 0;
+  position: relative;
+  z-index: 0; }
+
+.lconnPicker .lotusTitleBar .lotusTabs li.lotusSelected {
+  border: 0; }
+
+.lconnPicker .lotusTitleBar .lotusTabs li a {
+  border-color: transparent #e5e5e5 #e0e0e0;
+  border-style: solid;
+  border-width: 1px;
+  font-weight: bold;
+  padding: 10px 20px;
+  zoom: 1; }
+
+.lconnPicker .lotusTitleBar .lotusTabs li a, .lconnPicker .lotusTitleBar .lotusTabs li a:visited {
+  color: #444;
+  font-size: 1em; }
+
+.lconnPicker .lotusTitleBar .lotusTabs li a:hover, .lconnPicker .lotusTitleBar .lotusTabs li a:focus, .lconnPicker .lotusTitleBar .lotusTabs li a:active {
+  color: #222;
+  border-color: #d2d2d2 #d2d2d2 #d6d6d6; }
+
+.lconnPicker .lotusTitleBar .lotusTabs li.lotusSelected a, .lconnPicker .lotusTitleBar .lotusTabs li.lotusSelected a:visited, .lconnPicker .lotusTitleBar .lotusTabs li.lotusSelected a:hover, .lconnPicker .lotusTitleBar .lotusTabs li.lotusSelected a:focus, .lconnPicker .lotusTitleBar .lotusTabs li.lotusSelected a:active {
+  color: #222;
+  border-color: #d2d2d2 #d2d2d2 #f0f0f0;
+  background: #ffffff;
+  background: -moz-linear-gradient(top, #ffffff 0%, #f8f8f8 3%, #f0f0f0 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(3%, #f8f8f8), color-stop(100%, #f0f0f0));
+  background: -webkit-linear-gradient(top, #ffffff 0%, #f8f8f8 3%, #f0f0f0 100%);
+  background: -o-linear-gradient(top, #ffffff 0%, #f8f8f8 3%, #f0f0f0 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%, #f8f8f8 3%, #f0f0f0 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 3%, #f0f0f0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f0f0f0', GradientType=0); }
+
+.lotusui30.lotusImagesOff .lotusTitleBar .lotusTabs li.lotusSelected a, .lotusImagesOff .lconnPicker .lotusTitleBar .lotusTabs li.lotusSelected a {
+  border-bottom-width: 0; }
+
+.lconnPicker .lotusTitleBar .lotusTabs li.lotusSelected + li > div > a {
+  border-left-color: #d2d2d2; }
+
+/*cover tab separators*/
+.lconnPicker .lotusTitleBar .lotusTabs li:after {
+  background: #fff;
+  bottom: 1px;
+  content: "";
+  height: 10px;
+  position: absolute;
+  width: 1px; }
+
+.lconnPicker .lotusTitleBar .lotusTabs li:before {
+  background: #fff;
+  content: "";
+  height: 10px;
+  position: absolute;
+  width: 1px; }
+
+.lconnPicker .lotusTitleBar .lotusTabs li a:after {
+  background: #fff;
+  bottom: 1px;
+  content: "";
+  height: 10px;
+  position: absolute;
+  right: 0;
+  width: 1px; }
+
+.lconnPicker .lotusTitleBar .lotusTabs li a:before {
+  background: #fff;
+  content: "";
+  height: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px; }
+
+.lconnPicker .lotusTitleBar .lotusTabs li.lotusSelected, .lconnPicker .lotusTitleBar .lotusTabs li:hover, .lconnPicker .lotusTitleBar .lotusTabs li:focus, .lconnPicker .lotusTitleBar .lotusTabs li:active, .lconnPicker .lotusTitleBar .lotusTabs li a:hover, .lconnPicker .lotusTitleBar .lotusTabs li a:focus, .lconnPicker .lotusTitleBar .lotusTabs li a:active {
+  z-index: 1; }
+
+.lconnPicker .lotusTitleBar .lotusTabs li.lotusSelected:before, .lconnPicker .lotusTitleBar .lotusTabs li.lotusSelected:after, .lconnPicker .lotusTitleBar .lotusTabs li.lotusSelected a:before, .lconnPicker .lotusTitleBar .lotusTabs li.lotusSelected a:after, .lconnPicker .lotusTitleBar .lotusTabs li:hover:before, .lconnPicker .lotusTitleBar .lotusTabs li:hover:after, .lconnPicker .lotusTitleBar .lotusTabs li:focus:before, .lconnPicker .lotusTitleBar .lotusTabs li:focus:after, .lconnPicker .lotusTitleBar .lotusTabs li:active:before, .lconnPicker .lotusTitleBar .lotusTabs li:active:after, .lconnPicker .lotusTitleBar .lotusTabs li a:hover:before, .lconnPicker .lotusTitleBar .lotusTabs li a:hover:after, .lconnPicker .lotusTitleBar .lotusTabs li a:focus:before, .lconnPicker .lotusTitleBar .lotusTabs li a:focus:after, .lconnPicker .lotusTitleBar .lotusTabs li a:active:before, .lconnPicker .lotusTitleBar .lotusTabs li a:active:after {
+  content: none; }
+
+/**SPECIAL PAGES***/
+/*ABOUT*/
+.lconnPicker .lotusAboutBox {
+  background-color: #057bb0;
+  background-image: -moz-linear-gradient(top, #096da3 0%, #0189be 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#096da3), to(#0189be));
+  background-image: linear-gradient(top, #096da3, #0189be);
+  border: 0;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px; }
+
+.lconnPicker .lotusAboutBox p, .lconnPicker .lotusAboutBox li, .lconnPicker .lotusAboutBox a, .lconnPicker .lotusAboutBox a:visited, .lconnPicker .lotusAboutBox a:hover, .lconnPicker .lotusAboutBox a:focus, .lconnPicker .lotusAboutBox a:active {
+  color: #fff; }
+
+.lconnPicker .lotusAboutBox .lotusHeading, .lconnPicker .lotusAboutBox .lotusHeading2 {
+  color: #fff; }
+
+.lotusAbout .lotusui30_layout .lotusLegal {
+  margin: 5px 25px 10px; }
+
+/*ABOUT DEPRECATED*/
+.lotusAbout .lotusui30_layout .lotusAboutBox h1, .lotusAbout .lotusui30_layout .lotusAboutBox h3 {
+  color: #fff; }
+
+/*ACTIVITY STREAM*/
+.lconnPicker .lotusBoard .lotusStream {
+  background: #fff;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0; }
+
+.lconnPicker .lotusBoard ul.lotusStream {
+  /*this is the second time that lotusStream is used in a stream. lotusStream should be used once to prevent overrides like this.*/
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  clear: left; }
+
+.lconnPicker .lotusBoard .lotusStreamUpdate .lotusTextCollapsed.lotusText {
+  border: 1px solid #ccc;
+  height: 3em; }
+
+.lotusui_ie .lconnPicker .lotusBoard .lotusStreamUpdate .lotusTextCollapsed.lotusText {
+  border: 0; }
+
+.lconnPicker .lotusBoard .lotusStreamUpdate .lotusText {
+  padding: 8px 10px; }
+
+.lconnPicker .lotusBoard .lotusStream .lotusPost {
+  position: relative;
+  padding: 10px;
+  border-width: 1px 0; }
+
+.lconnPicker .lotusBoard .lotusStream .lotusPostContent {
+  max-width: 700px;
+  position: static; }
+
+.lconnPicker .lotusBoard .lotusStream .lotusPostContent .lotusPostContent {
+  /*no need to leave room for a delete icon, so remove it*/
+  margin-right: 0;
+  padding-right: 0; }
+
+.lconnPicker .lotusBoard .lotusStream .lotusPostHover, .lconnPicker .lotusBoard .lotusStream .lotusPostSelected {
+  background-color: #e9f1f3;
+  border-color: #cad9e1; }
+
+.lconnPicker .lotusBoard .lotusCommentList {
+  position: relative;
+  margin: 3px 0 0 65px;
+  padding: 0;
+  border-top: 1px solid #DDD; }
+
+.lconnPicker .lotusFlyoutInner {
+  background-color: #fff; }
+
+.lconnPicker .lotusFlyoutInner .lotusBoard .lotusCommentList {
+  margin-left: 0; }
+
+.lconnPicker .lotusBoard .lotusCommentItem > a.lotusMeta {
+  color: #1970B0; }
+
+.lconnPicker .lotusBoard .lotusStream .lotusPost .lotusPostIndicator a {
+  right: 10px; }
+
+.lconnPicker .lotusBoard .lotusStream .lotusPost .lotusDelete {
+  right: 10px;
+  top: 10px; }
+
+/*icons override for the new light theme*/
+.otherPeople32, .otherPeople48 {
+  background-image: none;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%; }
+
+.otherPeople32-NoPhotoGroup32 {
+  background-image: url("../../../sprite/otherPeople32-8bit.png");
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0; }
+
+.otherPeople48-NoPhotoGroup48 {
+  background-image: url("../../../sprite/otherPeople48-8bit.png");
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0; }
+
+.lconnPicker .lotusArrow, .lconnPicker .lotusSection .lotusArrow {
+  background-image: url("../../../sprite/lotusSprite-8bit.png"); }
+
+.iconsStates16 {
+  background-image: url("../../../sprite/sprite-lconn-32bit.png");
+  background-repeat: no-repeat;
+  display: inline-block; }
+
+.lconnSprite {
+  background-image: url("../../../sprite/sprite-lconn-32bit.png");
+  background-repeat: no-repeat;
+  display: inline-block; }
+
+.lconnSprite.iconsComponents16-Notifications {
+  background-image: url(../../../sprite/sprite16.png);
+  /*@noflip*/
+  background-position: -271px 0;
+  width: 18px;
+  height: 18px; }
+
+/*FIXME: must be repeated*/
+/*mail icon*/
+.lconnSprite-iconMailWhite16 {
+  background-image: url(../../../sprite/sprite16.png);
+  /*@noflip*/
+  background-position: -576px 0; }
+
+.lconnPicker .lotusSearch .lotusSearchButton {
+  background-color: transparent;
+  background-image: url("../../../sprite/lotusHSprite-8bit.png");
+  /*@noflip*/
+  background-position: -591px -9px;
+  opacity: 1; }
+
+.lconnPicker .lotusSearch .lotusSearchButton:hover, .lconnPicker .lotusSearch .lotusSearchButton:focus, .lconnPicker .lotusSearch .lotusSearchButton:active {
+  opacity: 1; }
+
+.lconnPicker .lotusWelcomeBox a.lotusClose img, .lotusui30_layout .lotusWelcomeBox a.lotusClose img {
+  background-image: url("../../../sprite/lotusHSprite-8bit.png");
+  /*@noflip*/
+  background-position: -1360px -4px;
+  opacity: 0.9;
+  width: 30px;
+  height: 30px;
+  margin-top: 18px; }
+
+.lconnPicker .lotusSection2 .lotusSectionHeader .lotusActionIcon img, .lconnPicker .lotusWidget h2 a.lotusActionMenu, .lconnPicker .lotusWidget2 h2 a.lotusActionMenu {
+  background-image: url("../../../sprite/sprite16.png");
+  /*@noflip*/
+  background-position: -656px 0;
+  background-repeat: no-repeat;
+  height: 16px;
+  margin-top: 2px;
+  opacity: 0.55;
+  width: 16px; }
+
+.lconnPicker .lotusFeeds a.lotusFeed {
+  background-image: url("../../../sprite/lotusSprite-8bit.png");
+  display: inline-block;
+  margin-right: 7px;
+  min-height: 12px;
+  padding-left: 16px; }
+
+.lconnSprite-iconCompressed16 {
+  background-image: url("../../../sprite/iconsFileTypes16-8bit.png");
+  /*@noflip*/
+  background-position: 0 -48px;
+  height: 16px;
+  width: 16px; }
+
+.lconn-ftype16 {
+  background-image: url("../../../sprite/iconsFileTypes16-8bit.png");
+  background-repeat: no-repeat;
+  display: inline-block; }
+
+.lconn-ftype32 {
+  background-image: url("../../../sprite/iconsFileTypes32-8bit.png");
+  background-repeat: no-repeat;
+  display: inline-block; }
+
+.lconn-ftype64 {
+  background-image: url("../../../sprite/iconsFileTypes64-8bit.png");
+  background-repeat: no-repeat;
+  display: inline-block; }
+
+.iconsOther16 {
+  background-image: url("../../../sprite/iconsOther16-8bit.png");
+  background-repeat: no-repeat;
+  display: inline-block; }
+
+.iconsStates16 {
+  background-image: url("../../../sprite/iconsStates16-8bit.png");
+  background-repeat: no-repeat;
+  display: inline-block; }
+
+.lconnPicker .lotusDialog .lotusDialogHeader .lotusDialogClose img, 
+.lconnPicker .lotusDialog .lotusClose img {
+   background-image: url("../../../sprite/lotusHSprite-8bit.png");
+   /*@noflip*/
+   background-position: -573px -8px;
+   height: 25px;
+   width: 15px; 
+  }
+
+.lconnSprite-iconHelp16 {
+  /*@noflip*/
+  background-position: 0 -2148px;
+  height: 20px;
+  width: 20px; }
+
+.lconnSprite-iconHelp16-ar {
+  /*@noflip*/
+  background-position: 0px -2172px;
+  height: 20px;
+  width: 20px; }
+
+.lconnSprite-iconComment16 {
+  /*@noflip*/
+  background-position: 0 -1688px;
+  height: 16px;
+  width: 16px; }
+
+.lconnSprite-iconBookmarks16, .lconnSprite-iconDogear16 {
+  /*@noflip*/
+  background-position: 0 -98px;
+  height: 16px;
+  width: 16px; }
+
+.lconnSprite-iconFiles16 {
+  /*@noflip*/
+  background-position: 0 -193px;
+  height: 16px;
+  width: 16px; }
+
+.lconnSprite-iconFeed16 {
+  /*@noflip*/
+  background-position: 0 -2112px;
+  height: 16px;
+  width: 16px; }
+
+.iconsComponentsGray16 {
+  background-image: url("../../../sprite/iconsComponentsGray16-8bit.png");
+  background-repeat: no-repeat;
+  display: inline-block; }
+
+.lconnSprite-iconFilesBlue16 {
+  /*@noflip*/
+  background-position: 0 -457px; }
+
+.lconnPicker .dijitPopup .lotusPopup .lotusPopupClose img {
+  background-image: url("../../../sprite/lotusHSprite-8bit.png");
+  /*@noflip*/
+  background-position: -573px -8px;
+  height: 15px;
+  width: 15px; }
+
+.lconnPicker .dijitPopup .lotusPopup .lotusPopupClose {
+  right: 8px;
+  top: 8px; }
+
+.lconnPicker .lotusSection h2 {
+  overflow: visible; }
+
+.lconnPicker .lotusMenu h3 {
+  overflow: visible; }
+
+.lconnPicker .lotusPopup {
+  width: 300px; }
+
+.lconnPicker .lconn_personContainer.compact .lconn_profileImage .lconn_userImage {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%; }
+
+.lconnPicker .lotusTable .lotusType {
+  font-style: italic;
+  color: #676767; }
+
+.lconnPicker .lotusTable td p:first-child, .lconnPicker p.lotusFirst {
+  font-size: 1.15em; }
+
+.lconnPicker .lotusTable td, .lconnPicker .lotusTable th.lotusRowHeader, .lconnPicker .lotusTable th.lotusSubHeader {
+  border-top: 0px solid #eee; }
+
+.lconnPicker .lotusTable th.lotusFirstCell, .lconnPicker .lotusTable td.lotusFirstCell {
+  padding-left: 10px;
+  padding-bottom: 20px; }
+
+.lconnPicker .lotusColLeft a.lotusF3, .lconnPicker .lotusColLeft a.lotusF3:visited {
+  color: #366bb2; }
+
+.lconnPicker span.lotusBtnDisabled a {
+  background-color: #ffffff !important; }
+
+.lconnPicker span.lotusBtnDisabled a:hover, .lconnPicker span.lotusBtnDisabled a:focus, .lconnPicker span.lotusBtnDisabled a:active {
+  box-shadow: none; }
+
+.lconnPicker .lotusFilters a.lotusFilter {
+  border-radius: 0px; }
+
+.lconnPicker img.lotusDelete {
+  background-image: url(../../../sprite/lotusHSprite-8bit.png);
+  background-position: -559px -12px; }
+
+.lconnPicker .lotusForm textarea, .lconnPicker .lotusForm select, .lotusui30dojo textarea {
+  overflow: auto; }
+
+.lconnLeftSide, .lconnRightSide {
+   background-color: #ffffff;
+}
+
+.dijit_a11y .lconnPicker, .dijit_a11y .lconnMenuScrollContainer, .dijit_a11y .lconnRightSide {
+   border: 1px solid #000000;
+}
+
+.lconnSectionHeader, .lotusSearch, .lconnPickerStream .lotusPaging {
+   border-bottom: 1px solid #e5e5e5;
+   padding-right: 5px;
+}
+
+.lconnEmptyMsg, .lconnErrorMsg {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 5px;
+  margin-top: 15px;
+}
+
+.loutsFormTable {font-size: 1em;}
+.lconnFolderIcon {padding-bottom: 4px;}
+.lconnDivider {
+   background-color: #e5e5e5;
+   height: 1px;
+    margin: 5px 0px;
+    line-height: 1px;
+    font-size: 1px;
+}
+.lconnPicker .lotusForm tr.lotusFormFieldRow td{
+   padding-top: 0px;
+}
+.lotusTable td label.lconnFilenameLable {
+   font-weight: normal;
+   padding-top: 2px;
+   padding-bottom: 2px;
+   font-size: 1em;
+   display: block;
+   overflow: hidden;
+   width: 100%;
+   text-overflow:ellipsis;
+}
+.lotusTable td label.lconnFilenameLableCustom {
+   padding-top: 2px;
+   padding-bottom: 2px;
+}
+.lotusTable td label.lconnFilenameLableCustomQuirks {
+   padding-top: 3px;
+   padding-bottom: 3px;
+   font-size: 0.8em;
+}
+.lconnLeftSide .lconnMenuScrollContainer a {
+   color: #000000;
+}
+
+.dijit_a11y .lconnMenuScrollContainer a {
+   text-decoration: underline;
+}
+
+a.lotusSelected, a.lotusSelected span {
+   background-color: #CFECFF;
+   color: #000000;
+}
+
+.dijit_a11y a.lotusSelected { text-decoration: underline; }
+
+
+.lconnPicker .lconnLeftSide, .lconnPicker .lconnRightSide {
+   background-color: #ffffff;
+}
+
+@-moz-document url-prefix(){
+   .lconnPicker .lotusDialogClose:focus, .lconnPicker .checkbox input[type = radio]:focus, .lconnPicker .lconnLeftSide, .lconnPicker .lconnRightSide .lotusNowrap.lotusFirstCell input[name = fileSelectionBtn]:focus {
+      outline: dotted 1px black;
+   }
+}
+
+.dijit_a11y .lconnPicker, .dijit_a11y .lconnPicker .lconnMenuScrollContainer, .dijit_a11y .lconnPicker .lconnRightSide {
+   border: 1px solid #000000;
+}
+
+.lconnPicker .lconnSectionHeader, .lconnPicker .lotusSearch, .lconnPicker .lconnPickerStream .lotusPaging {
+   border-bottom: 1px solid #e5e5e5;
+   padding-left: 5px;
+}
+.lconnPicker .lconnEmptyMsg, .lconnPicker .lconnErrorMsg {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 5px;
+  margin-top: 15px;
+}
+
+.lconnPicker .lconnDivider {
+   background-color: #e5e5e5;
+   height: 1px;
+    margin: 5px 0px;
+    line-height: 1px;
+    font-size: 1px;
+}
+.lconnPicker .lotusForm tr.lotusFormFieldRow td{
+   padding-top: 0px;
+}
+.lconnPicker .loutsFormTable {font-size: 1em;}
+.lconnPicker .lconnFolderIcon {padding-bottom: 4px;}
+.lconnPicker a.lotusSelected, .lconnPicker a.lotusSelected span {
+   background-color: #CFECFF;
+   color: #000000;
+}
+
+.lconnPicker .lconnLeftSide .lconnMenuScrollContainer a {
+   color: #000000;
+}
+
+.dijit_a11y .lconnPicker .lconnMenuScrollContainer a {
+   text-decoration: underline;
+}
+
+.dijit_a11y .lconnPicker a.lotusSelected { text-decoration: underline; }
+
+
+@import 'filepicker-lite'

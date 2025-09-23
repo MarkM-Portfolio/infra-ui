@@ -1,0 +1,228 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2014                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+${head}
+<title>IBM Connections Common UI - CKE Microformat test</title>
+
+<script type="text/javascript">
+   var textBox = null;
+
+   dojo.addOnLoad(loadTextAreas);
+
+   function getOptions() {
+      var emptyCallback = function(empty) {
+         if (empty) {
+            dojo.addClass(dojo.byId("postLink"), "lotusPersonInactive");
+            dojo.addClass(dojo.byId("resetLink"), "lotusPersonInactive");
+         }
+         else {
+            dojo.removeClass(dojo.byId("postLink"), "lotusPersonInactive");
+            dojo.removeClass(dojo.byId("resetLink"), "lotusPersonInactive");
+         }
+      };
+
+      var limitCallback = function(limit) {
+         if (limit) {
+            dojo.style(dojo.query(".charDisplay")[0], "color", "red");
+         }
+         else {
+            dojo.style(dojo.query(".charDisplay")[0], "color", "black");
+         }
+      }
+
+      var onFocusCallback = function() {
+         dojo.style(dojo.byId("actionList"), "visibility", "visible");
+      }
+
+      var onBlurCallback = function() {
+         dojo.style(dojo.byId("actionList"), "visibility", "hidden");
+      }
+
+      return {
+         maxLength : 100,
+         maxLengthBytes : 100,
+         textBoxRows : 6,
+         showRemainingLimit : 20,
+         textPopulatedCallback : emptyCallback,
+         reachedCharLimitCallback : limitCallback,
+         onFocusCallback : onFocusCallback,
+         onBlurCallback : onBlurCallback
+      };
+   }
+
+   function loadTextAreas() {
+      var options = getOptions();
+      options.useRTE = true;
+      if (textBox)
+         textBox.destroy();
+      lconn.core.ckplugins.mentions.PersonHandler.getStore = function() {
+         return new lconn.core.PeopleDataStore({
+            queryParam : 'name',
+            url : '../ckeditor/people.json'
+         });
+      };
+      if (!dojo.byId("textBox"))
+         dojo.create("div", {
+            id : "textBox"
+         }, dojo.byId("textBoxContainer"), "only");
+      textBox = new lconn.core.lcTextArea.widgets.BasicTextBox(options, dojo
+            .byId("textBox"));
+   }
+
+   function getValue(flag) {
+      var oMentionsSupport = new lconn.core.lcTextArea.mixins.IMentionsSupportRTE;
+      dojo.mixin(oMentionsSupport, textBox);
+      dojo.byId("textBox2").value = oMentionsSupport.getValue(flag);
+   }
+
+   function setValue(flag) {
+      var oMentionsSupport = new lconn.core.lcTextArea.mixins.IMentionsSupportRTE;
+      dojo.mixin(oMentionsSupport, textBox);
+      var text = dojo.byId("textBox2").value;
+      oMentionsSupport.setValue(text, flag);
+   }
+
+   function getTrackedMentions() {
+      var oMentionsSupport = new lconn.core.lcTextArea.mixins.IMentionsSupportRTE;
+      var res = "";
+      dojo.mixin(oMentionsSupport, textBox);
+      var text = dojo.byId("textBox2").value;
+      dojo.forEach(oMentionsSupport.getTrackedMentions().textData, function(
+            node) {
+         res += plaintifyNode(node) + ', ';
+      })
+      dojo.byId("textBox2").value = '{' + res + '}';
+   }
+
+   function plaintifyNode(node) {
+      var res = "{"
+      if (node.type == "PersonMentions") {
+         res += 'displayName: ' + node.displayName + ', hasSymbol: '
+               + node.hasSymbol + ', type: ' + node.type + ', userId: '
+               + node.userId + '}';
+      }
+      else {
+         res += 'type: ' + node.type + ", value: '"
+               + (node.value == '\n' ? '\\n' : node.value) + "'}";
+      }
+      return res;
+   }
+</script>
+<style type="text/css">
+   #textBox2, #textBoxContainer {
+      width: 600px;
+      padding-${right}: 10px;
+   }
+   #textBox, #textBox2 {
+      resize: both;
+   }
+   .lotusTitleBarContent nav {
+      height: 50px;
+   }
+</style>
+${endhead}
+<div class="lotusBanner">
+   <div class="lotusRightCorner">
+      <div class="lotusInner">
+         <a href="#lotusMainContent" accesskey="S" class="lotusAccess">
+            <img src="${_blankGif}" />
+         </a>
+         <div class="lotusLogo">
+            <span class="lotusAltText">IBM Connections Common UI</span>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="lotusTitleBar2 lotusTitleBar2Tabs">
+   <div class="lotusWrapper">
+      <div class="lotusInner">
+         <div class="lotusTitleBarContent">
+            <h2 class="lotusHeading">
+               <span class="lotusText">IMentionsSupport (RTE) Test Page</span>
+            </h2>
+            <nav aria-label="Select page width" role="navigation">
+            </nav>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="lotusFrame">
+   <div class="lotusMain">
+      <div class="lotusContent">
+         <form class="lotusForm2">
+            <header class="lotusFormTitle">
+               <h1 class="lotusHeading" aria-describedby="formDesc">About:</h1>
+               <div id="formDesc" class="lotusMeta">This page
+                  includes a CKE Lite textBox widget where IMentionsSupport methods can be tested.</div>
+            </header>
+            <form class="lotusForm2">
+               <!-- form body -->
+               <div class="lotusFormBody">
+
+                  <div class="lotusFormField">
+                     <label for="description">CKE Lite TextBox:</label>
+                     <div class="lotusFieldWrapper lotusBoard">
+                        <div id="textBoxContainer"
+                           class="lotusStreamUpdate">
+                           <div id="textBox"></div>
+                        </div>
+                        <ul id="actionList"
+                           class="lotusInlinelist lotusActions"
+                           style="visibility: hidden">
+                           <li class="lotusFirst"><a
+                              href="javascript:;" id="postLink"
+                              class="lotusAction lotusPersonInactive">Post</a>
+                           </li>
+                           <li><a href="javascript:;"
+                              id="resetLink"
+                              class="lotusAction lotusPersonInactive"
+                              onclick="textBox.resetBox();">Reset</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="lotusFormField">
+                     <label for="description">Input/Output Area:</label>
+                     <textarea id="textBox2"></textarea>
+                  </div>
+               </div>
+               <!--end form body-->
+               <!-- form footer -->
+               <div class="lotusFormFooter">
+                  <input type="button" class="lotusBtn"
+                     value="Get CKE Value" onclick="getValue();" /> <input
+                     type="button" class="lotusBtn"
+                     value="Get CKE Value (plainTextOnly)"
+                     onclick="getValue(true)" /> <input type="button"
+                     class="lotusBtn" value="Set CKE Value"
+                     onclick="setValue();" /> <input type="button"
+                     class="lotusBtn"
+                     value="Set CKE Value (plainTextOnly)"
+                     onclick="setValue(true);" /> <input type="button"
+                     class="lotusBtn" value="Get Tracked Mentions"
+                     onclick="getTrackedMentions();" />
+               </div>
+            </form>
+      </div>
+   </div>
+</div>
+<!--  Add your dojo config flags here -->
+<script>
+   djConfig.parseOnLoad = true;
+</script>
+${script:lconn.core.ckplugins.mentions.PersonHandler}
+${script:lconn.core.PeopleDataStore}
+${script:lconn.core.lcTextArea.widgets.BasicTextBox}
+${script:dojo.parser}
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2008, 2013                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+${head}
+        <title>IBM Connections - CKEditor message bundle</title>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <pre id="content"></pre>
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+        
+        dojo.addOnLoad(function() {
+            dojo.byId('content').innerHTML = indent(dojo.toJson(com.ibm.oneui.test.messages));
+        });
+        
+        function indent(str) {
+            var c, q, buf = [], inQuotes = false, i = 0, level = 0, s = 0;
+            while (i < str.length) {
+                switch (c = str.charAt(i)) {
+                    case "\"":
+                    case "'":
+                        buf.push(c);
+                        if (!inQuotes || c === q) {
+                            inQuotes = !inQuotes;
+                            q = c;
+                        }
+                        break;
+                    case ":":
+                        buf.push(c);
+                        if (!inQuotes)
+                            buf.push(' ');
+                        break;
+                    case "{":
+                        level++;
+                    case ",":
+                    case ";":
+                        buf.push(c);
+                        if (!inQuotes) {
+                            buf.push('\n');
+                            for (var j = 0; j < level; j++) buf.push('  ');
+                        }
+                        break;
+                    case "}":
+                        level--;
+                        if (!inQuotes) {
+                            buf.push('\n');
+                            for (var j = 0; j < level; j++) buf.push('  ');
+                        }
+                        buf.push(c);
+                        break;
+                    default:
+                        buf.push(c);
+                        /*
+                        if (s++ > 80) {
+                            buf.push('<wbr>');
+                            s = 0;
+                        }
+                        */
+                }
+                i++;
+            }
+            return buf.join('');
+        }
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:com.ibm.oneui.test.ckeditor.messages}
+</body>
+</html>

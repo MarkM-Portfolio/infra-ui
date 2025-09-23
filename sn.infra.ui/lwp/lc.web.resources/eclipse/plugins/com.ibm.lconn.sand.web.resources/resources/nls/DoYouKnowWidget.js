@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Invite to Connect",
+	NDYK1:"No more people to recommend",
+	LOADING: "loading",
+	DYK_TITLE: "People you may know",
+	INVITE_TITLE: "Send invitation to connect",
+	SEND_ACTION: "Send",
+	CANCEL_ACTION: "Cancel",
+	PREV: "Previous",
+	NEXT: "Next",
+	bpct: "Has commented on your blog",
+	bpcc: "You have commented on the same blog",
+	lpfr: "Is a colleague of someone you know",
+	lm1: "You are this persons manager",
+	le1: "This person is your manager",
+	sdm: "You share the same manager",
+	pt: "This person tagged you",
+	pbt: "You tagged this person",
+	acm: "You share activities",
+	wikiCoContribution: "You both edited the same wiki",
+	bpcb: "You commented on their blog",
+	lpcfr: "You share some colleagues",
+	ccmf: "You are in a commnuity together",
+	ccms: "You are in a commnuity together",
+	filesharing: "You share some files",
+	forumthreaddiscussion: "You share a forum thread",
+	ctb: "You share a bookmark",
+	tgw: "You have matching tags",
+	tcu: "You have used the same tag",
+	pctg: "You have both tagged the same person",
+	tgb: "The same people have tagged you both"
+})

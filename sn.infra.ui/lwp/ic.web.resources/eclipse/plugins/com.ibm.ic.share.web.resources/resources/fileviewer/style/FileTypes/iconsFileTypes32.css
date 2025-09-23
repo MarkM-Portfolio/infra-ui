@@ -1,0 +1,26 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+.ics-viewer .iconsFileTypes32-ftAudio32{width:32px;height:32px;background-position:0 0}
+.ics-viewer .iconsFileTypes32-ftCode32{width:32px;height:32px;background-position:0 -40px}
+.ics-viewer .iconsFileTypes32-ftCompressed32{width:32px;height:32px;background-position:0 -80px}
+.ics-viewer .iconsFileTypes32-ftContact32{width:32px;height:32px;background-position:0 -120px}
+.ics-viewer .iconsFileTypes32-ftData32{width:32px;height:32px;background-position:0 -160px}
+.ics-viewer .iconsFileTypes32-ftDataDocs32{width:32px;height:32px;background-position:0 -200px}
+.ics-viewer .iconsFileTypes32-ftDefault32{width:32px;height:32px;background-position:0 -240px}
+.ics-viewer .iconsFileTypes32-ftFlash32{width:32px;height:32px;background-position:0 -280px}
+.ics-viewer .iconsFileTypes32-ftFileSyncCheckmark32{width:14px;height:14px;background-position:0 -320px}
+.ics-viewer .iconsFileTypes32-ftFolder32{width:32px;height:32px;background-position:0 -342px}
+.ics-viewer .iconsFileTypes32-ftFolderOpen32{width:32px;height:32px;background-position:0 -382px}
+.ics-viewer .iconsFileTypes32-ftGraphic32{width:32px;height:32px;background-position:0 -422px}
+.ics-viewer .iconsFileTypes32-ftLink32{width:32px;height:32px;background-position:0 -462px}
+.ics-viewer .iconsFileTypes32-ftPage32{width:32px;height:32px;background-position:0 -502px}
+.ics-viewer .iconsFileTypes32-ftPdf32{width:32px;height:32px;background-position:0 -542px}
+.ics-viewer .iconsFileTypes32-ftPresentation32{width:32px;height:32px;background-position:0 -582px}
+.ics-viewer .iconsFileTypes32-ftPresentationDocs32{width:32px;height:32px;background-position:0 -622px}
+.ics-viewer .iconsFileTypes32-ftText32{width:32px;height:32px;background-position:0 -662px}
+.ics-viewer .iconsFileTypes32-ftVideo32{width:32px;height:32px;background-position:0 -702px}
+.ics-viewer .iconsFileTypes32-ftVisualization32{width:32px;height:32px;background-position:0 -742px}
+.ics-viewer .iconsFileTypes32-ftWordProcessing32{width:32px;height:32px;background-position:0 -782px}
+.ics-viewer .iconsFileTypes32-ftWordProcessingDocs32{width:32px;height:32px;background-position:0 -822px}
+
+.ics-viewer .iconsFileTypes32{background-image:url('../images/deprecated/iconsFileTypes32-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsFileTypes32{display:none}

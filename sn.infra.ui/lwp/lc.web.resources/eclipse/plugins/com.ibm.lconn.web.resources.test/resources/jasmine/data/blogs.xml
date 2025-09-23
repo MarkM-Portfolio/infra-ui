@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app"
+	xmlns:thr="http://purl.org/syndication/thread/1.0" xmlns:snx="http://www.ibm.com/xmlns/prod/sn"
+	xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xml:lang="en-US">
+	<title type="text">Blogs</title>
+	<subtitle type="html"></subtitle>
+	<id>urn:lsid:ibm.com:blogs:entries</id>
+	<link rel="alternate" type="text/html"
+		href="https://dubxpcvm3078.mul.ie.ibm.com:9445/blogs?lang=en_us" />
+	<link rel="self" type="application/atom+xml"
+		href="https://dubxpcvm3078.mul.ie.ibm.com:9445/blogs/homepage/feed_form/entries/atom?blogType=blog&amp;lang=en_us&amp;ps=3&amp;forceRefresh=1383138963838" />
+	<link rel="replies" type="application/atom+xml"
+		href="https://dubxpcvm3078.mul.ie.ibm.com:9445/blogs/homepage/feed_form/comments/atom?lang=en_us" />
+	<link rel="first" type="application/atom+xml"
+		href="https://dubxpcvm3078.mul.ie.ibm.com:9445/blogs/homepage/feed_form/entries/atom?ps=3&amp;blogType=blog&amp;lang=en_us" />
+	<opensearch:totalResults>1</opensearch:totalResults>
+	<app:categories
+		href="https://dubxpcvm3078.mul.ie.ibm.com:9445/blogs/homepage/feed_form/tags/atom?lang=en_us" />
+	<updated>2013-10-30T11:25:53+00:00</updated>
+	<generator uri="http://www.ibm.com/xmlns/prod/sn" version="4.5.0.0">IBM Connections - Blogs</generator>
+</feed>

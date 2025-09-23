@@ -1,0 +1,50 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div>
+	<div data-dojo-attach-point="_tagMenu,focusNode">
+		<div data-dojo-attach-point="_loadTags"><img alt="${nls.rs_tagLoadingTags}" src="${_blankGif}" class="lotusLoading">${nls.rs_tagLoadingTags}</div>
+		<div class="lconnEmpty lotusHidden" data-dojo-attach-point="_noTags">${nls.rs_tagCloudNoTags}</div>
+		<div class="lotusHidden" data-dojo-attach-point="_hasTags">
+			<div class="lotusHidden" data-dojo-attach-point="_selectedTagsSection">
+				<h3 style="border-bottom:0px;font-weight: bold;margin:0;padding:2px 0 0;">${nls.rs_tagCloudSelectedTags}</h3>
+				<ul class="lotusEditable lotusList lotusMeta" role="listbox" aria-label="${nls.rs_tagCloudSelectedTags}" data-dojo-attach-point="_selectedTags"><li></ul>
+			</div>
+		</div>
+		<div class="lotusHidden" data-dojo-attach-point="_tagSearchText">
+			<a href="javascript:void(0);" class="lotusBold" role="button" title="${nls.rs_tagCloudSeachDesc}" data-dojo-attach-event="onclick: _showSearchForm">${nls.rs_tagCloudSeachDesc}</a>
+		</div>
+		<div class="lotusChunk lotusSearch lotusHidden" data-dojo-attach-point="_tagSearchForm">
+			<form style="margin:0;" data-dojo-attach-event="onsubmit: _searchTag">
+				<input class="lotusText" data-dojo-attach-point="_typeAheadDom" data-dojo-attach-event="onkeyup:_onKeyUp"><span class="lotusBtnImg"><input title="${nls.rs_tagCloudSeach}" type="image" class="lotusSearchButton" src="${_blankGif}" name="submit" alt="${nls.rs_tagCloudSeach}"><a href="javascript:;" class="lotusAltText" role="button" data-dojo-attach-event="onclick: _searchTag">${nls.rs_tagCloudSeach}</a></span>
+			</form>
+		</div>
+		<div class="lotusHidden lotusChunk10" data-dojo-attach-point="_relatedTagsSection">
+			<h3 style="border-bottom: 0px; font-weight: bold; margin:0; padding:2px 0 0;">${nls.rs_tagCloudRelatedTags}</h3>
+			<div>${nls.rs_tagCloudRelatedTagsDescription}</div>
+			<ul class="lotusList lotusTags lotusRelatedTags" role="listbox" aria-label="${nls.rs_tagCloudRelatedTags}" data-dojo-attach-point="_relatedTags"><li></ul>
+		</div>
+		<div class="lotusHidden lotusChunk10" aria-label="${nls.rs_tagCloudNavigationLabel}" data-dojo-attach-point="_normalTagsSection">
+			<div id="${id}_tagCloudView" class="lotusHidden" data-dojo-attach-point="_tagCloudView">
+				<div class="lotusTagCloud" data-dojo-attach-point="_tagCloudTable"></div>
+			</div>
+			<div id="${id}_tagListView" class="lotusHidden" data-dojo-attach-point="_tagListView">
+				<ul id="${id}_tagList" class="lotusList lotusEditable lotusMeta" role="listbox" aria-label="${nls.rs_tagsLabel}" data-dojo-attach-point="_tagList"><li></ul>
+			</div>
+			<div class="lotusChunk lotusSubsection">
+				<div class="lotusHidden" data-dojo-attach-point="_tagCloudLink">
+					<ul class="lotusInlinelist lotusActions">
+						<li class="lotusFirst"><span class="lotusBold" role="button" aria-controls="${id}_tagCloudView" aria-disabled="true" aria-pressed="true" tabindex="0" data-dojo-attach-point="_showCloudSpan,focusNode">${nls.rs_viewAsCloud}</span></li>
+						<li><a href="javascript:void(0);" title="${nls.rs_viewAsListTitle}" role="button" aria-controls="${id}_tagListView" data-dojo-attach-point="_showListLink" data-dojo-attach-event="onclick: _showList">${nls.rs_viewAsList}</a></li>
+						<li class="lotusHidden" data-dojo-attach-point="_tagCloudAll"><a href="javascript:void(0);" title="${nls.rs_tagCloudViewAllTitle}" role="button" data-dojo-attach-event="onclick:_showAllTags">${nls.rs_tagCloudViewAll}</a></li>
+					</ul>
+				</div>
+				<div class="lotusHidden" data-dojo-attach-point="_tagListLink">
+					<ul class="lotusInlinelist lotusActions">
+						<li class="lotusFirst"><a href="javascript:void(0);" title="${nls.rs_viewAsCloudTitle}" role="button" aria-controls="${id}_tagCloudView" data-dojo-attach-point="_showCloudLink" data-dojo-attach-event="onclick: _showCloud">${nls.rs_viewAsCloud}</a></li>
+						<li><span class="lotusBold" role="button" aria-controls="${id}_tagListView" aria-disabled="true" aria-pressed="true" tabindex="0" data-dojo-attach-point="_showListSpan">${nls.rs_viewAsList}</span></li>
+						<li class="lotusHidden" data-dojo-attach-point="_tagListAll"><a href="javascript:void(0);" title="${nls.rs_tagCloudViewAllTitle}" role="button" data-dojo-attach-event="onclick:_showAllTags">${nls.rs_tagCloudViewAll}</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

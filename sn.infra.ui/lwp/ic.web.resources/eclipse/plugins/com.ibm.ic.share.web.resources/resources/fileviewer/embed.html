@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+<style>
+    body {
+        background: transparent !important;
+    }
+</style>
+<script id="preload">
+window.CKEDITOR_BASEPATH = "../../com.ibm.oneui.ckeditor/editor/";
+function getResourceUrl(resourceUrl) {
+   var path = window.location.pathname;
+   var contextRoot = path.substring(0, window.location.pathname.indexOf('/connections/resources/'));
+   var url = contextRoot!='' ? (contextRoot + resourceUrl) : resourceUrl;
+   return url;
+}
+function _breakParamPairs(string) {
+    var parts, params = {};
+
+    if (typeof string !== "string") {
+        return {};
+    }
+
+    parts = string.split("&");
+
+    parts.forEach(function (part) {
+        var key, value, index;
+
+        index = part.indexOf("=");
+
+        key = part.slice(0, index);
+        value = part.slice(index + 1);
+
+        params[key] = value;
+    });
+
+    return params;
+}
+
+function breakParams(href) {
+    if (typeof href !== "string") {
+        href = "";
+    }
+
+    var paramsStart = href.indexOf("?"),
+        fragmentStart = href.indexOf("#"),
+        params = {};
+
+    if (paramsStart === -1) {
+        paramsStart = fragmentStart;
+        href = href.replace("#", "?");
+    } else if (fragmentStart > paramsStart) {
+        href = href.replace("#", "&");
+    }
+
+    if (paramsStart > -1) {
+        params = _breakParamPairs(href.slice(paramsStart + 1));
+    }
+
+    return {
+        file: {
+            id: params["file"] || ""
+        },
+        gatekeeper: params["has"] ? params["has"].split(",") : [],
+        lang: params["lang"] || "",
+        etag: params["etag"] || "",
+        tornOff: params["tornOff"] === "true"
+    };
+}
+
+function getGatekeeperConfig(href) {
+    var gatekeeperConfig = {}
+        flags = breakParams(href).gatekeeper;
+
+    //Default enabled has conditions
+    gatekeeperConfig["fileviewer-detailspage"] = true;
+    gatekeeperConfig["fileviewer-history"] = true;
+    gatekeeperConfig["ckeditor-lite-mentions"] = true;
+    gatekeeperConfig["fileviewer-panels"] = true;
+    gatekeeperConfig["fileviewer-tearoff"] = true;
+    gatekeeperConfig["files-nested-folder"] = true;
+    gatekeeperConfig["docs-viewer-next"] = true;
+    gatekeeperConfig["fileviewer-preview-videojs"] = true;
+    gatekeeperConfig["fileviewer-panels-textnav"] = true;
+    gatekeeperConfig["fileviewer-panels-resize"] = true;
+    
+    flags.forEach(function (flag) {
+    	var name = flag.split("=")[0];
+    	var value = flag.split("=")[1];
+    	if (value === undefined || value === "1") value = true;
+    	else value = false;
+        gatekeeperConfig[name] = value;
+    });
+
+    return gatekeeperConfig;
+}
+
+function loadResource(url, resourceHtml) {
+    var etag = ibmConfig.versionStamp;
+
+    if (url.indexOf("${etag}") !== -1) {
+        url = url.replace("${etag}", etag);
+    } else {
+        url += (url.indexOf("?") === -1 ? "?" : "&") + "etag=" + etag;
+    }
+    
+    if (window.languageCode) {
+       url += (url.indexOf("?") === -1 ? "?" : "&") + "lang=" + languageCode;
+
+       if (window.countryCode) {
+       	url += "&country=" + countryCode;
+       }
+    }
+    
+    resourceHtml = resourceHtml.replace("${url}", url);
+    resourceHtml = resourceHtml.replace("${etag}", etag);
+
+    document.write(resourceHtml);
+}
+
+var ibmConfig = {
+   versionStamp: breakParams(window.location.href).etag
+};
+</script>
+<script>
+var dojo = {
+   provide: function () {},
+   mixin: function (name, args) {
+      ibmConfig.versionStamp = args.versionStamp; 
+   }
+}
+
+loadResource('../../lconn.core/config.js', '<script src="${url}"><\/script>');
+</script>
+<script>
+window.dojo = undefined;
+</script>
+<script>
+var gatekeeperConfig = getGatekeeperConfig(window.location.href);
+
+var dojoConfig = djConfig = {
+   async: true,
+   isDebug: false,
+   baseUrl: "../../dojo/",
+   locale: breakParams(window.location.href).lang.toLowerCase() || "en-us",
+   dojoBlankHtmlUrl: getResourceUrl("/files/static/" + ibmConfig.versionStamp + "/nav/blankIE.html"),
+   blankGif: "../../com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=" + ibmConfig.versionStamp,
+   useCommentedJson: true,
+   proxy: getResourceUrl("/files/ajaxProxy"),
+   localizationComplete: true
+};
+
+var languageCode = dojoConfig.locale.split('-')[0];
+var countryCode = dojoConfig.locale.split('-')[1];
+
+var netJazzAjaxConfig = {
+   params: "etag=" + ibmConfig.versionStamp + "&lang=" + languageCode + "&country=" + countryCode
+};
+
+var _fidoStylesLoaded = true;
+
+var _containerOrigin = "";
+
+function _setContainerOrigin(event) {
+    if (event.data === "ic-fileviewer/init") {
+        _containerOrigin = event.origin;
+
+        if (window.openFiDOCallback) {
+            window.openFiDOCallback();
+        }
+    }
+}
+
+window.addEventListener("message", _setContainerOrigin);
+
+</script>
+<script>
+(function () {
+    if (typeof loadResource === "undefined") { // We're probably unit testing
+        return;
+    }
+
+    loadResource('../../_js?include=dojo/main~net.jazz.ajax.xdloader', '<script src="${url}"><\/script>');
+    loadResource('../../_js?include=ic-core/config/features~lconn.core.auth~lconn.core.config.services~com.ibm.social.gadget.people._vcard_utils~com.ibm.social.sharebox._dialog_utils~ic-share.fileviewer.ConnectionsFileViewer~ic-share.fileviewer.data.ProfilesAPI&exclude=dojo/main', '<script src="${url}"><\/script>');
+    loadResource(getResourceUrl('/files/static/${etag}!en-us/iwidgets/CommunityReferentialWidget/core.js'), '<script src="${url}"><\/script>');
+    loadResource('../../_style?include=com.ibm.lconn.core.styles.oneui3/base/package3.css~com.ibm.lconn.core.styles.oneui3/sprites.css~ic-share.fileviewer.style.connections.css', '<link rel="stylesheet" type="text/css" id="lotusBaseStylesheet" href="${url}" appName="files" base="../../" query="?version=oneui3&rtl=false&etag=${etag}" theme="hikari" defaultTheme="hikari" oneui="3"></link>');
+    loadResource('../../_lconntheme/hikari.css?version=oneui3&rtl=false', '<link rel="stylesheet" type="text/css" id="lotusThemeStylesheet" href="${url}"></link>');
+}());
+</script>
+<script id="onload">
+(function () {
+    var openFailed = false,
+        authRequired = false;
+    currentViewer = {};
+
+    function openFiDO(ConnectionsFileViewer, ProfilesAPI, href) {
+        if (!_containerOrigin) {
+            console.warn("Suppressing file viewer because container has not supplied an origin via an init event.  To supply an origin, post a message with the string literal 'ic-fileviewer/init' to the file viewer iframe.");
+            return;
+        }
+
+        if (!_originInWhitelist(whitelist, _containerOrigin)) {
+            console.warn("Suppressing file viewer because container origin does not match the system CORS whitelist.  CORS whitelist: ", whitelist);
+            return;
+        }
+
+        var id = breakParams(href).file.id;
+
+        if (id) {
+            ConnectionsFileViewer.openFromId(id, {
+                tornOff: breakParams(href).tornOff,
+                preventLoginRedirect: true,
+                loadCurrentUser: true,
+                isIframePage: true,
+                createPersonLink: function (user) {
+                    var anchor = document.createElement("a");
+                    anchor.textContent = user.name;
+                    anchor.href = getResourceUrl("/profiles/html/profileView.do?userid=" + user.id);
+                    anchor.target = "_blank";
+
+                    anchor.onclick = function (evt) {
+                        evt.stopPropagation();
+                        evt.preventDefault();
+                        if (!user.email && user.id) {
+                            ProfilesAPI.fromURL(getResourceUrl("/profiles/atom/profile.do?userid=" + user.id)).then(function (profile) {
+                                _postMessage("ic-fileviewer/user-clicked?" + _urlEncodeUser(profile.getUser()));
+                            }, function () {
+                                console.error("ic-fileviewer: embed.html - request error retrieving profile entry for selected user");
+                                _postMessage("ic-fileviewer/user-clicked?" + _urlEncodeUser(user));
+                            });
+                        }
+                        else {
+                            _postMessage("ic-fileviewer/user-clicked?" + _urlEncodeUser(user));
+                        }
+                    };
+
+                    return anchor;
+                },
+                createPersonPhotoLink: function (user) {
+                   var cloudUserImage = "/contacts/profiles/photo/";
+                   var onpremUserImage = "/profiles/photo.do?r=true&small=true&userid=";
+                   var pictureUrl = lconn.core.config.services.scprofiles ? cloudUserImage : onpremUserImage;
+                   
+                   var anchor = document.createElement("a");
+                    anchor.href = "/profiles/html/profileView.do?userid=" + user.id;
+                    anchor.target = "_blank";
+                    var photo = document.createElement("img");
+                    photo.src = getResourceUrl(pictureUrl + user.id);
+                    photo.alt = user.name || "";
+                    anchor.appendChild(photo);
+                    
+                    anchor.onclick = function (evt) {
+                        evt.stopPropagation();
+                        evt.preventDefault();
+                        if (!user.email && user.id) {
+                            ProfilesAPI.fromURL(getResourceUrl("/profiles/atom/profile.do?userid=" + user.id)).then(function (profile) {
+                                _postMessage("ic-fileviewer/user-clicked?" + _urlEncodeUser(profile.getUser()));
+                            }, function () {
+                                console.error("ic-fileviewer: embed.html - request error retrieving profile entry for selected user");
+                                _postMessage("ic-fileviewer/user-clicked?" + _urlEncodeUser(user));
+                            });
+                        }
+                        else {
+                            _postMessage("ic-fileviewer/user-clicked?" + _urlEncodeUser(user));
+                        }
+                    };
+                    
+                    return anchor;
+                }
+            }).then(function (viewer) {
+                currentViewer = viewer._args.currentUser;
+                openFailed = false;
+                _postMessage("ic-fileviewer/open?file=" + id, { public: true });
+            }, function () {
+                openFailed = true;
+                _postMessage("ic-fileviewer/openError?file=" + id, { public: true });
+            });
+        }
+    }
+
+    function _urlEncodeUser(user) {
+        return "email=" + user.email + "&id=" + user.id + "&name=" + encodeURIComponent(user.name);
+    }
+
+    var whitelist, origin;
+
+    /**
+     * Sends a message to the parent window.  If the message is not "public", it will only be sent if
+     * the parent's origin matches a domain in the CORS whitelist.
+     *
+     * @param message The message to send to the parent window
+     * @param opts = {
+     *      public (boolean) If true, skip the check of the parent's origin
+     * }
+     */
+    function _postMessage(message, opts) {
+        if (!opts) {
+            opts = {};
+        }
+
+        if (!whitelist) {
+            _loadCORSWhitelist();
+        }
+
+        if (opts.public) {
+            parent.postMessage(message, "*");
+        } else if (_originInWhitelist(whitelist, _containerOrigin)) {
+            parent.postMessage(message, _containerOrigin);
+        } else if (!opts.silent) { // Keep things quiet in the unit test output
+            console.warn("Suppressing message because container has not supplied an origin via an init event.  To supply an origin, post a message with the string literal 'ic-fileviewer/init' to the file viewer iframe.  Some messages that do not contain personal information may still be posted.  Suppressed message:", message);
+        }
+    }
+
+    function _originInWhitelist(whitelist, parentOrigin) {
+        if (!parentOrigin) {
+            return false;
+        }
+
+        var parentReversed = _reverseString(parentOrigin);
+
+        return whitelist.some(function (domain) {
+            return parentReversed.indexOf(_reverseString(domain)) === 0;
+        });
+    }
+
+    function _loadCORSWhitelist() {
+        var domains = window.lconn && window.lconn.core && window.lconn.core.config
+            && window.lconn.core.config.properties && window.lconn.core.config.properties["CORS.Trusted.Websites"];
+
+        if (!domains) {
+            whitelist = [];
+        } else {
+            whitelist = domains.split(",").map(function (hostname) {
+                return "." + hostname;
+            });
+        }
+
+        whitelist.push(window.location.host);
+
+        return whitelist; // For unit test
+    }
+
+    function _reverseString(str) {
+        return str.split("").reverse().join("");
+    }
+
+    function _onAuthComplete(topic) {
+        if (!authRequired) {
+            return;
+        }
+
+        authRequired = false;
+
+        if (!openFailed) {
+            topic.publish("ic-fileviewer/softRefresh");
+        } else if (window.openFiDOCallback()) {
+            window.openFiDOCallback();
+        }
+    }
+
+    // This probably means we're unit testing.  Even if we're not, the rest of
+    // the file wouldn't work without require() anyway.
+    if (!window.require && window.jasmine) {
+        window.openFiDO = openFiDO;
+        window._urlEncodeUser = _urlEncodeUser;
+        window._postMessage = _postMessage;
+        window._originInWhitelist = _originInWhitelist;
+        window._loadCORSWhitelist = _loadCORSWhitelist;
+        return;
+    }
+
+    lconn.core.auth.setAuthCheck(function () {
+        return true;
+    });
+    
+    if (languageCode === "ar" || languageCode === "he") {
+        document.documentElement.dir = "rtl";
+    }
+
+    dojo.addOnLoad(function () {
+        (function (lang, hash, topic, ProfilesAPI, has) {
+            _postMessage("ic-fileviewer/resourcesLoaded", { public: true });
+   
+            if (has("highcontrast")) {
+           	    document.body.className += " lotusImagesOff";
+            }
+            var ConnectionsFileViewer = lang.getObject("ic-share.fileviewer.ConnectionsFileViewer");
+   
+            window.openFiDOCallback = function () {
+                openFiDO(ConnectionsFileViewer, ProfilesAPI, window.location.href);
+            }
+   
+            topic.subscribe("/dojo/hashchange", function () {
+                window.openFiDOCallback = function () {
+                    openFiDO(ConnectionsFileViewer, ProfilesAPI, window.location.href);
+                }
+   
+                window.openFiDOCallback();
+            });
+   
+            topic.subscribe("ic-fileviewer/closed", function () {
+                _postMessage("ic-fileviewer/close", { public: true });
+            });
+   
+            topic.subscribe("ic-fileviewer/windowClose", function () {
+                _postMessage("ic-fileviewer/windowClose", { public: true });
+            });
+   
+            topic.subscribe("ic-fileviewer/action/tearoff", function () {
+                _postMessage("ic-fileviewer/action/tearoff", { public: true });
+            });
+   
+            window.addEventListener("message", function (event) {
+                if (event.data === "ic-fileviewer/authenticationComplete") {
+                    _onAuthComplete(topic);
+                } else if (event.data === "ic-fileviewer/resetFocus") {
+                	topic.publish("ic-fileviewer/resetFocus");
+                }
+            });
+   
+            topic.subscribe("ic-fileviewer/authenticationRequired", function () {
+                authRequired = true;
+                _postMessage("ic-fileviewer/authenticationRequired", { public: true });
+            });
+        }(
+            define._modules["dojo/_base/lang"],
+            define._modules["dojo/hash"],
+            define._modules["dojo/topic"],
+            define._modules["ic-share/fileviewer/data/ProfilesAPI"],
+            define._modules["dojo/has"]
+        ));
+    });
+}());
+
+</script>
+</head>
+<body class="lotusui lotusui30dojo lotusui30 lotusui30_fonts lotusui30_body"></body>
+</html>

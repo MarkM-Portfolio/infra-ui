@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+<title>Test add content pane</title>
+${endhead}
+
+<script type="text/javascript">
+
+function addWidgetListener(item){
+	console.log("Add widget event detected");
+	console.log(item);
+}
+
+function populateFromFile(fileName){
+	var pane = dijit.byId("addContentPaneWidget");
+	pane.setJsonSourceUrl(fileName);
+	pane.populatePalette(true);
+}
+
+function registerCanAddWidgetHandlerFalse(){
+	var pane = dijit.byId("addContentPaneWidget");
+	pane.registerCanAddWidgetFct(function(widget){
+		console.log("can add widget handler returning false");
+		console.log(widget);
+		return false;
+	});
+}
+
+function registerCanAddWidgetHandlerTrue(){
+	var pane = dijit.byId("addContentPaneWidget");
+	pane.registerCanAddWidgetFct(function(widget){
+		console.log("can add widget handler returning true");
+		console.log(widget);
+		return true;
+	});
+}
+
+function registerCanAddWidgetHandlerUndefined(){
+	var pane = dijit.byId("addContentPaneWidget");
+	pane.registerCanAddWidgetFct(function(widget){
+		console.log("can add widget handler returning nothing");
+		console.log(widget);
+		// don't return anything. Should be the same as returning false (= button disabled)
+	});
+}
+
+function publishRecheckEvent(){
+	dojo.publish(lconn.core.paletteOneUI.Palette.prototype.RECHECK_CAN_ADD_WIDGET_HANDLER_EVENT);
+}
+
+function registerLayoutImage(){
+	var pane = dijit.byId("addContentPaneWidget");
+	
+	pane.setLayoutImage(lconn.core.paletteOneUI.Palette.prototype.PRIMARY_WIDGET, "img/2col.jpg");
+}
+
+function removeItem(){
+	var pane = dijit.byId("addContentPaneWidget");
+	pane.removeItem("idCalendar");
+}
+
+
+
+dojo.addOnLoad(function(){
+	dojo.subscribe(lconn.core.paletteOneUI.Palette.prototype.ADD_WIDGET_EVENT, addWidgetListener);
+});
+
+dojo.addOnLoad(function(){
+
+doh.registerGroup("palette tree",
+				[																																
+				]
+			);			
+			doh.run();
+});
+
+
+</script>
+
+<div class="lotusPalette">
+	<div dojoType="lconn.core.paletteOneUI.AddContentPane" id="addContentPaneWidget"></div>
+</div>
+
+<button onclick="populateFromFile('widgetJSON.txt')">Populate from widgetJSON.txt</button>
+<button onclick="registerCanAddWidgetHandlerFalse()">Register test canAddWidget handler returning false</button>
+<button onclick="registerCanAddWidgetHandlerTrue()">Register test canAddWidget handler returning true</button>
+<button onclick="registerCanAddWidgetHandlerUndefined()">Register test canAddWidget handler returning undefined</button>
+<button onclick="publishRecheckEvent()">Publish recheck event</button>
+<button onclick="registerLayoutImage()">Register layout image</button>
+<button onclick="removeItem()">Remove calendar widget</button>
+
+    <script>
+        djConfig.parseOnLoad=true;
+        djConfig.isDebug=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+
+    ${script:dojo.parser}
+    ${script:net.jazz.ajax.xdloader}
+    ${script:lconn.core.paletteOneUI.Palette}
+    ${script:lconn.core.paletteOneUI.AddContentPane}
+    ${script:doh.runner}
+</body>
+</html>

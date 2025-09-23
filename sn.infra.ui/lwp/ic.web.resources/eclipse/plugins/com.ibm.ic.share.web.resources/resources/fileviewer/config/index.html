@@ -1,0 +1,72 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2014, 2015                                          */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+${head}
+
+<title>File Viewer Setup</title>
+
+<script>
+   var loc = "" + window.location;
+
+   if (!/index.html\?render=test$/.test(loc)) {
+      window.location = "index.html?render=test";
+   }
+</script>
+
+<script>
+dojoConfig.blankGif="${_blankGif}";
+dojoConfig.parseOnLoad=true;
+</script>
+
+${script:dojo.cookie}
+
+<style>
+   input {
+      margin-right: 12px;
+   }
+   
+   p.fineprint {
+      font-size: 12px;
+      margin-top: 24px;
+   }
+</style>
+
+<script>
+   dojo.ready(function () {
+      dojo.query("input").forEach(function (input) {
+         var cookieName = dojo.attr(input, "data-cookie-name");
+         
+         if (cookieName) {
+            input.checked = dojo.cookie(cookieName) !== "false";
+            
+            dojo.connect(input, "click", function () {
+               dojo.cookie(cookieName, input.checked ? "true" : "false", { path: "/" });
+            });
+         }
+      });
+   });
+</script>
+
+${endhead}
+
+<div class="lotusMain" role="main">
+   <div class="lotusContent">
+      <h2>Available features</h2>
+      <label><input type="checkbox" data-cookie-name="com.ibm.ic.share.fileviewer.enabled" />Replace preview lightbox with file viewer</label><br />
+      <p class="fineprint">Feature flags are stored in session cookies and may be lost when the browser is closed.  Changes are stored automatically when a checkbox is clicked.  The page may need to be refreshed for changes to take effect.</p>
+   </div>
+</div>
+</body>
+${end}

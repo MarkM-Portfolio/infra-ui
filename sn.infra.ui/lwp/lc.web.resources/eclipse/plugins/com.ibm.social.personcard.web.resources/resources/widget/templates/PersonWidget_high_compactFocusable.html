@@ -1,0 +1,33 @@
+<!-- Copyright IBM Corp. 2014, 2016  All Rights Reserved.              -->
+
+<div class="lconn_personContainer compact">
+	<div class="lconn_profileImage">
+		<img class="lconn_userImage" dojoattachpoint="photoNode" alt="" role="presentation" src="${photoUrl}" style="max-width: ${_compactSize}px; max-height: ${_compactSize}px;">
+	</div>
+	<div class="lconn_profileInfo">
+		<div>
+			<span class="lconn_title" style="display: none;" dojoattachpoint="linkNode">${!displayNameString}</span>
+			<a class="lconn_title" href="${profileUrl}" aria-describedby="${id}_metaData" dojoattachpoint="hiddenLinkNode" dojoattachevent="onclick: linkClicked, onfocus: onEntryFocused">${!displayNameString}</a>
+		</div>
+		<div id="${id}_metaData" dojoAttachPoint="metaDataNode">
+			<div class="lconn_gray">
+				<span dojoAttachPoint="jobResponsibilityNode">${!jobResponsibility}</span>
+			</div>
+			<div class="lconn_gray">
+				<span dojoAttachPoint="addressNode">${!address}</span>
+			</div>
+			<div class="lconn_additionalInfo-compact lconn_gray">
+				<div>
+					<a href="mailto:${_escapedMail}" dojoAttachPoint="mailNode" dojoattachevent="onclick: linkClicked, onfocus: onEntryFocused">${!mail}</a>
+				</div>
+				<div>
+					<span dojoAttachPoint="phoneNode">${!phone}</span>
+				</div>
+			</div>
+			<div class="lconn_separator-compact"></div>
+			<div dojoAttachPoint="tagsContainer" class="lconn_tags-compact lconn_gray">
+				<div dojoAttachPoint="tagCloudNode">${!tagString}</div>
+			</div>
+		</div>
+	</div>
+</div>

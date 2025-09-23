@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2001, 2016                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+-->
+<iw:iwidget id="report-chain" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget"
+	supportedModes="view" mode="view" lang="en">
+    <iw:content mode="view">
+        <![CDATA[
+          <div id="report-chain"></div>
+          <script type="text/javascript" id="report-chain-script">
+            //set a unique id in case this is loaded again
+            var baseNode = document.getElementById('report-chain');
+            baseNode.id += '-' + this.iContext.widgetId;
+            
+            //set the loading text
+            baseNode.appendChild(document.createTextNode(generalrs.reportStructureLoading));
+            
+            //find the container and set some a11y attributes
+            var pNode = baseNode;
+            while (pNode && pNode.getAttribute('widgetid') != this.iContext.widgetId) {
+              pNode = pNode.parentNode;
+            }
+            if (pNode) {
+              pNode.setAttribute('role', 'region');
+              pNode.setAttribute('aria-label', generalrs.reportStructure);
+            }
+            
+            //load it up
+            var attributesItemSet = this.iContext.getiWidgetAttributes();
+            var displayedUserKey = attributesItemSet.getItemValue('profileDisplayedUserKey');
+            var numberOfNameToDisplay = attributesItemSet.getItemValue('numberOfNameToDisplay');
+
+            profiles_loadReportChain(displayedUserKey, baseNode.id, numberOfNameToDisplay, this.iContext.widgetId);
+
+          </script>
+        ]]> 
+     </iw:content>
+</iw:iwidget>

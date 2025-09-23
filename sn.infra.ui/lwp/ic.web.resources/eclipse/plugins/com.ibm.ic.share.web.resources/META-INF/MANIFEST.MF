@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IBM Connections Share Web Resources
+Bundle-SymbolicName: com.ibm.ic.share.web.resources;singleton:=true
+Bundle-Version: 5.0.0.qualifier
+Bundle-Vendor: IBM
+Bundle-ActivationPolicy: lazy

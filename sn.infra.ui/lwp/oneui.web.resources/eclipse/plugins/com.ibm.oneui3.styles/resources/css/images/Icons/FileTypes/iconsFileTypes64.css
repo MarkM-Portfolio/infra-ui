@@ -1,0 +1,26 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.iconsFileTypes64-ftAudio64{width:64px;height:64px;background-position:0 0}
+.iconsFileTypes64-ftCode64{width:64px;height:64px;background-position:0 -72px}
+.iconsFileTypes64-ftCompressed64{width:64px;height:64px;background-position:0 -144px}
+.iconsFileTypes64-ftContact64{width:64px;height:64px;background-position:0 -216px}
+.iconsFileTypes64-ftData64{width:64px;height:64px;background-position:0 -288px}
+.iconsFileTypes64-ftDataDocs64{width:64px;height:64px;background-position:0 -360px}
+.iconsFileTypes64-ftDefault64{width:64px;height:64px;background-position:0 -432px}
+.iconsFileTypes64-ftFlash64{width:64px;height:64px;background-position:0 -504px}
+.iconsFileTypes64-ftFileSyncCheckmark64{width:30px;height:30px;background-position:0 -576px}
+.iconsFileTypes64-ftFolder64{width:64px;height:64px;background-position:0 -614px}
+.iconsFileTypes64-ftFolderOpen64{width:64px;height:64px;background-position:0 -686px}
+.iconsFileTypes64-ftGraphic64{width:64px;height:64px;background-position:0 -758px}
+.iconsFileTypes64-ftLink64{width:64px;height:64px;background-position:0 -830px}
+.iconsFileTypes64-ftPage64{width:64px;height:64px;background-position:0 -902px}
+.iconsFileTypes64-ftPdf64{width:64px;height:64px;background-position:0 -974px}
+.iconsFileTypes64-ftPresentation64{width:64px;height:64px;background-position:0 -1046px}
+.iconsFileTypes64-ftPresentationDocs64{width:64px;height:64px;background-position:0 -1118px}
+.iconsFileTypes64-ftText64{width:64px;height:64px;background-position:0 -1190px}
+.iconsFileTypes64-ftVideo64{width:64px;height:64px;background-position:0 -1262px}
+.iconsFileTypes64-ftVisualization64{width:64px;height:64px;background-position:0 -1334px}
+.iconsFileTypes64-ftWordProcessing64{width:64px;height:64px;background-position:0 -1406px}
+.iconsFileTypes64-ftWordProcessingDocs64{width:64px;height:64px;background-position:0 -1478px}
+
+.iconsFileTypes64{background-image:url('./iconsFileTypes64-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsFileTypes64{display:none}

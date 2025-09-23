@@ -1,0 +1,45 @@
+define({
+	      /* ***************************************************************** */
+  /*                                                                   */
+  /* Copyright IBM Corp. 2011, 2018  All Rights Reserved.              */
+
+		   dialogTitle : "Pridať obrázok",
+		   newUpload : "Nové odoslanie",
+		   URL : "Adresa URL",
+		   imageLibrary : "Knižnica obrázkov",
+		   description : "Opis:",
+		   imageFile : "Súbory:",
+		   OK: "OK",
+		   cancel: "Zrušiť",
+		   required: "Povinné pole",
+		   preview: "Náhľad:",
+		   previewWarning: "Zdá sa, že zlyhalo načítavanie obrázka. Ste si istý, že toto je správna adresa URL obrázka?",
+		   alt: "Alternatívny text:",
+		   filesTab: "Z aplikácie Súbory",
+		   images:"Obrázky:",
+		   browse:"Prehľadávať...",
+		   imagePickerTitle:"Vložiť obrázky z aplikácie Súbory",
+		   componentImagePickerTitle:" ${0} - odoslané obrázky",
+		   /* New String for insert image dialog */
+		   title: "Vložiť obrázok",
+		   uploadBtn: "Odoslať obrázok",
+		   insertBtn: "Vložiť obrázok",
+		   uploadTab: "Lokálne súbory",
+		   externalTab: "Webová adresa URL",
+		   internalTab: "Existujúce obrázky",
+		   fileFieldTip: "Potiahnite a pustite obrázky zo svojho počítača priamo do tohto okna, aby ste ich odoslali.",
+		   AdditionalSection: "Ďalšie voľby",
+		   ExpandSection: "Rozvinúť viac možností",
+		   CloseSection: "Zvinúť viac možností",
+		   webURLPrompt: "Adresa URL webového obrázka:",
+		   previewPrompt: "Oblasť náhľadu: Zobrazenie veľkých obrázkov môže chvíľu trvať.",
+		   noExistingImage: "Ľutujeme, ale ešte nebol pridaný žiadny obrázok.",
+		   selectExistingImage: "Vybrať existujúci obrázok:",
+		   urlMissing: "Zadajte adresu URL",
+		   urlInvalid: "Neplatná adresa URL. Skontrolujte platnosť zadanej adresy URL a skúste to znova.",
+		   previousItem: "Predchádzajúci",
+		   nextItem: "Ďalší",
+			 oneImageOneTime: "V tomto okne je už pridaný obrázok. Naraz môžete vložiť iba jeden obrázok.",
+			 altTextForImgInList: "Kliknutím vyberiete obrázok"
+});
+

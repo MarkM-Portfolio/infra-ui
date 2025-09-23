@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Povezivanja</msg>
+  <msg name="connectionsEE_description">Embedded Experience OpenSocial gadget koja se koristi za prikaz dodatnih detalja i akcija za događaje povezivanja</msg>
+  <msg name="connectionsEE_errorTitle">Greška</msg>
+  <msg name="connectionsEE_errorDescription">Ovaj sadržaj nije odobren u vašoj organizaciji i nije dostupan. Molimo da se obratite administratoru vaše organizacije da omogući proširenje.</msg>
+</messagebundle>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Gadget Embedded Experience OpenSocial utilisé pour afficher des détails et des actions supplémentaires pour les événements Connections</msg>
+  <msg name="connectionsEE_errorTitle">Erreur</msg>
+  <msg name="connectionsEE_errorDescription">Une erreur s'est produite lors du chargement des ressources de gadget. Vérifiez que vous êtes connecté au réseau et essayez de charger le gadget à nouveau.</msg>
+</messagebundle>

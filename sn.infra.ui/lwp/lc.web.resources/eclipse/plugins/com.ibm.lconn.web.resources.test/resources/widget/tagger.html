@@ -1,0 +1,54 @@
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+<html>
+${head}
+<title>Tagger</title>
+${endhead}
+<div class="lotusMain">
+<div class="lotusContent">
+
+<div id="tagger1"></div>
+<div id="tagger2"></div>
+<div id="tagger3"></div>
+<div id="tagger4"></div>
+<div id="tagger5"></div>
+<div id="tagger6"></div>
+<div id="tagger7"></div>
+
+${script:lconn.core.widget.ReadOnlyTagger}
+${script:lconn.core.widget.Tagger}
+${script:lconn.core.widget.TaggerCore}
+<script>
+dojo.addOnLoad(function() {
+	new lconn.core.widget.Tagger({
+		tags: ["C", "b", "a"],
+		links: {tag: function(a, tag) {a.href = "hello/"+tag;}}
+	}, dojo.byId("tagger1"));
+	new lconn.core.widget.Tagger({
+		editable: true,
+		tags: ["a", "b", "c"]
+	}, dojo.byId("tagger2"));
+	new lconn.core.widget.ReadOnlyTagger({
+		tags: ["a", "b", "c"]
+	}, dojo.byId("tagger3"));
+	new lconn.core.widget.TaggerCore({
+		tags: ["a", "b", "c"]
+	}, dojo.byId("tagger4"));
+	new lconn.core.widget.TaggerCore({
+		tags: ["a", "b", "c"],
+		editable: true
+	}, dojo.byId("tagger5"));
+	new lconn.core.widget.Tagger({
+		tags: ["粤粵", "b", "c"],
+		editable: true
+	}, dojo.byId("tagger6"));
+	new lconn.core.widget.Tagger({
+		tags: ["لعربي", "b", "c"],
+		editable: true
+	}, dojo.byId("tagger7"));
+});
+</script>
+</div>
+</div>
+</body>
+</html>

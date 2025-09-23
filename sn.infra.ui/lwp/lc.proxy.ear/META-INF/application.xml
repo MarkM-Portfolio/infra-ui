@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2006, 2013                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<application id="lc.proxy.ear" version="5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_5.xsd">
+    <display-name>ConnectionsProxy</display-name>
+	<!-- Shindig must go first -->
+<!--    <module id="Module_1289165621265"> -->
+<!--    	<web> -->
+<!--    		<web-uri>connections.web.resources.war</web-uri> -->
+<!--    		<context-root>/connections/resources</context-root> -->
+<!--    	</web> -->
+<!--    </module> -->
+    
+<!--    <module id="WebModule_1300476687553"> -->
+<!--    	<web> -->
+<!--    		<web-uri>lc-bookmarklet.war</web-uri> -->
+<!--    		<context-root>/connections/bookmarklet</context-root> -->
+<!--    	</web> -->
+<!--    </module> -->
+<!--    <module id="OAuthProviderWar"> -->
+<!--        <web> -->
+<!--            <web-uri>lc.oauth.provider.web.war</web-uri> -->
+<!--            <context-root>/connections/oauth</context-root> -->
+<!--        </web>     -->
+<!--    </module> -->
+<!--     -->
+<!--    <module id="ConnectionsInfoWar"> -->
+<!--    	<web> -->
+<!--    		<web-uri>connections.info.war</web-uri> -->
+<!--    		<context-root>/connections</context-root> -->
+<!--    	</web> -->
+<!--    </module> -->
+    
+	<module id="ConnectionsCommonProxyWar">
+    	<web>
+    		<web-uri>lc.common.proxy.war</web-uri>
+    		<context-root>/connections/proxy</context-root>
+    	</web>
+    </module>
+    
+<!--    <module id="RProxyServiceTransportEjb"> -->
+<!--    	<ejb>tk.rproxysvc.transport.ejb.jar</ejb> -->
+<!--    </module> -->
+
+    <security-role id="SecurityRole_1300745257390">
+    	<description>
+    	</description>
+    	<role-name>person</role-name>
+    </security-role>
+    <security-role id="SecurityRole_1300745257406">
+    	<description>
+    	</description>
+    	<role-name>everyone</role-name>
+    </security-role>  
+<!--    <security-role> -->
+<!--      <description> -->
+<!--      </description> -->
+<!--      <role-name>metrics-report-run</role-name> -->
+<!--    </security-role> -->
+<!--    <security-role> -->
+<!--      <description> -->
+<!--      </description> -->
+<!--      <role-name>global-moderator</role-name> -->
+<!--    </security-role> -->
+<!--    <security-role> -->
+<!--      <description> -->
+<!--      </description> -->
+<!--      <role-name>mail-user</role-name> -->
+<!--    </security-role> -->
+    <security-role>
+    	<description>Used for authentication.  Do not change</description>
+    	<role-name>allAuthenticated</role-name>
+    </security-role>
+<!--    <security-role> -->
+<!--    	<role-name>admin</role-name> -->
+<!--    </security-role> -->
+    <security-role>
+        <role-name>reader</role-name>
+    </security-role>
+</application>

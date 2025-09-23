@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:snx="http://www.ibm.com/xmlns/prod/sn" xmlns="http://www.w3.org/2005/Atom">
+  <id>http://garner.rtp.raleigh.ibm.com/communities/service/atom/community/widgets?pageSize=10&amp;widgetDefId=&amp;communityUuid=a43a81c5-a372-4182-aa0b-9b6062f9720e</id>
+  <title type="text">Test Community 2 Widgets</title>
+  <updated>2015-09-10T14:08:13.632Z</updated>
+  <generator version="5.0.0.0" uri="http://www.ibm.com/xmlns/prod/sn">IBM Connections - Communities</generator>
+  <link href="http://garner.rtp.raleigh.ibm.com/communities/service/atom/community/widgets?pageSize=10&amp;widgetDefId=&amp;communityUuid=a43a81c5-a372-4182-aa0b-9b6062f9720e" rel="self">
+  </link>
+  <entry xmlns:snx="http://www.ibm.com/xmlns/prod/sn">
+    <id>http://garner.rtp.raleigh.ibm.com/communities/service/atom/community/widgets?communityUuid=a43a81c5-a372-4182-aa0b-9b6062f9720e&amp;widgetInstanceId=Wa40586e8c231_4f6a_b38a_3cc267a7791e</id>
+    <title type="text">Files</title>
+    <category term="widget" scheme="http://www.ibm.com/xmlns/prod/sn/type">
+    </category>
+    <link href="http://garner.rtp.raleigh.ibm.com/communities/service/atom/community/widgets?communityUuid=a43a81c5-a372-4182-aa0b-9b6062f9720e&amp;widgetInstanceId=Wa40586e8c231_4f6a_b38a_3cc267a7791e" rel="self">
+    </link>
+    <link href="http://garner.rtp.raleigh.ibm.com/communities/service/atom/community/widgets?communityUuid=a43a81c5-a372-4182-aa0b-9b6062f9720e" rel="edit">
+    </link>
+    <link href="http://garner.rtp.raleigh.ibm.com/communities/service/html/communityoverview?communityUuid=a43a81c5-a372-4182-aa0b-9b6062f9720e#fullpageWidgetId=Wa40586e8c231_4f6a_b38a_3cc267a7791e" rel="alternate">
+    </link>
+    <snx:widgetDefId>Files</snx:widgetDefId>
+    <snx:widgetInstanceId>Wa40586e8c231_4f6a_b38a_3cc267a7791e</snx:widgetInstanceId>
+    <snx:hidden>false</snx:hidden>
+    <snx:location>col2</snx:location>
+    <snx:previousWidgetInstanceId>W3984995aebb0_4750_bec3_87cd6e455af4</snx:previousWidgetInstanceId>
+  </entry>
+</feed>
+<!-- Copyright IBM Corp. 2015 All Rights Reserved. -->

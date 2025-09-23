@@ -1,0 +1,51 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+${script:com.ibm.lconn.layout.standard}
+${script:net.jazz.ajax.xdloader}
+${endhead}
+
+	<div id="pageActionsDiv">Actions: </div>
+	<div id="showMeWhenCommunity" style="display: none;">I'm only visible when communities render</div>
+
+<script>
+	var page = com.ibm.lconn.layout.page;
+	var retriever = {
+		getCommunity: function(community) {
+			var dfd = new dojo.Deferred();
+			setTimeout(function() {
+				community.name = "Test "+community.id;
+				dfd.callback(community);
+			}, 1000);
+			return dfd;
+		}
+	};
+		
+	var pageActions = [];
+	
+	page.data = {
+		user: {id: "asingh", name: "Allie Singh"},
+		community: retriever.getCommunity({id: "123"})
+	};
+	
+	page.when(["user", "community"], function() {
+		dojo.create("div", {innerHTML: "I can render stuff cause i have user and community"}, dojo.body());
+	});
+	
+	page.when("user", function() {
+		dojo.create("div", {innerHTML: "I can render stuff cause i have user"}, dojo.body());
+	});
+	
+	page.when("community", function() {
+		window.pageActionBar = new com.ibm.social.layout.widget.ActionBar({ actions: pageActions }, dojo.byId("pageActionsDiv"));
+		page.ready("!actions");
+	});	
+	
+	page.when(["community", "!actions"], function() {
+		pageActionBar.addAction(new com.ibm.social.layout.Action().mixin({name: "Cool"}));
+	});
+	
+	page.showWhen("community", "showMeWhenCommunity");
+	
+</script>
+
+${end}

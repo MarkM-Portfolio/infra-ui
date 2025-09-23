@@ -1,0 +1,73 @@
+<html>
+<head>
+<script type="text/javascript" src="/connections/resources/web/lconn.urlwidget/api/UWidget.js"></script>
+<script>
+
+   document.addEventListener("DOMContentLoaded", function(event) {
+      console.debug("testSingleIframeWidget.html: DOMContentLoaded listener ");
+      
+      onClickGetContext();
+      
+      UWidget.addWidgetEventListener("onview", function() {
+         document.getElementById("widgetEventResult").innerHTML = "onview";
+      }, window);
+
+      UWidget.addWidgetEventListener("onedit", function() {
+         document.getElementById("widgetEventResult").innerHTML = "onedit";
+      }, window);
+
+      UWidget.addWidgetEventListener("onfullpage", function() {
+         document.getElementById("widgetEventResult").innerHTML = "onfullpage";
+      }, window);
+   });
+   
+   function onClickGetContext(e) {
+      console.debug("testSingleIframeWidget.html: onClickGetContext ");
+      if (UWidget) {
+         UWidget.getContext(function(value) {
+            console.debug("testSingleIframeWidget.html: callback of UWidget.getContext");
+            document.getElementById("getContextResult").innerHTML = JSON.stringify(value, null, 3);
+         }, UWidget);
+      } 
+      else {
+         console.error("UWidget doesn't exist");
+      }
+   }
+
+   function onClickSetAttribute() {
+      console.debug("testSingleIframeWidget.html: onClickSetAttribute ");
+      if (UWidget) {
+         UWidget.setAttribute("time", Date(), function(value) {
+            console.debug("testSingleIframeWidget.html: callback of UWidget.setAttribute. value= " + value);
+            document.getElementById("testSetAttributeResult").innerHTML = value;
+            
+	         UWidget.getAttribute("time", function(value) {
+	            console.debug("testSingleIframeWidget.html: callback of UWidget.getAttribute. value= " + value);
+               document.getElementById("testGetAttributeResult").innerHTML = value;
+	         }, UWidget);
+            
+         }, UWidget);
+      } 
+      else {
+         console.error("UWidget doesn't exist");
+      }
+   }
+
+</script>
+</head>
+<body>
+
+<div id="uWidgetIframe" style="display:block">
+</div>
+
+<button id='testSetAttribute' onclick="onClickSetAttribute();">Set Attribute</button>
+<div><pre id="testSetAttributeResult"/></div>
+<div><pre id="testGetAttributeResult"/></div>
+
+<button id='getContext' onclick="onClickGetContext();">Get Context</button>
+<div><pre id="getContextResult"/></div>
+
+<div><pre id="widgetEventResult"/></div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<html><body><p>${head}
+${script:dojo.parser}
+${script:com.ibm.lconn.gadget.container.Handle}
+${script:com.ibm.lconn.gadget.container._Accessor}
+${script:com.ibm.lconn.gadget.container._Container}
+${script:com.ibm.lconn.gadget.container.iContainer2}
+${script:com.ibm.lconn.gadget.support.Site}
+${script:com.ibm.lconn.gadget.support.WidgetAdapter}
+${script:com.ibm.lconn.gadget.support.WidgetSite}
+${script:com.ibm.lconn.gadget.support.Preloader}
+
+<!-- Redirect to &render=test -->
+<script type="text/javascript">	
+	var loc = location + '';
+	if (loc.indexOf('render=test') < 0) {
+		if (loc.indexOf('?') > 0) {
+			location = loc + "&render=test";
+		}
+		else {
+			location = loc + "?render=test";
+		}
+	}
+</script>
+
+<script type="text/javascript">	
+	
+	dojo.require('lconn.core.config.services');
+	dojo.require("com.ibm.oneui.util.proxy");
+	dojo.require("lconn.core.url");
+	
+	var web_resources_url = lconn.core.config.services['webresources'].url;
+	var page_url_dotdot_dotdot = lconn.core.url.parse(window.location.toString(), '../..').toString();
+	page_url_dotdot_dotdot = page_url_dotdot_dotdot.substring(0, page_url_dotdot_dotdot.length - 1);
+	
+</script>
+
+
+<style>
+#attach_point {
+  width: 500px;
+  height: 80px;
+}
+#ee_attach_point {
+  width: 600px;
+  height: 80px;
+}
+#attach_point2 {
+  width: 500px;
+  height: 100px;
+}
+
+</style>
+
+${endhead}
+
+</p><h1>Test gadget site support classes</h1>
+
+<!-- BODY -->
+<div>
+	<!-- Do preload -->
+	
+	<!-- NOTE: both open/close tag needed; don't know why -->
+	<div data-dojo-type="ic-gadget/support/Preloader" data-dojo-props="&quot;widgetspecs&quot;:&quot;[{definitionUrl: '../container/iwidgets/helloworld/helloworld.xml', componentType: 'iWidget'}, \n\t\t \t\t\t   {definitionUrl: '../container/gadgets/helloWorldGadget.xml', componentType: 'gadget'}]&quot;">
+	</div>
+	
+	<!-- =============================================== -->
+	<hr>
+	<h2>Hello iWidget component</h2>
+	<hr>
+	
+	<br>
+	<br>
+	
+	<div data-dojo-type="ic-gadget/support/WidgetSite" data-dojo-props="&quot;widgetspec&quot;:&quot;{definitionUrl: '../container/iwidgets/helloworld/helloworld.xml', componentType: 'iWidget'}&quot;">
+		[Hello iWidget: REPLACE]	 
+	</div>
+	
+	foo
+	
+	<!-- =============================================== -->
+	<hr>
+	<h2>Gadget component</h2>
+	<hr>
+	
+	<br>
+	<br>
+	
+	<div data-dojo-type="ic-gadget/support/WidgetSite" data-dojo-props="&quot;widgetspec&quot;:&quot;{definitionUrl: '../container/gadgets/helloWorldGadget.xml', componentType: 'gadget'}&quot;">
+		[Hello Gadget: REPLACE]	 
+	</div>
+</div>
+
+<!-- Parse dijits -->
+<script type="text/javascript">
+	dojo.parser.parse();
+</script>
+${end}
+</body></html>

@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "мк",
+      "Play": "Пушти",
+      "Pause": "Копче Pause",
+      "Current Time": "Тековно време",
+      "Duration Time": "Време траење",
+      "Remaining Time": "Преостанато време",
+      "Stream Type": "Тип на постојан тек",
+      "LIVE": "ВО ЖИВО",
+      "Loaded": "Вчитано",
+      "Progress": "Напредок",
+      "Fullscreen": "Цел екран",
+      "Non-Fullscreen": "Не на цел екран",
+      "Mute": "Без звук",
+      "Unmute": "Вклучи звук",
+      "Unmuted": "Со вклучен звук",
+      "Playback Rate": "Стапка на повторно пуштање",
+      "Subtitles": "Поднаслови",
+      "subtitles off": "исклучени поднаслови",
+      "Captions": "Објаснувања",
+      "captions off": "исклучени објаснувања",
+      "Chapters": "Поглавја",
+      "Volume": "Гласност",
+      "You aborted the video playback.": "Го прекинавте повторното пуштање на видео",
+      "A network error caused the video download to fail part-way.": "Грешка во мрежата предизвика видеото нецелосно да се преземе.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "Видеото не може да се вчита, или затоа што не успеаа серверот или мрежата или затоа што форматот не е поддржан.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "Повторното пуштање на видеото е прекинато поради проблем со оштетување или затоа што видеото користи карактеристики што вашиот прегледувач не ги поддржува.",
+      "No compatible source was found for this video.": "За ова видео не е пронајден компактибилен извор."
+});
+

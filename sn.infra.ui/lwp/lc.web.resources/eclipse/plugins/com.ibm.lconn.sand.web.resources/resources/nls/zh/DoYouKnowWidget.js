@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "邀请建立连接",
+	NDYK1:"没有更多可推荐的人员",
+	LOADING: "正在装入",
+	DYK_TITLE: "您可能认识的人",
+	INVITE_TITLE: "发送连接邀请",
+	SEND_ACTION: "发送",
+	CANCEL_ACTION: "取消",
+	PREV: "上一个",
+	NEXT: "下一个",
+	bpct: "已对您的博客发表了评论",
+	bpcc: "您已对同一博客发表了评论",
+	lpfr: "是您认识的某人的同事",
+	lm1: "您是此人的经理",
+	le1: "此人是您的经理",
+	sdm: "你们的经理是同一人",
+	pt: "此人对您加了标签",
+	pbt: "您对此人加了标签",
+	acm: "你们共享活动",
+	wikiCoContribution: "你们编辑了同一个 wiki",
+	bpcb: "您在他们的博客上发表了评论",
+	lpcfr: "你们有一些共同的同事",
+	ccmf: "你们在同一个社区中",
+	ccms: "你们在同一个社区中",
+	filesharing: "你们共享某些文件",
+	forumthreaddiscussion: "你们共享某个论坛帖子",
+	ctb: "你们共享某个书签",
+	tgw: "你们具有匹配的标签",
+	tcu: "你们使用了相同的标签",
+	pctg: "你们都对同一人加了标签",
+	tgb: "同一人对你们都加了标签"
+})

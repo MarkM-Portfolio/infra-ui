@@ -1,0 +1,366 @@
+/* *************************************************************** */
+/*                                                                 */
+/* HCL Confidential                                                */
+/*                                                                 */
+/* OCO Source Materials                                            */
+/*                                                                 */
+/* Copyright HCL Technologies Limited 2008, 2019                   */
+/*                                                                 */
+/* The source code for this program is not published or otherwise  */
+/* divested of its trade secrets, irrespective of what has been    */
+/* deposited with the U.S. Copyright Office.                       */
+/*                                                                 */
+/* *************************************************************** */
+
+// NLS_CHARSET=UTF-8
+({
+   'rs_close' : "Chiudi",
+   'rs_loading' : "Caricamento in corso...",
+   'rs_at' : "alle",
+
+   'rs_searchDirectory' : "La persona non è riportata? Utilizzare la ricerca completa...",
+   'rs_searchGroupDirectory' : "Gruppo non elencato? Utilizzare la ricerca completa...",
+   'rs_searchPersonAndGroupDirectory' : "Persona o gruppo non elencato? Utilizzare la ricerca completa...",
+   'rs_searchCommunityDirectory' : "Comunità non elencata? Utilizzare la ricerca completa...",
+
+   'rs_shadowText_searchDirectory' : "Inserire del testo per trovare una persona",
+   'rs_shadowText_searchGroupDirectory' : "Inserire del testo per trovare un gruppo",
+   'rs_shadowText_searchPersonAndGroupDirectory' : "Inserire del testo per trovare una persona o un gruppo",
+   'rs_shadowText_searchCommunityDirectory' : "Inserire del testo per trovare una comunità",
+
+   'rs_listItem' : "Elemento di elenco",
+   'rs_noResults' : "Nessun risultato per ${0}'",
+   'rs_today' : "Oggi",
+   'rs_tomorrow' : "Domani",
+   'rs_yesterday' : "Ieri",
+
+   /* Activity List Widget */
+   'rs_activityFeedLink' : "Feed per queste attività",
+   'rs_externalText' : "Questa attività può avere membri esterni all'organizzazione.",
+   'rs_moveActivitySuccess' : '\"${activityTitle}\" è stato correttamente spostato nella comunità secondaria \"${destCommName}\".',
+   // copy 'rs_moreInfo' and 'rs_hideInfo' from activity's strings.js
+   'rs_moreInfo' : 'Mostra ulteriori informazioni su questa attività',
+   'rs_hideInfo' : 'Nascondi informazioni aggiuntive',
+   'rs_more' : "Più",
+   'rs_hide' : "Nascondi",
+   'rs_edit' : "Modifica",
+   'rs_restore' : "Ripristina",
+   'rs_deleteEntry' : "Elimina",
+   'rs_prioritize' : "Assegna priorità",
+   'rs_markComplete' : "Contrassegna come completa",
+   'rs_markIncomplete' : "Ripristina",
+   'rs_linkMore' : "... [ulteriori informazioni]",
+   'rs_linkLess' : "... [meno]",
+   'rs_actUpdatedByDate' : "Aggiornato da ${0} ${1}",// Updated by (author name) (date)
+   'rs_actUpdatedBy' : "Aggiornato da ${0}",// Updated by (author name)
+   'rs_actDue' : "Scadenza ${0}",// Due (date)
+   'rs_actTags' : "Tag: ",
+   'rs_actTagsDelim' : ", ",
+   'rs_startFromTemplate' : "Avvia Attività da questo modello",
+   'rs_favoriteTemplate' : "Contrassegna come modello preferito",
+   'rs_normalTemplate' : "Contrassegna come modello normale",
+   'rs_tunedOutPri' : "Escluso",
+   'rs_pagepos' : "${0} - ${1} di ${2}", // pagination - e.g. 1 - 10 of 100
+   'rs_navPrevLabel' : "Precedente",
+   'rs_navNextLabel' : "Successivo",
+   'rs_noActivities' : "Non sono presenti attività avviate per questa comunità.",
+   'rs_feedError' : "Caricamento feed non riuscito.",
+   'rs_highPri' : "Priorità alta",
+   'rs_medPri' : "Priorità media",
+   'rs_normalPri' : "Priorità normale (predefinita)",
+   'rs_tuneOut' : "Contrassegna come terminata",
+   'rs_startActivity' : "Avvia attività",
+   'rs_startFirstActivity' : "Crea la prima attività",
+   'rs_navNextLabel' : "Successivo",
+   'rs_viewAll' : "Visualizza tutto",
+   'rs_activityWidgetTitle' : "Attività",
+   'rs_activityWidgetBriefDescription' : "Tenere traccia degli obiettivi della comunità.  Creare To-Do e condividere risorse.",
+   'rs_activityWidgetDescription' : "Le attività della comunità possono essere utilizzate per collaborare e tenere traccia dell'avanzamento su iniziative o progetti della comunità.",
+   'rs_completedActivityLink' : "Mostra attività completate",
+   'rs_activitiesUnavailable' : "Il servizio attività non è disponibile.",
+   'rs_errorPersists' : "Se il problema persiste, contattare l'amministratore del sistema.",
+   'rs_shared' : "Condiviso",
+   'rs_removeActFromComm' : "Rimuovi dalla comunità",
+   'rs_externalLabel' : "Esterna",
+
+   // for ActivityForm
+   'rs_templateOptions' : "Opzioni modello",
+   'rs_template' : "Modello",
+   'rs_tagsLabel' : "Tag",
+   'rs_peopleLabel' : "Persone",
+   'rs_aboutThisTemplate' : "Informazioni su questo modello",
+   'rs_activity' : "Attività",
+   'rs_copyOf' : "Copia di ${0}",// copy of (activity name)
+   'rs_activityFormGoal' : "Obiettivo attività",
+   'rs_noTemplate' : "Nessuno",
+   'rs_copyActivityMembers' : "Utilizzare i membri dall'attività",
+   'rs_copyTemplateMembers' : "Utilizzare i membri dal modello",
+
+   /* Forum Widget */
+   'rs_noTopics' : "Non sono ancora presenti argomenti per questa comunità.",
+   'rs_noTopicsLoggedIn' : "Formulare una domanda, creare una serie di idee o semplicemente condividere le proprie idee.",
+   'rs_postedBy' : "Ultimo post di",
+   'rs_topics' : "argomenti",
+   'rs_noTopicsShort' : "Nessun argomento",
+   'rs_topic' : "argomento",
+   'rs_replies' : "risposte",
+   'rs_noReplies' : "Nessuna risposta",
+   'rs_reply' : "risposta",
+   'rs_startTopic' : "Avvia un argomento",
+   'rs_startFirstTopic' : "Inizia con il primo argomento",
+   'rs_ok' : "OK",
+   'rs_locked' : "[Bloccato]",
+   'rs_manageForumSetting' : "Impostazioni di Gestione forum",
+   'rs_forumSettingCommunityOverviewPage' : "Pagina Panoramica sulla comunità:",
+   'rs_defaultForumList' : "Mostra elenco di forum per impostazione predefinita",
+   'rs_defaultTopicList' : "Mostra elenco di argomenti per impostazione predefinita",
+   'rs_forumSettingApplicationView' : "Vista predefinita dell'applicazione forum:",
+   'rs_forumSettingNote' : "Nota: gli argomenti vengono visualizzati automaticamente se esiste un solo forum.",
+   'rs_forumSettingSubmit' : "Inoltra",
+   'rs_forumSettingSave' : "Salva",
+   'rs_forumSettingSaveAndClose' : "Salva e chiudi",
+   'rs_forumSettingConfirm' : "Le modifiche per i forum sono state salvate.",
+   'rs_forumSettingError' : "Si è verificato un errore. Contattare l'amministratore.",
+   'rs_formSettingHideMessage' : "Nascondi questo messaggio",
+   'rs_forumSettingCancel' : "Annulla",
+   'rs_forumAnsweredQuestion' : "Domanda con risposta",
+   'rs_forumUnAnsweredQuestion' : "Domanda senza risposta",
+   'rs_forumSortBy' : "Ordina per:",
+   'rs_forumSortByDate' : "Data",
+   'rs_forumSortByReplies' : "Risposte",
+   'rs_forumSortByTopic' : "Argomenti",
+   'rs_forumSortByTopicsAndReplies' : "Argomenti e risposte",
+   'rs_sortByReplies' : "Ordina in base alle risposte",
+   'rs_sortbyTopicsAndReplies' : "Ordina in base agli argomenti e alle risposte",
+   'rs_forumOpenQuestions' : "Domande aperte",
+   'rs_feedOpenQuestions' : "Feed per queste domande aperte",
+   'rs_feedAnsweredQuestions' : "Feed per queste domande con risposta",
+   'rs_forumMessages' : "${0} messaggi",
+   'rs_forumLastAddedPost' : "Ultimo post di ${0}",
+   'rs_forumTopics' : "${0} argomenti",
+   /* End discussion forum */
+
+   /* Editor plugins -- some for a possible one we haven't implemented yet */
+   'rs_createPersonLink' : "Crea un collegamento persona",
+   'rs_quote' : "Citazione",
+   'rs_labelColon' : "Etichetta: ",
+   'rs_personColon' : "Persona: ",
+   'rs_personLink' : "Collegamento Persona",
+   'rs_replace' : "Sostituisci",
+   'rs_inactivePerson' : "${0}(inattivo)", // person's name (inactive)
+   'rs_PersonPicture' : "Immagine di ${0}", // person name's picture
+
+   /*Visitor mode -- external user name decoration use cases */
+   'rs_PersonExternalLabel' : "Utente esterno", // A label for the visitor model use cases.
+   'rs_PersonExternal' : "${0} (utente esterno)", //'{0}' is the person's name. This will be used for the user profile name and profile photo tooltip
+   'rs_PersonPictureExternal' : "Foto di ${0} (utente esterno)", // Alt text for the external user's profile photo
+   'rs_personExternalDesc' : "Questo utente ha accesso a file e comunità che sono condivisi esternamente.",
+   /* End editor plugins */
+
+   /* Notification Form */
+   'rs_notifyOthers' : "Invia notifica ad altri utenti",
+   'rs_messageColon' : "Messaggio: ",
+   'rs_notifyColon' : "Notifica: ",
+   'rs_notificationConfirm' : "Il messaggio di notifica è stato inviato correttamente. ",
+   'rs_notificationFail' : "Il messaggio di notifica non è stato inviato. Riprovare o contattare il proprio amministratore di sistema se il problema persiste.",
+   'rs_pickCommunity' : "Seleziona dall'elenco comunità",
+   'rs_typeName' : "Immettere un nome",
+   'rs_typeToFilter' : "Inserire del testo per filtrare questo elenco",
+   /* End Notification Form */
+
+   /* FilteringCheckbox */
+   'rs_filterListPrompt' : "Inserire del testo per filtrare questo elenco",
+   'rs_filterGroupLabel' : "Seleziona gruppo",
+   'rs_noResults' : "Nessun risultato trovato",
+   // ${0} will be replaced with a number
+   'rs_numResults' : "Visualizzazione di ${0} risultati di ${1}",
+
+   /* PeopleFilterList */
+   'rs_removeFilter' : "Rimuovi",
+
+   /* Language Selector */
+   'rs_browser_setting' : "Impostazione browser",
+   'rs_customLangaugeLinkLabel' : "Lingua personalizzata",
+
+   /* Paging controls */
+   // 0 and 1 are page numbers
+   'rs_jumpPage' : "Passa alla pagina ${0} di ${1}",
+   "rs_jumpPageLabel" : "Passa a pagina",
+   'rs_pageNumLabel' : "Numero di pagina",
+   'rs_pageLabel' : "Pagina:",
+
+   /* Common Tags Widget */
+   'rs_tagCloudNavigationLabel' : 'Tag',
+   'rs_tagCloudToggleHint' : "Fare clic per nascondere o mostrare",
+   'rs_tagCloudHelpAlt' : "Ottenere aiuto con i tag",
+   'rs_tagCloudNoTags' : "Ancora nessun tag",
+   'rs_tagCloudNoRecentTags' : "Nessun tag recente",
+   'rs_tagCloudNoTagsProfiles' : "Ricerca la directory. I tag associati ai profili restituiti dalla ricerca verranno visualizzati qui.",
+   'rs_tagLoadingTags' : "Caricamento del contenuto in corso",
+   'rs_tagCloudSelectedTags' : "Tag selezionate",
+   'rs_tagCloudSeachDesc' : "Trova un tag",
+   'rs_tagCloudSeach' : "Ricerca",
+   'rs_tagCloudRelatedTags' : "Tag correlati",
+   'rs_tagCloudRelatedTagsDescription' : "Aggiungi un tag correlato per restringere ulteriormente la ricerca",
+   'rs_tagCloudError' : 'Si è verificato un errore',
+
+   'rs_viewAsCloud' : "Cloud",
+   'rs_viewAsCloudTitle' : "Elenca tag come cloud di tag",
+   'rs_viewAsCloudDescription' : "Visualizzazione dei tag come cloud di tag",
+   'rs_viewAsList' : "Elenco",
+   'rs_viewAsListTitle' : "Elenca tag in modo sequenziale",
+   'rs_viewAsListDescription' : "Elenca tag come elenco sequenziale di tag",
+   'rs_tagCloudViewAll' : "Sfoglia",
+   'rs_tagCloudViewAllTitle' : "Sfoglia tutti i tag",
+
+   'rs_normalTags' : "Tag attivi",
+
+   'rs_removeTag' : "Rimuovi il tag dai tag del filtro selezionati",
+   'rs_clearAll' : "Cancella tutto",
+   'rs_searchInputDefault' : "Inserire del testo per trovare un tag",
+   'rs_searchInputTagSelected' : "Immettere un altro tag",
+   'rs_relatedTagTitle' : "Mostra i risultati della ricerca del tag ${0}, conteggio ${1}",
+   'rs_removeTagTitle' : "Rimuovere il tag ${0} dai tag del filtro selezionati",
+   'rs_addTagTitle' : "Filtra per tag ${0} con conteggio ${1}",
+
+   'rs_tagDialogCloseTile' : "Chiudi",
+   'rs_tagDialogTitle' : "Tutti i tag",
+   'rs_tagDialogPageInfo' : "${0} - ${1} di ${2} tag",
+
+   /* Group Selection (Picker) Widget */
+   'rs_group_browse_groups' : "Sfoglia gruppi",
+   'rs_group_browse_groups_dialog_title' : "Sfoglia gruppi",
+   'rs_group_browse_find_groups' : "Trova gruppi",
+   'rs_group_browse_add_button' : "Aggiungi",
+   'rs_group_browse_cancel_button' : "Annulla",
+   'rs_group_browse_enter_string' : "Inserire del testo per trovare i gruppi",
+   'rs_group_browse_group_typeahead_label' : "Immettere un nome gruppo:",
+   'rs_group_browse_group_name' : "Nome gruppo:",
+   'rs_group_browse_results_label' : "Selezionare un gruppo corrispondente:",
+   'rs_group_browse_parent_group_label' : "Ti trovi in:",
+   'rs_group_browse_next_page' : "Pagina successiva",
+   'rs_group_browse_previous' : "Precedente",
+   'rs_group_browse_next' : "Successivo",
+   'rs_group_browse_paging' : "Impaginazione",
+   'rs_group_browse_previous_page' : "Pagina precedente",
+   'rs_group_browse_group_selected' : "Gruppo selezionato:",
+   'rs_group_browse_group_no_groups' : "Questo gruppo non contiene alcun gruppo",
+   'rs_group_browse_page_info' : "${0} - ${1} di ${2}",
+   'rs_group_browse_page_info_alt' : "Gruppi corrispondenti ${0} mediante ${1} di ${2}",
+   'rs_group_browse_remove_selection' : 'Rimuovere selezione gruppi nidificati: ${0}',
+   'rs_group_browse_paging' : "Impaginazione",
+   'rs_member_groups' : "Gruppi",
+   'rs_member_members' : "Membri",
+   'rs_member_no_results' : "Nessun risultato trovato",
+   'rs_member_remove_group' : "Rimuovi ${0}",
+   'rs_member_add_to_community' : "Fare clic per aggiungere un membro",
+   'rs_member_remove_name' : "Fare clic per rimuovere un membro",
+   'rs_group_add_to_community' : "Fare clic per aggiungere un gruppo",
+   'rs_group_remove_name' : "Fare clic per rimuovere un gruppo",
+   'rs_group_name' : "Nome gruppo",
+   'rs_group_role' : "Ruolo gruppo",
+
+   'rs_warning' : "Avvertenza",
+   'rs_a11y_warning' : "Avviso:",
+
+   'rs_messagebox_close_btn_title' : "Chiudi",
+   'rs_messagebox_close_btn_alt' : "Chiudi",
+   'rs_messagebox_error_icon_alt' : "Errore",
+   'rs_messagebox_error_a11y_label' : "Errore:",
+   'rs_messagebox_warning_icon_alt' : "Avviso",
+   'rs_messagebox_warning_a11y_label' : "Avviso:",
+   'rs_messagebox_info_icon_alt' : "Informazioni",
+   'rs_messagebox_info_a11y_label' : "Informazioni:",
+   'rs_messagebox_success_icon_alt' : "Riuscito",
+   'rs_messagebox_success_a11y_label' : "Riuscito:",
+
+   /* Document Picker CK Plugin */
+   'rs_docpicker_title' : "Inserisci collegamento a File",
+   'rs_docpicker_label' : "Collegamento a Connections File",
+   // '{0}' is a filename
+   'rs_docpicker_download_title' : "Scarica ${0}",
+   'rs_docpicker_viewdetails_text' : "Visualizza dettagli",
+   // '{0}' is a filename
+   'rs_docpicker_viewdetails_title' : "Visualizza dettagli di ${0}",
+
+   /* AttachedFileList widget */
+   'rs_attachedfile_remove_alt' : "Rimuovi",
+   'rs_attachedfile_filename' : "Immagine ${0}",
+
+   'rs_feedreader_warning' : "Avvertenza: questo collegamento serve ai lettori di feed e potrebbe essere visualizzato in maniera non corretta nel browser. Fare clic su OK per continuare o su Annulla per tornare alla pagina.",
+
+   'rs_search' : "Ricerca",
+   'rs_all_connections' : "Tutte le connessioni",
+   'rs_advanced' : "Avanzate",
+   'rs_select_scope' : "Selezionare l'ambito di ricerca",
+
+   'rs_icfixlayout' : {
+      button_label : "Riformatta",
+      dialog_title : "Riformatta contenuto",
+      warning : "Avvertenza",
+      reformat_save : "Riformatta e salva",
+      save_as_is : "Salva come si trova",
+      cancel : "Annulla",
+      warn_layout : "Il contenuto supera la larghezza massima di visualizzazione.  Riformattare automaticamente in modo che rientri nello spazio disponibile?",
+      remember_decision : "Ricorda selezione"
+   },
+
+   //The following error messages are used by icdocpicker when private files are shared with a Community.
+   'rs_sharefile_constraint_violation' : "Si è verificato un errore in fase di condivisione dei file selezionati.",
+   'rs_sharefile_access_denied' : "Questo file è stato eliminato o non è più condiviso con l'utente.",
+   'rs_sharefile_invalid_request' : "Si è verificato un errore in fase di condivisione dei file selezionati.",
+   'rs_sharefile_sharing_intent_restriction' : "Il file può essere condiviso solo all'interno della propria organizzazione.",
+   'rs_sharefile_error_title' : "Errore",
+
+   /* Strings for the native mobile app banners */
+   'rs_mobileBanner_title' : 'HCL Connections',
+   'rs_mobileBanner_inAppStore' : 'Nell\'App Store',
+   'rs_mobileBanner_inGooglePlay' : 'In Google Play',
+   'rs_mobileBanner_author' : 'HCL Software',
+   'rs_mobileBanner_open' : 'Apri',
+   'rs_mobileBanner_view' : 'Visualizza',
+   'rs_mobileBanner_hide' : 'Nascondi',
+
+   'rs_empty_column_placeholder' : 'Trascinare qui le app.',
+   'rs_widget_loading_error_title' : 'Impossibile visualizzare il widget',
+   'rs_widget_loading_error_message' : 'Riprovare o contattare il proprio amministratore di sistema se il problema persiste.',
+   'rs_widgets_loading_error_title' : 'Impossibile visualizzare i widget in questa comunità',
+   'rs_widget_misplacement_warning' : 'Questa app non è adatta a questa colonna. Un proprietario della comunità può spostarla in un\'altra colonna o rimuoverla dalla pagina.',
+
+   'rs_widget_title_change_fail_message' : {
+      title_too_long : 'Il titolo immesso è troppo lungo.',
+      empty_new_title : 'Il titolo immesso non può essere vuoto.',
+      default_message : 'Impossibile modificare il titolo per questa app ${0}.'
+   },
+
+   /* Strings for change title dialog */
+   'rs_widget_title_change_label' : 'Titolo:  ',
+   'rs_widget_title_change_direction' : 'Modificare il titolo per questa app ${0}.',
+   'rs_widget_title_change_title' : 'Modifica titolo',
+
+   /* Strings for Visitor Model Invite dialog */
+	'rs_vmmainContentTitle' : "Invita o aggiungi membri",
+	'rs_vmmainContentDesc' : "Invitare i membri in modo da fornire loro l'opportunità di unirsi alla comunità. Aggiungere i membri in modo da includerli automaticamente.",
+	'rs_vmtypeAheadLabel' : "Nome o email: ",
+	'rs_vmgroupTypeAheadLabel' : "Nome: ",
+	'rs_vmtypeAheadRoleLabel' : " come ",
+	'rs_vmgroupTypeAheadRoleLabel' : " come membri ",
+	'rs_vmtaNoResults' : "Nessun risultato trovato.",
+	'rs_vmtaHeader' : "intestazione",
+	'rs_vmaddUser' : "Aggiungi",
+	'rs_vmradioSectionTitle' : "Opzioni membro:",
+	'rs_vmradioOne' : "Invia inviti ad unirsi alla comunità",
+	'rs_vmradioTwo' : "Aggiungi automaticamente gli utenti alla comunità",
+	'rs_vmtwistyA' : "Aggiungi un messaggio facoltativo",
+	'rs_vmtwistyB' : "Rimuovi testo aggiuntivo",
+	'rs_vmmessage' : "Messaggio",
+	'rs_vmtextAreaStartText' : "Scrivi qualcosa...",
+	'rs_vmcheckboxLabel' : "Inviami una copia",
+	'rs_vmsave' : "Salva",
+	'rs_vminvite' : "Invita",
+	'rs_vmcancel' : "Annulla",
+	'rs_userContentTitle' : "Immetti informazioni",
+	'rs_vmaddUser' : "Crea utente",
+	'rs_vmback'	 : "Indietro",
+	'rs_vmvisitor'	 : "Visitatore"
+})

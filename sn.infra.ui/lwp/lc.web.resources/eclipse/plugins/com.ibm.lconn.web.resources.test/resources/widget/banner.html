@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>IBM Connections - Banner widget</title>
+        <style type="text/css">
+            .lotusui30_body .lotusMain,
+            .lotusui30_layout .lotusMain .lotusContent { min-height: 100px; }
+        </style>
+${endhead}
+    <div class="lotusFrame lotusui30_layout">
+        <div role="region" aria-label="Select page width">
+            <a onclick="dojo.query('.lotusContent')[0].style.width = '1000px'; return false;" href="javascript:;">Page width 1000px</a> |
+            <a onclick="dojo.query('.lotusContent')[0].style.width = '800px'; return false;" href="javascript:;">Page width 800px</a> |
+            <a onclick="dojo.query('.lotusContent')[0].style.width = '600px'; return false;" href="javascript:;">Page width 600px</a> |
+            <a onclick="dojo.query('.lotusContent')[0].style.width = '400px'; return false;" href="javascript:;">Page width 400px</a>
+        </div>
+        <div id="banner1" dojoType="lconn.core.widget.Banner" data-dojo-props="megaMenuMap:{profiles:'megamenu.html',communities:'megamenu.html',apps:'megamenu.html'}"></div>
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <h3>Toggle menus</h3>
+                <div>
+                    <button onclick="toggle('banner1', 'homepage')">Homepage</button>
+                    <button onclick="toggle('banner1', 'profiles')">Profiles</button>
+                    <button onclick="toggle('banner1', 'communities')">Communities</button>
+                    <button onclick="toggle('banner1', 'apps')">Apps</button>
+                    <button onclick="toggle('banner1', 'share')">Share</button>
+                    <button onclick="toggle('banner1', 'mail')">Mail</button>
+                    <button onclick="toggle('banner1', 'calendar')">Calendar</button>
+                    <button onclick="toggle('banner1', 'help')">Help</button>
+                </div>
+            </div>
+        </div>
+        <div id="banner2"></div>
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <h3>Enabled services</h3>
+                <div id="banner2_controls" onclick="enable(this, event)">
+                    <input class="lotusCheckbox" type="checkbox" id="banner2_homepage" /><label class="lotusCheckbox" for="banner2_homepage">Homepage</label> 
+                    <input class="lotusCheckbox" type="checkbox" id="banner2_profiles" /><label class="lotusCheckbox" for="banner2_profiles">Profiles</label> 
+                    <input class="lotusCheckbox" type="checkbox" id="banner2_communities" /><label class="lotusCheckbox" for="banner2_communities">Communities</label> 
+                    <input class="lotusCheckbox" type="checkbox" id="banner2_connectionsmail" /><label class="lotusCheckbox" for="banner2_connectionsmail">Connections Mail</label> 
+                    <input class="lotusCheckbox" type="checkbox" id="banner2_help" /><label class="lotusCheckbox" for="banner2_help">Help</label> 
+                </div>
+            </div>
+        </div>
+        <div id="banner3"></div>
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <h3>Current application</h3>
+                <div id="banner3_controls" onclick="choose(this, event)">
+                    <input class="lotusCheckbox" type="radio" id="banner3_homepage" name="appName" value="homepage" /><label class="lotusCheckbox" for="banner3_homepage">Homepage</label> 
+                    <input class="lotusCheckbox" type="radio" id="banner3_profiles" name="appName" value="profiles" /><label class="lotusCheckbox" for="banner3_profiles">Profiles</label> 
+                    <input class="lotusCheckbox" type="radio" id="banner3_communities" name="appName" value="communities" /><label class="lotusCheckbox" for="banner3_communities">Communities</label> 
+                    <input class="lotusCheckbox" type="radio" id="banner3_wikis" name="appName" value="wikis" /><label class="lotusCheckbox" for="banner3_wikis">Wikis</label> 
+                    <input class="lotusCheckbox" type="radio" id="banner3_activities" name="appName" value="activities" /><label class="lotusCheckbox" for="banner3_activities">Activities</label> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+        ibmConfig={serviceName:'homepage'};
+        
+        dojo.addOnLoad(function() {
+            var ck = dojo.query('input[type=checkbox]', dojo.byId('banner2_controls'));
+            dojo.map(ck, function(el) {
+                el.checked = lconn.core.config.services[el.id.substring('banner2_'.length)];
+            });
+            new lconn.core.widget.Banner({}, dojo.byId('banner2'));
+            new lconn.core.widget.Banner({appName: 'homepage'}, dojo.byId('banner3'));
+        });
+        
+        function toggle(jsid, menu) {
+            dojo.toggleClass(dijit.byId(jsid)[menu+'Menu'], 'lotusHidden');
+        }
+        function enable(div, e) {
+            //dojo.stopEvent(e);
+            var _lccs = lconn.core.config.services;
+            dijit.byId('banner2').destroy(true);
+            var ck = dojo.query('input[type=checkbox]', div);
+            dojo.map(ck, function(el) {
+                lconn.core.config.services[el.id.substring('banner2_'.length)] = el.checked;
+            });
+            new lconn.core.widget.Banner({}, dojo.byId('banner2'));
+            lconn.core.config.services = _lccs;
+        }
+        function choose(div, e) {
+            //dojo.stopEvent(e);
+            dijit.byId('banner3').destroy(true);
+            var rd = dojo.query('input[type=radio]', div);
+            var current = dojo.filter(rd, function(el) {
+                return el.checked;
+            })[0];
+            new lconn.core.widget.Banner({appName: current.value}, dojo.byId('banner3'));
+        }
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:dojo.parser}
+    ${script:lconn.core.widget.Banner}
+</body>
+</html>

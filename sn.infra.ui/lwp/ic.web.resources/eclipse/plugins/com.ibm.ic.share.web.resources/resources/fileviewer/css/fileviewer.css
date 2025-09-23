@@ -1,0 +1,3364 @@
+/* Copyright IBM Corp. 2014, 2018  All Rights Reserved.              */
+/* Spec: #242527; */
+.ics-viewer-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: .9;
+  background-color: #16181a;
+  z-index: 998;
+}
+.lotusui_ie8 .ics-viewer-overlay {
+  filter: alpha(opacity = 90);
+}
+.ics-viewer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  color: white;
+}
+body.ics-viewer-open {
+  overflow: hidden;
+}
+.lotusImagesOff .ics-viewer-banner {
+  height: 200px !important;
+}
+.ics-viewer .ics-viewer-banner {
+  background-color: #16181a;
+  color: #fff;
+  height: 50px;
+  overflow: hidden;
+  margin-right: 0;
+}
+.ics-viewer.ics-viewer-details-expanded .ics-viewer-banner {
+  margin-right: 285px;
+  position: relative;
+}
+.fileviewer-panels-textnav .ics-viewer.ics-viewer-details-expanded .ics-viewer-banner {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.ics-viewer.ics-viewer-details-expanded.rtl .ics-viewer-banner {
+  margin-right: 0;
+  margin-left: 285px;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-icon {
+  float: left;
+  margin: 14px 0 16px 27px;
+}
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-icon {
+  float: right;
+  margin: 14px 27px 16px 0;
+}
+.lotusui_ie9 .ics-viewer .ics-viewer-banner .ics-viewer-icon {
+  margin-top: 14px;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-icon.maliciousIcon {
+  margin-left: 10px;
+  margin-top: 1px;
+}
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-icon.maliciousIcon {
+  margin-top: 2px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  margin-left: 0px;
+}
+.lotusui_ie9 .ics-viewer .ics-viewer-banner .ics-viewer-icon.maliciousIcon {
+  margin-top: 2px;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-icon.externalIcon {
+  margin-left: 10px;
+  margin-top: 3px;
+}
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-icon.externalIcon {
+  margin-top: 2px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  margin-left: 0px;
+}
+.lotusui_ie9 .ics-viewer .ics-viewer-banner .ics-viewer-icon.externalIcon {
+  margin-top: 2px;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-icon.myFileSyncIcon {
+  margin-left: 10px;
+  margin-top: 3.5px;
+}
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-icon.myFileSyncIcon {
+  margin-top: 2px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  margin-left: 0px;
+}
+.lotusui_ie9 .ics-viewer .ics-viewer-banner .ics-viewer-icon.myFileSyncIcon {
+  margin-top: 2px;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-title {
+  font-size: 15px;
+  margin: 3px 0;
+  font-weight: 300;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 350px;
+}
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-title {
+  left: 150px;
+  right: 0;
+}
+.lotusImagesOff .ics-viewer .ics-viewer-banner .ics-viewer-title-name-container {
+  max-width: 900px;
+  display: flex;
+}
+.lotusImagesOff .ics-viewer .ics-viewer-banner .ics-viewer-title-name-container > div {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-title-name-container {
+  position: relative;
+  padding-top: 12px;
+  padding-left: 12px;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 600px;
+}
+.rtl.ics-viewer .ics-viewer-banner .ics-viewer-title-name-container {
+  margin-left: 225px;
+}
+.ics-viewer .ics-editBox .ics-viewer-cancel img {
+  background-image: url(../style/images/Cancel.png);
+  /*TODO*/
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  float: left;
+}
+.ics-viewer .ics-editBox .ics-viewer-cancel {
+  margin-left: 6px;
+  color: white;
+}
+.ics-viewer.rtl .ics-editBox .ics-viewer-cancel {
+  float: right;
+  margin-left: 0px;
+  margin-right: 16px;
+}
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-title-name-container {
+  padding-right: 15px;
+}
+.lotusImagesOff .ics-viewer .ics-viewer-banner .ics-viewer-title .ics-viewer-title-name-container a.ics-viewer-title-name {
+  max-width: 500px;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-title .ics-viewer-title-name-container a.ics-viewer-title-name {
+  color: white;
+  text-decoration: none;
+  float: left;
+  max-width: calc(100% - 200px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@-moz-document url-prefix() {
+  .ics-viewer .ics-viewer-banner .ics-viewer-title .ics-viewer-title-name-container a.ics-viewer-title-name {
+    margin-bottom: 1px;
+  }
+}
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-title .ics-viewer-title-name-container a.ics-viewer-title-name {
+  float: right;
+  direction: ltr;
+}
+.lotusui_ie8 .ics-viewer .ics-viewer-banner .ics-viewer-title a {
+  max-width: 200px;
+}
+.ics-viewer .ics-viewer-title-name.preview {
+  cursor: default;
+}
+.ics-viewer .ics-viewer-content {
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  /* transition: all 0.4s ease 0s; */
+  z-index: 100;
+}
+.ics-viewer .ics-viewer-content.videojs-fullScreen {
+  z-index: 151;
+}
+.ics-viewer.ics-viewer-details-expanded .ics-viewer-content {
+  margin-right: 285px;
+}
+.ics-viewer.ics-viewer-details-expanded.rtl .ics-viewer-content {
+  margin-right: 0;
+  margin-left: 285px;
+}
+.ics-viewer .ics-viewer-details {
+  background-color: #FFF;
+  bottom: 0;
+  box-shadow: -5px 0 5px -5px #000000;
+  color: #fff;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  /* transition: width 0.4s ease 0s; */
+  width: 285px;
+  z-index: 150;
+}
+.ics-viewer.ltr .ics-viewer-details {
+  right: 0;
+}
+.ics-viewer.rtl .ics-viewer-details {
+  left: 0;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf {
+  top: 0;
+  display: none;
+}
+.ics-viewer-details-expanded.ics-viewer .ics-viewer-details .ics-viewer-details-shelf {
+  display: block;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf {
+  color: #777677;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12.8px;
+  font-weight: 300;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  padding: 0;
+  position: absolute;
+  right: 0;
+}
+.ics-viewer .ics-viewer-details .ics-shelf.selected {
+  display: block;
+  height: 100%;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0;
+  padding: 14px 27px;
+  line-height: 21px;
+  background-color: #325c80;
+  color: #ffffff;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.tableDiv {
+  display: inline-block;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.moreButtonDisplay {
+  display: inline-flex;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.moreButtonDisplayIE {
+  display: inline-block;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.moreButtonHide {
+  display: none;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.moreButton {
+  margin: 15px;
+  margin-right: 27px;
+  margin-top: 18px;
+  right: 0;
+  position: fixed;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.ics-viewer .ics-viewer-title .ics-viewer-title-name-container div.myDriveButton .dijitButtonNode {
+  border: 0;
+}
+.ics-viewer .ics-viewer-title .ics-viewer-title-name-container div.myDriveButton .dijitDropDownButton {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.moreButton.select {
+  border-bottom: 6px solid #5AAAFA;
+  padding: 0 0 12px;
+  background-position: 100% 10%;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.moreButton .dijitArrowButtonInner {
+  background-image: url(../style/images/dropdown_white_12.png);
+  background-repeat: no-repeat;
+  margin: 0 -2px 0 2px;
+}
+.ics-viewer .ics-viewer-title .ics-viewer-title-name-container div.myDriveButton .dijitArrowButtonInner {
+  background-image: url(../style/images/dropdown_white_12.png);
+  background-repeat: no-repeat;
+  margin: 2px 0 0 8px;
+}
+@-moz-document url-prefix() {
+  .ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.moreButton.select {
+    padding: 0 0 10px;
+  }
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div span.dijitReset.dijitInline.dijitButtonNode {
+  border: none;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div span.dijitReset.dijitInline.dijitButtonText {
+  padding-right: 3px;
+  height: 13px;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3.active-panels {
+  padding: 0;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section {
+  margin: 0 27px;
+  padding: 32px 0 0;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section p {
+  margin: 0;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section-updated {
+  padding: 20px 0 0;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section .ics-info-filesize {
+  text-transform: capitalize;
+}
+.ics-viewer-type-verse .ics-viewer-details .ics-viewer-details-shelf .info-section-updated {
+  display: none;
+}
+.ics-viewer.ics-viewer-type-verse .info-section-detailsLink {
+  display: none;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section-detailsLink {
+  padding: 20px 0 0;
+}
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section a {
+  color: #3e76c0;
+  text-decoration: none;
+}
+.lotusui .ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section a {
+  color: #3e76c0;
+}
+.lotusui .ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section a:hover {
+  color: #05386b;
+  text-decoration: underline;
+}
+.ics-viewer .ics-viewer-details .ics-info {
+  position: relative;
+}
+.ics-viewer .ics-viewer-details .ics-info .ics-info-filename {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ics-viewer .ics-viewer-content {
+  text-align: center;
+}
+.ics-viewer .align-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.ics-viewer .lotusAccess {
+  display: none;
+}
+.ics-viewer .lotusAltText {
+  display: none;
+}
+.ics-viewer .lotusHidden {
+  display: none;
+}
+.ics-viewer .ics-viewer-validation {
+  font-weight: bold;
+  color: #f85050;
+  padding-bottom: 4px;
+}
+.ics-viewer .ics-viewer-validation a {
+  padding-left: 6px;
+}
+.ics-viewer img.maliciousIcon {
+  background-image: url(../style/images/Malicious.png);
+  width: 16px;
+  height: 16px;
+}
+.ics-viewer img.externalIcon {
+  background-image: url(../style/images/External.png);
+  /*TODO*/
+  width: 16px;
+  height: 16px;
+}
+.ics-viewer img.panelFeedIcon {
+  background-image: url(../style/images/Feed_gray_10.png);
+  /*TODO*/
+  width: 10px;
+  height: 10px;
+  margin-right: 4px;
+}
+.ics-viewer img.myFileSyncIcon {
+  background-image: url(../style/images/myFileSync_16.png);
+  /*TODO*/
+  width: 16px;
+  height: 16px;
+}
+.ics-viewer .ics-viewer-title-name-container .ics-editBox input {
+  padding: 6px 10px;
+  margin-top: -6px;
+  margin-left: -11px;
+  background: #272727;
+  border-width: 0;
+  width: 200px;
+  color: white;
+  border: 1px solid black;
+  outline: none;
+  float: left;
+  max-width: calc(100% - 200px);
+}
+.ics-viewer.rtl .ics-viewer-title-name-container .ics-editBox input {
+  float: right;
+}
+.ics-viewer .ics-viewer-title-name-container .ics-editBox.error input {
+  border-color: #FF5050;
+}
+.ics-viewer .ics-viewer-title-name-container .ics-editBox .inlineError {
+  background: #FF5050;
+  color: white;
+  padding: 2px 10px;
+  font-size: 14px;
+  margin-left: 8px;
+  float: left;
+  max-width: calc(100% - 200px);
+  position: absolute;
+  top: 10px;
+}
+.ics-viewer .ics-viewer-inlineList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+.ics-viewer .ics-viewer-inlineList li {
+  border-left: 1px solid #c8d6ec;
+  padding: 0 7px;
+  font-size: 12px;
+  display: inline;
+}
+.dijitRtl .ics-viewer .ics-viewer-inlineList li {
+  border-right: 1px solid #c8d6ec;
+  border-left: none;
+}
+.ics-viewer .ics-viewer-inlineList li.ics-viewer-first {
+  border-left: none;
+  padding-left: 0;
+}
+.dijitRtl .ics-viewer .ics-viewer-inlineList li.ics-viewer-first {
+  border-right: none;
+  padding-right: 0;
+  padding-left: 7px;
+}
+.ics-viewer-open .dijitPopup .dijitMenu {
+  background: white;
+  border-color: #DDDDDD;
+  color: #292929;
+}
+.ics-viewer-open .dijitPopup .dijitMenu .dijitMenuItemHover,
+.ics-viewer-open .dijitPopup .dijitMenu .dijitMenuItemSelected {
+  background: #F1F1F1;
+}
+.ics-viewer .dijitProgressBar.dijitProgressBarEmpty {
+  width: 200px;
+  left: 20px;
+}
+.dijitRtl .ics-viewer .dijitProgressBar.dijitProgressBarEmpty {
+  width: 200px;
+  right: 20px;
+}
+.ics-viewer-version-uploading {
+  margin-top: 20px;
+  position: absolute;
+}
+.ics-viewer-upload-cancel {
+  position: absolute;
+  left: 334px;
+  top: 35px;
+  width: 20px;
+  height: 20px;
+  background-image: url(../style/images/Cancel_gray_16.png);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.dijitRtl .ics-viewer-upload-cancel {
+  right: 334px;
+}
+.lotusImagesOff .ics-viewer-dragbar {
+  border: 1px dotted yellow;
+  margin-top: -100px;
+}
+.ics-viewer-dragbar {
+  cursor: col-resize;
+  height: 100%;
+  position: absolute;
+  width: 15px;
+  z-index: 1711;
+}
+.ics-viewer-dragbar .icon {
+  height: 35px;
+  margin: -44px 2px 0 6px;
+  padding: 2px 0;
+  background-image: url(../style/images/Expand_sidebar_gray.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 50%;
+  width: 11px;
+  /* Help Firefox compute the color of the focus indicator */
+  color: black;
+}
+.ics-viewer-locked-by-you-icon,
+.ics-viewer-locked-by-other-icon {
+  display: none;
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin: 14px 0 16px 27px;
+}
+.ics-viewer.rtl .ics-viewer-locked-by-you-icon,
+.ics-viewer.rtl .ics-viewer-locked-by-other-icon {
+  float: right;
+  margin-right: 27px;
+  margin-left: 0px;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-file-type-icon > * {
+  padding-right: 1px;
+}
+.ics-viewer-narrow.ics-viewer .ics-viewer-banner .ics-viewer-file-type-icon > * {
+  margin-left: 12px;
+}
+.dijitRtl .ics-viewer-narrow.ics-viewer .ics-viewer-banner .ics-viewer-file-type-icon > * {
+  margin-left: inherit;
+  margin-right: 12px;
+}
+.ics-viewer-locked-by-you .ics-viewer-locked-by-you-icon {
+  display: inherit;
+  background-image: url(../style/images/LockedByYou.png);
+}
+.ics-viewer-locked-by-you .ics-viewer-icon {
+  display: none;
+}
+.ics-viewer-locked-by-other .ics-viewer-locked-by-other-icon {
+  display: inherit;
+  background-image: url(../style/images/Locked.png);
+}
+.ics-viewer-locked-by-other .ics-viewer-icon {
+  display: none;
+}
+.ics-message-container {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 10px;
+  z-index: 1709;
+  text-align: left;
+}
+.lotusImagesOff .ics-message-container {
+  top: 15px;
+}
+.dijitRtl .ics-message-container {
+  text-align: right;
+}
+.ics-message-container .ics-viewer-messagebox {
+  display: table;
+  margin: 0 auto;
+}
+.ics-message-container .ics-viewer-messagebox-table {
+  min-width: 250px;
+}
+.ics-viewer-event-interceptor {
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1712;
+  cursor: col-resize;
+}
+.ics-viewer-event-interceptor.ics-viewer-event-interceptor-active {
+  display: inherit;
+}
+.fileviewer-panels-textnav .lotusImagesOff .ics-viewer .ics-viewer-details {
+  margin-top: 50px;
+}
+.fileviewer-panels-textnav .ics-viewer .ics-viewer-details {
+  top: 50px !important;
+}
+.fileviewer-panels-textnav .ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 {
+  border-top: 1px solid #474747;
+  background-color: #16181a !important;
+}
+.ics-viewer-open #lotusBannerNotifications_dropdown {
+  z-index: 800 !important;
+}
+.lotusui30dojo .lconnContentTitleDropdownBody.ics-viewer-dropdown-menu .dijitMenuItem td.dijitMenuItemLabel {
+  min-width: 0;
+}
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar {
+  float: right;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0px;
+  height: 50px;
+}
+.lotusImagesOff ul.ics-viewer-toolbar {
+  margin-top: 20px !important;
+  padding: 3px !important;
+}
+.lotusImagesOff ul.ics-viewer-toolbar li {
+  z-index: 150;
+}
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-toolbar {
+  float: left;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action {
+  float: left;
+  font-size: 12px;
+  color: white;
+  position: relative;
+  top: 6px;
+  margin: 10px 0 0 0;
+  margin-right: 27px;
+}
+.dijitRtl .ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action {
+  margin-right: inherit;
+  margin-left: 27px;
+}
+.ics-viewer-narrow.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action {
+  margin-right: 12px;
+}
+.dijitRtl .ics-viewer-narrow.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action {
+  margin-right: inherit;
+  margin-left: 12px;
+}
+.ics-viewer-narrow.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action.ics-viewer-splitbutton {
+  margin-right: 0;
+}
+.dijitRtl .ics-viewer-narrow.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action.ics-viewer-splitbutton {
+  margin-right: inherit;
+  margin-left: 0;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action.divider {
+  background: #474747;
+  width: 1px;
+  height: 100%;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  top: 0px;
+}
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action {
+  float: right;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action a {
+  color: white;
+  text-decoration: none;
+}
+.ics-viewer .ics-viewer-action {
+  padding: 0;
+  margin-bottom: 15px;
+  font-size: 12.8px;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action .fileViewerIconText {
+  font-size: 12px;
+  line-height: 18px;
+}
+.ics-viewer .viewerPanel {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 9px;
+}
+.ics-viewer .ics-viewer-action .dijitButtonNode {
+  border: 0px;
+}
+.ics-viewer .ics-viewer-action img,
+.ics-viewer .ics-viewer-action.dropdown-menu .dijitIcon {
+  width: 15px;
+  height: 15px;
+  padding: 1px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.ics-viewer .ics-viewer-action.dropdown-menu .dijitToolbar .dijitDropDownButton {
+  padding-left: 0em;
+}
+.ics-viewer .ics-viewer-action.dropdown-menu .dijitToolbar .dijitDropDownButton .dijitButtonContents {
+  padding: 0px;
+}
+.ics-viewer .ics-viewer-action.dropdown-menu .dijitToolbar .dijitDropDownButton .dijitArrowButtonInner {
+  display: none;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-splitmenu .dijitButtonText {
+  margin: 2px;
+}
+.ics-viewer-more-actions[role="menu"] {
+  margin-top: 15px;
+}
+.ics-viewer-action-splitmenu[role="menu"] {
+  margin-top: 3px;
+}
+.ics-viewer .ics-viewer-action.ics-viewer-action-share {
+  margin-right: 0;
+}
+.ics-viewer.rtl .ics-viewer-action.ics-viewer-action-share {
+  margin-left: 0;
+}
+.ics-viewer.rtl .ics-viewer-action.ics-viewer-action-share .actionLink {
+  left: 0;
+}
+.ics-viewer.rtl .ics-viewer-action.ics-viewer-action-share.ics-viewer-action-multiShare .actionLink img {
+  margin-left: 8px;
+  margin-right: 0px;
+  float: right;
+}
+.ics-viewer .ics-viewer-action.ics-viewer-action-share {
+  padding: 0;
+  float: none;
+  position: static;
+  font-size: 12.8px;
+}
+.ics-viewer .ics-viewer-action.ics-viewer-action-share .actionLink {
+  position: absolute;
+  top: 0px;
+  right: 0;
+}
+.ics-viewer .ics-viewer-action.ics-viewer-action-share.ics-viewer-action-multiShare .actionLink {
+  position: static;
+}
+.ics-viewer .ics-viewer-action.ics-viewer-action-share.ics-viewer-action-multiShare .actionLink img {
+  margin-right: 8px;
+}
+.ics-viewer .ics-viewer-action.ics-viewer-action-share.ics-viewer-action-multiShare .actionLink span {
+  top: 8px;
+  color: #292929;
+}
+.ics-viewer .ics-viewer-action.ics-viewer-action-share img {
+  float: left;
+  background-image: url(../style/images/Add.png);
+}
+.ics-viewer .ics-viewer-action.ics-viewer-action-share .ics-editBox .hintText {
+  color: #666666;
+  font-style: italic;
+  padding-left: 10px;
+  height: 30px;
+}
+.ics-viewer .ics-viewer-action.ics-viewer-action-share .ics-editBox .transition {
+  transition: height 0.3s ease 0s;
+}
+.ics-viewer .ics-viewer-action .dropdown-menu-icon {
+  background-image: url(../style/images/More_16.png);
+  position: relative;
+  top: 2px;
+}
+.dj_webkit .ics-viewer .ics-viewer-action.ics-viewer-more-actions .dijitIcon {
+  top: -1px;
+}
+.ics-viewer .ics-viewer-action.ics-viewer-action-splitmenu .dijitButtonNode {
+  height: 16px;
+}
+.ics-viewer .ics-viewer-action.ics-viewer-action-splitmenu .dropdown-menu-icon {
+  background-image: url(../style/images/arrow.png);
+  width: 12px;
+  height: 12px;
+  padding: 0;
+}
+.ics-viewer .ics-viewer-action-download img {
+  background-image: url(../style/images/Download.png);
+  /*TODO*/
+}
+.ics-viewer .ics-viewer-action-close img {
+  background-image: url(../style/images/Close_View.png);
+  /*TODO*/
+}
+.ics-viewer .ics-viewer-action-panel img {
+  background-image: url(../style/images/Open_sidebar_16.png);
+  /*TODO*/
+}
+.dj_webkit .ics-viewer .ics-viewer-action-panel img {
+  position: relative;
+  top: -1px;
+}
+.ics-viewer.ics-viewer-details-expanded .ics-viewer-action-panel img {
+  background-image: url(../style/images/Close_sidebar_16.png);
+  /*TODO*/
+}
+.ics-viewer.rtl .ics-viewer-action-panel img {
+  background-image: url(../style/images/Close_sidebar_16.png);
+  /*TODO*/
+}
+.ics-viewer.ics-viewer-details-expanded.rtl .ics-viewer-action-panel img {
+  background-image: url(../style/images/Open_sidebar_16.png);
+  /*TODO*/
+}
+.ics-viewer .ics-viewer-action-like .unchecked img {
+  background-image: url(../style/images/Like.png);
+  /*TODO*/
+}
+.ics-viewer .ics-viewer-action-like .checked img {
+  background-image: url(../style/images/Liked.png);
+  /*TODO*/
+}
+.ics-viewer .ics-viewer-action-tearoff img {
+  background-image: url(../style/images/TearOff.png);
+}
+.ics-viewer .ics-viewer-action-favorite img {
+  background-image: url(../style/images/Favorite.png);
+  position: relative;
+  top: -1px;
+}
+.ics-viewer .ics-viewer-action-favorite .checked img {
+  background-image: url(../style/images/Favorited.png);
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-view a:hover {
+  text-decoration: underline;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-splitmenu,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-roundtripedit,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-upload,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-login,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-edit,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-templateCreate {
+  top: 0;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-splitmenu .dijitButtonNode,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-roundtripedit a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-upload a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-login a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-edit a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-templateCreate a {
+  background-color: #4178be;
+  padding: 8px 20px;
+  display: inline-block;
+  line-height: 16px;
+  top: -1px;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-splitbutton {
+  margin-right: 0px;
+}
+.dijitRtl .ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-splitbutton {
+  margin-right: inherit;
+  margin-left: 0px;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-splitmenu .dijitButtonNode {
+  margin-left: 1px;
+  padding: 8px 10px;
+}
+.dijitRtl .ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-splitmenu .dijitButtonNode {
+  margin-left: inherit;
+  margin-right: 1px;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-splitmenu .dijitButtonNode,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-roundtripedit a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-view a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-upload a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-login a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-edit a,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-templateCreate a {
+  font-size: 13px;
+  font-weight: 300;
+  position: relative;
+}
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-splitmenu a > img,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-roundtripedit a > img,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-upload a > img,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-login a > img,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-edit a > img,
+.ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action-templateCreate a > img {
+  display: none;
+}
+.ics-viewer.ics-viewer-type-verse .ics-viewer-action-splitmenu,
+.ics-viewer.ics-viewer-type-verse .ics-viewer-action-roundtripedit,
+.ics-viewer.ics-viewer-type-verse .ics-viewer-action-edit,
+.ics-viewer.ics-viewer-type-verse .ics-viewer-action-templateCreate {
+  display: none;
+}
+.roundtripEditDialog.dijitDialog .promptLink a {
+  border: none !important;
+  padding: 0 !important;
+}
+.roundtripEditDialog.dijitDialog .promptLink a :focus {
+  text-decoration: underline !important;
+}
+.roundtripEditDialog.dijitDialog .promptLink span {
+  position: inherit !important;
+}
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+.ics-viewer .ics-viewer-nav {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  margin-top: -24px;
+}
+.ics-viewer .ics-viewer-nav-prev {
+  float: left;
+  left: 25px;
+}
+.ics-viewer.rtl .ics-viewer-nav-prev {
+  left: 75px;
+}
+.ics-viewer .ics-viewer-nav-next {
+  float: right;
+  right: 75px;
+}
+.ics-viewer.rtl .ics-viewer-nav-next {
+  right: 25px;
+}
+.ics-viewer .ics-viewer-nav a {
+  position: absolute;
+  text-decoration: none;
+  color: #BBB;
+}
+.ics-viewer .ics-viewer-nav-disabled a {
+  opacity: .3;
+  cursor: default;
+  display: none;
+}
+.lotusui_ie8 .ics-viewer .ics-viewer-nav-disabled a {
+  visibility: hidden;
+}
+.ics-viewer .ics-viewer-nav .ics-viewer-nav-icon {
+  width: 36px;
+  height: 36px;
+  margin: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(22, 24, 26, 0.8);
+}
+.ics-viewer .ics-viewer-nav-prev .ics-viewer-nav-icon {
+  background-image: url(../style/images/PreviousFile_white_16.png);
+}
+.ics-viewer .ics-viewer-nav-next .ics-viewer-nav-icon {
+  background-image: url(../style/images/NextFile_white_16.png);
+}
+.ics-viewer .ics-viewer-nav .ics-viewer-nav-file {
+  position: absolute;
+  top: 5px;
+  color: white;
+  padding: 8px 15px;
+  background-color: rgba(22, 24, 26, 0.8);
+  background-clip: padding-box;
+  white-space: nowrap;
+  /* display: none; */
+  opacity: 0;
+  transition: all .25s ease;
+  pointer-events: none;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 13px;
+}
+.ics-viewer.rtl .ics-viewer-nav .ics-viewer-nav-file {
+  direction: ltr;
+}
+.ics-viewer.rtl .ics-viewer-nav .ics-viewer-nav-file img {
+  float: right;
+}
+.ics-viewer.rtl .ics-viewer-nav .ics-viewer-nav-file span {
+  display: block;
+  max-width: 180px;
+  margin-right: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.lotusui_ie8 .ics-viewer .ics-viewer-nav .ics-viewer-nav-file {
+  display: none;
+  background-color: #16181a;
+  filter: alpha(opacity=80);
+}
+.ics-viewer .ics-viewer-nav a:hover .ics-viewer-nav-file {
+  opacity: 1;
+}
+.ics-viewer .ics-viewer-nav a:focus .ics-viewer-nav-file {
+  opacity: 1;
+  transition: none;
+}
+.ics-viewer .ics-viewer-nav .ics-viewer-nav-file img {
+  position: relative;
+  margin-right: 2px;
+  height: 20px;
+}
+.ics-viewer.rtl .ics-viewer-nav .ics-viewer-nav-file img {
+  margin-right: 0;
+  margin-left: 2px;
+}
+.lotusui_ie8 .ics-viewer .ics-viewer-nav a:hover .ics-viewer-nav-file,
+.lotusui_ie8 .ics-viewer .ics-viewer-nav a:focus .ics-viewer-nav-file {
+  display: block;
+}
+.ics-viewer .ics-viewer-nav-prev .ics-viewer-nav-file {
+  left: 47px;
+}
+.ics-viewer .ics-viewer-nav-next .ics-viewer-nav-file {
+  right: 47px;
+}
+.ics-viewer .ics-viewer-nav-disabled .ics-viewer-nav-file,
+.ics-viewer .ics-viewer-nav-disabled a:hover .ics-viewer-nav-file {
+  display: none;
+}
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+.ics-viewer .ics-viewer-icon-preview {
+  height: 100%;
+  white-space: nowrap;
+}
+.ics-viewer .ics-viewer-icon-preview > div {
+  display: inline-block;
+  background-color: #16181A;
+  vertical-align: middle;
+  padding: 100px 100px;
+  position: relative;
+  top: -4%;
+  max-width: 70%;
+}
+.ics-viewer .ics-viewer-icon-preview > div > div {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+}
+.ics-viewer .ics-viewer-icon-preview img {
+  margin: 0;
+  margin-bottom: 16px;
+}
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+.ics-viewer .ics-zoom-buttons {
+  position: relative;
+  z-index: 500;
+  background-clip: padding-box;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 3px 5px;
+  height: 35px;
+  width: 135px;
+  border-radius: 2px;
+}
+.ics-viewer .ics-zoom-buttons > a {
+  text-decoration: none;
+}
+.lotusui_ie8 .ics-viewer .ics-zoom-buttons {
+  background-color: black;
+  filter: alpha(opacity=60);
+}
+.ics-viewer .ics-zoom-buttons-helper {
+  position: absolute;
+  bottom: 2%;
+  width: 100%;
+}
+.ics-viewer .ics-zoom-buttons {
+  margin: auto;
+}
+.ics-viewer .ics-zoom-buttons a a:visited {
+  padding: 4px;
+  color: none;
+}
+.ics-viewer .ics-zoom-buttons img {
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 4px;
+  margin-right: 10px;
+  width: 20px;
+  top: 3px;
+  position: relative;
+}
+.ics-viewer.rtl .ics-zoom-buttons img {
+  margin-right: 0;
+  margin-left: 16px;
+}
+.ics-viewer .ics-zoom-buttons .ics-zoomIn-button {
+  background-image: url(../style/images/Zoom-in.png);
+  /*TODO*/
+  margin-right: 0;
+}
+.ics-viewer.rtl .ics-zoom-buttons .ics-zoomIn-button {
+  margin-left: 0;
+}
+.ics-viewer .ics-zoom-buttons .ics-zoomOut-button {
+  background-image: url(../style/images/Zoom-out.png);
+  /*TODO*/
+}
+.ics-viewer .ics-zoom-buttons .ics-restore-button {
+  background-image: url(../style/images/Restore_default.png);
+  /*TODO*/
+  margin-right: 11px;
+}
+.ics-viewer .ics-viewer-image-preview {
+  height: 100%;
+  overflow: auto;
+  text-align: center;
+}
+.ics-viewer .ics-zoom-img {
+  vertical-align: middle;
+  position: relative;
+}
+.ics-viewer .ics-zoom-widget {
+  position: absolute;
+  white-space: nowrap;
+  z-index: 149;
+  height: calc(100vh - 50px);
+  width: 100%;
+}
+.ics-viewer .align-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.ics-viewer .ics-viewer-expandable-reduce {
+  width: 76%;
+}
+.ics-viewer .ics-zoomToFit {
+  max-width: 95%;
+  max-height: 95%;
+}
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+.ics-viewer .ics-viewer-video-preview {
+  height: 100%;
+  white-space: nowrap;
+}
+.ics-video-widget {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 1280px;
+  min-width: 360px;
+  width: 854px;
+}
+.ics-video-widget.vjsVideo {
+  height: 0px;
+  width: 0px;
+  overflow: hidden;
+}
+.ics-video-widget.vjsVideo.loaded {
+  width: 75%;
+  height: auto;
+}
+.ics-video-widget.vjsVideo .vjs-default-skin .vjs-big-play-button {
+  left: 50%;
+  top: 50%;
+  margin: -1.3em -2em;
+}
+.lotusImagesOff .ics-video-widget .vjs-default-skin .vjs-control:focus {
+  outline: 1px dotted yellow;
+  margin: 1px;
+}
+.lotusImagesOff .ics-video-widget .vjs-default-skin .vjs-play-control:focus,
+.lotusImagesOff .ics-video-widget .vjs-default-skin .vjs-volume-control:focus {
+  width: 48px;
+  height: 28px;
+}
+.lotusImagesOff .ics-video-widget .vjs-default-skin .vjs-mute-control:focus {
+  width: 38px;
+  height: 28px;
+}
+.lotusImagesOff .ics-video-widget .vjs-default-skin .vjs-fullscreen-control:focus {
+  width: 36px;
+  height: 28px;
+}
+.lotusImagesOff .ics-video-widget .vjs-default-skin .vjs-progress-holder:focus {
+  height: 7px;
+  outline: 1px dotted yellow;
+  margin: 1px;
+}
+.lotusImagesOff .ics-video-widget .vjs-default-skin .vjs-volume-bar:focus {
+  outline: 1px dotted yellow;
+}
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+.ics-viewer-widget .viewer-frame {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.ics-viewer-widget .loading {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-top: -16px;
+  font-size: 17px;
+}
+.ics-viewer-widget .loadingMessage {
+  padding-right: 8px;
+}
+.ics-viewer-widget .loadingContainer {
+  padding-right: 13px;
+}
+.ics-viewer-widget.ics-viewer-publishing iframe {
+  display: none;
+}
+/* Copyright IBM Corp. 2015  All Rights Reserved.              */
+.ics-viewer .ics-commentbox-container .lotusMentionsDiv {
+  transition: min-height 0.3s ease 0s;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+}
+.ics-viewer .ics-commentbox-container.active .lotusMentionsDiv {
+  min-height: 8em;
+  max-height: 20em;
+  margin-bottom: 6px;
+  transition: min-height 0.3s ease 0s;
+}
+.ics-viewer-action-share .ics-commentbox-container.active .lotusMentionsDiv {
+  min-height: 0em;
+}
+.ics-viewer .ics-commentbox-container .commentActions {
+  display: none;
+  line-height: 16px;
+}
+.ics-viewer .ics-commentbox-container.active .commentActions {
+  display: inline;
+  font-weight: bold;
+}
+.ics-viewer .ics-commentbox-container.active .commentActions a {
+  font-size: 12px;
+}
+.ics-viewer .ics-commentbox-container.active .ics-viewer-messagebox {
+  margin-top: 18px;
+}
+.ics-viewer .ics-commentbox-container.active .ics-viewer-messagebox ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+.ics-viewer .ics-commentbox-container.active .ics-viewer-messagebox li {
+  margin: 6px 0;
+  padding: 0;
+}
+.ics-viewer .ics-commentbox-container .ckeditor .cke_contents {
+  transition: min-height 0.3s ease 0s !important;
+  height: 2.5em !important;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+}
+.ics-viewer .ics-commentbox-container .ckeditor textarea {
+  display: none;
+}
+.ics-viewer .ics-commentbox-container.active .ckeditor .cke_contents {
+  min-height: 8em !important;
+  max-height: 20em !important;
+  margin-bottom: 6px;
+  transition: min-height 0.3s ease 0s !important;
+  height: auto !important;
+}
+.ics-viewer-width-auto {
+  width: auto;
+}
+/* Copyright IBM Corp. 2015  All Rights Reserved.              */
+.ics-viewer .ics-typeaheadbox-container .lotusMentionsDiv {
+  background: #f9f9f9;
+  border-color: #bcbcbc;
+  transition: min-height 0.3s ease 0s;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+}
+.ics-viewer .ics-typeaheadbox-container.active .lotusMentionsDiv {
+  min-height: 8em;
+  max-height: 20em;
+  margin-bottom: 6px;
+  transition: min-height 0.3s ease 0s;
+}
+.ics-viewer-action-share .ics-typeaheadbox-container.active {
+  display: inline-block;
+}
+.ics-viewer-action-share .ics-typeaheadbox-container.active .lotusMentionsDiv {
+  min-height: 0em;
+}
+.ics-viewer .ics-typeaheadbox-container .typeaheadActions {
+  display: none;
+}
+.ics-viewer .ics-typeaheadbox-container.active .typeaheadActions {
+  display: inline;
+  font-weight: bold;
+}
+.ics-viewer .ics-typeaheadbox-container.active .typeaheadActions a {
+  font-size: 12px;
+}
+.ics-viewer .ics-typeaheadbox-container.active .typeaheadActions a.lotusFirst {
+  border-left: none;
+  padding-left: 0;
+}
+.ics-viewer .ics-typeaheadbox-container.active .ics-viewer-messagebox {
+  margin-top: 18px;
+}
+.ics-viewer .ics-typeaheadbox-container.active .ics-viewer-messagebox ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+.ics-viewer .ics-typeaheadbox-container.active .ics-viewer-messagebox li {
+  margin: 6px 0;
+  padding: 0;
+}
+.ics-viewer .ics-typeaheadbox-container .bhcPeopleTypeAhead .dijitValidationContainer {
+  display: none;
+}
+/* Copyright IBM Corp. 2015  All Rights Reserved.              */
+.ics-viewer-messagebox {
+  background: #F1F1F1;
+  color: #292929;
+}
+.ics-viewer-messagebox .ics-viewer-messagebox-icon {
+  width: 40px;
+  height: 40px;
+}
+.ics-viewer-messagebox .ics-viewer-messagebox-icon {
+  background-size: 40px 40px;
+}
+.ics-viewer-messagebox .ics-viewer-messagebox-icon.warning {
+  background-image: url(../style/images/msg_warning.png);
+  /*TODO*/
+}
+.ics-viewer-messagebox .ics-viewer-messagebox-icon.error {
+  background-image: url(../style/images/msg_error.png);
+  /*TODO*/
+}
+.ics-viewer-messagebox .ics-viewer-messagebox-icon.success {
+  background-image: url(../style/images/msg_success.png);
+  /*TODO*/
+}
+.ics-viewer-messagebox .ics-viewer-messagebox-icon.info {
+  background-image: url(../style/images/msg_info.png);
+  /*TODO*/
+}
+.ics-viewer-messagebox .ics-viewer-messagebox-table {
+  border-spacing: 0;
+}
+.ics-viewer-messagebox .ics-viewer-messagebox-row {
+  padding: 0;
+}
+.ics-viewer-messagebox .ics-viewer-messagebox-message {
+  padding: 8px;
+  font-size: 13px;
+  line-height: 20px;
+}
+/* Copyright IBM Corp. 2015  All Rights Reserved.              */
+.ics-viewer .ics-viewer-tagwidget .ics-viewer-tag img {
+  background-image: url(../style/images/DeleteTag.png);
+  /*TODO*/
+  width: 16px;
+  height: 16px;
+}
+.ics-viewer .ics-viewer-tagwidget img.addTagImg {
+  background-image: url(../style/images/Add.png);
+  /*TODO*/
+  width: 16px;
+  height: 16px;
+}
+.ics-viewer .ics-viewer-tagwidget .removeTagLink {
+  display: none;
+}
+.ics-viewer .ics-viewer-tagwidget.editing .removeTagLink {
+  display: inline;
+}
+.ics-viewer .ics-viewer-tagwidget .typeAheadContainer {
+  display: none;
+}
+.ics-viewer .ics-viewer-tagwidget.editing .typeAheadContainer {
+  display: inline;
+}
+.ics-viewer .ics-viewer-tagwidget.editing .typeAheadTd {
+  padding: 0 8px 0 0;
+  width: 100%;
+}
+.dijitRtl .ics-viewer .ics-viewer-tagwidget.editing .typeAheadTd {
+  padding: 0 0 0 8px;
+}
+.lotusImagesOff .ics-viewer .ics-viewer-tagwidget.editing .typeAheadTd {
+  border: 1px solid blue;
+}
+.ics-viewer .ics-viewer-tagwidget input {
+  width: 100%;
+  font-size: 12px;
+  padding: 5px;
+}
+.ics-viewer .ics-viewer-tagwidget ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  line-height: 20px;
+}
+.ics-viewer .ics-viewer-tagwidget li {
+  list-style-type: none;
+}
+@-moz-document url-prefix() {
+  .ics-viewer .ics-viewer-tagwidget li {
+    margin-bottom: 1px;
+  }
+}
+.ics-viewer .ics-viewer-tagwidget table {
+  border-spacing: 0;
+  margin-bottom: 3px;
+}
+.ics-viewer-tag-popup.dijitMenu {
+  padding: 5px 0;
+}
+.ics-viewer-tag-popup.dijitMenu .dijitMenuItem {
+  padding: 5px 10px;
+  color: #676767;
+  text-indent: 0;
+}
+.ics-viewer-tag-popup.dijitMenu .dijitMenuItem b {
+  color: #292929;
+}
+.ics-viewer-tag-popup.dijitMenu .lotusMeta {
+  color: #676767;
+}
+/* Copyright IBM Corp. 2015  All Rights Reserved.              */
+.ics-viewer .ics-viewer-expandable-text.expanded .readMore {
+  display: none;
+}
+.ics-viewer .ics-viewer-expandable-text .readLess {
+  display: none;
+}
+.ics-viewer .ics-viewer-expandable-text.expanded.collapsable .readLess {
+  display: inline;
+}
+.ics-viewer .ics-viewer-expandable-text .textContainer {
+  overflow: hidden;
+}
+/* Copyright IBM Corp. 2015  All Rights Reserved.              */
+.ics-viewer .ics-editBox textarea {
+  width: 100%;
+  height: 8em;
+  line-height: 20px;
+  padding: 2px;
+}
+/* Copyright IBM Corp. 2015, 2016  All Rights Reserved.              */
+.lotusImagesOff.ics-viewer-open .dijitDialog {
+  border: solid 2px;
+}
+.ics-viewer-open  .ics-dialog-action {
+  top: 50px;
+  bottom: 0;
+  overflow: auto;
+  background-color: white;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  padding: 32px;
+}
+.ics-viewer-open  .ics-dialog-action .button-container {
+  padding: 10px 0;
+}
+.ics-viewer-open  .ics-dialog-action .prompt-container {
+  margin-bottom: 20px;
+}
+.ics-viewer-open  .ics-dialog-action .prompt-container .prompt-bold {
+  font-weight: bold;
+}
+.ics-viewer-open  .dijitComboBoxMenuPopup {
+  z-index: 1002 !important;
+}
+.ics-viewer-open  .dijitComboBoxMenuPopup,
+.ics-viewer-open  .dijitTooltipDialogPopup {
+  z-index: 1002 !important;
+}
+.ics-viewer-open  .dijitDialog {
+  z-index: 1002 !important;
+  max-width: 600px;
+}
+.ics-viewer-open  .dijitDialog.versionDialog,
+.ics-viewer-open  .dijitDialog.commentDialog,
+.ics-viewer-open  .dijitDialog.sharingDialog,
+.ics-viewer-open  .dijitDialog.linkDialog,
+.ics-viewer-open  .dijitDialog.confirmationDialog,
+.ics-viewer-open  .dijitDialog.templateCreateDialog,
+.ics-viewer-open  .dijitDialog.roundtripEditDialog,
+.ics-viewer-open  .dijitDialog.provisionExternalUserDialog,
+.ics-viewer-open  .dijitDialog.flagActionDialog {
+  width: auto;
+  left: 50%;
+}
+.ics-viewer-open  .dijitDialog.versionDialog .name-input,
+.ics-viewer-open  .dijitDialog.commentDialog .name-input,
+.ics-viewer-open  .dijitDialog.sharingDialog .name-input,
+.ics-viewer-open  .dijitDialog.linkDialog .name-input,
+.ics-viewer-open  .dijitDialog.confirmationDialog .name-input,
+.ics-viewer-open  .dijitDialog.templateCreateDialog .name-input,
+.ics-viewer-open  .dijitDialog.roundtripEditDialog .name-input,
+.ics-viewer-open  .dijitDialog.provisionExternalUserDialog .name-input,
+.ics-viewer-open  .dijitDialog.flagActionDialog .name-input {
+  width: 100%;
+}
+.ics-viewer-open  .dijitDialog.versionDialog .errorContainer .ics-viewer-messagebox,
+.ics-viewer-open  .dijitDialog.commentDialog .errorContainer .ics-viewer-messagebox,
+.ics-viewer-open  .dijitDialog.sharingDialog .errorContainer .ics-viewer-messagebox,
+.ics-viewer-open  .dijitDialog.linkDialog .errorContainer .ics-viewer-messagebox,
+.ics-viewer-open  .dijitDialog.confirmationDialog .errorContainer .ics-viewer-messagebox,
+.ics-viewer-open  .dijitDialog.templateCreateDialog .errorContainer .ics-viewer-messagebox,
+.ics-viewer-open  .dijitDialog.roundtripEditDialog .errorContainer .ics-viewer-messagebox,
+.ics-viewer-open  .dijitDialog.provisionExternalUserDialog .errorContainer .ics-viewer-messagebox,
+.ics-viewer-open  .dijitDialog.flagActionDialog .errorContainer .ics-viewer-messagebox {
+  margin-bottom: 20px;
+}
+.ics-viewer-open  .dijitDialog.versionDialog .button-container,
+.ics-viewer-open  .dijitDialog.commentDialog .button-container,
+.ics-viewer-open  .dijitDialog.sharingDialog .button-container,
+.ics-viewer-open  .dijitDialog.linkDialog .button-container,
+.ics-viewer-open  .dijitDialog.confirmationDialog .button-container,
+.ics-viewer-open  .dijitDialog.templateCreateDialog .button-container,
+.ics-viewer-open  .dijitDialog.roundtripEditDialog .button-container,
+.ics-viewer-open  .dijitDialog.provisionExternalUserDialog .button-container,
+.ics-viewer-open  .dijitDialog.flagActionDialog .button-container {
+  float: right;
+}
+.dijitRtl .ics-viewer-open  .dijitDialog.versionDialog .button-container,
+.dijitRtl .ics-viewer-open  .dijitDialog.commentDialog .button-container,
+.dijitRtl .ics-viewer-open  .dijitDialog.sharingDialog .button-container,
+.dijitRtl .ics-viewer-open  .dijitDialog.linkDialog .button-container,
+.dijitRtl .ics-viewer-open  .dijitDialog.confirmationDialog .button-container,
+.dijitRtl .ics-viewer-open  .dijitDialog.templateCreateDialog .button-container,
+.dijitRtl .ics-viewer-open  .dijitDialog.roundtripEditDialog .button-container,
+.dijitRtl .ics-viewer-open  .dijitDialog.provisionExternalUserDialog .button-container,
+.dijitRtl .ics-viewer-open  .dijitDialog.flagActionDialog .button-container {
+  float: left;
+}
+.ics-viewer-open  .dijitDialog.versionDialog .dijitDialogTitleBar,
+.ics-viewer-open  .dijitDialog.commentDialog .dijitDialogTitleBar,
+.ics-viewer-open  .dijitDialog.sharingDialog .dijitDialogTitleBar,
+.ics-viewer-open  .dijitDialog.linkDialog .dijitDialogTitleBar,
+.ics-viewer-open  .dijitDialog.confirmationDialog .dijitDialogTitleBar,
+.ics-viewer-open  .dijitDialog.templateCreateDialog .dijitDialogTitleBar,
+.ics-viewer-open  .dijitDialog.roundtripEditDialog .dijitDialogTitleBar,
+.ics-viewer-open  .dijitDialog.provisionExternalUserDialog .dijitDialogTitleBar,
+.ics-viewer-open  .dijitDialog.flagActionDialog .dijitDialogTitleBar {
+  visibility: visible !important;
+  display: block !important;
+  background: #325c80;
+  padding-bottom: 15px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  padding-top: 15px !important;
+}
+.ics-viewer-open  .dijitDialog.versionDialog .dijitDialogTitleBar .dijitDialogCloseIcon,
+.ics-viewer-open  .dijitDialog.commentDialog .dijitDialogTitleBar .dijitDialogCloseIcon,
+.ics-viewer-open  .dijitDialog.sharingDialog .dijitDialogTitleBar .dijitDialogCloseIcon,
+.ics-viewer-open  .dijitDialog.linkDialog .dijitDialogTitleBar .dijitDialogCloseIcon,
+.ics-viewer-open  .dijitDialog.confirmationDialog .dijitDialogTitleBar .dijitDialogCloseIcon,
+.ics-viewer-open  .dijitDialog.templateCreateDialog .dijitDialogTitleBar .dijitDialogCloseIcon,
+.ics-viewer-open  .dijitDialog.roundtripEditDialog .dijitDialogTitleBar .dijitDialogCloseIcon,
+.ics-viewer-open  .dijitDialog.provisionExternalUserDialog .dijitDialogTitleBar .dijitDialogCloseIcon,
+.ics-viewer-open  .dijitDialog.flagActionDialog .dijitDialogTitleBar .dijitDialogCloseIcon {
+  background-image: url(../style/images/Close_View.png);
+  background-position: center;
+  height: 16px;
+  width: 16px;
+  right: 15px;
+  top: 15px;
+  margin: 0;
+}
+.dijitRtl .ics-viewer-open  .dijitDialog.versionDialog .dijitDialogTitleBar .dijitDialogCloseIcon,
+.dijitRtl .ics-viewer-open  .dijitDialog.commentDialog .dijitDialogTitleBar .dijitDialogCloseIcon,
+.dijitRtl .ics-viewer-open  .dijitDialog.sharingDialog .dijitDialogTitleBar .dijitDialogCloseIcon,
+.dijitRtl .ics-viewer-open  .dijitDialog.linkDialog .dijitDialogTitleBar .dijitDialogCloseIcon,
+.dijitRtl .ics-viewer-open  .dijitDialog.confirmationDialog .dijitDialogTitleBar .dijitDialogCloseIcon,
+.dijitRtl .ics-viewer-open  .dijitDialog.templateCreateDialog .dijitDialogTitleBar .dijitDialogCloseIcon,
+.dijitRtl .ics-viewer-open  .dijitDialog.roundtripEditDialog .dijitDialogTitleBar .dijitDialogCloseIcon,
+.dijitRtl .ics-viewer-open  .dijitDialog.provisionExternalUserDialog .dijitDialogTitleBar .dijitDialogCloseIcon,
+.dijitRtl .ics-viewer-open  .dijitDialog.flagActionDialog .dijitDialogTitleBar .dijitDialogCloseIcon {
+  right: inherit;
+  left: 15px;
+}
+.ics-viewer-open  .dijitDialog.versionDialog.restore .deleteOption,
+.ics-viewer-open  .dijitDialog.commentDialog.restore .deleteOption,
+.ics-viewer-open  .dijitDialog.sharingDialog.restore .deleteOption,
+.ics-viewer-open  .dijitDialog.linkDialog.restore .deleteOption,
+.ics-viewer-open  .dijitDialog.confirmationDialog.restore .deleteOption,
+.ics-viewer-open  .dijitDialog.templateCreateDialog.restore .deleteOption,
+.ics-viewer-open  .dijitDialog.roundtripEditDialog.restore .deleteOption,
+.ics-viewer-open  .dijitDialog.provisionExternalUserDialog.restore .deleteOption,
+.ics-viewer-open  .dijitDialog.flagActionDialog.restore .deleteOption,
+.ics-viewer-open  .dijitDialog.versionDialog.ics-version-last .deleteOption,
+.ics-viewer-open  .dijitDialog.commentDialog.ics-version-last .deleteOption,
+.ics-viewer-open  .dijitDialog.sharingDialog.ics-version-last .deleteOption,
+.ics-viewer-open  .dijitDialog.linkDialog.ics-version-last .deleteOption,
+.ics-viewer-open  .dijitDialog.confirmationDialog.ics-version-last .deleteOption,
+.ics-viewer-open  .dijitDialog.templateCreateDialog.ics-version-last .deleteOption,
+.ics-viewer-open  .dijitDialog.roundtripEditDialog.ics-version-last .deleteOption,
+.ics-viewer-open  .dijitDialog.provisionExternalUserDialog.ics-version-last .deleteOption,
+.ics-viewer-open  .dijitDialog.flagActionDialog.ics-version-last .deleteOption {
+  display: none !important;
+}
+.ics-viewer-open  .dijitDialog.versionDialog a,
+.ics-viewer-open  .dijitDialog.commentDialog a,
+.ics-viewer-open  .dijitDialog.sharingDialog a,
+.ics-viewer-open  .dijitDialog.linkDialog a,
+.ics-viewer-open  .dijitDialog.confirmationDialog a,
+.ics-viewer-open  .dijitDialog.templateCreateDialog a,
+.ics-viewer-open  .dijitDialog.roundtripEditDialog a,
+.ics-viewer-open  .dijitDialog.provisionExternalUserDialog a,
+.ics-viewer-open  .dijitDialog.flagActionDialog a {
+  border: 1px solid #4178be;
+  padding: 9px 18px;
+  font-size: 1em;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #00649d;
+}
+.ics-viewer-open  .dijitDialog.versionDialog a:hover,
+.ics-viewer-open  .dijitDialog.commentDialog a:hover,
+.ics-viewer-open  .dijitDialog.sharingDialog a:hover,
+.ics-viewer-open  .dijitDialog.linkDialog a:hover,
+.ics-viewer-open  .dijitDialog.confirmationDialog a:hover,
+.ics-viewer-open  .dijitDialog.templateCreateDialog a:hover,
+.ics-viewer-open  .dijitDialog.roundtripEditDialog a:hover,
+.ics-viewer-open  .dijitDialog.provisionExternalUserDialog a:hover,
+.ics-viewer-open  .dijitDialog.flagActionDialog a:hover,
+.ics-viewer-open  .dijitDialog.versionDialog a:focus,
+.ics-viewer-open  .dijitDialog.commentDialog a:focus,
+.ics-viewer-open  .dijitDialog.sharingDialog a:focus,
+.ics-viewer-open  .dijitDialog.linkDialog a:focus,
+.ics-viewer-open  .dijitDialog.confirmationDialog a:focus,
+.ics-viewer-open  .dijitDialog.templateCreateDialog a:focus,
+.ics-viewer-open  .dijitDialog.roundtripEditDialog a:focus,
+.ics-viewer-open  .dijitDialog.provisionExternalUserDialog a:focus,
+.ics-viewer-open  .dijitDialog.flagActionDialog a:focus {
+  border-width: 2px;
+  color: #00649d;
+  padding: 8px 17px;
+}
+.ics-viewer-open  .dijitDialog.versionDialog a:active,
+.ics-viewer-open  .dijitDialog.commentDialog a:active,
+.ics-viewer-open  .dijitDialog.sharingDialog a:active,
+.ics-viewer-open  .dijitDialog.linkDialog a:active,
+.ics-viewer-open  .dijitDialog.confirmationDialog a:active,
+.ics-viewer-open  .dijitDialog.templateCreateDialog a:active,
+.ics-viewer-open  .dijitDialog.roundtripEditDialog a:active,
+.ics-viewer-open  .dijitDialog.provisionExternalUserDialog a:active,
+.ics-viewer-open  .dijitDialog.flagActionDialog a:active {
+  border-width: 1px;
+  background-color: #ebf3fc;
+  padding: 8px 17px;
+}
+.ics-viewer-open  .dijitDialog.flagActionDialog textarea {
+  width: 100%;
+}
+.ics-viewer-open  .dijitDialog.linkDialog {
+  width: auto;
+}
+.ics-viewer-open  .dijitDialog.linkDialog .ics-dialog-action .linkContainer {
+  margin-bottom: 10px;
+}
+.ics-viewer-open  .dijitDialog.linkDialog .ics-dialog-action .linkContainer .linkLabel {
+  margin-bottom: 10px;
+  display: block;
+  padding-right: 15px;
+}
+.dijitRtl .ics-viewer-open  .dijitDialog.linkDialog .ics-dialog-action .linkContainer .linkLabel {
+  padding-right: inherit;
+  padding-left: 15px;
+}
+.ics-viewer-open  .dijitDialog.linkDialog .ics-dialog-action .linkContainer .linkValue {
+  width: 375px;
+  margin-bottom: 10px;
+  text-overflow: ellipsis;
+  direction: ltr;
+  cursor: text;
+}
+.ics-viewer-open  .dijitDialog.linkDialog .confirm {
+  float: right;
+  margin-top: 30px;
+  margin-right: 3px;
+}
+.dijitRtl .ics-viewer-open  .dijitDialog.linkDialog .confirm {
+  float: left;
+}
+.dijitRtl .ics-viewer-open  .dijitDialog.linkDialog .confirm {
+  margin-right: inherit;
+  margin-left: 3px;
+}
+.ics-viewer-open  .dijitDialog.linkDialog.hidePreview .preview {
+  display: none !important;
+}
+.ics-viewer-open  .dijitDialogUnderlayWrapper {
+  z-index: 1001 !important;
+}
+.ics-viewer .ics-panel-entry.share .remove.action span.lotusAltText.fileViewerIconText {
+  top: 0px;
+  position: absolute;
+}
+.ics-viewer.rtl ul.ics-viewer-tabs {
+  padding-right: 0px;
+  padding-left: 22px;
+}
+.ics-viewer.rtl .ics-panel-entry-container .ics-sharing-panel span.lotusAltText.fileViewerIconText {
+  position: absolute;
+  right: 0px;
+  left: -200px;
+}
+.ics-viewer.rtl .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .actionContainer.actionButton {
+  float: left;
+}
+.ics-viewer.rtl .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualAdd {
+  margin-right: 8px;
+  margin-left: 0px;
+}
+.ics-viewer .ics-viewer-panel-container {
+  position: absolute;
+  top: 50px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+.ics-viewer.ics-viewer-details-expanded .ics-viewer-panel-container {
+  overflow: auto;
+}
+.ics-viewer .ics-viewer-details .ics-panel-entry-container .ics-viewer-stream.hasNext .loadMoreLink {
+  display: inline;
+  font-weight: normal;
+}
+.ics-viewer .ics-viewer-details .ics-panel-entry-container .ics-viewer-stream.hasNext .loadContainer {
+  margin-top: 5px;
+}
+.ics-viewer .ics-viewer-details .ics-panel-entry.dropdownStream .ics-viewer-stream.loading .streamContent {
+  display: block;
+}
+.ics-viewer .ics-panel-entry-container .loadingMessage {
+  display: none;
+}
+.ics-viewer .ics-panel-entry-container.loading .loadingMessage {
+  display: block;
+}
+.ics-viewer .ics-panel-entry-container .titleContainer {
+  width: 100%;
+  background-color: #f1f1f1;
+}
+.ics-viewer .ics-panel-entry-container .panelTitle {
+  color: #1D3649;
+  font-size: 16px;
+  font-weight: 200;
+  margin-bottom: 20px;
+  padding: 0 32px;
+  background-color: #f1f1f1;
+}
+.ics-viewer .ics-panel-entry-container .panelTitle .panelTitleText {
+  height: 65px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.ics-viewer .ics-panel-entry-container .owner .panelContent,
+.ics-viewer .ics-panel-entry-container .folder .panelContent {
+  margin-top: 15px;
+}
+.ics-viewer .ics-panel-entry-container .reader .panelContent,
+.ics-viewer .ics-panel-entry-container .editor .panelContent,
+.ics-viewer .ics-panel-entry-container .folder .panelContent {
+  margin-bottom: 5px;
+}
+.ics-viewer .ics-panel-entry-container .panelContent {
+  padding: 0 32px;
+}
+.ics-viewer .ics-panel-entry-container .panelContent .panelContent {
+  padding: 0;
+}
+.ics-viewer .ics-panel-entry-container .versionDialog,
+.ics-viewer .ics-panel-entry-container .commentDialog,
+.ics-viewer .ics-panel-entry-container .sharingDialog {
+  width: 350px !important;
+  height: 350px !important;
+  position: fixed !important;
+  left: 50% !important;
+  z-index: 1000 !important;
+}
+.dijitRtl .ics-viewer .ics-panel-entry-container .versionDialog,
+.dijitRtl .ics-viewer .ics-panel-entry-container .commentDialog,
+.dijitRtl .ics-viewer .ics-panel-entry-container .sharingDialog {
+  left: inherit !important;
+  right: 50% !important;
+}
+.ics-viewer .ics-panel-entry-container .versionDialog .errorContainer,
+.ics-viewer .ics-panel-entry-container .commentDialog .errorContainer,
+.ics-viewer .ics-panel-entry-container .sharingDialog .errorContainer {
+  margin-bottom: 20px;
+}
+.ics-viewer .ics-panel-entry-container .versionDialog .dijitDialogTitleBar,
+.ics-viewer .ics-panel-entry-container .commentDialog .dijitDialogTitleBar,
+.ics-viewer .ics-panel-entry-container .sharingDialog .dijitDialogTitleBar {
+  visibility: visible !important;
+  display: block !important;
+}
+.ics-viewer .ics-panel-entry-container .versionDialog.restore .deleteOption,
+.ics-viewer .ics-panel-entry-container .commentDialog.restore .deleteOption,
+.ics-viewer .ics-panel-entry-container .sharingDialog.restore .deleteOption {
+  display: none !important;
+}
+.ics-viewer .ics-panel-entry-container .ics-viewer-stream {
+  padding-bottom: 20px;
+}
+.ics-viewer .ics-panel-entry-container .ics-viewer-stream .loadMoreLink {
+  display: none;
+}
+.ics-viewer .ics-panel-entry-container .ics-viewer-stream .loadingMessage {
+  display: none;
+}
+.ics-viewer .ics-panel-entry-container .ics-viewer-stream.hasNext .loadMoreLink {
+  display: inline;
+  font-weight: bold;
+}
+.ics-viewer .ics-panel-entry-container .ics-viewer-stream.hasNext .loadContainer {
+  margin-top: 20px;
+}
+.ics-viewer .ics-panel-entry-container .ics-viewer-stream.loading {
+  color: #676767;
+}
+.ics-viewer .ics-panel-entry-container .ics-viewer-stream.loading .loadingMessage {
+  display: block;
+}
+.ics-viewer .ics-panel-entry-container .ics-viewer-stream.loading .loadMoreLink {
+  display: none;
+}
+.ics-viewer .ics-dialog-action {
+  top: 50px;
+  bottom: 0;
+  overflow: auto;
+  background-color: white;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  padding: 32px;
+}
+.ics-viewer .ics-panel-entry-container {
+  bottom: 0;
+  overflow: auto;
+  background-color: white;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.ics-viewer .ics-panel-entry-container a {
+  text-decoration: none;
+  color: #4178b3;
+}
+@-moz-document url-prefix() {
+  .ics-viewer .ics-panel-entry-container a {
+    margin-left: 1px;
+  }
+}
+.ics-viewer .ics-panel-entry-container a[disabled] {
+  pointer-events: none;
+  cursor: default;
+  color: #676767;
+}
+.ics-viewer .ics-panel-entry-container .metadata .header1 a {
+  color: #4178b3;
+}
+.ics-viewer .ics-panel-entry-container .header1,
+.ics-viewer .ics-panel-entry-container .content {
+  color: #292929;
+}
+.ics-viewer .ics-panel-entry-container .remove,
+.ics-viewer .ics-panel-entry-container .header2,
+.ics-viewer .ics-panel-entry-container .header3,
+.ics-viewer .ics-panel-entry-container .footer,
+.ics-viewer .ics-panel-entry-container .actions {
+  color: #292929;
+}
+.ics-viewer .ics-panel-entry-container .content {
+  line-height: 26px;
+}
+.ics-viewer .ics-panel-entry-container .footer {
+  font-size: 10px;
+}
+.ics-viewer .ics-panel-entry-container .action a,
+.ics-viewer .ics-panel-entry-container a.action {
+  opacity: 0;
+  transition: all .25s ease;
+}
+.ie8 .ics-viewer .ics-panel-entry-container .action a,
+.ie8 .ics-viewer .ics-panel-entry-container a.action,
+.ie9 .ics-viewer .ics-panel-entry-container .action a,
+.ie9 .ics-viewer .ics-panel-entry-container a.action {
+  opacity: 1;
+  visibility: hidden;
+}
+.ics-viewer .ics-panel-entry-container .action a:focus,
+.ics-viewer .ics-panel-entry-container a.action:focus {
+  opacity: 100;
+}
+.ics-viewer .ics-panel-entry-container .action {
+  display: inline-block;
+}
+.ics-viewer .ics-panel-entry-container .share {
+  margin: 0;
+  height: 45px;
+}
+.ics-viewer .ics-panel-entry-container .share:first-child {
+  padding-top: 0;
+}
+.ics-viewer .ics-panel-entry-container .version,
+.ics-viewer .ics-panel-entry-container .comment {
+  margin: 0 0 20px;
+}
+.ics-viewer .ics-panel-entry-container .newCommentBox {
+  margin-bottom: 15px;
+}
+.ics-viewer .ics-panel-entry-container .noCommentsContainer {
+  display: block;
+}
+.ics-viewer .ics-panel-entry-container .noCommentsContainer.hideNoCommentsContainer {
+  display: none;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel {
+  padding-bottom: 30px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active > * {
+  display: none;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .multiAddContainer {
+  margin-bottom: 35px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer {
+  display: inherit;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container {
+  width: 100%;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container input {
+  width: 100%;
+  height: 30px;
+  float: left;
+  padding-left: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.lotusui_ie8 .ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container input {
+  height: auto;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container select {
+  height: 30px;
+  float: left;
+  color: #292929;
+  padding-left: 5px;
+}
+.lotusui_ie8 .ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container select {
+  height: auto;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualAdd {
+  margin-left: 8px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualAdd[disabled] {
+  pointer-events: none;
+  cursor: default;
+  color: #676767;
+  border: 1px solid #676767;
+  padding: 9px 18px;
+  font-size: 1em;
+  border-radius: 3px;
+  text-decoration: none;
+}
+.lotusui_ie8 .ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualAdd[disabled] {
+  padding: 5px 18px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualAdd,
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualCancel {
+  border: 1px solid #4178be;
+  padding: 9px 18px;
+  font-size: 1em;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #00649d;
+}
+.lotusui_ie8 .ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualAdd,
+.lotusui_ie8 .ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualCancel {
+  padding: 5px 18px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualAdd:hover,
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualAdd:focus,
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualCancel:hover,
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualCancel:focus {
+  border-width: 2px;
+  color: #00649d;
+  padding: 8px 17px;
+}
+.lotusui_ie8 .ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualAdd:hover,
+.lotusui_ie8 .ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualAdd:focus,
+.lotusui_ie8 .ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualCancel:hover,
+.lotusui_ie8 .ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualCancel:focus {
+  padding: 4px 17px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualAdd:active,
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualCancel:active {
+  border-width: 1px;
+  background-color: #ebf3fc;
+  padding: 8px 17px;
+}
+.lotusui_ie8 .ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualAdd:active,
+.lotusui_ie8 .ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .manualCancel:active {
+  padding: 4px 17px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.multiAdd-active .multiAddContainer .ics-typeaheadboxmulti-container .actionContainer.actionButton {
+  float: right;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .ics-viewer-action-multiShare span.linkText {
+  position: relative;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .ics-viewer-action-multiShare span.lotusAltText.fileViewerIconText {
+  position: relative;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .ics-viewer-action-multiShare .externalAddContainer a {
+  display: block;
+  height: 25px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .ics-viewer-action-multiShare .externalAddContainer img {
+  background-image: url(../style/images/Add.png);
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .ics-viewer-action-multiShare img {
+  float: left;
+  background-image: url(../style/images/Add_Black_32.png);
+  width: 28px;
+  height: 28px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .sharingMsg {
+  padding-bottom: 20px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel.community-file .communityShareMsg {
+  display: block;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .communityShareMsg {
+  display: none;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .shareLinksStream {
+  padding-bottom: 0px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .shareLinks .header1 {
+  border-bottom: 1px #ddd solid;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer {
+  position: relative;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer .panelContent {
+  margin-top: 10px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer .panelContent .ics-typeaheadbox-container {
+  width: 100%;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer .panelContent .ics-typeaheadbox-container .actionContainer a[disabled] {
+  pointer-events: none;
+  cursor: default;
+  color: #676767;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer .panelContent .ics-typeaheadbox-container select,
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer .panelContent .ics-typeaheadbox-container input {
+  width: 100%;
+  height: 30px;
+  float: left;
+}
+.lotusui_ie8 .ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer .panelContent .ics-typeaheadbox-container select,
+.lotusui_ie8 .ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer .panelContent .ics-typeaheadbox-container input {
+  height: auto;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer .panelContent .ics-typeaheadbox-container input {
+  font-style: italic;
+  color: #676767;
+  padding-left: 10px;
+}
+.dijitRtl .ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer .panelContent .ics-typeaheadbox-container input {
+  padding-left: inherit;
+  padding-right: 10px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer .panelContent .ics-typeaheadbox-container input:focus {
+  font-style: normal;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer .panelContent .ics-typeaheadbox-container select {
+  color: #292929;
+  padding-left: 5px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer .panelContent .ics-typeaheadbox-container.active .actionContainer {
+  margin-top: 4px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer .panelContent .ics-typeaheadbox-container.active .actionContainer img {
+  background-image: url(../style/images/Add_white_12.png);
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .streamContainer .shareGroupTitle {
+  border-bottom: 1px #ddd solid;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .ics-share-options .shareOptionsTitle {
+  border-bottom: 1px #ddd solid;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .ics-share-options .propagation input {
+  margin-left: 0px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .ics-share-options .propagation span {
+  position: relative;
+  bottom: 1px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel span.lotusAltText.fileViewerIconText {
+  position: absolute;
+  right: 0px;
+  top: -20px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel * {
+  margin-bottom: 5px;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .bhcPeopleTypeAhead,
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel .bhcPeopleTypeAhead * {
+  margin-bottom: 0;
+}
+.ics-viewer .ics-panel-entry-container .ics-sharing-panel div.bhcPeopleTypeAhead {
+  width: 100%;
+}
+.ics-viewer .ics-panel-entry.metadata .icon,
+.ics-viewer .ics-panel-entry.metadata .remove,
+.ics-viewer .ics-panel-entry.metadata .footer,
+.ics-viewer .ics-panel-entry.metadata .actions {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.metadata.metadata2 .header3 {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.metadata.metadata3 .header2,
+.ics-viewer .ics-panel-entry.metadata.metadata3 .header3 {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.metadata.metadataIcon .icon {
+  display: block;
+  top: 25px;
+  right: 0;
+  min-height: 30px;
+  height: 30px;
+}
+.dijitRtl .ics-viewer .ics-panel-entry.metadata.metadataIcon .icon {
+  right: inherit;
+  left: 0;
+}
+.ics-viewer .ics-panel-entry.metadata .header1 .vcard .menu_drop_icon {
+  top: 7px;
+  position: absolute;
+}
+.ics-viewer .ics-panel-entry.metadata .header2 .vcard .menu_drop_icon {
+  top: 22px;
+  position: absolute;
+}
+.ics-viewer .ics-panel-entry.version .header1 {
+  width: 100%;
+  margin-right: 4px;
+}
+.dijitRtl .ics-viewer .ics-panel-entry.version .header1 {
+  margin-right: inherit;
+  margin-left: 4px;
+}
+.ics-viewer .ics-panel-entry.version .header1 .menu_drop_icon {
+  top: 2px;
+  position: absolute;
+}
+.ics-viewer .ics-panel-entry.version .versionNumber {
+  font-size: 14px;
+  color: #325c80;
+  font-weight: 500;
+  margin-right: 14px;
+  float: left;
+}
+.dijitRtl .ics-viewer .ics-panel-entry.version .versionNumber {
+  margin-right: inherit;
+  margin-left: 14px;
+}
+.dijitRtl .ics-viewer .ics-panel-entry.version .versionNumber {
+  float: right;
+}
+.ics-viewer .ics-panel-entry.version .remove,
+.ics-viewer .ics-panel-entry.version icon {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.version .header2,
+.ics-viewer .ics-panel-entry.version .header3 {
+  margin-left: 22px;
+  width: calc(100% - 22px);
+}
+.dijitRtl .ics-viewer .ics-panel-entry.version .header2,
+.dijitRtl .ics-viewer .ics-panel-entry.version .header3 {
+  margin-left: inherit;
+  margin-right: 22px;
+}
+.ics-viewer .ics-panel-entry.version .header2 {
+  font-size: 11px;
+  font-weight: 300;
+  margin-bottom: 0;
+  color: #676767;
+}
+.ics-viewer .ics-panel-entry.version .footer {
+  padding-left: 22px;
+  font-size: 12.8px;
+  font-weight: 300;
+  margin-bottom: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  width: 100%;
+  word-wrap: break-word;
+}
+.ics-viewer .ics-panel-entry.version .icon {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.version .dijitProgressBarLabel {
+  color: black;
+}
+.ics-viewer .ics-panel-entry.comment .header1 {
+  color: #325c80;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.ics-viewer .ics-panel-entry.comment .header1 .vcard .menu_drop_icon {
+  top: 2px;
+  position: absolute;
+}
+.ics-viewer .ics-panel-entry.comment .header2,
+.ics-viewer .ics-panel-entry.comment .footer {
+  font-size: 11px;
+  font-weight: 300;
+  margin-bottom: 0;
+  color: #676767;
+}
+.ics-viewer .ics-panel-entry.comment .header2 {
+  margin-bottom: 5px;
+}
+.ics-viewer .ics-panel-entry.comment .footer {
+  font-size: 11px;
+}
+.ics-viewer .ics-panel-entry.comment .remove,
+.ics-viewer .ics-panel-entry.comment .header3 {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.comment .content {
+  line-height: 20px;
+}
+.ics-viewer .ics-panel-entry.comment.editing .ics-viewer-expandable-text {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.description .content {
+  line-height: 20px;
+  width: 100%;
+}
+.ics-viewer .ics-panel-entry.description .content div.descriptionBox{
+  font-weight: bold;
+}
+.ics-viewer .ics-panel-entry.security .header1,
+.ics-viewer .ics-panel-entry.security .header2,
+.ics-viewer .ics-panel-entry.security .header3 {
+  white-space: normal;
+  line-height: 20px;
+  width: 100%;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .shareLink {
+  white-space: nowrap;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .shareLink .vcard .lotusPerson {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.dijitRtl .ics-viewer .ics-panel-entry.dropdownStream .shareLink .vcard .lotusPerson {
+  float: right;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .shareLink .vcard .menu_drop_icon {
+  float: left;
+}
+.dijitRtl .ics-viewer .ics-panel-entry.dropdownStream .shareLink .vcard .menu_drop_icon {
+  float: right;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .shareLink * {
+  margin-bottom: 0;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .shareLink .remove,
+.ics-viewer .ics-panel-entry.dropdownStream .shareLink .icon {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .shareLink.ics-panel-entry {
+  margin-bottom: 10px;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .shareLink.ics-panel-entry.ics-viewer-last {
+  margin-bottom: 0;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .shareLink .header1 {
+  color: #292929;
+  border-bottom: none;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .shareLink .header1 a {
+  color: #292929;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .shareLink ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  line-height: 21px;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .shareLink .targetUser {
+  color: #676767;
+  clear: both;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .shareLink .targetUser a {
+  color: #676767;
+}
+@-moz-document url-prefix() {
+  .ics-viewer .ics-panel-entry.dropdownStream .shareLink .targetUser a {
+    margin-bottom: 1px;
+  }
+}
+.ics-viewer .ics-panel-entry.share .header2,
+.ics-viewer .ics-panel-entry.share .header3,
+.ics-viewer .ics-panel-entry.share .content,
+.ics-viewer .ics-panel-entry.share .footer,
+.ics-viewer .ics-panel-entry.share .actions {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.share .remove {
+  margin-top: 5px;
+  float: right;
+}
+@-moz-document url-prefix() {
+  .ics-viewer .ics-panel-entry.share .remove {
+    margin-right: 1px;
+  }
+}
+.ics-viewer .ics-panel-entry.share .remove .removeIcon {
+  background-image: url(../style/images/Remove.png);
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.ics-viewer .ics-panel-entry.share .remove .removeIcon:hover,
+.ics-viewer .ics-panel-entry.share .remove .removeIcon:focus {
+  background-image: url(../style/images/RemoveHover.png);
+  /*TODO*/
+}
+.ics-viewer .ics-panel-entry.share .header1 {
+  margin-left: 10px;
+  margin-top: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: calc(100% - 75px);
+}
+.dijitRtl .ics-viewer .ics-panel-entry.share .header1 {
+  margin-left: inherit;
+  margin-right: 10px;
+}
+.lotusui_ie8 .ics-viewer .ics-panel-entry.share .header1 {
+  max-width: 177px;
+  min-width: 1px;
+}
+.ics-viewer .ics-panel-entry.share .header1 .vcard .menu_drop_icon {
+  top: 7px;
+  position: absolute;
+}
+.ics-viewer .ics-panel-entry.share .header2 {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.share .icon {
+  position: static;
+  top: 0;
+  right: 0;
+}
+.dijitRtl .ics-viewer .ics-panel-entry.share .icon {
+  right: inherit;
+  left: 0;
+}
+.ics-viewer .ics-panel-entry.share.folder .icon {
+  cursor: default;
+}
+.ics-viewer .ics-panel-entry.share.folder .icon * {
+  cursor: default;
+}
+.ics-viewer .ics-panel-entry.share.unremovable .remove {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.share.selected {
+  background-color: #e5f3f8;
+}
+.ics-viewer .ics-panel-entry.share.community .icon img {
+  background-image: url(../style/images/group.png);
+}
+.ics-viewer .ics-panel-entry.share.folder {
+  /* Community folder icon is set at the bottom of the file. */
+}
+.ics-viewer .ics-panel-entry.share.folder .icon img {
+  background-image: url(../style/images/iconsFileTypes24-8bit.png);
+  background-position: 0 -30px;
+  background-repeat: no-repeat;
+  border-radius: 0;
+  cursor: pointer;
+}
+.ics-viewer .ics-panel-entry.share.folder.shared .icon img {
+  background-image: url(../style/images/iconsFileTypes24-8bit.png);
+  background-position: 0 -94px;
+}
+.ics-viewer .ics-panel-entry.share.folder.public .icon img {
+  background-image: url(../style/images/iconsFileTypes24-8bit.png);
+  background-position: 0 -62px;
+}
+.ics-viewer .ics-panel-entry.share.folder svg {
+  width: 24px;
+  height: 30px;
+}
+.ics-viewer .ics-panel-entry .header1Action {
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease 0s;
+  display: none;
+}
+.dijitRtl .ics-viewer .ics-panel-entry .header1Action {
+  right: inherit;
+  left: 0;
+}
+.ics-viewer .ics-panel-entry.hover .header1Action {
+  opacity: 100;
+}
+.ics-viewer .ics-panel-entry .header1ActionIcon {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+}
+.ics-viewer .ics-panel-entry.tags .header1Action,
+.ics-viewer .ics-panel-entry.description .header1Action {
+  display: inline;
+}
+.ics-viewer .ics-panel-entry.tags .header1Action img,
+.ics-viewer .ics-panel-entry.description .header1Action img {
+  background-image: url(../style/images/Edit.png);
+  /*TODO*/
+}
+.ics-viewer .ics-panel-entry.tags .header1Action:hover img,
+.ics-viewer .ics-panel-entry.description .header1Action:hover img,
+.ics-viewer .ics-panel-entry.tags .header1Action:focus img,
+.ics-viewer .ics-panel-entry.description .header1Action:focus img {
+  background-image: url(../style/images/EditHover.png);
+  /*TODO*/
+}
+@-moz-document url-prefix() {
+  .ics-viewer .ics-panel-entry.tags .header1Action,
+  .ics-viewer .ics-panel-entry.description .header1Action {
+    margin-right: 1px;
+    margin-top: 1px;
+  }
+}
+.ics-viewer .ics-panel-entry.tags .header2,
+.ics-viewer .ics-panel-entry.description .header2 {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.tags.emptyContent .header2,
+.ics-viewer .ics-panel-entry.description.emptyContent .header2 {
+  display: inline;
+}
+.ics-viewer .ics-panel-entry.tags.editing .header2,
+.ics-viewer .ics-panel-entry.description.editing .header2 {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.dropdownStream {
+  overflow: visible;
+  display: inline-block;
+}
+.ics-viewer .ics-panel-entry.dropdownStream > .header1 {
+  width: 100%;
+  white-space: normal;
+}
+.ics-viewer .ics-panel-entry.dropdownStream > .header1 > a {
+  color: #676767;
+}
+.ics-viewer .ics-panel-entry.dropdownStream > .icon {
+  display: block;
+  position: absolute;
+  left: -11px;
+  top: 5px;
+  height: 9px;
+  width: 12px;
+  min-height: 9px;
+}
+.dijitRtl .ics-viewer .ics-panel-entry.dropdownStream > .icon {
+  left: inherit;
+  right: -11px;
+}
+.ics-viewer .ics-panel-entry.dropdownStream > .icon img {
+  width: 9px;
+  height: 21px;
+  background-image: url(../style/images/Twistie_right.png);
+}
+.dijitRtl .ics-viewer .ics-panel-entry.dropdownStream > .icon img {
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+.ics-viewer .ics-panel-entry.dropdownStream > .icon img.open,
+.dijitRtl .ics-viewer .ics-panel-entry.dropdownStream > .icon img.open {
+  background-image: url(../style/images/Twistie_down.png);
+}
+.ics-viewer .ics-panel-entry.dropdownStream .dropdownLinkSpan {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .remove {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .ics-viewer-stream.loading .streamContent {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .ics-viewer-stream .streamContent {
+  border: 1px #E9E9E9 solid;
+  margin-top: 5px;
+  padding: 12px 10px;
+  cursor: auto;
+  -webkit-box-shadow: 0 2px 5px #eee;
+  -moz-box-shadow: #eee;
+  box-shadow: 0px 2px 5px #eee;
+}
+.lotusui_ie8 .ics-viewer .ics-panel-entry.dropdownStream .ics-viewer-stream .streamContent {
+  border: 1px solid lightgray;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .ics-viewer-stream .streamContent .name {
+  margin-bottom: 5px;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .ics-viewer-stream .streamContent .name.ics-viewer-last {
+  margin-bottom: 0;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .ics-viewer-stream .streamContent .name .icon {
+  display: block;
+  position: absolute;
+  left: auto;
+  top: 0px;
+  right: 0;
+}
+.dijitRtl .ics-viewer .ics-panel-entry.dropdownStream .ics-viewer-stream .streamContent .name .icon {
+  left: inherit;
+  right: auto;
+}
+.dijitRtl .ics-viewer .ics-panel-entry.dropdownStream .ics-viewer-stream .streamContent .name .icon {
+  right: inherit;
+  left: 0;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .ics-viewer-stream .streamContent .name .icon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .ics-viewer-stream .streamContent .name .header1 {
+  font-size: 12.8px;
+  color: #292929;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .ics-viewer-stream .streamContent .name a {
+  color: #292929;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .ics-viewer-stream .streamContent .name > * {
+  cursor: auto;
+  line-height: 30px;
+}
+.ics-viewer .ics-panel-entry.dropdownStream .ics-viewer-stream .streamContent .name > span.header2 {
+  font-size: 11px;
+  font-weight: 300;
+  margin-bottom: 0;
+  color: #676767;
+  margin-top: -10px;
+}
+.ics-viewer .ics-panel-entry.dropdownStream.hideLinks .icon,
+.ics-viewer .ics-panel-entry.dropdownStream.hideLinks .dropdownLink {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.dropdownStream.hideLinks .dropdownLinkSpan {
+  display: block;
+}
+.ics-viewer .ics-panel-entry {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+}
+.ics-viewer .ics-panel-entry.ics-viewer-last {
+  margin-bottom: 0;
+}
+.ics-viewer .ics-panel-entry > * {
+  padding: 0px;
+  font-size: 12.8px;
+  line-height: 20px;
+  font-weight: 300;
+  margin: 0px;
+  float: left;
+}
+.dijitRtl .ics-viewer .ics-panel-entry > * {
+  float: right;
+}
+.ics-viewer .ics-panel-entry .icon {
+  max-width: 30px;
+  min-height: 40px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  top: 2px;
+}
+.dijitRtl .ics-viewer .ics-panel-entry .icon {
+  right: inherit;
+  left: 0;
+}
+.ics-viewer .ics-panel-entry .icon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+}
+.ics-viewer .ics-panel-entry .remove {
+  padding: 0px 2px;
+  text-align: center;
+  line-height: 20px;
+  float: left;
+}
+.dijitRtl .ics-viewer .ics-panel-entry .remove {
+  float: right;
+}
+.ics-viewer .ics-panel-entry .header1 {
+  width: calc(100% - 43px);
+}
+.ics-viewer .ics-panel-entry .header2 {
+  width: calc(100% - 30px);
+}
+.ics-viewer .ics-panel-entry .header3,
+.ics-viewer .ics-panel-entry .content {
+  width: calc(100% - 0px);
+}
+.lotusui_ie8 .ics-viewer .ics-panel-entry .header1,
+.lotusui_ie8 .ics-viewer .ics-panel-entry .header2,
+.lotusui_ie8 .ics-viewer .ics-panel-entry .header3,
+.lotusui_ie8 .ics-viewer .ics-panel-entry .content,
+.lotusui_ie8 .ics-viewer .ics-panel-entry .footer {
+  min-width: 220px;
+  max-width: 100%;
+}
+.ics-viewer .ics-panel-entry .content[contenteditable=true] {
+  width: calc(100% - 4px);
+  padding: 2px;
+  margin: -3px;
+  border: 1px solid #676767;
+}
+.ics-viewer .ics-panel-entry .header1,
+.ics-viewer .ics-panel-entry .header2,
+.ics-viewer .ics-panel-entry .header3 {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+.ics-viewer .ics-panel-entry .header1 .vcard .lotusPerson,
+.ics-viewer .ics-panel-entry .header2 .vcard .lotusPerson,
+.ics-viewer .ics-panel-entry .header3 .vcard .lotusPerson {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.dijitRtl .ics-viewer .ics-panel-entry .header1 .vcard .lotusPerson,
+.dijitRtl .ics-viewer .ics-panel-entry .header2 .vcard .lotusPerson,
+.dijitRtl .ics-viewer .ics-panel-entry .header3 .vcard .lotusPerson {
+  float: right;
+}
+@-moz-document url-prefix() {
+.ics-viewer .ics-panel-entry .header1 .vcard .lotusPerson,
+.ics-viewer .ics-panel-entry .header2 .vcard .lotusPerson,
+.ics-viewer .ics-panel-entry .header3 .vcard .lotusPerson {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-left: 1px;
+  }
+}
+.ics-viewer .ics-panel-entry .header1 .vcard .menu_drop_icon,
+.ics-viewer .ics-panel-entry .header2 .vcard .menu_drop_icon,
+.ics-viewer .ics-panel-entry .header3 .vcard .menu_drop_icon {
+  float: left;
+}
+.dijitRtl .ics-viewer .ics-panel-entry .header1 .vcard .menu_drop_icon,
+.dijitRtl .ics-viewer .ics-panel-entry .header2 .vcard .menu_drop_icon,
+.dijitRtl .ics-viewer .ics-panel-entry .header3 .vcard .menu_drop_icon {
+  float: right;
+}
+.ics-viewer .ics-panel-entry .content {
+  position: relative;
+  word-wrap: break-word;
+}
+.ics-viewer .ics-panel-entry .content p {
+  margin: 0;
+}
+.lotusImagesOff .ics-viewer .ics-panel-entry .actions {
+  padding-right: 40px;
+}
+.lotusImagesOff .dijitRtl .ics-viewer .ics-panel-entry .actions {
+  padding-right: 10px;
+}
+.lotusImagesOff .ics-viewer .ics-panel-entry .action a,
+.lotusImagesOff .ics-viewer .ics-panel-entry a.action,
+.ics-viewer .ics-panel-entry.hover .action a,
+.ics-viewer .ics-panel-entry.hover a.action {
+  opacity: 100;
+}
+.ics-viewer .ics-panel-entry .action .deleteAnchor {
+  display: inline-block;
+  width: 16px;
+}
+.ics-viewer .ics-panel-entry .actions {
+  float: right;
+}
+.dijitRtl .ics-viewer .ics-panel-entry .actions {
+  float: left;
+}
+@-moz-document url-prefix() {
+  .ics-viewer .ics-panel-entry .actions {
+    margin-right: 1px;
+  }
+}
+.ics-viewer .ics-panel-entry .actions img {
+  width: 16px;
+  height: 16px;
+}
+.ics-viewer .ics-panel-entry .actions .restore a img {
+  background-image: url(../style/images/Restore.png);
+  /*TODO*/
+}
+.ics-viewer .ics-panel-entry .actions .restore a:hover img,
+.ics-viewer .ics-panel-entry .actions .restore a:focus img {
+  background-image: url(../style/images/RestoreHover.png);
+  /*TODO*/
+}
+.ics-viewer .ics-panel-entry .actions .edit a img {
+  background-image: url(../style/images/Edit.png);
+  /*TODO*/
+}
+.ics-viewer .ics-panel-entry .actions .edit a:hover img,
+.ics-viewer .ics-panel-entry .actions .edit a:focus img {
+  background-image: url(../style/images/EditHover.png);
+  /*TODO*/
+}
+.ics-viewer .ics-panel-entry .actions .delete a img {
+  background-image: url(../style/images/Trash.png);
+  /*TODO*/
+}
+.ics-viewer .ics-panel-entry .actions .delete a:hover img,
+.ics-viewer .ics-panel-entry .actions .delete a:focus img {
+  background-image: url(../style/images/TrashHover.png);
+  /*TODO*/
+}
+.ics-viewer .ics-panel-entry .actions .download a img {
+  background-image: url(../style/images/DownloadDark.png);
+  /*TODO*/
+}
+.ics-viewer .ics-panel-entry .actions .download a:hover img,
+.ics-viewer .ics-panel-entry .actions .download a:focus img {
+  background-image: url(../style/images/DownloadDarkHover.png);
+  /*TODO*/
+}
+.ics-viewer .ics-panel-entry .actions .flag a img {
+  background-image: url(../style/images/FlagInappropriate_16_gray.png);
+  /*TODO*/
+}
+.ics-viewer .ics-panel-entry .actions .flag a:hover img,
+.ics-viewer .ics-panel-entry .actions .flag a:focus img {
+  background-image: url(../style/images/FlagInappropriate_16_blue.png);
+  /*TODO*/
+}
+.ics-viewer .ics-panel-entry .actions .action {
+  display: none;
+  margin-left: 7px;
+}
+.ics-viewer .ics-panel-entry .actions.edit .action.edit {
+  display: inline;
+}
+.ics-viewer .ics-panel-entry .actions.flag .action.flag {
+  display: inline;
+}
+.ics-viewer .ics-panel-entry .actions.delete .action.delete {
+  display: inline;
+}
+.ics-viewer .ics-panel-entry .actions.restore .action.restore {
+  display: inline;
+}
+.ics-viewer .ics-panel-entry .actions.download .action.download {
+  display: inline;
+}
+.ics-viewer .ics-panel-entry .actions .save,
+.ics-viewer .ics-panel-entry .actions .cancel {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.editing .actions,
+.ics-viewer .ics-panel-entry.editing .action {
+  display: none;
+}
+.ics-viewer .ics-panel-entry.metadata .header1 {
+  width: calc(100% - 19px);
+  font-size: 11px;
+  margin-bottom: 0px;
+  color: #676767;
+}
+.ics-viewer .ics-panel-entry.metadata .header2,
+.ics-viewer .ics-panel-entry.metadata header3 {
+  width: calc(100% - 0px);
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #292929;
+}
+.ics-viewer .ics-panel-entry.metadata .header2 .versionNumber,
+.ics-viewer .ics-panel-entry.metadata header3 .versionNumber {
+  font-size: 14px;
+  color: #325c80;
+  font-weight: 500;
+}
+.ics-viewer .ics-panel-entry.share a {
+  color: #292929;
+}
+.ics-viewer .fileState {
+  line-height: 20px;
+  white-space: normal;
+}
+.ics-viewer .icon.initials {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.ics-viewer .icon.initials span {
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  color: #4178b3;
+}
+.ics-viewer .confirmation,
+.ics-viewer .confirmation-version {
+  visibility: hidden;
+  position: absolute;
+  top: 10px;
+  width: calc(100% - 0px);
+  text-align: center;
+  color: black;
+  height: calc(100% - 20px);
+}
+.ics-viewer .confirmation > span,
+.ics-viewer .confirmation-version > span {
+  height: 100%;
+  vertical-align: middle;
+  display: none;
+}
+.ics-viewer .confirmation > div,
+.ics-viewer .confirmation-version > div {
+  display: inline-block;
+}
+.ics-viewer .confirmation a,
+.ics-viewer .confirmation-version a {
+  padding: 10px;
+  position: relative;
+}
+.ics-viewer .confirmation a.good,
+.ics-viewer .confirmation-version a.good {
+  border: 1px solid green;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+}
+.ics-viewer .confirmation a.bad,
+.ics-viewer .confirmation-version a.bad {
+  border: 1px solid red;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+.ics-viewer .confirmation a.neutral,
+.ics-viewer .confirmation-version a.neutral {
+  border: 1px solid #4178b3;
+  background-color: white;
+}
+.ics-viewer .confirm > *,
+.ics-viewer .confirm .content p {
+  opacity: .5;
+}
+.ics-viewer .confirm .confirmation {
+  visibility: visible;
+  opacity: 1;
+  z-index: 100;
+}
+.ics-viewer .confirm .confirmation > span {
+  display: inline-block;
+}
+.ics-viewer .confirm .confirmation a {
+  opacity: 1;
+}
+.ics-viewer .confirm .actions {
+  visibility: hidden;
+  transition: none;
+}
+.ics-viewer .confirm-version > *,
+.ics-viewer .confirm-version .content p {
+  opacity: .5;
+}
+.ics-viewer .confirm-version .confirmation-version {
+  visibility: visible;
+  opacity: 1;
+  z-index: 100;
+}
+.ics-viewer .confirm-version .confirmation-version > span {
+  display: inline-block;
+}
+.ics-viewer .confirm-version .confirmation-version a {
+  opacity: 1;
+}
+.ics-viewer .confirm-version .actions {
+  visibility: hidden;
+  transition: none;
+}
+.ics-viewer ul.ics-viewer-tabs {
+  list-style: none outside none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  height: 50px;
+  padding-right: 22px;
+}
+.ics-viewer ul.ics-viewer-tabs > li {
+  float: left;
+  margin-left: 22px;
+  margin-top: 15px;
+  width: 30px;
+  cursor: pointer;
+}
+.dijitRtl .ics-viewer ul.ics-viewer-tabs > li {
+  float: right;
+}
+.dijitRtl .ics-viewer ul.ics-viewer-tabs > li {
+  margin-left: inherit;
+  margin-right: 22px;
+}
+.ics-viewer ul.ics-viewer-tabs > li > a {
+  color: #FFFFFF;
+  display: block;
+}
+.ics-viewer ul.ics-viewer-tabs > li hr {
+  margin: 7px 7px 0;
+  color: #FFFFFF;
+  height: 0px;
+  width: 0px;
+  border-top: none;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+  border-left: 8px solid transparent;
+  padding: 0;
+  display: none;
+}
+.ics-viewer ul.ics-viewer-tabs > li.selected hr {
+  display: inherit;
+}
+.ics-viewer ul.ics-viewer-tabs img {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  padding-bottom: 1px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.dijitRtl .ics-viewer ul.ics-viewer-tabs img {
+  margin-left: inherit;
+  margin-right: 5px;
+}
+.ics-viewer ul.ics-viewer-tabs .about img {
+  background-image: url(../style/images/about_this_file.png);
+}
+.ics-viewer ul.ics-viewer-tabs .comments img {
+  background-image: url(../style/images/comments.png);
+}
+.ics-viewer ul.ics-viewer-tabs .share img {
+  background-image: url(../style/images/shared_with.png);
+}
+.ics-viewer ul.ics-viewer-tabs .version img {
+  background-image: url(../style/images/version_history.png);
+}
+.ics-viewer .ics-viewer-tags .ics-viewer-tag img {
+  background-image: url(../style/images/DeleteTag.png);
+  /*TODO*/
+}
+.ics-viewer input,
+.ics-viewer textarea,
+.ics-viewer select,
+.ics-viewer .lotusMentionsDiv {
+  background: #f9f9f9;
+  border: 1px solid #bcbcbc;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ics-viewer .viewer-folder-stream {
+  position: relative;
+}
+.ics-viewer .viewer-folder-stream .ics-panel-entry.share.community .icon img {
+  /* This needs to be cleaned up */
+  background-image: url(../style/images/iconsFileTypes24-8bit.png) !important;
+  background-position: 0 2px !important;
+  background-repeat: no-repeat;
+  border-radius: 0;
+}
+.ics-viewer .viewer-folder-stream .shareFolderTitle {
+  border-bottom: 1px #ddd solid;
+}
+.ics-viewer .bhcPeopleTypeAhead input {
+  background-color: #f9f9f9 !important;
+  padding: 1px 1px 1px 10px !important;
+  color: black;
+}
+.fileviewer-panels-textnav .ics-viewer .panelTitle {
+  display: none !important;
+}
+.fileviewer-panels-textnav .ics-viewer .panelContent {
+  padding: 32px 32px 0;
+}
+.fileviewer-panels-textnav .ics-viewer ul.ics-viewer-tabs > li {
+  width: inherit;
+  /* ??? */
+}
+.fileviewer-panels-textnav .ics-viewer ul.ics-viewer-tabs > li > a {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 0 5px 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.fileviewer-panels-textnav .ics-viewer ul.ics-viewer-tabs > li > a.wrapped {
+  line-height: 12px;
+  padding-bottom: 4px !important;
+  text-align: center;
+}
+@-moz-document url-prefix() {
+  .fileviewer-panels-textnav .ics-viewer ul.ics-viewer-tabs > li.selected:focus a {
+     border-bottom-width: 4px;
+  }
+}
+.fileviewer-panels-textnav .ics-viewer ul.ics-viewer-tabs > li.selected a {
+  border-bottom: 6px solid #5AAAFA;
+  padding: 0 5px 8px;
+}
+.bhcPeopleTypeAhead.dijitTextBox {
+  border: none !important;
+}
+.bhcPeopleTypeAhead.dijitTextBox .dijitInputInner {
+  border: 1px solid #bcbcbc !important;
+}
+/* Copyright IBM Corp. 2015  All Rights Reserved.              */
+.ics-viewer .ics-thumbnailwidget-container form input[type="file"] {
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.ics-viewer .ics-thumbnailwidget-container .ics-viewer-inlineList {
+  font-weight: bold;
+  font-size: 12px;
+}
+.ics-viewer .ics-thumbnailwidget-container .ics-viewer-inlineList a[disabled] {
+  pointer-events: none;
+  cursor: default;
+  color: #676767;
+}
+/* Copyright IBM Corp. 2015  All Rights Reserved.              */
+.ics-viewer .ics-newversionwidget-container form input[type="file"] {
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.ics-viewer .ics-newversionwidget-container .ics-editBox .transition {
+  transition: height 0.3s ease 0s;
+  margin-bottom: 6px;
+}
+.ics-viewer .ics-newversionwidget-container .ics-editBox .hintText {
+  color: #666666;
+  font-style: italic;
+  padding-left: 10px;
+  height: 30px;
+}
+.ics-viewer .ics-newversionwidget-container .ics-viewer-inlineList {
+  font-weight: bold;
+  font-size: 12px;
+}
+.ics-viewer .ics-newversionwidget-container .ics-viewer-inlineList a[disabled] {
+  pointer-events: none;
+  cursor: default;
+  color: #676767;
+}
+.textfileviewer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  min-height: 48px;
+  padding-bottom: 12px;
+  overflow: scroll;
+  padding: 50px 100px 0;
+  /* Override Prism style */
+}
+.textfileviewer pre[class*="language-"] {
+  margin: 0;
+}
+.textfileviewer .textfileviewer-message {
+  margin-top: 8px;
+  padding: 16px;
+  font-style: italic;
+}
+.textfileviewer .textfileviewer-loading-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1710;
+}
+.textfileviewer .textfileviewer-loading-indicator div {
+  width: 100px;
+  margin: auto;
+  margin-top: 12px;
+  padding: 12px 24px;
+  text-align: center;
+  background-color: rgba(245, 242, 240, 0.85);
+  border: 1px solid black;
+}
+.textfileviewer .textfileviewer-content,
+.textfileviewer .textfileviewer-content code {
+  overflow-y: hidden;
+}
+.textfileviewer .textfileviewer-loading-indicator {
+  visibility: hidden;
+}
+.textfileviewer .textfileviewer-empty-indicator,
+.textfileviewer .textfileviewer-error-indicator,
+.textfileviewer .textfileviewer-content {
+  display: none;
+}
+.textfileviewer.loading-true .textfileviewer-loading-indicator {
+  visibility: visible;
+}
+.textfileviewer.error-true .textfileviewer-error-indicator {
+  display: inherit;
+}
+.textfileviewer.error-default.textfileviewer-empty .textfileviewer-empty-indicator,
+.textfileviewer.error-false.textfileviewer-empty .textfileviewer-empty-indicator {
+  display: inherit;
+}
+.textfileviewer.error-default.textfileviewer-nonempty .textfileviewer-content,
+.textfileviewer.error-false.textfileviewer-nonempty .textfileviewer-content {
+  display: inherit;
+}
+/* Copyright IBM Corp. 2015  All Rights Reserved.              */
+.ics-viewer-overlay.ics-viewer-welcome-overlay {
+  display: none;
+  top: 50px;
+  z-index: 1710;
+}
+.ics-viewer-welcome-showing .ics-viewer-overlay {
+  opacity: .75;
+}
+.ics-viewer-welcome-showing .ics-viewer-overlay.ics-viewer-welcome-overlay {
+  display: block;
+}
+.ics-viewer .ics-message-container.ics-viewer-welcome-container {
+  z-index: 1711;
+}
+.ics-viewer .ics-message-container.ics-viewer-welcome-container .lotusMessage2 {
+  display: block;
+  background-color: #4178be;
+  border: none;
+  border-radius: 0;
+  color: white;
+  weight: 400;
+  width: 80%;
+  padding: 25px 30px 30px;
+  margin: auto;
+  margin-top: 9px;
+}
+.ics-viewer .ics-message-container.ics-viewer-welcome-container .lotusMessage2 .lotusIconMsgSuccess {
+  display: none;
+}
+.ics-viewer .ics-message-container.ics-viewer-welcome-container .lotusMessage2 .lotusDelete {
+  top: 30px;
+  right: 30px;
+}
+.dijitRtl .ics-viewer .ics-message-container.ics-viewer-welcome-container .lotusMessage2 .lotusDelete {
+  right: inherit;
+  left: 30px;
+}
+.ics-viewer .ics-message-container.ics-viewer-welcome-container .lotusMessage2 .lotusDelete img {
+  background-image: url(../style/images/cancel_2.png);
+  background-position: center;
+  opacity: 1;
+  width: 16px;
+  height: 16px;
+}
+.ics-viewer .ics-message-container.ics-viewer-welcome-container .lotusMessage2 .lotusMessageBody {
+  padding: 0;
+  margin: 0;
+}
+.ics-viewer .ics-message-container.ics-viewer-welcome-container .lotusMessage2 .lotusMessageBody .title {
+  font-size: 1.75em;
+  border-bottom: 1px solid white;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+.ics-viewer .ics-message-container.ics-viewer-welcome-container .lotusMessage2 .lotusMessageBody .subtitle {
+  font-size: 1.15em;
+}
+.ics-viewer .ics-message-container.ics-viewer-welcome-container .lotusMessage2 .lotusMessageBody .lines {
+  font-size: 1.15em;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.ics-viewer .ics-message-container.ics-viewer-welcome-container .lotusMessage2 .lotusMessageBody .lines li {
+  padding-top: 4px;
+}
+.ics-viewer.loadError .ics-viewer-welcome-container,
+.ics-viewer.loadError .ics-viewer-welcome-overlay {
+  display: none;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light {
+  /* Copyright IBM Corp. 2015  All Rights Reserved.              */
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer-overlay {
+  background-color: #ccc;
+  opacity: .85;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer .ics-viewer-banner {
+  background-color: #325c80;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer .ics-viewer-title-name-container .ics-editBox input {
+  background-color: #264a60;
+  border: 1px solid #1d3649;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer .ics-viewer-banner .ics-viewer-toolbar .ics-viewer-action.divider {
+  background-color: #264a60;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer .ics-viewer-details {
+  box-shadow: none;
+  background-color: #f1f1f1;
+  top: 53px !important;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer .ics-viewer-details .ics-shelf.selected {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer .ics-panel-entry-container,
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 {
+  background-color: #f1f1f1 !important;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 {
+  border-bottom: 1px solid #ccc;
+  border-top: none;
+  color: #292929;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.moreButton {
+  right: 30px;
+  margin-top: 15px;
+  margin-right: 0;
+  background-image: url(../style/images/dropdown_gray_12.png);
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 div.moreButton span.dijitReset.dijitInline.dijitButtonText {
+  font-weight: 400;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer ul.ics-viewer-tabs > li {
+  margin-top: 12px;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer ul.ics-viewer-tabs > li:first-child {
+  margin-left: 0;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer ul.ics-viewer-tabs > li a {
+  color: #292929;
+  font-weight: 400;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 6px;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer ul.ics-viewer-tabs > li.selected a {
+  border-bottom: 5px solid #4178be;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer ul.ics-viewer-tabs {
+  height: 42px;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer .panelContent {
+  padding-top: 15px;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer .ics-panel-entry-container .panelContent .panelContent {
+  padding-top: 0;
+}
+.fileviewer-panels-textnav.fileviewer-theme-light .ics-viewer .ics-panel-entry.dropdownStream .ics-viewer-stream .streamContent {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 12px 10px;
+}
+
+.ics-viewer-loading {
+  display: inline-flex;
+}
+.ics-viewer .ics-share-with-link {
+   margin-top: 30px;
+}
+.ics-viewer .ics-share-with-link .shareWithLinkTitle {
+   border-bottom: 1px #ddd solid;
+}
+.ics-viewer .ics-share-with-link .shareWithLinkTitle a {
+   color: #777677;
+}
+.ics-viewer .ics-share-with-link .shareWithLinkTitle a img.arrowOpen {
+   background-image: url(sprites.png);
+   background-position: -429px 0px;
+   width: 10px;
+   margin: 0;
+}
+.ics-viewer .ics-share-with-link .shareWithLinkTitle a img.arrowClosed {
+   background-image: url(sprites.png);
+   background-position: -419px 0px;
+   width: 10px;
+   margin: 0;
+}
+.dijitRtl .ics-viewer .ics-share-with-link .shareWithLinkTitle a img.arrowClosed  {
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+.ics-viewer .ics-share-with-link .selectContent select, .ics-viewer .ics-share-with-link .linkContent input {
+  height: 30px;
+  width: 100%;
+}
+.ics-viewer .ics-share-with-link .linkContent input {
+  background-color: #ffffff;
+  color: #777677;
+}
+.ics-viewer .ics-share-with-link .descriptionContent a{
+   font-weight: bold;
+}
+.ics-viewer .ics-share-with-link .linkContent .buttonContainer{
+  overflow: hidden;
+}
+.ics-viewer .ics-share-with-link .linkContent .copyLinkBtn{
+  float: left;
+  font-weight: bold;
+}
+.dijitRtl .ics-viewer .ics-share-with-link .linkContent .copyLinkBtn{
+  float: right;
+  font-weight: bold;
+}
+.ics-viewer .ics-share-with-link .linkContent .deleteLinkBtn{
+  float: right;
+  font-weight: bold;
+}
+.dijitRtl .ics-viewer .ics-share-with-link .linkContent .deleteLinkBtn{
+  float: left;
+  font-weight: bold;
+}
+.ics-viewer .ics-viewer-copy-shared-link svg g{
+  fill:white
+}

@@ -1,0 +1,57 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>Core test pages</title>
+
+
+<style>
+    dt, dd { margin: 2px auto; }
+    dt {
+        float: ${left};
+        clear: ${left};
+        margin-${right}: 1em
+    }
+    dd {
+        float: ${left};
+    }
+</style>
+
+${endhead}
+<div class="lotusBanner">
+   <div class="lotusRightCorner">
+      <div class="lotusInner">
+         <a href="#lotusMainContent" accesskey="S" class="lotusAccess">
+            <img src="${_blankGif}" />
+         </a>
+         <div class="lotusLogo">
+            <span class="lotusAltText">IBM Connections Common UI</span>
+         </div>
+      </div>
+   </div>
+</div>
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    Index
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+
+<div class="lotusMain">
+    <div class="lotusContent">
+        <h1>Core test pages</h1>
+        <p>Keep this page updated to list all available test pages under the <code>ic-ui</code> namespace.</p>
+
+        <h2>Test pages</h2>
+        <ul>
+            <li><a href="aria/index.html?render=test">ARIA helpers</a></li>
+            <li><a href="ui/index.html?render=test">Core UI widgets and utilities</a></li>
+            <li><a href="ckeditor/index.html?render=test">CKEditor wrappers, plugins and utilities</a></li>
+            <li><a href="globalization/index.html?render=test">Globalization support</a></li>
+            <li><a href="../ic-oauth-test/ui/index.html?render=test">OAuth support</a></li>
+        </dl>
+
+    </div>
+</div>
+</body>
+${end}

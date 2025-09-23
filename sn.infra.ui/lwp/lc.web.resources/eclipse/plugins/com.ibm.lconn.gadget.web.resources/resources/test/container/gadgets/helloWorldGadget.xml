@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+<Module>
+	<ModulePrefs title="Hello World" description="Hello World gadget" height="400" width="500">
+		<Optional feature="inline"/>
+		<Require feature="views" />
+		<Require feature="opensocial"/>
+		<Optional feature="com.ibm.connections.theme"/>
+	</ModulePrefs>
+	<UserPref name="foo" required="false" type="hidden" datatype="string"/>
+	<Content type="html"><![CDATA[
+		<script type="text/javascript">
+			function report(val) {
+				if (typeof dojo !== 'undefined') /* is inline */ {
+					alert(val);
+				} else {
+					document.write("<p/>" + val);
+				}
+			}
+		</script>
+	
+	
+	 	<h3>Hello Gadget World</h3>
+	 	I am an regular gadget gadget.
+	 	<p/>
+	 	<!--
+	 	Prefs as expected for gadget.Prefs().getString('foo'): __UP_foo__
+	 	-->
+	 	
+	 	<script type="text/javascript">
+	 		var p = new gadgets.Prefs();
+	 		report("Prefs as expected for gadget.Prefs().getString('foo'): " + p.getString('foo'));
+	 	</script>
+	 	
+	 	<script type="text/javascript">
+	 		var vp = gadgets.views.getParams();
+	 		var val = null;
+	 		if (vp) { val = vp.lang; }
+	 		if (!val) { val = 'undefined'; }
+	 		report("View params as expected for adgets.views.getParams().lang: " + val);
+	 	</script>
+  	]]></Content>
+</Module>

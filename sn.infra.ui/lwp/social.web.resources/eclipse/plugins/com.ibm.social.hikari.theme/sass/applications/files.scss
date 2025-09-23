@@ -1,0 +1,531 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2012, 2014                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+@import '../colors';
+
+.dojoDndAvatarHeader {display:none;}
+.dojoDndAvatar tr { opacity: 0.5 !important;}
+.lotusui_ie .dojoDndAvatar td { filter: Alpha(Opacity=50) !important; zoom: 1;}
+.lotusui .dojoDndAvatarCanDrop .qkrDropAvatar { border: 1px solid black; }
+.lotusui .dojoDndAvatarCanDrop tr { opacity: 1.0 !important; }
+.lotusui_ie .lotusui .dojoDndAvatarCanDrop td { filter: Alpha(Opacity=100) !important;  zoom: 1;}
+tr.dojoDndItemOver .dojoDndHandle { cursor: move; }
+tr.dojoDndItemOver .dojoDndHandle .lotusCheckbox { cursor: default; }
+.dojoDndCopy tr.dojoDndItemOver td.lotusFirstCell { background-image: none; }
+.dijitDialogUnderlay {background: black;opacity: 0.15;}
+.dj_ie .dijitDialogUnderlay {filter: alpha(opacity=15);}
+.qkrErrorDetailsText, .qkrErrorDetailsLink { font-weight: normal; }
+ul.lotusYearTree {list-style: none;list-style-position:outside;margin-left: 0;}
+ul.lotusYearTree ul.lotusMonthTree {list-style: none;list-style-position:outside;margin-left: 30px;}
+.lotusImagesOff .lotusTabs li.lotusSelected { position:relative; top:1px; }
+.lotusImagesOff .lotusDelete .lotusAltText { padding-left: 5px; }
+.lconnTabBody .qkrLoading {margin-top: 14px;}
+.lconnTabBody .lotusVertTable .qkrLoading {margin-top: 0;}
+.lotusSection p.lotusChunk {margin:5px 0 0 0;clear:both;display:block;}
+.lotusColLeft .lotusSection .lotusList li.lotusSelected .lotusLeft { width: 87%; }
+.lotusColLeft .lotusSection {min-height: 25px; z-index: 1;}
+a.lotusView {cursor: pointer;}
+.lotusSort th, .lotusSort td { vertical-align: middle; }
+.lotusSort A { vertical-align: baseline; }
+.lotusChunk .qkrEmpty,
+.lotusChunk .qkrLoading,
+.lotusChunk .qkrError {
+font-style: italic;
+}
+.lotusInfoBox .lotusInlinelist {margin-left: 0;}
+ul.lotusList li label {vertical-align: middle;}
+td.lotusFormError UL {margin-bottom:0; margin-left:0; padding-left:0; }
+td.lotusFormHelp {width: 20px; vertical-align: top;}
+.lotusForm tr.lotusFormFieldRow td td {padding-bottom:0;}
+.qkrBackLink { margin-bottom: 8px; }
+.qkrBackLink img { margin-right:5px; }
+.dj_gecko .qkrBackLink img { vertical-align:baseline; }
+.lotusPlaceBar .lotusBtnContainer {float: left; padding-left: 20px; padding-top:0.5em;}
+
+.lotusui30 .lotusPlaceBar .lotusBtnContainer {
+margin: 0; /*upload file and new folder*/
+position:absolute;
+    top: -53px;
+    left: $left-col-outer-width + $smaller;
+}
+
+.lotusPlaceBar .qkrQuota {margin-right:10px; margin-top:8px; float: right;}
+.qkrQuota {margin: 5px 10px; float: right; font-size: .9em;}
+.grid .qkrQuota {
+    margin-right: 50px;
+}
+.qkrPlaceMessageBar {padding-left: 10px; padding-top: 12px; padding-right:12px; padding-bottom: 0px; margin-bottom: -12px;}
+.lotusui h1 a,
+.lotusui h1 a:visited,
+.lotusui h1 a:hover,
+.lotusui h1 a:focus,
+.lotusui h1 a:active {color: #444;}
+.lotusui_ie button.lotusBtn, .lotusui_ie input.lotusBtn{padding-left:7px;padding-right:7px;overflow:visible;}
+.lotusui_ie button.lotusFormButton, .lotusui_ie input.lotusFormButton{padding-left:7px;padding-right:7px;overflow:visible;}
+.lotusContent .lotusBtnContainer {overflow: visible; white-space: normal;}
+.lotusStream {clear: both;}
+.lotusStream .qkrEmpty {margin: 20px 10px; font-style: italic;}
+.lotusStream .qkrError {margin: 20px 10px; font-style: italic; color: #666;}
+.lotusStream .qkrLoading {margin: 20px 10px;}
+.lotusStream .qkrLoading IMG {margin-right: 5px;}
+.lotusStream span {cursor: default;}
+.lotusStream a span {cursor: pointer;}
+.lotusStream .lotusDetails .lotusMeta {margin-bottom: 5px;}
+.lotusStream .lotusActions {margin-top: 5px;}
+.lotusTable td ul.lotusFirst,
+.lotusTable td div.lotusFirst {margin-top:0;}
+.lotusStream .lconnSprite-iconContext { margin-top: 3px !important; vertical-align: baseline; }
+.lotusStream .lconnSprite-iconRating16-off,
+.lotusStream .lconnSprite-iconRating16-on,
+.lotusStream .lconnSprite-iconPublic16,
+.lotusStream .lconnSprite-iconPrivate16,
+.lotusStream .lconnSprite-iconShared16 {vertical-align:top !important;}
+table.lotusFixedTable td, table.lotusFixedTable th {overflow: hidden; text-overflow: ellipsis; }
+.dijit_a11y table.lotusFixedTable { table-layout: auto; }
+textarea { height: 6em; }
+html.dj_safari textarea { min-height: 75px; resize:none; }
+.lotusHeader .lconnPinnedToggle {margin-left: 10px;}
+.lotusHeader .lconnPinnedToggle img {margin:0; padding:0; vertical-align: baseline;}
+.lotusHeader .lconnInternalLink {
+  color: #3e76c0;
+  font-size: .6em;
+}
+.lotusCommentList .lotusInlinelist li{margin:0;border-top-width:0;}
+.lotusCommentList .lotusActions {padding-top: 5px;}
+.qkrComments { margin-top: 12px; }
+.lotusui_ie .qkrComments {margin-top: 0px;}
+.qkrAddComment .lotusFormTable {padding: 6px 16px;}
+.qkrAddComment .lotusFormTable TEXTAREA {height: 13em;}
+.lotusDialog .lotusFormFieldRow TD {vertical-align: top;}
+.lotusDialog .lotusFormErrorSummary div {margin-top: 0;}
+.lotusDialog .lotusDialogContent .lotusFormTable {margin-bottom: -10px;}
+.lotusui .lotusDialogBorder{max-width:none;}
+.lotusui .lotusDialog .lotusDialogContent {max-height:none; max-width: none;overflow-x: hidden; overflow-y: visible; padding-right: 17px;}
+.lotusui_ie .lotusDialog .lotusDialogContent{position:static;}
+.lotusui_ie .lotusDialog .lotusDialogFooter{zoom:1}
+.qkrDialogScrolledY {overflow-y: scroll;}
+.lotusui_ie .qkrDialogScrolledY { position: relative; }
+.lotusui .lotusDialog .qkrDialogScrolledY .lotusDialogContent  {padding-right:1px;}
+.dj_safari .lotusui .lotusDialog .qkrDialogScrolledY .lotusDialogContent  {padding-right:2px;}
+.lotusForm .qkrEmpty {font-style: italic;}
+.lotusui .lotusCheckbox {padding:0; vertical-align:middle;}
+.lotusui_ie .qkrVersions {margin-top:0;}
+.dijitPopup .lotusHelp,
+.dijitTooltipDialog .lotusHelp,
+.lotusTooltipDialog .lotusHelp {position: relative; left: 0; top: 0; width: auto;}
+.lotusui .dijitTooltipContainer {font-size: 1em;}
+.lotusHelp .lotusChunk {margin: 5px 0 0;}
+.lotusHelp .lotusInfoBox h3 {float: none; margin-left: 0; padding-left: 0}
+.lotusTooltipDialog .dijitTooltipContainer {background-image: none; background-color: transparent; border: 0; padding: 0;}
+.lotusTooltipDialog .dijitTooltipConnector {display: none;}
+.qkrInlineWarning {color:#FF0000;padding-left: 5px;font-weight: bold;cursor: pointer;}
+.lotusStream .qkrInlineWarning {padding-left: 0;}
+.dj_ff2 .lotusStream .qkrInlineWarning,
+.lotusui_ie .lotusStream .qkrInlineWarning {padding-left: 5px;}
+.lotusui_ie .lotusStream .qkrInlineWarning {zoom: 1;}
+span#semtagmenu {z-index:10000;}
+.qkrMetrics dd table {}
+.qkrMetrics dd table td {white-space: nowrap;}
+.qkrMetrics dd table th {padding-right: 15px; padding-left: 0;}
+.dijitCalendarDisabledDate span {color: #ccc !important;}
+.qkrViewControlHeader {
+position: relative;
+padding-right: 175px;
+}
+.dijit_a11y .qkrViewControlHeader {
+padding-right: 0px;
+}
+.qkrViewControlInline {
+position: absolute;
+bottom: 0;
+right: 0;
+}
+.dijit_a11y .qkrViewControlInline {
+position: static;
+float: right;
+}
+@media print
+{
+.dj_ff2 .lotusBtnImg,
+.dj_ff2 .lotusBtnSpecial,
+.dj_ff2 .lotusFormButton
+{
+color: #000;
+background: none !important;
+}
+}
+.lotusMenu .lotusMenuSubsection{margin-bottom: 10px;}
+.lotusMenu .lotusMenuSubsection .XlotusSubsectionInfo {margin-left: 10px;}
+.lotusMenu .lotusIcons li img{vertical-align: bottom;}
+.lotusMenu h3 a { display: block; }
+.lotusMenu h3, .lotusSection h2, .lotusSection .dijitTitlePaneTitle {-moz-user-select: none;}
+.lconnPinnedToggle .lconnPinnedUnknown {opacity: 0.4;}
+.lotusui_ie .lconnPinnedToggle .lconnPinnedUnknown {filter: Alpha(Opacity=40);}
+.lotusui .lotusFeeds a.lotusFeed { margin: 0; }
+.lotusui .lotusFeeds .lotusDivider { margin: 0 5px; color: #666666; }
+.lotusui30 .lotusBreakWord {word-wrap: break-word; word-break: normal; overflow: hidden;}
+.lotusui_ie .lotusui30 .lotusBreakWord {word-break: normal; overflow: hidden;}
+
+.lotusui30_layout .lotusContent .lotusTable tr td:first-child {
+  padding-left: 10px;
+}
+
+.files-independent-scrollbars-compatible #scene-body {
+  margin-left: -20px;
+}
+
+.qkrComments {
+margin-left: -9px;
+margin-top: 12px;}
+
+/* for sync view banner */
+.lotusui30 .lotusSyncViewWelcomeBox{
+  background-color:#152935;
+  border-radius: 0px;
+  background-image:-moz-linear-gradient(top, #152935 0%, #152935 100%);
+  background-image:-webkit-gradient(linear, left top, left bottom, from(#152935), to(#152935));
+  background-image:linear-gradient(top, #152935, #152935);}
+  
+.lotusui30 .lotusSyncViewWelcomeBox .lotusSyncHeading {
+  color: #00B4A0;
+  font-weight: 500;}
+  
+.lotusui30 .lotusSyncViewWelcomeBox p {
+  color: #C8D2D2;}
+  
+.lotusui30 .lotusSyncViewWelcomeBox .lotusSyncPic {
+  background-image: url(/com.ibm.lconn.core.styles.oneui3/images/sync_hikaritheme.png);}
+  
+.lotusui30 .lotusSyncViewWelcomeBox .lotusSyncButtonDiv .lotusSyncInstallButton{
+  background: #00B4A0;
+  border: none;
+  border-radius: 0px;}
+
+.lotusui30 .lotusSyncViewWelcomeBox .lotusSyncLinkSpan{
+   color: #C8D2D2;
+}
+
+.lotusui30 .lotusSyncViewWelcomeBox .lotusSyncLinkSpan A{
+   color: #00B4A0;
+}
+
+.lotusui30_layout .lotusMain .lotusContent {
+  padding: 15px 0 40px 10px;
+}
+
+.lconnFileUploadStatus.lotusIndent20 {padding-left: 0;}
+.lotusui30 .lotusMessage.lotusMeta {color: $black-ongray}
+
+.lotusui30 .lotusPostAvatar img {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%; 
+}
+
+/* START of drop down menu of folder action menu, folder breadcrumb truncation menu and left navigation global action menu */
+.lotusui30dojo .lotusGlobalActionBarMenu .dijitMenuItem,
+.lotusui30dojo .lconnContentTitleDropdownBody .dijitMenuItem {
+  color: $black-ongray;
+}
+.lotusui30dojo .lotusGlobalActionBarMenu .dijitMenuItem:not(.dijitMenuItemFocused):not(.dijitMenuItemHover) .dijitReset,
+.lotusui30dojo .lconnContentTitleDropdownBody .dijitMenuItem:not(.dijitMenuItemFocused):not(.dijitMenuItemHover) .dijitReset,
+{
+  border-top: 1px solid $transparent;
+  border-bottom: 1px solid $transparent;
+}
+.lotusui30dojo .lotusGlobalActionBarMenu .dijitMenuItem td.dijitMenuItemLabel,
+.lotusui30dojo .lconnContentTitleDropdownBody .dijitMenuItem td.dijitMenuItemLabel {
+  padding: 7px 20px 7px 10px !important;
+  color: inherit;
+}
+
+.lotusui30dojo .lotusGlobalActionBarMenu .dijitMenuItem:not(.dijitMenuItemFocused).dijitMenuItemHover td.dijitMenuItemLabel,
+.lotusui30dojo .lconnContentTitleDropdownBody .dijitMenuItem:not(.dijitMenuItemFocused).dijitMenuItemHover td.dijitMenuItemLabel,
+{
+  border-top: 1px solid $gray25;
+  border-bottom: 1px solid $gray25;
+}
+
+.lotusui30dojo .lotusGlobalActionBarMenu .dijitMenuItem.dijitMenuItemFocused .dijitReset,
+.lotusui30dojo .lconnContentTitleDropdownBody .dijitMenuItem.dijitMenuItemFocused .dijitReset,
+{
+  border-top: 1px solid $blue50;
+  border-bottom: 1px solid $blue50;
+}
+/* END of drop down menu of folder action menu, folder breadcrumb truncation menu and left navigation global action menu */
+
+
+/* For left nav tree*/
+.lotusui30 .lotusMenu .lconnFilesLeftNavTree {
+  margin-left: 0px; }
+
+.lotusGlobalActionBar {
+  width: 135px !important;
+  margin-left: 10px !important;
+  margin-bottom: 20px !important; }
+
+.lotusui30 .lotusGlobalActionBar .lotusBtn .lotusDropDownSprite {
+  background-position: 0 -1260px; }
+
+.lotusHeader .lconnBreadcrumbnode:hover,
+.lotusHeader div:hover>.lconnBreadcrumbnode,
+.lotusHeader .lconnBreadcrumbnode:focus,
+.lotusHeader div:focus>.lconnBreadcrumbnode {
+  text-decoration: underline;
+}
+/* no underline in High-Contrast mode */
+.lotusImagesOff .lotusHeader .lconnBreadcrumbnode:hover,
+.lotusImagesOff .lotusHeader div:hover>.lconnBreadcrumbnode,
+.lotusImagesOff .lotusHeader .lconnBreadcrumbnode:focus,
+.lotusImagesOff .lotusHeader div:focus>.lconnBreadcrumbnode {
+  text-decoration: inherit;
+}
+
+.lotusui30 .lotusMenu .lotusMenuSubsection ul.lotusIcons .lotusSelected a,  
+.lotusui30 .lotusMenu .lotusMenuSubsection ul.lotusIcons a {
+  padding: 1.5px 0px 1.5px 40px;
+  margin: 2px 0;
+  border-left: 4px solid transparent;
+}
+.lotusui30 .lotusMenu .lotusMenuSubsection ul.lotusIcons .lotusSelected a {
+  border-left: 4px solid #4178be; 
+}
+.lotusui30 .lotusMenu ul.lotusIcons img, .lotusui30 .lotusMenu ul.lotusIcons .lotusSelected img {
+  top: 0px;
+  left: 7px;
+  margin-top: -1px;
+}
+
+.lconnFilesTree .node .headerOuter .highlight {
+  background-color: transparent;
+}
+
+.files-independent-scrollbars-compatible .lotusui30_layout .lotusColLeft:after {
+   border-right: 0;
+}
+
+.files-independent-scrollbars-compatible .lotusColLeft .lotusGlobalActionBar {
+    padding-top: 20px;
+    margin-left: 0px !important;
+}
+
+.lotusui30dojo .dijitMenu{
+	border: 1px solid #e8e8e8;
+}
+
+.lotusui30dojo .dijitMenuSeparatorTop{
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.files-independent-scrollbars-compatible .lotusSearch,
+.files-independent-scrollbars-compatible .lconnContentSceneActions,
+.files-independent-scrollbars-compatible .lotusMessageContainer {
+    margin-right: 50px;
+}
+
+.files-independent-scrollbars-compatible .lotusui30_body .lotusMain {
+    padding: 0px 0px 0px $smaller;
+}
+
+@media screen and (min-width:1250px) {
+    .files-independent-scrollbars-compatible .lotusui30_body .lotusMain {
+        padding-left: $larger;
+        padding-right: 0;
+    }
+} 
+
+@media screen and (min-width:1600px) {
+    .files-independent-scrollbars-compatible .lotusui30_body .lotusMain,
+    .lconnFiles .lotusTopNav .lotusTitleBar .lotusRightCorner {
+        max-width: 1750px;
+    }
+}
+
+.files-independent-scrollbars-compatible .lotusStyledScroll {
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: -20px;
+}
+
+.files-independent-scrollbars-compatible .lotusColLeft .lotusStyledScroll {
+   padding-right: 10px;
+   padding-left: 10px;
+}
+
+.files-independent-scrollbars-compatible .lotusContent .lotusStyledScroll {
+	padding-right: 50px;
+	padding-left: 22px;
+}
+
+.files-independent-scrollbars-compatible .lotusContent .lotusStyledScroll.grid {
+   padding-right: 0;
+}
+
+.files-independent-scrollbars-compatible .lotusContent #scene-body .filesList .lotusPaging {
+   margin: 0px 0px 0px -10px;
+}
+.files-independent-scrollbars-compatible .lotusContent #scene-body .filesList {
+   margin-top: 0px;
+}
+.files-independent-scrollbars-compatible .lotusContent .lotusBtnContainer {
+   padding-bottom: 10px;
+}
+.lconnFiles .lotusui30 .lotusMenu li a, .lotusui30 .lotusMenu li a:visited{
+	padding: 0 16px;
+}
+.lconnFiles .lotusui30 .lotusMenu li.lotusSelected a, .lotusMenu li.lotusSelected a:hover{
+	padding: 0 20px 0 13px;
+}
+.lconnFiles .lotusui30 .lotusMenu div[class~="lotusSelected"] {
+	font-weight: bold;
+	border-left: 4px solid #4178be;
+}
+
+.lconnFiles .lotusui30 .lotusMenu div[id^="label"] {
+	padding-left: 13px;
+}
+.lconnFiles .lotusui30 .lotusMenu div[id^="menu"] {
+	padding-left: 0px;
+}
+/* dnd for general style*/
+.lconnFiles .qkrDropAvatar {
+   color: #ffffff;
+}
+
+.lconnFiles .qkrDropAvatar .DropAvatarBadge div {
+   background: rgba(50,92,128,.9);
+   border: none;
+}
+
+.lconnFiles .qkrDropAvatar .DropAvatarContainer {
+   box-shadow: none;
+   background-color: #325c80;
+}
+
+/* dnd for high contrast */
+
+.lconnFiles .dj_a11y .lconnFilesTree .node .headerOuter,.lconnFiles .dj_a11y .lconnFilesTree .node .headerSelector{
+    border: none;
+}
+
+.lconnFiles .dj_a11y .qkrDropAvatar .DropAvatarBadge{
+	border: 1px solid;
+}
+.lconnFiles .search-result-pages-restyle .lotusui30 {
+	.files-independent-scrollbars-compatible .lotusColLeft .lotusGlobalActionBar {
+		padding-top: 45px;
+	}
+	
+	div.lotusTitleBar .lotusSearch {
+		top: 35px;
+	}
+	
+	div.lotusHeader {
+		margin-bottom: 35px;
+		
+		#scene-title {
+			padding-top: 35px;
+		}
+	}
+	
+	.lotusTable td {
+		padding-top: 15px;
+		padding-bottom: 20px;
+	}
+	
+	.qkrIcon32 tr.dojoDndItem td.lotusFirstCell {
+		background-position: left 22px;
+	}
+}
+
+.lconnFiles .lotusui30 .lotusColLeft .lotusSection h2{
+	font-weight: normal;
+}
+
+/* Enable titlebar for nested folder*/
+.lconnFiles .lotusTitleBar .lotusColLeft .lotusGlobalActionBar {
+    padding-top: 0px;
+}
+
+
+.lconnFiles .lotusTitleBar .lotusGlobalActionBar {
+    margin-bottom: 0!important
+}  	
+
+.lconnFiles .lotusui30 .lotusTopNav .lotusTitleBar {
+    background: #ffffff!important;
+    box-shadow: 0px 1px 4px 0px rgba(40, 40, 40, 0.2);
+    height: 65px;
+    z-index: 1;
+    box-sizing: border-box;
+}
+ 
+.lconnFiles .lotusui30 .lotusTopNav .lotusTitleBar .lotusHeader {
+    padding-left: 15px;
+    margin: 0;
+}
+
+@media screen and (min-width: 1250px) {
+.files-independent-scrollbars-compatible .lotusui30_body .lotusMain,.lconnFiles .lotusui30 .lotusTopNav .lotusTitleBar .lotusRightCorner{
+    padding-left:50px;
+    padding-right: 0;
+    }
+}
+
+.lconnFiles .lotusui30_layout .lotusTopNav .lotusTitleBar .lotusColLeft {
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.lconnFiles .lotusui30_layout .lotusMain .lotusColLeft {
+    padding-top: 15px
+} 
+
+.lconnFiles .lotusui30_layout .lotusMain .lotusColLeft:after {
+   margin-left: -1000px;
+}
+
+.lconnFiles .lotusui30 .lotusTopNav .lotusPlaceBar button[id^="lconn_files_action_createitem_"] {
+    border: 0;
+    margin: 0;
+} 
+
+.lconnFiles .lotusui30 .lotusTopNav .lotusTitleBar .lotusInner {
+    position: relative;
+    padding: 10px 0 0;
+} 
+
+.lconnFiles .lotusui30 .lotusTopNav .lotusTitleBar .lotusRightCorner {
+    background: #ffffff!important;
+    padding-top: 5px;
+} 
+
+.lconnFiles .lotusui30 .lotusTopNav .lotusTitleBar .lotusSearch {
+    top: 10px;
+} 
+.lconnFiles .lotusTopNav .lotusTitleBar .icSearchPaneButton {
+    margin-top:auto;
+}
+.lconnFiles .lotusTopNav .lotusTitleBar .lotusColLeft::after {
+    border-left-color:#fff;
+}
+.lconnFiles .lotusContent .lotusHeader{
+   padding: 0 25px 12px 0;
+}
+.lconnFiles.search-result-pages-restyle .lotusui30 .lotusTopNav .lotusTitleBar #lotusContentHeaderTitleBar{
+   padding-left: 40px;
+}
+.lconnFiles.search-result-pages-restyle .lotusui30 .lotusSyncViewWelcomeBox .lotusSyncPic{
+   left: -170px;
+}

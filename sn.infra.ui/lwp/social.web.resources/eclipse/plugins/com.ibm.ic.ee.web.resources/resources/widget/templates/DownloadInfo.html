@@ -1,0 +1,22 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="${baseClass}">
+  <div class="lotusPaging" style="${_initPageStyle}" data-dojo-attach-point="topPageNode">
+     <div class="lotusLeft numShape" style="display:none;" data-dojo-attach-point="pageInfoNode"></div>
+     <ul class="lotusRight lotusInlinelist" style="display:none;" data-dojo-attach-point="topPageNavigateNode">
+        <li class="lotusFirst" data-dojo-attach-point="tPreviousLinkNode"><a href="#" title="${_strings.PREVIOUS_TOOLTIP}" data-dojo-attach-event="onclick:previous">${_strings.PREVIOUS}</a></li>
+        <li class="lotusFirst" data-dojo-attach-point="tPreviousTextNode">${_strings.PREVIOUS}</li>
+        <li data-dojo-attach-point="tNextLinkNode"><a class="numShape" href="#" title="${_strings.NEXT_TOOLTIP}" data-dojo-attach-event="onclick:next">${_strings.NEXT}</a></li>
+        <li data-dojo-attach-point="tNextTextNode">${_strings.NEXT}</li>
+     </ul>
+     <ul class="lotusInlinelist" style="display:none" data-dojo-attach-point="pageListNode">${_strings.PAGE}<li></ul>
+  </div>
+  <div data-dojo-attach-point="streamNode"></div>
+  <div class="lotusPaging" style="${_initPageStyle}" data-dojo-attach-point="bottomPageNode">
+     <ul class="lotusRight lotusInlinelist" style="display: none;" data-dojo-attach-point="bottomPageNavigateNode">
+        <li class="lotusFirst" data-dojo-attach-point="bPreviousLinkNode"><a href="#" title="${_strings.PREVIOUS_TOOLTIP}" data-dojo-attach-event="onclick:previous">${_strings.PREVIOUS}</a></li>
+        <li class="lotusFirst" data-dojo-attach-point="bPreviousTextNode">${_strings.PREVIOUS}</li>
+        <li data-dojo-attach-point="bNextLinkNode"><a href="#" title="${_strings.NEXT_TOOLTIP}" data-dojo-attach-event="onclick:next">${_strings.NEXT}</a></li>
+        <li data-dojo-attach-point="bNextTextNode">${_strings.NEXT}</li>
+     </ul>
+  </div>
+</div>

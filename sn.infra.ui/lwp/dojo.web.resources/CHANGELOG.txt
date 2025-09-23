@@ -1,0 +1,23 @@
+1.9.1-20130926-IBM
+	Change Dojo version back to 1.9.1 from 1.9.2-pre.
+
+1.9.1-20130924-IBM
+	Periodically merged changes from github.
+	Add initial support for IE 11 and FF 24 ESR.
+	Pull in fix for https://bugs.dojotoolkit.org/ticket/17455: Hide Safari address bar within IOS 7.
+
+1.9.1-20130718-IBM
+	Periodically merged changes from github.
+	Pull in fix for https://bugs.dojotoolkit.org/ticket/17164: Transition issue on Samsung devices.
+
+1.9.1-20130617-IBM
+	Change version to 1.9.1 to sync with the external release.
+	Periodically merged changes from github.
+	https://csnext.ibm.com:8002/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/10012: To backport translation of Bulgarian, Croatian, Romanian, and Slovak to Dojo 1.4.x - Backport Bulgarian (bg) and Croatian (hr) translations from 1.9 thru 1.4
+
+1.9.0-20130520-IBM:
+	1.9.0 merged from https://svn.dojotoolkit.org/src/branches/1.9 [31451]
+
+1.9.0-20130502-IBM:
+	1.9.0 merged from https://svn.dojotoolkit.org/src/branches/1.9 [31388]
+

@@ -1,0 +1,59 @@
+<div class="lotusFlyoutInner">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+   <div dojoAttachPoint="gadgetBody">
+	   <div class="lotusFlyoutContentArea" style="display: none;" dojoAttachPoint="msgNode"></div>   
+	   <div class="lotusHeadingChunk eeHeading" dojoAttachPoint="headerNode">
+	      <h1 class="lotusHeading">
+	         <img dojoAttachPoint="fileIcon" class="lconn-ftype16" src="${_blankGif}" role="presentation" aria-hidden="true" alt=""></img>
+	         <a dojoAttachPoint="titleNode" href="" target="_blank"></a>
+	      </h1>
+	   </div>
+	   <span dojoAttachPoint="sharedExternally"></span>
+	   <div class="lotusChunk" dojoAttachPoint="imgPrev" style="display: none;"></div>
+	   <div class="lotusChunk" dojoAttachPoint="contentArea" style="display: none;"></div>
+	   <div class="lotusChunk" style="display: none;" dojoAttachPoint="lockCtnr"></div>
+	   <div class="lotusChunk">
+	      <ul class="lotusInlinelist lotusMeta" dojoAttachPoint="listCtnr">
+	         <li dojoAttachPoint="previewCtnr" style="display: none;"><a title="${nls.file.PREVIEW.TITLE}" dojoAttachPoint="prevLink" target="_blank">${nls.file.PREVIEW.LINK}</a></li>
+	         <li dojoAttachPoint="downloadCtnr"><a dojoAttachPoint="downloadLink">${nls.file.download.DOWNLOAD_ALT}</a></li>
+	         <li style="display: none;" dojoAttachPoint="switchEELink"><a title="${nls.ecm_file.switch_ee_tooltip}" href="javascript:;" dojoAttachEvent="onclick:loadDraftWidget">${_ecmStrings.switch_ee}</a></li>
+	         <li><span dojoAttachPoint="fileSize"></span></li>
+	         <li class="lotusTags" dojoAttachPoint="tagsCtnr" style="display: none;">
+               <span>
+	               <label>${nls.generic.tags}</label>
+	               <span dojoAttachPoint="tagsNode" role="list" tabindex="0"></span>
+               </span>
+	         </li>
+	      </ul>
+	   </div> 
+	   <div class="lotusChunk">
+	      <span dojoAttachPoint="recommendationNode"></span>
+	   </div>
+	   <div class="lotusBtnContainer" style="display: none;" dojoAttachPoint="btnContainer"></div>
+	   <div class="lotusTabContainer lotusTabCondensed" id="EEtabContainer">
+	      <ul class="lotusTabs" role="tablist" dojoAttachPoint="tabContainerNode">
+	         <li class="lotusFirst lotusSelected eeFirstTab file-ee-tab-comments" dojoAttachPoint="commentsTab" role="presentation">
+	            <a href="javascript:;" role="tab" aria-selected="true" id="EEcomments_link" class="file-ee-tablink" dojoAttachPoint="commentsTabLink"></a>
+	         </li>     
+	         <li class="file-ee-tab-history" dojoAttachPoint="historyTab" role="presentation">
+	            <a href="javascript:;" role="tab" id="EEhistory_link" aria-selected="false" class="file-ee-tablink" dojoAttachPoint="historyTabLink">${nls.HISTORY.TAB_TITLE}</a>
+	         </li>
+	      </ul>
+	   </div>
+	   <div tabindex="0" role="tabpanel" aria-labelledby="EEcomments_link" dojoAttachPoint="commentsTabBody" class="eeTabBody file-ee-tab-comments-body file-ee-selected"></div>
+	   <div tabindex="0" role="tabpanel" aria-labelledby="EEhistory_link" dojoAttachPoint="historyTabBody" class="eeTabBody file-ee-tab-history-body" style="display:none"></div>
+   </div>
+</div>

@@ -1,0 +1,26 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2013, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<project name="jasmine">
+	<property name="jasmine.version"  value="2.0.0"/>
+	<property name="jasmine.zip"      value="jasmine-standalone-${jasmine.version}.zip"/>
+	<property name="skip.jasmine"     value="false"/>
+	
+	<target name="extract_jasmine_standalone" unless="${skip.jasmine}">
+		<echo>Copying Jasmine resources</echo>
+		<collector componentName="prereqs.sn/jasmine-2.0" groupList="default" verbose="${verbose}" overrideDest="false" includeDependencies="false"
+			recurseDependencies="false" usePreferredInstallLocation="false" type="zip" platform="all" toDir="${dir.tmpout}" />
+		<unzip src="${dir.tmpout}/${jasmine.zip}" dest="${to.dir}" />
+	</target>
+</project>
+

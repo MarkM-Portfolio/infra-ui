@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+({
+	"CLOSE_HELP_DATE":"Chiudi guida di Date",
+	"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Chiudi guida dei tipi di documento",
+	"CLOSE_HELP_PERSON":"Chiudi guida delle persone",
+	"CLOSE_HELP_TAG":"Chiudi guida dei tag",
+	"CLOSE_HELP_TREND":"Chiudi guida di Tendenza",
+	"COLLAPSE_DATE":"Comprimi il filtro Date",
+	"COLLAPSE_ECM_DOCUMENT_TYPE":"Riduci il filtro Tipi di documento",
+	"COLLAPSE_PERSON":"Comprimi il filtro Persone",
+	"COLLAPSE_TAG":"Comprimi il filtro Tag",
+	"COLLAPSE_TREND":"Comprimi il filtro andamenti",
+	"DESCRIPTION_DATE":"Per visualizzare i risultati che sono stati creati o aggiornati in un determinato momento, espandere la freccia e filtrare le informazioni per anno e mese.",
+	"DESCRIPTION_ECM_DOCUMENT_TYPE":"Un tipo di documento è una parola chiave assegnata ai file per semplificarne la ricerca. Fare clic su un tipo di documento per visualizzare i risultati della ricerca assegnati a tale parola chiave.",
+	"DESCRIPTION_PERSON":"Visualizzare le persone associate ai risultati della propria ricerca. Fare clic su un nome per visualizzare i risultati della ricerca associati a una persona specifica.",
+	"DESCRIPTION_TAG":"Un tag è una parola chiave assegnata a contenuti o persone per semplificarne l'individuazione. Fare clic su un tag per visualizzare i risultati della ricerca assegnati a tale parola chiave.",
+	"DESCRIPTION_TREND":"Una tendenza è una parola chiave generata dal sistema per semplificare l'esecuzione delle ricerche negli aggiornamenti dello stato. Fare clic su una tendenza per visualizzare i risultati della ricerca assegnati a tale parola chiave.",
+	"EXPAND_DATE":"Espandi il filtro Date",
+	"EXPAND_ECM_DOCUMENT_TYPE":"Espandi il filtro Tipi di documento",
+	"EXPAND_PERSON":"Espandi il filtro Persone",
+	"EXPAND_TAG":"Espandi il filtro Tag",
+	"EXPAND_TREND":"Espandi il filtro andamenti",
+	"HELP_DATE":"Guida di Date",
+	"HELP_ECM_DOCUMENT_TYPE":"Guida Tipi di documento",
+	"HELP_PERSON":"Guida delle persone",
+	"HELP_TAG":"Guida dei tag",
+	"HELP_TREND":"Guida di Tendenza",
+	"NO_DATE_CONTENT":"Date non disponibili correntemente",
+	"NO_ECM_DOCUMENT_TYPE_CONTENT":"Tipi di documenti non disponibili correntemente",
+	"NO_PERSON_CONTENT":"Persone non disponibili correntemente",
+	"NO_TAG_CONTENT":"Tag non disponibili correntemente",
+	"NO_TREND_CONTENT":"Tendenze non disponibili correntemente",
+	"TITLE_DATE":"Date",
+	"TITLE_ECM_DOCUMENT_TYPE":"Tipi di documento",
+	"TITLE_PERSON":"Persone",
+	"TITLE_TAG":"Tag",
+	"TITLE_TREND":"Tendenza"
+})
+

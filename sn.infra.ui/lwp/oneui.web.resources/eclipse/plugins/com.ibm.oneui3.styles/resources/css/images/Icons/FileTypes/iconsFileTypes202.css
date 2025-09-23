@@ -1,0 +1,20 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2012                                          */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+.iconsFileTypes202-FolderThumbnailCommunityHikari202{width:202px;height:164px;background-position:0 0}
+.iconsFileTypes202-FolderThumbnailPrivate202{width:202px;height:164px;background-position:0 -172px}
+.iconsFileTypes202-FolderThumbnailPublicHikari202{width:202px;height:164px;background-position:0 -344px}
+.iconsFileTypes202-FolderThumbnailSharedHikari202{width:202px;height:164px;background-position:0 -516px}
+
+.iconsFileTypes202{background-image:url('./iconsFileTypes202-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsFileTypes202{display:none}

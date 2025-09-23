@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mantis-super-pom</artifactId>
+        <groupId>com.ibm.maven</groupId>
+        <version>1.0</version>
+<!--        <relativePath></relativePath>-->
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ibm.lconn.infra.ui.oneui.web.resources</groupId>
+    <artifactId>oneui.web.resources</artifactId>
+    <name>oneui.web.resources</name>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>eclipse/plugins/com.ibm.oneui.ckeditor</module>
+        <module>eclipse/plugins/com.ibm.oneui.styles</module>
+        <module>eclipse/plugins/com.ibm.oneui.web.resources</module>
+        <module>eclipse/plugins/com.ibm.oneui.web.resources.test</module>
+        <module>eclipse/plugins/com.ibm.oneui3.styles</module>
+        <module>eclipse/plugins/com.ibm.social.gen4.theme</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <version>4.3.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.jazz</groupId>
+            <artifactId>net.jazz.ajax</artifactId>
+            <version>2.2.1000.20150220-0240</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.jazz</groupId>
+            <artifactId>net.jazz.ajax.tests</artifactId>
+            <version>2.1.0.20150220-0240</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.jazz</groupId>
+            <artifactId>net.jazz.web.core</artifactId>
+            <version>2.1.1000.v20130626_0447</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <archive>
+                        <manifestFile>META-INF/MANIFEST.MF</manifestFile>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <resources>
+            <resource>
+                <directory>resources</directory>
+                <targetPath>resources</targetPath>
+            </resource>
+            <resource>
+                <directory>${basedir}</directory>
+                <includes>
+                    <include>plugin.xml</include>
+                </includes>
+            </resource>
+        </resources>
+
+    </build>
+
+</project>

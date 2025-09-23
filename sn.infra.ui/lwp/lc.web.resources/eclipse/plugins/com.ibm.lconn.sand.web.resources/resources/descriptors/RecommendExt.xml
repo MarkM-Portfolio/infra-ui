@@ -1,0 +1,16 @@
+<!-- Copyright IBM Corp. 2010, 2015  All Rights Reserved.              -->
+
+<iw:iwidget name="Recommend" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" useHomepageEnhancedFeatures="true" iScope="lconn.sand.RecommendWrapped">
+	<iw:resource uri="../sandAll.js" />
+	
+	<iw:itemSet id="defaultParams">
+		<iw:item id="xsltUrl" value="../xslt/recommend.xsl" /> 
+	</iw:itemSet>	
+		
+    <iw:content mode="view">
+        <![CDATA[
+	   	<div id="_IWID_root">		
+	   	</div>
+        ]]> 
+     </iw:content>
+</iw:iwidget>

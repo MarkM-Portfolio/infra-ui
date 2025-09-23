@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app"
+	xmlns:snx="http://www.ibm.com/xmlns/prod/sn" xmlns:os="http://a9.com/-/spec/opensearch/1.1/"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:thr="http://purl.org/syndication/thread/1.0">
+	<generator uri="http://www.ibm.com/xmlns/prod/sn" version="4.5.0.0">IBM
+		Connections - Activities</generator>
+	<icon>https://connections.swg.usma.ibm.com/activities/styles/images/favicon.ico</icon>
+	<logo>https://connections.swg.usma.ibm.com/activities/nav/common/images/iconActivities128.png</logo>
+	<id>https://connections.swg.usma.ibm.com/activities/service/atom2/todos?sortorder=0%2C1&amp;sortfields=duedate%2Clastmod&amp;count=10&amp;assignedToUserid=1a4d1cc0-8301-1032-9a44-89fbb6fdad64</id>
+	<title type="text">To Do List for Jorge Manso</title>
+	<updated>1970-01-01T00:00:00Z</updated>
+	<author>
+		<name>Jorge Manso</name>
+		<email>JORGEMAN@ie.ibm.com</email>
+		<snx:userid>1a4d1cc0-8301-1032-9a44-89fbb6fdad64</snx:userid>
+		<snx:userState>active</snx:userState>
+	</author>
+	<link rel="self"
+		href="https://connections.swg.usma.ibm.com/activities/service/atom2/todos?sortorder=0%2C1&amp;sortfields=duedate%2Clastmod&amp;count=10&amp;assignedToUserid=1a4d1cc0-8301-1032-9a44-89fbb6fdad64" />
+	<link rel="http://www.ibm.com/xmlns/prod/sn/service" type="application/atomsvc+xml"
+		href="https://connections.swg.usma.ibm.com/activities/service/atom2/service" />
+	<link rel="http://www.ibm.com/xmlns/prod/sn/tag-cloud" type="application/atomcat+xml"
+		href="https://connections.swg.usma.ibm.com/activities/service/atom2/todos/tags?sortorder=0%2C1&amp;sortfields=duedate%2Clastmod&amp;completed=no&amp;assignedToUserid=1a4d1cc0-8301-1032-9a44-89fbb6fdad64&amp;count=10" />
+	<link rel="alternate"
+		href="https://connections.swg.usma.ibm.com/activities/service/html/todos?sortorder=0%2C1&amp;sortfields=duedate%2Clastmod&amp;assignedToUserid=1a4d1cc0-8301-1032-9a44-89fbb6fdad64&amp;count=10" />
+	<os:totalResults>0</os:totalResults>
+	<os:startIndex>1</os:startIndex>
+</feed>

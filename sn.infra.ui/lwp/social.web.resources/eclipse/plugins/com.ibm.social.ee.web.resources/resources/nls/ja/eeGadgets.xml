@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<messagebundle>
+  <msg name="connectionsEE_title">IBM Connections</msg>
+  <msg name="connectionsEE_description">IBM Connections のイベントの追加の詳細とアクションを表示するために使用される埋め込み画面 OpenSocial ガジェット</msg>
+  <msg name="connectionsEE_errorTitle">エラー</msg>
+  <msg name="connectionsEE_errorDescription">ガジェット・リソースのロード中にエラーが発生しました。ネットワークに接続していることを確認し、ガジェットを再度ロードしてください。</msg>
+</messagebundle>

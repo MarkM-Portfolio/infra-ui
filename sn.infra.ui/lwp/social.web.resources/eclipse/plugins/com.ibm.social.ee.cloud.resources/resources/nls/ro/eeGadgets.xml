@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Gadget-ul Embedded Experience OpenSocial utilizat pentru a afişa detalii suplimentare şi acţiuni pentru evenimentele Connections</msg>
+  <msg name="connectionsEE_errorTitle">Eroare</msg>
+  <msg name="connectionsEE_errorDescription">Acest conţinut nu este aprobat de organizaţia dumneavoastră şi nu este disponibil. Contactaţi administratorul organizaţiei pentru a activa extensia.</msg>
+</messagebundle>

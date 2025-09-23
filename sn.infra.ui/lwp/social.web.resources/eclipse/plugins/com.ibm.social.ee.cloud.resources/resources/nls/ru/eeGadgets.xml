@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Встроенный гаджет Experience OpenSocial служит для отображения дополнительных сведений и действий для событий Connections</msg>
+  <msg name="connectionsEE_errorTitle">Ошибка</msg>
+  <msg name="connectionsEE_errorDescription">Эта информация не утверждена вашей организацией и недоступна. Обратитесь к администратору вашей организации, чтобы включить это расширение.</msg>
+</messagebundle>

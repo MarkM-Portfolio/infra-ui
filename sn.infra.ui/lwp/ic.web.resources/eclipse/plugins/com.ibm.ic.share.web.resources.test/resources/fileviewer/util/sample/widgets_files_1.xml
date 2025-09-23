@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:snx="http://www.ibm.com/xmlns/prod/sn" xmlns="http://www.w3.org/2005/Atom">
+  <id>http://garner.rtp.raleigh.ibm.com/communities/service/atom/community/widgets?pageSize=10&amp;widgetDefId=&amp;communityUuid=3f4c2927-8cbc-40ea-8899-23e59e365231</id>
+  <title type="text">Test Community&lt;&lt;&lt;&lt;&lt;&lt;&lt;&gt; Widgets</title>
+  <updated>2015-09-10T14:07:10.695Z</updated>
+  <generator version="5.0.0.0" uri="http://www.ibm.com/xmlns/prod/sn">IBM Connections - Communities</generator>
+  <link href="http://garner.rtp.raleigh.ibm.com/communities/service/atom/community/widgets?pageSize=10&amp;widgetDefId=&amp;communityUuid=3f4c2927-8cbc-40ea-8899-23e59e365231" rel="self">
+  </link>
+  <entry xmlns:snx="http://www.ibm.com/xmlns/prod/sn">
+    <id>http://garner.rtp.raleigh.ibm.com/communities/service/atom/community/widgets?communityUuid=3f4c2927-8cbc-40ea-8899-23e59e365231&amp;widgetInstanceId=Wd618823ff5d0_405d_a103_e0016e796d24</id>
+    <title type="text">Files</title>
+    <category term="widget" scheme="http://www.ibm.com/xmlns/prod/sn/type">
+    </category>
+    <link href="http://garner.rtp.raleigh.ibm.com/communities/service/atom/community/widgets?communityUuid=3f4c2927-8cbc-40ea-8899-23e59e365231&amp;widgetInstanceId=Wd618823ff5d0_405d_a103_e0016e796d24" rel="self">
+    </link>
+    <link href="http://garner.rtp.raleigh.ibm.com/communities/service/atom/community/widgets?communityUuid=3f4c2927-8cbc-40ea-8899-23e59e365231" rel="edit">
+    </link>
+    <link href="http://garner.rtp.raleigh.ibm.com/communities/service/html/communityoverview?communityUuid=3f4c2927-8cbc-40ea-8899-23e59e365231#fullpageWidgetId=Wd618823ff5d0_405d_a103_e0016e796d24" rel="alternate">
+    </link>
+    <snx:widgetDefId>Files</snx:widgetDefId>
+    <snx:widgetInstanceId>Wd618823ff5d0_405d_a103_e0016e796d24</snx:widgetInstanceId>
+    <snx:hidden>false</snx:hidden>
+    <snx:location>col2</snx:location>
+    <snx:previousWidgetInstanceId>W55adcb50662b_4854_953e_844f037751a3</snx:previousWidgetInstanceId>
+  </entry>
+</feed>
+<!-- Copyright IBM Corp. 2015 All Rights Reserved. -->

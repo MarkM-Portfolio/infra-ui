@@ -1,0 +1,110 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.    
+
+
+              -->
+
+              <div class="lotusDialogBorder cnx8LotusDialogBorder">
+               <form id="${id}_networkInviteForm" class="lotusDialog lotusForm" dojoAttachEvent="onsubmit:formSubmitted">
+                  <div class="lotusDialogHeader cnx8LotusHeader" dojoAttachPoint="inviteOverlayHeader">
+                     <h1 class="lotusHeading">${friendsInviteTitle}</h1>
+                     <a title="${friendsCancelInvActionMessage}" role="button" class="lotusRight lotusDialogClose"  href="javascript:;" dojoAttachEvent="onclick:friendsCancelInvAction">
+                        <img role="presentation" class="ImgBackgroundPosition" src="${blankGif}" alt="" />
+                        <span class="lotusAltText">X</span>
+                     </a>
+                  </div>   
+                  <div class="lotusDialogContent cnx8lotusDialogContent">
+                     <fieldset>
+                        <legend class="lotusHidden">${friendsInviteTitle}</legend>
+                        <table class="lotusFormTable" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                           <tbody>
+                           <tr class="lotusFormFieldRow">
+                              <td>
+                                 <div class="profilePhoto">
+                                    <img src="${profilePhotoSrc}" alt="${displayName}" height="96" width="96" style="top:5px; position: relative;" />&nbsp;
+                                 </div>
+                              </td>
+                              <td style="width:3px;">
+                              </td>
+                              <td>
+                                 <div>
+                                    <big class="friendsColleaguesInviteDiv" dojoAttachPoint="friendsColleaguesInviteMessageControl">${friendsColleaguesInviteMessage}</big>
+                                 </div>
+                                 <div style="margin-top:5px;">
+                                    <label for="${id}_invitation_text">${invitationMessageLabel}</label>
+                                    <textarea id="${id}_invitation_text" dojoAttachPoint="invitationMessageControl" dojoAttachEvent="focus:_invitationMessageControlFocus, blur:_invitationMessageControlBlur" 
+                                    class="cnx8textarea" cols="40" rows="4" name="invitation_text" class="bidiAware">${invitationMessage}</textarea>
+                                 </div>
+                                 <div style="margin-top:5px;" dojoAttachPoint="invitationTagsControlDiv">
+                                    <label for="${id}_invitation_tags" dojoAttachPoint="invitationTagsLabelControl">${invitationTagsLabel}</label>
+                                    <div class="cnx8findTagtextareaDiv">
+                                     <table>
+                                        <tr>
+                                             <td>
+                                                <input  class="cnx8findTagtextarea" id="${id}_invitation_tags" dojoType="lconn.core.CommonTags.CommonTagsTypeAhead" dojoAttachPoint="invitationTagsControl" multipleValues="true" token=" " minChars="2" maxChars="255"/>
+                                             </td>
+                                             <td>
+                                                <svg class="MuiSvgIcon-root cnx8findTagSVG" focusable="false" height="25px" width="25px" viewBox="0 0 32 32" aria-hidden="true" role="presentation" data-mui-test="searchIcon"><path d="M30 28.59L22.45 21A11 11 0 1 0 21 22.45L28.59 30zM5 14a9 9 0 1 1 9 9 9 9 0 0 1-9-9z"></path></svg>
+                                             </td>  
+                                          </tr>
+                                       </table>
+                                    </div>
+                                 </div>
+                                 <div dojoAttachPoint="invitationFollowControlDiv">
+                                 <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin-top:15px;">
+                                 <tr>
+                                    <td class="cnx8TdCheckBox">
+                                       <input type="checkbox" class="cnx8checkBox" id="${id}_invitation_follow" name="invitation_follow" value="true" checked="checked" dojoAttachPoint="invitationFollowControl">
+                                    </td>
+                                    <td class="cnx8TdLabel">
+                                       <div style="margin-top:5px;">
+                                          <label for="${id}_invitation_follow">${invitationFollowLabel}</label>
+                                       </div>
+                                    </td> 
+                                    <td>
+                                       <div class="tooltip">
+                                          <svg class="MuiSvgIcon-root cnx8HelpSVG" focusable="false" viewBox="0 0 32 32" height="25px" width="25px" aria-hidden="true" role="presentation" data-mui-test="helpIcon"><path d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 26a12 12 0 1 1 12-12 12 12 0 0 1-12 12z"></path><circle cx="16" cy="23.5" r="1.5"></circle><path d="M17 8h-1.5a4.49 4.49 0 0 0-4.5 4.5v.5h2v-.5a2.5 2.5 0 0 1 2.5-2.5H17a2.5 2.5 0 0 1 0 5h-2v4.5h2V17a4.5 4.5 0 0 0 0-9z"></path></svg>
+                                          <p class="tooltiptext"> 
+                                             Follow a person to keep current with their activities and status updates, without having to add them to your network.<br><br>
+
+                                             <b>Following a person</b><br>
+                                             1. Click on a person's name to open their profile.<br>
+                                             2. Click Follow.<br><br>
+                                             
+                                             <b>Stop following a person</b><br>
+                                             1. Click on a person's name to open their profile.<br>
+                                             2. Click Stop Following.
+                                          </p>
+                                       </div>
+									   </td> 
+                                    
+                                 </tr>
+                                 </table>
+                                 <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+                                    <tr>
+                                     <td class="cnx8TdCheckBox">
+                                     </td>
+                                     <td>
+                                        <div>${invitationFollowDescription}</div>
+                                     </td>
+                                    </tr>
+                                 </table>
+                                 </div>
+                              </td>
+                           </tr>
+                           </tbody>
+                        </table>
+                     </fieldset>
+                  </div>
+                  <div class="lotusDialogFooter cnx8lotusDialogFooter">
+                     <div class="lotusBtnContainer">
+                        <input type="button" value="${friendsCancelInvActionMessage}" class="lotusBtn cnx8lotusBtn"
+                                 dojoAttachEvent="onclick:friendsCancelInvAction" />
+                        <span class="cnx8Span">
+                           <input type="button" value="${friendsSendInvActionMessage}" class="lotusFormButton lotusBtnSpecial"
+                              dojoAttachEvent="onclick:friendsSendInvAction" />
+                        </span>
+                     </div>
+                  </div>
+                </form>
+            </div>
+            

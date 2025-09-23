@@ -1,0 +1,147 @@
+${head}
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+${script:com.ibm.lconn.gadget.container.Handle}
+${script:com.ibm.lconn.gadget.container._Accessor}
+${script:com.ibm.lconn.gadget.container._Container}
+${script:com.ibm.lconn.gadget.container.iContainer2}
+
+<!-- Redirect to &render=test -->
+<script type="text/javascript">	
+	var loc = location + '';
+	if (loc.indexOf('render=test') < 0) {
+		if (loc.indexOf('?') > 0) {
+			location = loc + "&render=test";
+		}
+		else {
+			location = loc + "?render=test";
+		}
+	}
+	
+	dojo.config.isDebug = true;
+	
+	dojo.require('lconn.core.config.services');
+	dojo.require("com.ibm.oneui.util.proxy");
+	
+	var web_resources_url = lconn.core.config.services['webresources'].url;
+	
+	if (loc.indexOf('creScriptTag=true') > 0) {
+		
+		var os_path = lconn.core.config.services['opensocial'].url;
+		var base_path = com.ibm.oneui.util.proxy(os_path);
+	
+		document.write('\x3Cscript src=\"' + base_path + '/gadgets/js/cre.iruntime:cre.iwidget:cre.iwidget.itemset:cre.util.stringify:cre.service.event:core:container:rpc:views:embedded-experiences:selection:inline:actions:shared-script-frame:shindig.sha1:open-views:cre.service.people.js?c=1\&debug=true\&noCache=true\"\x3E\x3C\x2Fscript\x3E');
+	} else {
+		console.log('To use a script tag to load CRE this to the URL: &creScriptTag=true');
+	}
+</script>
+
+<script type="text/javascript">
+	var mContainer = null;
+	var mHandle = null;
+</script>
+
+<style>
+#attach_point {
+  width: 350px;
+  height: 120px;
+}
+#renderbutton {
+  padding: 4px;
+  margin: 4px;
+  background: orange;
+  border: black solid 1px;
+}
+</style>
+${endhead}
+<!-- BODY -->
+<table width="100%"><tr><td>
+	<h1>CRE People Service Test</h1>
+	<script type="text/javascript">
+		function load_widget(renderType) {
+			var renderMode = (renderType==null || typeof renderType == 'undefined')?'default':renderType;
+			try {
+				var def = {
+						definitionUrl: dojo.formToObject('gadgetBootstrapper').gadget,
+						placement: 'attach_point',
+						componentType : 'gadget',
+						instanceData : { 
+							renderType : renderMode
+						}	
+					};
+					
+				if (mHandle) {
+					mHandle.close();
+					mHandle = null;
+				}
+								
+				mHandle = mContainer.loadWidget(def);
+			} catch ( e ) {
+				console.debug("Caught exception: " + e);
+			}
+			
+			return false;
+		}
+		
+		function refresh_widget() {
+			if (mHandle) {
+				mHandle.refresh();
+			}
+		}
+		
+		function close_widget() {
+			if (mHandle) {
+				mHandle.close();
+			}
+		}
+		
+		function parse_action() {
+			return false;
+		}	
+		
+
+	</script>
+	<div id="bootstrapForm">
+		<form name="gadgetBootstrapper" id="gadgetBootstrapper">
+			Gadget Url:
+			<input type="text" id="gadget" name="gadget" style="width: 60%"
+	               value="" />
+		</form>
+		<script>
+			function preFillHello() {
+				var idx = location.pathname.lastIndexOf('/');
+				var base = location.protocol + '//' + location.host + location.pathname.substring(0, idx);
+				var gadgetUrl = base + '/gadgets/PeopleService_Test.xml';
+				dojo.byId('gadget').value = gadgetUrl;
+			}
+			function testCreateVcard(){
+                var vcard = getVcard("user1", "user1 test", {"refNode":"attach_point1", "relPos": "replace"});
+		    }
+			function getVcard(id, displayName, node){
+				return vcardUtil.generateVcard(id, displayName, node);
+ 		    }
+		</script>
+		<button id="renderbutton" onclick="load_widget('default');">Render Iframe</button>
+		<button id="renderbutton" onclick="load_widget('inline');">Render Inline</button>
+		<button onClick="refresh_widget();">Refresh</button>
+		<button onClick="close_widget();">Close</button>
+	</div>   
+	
+	<h3>Vcard Test:</h3>
+	<div id="attach_point1" style=""></div>
+	<br>
+	<h3>Gadget display area</h3>
+	<div id="attach_point" style="">Gadget Goes Here...</div>
+	
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+		dojo.addOnLoad(function() {
+			mContainer = com.ibm.lconn.gadget.container.iContainer2;			
+			mContainer.init();
+			preFillHello();
+			vcardUtil = com.ibm.lconn.gadget.services.people_container;
+			testCreateVcard();
+		});
+</script>
+${end}

@@ -1,0 +1,20 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.iconsComponents64-Activities64{width:64px;height:64px;background-position:0 0}
+.iconsComponents64-Blogs64{width:64px;height:64px;background-position:0 -72px}
+.iconsComponents64-Bookmarks64{width:64px;height:64px;background-position:0 -144px}
+.iconsComponents64-Calendar64{width:64px;height:64px;background-position:0 -216px}
+.iconsComponents64-Charts64{width:64px;height:64px;background-position:0 -288px}
+.iconsComponents64-Chat64{width:64px;height:64px;background-position:0 -360px}
+.iconsComponents64-Events64{width:64px;height:64px;background-position:0 -432px}
+.iconsComponents64-Files64{width:64px;height:64px;background-position:0 -504px}
+.iconsComponents64-Forms64{width:64px;height:64px;background-position:0 -576px}
+.iconsComponents64-Forums64{width:64px;height:64px;background-position:0 -648px}
+.iconsComponents64-Home64{width:64px;height:64px;background-position:0 -720px}
+.iconsComponents64-Mail64{width:64px;height:64px;background-position:0 -792px}
+.iconsComponents64-Places64{width:64px;height:64px;background-position:0 -864px}
+.iconsComponents64-Profiles64{width:64px;height:64px;background-position:0 -936px}
+.iconsComponents64-Tasks64{width:64px;height:64px;background-position:0 -1008px}
+.iconsComponents64-Wikis64{width:64px;height:64px;background-position:0 -1080px}
+
+.iconsComponents64{background-image:url('./iconsComponents64-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsComponents64{display:none}

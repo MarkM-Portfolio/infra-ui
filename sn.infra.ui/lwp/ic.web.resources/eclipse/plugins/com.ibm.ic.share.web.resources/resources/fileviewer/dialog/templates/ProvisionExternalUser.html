@@ -1,0 +1,23 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="ics-dialog-action">
+   <div class="prompt-container">
+      <span>${nls.PROMPT.NO_ACCOUNT}</span>
+   </div>
+   <div data-dojo-attach-point="userEmailsContainer"></div>
+   <div class="prompt-container">
+      <span>${nls.PROMPT.INVITE}</span>
+   </div>
+   <form class="lotusHidden" method="post" enctype="application/x-www-form-urlencoded" data-dojo-attach-point="form">
+      <input type="hidden" name="appCsrfToken" data-dojo-attach-point="appCsrfToken">
+      <input type="hidden" name="returnUrl" data-dojo-attach-point="returnUrl">
+      <input type="hidden" name="cancelUrl" data-dojo-attach-point="cancelUrl">
+      <input type="hidden" name="guestEmails" data-dojo-attach-point="guestEmails">
+      <input type="hidden" name="serviceData" data-dojo-attach-point="serviceData">
+   </form>
+   <div class="button-container">
+      <a class="confirm bad" href="javascript:;" data-dojo-attach-point="upload"
+       data-dojo-attach-event="onclick:clickLink" id="ok" role="button">${nls.SUBMIT}</a>
+      <a class="cancel neutral" href="javascript:;"
+       data-dojo-attach-event="onclick:clickLink" id="cancel" role="button">${nls.CANCEL}</a>
+   </div>
+</div>

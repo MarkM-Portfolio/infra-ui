@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>Synchronous dojo.requireLocalization()</title>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="Synchronous dojo.requireLocalization()">
+            <div class="lotusContent">
+                <p>This is an English string</p>
+                <h1 id="hdr1-en"></h1>
+                <p>This is a Japanese string</p>
+                <h1 id="hdr1-ja"></h1>
+                <p>This should be a Polish string but since the translation is missing, it falls back to ROOT (English).</p>
+                <h1 id="hdr1-pl"></h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        dojo.addOnLoad(function() {
+            dojo.forEach(['ja', 'en', 'pl'], function(lang) {
+                dojo.requireLocalization("lconn.test", "strings", lang);
+                var strings = dojo.i18n.getLocalization("lconn.test", "strings", lang);
+                if (strings) {
+                    dojo.html.set(dojo.byId("hdr1-" + lang), strings.greeting);
+                } else {
+                    dojo.html.set(dojo.byId("hdr1-" + lang), "It didn't work :-(");
+                }
+            });
+            // This should fall back to 'en'
+            dojo.requireLocalization("lconn.test", "strings");
+        });
+    </script>
+    ${script:dojo.i18n}
+    ${script:dojo.html}
+</body>
+</html>

@@ -1,0 +1,15 @@
+/* Copyright IBM Corp. 2011, 2015  All Rights Reserved.              */
+
+@import url(core.css)
+
+@import url(/dijit/themes/dijit.css)
+@import url(/dijit/themes/tundra/Tree.css)
+@import url(/dijit/themes/tundra/ProgressBar.css)
+
+@import url(dojo.css)
+
+@import url(semanticTagStyles.css)
+
+@import url(../sprite/sprite-lconn.css)
+
+@import url(connectionsCore.css)

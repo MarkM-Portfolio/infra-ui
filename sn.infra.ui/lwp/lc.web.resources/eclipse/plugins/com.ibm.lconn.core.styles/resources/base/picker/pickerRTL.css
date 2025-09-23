@@ -1,0 +1,290 @@
+/* Copyright IBM Corp. 2011, 2015  All Rights Reserved.              */
+
+/*--------------------------------------------------------
+     File Picker styles
+--------------------------------------------------------*/
+.lconnFilesTree .node {
+   margin: 2px 0;
+}
+.lconnFilesTree .node .headerOuter {
+   clear:both;
+   border: 2px solid rgba(62, 118, 192, 0);
+}
+.lconnFilesTree .node .headerOuter:hover {
+   background-color: #e0e0e0;
+}
+.lconnFilesTree .node .headerSelector {
+   border-right: 4px solid rgba(62, 118, 192, 0);
+}
+.lconnFilesTree .node .header {
+   overflow: hidden;
+   height: 27px;
+}
+.lconnFilesTree .node .highlight {
+   border-right: 4px solid #3e76c0;
+   background-color:#f1f1f1;
+   font-weight: 700;
+}
+.lconnFilesTree .node:focus,
+.lconnFilesTree .tree:focus {
+   border: 1px solid #6C97C2;
+}
+
+.lconnPicker {
+   background-color: #eaecee;
+}
+
+.lconnPicker .lconnLeftSide, .lconnPicker .lconnRightSide {
+   background-color: #ffffff;
+}
+
+@-moz-document url-prefix(){
+   .lconnPicker .lotusDialogClose:focus, .lconnPicker .checkbox input[type = radio]:focus, .lconnPicker .lconnLeftSide, .lconnPicker .lconnRightSide .lotusNowrap.lotusFirstCell input[name = fileSelectionBtn]:focus {
+      outline: dotted 1px black;
+   }
+}
+
+.dijit_a11y .lconnPicker, .dijit_a11y .lconnPicker .lconnMenuScrollContainer, .dijit_a11y .lconnPicker .lconnRightSide {
+   border: 1px solid #000000;
+}
+
+.lconnPicker .lconnSectionHeader, .lconnPicker .lotusSearch, .lconnPicker .lconnPickerStream .lotusPaging {
+   border-bottom: 1px solid #e5e5e5;
+   padding-left: 5px;
+}
+.lconnPicker .lconnEmptyMsg, .lconnPicker .lconnErrorMsg {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 5px;
+  margin-top: 15px;
+}
+
+.lconnPicker .lconnDivider {
+   background-color: #e5e5e5;
+   height: 1px;
+    margin: 5px 0px;
+    line-height: 1px;
+    font-size: 1px;
+}
+.lotusui30 .lotusForm tr.lotusFormFieldRow td{
+   padding-top: 0px;
+}
+.lconnPicker .loutsFormTable {font-size: 1em;}
+.lconnPicker .lconnFolderIcon {padding-bottom: 4px;}
+.lconnPicker a.lotusSelected, .lconnPicker a.lotusSelected span {
+   background-color: #CFECFF;
+   color: #000000;
+}
+
+.lconnPicker .lconnLeftSide .lconnMenuScrollContainer a {
+   color: #000000;
+}
+
+.dijit_a11y .lconnPicker .lconnMenuScrollContainer a {
+   text-decoration: underline;
+}
+
+.dijit_a11y .lconnPicker a.lotusSelected { text-decoration: underline; }
+
+.lconnPicker .lconnPickerInput, .lconnPicker .lconnPickerOtherFiles {
+   color: #848484;
+}
+
+
+.radioSwitch .lconnPickerDialogBody {
+   padding: 15px;
+}
+.tabbedSwitch .lconnPickerDialogBody {
+   padding: 0px;
+}
+
+.radioSwitch .lconnPickerSourceArea {
+}
+.tabbedSwitch .lconnPickerSourceArea {
+   padding-top: 15px;
+   overflow: hidden;
+}
+
+
+/* classes for source switching area */
+.radioSwitch .lconnPickerSourceSwitchingArea {
+   margin-bottom: 4px;
+   padding-bottom: 7px;
+}
+.tabbedSwitch .lconnPickerSourceSwitchingArea {
+   height: 45px;
+   background: #F1F1F1;
+   margin-bottom: inherit;
+   padding-bottom: inherit;
+}
+
+
+.radioSwitch .lconnPickerSourceSwitchingContentArea {
+   margin-right: 5px;
+   padding-top: 4px;
+}
+.tabbedSwitch .lconnPickerSourceSwitchingContentArea {
+   margin-right: inherit;
+   padding-top: 15px;
+   padding-left: 30px;
+   padding-right: 30px;
+}
+
+
+.tabbedSwitch .lconnPickerSourceRadioButtonHiddenInTabbedSwitch {
+   display: none;
+}
+
+.tabbedSwitch .lconnPickerSourceLabel {
+   padding-top: 5px;
+   color: #1D3649
+}
+
+.tabbedSwitch .lconnPickerSourceLabelSpan {
+   margin-right: 10px;
+}
+.tabbedSwitch .lconnPickerSourceLabelSpanChecked {
+   color: #366BB2;
+   border-bottom: 5px solid #3E76C0;
+   padding-bottom: 10px;
+}
+
+.radioSwitch .lconnPickerSourceLabelImg {
+   display: none;
+}
+.tabbedSwitch .lconnPickerSourceLabelImg {
+   display: inherit;
+   position: relative;
+   top: -2px;
+}
+
+.tabbedSwitch .lconnPickerSourceLabelIconCloud {
+   background: url(/com.ibm.oneui3.styles/imageLibrary/Icons/Picker/Cloud_darkblue_16.png) top left no-repeat;
+   height: 16px;
+   width: 16px;
+}
+
+.tabbedSwitch .lconnPickerSourceLabelIconCloudChecked {
+   background: url(/com.ibm.oneui3.styles/imageLibrary/Icons/Picker/Cloud_blue_16.png) top left no-repeat;
+}
+
+.tabbedSwitch .lconnPickerSourceLabelIconUpload {
+   background: url(/com.ibm.oneui3.styles/imageLibrary/Icons/Picker/Upload_Darkblue_16.png) top left no-repeat;
+   height: 16px;
+   width: 16px;
+}
+
+.tabbedSwitch .lconnPickerSourceLabelIconUploadChecked {
+   background: url(/com.ibm.oneui3.styles/imageLibrary/Icons/Picker/Upload_blue_16.png) top left no-repeat;
+}
+
+.tabbedSwitch .lconnPickerSourceLabelIconCommunity {
+   background: url(/com.ibm.oneui3.styles/imageLibrary/Icons/Picker/Community_Darkblue_16.png) top left no-repeat;
+   height: 16px;
+   width: 16px;
+}
+
+.tabbedSwitch .lconnPickerSourceLabelIconCommunityChecked {
+   background: url(/com.ibm.oneui3.styles/imageLibrary/Icons/Picker/Community_Blue_16.png) top left no-repeat;
+}
+/* END OF classes for source switcher area */
+
+/* For Drag and Drop in Picker start*/
+.pickerDropfilesHorizentalPrompt {
+   border: 2px dashed #cccccc;
+   width: 9999px;
+   height: 170px;
+   text-align: center;
+   vertical-align: middle !important;
+   display: table-cell;
+   background: repeating-linear-gradient(
+    45deg,
+    #f6f6f6,
+    #f6f6f6 10px,
+    #f8f9f9 10px,
+    #f8f9f9 20px
+  );
+}
+.pickerDropfilesVerticalPrompt {
+   border: 2px dashed #cccccc;
+   display: block;
+   border-spacing: 0;
+   height: 170px !important; 
+   max-height:200px !important;
+   text-align: center;
+   vertical-align: top;
+   overflow-y: auto !important;
+   background: repeating-linear-gradient(
+    45deg,
+    #f6f6f6,
+    #f6f6f6 10px,
+    #f8f9f9 10px,
+    #f8f9f9 20px
+  );
+}
+.pickerDropfilesDesc {
+   color: #292929;
+   font-size: 1.25em;
+   font-family: "Helvetica Neue",Helvetica,Arial,Roboto;
+   font-weight: 200;
+   margin-left: 30px !important;
+   margin-right: 30px !important;
+}
+
+.pickerDropfilesVerticalPrompt .pickerBrowserContainer {
+   width: 99999px;
+   height: 60px;
+   display: table-cell;
+   vertical-align: middle;
+}
+
+.pickerInputSpan INPUT {
+   margin: 0 !important;
+}
+
+.pickerDnDLabelRow {
+   margin-top: 20px;
+   padding-right:20px;
+}
+
+.pickerDropfilesList {
+   margin-left: 20px;
+   margin-right: 20px;
+   text-align: right;
+}
+/* For Drag and Drop in Picker end*/
+
+/* classes for view menu and search bar */
+.lconnPicker .lotusSearch.pickerSearchBar {
+   height: 30px;
+   padding: 5px 0;
+   margin: 0;
+}
+.lconnPicker .lconnPickerCompact .lotusSearch.pickerSearchBar {
+   line-height: 22px;
+   height: 30px;
+   padding: inherit;
+   border-bottom: 0px;
+}
+
+.lconnPicker .lotusSearch.pickerSearchBar .pickerSearchBarStatusText {
+   padding-top: 2px;
+}
+
+.lconnPicker .lconnPickerStream nav.breadcrumb ol {
+   margin: 0;
+   padding-right: 0;
+   list-style: none;
+}
+
+.lconnPicker .lconnPickerStream nav.breadcrumb li {
+   display: inline
+}
+
+.lconnPicker .files-enable-new-folder-icon .lconnSprite-iconFolderClose24 {
+   background-image: url();
+}
+
+.lconnPicker .lconnPickerStream div.icon img {
+	padding: 0;
+}
+/* END OF classes for drop down menu and search bar */

@@ -1,0 +1,36 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2001, 2015                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+/*
+    U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+*/
+
+.cke_menuitem span.cke_button__wikilinkpage_icon,
+.cke_menuitem span.cke_button__wikilinkattachment_icon,
+.cke_menuitem span.cke_button__linkToFiles_icon,
+span.cke_button__quicklink_icon {
+  width: 16px;
+  height: 16px;
+  background-image:url('../../../../com.ibm.lconn.core.styles.oneui3/images/Icons/CKActions/IBMDesign_iconsCKActions16-8bit.png');
+  background-repeat: no-repeat;
+  display: -moz-inline-box;
+  display: inline-block;
+}
+
+.cke_menuitem span.cke_button__wikilinkpage_icon { background-position: 0 -840px; }
+span.cke_button__quicklink_icon { background-position: 0 -504px; }
+.cke_menuitem span.cke_button__wikilinkattachment_icon { background-position: 0 -455px; } 
+.cke_menuitem span.cke_button__linkToFiles_icon { background-position: 0 -889px; }
+.cke_combopanel__macros {width: auto;}
+.cke_combo__macros .cke_combo_text {width: 150px;}

@@ -1,0 +1,78 @@
+<!-- Copyright IBM Corp. 2015, 2017  All Rights Reserved.                    -->
+<div>
+  <div style="display: block;" class="ics-viewer-overlay">&nbsp;</div>
+  <div class="ics-viewer-event-interceptor"></div>
+  <div class="ics-viewer ics-viewer-details-expanded" data-dojo-attach-point="viewerContent" role="dialog" aria-labelledby="${ariaLabelId}">
+    <div class="ics-viewer-banner" data-sbw-bind="panelSize:style=margin-{panelLocation}!_getBannerMarginRight">
+      <div class="ics-viewer-title">
+        <span data-dojo-attach-point="fileTypeIconNode"></span>
+        <div class="ics-viewer-title-name-container">
+           <a class="ics-viewer-title-name" href="javascript:;" role="button" data-dojo-attach-point="firstFocusable,titleLinked" id="${ariaLabelId}"></a>
+           <div data-dojo-attach-point="maliciousIconDiv" class="lotusHidden">
+              <img src="${blank}" title="${fileTypeMalicious}" class="ics-viewer-icon maliciousIcon" alt="${fileTypeMalicious}" /></a>
+              <span class="lotusAltText fileViewerIconText">${fileTypeMalicious}</span></a>
+           </div>
+           <div data-dojo-attach-point="externalIconDiv" class="lotusHidden">
+              <img src="${blank}" title="${fileTypeExternal}" class="ics-viewer-icon externalIcon" alt="${fileTypeExternal}" /></a>
+              <span class="lotusAltText fileViewerIconText">${fileTypeExternal}</span></a>
+           </div>
+           <div data-dojo-attach-point="myFileSyncIconDiv" class="lotusHidden">
+              <img src="${blank}" title="${myFileSync}" class="ics-viewer-icon myFileSyncIcon" alt="${myFileSync}" /></a>
+              <span class="lotusAltText fileViewerIconText">${myFileSync}</span></a>
+           </div>
+           <div data-dojo-attach-point="myDriveSyncDiv" class="myDriveButton lotusHidden"></div>
+        </div>
+      </div>
+      <ul class="ics-viewer-toolbar" data-dojo-attach-point="actionContainer"></ul>
+    </div>
+    <div class="ics-viewer-content" data-dojo-attach-point="previewContainer" data-sbw-bind="panelSize:style=margin-{panelLocation}!px">
+      <div class="ics-message-container ics-viewer-welcome-container" data-dojo-attach-point="welcomeContainer"></div>
+      <div class="ics-viewer-overlay ics-viewer-welcome-overlay">&nbsp;</div>
+      <div class="ics-message-container" data-dojo-attach-point="messageContainer"></div>
+      <div class="ics-viewer-nav ics-viewer-nav-prev" data-dojo-attach-point="previous">
+         <a href="javascript:;" data-dojo-attach-event="onclick:_previous" data-dojo-attach-point="previousArrow" tabindex="-1" aria-describedby="${id}_describe_previous" role="button">
+            <img class="ics-viewer-nav-icon" src="${blank}" data-dojo-attach-point="previousImage" alt="" />
+            <span class="lotusAltText"> &#9668; </span>
+            <div class="ics-viewer-nav-file">
+               <img data-dojo-attach-point="previousIcon" src="${blank}" class="lconn-ftype16" alt="" />
+               <span data-dojo-attach-point="previousName"></span>
+            </div>
+         </a>
+         <span class="lotusAccess" id="${id}_describe_previous">${nls.NAVIGATION.PREVIOUS_A11Y}</span>
+      </div>
+      <div class="ics-viewer-nav ics-viewer-nav-next" data-dojo-attach-point="next">
+         <a href="javascript:;" data-dojo-attach-event="onclick:_next" data-dojo-attach-point="nextArrow" tabindex="-1" aria-describedby="${id}_describe_next" role="button">
+            <img class="ics-viewer-nav-icon" src="${blank}" data-dojo-attach-point="nextImage" alt="" />
+            <span class="lotusAltText"> &#9658; </span>
+            <div class="ics-viewer-nav-file">
+               <img data-dojo-attach-point="nextIcon" src="${blank}" class="lconn-ftype16" alt="" />
+               <span data-dojo-attach-point="nextName"></span>
+            </div>
+         </a>
+         <span class="lotusAccess" id="${id}_describe_next">${nls.NAVIGATION.NEXT_A11Y}</span>
+      </div>
+    </div>
+      
+    <div class="ics-viewer-details" data-sbw-bind="panelSize:style=width!px" data-dojo-attach-point="shelfContainer">
+      <div class="ics-viewer-details-shelf">
+        <div class="ics-shelf ics-info selected">
+          <h3 data-dojo-attach-point="panelNavContainer">${nls.SECTION.ABOUT.NAME}</h3>
+          <div data-dojo-attach-point="panelContainer" class="ics-viewer-panel-container" tabindex="-1">
+            <div class="info-section">
+              <p class="ics-info-filename" title="${file.args.name}">${file.args.name}</p>
+              <p class="ics-info-filesize">${fileSize}</p>
+            </div>
+            <div class="info-section info-section-updated">
+              <p class="ics-info-updated" data-dojo-attach-point="lastUpdated"></p>
+            </div>
+            <div class="info-section info-section-detailsLink">
+              <a href="${file.args.links.details}" data-dojo-attach-point="lastFocusable,fileDetails">${nls.SECTION.ABOUT.VIEW_FILE_DETAILS}</a>
+              <a href="javascript:;" data-dojo-attach-point="lastFocusable,fileDetailsCCM" data-dojo-attach-event="click:onLinkClicked">${nls.SECTION.ABOUT.VIEW_FILE_DETAILS}</a>
+              <span class="lotusAccess" style="width:100px;">${nls.SECTION.ABOUT.A11Y}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

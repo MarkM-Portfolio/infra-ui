@@ -1,0 +1,134 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>Globalization Preferences</title>
+
+
+<script>
+dojoConfig.blankGif="";
+dojoConfig.parseOnLoad=true;
+
+</script>
+${script:dojo/parser}
+${script:dojo/topic}
+${script:dojo/dom}
+${script:dojo/dom-class}
+${script:dojo/_base/lang}
+${script:dojo/_base/array}
+${script:net.jazz.ajax.xdloader}
+${script:ic-core/globalization/widget/GlobalizationPreferences}
+${script:ic-core/globalization/action/RestoreDefaults}
+${script:ic-core/globalization/action/Save}
+${script:ic-ui/MessageBox}
+${script:ic-core/util/html}
+${script:ic-test/mocks/globalization/app}
+
+<script>
+   var pw_strings = {'restore_defaults':{'label':'Restore Defaults'},'error':'Error','language':{'tooltip':'Specify the language in which application text will display.  This setting will not affect user-generated text.','label':'Language:','selected':'${0} (current)'},'cancel':{'label':'Cancel'},'bidi':{'tooltip':'Allows for the language specific display of concatenated text and structured text, such as file paths.  Also allows you to specify a text direction and calendar independent of your language selection.','label':'Enable bidirectional text','help':'Enable bidirectional text help'},'save':{'label':'Save'},'calendar':{'label':'Calendar:','options':{'hijri':'Hijri','gregorian':'Gregorian','hebrew':'Hebrew'}},'direction':{'tooltip':'The direction of text derived from user input, such as names of content and navigation breadcrumbs.  By default, this is determined by your language selection (left to right for most).  Choosing contextual allows the system to determine direction based on character analysis (supports mixed-direction text).','label':'Direction of user-generated text:','options':{'contextual':'Contextual (character-based)','rtl':'Right to left','ltr':'Left to right','default_ltr':'Use language default (left to right)','default_rtl':'Use language default (right to left)'}}};
+   var h_strings = {'help':'Help','close':'Close'};
+   var m_strings = {'success':{'icon_alt':'Success','a11y_label':'Success:'},'error':{'icon_alt':'Error','a11y_label':'Error:'},'warning':{'icon_alt':'Warning','a11y_label':'Warning:'},'info':{'icon_alt':'Information','a11y_label':'Information:'}};
+   
+   var app_stub = require('ic-test/mocks/globalization/app'),
+      SaveAction = require('ic-core/globalization/action/Save'),
+      RestoreDefaultsAction = require('ic-core/globalization/action/RestoreDefaults');
+   var scene_stub = {};
+   
+   var no_actions = [];
+   var two_actions = [
+      new SaveAction(app_stub, scene_stub),
+      new RestoreDefaultsAction(app_stub, scene_stub)
+   ];
+   
+   function actionCompleted(obj) {
+      var array = require('dojo/_base/array'),
+        lang = require('dojo/_base/lang');
+      if (lang.isArray(obj.messages))
+         array.forEach(obj.messages, renderMessage);
+      else
+         renderMessage(obj.messages);
+   }
+   
+   function renderMessage(m) {
+      var MessageBox = require('ic-ui/MessageBox'),
+        dom = require('dojo/dom');
+      var _t = MessageBox.TYPE.INFO, _l = m_strings.info;
+      if (m.error) {
+         _t = MessageBox.TYPE.ERROR;
+         _l = m_strings.error;
+      } else if (m.warning) {
+         _t = MessageBox.TYPE.WARNING;
+         _l = m_strings.warning;
+      } else if (m.success) {
+         _t = MessageBox.TYPE.SUCCESS;
+         _l = m_strings.success;
+      }
+      clearMessages();
+      new MessageBox({
+         _strings: _l,
+         msg: m.message,
+         type: _t
+      }, dom.byId('messages'));
+   }
+   
+   function clearMessages() {
+      var htmlUtil = require('ic-core/util/html');
+      htmlUtil.removeChildren(dojo.byId('messages'));
+   }
+   
+   require(["dojo/topic", "dojo/dom-class", "dojo/domReady!"], function(topic, domClass) {
+      var bodyElem = document.getElementsByTagName("body")[0];
+      if (domClass.contains(bodyElem, "dijit_a11y")) {
+         domClass.add(bodyElem, "lotusImagesOff");
+      }
+      
+      topic.subscribe("ic-core/action/completed", actionCompleted);
+   });
+   
+</script>
+
+
+<style>
+input {
+   width: 200px;
+}
+div#messages { position: fixed; top: 0; right: 0; margin: 10px auto; white-space: nowrap; }
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-test/globalization/index.html?render=test">Globalization support</a>
+    <span class="lotusDivider">&gt;</span>
+    Globalization Preferences
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain">
+<div class="lotusContent">
+<h1>Globalization Preferences</h1>
+<dl>
+    <dt>Module ID: <code>ic-core/globalization/widget/GlobalizationPreferences</code></dt>
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-core/ic-core.globalization.widget.GlobalizationPreferences.html">JSDoc</a></dd>
+</dl>
+
+<h2>Without Language</h2>
+<div data-dojo-type="ic-core/globalization/widget/GlobalizationPreferences" data-dojo-props="id:&quot;without_language&quot;,strings:pw_strings,helpStrings:h_strings,actions:no_actions,bidi:true,calendar:&quot;gregorian&quot;,direction:&quot;contextual&quot;,disableLanguage:true"></div>
+
+<h2>With Language</h2>
+<div data-dojo-type="ic-core/globalization/widget/GlobalizationPreferences" data-dojo-props="id:&quot;with_language&quot;,strings:pw_strings,helpStrings:h_strings,actions:no_actions,bidi:true,calendar:&quot;gregorian&quot;,direction:&quot;contextual&quot;"></div>
+
+<h2>With Actions</h2>
+<div data-dojo-type="ic-core/globalization/widget/GlobalizationPreferences" data-dojo-props="id:&quot;with_actions&quot;,strings:pw_strings,helpStrings:h_strings,actions:two_actions,bidi:true,calendar:&quot;gregorian&quot;,direction:&quot;contextual&quot;"></div>
+
+<h2>Conditional Calendar</h2>
+<div data-dojo-type="ic-core/globalization/widget/GlobalizationPreferences" data-dojo-props="id:&quot;conditional_calendar&quot;,strings:pw_strings,helpStrings:h_strings,actions:no_actions,bidi:false,calendar:&quot;gregorian&quot;,direction:&quot;contextual&quot;,disableLanguage:true,isCalendarIndependent:false"></div>
+
+<div id="messages"></div>
+
+</div>
+</div>
+</body>
+${end}

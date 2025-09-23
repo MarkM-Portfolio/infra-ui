@@ -1,0 +1,22 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.                    */
+.otherActivityStream14-asActivities14{width:14px;height:14px;background-position:0 0}
+.otherActivityStream14-asBlogs14{width:14px;height:14px;background-position:0 -22px}
+.otherActivityStream14-asBookmarks14{width:14px;height:14px;background-position:0 -44px}
+.otherActivityStream14-asCommentsSharkfin14{width:13px;height:7px;background-position:0 -66px}
+.otherActivityStream14-asCommunities14{width:14px;height:14px;background-position:0 -81px}
+.otherActivityStream14-asConnections14{width:14px;height:14px;background-position:0 -103px}
+.otherActivityStream14-asDot14{width:3px;height:3px;background-position:0 -125px}
+.otherActivityStream14-asExternalLink14{width:8px;height:8px;background-position:0 -136px}
+.otherActivityStream14-asFiles14{width:14px;height:14px;background-position:0 -152px}
+.otherActivityStream14-asForums14{width:14px;height:14px;background-position:0 -174px}
+.otherActivityStream14-asLibraries14{width:14px;height:14px;background-position:0 -196px}
+.otherActivityStream14-asProfiles14{width:14px;height:14px;background-position:0 -218px}
+.otherActivityStream14-asWikis14{width:14px;height:14px;background-position:0 -240px}
+.otherActivityStream14-eeActiveSharkFin14{width:13px;height:8px;background-position:0 -262px}
+.otherActivityStream14-eeLeftSharkFin14{width:14px;height:24px;background-position:0 -278px}
+.otherActivityStream14-asSearchMag14{width:16px;height:16px;background-position:0 -310px}
+.otherActivityStream14-asCloseHover14{width:14px;height:14px;background-position:0 -334px}
+.otherActivityStream14-asKnockedfin14{width:14px;height:9px;background-position:0 -356px}
+
+.otherActivityStream14{background-image:url('./otherActivityStream14-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .otherActivityStream14{display:none}

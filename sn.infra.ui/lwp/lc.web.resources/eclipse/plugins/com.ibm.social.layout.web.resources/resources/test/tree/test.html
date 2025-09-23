@@ -1,0 +1,82 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+${script:dijit.dijit}
+${script:dijit.Tree}
+${script:com.ibm.social.layout.test.tree.TestNavigationTree}
+${endhead}
+
+<script>
+var store = new dojo.data.ItemFileReadStore({data: {
+	label: "label",
+	identifier: "id",
+	items: [
+		{id:"1",label:"Item 1 (No children)",url:"#1"},
+		{id:"2",label:"Item 2 (With url and children)",url:"#2", children: [
+			{id:"2_1",label:"Child 1 (No children)",url:"#2_1"},
+			{id:"2_2",label:"Child 2 (No children)",url:"#2_2"},
+			{id:"2_3",label:"Child 3 (With children)",children: [
+				{id:"2_3_1",label:"Grandchild 1",url:"#2_3_1"},
+				{id:"2_3_2",label:"Grandchild 2",children: [
+					{id:"2_3_2_1",label:"Great-Grandchild 1",url:"#2_3_2_1"},
+					{id:"2_3_2_2",label:"Great-Grandchild 2",url:"#2_3_2_2"}
+				]}
+			]}
+		]}
+	]
+}});
+var model = new dijit.tree.ForestStoreModel({store: store});
+</script>
+
+<div class="lotusFrame">
+	<div class="lotusMain">
+	
+Clicking changes focus and highlights nodes with URLs<br>
+	
+		<div class="lotusColLeft">
+			<div class="lotusMenu" role="navigation" aria-label="Main navigation"><div class="lotusBottomCorner"><div class="lotusInner">
+			
+In-page JSON data store
+<div id="tree1"></div>
+<script>
+var tree1 = new com.ibm.social.layout.widget.NavigationTree({model: model, lotusSelectedPath: [undefined, '1']}, dojo.byId("tree1"));
+</script>
+
+         </div></div></div>      
+      </div>
+
+      <div class="lotusColLeft">
+         <div class="lotusMenu" role="navigation" aria-label="Main navigation"><div class="lotusBottomCorner"><div class="lotusInner">
+
+
+External JSON data store
+<div id="tree2"></div>
+<script>
+var store2 = new dojo.data.ItemFileReadStore({url: "data.json"});
+var model2 = new dijit.tree.ForestStoreModel({store: store2});
+var tree2 = new com.ibm.social.layout.widget.NavigationTree({model: model2, lotusSelectedPath: [undefined, '2']}, dojo.byId("tree2"));
+</script>
+
+         </div></div></div>      
+      </div>
+      <div class="lotusColLeft">
+         <div class="lotusMenu" role="navigation" aria-label="Main navigation"><div class="lotusBottomCorner"><div class="lotusInner">
+
+Initially expanded + highlighted item
+<div id="tree3"></div>
+<script>
+var store3 = new dojo.data.ItemFileReadStore({url: "data.json"});
+var model3 = new dijit.tree.ForestStoreModel({store: store2});
+var tree3 = new com.ibm.social.layout.widget.NavigationTree({model: model3, lotusSelectedPath: [undefined, '2','2_1']}, dojo.byId("tree3"));
+</script>
+<a href="javascript:;" onclick="tree3.attr('lotusSelectedPath', [undefined, '2','2_3', '2_3_2', '2_3_2_2'])">Expand + highlight inner node</a>
+<br>
+<a href="javascript:;" onclick="tree3.attr('lotusSelectedNode', null)">Unhighlight node</a>
+
+			</div></div></div>      
+		</div>
+	</div>
+</div>	
+
+</body>
+
+${end}

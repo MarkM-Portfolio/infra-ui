@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>IBM Connections - Language selector</title>
+        <style type="text/css">
+            td { padding: 1em; }
+            td.code { padding: 0; }
+            td.languageSelector { min-width: 200px; }
+        </style>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="Language selector test page">
+            <div class="lotusContent">
+                <h1>Language Selector</h1>
+                <table border="1">
+                    <tr>
+                        <th>Description</th>
+                        <th>Example</th>
+                        <th>Code</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            1. Using lconn.core.header.enableLanguageSelector().
+                            You should see a link that pops up a menu with three
+                            language options, plus Browser Setting.
+                        </td>
+                        <td class="languageSelector">
+                            <div id="languageSelector1"></div>
+                        </td>
+                        <td class="code">
+                            <pre>
+new lconn.core.LanguageSelector(
+    dojo.byId('languageSelector2'),
+    {"en":"English","it":"Italiano","iw":"\u05e2\u05d1\u05e8\u05d9\u05ea"}
+    "lcLang",
+    {path: '/', expires: -1, domain: 'localhost'}
+);
+                            </pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            2. Using constructor. You should see a link that pops
+                            up a menu with three language options, plus Browser Setting. 
+                        </td>
+                        <td class="languageSelector">
+                            <a id="languageSelector2" href="javascript:;"></a>
+                        </td>
+                        <td class="code">
+                            <pre>
+new lconn.core.LanguageSelector(
+    dojo.byId("languageSelector2"),
+    {"en":"English","it":"Italiano","iw":"\u05e2\u05d1\u05e8\u05d9\u05ea"}
+    "lcLang",,
+    {path: '/', expires: -1, domain: 'localhost'}
+);
+                            </pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            3. Single language. You should see no link, because it
+                            makes no sense to let users choose when there's only
+                            one choice available.
+                        </td>
+                        <td class="languageSelector">
+                            <a id="languageSelector3" href="javascript:;"></a>
+                        </td>
+                        <td class="code">
+                            <pre>
+new lconn.core.LanguageSelector(
+    dojo.byId("languageSelector3"),
+    {"en":"English"},
+    "lcLang",,
+    {path: '/', expires: -1, domain: 'localhost'}
+);
+                            </pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            4. Force language via LotusConnections-config.xml.
+                            You should see no link, although there are two options:
+                            a language set by an admin, and BD (browser-determined).
+                        </td>
+                        <td class="languageSelector">
+                            <a id="languageSelector4" href="javascript:;"></a>
+                        </td>
+                        <td class="code">
+                            <pre>
+lconn.core.header.enableLanguageSelector(
+    "languageSelector4",
+    {"en":"en","BD":"BD"},
+    "lcLang",
+    "",
+    -1
+);
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:dojo.parser}
+    ${script:lconn.core.LanguageSelector}
+    ${script:lconn.core.header}
+    <script>
+        (function() {
+            var LANGUAGES_SOME = {"en":"English","it":"Italiano","iw":"\u05e2\u05d1\u05e8\u05d9\u05ea"},
+                LANGUAGES_EN = {"en":"English"};
+            dojo.addOnLoad(function(){
+                lconn.core.header.enableLanguageSelector(
+                    "languageSelector1",
+                    LANGUAGES_SOME,
+                    "lcLang",
+                    "localhost",
+                    1000
+                );
+                
+                new lconn.core.LanguageSelector(
+                    dojo.byId('languageSelector2'),
+                    LANGUAGES_SOME,
+                    "lcLang",
+                    {path: '/', expires: -1, domain: 'localhost'}
+                );
+                
+                new lconn.core.LanguageSelector(
+                    dojo.byId('languageSelector3'),
+                    LANGUAGES_EN,
+                    "lcLang",
+                    {path: '/', expires: -1, domain: 'localhost'}
+                );
+                
+                lconn.core.header.enableLanguageSelector(
+                    "languageSelector4",
+                    {"en":"en","BD":"BD"},
+                    "lcLang",
+                    "",
+                    -1
+                 );
+            });
+        })();
+    </script>
+</body>
+</html>

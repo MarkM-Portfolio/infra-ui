@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+<title>Test button widget</title>
+${endhead}
+
+<script type="text/javascript">
+	
+	var buttonUnderTest;
+	
+	function disableButton(){
+		buttonUnderTest.disableButton();
+	}
+	function enableButton(){
+		buttonUnderTest.enableButton();
+	}
+	
+	dojo.addOnLoad( function(){
+		buttonUnderTest = new lconn.core.paletteOneUI.WidgetButton({
+			widgetItem: {name: ["Test 1"], iconUrl: ["img/2col.jpg"]}
+		});
+		
+		dojo.byId("buttonUnderTestNode").appendChild(buttonUnderTest.domNode);
+		
+		dojo.subscribe(lconn.core.paletteOneUI.WidgetButton.prototype.ADD_WIDGET_EVENT, function(item){
+			console.log("on add widget");
+			console.log(item);
+		});
+	});
+	
+	dojo.addOnLoad( function() {
+		doh.registerGroup("widget button", []);		
+		doh.run();
+	});
+</script>
+
+<div class="lotusPalette">
+<div class="lotusPaletteBody">
+		<div class="lotusPaletteContent lotusPlain">
+			<div id="buttonUnderTestNode"></div>
+		</div>
+</div>
+</div>
+
+<button onclick="enableButton()">Enable Button</button>
+<button onclick="disableButton()">Disable Button</button>
+
+    <script>
+        djConfig.parseOnLoad=true;
+        djConfig.isDebug=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+
+    ${script:dojo.parser}
+    ${script:lconn.core.paletteOneUI.WidgetButton}
+    ${script:doh.runner}
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusGlobalSearch" role="search">
+	<div class="lotusSearch">
+		<form dojoAttachPoint="formNode" method="POST" dojoAttachEvent="onsubmit:formSubmitted">
+			<input name="scope" value="" dojoAttachPoint="scopeInputNode" type="hidden" />
+			<input name="component" value="" dojoAttachPoint="featureInputNode" type="hidden" />
+			<table class="lotusLayout" cellspacing="0" role="presentation" summary="">
+				<tbody>
+					<tr>
+						<td>
+							<div class="lotusHidden" id="${id}-searchOptionLabel">${_strings.LABEL_SELECT_SCOPE}</div>
+							<div>
+								<a href="javascript:;" title="${_strings.LABEL_SELECT_SCOPE}" class="lotusScope" dojoAttachPoint="scopeNode" dojoAttachEvent="onclick:openMenu,onkeypress:openMenuA11y" aria-haspopup="true" role="button" aria-labelledby="${id}-searchOptionLabel ${id}searchOpt">
+								<img class="lotusIcon" alt="" src="${_blankGif}" dojoAttachPoint="currScopeIconNode" role="presentation"/>
+								<span id="${id}searchOpt" dojoAttachPoint="currScopeLabelNode"> </span>
+								<span class="lotusAltText" role="presentation">&#9660;</span>
+								</a>
+							</div>
+						</td>
+						<td>
+							<input id="${id}searchInput" dojoAttachPoint="textNode" class="lotusText lotusInactive" type="text" name="query" title="${_strings.LABEL_SEARCH}"/>
+						</td>
+						<td>
+							<span class="lotusBtnImg">
+								<input dojoAttachPoint="onclick:submitForm" class="lotusSearchButton" type="image" src="${_blankGif}" alt="${_strings.LABEL_SEARCH}" title="${_strings.LABEL_SEARCH}" aria-label="${_strings.LABEL_SEARCH}"/>
+								<a href="javascript:;" alt="${_strings.LABEL_SEARCH}" dojoAttachEvent="onclick:submitForm" class="lotusAltText">${_strings.LABEL_SEARCH}</a>
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,71 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>Toolbar</title>
+
+
+<script>
+dojoConfig.parseOnLoad=true;
+
+</script>
+${script:net.jazz.ajax.xdloader}
+${script:ic-ui/aria/Toolbar}
+
+<script>
+    require(['dojo/dom', 'ic-ui/aria/Toolbar', 'dojo/domReady!'], function(dom, Toolbar) {
+        new Toolbar(dom.byId('tb1'));
+        new Toolbar(dom.byId('tb2'));
+        new Toolbar(dom.byId('tb3'), {cycle:false});
+    });
+</script>
+
+
+<style>
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-test/aria/index.html?render=test">ARIA Helpers</a>
+    <span class="lotusDivider">&gt;</span>
+    Toolbar
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain">
+<div class="lotusContent">
+<h1>Toolbar</h1>
+<dl>
+    <dt>Module ID: <code>ic-ui/aria/Toolbar</code></dt>
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-ui/ic-ui.aria.Toolbar.html">JSDoc</a></dd>
+</dl>
+
+<p>This helper enables a toolbar for keyboard navigation, it acts as a single tab stop when focusing in e.g. from <a id="a1" href="#" onclick="return false">this link</a>. Buttons can be focused using the arrow keys.</p>
+
+<h2>Toolbar, first pressed, cyclical</h2>
+<div id="tb1" role="toolbar">
+    <button role="button" aria-pressed="true">Button1</button>
+    <button role="button">Button2</button>
+    <button role="button">Button3</button>
+</div>
+
+<h2>Toolbar, first pressed, second disabled, cyclical</h2>
+<div id="tb2" role="toolbar">
+    <button role="button" aria-pressed="true">Button3</button>
+    <button role="button" disabled="true" aria-disabled="true">Button4</button>
+    <button role="button">Button5</button>
+</div>
+
+<h2>Toolbar, second pressed, acyclical</h2>
+<div id="tb3" role="toolbar">
+    <button role="button">Button6</button>
+    <button role="button" aria-pressed="true">Button7</button>
+    <button role="button">Button8</button>
+</div>
+</div>
+</div>
+</body>
+${end}

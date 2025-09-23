@@ -1,0 +1,47 @@
+${head}
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+${script:lconn.core.config.services}
+
+<script src="../../resources/CREOAuthProviderAPI.js"> </script>
+
+<script type="text/javascript">	
+	var autoAuth = /_oauth_client_auto_authorize=true/.test(window.location.toString());
+	var autoAuthFail = /auto_succeed=false/.test(window.location.toString());
+	window.providerAPI = new cre$.oauth.Provider();
+	if(autoAuth){
+		var status = (autoAuthFail)?cre$.oauth.Provider.StatusReturns.AUTO_AUTHORIZE_REJECTED:cre$.oauth.Provider.StatusReturns.AUTHORIZE_SUCCESS;
+		window.setTimeout(function(){
+			providerAPI.setStatus(status);
+		},1000);
+	}
+</script>
+
+${endhead}
+
+<h1>Iframe'd Window that Mimics an OAuth Provider Authorization Page</h1>
+<p id="btnContainer"/>
+<script type="text/javascript">	
+if(autoAuth == false || (autoAuth && autoAuthFail)){
+	var $ = function(id){
+		return document.getElementById(id);
+	}
+
+	var signals = ["AUTHORIZE_SUCCESS", "AUTHORIZE_REJECTED", "AUTHORIZE_SERVER_ERROR", "AUTO_AUTHORIZE_REJECTED"];
+	var i, btnContainer = $("btnContainer");
+
+	var sendSignal = function(signalName){
+		providerAPI.setStatus(cre$.oauth.Provider.StatusReturns[signalName], ("Sent Signal "+signalName));
+	}
+	
+	btnContainerHTML = "";
+	for(i = 0; i < signals.length; i++){
+		btnContainerHTML += "<button id='button"+i+"' ";
+		btnContainerHTML += "onclick=\"sendSignal('"+signals[i]+"');\"";
+		btnContainerHTML += ">Send "+signals[i]+" signal</button>";
+	}
+	btnContainer.innerHTML = btnContainerHTML;
+}
+
+</script>
+${end}

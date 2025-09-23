@@ -1,0 +1,451 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+
+/*--------------------------------------------------------
+     File Picker styles
+--------------------------------------------------------*/
+.lconnPicker {
+	background-color: #eaecee;
+}
+
+.lconnPicker .lconnLeftSide, .lconnPicker .lconnRightSide {
+	background-color: #ffffff;
+}
+
+.dijit_a11y .lconnPicker, .dijit_a11y .lconnPicker .lconnMenuScrollContainer, .dijit_a11y .lconnPicker .lconnRightSide {
+	border: 1px solid #000000;
+}
+
+.lconnPicker .lconnSectionHeader, .lconnPicker .lotusSearch, .lconnPicker .lconnPickerStream .lotusPaging {
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.lconnPicker .lconnDivider {
+	background-color: #e5e5e5;
+	height: 1px;
+    margin: 5px 0px;
+    line-height: 1px;
+    font-size: 1px;
+}
+.lconnPicker .lconnFilenameLable {
+   font-weight: normal;
+   padding-top: 2px;
+   padding-bottom: 2px;
+   font-size: 1em;
+   display: block;
+   overflow: hidden;
+   width: 100%;
+   text-overflow:ellipsis;
+}
+.lconnPicker .lconnFilenameLableCustom {
+   padding-top: 2px;
+   padding-bottom: 2px;
+}
+.lconnPicker .lconnFilenameLableCustomQuirks {
+   padding-top: 3px;
+   padding-bottom: 3px;
+   font-size: 0.8em;
+}
+.lconnPicker .lconnMenuScrollContainer a {
+	color: #000000;
+}
+
+.dijit_a11y .lconnPicker .lconnMenuScrollContainer a {
+	text-decoration: underline;
+}
+
+.lconnPicker a.lotusSelected, .lconnPicker a.lotusSelected span {
+	background-color: #CFECFF;
+	color: #ffffff;
+}
+
+.dijit_a11y .lconnPicker a.lotusSelected { text-decoration: underline; }
+
+.lconnPicker .lconnPickerInput, .lconnPicker .lconnPickerOtherFiles {
+	color: #848484;
+}
+.lconnPicker .lotusDialogBorder{
+   border: 3px solid rgba(2, 2, 2, 0.4);
+   border-radius: 3px 3px 3px 3px;
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);   
+}
+.lconnPicker .lotusDialog{
+   background-color: #FFFFFF;
+}
+.lconnPicker .lotusForm{
+   margin: 0;
+   padding: 0;
+}
+.lconnPicker .lotusDialogHeader{
+   background: -moz-linear-gradient(center top , #3C3C3C 0%, #252525 100%) repeat scroll 0 0 #3C3C3C;
+   border-bottom: 0 none;
+   padding: 15px 20px;
+}
+.lconnPicker .lotusDialog .lotusHeading {
+    color: #FFFFFF;
+    display: block;
+    font-size: 1.2em;
+    margin-right: 0;
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    padding: 0;
+    font-weight: bold;
+}
+.lconnPicker .lotusDialog h1{line-height:1.2;}
+.lconnPicker .lotusDialog .lotusDialogHeader .lotusDialogClose {
+    border: 0 none;
+    padding: 0;
+    position: absolute;
+    right: -11px;
+    top: -11px;
+    line-height: 1em;
+}
+.lconnPicker .lotusDialog .lotusDialogContent {
+    border: 0 none;
+}
+.lconnPicker .lotusDialog .lotusDialogContent {
+    border-bottom: 1px solid #AAAAAA;
+    max-height: 300px;
+    overflow: auto;
+    padding: 15px 20px;
+}
+.lconnPicker .lotusDialog .lotusDialogHeader .lotusDialogClose img {
+    background-image: url("images/lotusHSprite-8bit.png");
+    background-position: -150px 0;
+    height: 32px;
+    width: 32px;
+    border: 0 none;
+    line-height: 0;
+    vertical-align: middle;
+}
+.lconnPicker .lotusAltText {
+    display: none;
+}
+.lconnPicker .lotusArrow {
+	 background-image: url("images/lotusSprite-8bit.png");
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    height: 16px;
+    width: 16px;
+}
+.lconnPicker .lotusTwistyClosed {
+    background-position: 2px -102px;
+    margin-right: 2px;
+}
+.lconnPicker .lotusTwistyOpen {
+    background-position: 2px 2px;
+    margin-right: 2px;
+}
+.lconnPicker .lotusTiny {}
+.lconnPicker .lotusMeta {}
+.lconnPicker .lotusLeft {
+   float: left;
+    text-align: left;
+}
+.lconnPicker .lotusBtnImg{
+	background: none repeat scroll 0 0 transparent;
+	border: 0 none;
+	color: #333333;
+	font-weight: bold;
+	text-align: center;
+	display: inline-block;
+	line-height: 1;
+	padding: 2px;
+	vertical-align: top;
+}
+.lconnPicker .lotusSearch .lotusSearchButton {
+    background-color: transparent;
+    background-image: url("images/lotusHSprite-8bit.png");
+    background-position: -569px -8px;
+    height: 16px;
+    opacity: 0.45;
+    width: 16px;
+}
+}
+.lconnPicker .lotusBtnImg input {
+    background-repeat: no-repeat;
+    height: 16px;
+    margin: 0;
+    vertical-align: middle;
+    width: 16px;
+}
+.lconnPicker .lotusSearch .lotusText{
+	border-color: #CCCCCC;
+	padding-bottom: 4px;
+    padding-top: 3px;
+}
+.lconnPicker .lotusTable {
+   border-bottom-color: #EEEEEE;
+    border-collapse: collapse;
+    width: 100%;
+}
+.lconnPicker .lconnSprite {
+	background-image: url("images/sprite-lconn-8bit.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+.lconnPicker .lconnSprite-iconPublic16{
+   background-position: 0 -1382px;
+    height: 16px;
+    width: 16px;
+}
+.lconnPicker .lconnSprite-iconPrivate16{
+   background-position: 0 -1340px;
+    height: 16px;
+    width: 16px;
+}
+.lconnPicker .lconnSprite-iconShared16{
+   background-position: 0 -1406px;
+    height: 16px;
+    width: 16px;
+}
+.lconnPicker .lconn-ftype16 {background-repeat:no-repeat;display:-moz-inline-box;display:inline-block;background-image:url(images/iconsFileTypes16-8bit.png)}
+.lconn-ftype16 {width:16px;height:16px;background-position: 0 -144px;}
+.lotusImagesOff .lconnPicker .lconn-ftype16, .lotusImagesOff .lconnPicker .lconn-ftype32, .lotusImagesOff .lconnPicker .lconn-ftype64 {display:none;}
+.lconnPicker .lconn-ftype16-asf,.lconnPicker .lconn-ftype16-asr, .lconnPicker .lconn-ftype16-asx, .lconnPicker .lconn-ftype16-avi, .lconnPicker .lconn-ftype16-divx, .lconnPicker .lconn-ftype16-flv, .lconnPicker .lconn-ftype16-lsf, .lconnPicker .lconn-ftype16-lsx, .lconnPicker .lconn-ftype16-mov, .lconnPicker .lconn-ftype16-movie, .lconnPicker .lconn-ftype16-mp2, .lconnPicker .lconn-ftype16-mp4, .lconnPicker .lconn-ftype16-mpa, .lconnPicker .lconn-ftype16-mpe, .lconnPicker .lconn-ftype16-mpeg, .lconnPicker .lconn-ftype16-mpg, .lconnPicker .lconn-ftype16-mpv2, .lconnPicker .lconn-ftype16-qt, .lconnPicker .lconn-ftype16-svi, .lconnPicker .lconn-ftype16-wmv {background-position: 0 -408px;}
+.lconnPicker .lconn-ftype16-flw, .lconnPicker .lconn-ftype16-key, .lconnPicker .lconn-ftype16-mass, .lconnPicker .lconn-ftype16-odp, .lconnPicker .lconn-ftype16-ope, .lconnPicker .lconn-ftype16-otc, .lconnPicker .lconn-ftype16-otp, .lconnPicker .lconn-ftype16-pot, .lconnPicker .lconn-ftype16-potm, .lconnPicker .lconn-ftype16-potx, .lconnPicker .lconn-ftype16-pp2, .lconnPicker .lconn-ftype16-pp97, .lconnPicker .lconn-ftype16-ppam, .lconnPicker .lconn-ftype16-pps, .lconnPicker .lconn-ftype16-ppsm, .lconnPicker .lconn-ftype16-ppsx, .lconnPicker .lconn-ftype16-ppt, .lconnPicker .lconn-ftype16-pptm, .lconnPicker .lconn-ftype16-pptx, .lconnPicker .lconn-ftype16-prz, .lconnPicker .lconn-ftype16-shw3, .lconnPicker .lconn-ftype16-sti, .lconnPicker .lconn-ftype16-sxi {background-position: 0 -336px;}
+.lconnPicker .lconn-ftype16-rtz {background-position: 0 -288px;}
+.lconnPicker .lconn-ftype16-link {background-position: 0 -264px;}
+.lconnPicker .lconn-ftype16-cab, .lconnPicker .lconn-ftype16-dmg, .lconnPicker .lconn-ftype16-gtar, .lconnPicker .lconn-ftype16-gz, .lconnPicker .lconn-ftype16-jar, .lconnPicker .lconn-ftype16-rar, .lconnPicker .lconn-ftype16-sit, .lconnPicker .lconn-ftype16-sqx, .lconnPicker .lconn-ftype16-tar, .lconnPicker .lconn-ftype16-taz, .lconnPicker .lconn-ftype16-tgz, .lconnPicker .lconn-ftype16-z, .lconnPicker .lconn-ftype16-zip {background-position: 0 -48px;}
+.lconnPicker .lconn-ftype16-doc, .lconnPicker .lconn-ftype16-docm, .lconnPicker .lconn-ftype16-docx, .lconnPicker .lconn-ftype16-dot, .lconnPicker .lconn-ftype16-dotm, .lconnPicker .lconn-ftype16-dotx, .lconnPicker .lconn-ftype16-en4, .lconnPicker .lconn-ftype16-enw, .lconnPicker .lconn-ftype16-leg, .lconnPicker .lconn-ftype16-lwp, .lconnPicker .lconn-ftype16-lwp7, .lconnPicker .lconn-ftype16-manu, .lconnPicker .lconn-ftype16-msw, .lconnPicker .lconn-ftype16-mwp, .lconnPicker .lconn-ftype16-mwp2, .lconnPicker .lconn-ftype16-mwpf, .lconnPicker .lconn-ftype16-odc, .lconnPicker .lconn-ftype16-odg, .lconnPicker .lconn-ftype16-odt, .lconnPicker .lconn-ftype16-ort, .lconnPicker .lconn-ftype16-otg, .lconnPicker .lconn-ftype16-oth, .lconnPicker .lconn-ftype16-odm, .lconnPicker .lconn-ftype16-ott, .lconnPicker .lconn-ftype16-pages, .lconnPicker .lconn-ftype16-pcl, .lconnPicker .lconn-ftype16-rtx, .lconnPicker .lconn-ftype16-std, .lconnPicker .lconn-ftype16-stw, .lconnPicker .lconn-ftype16-sxd, .lconnPicker .lconn-ftype16-sxq, .lconnPicker .lconn-ftype16-sxw, .lconnPicker .lconn-ftype16-w6, .lconnPicker .lconn-ftype16-w97, .lconnPicker .lconn-ftype16-wm, .lconnPicker .lconn-ftype16-wp5, .lconnPicker .lconn-ftype16-wp6, .lconnPicker .lconn-ftype16-wpf {background-position: 0 -456px;}
+.lconnPicker .lconn-ftype16-crd, .lconnPicker .lconn-ftype16-vcard, .lconnPicker .lconn-ftype16-vcf, .lconnPicker .lconn-ftype16-vcrd {background-position: 0 -72px;}
+.lconnPicker .lconn-ftype16-asp, .lconnPicker .lconn-ftype16-axs, .lconnPicker .lconn-ftype16-css, .lconnPicker .lconn-ftype16-htc, .lconnPicker .lconn-ftype16-htm, .lconnPicker .lconn-ftype16-html, .lconnPicker .lconn-ftype16-java, .lconnPicker .lconn-ftype16-js, .lconnPicker .lconn-ftype16-jsp, .lconnPicker .lconn-ftype16-php, .lconnPicker .lconn-ftype16-sct, .lconnPicker .lconn-ftype16-stm, .lconnPicker .lconn-ftype16-wml, .lconnPicker .lconn-ftype16-xml, .lconnPicker .lconn-ftype16-xsl {background-position: 0 -24px;}
+.lconnPicker .lconn-ftype16-djv, .lconnPicker .lconn-ftype16-djvu, .lconnPicker .lconn-ftype16-jpe, .lconnPicker .lconn-ftype16-jpeg, .lconnPicker .lconn-ftype16-jpg, .lconnPicker .lconn-ftype16-odi, .lconnPicker .lconn-ftype16-oti, .lconnPicker .lconn-ftype16-pic, .lconnPicker .lconn-ftype16-pict, .lconnPicker .lconn-ftype16-png, .lconnPicker .lconn-ftype16-tif, .lconnPicker .lconn-ftype16-tif6, .lconnPicker .lconn-ftype16-tiff {background-position: 0 -240px;}
+.lconnPicker .lconn-ftype16-123, .lconnPicker .lconn-ftype16-12m, .lconnPicker .lconn-ftype16-acs, .lconnPicker .lconn-ftype16-csv, .lconnPicker .lconn-ftype16-dbs, .lconnPicker .lconn-ftype16-dez, .lconnPicker .lconn-ftype16-ens, .lconnPicker .lconn-ftype16-fcd, .lconnPicker .lconn-ftype16-fcs, .lconnPicker .lconn-ftype16-mwkd, .lconnPicker .lconn-ftype16-mwks, .lconnPicker .lconn-ftype16-odf, .lconnPicker .lconn-ftype16-ods, .lconnPicker .lconn-ftype16-oss, .lconnPicker .lconn-ftype16-otf, .lconnPicker .lconn-ftype16-ots, .lconnPicker .lconn-ftype16-qad, .lconnPicker .lconn-ftype16-smd, .lconnPicker .lconn-ftype16-sms, .lconnPicker .lconn-ftype16-stc, .lconnPicker .lconn-ftype16-sxc, .lconnPicker .lconn-ftype16-sxm, .lconnPicker .lconn-ftype16-wg2, .lconnPicker .lconn-ftype16-wk4, .lconnPicker .lconn-ftype16-wk6, .lconnPicker .lconn-ftype16-xla, .lconnPicker .lconn-ftype16-xlam, .lconnPicker .lconn-ftype16-xlc, .lconnPicker .lconn-ftype16-xlm, .lconnPicker .lconn-ftype16-xls, .lconnPicker .lconn-ftype16-xlsb, .lconnPicker .lconn-ftype16-xlsm, .lconnPicker .lconn-ftype16-xlsx, .lconnPicker .lconn-ftype16-xlt, .lconnPicker .lconn-ftype16-xltm, .lconnPicker .lconn-ftype16-xltx, .lconnPicker .lconn-ftype16-xlw {background-position: 0 -96px;}
+.lconnPicker .lconn-ftype16-ai, .lconnPicker .lconn-ftype16-eps, .lconnPicker .lconn-ftype16-ich, .lconnPicker .lconn-ftype16-ich6, .lconnPicker .lconn-ftype16-iwp, .lconnPicker .lconn-ftype16-pdf, .lconnPicker .lconn-ftype16-ps {background-position: 0 -312px;}
+.lconnPicker .lconn-ftype16-swf, .lconnPicker .lconn-ftype16-fla {background-position: 0 -168px;}
+.lconnPicker .lconn-ftype16-aac, .lconnPicker .lconn-ftype16-aif, .lconnPicker .lconn-ftype16-aifc, .lconnPicker .lconn-ftype16-aiff, .lconnPicker .lconn-ftype16-au, .lconnPicker .lconn-ftype16-kar, .lconnPicker .lconn-ftype16-m3u, .lconnPicker .lconn-ftype16-m4a, .lconnPicker .lconn-ftype16-mid, .lconnPicker .lconn-ftype16-midi, .lconnPicker .lconn-ftype16-mp3, .lconnPicker .lconn-ftype16-mpga, .lconnPicker .lconn-ftype16-ra, .lconnPicker .lconn-ftype16-ram, .lconnPicker .lconn-ftype16-rm, .lconnPicker .lconn-ftype16-rmi, .lconnPicker .lconn-ftype16-rpm, .lconnPicker .lconn-ftype16-snd, .lconnPicker .lconn-ftype16-wav, .lconnPicker .lconn-ftype16-wma {background-position: 0 0;}
+.lconnPicker .lconn-ftype16-323, .lconnPicker .lconn-ftype16-asc, .lconnPicker .lconn-ftype16-bas, .lconnPicker .lconn-ftype16-c, .lconnPicker .lconn-ftype16-etx, .lconnPicker .lconn-ftype16-h, .lconnPicker .lconn-ftype16-jw, .lconnPicker .lconn-ftype16-log, .lconnPicker .lconn-ftype16-mcw, .lconnPicker .lconn-ftype16-msg, .lconnPicker .lconn-ftype16-ow, .lconnPicker .lconn-ftype16-pfs, .lconnPicker .lconn-ftype16-qa, .lconnPicker .lconn-ftype16-rtf, .lconnPicker .lconn-ftype16-sow, .lconnPicker .lconn-ftype16-text, .lconnPicker .lconn-ftype16-tsv, .lconnPicker .lconn-ftype16-tw, .lconnPicker .lconn-ftype16-txt, .lconnPicker .lconn-ftype16-uls, .lconnPicker .lconn-ftype16-vw3, .lconnPicker .lconn-ftype16-ws, .lconnPicker .lconn-ftype16-xy {background-position: 0 -384px;}
+.lconnPicker .lconn-ftype16-bmp, .lconnPicker .lconn-ftype16-cgm, .lconnPicker .lconn-ftype16-cmx, .lconnPicker .lconn-ftype16-cod, .lconnPicker .lconn-ftype16-drw, .lconnPicker .lconn-ftype16-dxf, .lconnPicker .lconn-ftype16-eshr, .lconnPicker .lconn-ftype16-gif, .lconnPicker .lconn-ftype16-hgs, .lconnPicker .lconn-ftype16-ico, .lconnPicker .lconn-ftype16-ief, .lconnPicker .lconn-ftype16-img, .lconnPicker .lconn-ftype16-jfif, .lconnPicker .lconn-ftype16-pbm, .lconnPicker .lconn-ftype16-pcx, .lconnPicker .lconn-ftype16-pgl, .lconnPicker .lconn-ftype16-pgm, .lconnPicker .lconn-ftype16-pnm, .lconnPicker .lconn-ftype16-pntg, .lconnPicker .lconn-ftype16-ppm, .lconnPicker .lconn-ftype16-psd, .lconnPicker .lconn-ftype16-psp6, .lconnPicker .lconn-ftype16-ras, .lconnPicker .lconn-ftype16-rgb, .lconnPicker .lconn-ftype16-sdw, .lconnPicker .lconn-ftype16-svg, .lconnPicker .lconn-ftype16-svgz, .lconnPicker .lconn-ftype16-tga, .lconnPicker .lconn-ftype16-wbmp, .lconnPicker .lconn-ftype16-wpg, .lconnPicker .lconn-ftype16-xbm, .lconnPicker .lconn-ftype16-xpm, .lconnPicker .lconn-ftype16-xwd {background-position: 0 -240px;}
+.lconnPicker .lotusDialog .lotusDialogFooter {
+    background-color: #FFFFFF;
+    border-top: 1px solid #AAAAAA;
+    margin: 0 20px;
+    padding: 15px 0;
+    text-align:right;
+}
+.lconnPicker .lotusBtnDisabled {
+    border-width: 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5) !important;
+    color: #7C7C7C !important;
+}
+.lconnPicker button.lotusFormButton, input.lotusFormButton {
+    background-color: #E7E7E7;
+    background-image: -moz-linear-gradient(center top , #EDEDED 0%, #E1E1E1 100%);
+    border-radius: 3px 3px 3px 3px;
+    border-width: 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    color: #333333;
+    margin: 0 9px 3px 1px;
+    padding: 5px 15px;
+    text-decoration: none;
+    text-shadow: 0 1px 1px #FFFFFF;
+}
+.lconnPicker a.lotusAction {
+    font-size: 0.9em;
+}
+.lconnPicker .lotusTable th.lotusFirstCell, .lotusTable td.lotusFirstCell {
+    padding-left: 10px;
+}
+.lconnPicker .lotusInlinelist {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.lconnPicker .lotusRight {
+   float: right;
+    text-align: right;
+}
+.lconnPicker .lotusPaging .lotusInlinelist li.lotusFirst {
+    padding-left: 0;
+}
+.lconnPicker  .lotusPaging .lotusRight li {
+    margin-left: 5px;
+    padding: 0 0 0 6px;
+}
+.lconnPicker .lotusPaging .lotusInlinelist li {
+    border-color: #CCCCCC;
+}
+.lconnPicker .lotusPaging {
+    background: none repeat scroll 0 0 transparent;
+    border-color: #DDDDDD;
+    border-width: 1px 0;
+    padding-left: 0;
+    padding-right: 0;
+    clear: both;
+    font-size: 0.9em;
+     text-align: center;
+     overflow: hidden;
+}
+.lconnPicker .lotusInlinelist li {
+    border-left: 1px solid #CCCCCC;
+    display: inline;
+    margin: 0;
+    padding: 0 7px;
+}
+.lconnPicker .lotusInlinelist li.lotusFirst{
+	border-left-width: 0;
+    padding-left: 0;
+}
+.lconnPicker .lconnSprite-iconAttention16{
+   background-position: 0 -1176px;
+    height: 16px;
+    width: 16px;
+}
+.lconnPicker .lconnSprite-iconWarning16 {
+    background-position: 0 -1248px;
+    height: 16px;
+    width: 16px;
+}
+.lconnPicker .lotusMessage {
+    font-weight: normal;
+    background-color: #FFEBE6;
+    border-color: #F08137;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 3px 3px 3px 3px;
+}
+.lconnPicker .lotusInfo {
+	font-weight: normal;
+    background-color: #D9F1FB;
+    border: 1px solid #00B0DA;
+    padding: 10px;
+}
+.lconnPicker .lotusWarning {
+	 font-weight: normal;
+    background-color: #FDF4C8;
+    border: 1px solid #E48617;
+    padding: 10px;
+}
+.lconnPicker .lotusAlignRight {
+    text-align: right;
+}
+.lconnPicker .lotusHidden {
+    display: none;
+}
+.lconnPicker .lotusForm td.lotusFormLabel {
+    font-weight: normal;
+    text-align: left;
+}
+.lconnPicker .lotusForm tr.lotusFormFieldRow td, .lotusForm td.lotusFormFieldRow {
+    padding-bottom: 10px;
+}
+.lconnPicker .lotusOffScreen {
+    position: absolute;
+    top: -9999px;
+}
+.lconnPicker .lotusDialog .lotusDialogContent .lotusFormTable {
+    margin-bottom: -10px;
+}
+.lconnPicker .lotusDialog .lotusFormTable, .lotusDialog .lotusFormTable td, .lotusDialog .lotusDialogContent {
+    border: 0 none;
+    padding: 15px 20px;
+}
+.lconnPicker .lotusDialog .lotusFormTable td {
+    padding: 0 3px 10px 0;
+}
+.lconnPicker .lotusForm .lotusFormTable {
+    width: 100%;
+}
+.lconnPicker .lotusDialog .lotusFormTable, .lotusDialog .lotusFormTable td, .lotusDialog .lotusDialogContent {
+    max-height: 300px;
+    overflow: auto;
+}
+.lconnPicker .lconnUploadContainer {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+.lconnPicker .lotusBtn {
+    padding: 5px 15px;
+    text-shadow: 0 1px 1px #FFFFFF;
+}
+.lconnPicker .lotusBtn {
+    background-color: #E7E7E7;
+    background-image: -moz-linear-gradient(center top , #EDEDED 0%, #E1E1E1 100%);
+    border: 0 none;
+    border-collapse: separate;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    color: #333333;
+    font-weight: bold;
+    margin: 0 4px 3px 1px;
+    text-align: center;
+}
+.lconnPicker .lotusBtn {
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-right: 5px;
+}
+.lconnPicker .lotusForm .lotusText, .lotusForm textarea, .lotusForm select {
+    border: 1px solid #AAAAAA;
+    line-height: inherit;
+    margin: 0;
+    padding: 1px;
+}
+.lconnPicker .lotusForm fieldset {
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+}
+.lconnPicker .lotusForm fieldset legend {
+    color: #222222;
+    font-weight: bold;
+    margin-bottom: 2px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.lconnPicker .lotusAccess {
+    position: absolute;
+    top: -3000px;
+}
+.lconnPicker .lotusForm .lotusText {
+    width: 99%;
+}
+.lconnPicker .lotusNowrap {
+    white-space: nowrap;
+}
+.lconnPicker .lotusForm td.lotusFormLabel {
+    text-align: left;
+    vertical-align: top;
+}
+.lconnPicker .lotusMessage img {
+    margin-right: 7px;
+    margin-top: 0;
+    float:left;
+}
+.lconnPicker .lconnSprite-iconError16 {
+    background-position: 0 -1224px;
+    height: 16px;
+    width: 16px;
+}
+.lconnPicker .lconnFileUpload {
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+.lconnPicker .lconnFileUploadIcon {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.lconnPicker .lconnFileUploadAction {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.lconnPicker .lconnFileUploadAction .lconnRemoveLink {
+    padding: 0 4px;
+}
+.lconnPicker img.lotusDelete {
+    background-image: url("images/lotusHSprite-8bit.png");
+    background-position: -537px -12px;
+    height: 8px;
+    opacity: 0.45;
+    width: 8px;
+}
+.lconnPicker .lotusDelete {
+    background-repeat: no-repeat;
+}

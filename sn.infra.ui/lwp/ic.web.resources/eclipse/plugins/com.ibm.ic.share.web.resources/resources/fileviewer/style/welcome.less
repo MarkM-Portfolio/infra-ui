@@ -1,0 +1,87 @@
+/* Copyright IBM Corp. 2015  All Rights Reserved.              */
+
+.ics-viewer-overlay.ics-viewer-welcome-overlay {
+   display: none;
+   top: 50px;
+   z-index: 1710;
+}
+
+.ics-viewer-welcome-showing {
+   .ics-viewer-overlay {
+      opacity: .75;
+   }
+   
+   .ics-viewer-overlay.ics-viewer-welcome-overlay {
+      display: block;
+   }
+}
+
+.ics-viewer .ics-message-container.ics-viewer-welcome-container {
+   z-index: 1711;
+
+   .lotusMessage2 {
+      display: block;
+   
+      background-color: #4178be;
+      border: none;
+      border-radius: 0;
+   
+      color: white;
+      weight: 400;
+   
+      width: 80%;
+      padding: 25px 30px 30px;
+      margin: auto;
+      margin-top: 9px;
+   
+      .lotusIconMsgSuccess {
+         display: none;
+      }
+   
+      .lotusDelete {
+         top: 30px;
+         .right(30px);
+   
+         img {
+            background-image: ~"url(../style/images/cancel_2.png)";
+            background-position: center;
+            opacity: 1;
+            width: 16px;
+            height: 16px;
+         }
+      }
+   
+      .lotusMessageBody {
+         padding: 0;
+         margin: 0;
+   
+         .title {
+            font-size: 1.75em;
+            border-bottom: 1px solid white;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+         }
+   
+         .subtitle {
+            font-size: 1.15em;
+         }
+   
+         .lines {
+            font-size: 1.15em;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+   
+            li {
+               padding-top: 4px;
+            }
+         }
+      }
+   }
+}
+
+.ics-viewer.loadError {
+  .ics-viewer-welcome-container, .ics-viewer-welcome-overlay {
+    display: none;
+  }
+}

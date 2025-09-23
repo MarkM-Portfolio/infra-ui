@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015, 2016  All Rights Reserved.                    -->
+<messagebundle>
+  <msg name="as_title">Ažuriranja</msg>
+  <msg name="as_description">Ažuriranja od IBM Connections</msg>
+  <msg name="as_error">Dogodila se greška konfiguracije za tok ažuriranja. Molimo kontaktirajte vašeg administratora.</msg>
+</messagebundle>

@@ -1,0 +1,12 @@
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+<!--  TODO : Create a separate CSS class for the overrides below ()both the dv and the anchor ! -->
+<div class="lotusMessage ${msgClass}" style="${msgStyle}" role="${role}">
+	<img class="lotusIcon ${imgClass}" src="${_blankGif}" alt="${typeAlt}" />
+	<span class="lotusAltText">${typeAlt}:</span>
+	<div>${msgText}</div>
+	<a href="javascript:;" style="top: 5px !important;" dojoAttachPoint="closeBtn" dojoAttachEvent="onclick:clearItem" class="lotusDelete">
+		<img alt="${strings.msgCloseAlt}" src="${_blankGif}"/>
+		<span class="lotusAltText">X</span>
+	</a>
+</div>

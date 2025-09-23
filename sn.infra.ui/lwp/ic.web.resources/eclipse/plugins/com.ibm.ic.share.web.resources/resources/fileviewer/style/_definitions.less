@@ -1,0 +1,69 @@
+/* Copyright IBM Corp. 2015  All Rights Reserved.              */
+
+@divider-color: #474747; /* Spec: #242527; */
+@banner-height: 50px;
+
+@header-background: #16181a;
+@panel-background: white;
+
+.floatLeft() {
+  float: left;
+  .dijitRtl & {
+    float: right;
+  }
+}
+
+.floatRight() {
+  float: right;
+  .dijitRtl & {
+    float: left;
+  }
+}
+
+.left(@amount) {
+  left: @amount;
+  .dijitRtl & {
+    left: inherit;
+    right: @amount;
+  }
+}
+
+.right(@amount) {
+  right: @amount;
+  .dijitRtl & {
+    right: inherit;
+    left: @amount;
+  }
+}
+
+.marginLeft(@amount) {
+  margin-left: @amount;
+  .dijitRtl & {
+    margin-left: inherit;
+    margin-right: @amount;
+  }
+}
+
+.marginRight(@amount) {
+  margin-right: @amount;
+  .dijitRtl & {
+    margin-right: inherit;
+    margin-left: @amount;
+  }
+}
+
+.paddingLeft(@amount) {
+  padding-left: @amount;
+  .dijitRtl & {
+    padding-left: inherit;
+    padding-right: @amount;
+  }
+}
+
+.paddingRight(@amount) {
+  padding-right: @amount;
+  .dijitRtl & {
+    padding-right: inherit;
+    padding-left: @amount;
+  }
+}

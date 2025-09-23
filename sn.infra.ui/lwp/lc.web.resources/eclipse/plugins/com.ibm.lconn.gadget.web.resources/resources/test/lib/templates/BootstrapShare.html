@@ -1,0 +1,22 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div style="padding: 10px 10px 10px 10px; ">
+	<div>
+		<h2>To test your Sharebox Gadget :</h2>
+		<ol>
+		<li>Input your desired gadget URL</li>
+		<li>Click "Open Global Sharebox" below</li>
+		<li>if you implement changes in your gadget, reload this page to flush out preloaded actions, then start again.</li>
+		</ol>
+		<form>
+			<div>	
+				<input name="openGlobalShareButton" dojoAttachPoint="openGlobalShareButton" type="button" value="Open Global Sharebox" class="${buttonStyle}" ${disableButtons}/>
+			</div>
+		</form>
+	</div>
+
+	<div>
+		<span dojoAttachPoint="shareDialog" > 
+			<h2>This feature can only be tested if you are authenticated with Connections.  Please authenticate first.</h2>
+		</span>
+	</div>
+</div>

@@ -1,0 +1,19 @@
+.lconnBox #main .lotusFormFooter {
+    border-width: 1px 0 0;
+    border-style: solid;
+    border-color: #aaa;
+    padding: 10px 15px; 
+}
+
+.lconnBox .lotusTable tr td.eventDiv,
+.lconnBox .lotusTable tr td:first-child {
+    padding-left: 6px;
+}
+
+.lconnBox .lotusui30 a:hover, .lotusui30 a:focus, .lotusui30 a:active {
+    color: #05386b;
+}
+
+.lconnBox .lotusui30 a, .lotusui30 a:visited {
+    color: #1970b0;
+}

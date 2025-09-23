@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2011, 2015  All Rights Reserved.              */
+
+/*****************************STYLE THE LINK**********************************/
+/* keep position relative all the time to prevent excess reflows in non-IE browsers */
+a.lotusResourceLink {position: relative;zoom: 1;border-bottom: 1px solid transparent;}
+ /* no position relative when not hovering to prevent weird scrolling issues in IE (94912) */
+.lotusui_ie a.lotusResourceLink {position: static;}
+a.lotusResourceLink:hover {position: relative !important;border-bottom: 1px dotted #105cb6;}
+a.lotusResourceLink img.lotusResourceLinkArrow {visibility: hidden;position: absolute;right: 0;bottom: -4px;}
+a.lotusResourceLink:hover img.lotusResourceLinkArrow {visibility: visible;}
+a.lotusResourceLink .hidden {display: none !important;}
+
+/*****************************Prototype oneui**********************************/
+.lotusResourceHover .titleBar {position: relative;	margin: 5px 15px 0 10px;overflow: hidden;zoom: 1;line-height: 1.3em;font-size: 1.13em;color: #3087b3;}
+.lotusResourceHover .titleBar .titleIndent {margin-left: 20px;}
+.lotusResourceHover .titleBar .iconLink {position: absolute;width: 20px;height: 16px;top: 2px;left: 0;}
+.lotusResourceHover .titleBar .iconNode {width: 16px;height: 16px;}
+/* wrapper div is required for margins in IE */
+.lotusResourceHover .dividerWrapper {display: none; margin: 2px 2px;overflow: hidden;}
+/* wrapper div is required for margins in IE */
+.lotusResourceHover .bottomDividerWrapper {margin: 1px 2px 5px;overflow:hidden;}
+.lotusResourceHover .divider {padding-bottom: 1px;overflow: hidden;line-height: 1px;font-size: 1px;}
+.lotusResourceHover .summarySection .loadingIframe {visibility: hidden;}
+.lotusResourceHover .summarySection {display:table;}
+.lotusResourceHover .summarySection .loading-wrapper {position:absolute;z-index:1000;}
+.lotusResourceHover .summarySection .image-loading {display:table-cell;vertical-align:middle;text-align:center;}
+.lotusResourceHover .summarySection .lotusHidden {display: none;}
+.lotusui_ie .lotusResourceHover .summarySection .loading-wrapper {position:absolute !important;left:50%;top:50% !important;}
+.lotusui_ie .lotusResourceHover .summarySection .image-loading {left:-50%;padding-left:16px;position:relative !important;top:-50% !important;}
+.lotusResourceHover .bottomSection {margin-left: 3px;margin-bottom: 6px;}
+.lotusResourceHover .toggleLink {margin-top: 4px;padding-left: 9px;}
+
+.lotusui30 .lotusResourceHover .lotusPopupContent {padding: 0;}
+.lotusui30 .lotusResourceHover .lotusPopupHeader {padding: 10px 20px 0 20px; border-bottom: 0px; margin-bottom: 0;}
+

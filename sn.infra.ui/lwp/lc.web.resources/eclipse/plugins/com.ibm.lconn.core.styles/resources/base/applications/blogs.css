@@ -1,0 +1,2251 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* HCL Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright HCL Technologies Limited 2022                           */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+/** Blogs CSS **/
+/* Paging */
+.blog .blogPaging h4{font-weight:normal;font-size:.9em;background-color:#f3f3f3;border:1px solid #e0e0e0;padding:1px 15px;margin-bottom:0;text-align:left;}
+.blog .blogPaging .disabled {color:#666;}
+
+#lotusColRight .lotusSection {overflow:hidden;}
+table.lotusHeader {width:100%;}
+
+/*Comments*/
+.comments-head {font-weight:normal;font-size:1.1em;background-color:#f3f3f3;border:1px solid #e0e0e0;padding:3px 14px;margin-bottom:7px;text-align:left;}
+/*.comment {padding:10px 15px 0px 15px;*/ /*background-color:#f3f3f3;margin:10px 0;border:1px solid #e0e0e0;}*/
+span.commentLogin {display:block;padding-left:15px;}
+.comments-form {margin:0;}
+.comment-details {margin-bottom:25px;}
+.comment-details-head {display:block;border-bottom:1px solid #e0e0e0;margin-bottom:5px;padding-left:4px;}
+.comment-details-head .action {font-size:0.9em;}
+.comment-count {padding:1px 2px;margin-right:4px;}
+.comment-count-author {color:#fff;background-color:#43a0f6;padding:1px 4px;margin-right:4px;}
+.lotusImagesOff .comment-count-author{border: 1px solid }
+.comment-content {padding:0 4px;display:block;}
+
+/** Admin styles **/
+div.yourWeblogBox{border-top: 1px solid #DBDBDB; margin: 5px }
+/**div.yourWeblogBox{border:1px solid #DBDBDB;float:left;height:125px;left:250px;margin:5px;padding:5px;width:300px;} **/
+/* action menu */
+.admin .actions{margin:0;}
+.admin .actions ul li {
+		font: normal 1.1em/2.8em Helvetica, Arial, Verdana, sans-serif;
+		border-left-width:0;
+		background: transparent 0 center no-repeat;
+		padding:0 8px;
+		}
+		.admin .actions ul.inlinelist li.first{background:transparent}
+.admin .actions a {padding:2px;}
+.admin a.menuItemSelected{font-weight:bold;}
+
+/*** C A L E N D A R ***/ /*complete*/
+/*styles beginning with hCalendar are used to support roller blog html*/
+.calendar, .hCalendarTable{}
+/*contains the month/year*/
+.calendar caption, .hCalendarMonthYearRow{font-weight:bold;font-size:1.1em;text-align:center;padding:2px 2px 11px 2px}
+/*the header cells that contain the days of the week*/
+.calendar th, .hCalendarTable th{ text-align:right;font-weight:normal;padding:2px 2px 2px 14px}
+/*all regular table cells*/
+.calendar td, .hCalendarTable td{text-align:right;padding-bottom:2px}
+.calendar td a, .hCalendarTable td a{color:#000;padding:1px}
+.calendar td a:hover, .hCalendarTable td a:hover, .calendar td.today a:hover, .hCalendarTable td.today a:hover{color:#fff;border:1px solid #0063dc;background-color:#0063dc}
+.calendar td.today a, .hCalendarTable td.today a{background-color:#dceafd;border:1px solid #dceafd;color:#0063dc;}
+/*the current date*/
+.calendar td.selected a, .calendar td.selected a:visited, td.hCalendarDayCurrent a, td.hCalendarDayCurrent a:visited, td.hCalendarDayLinked a, td.hCalendarDayLinked a:hover{background-color:#dceafd;color:#000;border:1px solid #0063dc;padding-right:2px;margin-right:-1px;}
+/*the cell that contains the footer*/
+.calendar tfoot td, .hCalendarNextPrev td{text-align:center;font-size:.9em;color:#333;padding-top:9px}
+.calendar tfoot td a, .hCalendarNextPrev td a{color:#0063dc}
+/*table links (navigational and current date)*/
+.calendar a, .hCalendarTable a{text-decoration:none;}
+.calendar .arrow{background-position:left center;background-repeat:no-repeat;}
+.calendar .arrow img{height:16px;width:16px}
+.calendar #next:hover{background-color:transparent}
+.calendar #prev:hover{background-color:transparent}
+
+/* dojo calendar styles */
+.calendarContainer {font-size:1.4em;}
+.selectedYear {color:#105cb6 !important;}
+.previousYear, .nextYear {color:#fff !important;}
+/***********************************************************/
+/** Roller styles **/
+/* table */
+table.rollertable th, table.rollertable th {background: #F4F5F6;text-align:left;padding: 3px;border: 1px solid #dbdbdb;border-bottom:0;}
+table.rollertable td, table.rollertable tbody td {border: 1px solid #dbdbdb;}
+table.rollertable {border-collapse: collapse; width: 100%;}
+table.rollertable td, table.rollertable tbody td {vertical-align: top;}
+table.rollertable tbody td {padding: 3px;}
+table.rollertable td.center {text-align: center;}
+table.rollertable td.details {word-wrap:break-word;}
+
+/* Shelf list */
+/*#frame #colRight {width:250px;}*/
+#colRight .list li {margin:2px 1px;}
+/* Sidebar */
+div.menu-tl {margin: 0px;padding: 0px;height: 100%;width: 100%;vertical-align: middle;display: table;}
+div.menu-tr {margin: 0px;padding: 0px;height: 100%;width: 100%;}
+td.pendingentry, tr.pendingentry {background: #ffffcc !important;}
+td.draftentry, tr.draftentry {background: #ffcccc !important;}
+td.needsapprovalentry, tr.needsapprovalentry {background: #ccccff !important;}
+.draftEntryBox {background: #ffcccc !important;border: 1px grey solid;}
+.pendingEntryBox {background: #ffffcc !important;border: 1px grey solid;}
+.needsApprovalEntryBox {background: #ccccff !important;border: 1px grey solid;}
+
+/* form table */
+.formtable, .formtableNoDesc {/*width: 100%;*/border-collapse: collapse; } 
+.formtable td.label, .formtable td.field, .formtable td.description,
+.formtableNoDesc td.label, .formtableNoDesc td.field, .formtableNoDesc  {vertical-align: top;border-style: solid;border-width: 0px 0px 1px 0px;border-color: #dbdbdb;padding: 4px 10px 4px 10px;}
+.formtable td.label {text-align: right;width: 20%;}
+.formtable td.field {width: 30%;}
+.formtable td.description {width: 50%;line-height: 140%;}
+.formtableNoDesc td.label {text-align: right;width: 40%;}
+.formtableNoDesc td.field {width: 40%;}
+.formtableNoDesc td.description {width: 0%;}
+
+/* tag autocomplete */
+div.autocomplete {position:absolute;width:250px;background-color:white;border:1px solid #888;margin:0px;padding:0px;}
+div.autocomplete ul {list-style-type:none;margin:0px;padding:0px;}
+div.autocomplete ul li.selected { background-color: #ffb;}
+div.autocomplete ul li {list-style-type:none;display:block;margin:0;padding:2px;cursor:pointer;}
+
+/* Entry management styles */
+p.toplabel {margin:10px 0 0 0;}
+.tablenav {margin:0;padding:0;}
+.mm_subtable_label {padding-right:25px;}
+.mm_weblog_name {font-size:1.2em;font-weight:bold;color:#AA399A;}
+.mm_weblog_name img {vertical-align:top;padding-bottom:5px;}
+.mm_table_actions img {margin:2px;}
+.miscControl {padding-top:5px;}
+a.controlToggle {cursor:pointer;font-weight:bold;}
+
+/* New entry styles */
+.entryEditTable td {padding:1px 10px 1px 0;}
+.entryActions {padding:3px 5px}
+
+/* Search results */
+#searchAgain {border-bottom:1px solid #e0e0e0;padding:5px 0px 5px 3px;}
+#searchAgain h2 {font-weight:normal;}
+#searchAgain input {padding-left:-2px;}
+
+/* Errors and status messages */
+div.messages, div.errors {background-color:#FEF89A;padding:7px 5px 5px 5px;border:1px solid #e0e0e0;margin-bottom:5px;}
+.messages img {vertical-align:top;}
+
+.entryField { width: 90% }
+
+/* Autocomplete and type ahead */
+.tabSection .tabContainer{border-bottom-width:0;margin:5px 5px 0 5px}
+.tabSection .tabcontent{margin-top:0;z-index:-100;-moz-border-radius:0 2px 2px 2px; }
+
+div.auto_complete {
+	/*width: 20em;*/
+background: #fff;
+/*display: block;*/
+position: absolute;
+z-index: 100;
+border:1px solid #888;
+}
+
+* html div.auto_complete {  }
+	
+div.auto_complete ul {
+border:1px solid #888;
+margin:0;
+padding:0;
+width:100%;
+list-style-type:none;
+display: block;
+}
+div.auto_complete ul li {
+margin:0;
+padding:1px;
+white-space: nowrap;
+display: block;
+}
+div.auto_complete ul li.selected {
+background-color: #ffb;
+}
+div.auto_complete ul strong.highlight {
+color: #800;
+margin:0;
+padding:0;
+}
+
+#memberAddDialog {
+	background-color: white;
+	border: 1px solid gray;
+	width: 35em;
+	height: auto;
+	padding: 0 10px 10px 10px;
+}
+#memberAddDialog .tabcontent,  #memberAddDialog .tabContainer { margin: 0; }
+#memberAddDialog .section {background-color:#fff;}
+#memberAddDialog .tabs a, #memberAddDialog .tabs a:visited {margin-bottom:-6px;}
+
+#memberAddDialog .tabPanes {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#memberAddDialog .submitArea, #publicMemberAddDialog .submitArea { margin-top: 5px; }
+
+#memberAddDialog form, #publicMemberAddDialog form { padding: 0; margin: 0; }
+#memberAddDialog form ul {border:0 !important; background-color:#fff !important;}
+#memberAddDialog .tabPanes p span { font-weight: bold; }
+#memberAddDialog .tabPanes input { width: 100%; }
+
+/* Popup help */
+.popup {position: absolute;top: -9999px;z-index: 200;background-color: #fff;width: 20em;float: none;text-align: left;}
+
+/* Dogear Bookmark styles */
+div.dogearlink {margin-bottom:5px;}
+.dogearlink a, .dogearlink a:focus, .dogearlink a:active, .dogearlink a:hover {text-decoration:underline;}
+.dogearlink img, .dogearperson, .dogeartags {display:none;}
+
+#header .hidden { position: absolute; top: -9000px; left: -9000px; }
+
+/* Flag as Inappropriate Form styles 
+div.FlagAsInappropriateForm {background-color: #DFDFDF;border-bottom: 2px dotted #A0A0A0;border-top: 2px dotted #A0A0A0;margin: 2px 0pt;padding: 5px;}
+div.FlagAsInappropriateForm td{padding: 3px;}
+div.FlagAsInappropriateForm td.label {text-align: left;font-weight: normal;vertical-align: top;width:1px}
+div.FlagAsInappropriateForm td.title {text-align: left;font-weight: bold;vertical-align: center;font-size:larger;width:1px}
+*/
+/* Quarantine This Entry Form styles 
+div.QuarantineThisEntryForm {background-color: #DFDFDF;border-bottom: 2px dotted #A0A0A0;border-top: 2px dotted #A0A0A0;margin: 2px 0pt;padding: 5px;}
+div.QuarantineThisEntryForm td{padding: 3px;}
+div.QuarantineThisEntryForm td.label {text-align: left;font-weight: normal;vertical-align: top;width:1px}
+div.QuarantineThisEntryForm td.title {text-align: left;font-weight: bold;vertical-align: center;font-size:larger;width:1px}
+*/
+/* Comment This Entry Form styles 
+div.AddWeblogEntryCommentForm {background-color: #DFDFDF;border-bottom: 2px dotted #A0A0A0;border-top: 2px dotted #A0A0A0;margin: 2px 0pt;padding: 5px;}
+div.AddWeblogEntryCommentForm td{padding: 3px;}
+div.AddWeblogEntryCommentForm td.label {text-align: left;font-weight: normal;vertical-align: top;width:1px}
+div.AddWeblogEntryCommentForm td.title {text-align: left;vertical-align: center;font-size:larger;width:1px}
+div.AddWeblogEntryCommentForm div.submitArea div#postAsTrackbackDiv {margin-top:5px}*/
+
+.RichTextEditable #EditorToolbarTable td {vertical-align:middle}
+
+/* loose styles */
+p.loose {margin-top: 10px; margin-bottom: 10px;}
+h2.loose {margin-top: 12px; margin-bottom: 12px;}
+table.loose td {padding: 5px;}
+
+/* preview iframe styles */
+iframe.preview {border: 2px inset;}
+
+/* edit my blogs action bar styles */
+td.mm_table_actions {vertical-align:middle}
+
+/* cache info styles */
+#cache_stat_tlb{border-style: outset;  border-width:1px; border-color:#d4d0c8}
+#cache_stat_tlb th{border-style: inset; border-width:1px; border-color:#d4d0c8; text-align:center; font-weight:bold}
+#cache_stat_tlb td{border-style: inset; border-width:1px; border-color:#d4d0c8}
+
+/***** T A B ****/
+.tabSection .tabContainer{border-bottom-width:0;margin:5px 5px 0 10px}
+.tabSection .tabcontent{margin-top:0;z-index:-100;-moz-border-radius:0 7px 7px 7px; }
+.tabContainer{position:relative;height:3em;border-bottom:1px solid #e0e0e0; z-index: 1;}
+/*** T A G   C L O U D ***/ /*complete*/
+.tagCloud ul{margin:0;padding:0}
+.tagCloud li{display:inline}
+.tagCloud a{text-decoration:none;font-weight:bold}
+.tagCloud a:hover, .tagCloud a:focus{color:#05386b;text-decoration:underline;}
+a.f5, a.f5:visited { font-size: 115%; color: #1c3052}
+a.f4, a.f4:visited { font-size: 108%; color: #2b588e}
+a.f3, a.f3:visited { font-size: 100%; color: #4477bb}
+a.f2, a.f2:visited { font-size: 95%; color: #649cd8}
+a.f1, a.f1:visited { font-size: 90%; color: #8bbce8}
+/***********************************************************/
+/* Tag Slider Track */
+
+#tagSliderTrack {float:left;width:76px;background-repeat: repeat-x;background-position: center left;height:17px;}
+#tagSliderGradient .less {float:left;/*width: 3.8em;*/padding-right:4px;padding-left:8px;padding-bottom: 1px;}
+#tagSliderGradient .more {float:left;/*width: 3.5em;*/padding-left:1px;padding-bottom: 1px;padding-right:8px;}
+#tagSliderGradient {width:171px;color: black;font-family: Arial, Helvetica, Verdana, sans-serif;height:18px;}
+#tagSliderHandle {padding-top:3px;width:5px;height:10px;cursor:hand;cursor:pointer;}
+
+/* Recommendation popup */
+.ratingPopup {background-color:#E0E8F8/*F0F0F0*/;padding:7px;}
+.ratingPopup h3{/*color:#666769;*/margin-bottom:3px;}
+.ratingPopup textarea{color:#7098C0;background-color:#fff;font-family:Arial, Helvetica, sans-serif;font-size:1.0em; size:auto;}
+.ratingPopup {border:1px solid #649DE0;}
+
+.entry_moreactions_menu {margin-top:12px;background-color:#F0F0F0;padding:3px 10px 3px 10px;border:1px solid #649DE0;z-index:200;position:absolute;left:-9999px;float:none;}
+
+.disabledLink, a.disabledLink:hover, a.disabledLink:focus {color:#666 !important;text-decoration:none;}
+
+.table tr#detail-open td {border-top-width:0px}
+
+.inlinelist li.last, .lotusInlinelist li.lotusLast {border-left-style:solid; border-left-width:1px; padding-left: 6px}
+.paging .inlinelist li.last {padding-left: 6px}
+
+.tagStatDetailPopup{border:1px solid #649DE0;padding:5px;width:auto;margin-top:10px}
+
+/* selected item background color */
+.lotusActionMenu li.lotusSelected a{background-color:#CFECFF;}
+
+/* allow other content to appear above lotus footer */
+#lotusFooter, .lotusFooter {overflow:visible;}
+
+/* typeahead */
+.typeAheadHome {padding:2px!important;width:11em!important;}
+.typeAheadEntry {padding:2px!important;width:32em!important;}
+.typeAheadBlog {padding:0 1px !important;width:99%;}
+.lotusui_ie .typeAheadBlog {width: expression(this.parentNode.offsetWidth*0.99)!important;}
+.typeAheadTagFilter {padding:2px!important;width:10em!important;height:18px;}
+.typeAheadAuthor {padding:2px!important;width:24em!important;}
+
+.completedIcon        { background: transparent no-repeat scroll center left; }
+
+/* begin Search Scope Button */
+.lotusBlue .dropDownButtonSearchScope button { padding:3px 0; margin:0px; border:0px; background: transparent repeat-x center; }
+.lotusBlue .dropDownButtonSearchScope { padding:0px; margin:0px; border:0px;     border: 1px solid #86b8f3;  }
+.lotusBlue .dropDownButtonSearchScope button .dijitButtonText { display:none; border:0px; margin:0px; padding:0px; }
+.lotusBlue .dropDownButtonSearchScope button .dijitA11yDownArrow { color:#FFFFFF; padding:0px; margin:0px; border:0px; font-size:.7em;}
+/* end Search Scope Button */
+
+/*** S E A R C H ***/
+.lotusSearch .lotusSearchButton{border-color:#2f76b9;}
+.lotusSearch .lotusSearchButton:hover, .lotusSearch .lotusSearchButton:focus{border-color:#10395f;}
+.lotusSearch .lotusText{border-color:#5581b7;}
+#lotusMain .lotusSearch .lotusText, .lotusMain .lotusSearch .lotusText{border-color:#a7a9bb;}
+.lotusSearch .lotusInactive{color:#666}
+.lotusSearch a:hover, .lotusSearch a:focus{background-color:transparent}
+/***********************************************************/
+.dijitMenu {margin-left:0px;}
+
+.lotusViewControl td {vertical-align:top}
+.tabbedpage #lotusMain {background-image:none}
+.simplepage #lotusMain {background-image:none}
+.mainmenupage #lotusMain {background-image:none}
+
+/*** fix editor indent issue ***/
+#previewArea blockquote{margin: 1em 40px!important;}
+.entryContentContainer blockquote{margin: 1em 40px!important;}
+
+/*** fix layout issue when change image's display to float-left/float-right ***/
+#previewArea {width:100%;overflow-x:auto;overflow-y:visible;}
+.entryContentContainer{width:100%;overflow-x:auto;overflow-y:visible;}
+
+html.* #previewArea {display:inline-block;width:100%;}
+html.* .entryContentContainer{display:inline-block;width:100%;}
+
+
+/*********** fix sub sup style issue *****************/
+.entryContentContainer sub, #previewArea sub {font-size:smaller;line-height:normal;vertical-align:sub;}
+.entryContentContainer sup, #previewArea sup {font-size:smaller;line-height:normal;vertical-align:super;}
+
+/********************************************/
+/*********** STYLES FROM R1 *****************/
+
+/** Blogs CSS **/
+.blog #frame #content {padding: 15px 10px 20px 13px;}
+.entry p{margin:5px 0 0 0px}
+.entry ul.actions{margin: 5px 0 0 0px;}
+#footer {margin-left:30px;}
+.blog #colLeft .tabContainer, .blog #colLeft .tabSection {padding-top:0;margin-top:0;}
+.blog #colLeft .list {margin-left:10px;}
+.blog #frame #colRight {padding-left:10px;}
+.blog .tagCloud {padding:5px;overflow:hidden;}
+.blog .entryBody {margin:0 0 0 14px;}
+.blog .indent7 {padding-left:7px;}
+.blog .indent12 {padding-left:12px;}
+.blog .header img {padding-top:5px;}
+.blog .pivotForm {padding-left:5px;} /* for filter form on tag cloud */
+.blog .infoText {color:#666;font-size:.9em;}
+
+/** the r1 version comment styles, have conflict with r2 one, need dicision **/
+#frame .comments-head {font-weight:normal;font-size:1.1em;background-color:#f3f3f3;border:1px solid #e0e0e0;border-top:0;padding:3px 14px;margin-bottom:0;text-align:left;}
+#frame .comment {padding:0px 15px; /*background-color:#f3f3f3;margin:10px 0;border:1px solid #e0e0e0;*/}
+
+/* Start button */
+.startButtonTop {width:190px; background: no-repeat top left;margin:auto;}
+.startButtonTop span, .startButtonTop span:hover, .startButtonTop span:focus { display:block; color:#515151; text-decoration:none; }
+.startButtonTop:hover {background: no-repeat top left;}
+.startButtonTextTop {margin:0 0 0 55px; padding:5px 0 0 0; font-size:1.5em; font-weight:bold; cursor:hand;}
+.startButtonTextBottom {margin:-4px 0 0px 55px; padding:0 0 5px 0px;  font-size:1.1em; cursor:hand;}
+.startButtonText {padding:14px 10px 13px 65px; font-size:1.2em; cursor:hand;}
+.startButtonBottom {width:190px; background:no-repeat top left;margin:auto;padding:0;line-height:5px;}
+
+/** Form styles */
+.comments-form form ul{ /*position: relative;width: 100%; */ list-style: none; margin:10px 0;padding:0 15px;background-color:#f3f3f3;border:1px solid #e0e0e0;}
+.comments-form form li{ line-height: 2em; margin: 0; padding: 1px 1px 6px 0px; }
+.comments-form form li.focused{ background-color: #fff7c0 !important; }
+.comments-form form li p{ font-size: 9px; line-height: 13px; color: #444; }
+.comments-form form li{ display: inline-block; }
+.comments-form form[id] li{ display: block; }
+.comments-form form li div{ display: inline-block; }
+.comments-form form[id] li div{ display: inline; }
+form .left{ float: left !important; margin: 0; }
+form .right{ float: right !important; margin: 0; }
+form .clear{ clear: both; } 
+form li div p{ margin: 0 0 5px 0; }
+form div.left{ margin-right: 2px !important; }
+form div.left[class]{ margin-right: 4px !important; }
+form div.left img{ margin: 0 0 -2px 0; }
+/* form h2{ font-size: 1.8em; clear: left; } Not needed for R1 themes - commented out to stop interference with R2 admin pages*/
+form .info{ display: inline-block; margin: 0 0 10px 0; padding: 0 0 4px 0; border-bottom: 1px dotted #ccc !important;}
+form .info[class]{ display: block; }
+form .info p{ font-size: 1em; line-height: 1.3em; margin: 0 0 8px 0; }
+textarea.textarea{margin-bottom: 1px;}
+textarea.textarea[class]{font-family: Helvetica, Arial, Verdana, sans-serif;}
+select.select{ padding: 1px 0 0 0; margin: 1px 0 3px 0; }
+select.select[class]{ margin: 0; padding: 1px 0 1px 0; }
+form .small{ width: 70px; }
+form .medium{ width: 170px; }
+form .large, form textarea.textarea{ width: 340px; }
+form .tags{ width: 320px; }
+form textarea.small{ height: 5.5em; }
+form textarea.medium{ height: 10em; }
+form textarea.large{ height: 20em; }
+label.desc{margin: 4px 0 3px 0;border: 0;font-size: 1.1em;line-height: 1.3em;display: block;}
+div.row {padding: 2px;}
+div.formrow {float: left;width: 80%;}
+label.formrow {float: left;text-align: right;width: 20%;padding-right: 1em;}
+div.sideformrow {float: left;width: 100%;padding-bottom:5px;}
+label.sideformrow {float: left;text-align: left;/*width: 30%;*/padding-right: .5em;}
+
+/* from v1.0, not sure whether is needed for now, need decision */
+* html .entry table, * html .entry img, * html .entry div {width:auto !important;}
+
+/* v1.0 header styles, with lotus prefix added for the new header*/
+#header .hidden { position: absolute; top: -9000px; left: -9000px; }
+#header .lotusInlinelist{margin:0 0 0 0;padding:0}
+#header .lotusInlinelist li{display:inline;margin:0 0 0 -4px;padding:0 10px;border-left:1px solid #ccc;}
+#header .lotusInlinelist li.lotusFirst{margin-left:0;padding-left:0;border-left-width:0;}
+#header .lotusInlinelist li.lotusFirst {margin-left:-5px;padding-left:0;border-left-width:0;}
+
+
+/* ADD MEMBER FORM */
+
+.AddMembers .memberList {
+    border: 1px solid #9a9a9a;
+    border-bottom: none;
+    background-color: white;
+}
+
+.AddMembers .scroll {
+    border-bottom: 1px solid #9a9a9a;
+}
+
+.AddMembers .memberList .member {
+    border-bottom: 1px solid #9a9a9a;
+}
+
+.AddMembers .memberList .member .P {
+    height: 16px;
+    width: 16px;
+    background: transparent url(../../images/blogs/personIcon.gif) no-repeat scroll center center;
+}
+
+.AddMembers .memberList .member .type {
+    color: #afafaf;
+    font-style: italic;
+}
+
+.AddMembers .memberList .member .fieldDel {
+    /* float: right; */
+}
+
+.AddMembers .typeAhead {
+    font-size: 1.1em;
+    border: 1px solid #9a9a9a;
+}
+
+.field .fieldDel {
+    height: 16px;
+    width: 16px;
+    background: transparent url(../../images/blogs/remove_icon.gif) no-repeat scroll center center;
+    border: none;
+}
+
+.dijit_a11y .field .fieldDel {
+    border: none;
+    display: none;
+}
+
+.field .fieldDelText {
+    height: 16px;
+    width: 16px;
+    border: none;
+    display: none;
+}
+
+.dijit_a11y  .field .fieldDelText {
+    height: 16px;
+    width: 16px;
+    border: none;
+    cursor: pointer;
+    display: inline;
+}
+
+.field .fieldAdd {
+    height: 16px;
+    width: 16px;
+    background: transparent url(../../images/blogs/add_icon.gif) no-repeat scroll center center;
+    border: none;
+    vertical-align: top;
+}
+
+.dijit_a11y .field .fieldAdd {
+    border: none;
+    display: none;
+}
+
+.field .fieldAddText {
+	height: 16px;
+    width: 16px;
+    border: none;
+    display: none;
+}
+
+.dijit_a11y  .field .fieldAddText {
+	height: 16px;
+    width: 16px;
+    border: none;
+    cursor: pointer;
+    display: inline;
+}
+
+/* ADD MEMBER FORM Layout */
+
+.AddMembers .memberList {
+    visibility: hidden;
+}
+.AddMembers .scroll {
+    overflow: auto;
+}
+.AddMembers .memberList .member {
+    padding: 3px;
+}
+.AddMembers .memberList .member .P {
+    float: left;
+}
+.AddMembers .memberList .member .nameContent {
+    padding-left: 20px;
+}
+.AddMembers .memberList .member .fieldDel {
+    
+}
+.AddMembers .typeAhead {
+    width: 310px;
+}
+.AddMembers .field {
+    padding:5px 5px 5px 5px;
+}
+
+/* END ADD MEMBER FORM */
+
+.yourWeblogBox .cnxnsType { font-size:0.75em; font-weight:normal; margin-left:5px;}
+.yourWeblogBox .cnxnsType img { vertical-align: top; margin-right:5px; }
+
+.lotusInlineVCard {
+    margin:0 0 10px !important;
+}
+
+
+/* ------ NOTIFICATION (BEGIN) --------- */
+
+/* Notification FORM */
+#NotificationForm .lotusFormFieldRow TD{PADDING-LEFT:30px; PADDING-RIGHT:25px}
+
+/* Notification FORM - Type in a Name - Add Button */
+#NotificationForm .fieldAdd{background:transparent url(../../images/blogs/add_icon.gif) no-repeat scroll center center;border:medium none;height:16px;width:16px;}
+.dijit_a11y #NotificationForm .fieldAdd{border: none;display: none;}
+
+/* ------------------------------------- */
+
+/* Notification Form Ex */
+#NotificationFormEx .lotusFormFieldRow TD{PADDING-LEFT:30px; PADDING-RIGHT:25px}
+
+/* Notification Form Ex - Tab Container */
+#NotificationFormEx .lotusTabContainer UL {BORDER-WIDTH: 0px;}
+#NotificationFormEx .lotusTabContainer UL DIV {display:inline;}
+#NotificationFormEx .lotusTabContent {BORDER: #d8d8d8 1px solid; BORDER-TOP: 0px; PADDING: 1px 0px 0px; MARGIN: -10px 0px 12px;  background-color: #ffffff; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;}
+
+/* Notification Form Ex - Type in a Name */
+#NotificationFormEx .fieldborder {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 10px; PADDING-TOP: 0px;}
+#NotificationFormEx .fieldborder .fieldcontent {margin: 4px; padding:4px 8px; BACKGROUND-COLOR: #e8e8f0;}
+#NotificationFormEx .fieldborder .fieldcontent .typeAheadPeople{width:100% !important; margin:4px 0px; padding:4px 0px;}
+
+/* Notification Form Ex - Pick from Community */
+/* Notification Form Ex - Pick from Community - Filter Box */
+#NotificationFormEx .notifyList .lotusSearch {margin-left: 4px; margin-right: 4px; padding-right: 4px;}
+#NotificationFormEx .notifyList .lotusSearch input{border: #b8c0d8 1px solid; padding: 4px 2px; margin:4px 0px; DISPLAY: inline; WIDTH:100%;}
+/* Notification Form Ex - Pick from Community - People List */
+#NotificationFormEx .notifyList div.peopleList {display:block; margin: 4px; padding: 4px; border: #b8c0d8 1px solid; overflow: auto; height: 120px}
+#NotificationFormEx .notifyList div.peopleList .notifyPerson {width:170px; height:20px; font-size:.9em; }
+#NotificationFormEx .notifyList div.peopleList .notifyPerson input {display:block; margin-right:5px;}
+.lotusui_ie #NotificationFormEx .notifyList div.peopleList .notifyPerson input {margin-right:0px;}
+#NotificationFormEx .notifyList div.peopleList .notifyPerson label {height:20px; line-height:18px; overflow:hidden; white-space:nowrap; width:145px; display:block;}
+/* Notification Form Ex - Pick from Community - Pager Control */
+#NotificationFormEx .notifyList div.lotusTiny {margin: 4px; }
+#NotificationFormEx .notifyList  div.lotusTiny ul {border: 0px; background-color:#FFFFFF;}
+#NotificationFormEx .peopleList.disabled {background-color: threedface;}
+#NotificationFormEx .lotusTabContent label {font-weight:normal !important;}
+/* ------------------------------------- */
+
+/* Notification FORM (EX) - Receivers */
+#NotificationForm .filterList .member, #NotificationFormEx .filterList .member {padding:1px 5px;background-color:#EBEFFA;border:1px solid #90CAFF;margin-right:8px;margin-bottom:5px;float:left;}
+#NotificationForm .filterList .member .nameContent .lotusPerson, #NotificationFormEx .filterList .member .nameContent .lotusPerson {color: #105CB6;}
+#NotificationForm .filterList .member .nameContent .fieldDel, #NotificationFormEx .filterList .member .nameContent .fieldDel {background:transparent url(../../images/blogs/remove_icon.gif) no-repeat scroll center center;border:medium none;height:16px;width:16px;}
+.dijit_a11y #NotificationForm .filterList .member .nameContent .fieldDel, .dijit_a11y #NotificationFormEx .member .nameContent .fieldDel {border: none;display: none;}
+
+/* ------ NOTIFICATION (END) --------- */
+
+.lotusMessage span span, .lotusMessage span img {display:inline; margin-left:auto; float:none;}
+
+.lotusWidget2 .lotusWidgetBody {padding:3px 5px}
+
+.lotusui_ie div#widget_typeahead_bloguser input {margin:2px !important}
+
+.blogsUntag {background:transparent no-repeat scroll right center; padding-right:17px;width:85%;}
+
+/* ------ Tab a11y fix--------- */
+.lotusImagesOff .lotusTabContainer .lotusSelected a {border:3px solid;}
+.lotusImagesOff .lotusViewControl .lotusSummaryOff span {text-decoration:underline;}
+.lotusImagesOff .lotusViewControl .lotusDetailsOff span {text-decoration:underline;}
+
+.dijitCalendarContainer .dijitCalendarIncrease {padding-right:0px}
+.dijitCalendarContainer .dijitCalendarDecrease {padding-left:0px}
+.dijitCalendarContainer .dijitCalendarIncrementControl{margin:0px 0px}
+
+/* ------ padding for repace &nbps;-------- */
+.blogsPadding { padding: 0pt 5px; }
+.blogsPaddingLeft { padding-left: 5px; }
+.blogsPaddingRight { padding-right: 5px; }
+.blogsMarginRight { margin-right: 5px; }
+
+.blogsTabContainer .lotusTabs li {margin-top:2px !important}
+
+/* ------ fix LTR issue;-------- */
+.lotusTable td.entryContentContainerTD [dir="rtl"]{text-align:right;}
+.lotusTable td.entryContentContainerTD [dir="ltr"]{text-align:left;}
+.lotusTable td.entryContentContainerTD * {text-align:expression( this.getAttribute("dir")=="ltr"?"left":this.getAttribute("dir")=="rtl"?"right":"left" +";")}
+
+/* ------ fix TH issue;-------- */
+.lotusTable td.entryContentContainerTD th {font-weight:bold!important; text-align:center!important;}
+/* defect #195435 */
+.lotusTable td.entryContentContainerTD div.blogsWrapText td {border-top-width:1px;}
+
+/* ------ idea blog styles-------- */
+.ideaVotingDiv {background-color: #FFFFFF; border: 1px solid #AAAAAA; text-align: center; min-height: 58px; height: auto !important; color: #848484; padding: 10px 10px 5px; width: 58px;}
+.ideaVotingDivDisabled {background-color: #EEEEEE; border: 1px solid #AAAAAA; text-align: center; min-height: 58px; height: auto !important; color: #848484; padding: 10px 10px 5px; width: 58px;}
+.ideaVotingNumber {padding: 7px; font-size: 2em;}
+.ideaVotingButtonDiv {width: 100%; display: inline-block; font-size: 0.9em; background-color:#FFFFFF;}
+.ideaVotingButtonDivDisabled {width: 100%; display: inline-block; font-size: 0.9em; background-color:#EEEEEE;}
+.ideaVotingButton {width: 100%; color: #1070B0!important; text-decoration:none!important;}
+.ideaVotingButtonDisabled {width: 100%; color: #1070B0!important; text-decoration:none!important; cursor:default!important;}
+.ideaGraduated {padding: 3px 5px; border: 1px solid #8AC4FF; display:inline-block; background-color:#C5E2FF; color:#105CB6;}
+.ideaVotingLite{padding: 3px 5px; border: 1px solid #CCCCCC; display: inline-block;}
+.blogsVotingTooltip .dijitTooltipContainer { background-color:#FEF89A!important; padding:2px 3px!important;}
+
+/* ------ fix SPR #SUNN8C6MPL -------- */
+.blogsBoard .lotusPost .lotusPerson {font-weight: normal!important;}
+.app-blogs.cnx8-ui .blogsBoard .lotusPost .lotusPerson {
+    font-weight: normal !important;
+    color: var(--color-link) !important;
+}
+.app-blogs.cnx8-ui .lotusActionBar.lotusBtnContainer .lotusBtn a {
+    text-transform: unset !important;
+    padding: 7px 16px !important;
+    text-shadow: none;
+    box-shadow: none !important;
+}
+/* ------ fix SPR #CAMD8EHGXZ -------- */
+.lotusPost .cnxnsType{ font-size:0.75em; font-weight:normal; margin-left:5px;}
+
+/* ------ fix PMR 23162,999,760 -------- */
+#previewArea h1,.entryContentContainer h1,
+#previewArea h2,.entryContentContainer h2, 
+#previewArea h3,.entryContentContainer h3, 
+#previewArea h4,.entryContentContainer h4, 
+#previewArea h5,.entryContentContainer h5, 
+#previewArea h6,.entryContentContainer h6{color: #000000 !important; padding:2px !important;font-weight:bold !important;border:none !important; margin:0!important;}
+#previewArea h1,.entryContentContainer h1{font-size:1.8em}
+#previewArea h2,.entryContentContainer h2{font-size:1.6em}
+#previewArea h3,.entryContentContainer h3{font-size:1.4em}
+#previewArea h4,.entryContentContainer h4{font-size:1.2em}   
+#previewArea h5,.entryContentContainer h5{font-size:1.1em}
+#previewArea h6,.entryContentContainer h6{font-size:1em}
+
+/* ------ to replace <wbr/> tag in blogs -------- */
+.blogsWrapText{
+word-wrap:break-word;
+}
+
+.blogsFixedTable{
+table-layout: fixed;
+}
+
+.blogsFixedTable td{
+overflow:hidden;
+word-wrap:break-word;
+}
+
+.lotusui30 .lotusMessage .blogsDateTime{
+display:inline;
+margin:0!important;
+}
+
+.blogsUpdatedTimeInfo{
+ display:block;
+ font-style: italic;
+ font-size: 0.9em;
+ color: #666;	
+}
+
+#duplicatedEntryInfo .blogsUpdatedTimeInfo{
+	margin-left: 95px;
+}
+
+.lotusui30.lotusImagesOff .lotusLike .lotusNoLikes, .lotusImagesOff .lotusui30 .lotusLike .lotusNoLikes {display:inline!important;}
+
+.blogsRatingTD {width:90px;}
+.lotusui30.lotusImagesOff .blogsRatingTD {width:120px;}
+
+.lotusui30 .lotusContent .lotusForm .lotusFormTable td.lotusFormFooter {
+	 padding: 10px;
+}
+
+.lotusui30 .lotusMeta .lotusLike {font-size:1em !important;}
+
+.blog .entryContentContainer { margin-top:10px; }
+
+.blogsHiddenBorder{border:0}
+.lotusui_ie .lotusui30 #createDirBtn.lotusBtn{
+	margin-bottom:0px
+}
+.lotusui_ie .lotusui30.tabbedpage  .lotusMenu .lotusMenuSubsection li a {position: static}
+
+#widget_publishDate.dijit div div.dijitReset input#publishDate.dijitReset {height: 16px; text-align: center;}
+
+.lotusJapanese .postAsTrackbackTD {width: 260px !important;}
+
+#login_participate_link a {color: #1970B0;}
+.lotusui30 .lotusTable .entryContentContainer td {border-top: 0}
+.lotusui30 .lotusBoard .lotusPost .lotusPostContent .lotusMentionsDiv .lotusPerson { font-weight: normal;}
+
+/* defect #151043 */
+.lotusui30 img {
+	max-width: 700px;
+}
+
+/* CNX8-UI */
+.app-blogs.cnx8-ui .lotusMain {
+    margin: 0px !important;
+    padding-left: 0px;
+    padding-top: 0px;
+    max-width: 1700px;
+}
+.app-blogs.cnx8-ui .lotusMain.cnx8EntryBlog #lotusContent {
+    margin-left: 0px !important;
+}
+.app-blogs.cnx8-ui #lotusColRight,
+.app-blogs.cnx8-ui #lotusContent {
+    padding-left: 30px;
+    padding-top: 10px;
+    height: auto !important;
+    padding-bottom: 25px;
+    margin-bottom: 0px !important;
+}
+.app-blogs.cnx8-ui #lotusColLeft {
+	display: block !important;
+    margin-left: 0px;
+    padding: 0px !important;
+    min-height: calc(100vh - 98px) !important;
+    background-color: var(--color-third-navigation-base) !important;
+    border-right: 1px solid var(--color-third-navigation-border) !important;
+}
+.app-blogs.cnx8-ui .lotusColLeft .lotusMenu,
+.app-blogs.cnx8-ui form[name=bookmarksForm] .lotusTable .lotusFirstCell input {
+    margin: 0px;
+}
+.app-blogs.cnx8-ui .lotusMenu li.lotusSelected a:before {
+    content: '' !important;
+}
+.app-blogs.cnx8-ui .lotusMenu li.lotusSelected,
+.app-blogs.cnx8-ui .lotusMenu li.lotusSelected:hover {
+    border-left: unset;
+}
+.app-blogs.cnx8-ui .lotusMenu li.lotusSelected a {
+    background-color: var(--color-third-navigation-selected-option);
+    color: var(--color-text-primary);
+}
+.app-blogs.cnx8-ui .lotusMenu li a:hover {
+    background-color: var(--color-third-navigation-selected-option);
+}
+.app-blogs.cnx8-ui .lotusMenu li a {
+    padding-left: 30px !important;
+    color: var(--color-tab-text);
+    background-color: var(--color-main-secondary-background);
+}
+.app-blogs.cnx8-ui .lotusMenu li.lotusSelected a:hover {
+    border-top: unset !important;
+    border-bottom: unset !important;
+}
+.app-blogs.cnx8-ui .lotusColRight .lotusSection {
+    margin: 0 0 15px 10px;
+}
+.app-blogs.cnx8-ui .lotusColRight .lotusSection h2,
+.app-blogs.cnx8-ui .lotusSection h2 {
+    border-top: unset;
+    border-bottom: unset;
+}
+.cnx8-ui.app-blogs .lotusTwistyClosed {
+    background-image: url("../../images/caret-right.svg");
+    background-position: 50%;
+    margin-right: 15px;
+    opacity: 1;
+}
+.cnx8-ui.app-blogs .lotusTwistyOpen{
+    background-image: url("../../images/caret-down.svg");
+    background-position: 50%;
+    margin-right: 15px;
+    opacity: 1;
+}
+.app-blogs.cnx8-ui .lotusActionBar .lotusBtnContainer{
+    margin-top: 40px;
+}
+.app-blogs.cnx8-ui .lotusTagCloud {
+    margin-left: 0px;
+}
+.app-blogs.cnx8-ui [dojoattachpoint="_normalTagsSection"] {
+    display: flex;
+    flex-direction: column;
+}
+.app-blogs.cnx8-ui div#lconnTagWidget_tagCloudView,
+.app-blogs.cnx8-ui div#lconnTagWidget_tagListView {
+    order: 2;
+}
+/* Begin: Primary Button */
+.app-blogs.cnx8-ui #tertiary_level_nav .lotusBtn a {
+    color: var(--color-button-text) !important;
+    text-transform: none !important;
+    box-shadow: none !important;
+    font-weight: var(font-weight-medium) !important;
+    box-shadow: none !important;
+    text-shadow: none;
+}
+/* End: Primary Button */
+
+
+.app-blogs.cnx8-ui #tertiary_level_nav .lotusBtn {
+    position: fixed;
+    left: 100px;
+}
+.app-blogs.cnx8-ui #tertiary_level_nav ul {
+    margin: auto;
+}
+.app-blogs.cnx8-ui #sortbyToolbarLabel {
+    text-transform: capitalize;
+    color: var(--color-text-secondary) !important;
+    padding-right: 30px;
+}
+
+.app-blogs.cnx8-ui .lotusInlinelist li {
+    border-left: 0px;
+    margin-right: 15px;
+}
+.app-blogs.cnx8-ui .lotusInlinelist li a {
+    font-weight: 600;
+    text-decoration: none !important;
+}
+.cnx8-ui.app-blogs .lotusSort .lotusAscending{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../../images/chevron-up.svg");
+    background-size: 0.85em 0.85em;
+    background-position: 97% center;
+    padding-right: 20px;
+}
+.cnx8-ui.app-blogs .lotusSort .lotusDescending{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../../images/chevron-down.svg");
+    background-size: 0.85em 0.85em;
+    background-position: 97% center;
+    padding-right: 20px;
+}
+
+.cnx8-ui.app-blogs .cnx8Paging .prev {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../../images/chevron-left.svg");
+    background-position: 100%;
+    padding-right: 11px;
+    background-size: 1em 1em;
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 15px;
+}
+.cnx8-ui.app-blogs .cnx8Paging .next {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../../images/chevron-right.svg");
+    background-position: 100%;
+    padding-right: 11px;
+    background-size: 1em 1em;
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 15px;
+}
+.cnx8-ui.app-blogs .cnx8Paging .page-last {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../../images/page-last.svg");
+    background-position: 100%;
+    padding-right: 15px;
+    margin-left: 14px !important;
+    background-size: 1.25em 1.25em;
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 15px;
+}
+
+.cnx8-ui.app-blogs .cnx8Paging .page-first {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../../images/page-first.svg");
+    background-position: 100%;
+    padding-right: 15px;
+    margin-right: 14px !important;
+    background-size: 1.25em 1.25em;
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 15px;
+}
+.cnx8-ui.app-blogs .cnx8Paging.lotusPaging {
+    border: 0;
+}
+.cnx8-ui.app-blogs .cnx8Paging .pagination {
+    display: inline-flex;
+    float: left;
+    padding-top: 5px;
+}
+.cnx8-ui.app-blogs .cnx8Paging .pageDropdown {
+    float: right;
+    margin-right: -15px;
+}
+
+.cnx8-ui.app-blogs .cnx8Paging .pageDropdown li select {
+    border: none !important;
+    background-size: 0.9em 0.75em !important;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-medium) !important;
+}
+.cnx8-ui.app-blogs .cnx8Paging .rppText {
+    color: var(--color-text-secondary) !important;
+}
+
+.cnx8-ui.app-blogs .cnx8Paging .disable-paging {
+    opacity: 0.3;
+}
+
+.cnx8-ui.app-blogs .cnx8Paging .lotusInlinelist li,
+.cnx8-ui.app-blogs .cnx8Paging .lotusInlinelist li a,
+.cnx8-ui.app-blogs .cnx8Paging .lotusInlinelist li a:focus,
+.cnx8-ui.app-blogs .cnx8Paging .lotusInlinelist li a:hover,
+.cnx8-ui.app-blogs .cnx8Paging .lotusInlinelist li a:visited {
+    font-size: var(--font-size-medium) !important;
+    text-decoration: none !important;
+}
+.cnx8-ui.app-blogs .cnx8Paging .lotusInlinelist li a.inactive {
+    color: var(--color-text-secondary) !important;
+    font-weight: 600;
+}
+.cnx8-ui.app-blogs #lotusContent .cnx8Paging .pagination .inlinelist .pageList a.inactive {
+    color: var(--color-text-secondary) !important;
+}
+
+.app-blogs.cnx8-ui .lotusInlinelist .pageList {
+    margin-right: 5px;
+}
+
+.app-blogs.cnx8-ui .lotusInlinelist .pagePrevIconList {
+    margin-right: 5px;
+}
+.app-blogs.cnx8-ui .lotusLike .lotusIconLike {
+    background-image:  url("../../images/favorite.svg");
+    background-repeat:no-repeat;
+    background-position: 0 !important;
+    top: 4px;
+}
+.app-blogs.cnx8-ui #cnx8_latestBlogsTable .lotusLike {
+    float: none !important;
+}
+.app-blogs.cnx8-ui .lotusLike .lotusLikeCount {
+    background: none;
+    border: none !important;
+}
+.app-blogs.cnx8-ui #cnx8_latestBlogsTable .shareWrapper {
+    display: inline-block;
+}
+.app-blogs.cnx8-ui #cnx8_latestBlogsTable .shareWrapper div a {
+    align-items: center;
+}
+.app-blogs.cnx8-ui #lotusContent .cnxLikes {
+	display: inline-block;
+}
+.app-blogs.cnx8-ui .blog_list_view {
+    background-image: url("../../images/display_list_view.svg");
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+}
+.app-blogs.cnx8-ui .lotusSelected .blog_list_view {
+    background-image: url("../../images/display_list_view_selected.svg");
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+}
+.app-blogs.cnx8-ui .blog_details_view {
+    background-image: url("../../images/display_details_view.svg");
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+}
+.app-blogs.cnx8-ui .lotusSelected .blog_details_view {
+    background-image: url("../../images/display_details_view_selected.svg");
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+}
+.app-blogs.cnx8-ui .lotusSelected .blog_details_view,
+.app-blogs.cnx8-ui .lotusSelected .blog_list_view {
+    pointer-events: none;
+}
+.app-blogs.cnx8-ui #viewAsListToggleLink, .app-blogs.cnx8-ui #viewAsDetailToggleLink  {
+    border: none;
+}
+.app-blogs.cnx8-ui .lotusActionBar, .app-blogs.cnx8-ui .lotusActionBar2 {
+    margin: 0px !important;
+    height: 3.5em;
+}
+/** TagCloud in Blogs **/
+.cnx8-ui .lotusTagCloud {
+    margin: 0;
+    padding: 0;
+}
+.cnx8-ui .lotusTagCloud ul {
+    display: flex !important;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none !important;
+}
+.cnx8-ui .lotusTagCloud ul li {
+    display: flex !important;
+    align-items: center;
+    margin: 0 2px;
+}
+.cnx8-ui .lotusTagCloud ul li a,
+.cnx8-ui .lotusTagCloud ul li a:visited {
+    padding:.2em;
+    margin: .1em 0;
+    display: inline-flex;
+    line-height: 1em;
+    color: var(--tagcloud-chip-text) !important;
+    transition: 0.3s;
+    text-decoration: none;
+    letter-spacing: 0.02px !important;
+}
+.cnx8-ui .lotusTagCloud ul li a:hover {
+    color: var(--tagcloud-chip-text) !important;
+    text-decoration: underline !important;
+    text-decoration-style: solid !important;
+}
+.cnx8-ui .lotusTagCloud ul li a.lotusF1 {
+    zoom: .85;
+}
+.cnx8-ui .lotusTagCloud ul li a.lotusF2 {
+    zoom: .95;
+}
+.cnx8-ui .lotusTagCloud ul li a.lotusF3 {
+    zoom: 1;
+}
+.cnx8-ui .lotusTagCloud ul li a.lotusF4 {
+    zoom: 1.05;
+}
+.cnx8-ui .lotusTagCloud ul li a.lotusF5 {
+    zoom: 1.1;
+}
+/** TagList in Blogs **/
+.cnx8-ui #lconnTagWidget_tagListView {
+    margin: 0;
+    padding: 0;
+}
+.cnx8-ui ul.lotusMeta.lotusList {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none !important;
+}
+.cnx8-ui ul.lotusMeta.lotusList li {
+    padding: 0.2em 0.7em;
+    height: 1.5em;
+    width: fit-content;
+    margin: 8px;
+    display: flex;
+    border-radius: 16px;
+    letter-spacing: 0.37px;
+    justify-content: right;
+    text-decoration: none !important;
+    line-height: 20px;
+}
+.cnx8-ui ul#lconnTagWidget_tagList.lotusMeta.lotusList li,
+.cnx8-ui ul#lconnTagWidget_tagList.lotusMeta.lotusList li:visited {
+    color: var(--tagcloud-chip-text) !important;
+    background-color: var(--tagcloud-chip-background);
+    border: 1px solid var(--tagcloud-chip-border);
+    transition: 0.3s;
+}
+.cnx8-ui ul#lconnTagWidget_tagList.lotusMeta.lotusList li:hover {
+    color: var(--tagcloud-chip-text) !important;
+    background-color: var(--tagcloud-chip-background-hover);
+    border: 1px solid var(--tagcloud-chip-border-hover);
+}
+.cnx8-ui ul.lotusMeta.lotusList li a,
+.cnx8-ui ul.lotusMeta.lotusList li a:hover,
+.cnx8-ui ul.lotusMeta.lotusList li a:visited {
+    font-size: var(--font-size-medium) !important;
+    color: var(--tagcloud-chip-text) !important;
+    text-decoration: none !important;
+}
+.cnx8-ui ul.lotusMeta.lotusList li a.lotusDelete img {
+    vertical-align: middle !important;
+    filter: grayscale(100%);
+}
+.cnx8-ui ul.lotusMeta.lotusList li span {
+    text-align: center;
+    z-index: 1;
+    flex-wrap: wrap;
+    min-width: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    align-content: center;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: center;
+}
+.cnx8-ui ul.lotusMeta.lotusList li span.lotusRight {
+    font-size: var(--font-size-small) !important;
+    font-weight: 500 !important;
+}
+.cnx8-ui ul.lotusMeta.lotusList li span.lotusLeft,
+.cnx8-ui a.lotusFilter .lotusDelete,
+.cnx8-ui .lotusFilters2 img.lotusDelete {
+    padding: 0px 5px;
+}
+.cnx8-ui ul.lotusMeta.lotusList li span.lotusLeft,
+.cnx8-ui ul.lotusMeta.lotusList li span.lotusLeft:visited,
+.cnx8-ui ul.lotusMeta.lotusList li a.lotusDelete,
+.cnx8-ui ul.lotusMeta.lotusList li a.lotusDelete:visited {
+    color: var(--color-link) !important;
+    font-weight: var(--font-weight-bold) !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+.cnx8-ui ul.lotusMeta.lotusList li span.lotusLeft:hover,
+.cnx8-ui ul.lotusMeta.lotusList li a.lotusDelete:hover{
+    color: var(--color-link-hover) !important;
+    background-color: transparent !important;
+    border: none !important;
+    cursor: pointer;
+}
+/** Chip in Blogs **/
+.app-blogs.cnx8-ui #lotusContent .lotusFilters2 a.lotusFilter,
+.app-blogs.cnx8-ui #lotusContent .lotusFilters2 a.lotusFilter:hover,
+.app-blogs.cnx8-ui #lotusContent .lotusFilters2 a.lotusFilter:visited,
+.app-blogs.cnx8-ui #addtagwidget span[role=listitem] {
+    border-color: var(--tagcloud-chip-border-hover);
+    color: var(--tagcloud-chip-text) !important;
+    background-color: var(--tagcloud-chip-background-hover);
+    padding: 0.2em 0.7em;
+    height: 1.5em;
+    width: fit-content;
+    border-radius: 16px;
+    letter-spacing: 0.37px;
+    justify-content: right;
+    text-decoration: none !important;
+    line-height: 20px;
+    transition: 0.3s;
+    margin: 2px;
+}
+.app-blogs.cnx8-ui #addtagwidget img.lotusDelete {
+    background-image: url("../../images/close.svg");
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-size: cover;
+    background-size: 15px;
+    margin-left: 5px
+}
+.cnx8-ui.app-blogs div#lconnTagCloudContent [dojoattachpoint=_tagSearchForm] {
+    display: block;
+}
+.cnx8-ui.app-blogs .lotusBtnImg {
+    background-repeat: no-repeat;
+    background-color: var(--color-button);
+    background-image: url("../../images/blogs/search-tags.svg");
+    fill: #f1f1f1;
+    background-position: center;
+    background-size: 18px;
+    height: 19px;
+    width: 20px;
+    border-radius: 2px !important; ;
+}
+.cnx8-ui.app-blogs .lotusBtnImg .lotusSearchButton {
+    background-image: none !important;
+    padding: 0px;
+    border: none !important;
+}
+.cnx8-ui.app-blogs input#lconnTagWidgetcommonTagsTypeAhead {
+    height: 20px;
+    padding: 4px;
+    margin: 0px !important;
+    width: auto !important;
+    border-radius: 1px;
+}
+/*** Add Blog, Administration Page ***/
+.app-blogs.cnx8-ui #lotusContent h1 {
+    opacity: 1;
+    color: #363636 !important;
+    font-size: 18px;
+    font-style: normal;
+    letter-spacing: 0px;
+}
+.app-blogs.cnx8-ui .lotusForm .lotusFormTable .lotusFormFooter {
+    border: none !important;
+}
+.app-blogs.cnx8-ui .lotusMeta {
+    color: #363636 !important;
+}
+.app-blogs.cnx8-ui h2.loose {
+    color: #363636 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+}
+.app-blogs.cnx8-ui input:not[type=checkbox],
+.cnx8-ui.app-blogs input[type=text]:not(#publishDate),
+.app-blogs.cnx8-ui input:not[type="image"],
+.app-blogs.cnx8-ui input:not(.lotusBtn){
+    height: 28px;
+    border-radius: 3px !important;
+    padding: 0px 10px !important;
+    border: 1px solid !important;
+    border-color: var(--color-third-navigation-border) !important;
+    opacity: 1;
+    background-color: var(--color-tab);
+    outline: none !important;
+    font-size: var(--font-size-medium) !important;
+    font-family: var(--font-family);
+    width: auto !important;
+}
+.app-blogs.cnx8-ui #websiteForm tr,
+.app-blogs.cnx8-ui .formtableNoDesc tr {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+}
+.cnx8-ui.app-blogs #entryform,
+.app-blogs.cnx8-ui #websiteForm,
+.app-blogs.cnx8-ui .formtableNoDesc,
+.app-blogs.cnx8-ui .label,
+.app-blogs.cnx8-ui input:checked + label,
+.app-blogs.cnx8-ui td.field,
+.app-blogs.cnx8-ui td.label,
+.app-blogs.cnx8-ui td.description,
+.app-blogs.cnx8-ui td.lotusFormLabel,
+.app-blogs.cnx8-ui .lotusForm td label {
+    border: none !important;
+    color: var(--color-tab-text) !important;
+    font-size: var(--font-size-medium) !important;
+    text-align: left;
+}
+  /* Info Icon */
+.cnx8-ui.app-blogs .tags-section-info,
+.app-blogs.cnx8-ui .blogs-helpIcon,
+.app-blogs.cnx8-ui .lconnSprite-iconHelp16 {
+    background-image: url("../../images/tags-info-icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-clip: border-box;
+    background-size: 0.95em 1.15em;
+    padding: 2px !important;
+    width: 12px !important;
+    height: 12px;
+}
+.app-blogs.cnx8-ui .blogs-helpIcon {
+    vertical-align: text-bottom;
+    display: inline-grid;
+}
+.cnx8-ui.app-blogs #lconnTagCloudFilter span#section_tags_label {
+    width: unset;
+    margin-right: 5px;
+}
+.cnx8-ui.app-blogs #lconnTagCloudFilter a#tagsHelpLink {
+    float: none;
+}
+.app-blogs.cnx8-ui form[name=rollerConfigForm] table.formtableNoDesc {
+    margin: 0px !important;
+    width: 100% !important;
+}
+.app-blogs.cnx8-ui hr,
+.app-blogs.cnx8-ui .hline {
+    border-top: 1px solid var(--color-third-navigation-border) !important;
+    border: none;
+}
+.cnx8-ui.app-blogs #websiteForm table td {
+    padding: 0px !important;
+    width: 100%;
+}
+.cnx8-ui.app-blogs #websiteForm table td field,
+.cnx8-ui.app-blogs #websiteForm table td label {
+    margin-bottom: 0px !important;
+    font-weight: var(--font-weight-normal) !important;
+    border: none !important;
+    color: var(--color-tab-text) !important;
+    text-align: left;
+    padding: 0px !important;
+    width: 100%;
+}
+.cnx8-ui.app-blogs .lotusBtn[type=submit] {
+    background-color: var(--color-button) !important;
+    color: var(--color-button-text) !important;
+}
+.cnx8-ui.app-blogs input.lotusFormButton {
+    text-shadow: none;
+    box-shadow: none !important;
+}
+.cnx8-ui.app-blogs .lotusBtn[type=submit]:hover,
+.cnx8-ui.app-blogs .lotusFormButton.submit[type=button]:hover,
+.cnx8-ui.app-blogs .lotusFormButton[name=save][type=button]:hover,
+.app-blogs.cnx8-ui #filesListForm input#deleteBtn:hover {
+    background-color: var(--color-button-hover) !important;
+    color: var(--color-button-text) !important;
+    text-shadow: none;
+    box-shadow: none !important;
+}
+.app-blogs.cnx8-ui input[type=text][aria-label="search"] {
+    border: none !important;
+}
+.app-blogs.cnx8-ui input[type=text][id="tags"]{
+    width: auto !important;
+    height: 20px !important;
+}
+.app-blogs.cnx8-ui #memberAddDialog .field .fieldAdd {
+    vertical-align: unset;
+}
+.app-blogs.cnx8-ui #memberAddDialog select,
+.app-blogs.cnx8-ui #memberAddDialog input[type=text] {
+    margin: 10px;
+    padding: 10px 30px !important;
+    width: fit-content !important;
+    background-position-x: 90% !important;
+}
+.app-blogs.cnx8-ui select,
+.app-blogs.cnx8-ui input[type=text]:not(:read-only),
+.app-blogs.cnx8-ui textarea {
+    border-radius: 3px;
+    border: 1px solid var(--color-third-navigation-border) !important;
+    font-family: var(--font-family);
+    font-size: var(--font-size-medium) !important;
+    color: var(--color-search-text-secondary) !important;
+}
+.app-blogs.cnx8-ui #websiteForm input[type=text],
+.app-blogs.cnx8-ui .formtableNoDesc input[type=text] {
+    border: 1px solid var(--color-third-navigation-border) !important;
+    width: 100% !important;
+    padding: 10px;
+    outline: none;
+}
+.app-blogs.cnx8-ui #websiteForm textarea#description {
+    outline: none;
+    padding: 10px;
+}
+.app-blogs.cnx8-ui #websiteForm input[type=checkbox],
+.app-blogs.cnx8-ui .formtableNoDesc input[type=checkbox],
+.app-blogs.cnx8-ui #entryform input[type=checkbox] {
+    direction: rtl;
+    text-align: left;
+    vertical-align: middle;
+    border: 1px solid #3D5466 !important;
+    margin: 0px;
+    width: auto !important;
+}
+.cnx8-ui.app-blogs #websiteForm .cnx8CheckboxContainer td.field {
+    width: auto;
+    margin-right: 5px;
+}
+.app-blogs.cnx8-ui #websiteForm .formtableNoDesc tr.cnx8CheckboxContainer {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.cnx8-ui.app-blogs #websiteForm select {
+    background-position-x: 54em !important;
+    border: 1px solid var(--color-third-navigation-border) !important;
+    border-radius: 3px;
+    width: 100%;
+}
+.cnx8-ui.app-blogs li.lotusSelected a {
+    border-style: none;
+}
+.cnx8-ui.app-blogs #lotusFrame .cnx8_lotusFrame{
+    height: calc(100vh - 150px) !important;
+}
+.cnx8-ui.app-blogs #lotusFrame #lotusColLeft .lotusSelected * {
+    font-weight: var(--font-weight-normal) !important;
+}
+.cnx8-ui.app-blogs .lotusColLeft .lotusMenu {
+    margin-top: 5%;
+}
+.cnx8-ui.app-blogs .lotusMenu li a:hover {
+    background-color: var(--color-third-navigation-selected-option) !important;
+}
+/********* New Entry Page ***********/
+.cnx8-ui.app-blogs #entryform .control #postEntryID {
+    background-color: var(--color-button);
+}
+.cnx8-ui.app-blogs #entryform .entryEditTable label,.cnx8-ui.app-blogs label#editTitle {
+    border: none !important;
+    color: var(--color-search-text-secondary) !important;
+}
+.entryEditTable #addtagwidget .blogsEmpty {
+    font-size: var(--font-size-small) !important;
+    color: var(--color-search-text-secondary) !important;
+    text-align: left;
+    opacity: 1;
+    font-weight: 600;
+    font-style: normal;
+}
+.entryEditTable #addtagwidget a.blogsAdd.lotusAction {
+    font-size: 12px !important;
+    text-align: left;
+    opacity: 1;
+    font-weight: 600;
+    font-style: normal;
+}
+.cnx8-ui.app-blogs #editorTab a {
+    font-size: 13px !important;
+	margin-top: 2px;
+}
+.cnx8-ui.app-blogs #editorTab {
+	margin: 0px 2px 1px 0px;
+}
+.cnx8-ui.app-blogs #addtagwidget .lotusTags .lotusSearch input.lotusBtnSmall {
+    padding: 6px 15px;
+    margin: 0 9px 3px 1px;
+    background: var(--color-button);
+    color: var(--color-button-text);
+    border-width: 0;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.cnx8-ui.app-blogs #addtagwidget #addtagwidgetAddTagsTypeAhead {
+    display: block;
+    width: 852px !important;
+}
+.cnx8-ui.app-blogs .lotusTags .lotusSearch input.lotusBtnSmallGray {
+    padding: 4px 20px;
+    color: var(--color-button);
+    background: var(--color-button-text);
+    display: inline-block;
+    border-width: 16em;
+    border: 1px solid var(--color-button);
+    box-shadow: 1px 1px;
+}
+.cnx8-ui.app-blogs input#addtagwidgetAddTagsTypeAhead {
+    margin: 10px 0 !important;
+}
+.cnx8-ui.app-blogs #entryform #miscControl {
+    margin-top: 2px;
+}
+.cnx8-ui.app-blogs #entryform section_miscControl
+.cnx8-ui.app-blogs #entryform span#miscSettingsLabel {
+    color: var(--color-scrollbar-thumb-hover) !important;
+    padding-left: 5px;
+}
+.cnx8-ui.app-blogs #entryform input#title {
+    width: 852px !important;
+}
+.cnx8-ui.app-blogs #entryTimeSettings .dijitInputContainer {
+    background: unset !important;
+}
+.cnx8-ui.app-blogs #entryform select#commentDays {
+    width: 10em;
+    background-position-x: 115px !important;
+}
+.cnx8-ui.app-blogs #entryTimeSettings input#publishDate {
+    border: none !important;
+    padding: 7px !important;
+}
+.cnx8-ui.app-blogs #entryform input:not(:read-only) {
+    width: 77% !important;
+    padding: 10px !important;
+    border: 1px solid var(--color-third-navigation-border) !important;
+    outline: none;
+}
+.cnx8-ui.app-blogs #entryform input#trackbackUrl {
+    width: 35em !important;
+}
+.cnx8-ui.app-blogs #entryform .lotusBtn {
+    background: var(--color-link);
+    color: var(--color-button-text);
+    border-width: 0;
+    border-radius: 2px;
+}
+.cnx8-ui.app-blogs #entryform .control #postEntryID,
+.cnx8-ui.app-blogs #uploadFiles input#file-upload-button,
+.cnx8-ui.app-blogs #entryform .control input.lotusBtn.saveDraftBtn {
+    padding: 8px 20px;
+    margin: 0 9px 3px 1px;
+    background: var(--color-link);
+    color: var(--color-button-text);
+    border-width: 0;
+    border-radius: 2px;
+}
+.cnx8-ui.app-blogs #entryform .control input.lotusBtn.cancelEntryBtn{
+	padding: 7px 20px;
+    color: var(--color-link);
+    background: var(--color-button-text);
+    display: inline-block;
+    border-width: 16em;
+    border: 1px solid var(--color-link);
+    box-shadow: 1px 1px;
+    border-radius: initial;
+}
+.cnx8-ui.app-blogs #entryTimeSettings select {
+    padding: 6px 20px 6px 5px !important;
+    margin-left: 5px;
+    background-position-x: 25px !important;
+    background-size: 12px !important;
+}
+.cnx8-ui.app-blogs #entryTimeSettings span#timezoneStr {
+    display: block;
+    color: var(--color-tab-text) !important;
+}
+.cnx8-ui.app-blogs #entryform div#section_miscControl label,
+.cnx8-ui.app-blogs #entryform #commentDays,
+ #pinnedToMain_describe, #permlink_url_describe,
+ #permlink_url_describe span, #enclosureUrlTipLabel {
+    color: var(--color-tab-text) !important;
+    padding-left: 5px;
+}
+#permlink_url, #att_mediacast_url {
+    display: block;
+}
+#permlink_url_describe{
+    display: inline-flex;
+}
+.cnx8-ui.app-blogs #entryform .entryEditTable lotusFormRequired.blogsPaddingRight {
+    display: none;
+}
+.cnx8-ui.app-blogs #entryform  .entryEditTable {
+    width: 100%;
+}
+.control{
+	margin-left: 11px;
+}
+.cnx8-ui.app-blogs form[name=userAdminForm] input#typeahead_bloguser {
+    width: 450px !important;
+    border: 1px solid var(--color-third-navigation-border);
+    border-radius: 2px;
+    display: block;
+    color: var(--color-scrollbar-thumb-hover);
+    padding: 5px;
+    margin: 5px 0px;
+    outline: none;
+}
+.cnx8-ui.app-blogs form[name=userAdminForm] input#editUserSubmitBtn {
+    margin-left: 0px !important;
+    width: 105px;
+    cursor: pointer;
+}
+.cnx8-ui.app-blogs form[name=userAdminForm] {
+    margin-top: 10px;
+}
+.cnx8-ui.app-blogs #typeahead_bloguser_dropdown .lconnPeopleTypeAheadMenu {
+    border-radius: 2px;
+    box-shadow: 0px 1px 5px rgb(0 0 0 / 20%), 0px 2px 2px rgb(0 0 0 / 14%), 0px 3px 1px rgb(0 0 0 / 12%);
+}
+.cnx8-ui.app-blogs #typeahead_bloguser_dropdown .dijitMenuItemHover {
+    background-color: var(--color-base-background);
+}
+.cnx8-ui.app-blogs .dijitComboBoxMenuPopup #typeahead_bloguser_popup img {
+    margin-right: 5px;
+    border-radius: 50%;
+}
+.cnx8-ui.app-blogs .dijitComboBoxMenuPopup #typeahead_bloguser_popup div {
+    padding: 5px 10px;
+}
+.cnx8-ui.app-blogs .dijitComboBoxMenuPopup #typeahead_bloguser_popup .dijitMenuItemHover,
+.cnx8-ui.app-blogs .dijitComboBoxMenuPopup #typeahead_bloguser_popup .dijitMenuItemSelected {
+    background-color: var(--color-main-hover-background);
+}
+/* BEGIN: Secondary Button Hover */
+.cnx8-ui.app-blogs input[type=button]:hover,
+.cnx8-ui.app-blogs form[name=createWebsiteForm] .lotusFormButton[type=button]:hover,
+.cnx8-ui.app-blogs form[name=rollerConfigForm] .lotusFormButton[type=reset]:hover,
+.app-blogs.cnx8-ui #lotusContent .lotusActionBar span.lotusBtn:nth-child(2) a:hover,
+.cnx8-ui.app-blogs input.lotusFormButton:nth-child(2):hover,
+.app-blogs.cnx8-ui span.lotusBtn #deleteBtn:hover,
+.app-blogs.cnx8-ui .lotusBtnSmallGray:hover {
+    background-color: rgba(1, 83, 155, 0.1) !important;
+    color: var(--color-button) !important;
+}
+/* END: Secondary Button Hover */
+
+.cnx8-ui.app-blogs #lotusContent a.lotusBtnSmallGray {
+    padding: 5px 10px !important;
+}
+.cnx8-ui.app-blogs form[name=createWebsiteForm] td span input {
+    width: 20% !important;
+}
+/* BEGIN: Secondary Button */
+.app-blogs.cnx8-ui input.lotusBtn,
+.app-blogs.cnx8-ui span.lotusBtn #deleteBtn,
+.app-blogs.cnx8-ui #lotusContent .lotusActionBar span.lotusBtn:nth-child(2) a,
+.cnx8-ui.app-blogs input.lotusFormButton:nth-child(2),
+.cnx8-ui.app-blogs .lotusFormButton[value=Cancel],
+.cnx8-ui.app-blogs .lotusBtnSmallGray {
+    text-transform: unset !important;
+    color: var(--color-link) !important;
+    border: 1px solid var(--color-button) !important;
+    border-radius: 2px !important;
+    background: transparent !important;
+    font-size: var(--font-size-medium) !important;
+    font-weight: var(--font-weight-medium) !important;
+    font-family: var(--font-family) !important;
+    box-shadow: none !important;
+    min-width: 80px !important;
+    min-height: 36px !important;
+    text-shadow: none;
+}
+/* END: Secondary Button*/
+
+/* BEGIN: Primary Button Hover*/
+.app-blogs.cnx8-ui .lotusFormButton.lotusBtnSpecial:hover,
+.app-blogs.cnx8-ui .lotusFormButton[name=submitBtn]:hover,
+.cnx8-ui.app-blogs #addtagwidget .lotusSearch input.lotusBtnSmall:hover {
+    background-color: var(--color-button-hover) !important;
+    color: var(--color-button-text) !important;
+    box-shadow: none !important;
+}
+/* END: Primary Button Hover*/
+
+/* BEGIN: Disable Button */
+.cnx8-ui.app-blogs input.lotusFormButton.lotusBtnDisabled.submit[type=button]:hover,
+.cnx8-ui.app-blogs input.lotusFormButton.lotusBtnDisabled.submit[type=button],
+.cnx8-ui.app-blogs input.lotusFormButton.lotusBtnDisabled,
+.cnx8-ui.app-blogs input.lotusFormButton.lotusBtnDisabled:hover {
+    color: var(--color-disabled-text) !important;
+    box-shadow: none !important;
+    background-color: var(--color-disabled-background) !important;
+    cursor: default;
+}
+/* END: Disable Button  */
+
+/* BEGIN: Secondary button link for popups */
+.cnx8-ui.app-blogs .lotusDialogFooter .lotusFormButton.cancel,
+.cnx8-ui.app-blogs #dialog-actions #cancel-button {
+    border: none !important;
+    background: transparent !important;
+    color: var(--color-link) !important;
+    min-width: 60px !important;
+}
+/* END: Secondary button link  */
+
+/* BEGIN: Secondary button link Hover effect for popups */
+.cnx8-ui.app-blogs .lotusDialogFooter .lotusFormButton.cancel:hover,
+.cnx8-ui.app-blogs #dialog-actions #cancel-button:hover {
+    background: rgba(1, 83, 155, 0.2) !important;
+    box-shadow: none !important;
+}
+/* END: Secondary button link Hover effect */
+
+.cnx8-ui.app-blogs form[id=websiteForm] .lotusFormButton[type=button],
+.cnx8-ui.app-blogs form[name=rollerConfigForm] .lotusFormButton[type=reset] {
+    text-transform: unset !important;
+    color: var(--color-link) !important;
+    border: 1px solid !important;
+    border-color: var(--color-button) !important;
+    border-radius: 2px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+.app-blogs.cnx8-ui .rollertable {
+    margin-top: 10px;
+    width: 99.9%;
+}
+.app-blogs.cnx8-ui table.rollertable td, table.rollertable tbody td {
+    border: 1px solid var(--color-third-navigation-selected-option) !important;
+    padding: 1em;
+}
+.app-blogs.cnx8-ui .adminTopNav {
+    border-bottom: 1px solid var(--color-third-navigation-border);
+    line-height: 3em;
+}
+.cnx8-ui.app-blogs .lotusColLeft h3 {
+    margin-bottom: 10px !important;
+}
+.cnx8-ui.app-blogs .lotusHeading a.lotusArrow {
+    padding-right: 10px !important;
+}
+.cnx8-ui.app-blogs .lotusSection .lotusList li {
+    padding-left: 20px !important;
+}
+.cnx8-ui.app-blogs .lotusFooter {
+    margin-top: 0px;
+}
+.cnx8-ui.app-blogs .lotusColLeft .lotusSection {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.cnx8-ui.app-blogs .cnx8CheckboxContainer .description,
+.app-blogs.cnx8-ui #cnx8MylikesBlogs .cnx7LikesRight,
+.app-blogs.cnx8-ui .lotusHeader h1,
+.app-blogs.cnx8-ui .lotusPaging:not(.cnx8Paging),
+.app-blogs.cnx8-ui .lotusHeader,
+.app-blogs.cnx8-ui .lotusActionBar2 .lotusRight #cnx7-ui-toggle,
+.app-blogs.cnx8-ui .lotusActionBar .lotusRight #cnx7-ui-toggle,
+.app-blogs.cnx8-ui #lotusContent .blogsRatingTD.lotusTiny,
+.app-blogs.cnx8-ui #lotusContent .blogsRatingTD,
+.cnx8-ui.app-blogs #featuresHelpLink,
+.app-blogs.cnx8-ui #lotusTitleBar,
+.cnx8-ui.app-blogs div#lconnTagCloudContent [dojoattachpoint=_tagSearchText],
+.cnx8-ui.app-blogs form[name=userAdminForm] label#typeahead_bloguser_label,
+.cnx8-ui.app-blogs div[role=navigation] .lotusMenuSection ul#cnx8NewEntryMenu li:last-child,
+.cnx8-ui.app-blogs #section_admin_menu ul li:last-child,
+.app-blogs.cnx8-ui #widget_startDate .dijitValidationContainer,
+.app-blogs.cnx8-ui #widget_endDate .dijitValidationContainer,
+.cnx8-ui.app-blogs #websiteForm .cnx8CheckboxContainer .lotusOffScreen,
+.app-blogs.cnx8-ui .lotusMain.cnx8EntryBlog #lotusColLeft {
+    display: none !important;
+}
+.cnx8-ui.app-blogs #tertiary_level_nav #communityActionBar li {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+.cnx8-ui.app-blogs li a .lotusArrow.lotusDropDownSprite,
+.cnx8-ui.app-blogs li a .lconnSprite-iconDropDown5x3 {
+    background-image: url("../../images/caret-down.svg");
+    background-position: 50%;
+    background-size: 0.75em 0.75em;
+    opacity: 1;
+    width: 15px;
+    height: 15px;
+}
+.cnx8-ui.app-blogs #tertiary_level_nav #communityActionBar li a,
+.cnx8-ui.app-blogs #tertiary_level_nav #communityActionBar li a:visited {
+    font-weight: var(--font-weight-normal) !important;
+    font-size: var(--font-size-medium) !important;
+    color: var(--color-text-secondary) !important;
+    line-height: 21px !important;
+    padding: 0px 10px !important;
+}
+.cnx8-ui.app-blogs #tertiary_level_nav .tabNavBar {
+    box-shadow: none !important;
+    display: inline-block;
+    padding: 0px !important;
+    width: 100% !important;
+}
+.cnx8-ui.app-blogs #tertiary_level_nav .lotusHidden{
+    display:none !important;
+}
+.cnx8-ui.app-blogs #tertiary_level_nav.addHeight150 {
+    padding: 42px 0;
+    margin: 0px;
+}
+.cnx8-ui.app-blogs #tertiary_level_nav .tabNavBar .lotusPlaceBar {
+    overflow: auto !important;
+}
+.cnx8-ui.app-blogs #tertiary_level_nav .tabNavBar .lotusPlaceBar .lotusRightCorner,
+.cnx8-ui.app-blogs #tertiary_level_nav .tabNavBar .lotusTitleBar2 .lotusWrapper{
+    max-width: 100% !important;
+}
+.cnx8-ui.app-blogs .lotusPlaceBar .lotusInner {
+    border: none !important;
+    padding: 0px !important;
+}
+.cnx8-ui.app-blogs #tertiary_level_nav .tabNavBar .lotusPlaceBar .tabNavPlaceBarRightCorner,
+.cnx8-ui.app-blogs #tertiary_level_nav .tabNavBar .lotusPlaceBar .lotusTabs  {
+    padding: 0px !important;
+}
+.cnx8-ui.app-blogs #lotusContent .lotusPlaceBar .lotusInlinelist.lotusRight {
+    right: 15px;
+    margin: 10px 0;
+}
+.cnx8-ui.app-blogs .lotusPlaceBar .lotusRightCorner {
+    min-width: 100% !important;
+    float: left;
+}
+.app-blogs.cnx8-ui #tertiary_level_nav ul[aria-label="Subcommunities"] {
+    display: none !important;
+}
+.cnx8-ui.app-blogs #tertiary_level_nav .tabNavBar .tabNavItemInline {
+    padding-right: 5px !important;
+}
+.cnx8-ui.app-blogs #tertiary_level_nav .tabNavBar #tabNavSubMenuContainer {
+    margin-top: 20px !important;
+}
+.cnx8-ui.app-blogs #tertiary_level_nav .tabNavBar .tabNavCommunityName{
+    padding-top: 20px !important;
+    padding-left: 0px !important;
+}
+.cnx8-ui.app-blogs #tertiary_level_nav .tabNavBar .tabNavMenu ul#bizCardNavMenu li:nth-child(1) a{
+    padding-left: 0px !important;
+}
+.cnx8-ui.app-blogs #tertiary_level_nav .tabNavBar .tabNavMenu ul#bizCardNavMenu li {
+    border: none !important;
+    outline: none !important;
+}
+.cnx8-ui.app-blogs #tertiary_level_nav .tabNavBar .tabNavMenu,
+.cnx8-ui.app-blogs #tertiary_level_nav .tabNavBar .tabNavMenu #communityActionBar.tabNavActionsMenu,
+.cnx8-ui.app-blogs #tertiary_level_nav .tabNavBar .tabNavMenu .tabNavActionsMenu {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.cnx8-ui.app-blogs #tertiary_level_nav .tabNavBar #login_participate_link li {
+    line-height: unset !important;
+}
+.app-blogs.cnx8-ui #tertiary_level_nav .tabNavBar div#lotusTitleBar {
+    display: block !important;
+}
+.app-blogs.cnx8-ui #tertiary_level_nav .tabNavBar div.lotusTitleBar2 .tabNavTitleBarWrapper {
+    width: 100% !important;
+}
+/* hide themes option for cnx8 */
+.cnx8-ui.app-blogs form[name=rollerConfigForm] .formtableNoDesc tr:nth-last-child(-n+3),
+.cnx8-ui.app-blogs .lotusInner.inner ul.aria_toolbar li:last-child {
+    display: none;
+}
+.app-blogs.cnx8-ui .lotusPopup .lotusPopupClose {
+    top: 0px !important;
+}
+/********************************blogs Comments**********************************/
+.app-blogs.cnx8-ui .lotusTabContainer ul.lotusTabs li {
+    border: none !important;
+}
+.app-blogs.cnx8-ui .lotusTabContainer ul li a {
+    font-size: var(--font-size-medium) !important;
+    text-decoration: none !important;
+    color:var(--color-tab-text) !important;
+    margin-bottom:10px !important;
+}
+.app-blogs.cnx8-ui .lotusTabContainer ul li.lotusSelected a {
+    border-bottom:2px solid var(--color-button);
+}
+.app-blogs.cnx8-ui .lotusTabContainer ul li.lotusSelected {
+    background-color:transparent !important;
+}
+.app-blogs.cnx8-ui .lotusBtnContainer {
+    margin: 12px 0px !important;
+    height: unset;
+}
+.cnx8-ui.app-blogs #lotusContent .blogsFixedTable tr.lotusSort {
+    border-bottom: 1px solid  var(--color-third-navigation-border);
+}
+.cnx8-ui.app-blogs #lotusContent .blogsFixedTable .lotusSort th,
+.cnx8-ui.app-blogs #lotusContent .blogsFixedTable .lotusSort a {
+    font-weight: var(--font-weight-bold) !important;
+    font-size: var(--font-size-medium) !important;
+    text-transform: capitalize !important;
+}
+.cnx8-ui.app-blogs .lotusTable td {
+    font-size: var(--font-size-small) !important;
+    padding: 10px 5px !important;
+}
+.cnx8-ui.app-blogs .lotusTable td h4 a,
+.cnx8-ui.app-blogs .lotusTable td h4 a:hover{
+    font-size: var(--font-size-small) !important;
+}
+.cnx8-ui.app-blogs table.lotusFormTable tr td:nth-child(2) {
+    clear: left !important;
+    float: left;
+}
+.cnx8-ui.app-blogs td.lotusFormLabel {
+    margin-left: 0px !important;
+}
+.cnx8-ui.app-blogs td.lotusFormFooter {
+    padding-left: 0px !important;
+}
+.cnx8-ui.app-blogs #createDirBtn.lotusBtn {
+    margin-top: 10px;
+}
+.cnx8-ui.app-blogs fieldset.blogsHiddenBorder {
+    padding-left: 0em;
+}
+.cnx8-ui.app-blogs #recentEntries table tr td:nth-child(1) {
+    display: none;
+}
+.cnx8-ui.app-blogs .dijitMenuPopup table,
+.cnx8-ui.app-blogs .dijitMenu {
+	background: var(--color-base-background);
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 12%), 0px 2px 2px rgb(0 0 0 / 14%), 0px 1px 5px rgb(0 0 0 / 20%);
+    border-radius: 2px;
+    color: var(--color-chip-text);
+}
+.cnx8-ui.app-blogs .dijitMenuPopup table tr.dijitMenuItem {
+	line-height: unset;
+}
+.cnx8-ui.app-blogs .dijitMenuItem td.dijitMenuItemLabel,
+.cnx8-ui.app-blogs .dijitComboBoxMenu .dijitMenuItem,
+.cnx8-ui.app-blogs .dijitMenuPopup table.dijitMenuTable {
+	padding: 10px 20px 8px 5px !important;
+}
+.cnx8-ui.app-blogs #notificationForm_typeahead_dropdown .dijitMenuItem img {
+    margin-right: 5px;
+}
+.cnx8-ui.app-blogs .dijitMenuActive .dijitMenuItemHover,
+.cnx8-ui.app-blogs .dijitMenuActive .dijitMenuItemSelected,
+.cnx8-ui.app-blogs .dijitMenuItemHover {
+	background-color: var(--color-third-navigation-selected-option) !important;
+}
+.cnx8-ui.app-blogs .dijitMenuPopup .dijitMenuTable .dijitMenuItemFocused td.dijitMenuItemLabel,
+.cnx8-ui.app-blogs .dijitMenuPopup .dijitMenuTable td.dijitMenuItemLabel:hover,
+.cnx8-ui.app-blogs .dijitMenuPopup .dijitMenuTable td.dijitMenuItemLabel:active,
+.cnx8-ui.app-blogs .dijitMenuPopup .dijitMenuTable td.dijitMenuItemLabel:focus {
+    border-top: unset !important;
+    border-bottom: unset !important;
+}
+.cnx8-ui.app-blogs #postCommentAsTrackback,
+.cnx8-ui.app-blogs .dijitComboBoxMenuPopup .dijitMenuItem img {
+    margin-right: 5px;
+}
+.cnx8-ui.app-blogs #postCommentAsTrackbackWeblogSelect {
+    background-position-x: 97% !important;
+}
+.cnx8-ui.app-blogs .lotusDialog .lotusDialogHeader {
+    background: var(--color-base-background) !important;
+}
+.cnx8-ui.app-blogs .lotusDialog .lotusDialogHeader .lotusDialogClose {
+    top: 15px;
+    right: 5px;
+}
+.cnx8-ui.app-blogs .lotusDialog .lotusDialogFooter {
+    border-top: unset;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.cnx8-ui.app-blogs .lotusDialog .lotusFormTable td {
+    overflow: hidden;
+}
+.cnx8-ui.app-blogs .cke_dialog_title {
+    background-color: white;
+    border-bottom: 1px solid var(--color-main-secondary-border);
+}
+.cnx8-ui.app-blogs div.cke_dialog_ui_input_text {
+    border-radius: 3px;
+    border: unset;
+}
+.cnx8-ui.app-blogs input.cke_dialog_ui_input_text{
+    border: unset;
+    padding: 0px;
+    width: 100%;
+    height: 24px;
+}
+.cnx8-ui.app-blogs .tabNavBar .tabNavSubcommunityName {
+    padding: 0px !important;
+}
+.cnx8-ui.app-blogs .tabNavBar .tabNavSubcommunityName .comNavInline {
+    font-size: var(--font-size-xlarge) !important;
+}
+.cnx8-ui.app-blogs .tabNavBar #tabNavParentName {
+    color: var(--color-tab-text) !important;
+    font-weight: var(--font-weight-normal) !important;
+    padding: 0px !important;
+}
+.cnx8-ui.app-blogs .tabNavBar #tabNavParentName a,
+.cnx8-ui.app-blogs .tabNavBar #tabNavParentName a:visited {
+    padding: 0px !important;
+}
+.cnx8-ui.app-blogs #lotusContent #select_blog_list{
+    width: 875px;
+    background-position: 840px !important;
+}
+.cnx8-ui.app-blogs #dojoEditor {
+    border: none !important;
+}
+.cnx8-ui.app-blogs .lotusLikeLightBox ul.lotusList li {
+    padding-left: 10px;
+}
+.cnx8-ui.app-blogs #section_entrymanagement input#tags {
+    padding: 6px !important;
+    height: unset !important;
+}
+.app-blogs.cnx8-ui input#agreeToDeleteWebsite {
+    margin-right: 5px;
+    margin-top: -2px;
+}
+.cnx8-ui.app-blogs #section_entrymanagement span.lotusBtnImg.lotusSearch,
+.cnx8-ui.app-blogs #section_dateFilter span.lotusBtnImg.lotusSearch {
+    margin-left: -6px !important;
+    height: 20px;
+}
+.app-blogs.cnx8-ui #entry_summary_table th.lotusFirstCell,
+.app-blogs.cnx8-ui #entry_detail_table th.lotusFirstCell {
+    padding-left: 5px;
+    width: 16px !important;
+}
+.app-blogs.cnx8-ui #entry_summary_table .lotusFirstCell .lotusSort a {
+    font-weight: var(--font-weight-normal) !important;
+}
+.app-blogs.cnx8-ui #widget_startDate .dijitInputContainer input,
+.app-blogs.cnx8-ui #widget_endDate .dijitInputContainer input {
+    border: none !important;
+}
+
+.app-blogs.cnx8-ui .lotusDialog textarea#inputDialog_content{
+    padding: 5px;
+}
+.app-blogs.cnx8-ui .lotusDialog textarea#inputDialog_content {
+    width: 390px !important;
+}
+.app-blogs.cnx8-ui #blogsAddMembers .field select{
+    margin-left: 0px;
+}
+.app-blogs.cnx8-ui #addMemberForm .submitArea {
+    padding-left: 5px;
+} 
+.app-blogs.cnx8-ui #blogsAddMembers .member .fieldDel {
+    cursor: pointer;
+}
+.app-blogs.cnx8-ui #blogsAddMembers .memberList {
+    border-radius: 3px;
+}
+.app-blogs.cnx8-ui #blogsActionBar li {
+    border-left: 1px solid var(--color-tab-text-selected) !important;
+    margin: 0;
+    padding: 0px 5px 0px 10px;
+}
+.app-blogs.cnx8-ui #blogsActionBar li.lotusFirst{
+    border-left-width: 0 !important;
+    padding: 0px 5px 0px 10px;
+}
+.app-blogs.cnx8-ui .cke_dialog .cke_dialog_body .cke_dialog_title{
+	background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 19px;
+    color: var(--color-modal-header-text) !important;
+    font-weight: bold;
+}
+.app-blogs.cnx8-ui .cke_dialog .cke_dialog_body input.cke_dialog_ui_input_text, input.cke_dialog_ui_input_password {
+    border-radius: 1px;
+    height: 27px;
+    width: 100%;
+    padding: 4px 0px;
+    outline: none;
+}
+.app-blogs.cnx8-ui .cke_dialog .cke_dialog_body .cke_dialog_footer_buttons {
+    margin-right: 11px !important;
+}
+.app-blogs.cnx8-ui .cke_dialog .cke_dialog_body .cke_dialog_footer .cke_resizer.cke_resizer_ltr {
+    display: none;
+}
+.app-blogs.cnx8-ui .cke_dialog .cke_dialog_body a.cke_dialog_ui_button.cke_dialog_ui_button_ok, a.cke_dialog_ui_button.cke_dialog_ui_button_ok:hover {
+    background: var(--color-button) !important;
+    border: 0;
+}
+.app-blogs.cnx8-ui .cke_dialog .cke_dialog_body .cke_dialog_footer_buttons .cke_dialog_ui_hbox .cke_dialog_ui_hbox_first span.cke_dialog_ui_button{
+    color: #fff !important;
+}
+
+.app-blogs.cnx8-ui .cke_dialog .cke_dialog_body .cke_dialog_footer_buttons .cke_dialog_ui_hbox .cke_dialog_ui_hbox_last span.cke_dialog_ui_button {
+    color: var(--color-button) !important;
+}
+.app-blogs.cnx8-ui .cke_dialog .cke_dialog_body .cke_dialog_close_button {
+    background-image: url(../../images/close.svg) !important;
+    background: #fff;
+    background-size: 8px;
+    background-position: 3px 3px !important;
+    background-repeat: no-repeat !important;
+    cursor: pointer;
+}
+.app-blogs.cnx8-ui form[name=bookmarksForm] .lotusSort .lotusFirstCell {
+    padding-left: 5px;
+}
+.app-blogs.cnx8-ui form[name=bookmarksForm] .lotusActionBar .lotusBtn {
+    margin-right: 10px;
+}
+.app-blogs.cnx8-ui form[name=bookmarkFormEx] .lotusFormTable td label {
+    display: flex;
+    flex-direction: row;
+}
+.app-blogs.cnx8-ui form[name=bookmarkFormEx] #feedHelpLink {
+    width: 20%;
+}
+.app-blogs.cnx8-ui #lotusContent .lotusFeeds a.lotusFeed {
+    font-weight: var(--font-weight-normal) !important ;
+    font-size: var(--font-size-small) !important;
+}
+.app-blogs.cnx8-ui #lotusContent .lotusFeeds {
+    margin-left: 0px;
+}
+.app-blogs.cnx8-ui #announcementBox {
+    box-shadow: 0 1px 6px 0 rgb(var(--color-main-box-shadow) / 40%);
+}
+.app-blogs.cnx8-ui #announcementBox tr td {
+    padding-left: 10px !important;
+}
+.cnx8-ui.app-blogs .cke_dialog .cke_dialog_ui_hbox.cke_dialog_footer_buttons .cke_dialog_ui_hbox .cke_dialog_ui_hbox_first {
+    float: right;
+    padding-right: 0px;
+}
+.cnx8-ui.app-blogs .cke_dialog .cke_dialog_ui_hbox.cke_dialog_footer_buttons .cke_dialog_ui_hbox .cke_dialog_ui_hbox_last{
+	float: left;
+	margin-right: 10px;
+}
+.cnx8-ui.app-blogs .cke_dialog .cke_dialog_ui_hbox.cke_dialog_footer_buttons .cke_dialog_ui_hbox .cke_dialog_ui_hbox_last a.cke_dialog_ui_button.cke_dialog_ui_button_cancel {
+	color: var(--color-button);
+    border: 1px solid !important;
+	padding: 9px 17px;
+}
+.cnx8-ui.app-blogs #websiteForm input[type=text] {
+    width: 757px !important;
+}
+.app-blogs.cnx8-ui #blogsActionBar {
+    margin-right: 10px !important;
+}
+.app-blogs.cnx8-ui .dijitComboBoxMenu [dojoattachpoint="searchButton"] {
+    padding-left: 12px !important;
+}
+.app-blogs.cnx8-ui button.fieldAdd {
+    display: none;
+}
+.cnx8-ui.app-blogs form#websiteForm .formtableNoDesc textarea {
+    width: 757px !important;
+}
+.cnx8-ui.app-blogs.itm-bar-open #websiteForm input[type=text] {
+    width: 686px !important;
+}
+.cnx8-ui.app-blogs.itm-bar-open form#websiteForm .formtableNoDesc textarea {
+    width: 706px !important;
+}
+.app-blogs.cnx8-ui table.lotusTable.blogsFixedTable span.lotusRight .rating.lotusRating div svg {
+    height: 13px;
+    padding-top: 3px;
+}
+.app-blogs.cnx8-ui #filesListForm input#deleteBtn {
+	background: var(--color-button) !important;
+	color: var(--color-button-text) !important;
+	margin-left: 0px;
+    text-shadow: none;
+}
+.app-blogs.cnx8-ui .blogsHiddenBorder input[id^='uploadFile']::-ms-browse {
+	border: 1px solid var(--color-button);
+	padding: 5px 15px;
+	border-radius: .2em;
+	color: var(--color-button-text);
+	background-color: var(--color-button-text);
+	cursor: pointer;
+}
+.app-blogs.cnx8-ui .blogsHiddenBorder input[id^='uploadFile']::-webkit-file-upload-button {
+	border: 1px solid var(--color-button);
+	padding: 5px 15px;
+	border-radius: .2em;
+	background-color: var(--color-button-text);
+	color: var(--color-button-text);
+	cursor: pointer;
+}
+.app-blogs.cnx8-ui .blogsHiddenBorder input[id^='uploadFile']::file-selector-button {
+	border: 1px solid var(--color-button);
+	padding: 5px 15px;
+	border-radius: .2em;
+	background-color: var(--color-button-text);
+	color: var(--color-button);
+	cursor: pointer;
+}
+.app-blogs.cnx8-ui .blogsHiddenBorder input[id^='uploadFile']::-ms-browse:hover {
+	background-color: var(--color-button);
+	color: var(--color-button-text);
+}
+.app-blogs.cnx8-ui .blogsHiddenBorder input[id^='uploadFile']::-webkit-file-upload-button:hover {
+	background-color: var(--color-button);
+	color: var(--color-button-text);
+}
+.app-blogs.cnx8-ui .blogsHiddenBorder input[id^='uploadFile']::file-selector-button:hover {
+    background-color: rgba(1, 83, 155, 0.1) !important;
+    color: var(--color-button) !important;
+}
+.app-blogs.cnx8-ui form[aria-labelledby="filesManageTitle"] input#newDir {
+	display: block;
+	margin-left: 0px !important;
+	height: 30px !important;
+	min-width: 450px;
+    outline: none;
+}
+.app-blogs.cnx8-ui form[aria-labelledby="filesManageTitle"], form[aria-labelledby="uploadFilesTitle"] {
+	border-bottom: 1px solid var(--color-third-navigation-border);
+	margin-bottom: 15px;
+}
+.app-blogs.cnx8-ui form[aria-labelledby="filesManageTitle"] label[for="newDir"] strong {
+	font-weight: var(--font-weight-normal);
+	font-family: var(--font-family);
+}
+.app-blogs.cnx8-ui #filesListForm table.lotusTable {
+	margin-top: 10px;
+}
+.app-blogs.cnx8-ui #filesListForm table.lotusTable tr td, .app-blogs.cnx8-ui #filesListForm table.lotusTable th {
+	text-align: left;
+}
+.app-blogs.cnx8-ui #filesListForm table.lotusTable th.lotusFirstCell  {
+	padding-bottom: 0px;
+}
+/********************************community blogs**********************************/
+.app-blogs.cnx8-ui .tabNavBar .lotusTabs li a {
+    line-height: 21px !important;
+    padding: 0px 15px !important;
+}
+.app-blogs.cnx8-ui #lotusContent .control {
+    margin-left: 0px;
+}
+.app-blogs.cnx8-ui #NotificationForm .lotusFormFooter {
+    padding-left: 30px !important;
+}
+.app-blogs.cnx8-ui form[name=quarantineForm] #quarantine_comment {
+    width: 500px !important;
+
+}
+.app-blogs.cnx8-ui form[name=quarantineForm] .lotusFormFooter {
+    padding-left: 60px !important;
+}
+.app-blogs.cnx8-ui .lotusDialog label[for=agreeToDeleteWebsite]{
+    vertical-align: bottom;
+}
+.app-blogs.cnx8-ui form[name=commentManagementForm] .lotusSort .lotusFirstCell{
+    padding-left: 5px !important;
+}
+.app-blogs.cnx8-ui #section_tag_label {
+    width: unset;
+    margin-right: 5px;
+}
+.app-blogs.cnx8-ui .lotusPostContent .cke_contents.cke_reset.lotusTextExpanded {
+    width: 932px;
+}
+.app-blogs.cnx8-ui .lotusPostContent .cke_top.cke_reset_all {
+    border-top: 1px solid var(--color-third-navigation-border) !important;
+    border-left: 1px solid var(--color-third-navigation-border) !important;
+    border-right: 1px solid var(--color-third-navigation-border) !important;
+}
+.app-blogs.cnx8-ui img.lconnSprite-iconDropDown5x3 {
+    width: 15px;
+    height: 8px;
+    background-image: url("../../images/caret-down.svg");
+    background-position: 50%;
+    opacity: 0.85;
+    background-size: 10px 5px;
+    background-repeat: no-repeat;
+    vertical-align: unset !important;
+}

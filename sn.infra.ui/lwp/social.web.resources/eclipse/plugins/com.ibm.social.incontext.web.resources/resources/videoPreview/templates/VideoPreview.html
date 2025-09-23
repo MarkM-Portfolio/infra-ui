@@ -1,0 +1,33 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<div class="lconnPreview" dojoAttachPoint="videoPreview" style="overflow: hidden;">
+	<div class="lconnPreviewLeft" dojoAttachPoint="leftPane">
+		<a dojoAttachPoint="thumbnailContainer" class="lconnPreviewCenter">
+            <span dojoAttachPoint="highContrastThumbnailText" dir="ltr" class="lotusHidden"></span>
+            <span dojoAttachPoint="highContrastPlayText" dir="ltr" class="lotusHidden"></span>
+			<span dojoAttachPoint="playBtn" class="playBtn otherHTML5Player16 otherHTML5Player16-play-overlay-sm"></span>
+			<img src="${_blankGif}" dir="ltr" alt="" dojoAttachPoint="thumbnail" />
+		</a>
+	</div>
+	<div class="lconnPreviewContent" dojoAttachPoint="rightPane">
+		<div class="lconnPreviewContentTitle" dojoAttachPoint="titleNode"><a href="${data.filePageUrl}" dir="ltr" target="_blank"></a></div>
+        <div class="fileMeta lotusHidden" dojoAttachPoint="fileMetaNode">
+            <ul class="inlineSepList">
+                <li class="fileAuthor" dojoAttachPoint="authorNode">${!data.authorInfo}</li>
+                <li class="lotusHidden fileTags" dojoAttachPoint="tagNode"></li>
+            </ul>
+        </div>
+	</div>		
+</div>

@@ -1,0 +1,321 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+.ic-thumb-widget {
+  margin: 10px auto 0;
+  width: 888px;
+  float: left;
+}
+
+
+.lotusImagesOff .ic-thumb-widget-flip-card {
+  border: 1px solid #FF0;
+}
+
+.ic-thumb-widget-flip-card {
+  display: block;
+  position: relative;
+  float: left;
+}
+.ic-thumb-widget-flip-card .card-front,
+.ic-thumb-widget-flip-card .card-back {
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.ic-thumb-widget-flip-card .card-back {
+   display: none\0/; /* IE 8 doesn't support "filter" properly so just hide/show the back side - Hack only for IE8/9 */
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+}
+
+.ic-thumb-widget-flip-card:hover .card-back, .ic-thumb-widget-flip-card-a11y-h .card-back {
+   display: block\0/; /* IE 8 doesn't support "filter" properly so just hide/show the back side - Hack only for IE8/9 */
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  background-color: #626262 !important; /* for IE 8 */
+  background-color: rgba(0,0,0,0.6) !important;
+}
+
+/*** Just for show... ***/
+
+.ic-thumb-widget-flip-card * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.ic-thumb-widget-flip-card a, .ic-thumb-widget-flip-card a:visited {
+    text-decoration: none;
+}
+
+.ic-thumb-widget-flip-card a:hover {
+    text-decoration: underline;
+}
+
+.ic-thumb-widget-flip-card {
+  color: #fff;
+  width: 202px;
+  height: 164px;
+  margin: 10px 18px 10px 2px; /* considering box-shadow is 2px, I need to give at least 2px on the left margin maintain the control in all the browsers */
+}
+.ic-thumb-widget-flip-card .card-front,
+.ic-thumb-widget-flip-card .card-back {
+  background-color: #F6F6F6;
+}
+
+/* content of the front */
+
+.ic-thumb-widget-flip-card .card-front {
+    overflow: hidden;
+}
+
+.ic-thumb-widget-flip-card .card-front .check, .ic-thumb-widget-flip-card .card-front .pin {
+    visibility: hidden;
+    position: absolute;
+}
+
+/* triangle pin hidden */
+.ic-thumb-widget-flip-card .trianglePin {
+    position:absolute;
+    top:0;
+    right:0;
+  	visibility: hidden;
+}
+
+/* triangle pin visible */
+.ic-thumb-widget-flip-card-is-pinned .card-front .trianglePin, .ic-thumb-widget-flip-card .card-back .trianglePin {
+  	visibility: visible;
+}
+
+.ic-thumb-widget-flip-card-is-checked .card-front .check {
+    visibility: visible;
+    top: 8px;
+    left: 10px;
+}
+
+.ic-thumb-widget-flip-card-is-pinned .card-front .pin {
+    visibility: visible;
+    top: 3px;
+    right: 3px;
+}
+
+.ic-thumb-widget-flip-card .card-front .summary {
+    background-color: #F0F0F0;
+    border-top: 1px solid #FFFFFF;
+    bottom: 0;
+    height: 40px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.ic-thumb-widget-flip-card .card-front .summary span.text {
+    color: #292929;
+    display: block;
+    overflow: hidden;
+    padding: 10px 28px 5px 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ic-thumb-widget-flip-card .card-front .summary span.text.sync {
+    padding-right: 48px;
+}
+
+.ic-thumb-widget-flip-card .card-front .summary .icon {
+    bottom: 12px;
+    display: block;
+    position: absolute;
+    right: 8px;
+    white-space: nowrap;
+}
+
+.ic-thumb-widget-flip-card .card-front .summary .icon.lotusHidden {
+    display: none;
+}
+
+/* sync icon */
+.ic-thumb-widget-flip-card .card-front .summary .icon.sync {
+    right: 28px;
+}
+
+/* virus icon */
+.ic-thumb-widget-flip-card .card-front .summary .icon.virus {
+    right: 28px;
+}
+
+/* content of the back */
+
+.ic-thumb-widget-flip-card .card-back {
+    padding: 10px;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    cursor: pointer;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+
+.ic-thumb-widget-flip-card .card-back .check {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-size: 0.1em; /* just to be sure the image height remains */
+}
+
+.ic-thumb-widget-flip-card .card-back .pin {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    font-size: 0.1em; /* just to be sure the image height remains */
+}
+
+.ic-thumb-widget-flip-card .card-back a, .ic-thumb-widget-flip-card .card-back a:hover, .ic-thumb-widget-flip-card .card-back a:focus, .ic-thumb-widget-flip-card .card-back a:active, .ic-thumb-widget-flip-card .card-back a:visited {
+    color: #fff; /* white dotted border when focus via keyboard navigation */
+    font-weight:bold;
+}
+
+.ic-thumb-widget-flip-card .card-back a.pin, .ic-thumb-widget-flip-card .card-back a.pin:hover, .ic-thumb-widget-flip-card .card-back a.pin:focus, .ic-thumb-widget-flip-card .card-back a.pin:active, .ic-thumb-widget-flip-card .card-back a.pin:visited {
+    color: #333; /* grey background for the pin */
+}
+
+.ic-thumb-widget-flip-card .card-back a span { /* SmartCloud generates a span element with an arrow next to the name for the Business Card */
+    display: none;
+}
+
+.ic-thumb-widget-flip-card .card-back .title {
+    margin: 16px 0 0 0;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    padding: 0;
+}
+
+.ic-thumb-widget-flip-card .card-back .title a {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ic-thumb-widget-flip-card .card-back span.desc {
+    display: block;
+    margin: 5px 0 0 0;
+    line-height: 1.2em;
+}
+
+.ic-thumb-widget-flip-card .card-back .actions {
+    bottom: 0;
+    left: 0;
+    width:100%;
+    height: 40px;
+    margin: 0;
+    padding: 11px 8px;
+    position: absolute;
+    background-color: #F6F6F6;
+    text-align: right;
+    border-top: 1px solid #FFFFFF;
+}
+
+.ic-thumb-widget-flip-card .card-back .actions a {
+    text-decoration: none;
+    margin-left: 5px;
+    color: #333333; /* black dotted border when focus via keyboard navigation */
+}
+
+/* extra border / box-shadow on selection */
+
+.ic-thumb-widget-flip-card-is-checked .card-front,
+.ic-thumb-widget-flip-card-is-checked .card-back {
+  border-color: #047CBD;
+  -webkit-box-shadow: 0 0 0 2px #047CBD;
+  -moz-box-shadow: 0 0 0 2px #047CBD;
+  box-shadow: 0 0 0 2px #047CBD;
+}
+
+/* high contrast mode */
+
+.ic-thumb-widget-flip-card .hc, .ic-thumb-widget-flip-card .hc {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.lotusui30.lotusImagesOff .ic-thumb-widget-flip-card .hc, .lotusImagesOff .lotusui30 .ic-thumb-widget-flip-card .hc {
+	text-indent: 0;
+	text-overflow: ellipsis;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.lotusui30.lotusImagesOff .ic-thumb-widget-flip-card .summary  span.text, .lotusImagesOff .lotusui30 .ic-thumb-widget-flip-card .summary span.text {
+	position: absolute;
+	top: -2px;
+	left: 2px;
+	right: 2px;	
+	padding: 0;
+	width: 100%;
+	height: auto;
+	text-align: left;
+}
+
+.lotusui30.lotusImagesOff .ic-thumb-widget-flip-card .summary  span.icon.hc, .lotusImagesOff .lotusui30 .ic-thumb-widget-flip-card .summary  span.icon.hc {
+	width: 50%;
+	height: auto;
+	bottom: -2px;
+	rigth: 2px;
+	text-align: right;
+}
+
+.lotusui30.lotusImagesOff .ic-thumb-widget-flip-card .summary  span.icon.sync.hc, .lotusImagesOff .lotusui30 .ic-thumb-widget-flip-card .summary  span.icon.sync.hc {
+	right: auto;
+	text-align: left;
+}
+
+/* max two lines (15x2 = 30) */
+.lotusui30.lotusImagesOff .ic-thumb-widget-flip-card .actions, .lotusImagesOff .lotusui30 .ic-thumb-widget-flip-card .actions {
+	padding: 0;
+	line-height: 15px;
+}
+
+.lotusui30.lotusImagesOff .ic-thumb-widget-flip-card .actions a, .lotusImagesOff .lotusui30 .ic-thumb-widget-flip-card .actions a {
+	display: inline-block;
+	float: left;
+	position: static;
+	width: auto;
+	height: auto;
+}
+
+.lotusui30.lotusImagesOff .check, .lotusImagesOff .lotusui30 .check, .lotusui30.lotusImagesOff .pin, .lotusImagesOff .lotusui30 .pin {
+	display: inline-block;
+	width: auto;
+	height: auto;
+}
+
+.ic-thumb-folder {
+    background-image: url('/com.ibm.oneui3.styles/css/images/Icons/FileTypes/iconsFileTypes202-8bit.png') !important;
+    background-position: 0px -172px !important;
+    width: 202px;
+    height: 132px;
+}
+.ic-thumb-folder.ic-thumb-folder-shared {
+    background-position: -0px -516px !important;
+}
+.ic-thumb-folder.ic-thumb-folder-public {
+    background-position: -0px -344px !important;
+}
+.ic-thumb-folder.ic-thumb-folder-community {
+    background-position: -0px -0px !important;
+}

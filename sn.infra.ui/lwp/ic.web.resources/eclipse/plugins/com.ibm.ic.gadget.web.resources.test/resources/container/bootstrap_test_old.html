@@ -1,0 +1,296 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<html><body><p>${head}
+
+<!-- Redirect to &render=test -->
+<script type="text/javascript">	
+	var loc = location + '';
+	if (loc.indexOf('render=test') < 0) {
+		if (loc.indexOf('?') > 0) {
+			location = loc + "&render=test";
+		}
+		else {
+			location = loc + "?render=test";
+		}
+	}
+	
+	dojo.config.isDebug = true;
+	
+	dojo.require('lconn.core.config.services');
+	dojo.require("com.ibm.oneui.util.proxy");
+	
+	var web_resources_url = lconn.core.config.services['webresources'].url;
+	
+	if (loc.indexOf('creScriptTag=true') > 0) {
+		
+		var os_path = lconn.core.config.services['opensocial'].url;
+		var base_path = com.ibm.oneui.util.proxy(os_path);
+	
+		document.write('\x3Cscript src=\"' + base_path + '/gadgets/js/cre.iruntime:cre.iwidget:cre.iwidget.itemset:cre.util.stringify:cre.service.event:core:container:rpc:views:embedded-experiences:selection:inline:actions:shared-script-frame:shindig.sha1:open-views.js?c=1\&debug=true\&noCache=true\"\x3E\x3C\x2Fscript\x3E');
+	} else {
+		console.log('To use a script tag to load CRE this to the URL: &creScriptTag=true');
+	}
+</script>
+
+<script type="text/javascript">
+	var mContainer = null;
+	var mHandle = null;
+	var mEEHandle = null;
+	var iWidgetHandle = null;
+</script>
+
+<script src="../../container/iContainer.js?debug=true"></script>
+
+
+<style>
+#attach_point {
+  width: 500px;
+  height: 80px;
+}
+#ee_attach_point {
+  width: 600px;
+  height: 80px;
+}
+#attach_point2 {
+  width: 500px;
+  height: 100px;
+}
+
+</style>
+
+${endhead}
+
+<!-- BODY -->
+</p><table width="100%"><tr><td>
+	<h1>BootStrap Test</h1>
+	
+	<script type="text/javascript">
+		function load_widget() {
+			try {
+				var def = {
+						definitionUrl: dojo.formToObject('gadgetBootstrapper').gadget,
+						placement: 'attach_point'
+					};
+					
+				if (mHandle) {
+					mHandle.close();
+					mHandle = null;
+				}
+				mHandle = mContainer.renderGadget(def);
+			} catch ( e ) {
+				console.debug("Caught exception: " + e);
+			}
+			
+			return false;
+		}
+		
+		function refresh_widget() {
+			if (mHandle) {
+				mHandle.refresh();
+			}
+		}
+		
+		function close_widget() {
+			if (mHandle) {
+				mHandle.close();
+			}
+		}
+		
+		function parse_action() {
+			return false;
+		}	
+	</script>
+	<div id="bootstrapForm">
+		<form name="gadgetBootstrapper" id="gadgetBootstrapper">
+			Gadget Url:
+			<input type="text" id="gadget" name="gadget" style="width: 60%" value="http://hosting.gmodules.com/ig/gadgets/file/109810496796399416248/timedate2.xml">
+		</form>
+	
+		<button onclick="load_widget();" name="submitButton" value="submit">Load Gadget</button>
+		<button onclick="refresh_widget();">Refresh</button>
+		<button onclick="close_widget();">Close</button>
+	</div>   
+	
+	<h3>Attach Point</h3>
+	<div id="attach_point" style="">Gadget Goes Here...</div>
+</td>
+<td valign="top">
+	<h1>EE BootStrap Test</h1>
+	
+	<script type="text/javascript">
+		var count=1;
+		function load_ee_widget() {
+			try {
+				if (mEEHandle) {
+					mEEHandle.close();
+					mEEHandle = null;
+				}
+				
+				var rawContext = dojo.formToObject('eeGadgetBootstrapper').eeContext;
+				var eeContext;
+				if ( dojo.trim(rawContext).charAt(0) == '{' ) {
+					eeContext = dojo.fromJson(rawContext);
+				} else  {
+					eeContext = rawContext;
+				}
+				
+				var parentElm = dojo.byId('ee_attach_point');
+				parentElm.innerHTML = '';
+				var id = 'ee_elm_' + count++;
+				dojo.create('div', { id : id }, parentElm);
+				var elm = id;
+				
+				var def = {
+						definitionUrl: dojo.formToObject('eeGadgetBootstrapper').eeGadget,
+						context: eeContext,
+						placement: elm,
+						renderParams: {
+							"gadgetViewParams": { "width": "20" }
+						},
+						callback: function () {
+							console.debug("bootstrap_test - gadget rendered, or so I'm told.")
+						}
+				};
+						
+				mEEHandle = mContainer.renderEEGadget(def);
+			} catch ( e ) {
+				console.debug("Caught exception: " + e);
+			}
+			
+			return true;
+		}
+		
+		function refresh_ee_widget() {
+/* 			if (mEEHandle) {
+				mEEHandle.refresh();
+			}
+			*/
+			close_ee_widget();
+			load_ee_widget();
+ 		}
+		
+		function close_ee_widget() {
+			if (mEEHandle) {
+				mEEHandle.close();
+			}
+		}
+		
+		function parse_ee_action() {
+			return false;
+		}	
+	</script>
+
+	<div id="eeBootstrapForm">
+		<form name="eeGadgetBootstrapper" id="eeGadgetBootstrapper">
+			Gadget Url:
+			<input type="text" id="eeGadget" name="eeGadget" style="width: 60%"><br>
+	        Context:
+	        <input type="text" id="eeContext" name="eeContext" style="width: 60%" value="Some context goes here">
+		</form>
+		<script>
+			function preFillHello() {
+				var idx = location.pathname.lastIndexOf('/');
+				var base = location.protocol + '//' + location.host + location.pathname.substring(0, idx+1);
+				var gadgetUrl = base + '/gadgets/EEHelloWorld.xml';
+				dojo.byId('eeGadget').value = gadgetUrl;
+				dojo.byId('eeContext').value = 'some context goes here';
+			}
+			
+			function preFillFilesEE() {
+				dojo.byId('eeGadget').value = 'http://paris.rtp.raleigh.ibm.com:9080/connections/resources/web/com.ibm.social.ee/File.xml';
+				dojo.byId('eeContext').value = '{ "id": "03fa819a-17bc-476c-861b-e4845e5e1133" }';
+			}
+			
+		</script>
+		<button onclick="preFillHello();">Pre-fill Hello World</button>
+		<button onclick="preFillFilesEE();">Pre-fill Files EE (from paris)</button>
+		<br><br>
+		<button onclick="load_ee_widget();">Load EE Gadget</button>
+		<button onclick="refresh_ee_widget();">Refresh</button>
+		<button onclick="close_ee_widget();">Close</button>
+	</div>   
+	
+	<h3>EE Attach Point</h3>
+	<div id="ee_attach_point" style="">EE Gadget Goes Here...</div>
+</td>
+</tr>
+<tr>
+<td>
+<h1>IWidget test</h1>
+	
+	<script type="text/javascript">
+		function load_iwidget() {
+			try {			
+				var def = [{
+						definitionUrl: dojo.formToObject('IWidgetBootstrapper').IWidget,
+						componentType: "iWidget",
+						placement: 'attach_point2'
+					}];
+				dojo.empty("attach_point2");
+				console.log("getCREServerUrl():  ", cre$.iRuntime.getCREServerUrl());
+				console.log("definitionUrl:  ", dojo.formToObject('IWidgetBootstrapper').IWidget);
+				
+				iWidgetHandle = mContainer.renderWidget(def);
+			} catch ( e ) {
+				console.debug("Caught exception: " + e);
+			}
+			
+			return false;
+		}
+		
+		function serverHost() {
+			var loc = document.location;
+			return(loc.protocol + "//" + location.hostname + ":" + location.port);
+		}
+		
+		function refresh_iwidget() {
+			iWidgetHandle.refresh();
+		}
+		
+		function close_iwidget() {
+			iWidgetHandle.close();
+		}
+
+		function preFillHelloIwidget() {
+			var iWidgetNode = dojo.byId("IWidget");
+			var loc = document.location;
+			iWidgetNode.value = web_resources_url + "/web/com.ibm.lconn.gadget/test/container/helloworld.xml";
+		}
+			
+		function preFillStockIwidget() {
+			var iWidgetNode = dojo.byId("IWidget");
+			var loc = document.location;
+			iWidgetNode.value = web_resources_url + "/web/com.ibm.lconn.gadget/test/container/iwidgets/simple_stock/stock3.xml";
+		}		
+	</script>
+
+	<div id="bootstrapForm">
+		<form name="IWidgetBootstrapper" id="IWidgetBootstrapper">
+			Gadget Url:
+			<input type="text" id="IWidget" name="IWidget" style="width: 60%" value="http://broberts2.swg.usma.ibm.com:9080/connections/resources/web/com.ibm.lconn.gadget/test/container/helloworld.xml">
+		</form>
+	
+	<button onclick="preFillHelloIwidget();">Pre-fill Hello World</button>
+		<button onclick="preFillStockIwidget();">Pre-fill Stocks</button>
+		<br><br>
+		<button onclick="load_iwidget();">Load Iwidget</button>
+		<button onclick="refresh_iwidget();">Refresh</button>
+		<button onclick="close_iwidget();">Close</button>
+	</div>   
+	
+	<h3>Attach Point</h3>
+	<div id="attach_point2" style="">iWidget Goes Here...</div>
+</td>
+</tr>
+</table>
+	
+	<script type="text/javascript">
+		dojo.addOnLoad(function() {
+			mContainer = com.ibm.lconn.gadget.container.iContainer;			
+			mContainer.init();
+			
+			preFillHelloIwidget();
+		});
+	</script>
+
+${end}
+</body></html>

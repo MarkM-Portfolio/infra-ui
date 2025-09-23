@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+({
+	"CLOSE_HELP_DATE":"Tutup Bantuan Tanggal",
+	"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Tutup Bantuan Jenis Dokumen",
+	"CLOSE_HELP_PERSON":"Tutup Bantuan Orang",
+	"CLOSE_HELP_TAG":"Tutup Bantuan Tanda",
+	"CLOSE_HELP_TREND":"Tutup Bantuan Tren",
+	"COLLAPSE_DATE":"Ciutkan filter Tanggal",
+	"COLLAPSE_ECM_DOCUMENT_TYPE":"Ciutkan filter Jenis Dokumen",
+	"COLLAPSE_PERSON":"Ciutkan filter Orang",
+	"COLLAPSE_TAG":"Ciutkan filter Tanda",
+	"COLLAPSE_TREND":"Ciutkan filter Tren",
+	"DESCRIPTION_DATE":"Untuk menampilkan hasil yang dibuat atau diperbarui pada waktu tertentu, perluas twistie dan filter informasi berdasarkan tahun dan bulan.",
+	"DESCRIPTION_ECM_DOCUMENT_TYPE":"Jenis dokumen merupakan kata kunci dari file yang Anda tentukan agar lebih mudah ditemukan. Klik jenis dokumen untuk menampilkan hasil pencarian yang telah ditentukan oleh kata kunci tersebut.",
+	"DESCRIPTION_PERSON":"Lihat orang yang terkait dengan hasil pencarian Anda. Klik sebuah nama untuk menampilkan hasil pencarian yang terkait dengan orang tertentu.",
+	"DESCRIPTION_TAG":"Tanda merupakan kata kunci yang Anda gunakan pada konten agar konten tersebut mudah ditemukan. Klik tanda untuk menampilkan hasil pencarian yang telah ditentukan oleh kata kunci tersebut.",
+	"DESCRIPTION_TREND":"Tren adalah kata kunci yang dihasilkan oleh sistem untuk membuat pencarian di Pembaruan Status menjadi lebih mudah. Klik tren untuk menampilkan hasil pencarian yang telah ditentukan oleh kata kunci tersebut.",
+	"EXPAND_DATE":"Perluas filter Tanggal",
+	"EXPAND_ECM_DOCUMENT_TYPE":"Perluas filter Jenis Dokumen",
+	"EXPAND_PERSON":"Perluas filter Orang",
+	"EXPAND_TAG":"Perluas filter Tanda",
+	"EXPAND_TREND":"Perluas filter Tren",
+	"HELP_DATE":"Bantuan Tanggal",
+	"HELP_ECM_DOCUMENT_TYPE":"Bantuan Jenis Dokumen",
+	"HELP_PERSON":"Bantuan Orang",
+	"HELP_TAG":"Bantuan Tanda",
+	"HELP_TREND":"Bantuan Tren",
+	"NO_DATE_CONTENT":"Tanggal saat ini tidak tersedia",
+	"NO_ECM_DOCUMENT_TYPE_CONTENT":"Jenis Dokumen saat ini tidak tersedia",
+	"NO_PERSON_CONTENT":"Orang saat ini tidak tersedia",
+	"NO_TAG_CONTENT":"Tanda saat ini tidak tersedia",
+	"NO_TREND_CONTENT":"Tren saat ini tidak tersedia",
+	"TITLE_DATE":"Tanggal",
+	"TITLE_ECM_DOCUMENT_TYPE":"Jenis Dokumen",
+	"TITLE_PERSON":"Orang",
+	"TITLE_TAG":"Tanda",
+	"TITLE_TREND":"Tren"
+})
+

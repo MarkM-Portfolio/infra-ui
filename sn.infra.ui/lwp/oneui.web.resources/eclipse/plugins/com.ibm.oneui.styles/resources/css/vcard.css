@@ -1,0 +1,76 @@
+/* Copyright IBM Corp. 2001, 2015  All Rights Reserved.              */
+
+/* CSS Document */ /*version 1.07.2 4/11/08*/
+/*** V C A R D (P E R S O N   C A R D) ***/
+.lotusVCard{display:table;position:absolute;top:0;left:-9999px;margin:4px 0 0 4px;-moz-border-radius:4px;-webkit-border-radius:4px;background-color:#e0e0e0;width:400px;}/*this contains the drop shadow color*/
+.lotusVCard .lotusContainer{display:table;width:400px;position:relative;top:-4px;left:-4px;border:1px solid #c5c5c5;background-color:#eff2f5;}/*the styling for the card, itself*/
+/*general styles for elements within the vcard*/
+.lotusVCard ul{margin:0;padding:0;list-style:none;}
+.lotusVCard li{margin:0;padding:0;}
+.lotusVCard h2{margin:0;font-size:1.2em;font-weight:bold;}
+.lotusVCard p{margin:0}
+.lotusVCard img{vertical-align:middle;border-width:0}
+.lotusVCard a:link, .lotusVCard a:visited{text-decoration:none;color:#105cb6}
+.lotusVCard a:hover, .lotusVCard a:focus, a:active{text-decoration:underline;color:#105cb6}
+.lotusVCard .lotusInlinelist{margin:0;padding:0}
+.lotusVCard .lotusInlinelist li{display:inline;margin:0;padding:0 7px;border-left:1px solid #ccc;}
+.lotusVCard .lotusInlinelist li.lotusFirst, .lotusInlinelist li.lotusLast{padding-left:0;border-left-width:0;}
+/*the application links at the top of the card*/
+.lotusVCard .lotusAppLinks td{background:#fff url(./images/placeBar.png) left center repeat-x;border-width:0 0 1px 1px;border-style:solid;border-color:#c5c5c5;text-align:center}
+.lotusVCard .lotusAppLinks td.lotusFirst{border-left-width:0}
+.lotusVCard .lotusAppLinks a{display:block;padding:3px 9px;}
+/*the more arrow, for when there is a second row of application links*/
+.lotusVCard .lotusMore{width:16px;margin-right:10px;background:url(images/iconMoreAppsClosed.gif) right center no-repeat;}
+.lotusVCard .lotusMore:hover, .lotusVCard .lotusMore:focus{text-decoration:none}
+.lotusVCard .lotusMoreExpanded{background-image:url(images/iconMoreAppsOpen.gif)}
+/*the detail area of the card that contains all info for the person*/
+.lotusVCard .lotusDetails{padding:10px;border:1px solid #fff;background-color:#eff2f5;}
+.lotusVCard .lotusPhoto{float:left;padding:3px;border:1px solid #bdc4ca;}
+.lotusVCard .lotusPersonInfo{margin-left:86px}
+/*the comment area*/
+.lotusVCard .lotusComment{position:relative;margin:0 0 2px -10px;padding:0 0 0 10px;clear:both}
+.lotusVCard .lotusCommentHeader{position:absolute;top:0;left:16px;z-index:1;padding-left:15px;padding-bottom:3px;height:1.5em;background:url(images/commentPoint.gif) left bottom no-repeat;}
+.lotusVCard .lotusCommentBody{position:relative;top:1.6em;margin:0 10px 2em 0;padding:5px 10px;border:1px solid #c4d8f2;-moz-border-radius:4px;-webkit-border-radius:4px;background-color:#e6f1ff;z-index:0}
+/*actions you can perform on this person, from the person card*/
+.lotusVCard .lotusPersonActions{padding:5px;border-top:1px solid #c5c5c5;background-color:#fff;}
+.lotusVCard .lotusPersonActions .lotusInlinelist li{border-left-color:#105cb6 !important;}
+.lotusVCard .lotusNoDivider li{border-left-width:0}
+.lotusVCard ul.lotusActionMenu{border:0;display:none;width:auto;margin-top:-10px;background:#fff url(images/actionMenuBkgd.gif) top left repeat-y;}
+.lotusVCard .lotusActionMenu li{background-color:transparent;width:100%}
+.lotusVCard .lotusActionMenu li.lotusMenuSeparator{border-top:1px solid #b3cae9}
+.lotusVCard .lotusActionMenu a, .lotusActionMenu a:visited{display:block;width:100%;padding:3px 3px 5px 25px;text-decoration:none;background-position:3px center;background-repeat:no-repeat;color:#000;}/*leaves room for an icon, define them below*/
+.lotusVCard .lotusActionMenu a:hover{color:#000;background-color:#cfecff;}
+/*any specific icon menu items*/
+.lotusVCard .lotusSendMail a{background-image:url(images/iconSendMail.gif)}
+/*adjustments for an inline version of the card*/
+.lotusInlineVCard{position:static;left:auto;margin:0 0 10px 0}
+.lotusInlineVCard, .lotusInlineVCard .lotusContainer{width:175px;position:static;top:auto;left:auto}
+.lotusInlineVCard .lotusPhoto{padding:0;border-width:0;margin-top:5px}
+.lotusInlineVCard .lotusPersonInfo{margin-left:60px;margin-top:4px}
+.lotusInlineVCard .lotusEmail{clear:both;border-width:1px 0;border-style:solid;border-color:#c5c5c5;padding:5px 10px}
+.lotusInlineVCard .lotusAppLinks{list-style-type:none;margin:0;padding:0}
+.lotusPivotNav{float:left;padding:2px 5px 1px 2px}
+.lotusPivotNavToggle{margin:0 5px 0 0;padding:0;float:left;height:45px;width:10px;}
+.lotusPivotNavToggle a{display:block;height:45px;background-position:3px center;background-repeat:no-repeat;text-decoration:none;}
+.lotusPivotNavToggle a:hover, .lotusPivotNavToggle a:focus{text-decoration:none;}
+.lotusPivotNavToggle a{background-color:#d8d8e0;background-image:url(images/vCardClosed.gif)}
+.lotusPivotNavOpen .lotusPivotNavToggle a{background-image:url(images/vCardOpen.gif);background-position:left center}
+.lotusInlineVCardDetails{display:none}
+/***********************************************************/
+
+/*** V C A R D   H O V E R ***/
+/*the element that shows up when you hover over a person link.  Click it and you get the person card*/
+.lotusVCardHover{padding:5px 5px 5px 25px;position:absolute;top:0;left:-9999px;border-width:1px;border-style:solid;-moz-border-radius:2px;-webkit-border-radius:2px;background-position:5px center;background-repeat:no-repeat;white-space:nowrap;text-decoration:none;color:#105cb6;border-color:#aeaeae;background-color:#fff79a;background-image:url(images/iconProfiles.gif);}
+.lotusVCardHover:hover, .lotusVCardHover:focus{text-decoration:none;color:#105cb6;text-decoration:none}
+/***********************************************************/
+
+/*ie hacks*/
+.lotusVCard .lotusInlinelist{overflow:hidden}
+.lotusVCard .lotusInlinelist li{display:inline-block;float:left}
+/*reset styles for IE6*/
+*html .lotusVCard .lotusInlinelist{overflow:auto}
+*html .lotusVCard .lotusInlinelist li{display:inline;float:none}
+.lotusVCard .lotusPhoto{position:relative}/*IE fix for floated elements within a relative container not showing*/
+.lotusVCard .lotusActionMenu a,
+.lotusVCard .lotusActionMenu li{height:1%;display:inline-block}
+.lotusVCard .lotusContainer{overflow:hidden}

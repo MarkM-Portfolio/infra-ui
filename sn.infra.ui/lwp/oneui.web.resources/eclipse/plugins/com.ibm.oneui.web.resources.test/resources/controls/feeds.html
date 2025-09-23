@@ -1,0 +1,63 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>Feeds control</title>
+
+
+<script>
+djConfig.blankGif="";
+
+</script>
+${script:dojo.parser}
+${script:com.ibm.oneui.controls.Feeds}
+
+<script>
+	var items1 = [{
+		text : 'IBM.com',
+		title : 'Feed of IBM.com',
+		type : 'application/atom+xml',
+		href : 'http://www.ibm.com/feed'
+	}, {
+		text : 'Watson',
+		title : 'Feed of Watson technologies',
+		type : 'application/atom+xml',
+		href : 'http://www.ibm.com/watson/feed'
+	}], items2 = [{
+		text : 'Jazz.net',
+		title : 'Feed of Jazz.net',
+		type : 'application/atom+xml',
+		href : 'http://jazz.net/feed'
+	}];
+		
+	dojo.addOnLoad(function() {
+		var bodyElem = document.getElementsByTagName("body")[0];
+		if (dojo.hasClass(bodyElem, "dijit_a11y")) {
+			dojo.addClass(bodyElem, "lotusImagesOff");
+		}
+		dojo.parser.parse();
+		
+		// Creates a Feeds control with a string argument
+		new com.ibm.oneui.controls.Feeds({
+			items: items2
+		}, dojo.byId('feeds1'));
+	});
+</script>
+
+
+<style>
+div.feeds { width: 900px; margin: auto; }
+.lotusui30_body {background-color:#ffffff;}
+</style>
+
+${endhead}
+
+<div class="feeds">
+	<h1>Feeds Control</h1>
+	<h2>Templated</h2>
+	<div dojoType="com.ibm.oneui.controls.Feeds" data-dojo-props="items:window.items1"></div>
+	
+	<h2>Programmatic</h2>
+	<div id="feeds1"></div>
+</div>
+</body>
+${end}

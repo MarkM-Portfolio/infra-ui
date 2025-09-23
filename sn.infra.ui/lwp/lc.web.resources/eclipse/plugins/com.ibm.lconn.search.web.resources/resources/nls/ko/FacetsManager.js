@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+({
+	"CLOSE_HELP_DATE":"날짜 도움말 닫기",
+	"CLOSE_HELP_ECM_DOCUMENT_TYPE":"문서 유형 도움말 닫기",
+	"CLOSE_HELP_PERSON":"사용자 도움말 닫기",
+	"CLOSE_HELP_TAG":"태그 도움말 닫기",
+	"CLOSE_HELP_TREND":"경향 도움말 닫기",
+	"COLLAPSE_DATE":"날짜 필터 접기",
+	"COLLAPSE_ECM_DOCUMENT_TYPE":"문서 유형 필터 접기",
+	"COLLAPSE_PERSON":"사용자 필터 접기",
+	"COLLAPSE_TAG":"태그 필터 접기",
+	"COLLAPSE_TREND":"경향 필터 접기",
+	"DESCRIPTION_DATE":"특정 시간에 작성 또는 업데이트된 결과를 표시하려면 트위스티를 펼치고 년 및 월을 기준으로 정보를 필터링하십시오.",
+	"DESCRIPTION_ECM_DOCUMENT_TYPE":"문서 유형은 더 쉽게 찾을 수 있도록 파일에 지정한 키워드입니다. 해당 키워드가 지정된 검색 결과를 표시하려면 문서 유형을 클릭하십시오.",
+	"DESCRIPTION_PERSON":"검색 결과와 연관된 사용자를 보십시오. 특정 사용자와 연관된 검색 결과를 표시하려면 이름을 클릭하십시오. ",
+	"DESCRIPTION_TAG":"태그는 컨텐츠나 사용자에게 지정한 키워드로서 그 대상을 분류하여 찾기 쉽게 해줍니다. 키워드가 지정된 검색 결과를 표시하려면 태그를 클릭하십시오.",
+	"DESCRIPTION_TREND":"경향은 시스템에서 생성되어 상태 업데이트에서 검색을 보다 쉽게 수행할 수 있게 하는 키워드입니다. 키워드가 지정된 검색 결과를 표시하려면 경향을 클릭하십시오.",
+	"EXPAND_DATE":"날짜 필터 펼치기",
+	"EXPAND_ECM_DOCUMENT_TYPE":"문서 유형 필터 펼치기",
+	"EXPAND_PERSON":"사용자 필터 펼치기",
+	"EXPAND_TAG":"태그 필터 펼치기",
+	"EXPAND_TREND":"경향 필터 펼치기",
+	"HELP_DATE":"날짜 도움말",
+	"HELP_ECM_DOCUMENT_TYPE":"문서 유형 도움말",
+	"HELP_PERSON":"사용자 도움말",
+	"HELP_TAG":"태그 도움말",
+	"HELP_TREND":"경향 도움말",
+	"NO_DATE_CONTENT":"현재 사용할 수 없는 날짜임",
+	"NO_ECM_DOCUMENT_TYPE_CONTENT":"현재 사용할 수 없는 문서 유형임",
+	"NO_PERSON_CONTENT":"현재 사용할 수 없는 사용자임",
+	"NO_TAG_CONTENT":"현재 사용할 수 없는 태그임",
+	"NO_TREND_CONTENT":"현재 사용할 수 없는 경향임",
+	"TITLE_DATE":"날짜",
+	"TITLE_ECM_DOCUMENT_TYPE":"문서 유형",
+	"TITLE_PERSON":"사용자",
+	"TITLE_TAG":"태그",
+	"TITLE_TREND":"경향"
+})
+

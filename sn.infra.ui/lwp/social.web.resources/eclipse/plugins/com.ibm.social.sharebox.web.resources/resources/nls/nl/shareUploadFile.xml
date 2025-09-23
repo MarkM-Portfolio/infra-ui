@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">Bestanden</msg>
+  <msg name="description">Bestandengadget voor het uploaden en delen van bestanden</msg>
+  <msg name="action_uploadFile_label">Bestanden</msg>
+  <msg name="action_uploadFile_tooltip">Bestanden uploaden en delen</msg>
+  <msg name="loading">Bezig met laden...</msg>
+  <msg name="error_msg">De content kan niet worden geladen. Probeer het later opnieuw of neem contact op met de systeembeheerder.</msg>
+  <msg name="error_alt">Fout</msg>
+</messagebundle>

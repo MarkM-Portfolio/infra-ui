@@ -1,0 +1,152 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- HCL Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright HCL Technologies Limited 2014, 2021                     -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="import_from_sequoia" default="development" basedir=".">
+	<property name="include.pattern" value="**/*" />
+
+	<property name="skip.javadoc" value="true" />
+	<property name="skip.javadoc.public" value="true" />
+	<property name="skip.javadoc.full" value="true" />
+	<property name="whitespace.exclude" value="**/*.js" />
+	<property name="jsObfuscator.skipobfuscation" value="true" />
+
+	<import file="${env.WPLC_IMPORT}/std_props.xml" />
+	<import file="${env.WPLC_IMPORT}/std_dirs.xml" />
+
+	<import file="${env.WPLC_IMPORT}/check.xml" />
+	<import file="${env.WPLC_IMPORT}/compile.xml" />
+	<import file="${env.WPLC_IMPORT}/rmic.xml" />
+	<import file="${env.WPLC_IMPORT}/package_extra.xml" />
+	<import file="${env.WPLC_IMPORT}/javadoc.xml" />
+	<import file="${env.WPLC_IMPORT}/jdepend.xml" />
+	<import file="${env.WPLC_IMPORT}/clean.xml" />
+	<import file="${env.WPLC_IMPORT}/comp_zip.xml" />
+	<import file="${env.WPLC_IMPORT}/std_targets.xml" />
+	<import file="${env.WPLC_IMPORT}/process_nls.xml" />
+	<import file="${env.WPLC_IMPORT}/performance.xml" />
+	<import file="${env.WPLC_IMPORT}/dependencies.xml" />
+
+	<target name="production" depends="development" />
+	<target name="development" depends="prepareFileviewerBuild" />
+
+	<property name="output.folder" value="${dir.build}/eclipse/plugins" />
+
+	<property name="fileviewer.bundle.name" value="com.ibm.ic.fileviewer" />
+	<property name="fileviewer.bundle.version" value="1.0.0.SNAPSHOT" />
+	<property name="fileviewer.folder.name" value="${fileviewer.bundle.name}_${fileviewer.bundle.version}" />
+	<property name="fileviewer.jar.name" value="${fileviewer.folder.name}.jar" />
+  
+	<property name="coreutil.bundle.name" value="com.ibm.ic.coreutil" />
+	<property name="coreutil.bundle.version" value="1.0.0.SNAPSHOT" />
+	<property name="coreutil.folder.name" value="${coreutil.bundle.name}_${coreutil.bundle.version}" />
+	<property name="coreutil.jar.name" value="${coreutil.folder.name}.jar" />
+  
+  <macrodef name="importFromIcsc">
+    <attribute name="bundleVersion"/>
+    <attribute name="folderName"/>
+    <attribute name="originalJarNamePattern"/>
+    <attribute name="outputJarName"/>
+    <attribute name="bundleSymbolicName"/>
+    <attribute name="resourceBaseName"/>
+    <attribute name="alias"/>
+
+    <sequential>
+      <locateComponent component="icsc" property="icsc" locateBuildDir="true" />
+
+      <copy todir="${output.folder}" overwrite="true">
+        <fileset dir="${icsc}" includes="@{originalJarNamePattern}" />
+        <globmapper from="*" to="@{outputJarName}"/>
+      </copy>
+
+      <unzip src="${output.folder}/@{outputJarName}" dest="${output.folder}/@{folderName}" />
+
+      <replace file="${output.folder}/@{folderName}/plugin.xml">
+        <replacetoken><![CDATA[</plugin>]]></replacetoken>
+        <replacevalue><![CDATA[  <extension point="net.jazz.ajax.webBundles">
+    <resource base-name="@{resourceBaseName}" />
+    <alias value="@{alias}" />
+  </extension>
+
+</plugin>]]></replacevalue>
+      </replace>
+
+      <replace file="${output.folder}/@{folderName}/plugin.xml">
+        <replacetoken><![CDATA[<dojoModuleBinding bind="ic.fileviewer.FileViewer" to="lconn.share.action.impl.fileViewer" />]]></replacetoken>
+        <replacevalue><![CDATA[<!--dojoModuleBinding bind="ic.fileviewer.FileViewer" to="lconn.share.action.impl.fileViewer" /-->]]></replacevalue>
+      </replace>
+      
+      <local name="manifest.name" />
+      <property name="manifest.name" value="${output.folder}/@{folderName}/META-INF/MANIFEST.MF" />
+
+      <manifest file="${manifest.name}" mode="update">
+        <attribute name="Bundle-SymbolicName" value="@{bundleSymbolicName}" />
+        <attribute name="Bundle-Version" value="@{bundleVersion}" />
+      </manifest>
+
+      <script language="javascript"><![CDATA[
+        var Manifest = java.util.jar.Manifest;
+        var Attributes = java.util.jar.Attributes;
+        var File = java.io.File;
+        var FileInputStream = java.io.FileInputStream;
+        var FileOutputStream = java.io.FileOutputStream;
+
+        var file = new File(project.getProperty("manifest.name"));
+
+        var inputStream = new FileInputStream(file);
+        var manifest = new Manifest();
+        manifest.read(inputStream);
+        inputStream.close();
+
+        manifest.getMainAttributes().remove(new Attributes.Name("Import-Package"));
+        manifest.getMainAttributes().remove(new Attributes.Name("Require-Bundle"));
+
+        var outputStream = new FileOutputStream(file);
+        manifest.write(outputStream);
+
+        outputStream.close();
+      ]]></script>
+
+      <delete file="${output.folder}/@{outputJarName}" />
+
+      <jar destfile="${output.folder}/@{outputJarName}" basedir="${output.folder}/@{folderName}" manifest="${manifest.name}" />
+      
+      <delete dir="${output.folder}/@{folderName}" />
+    </sequential>
+  </macrodef>
+  
+  <target name="prepareFileviewerBuild">
+    <mkdir dir="${output.folder}" />
+    
+    <importFromIcsc
+      bundleVersion="1.0.0.SNAPSHOT"
+      folderName="${fileviewer.folder.name}"
+      bundleSymbolicName="com.ibm.ic.fileviewer;singleton:=true"
+      originalJarNamePattern="ic-fileviewer**.jar"
+      outputJarName="${fileviewer.jar.name}"
+      resourceBaseName="/fileviewer"
+      alias="ic.fileviewer"
+    />
+    
+    <importFromIcsc
+      bundleVersion="1.0.0.SNAPSHOT"
+      folderName="${coreutil.folder.name}"
+      bundleSymbolicName="com.ibm.ic.coreutil;singleton:=true"
+      originalJarNamePattern="ic-coreutil**.jar"
+      outputJarName="${coreutil.jar.name}"
+      resourceBaseName="/coreutil"
+      alias="ic.coreutil"
+    />
+  </target>
+
+</project>

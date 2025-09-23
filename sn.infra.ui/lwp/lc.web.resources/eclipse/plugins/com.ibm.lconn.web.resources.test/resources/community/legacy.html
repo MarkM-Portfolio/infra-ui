@@ -1,0 +1,65 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+${script:lconn.communities.bizCard.bizCard}
+
+${endhead}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+<div>To retrieve data, set LotusConnections-config.xml to point to a communities server.  The business card will appear after you hover and display based on the specified key.</div>
+
+<script>
+	function communityInline(node, id, active) {
+		node = dojo.byId(node);
+		node.innerHTML = '<span class="vcomm X-community-display-inline"><span style="display:none;" class="name">x</span><span style="display:none" id="test1" class="uuid">'+id+'</span><span style="display:none;" class="selectedWidgetId">'+(active || "")+'</span></span>';
+		SemTagSvc.parseDom(null, node);
+	}
+</script>
+
+<table>
+
+<tr>
+<td id="test1">
+<span class="vcomm X-community-display-inline">
+	<span style="display:none;" class="name">x</span>
+	<span style="display:none" class="uuid"></span>
+	<span style="display:none;" class="selectedWidgetId">Forum</span>
+</span>
+</td>
+<td>
+	No UUID entered</td>
+</tr>
+
+
+<tr>
+<td id="test2">
+</td>
+<td>
+	<script>
+	communityInline('test2', '80938320-d0f3-4f2d-b7cc-9170500a0909', 'Forum');
+	</script>
+	<input type="text" onblur="communityInline('test2', this.value, 'Forum');" value="80938320-d0f3-4f2d-b7cc-9170500a0909">
+	Enter the UUID of the community to show inline with the Forum highlighted.</td>
+</tr>
+
+
+<tr>
+<td id="test3">
+</td>
+<td>
+	<script>
+	communityInline('test3', 'bd296d09-b878-44ba-989c-f545f6a72c2a');
+	</script>
+	<input type="text" onblur="communityInline('test3', this.value);" value="bd296d09-b878-44ba-989c-f545f6a72c2a">
+	Enter the UUID of the community to show inline with the nothing highlighted.</td>
+</tr>
+
+</table>
+
+
+</div>
+</div>
+</body>
+${end}

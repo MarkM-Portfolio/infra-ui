@@ -1,0 +1,140 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	UPDATED_BY: "更新者 ${author}",
+	PREVIEW_MODE_ONLY: "（仅限预览方式）",
+	
+	//Community
+	COMMUNITY_VIEWED_TODAY: "社区曾在今天查看",
+	COMMUNITY_VIEWED_YESTERDAY: "社区曾在昨天查看",
+	COMMUNITY_VIEWED_HOURS_AGO: "社区曾在 ${hours} 小时前查看",
+	COMMUNITY_VIEWED_MINUTES_AGO: "社区曾在 ${minutes} 分钟前查看",
+	COMMUNITY_VIEWED_SECONDS_AGO: "社区曾在 ${seconds} 秒钟前查看",
+	COMMUNITY_VIEWED_1_HOUR_AGO: "社区曾在 1 小时前查看",
+	COMMUNITY_VIEWED_1_MINUTE_AGO: "社区曾在 1 分钟前查看",
+	COMMUNITY_VIEWED_1_SECOND_AGO: "社区曾在 1 秒钟前查看",
+	COMMUNITY_VIEWED_AT_DATE: "社区曾在 ${date} 查看",
+	
+	//File
+	FILE_VIEWED_TODAY: "文件曾在今天查看",
+	FILE_VIEWED_YESTERDAY: "文件曾在昨天查看",
+	FILE_VIEWED_HOURS_AGO: "文件曾在 ${hours} 小时前查看",
+	FILE_VIEWED_MINUTES_AGO: "文件曾在 ${minutes} 分钟前查看",
+	FILE_VIEWED_SECONDS_AGO: "文件曾在 ${seconds} 秒钟前查看",
+	FILE_VIEWED_1_HOUR_AGO: "文件曾在 1 小时前查看",
+	FILE_VIEWED_1_MINUTE_AGO: "文件曾在 1 分钟前查看",
+	FILE_VIEWED_1_SECOND_AGO: "文件曾在 1 秒钟前查看",
+	FILE_VIEWED_AT_DATE: "文件曾在 ${date} 查看",
+	
+	//Profile
+	PROFILE_VIEWED_TODAY: "个人档案曾在今天查看",
+	PROFILE_VIEWED_YESTERDAY: "个人档案曾在昨天查看",
+	PROFILE_VIEWED_HOURS_AGO: "个人档案曾在 ${hours} 小时前查看",
+	PROFILE_VIEWED_MINUTES_AGO: "个人档案曾在 ${minutes} 分钟前查看",
+	PROFILE_VIEWED_SECONDS_AGO: "个人档案曾在 ${seconds} 秒钟前查看",
+	PROFILE_VIEWED_1_HOUR_AGO: "个人档案曾在 1 小时前查看",
+	PROFILE_VIEWED_1_MINUTE_AGO: "个人档案曾在 1 分钟前查看",
+	PROFILE_VIEWED_1_SECOND_AGO: "个人档案曾在 1 秒钟前查看",
+	PROFILE_VIEWED_AT_DATE: "个人档案曾在 ${date} 查看",
+	
+	//Activity
+	ACTIVITY_VIEWED_TODAY: "活动曾在今天查看",
+	ACTIVITY_VIEWED_YESTERDAY: "活动曾在昨天查看",
+	ACTIVITY_VIEWED_HOURS_AGO: "活动曾在 ${hours} 小时前查看",
+	ACTIVITY_VIEWED_MINUTES_AGO: "活动曾在 ${minutes} 分钟前查看",
+	ACTIVITY_VIEWED_SECONDS_AGO: "活动曾在 ${seconds} 秒钟前查看",
+	ACTIVITY_VIEWED_1_HOUR_AGO: "活动曾在 1 小时前查看",
+	ACTIVITY_VIEWED_1_MINUTE_AGO: "活动曾在 1 分钟前查看",
+	ACTIVITY_VIEWED_1_SECOND_AGO: "活动曾在 1 秒钟前查看",
+	ACTIVITY_VIEWED_AT_DATE: "活动曾在 ${date} 查看",
+	
+	//Bookmark
+	BOOKMARK_VIEWED_TODAY: "书签曾在今天查看",
+	BOOKMARK_VIEWED_YESTERDAY: "书签曾在昨天查看",
+	BOOKMARK_VIEWED_HOURS_AGO: "书签曾在 ${hours} 小时前查看",
+	BOOKMARK_VIEWED_MINUTES_AGO: "书签曾在 ${minutes} 分钟前查看",
+	BOOKMARK_VIEWED_SECONDS_AGO: "书签曾在 ${seconds} 秒钟前查看",
+	BOOKMARK_VIEWED_1_HOUR_AGO: "书签曾在 1 小时前查看",
+	BOOKMARK_VIEWED_1_MINUTE_AGO: "书签曾在 1 分钟前查看",
+	BOOKMARK_VIEWED_1_SECOND_AGO: "书签曾在 1 秒钟前查看",
+	BOOKMARK_VIEWED_AT_DATE: "书签曾在 ${date} 查看",
+	
+	//Blog
+	BLOG_VIEWED_TODAY: "博客曾在今天查看",
+	BLOG_VIEWED_YESTERDAY: "博客曾在昨天查看",
+	BLOG_VIEWED_HOURS_AGO: "博客曾在 ${hours} 小时前查看",
+	BLOG_VIEWED_MINUTES_AGO: "博客曾在 ${minutes} 分钟前查看",
+	BLOG_VIEWED_SECONDS_AGO: "博客曾在 ${seconds} 秒钟前查看",
+	BLOG_VIEWED_1_HOUR_AGO: "博客曾在 1 小时前查看",
+	BLOG_VIEWED_1_MINUTE_AGO: "博客曾在 1 分钟前查看",
+	BLOG_VIEWED_1_SECOND_AGO: "博客曾在 1 秒钟前查看",
+	BLOG_VIEWED_AT_DATE: "博客曾在 ${date} 查看",
+	
+	//Forum
+	FORUM_VIEWED_TODAY: "论坛曾在今天查看",
+	FORUM_VIEWED_YESTERDAY: "论坛曾在昨天查看",
+	FORUM_VIEWED_HOURS_AGO: "论坛曾在 ${hours} 小时前查看",
+	FORUM_VIEWED_MINUTES_AGO: "论坛曾在 ${minutes} 分钟前查看",
+	FORUM_VIEWED_SECONDS_AGO: "论坛曾在 ${seconds} 秒钟前查看",
+	FORUM_VIEWED_1_HOUR_AGO: "论坛曾在 1 小时前查看",
+	FORUM_VIEWED_1_MINUTE_AGO: "论坛曾在 1 分钟前查看",
+	FORUM_VIEWED_1_SECOND_AGO: "论坛曾在 1 秒钟前查看",
+	FORUM_VIEWED_AT_DATE: "论坛曾在 ${date} 查看",
+	
+	//Wiki
+	WIKI_VIEWED_TODAY: "Wiki 曾在今天查看",
+	WIKI_VIEWED_YESTERDAY: "Wiki 曾在昨天查看",
+	WIKI_VIEWED_HOURS_AGO: "Wiki 曾在 ${hours} 小时前查看",
+	WIKI_VIEWED_MINUTES_AGO: "Wiki 曾在 ${minutes} 分钟前查看",
+	WIKI_VIEWED_SECONDS_AGO: "Wiki 曾在 ${seconds} 秒钟前查看",
+	WIKI_VIEWED_1_HOUR_AGO: "Wiki 曾在 1 小时前查看",
+	WIKI_VIEWED_1_MINUTE_AGO: "Wiki 曾在 1 分钟前查看",
+	WIKI_VIEWED_1_SECOND_AGO: "Wiki 曾在 1 秒钟前查看",
+	WIKI_VIEWED_AT_DATE: "Wiki 曾在 ${date} 查看",
+
+	//Event
+	EVENT_VIEWED_TODAY: "事件曾在今天查看",
+	EVENT_VIEWED_YESTERDAY: "事件曾在昨天查看",
+	EVENT_VIEWED_HOURS_AGO: "事件曾在 ${hours} 小时前查看",
+	EVENT_VIEWED_MINUTES_AGO: "事件曾在 ${minutes} 分钟前查看",
+	EVENT_VIEWED_SECONDS_AGO: "事件曾在 ${seconds} 秒钟前查看",
+	EVENT_VIEWED_1_HOUR_AGO: "事件曾在 1 小时前查看",
+	EVENT_VIEWED_1_MINUTE_AGO: "事件曾在 1 分钟前查看",
+	EVENT_VIEWED_1_SECOND_AGO: "事件曾在 1 秒钟前查看",
+	EVENT_VIEWED_AT_DATE: "事件曾在 ${date} 查看",
+	
+	//To Do
+	TODO_VIEWED_TODAY: "待办事宜曾在今天查看",
+	TODO_VIEWED_YESTERDAY: "待办事宜曾在昨天查看",
+	TODO_VIEWED_HOURS_AGO: "待办事宜曾在 ${hours} 小时前查看",
+	TODO_VIEWED_MINUTES_AGO: "待办事宜曾在 ${minutes} 分钟前查看",
+	TODO_VIEWED_SECONDS_AGO: "待办事宜曾在 ${seconds} 秒钟前查看",
+	TODO_VIEWED_1_HOUR_AGO: "待办事宜曾在 1 小时前查看",
+	TODO_VIEWED_1_MINUTE_AGO: "待办事宜曾在 1 分钟前查看",
+	TODO_VIEWED_1_SECOND_AGO: "待办事宜曾在 1 秒钟前查看",
+	TODO_VIEWED_AT_DATE: "待办事宜曾在 ${date} 查看",
+	
+	//Survey
+	SURVEY_VIEWED_TODAY: "今日查看的调查",
+	SURVEY_VIEWED_YESTERDAY: "昨日查看的调查",
+	SURVEY_VIEWED_HOURS_AGO: "${hours} 小时前查看的调查",
+	SURVEY_VIEWED_MINUTES_AGO: "${minutes} 分钟前查看的调查",
+	SURVEY_VIEWED_SECONDS_AGO: "${seconds} 秒前查看的调查",
+	SURVEY_VIEWED_1_HOUR_AGO: "1 小时前查看的调查",
+	SURVEY_VIEWED_1_MINUTE_AGO: "1 分钟前查看的调查",
+	SURVEY_VIEWED_1_SECOND_AGO: "1 秒前查看的调查",
+	SURVEY_VIEWED_AT_DATE: "已在 ${date} 查看的调查",
+	
+	//Survey
+	GENERIC_VIEWED_TODAY: "在今日查看",
+	GENERIC_VIEWED_YESTERDAY: "在昨日查看",
+	GENERIC_VIEWED_HOURS_AGO: "已在 ${hours} 小时前查看",
+	GENERIC_VIEWED_MINUTES_AGO: "已在 ${minutes} 分钟前查看",
+	GENERIC_VIEWED_SECONDS_AGO: "已在 ${seconds} 秒前查看",
+	GENERIC_VIEWED_1_HOUR_AGO: "已在 1 小时前查看",
+	GENERIC_VIEWED_1_MINUTE_AGO: "已在 1 分钟前查看",
+	GENERIC_VIEWED_1_SECOND_AGO: "已在 1 秒前查看",
+	GENERIC_VIEWED_AT_DATE: "已在 ${date} 查看"
+})
+

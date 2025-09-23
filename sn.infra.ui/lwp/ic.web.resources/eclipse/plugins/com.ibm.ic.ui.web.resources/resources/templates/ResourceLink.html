@@ -1,0 +1,19 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="root">
+	<div class="lotusPopupHeader" data-dojo-attach-point="titleBar">
+		<a class="iconLink" data-dojo-attach-point="iconLink"><img class="iconNode" data-dojo-attach-point="iconNode"></a>
+		<div class="titleIndent" data-dojo-attach-point="titleWrapper"><a data-dojo-attach-point="titleLink"></a></div>
+	</div>
+	
+	<div class="dividerWrapper"><div class="divider" data-dojo-attach-point="divider"></div></div>
+	
+	<div class="summarySection">
+		<div class="loading-wrapper"><span class="image-loading" data-dojo-attach-point="loadingImage"><img class="lotusLoading" src="${_blankGif}"></span></div>
+		<iframe class="loadingIframe" frameborder="0" allowtransparency="true" data-dojo-attach-point="hoverIframe" data-dojo-attach-event="onreadystatechange: _contentLoaded, onload: _contentLoaded"></iframe>
+	</div>
+	
+	<div class="lotusHidden bottomSection" data-dojo-attach-point="bottomSection">
+		<div class="bottomDividerWrapper"><div class="divider" data-dojo-attach-point="bottomDivider"></div></div>
+		<a class="toggleLink" href="#" data-dojo-attach-point="toggleLink" data-dojo-attach-event="onclick: toggleSize">${messages.showMore}</a>
+	</div>
+</div>

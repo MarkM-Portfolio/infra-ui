@@ -1,0 +1,97 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.              -->
+<div name="node"
+     id="node_${id}"
+     role="presentation"
+     class="${classNodeDiv}"
+     dojoAttachEvent="onkeydown:_onKeydown"
+     tabindex="-1"
+     title="${altNode}"
+     style="box-sizing: border-box;">
+   <div name="headerOuter"
+        role="presentation"
+        dojoAttachPoint="headerOuterDiv"
+        class="${classHeaderOuterDiv}">
+      <div name="headerSelector"
+           role="${ariaRoleNode}"
+           dojoAttachPoint="headerSelectorDiv"
+           aria-expanded=false
+     	   aria-selected=false
+     	   aria-checked=false
+     	   class="${classHeaderSelectorDiv}"
+           id="${id}_headerselector"
+           tabindex="-1" >
+         <div name="header"
+              role="presentation"
+              dojoAttachPoint="headerDiv"
+              dojoAttachEvent="onclick:_onclickHeader,onmouseenter:_onmouseenterHeader,onmouseleave:_onmouseleaveHeader,onchange:_onchangeHeader"
+              class="${classHeaderDiv}"
+              style="display:none;"
+              title="${altHeader}">
+            <!-- IMPORTANT: adjust lconn.share.widget.Node._calcAndApplyMaxWidthForTitle() when adding/removing/changing elements -->
+            <div name="checkbox"
+                 role="presentation"
+                 dojoAttachPoint="checkboxDiv"
+                 class="${classCheckboxDiv}"
+                 style="display:none;"
+                 title="${altCheckbox}">
+               <input id="${id}_checkbox"
+                      name="treeNodeCheckbox"
+                      type="checkbox"
+                      dojoAttachPoint="checkbox"
+                      dojoAttachEvent="onclick:_onclickCheckbox"
+                      style="display:none;"
+                      tabindex="-1"
+                      aria-labelledby="${id}_title" />
+               <input id="${id}_radio"
+                      name="treeNodeRadio"
+                      type="radio"
+                      dojoAttachPoint="radio"
+                      dojoAttachEvent="onclick:_onclickCheckbox,onfocus:_onfocusRadio"
+                      style="display:none;"
+                      tabindex="-1"
+                      aria-labelledby="${id}_title" />
+            </div>
+            <div name="twisty"
+                 dojoAttachPoint="twistyDiv"
+                 class="${classTwistyDiv}"
+                 style="display:none;"
+                 title="${altTwisty}">
+               <a role="button"
+                  class="lotusSprite lotusArrow lotusTwistyClosed"
+                  aria-label="${altTwisty}"
+                  href="javascript:;"
+                  tabindex="-1"
+                  dojoAttachPoint="twistyAnchor"
+                  dojoAttachEvent="onclick:_onclickTwisty"
+                  style="display:none;">
+                  <span class="lotusAltText"
+                        role="presentation"
+                        dojoAttachPoint="twistySymbol">&gt;
+                  </span> 
+               </a>
+               <span>&nbsp;</span>
+            </div>
+            <div name="icon"
+                 dojoAttachPoint="iconDiv"
+                 dojoAttachEvent="onclick:_onclickIcon"
+                 class="${classIconDiv}"
+                 style="display:none;"
+                 title="${altIcon}">
+            </div>
+            <div name="title"
+                 id="${id}_title"
+                 dojoAttachPoint="titleDiv"
+                 dojoAttachEvent="onclick:_onclickTitle,onkeypress:_onclickTitle"
+                 class="${classTitleDiv}"
+                 style="display:none;"
+                 title="${altTitle}"
+                 role="button"
+                 aria-pressed="false"
+                 aria-label="${ariaLabelTitle}">
+            </div>
+            <div name="extIcon" dojoAttachPoint="externalDiv" class="${classExternalDiv}" style="display:none;" title="${altExternal}"></div>
+            <div name="share" dojoAttachPoint="visibilityDiv" class="${classVisibilityDiv}" style="display:none;" title="${altVisibility}"></div>
+         </div>
+      </div>
+   </div>
+</div>

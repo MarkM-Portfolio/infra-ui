@@ -1,0 +1,36 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- (C) Copyright IBM Corp. 2006                                      -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<component name="prereqs.web.resources" 
+           type="binary" 
+           description="Target Platform for Connections resources war" 
+           spec-version="1.0"
+           build-version=""
+           owner="Clayton Coleman"
+           owner-email="claycole@us.ibm.com">
+
+   <output-group name="to_osgi_war">
+       <output type="dir" 
+               visibility="public" 
+               platform="all" 
+               location="eclipse" 
+               preferredInstallLocation="WEB-INF/eclipse"/>
+   </output-group>
+   
+   <output-group name="dist">
+       <output type="file" visibility="public" platform="all" location="build.web.resources.target" preferredInstallLocation="" />
+       <output type="file" visibility="public" platform="all" location="build_utils.xml" preferredInstallLocation="" />
+   </output-group>   
+
+</component>

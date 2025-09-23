@@ -1,0 +1,21 @@
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+<div class="lotusPaletteWidget">
+    <div class="lotusInner">
+        <div class="lotusIcon" dojoAttachPoint="widgetIconNode">
+        </div>
+        <div class="lotusTitle">
+            <h4 dojoAttachPoint="titleContainerNode" style="padding: 2px;">
+            	<a href="javascript:;" role="button" dojoAttachPoint="titleNode"></a>
+            	<a href="javascript:;" role="button" dojoAttachPoint="titleNodeAdded" class="homepageUnclickable lotusHidden" aria-pressed="true">
+            		<span href="javascript:;" dojoAttachPoint="titleNodeSpan" class="titleNodeSpanSelected"></span>
+            		<span class="lotusAltText" dojoAttachPoint="layoutAddedDescNode"></span>
+				</a>
+				<span dojoAttachPoint="defaultWidgetLabelNode" class="lotusHidden" style="font-size:1em;color:#777777;font-weight:normal;">${_resourceBundle.DEFAULT}</span>
+            	<br/>
+            	<span dojoAttachPoint="addedWidgetLabelNode" class="lotusAdded lotusHidden">${_resourceBundle.ADDED_WIDGET}</span>
+            </h4>            
+        </div> 
+        <a style="display: none" class="lotusIcon lotusHidden" href="javascript:;" title="${_resourceBundle.ADD_INFO}" dojoAttachPoint="plusIconNode"><img dojoAttachPoint="blankImageNode" title="${_resourceBundle.ADD_INFO}" width="16" height="16" alt="+" /><span class="lotusAltText">+</span></a> 
+    </div>
+</div>

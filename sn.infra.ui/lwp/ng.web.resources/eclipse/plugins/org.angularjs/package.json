@@ -1,0 +1,25 @@
+{
+  "name": "org.angularjs",
+  "version": "1.3.0",
+  "description": "AngularJS packaged for HCL Connections",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular",
+    "angularjs",
+    "ibm",
+    "ics",
+    "connections"
+  ],
+  "dependencies": {
+    "esprima": "",
+    "escodegen": "",
+    "gulp": "",
+    "gulp-rename": "",
+    "through2": ""
+  },
+  "author": "Claudio Procida",
+  "license": "ISC"
+}

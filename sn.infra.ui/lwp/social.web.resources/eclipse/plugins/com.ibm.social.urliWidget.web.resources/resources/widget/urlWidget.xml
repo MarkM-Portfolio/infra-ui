@@ -1,0 +1,56 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<iw:iwidget name="UrliWidget" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" supportedModes="view edit fullpage" mode="" lang="en"
+	iScope="(lconn.core.dynamiciwidget.create('com.ibm.social.urliWidget.web.resources.widget.urlWidget'))">
+	<iw:content mode="view">
+        <![CDATA[        
+            <div id="mainContainer">
+				<div id="iframeWrapper">
+				</div>
+			</div>
+
+			<div class="fatalError" id="fatalError" style="display: none">
+				<h3 id="errorTitle"></h3>
+				<p id="errorDesc"></p>
+			</div>
+        ]]>
+	</iw:content>
+	<iw:content mode="edit">
+        <![CDATA[        
+            <div id="mainContainer">
+               <div id="iframeWrapper">
+            </div>
+         </div>
+
+         <div class="fatalError" id="fatalError" style="display: none">
+            <h3 id="errorTitle"></h3>
+            <p id="errorDesc"></p>
+         </div>
+        ]]>
+   </iw:content>
+   <iw:content mode="fullpage">
+        <![CDATA[        
+            <div id="mainContainer">
+               <div id="iframeWrapper">
+            </div>
+         </div>
+
+         <div class="fatalError" id="fatalError" style="display: none">
+            <h3 id="errorTitle"></h3>
+            <p id="errorDesc"></p>
+         </div>
+        ]]>
+   </iw:content>
+</iw:iwidget>

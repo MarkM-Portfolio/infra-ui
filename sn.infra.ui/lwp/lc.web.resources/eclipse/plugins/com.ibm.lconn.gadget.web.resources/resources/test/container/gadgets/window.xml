@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<Module>
+<ModulePrefs title="Sample Window adjusting gadget"
+             height="400">
+<Require feature="dynamic-height"></Require>
+<Require feature="dynamic-width"></Require>
+<Require feature="open-views"></Require>
+<Require feature="settitle"></Require>
+</ModulePrefs>
+<Content type="html">
+<![CDATA[
+<script>
+
+function setWidth() {
+	gadgets.window.adjustWidth(document.getElementById("width").value);
+	document.getElementById("output").innerHTML = "width altered...";
+}
+
+function setHeight() {
+	gadgets.window.adjustHeight(document.getElementById("height").value);
+	document.getElementById("output").innerHTML = "height altered...";
+}
+
+function setSize() {
+	gadgets.window.adjustSize(document.getElementById("height").value, document.getElementById("width").value);
+	document.getElementById("output").innerHTML = "height and width altered with one call...";
+}
+
+function getVDims() {
+	var myDims = gadgets.window.getViewportDimensions();
+	document.getElementById("vDimWidth").value = myDims.width;
+	document.getElementById("vDimHeight").value = myDims.height;
+	document.getElementById("output").innerHTML = "Viewport dimensions were discovered";
+}
+
+function useCDims(myDims) {
+	console.log(myDims);
+	document.getElementById("cDimWidth").value = myDims.width;
+	document.getElementById("cDimHeight").value = myDims.height;
+	document.getElementById("output").innerHTML = "Container dimensions were discovered";
+}
+
+function getCDims() {
+	console.log("getting container dims");
+	console.log(gadgets.window.getContainerDimensions);
+	gadgets.window.getContainerDimensions(useCDims);
+}
+
+function setTitle() {
+	gadgets.window.setTitle(document.getElementById("newTitle").value);
+	document.getElementById("output").innerHTML = "title set...";
+}
+
+</script>
+<div>
+<input type="text" id="width" name="width" /><input type="button" value="Set Width" onclick="setWidth()"/> <br />
+<input type="text" id="height" name="height" /><input type="button" value="Set Height" onclick="setHeight()"/> <br />
+
+<input type="button" value="Set Size" onclick="setSize()"/> <br />
+
+<br />
+
+Viewport Width : <input type="text" id="vDimWidth" name="vDimWidth" disabled="disabled" /> <br />
+Viewport Height : <input type="text" id="vDimHeight" name="vDimHeight" disabled="disabled" /> <br />
+<input type="button" value="get Viewport Dimensions" onclick="getVDims()"/> <br />
+
+<br />
+
+Container Width : <input type="text" id="cDimWidth" name="cDimWidth" disabled="disabled" /> <br />
+Container Height : <input type="text" id="cDimHeight" name="cDimHeight" disabled="disabled" /> <br />
+<input type="button" value="get Container Dimensions" onclick="getCDims()"/> <br />
+
+<br />
+
+
+<input type="text" id="newTitle" name="newTitle" /><input type="button" value="Set Title" onclick="setTitle()"/> <br />
+<br />
+</div>
+<div id="output">
+</div>
+]]>
+</Content>
+</Module>

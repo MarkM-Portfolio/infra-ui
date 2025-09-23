@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">Soubory</msg>
+  <msg name="description">Modul gadget umožňující odesílat a sdílet soubory</msg>
+  <msg name="action_uploadFile_label">Soubory</msg>
+  <msg name="action_uploadFile_tooltip">Odesílání a sdílení souborů</msg>
+  <msg name="loading">Probíhá načítání...</msg>
+  <msg name="error_msg">Obsah nelze načíst. Zkuste akci zopakovat nebo se obraťte na administrátora.</msg>
+  <msg name="error_alt">Chyba</msg>
+</messagebundle>

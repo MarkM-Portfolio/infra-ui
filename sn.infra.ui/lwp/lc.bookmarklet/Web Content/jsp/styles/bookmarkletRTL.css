@@ -1,0 +1,130 @@
+/* *************************************************************** */
+/*                                                                 */
+/* HCL Confidential                                                */
+/*                                                                 */
+/* OCO Source Materials                                            */
+/*                                                                 */
+/* Copyright HCL Technologies Limited 2007, 2022                   */
+/*                                                                 */
+/* The source code for this program is not published or otherwise  */
+/* divested of its trade secrets, irrespective of what has been    */
+/* deposited with the U.S. Copyright Office.                       */
+/*                                                                 */
+/* *************************************************************** */
+ul {list-style-type:none !important;}
+li {white-space:normal !important;float:none;}
+ul.lotusTabs{right:10px;position:relative;}
+.bookmarkletWarningMsgBox{margin-left:0px !important;top:0px !important;}
+
+.lotusBookmarklet.cnx8-ui #bookmarkletForm .lotusDialogHeader h1#pageTitleField {
+    color: #000;
+    margin: 0px 3px;
+}
+
+.lotusBookmarklet.cnx8-ui table#addBookmarksTab tbody>tr#lotusTabContainer>td div.lotusTabContainer>ul#lotusTabs>li {
+    border: none;
+    width: 130px;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.lotusBookmarklet.cnx8-ui table#addBookmarksTab tbody>tr#lotusTabContainer>td div.lotusTabContainer>ul#lotusTabs {
+    bottom: 0px !important;
+}
+
+.lotusBookmarklet.cnx8-ui table#addBookmarksTab tbody>tr#lotusTabContainer>td div.lotusTabContainer>ul#lotusTabs li.lotusSelected a {
+    color: #4984b8;
+    border-bottom: 2px solid #4984b8;
+    font-size: 0.84em;
+}
+
+.lotusBookmarklet.cnx8-ui table#addBookmarksTab tbody>tr#lotusTabContainer td {
+    width: 100%;
+    padding: 30px 0px 0px 0px !important;
+}
+
+.lotusBookmarklet.cnx8-ui table#addBookmarksTab tbody>tr>td {
+    display: block;
+    margin: 0px;
+    padding: 3px;
+    width: 75%;
+}
+
+.lotusBookmarklet.cnx8-ui table#addBookmarksTab tbody>tr.lotusFormTabContentFirst>td {
+    margin: 15px 0px;
+}
+
+.lotusBookmarklet.cnx8-ui table>tbody>tr.lotusFormTabContentFirst>td>div>label.labelForBookmark {
+    margin-right: 36px;
+    font-size: 0.95em;
+}
+
+.lotusBookmarklet.cnx8-ui table#addBookmarksTab tbody>tr>td.lotusFormFooter {
+    border-top: none;
+    padding: 0px !important;
+}
+
+.lotusBookmarklet.cnx8-ui table#addBookmarksTab tbody>tr>td.lotusFormFooter input#submitBtn {
+    background: #01539B !important;
+    border-radius: 1px !important;
+    border: 1px solid #01539B !important;
+    color: #fff !important;
+    width: 82px;
+    font-weight: 400;
+    height: 27px;
+    box-shadow: none;
+}
+
+.lotusBookmarklet.cnx8-ui table#addBookmarksTab tbody>tr>td.lotusFormFooter input#cancelBtn {
+    background: transparent !important;
+    border-radius: 1px !important;
+    border: 1px solid #01539B !important;
+    color: #01539B !important;
+    height: 27px;
+    width: 82px;
+    box-shadow: none;
+}
+
+.lotusBookmarklet.cnx8-ui table#addBookmarksTab tbody>tr#lotusTabContainer>td div.lotusTabContainer>ul#lotusTabs>li.lotusSelected {
+    bottom: -3px !important;
+}
+.lotusBookmarklet.cnx8-ui #bookmarkletForm .lotusDialogHeader {
+    background: transparent;
+    padding-bottom: 0px;
+}
+
+.lotusBookmarklet.cnx8-ui #bookmarkletForm .lotusDialogHeader h1#pageTitleField {
+    color: #000;
+}
+
+.lotusBookmarklet.cnx8-ui #bookmarkletForm table.lotusFixedTable.lotusDialogContent {
+    padding: 10px 20px;
+}
+
+.lotusBookmarklet.cnx8-ui table#addBookmarksTab tbody>tr>td {
+    display: block;
+    margin: 0px;
+    padding: 3px;
+    width: 70%;
+}
+
+.lotusBookmarklet.cnx8-ui #bookmarkletForm table#addBookmarksTab tbody>tr>td>label {
+    color: #3D5466 !important;
+    font-size: 0.7rem !important;
+    text-align: left;
+    opacity: 1;
+    font-weight: 600;
+}
+
+.lotusBookmarklet.cnx8-ui table#addBookmarksTab tbody>tr>td>input {
+    height: 23px;
+}
+
+.lotusBookmarklet.cnx8-ui #bookmarkletForm table#addBookmarksTab {
+    padding-top: 0px;
+}
+
+body.lotusBookmarklet.cnx8-ui {
+    overflow: hidden;
+    font: -webkit-control;
+}

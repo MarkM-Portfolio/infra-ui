@@ -1,0 +1,550 @@
+/* *************************************************************** */
+/*                                                                 */
+/* HCL Confidential                                                */
+/*                                                                 */
+/* OCO Source Materials                                            */
+/*                                                                 */
+/* Copyright HCL Technologies Limited 2008, 2022                   */
+/*                                                                 */
+/* The source code for this program is not published or otherwise  */
+/* divested of its trade secrets, irrespective of what has been    */
+/* deposited with the U.S. Copyright Office.                       */
+/*                                                                 */
+/* *************************************************************** */
+
+.emailPreferences .lotusForm2 label {
+	font-weight: normal;
+}
+
+label.lotusCheckbox {
+	margin-left: 7px;
+}
+
+tr.prefRow {
+	background-color: #F0F4F7;
+}
+
+tr.prefRowHeader {
+	background-color: #F0F4F7;
+	border: 1px solid  #F0F4F7;
+}
+
+/* Should not be needed when the HelpLauncher markup 
+   matches One UI's. */
+.lotusui30 .lotusHelp .lotusInfoBox h3 {
+	float: none;
+}
+
+
+.lotusContent span.positionAbsolute {
+	position: absolute;
+}
+
+
+.lotusContent .lotusForm2 {
+	background-color: transparent;
+}
+
+.lotusForm2 .confMessagePadding {
+	padding: 10px 20px 5px;
+}
+
+.lotusForm2 .lotusFormTitle .notificationPrefTitle {
+	margin-left: 7px; margin-right: 7px;
+}
+
+table.prefTable {
+	width: 80%;
+}
+
+td.prefData {
+	width: 49%;
+	padding: 5px;
+}
+
+td.prefData.prefDataLanguage{
+	width: 49%;
+	padding: 5px;
+	vertical-align: top;
+}
+
+td.checkboxPrefCell input{
+	horizontal-align: middle;
+}
+
+td.checkboxPrefCell span.checkboxPrefHelp{
+	display: inline-table;
+	padding-left: 10px;
+}
+
+td.prefData.prefDataLanguage span span{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+td.prefData.prefDataLanguage #languageSelectorNodeText{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+
+.lotusForm2 .lotusFormTitle.prefTitlePadding {
+	padding-top: 35px;
+}
+
+.lotusForm2 .lotusFormBody.responsesNotifications {
+	margin-bottom: 20px;
+}
+
+.responsesNotifications table {
+	border-spacing: 3px; 
+	width: 80%
+}
+
+th.prefRowHeaderText {
+	width: 45%; 
+	padding: 5px;
+}
+
+span.responsesDataBodyText {
+	margin-left: 3px; margin-right: 3px
+}
+
+td.responsesDataBody {
+	text-align: center;
+}
+
+.lotusFormFooter {
+	background-color: transparent; 
+	padding-top: 15px;
+}
+
+.lotusHidden.progressIndicator {
+	margin-top: 30px;
+}
+
+
+.lotusHidden.progressIndicator img.loading {
+	padding: 0px 7px;
+}
+
+span.replyToHelp{
+	display: inline-table; 
+	padding-left: 10px;	
+}
+
+
+span.cleanReplyToHelp{
+	display: inline-table; 
+	padding-left: 10px; 
+	padding-right: 10px;
+}
+
+.lotusui_ie7 .lotusui30 .lotusForm2 INPUT.lotusCheckbox.emailPrefsCheckbox{
+    margin-right: 0px;
+}
+
+.lotusui_ie .lotusui30 .lotusForm2 INPUT.lotusCheckbox{
+    top: -1px;
+}
+/* Email notification -settings page changes */
+.updatedNavigation .lotusNavTabs li {
+	margin-right: 0px !important;
+}
+.updatedNavigation .lotusTabWrapper a {
+	margin-right: 0px !important;
+}
+.updatedNavigation {
+	width: min-content;
+	display: inline-block;
+	background: var(--color-third-navigation-base);
+	margin-left: -24px;
+	height: 45em;
+	top: -14%;
+	border-right: 1px solid var(--color-third-navigation-border);
+}
+.updatedNavigation .lotusSelected span {
+	width: 179px !important;
+    background: var(--color-third-navigation-selected-option) !important;
+    display: inline-block;
+    margin-left: -26px !important;
+    padding-left: 21px !important;
+}
+.updatedNavigation .lotusTabWrapper a {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.updatedNavigation .lotusTab {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.hidelotusBtnSpecial .lotusBtn {
+	background-color:  var(--color-button);
+	color: var(--color-base-background);
+	border-radius: 2px;
+	font-family: var(--font-family);
+}
+.app-news.cnx8-ui .updatedNotification label.switch {
+	float: right;
+	margin-right: 8%;
+}
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 34px;
+	height: 14px;
+}
+.switch input { 
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: -5px;
+	bottom: 0;
+	-webkit-transition: .4s;
+	transition: .4s;
+	background-color: var(--color-button-disabled-text) !important;
+}
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 20px !important;
+	width: 20px !important;
+	background-color: var(--color-button) !important;
+	margin: -4px 0px 0px -5px !important;
+	left: 0px !important;
+	bottom: 0px;
+	-webkit-transition: .4s;
+	transition: .4s;
+	top:1px;
+}
+input:checked + .slider {
+	background-color: var(--color-switch-primary) !important;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px var(--color-button-disabled-text) !important;;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+	background-color: var(--color-button) !important;
+}
+/* Rounded sliders */
+.slider.round:before {
+	border-radius: 50%;
+	background-color: var(--color-base-background) !important;
+	box-shadow: 0 0 2px;
+}
+.slider.round {
+	height: 16px;
+	width: 37px;
+	border-radius: 7px;
+	background-color: var(--color-button-disabled-text) !important;
+}
+.updatedNotification tbody tr:nth-child(odd) {
+	background-color: var(--color-main-secondary-background) !important;
+}
+.updatedNotification .confMessagePadding {
+	padding: 0px;
+}
+.updatedNotification tr {
+	height:70px;
+}
+.updatedNotification table {
+	border-spacing: 0px !important;
+	margin-left:10px;
+}
+.updatedNotification table {
+	border: 2px solid var(--color-header-text-hover);
+}
+.updatedNotification table tr td select {
+	box-sizing: border-box;
+	height: 36px;
+	width: 177px;
+	border-radius: 2px;
+	background: var(--color-main-secondary-background);
+}
+.updatedNotification table tr td select {
+	/* height: 21px; */
+	width: 165px;
+	color: var(--color-tab-text);
+	font-family: var(--font-family);
+	font-size: var(--font-size-small) !important;
+	letter-spacing: 0.15px;
+	line-height: 21px;
+}
+.updatedNotification tr td {
+	height: 16px;
+	width: 51px;
+	color: var(--color-tab-text);
+	font-family: var(--font-family);
+	font-size: var(--font-size-small);
+	letter-spacing: 0;
+	line-height: 16px;
+}
+.updatedNotification tr td:first-child {
+	padding-left: 15px;
+}
+.lotusWrapper {
+	min-width:250px !important;
+}
+.modifiedLotusTitleBar2 {
+	border: solid;
+	width: 210px;
+	float: left;
+}
+.updatedNotification {
+	width: 80%;
+	clear: none;
+	display: inline;
+	clear: none !important;
+	float: left;
+	left: 11%;
+}
+.lotusui30 .updatedNavigation .lotusNavTabs {
+	padding-left: 25px !important;
+}
+.updatedNotification .lotusFormBody .prefTable tr {
+	background: var(--color-base-background) !important;
+	
+}
+.updatedNotification span#NewsLanguageSelector {
+	box-sizing: border-box;
+	height: 36px;
+	border: 1px solid var(--color-header-text-hover);
+	border-radius: 2px;
+	background-color: var(--color-main-secondary-background);
+	display: inline-block;
+	width: 44%;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: url(../../images/caret-down.svg);
+	background-repeat: no-repeat;
+	background-size: 0.85em 0.85em;
+	background-position: 94% center;
+	background-clip: border-box;
+	padding: 5px !important;
+	color: #3D5466;
+}
+.updatedNotification .lotusFormBody .prefTable tr td {
+	padding-left: 0px !important;
+}
+.updatedNotification .lotusForm2 input.lotusCheckbox {
+	height: 15px;
+	width: 15px;
+	top: -1px;
+}
+.updatedNotification .prefDataLanguage label.lotusCheckbox {
+	padding-top: 7px !important;
+	display: inline-block !important;
+	margin-left:36%;
+}
+.updatedNotification input.lotusBtn {
+	/* border: solid red; */
+	background-color: var(--color-base-background) !important;
+	color: var(--color-button) !important;
+	background-image: none !important;
+	box-shadow: 0 0 0 1px var(--color-button) inset !important;
+}
+.updatedNotification input.lotusBtn:first-child {
+	border: solid;
+	background: var(--color-button) !important;
+	color: var(--color-base-background) !important;
+	box-shadow: 0 0 0 1px var(--color-button) inset !important;
+}
+input.lotusBtn.lotusBtnSpecial {
+	float: right;
+}
+input.lotusBtn:nth-child(2) {
+	float: left;
+}
+input.lotusBtn.lotusBtnSpecial:nth-child(1) {
+	margin-left: 67%;
+}
+input.lotusBtn:nth-child(1) {
+	float: right;
+}
+.updatedNotification .lotusFormFooter.hidelotusBtnSpecial {
+	width: 98%;
+}
+.updatedNotification #languageSelectorNodeText {
+	color: var(--color-scrollbar-thumb-hover) !important;
+	font-weight: var(--font-weight-normal) !important;
+}
+.app-news.cnx8-ui .updatedNotification .lotusTitleBar2 .lotusNavTabs li.lotusSelected .lotusTab {
+	border-bottom: none;
+}
+.app-news.cnx8-ui .updatedNavigation .lotusNavTabs .lotusTabInner {
+	font-weight: var(--font-weight-normal);
+}
+.app-news.cnx8-ui .updatedNotification .lotusMain {
+	margin-top: -3% !important;
+}
+.app-news.cnx8-ui .updatedNotification .prefTable {
+	border: none;
+}
+.app-news.cnx8-ui .updatedNotification .lotusForm2 .lotusFormTitle {
+	border-top: none;
+	margin-top: -3%;
+}
+.app-news.cnx8-ui .updatedNotification .lotusui30 .lotusHeader {
+	margin-bottom: 0px;
+}
+.app-news.cnx8-ui .updatedNotification .lotusHeader {
+	margin-bottom: 10px !important;
+}
+.app-news.cnx8-ui .updatedNotification .lotusForm2 {
+	margin-top: -1%;
+}
+.app-news.cnx8-ui .updatedNotification table.prefTable tr {
+	height: 45px;
+}
+.updatedNotification .responsesNotifications table {
+	border-radius: 10px;
+	width:95%;
+}
+.app-news.cnx8-ui .updatedNotification .responsesNotifications table:nth-child(2) {
+	margin-top: 2%;
+}
+.app-news.cnx8-ui .updatedNotification span#NewsLanguageSelector img {
+	float: right !important;
+	margin-top: 5px !important;
+}
+.app-news.cnx8-ui .updatedNotification .prefTable .prefDataLanguage label {
+	margin-left: 29%;
+}
+.app-news.cnx8-ui .updatedNotification table.prefTable {
+	width:97%;
+	border:none;
+}
+.app-news.cnx8-ui .updatedNotification label.switch {
+	float: right;
+	margin-right: 8%;
+	top: 12px;
+}
+.app-news.cnx8-ui .updatedNotification {
+	margin-top: 0px !important;
+}
+.updatedNavigation .lotusNavTabs li.lotusSelected .lotusTab {
+	border-bottom: 0px !important;
+}
+/*Email notification - settings page changes */
+.cnx8-ui input.lotusBtn.lotusBtnSpecial {
+	float: none;
+}
+.cnx8-ui span#NewsLanguageSelector a {
+	padding-top: 2%;
+	display: inline-block;
+	padding-left: 5%;
+	width: 90%;
+}
+/*Email notification - settings page changes */
+.cnx8-ui input.lotusBtn.lotusBtnSpecial {
+	float: none;
+}
+.cnx8-ui span#NewsLanguageSelector a {
+	padding-top: 2%;
+	display: inline-block;
+	padding-left: 5%;
+	width: 90%;
+}
+/* Settings page css update */
+.updatedNotification h1#page_heading {
+	font-size: var(--font-size-large) !important;
+	margin-left: 0.4%;
+}
+.updatedNotification .lotusForm2 input.lotusCheckbox {
+	margin-left: 1px;
+}
+.updatedNotification label.lotusCheckbox.emailPrefsCheckbox {
+	margin-left: 1.2%;
+}
+.updatedNotification .responsesNotifications table:nth-child(1) tr > th:nth-child(1) {
+	display: none;
+}
+.updatedNotification .lotusForm2 .lotusFormTitle .notificationPrefTitle {
+	display: none;
+}
+.updatedNotification th.prefRowHeader {
+	text-align: left;
+	padding-left: 1.6% !important;
+}
+.updatedNotification input#directNotifications {
+	margin-left: 1px;
+}
+.updatedNotification span#NewsLanguageSelector {
+	width: 40% !important;
+}
+.updatedNotification th.prefRowHeaderText span:nth-child(2) {
+	width: 100%;
+	display: inline-block;
+	text-align: left;
+	font-weight: var(--font-weight-normal);
+	margin-top: 2%;
+}
+.updatedNotification th.prefRowHeaderText span {
+	margin-left: 2%;
+}
+.updatedNotification table tr td select{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: url("../../images/caret-down.svg");
+	background-repeat: no-repeat !important;
+    background-size: 0.85em 0.85em !important;
+    background-position: 97% center !important;
+    background-clip: border-box !important;
+    padding: 1px 5px !important;
+    border: 1px solid !important;	
+	color: #3D5466;
+}
+/* Settings page css update */
+
+/* start defaulthomepage view */
+.def-hp-form-container {
+    border-bottom: 1px solid var(--color-header-text-hover);
+}
+
+.def-hp form.def-hp-settings {
+    margin: 2em 0em 1.5em -1em;
+}
+
+.def-hp-settings label {
+    margin: 1em;
+}
+.def-hp-settings label.disabled, .def-hp-settings span.disabled {
+    color: var(--color-button-disabled-text) !important;
+}
+
+.def-hp-error {
+    background-color: var(--color-admin-banner-error);
+    margin-left: 0.5em;
+    margin-top: 1em;
+}
+/* end defaulthomepage view */
+
+.app-news.cnx8-ui.lotusui30 .lotusTitleBar2 .lotusNavTabs a.lotusTab, .app-news.cnx8-ui.lotusui30 .lotusTitleBar2 .lotusNavTabs a.lotusTab:visited {
+	line-height: 1.50;
+}
+
+.cnx8-ui.app-news .lotusTitleBar2.lotusTitleBar2Tabs .lotusInner {
+	padding-top: 0px;
+}
+.cnx8-ui.app-news .updatedNavigation {
+	min-height: 100%;
+}
+.cnx8-ui.app-news .lotusFooter {
+	padding-bottom: 100px;
+	margin-top: 0px;
+}
+.cnx8-ui.app-news .def-hp {
+	margin-top: 2%;
+	margin-left: 2%;
+}

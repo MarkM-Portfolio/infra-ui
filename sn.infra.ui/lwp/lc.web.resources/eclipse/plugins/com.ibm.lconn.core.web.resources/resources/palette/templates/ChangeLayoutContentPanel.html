@@ -1,0 +1,23 @@
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+<div class="lotusPaletteContent">
+<div class="lotusLargeWidgets">
+<div dojoAttachPoint="noWidgetNode" class="lotusHidden lotusPaging">
+${_resourceBundle.NO_WIDGET}</div>
+<div dojoAttachPoint="containerNode"></div>
+</div>
+<div class="lotusLeft lotusPaging" dojoAttachPoint="legendNode">
+	<img dojoAttachPoint="navLegendImgNode" title="${_resourceBundle.NAV_LEGEND}" width="14" height="14" alt="${_resourceBundle.NAV_LEGEND}" /> = ${_resourceBundle.NAVIGATION}
+</div>
+<div class="lotusPaging lotusHidden"
+	dojoAttachPoint="pagerContainerNode">
+<div class="lotusLeft lotusHidden" dojoAttachPoint="pagerNode"></div>
+<ul class="lotusRight lotusInlinelist lotusHidden" dojoAttachPoint="scrollControlNode">
+	<li class="lotusFirst" dojoAttachEvent="onclick: onPrevious"
+		dojoAttachPoint="previousNode">${_resourceBundle.PREVIOUS}</li>
+	<li dojoAttachEvent="onclick: onNext" dojoAttachPoint="nextNode">
+	<a href="javascript:;">${_resourceBundle.NEXT}</a></li>
+</ul>
+</div>
+</div>
+

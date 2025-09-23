@@ -1,0 +1,52 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+${script:dijit._Widget}
+${script:lconn.core.ckeditor}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+
+<a onclick="document.body.style.width = '1200px'; return false;" href="#">Page width 1000px</a> |
+<a onclick="document.body.style.width = '400px'; return false;" href="#">Page width 400px</a>
+<br>
+
+<table style="width: 100%;" cellpadding="1" cellspacing="1" border="1">
+<thead><tr>
+<th>Test case</th><th>Description</th>
+</tr></thead><tbody>
+
+<tr><td>
+    <div id="ckdiv"></div>
+</td><td>
+    Loading CKEditor on demand with arguments passed.
+</td></tr>
+
+
+<tr><td>
+    <div id="ckdiv2"><INPUT type="button" onclick="load2()" value="Load me"></div>
+</td><td>
+    Loading CKEditor on demand with a function passed.
+</td></tr>
+
+
+</tbody></table>
+</div>
+</div>
+</body>
+<script>
+  lconn.core.ckeditor.replace("ckdiv");
+</script>
+<script>
+  function load2() {
+	  dojo.byId("ckdiv2").innerHTML = "testing loading";
+	  lconn.core.ckeditor.async(function() {
+		  var ed = CKEDITOR.replace("ckdiv2");
+		  ed.on("blur", function() {console.log('blurred');});
+	  });	  
+  }
+</script>
+
+${end}
+

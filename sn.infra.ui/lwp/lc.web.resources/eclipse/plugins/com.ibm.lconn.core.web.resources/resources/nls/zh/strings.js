@@ -1,0 +1,366 @@
+/* *************************************************************** */
+/*                                                                 */
+/* HCL Confidential                                                */
+/*                                                                 */
+/* OCO Source Materials                                            */
+/*                                                                 */
+/* Copyright HCL Technologies Limited 2008, 2019                   */
+/*                                                                 */
+/* The source code for this program is not published or otherwise  */
+/* divested of its trade secrets, irrespective of what has been    */
+/* deposited with the U.S. Copyright Office.                       */
+/*                                                                 */
+/* *************************************************************** */
+
+// NLS_CHARSET=UTF-8
+({
+   'rs_close' : "关闭",
+   'rs_loading' : "正在装入...",
+   'rs_at' : "，",
+
+   'rs_searchDirectory' : "未列出任何人员？ 请使用完整搜索...",
+   'rs_searchGroupDirectory' : "组未列出？ 请使用完整搜索...",
+   'rs_searchPersonAndGroupDirectory' : "人员或组未列出？ 请使用完整搜索...",
+   'rs_searchCommunityDirectory' : "社区未列出？ 请使用完整搜索...",
+
+   'rs_shadowText_searchDirectory' : "输入信息以查找人员",
+   'rs_shadowText_searchGroupDirectory' : "输入信息以查找组",
+   'rs_shadowText_searchPersonAndGroupDirectory' : "输入信息以查找人员或组",
+   'rs_shadowText_searchCommunityDirectory' : "输入信息以查找社区",
+
+   'rs_listItem' : "列表项",
+   'rs_noResults' : "“${0}”没有结果",
+   'rs_today' : "今天",
+   'rs_tomorrow' : "明天",
+   'rs_yesterday' : "昨天",
+
+   /* Activity List Widget */
+   'rs_activityFeedLink' : "这些活动的订阅源",
+   'rs_externalText' : "此活动可以包含贵组织以外的成员。",
+   'rs_moveActivitySuccess' : '已将“${activityTitle}”成功移到“${destCommName}”子社区。',
+   // copy 'rs_moreInfo' and 'rs_hideInfo' from activity's strings.js
+   'rs_moreInfo' : '显示有关此活动的更多信息',
+   'rs_hideInfo' : '隐藏附加信息',
+   'rs_more' : "更多",
+   'rs_hide' : "隐藏",
+   'rs_edit' : "编辑",
+   'rs_restore' : "恢复",
+   'rs_deleteEntry' : "删除",
+   'rs_prioritize' : "划分优先级",
+   'rs_markComplete' : "标记为完成",
+   'rs_markIncomplete' : "恢复",
+   'rs_linkMore' : "... [更多]",
+   'rs_linkLess' : "... [更少]",
+   'rs_actUpdatedByDate' : "更新者 ${0} ${1}",// Updated by (author name) (date)
+   'rs_actUpdatedBy' : "更新者 ${0}",// Updated by (author name)
+   'rs_actDue' : "到期日期 ${0}",// Due (date)
+   'rs_actTags' : "标签： ",
+   'rs_actTagsDelim' : ", ",
+   'rs_startFromTemplate' : "从此模板启动活动",
+   'rs_favoriteTemplate' : "标记为收藏模板",
+   'rs_normalTemplate' : "标记为普通模板",
+   'rs_tunedOutPri' : "忽视",
+   'rs_pagepos' : "${0} - ${1}/${2}", // pagination - e.g. 1 - 10 of 100
+   'rs_navPrevLabel' : "上一步",
+   'rs_navNextLabel' : "下一步",
+   'rs_noActivities' : "此社区中未发起任何活动。",
+   'rs_feedError' : "无法装入订阅源。",
+   'rs_highPri' : "高优先级",
+   'rs_medPri' : "中等优先级",
+   'rs_normalPri' : "正常优先级（缺省值）",
+   'rs_tuneOut' : "标记为调出",
+   'rs_startActivity' : "发起活动",
+   'rs_startFirstActivity' : "创建第一个活动",
+   'rs_navNextLabel' : "下一步",
+   'rs_viewAll' : "查看全部",
+   'rs_activityWidgetTitle' : "活动",
+   'rs_activityWidgetBriefDescription' : "跟踪社区目标。创建待办事宜和共享资源。",
+   'rs_activityWidgetDescription' : "社区活动可用于协作并跟踪社区项目或计划的进度。",
+   'rs_completedActivityLink' : "显示已完成的活动",
+   'rs_activitiesUnavailable' : "活动服务不可用。",
+   'rs_errorPersists' : "如果问题仍然存在，请与管理员联系。",
+   'rs_shared' : "已共享",
+   'rs_removeActFromComm' : "从社区除去",
+   'rs_externalLabel' : "外部",
+
+   // for ActivityForm
+   'rs_templateOptions' : "模板选项",
+   'rs_template' : "模板",
+   'rs_tagsLabel' : "标签",
+   'rs_peopleLabel' : "人员",
+   'rs_aboutThisTemplate' : "关于此模板",
+   'rs_activity' : "活动",
+   'rs_copyOf' : "${0} 的副本",// copy of (activity name)
+   'rs_activityFormGoal' : "活动目标",
+   'rs_noTemplate' : "无",
+   'rs_copyActivityMembers' : "使用活动的成员",
+   'rs_copyTemplateMembers' : "使用模板的成员",
+
+   /* Forum Widget */
+   'rs_noTopics' : "此社区中尚不存在主题。",
+   'rs_noTopicsLoggedIn' : "提问、集体讨论或分享您的观点。",
+   'rs_postedBy' : "最新发布者",
+   'rs_topics' : "个主题",
+   'rs_noTopicsShort' : "无主题",
+   'rs_topic' : "主题",
+   'rs_replies' : "个回复",
+   'rs_noReplies' : "无回复",
+   'rs_reply' : "回复",
+   'rs_startTopic' : "创建主题",
+   'rs_startFirstTopic' : "创建第一个主题",
+   'rs_ok' : "确定",
+   'rs_locked' : "[已锁定]",
+   'rs_manageForumSetting' : "管理论坛设置",
+   'rs_forumSettingCommunityOverviewPage' : "社区概述页面：",
+   'rs_defaultForumList' : "缺省情况下显示论坛列表",
+   'rs_defaultTopicList' : "缺省情况下显示主题列表",
+   'rs_forumSettingApplicationView' : "论坛应用程序缺省视图：",
+   'rs_forumSettingNote' : "注：如果只有一个论坛，缺省情况下主题将会显示。",
+   'rs_forumSettingSubmit' : "提交",
+   'rs_forumSettingSave' : "保存",
+   'rs_forumSettingSaveAndClose' : "保存并关闭",
+   'rs_forumSettingConfirm' : "已保存您对“论坛”所作的更改。",
+   'rs_forumSettingError' : "出现错误。 请与管理员联系。",
+   'rs_formSettingHideMessage' : "隐藏此消息",
+   'rs_forumSettingCancel' : "取消",
+   'rs_forumAnsweredQuestion' : "已回答的问题",
+   'rs_forumUnAnsweredQuestion' : "未回答的问题",
+   'rs_forumSortBy' : "排序依据：",
+   'rs_forumSortByDate' : "日期",
+   'rs_forumSortByReplies' : "回复",
+   'rs_forumSortByTopic' : "主题",
+   'rs_forumSortByTopicsAndReplies' : "主题和回复",
+   'rs_sortByReplies' : "按回复排序",
+   'rs_sortbyTopicsAndReplies' : "按主题和回复排序",
+   'rs_forumOpenQuestions' : "未解决的问题",
+   'rs_feedOpenQuestions' : "这些未解决问题的订阅源",
+   'rs_feedAnsweredQuestions' : "这些已答问题的订阅源",
+   'rs_forumMessages' : "${0} 条消息",
+   'rs_forumLastAddedPost' : "最新发布者 ${0}",
+   'rs_forumTopics' : "${0} 个主题",
+   /* End discussion forum */
+
+   /* Editor plugins -- some for a possible one we haven't implemented yet */
+   'rs_createPersonLink' : "创建个人链接",
+   'rs_quote' : "引用",
+   'rs_labelColon' : "标签： ",
+   'rs_personColon' : "个人： ",
+   'rs_personLink' : "个人链接",
+   'rs_replace' : "替换",
+   'rs_inactivePerson' : "${0}（未激活）", // person's name (inactive)
+   'rs_PersonPicture' : "${0} 的图片", // person name's picture
+
+   /*Visitor mode -- external user name decoration use cases */
+   'rs_PersonExternalLabel' : "外部用户", // A label for the visitor model use cases.
+   'rs_PersonExternal' : "${0}（外部用户）", //'{0}' is the person's name. This will be used for the user profile name and profile photo tooltip
+   'rs_PersonPictureExternal' : "${0} 的照片（外部用户）", // Alt text for the external user's profile photo
+   'rs_personExternalDesc' : "该用户对外部共享的文件和社区具有访问权。",
+   /* End editor plugins */
+
+   /* Notification Form */
+   'rs_notifyOthers' : "通知其他人",
+   'rs_messageColon' : "消息： ",
+   'rs_notifyColon' : "通知： ",
+   'rs_notificationConfirm' : "通知消息已成功发出。 ",
+   'rs_notificationFail' : "未发送通知消息。 请稍后重试，如果此问题依然存在，请与系统管理员联系。",
+   'rs_pickCommunity' : "从社区列表中挑选",
+   'rs_typeName' : "输入名称",
+   'rs_typeToFilter' : "输入以过滤此列表",
+   /* End Notification Form */
+
+   /* FilteringCheckbox */
+   'rs_filterListPrompt' : "输入以过滤此列表",
+   'rs_filterGroupLabel' : "选择组",
+   'rs_noResults' : "找不到结果",
+   // ${0} will be replaced with a number
+   'rs_numResults' : "显示 ${0} 个结果（共 ${1} 个）",
+
+   /* PeopleFilterList */
+   'rs_removeFilter' : "除去",
+
+   /* Language Selector */
+   'rs_browser_setting' : "浏览器设置",
+   'rs_customLangaugeLinkLabel' : "定制语言",
+
+   /* Paging controls */
+   // 0 and 1 are page numbers
+   'rs_jumpPage' : "跳到第 ${0} 页（共 ${1} 页）",
+   "rs_jumpPageLabel" : "跳到页面",
+   'rs_pageNumLabel' : "页码",
+   'rs_pageLabel' : "页码：",
+
+   /* Common Tags Widget */
+   'rs_tagCloudNavigationLabel' : '标签',
+   'rs_tagCloudToggleHint' : "单击以隐藏或显示",
+   'rs_tagCloudHelpAlt' : "获取关于标签的帮助",
+   'rs_tagCloudNoTags' : "尚无标签",
+   'rs_tagCloudNoRecentTags' : "无最近标签",
+   'rs_tagCloudNoTagsProfiles' : "搜索目录。 搜索所返回的个人档案相关标签将显示在此处。",
+   'rs_tagLoadingTags' : "正在装入内容",
+   'rs_tagCloudSelectedTags' : "选定的标签",
+   'rs_tagCloudSeachDesc' : "查找标签",
+   'rs_tagCloudSeach' : "搜索",
+   'rs_tagCloudRelatedTags' : "相关标签",
+   'rs_tagCloudRelatedTagsDescription' : "添加相关标签进一步优化搜索",
+   'rs_tagCloudError' : '发生错误',
+
+   'rs_viewAsCloud' : "标签云",
+   'rs_viewAsCloudTitle' : "以标签云方式列出标签",
+   'rs_viewAsCloudDescription' : "以标签云方式查看标签",
+   'rs_viewAsList' : "标签列表",
+   'rs_viewAsListTitle' : "以有序的标签列表方式列出标签",
+   'rs_viewAsListDescription' : "以有序的标签列表方式查看标签",
+   'rs_tagCloudViewAll' : "浏览",
+   'rs_tagCloudViewAllTitle' : "浏览所有标签",
+
+   'rs_normalTags' : "有效标签",
+
+   'rs_removeTag' : "从选定过滤器标签中除去该标签",
+   'rs_clearAll' : "全部清除",
+   'rs_searchInputDefault' : "输入信息以查找标签",
+   'rs_searchInputTagSelected' : "输入其他标签",
+   'rs_relatedTagTitle' : "显示标签 ${0} 的搜索结果，计数 ${1}",
+   'rs_removeTagTitle' : "从选定过滤标签中除去标签“${0}”",
+   'rs_addTagTitle' : "按计数为 ${1} 的标签“${0}”过滤",
+
+   'rs_tagDialogCloseTile' : "关闭",
+   'rs_tagDialogTitle' : "所有标签",
+   'rs_tagDialogPageInfo' : "第 ${0} - ${1} 个标签（共 ${2} 个）",
+
+   /* Group Selection (Picker) Widget */
+   'rs_group_browse_groups' : "浏览组",
+   'rs_group_browse_groups_dialog_title' : "浏览组",
+   'rs_group_browse_find_groups' : "查找组",
+   'rs_group_browse_add_button' : "添加",
+   'rs_group_browse_cancel_button' : "取消",
+   'rs_group_browse_enter_string' : "输入信息以查找组",
+   'rs_group_browse_group_typeahead_label' : "输入组名：",
+   'rs_group_browse_group_name' : "组名：",
+   'rs_group_browse_results_label' : "选择匹配的组：",
+   'rs_group_browse_parent_group_label' : "您现在的位置：",
+   'rs_group_browse_next_page' : "下一页",
+   'rs_group_browse_previous' : "上一步",
+   'rs_group_browse_next' : "下一步",
+   'rs_group_browse_paging' : "页面调度",
+   'rs_group_browse_previous_page' : "上一页",
+   'rs_group_browse_group_selected' : "所选组：",
+   'rs_group_browse_group_no_groups' : "此组不包含任何组",
+   'rs_group_browse_page_info' : "${0} - ${1}/${2}",
+   'rs_group_browse_page_info_alt' : "第 ${0} 个到第 ${1} 个匹配组（共 ${2} 个）",
+   'rs_group_browse_remove_selection' : '除去嵌套组选择：${0}',
+   'rs_group_browse_paging' : "页面调度",
+   'rs_member_groups' : "组",
+   'rs_member_members' : "成员",
+   'rs_member_no_results' : "找不到结果",
+   'rs_member_remove_group' : "除去 ${0}",
+   'rs_member_add_to_community' : "单击以添加成员",
+   'rs_member_remove_name' : "单击以除去成员",
+   'rs_group_add_to_community' : "单击以添加组",
+   'rs_group_remove_name' : "单击以除去组",
+   'rs_group_name' : "组名",
+   'rs_group_role' : "组角色",
+
+   'rs_warning' : "警告",
+   'rs_a11y_warning' : "警告：",
+
+   'rs_messagebox_close_btn_title' : "关闭",
+   'rs_messagebox_close_btn_alt' : "关闭",
+   'rs_messagebox_error_icon_alt' : "错误",
+   'rs_messagebox_error_a11y_label' : "错误：",
+   'rs_messagebox_warning_icon_alt' : "警告",
+   'rs_messagebox_warning_a11y_label' : "警告：",
+   'rs_messagebox_info_icon_alt' : "信息",
+   'rs_messagebox_info_a11y_label' : "信息：",
+   'rs_messagebox_success_icon_alt' : "成功",
+   'rs_messagebox_success_a11y_label' : "成功：",
+
+   /* Document Picker CK Plugin */
+   'rs_docpicker_title' : "插入指向文件的链接",
+   'rs_docpicker_label' : "指向 Connections 文件的链接",
+   // '{0}' is a filename
+   'rs_docpicker_download_title' : "下载 ${0}",
+   'rs_docpicker_viewdetails_text' : "查看详细信息",
+   // '{0}' is a filename
+   'rs_docpicker_viewdetails_title' : "查看 ${0} 的详细信息",
+
+   /* AttachedFileList widget */
+   'rs_attachedfile_remove_alt' : "除去",
+   'rs_attachedfile_filename' : "图像 ${0}",
+
+   'rs_feedreader_warning' : "警告：此链接专用于订阅源阅读器，在您的浏览器中可能无法正确显示。 请单击“确定”继续，或单击“取消”返回页面。",
+
+   'rs_search' : "搜索",
+   'rs_all_connections' : "所有 Connections",
+   'rs_advanced' : "高级",
+   'rs_select_scope' : "选择搜索范围",
+
+   'rs_icfixlayout' : {
+      button_label : "重新格式化",
+      dialog_title : "重新对内容进行格式化",
+      warning : "警告",
+      reformat_save : "重新格式化并保存",
+      save_as_is : "另存为",
+      cancel : "取消",
+      warn_layout : "您的内容超出了最大显示宽度。  是否想要自动进行重新格式化来适应可用的空间？",
+      remember_decision : "记住我的决策"
+   },
+
+   //The following error messages are used by icdocpicker when private files are shared with a Community.
+   'rs_sharefile_constraint_violation' : "共享选定文件时发生错误。",
+   'rs_sharefile_access_denied' : "此文件已删除，或者不再与您共享。",
+   'rs_sharefile_invalid_request' : "共享选定文件时发生错误。",
+   'rs_sharefile_sharing_intent_restriction' : "此文件只能在您的组织内共享。",
+   'rs_sharefile_error_title' : "错误",
+
+   /* Strings for the native mobile app banners */
+   'rs_mobileBanner_title' : 'HCL Connections',
+   'rs_mobileBanner_inAppStore' : '在应用商店中',
+   'rs_mobileBanner_inGooglePlay' : '在 Google Play 中',
+   'rs_mobileBanner_author' : 'HCL Software',
+   'rs_mobileBanner_open' : '打开',
+   'rs_mobileBanner_view' : '查看',
+   'rs_mobileBanner_hide' : '隐藏',
+
+   'rs_empty_column_placeholder' : '将应用程序拖到此处。',
+   'rs_widget_loading_error_title' : '无法显示窗口小部件。',
+   'rs_widget_loading_error_message' : '请稍后重试，如果此问题依然存在，请与系统管理员联系。',
+   'rs_widgets_loading_error_title' : '无法显示此社区中的窗口小部件',
+   'rs_widget_misplacement_warning' : '此列放不下此应用程序。 社区所有者可以将其移动到其他列或从页面除去。',
+
+   'rs_widget_title_change_fail_message' : {
+      title_too_long : '输入的标题太长。',
+      empty_new_title : '输入的标题不能为空。',
+      default_message : '无法更改此“${0}”应用程序的标题。'
+   },
+
+   /* Strings for change title dialog */
+   'rs_widget_title_change_label' : '标题：  ',
+   'rs_widget_title_change_direction' : '更改此“${0}”应用程序的标题。',
+   'rs_widget_title_change_title' : '更改标题',
+
+   /* Strings for Visitor Model Invite dialog */
+	'rs_vmmainContentTitle' : "邀请或添加成员",
+	'rs_vmmainContentDesc' : "邀请成员，向他们提供加入社区的机会。添加成员以将他们自动包含在内。",
+	'rs_vmtypeAheadLabel' : "姓名或电子邮件：",
+	'rs_vmgroupTypeAheadLabel' : "名称：",
+	'rs_vmtypeAheadRoleLabel' : " 作为",
+	'rs_vmgroupTypeAheadRoleLabel' : " 作为成员",
+	'rs_vmtaNoResults' : "找不到结果。",
+	'rs_vmtaHeader' : "标题",
+	'rs_vmaddUser' : "添加",
+	'rs_vmradioSectionTitle' : "成员选项：",
+	'rs_vmradioOne' : "发送邀请以加入社区",
+	'rs_vmradioTwo' : "将用户自动添加至社区",
+	'rs_vmtwistyA' : "添加可选消息",
+	'rs_vmtwistyB' : "除去其他文本",
+	'rs_vmmessage' : "消息：",
+	'rs_vmtextAreaStartText' : "说点什么...",
+	'rs_vmcheckboxLabel' : "向我发送副本",
+	'rs_vmsave' : "保存",
+	'rs_vminvite' : "邀请",
+	'rs_vmcancel' : "取消",
+	'rs_userContentTitle' : "输入信息",
+	'rs_vmaddUser' : "创建用户",
+	'rs_vmback'	 : "上一步",
+	'rs_vmvisitor'	 : "访问者"
+})

@@ -1,0 +1,59 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+
+/*-------------------------------------------------------
+   Working...
+-------------------------------------------------------*/
+.lotusLoadingBox {
+   /* Basic styles needed for loading message */
+   color: #FFF;
+   background:#444;
+   background:-moz-linear-gradient(rgba(62,  62,  62,  0.80), rgba(37, 37, 37, 0.80)) repeat scroll 0 0 transparent;
+   background:-webkit-gradient(linear, 0 0, 0 100%, from(rgba(62,  62,  62,  0.80)), to(rgba(37, 37, 37, 0.80))) repeat scroll 0 0 transparent;
+   background:linear-gradient(rgba(62,  62,  62,  0.80), rgba(37, 37, 37, 0.80)) repeat scroll 0 0 transparent;
+   border:1px solid #FFFFFF;
+   -moz-border-radius:0 0 0 0;
+   border-radius: 0 0 0 0;
+   -moz-box-shadow:0 0 7px rgba(0, 0, 0, 0.3);
+   font-size:1.0em;
+   padding:4px 5px; 
+   /* Postion the loading message center */
+   position: fixed;
+   left: 48%;
+   top: 0;
+   margin-top: 45px;
+}
+
+.report {clear: both;}
+.report .qkrLoading {margin: 20px 10px;}
+.report .qkrLoading IMG {margin-right: 5px;}
+
+.lotusui .metricsFilter {border-color: #CCC; border-style: solid; border-width: 1px 0; padding: 5px 0;}
+.lotusui .metricsFilter form {display: inline;}
+
+.lotusui h1 a,
+.lotusui h1 a:visited,
+.lotusui h1 a:hover,
+.lotusui h1 a:focus,
+.lotusui h1 a:active {color: #444;}
+
+.lotusDialog .lotusFormTable .more {color: #666;}
+
+.reportIframe {min-height: 25em;}
+
+/* Need to remove the left border of community actions as only one action */
+.lotusui30 .lotusInlinelist li {border-left: 0 none;}
+
+.lotusui30 .lotusForm .metricsFormSection {margin-right: 5px; display: inline;}
+
+.lotusui30 .lotusForm .metricsFormInput,
+.lotusui30 .lotusForm select.metricsFormInput {margin-right: 5px;}
+
+.lotusui30 .lotusMenu .lotusTree .dijitTreeIsRoot .lotusSelected, 
+.lotusui30 .lotusMenu .lotusTree .dijitTreeIsRoot .lotusSelected a, 
+.lotusui30 .lotusMenu .lotusTree .dijitTreeIsRoot .dijitTreeIsRoot .lotusSelected, 
+.lotusui30 .lotusMenu .lotusTree .dijitTreeIsRoot .dijitTreeIsRoot .lotusSelected a {font-weight: bold;}
+
+.lotusui30 .lotusMenu .lotusTree .dijitTreeContainer .lotusSelected, 
+.lotusui30 .lotusMenu .lotusTree .dijitTreeContainer .lotusSelected a, 
+.lotusui30 .lotusMenu .lotusTree .dijitTreeIsRoot .dijitTreeIsRoot .dijitTreeContainer .lotusSelected, 
+.lotusui30 .lotusMenu .lotusTree .dijitTreeIsRoot .dijitTreeIsRoot .dijitTreeContainer .lotusSelected a {font-weight: bold;}

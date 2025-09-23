@@ -1,0 +1,14 @@
+<!-- Copyright IBM Corp. 2010, 2015  All Rights Reserved.              -->
+
+<iw:iwidget name="SharedLC" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" useHomepageEnhancedFeatures="true" iScope="lconn.sand.sandSharedLC">
+<!--	<iw:resource uri="../js_src/lconn/sand/sandSharedLC.js" />
+	<iw:resource uri="../js_build/sand_ui.js" /> 
+	-->
+	
+    <iw:content mode="view">
+        <![CDATA[
+	   	<div id="_IWID_root">		
+	   	</div>
+        ]]> 
+     </iw:content>
+</iw:iwidget>

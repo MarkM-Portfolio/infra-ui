@@ -1,0 +1,40 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.iconsStates16-Block14{width:14px;height:14px;background-position:0 0}
+.iconsStates16-CheckedOut{width:16px;height:16px;background-position:0 -22px}
+.iconsStates16-CheckedOutMe{width:16px;height:16px;background-position:0 -46px}
+.iconsStates16-Comment16{width:16px;height:16px;background-position:0 -70px}
+.iconsStates16-Forwarded16{width:16px;height:16px;background-position:0 -94px}
+.iconsStates16-HasAttachment{width:16px;height:16px;background-position:0 -118px}
+.iconsStates16-HighPriority{width:16px;height:16px;background-position:0 -142px}
+.iconsStates16-Importance{width:16px;height:16px;background-position:0 -166px}
+.iconsStates16-Like16{width:16px;height:16px;background-position:0 -190px}
+.iconsStates16-LowPriority{width:16px;height:16px;background-position:0 -214px}
+.iconsStates16-MediumPriority{width:16px;height:16px;background-position:0 -238px}
+.iconsStates16-NoComment16{width:16px;height:16px;background-position:0 -262px}
+.iconsStates16-NoPriority{width:16px;height:16px;background-position:0 -286px}
+.iconsStates16-NotPinned{width:16px;height:16px;background-position:0 -310px}
+.iconsStates16-Pinned{width:16px;height:16px;background-position:0 -334px}
+.iconsStates16-Private{width:16px;height:16px;background-position:0 -358px}
+.iconsStates16-Public{width:16px;height:16px;background-position:0 -382px}
+.iconsStates16-RatingHalf-rtl{width:14px;height:14px;background-position:0 -406px}
+.iconsStates16-RatingHalf{width:14px;height:14px;background-position:0 -428px}
+.iconsStates16-RatingOff{width:16px;height:16px;background-position:0 -450px}
+.iconsStates16-RatingOff12{width:12px;height:12px;background-position:0 -474px}
+.iconsStates16-RatingOff14{width:14px;height:14px;background-position:0 -494px}
+.iconsStates16-RatingOff16{width:16px;height:16px;background-position:0 -516px}
+.iconsStates16-RatingOn{width:16px;height:16px;background-position:0 -540px}
+.iconsStates16-RatingOn12{width:12px;height:12px;background-position:0 -564px}
+.iconsStates16-RatingOn14{width:14px;height:14px;background-position:0 -584px}
+.iconsStates16-RatingOn16{width:16px;height:16px;background-position:0 -606px}
+.iconsStates16-Replied16{width:16px;height:16px;background-position:0 -630px}
+.iconsStates16-RepliedForwarded16{width:16px;height:16px;background-position:0 -654px}
+.iconsStates16-Shared{width:16px;height:16px;background-position:0 -678px}
+.iconsStates16-StarOff{width:16px;height:16px;background-position:0 -702px}
+.iconsStates16-StarOn{width:16px;height:16px;background-position:0 -726px}
+.iconsStates16-TunedOut{width:16px;height:16px;background-position:0 -750px}
+.iconsStates16-WikiPageViews16{width:16px;height:16px;background-position:0 -774px}
+.iconsStates16-NewFolder-16px-Blue{width:16px;height:16px;background-position:0 -798px}
+.iconsStates16-NewFolder-16px-DarkBlue{width:16px;height:16px;background-position:0 -822px}
+
+.iconsStates16{background-image:url('./iconsStates16-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsStates16{display:none}

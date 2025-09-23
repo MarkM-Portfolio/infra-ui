@@ -1,0 +1,55 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div align="right">
+  
+  <table width="90%" class="lotusInfoBox" style="${extraStyles} ${spacingStyles}" tabindex="0" data-dojo-attach-point="tableNode" data-dojo-attach-event="onfocus:onSettingFocus">
+	  <tr>
+		<td class="lotusAlignLeft ${displayNameClass} ${displayValueClass}" width="150" title="${displayDescription}">
+			<span data-dojo-attach-point="roleNode">
+				${displayName}
+			</span>
+			<span class="lotusHidden" data-dojo-attach-point="roleEditNode">
+				<input type="text" aria-required="true" class="lotusText" value="${_resourceBundle.roleNewRole}" title="${_resourceBundle.roleNewRole}" style="width:90% !important;" data-dojo-attach-point="roleEditTextBox">
+			</span>
+		</td>
+		<td class="lotusAlignRight ${displayValueClass}">
+			<span data-dojo-attach-point="valueNode">
+				${displayValue}
+			</span>
+			<span class="lotusHidden" data-dojo-attach-point="valueEditNode">
+				<input type="text" aria-required="true" class="lotusText" value="${displayValue}" title="${_resourceBundle.roleValue}" style="width:100% !important;" data-dojo-attach-point="valueEditTextBox">
+			</span>
+		</td>
+		<td class="lotusAlignRight" width="100">
+			<ul class="lotusInlinelist lotusActions">
+				<span class="lotusHidden" data-dojo-attach-point="editActionNode" data-dojo-attach-event="onclick:onEdit">
+					<li title="${displayEditActionDescription}" class="lotusFirst lotusAlignLeft">
+						<a href="javascript:;"" role="button">${_resourceBundle.roleEditActionName}</a>
+					</li>
+				</span>
+				<span class="lotusHidden" data-dojo-attach-point="deleteRoleActionNode" data-dojo-attach-event="onclick:onDelete">
+					<li title="${_resourceBundle.roleDeleteActionDescription}" class="lotusAlignLeft">
+						| <a href="javascript:;"" role="button" class="${displayValueClass}">${_resourceBundle.roleDeleteActionName}</a> <!-- TODO : Remove bar and use style instead -->
+					</li>
+				</span>
+				<span class="lotusHidden" data-dojo-attach-point="overrideActionNode" data-dojo-attach-event="onclick:onEdit">
+					<li title="${_resourceBundle.roleOverrideActionDescription}" class="lotusFirst lotusAlignLeft">
+						<a href="javascript:;"" role="button">${_resourceBundle.roleOverrideActionName}</a>
+					</li>
+				</span>
+				<span class="lotusHidden" data-dojo-attach-point="saveActionNode" data-dojo-attach-event="onclick:onSave">
+					<li title="${_resourceBundle.roleSaveActionDescription}" class="lotusFirst lotusAlignLeft">
+						<a href="javascript:;"" role="button">${_resourceBundle.roleSaveActionName}</a>
+					</li>
+				</span>
+				<span class="lotusHidden" data-dojo-attach-point="cancelActionNode" data-dojo-attach-event="onclick:onCancel">
+					<li title="${_resourceBundle.roleCancelActionDescription}" class="lotusAlignLeft">
+						| <a href="javascript:;"" role="button">${_resourceBundle.roleCancelActionName}</a>  <!-- TODO : Remove bar and use style instead -->
+					</li>
+				</span>
+
+			</ul>
+		</td>
+	  </tr>
+  </table>
+    
+</div>

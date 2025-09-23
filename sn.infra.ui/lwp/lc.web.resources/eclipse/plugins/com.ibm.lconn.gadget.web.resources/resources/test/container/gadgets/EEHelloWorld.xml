@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+<Module>
+<ModulePrefs title="Hello EE World" description="Hello World Embedded Experience gadget" height="400" width="500">
+<Require feature="embedded-experiences"/>
+</ModulePrefs>
+<Content type="html" view="embedded, default"><![CDATA[
+     <script type="text/javascript">
+     	var context;
+     	    	
+     	function init(){
+     		console.debug("EEHelloWorld - init - entering");
+			var updateSpan = function(key) {
+				context = opensocial.data.getDataContext().getDataSet(key);
+     			if (context) {
+					// should not use JSON.stringify outside test gadgets.
+					document.getElementById('eeContext').innerHTML = JSON.stringify(context);
+					console.debug("EEHelloWorld - exiting - Key: " + key + ", context: " + JSON.stringify(context));
+				}
+            };
+			var dataContext = opensocial.data.getDataContext();
+     		dataContext.registerListener('org.opensocial.ee.context', function(key) {
+     			console.debug("EEHelloWorld - entering - contextListener");
+     			updateSpan(key);
+     		});
+     		console.debug("EEHelloWorld - init - opensocial.data.getDataContext()", dataContext);
+     		console.debug("EEHelloWorld - init - opensocial.data.getDataContext().getData()", dataContext.getData());
+     		console.debug("EEHelloWorld - init - opensocial.data.getDataContext().getDataSet()", dataContext.getDataSet());
+     		updateSpan("org.opensocial.ee.context");
+			console.debug("EEHelloWorld - init - exiting");
+     	}
+     	
+     	gadgets.util.registerOnLoadHandler(init);
+   	 </script>
+
+	 <div id="hello">
+	 	<h3>Hello Embedded Experiences World</h3>
+	 	I am an EE gadget.<br>
+	 	My context is: <span id="eeContext">[Context will go here]</span>
+	 </div>
+  ]]></Content>
+</Module>

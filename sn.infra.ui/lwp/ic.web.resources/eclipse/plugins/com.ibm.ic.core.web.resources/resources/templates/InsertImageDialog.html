@@ -1,0 +1,82 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="dijitHidden">
+	<div data-dojo-type="lconn.core.TempTabbedDialog" class="lotusImageDialog lcSharebox" style="width: 700px;" data-dojo-attach-point="_dialog" title="${messages.dialogTitle}">
+		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-attach-point="uploadTab" title="${messages.newUpload}">
+			<div data-dojo-attach-point="uploadContent" style="padding: 10px">
+				<div class="lotusFormField">
+					<label for="imageFileField">${messages.imageFile}</label>
+					<div class="lotusFieldWrapper">
+						<div data-dojo-attach-point="fileFieldContainer"></div></div>
+					</div>
+				</div>
+
+				<div class="lotusFormField">
+					<label for="imageDescription">${messages.description}</label>
+					<div class="lotusFieldWrapper">
+						<textarea id="imageDescription" name="imageDescription" rows="5" class="lotusText"></textarea>
+					</div>
+				</div>
+
+				<div class="lotusFormField">
+					<label for="uploadAlt">${messages.alt}</label>
+					<div class="lotusFieldWrapper">
+						<input class="lotusText" type="text" id="uploadAlt" name="uploadAlt">
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-attach-point="libraryTab" title="${messages.imageLibrary}" style="padding: 0px">
+			<div class="lotusFormField lconnImageLibraryTab">
+				<div data-dojo-attach-point="galleryContainer"></div>
+			</div>
+		</div>
+
+
+		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-attach-point="filesTab" title="${messages.filesTab}">
+			<div data-dojo-attach-point="filesContent" class="lotusFormField" style="padding: 10px">
+				<div class="lotusFormField">
+					<label>${messages.imageFile}</label>
+					<div class="lotusFieldWrapper">
+						<div data-dojo-attach-point="fileList" style="overflow:hidden">
+							<input value="${messages.browse}" class="lotusBtn" type="button" data-dojo-attach-event="onclick:_openPicker">
+						</div>
+					</div>
+				</div>
+				<div class="lotusFormField">
+					<label for="filesAlt">${messages.alt}</label>
+					<div class="lotusFieldWrapper">
+						<input data-dojo-attach-point="filesAlt" class="lotusText" type="text" id="filesAlt" name="filesAlt">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-attach-point="urlTab" title="${messages.URL}">
+			<div class="lotusFormField" style="padding: 10px">
+				<div class="lotusFormField">
+					<label for="URL"><span class="lotusFormRequired" title="${messages.required}">*</span>URL:</label>
+					<div class="lotusFieldWrapper">
+						<input class="lotusText" type="text" id="URL" name="URL" data-dojo-attach-event="onchange: loadImageUrl" data-dojo-attach-point="urlInput" value="" aria-required="true">
+					</div>
+				</div>
+
+				<div class="lotusFormField">
+					<label for="urlAlt">${messages.alt}</label>
+					<div class="lotusFieldWrapper">
+						<input data-dojo-attach-point="urlAlt" class="lotusText" type="text" id="urlAlt" name="urlAlt">
+					</div>
+				</div>
+
+				<div class="lotusFormField">
+					<label for="preview">${messages.preview}</label>
+					<div class="lotusFieldWrapper">
+						<div id="preview" style="width: 300px; height: 300px; border: 1px solid black; overflow: auto">
+							<img src="${_blankGif}" data-dojo-attach-point="previewImage">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

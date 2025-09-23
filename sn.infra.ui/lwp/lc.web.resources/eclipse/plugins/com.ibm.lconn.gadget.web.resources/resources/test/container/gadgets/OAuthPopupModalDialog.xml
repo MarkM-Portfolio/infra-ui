@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<Module >
+<ModulePrefs title="OAuth Modal Dialog Popup" description="OAuth Modal Popup Dialog Test" height="400" width="500">
+<Require feature="oauthpopup"/>
+<Require feature="open-views"/>
+</ModulePrefs>
+<Content type="html" view="embedded, default">
+<![CDATA[
+     <script type="text/javascript">     	
+     	function init(){
+     		var $ = function(id){
+     			return document.getElementById(id);
+     		};
+			var authLink = $("authLink");
+			var authDoneLink = $("authDoneLink");
+			var authComplete = $("authComplete");
+			
+			var onOpen = function(){
+				authLink.style.display = "none";
+				authDoneLink.style.display = "";
+			};
+			
+			var onClose = function(){
+				authDoneLink.style.display="none";
+				authComplete.style.display="";
+			};
+			
+			var popup = new gadgets.oauth.Popup(
+			    "http://w3.ibm.com",
+			    "height=500,width=500",
+			    onOpen,
+			    onClose
+			);
+			
+			authLink.onclick = popup.createOpenerOnClick();
+			authDoneLink.onclick = popup.createApprovedOnClick();     	
+		}
+     	
+		gadgets.util.registerOnLoadHandler(init);
+     	
+   	 </script>
+   	     
+	 <div id="hello">
+	 	<h3>Modal OAuth Auth Grant Test</h3>
+		<div>
+		<a id="authLink" href="javascript:;"> Authorize Popup</a>
+		<a id="authDoneLink" href="javascript:;" style="display:none" > Authorization Done</a>
+		<span id="authComplete" style="display:none"> Auth Completed</span>
+		</div>
+	 </div>
+  ]]></Content>
+</Module>

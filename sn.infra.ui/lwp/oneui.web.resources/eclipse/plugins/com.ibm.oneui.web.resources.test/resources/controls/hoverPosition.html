@@ -1,0 +1,337 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+${script:com.ibm.oneui.controls.HoverPopup}
+${script:com.ibm.oneui.controls.HoverDialog}
+${script:com.ibm.oneui.controls.HoverHelp}
+${script:com.ibm.oneui.controls.PreviewDialog}
+
+${style:com.ibm.oneui/controls/templates/Dialog}
+${style:com.ibm.oneui/controls/templates/HoverPopup}
+${style:com.ibm.oneui/controls/templates/HoverHelp}
+
+<script>
+dojo.declare("TestPopup", [com.ibm.oneui.controls.HoverPopup, com.ibm.oneui.controls._HoverDialogMixin], {
+});
+dojo.require("dojo.hash");
+
+dojo.subscribe("/dojo/hashchange", stateChange);
+
+var popup;
+var currentTest = 0;
+function stateChange(state) {
+	currentTest = parseInt(state) || 0;
+	var test = tests[currentTest];
+	
+   var infoStyle = dojo.byId("info").style;
+   dojo.byId("title").innerHTML = currentTest + ": " + test.title;
+   dojo.byId("description").innerHTML = test.description || "";
+   dojo.byId("next").href = "#"+ ((currentTest+1) % tests.length);
+   infoStyle.left = test.moveInfo ? "10px" : "";
+   infoStyle.right = test.moveInfo ? "" : "10px";
+   infoStyle.bottom = test.moveInfo ? "10px" : "";
+   infoStyle.top = test.moveInfo ? "" : "10px";
+   infoStyle.display = "";
+   dojo.byId("next").focus();
+   
+   var content = dojo.byId("content"); content.style.cssText = ""; dojo.style(content, test.content || {});
+   var launcher = dojo.byId("launcher"); launcher.style.cssText = "display: inline; border: 1px solid red;"; dojo.style(launcher, test.launcher || {});
+   
+   var body = dojo.body(); 
+   body.style.cssText = "";
+   if (launcher.style.position == "absolute")
+	   body.style.position = "relative";
+   dojo.style(body, test.body || {});
+   var viewport = test.viewport;
+	// if we haven't specified a body width or height, reset us to 600,400
+	if (!test.body || !(test.body.width || test.body.height))
+	   dojo.marginBox(body, {w: 600, h: 400});
+	
+   if (typeof viewport == "undefined") {
+   	window.scrollTo(0,0);
+		var bodyBox = dojo.position(body);
+   	if (dojo.isIE) {
+	 	   var v = dijit.getViewport();
+   		window.resizeBy(Math.round(bodyBox.w) - Math.round(v.w), Math.round(bodyBox.h) - Math.round(v.h));
+   	}
+   	else {
+			window.innerHeight = Math.round(bodyBox.h);
+			window.innerWidth = Math.round(bodyBox.w);
+   	}
+   }
+   else {
+	   window.scrollTo(viewport.l || 0, viewport.t || 0);
+	   if (dojo.isIE) {
+		   var v = dijit.getViewport();
+	   	window.resizeBy(Math.round(viewport.w) - Math.round(v.w), Math.round(viewport.h) - Math.round(v.h));
+	   }
+	   else {
+			window.innerHeight = viewport.h;
+			window.innerWidth = viewport.w;
+	   }
+   }
+   
+   v = dijit.getViewport();
+   var b = dojo.position(body);
+   dojo.byId("winDim").innerHTML = "w: "+ v.w + " h: "+v.h;
+   dojo.byId("bodyDim").innerHTML = "w: "+ b.w + " h: "+b.h;
+   dojo.byId("scrollDim").innerHTML = v.l + ", "+v.t;
+   
+   if (popup)
+	   popup.destroyRecursive();
+   popup = new com.ibm.oneui.controls.HoverPopup(dojo.mixin({
+	   around: dojo.byId("launcher"), 
+	   programmatic: "block",
+	   html: "<div style='width: 200px; height: 100px;'>Some contents<br>that must be positioned</div>"
+	}, test.popup || {}));
+   popup.open();
+}
+var tests = [
+	{
+		title: "Upper left"
+	},
+	{
+		title: "Middle left, content pushing down",
+		content: {height: "200px"}
+	},
+	{
+		title: "Bottom left, content pushing down",
+		body: {overflow: "hidden"},
+		content: {height: "375px"}
+	},
+	{
+		title: "Bottom left, flush with document",
+		body: {overflow: "hidden"},
+		content: {height: "382px"}
+	},
+	{
+		title: "Floated, upper right",
+		launcher: {cssFloat: "right"},
+		moveInfo: true
+	},
+	{
+		title: "Floated, middle right, content pushing down",
+		launcher: {cssFloat: "right"},
+		content: {height: "200px"},
+		moveInfo: true
+	},
+	{
+		title: "Floated, bottom right, content pushing down",
+		launcher: {cssFloat: "right"},
+		content: {height: "380px"},
+		moveInfo: true
+	},
+	
+	// Test absolute positioning around the edges of the screen
+	{
+		title: "Absolute, upper right",
+		launcher: {position: "absolute", top: "10px", right: "10px", display: "block"},
+		moveInfo: true
+	},
+	{
+		title: "Absolute, middle right",
+		launcher: {position: "absolute", top: "200px", right: "10px", display: "block"},
+		moveInfo: true
+	},
+	{
+		title: "Absolute bottom right",
+		launcher: {position: "absolute", bottom: "10px", right: "10px", display: "block"},
+		moveInfo: true
+	},
+	{
+		title: "Absolute bottom middle, open right",
+		launcher: {position: "absolute", bottom: "10px", right: "50%", display: "block"}
+	},
+	{
+		title: "Absolute bottom middle, open left",
+		launcher: {position: "absolute", bottom: "10px", left: "55%", display: "block"}
+	},
+	{
+		title: "Absolute bottom left",
+		launcher: {position: "absolute", bottom: "10px", left: "10px", display: "block"}
+	},
+	{
+		title: "Absolute middle left, open below",
+		launcher: {position: "absolute", bottom: "50%", left: "10px", display: "block"}
+	},
+	{
+		title: "Absolute middle left, open above",
+		launcher: {position: "absolute", top: "55%", left: "10px", display: "block"}
+	},
+	{
+		title: "Absolute upper left",
+		launcher: {position: "absolute", top: "10px", left: "10px", display: "block"}
+	},
+	{
+		title: "Absolute upper left, close",
+		launcher: {position: "absolute", top: "5px", left: "10px", display: "block"}
+	},
+	{
+		title: "Absolute upper left, flush",
+		launcher: {position: "absolute", top: "0px", left: "0px", display: "block"}
+	},
+	{
+		title: "Absolute upper middle, open right",
+		launcher: {position: "absolute", top: "10px", right: "50%", display: "block"},
+		moveInfo: true
+	},
+	{
+		title: "Absolute upper middle, open left",
+		launcher: {position: "absolute", top: "10px", left: "55%", display: "block"},
+		moveInfo: true
+	},
+	
+	// Test scrolling vertically
+	{
+		title: "Absolute bottom right, scrolled to bottom",
+		launcher: {position: "absolute", bottom: "10px", right: "10px", display: "block"},
+		body: {width: "600px", height: "600px"},
+		viewport: {w: 600, h: 400, t: 200},
+		moveInfo: true
+	},
+	{
+		title: "Absolute bottom middle, scrolled to top",
+		launcher: {position: "absolute", bottom: "200px", right: "10px", display: "block"},
+		body: {width: "600px", height: "600px"},
+		viewport: {w: 600, h: 400, t: 0},
+		moveInfo: true
+	},
+	{
+		title: "Absolute bottom middle, scrolled to middle",
+		launcher: {position: "absolute", bottom: "200px", right: "10px", display: "block"},
+		body: {width: "600px", height: "600px"},
+		viewport: {w: 600, h: 400, t: 100},
+		moveInfo: true
+	},
+	{
+		title: "Absolute bottom middle, scrolled to bottom",
+		launcher: {position: "absolute", bottom: "200px", right: "10px", display: "block"},
+		body: {width: "600px", height: "600px"},
+		viewport: {w: 600, h: 400, t: 200},
+		moveInfo: true
+	},
+	{
+		title: "Absolute bottom left, scrolled to bottom",
+		launcher: {position: "absolute", bottom: "10px", left: "10px", display: "block"},
+		body: {width: "600px", height: "600px"},
+		viewport: {w: 600, h: 400, t: 200},
+		moveInfo: false
+	},
+	
+	// Test scrolling horizontally
+	{
+		title: "Absolute middle right, scrolled horizontally right",
+		launcher: {position: "absolute", bottom: "200px", right: "10px", display: "block"},
+		body: {width: "800px", height: "400px"},
+		viewport: {w: 600, h: 400, l: 200},
+		moveInfo: true
+	},
+	{
+		title: "Absolute middle, scrolled horizontally middle",
+		launcher: {position: "absolute", bottom: "200px", right: "200px", display: "block"},
+		body: {width: "800px", height: "400px"},
+		viewport: {w: 600, h: 400, l: 100},
+		moveInfo: true
+	},
+	{
+		title: "Absolute middle, scrolled horizontally left",
+		launcher: {position: "absolute", bottom: "200px", right: "200px", display: "block"},
+		body: {width: "800px", height: "400px"},
+		viewport: {w: 600, h: 400, l: 200},
+		moveInfo: true
+	},
+	
+	{
+		title: "Launcher is wide, opens left",
+		launcher: {position: "absolute", width: "200px", top: "10px", left: "50%", display: "block"},
+		moveInfo: true
+	},
+	{
+		title: "Launcher is wide, opens right",
+		launcher: {position: "absolute", width: "200px", top: "10px", left: "20%", display: "block"},
+		moveInfo: true
+	},
+	{
+		title: "Not enough room to open, right",
+		launcher: {position: "absolute", width: "500px", top: "10px", left: "10px", display: "block"},
+		moveInfo: true
+	},
+	{
+		title: "Not enough room to open, left",
+		launcher: {position: "absolute", width: "500px", top: "10px", right: "10px", display: "block"},
+		moveInfo: true
+	},
+	{
+		title: "Not enough room to open, bottom, right",
+		launcher: {position: "absolute", width: "500px", bottom: "10px", left: "10px", display: "block"},
+		moveInfo: true
+	},
+	{
+		title: "Not enough room to open, bottom, left",
+		launcher: {position: "absolute", width: "500px", bottom: "10px", right: "10px", display: "block"},
+		moveInfo: true
+	},
+	{
+		title: "Open below, far upper left",
+		launcher: {position: "absolute", top: "0px", left: "0px", display: "block"},
+		popup: {orientation: "b"}
+	},
+	{
+		title: "Open below, upper left",
+		launcher: {position: "absolute", top: "10px", left: "10px", display: "block"},
+		popup: {orientation: "b"}
+	},
+	{
+		title: "Open below, middle",
+		launcher: {position: "absolute", top: "10px", left: "40%", display: "block"},
+		popup: {orientation: "b"},
+		moveInfo: true
+	},
+	{
+		title: "Open below, unbalanced right",
+		launcher: {position: "absolute", top: "10px", right: "40px", display: "block"},
+		popup: {orientation: "b"},
+		content: {width: 200},
+		moveInfo: true
+	},
+	{
+		title: "Open below, upper right",
+		launcher: {position: "absolute", right: "10px", top: "10px", display: "block"},
+		popup: {orientation: "b"},
+		moveInfo: true
+	},
+	{
+		title: "Open below, far upper right",
+		launcher: {position: "absolute", right: "0px", top: "0px", display: "block"},
+		popup: {orientation: "b"},
+		moveInfo: true
+	}
+];
+
+// resize to an even increment
+window.resizeTo(600,600);
+</script>
+
+
+${endhead}
+
+<div style="display; none; padding: 4px; position: fixed; right: 10px; top: 10px; width: 200px; border: 1px solid gray; background-color: white;" id="info">
+	<h4 id="title"></h4>
+	<div id="description"></div>
+	<div>Window dimensions: <span id="winDim"></span></div>
+	<div>Body dimensions: <span id="bodyDim"></span></div>
+	<div>Scroll position <span id="scrollDim"></span></div>
+	<div>
+		<a id="next" href="#">Next test</a><br>
+		<a href="#0">Back to first test</a><br>
+		<a href="#" onclick="stateChange(dojo.hash()); return false;">Test again</a><br>
+		<a href="#" onclick="document.body.style.overflow = 'hidden'; return false;">Hide scrollbars</a>
+	</div>
+</div>
+<div id="content"></div>
+<div id="launcher">Launcher</div>
+</body>
+<script>
+stateChange(dojo.hash());
+</script>
+${end}

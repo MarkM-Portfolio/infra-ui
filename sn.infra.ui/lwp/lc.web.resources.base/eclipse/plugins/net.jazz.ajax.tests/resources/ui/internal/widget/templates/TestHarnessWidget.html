@@ -1,0 +1,42 @@
+<div class="net-jazz-ajax-tests">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+	<div class="testOutputArea">
+		<div class="tabArea">
+			<div class="active" dojoAttachPoint="logTab">Log</div>
+			<div dojoAttachPoint="testPageTab">Test Page</div>
+		</div>
+		<div class="tabbed harnessOutput" dojoAttachPoint="logNode"></div>
+		<div class="tabbed">
+			<iframe class="testFrame hidden" dojoAttachPoint="frameNode"></iframe>
+		</div>
+	</div>
+	<div class="testResultArea">
+		<h1>Test Results</h1>
+		<div class="summary">
+			Tests Registered: <span dojoAttachPoint="registeredSpan">0</span><br />
+			Tests Executed: <span dojoAttachPoint="executedSpan">0</span><br />
+			Tests Passing: <span dojoAttachPoint="passingSpan">0</span><br />
+			Tests Failing: <span dojoAttachPoint="failingSpan">0</span>
+		</div>
+		<table class="resultsTable">
+			<thead>
+				<tr><th>Test</th><th>Time</th></tr>
+			</thead>
+			<tbody dojoAttachPoint="testResultTable">
+			</tbody>
+		</table>
+	</div>
+</div>

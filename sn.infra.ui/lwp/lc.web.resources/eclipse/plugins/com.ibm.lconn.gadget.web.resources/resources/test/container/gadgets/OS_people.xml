@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<Module>
+<ModulePrefs title="OpenSocial people gadget" height="400">
+	<Require feature="osapi"/>
+</ModulePrefs>
+<Content type="html">
+<![CDATA[
+<script type="text/javascript">
+	function refresh() {
+		osapi.people.get({'userId':'@me'}).execute(
+						function(result) {
+							console.log("osapi request result", result);
+							var message = "request code is osapi.people.get({'userId':'@me'}).execute(callback); <br />" +
+							"result of people request : <br />" +
+							"result.id : " + result.id + "<br /><br />" +
+							"result.displayName : " + result.displayName + " <br />" +
+							"result.emails[0].value : " + (result.emails ? result.emails[0].value : "") + " </ br>";
+							document.getElementById("output").innerHTML=message;
+						}
+					);
+	}
+	
+	gadgets.util.registerOnLoadHandler(refresh);
+</script>
+request is for userId @me, so if you are not logged in, it will return null! An empty request (osapi.people.get() ) will also default to @me
+<div>
+	<a onclick="refresh()">Refresh people data</a>
+</div>
+<div id="output">
+testing people api...
+</div>
+]]>
+</Content>
+</Module>

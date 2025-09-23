@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2001, 2015                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+-->
+<iw:iwidget id="tags" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget">
+    <iw:content mode="view">
+        <![CDATA[    
+            <div id="socialTags_widgetId_container">
+              &nbsp;
+            </div>
+            <script type="text/javascript" id="socialTags_widgetId_container-script">
+              dojo.require("dojo.parser");
+              
+              var widgetId = "_"+this.iContext.widgetId+"_";
+              var attributesItemSet = this.iContext.getiWidgetAttributes();
+              var displayedUserKey = attributesItemSet.getItemValue("profileDisplayedUserKey");
+              document.getElementById("socialTags_widgetId_container").innerHTML += generalrs.socialTagsLoading;
+            
+              profiles_loadTags( displayedUserKey, "socialTags_widgetId_container", this.iContext);
+            </script>
+		]]> 
+     </iw:content>
+</iw:iwidget>

@@ -1,0 +1,19 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.              -->
+<div class="${classFilesTree}" role="${ariaRoleFilesTree}" aria-label="File or folder selection" style="box-sizing: border-box; height:${initHeight};" tabindex="-1">
+   <div 
+      dojoAttachPoint="containerNode"
+      class="${classTreeDiv}"
+      role = "region"
+      id = "${id}_containerNode"
+      dojoAttachEvent="onkeydown:_onKeydown"
+      tabindex="-1"
+      style="box-sizing: border-box;">
+      <div name="loading" dojoAttachPoint="loadingDiv" style="display:none;">
+         <img src="${blankGif}" class="lotusLoading" alt="" role="presentation" style="margin:0 5px;">
+         ${_strings.rs_loading}
+      </div>
+      <div name="more" dojoAttachPoint="moreDiv" style="display:none; margin:5px">
+         <a href="javascript:;" dojoAttachEvent="onclick:_loadMore" style="margin:5px;" title="${_strings.rs_more}">${_strings.rs_more}</a>
+      </div>
+   </div>
+</div>

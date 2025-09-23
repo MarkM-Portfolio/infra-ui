@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "no",
+      "Play": "Spill av",
+      "Pause": "Pause",
+      "Current Time": "Gjeldende klokkeslett",
+      "Duration Time": "Varighet",
+      "Remaining Time": "Tid som gjenstår",
+      "Stream Type": "Datastrømtype",
+      "LIVE": "LIVE",
+      "Loaded": "Lastet",
+      "Progress": "Fremdrift",
+      "Fullscreen": "Full skjerm",
+      "Non-Fullscreen": "Ikke-fullskjerm",
+      "Mute": "Demp",
+      "Unmute": "Opphev demping",
+      "Unmuted": "Demping opphevet",
+      "Playback Rate": "Avspillingshastighet",
+      "Subtitles": "Undertitler",
+      "subtitles off": "Undertitler av",
+      "Captions": "Bildetekster",
+      "captions off": "Bildetekster av",
+      "Chapters": "Kapitler",
+      "Volume": "Volum",
+      "You aborted the video playback.": "Du avbrøt videoavspillingen",
+      "A network error caused the video download to fail part-way.": "En nettverksfeil førte til at nedlastingen av videoen mislyktes.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "Videoen kunne ikke lastes inn, enten fordi tilkoblingen til serveren eller nettverket ble brutt, eller fordi formatet ikke støttes.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "Videoavspillingen ble avbrutt på grunn av et problem med filen eller fordi videoen brukte funksjoner som nettleseren din ikke støtter.",
+      "No compatible source was found for this video.": "Det ble ikke funnet noen kompatibel kilde for denne videoen."
+});
+

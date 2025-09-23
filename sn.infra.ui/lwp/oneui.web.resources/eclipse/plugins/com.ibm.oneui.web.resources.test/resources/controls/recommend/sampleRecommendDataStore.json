@@ -1,0 +1,21 @@
+{
+	id: "my.id",
+	identifier: "userId",
+	items: [
+		{
+			userId: "robertsb",
+			displayName: "Bruce Roberts",
+			mail: "robertsb@us.ibm.com"
+		},
+		{
+			userId: "bbarber",
+			displayName: "Bob Barber",
+			mail: "bbarber@us.ibm.com"
+		},
+		{
+			userId: "user2",
+			displayName: "user 2",
+			mail: "user2@ibm.com"
+		}
+	]
+}

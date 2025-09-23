@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Activity Stream Event Constants JavaScript Unit Test Runner</title>
+		
+		<script type="text/javascript">
+			// Redirect to the D.O.H. runner HTML page
+			function redirect(){
+				// Initialize all the necessary params and URLs
+				var runnerHtmlUrl = "/connections/resources/web/com.ibm.social.test/runner.html",
+					dojoUrl = "../dojo/dojo.js",
+					testUrl = "../com.ibm.social.test/as/constants/module",
+					testModule = "com.ibm.social.test.as.constants.module";
+				
+				// Redirect to the runner.html
+				window.location = runnerHtmlUrl 
+					+ "?dojoUrl=" + dojoUrl 
+					+ "&testUrl=" + testUrl 
+					+ "&testModule=" + testModule;
+			}
+		</script>
+	</head>
+	
+	<body onload="redirect()">
+		Redirecting to D.O.H runner.
+	</body>
+</html>

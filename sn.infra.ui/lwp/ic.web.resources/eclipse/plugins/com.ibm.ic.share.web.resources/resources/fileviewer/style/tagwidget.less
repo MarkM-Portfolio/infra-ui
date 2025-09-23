@@ -1,0 +1,88 @@
+/* Copyright IBM Corp. 2015  All Rights Reserved.              */
+
+.ics-viewer .ics-viewer-tagwidget .ics-viewer-tag img {
+  background-image:  ~"url(../style/images/DeleteTag.png)"; /*TODO*/
+  width: 16px;
+  height: 16px;
+}
+
+.ics-viewer .ics-viewer-tagwidget img.addTagImg {
+  background-image:  ~"url(../style/images/Add.png)"; /*TODO*/
+  width: 16px;
+  height: 16px;
+}
+
+.ics-viewer .ics-viewer-tagwidget .removeTagLink {
+  display: none;
+}
+
+.ics-viewer .ics-viewer-tagwidget.editing .removeTagLink {
+  display: inline;
+}
+
+.ics-viewer .ics-viewer-tagwidget .typeAheadContainer {
+  display: none;
+}
+
+.ics-viewer .ics-viewer-tagwidget.editing .typeAheadContainer {
+  display: inline;
+}
+
+.ics-viewer .ics-viewer-tagwidget.editing .typeAheadTd {
+  padding: 0 8px 0 0;
+  width: 100%;
+}
+
+.dijitRtl .ics-viewer .ics-viewer-tagwidget.editing .typeAheadTd {
+  padding: 0 0 0 8px;
+}
+
+.lotusImagesOff .ics-viewer .ics-viewer-tagwidget.editing .typeAheadTd {
+  border: 1px solid blue;
+}
+
+.ics-viewer .ics-viewer-tagwidget input {
+  width: 100%;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.ics-viewer .ics-viewer-tagwidget ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  line-height: 20px;
+}
+
+.ics-viewer .ics-viewer-tagwidget li {
+  list-style-type: none;
+}
+
+@-moz-document url-prefix() {
+  .ics-viewer .ics-viewer-tagwidget li {
+    margin-bottom: 1px;
+  }
+}
+
+.ics-viewer .ics-viewer-tagwidget table {
+  border-spacing: 0;
+  margin-bottom: 3px;
+}
+
+.ics-viewer-tag-popup.dijitMenu {
+  padding: 5px 0;
+}
+
+.ics-viewer-tag-popup.dijitMenu .dijitMenuItem {
+  padding: 5px 10px;
+  color: #676767;
+  text-indent: 0;
+}
+
+.ics-viewer-tag-popup.dijitMenu .dijitMenuItem b {
+  color: #292929;
+}
+
+.ics-viewer-tag-popup.dijitMenu .lotusMeta {
+  color: #676767;
+}

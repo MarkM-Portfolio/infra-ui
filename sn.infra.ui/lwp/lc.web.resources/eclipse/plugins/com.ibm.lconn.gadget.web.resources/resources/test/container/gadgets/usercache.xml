@@ -1,0 +1,48 @@
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<Module>
+    <ModulePrefs title="Sample usercache gadget">
+        <Require feature="connections.usercache">
+            <Param name="storageMethods"><![CDATA[ {"transient":"sessionStorage", "persistent":"localStorage"} ]]></Param>
+        </Require>
+    </ModulePrefs>
+    <Content type="html"><![CDATA[
+        <pre id="usercacheTestOutput"></pre>
+        <script>
+            gadgets.util.registerOnLoadHandler(function(){
+
+                var output = document.getElementById('usercacheTestOutput');
+                try{
+                    osapi.usercache.transient.update({data: {'key1': 'a'}})
+                                .execute(function(){
+                                    output.innerHTML += 'Added key1 to persistant datastore\n';
+                                });
+                    osapi.usercache.transient.get({fields: ['key1']})
+                                .execute(function(obj){
+                                    console.log(arguments);
+                                    output.innerHTML += 'Got key1 (value: ' + obj.key1 + ') from datastore\n';
+                                });
+
+                    osapi.usercache.transient.delete({keys: ['key1']})
+                                .execute(function(obj){
+                                    output.innerHTML += 'Deleted key1\n';
+                                });
+                    osapi.usercache.transient.get({fields: ['key1']})
+                                .execute(function(obj){
+                                    console.log(arguments);
+                                    if(obj.key1 === null){
+                                        output.innerHTML += 'Verified key1 deleted';
+                                    } else{
+                                        output.innerHTML += 'Got key1 (value: ' + obj.key1 + ') from datastore but it should have been deleted?\n';
+                                    }
+                                });
+                }
+                catch(e){
+                output.innerHTML += "error" + e.message;
+                };
+            });
+
+        </script>
+    ]]></Content>
+
+</Module>

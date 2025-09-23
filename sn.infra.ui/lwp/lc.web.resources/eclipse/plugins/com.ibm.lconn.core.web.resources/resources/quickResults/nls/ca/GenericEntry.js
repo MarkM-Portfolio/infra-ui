@@ -1,0 +1,140 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	UPDATED_BY: "Actualitzat per ${author}",
+	PREVIEW_MODE_ONLY: "(Només mode de visualització prèvia)",
+	
+	//Community
+	COMMUNITY_VIEWED_TODAY: "Comunitat visualitzada avui",
+	COMMUNITY_VIEWED_YESTERDAY: "Comunitat visualitzada ahir",
+	COMMUNITY_VIEWED_HOURS_AGO: "Comunitat visualitzada fa ${hours} hores",
+	COMMUNITY_VIEWED_MINUTES_AGO: "Comunitat visualitzada fa ${minutes} minuts",
+	COMMUNITY_VIEWED_SECONDS_AGO: "Comunitat visualitzada fa ${seconds} segons",
+	COMMUNITY_VIEWED_1_HOUR_AGO: "Comunitat visualitzada fa 1 hora",
+	COMMUNITY_VIEWED_1_MINUTE_AGO: "Comunitat visualitzada fa 1 minut",
+	COMMUNITY_VIEWED_1_SECOND_AGO: "Comunitat visualitzada fa 1 segon",
+	COMMUNITY_VIEWED_AT_DATE: "Comunitat visualitzada el ${date}",
+	
+	//File
+	FILE_VIEWED_TODAY: "Fitxer visualitzat avui",
+	FILE_VIEWED_YESTERDAY: "Fitxer visualitzat ahir",
+	FILE_VIEWED_HOURS_AGO: "Fitxer visualitzat fa ${hours} hores",
+	FILE_VIEWED_MINUTES_AGO: "Fitxer visualitzat fa ${minutes} minuts",
+	FILE_VIEWED_SECONDS_AGO: "Fitxer visualitzat fa ${seconds} segons",
+	FILE_VIEWED_1_HOUR_AGO: "Fitxer visualitzat fa 1 hora",
+	FILE_VIEWED_1_MINUTE_AGO: "Fitxer visualitzat fa 1 minut",
+	FILE_VIEWED_1_SECOND_AGO: "Fitxer visualitzat fa 1 segon",
+	FILE_VIEWED_AT_DATE: "Fitxer visualitzat el ${date}",
+	
+	//Profile
+	PROFILE_VIEWED_TODAY: "Perfil visualitzat avui",
+	PROFILE_VIEWED_YESTERDAY: "Perfil visualitzat ahir",
+	PROFILE_VIEWED_HOURS_AGO: "Perfil visualitzat fa ${hours} hores",
+	PROFILE_VIEWED_MINUTES_AGO: "Perfil visualitzat fa ${minutes} minuts",
+	PROFILE_VIEWED_SECONDS_AGO: "Perfil visualitzat fa ${seconds} segons",
+	PROFILE_VIEWED_1_HOUR_AGO: "Perfil visualitzat fa 1 hora",
+	PROFILE_VIEWED_1_MINUTE_AGO: "Perfil visualitzat fa 1 minut",
+	PROFILE_VIEWED_1_SECOND_AGO: "Perfil visualitzat fa 1 segon",
+	PROFILE_VIEWED_AT_DATE: "Perfil visualitzat el ${date}",
+	
+	//Activity
+	ACTIVITY_VIEWED_TODAY: "Activitat visualitzada avui",
+	ACTIVITY_VIEWED_YESTERDAY: "Activitat visualitzada ahir",
+	ACTIVITY_VIEWED_HOURS_AGO: "Activitat visualitzada fa ${hours} hores",
+	ACTIVITY_VIEWED_MINUTES_AGO: "Activitat visualitzada fa ${minutes} minuts",
+	ACTIVITY_VIEWED_SECONDS_AGO: "Activitat visualitzada fa ${seconds} segons",
+	ACTIVITY_VIEWED_1_HOUR_AGO: "Activitat visualitzada fa 1 hora",
+	ACTIVITY_VIEWED_1_MINUTE_AGO: "Activitat visualitzada fa 1 minut",
+	ACTIVITY_VIEWED_1_SECOND_AGO: "Activitat visualitzada fa 1 segon",
+	ACTIVITY_VIEWED_AT_DATE: "Activitat visualitzada el ${date}",
+	
+	//Bookmark
+	BOOKMARK_VIEWED_TODAY: "Adreça d'interès visualitzada avui",
+	BOOKMARK_VIEWED_YESTERDAY: "Adreça d'interès visualitzada ahir",
+	BOOKMARK_VIEWED_HOURS_AGO: "Adreça d'interès visualitzada fa ${hours} hores",
+	BOOKMARK_VIEWED_MINUTES_AGO: "Adreça d'interès visualitzada fa ${minutes} minuts",
+	BOOKMARK_VIEWED_SECONDS_AGO: "Adreça d'interès visualitzada fa ${seconds} segons",
+	BOOKMARK_VIEWED_1_HOUR_AGO: "Adreça d'interès visualitzada fa 1 hora",
+	BOOKMARK_VIEWED_1_MINUTE_AGO: "Adreça d'interès visualitzada fa 1 minut",
+	BOOKMARK_VIEWED_1_SECOND_AGO: "Adreça d'interès visualitzada fa 1 segon",
+	BOOKMARK_VIEWED_AT_DATE: "Adreça d'interès visualitzada el ${date}",
+	
+	//Blog
+	BLOG_VIEWED_TODAY: "Blog visualitzat avui",
+	BLOG_VIEWED_YESTERDAY: "Blog visualitzat ahir",
+	BLOG_VIEWED_HOURS_AGO: "Blog visualitzat fa ${hours} hores",
+	BLOG_VIEWED_MINUTES_AGO: "Blog visualitzat fa ${minutes} minuts",
+	BLOG_VIEWED_SECONDS_AGO: "Blog visualitzat fa ${seconds} segons",
+	BLOG_VIEWED_1_HOUR_AGO: "Blog visualitzat fa 1 hora",
+	BLOG_VIEWED_1_MINUTE_AGO: "Blog visualitzat fa 1 minut",
+	BLOG_VIEWED_1_SECOND_AGO: "Blog visualitzat fa 1 segon",
+	BLOG_VIEWED_AT_DATE: "Blog visualitzat el ${date}",
+	
+	//Forum
+	FORUM_VIEWED_TODAY: "Fòrum visualitzat avui",
+	FORUM_VIEWED_YESTERDAY: "Fòrum visualitzat ahir",
+	FORUM_VIEWED_HOURS_AGO: "Fòrum visualitzat fa ${hours} hores",
+	FORUM_VIEWED_MINUTES_AGO: "Fòrum visualitzat fa ${minutes} minuts",
+	FORUM_VIEWED_SECONDS_AGO: "Fòrum visualitzat fa ${seconds} segons",
+	FORUM_VIEWED_1_HOUR_AGO: "Fòrum visualitzat fa 1 hora",
+	FORUM_VIEWED_1_MINUTE_AGO: "Fòrum visualitzat fa 1 minut",
+	FORUM_VIEWED_1_SECOND_AGO: "Fòrum visualitzat fa 1 segon",
+	FORUM_VIEWED_AT_DATE: "Fòrum visualitzat el ${date}",
+	
+	//Wiki
+	WIKI_VIEWED_TODAY: "Wiki visualitzat avui",
+	WIKI_VIEWED_YESTERDAY: "Wiki visualitzat ahir",
+	WIKI_VIEWED_HOURS_AGO: "Wiki visualitzat fa ${hours} hores",
+	WIKI_VIEWED_MINUTES_AGO: "Wiki visualitzat fa ${minutes} minuts",
+	WIKI_VIEWED_SECONDS_AGO: "Wiki visualitzat fa ${seconds} segons",
+	WIKI_VIEWED_1_HOUR_AGO: "Wiki visualitzat fa 1 hora",
+	WIKI_VIEWED_1_MINUTE_AGO: "Wiki visualitzat fa 1 minut",
+	WIKI_VIEWED_1_SECOND_AGO: "Wiki visualitzat fa 1 segon",
+	WIKI_VIEWED_AT_DATE: "Wiki visualitzat el ${date}",
+
+	//Event
+	EVENT_VIEWED_TODAY: "Esdeveniment visualitzat avui",
+	EVENT_VIEWED_YESTERDAY: "Esdeveniment visualitzat ahir",
+	EVENT_VIEWED_HOURS_AGO: "Esdeveniment visualitzat fa ${hours} hores",
+	EVENT_VIEWED_MINUTES_AGO: "Esdeveniment visualitzat fa ${minutes} minuts",
+	EVENT_VIEWED_SECONDS_AGO: "Esdeveniment visualitzat fa ${seconds} segons",
+	EVENT_VIEWED_1_HOUR_AGO: "Esdeveniment visualitzat fa 1 hora",
+	EVENT_VIEWED_1_MINUTE_AGO: "Esdeveniment visualitzat fa 1 minut",
+	EVENT_VIEWED_1_SECOND_AGO: "Esdeveniment visualitzat fa 1 segon",
+	EVENT_VIEWED_AT_DATE: "Esdeveniment visualitzat el ${date}",
+	
+	//To Do
+	TODO_VIEWED_TODAY: "Tasca visualitzada avui",
+	TODO_VIEWED_YESTERDAY: "Tasca visualitzada ahir",
+	TODO_VIEWED_HOURS_AGO: "Tasca visualitzada fa ${hours} hores",
+	TODO_VIEWED_MINUTES_AGO: "Tasca visualitzada fa ${minutes} minuts",
+	TODO_VIEWED_SECONDS_AGO: "Tasca visualitzada fa ${seconds} segons",
+	TODO_VIEWED_1_HOUR_AGO: "Tasca visualitzada fa 1 hora",
+	TODO_VIEWED_1_MINUTE_AGO: "Tasca visualitzada fa 1 minut",
+	TODO_VIEWED_1_SECOND_AGO: "Tasca visualitzada fa 1 segon",
+	TODO_VIEWED_AT_DATE: "Tasca visualitzada el ${date}",
+	
+	//Survey
+	SURVEY_VIEWED_TODAY: "Enquesta visualitzada avui",
+	SURVEY_VIEWED_YESTERDAY: "Enquesta visualitzada ahir",
+	SURVEY_VIEWED_HOURS_AGO: "Enquesta visualitzada fa ${hours} hores",
+	SURVEY_VIEWED_MINUTES_AGO: "Enquesta visualitzada fa ${minutes} minuts",
+	SURVEY_VIEWED_SECONDS_AGO: "Enquesta visualitzada fa ${seconds} segons",
+	SURVEY_VIEWED_1_HOUR_AGO: "Enquesta visualitzada fa 1 hora",
+	SURVEY_VIEWED_1_MINUTE_AGO: "Enquesta visualitzada fa 1 minut",
+	SURVEY_VIEWED_1_SECOND_AGO: "Enquesta visualitzada fa 1 segon",
+	SURVEY_VIEWED_AT_DATE: "Enquesta visualitzada el dia ${date}",
+	
+	//Survey
+	GENERIC_VIEWED_TODAY: "Visualitzat avui",
+	GENERIC_VIEWED_YESTERDAY: "Visualitzat ahir",
+	GENERIC_VIEWED_HOURS_AGO: "Visualitzat fa ${hours} hores",
+	GENERIC_VIEWED_MINUTES_AGO: "Visualitzat fa ${minutes} minuts",
+	GENERIC_VIEWED_SECONDS_AGO: "Visualitzat fa ${seconds} segons",
+	GENERIC_VIEWED_1_HOUR_AGO: "Visualitzat fa 1 hora",
+	GENERIC_VIEWED_1_MINUTE_AGO: "Visualitzat fa 1 minut",
+	GENERIC_VIEWED_1_SECOND_AGO: "Visualitzat fa 1 segon",
+	GENERIC_VIEWED_AT_DATE: "Visualitzat el dia ${date}"
+})
+

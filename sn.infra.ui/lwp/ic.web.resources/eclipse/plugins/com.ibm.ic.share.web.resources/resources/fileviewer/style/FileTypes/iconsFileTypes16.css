@@ -1,0 +1,34 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+.ics-viewer .iconsFileTypes16{background-image:url('../images/deprecated/iconsFileTypes16-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsFileTypes16{display:none}
+
+.ics-viewer .iconsFileTypes16-ftAudio16{background-image:url('../images/PNGs_16/audio16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftCode16{background-image:url('../images/PNGs_16/code16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftCompressed16{background-image:url('../images/PNGs_16/zip16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftDataDocs16{background-image:url('../images/PNGs_16/spreadsheet16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftDefault16{background-image:url('../images/PNGs_16/generic_file16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftFlash16{background-image:url('../images/PNGs_16/flash16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftGraphic16{background-image:url('../images/PNGs_16/photo16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftLink16{background-image:url('../images/PNGs_16/link16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftPdf16{background-image:url('../images/PNGs_16/pdf16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftPresentationDocs16{background-image:url('../images/PNGs_16/presentation16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftText16{background-image:url('../images/PNGs_16/text16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftVideo16{background-image:url('../images/PNGs_16/video16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftWordProcessingDocs16{background-image:url('../images/PNGs_16/wordprocessing16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+
+/*Depricated Icons*/
+.ics-viewer .iconsFileTypes16-ftContact16{width:16px;height:16px;background-position:0 -72px}
+.ics-viewer .iconsFileTypes16-ftFileSyncCheckmark16{width:10px;height:10px;background-position:0 -192px}
+.ics-viewer .iconsFileTypes16-ftFolder16{width:16px;height:16px;background-position:0 -210px}
+.ics-viewer .iconsFileTypes16-ftFolderOpen16{width:16px;height:16px;background-position:0 -234px}
+.ics-viewer .iconsFileTypes16-ftPage16{width:16px;height:16px;background-position:0 -306px}
+.ics-viewer .iconsFileTypes16-ftVisualization16{width:16px;height:16px;background-position:0 -450px}
+
+/*Currently Unused*/
+.ics-viewer .iconsFileTypes16-ftBlog16{background-image:url('../images/PNGs_16/blog16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftCharting16{background-image:url('../images/PNGs_16/charting16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftDownload16{background-image:url('../images/PNGs_16/download16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftForum16{background-image:url('../images/PNGs_16/forum16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftLayout16{background-image:url('../images/PNGs_16/layout16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftWiki16{background-image:url('../images/PNGs_16/wiki16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}
+.ics-viewer .iconsFileTypes16-ftUnknown16{background-image:url('../images/PNGs_16/unknown16.png');background-repeat:no-repeat;width:16px;height:16px;background-position:0 0;}

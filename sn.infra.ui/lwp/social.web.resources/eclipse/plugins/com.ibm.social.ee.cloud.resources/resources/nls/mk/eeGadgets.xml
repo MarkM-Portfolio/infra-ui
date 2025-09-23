@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Вградената украсна програма OpenSocial беше употребена за прикажување дополнителни детали и дејства за настани на Connections</msg>
+  <msg name="connectionsEE_errorTitle">Грешка</msg>
+  <msg name="connectionsEE_errorDescription">Вашата организација не ја одобрила оваа содржина и не е достапна. Контактирајте со администраторот на вашата организација за да ја овозможи наставката.</msg>
+</messagebundle>

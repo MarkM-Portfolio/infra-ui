@@ -1,0 +1,9 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<ul class="dijitReset dijitMenu" tabindex="-1" style="display: none; overflow: auto; overflow-x: hidden;" data-dojo-attach-point="listNode" data-dojo-attach-event="onmouseup:select,onmousedown:_onMouseDown,onmouseover:_onMouseOver,onmouseout:_onMouseOut">
+	<li class="dijitMenuItem dijitMenuPreviousButton _selectable" clickmethod="previousPage" wairole="option" data-dojo-attach-point="previousNode">${messages.previous}</li>
+	<li class="dijitMenuItem dijitMenuItemText _selectable" wairole="option" data-dojo-attach-point="errorNode">${messages.error}</li>
+	<li class="dijitMenuItem dijitMenuItemText _selectable" wairole="option" data-dojo-attach-point="emptyNode"> </li>
+	<li class="dijitMenuItem _selectable" wairole="option" map="value" data-dojo-attach-point="templateNode"> </li>
+	<li class="dijitMenuItem dijitMenuItemText _selectable" wairole="option" data-dojo-attach-point="loadingNode">${messages.loading}</li>
+	<li class="dijitMenuItem dijitMenuNextButton _selectable" clickmethod="nextPage" wairole="option" data-dojo-attach-point="nextNode">${messages.next}</li>
+</ul>

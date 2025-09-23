@@ -1,0 +1,19 @@
+/* Copyright IBM Corp. 2001, 2015  All Rights Reserved.              */
+
+/*
+    U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+This CSS was built on March 9 2012. (version: OneUI-3.0.3_20120309-0300)
+these are the styles for the docked footer (layout)
+companion files: footerDocked.css / footerDockedTheme.css
+companion files: footerDockedRTL.css / footerDockedThemeRTL.css*/
+/*** D O C K E D   F O O T E R ***/
+/*this sits at the bottom of the UI and shows your online status. It also lets you communicate using Sametime*/
+
+
+
+.lotusui30 .lotusFooterDocked .lotusInlinelist li a {outline:1px solid #000; border-color:#5a5b5c; background:#2d3033;
+	background:-moz-linear-gradient(#4b4d51, #2d3033);
+	background:-webkit-gradient(linear, left top, left bottom, from(#4b4d51), to(#2d3033));}
+.lotusui_ie .lotusui30 .lotusFooterDocked .lotusInlinelist li a {border-color:#000;}
+
+/***********************************************************/

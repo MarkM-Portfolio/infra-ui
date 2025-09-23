@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2005, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!--
+  Note to U.S. Government Users Restricted Rights:
+  Use, duplication or disclosure restricted by GSA ADP Schedule
+  Contract with IBM Corp.
+-->
+<html ${bidiAttr}>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=9" >
+<title></title>
+${baseTag}
+<link rel="stylesheet" href="${style}" >
+<link rel="shortcut icon" href="${contextRoot}/web/${iconPath}">
+<style>
+#net-jazz-ajax-NoScriptMessage {
+	color: #D0D0D0;
+	font-size: 2em;
+	text-align: center;
+	position: absolute;
+	top: 1%;
+	z-index: 999;
+}
+</style>
+</head>
+<body class="claro">
+	<div dojotype="${ajaxModuleClass}"></div>
+	<noscript><div id="net-jazz-ajax-NoScriptMessage">${noScriptMsg}</div></noscript>
+	<script type="text/javascript">
+		djConfig = {
+			isDebug: ${isDebugEnabled},
+			usePlainJson: true,
+			baseUrl: "${baseUrl}",
+			locale: "${locale}",
+			localizationComplete: true,
+			parseOnLoad: true
+		};
+		/*${contextInformation}*/
+		net = {jazz: {ajax: {}}};
+		net.jazz.ajax._contextRoot = "${contextRoot}";
+		net.jazz.ajax._webuiPrefix = "/web/";
+	</script>
+	${javascript}
+</body>
+</html>

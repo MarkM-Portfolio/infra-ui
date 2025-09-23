@@ -1,0 +1,43 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2013                                          */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+.net-jazz-ajax-errorPage {
+	position: relative;
+	padding: 5px 9px 3px 9px;
+	height: auto !important;
+	min-height: 53px;
+	zoom: 1;
+}
+.net-jazz-ajax-errorPage .title {
+	margin-top: 5px;
+	padding-left: 0px;
+	color: red;
+	font-size: 16pt;
+}
+.net-jazz-ajax-errorPage a {
+	color: #85852C;
+	text-decoration: none;
+}
+.net-jazz-ajax-errorPage a:hover {
+	color: #676532;
+	text-decoration: underline;
+}
+.net-jazz-ajax-errorPage p {
+	margin-top: 12px;
+	margin-bottom: 21px;
+}
+.net-jazz-ajax-errorPage .fine-print {
+	color: #666666;
+	font-size: 8pt;
+}

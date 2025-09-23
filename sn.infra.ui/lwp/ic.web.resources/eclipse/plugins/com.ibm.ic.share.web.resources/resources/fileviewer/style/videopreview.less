@@ -1,0 +1,55 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+.ics-viewer .ics-viewer-video-preview {
+  height: 100%;
+  white-space: nowrap;
+}
+
+.ics-video-widget {
+  display: inline-block;
+  vertical-align: middle;
+  max-width:1280px;
+  min-width:360px;
+  width:854px;
+  &.vjsVideo {
+     height:0px;
+     width:0px;
+     overflow:hidden;
+     &.loaded{
+	   width: 75%;
+	   height: auto;
+	 }
+	 .vjs-default-skin .vjs-big-play-button {
+       left: 50%;
+       top: 50%;
+       margin: -1.3em -2em;
+    }  
+  }
+}
+.lotusImagesOff .ics-video-widget {
+  .vjs-default-skin .vjs-control:focus {
+    outline: 1px dotted yellow;
+    margin: 1px;
+  }
+  .vjs-default-skin .vjs-play-control:focus,
+  .vjs-default-skin .vjs-volume-control:focus {
+    width: 48px;
+    height:28px;
+  }
+  .vjs-default-skin .vjs-mute-control:focus {
+    width: 38px;
+    height:28px;
+  }
+  .vjs-default-skin .vjs-fullscreen-control:focus {
+    width: 36px;
+    height:28px;
+  }
+  .vjs-default-skin .vjs-progress-holder:focus {
+    height: 7px;
+    outline: 1px dotted yellow;
+    margin: 1px;
+  }
+  .vjs-default-skin .vjs-volume-bar:focus {
+    outline: 1px dotted yellow;
+  }
+}

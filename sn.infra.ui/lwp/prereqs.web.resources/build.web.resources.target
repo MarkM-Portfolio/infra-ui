@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><?pde version="3.6"?><target name="Connections Web Resources build output (JazzFoundation I20101012-1700+sn.infra.ui output)">
+<locations>
+<location path="${workspace_loc:/prereqs.web.resources/eclipse}" type="Directory"/>
+<location path="${project_loc:prereqs.web.resources}/../build/lc.web.resources.base/eclipse/plugins" type="Directory"/>
+<location path="${project_loc:prereqs.web.resources}/../build/lc.web.osgi/eclipse/plugins" type="Directory"/>
+<location path="${project_loc:prereqs.web.resources}/../build/oneui.web.resources/eclipse/plugins" type="Directory"/>
+<location path="${project_loc:prereqs.web.resources}/../build/social.web.resources/eclipse/plugins" type="Directory"/>
+<location path="${project_loc:prereqs.web.resources}/../build/lc.web.resources/eclipse/plugins" type="Directory"/>
+</locations>
+</target>

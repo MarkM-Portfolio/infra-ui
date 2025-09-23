@@ -1,0 +1,24 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div aria-labelledby="${id}_flyoutTitleNode" class="lotusFlyout">
+   <div class="lotusWrapper" dojoAttachPoint="wrapper" style="position: relative;">
+	   <div class="lotusFlyoutHeader" dojoAttachPoint="flyoutHeader">
+	      <ul class="lotusInlinelist">
+	         <li class="lotusFirst" dojoAttachPoint="titleNode" id="${id}_flyoutTitleNode">${title}</li>
+	         <li class="lotusMeta" dojoAttachPoint="timeNode"></li>
+	      </ul>
+	      <div style="display: none;">
+	         <a style="display:none" href="#" dojoAttachPoint="prevNode" dojoAttachEvent="onclick:previous">${messages.previous}</a>
+	         <a style="display:none" href="#" dojoAttachPoint="nextNode" dojoAttachEvent="onclick:next">${messages.next}</a>
+	      </div>
+	      <span class="lotusBtnImg lotusClose" title="${messages.close}" dojoAttachPoint="metaClose" dojoAttachEvent="click:metaClickClose">
+	         <input dojoAttachPoint="metaCloseInput" type="image" src="${_blankGif}" alt="${messages.close}"><a class="lotusAltText" href="javascript:;">X</a></input>
+	      </span>
+	   </div>
+	   <div class="lotusFlyoutContentArea" dojoAttachPoint="msgNode" style="display:none;"></div>
+	   <div class="lotusFlyoutContent lotusStyledScroll" dojoAttachPoint="scrollNode">
+	      <div class="lotusFlyoutContentArea">
+	        <div dojoAttachPoint="contentNode"></div>
+	      </div>
+	   </div>
+   </div>
+</div>

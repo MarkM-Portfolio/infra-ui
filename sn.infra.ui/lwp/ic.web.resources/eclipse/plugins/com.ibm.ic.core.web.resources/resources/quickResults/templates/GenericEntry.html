@@ -1,0 +1,24 @@
+<!-- Copyright IBM Corp. 2014, 2016  All Rights Reserved.              -->
+
+<div class="lconn_personContainer compact">
+	<div class="lconn_profileImage">
+		<img class="${_additionalClass}" data-dojo-attach-point="photoNode" alt="" role="presentation" src="${photoUrl}" style="max-width: 40px; max-height: 40px;">
+	</div>
+	<div class="lconn_profileInfo">
+		<div>
+			<span class="lconn_title" data-dojo-attach-point="linkNode">${!entryTitle}</span>
+			<a class="lconn_title" data-dojo-attach-point="hiddenLinkNode" data-dojo-attach-event="onclick: linkClicked" href="${resourceUrl}" style="display: none;">${!entryTitle}</a>
+		</div>
+		<div id="${id}_metaData" data-dojo-attach-point="metaDataNode">
+			<div class="lconn_gray">
+				<span data-dojo-attach-point="detailsNode">${details}</span>
+			</div>
+			<div class="lconn_gray">
+				<span data-dojo-attach-point="authorNode">${_authorString}</span>
+				<span class="lotusHidden" data-dojo-attach-point="_separator"> | </span>
+				<span class="lotusHidden" data-dojo-attach-point="dateNode">${_dateString}</span>
+				<span class="lotusHidden" data-dojo-attach-point="previewOnlyNode">${PREVIEW_MODE_ONLY}</span>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,30 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<li class="lotusAddComment" dojoAttachPoint="addCommentAP">
+	<form class="lotusForm2 lotusStreamUpdate">
+        <div dojoAttachPoint="commentInputTextBox"></div>
+		<div dojoAttachPoint="mentionsWarningPlaceholder"></div>
+		<div class="lotusActions lotusHidden" dojoAttachPoint="commentActionsAP">
+			<ul class="lotusInlinelist lotusRight">
+				<li style="border: 0;">
+					<span dojoAttachPoint="commentFileAttachContainer"></span>
+				</li>
+				<li dojoAttachPoint="commentCountdownContainer" class="lotusMeta" aria-atomic="true" aria-live="polite" role="status" aria-relevant="text">
+	                <span class="charDisplay"></span>
+	                <div class="ariaCharLabel lotusOffScreen"></div>
+				</li>
+			</ul>
+			<ul class="lotusInlinelist lotusLeft">
+				<li class="lotusFirst"><a tabindex="0" href="javascript:;" class="newsItemComment" role="button" dojoAttachPoint="commentPostActoin" dojoattachevent="onclick:post" data-skipdirtycheck="true"><strong>${strings.commentPostText}</strong></a></li>
+				<li><a tabindex="0" class="newsItemComment" href="javascript:;" role="button" dojoAttachPoint="commentCancelBtn" dojoattachevent="onclick:cancel" data-skipdirtycheck="true">${strings.commentCancelText}</a></li>
+			</ul>
+		</div>
+		<div class="lotusMessage2 lotusHidden" role="alert" dojoAttachPoint="commentErrorAP">
+			<img class="lconnSprite lconnSprite-iconError16" alt="${strings.errorText}" src="${_blankGif}">
+			<span class="asCommentError" dojoAttachPoint="commentFailureTextAP"></span>
+			<a href="javascript:;" dojoAttachPoint="closeBtn" dojoAttachEvent="onclick:clearErrorMsg" class="lotusDelete">
+				<img alt="${strings.msgCloseAlt}" src="${_blankGif}" />
+				<span class="lotusAltText">X</span>
+			</a>
+		</div>
+	</form>
+</li>

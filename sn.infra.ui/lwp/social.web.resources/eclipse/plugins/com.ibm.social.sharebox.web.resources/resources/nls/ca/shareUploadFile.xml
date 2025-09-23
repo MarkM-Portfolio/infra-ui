@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">Fitxers</msg>
+  <msg name="description">Gadget de fitxers per permetre carregar i compartir fitxers</msg>
+  <msg name="action_uploadFile_label">Fitxers</msg>
+  <msg name="action_uploadFile_tooltip">Carrega i comparteix fitxers</msg>
+  <msg name="loading">Carregant...</msg>
+  <msg name="error_msg">No es pot carregar el contingut. Torneu-ho a intentar o poseu-vos en contacte amb l'administrador.</msg>
+  <msg name="error_alt">Error</msg>
+</messagebundle>

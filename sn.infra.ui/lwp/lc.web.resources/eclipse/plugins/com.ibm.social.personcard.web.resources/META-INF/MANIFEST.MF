@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IBM Social Business Toolkit Person Card
+Bundle-SymbolicName: com.ibm.social.personcard.web.resources;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: IBM

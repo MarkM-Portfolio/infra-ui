@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Bağlanmak için Davet Et",
+	NDYK1:"Önerilecek başka kişi yok",
+	LOADING: "yükleniyor",
+	DYK_TITLE: "Tanıyabileceğiniz kişiler",
+	INVITE_TITLE: "Bağlantı oluşturmak için davet gönder",
+	SEND_ACTION: "Gönder",
+	CANCEL_ACTION: "İptal",
+	PREV: "Önceki",
+	NEXT: "Sonraki",
+	bpct: "Web günlüğünüz üzerine yorum yaptı",
+	bpcc: "Aynı web günlüğü üzerine yorum yaptınız",
+	lpfr: "Tanıdığınız bir kişinin iş arkadaşı",
+	lm1: "Bu kişinin yöneticisisiniz",
+	le1: "Bu kişi sizin yöneticiniz",
+	sdm: "Yöneticiniz ortak",
+	pt: "Bu kişi sizi etiketledi",
+	pbt: "Bu kişiyi etiketlediniz",
+	acm: "Etkinlikleri paylaşıyorsunuz",
+	wikiCoContribution: "Her ikinizde aynı vikiyi düzenlediniz",
+	bpcb: "Web günlükleri üzerine yorum yaptınız",
+	lpcfr: "Bazı iş arkadaşlarınız ortak",
+	ccmf: "Birlikte bir topluluktasınız",
+	ccms: "Birlikte bir topluluktasınız",
+	filesharing: "Bazı dosyalar paylaşıyorsunuz",
+	forumthreaddiscussion: "Bir forum konusunu paylaşıyorsunuz",
+	ctb: "Bir yer işaretini paylaşıyorsunuz",
+	tgw: "Eşleşen etiketleriniz var",
+	tcu: "Aynı etiketi kullandınız",
+	pctg: "İkiniz de aynı kişiyi etiketlediniz",
+	tgb: "Aynı kişi ikinizi de etiketledi"
+})

@@ -1,0 +1,8 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.otherPeople32-LoadingPhotoPerson32{width:32px;height:32px;background-position:0 0}
+.otherPeople32-NoPhotoCommunity32{width:32px;height:32px;background-position:0 -40px}
+.otherPeople32-NoPhotoGroup32{width:32px;height:32px;background-position:0 -80px}
+.otherPeople32-NoPhotoPerson32{width:32px;height:32px;background-position:0 -120px}
+
+.otherPeople32{background-image:url('./otherPeople32-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .otherPeople32{display:none}

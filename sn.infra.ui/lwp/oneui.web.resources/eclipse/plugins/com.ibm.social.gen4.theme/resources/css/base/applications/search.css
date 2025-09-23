@@ -1,0 +1,113 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+
+.lotusui30 div.lotusHeader.lconnSearchHeader {
+margin-bottom: 4px;
+}
+form#advancedSearchForm1 .lotusText {
+width: 22em;
+}
+form#advancedSearchForm1 strong {
+text-decoration: underline;
+}
+.lconnSearchPageSection {
+border-bottom: 1px solid #ccc;
+padding-bottom: 20px
+}
+.lconnSearchColumn {
+padding-left: 10px;
+}
+.lconnSearchColumnItem {
+padding-top: 0.5em;
+}
+.lconnSearchInputContainer {
+padding:15px;
+padding-bottom: 0px
+}
+.lotusui30 .lotusContent .lotusSearch .lotusText:focus,.lotusui30 .lotusTitleBar .lotusSearch .lotusText:active {
+color: #222;
+}
+.lotusui30 .lotusContent .lotusSearch .lotusText {
+border: 0;
+padding-top: 4px;
+padding-right: 0;
+padding-bottom: 3px;
+padding-left: 9px;
+background: none;
+color: #666;
+width: 99%;
+}
+.lotusui30 .lotusContent .lotusSearch .lotusLayout td {
+width: 100%;
+}
+.lotusui30 .lotusContent .lotusSearch .lotusLayout {
+border: 1px solid #ccc;
+background: #fff;
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+border-radius: 15px;
+width: 100%;
+}
+.lotusui30 .lotusContent .lotusSearch .lotusSearchButton {
+opacity: 0.4;
+filter: alpha(opacity = 40);
+}
+.lotusui30 .lotusContent .lotusSearch .lotusBtnImg {
+border: 0;
+margin-top: 1px;
+margin-bottom: 4px;
+margin-left: 1px;
+margin-right: 5px;
+background: none;
+padding: 1px;
+}
+.lotusui30 .lotusSuggestion {
+margin-top: 12px;
+}
+.lotusSuggestion.lotusMessage span {
+margin-left: 0px;
+display: inline;
+}
+.lconnSearchResults .searchComponentCategory .lotusMeta {
+color: black;
+}
+.lconnSearchResults .lotusDim {
+opacity: 0.5;
+filter: alpha(opacity =     50);
+}
+.lconnSearchResults a:visited {
+color: #551a8b;
+}
+#datebin ul.lotusYearTree {
+list-style: none;
+margin-left: 0px;
+padding-left: 0px;
+}
+ul.lotusYearTree li.lotusYearEntry {
+list-style: none;
+margin-bottom: 2px;
+margin-top: 2px;
+}
+.lotusui30 .lotusColLeft ul.lotusYearTree ul.lotusMonthTree {
+list-style: none;
+}
+.lotusui30 .lotusColLeft ul.lotusMonthTree li.lotusMonthEntry {
+list-style: none;
+padding-left: 60px;
+}
+.lconnFacet .lotusArrow {
+margin-left: 12px;
+}
+.lotusui30 .lconnFacet .lotusInlinelist.lotusActions {
+margin-right: -20px;
+}
+/*theming*/
+
+.lotusui30 .lconnSearchResults .lconnPromotedStatusUpdatesContainer .lotusTable,
+/*FLAG: this is an override to a style in sprites.css and package3.css*/
+.lotusui30 .lconnSearchResults .lconnPromotedStatusUpdatesContainer .lotusTable td{border-color:#ccc;}
+/*overrides inline styles*/
+#filtersContainer, #searchFilters > div{border-width:0 !important;}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage div.lotusHeader.lconnSearchHeader {
+	padding-top: 45px;
+}

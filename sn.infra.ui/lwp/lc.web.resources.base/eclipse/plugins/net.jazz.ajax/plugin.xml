@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2009, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<?eclipse version="3.0"?>
+<!--
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<plugin>
+
+	<!-- extension-point declarations -->
+
+	<extension-point id="webBundles" name="Web Bundle" schema="schema/webBundles.exsd"/>
+	<extension-point id="applications" name="Applications" schema="schema/applications.exsd"/>
+	<extension-point id="pages" name="Application Pages" schema="schema/pages.exsd" />
+	<extension-point id="ajaxModules" name="Ajax Modules" schema="schema/ajaxModules.exsd" />
+	<extension-point id="cssBindingSets" name="CSS Binding Sets" schema="schema/cssBindingSets.exsd" />
+	<extension-point id="applicationPageBindings" name="Application Page Bindings" schema="schema/applicationPageBindings.exsd" />
+	<extension-point id="bootstrapProperties" name="Bootstrap Properties" schema="schema/bootstrapProperties.exsd" />
+	<extension-point id="ajaxModuleAliases" name="Ajax Module Aliases" schema="schema/ajaxModuleAliases.exsd"/>
+	<extension-point id="dojoModules" name="Dojo Module" schema="schema/dojoModules.exsd"/>
+	<extension-point id="dojoResourceModules" name="Dojo Resource Module" schema="schema/dojoResourceModules.exsd"/>
+	<extension-point id="dojoModuleBinding" name="Dojo Module Binding" schema="schema/dojoModuleBinding.exsd"/>
+
+	<extension point="net.jazz.ajax.webBundles"/>
+	
+	<!--
+	<extension point="net.jazz.ajax.ajaxModules">
+		<ajaxModule id="net.jazz.ajax.MissingDependencies"
+				internalPathInfo="/{missingDependencyList}"
+				widgetClass="net.jazz.ajax.ui.internal.MissingDependencies">
+		</ajaxModule>
+	</extension>
+	
+	<extension point="net.jazz.ajax.ajaxModuleAliases">
+		<ajaxModuleAlias alias="/jafstatus" id="net.jazz.ajax.JAFStatus" />
+	</extension>
+	-->
+	
+	<extension point="net.jazz.ajax.cssBindingSets">
+		<cssBindingSet id="net.jazz.ajax.ui.internal.CSSBindingSet" path="/ui/internal/templates">
+			<cssBinding jsModule="net.jazz.ajax.ui.ErrorPage">
+				<cssModule path="/ErrorPage.css"/>
+			</cssBinding>
+			<cssBinding jsModule="net.jazz.ajax.ui.internal.MissingDependencies">
+				<cssModule path="/MissingDependencies.css"/>
+			</cssBinding>
+			<cssBinding jsModule="net.jazz.ajax.ui.internal.JAFStatus">
+				<cssModule path="/JAFStatus.css"/>
+			</cssBinding>
+			<cssBinding jsModule="net.jazz.ajax.ui.internal.OpenSocialJazz">
+				<cssModule path="/OpenSocialJazz.css"/>
+			</cssBinding>
+		</cssBindingSet>
+		<cssBindingSet id="net.jazz.ajax.ui.CSSBindingSet" path="/ui">
+			<cssBinding jsModule="net.jazz.ajax.ui.PlatformUI">
+				<cssModule path="/styles.css"/>
+			</cssBinding>
+		</cssBindingSet>
+	</extension>
+	
+	<extension point="net.jazz.ajax.dojoModules">
+		<dojoModule id="net.jazz.ajax.BootstrapProperties"
+					provider="net.jazz.ajax.BootstrapProperties"/>
+		<dojoModule id="net.jazz.ajax._xdbootstrap"
+					provider="net.jazz.ajax.resource.XDLoaderProperties"/>
+		<dojoModule id="net.jazz.ajax.core.internal.amd,dojo._base.browser,dojo._base.connect,dojo._base.declare,dojo._base.kernel,dojo._base.xhr,dojo.fx,dojo.dnd.Source,dojo.on,dojo.request,dojo.request.watch,dojo.dom-attr,dojo.dom-construct,dojo.i18n,dojo.main,dojo.query,dojox.cometd,dojox.drawing.stencil._Base,dojox.dtl._DomTemplated,dojox.flash._base,dojox.gfx.renderer,dojox.gfx.vml,dojox.gfx,dijit._base.popup,dijit.BackgroundIframe,dijit.focus,dijit.form._FormWidget,dijit.form.Button,dijit.form.CheckBox,dijit.form._RadioButtonMixin,dijit.layout.AccordionContainer,dijit.layout.StackContainer,dijit.place,dijit._Templated,dijit._TemplatedMixin,dijit._TimePicker,dijit._Widget,dijit._WidgetBase,dijit.Dialog,dijit.Menu,dijit.popup,dijit.Toolbar,dijit.Tree,dojox.string.BidiComplex,doh.main,doh.runner"
+					provider="net.jazz.ajax.model.CoreResources"/>
+	</extension>
+</plugin>

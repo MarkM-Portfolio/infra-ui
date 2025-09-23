@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Povabilo za povezavo",
+	NDYK1:"Ni več oseb za priporočanje",
+	LOADING: "nalaganje",
+	DYK_TITLE: "Osebe, ki jih morda poznate",
+	INVITE_TITLE: "Pošljite povabilo za povezavo",
+	SEND_ACTION: "Pošlji",
+	CANCEL_ACTION: "Prekliči",
+	PREV: "Nazaj",
+	NEXT: "Naprej",
+	bpct: "je komentiral(-a) vaš blog",
+	bpcc: "Komentirali ste isti blog",
+	lpfr: "Je kolega osebe, ki jo poznate",
+	lm1: "Ste upravitelj teh oseb",
+	le1: "Ta oseba je vaš upravitelj",
+	sdm: "Imate istega upravitelja",
+	pt: "Ta oseba vas je označila",
+	pbt: "Označili ste to osebo",
+	acm: "Imata skupne dejavnosti",
+	wikiCoContribution: "Oba sta urejala isti wiki",
+	bpcb: "Komentirali ste blog te osebe",
+	lpcfr: "Imata nekaj skupnih kolegov",
+	ccmf: "S to osebo sta skupaj v skupnosti",
+	ccms: "S to osebo sta skupaj v skupnosti",
+	filesharing: "Imata nekaj skupnih datotek",
+	forumthreaddiscussion: "Imata skupno nit v forumu",
+	ctb: "Imata skupni zaznamek",
+	tgw: "Imata ujemajoče se oznake",
+	tcu: "Uporabili ste isto oznako",
+	pctg: "Oba sta označila isto osebo",
+	tgb: "Iste osebe so označile vaju"
+})

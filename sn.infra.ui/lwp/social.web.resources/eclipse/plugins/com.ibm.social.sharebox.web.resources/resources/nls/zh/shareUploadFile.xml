@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">文件</msg>
+  <msg name="description">文件小配件允许上载和共享文件</msg>
+  <msg name="action_uploadFile_label">文件</msg>
+  <msg name="action_uploadFile_tooltip">上传并共享文件</msg>
+  <msg name="loading">正在装入...</msg>
+  <msg name="error_msg">无法装入该内容。 请稍后重试或与系统管理员联系。</msg>
+  <msg name="error_alt">错误</msg>
+</messagebundle>

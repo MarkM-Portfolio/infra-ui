@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+define({
+		"CLOSE_HELP_DATE":"Zatvori pomoć za datume",
+		"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Zatvori pomoć za tipove dokumenta",
+		"CLOSE_HELP_PERSON":"Zatvori pomoć za osobe",
+		"CLOSE_HELP_TAG":"Zatvori pomoć za oznake",
+		"CLOSE_HELP_TREND":"Zatvori pomoć za trendove",
+		"COLLAPSE_DATE":"Skupi filter za datume",
+		"COLLAPSE_ECM_DOCUMENT_TYPE":"Skupi filter tipova dokumenta",
+		"COLLAPSE_PERSON":"Skupi filter za osobe",
+		"COLLAPSE_TAG":"Skupi filter za oznake",
+		"COLLAPSE_TREND":"Skupi filter za trendove",
+		"DESCRIPTION_DATE":"Da biste prikazali rezultate koji su kreirani ili ažurirani u određeno vreme, proširite kontrolu twistie i filtrirajte informacije po godini i mesecu.",
+		"DESCRIPTION_ECM_DOCUMENT_TYPE":"Tip dokumenta je ključna reč koju dodeljujete datotekama da biste olakšali njihovo pronalaženje. Kliknite na tip dokumenta da biste prikazali rezultate pretrage koji su dodeljeni ključnoj reči.",
+		"DESCRIPTION_PERSON":"Prikaži osobe u vezi sa rezultatima pretrage. Kliknite na ime da biste prikazali rezultate pretrage pridružene određenoj osobi.",
+		"DESCRIPTION_TAG":"Oznaka je ključna reč koju dodeljujete sadržaju ili osobama da bi bilo lakše pronaći ih. Kliknite na oznaku da biste prikazali rezultate pretrage kojima je dodeljena ta ključna reč.",
+		"DESCRIPTION_TREND":"Trend je ključna reč koju sistem generiše kako bi bilo lakše pretraživati ažuriranja statusa. Kliknite na trend da biste prikazali rezultate pretrage kojima je dodeljena ta ključna reč.",
+		"EXPAND_DATE":"Proširi filter za datume",
+		"EXPAND_ECM_DOCUMENT_TYPE":"Proširi filter za tipove dokumenta",
+		"EXPAND_PERSON":"Proširi filter za osobe",
+		"EXPAND_TAG":"Proširi filter za oznake",
+		"EXPAND_TREND":"Proširi filter za trendove",
+		"HELP_DATE":"Pomoć za datume",
+		"HELP_ECM_DOCUMENT_TYPE":"Pomoć sa tipovima dokumenata",
+		"HELP_PERSON":"Pomoć za osobe",
+		"HELP_TAG":"Pomoć sa oznakama",
+		"HELP_TREND":"Pomoć sa Trendovima",
+		"NO_DATE_CONTENT":"Datumi nisu trenutno dostupni",
+		"NO_ECM_DOCUMENT_TYPE_CONTENT":"Tipovi dokumenta nisu trenutno dostupni",
+		"NO_PERSON_CONTENT":"Osobe nisu trenutno dostupne",
+		"NO_TAG_CONTENT":"Oznake nisu trenutno dostupne",
+		"NO_TREND_CONTENT":"Trendovi nisu trenutno dostupni",
+		"TITLE_DATE":"Datumi",
+		"TITLE_ECM_DOCUMENT_TYPE":"Tipovi dokumenta",
+		"TITLE_PERSON":"Osobe",
+		"TITLE_TAG":"Oznake",
+		"TITLE_TREND":"U trendu"
+});
+

@@ -1,0 +1,33 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="socialPath" role="presentation">
+  <div dojoAttachPoint="loadingContainer" class="lotusChunk" role="presentation">
+	<img role="presentation" class="lotusLoading" src="${_blankGif}" alt=""/>
+	${lcSandStrings.sand_loadingString}
+  </div>
+  <div dojoAttachPoint="msgContainer" class="lotusChunk" role="presentation"></div>
+  <div dojoAttachPoint="pathContainer" style="display:none;" role="presentation">
+	<div class="lotusCenter" role="presentation">
+		<div role="img" aria-hidden="true" dojoAttachPoint="msgPersonSelf"></div>
+		<p role="presentation">			
+			<img class="otherFramework16 otherFramework16-ArrowDown12" src="${_blankGif}" dojoAttachPoint="youAreConnectedToPerson"/>
+			<span class="lotusAltText">&#8595;</span>
+		</p>
+	</div>
+	<div class="lotusCenter" dojoAttachPoint="spCenterSection" role="presentation">
+		<div dojoAttachPoint="imageStream"></div>
+		<p role="presentation">			
+			<img class="otherFramework16 otherFramework16-ArrowDown12" src="${_blankGif}" dojoAttachPoint="personIsConnectedToTarget"/>
+			<span class="lotusAltText">&#8595;</span>
+		</p>
+	</div>
+	<div class="lotusCenter" role="presentation">
+		<p role="img" aria-hidden="true" dojoAttachPoint="target"></p>
+	</div>
+	<p role="presentation"></p>
+	<div dojoAttachPoint="personInNetwork" class="attributeTitle" style="display:none;" role="presentation"></div>
+	<div dojoAttachPoint="evidenceContainer" class="lotusTiny lotusBorderTop">
+		<div dojoAttachPoint="_evidence1" tabindex="0" role="presentation"></div>
+		<div dojoAttachPoint="_evidence2" class="lotusBorderTop" tabindex="0" role="presentation"></div>
+	</div>
+  </div>
+</div>

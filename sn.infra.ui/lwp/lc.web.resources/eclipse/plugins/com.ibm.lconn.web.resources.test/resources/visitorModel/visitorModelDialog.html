@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2008, 2016                                  -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+${head}
+${script:lconn.test.WikiAttachmentsDataStore}
+${script:lconn.test.visitorModel.visitorModelDialog}
+${style:com.ibm.lconn.web.resources.test/TempTabbedDialog}
+${script:lconn.core.PeopleTypeAhead}
+<title>IBM Connections - Visitor Model Invitation</title>
+${endhead}
+<div class="lotusBanner">
+   <div class="lotusRightCorner">
+      <div class="lotusInner">
+         <a href="#lotusMainContent" accesskey="S" class="lotusAccess">
+            <img src="${_blankGif}" />
+         </a>
+         <div class="lotusLogo">
+            <span class="lotusAltText">IBM Connections Common UI</span>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="lotusTitleBar2 lotusTitleBar2Tabs">
+   <div class="lotusWrapper">
+      <div class="lotusInner">
+         <div class="lotusTitleBarContent">
+            <h2 class="lotusHeading">
+               <span class="lotusText">Visitor Model Invite - Inline/popUp</span>
+            </h2>
+            <nav aria-label="Select page width" role="navigation"></nav>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="lotusFrame">
+   <div class="lotusMain" role="main"
+      aria-label="Initial Instruct plugin test page">
+      <div class="lotusContent">
+         <form class="lotusForm2">
+            <div class="lotusFormBody">
+               <!-- form header (use a div instead of a header tag if you aren't using html5) -->
+               <header class="lotusFormTitle">
+               <h1 class="lotusHeading" aria-describedby="formDesc">About:</h1>
+               <div id="formDesc" class="lotusMeta">
+                  Click on the '<code>Display VM</code>' buttons to display the 'Visitor Model' Invitation.
+               </div>
+               </header>
+            </div>
+            
+            <!-- form footer -->
+            <div class="lotusFormFooter">
+            <table width="50%" align="center">
+	            <tr>
+	            <td><input id="firePopUp" type="button" class="lotusBtn"
+                  value="Display VM Dialog" onclick="showVMDialog()" />
+               		<input id="fireInline" type="button" class="lotusBtn"
+                  value="Display VM Inline" onclick="showVMInline()" /></td>
+                <td><div id='inLineTestNode'></div></td>
+	            </tr>
+            </table>
+            </div>
+            </form>
+            </div>
+      </div>
+   </div>
+</div>
+<script>
+function GeneratingTestStore(f, c) {
+	this.requestDelay = 2000;
+	this.perItemDelay = 50;
+	this.createItem = c || function(i) {
+		return {value: "test "+(i+1)};		
+	};
+	this.fetch = function(kwArgs) {
+		var testStoreTimer;
+		kwArgs.abort = function() {clearTimeout(testStoreTimer);};
+		var time = this.requestDelay;
+		if (kwArgs.queryOptions && kwArgs.queryOptions.immediate)
+			time = this.perItemDelay * kwArgs.query.length;
+		testStoreTimer = setTimeout(dojo.hitch(this, f, kwArgs), time);
+		return kwArgs;
+	}
+	this.hasComplexity = function(kwArgs, required) {
+		return kwArgs.query.length >= required;
+	}
+	this.getValue = function(item, attr, defaultValue) {
+		return item[attr] || defaultValue;
+	}
+};
+
+function responseGenerator(kwArgs) {
+	var scope = kwArgs.scope || window;
+	var query = kwArgs.query;
+	if (query == "error") {
+		kwArgs.onError.apply(scope, [{message: "An error has occurred"}, kwArgs]);
+		return;
+	}
+	var arr = [];
+	var start = kwArgs.start || 0;
+	var total = 0, pageSize = kwArgs.count || 5;
+	if (query != "none") {
+		if (/^[0-9]+$/.exec(query)) {
+			total = parseInt(query);
+			for (var i=start,l=Math.min(start+pageSize,total); i<l; i++)
+				arr.push(this.createItem(i));
+		}
+		else {
+		}
+	}
+	if (kwArgs.onBegin)
+		kwArgs.onBegin.apply(scope, [total, kwArgs]);
+	if (kwArgs.onItem)
+		for (var i=0; i<arr.length; i++)
+			kwArgs.onItem.apply(scope, [arr[i], kwArgs]);
+	if (kwArgs.onComplete)
+		kwArgs.onComplete.apply(scope, [arr, kwArgs]);
+}
+
+   function showVMDialog() {
+	   
+   }
+   
+   function showVMInline() {
+   	  var inlineNode = dojo.byId('inLineTestNode');
+      var invite = new lconn.test.visitorModel.visitorModelDialog({
+    	  containerNode : inlineNode
+      });
+      invite.show();
+   }
+  
+</script>
+
+<script>
+
+</script>
+
+${end}

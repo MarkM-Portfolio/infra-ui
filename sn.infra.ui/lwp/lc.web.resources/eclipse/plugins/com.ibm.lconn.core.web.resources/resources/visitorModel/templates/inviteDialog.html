@@ -1,0 +1,67 @@
+<div class="mainContent" role="presentation">
+				<div>${mainContentDesc}</div></br>
+				<div id="optionsPanel">
+					<div class="inviteOptions"><b>${radiosTitle}</b></div>
+					<input type="radio" class="lotusCheckbox" name="memberOptions" id="vmInviteType" value="invite" checked="true"/>${radio1text}</br>
+					<input type="radio" class="lotusCheckbox" name="memberOptions" id="vmAddType" value="add" />${radio2text}</br></br>
+				</div>
+				<div id="vmInvitePanel" style="display:none">
+					<div class="lotusBold" style="display:inline-block">${taLabel}</div>
+					<div style="display:inline-block">
+					<div id="vmInviteMembersWidget" ></div>
+				</div></br>
+				<span id="invitationListContainerExternal">
+					<div class="field" id="vmInvitationListContainer" style="display:none;">
+						<div id="vmInvitationList" class="memberList" aria-labelledby="addMembersWidget" role="listbox"></div>
+					</div>
+				</span>
+				<table class="lotusHidden">
+					<tr><td><b>${taLabel}</b></td><td><div class="userTypeAhead"></div></td><td>
+					<input type="button" class="lotusFormButton createUser" /><td></tr>
+					<tr><td colspan="3"><div class="selectedUsers"></div></td></tr>
+				</table>
+				</div>
+				<div id="vmAddPanel" style="display:none">
+					<div class="lotusBold" style="display:inline-block">
+						<span id="vmTALabel">${taLabel}</span>
+						<span id="vmGTALabel" style="display:none">${gtaLabel}</span>
+					</div>
+					<div id="vmPeopleGroupSelectDiv" style="display:none;">
+						<select id="vmPeopleGroupSelect" style="display:inline-block">
+						<option value="people" selected="selected">people</option>
+						<option value="groups">groups</option>
+					</select></div>
+					<div id="vmRoleLabelContainer" style="display:none">
+						<span id="vmRoleLabel">${taRoleLabel}</span>
+						<span id="vmGRoleLabel">${gtaRoleLabel}</span>
+					</div>
+					<div style="display:none" id="vmAddMembersWidget" ></div>
+					<div style="display:none" id="vmAddGroupsWidget" ></div>
+					<span id="memberListContainerExternal">
+						<div class="field" id="vmMemberListContainer" style="display:none;">
+							<div id="vmMemberList" class="memberList" aria-labelledby="addMembersWidget" role="listbox"></div>
+						</div>
+					</span></br>
+					<table class="lotusHidden">
+						<tr><td><b>${taLabel}</b></td>
+						<td><div class="userTypeAhead"></div></td><td>
+						<input type="button" class="lotusFormButton createUser" /><td></tr>
+						<tr><td colspan="3"><div class="selectedUsers"></div></td></tr>
+					</table>
+				</div>
+				<div class="lotusFormFieldRow">
+					<span><a id="vmOptionalMailBtn" role="button" href="javascript:;" class="lotusAction">${textDisplayText}</a></span>
+					<div id="vmOptionalMail" style="display:none">
+						<div class="lotusBold">${messageText}</div>
+						<textarea class="lotusText bidiAware"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="userContent" align="center" style="display: none" role="presentation">
+				<table class="userTable" >
+					<tr><td>First Name:</td><td><input class="newUserFirst" type="text" /></td></tr>
+					<tr><td>Last Name:</td><td><input class="newUserLast" type="text" /></td></tr>
+					<tr><td>Organization:</td><td><input class="newUserOrg" type="text" /></td></tr>
+					<tr><td>Email:</td><td><input class="newUserEmail" type="text" /></td></tr>
+				</table>
+			</div>

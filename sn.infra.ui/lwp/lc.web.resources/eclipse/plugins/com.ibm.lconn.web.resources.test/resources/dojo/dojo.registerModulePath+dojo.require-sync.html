@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>Synchronous dojo.registerModulePath() + dojo.require()</title>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="Synchronous dojo.registerModulePath() + dojo.require()">
+            <div class="lotusContent">
+                <p>If dojo.registerModulePath() works, you should see a version number below.</p>
+                <h1 id="hdr1"></h1>
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        dojoConfig.isDebug=false;
+        dojo.addOnLoad(function() {
+            dojo.registerModulePath("com.ibm.oneui.ckeditor", "//apps.na.collabserv.com/connections/resources/web/com.ibm.oneui.ckeditor");
+            dojo.require("com.ibm.oneui.ckeditor.editor.dojo");
+            setTimeout(function() {
+                dojo.html.set(dojo.byId("hdr1"), CKEDITOR.version);
+            }, 1000);
+        });
+    </script>
+    ${script:dojo.html}
+</body>
+</html>

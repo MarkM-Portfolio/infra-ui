@@ -1,0 +1,24 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2013                                          */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+
+;define("lconn/bar",'lconn/bar', function() {
+	function Bar() {
+		this.foo = function foo_$0() {
+			return 'abc';
+		};
+	}
+	Bar.prototype.eek = 123;
+	return Bar;
+});

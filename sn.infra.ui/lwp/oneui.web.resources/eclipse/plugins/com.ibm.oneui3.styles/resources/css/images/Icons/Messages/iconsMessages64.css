@@ -1,0 +1,5 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.iconsMessages64-myFileSync64{width:26px;height:22px;background-position:0 0}
+
+.iconsMessages64{background-image:url('./iconsMessages64-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsMessages64{display:none}

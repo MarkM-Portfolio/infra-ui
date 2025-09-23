@@ -1,0 +1,367 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2011, 2015                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+.lcPreviewGadget div.gadgets-gadget-title-bar,
+.lcPreviewGadget div.gadgets-gadget-user-prefs-dialog {
+display: none;
+}
+
+.eeImgPrev {
+   overflow: hidden;
+   display: block;
+   position: relative;
+   float: left;
+   margin-left: 10px;
+}
+
+.lconnNumFollowers { color: #707070 !important; }
+
+.lotusCommentList .eeCommentError {
+   padding-top: 10px !important;
+}
+
+.eeLoadingCtnr {
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 20px;
+}
+
+.eeLoadingTxt {
+   margin-right: 3px;
+}
+
+/* Override File's style which forces a min heigh of 75px in Safari */
+html.dj_safari textarea.eeTextArea { min-height: 0px;}
+
+
+.lotusui30 .lotusForumReplies .lotusBoard .lotusCommentList:after {
+   background: none;
+   height: 0;
+   width: 0;
+}
+
+.lotusui30 .lotusForumReplies .lotusBoard ul.lotusCommentList li.lotusCommentItem {
+   border-width: 0;
+}
+
+.lotusui30 .lotusForumReplies .lotusBoard ul.lotusCommentList li.lotusCommentItem.showMore {
+   border-width: 1px;
+   margin-top: 10px;
+}
+
+
+.lotusui30 .lotusForumReplies .lotusBoard ul.lotusCommentList li.lotusCommentItem div.lotusPost {
+   border-right: 1px solid #DDDDDD;
+   border-left: 1px solid #DDDDDD;
+   border-bottom: 1px solid #DDDDDD;
+}
+
+.lotusui30 .lotusForumReplies .lotusBoard ul.lotusCommentList li.lotusCommentItem div.lotusPost.selected {
+   background-color: #FFFFFF;
+}
+
+.lotusui30 .lotusForumReplies .lotusBoard .lotusPost .lotusActions {
+   margin-top: 0;
+   padding-top: 0;
+   margin-bottom: 5px;
+}
+
+.lotusui30 .lotusForumReplies .lotusBoard .lotusCommentList {
+   margin-top: 0;
+}
+
+.lotusui30 .lotusForumReplies .lotusBoard ul.lotusCommentList {
+   border-width: 0;
+}
+
+.lotusui30 .lotusForumReplies.noShowMore .lotusBoard ul.lotusCommentList {
+   border-width: 1px 0 0;
+   border-color: #DDDDDD;
+   margin-top: 10px;
+}
+
+.lotusui30 .lotusForumReplies .lotusBoard ul.lotusCommentList.lotusChild {
+   border-width: 0 !important;
+   margin-top: 0px;
+}
+
+.lotusui30 .lotusForumReplies .navigateLink {
+   float: right;
+}
+
+.lotusui30 .lotusForumReplies .navigateLink img {
+   vertical-align: baseline;
+}
+
+.lotusui30 .lotusForumReplies .navigateLink {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -9999px;
+}
+
+.lotusui30 .lotusForumReplies .lotusPostHover .navigateLink {
+    display: inline;
+    position: static;
+    right: 0;
+    top: 0;
+}
+
+
+.lotusui30 .lotusPostHover .replyAction {
+    display: inline;
+    position: static;
+    right: 0;
+    top: 0;
+}
+
+.lotusui30 .replyAction {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -9999px;
+}
+
+.lotusui30 .lotusForumReplies .lotusBoard ul.lotusCommentList .lotusChild {
+    background: url("../../com.ibm.lconn.core.styles.oneui3/images/commentIndent.png") no-repeat scroll left top transparent;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 16px;
+    background-color: #FFFFFF;
+}
+
+.lotusui30 .lotusFlyoutInner .lotusBoard .lotusPostContent {
+    padding: 0
+}
+
+/* Remove sharkfin from comments */
+.lotusui30 .lotusFlyoutInner .lotusBoard .lotusCommentList:after {
+   background: none;
+   height: 0;
+   width: 0;
+}
+
+.lotusui_ie .lotusui30 .lotusFlyoutInner .lotusBoard .lotusCommentList .lotusAddComment {
+   margin-left: -2px;
+}
+
+.lotusui_ie .lotusui30 .lotusFlyoutInner .lotusBoard {
+   padding-right: 2px;
+}
+
+.eeDropDown {
+   margin-right: 4px;
+}
+
+.lotusui30 .lotusFlyoutInner .discussThisContent h4 {
+   margin-bottom: 3px;
+}
+
+.lotusui30 .lotusFlyoutInner .lotusCommentsCondensed .lotusPostContent .lotusMeta {
+   position: relative;
+}
+
+.lotusui30 .lotusFlyoutInner .lotusCommentsCondensed .lotusPostAction {
+   margin-left: 0;
+}
+
+/* Styles used to fix defect 65639 regarding visual focus dotted line getting truncated */
+
+.eeFirstTab {
+   margin-right: 1px !important;
+}
+
+.eeActions {
+   margin-bottom: 5px;
+   margin-right: 2px;
+}
+
+.eeActionLinks {
+   margin-right: 2px !important;
+}
+
+.eeHeading {
+  margin-top: 3px !important;
+}
+
+.eeCommentContent {
+   padding-right: 2px !important;
+}
+
+.eeShortCommentContent {
+   max-height: 4.5em;
+}
+
+/* From profiles */
+.lotusNetworkPerson { padding: 2px 7px 4px 0px; }
+.lotusDim {opacity:0.5; filter:alpha(opacity=50); width:100%; }
+.lotusui_ie .lotusDim img { filter:alpha(opacity=50); }
+
+/* From blogs */
+.ideaGraduated {padding: 3px 5px; border: 1px solid #8AC4FF; display:inline-block; background-color:#C5E2FF; color:#105CB6;}
+
+/* Fix from One UI - Remove when we sync with One UI 3.0.4 */
+.lotusui30 .lotusFlyoutInner .lotusHeadingChunk {font-size:1.5em;}
+.lotusui30 .lotusFlyoutInner .lotusHeading {font-family: Arial, Helvetica, sans-serif;}
+.lotusui30 .lotusFlyoutInner .lotusStatus {font-size:1.1em; color:#444;}
+/* -- End fix -- */
+
+.eeOAuthImg {
+   float: right;
+}
+
+.eeOAuthBodyContent {
+   margin-right: 50px;
+   max-width: 360px;
+}
+
+body.eeHideBodyOverflow {
+   overflow: hidden !important;
+}
+
+.lotusui30 .lconnEmpty {
+   color: #666666;
+   font-style: italic;
+}
+
+.eeDraftIndicator {
+   background: none repeat scroll 0 0 #E6F1FE;
+   border: 1px solid #B9CFEB;
+   color: #666666;
+   padding: 0 5px;
+   vertical-align: middle;
+   font-size: 0.55em;
+}
+
+.lotusui_ie .eeDraftIndicator {
+   margin-right: 5px;
+   display: inline-block;
+}
+
+.lotusui30 .eeReviewTab .eeGreyText  {
+	color: #666 !important;
+}
+
+.lotusui30 .eeReviewTab h3 {
+	margin: 0;
+	font-size: 1.2em;
+}
+
+.lotusui30 .lotusFlyoutInner .lotusBoard .lotusStreamUpdate .lotusText { 
+   height: auto;
+   min-height: 2em;
+}
+
+.lotusui30 .lotusFlyoutInner .mentionsWarning .lotusMessage2 {
+   margin: -10px 0 20px 0;
+   padding: 5px;
+   clear: both;
+}
+
+.lotusui30 .lotusFlyoutInner .lotusCommentList .lotusLikeCount {
+   background: none;
+   border-radius: 0px;
+   border-width: 0px;
+   margin-right: 0px;
+}
+
+.lotusui30 .lotusFlyoutInner .lotusCommentList .lotusLikeConnector {
+   display: none;
+}
+
+.lotusui30 .lotusFlyoutInner .lotusCommentList li.lotusAddComment .lotusMentionsDiv a {
+   padding-bottom: 0;
+}
+
+/* comment thread */
+.lotusui30 .lotusThreadedComments .lotusBoard .lotusCommentList:after {
+   background: none;
+   height: 0;
+   width: 0;
+}
+
+.lotusui30 .lotusThreadedComments .lotusBoard ul.lotusCommentList li.lotusCommentItem {
+   border-width: 0;
+}
+
+.lotusui30 .lotusThreadedComments .lotusBoard ul.lotusCommentList li.lotusCommentItem.showMore {
+   border-width: 1px;
+   margin-top: 10px;
+}
+
+
+.lotusui30 .lotusThreadedComments .lotusBoard ul.lotusCommentList li.lotusCommentItem div.lotusPost {
+   border-right: 1px solid #DDDDDD;
+   border-left: 1px solid #DDDDDD;
+   border-bottom: 1px solid #DDDDDD;
+}
+
+.lotusui30 .lotusThreadedComments .lotusBoard ul.lotusCommentList li.lotusCommentItem div.lotusPost.selected {
+   background-color: #FFFFFF;
+}
+
+.lotusui30 .lotusThreadedComments .lotusBoard .lotusPost .lotusActions {
+   margin-top: 0;
+   padding-top: 0;
+   margin-bottom: 5px;
+}
+
+.lotusui30 .lotusThreadedComments .lotusBoard .lotusCommentList {
+   margin-top: 0;
+}
+
+.lotusui30 .lotusThreadedComments .lotusBoard ul.lotusCommentList {
+   border-width: 0;
+}
+
+.lotusui30 .lotusThreadedComments.noShowMore .lotusBoard ul.lotusCommentList {
+   border-width: 1px 0 0;
+   border-color: #DDDDDD;
+   margin-top: 10px;
+}
+
+.lotusui30 .lotusThreadedComments .lotusBoard ul.lotusCommentList.lotusChild {
+   border-width: 0 !important;
+   margin-top: 0px;
+}
+
+.lotusui30 .lotusThreadedComments .navigateLink {
+   float: right;
+}
+
+.lotusui30 .lotusThreadedComments .navigateLink img {
+   vertical-align: baseline;
+}
+
+.lotusui30 .lotusThreadedComments .navigateLink {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -9999px;
+}
+
+.lotusui30 .lotusThreadedComments .lotusPostHover .navigateLink {
+    display: inline;
+    position: static;
+    right: 0;
+    top: 0;
+}
+
+.lotusui30 .lotusThreadedComments .lotusBoard ul.lotusCommentList .lotusChild {
+    background: url("../../com.ibm.lconn.core.styles.oneui3/images/commentIndent.png") no-repeat scroll left top transparent;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 16px;
+    background-color: #FFFFFF;
+}

@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IBM Connections Configuration (Highway) Test (AMD)
+Bundle-SymbolicName: com.ibm.ic.highway.web.resources.test;singleton:=true
+Bundle-Version: 6.0.0.qualifier
+Bundle-Vendor: IBM
+Bundle-ActivationPolicy: lazy

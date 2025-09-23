@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Gadżet OpenSocial Aktywna treść osadzona używany do wyświetlania dodatkowych szczegółów i działań dotyczących zdarzeń programu Connections</msg>
+  <msg name="connectionsEE_errorTitle">Błąd</msg>
+  <msg name="connectionsEE_errorDescription">Ta treść nie jest zatwierdzona przez organizację i jest niedostępna. Skontaktuj się z administratorem w organizacji w celu włączenia rozszerzenia.</msg>
+</messagebundle>

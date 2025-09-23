@@ -1,0 +1,52 @@
+${head}
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+
+<title>Notification Center</title>
+
+
+<script>
+dojoConfig.parseOnLoad=true;
+
+</script>
+${script:com.ibm.social.as.notification.NotificationCenter}
+<!--  add your custom modules here -->
+<script>
+(function () {
+   function initialize() {
+       com.ibm.social.as.notification.NotificationCenter.getInstance(null, "iframe");
+   }    
+   dojo.addOnLoad(initialize);
+})();
+</script>
+
+
+<style>
+/* Add your custom styles here */
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    Notification Center
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain">
+<div class="lotusContent">
+<h1>Notification Center</h1>
+<dl>
+    <!--  Update the module ID -->
+    <dt>Module ID: <code>com.ibm.social.as.notification.NotificationCenter</code></dt>
+    <!--  Update the JSDoc page URL -->
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/">JSDoc</a></dd>
+</dl>
+<div>
+    <!--  Add your test widgets and DOM here -->
+</div>
+</div>
+</div>
+</body>
+${end}

@@ -1,0 +1,45 @@
+define({
+	      /* ***************************************************************** */
+  /*                                                                   */
+  /* Copyright IBM Corp. 2011, 2018  All Rights Reserved.              */
+
+		   dialogTitle : "Kép hozzáadása",
+		   newUpload : "Új feltöltés",
+		   URL : "URL",
+		   imageLibrary : "Képek könyvtára",
+		   description : "Leírás:",
+		   imageFile : "Fájlok:",
+		   OK: "OK",
+		   cancel: "Mégse",
+		   required: "Kötelező mező",
+		   preview: "Előkép:",
+		   previewWarning: "A kép betöltése nem sikerült. Biztos benne, hogy ez érvényes képfájl URL?",
+		   alt: "Alternatív szöveg:",
+		   filesTab: "Fájlokból",
+		   images:"Képek:",
+		   browse:"Tallózás...",
+		   imagePickerTitle:"Képek beszúrása a Fájlok alkalmazásból",
+		   componentImagePickerTitle:" ${0} feltöltött kép",
+		   /* New String for insert image dialog */
+		   title: "Kép beszúrása",
+		   uploadBtn: "Kép feltöltése",
+		   insertBtn: "Kép beszúrása",
+		   uploadTab: "Helyi fájlok",
+		   externalTab: "Web URL",
+		   internalTab: "Meglévő képek",
+		   fileFieldTip: "Húzzon át képeket a munkaasztalról közvetlenül ebbe az ablakba a feltöltésükhöz. ",
+		   AdditionalSection: "További beállítások",
+		   ExpandSection: "További beállítások kibontása",
+		   CloseSection: "További beállítások összezárása",
+		   webURLPrompt: "Webes kép URL:",
+		   previewPrompt: "Előnézet terület: A nagy képek megjelenítése eltarthat egy ideig. ",
+		   noExistingImage: "Hoppá! Még nem lettek hozzáadva képek. ",
+		   selectExistingImage: "Válasszon ki egy meglévő képet: ",
+		   urlMissing: "Adjon meg URL címet",
+		   urlInvalid: "Érvénytelen URL. Győződjön meg róla, hogy a beírt URL érvényes, és próbálkozzon újra. ",
+		   previousItem: "Előző",
+		   nextItem: "Következő",
+			 oneImageOneTime: "Egy kép már hozzá lett adva ehhez az ablakhoz. Egyszerre csak egy képet szúrhat be. ",
+			 altTextForImgInList: "Kattintson ide egy kép kiválasztásához"
+});
+

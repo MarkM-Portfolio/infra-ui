@@ -1,0 +1,192 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>Inline & Popup Recommendation Controls with different currentUserId values</title>
+
+${script:com.ibm.oneui.recommend.Popup}
+${script:com.ibm.oneui.recommend.Inline}
+${script:com.ibm.oneui.test.controls.recommend.RecommendDataStore}
+
+<script>
+
+
+</script>
+
+<script>
+   dojo.addOnLoad(function() {
+        var bodyElem = document.getElementsByTagName("body")[0];
+        if (dojo.hasClass(bodyElem, "dijit_a11y")) {        
+            dojo.addClass(bodyElem, "lotusImagesOff");
+        }
+        dojo.parser.parse();
+   });
+</script>
+
+
+<style>
+input {
+   width: 200px;
+}
+.lotusui30_body {background-color:#ffffff;}
+</style>
+
+${endhead}
+
+<div>
+
+
+<u><H2>Instantiated via Markup</H2></u>
+
+
+<li> Inline - currentUserId = bbarber (only recommender)</li>
+<br/>
+<div dojoType="com.ibm.oneui.recommend.Inline" count="10" showActions="false" debug="true" loadIndividualStyles="false" strings="{NOUN:'article'}" id="inline_recommendation_bbarber_via_markup2" dataStore="window.oneRecommender" currentUserId="'bbarber'">
+</div>
+
+<br>
+<br> 
+
+
+
+<li> Inline - currentUserId =  N/A, no one has recommended</li>
+<br/>
+<div dojoType="com.ibm.oneui.recommend.Inline" debug="true" loadIndividualStyles="false" strings="{NOUN:'article'}" id="inline_recommendation_nouser_via_markup_empty" dataStore="window.emptydatastore">
+</div>
+
+<br>
+<br>
+
+<li> Inline - currentUserId = N/A</li>
+<br/>
+<div dojoType="com.ibm.oneui.recommend.Inline" debug="true" loadIndividualStyles="false" strings="{NOUN:'article'}" id="inline_recommendation_nouser_via_markup" dataStore="window.datastore">
+</div>
+
+<br>
+<br>
+
+<li> Inline - currentUserId = bbarber (who has recommended)</li>
+<br/>
+<div dojoType="com.ibm.oneui.recommend.Inline" count="10" showActions="false" debug="true" loadIndividualStyles="false" strings="{NOUN:'article'}" id="inline_recommendation_bbarber_via_markup" dataStore="window.datastore2" currentUserId="'bbarber'">
+</div>
+
+<br>
+<br> 
+
+
+<li> Inline - currentUserId = tester (who hasn't recommend)</li>
+<br/>
+
+<div dojoType="com.ibm.oneui.recommend.Inline" debug="true" loadIndividualStyles="false" strings="{NOUN:'article'}" id="inline_recommendation_tester_via_markup" dataStore="window.datastore3"  currentUserId="'tester'">
+</div>
+
+<br>
+<br> 
+
+<li> Inline - currentUserId = tester (who hasn't recommend), no one has recommended</li>
+<br/>
+
+<div dojoType="com.ibm.oneui.recommend.Inline" debug="true" loadIndividualStyles="false" strings="{NOUN:'article'}" id="inline_recommendation_tester_via_markup_empty" dataStore="window.emptydatastore2" currentUserId="'tester'">
+</div>
+
+<br>
+<br> 
+
+<li> Inline - currentUserId = tester (who hasn't recommend), 30 have recommended</li>
+<br/>
+
+<div dojoType="com.ibm.oneui.recommend.Inline" debug="true" loadIndividualStyles="false" strings="{NOUN:'article'}" id="inline_recommendation_tester_via_markup_empty_thirty" dataStore="window.thirtydatastore" currentUserId="'tester'">
+</div>
+
+<br>
+<br> 
+
+<u><H2>Instantiated via Program</H2></u>
+<li> POPUP - currentUserId = bbarber (who has recommended) via Program</li>
+<br/>
+<div id="popup_recommendation_bbarber_via_program"><a href="javascript:">I'm Bbarber (who has recommended) </a></div>
+
+<br/>
+
+<li> POPUP - currentUserId = tester (who hasn't recommended) via Program</li>
+
+<br/>
+<div id="popup_recommendation_tester_via_program"><a href="javascript:">I'm tester (who hasn't recommended) </a></div>
+
+<br/>
+
+<li> Popup - currentUserId = N/A via Program</li>
+<br/>
+<div id="popup_recommendation_nouser_via_program"><a href="javascript:">I'm un-authenticated</a></div>
+
+<br/>
+
+<li> POPUP - currentUserId = bbarber via Program.  No one has recommended</li>
+<br/>
+<div id = "no_recommend"><a href="javascript:">I'm Bbarber, nobody has recommended.</a></div>
+
+<li> POPUP - currentUserId = bbarber (who has recommended) via Program, 30 recommenders</li>
+<br/>
+<div id="popup_recommendation_bbarber_30_recommenders"><a href="javascript:">I'm Bbarber (who has recommended) 30 total recommenders </a></div>
+
+<br/>
+
+<script>
+
+window.datastore = new com.ibm.oneui.test.controls.recommend.RecommendDataStore({});
+window.datastore2 = new com.ibm.oneui.test.controls.recommend.RecommendDataStore({});
+window.datastore3 = new com.ibm.oneui.test.controls.recommend.RecommendDataStore({});
+
+var store = new com.ibm.oneui.test.controls.recommend.RecommendDataStore({});
+
+var url = dojo.moduleUrl("com.ibm.oneui","test/controls/recommend/emptyDataStore.json").toString();
+var urlToThirty = dojo.moduleUrl("com.ibm.oneui","test/controls/recommend/30recommenders.json").toString();
+var noRecommendStore = new com.ibm.oneui.test.controls.recommend.RecommendDataStore({'url':  url});
+var noRecommendStore2 = new com.ibm.oneui.test.controls.recommend.RecommendDataStore({'url':  url});
+var urlToOne = dojo.moduleUrl("com.ibm.oneui", "test/controls/recommend/onerecommender.json").toString();
+
+var ThirtyRecommendStore = new com.ibm.oneui.test.controls.recommend.RecommendDataStore({'url': urlToThirty });
+var oneRecommender = new com.ibm.oneui.test.controls.recommend.RecommendDataStore({'url': urlToOne});
+window.oneRecommender = oneRecommender;
+window.emptydatastore = noRecommendStore;
+window.emptydatastore2 = noRecommendStore2;
+window.thirtydatastore = ThirtyRecommendStore;
+
+function launchPopupRecommend(id, ds, user){
+
+   if( user == undefined ){
+      new com.ibm.oneui.recommend.Popup(
+         {
+            strings: {NOUN:"article"},
+            around: dojo.byId(id),
+            dataStore: ds  
+         }
+      );
+   }else{
+   
+      new com.ibm.oneui.recommend.Popup(
+         {
+            around: dojo.byId(id),
+            strings: {NOUN:"article"},
+            currentUserId: user,
+            dataStore: ds     
+         }
+      );
+   
+   }
+
+}
+
+
+
+
+launchPopupRecommend("no_recommend", noRecommendStore, "bbarber");
+
+launchPopupRecommend("popup_recommendation_bbarber_via_program", store, "bbarber"); 
+launchPopupRecommend("popup_recommendation_tester_via_program", store, "tester");   
+launchPopupRecommend("popup_recommendation_nouser_via_program", store);
+launchPopupRecommend("popup_recommendation_bbarber_30_recommenders", ThirtyRecommendStore, "bbarber");
+</script>
+
+</div>
+</body>
+${end}

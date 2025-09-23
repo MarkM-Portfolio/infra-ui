@@ -1,0 +1,7 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.brandingOther32-DocsBlue32{width:32px;height:32px;background-position:0 0}
+.brandingOther32-DocsGray32{width:32px;height:32px;background-position:0 -40px}
+.brandingOther32-DocsWhite32{width:32px;height:32px;background-position:0 -80px}
+
+.brandingOther32{background-image:url('./brandingOther32-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .brandingOther32{display:none}

@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2013, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!-- Schema file written by PDE -->
+<schema targetNamespace="net.jazz.ajax" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="net.jazz.ajax" id="pages" name="Web UI Pages"/>
+      </appInfo>
+      <documentation>
+         This extension point provides a mechanism for contributing a logical page to the Jazz Web UI and for identifying actions that run in the context of the specified page.&lt;br&gt;
+&lt;br&gt;
+Each page must specify one or more action identifiers that will be bound at runtime to a JavaScript function. When a user browses to a URI that corresponds to an action that belongs to a page, the Jazz Ajax Framework invokes the associated JavaScript, passing any URI request parameters as arguments on an object argument to the JavaScript function.&lt;br&gt;
+&lt;br&gt;
+A page can also specify zero or more resourcePatterns. When the user clicks a hyperlink, the Jazz Ajax Framework examines all resourcePatterns extensions; if one of the patterns can match the target of the hyperlink, the Jazz Ajax Framework stops the event propagation and redirects to #[resource-url].
+&lt;br&gt;
+This URI to action or resource pattern handler binding is what enables the Jazz Web UI to support the browser&apos;s Back, Forward, Bookmarking, and History controls in an extensible way, since a particular URI always corresponds to the same action.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="page" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="page">
+      <annotation>
+         <appInfo>
+            <meta.element labelAttribute="name"/>
+         </appInfo>
+         <documentation>
+            A logical page that the Jazz Web UI framework will make available for users to view and bookmark
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="action" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="applicationScope" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="resourcePattern" minOccurs="0" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The unique identifier of the page
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="widget" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The fully-qualified name of the Dojo widget that implements the page
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The page&apos;s name which the Jazz Web UI will display in the header. Does not need to be unique.
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="defaultAction" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The identifier of the Action that the Jazz Web UI will execute when the user navigates to the page. Must correspond to an identifier of one of the page extension&apos;s child &lt;code&gt;action&lt;/code&gt; elements.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="removalPropertyId" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="cssUri" type="string">
+            <annotation>
+               <documentation>
+                  cssUri attribute has been deprecated.  Use cssBindingSets instead to associate CSS with the page&apos;s widget.
+               </documentation>
+               <appInfo>
+                  <meta.attribute deprecated="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="componentMenuWidget" type="string">
+            <annotation>
+               <documentation>
+                  The fully-qualified name of the Dojo widget that implements the component menu for this page
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="searchProvider" type="string">
+            <annotation>
+               <documentation>
+                  The fully qualified name of the Dojo class that extends jazz.ui._SearchProvider to provide the behaviour for page&apos;s search box.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="action">
+      <annotation>
+         <appInfo>
+            <meta.element labelAttribute="id"/>
+         </appInfo>
+         <documentation>
+            The set of one or more actions that execute in the context of the page. Exactly one of the actions&apos; identifiers must correspond to the &lt;code&gt;defaultAction&lt;/code&gt; attribute of the parent &lt;code&gt;page&lt;/code&gt; element.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The action&apos;s unique identifier
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="service" type="string">
+            <annotation>
+               <documentation>
+                  The URL to a service capable of rendering the HTML content for a page that is invoking this action.  For example: &quot;/services/MyService&quot;.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="widget" type="string">
+            <annotation>
+               <documentation>
+                  The id to the javascript module to be loaded in parallel with the service&apos;s HTML snippet.  This module must represent all the dependencies for the HTML snippet&apos;s widget and any nested widgets.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="applicationScope">
+      <annotation>
+         <appInfo>
+            <meta.element deprecated="true"/>
+         </appInfo>
+         <documentation>
+            The set of one or more application scopes that specify what application this page will be visible in. The scope identifier attribute must correspond to the identifier of an application.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The reference to the application identifier that is scoped to this page.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="resourcePattern">
+      <annotation>
+         <appInfo>
+            <meta.element labelAttribute="pattern"/>
+         </appInfo>
+         <documentation>
+            The set of one or more resource patterns which a Jazz Ajax Framework page declares it, the page, can handle.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="pattern" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The pattern which a Jazz Ajax Framework page declares that it, the page, can handle.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         0.5
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         The following example shows how to contribute to the &lt;code&gt;com.ibm.team.repository.web.pages&lt;/code&gt; extension point:
+&lt;pre&gt;
+  &lt;page
+   id=&quot;com.example.ExamplePage&quot;
+   widget=&quot;com.example.ui.internal.ExamplePage&quot;
+   name=&quot;Example Page&quot;
+   defaultAction=&quot;com.example._showDefaultView&quot;&gt;
+   
+   &lt;action id=&quot;com.example._showDefaultView&quot;/&gt;
+   &lt;action id=&quot;com.example.doSomethingElse&quot;/&gt;
+   &lt;action id=&quot;com.example.runAPlainFunction&quot;/&gt;
+   
+   &lt;resourcePattern pattern=&quot;/example/uri/&quot;/&gt;
+  &lt;/page&gt;
+&lt;/pre&gt;
+The URI for page&apos;s default action would be:&lt;br&gt;
+&lt;pre&gt;
+  [pageRoot]#action=jazz.viewPage&amp;id=com.example.ExamplePage
+&lt;/pre&gt; 
+Navigating to this URI (for instance by clicking on the &apos;Example Page&apos; hyperlink in the header of the default Jazz Web UI), would result in the Jazz Web UI loading the widget &lt;code&gt;com.example.ui.internal.ExamplePage&lt;/code&gt;, all of the JavaScript code that &lt;code&gt;ExamplePage&lt;/code&gt; depends on, and then invoking the JavaScript function bound to the action ID &lt;code&gt;com.example._showDefaultView&lt;/code&gt;.&lt;br&gt;
+&lt;br&gt;
+Note that the action ID &lt;code&gt;com.example._showDefaultView&lt;/code&gt; is not special in any way - you may identify your default action however you please - but we use the underscore convention to indicate that we don&apos;t expect this action URI to be published externally.&lt;br&gt;
+&lt;br&gt;
+The URI for the other action is simply:
+&lt;pre&gt;
+  [pageRoot]#action=com.example.doSomethingElse[nvpList]
+&lt;/pre&gt;  
+Where &lt;code&gt;[nvpList]&lt;/code&gt; is a string of name-value pairs following the form &lt;code&gt;&amp;name1=val1&amp;name2=val2&lt;/code&gt;.&lt;br&gt;
+&lt;br&gt;
+To bind code to the two actions above, you&apos;d add code like the following to your page widget&apos;s implementation:
+&lt;pre&gt;
+ // inside the widget definition for ExamplePage.js.
+ initializer: function() {
+  var PlatformUI = com.ibm.team.repository.web.ui.PlatformUI;
+  var ActionRegistry = PlatformUI.getWorkbench().getActionRegistry();
+  
+  // bind default action
+  ActionRegistry.registerAction(
+    &quot;com.example._showDefaultView&quot;, this, &quot;_showDefaultView&quot;);
+  // three argument form
+  ActionRegistry.registerAction(
+    &quot;com.example.doSomethingElse&quot;, this, &quot;doSomethingElse&quot;);
+  // two argument form
+  ActionRegistry.registerAction(
+    &quot;com.example.runAPlainFunction&quot;, function(kwArgs) {/* do something */});
+    
+  var ResourceRegistry = PlatformUI.getWorkbench().getResourceRegistry();
+  ResourceRegistry.registerHandlerForPattern(
+    &quot;/example/uri/&quot;, this, &quot;handleResourceClick&quot;);
+ },
+ 
+ _showDefaultView: function(kwArgs) {
+  // do something to generate the default view
+ },
+ 
+ doSomethingElse: function(kwArgs) {
+  // do something
+ },
+ 
+ handleResourceClick: function(parsedUrlObj) {
+  // do something
+ }
+&lt;/pre&gt;
+Note that in the above code there are two forms of the &lt;code&gt;ActionRegistry#registerAction&lt;/code&gt; function. The first form takes three arguments:&lt;br&gt;
+&lt;pre&gt;
+  registerAction(/*string*/id, /*object*/thisContext, /*string*/methodName);
+&lt;/pre&gt;  
+You should use the three argument form when you are calling a &lt;i&gt;method&lt;/i&gt; on a stateful object where you must ensure that the value of &lt;code&gt;this&lt;/code&gt; in the method body corresponds to enclosing object (specified by the &lt;code&gt;thisContext&lt;/code&gt; argument). Note that the object specified by &lt;code&gt;thisContext&lt;/code&gt; must have a property of type function with the name specified by &lt;code&gt;methodName&lt;/code&gt;.&lt;br&gt;
+&lt;br&gt;
+The other form takes two arguments:
+&lt;pre&gt;
+  registerAction(/*string*/id, /*function*/functionVarOrLiteral);
+&lt;/pre&gt;  
+You should use the two argument form when you are calling a &lt;i&gt;stateless function&lt;/i&gt; or when you access stateful objects using closures (e.g. assigning &lt;code&gt;this&lt;/code&gt; to a closure variable &lt;code&gt;self&lt;/code&gt; outside &lt;code&gt;functionVarOrLiteral&lt;/code&gt;).
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiInfo"/>
+      </appInfo>
+      <documentation>
+         A &lt;code&gt;&amp;lt;page&amp;gt;&lt;/code&gt; element&apos;s &lt;code&gt;defaultAction&lt;/code&gt; attribute must match one of its child &lt;code&gt;&amp;lt;action&amp;gt;&lt;/code&gt; element&apos;s &lt;code&gt;id&lt;/code&gt; attributes.&lt;br&gt;
+&lt;br&gt;
+A runtime error will occur if the &lt;code&gt;pages&lt;/code&gt; extender hasn&apos;t bound a JavaScript function to an action identifier and a user navigates to the action identifier&apos;s URI.
+      </documentation>
+   </annotation>
+
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Licensed Materials - Property of IBM
+(c) Copyright IBM Corporation 2007, 2008. All Rights Reserved. 
+
+Note to U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+      </documentation>
+   </annotation>
+
+</schema>

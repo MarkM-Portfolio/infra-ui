@@ -1,0 +1,182 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+${script:com.ibm.oneui.controls.HoverDialog}
+${script:com.ibm.oneui.controls.ItemIterator}
+${script:com.ibm.oneui.controls.PreviewDialog}
+
+${endhead}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+<script>
+</script>
+<a onclick="document.body.style.width = '1200px'; return false;" href="#">Page width 1000px</a> |
+<a onclick="document.body.style.width = '400px'; return false;" href="#">Page width 400px</a>
+<br>
+
+<table style="width: 100%;" cellpadding="1" cellspacing="1" border="1">
+<thead><tr>
+<th>Test case</th><th>Description</th>
+</tr></thead><tbody>
+
+
+<tr><td>
+<div>
+<a id="link1_1" href="#">Preview Dialog (1) with multiple arounds</a>
+<a id="link1_2" href="#">Preview Dialog (2) with multiple arounds</a>
+<script>
+	var link1 = new com.ibm.oneui.controls.PreviewDialog({
+		around: [dojo.byId('link1_1'), dojo.byId("link1_2")], 
+		title: "Previewable item (0)",
+		updateDialogContents: function(item, widgetwidget, node) {
+			node.innerHTML = "Testing";
+		}
+	});
+</script>
+</div>
+</td><td>
+	<ol>
+	</ol>
+</td></tr>
+
+<tr><td>
+<div>
+<a id="link2_1" href="#">Preview Dialog (1) with next/previous</a>
+<a id="link2_2" href="#">Preview Dialog (2) with next/previous</a>
+<script>
+	var iterator2 = new com.ibm.oneui.controls.ItemIterator([{title: "Item1", around: "link2_1"}, {title: "Item2", around: "link2_2"}]);
+	iterator2.transform = function(item) {
+		item.around = dojo.byId(item.around);
+		return item;
+	}
+	
+	var link2 = new com.ibm.oneui.controls.PreviewDialog({
+		around: [dojo.byId('link2_1'), dojo.byId("link2_2")], 
+		iterator: iterator2,
+		title: "Previewable item (0)",
+		updateDialogContents: function(item, widget, node) {
+			node.style.width = "300px";
+			node.innerHTML = "Testing: "+item.title;
+		}
+	});
+</script>
+</div>
+</td><td>
+	<ol>
+	</ol>
+</td></tr>
+
+
+<tr><td>
+<div>
+<a id="link3_1" href="#">Preview Dialog (1) with deferred</a>
+<a id="link3_2" href="#">Preview Dialog (2) with deferred</a>
+<script>
+	var iterator3 = new com.ibm.oneui.controls.ItemIterator([{title: "Item1", around: "link3_1"}, {title: "Item2", around: "link3_2"}]);
+	iterator3.page = 1;
+	iterator3.transform = function(item) {
+		item.around = dojo.byId(item.around);
+		if (!item.deferred) {
+			var timer;
+			var dfd = item.deferred = new dojo.Deferred(function() {clearTimeout(timer);});
+			timer = setTimeout(function() {
+				console.log("Deferred item available");
+				dfd.callback({title: "yo i'm here"});
+			}, 2000);			
+		}
+		return item;
+	}
+	iterator3.nextPage = function() {
+		var timer;
+		var dfd = new dojo.Deferred(function() {clearTimeout(timer);});
+		timer = setTimeout(dojo.hitch(this, "nextPageAvailable", dfd), 4000);			
+		return dfd;
+	}
+	iterator3.nextPageAvailable = function(dfd /*, xhr response maybe */) {
+		console.log("Next page available");
+		this.page++;
+		for (var i=0,l=this._items.length; i<l; i++)
+			this._items[i].title = "Page "+this.page+" item "+(i+1);
+		dfd.callback(this.item());
+	}
+	iterator3.hasPrevious = function() {
+		return this._items.length > 0 && (this.page > 1 || this.position > 0);
+	}
+	iterator3.resetToFirstLink = function() {
+		this._items = [this._items[0]];
+		link3.setAround([dojo.byId(this._items[0].around)]);
+	}
+	
+	var link3 = new com.ibm.oneui.controls.PreviewDialog({
+		around: [dojo.byId('link3_1'), dojo.byId("link3_2")], 
+		iterator: iterator3,
+		title: "Previewable item",
+		updateDialogContents: function(item, widget, node) {
+			node.style.minWidth = "300px";
+			node.style.minHeight = "60px";
+			if (item.deferred && item.deferred.fired < 0) {
+				// loading
+				this.setTitle(item.title);
+				this.loading();
+				item.deferred.addCallback(widget, "onLoaded", item, widget, node);
+			}
+			else {
+				this.setTitle(item.title);
+				node.innerHTML = "Testing: "+item.title;
+			}
+		},
+		onLoaded: function(item, widget, node) {
+			if (!this.isOpen(item.around)) {
+				console.log("loaded item returned, but no longer on the right item");
+				return;
+			}
+			this._presentation.updateContents(item, widget, node);
+		}
+	});
+</script>
+</div>
+</td><td>
+	<ol>
+	</ol>
+</td></tr>
+
+<tr><td>
+<div>
+<a id="link4_1" href="#">Next/Previous on list (1)</a>
+<a id="link4_2" href="#">Next/Previous on list (1)</a>
+<script>
+	var iterator4 = new com.ibm.oneui.controls.ItemIterator([{title: "Item1", around: "link4_1"}, {title: "Item2", around: "link4_2"}]);
+	iterator4.circular = false;
+	iterator4.page = 1;
+	iterator4.transform = function(item) {
+		item.around = dojo.byId(item.around);
+		return item;
+	}
+	
+	var link4 = new com.ibm.oneui.controls.PreviewDialog({
+		around: [dojo.byId('link4_1'), dojo.byId("link4_2")], 
+		iterator: iterator4,
+		title: "Previewable item",
+		updateDialogContents: function(item, widget, node) {
+			this.setTitle(item.title);
+			widget.attr("title", item.title);
+			node.style.minWidth = "300px";
+			node.style.minHeight = "60px";
+			node.innerHTML = "Testing: "+item.title;
+		}
+	});
+</script>
+</div>
+</td><td>
+	<ol>
+	</ol>
+</td></tr>
+
+
+</tbody></table>
+</div>
+</div>
+</body>
+${end}

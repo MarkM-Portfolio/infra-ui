@@ -1,0 +1,116 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+.ics-viewer .ics-viewer-nav {
+   position: absolute;
+   z-index: 999;
+   top: 50%;
+   margin-top: -24px;
+}
+
+.ics-viewer .ics-viewer-nav-prev {
+   float: left;
+   left: 25px;
+}
+
+.ics-viewer .ics-viewer-nav-next {
+   float: right;
+   right: 25px;
+}
+
+.ics-viewer .ics-viewer-nav a {
+   position: relative;
+   text-decoration: none;
+   color: #BBB;
+}
+
+.ics-viewer .ics-viewer-nav-disabled a {
+   opacity: .3;
+   cursor: default;
+}
+
+.lotusui_ie8 .ics-viewer .ics-viewer-nav-disabled a {
+   visibility: hidden;
+}
+
+.ics-viewer .ics-viewer-nav .ics-viewer-nav-icon {
+   width: 48px;
+   height: 48px;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.ics-viewer .ics-viewer-nav-prev .ics-viewer-nav-icon {
+   background-image: url("ic-share/fileviewer/css/images/prev.png");
+}
+
+.ics-viewer .ics-viewer-nav-next .ics-viewer-nav-icon {
+   background-image: url("ic-share/fileviewer/css/images/next.png");
+}
+
+.ics-viewer .ics-viewer-nav .ics-viewer-nav-file {
+   position: absolute;
+   top: -11px;
+   color: white;
+   padding: 8px 15px;
+   
+   background-color: rgba(22, 24, 26, 0.8);
+   background-clip: padding-box;
+   border-radius: 4px;
+   white-space: nowrap;
+   /* display: none; */
+   opacity: 0;
+   transition: all .25s ease;
+   pointer-events: none;
+   
+   max-width: 200px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   
+   font-size: 16px;
+}
+
+.ics-viewer.rtl .ics-viewer-nav .ics-viewer-nav-file {
+   direction: ltr;
+}
+
+.lotusui_ie8 .ics-viewer .ics-viewer-nav .ics-viewer-nav-file {
+   display: none;
+   background-color: rgb(22, 24, 26);
+   filter: alpha(opacity=80);
+}
+
+.ics-viewer .ics-viewer-nav a:hover .ics-viewer-nav-file {
+   opacity: 1;
+}
+
+.ics-viewer .ics-viewer-nav a:focus .ics-viewer-nav-file {
+   opacity: 1;
+   transition: none;
+}
+
+.ics-viewer .ics-viewer-nav .ics-viewer-nav-file img {
+   position: relative;
+   top: -2px;
+   margin-right: 2px;
+}
+
+.ics-viewer.rtl .ics-viewer-nav .ics-viewer-nav-file img {
+   margin-right: 0;
+   margin-left: 2px;
+}
+
+.lotusui_ie8 .ics-viewer .ics-viewer-nav a:hover .ics-viewer-nav-file, .lotusui_ie8 .ics-viewer .ics-viewer-nav a:focus .ics-viewer-nav-file {
+   display: block;
+}
+
+.ics-viewer .ics-viewer-nav-prev .ics-viewer-nav-file {
+   left: 56px;
+}
+
+.ics-viewer .ics-viewer-nav-next .ics-viewer-nav-file {
+   right: 56px;
+}
+
+.ics-viewer .ics-viewer-nav-disabled .ics-viewer-nav-file, .ics-viewer .ics-viewer-nav-disabled a:hover .ics-viewer-nav-file {
+   display: none;
+}

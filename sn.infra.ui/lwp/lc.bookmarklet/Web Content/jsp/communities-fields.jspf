@@ -1,0 +1,80 @@
+<%@ page session="false" contentType="text/html; charset=UTF-8" buffer="48kb" %>
+<%--wscExemptBegin--%>
+<%-- ***************************************************************** --%>
+<%--                                                                   --%>
+<%-- IBM Confidential                                                  --%>
+<%--                                                                   --%>
+<%-- OCO Source Materials                                              --%>
+<%--                                                                   --%>
+<%-- Copyright IBM Corp. 2006, 2015                                    --%>
+<%--                                                                   --%>
+<%-- The source code for this program is not published or otherwise    --%>
+<%-- divested of its trade secrets, irrespective of what has been      --%>
+<%-- deposited with the U.S. Copyright Office.                         --%>
+<%--                                                                   --%>
+<%-- ***************************************************************** --%>
+<%--wscExemptEnd--%>
+
+<%@ taglib prefix="c" 			uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" 			uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" 			uri="http://java.sun.com/jsp/jstl/fmt" %>
+<tr id="communitiesFields" style="display: none" class="tabcontent">
+	<td colspan="3" style="padding:0px;">
+		<c:if test="${CommunitiesEnabled}">
+			<img title="processing" alt="processing" src="<c:url value="/images/progressIndicator.gif" />" id="communitiesProcessing"/>
+			<table width="100%" cellpadding="0" cellspacing="0" border="0" style="display: none;" id="communitiesInputs">
+				<tr class="lotusFormTabContentFirst">
+					<td width="15%" class="lotusFormLabel lotusFormFieldRow">
+						<br />
+						<label id="communityLabel"><fmt:message key="jsp.helpapi.bookmark.prop.community" /></label>
+					</td>
+					<td class="lotusFormFieldRow">
+						<label>
+							<c:choose>
+								<c:when test="${servletPath == '/postFeed'}">
+									<fmt:message key="jspf.communities.select.feed.tip" />
+								</c:when>
+								<c:otherwise>
+									<fmt:message key="jspf.communities.select.tip" />
+								</c:otherwise>
+							</c:choose>
+						</label>
+						<br />
+						<select style="height:60px;" aria-label="<fmt:message key="jsp.bookmarklet.communities.select" />" aria-labelledby="communityLabel" title="<fmt:message key="jsp.bookmarklet.communities.select" />" class="lotusText" onclick="javascript: TabController.imgEffect(this, 1, this.value, 'click');" id="communityUuid" size="3" multiple="true" name="communityUuid">
+						</select>
+						<br />
+						<a href="#" role="button" onclick="javascript: TabController.resetSelectedItems(dojo.byId('communityUuid'), 1); return false;"><fmt:message key="jspf.communities.clear" /></a>
+						<c:if test="${servletPath != '/postFeed'}">
+						<div class="lotusFormSection">
+							<input class="lotusCheckbox" type="checkbox" value="true" name="importantCommuBookmark" id="comm_importantBookmark">
+							<label class="labelForBookmark" for="comm_importantBookmark"><fmt:message key="jsp.posting.communities.important" /></label>
+						</div>
+						</c:if>
+					</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td width="15%" class="lotusFormLabel lotusFormFieldRow" style="background-color:#fff !important;">
+						<label for="rteDivForCommunities"><fmt:message key="jsp.helpapi.bookmark.prop.discussion" /></label>
+					</td>
+					<td class="lotusFormFieldRow" style="background-color:#fff !important;">
+						<textarea style="widht:98%;" rows="2" id="rteDivForCommunities" class="lotusText bidiAware" onblur="fnValidateDesc()"></textarea>
+						<input type="hidden" id="verbiageForCommunities" name="verbiageForCommunities" />
+					</td>
+					<td style="background-color:#fff !important;">
+						&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+				</tr>
+			</table>
+			<table width="100%" cellpadding="0" cellspacing="0" border="0" id="nocommunities" style="display: none;">
+				<tr class="lotusFormTabContentFirst" >
+					<td class="lotusFormFieldRow lotusIndent20" colspan="3">
+						<label aria-label="<fmt:message key="jspf.communities.nocommunities" />" role="alert" id="nocommunitiesLabel" tabindex="0"><fmt:message key="jspf.communities.nocommunities" /></label>
+					</td>
+				</tr>
+			</table>
+		</c:if>
+	</td>
+</tr>

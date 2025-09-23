@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+define({
+		"CLOSE_HELP_DATE":"Stäng hjälpen för datum",
+		"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Stäng hjälpen för dokumenttyper",
+		"CLOSE_HELP_PERSON":"Stäng hjälpen för personer",
+		"CLOSE_HELP_TAG":"Stäng hjälpen för taggar",
+		"CLOSE_HELP_TREND":"Stäng hjälpen för trender",
+		"COLLAPSE_DATE":"Komprimera filtret för datum",
+		"COLLAPSE_ECM_DOCUMENT_TYPE":"Komprimera filtret för dokumenttyper",
+		"COLLAPSE_PERSON":"Komprimera filtret för personer",
+		"COLLAPSE_TAG":"Komprimera taggfiltret",
+		"COLLAPSE_TREND":"Komprimera filtret för trender",
+		"DESCRIPTION_DATE":"Om du vill se resultat som skapats eller uppdaterats en viss tid expanderar du triangeln och filtrerar informationen efter år och månad.",
+		"DESCRIPTION_ECM_DOCUMENT_TYPE":"Dokumenttyper är nyckelord som du tilldelar filer så att det blir lättare att hitta dem. Klicka på en dokumenttyp om du vill se sökresultat för nyckelordet.",
+		"DESCRIPTION_PERSON":"Visa de personer som är associerade med dina sökresultat. Klicka på ett namn om du vill se sökresultat för den personen.",
+		"DESCRIPTION_TAG":"Taggar är nyckelord som du tilldelar innehåll eller personer för att det ska gå enklare att hitta. Klicka på en tagg om du vill se sökresultat för det nyckelordet.",
+		"DESCRIPTION_TREND":"Trender är nyckelord som genereras av systemet och som används till att enklare söka i Statusuppdateringar. Klicka på en trend om du vill se sökresultaten.",
+		"EXPAND_DATE":"Expandera filtret för datum",
+		"EXPAND_ECM_DOCUMENT_TYPE":"Expandera filtret för dokumenttyper",
+		"EXPAND_PERSON":"Expandera filtret för personer",
+		"EXPAND_TAG":"Expandera taggfiltret",
+		"EXPAND_TREND":"Expandera filtret för trender",
+		"HELP_DATE":"Hjälp för datum",
+		"HELP_ECM_DOCUMENT_TYPE":"Hjälp för dokumenttyper",
+		"HELP_PERSON":"Hjälp för personer",
+		"HELP_TAG":"Hjälp för taggar",
+		"HELP_TREND":"Hjälp för trender",
+		"NO_DATE_CONTENT":"Datum är inte tillgängligt",
+		"NO_ECM_DOCUMENT_TYPE_CONTENT":"Dokumenttyper är inte tillgängligt",
+		"NO_PERSON_CONTENT":"Personer är inte tillgängligt",
+		"NO_TAG_CONTENT":"Taggar är inte tillgängligt",
+		"NO_TREND_CONTENT":"Trender är inte tillgängligt",
+		"TITLE_DATE":"Datum",
+		"TITLE_ECM_DOCUMENT_TYPE":"Dokumenttyper",
+		"TITLE_PERSON":"Personer",
+		"TITLE_TAG":"Taggar",
+		"TITLE_TREND":"Trender"
+});
+

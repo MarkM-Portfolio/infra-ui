@@ -1,0 +1,38 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="ics-dialog-action">
+   <div class="errorContainer" data-dojo-attach-point="errorContainer"></div>
+   <div class="prompt-container" data-dojo-attach-point="promptContainer">${nls.PROMPT}</div>
+   <form>
+      <table>
+         <colgroup>
+            <col>
+            <col width="100%">
+         </colgroup>
+         <tbody>
+            <tr>
+               <td class="lotusNowrap">
+                  <label class="name-container" for="${fileNameInputId}"><span class="lotusFormRequired">*</span>${nls.NAME_FIELD}</label>
+               </td>
+               <td>
+                  <input class="name-input" type="text" name=fileName data-dojo-attach-point="fileName" id="${fileNameInputId}" aria-required="true">
+               </td>
+            </tr>
+            <tr>
+               <td></td>
+               <td>
+                  <div class="external-container" data-dojo-attach-point="externalContainer">
+                     <input type="checkbox" name="${nls.EXTERNAL_FIELD}" data-dojo-attach-point="isExternal" id="${externalCheckboxId}">
+                     <label for="${externalCheckboxId}">${nls.EXTERNAL_FIELD}</label>
+                  </div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   <div class="button-container">
+      <a class="confirm bad" href="javascript:;"
+         data-dojo-attach-event="onclick:clickLink" id="ok" role="button">${nls.CREATE_BUTTON}</a> 
+      <a class="cancel neutral" href="javascript:;"
+         data-dojo-attach-event="onclick:clickLink" id="cancel" role="button">${nls.CANCEL}</a>
+   </div>
+   </form>
+</div>

@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "ru",
+      "Play": "Воспроизвести",
+      "Pause": "Пауза",
+      "Current Time": "Текущее время",
+      "Duration Time": "Продолжительность",
+      "Remaining Time": "Оставшееся время",
+      "Stream Type": "Тип потока",
+      "LIVE": "Прямой эфир",
+      "Loaded": "Загружено",
+      "Progress": "Состояние",
+      "Fullscreen": "Полный экран",
+      "Non-Fullscreen": "Неполный экран",
+      "Mute": "Выключить микрофон",
+      "Unmute": "Включить микрофон",
+      "Unmuted": "Микрофон включен",
+      "Playback Rate": "Скорость воспроизведения",
+      "Subtitles": "Субтитры",
+      "subtitles off": "субтитры выключены",
+      "Captions": "Титры",
+      "captions off": "титры выключены",
+      "Chapters": "Главы",
+      "Volume": "Громкость",
+      "You aborted the video playback.": "Воспроизведение видеозаписи прервано",
+      "A network error caused the video download to fail part-way.": "Загрузка видеозаписи прервана из-за сетевой ошибки.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "Видеозапись не удалось загрузить: сбой сервера, неполадки сети или неподдерживаемый формат.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "Воспроизведение видеозаписи прервано из-за повреждения данных, или видеозапись не полностью поддерживается браузером.",
+      "No compatible source was found for this video.": "Не найден совместимый источник для этой видеозаписи."
+});
+

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<Templates xmlns:share="http://www.ibm.com/share" xmlns:os="http://ns.opensocial.org/2008/markup">
+   <Namespace prefix="share" url="http://www.ibm.com/share" />
+   <Style>
+      <!-- Global CSS for entire library -->
+      .shareCSPicker input {
+         width: 99%;
+      }
+   </Style>
+   <JavaScript>
+      <!--  Global Javascript -->
+      function initCommunitySelector(args){
+         if(!args || args.type != 'community') {
+            return;
+         }
+         net.jazz.ajax.xdloader.load_async("com.ibm.social.incontext.typeahead.widget.CommunitySelector", dojo.hitch(window, function(args) {
+            /*retrieve and hide div*/
+            var div = document.getElementById("shareCSTemplate" + args.moduleId), i, selections, item, dao;
+            div.style.display = "none";
+
+            /*Check for existing selection.  Update context if one exists.*/
+            if(gadgets.selection) {
+               dojo.forEach(gadgets.selection.getSelection(), function(item){
+                  if(item.type == "opensocial.Group") {
+                     var dao = item.dataObject;
+                     if(dao) {
+                        if(dao.action == "add") {
+                           this.resourceId = dao.communityId;
+                           this.resourceTitle = dao.communityTitle;
+                           this.resourceType = dao.communityType;
+                        } else if(dao.action == "remove") {
+                           this.resourceId = null;
+                           this.resourceTitle = null;
+                           this.resourceType = null;
+                        }
+                     }
+                  }
+               }, args);
+            }
+
+            /*Create community selector*/	                   
+            var cs = new com.ibm.social.incontext.typeahead.widget.CommunitySelector({
+               selectedCommunity: {id: args.resourceId, title: args.resourceTitle, communityType: args.resourceType},
+               onCommunitySelection: function(community) {
+                  if(gadgets.selection) {
+                     gadgets.selection.setSelection([{type: "opensocial.Group", 
+                        dataObject: {communityId: community.id, 
+                        communityTitle: community.title,
+                        communityType: community.communityType, action: "add"}}]);
+                  }   
+               },
+               onCommunityRemoval: function(community) {
+                  if(gadgets.selection) {
+                     gadgets.selection.setSelection([{type: "opensocial.Group", 
+                        dataObject: {communityId: community.id, 
+                        communityTitle: community.title, 
+                        communityType: community.communityType, action: "remove"}}]);
+                  }
+               }			      
+            }, dojo.create("div", null, div));
+
+            /*Show div */
+            div.style.display = "";
+            if (gadgets.window.adjustHeight)
+               gadgets.window.adjustHeight();
+            if(gadgets.selection)
+               gadgets.selection.addListener(dojo.hitch(dojo.global, handleSelection, cs, args.onCommunitySelectionUpdate));                  
+         }, args));
+      }
+
+      function handleSelection(communitySelector, onCommunitySelectionUpdate, selections) {
+         dojo.forEach(selections, function(item){
+            if(item.type == "opensocial.Group") {
+               var dao = item.dataObject;
+               if(dao) {
+                  if(dao.action == "add") {
+                     communitySelector.addCommunitySelection({id:dao.communityId, title: dao.communityTitle, communityType: dao.communityType}, true);
+                     if(onCommunitySelectionUpdate)
+                        onCommunitySelectionUpdate(dao.communityId, dao.communityTitle, dao.communityType);
+                  } else if(dao.action == "remove") {
+                     communitySelector.removeCommunitySelection({id:dao.communityId, title: dao.communityTitle, communityType:dao.communityType}, true);
+                     if(onCommunitySelectionUpdate)
+                        onCommunitySelectionUpdate(null, null, null);
+                  }
+               }
+            }
+         });
+      }
+
+   </JavaScript>
+
+<TemplateDef tag="share:internalCommunitySelector">
+		<Template>
+			<!-- Stylesheets -->
+	        <link rel="stylesheet" type="text/css" href="../_style?include=com.ibm.lconn.core.styles.oneui3/base/package3.css" />
+	        <link rel="stylesheet" type="text/css" href="../_lconntheme/default.css?version=oneui3" />
+            <!--[if IE 6]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie lotusui_ie6";</script><![endif]-->
+            <!--[if IE 7]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie lotusui_ie7";</script><![endif]-->
+            <!--[if IE 8]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie8";</script><![endif]-->
+            <!--[if IE 9]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie9";</script><![endif]-->
+			<div id="shareCSTemplate${moduleId}" style="display:none;" class="shareCSPicker"></div>			
+		</Template>	
+		<Style>
+			<!-- CSS for this template only -->		
+
+		</Style>
+		<JavaScript>
+		</JavaScript>
+
+	</TemplateDef>
+
+	<TemplateDef tag="share:communitySelector">
+		<Template>
+			<!-- Stylesheets -->
+			<link rel="stylesheet" type="text/css" href="../_style?include=com.ibm.lconn.core.styles.oneui3/base/package3.css" />
+	        <link rel="stylesheet" type="text/css" href="../_lconntheme/default.css?version=oneui3" />
+            <!--[if IE 6]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie lotusui_ie6";</script><![endif]-->
+            <!--[if IE 7]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie lotusui_ie7";</script><![endif]-->
+            <!--[if IE 8]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie8";</script><![endif]-->
+            <!--[if IE 9]><script>document.getElementsByTagName("html")[0].className+=" lotusui_ie9";</script><![endif]-->
+	        <script src="../_js?include=net.jazz.ajax.xdloader.js"></script>
+	        
+			<div class="lotusui30 lotusui30_fonts lotusui30_layout lotusui30_body"><div id="shareCSTemplate${moduleId}" style="display:none" class="shareCSPicker"></div></div>			
+		</Template>	
+		<Style>
+			<!-- CSS for this template only -->		
+		</Style>
+		<JavaScript>
+		<!-- Functions for this template only -->
+
+		</JavaScript>
+
+	</TemplateDef>
+</Templates>

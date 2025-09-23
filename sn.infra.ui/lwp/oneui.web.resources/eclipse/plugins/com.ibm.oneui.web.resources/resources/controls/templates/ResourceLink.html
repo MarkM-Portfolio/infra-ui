@@ -1,0 +1,22 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="root">
+	<div class="lotusPopupHeader" dojoAttachPoint="titleBar">
+		<a dojoAttachPoint="iconLink" class="iconLink"><img dojoAttachPoint="iconNode" class="iconNode"></img></a>
+		<div class="titleIndent" dojoAttachPoint="titleWrapper"><a dojoAttachPoint="titleLink"></a></div>
+	</div>
+	
+	<div class="dividerWrapper"><div dojoAttachPoint="divider" class="divider"></div></div>
+	
+	<div class="summarySection">
+		<div class="loading-wrapper"><span class="image-loading" dojoAttachPoint="loadingImage"><img class="lotusLoading" src="${_blankGif}"></span></div>
+		<iframe class="loadingIframe"
+				dojoAttachPoint="hoverIframe" 
+				dojoAttachEvent="onreadystatechange: _contentLoaded, onload: _contentLoaded" 
+				frameborder="0" allowTransparency="true"></iframe>
+	</div>
+	
+	<div class="lotusHidden bottomSection" dojoAttachPoint="bottomSection">
+		<div class="bottomDividerWrapper"><div dojoAttachPoint="bottomDivider" class="divider"></div></div>
+		<a class="toggleLink" dojoAttachPoint="toggleLink" dojoAttachEvent="onclick: toggleSize" href="#">${messages.showMore}</a>
+	</div>
+</div>

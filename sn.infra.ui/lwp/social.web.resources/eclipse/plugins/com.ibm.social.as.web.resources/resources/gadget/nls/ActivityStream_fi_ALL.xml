@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015, 2016  All Rights Reserved.                    -->
+<messagebundle>
+  <msg name="as_title">Päivitykset</msg>
+  <msg name="as_description">Päivitykset IBM Connections -järjestelmästä</msg>
+  <msg name="as_error">Päivitysvirran kokoonpanossa on virhe. Ota yhteys pääkäyttäjään.</msg>
+</messagebundle>

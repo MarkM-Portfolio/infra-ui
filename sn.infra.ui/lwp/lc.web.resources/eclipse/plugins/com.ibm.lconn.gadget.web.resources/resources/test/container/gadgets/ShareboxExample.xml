@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<Module>
+<ModulePrefs title="Hello Sharebox" description="Hello World style example for Sharebox extension" height="400" width="500">
+	<Optional feature="actions">
+		<Param name="action-contributions">
+			<![CDATA[
+				<actions>
+					<action id="hello-sharebox" path="container/sharebox" label="Hello Sharebox" tooltip="Hello Sharebox" />
+					<action id="hello-sharebox-community" path="container/communitySharebox" label="Hello Community Sharebox" tooltip="Hello Community Sharebox" />
+				</actions>
+			]]>
+		</Param>
+	</Optional>
+</ModulePrefs>
+
+<UserPref name="type" required="false" type="hidden" default_value=""/>
+<UserPref name="resourceId" required="false" type="hidden" default_value=""/>
+
+<Content type="html" view="default"><![CDATA[
+     <script type="text/javascript">
+     	function actionCallback(){
+     		var msgs = document.getElementById("messages");
+     		msgs.innerHTML = msgs.innerHTML + "<span> Action callback run. </span> <br/>";
+     	}
+     	
+     	function init(){
+     		var helloAction = {
+     			id: "hello-sharebox",
+     			callback: actionCallback
+     		}
+     		
+     		gadgets.actions.updateAction(helloAction);
+     		
+     		var helloCommunityAction = {
+     			id: "hello-sharebox-community",
+     			callback: actionCallback
+     		}
+     		
+     		gadgets.actions.updateAction(helloCommunityAction);
+     		
+     		//type is either global or community, if community resourceId is provided 
+     		var prefs = new gadgets.Prefs();
+     		var type = prefs.getString("type");
+     		var resourceId = prefs.getString("resourceId");
+     		
+     		var msg = (type == "global")? "Global Context" : ("Community Context, community Id is " + resourceId);
+     		document.getElementById("messages").innerHTML = "Loaded in " + msg + "<br/>";
+     	}
+     	
+		gadgets.util.registerOnLoadHandler(init);	
+   	 </script>
+   	 
+	 <div id="hello">
+	 	<h3>Hello Sharebox</h3>
+	 	<p id="messages"/>
+	 </div>
+  ]]></Content>
+</Module>
+

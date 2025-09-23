@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">Tiedostot</msg>
+  <msg name="description">Tiedostot-gadget-komponentti tiedostojen palvelimeen siirtoa ja yhteiskäyttöön määritystä varten.</msg>
+  <msg name="action_uploadFile_label">Tiedostot</msg>
+  <msg name="action_uploadFile_tooltip">Siirrä tiedostoja palvelimeen ja määritä niitä yhteiskäyttöön</msg>
+  <msg name="loading">Lataus on meneillään...</msg>
+  <msg name="error_msg">Sisällön lataus ei onnistu. Yritä uudelleen tai ota yhteys järjestelmän pääkäyttäjään.</msg>
+  <msg name="error_alt">Virhe</msg>
+</messagebundle>

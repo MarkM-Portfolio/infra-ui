@@ -1,0 +1,72 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div>
+
+	<div dojoAttachPoint="_loadingNode">
+		<img alt="" class="lotusLoading" src="${_blankGif}" role="presentation">
+		<span>&nbsp;${_strings.LOADING}</span>
+	</div>
+
+	<div dojoAttachPoint="_contentNode" style="display: none">
+		<form class="lotusForm2" dojoAttachPoint="_formNode" action="javascript:;">
+		
+			<div class="lotusFormBody">
+				
+				<div class="lotusFormField" dojoAttachPoint="_selectPropertyContainerNode">
+					<label id="${id}_selectPropertyLabel" for="${id}_selectProperty">
+						<span class="lotusFormRequired" title="${_strings.REQUIRED_FIELD}">*</span>
+						${_strings.PROPERTY_PREFIX}
+					</label>
+					<div class="lotusFieldWrapper">
+						<select dojoAttachPoint="_selectProperty" dojoAttachEvent="onclick: _onSelectPropertyClick, onchange: _onSelectPropertyChange" 
+								id="${id}_selectProperty" aria-labelledby="${id}_selectPropertyLabel"
+								aria-required="true"
+								aria-controls="${id}_inputContainer ${id}_dateTimeInputOptions">
+							<option value="">${_strings.SELECT_A_PROPERTY}</option>
+						</select>
+						<a role="button" href="javascript:;" aria-controls="${id}_inputContainer" dojoAttachEvent="onclick: _onChangeProperty">
+							${_strings.SHOW_DETAILS}
+						</a>
+					</div>
+				</div>
+				
+				<div class="lotusFormField" dojoAttachPoint="_dateTimeInputOptionsNode" id="${id}_dateTimeInputOptions" style="display: none">
+				
+					<span class="lotusFormLabel">${_strings.FORMAT_PREFIX}</span>
+					
+					<div class="lotusFieldWrapper">
+						<ul class="lotusInlinelist" role="toolbar" dojoAttachPoint="_dateTimeInputOptionsDaySelectedListNode">
+							<li role="presentation"  class="lotusFirst">
+								<span role="button" aria-pressed="true" aria-disabled="true" tabindex="0"
+									aria-controls="${id}_inputContainer" aria-label="${_strings.DAY}">${_strings.DAY}</span>
+							</li>
+							<li role="presentation">
+								<a role="button" href="javascript:;" aria-pressed="false" aria-controls="${id}_inputContainer"
+									dojoAttachEvent="onclick: _onSelectRangeDateInput" aria-label="${_strings.RANGE}">${_strings.RANGE}</a>
+							</li>
+						</ul>
+						
+						<ul class="lotusInlinelist" role="toolbar" dojoAttachPoint="_dateTimeInputOptionsRangeSelectedListNode" style="display: none" >
+							<li role="presentation" class="lotusFirst lotusDisabled">
+								<a role="button" href="javascript:;" aria-pressed="false" aria-controls="${id}_inputContainer"
+									dojoAttachEvent="onclick: _onSelectDayDateInput" aria-label="${_strings.DAY}">${_strings.DAY}</a>
+							</li>
+							<li role="presentation">
+								<span role="button" aria-pressed="true" aria-disabled="true" tabindex="0"
+									aria-controls="${id}_inputContainer" aria-label="${_strings.RANGE}">${_strings.RANGE}</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+				<div dojoAttachPoint="_inputContainerNode" id="${id}_inputContainer" style="display: none; white-space: nowrap"></div>
+			
+				<div class="lotusFormField lotusMeta" title="${_strings.LEGEND}">
+					${_strings.REQUIRED_LEGEND}
+				</div>
+			
+			</div>
+				
+		</form>
+	</div>
+	
+</div>

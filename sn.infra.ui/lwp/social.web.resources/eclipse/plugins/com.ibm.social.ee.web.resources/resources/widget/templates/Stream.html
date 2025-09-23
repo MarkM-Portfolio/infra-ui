@@ -1,0 +1,48 @@
+<div class="${baseClass}">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+  <div class="qkrError" dojoAttachPoint="errorNode" style="display: none; color: red;"></div>
+  <div class="lotusPaging" dojoAttachPoint="topPageNode" style="${_initPageStyle}">
+     <div class="lotusLeft numShape" style="display:none;" dojoAttachPoint="pageInfoNode"></div>
+     <ul class="lotusRight lotusInlinelist" dojoAttachPoint="topPageNavigateNode" style="display:none;">
+        <li dojoAttachPoint="tPreviousLinkNode" class="lotusFirst"><a href="#" dojoAttachEvent="onclick:previous" title="${_strings.PREVIOUS_TOOLTIP}">${_strings.PREVIOUS}</a></li>
+        <li dojoAttachPoint="tPreviousTextNode" class="lotusFirst">${_strings.PREVIOUS}</li>
+        <li dojoAttachPoint="tNextLinkNode"><a href="#" dojoAttachEvent="onclick:next" title="${_strings.NEXT_TOOLTIP}">${_strings.NEXT}</a></li>
+        <li dojoAttachPoint="tNextTextNode">${_strings.NEXT}</li>
+     </ul>
+     <ul class="lotusInlinelist" style="display:none" dojoAttachPoint="pageListNode">${_strings.PAGE}<li /></ul>
+  </div>
+  <div class="qkrLoading" dojoAttachPoint="loadingIndicator">
+     <img alt="${_strings.LOADING}" src="${_loadingImg}"/>${_strings.LOADING}
+  </div>
+  <div dojoAttachPoint="streamNode"></div>
+  <div class="lotusPaging" dojoAttachPoint="bottomPageNode" style="${_initPageStyle}">
+     <div class="lotusLeft">
+        <ul class="lotusLeft lotusInlinelist" dojoAttachPoint="pageSizeListNode" style="display: none;">${_strings.SHOW}
+        	  <li class="lotusFirst"><a class="numShape" href="javascript:;" role="button" aria-pressed="false" title="${_strings.SHOW_TOOLTIP_10}">10</a></li><li 
+        	      class="lotusFirst numShape" style="display: none;" id="${id}10" role="button" aria-pressed="true" aria-disabled="true">10</li><li 
+        	      ><a class="numShape" href="javascript:;" role="button" aria-pressed="false" title="${_strings.SHOW_TOOLTIP_25}">25</a></li><li class="numShape" style="display: none;" id="${id}25" role="button" aria-pressed="true" aria-disabled="true">25</li>
+           ${_strings.ITEMS_PER_PAGE}
+        </ul>         
+     </div>
+     <ul class="lotusRight lotusInlinelist" dojoAttachPoint="bottomPageNavigateNode" style="display: none;">
+        <li dojoAttachPoint="bPreviousLinkNode" class="lotusFirst"><a class="numShape" href="#" dojoAttachEvent="onclick:previous" title="${_strings.PREVIOUS_TOOLTIP}">${_strings.PREVIOUS}</a></li>
+        <li dojoAttachPoint="bPreviousTextNode" class="lotusFirst">${_strings.PREVIOUS}</li>
+        <li dojoAttachPoint="bNextLinkNode"><a class="numShape" href="#" dojoAttachEvent="onclick:next" title="${_strings.NEXT_TOOLTIP}">${_strings.NEXT}</a></li>
+        <li dojoAttachPoint="bNextTextNode">${_strings.NEXT}</li>
+     </ul>
+     <div style="display:none;" dojoAttachPoint="jumpPageNode"></div>
+  </div>      
+</div>

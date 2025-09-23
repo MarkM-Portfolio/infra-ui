@@ -1,0 +1,9 @@
+This plugin doesn't contain AngularJS sources. You can populate it by running
+    
+    $ bower install && npm install && gulp
+    
+after changing working directory to the directory containing the bower.json file.
+
+Note that use of AngularJS into IBM Connections must be prior approved by legal.
+This bundle and associated resources are currently only meant to be used for
+development and test.

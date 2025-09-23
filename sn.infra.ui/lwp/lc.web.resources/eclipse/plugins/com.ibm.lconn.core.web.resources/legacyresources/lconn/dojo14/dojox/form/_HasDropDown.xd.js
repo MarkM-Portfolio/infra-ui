@@ -1,0 +1,22 @@
+/*
+	Copyright (c) 2004-2009, The Dojo Foundation All Rights Reserved.
+	Available via Academic Free License >= 2.1 OR the modified BSD license.
+	see: http://dojotoolkit.org/license for details
+*/
+
+
+dojo._xdResourceLoaded(function(dojo, dijit, dojox){
+return {depends: [["provide", "dojox.form._HasDropDown"],
+["require", "dijit._HasDropDown"]],
+defineResource: function(dojo, dijit, dojox){if(!dojo._hasResource["dojox.form._HasDropDown"]){ //_hasResource checks added by build. Do not use _hasResource directly in your code.
+dojo._hasResource["dojox.form._HasDropDown"] = true;
+dojo.deprecated("dojox.form._HasDropDown", "Use dijit._HasDropDown instead", "2.0");
+
+dojo.provide("dojox.form._HasDropDown");
+dojo.require("dijit._HasDropDown");
+
+dojo.setObject("dojox.form._HasDropDown", dijit._HasDropDown);
+
+}
+
+}};});

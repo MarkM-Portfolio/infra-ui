@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">Arquivos</msg>
+  <msg name="description">Dispositivo de arquivos para permitir o upload e o compartilhamento dos arquivos</msg>
+  <msg name="action_uploadFile_label">Arquivos</msg>
+  <msg name="action_uploadFile_tooltip">Fazer Upload e Compartilhar Arquivos</msg>
+  <msg name="loading">Carregando...</msg>
+  <msg name="error_msg">O conteúdo não pode ser carregado. Tente novamente mais tarde ou entre em contato com o administrador do sistema.</msg>
+  <msg name="error_alt">Erro</msg>
+</messagebundle>

@@ -1,0 +1,29 @@
+<div class="ics-share-with-link">
+   <div class="shareWithLinkTitle">
+      <a href="javascript:;" data-dojo-attach-event="click:_clickMenu" data-dojo-attach-point="iconLinkNode" role="button" aria-label="${dropDownButton}">
+        <img src="${iconSource}" data-dojo-attach-point="iconNode" alt="${dropDownButton}"/>
+        <span>${nls.TITLE}</span>
+      </a>
+   </div>
+   <div data-dojo-attach-point="shareWithLinkContainter">
+      <div class="descriptionContent" data-dojo-attach-point="descriptionContent" style="display:none">
+         <div>${nls.EMPTY_DESCRIPTION}</div>
+         <a href="javascript:;" data-dojo-attach-point="createLinkBtn" data-dojo-attach-event="click:_createAction" role="button">${nls.CREATE_LINK}</a>
+      </div>
+
+      <div class="selectContent" data-dojo-attach-point="selectContent" data-dojo-attach-event="onchange:_changeType" style="display:none">
+         <select data-dojo-attach-point="typeSelector" style="display:none">
+         </select>
+         <div data-dojo-attach-point="typeLabel" style="display:none"/>
+      </div>
+
+      <div class="linkContent" data-dojo-attach-point="linkContent" style="display:none">
+         <input data-dojo-attach-point="linkInput" type="text" readonly="readonly"/>
+         <div data-dojo-attach-point="shareLinkDescription"></div>
+         <div class="buttonContainer">
+            <a href="javascript:;" class="copyLinkBtn" data-dojo-attach-point="copyLinkBtn" data-dojo-attach-event="click:_copyLink" role="button">${nls.COPY_LINK}</a>
+            <a href="javascript:;" class="deleteLinkBtn" data-dojo-attach-point="deleteLinkBtn" data-dojo-attach-event="click:_deleteAction" role="button">${nls.DELETE_LINK}</a>
+         </div>
+      </div>
+   </div>
+</div>

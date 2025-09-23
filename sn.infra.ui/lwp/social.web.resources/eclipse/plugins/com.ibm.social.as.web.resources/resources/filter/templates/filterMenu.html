@@ -1,0 +1,8 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<span class="asFilterMenu" dojoAttachPoint="filterMenuNode">
+	${filter.label} <select dojoAttachPoint="filterHolderNode" 
+							id="${id}_filterHolderNode" 
+							aria-labelledby="${id}_asFilterDescription"
+							dojoAttachEvent="onchange: menuItemClicked"></select>
+	<span class="lotusAccess" id="${id}_asFilterDescription">${bundle.nlsStrings.filterAriaDescription}</span>
+</span>

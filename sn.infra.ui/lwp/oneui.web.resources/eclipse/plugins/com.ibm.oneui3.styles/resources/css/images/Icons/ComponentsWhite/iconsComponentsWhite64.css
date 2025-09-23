@@ -1,0 +1,14 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.iconsComponentsWhite64-ActivitiesWhite64{width:62px;height:62px;background-position:0 0}
+.iconsComponentsWhite64-BlogsWhite64{width:62px;height:62px;background-position:0 -70px}
+.iconsComponentsWhite64-BookmarksWhite64{width:62px;height:62px;background-position:0 -140px}
+.iconsComponentsWhite64-CommunitiesWhite64{width:62px;height:62px;background-position:0 -210px}
+.iconsComponentsWhite64-FilesWhite64{width:62px;height:62px;background-position:0 -280px}
+.iconsComponentsWhite64-ForumsWhite64{width:62px;height:62px;background-position:0 -350px}
+.iconsComponentsWhite64-NewsFeedWhite64{width:62px;height:62px;background-position:0 -420px}
+.iconsComponentsWhite64-ProfilesWhite64{width:62px;height:62px;background-position:0 -490px}
+.iconsComponentsWhite64-TodoWhite64{width:62px;height:62px;background-position:0 -560px}
+.iconsComponentsWhite64-WikisWhite64{width:62px;height:62px;background-position:0 -630px}
+
+.iconsComponentsWhite64{background-image:url('./iconsComponentsWhite64-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsComponentsWhite64{display:none}

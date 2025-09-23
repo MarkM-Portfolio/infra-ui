@@ -1,0 +1,21 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusSubsection">
+
+	<h3 class="lotusHeading2">
+		<span class="lotusLeft">${_strings.PROPERTIES}</span>
+		<a role="button" class="lotusRight" href="javascript:;" data-dojo-attach-point="helpLink"></a>
+	</h3>
+	
+	<div class="lotusClear" style="display: none" data-dojo-attach-point="_loadingNode">
+		<img alt="" class="lotusLoading" src="${_blankGif}" role="presentation">
+		<span> ${_strings.LOADING}</span>
+	</div>
+	
+	<ul class="lotusList lotusEditable lotusMeta" style="display:none" data-dojo-attach-point="_contentNode">
+	</ul>
+	 
+	<div class="lotusClear" data-dojo-attach-point="_addPropertyButtonContainer">
+		<a href="javascript:;" id="ecmPropertiesListAddPropertyButton" role="button" data-dojo-attach-event="onclick: _addProperty">${_strings.ADD_PROPERTY}</a>
+	</div>
+
+</div>

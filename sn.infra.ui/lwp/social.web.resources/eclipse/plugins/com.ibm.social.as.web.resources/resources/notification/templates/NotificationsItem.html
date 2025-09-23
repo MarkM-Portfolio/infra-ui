@@ -1,0 +1,14 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="icNotification-post" data-dojo-attach-event="onclick: onClick" role="article" aria-label="${ariaSummary} ${timeString}">
+        <div class="icNotification-post-inner">
+            <img class="icNote-authorImg" data-dojo-attach-point="authorImage" src="" alt="">
+            <div class="icNote-body">
+                <div class="icNote-message">${!data.title}
+                    <span data-dojo-attach-point="bluedot" tabindex="0" class="bluedot lotusHidden"></span>
+                </div>
+                <div class="icNote-time"><a class="icPost-timestamp"><abbr class="timeago" data-dojo-attach-point="timeagoNode" title="${time}" tabindex="0">${timeString}</abbr></a></div>
+            </div>
+        </div>
+</div>
+
+

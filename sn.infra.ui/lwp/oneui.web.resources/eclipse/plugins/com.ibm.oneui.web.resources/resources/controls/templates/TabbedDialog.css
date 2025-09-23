@@ -1,0 +1,19 @@
+/* Copyright IBM Corp. 2011, 2015  All Rights Reserved.              */
+
+/* Depends on Dialog.css, which is a temporary backport from OneUI 2.1.  Assumes also that base dijit styles are present */
+
+.lotusui .lotusTabbedDialog .lotusHoverClose {position: absolute;top: 4px;right: 4px;}
+.lotusui .lotusTabbedDialog a.lotusClose img {height: 16px;width: 16px;}
+.lotusui .lotusTabbedDialog .dijitDialogPaneContent {
+	padding: 5px 10px 10px;
+	background: #5A5C60;
+	background: -moz-linear-gradient(center top , #5A5C60 0%, #434649 100%) repeat scroll 0 0 transparent;
+}
+
+/* Temporary, caused by tab controller overlaying our controller cause it's later in the dom */
+.lotusui .lotusTabbedDialog .lotusHoverClose {z-index: 10000;}
+/* Temporary, need to debug problems with styles */
+.lotusui .tabStripButton {display: none; position: absolute; overflow: hidden;}
+/* Temporary, need to understand how width is used (it pushes the dialog focus control way off screen) */
+.dijitTabContainer .nowrapTabStrip {width: auto;}
+.lotusui .dijitTabContainer .nowrapTabStrip {width: auto;}

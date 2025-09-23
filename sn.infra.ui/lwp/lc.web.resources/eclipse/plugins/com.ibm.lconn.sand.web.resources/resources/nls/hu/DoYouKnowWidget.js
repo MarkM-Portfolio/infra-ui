@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Meghívás csatlakozásra",
+	NDYK1:"Nincs több személy, akinek ajánlhatna",
+	LOADING: "betöltés",
+	DYK_TITLE: "Emberek, akiket ismerhet",
+	INVITE_TITLE: "Meghívás küldése csatlakozásra",
+	SEND_ACTION: "Küldés",
+	CANCEL_ACTION: "Mégse",
+	PREV: "Előző",
+	NEXT: "Következő",
+	bpct: "Megjegyzést írt az Ön blogjára",
+	bpcc: "Megjegyzést írt ugyanarra a blogra",
+	lpfr: "Munkatársa valakinek, akit ismer",
+	lm1: "Ön a személy menedzsere",
+	le1: "Ez a személy az Ön menedzsere",
+	sdm: "Ugyanaz a felettesük",
+	pt: "Ez a személy megjelölte Önt egy címkével",
+	pbt: "Ezt a személyt megjelölte címkével",
+	acm: "Tevékenységeken osztoznak",
+	wikiCoContribution: "Ugyanazt a wikit szerkesztették",
+	bpcb: "Megjegyzést írt a blogjára",
+	lpcfr: "Néhány közös munkatársuk van",
+	ccmf: "Egy közösségben vannak",
+	ccms: "Egy közösségben vannak",
+	filesharing: "Fájlokat oszt meg",
+	forumthreaddiscussion: "Egy fórumszálon osztoznak",
+	ctb: "Egy könyvjelzőn osztoznak",
+	tgw: "Néhány címkéjük egyezik",
+	tcu: "Ugyanazt a címkét használták",
+	pctg: "Megjelölték ugyanazt a személyt",
+	tgb: "Azonos személyek jelölték meg mindkettőjüket"
+})

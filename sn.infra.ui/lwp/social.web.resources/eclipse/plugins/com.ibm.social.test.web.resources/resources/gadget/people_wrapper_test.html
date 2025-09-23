@@ -1,0 +1,252 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+${head}
+
+${script:com.ibm.lconn.gadget.container.Handle}
+${script:com.ibm.lconn.gadget.container._Accessor}
+${script:com.ibm.lconn.gadget.container._Container}
+${script:com.ibm.lconn.gadget.container.iContainer2}
+${script:com.ibm.social.gadget.people.scanner}
+
+<!-- Redirect to &render=test -->
+<script type="text/javascript">	
+	var loc = location + '';
+	if (loc.indexOf('render=test') < 0) {
+		if (loc.indexOf('?') > 0) {
+			location = loc + "&render=test";
+		}
+		else {
+			location = loc + "?render=test";
+		}
+	}
+	
+	dojo.config.isDebug = true;
+	
+	dojo.require('lconn.core.config.services');
+	dojo.require("com.ibm.oneui.util.proxy");
+	
+	var web_resources_url = lconn.core.config.services['webresources'].url;
+	
+	if (loc.indexOf('creScriptTag=true') > 0) {
+		
+		var os_path = lconn.core.config.services['opensocial'].url;
+		var base_path = com.ibm.oneui.util.proxy(os_path);
+	
+		document.write('\x3Cscript src=\"' + base_path + '/gadgets/js/cre.iruntime:cre.iwidget:cre.iwidget.itemset:cre.util.stringify:cre.service.event:core:container:rpc:views:embedded-experiences:selection:inline:actions:shared-script-frame:shindig.sha1:open-views.js?c=1\&debug=true\&noCache=true\"\x3E\x3C\x2Fscript\x3E');
+	} else {
+		console.log('To use a script tag to load CRE this to the URL: &creScriptTag=true');
+	}
+</script>
+
+
+<script type="text/javascript">
+	var mContainer = null;
+	var mHandle = null;
+	var mEEHandle = null;
+	var iWidgetHandle = null;
+</script>
+
+
+<style>
+#attach_point {
+  width: 350px;
+  height: 120px;
+}
+
+.renderbutton {
+  padding: 4px;
+  margin: 4px;
+  background: orange;
+  border: black solid 1px;
+}
+</style>
+
+
+<!-- <script type="text/javascript" src="http://tapstage.swg.usma.ibm.com/profiles/ibm_semanticTagServlet/javascript/semanticTagService.js?inclDojo=false"></script> -->
+
+${endhead}
+
+<!-- BODY -->
+	
+<h1>people api wrapper tests</h1>
+<script type="text/javascript">
+
+	
+
+	function preFillCreGadget() {
+		var gadgetUrlInput = dojo.byId("gadgetUrl");
+		gadgetUrlInput.value = lconn.core.url.parse(location.toString(), 'gadgets/cre_gadget.xml').toString();
+	}
+	
+	function preFillNonCreGadget() {
+		var gadgetUrlInput = dojo.byId("gadgetUrl");
+		gadgetUrlInput.value = lconn.core.url.parse(location.toString(), 'gadgets/non_cre_gadget.xml').toString();
+	}
+	
+	function load_widget(renderType) {
+		var renderMode = (renderType==null || typeof renderType == 'undefined')?'default':renderType;
+		try {
+			var def = {
+					definitionUrl: dojo.formToObject('gadgetForm').gadgetUrl,
+					placement: 'attach_point',
+					componentType : 'gadget',
+					instanceData : { 
+						renderType : renderMode
+					}	
+				};
+				
+			if (mHandle) {
+				mHandle.close();
+				mHandle = null;
+			}
+							
+			mHandle = mContainer.loadWidget(def);
+		} catch ( e ) {
+			console.debug("Caught exception: " + e);
+		}
+		
+		return false;
+	}
+		
+	function refresh_gadget() {
+		if (mHandle) {
+			mHandle.refresh();
+		}
+	}
+	
+	function close_gadget() {
+		if (mHandle) {
+			mHandle.close();
+		}
+	}
+	
+	function parse_action() {
+		return false;
+	}
+	
+	function spoofSemTag() {
+		window.SemTagSvc = {"parseDom":function(thing, thing){console.log("SemTagSvc.parseDom called!");}};
+	}
+	
+	function disableProfiles() {
+		delete lconn.core.config.services.profiles;
+	}
+	function run_c_scanner() {
+   		com.ibm.social.gadget.people.scanner.scan(document.getElementById("cVcardDiv"), true);
+    }
+    function load_c_profile_link(){
+		var uid = document.getElementById("c_userId").value;
+		var displayName = document.getElementById("c_displayName").value;
+		var profileUrl = lconn.core.url.getServiceUrl(lconn.core.config.services.profiles);
+		var photoText = "Photo of " + displayName;
+		var linkText = "This is a link to the profile of " + displayName;
+		var profileUserUrl = profileUrl + "/html/profileView.do?userid=" + uid;
+		var vcard = dojo.create("span", {className: "vcard"});
+		vcard = dojo.place(vcard, "c_simple");
+		
+		var cardAnchor = 
+			dojo.create("a", {
+				href: profileUserUrl,
+				title: linkText,
+				className: "fn url",
+				target: this.linkTarget,
+				innerHTML: displayName
+		}, vcard);
+		
+		dojo.create("span", {
+			className: "photo",
+			src: profileUrl + "/photo.do?userid=" + uid,
+			alt: photoText,
+			style: {display: "none"}
+		}, cardAnchor);
+		
+		dojo.create("span", {
+			className: "x-lconn-userid",
+			style: {display: "none"},
+			innerHTML: uid
+		}, vcard);
+		com.ibm.social.gadget.people.scanner.scan(document.getElementById("c_simple"), "non_gadget");
+	}
+</script>
+<div id="windowDiv">
+<h3>Non Gadget tests</h3>
+<table>
+		<tr>
+			<td>User Id:</td><td><input id="c_userId" /><td/>
+		</tr>
+		<tr>
+			<td>Display Name:</td><td><input id="c_displayName" /><td/>
+		</tr>	 
+		</table>
+	 	<div id="c_simple"></div>
+		<div><button onClick="load_c_profile_link();">Load Profile Link</button> (this will create a vcard node from the given information, and then invoke the scanner on that node)</div>
+     <br />
+<button onClick="run_c_scanner();">Run Scanner</button>
+     
+     <div> sample vCard microformat :
+     <div id="cVcardDiv">
+     	<span class="vcard">
+		   <a href="http://fake.url"class="fn url">David McMullin</a>
+		   <span class="x-lconn-userid" style="display: none;">253aa593-0bc5-43c3-8b77-7ec1be384858</span>
+		   <span class="email" style="display: none;">dmcmulli@ie.ibm.com</span>
+		</span>
+		<br />
+		<span class="vcard">
+		   <a href="http://fake.url"class="fn url">Amy Jones22</a>
+		   <span class="x-lconn-userid" style="display: none;">22222</span>
+		   <span class="email" style="display: none;">ajones@iris.com</span>
+		</span>
+		<br />
+		<div>
+			<div>
+				<span class="vcard">
+				   <a href="http://fake.url"class="fn url">Amy Jones33</a>
+				   <span class="x-lconn-userid" style="display: none;">33333</span>
+				   <span class="email" style="display: none;">ajones@iris.com</span>
+				</span>
+			</div>
+		</div>
+     </div>
+     </div>
+     
+<h3>Gadget tests</h3>
+<form name="gadgetForm" id="gadgetForm" >
+Gadget Url : <input type="text" id="gadgetUrl" name="gadgetUrl" style="width : 60%" />
+</form>
+		<button class="renderbutton" onclick="load_widget('default');">Render Iframe</button>
+		<button class="renderbutton" onclick="load_widget('inline');">Render Inline</button>
+		<button onClick="refresh_gadget();">Refresh</button>
+		<button onClick="close_gadget();">Close</button>
+		<button onClick="spoofSemTag();">Add fake SemTagSvc for testing</button>
+		<button onClick="disableProfiles();">disable profiles for testing</button>
+<br />
+<button onClick="preFillCreGadget();">Pre-fill gadget with cre</button>
+<button onClick="preFillNonCreGadget();">Pre-fill gadget without cre</button>
+</div>
+
+
+<h3>Attach Point</h3>
+<div id="attach_point" >gadget goes here</div>
+<br />
+
+	
+	<script type="text/javascript">
+		dojo.addOnLoad(function() {
+			mContainer = com.ibm.lconn.gadget.container.iContainer2;			
+			mContainer.init();
+		});
+	</script>
+
+${end}

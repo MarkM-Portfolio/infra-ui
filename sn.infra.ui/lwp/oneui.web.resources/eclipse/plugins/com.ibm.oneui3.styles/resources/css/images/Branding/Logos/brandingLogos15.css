@@ -1,0 +1,10 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.brandingLogos15-ibmLogoBlack15{width:40px;height:15px;background-position:0 0}
+.brandingLogos15-ibmLogoBlue15{width:40px;height:15px;background-position:0 -23px}
+.brandingLogos15-ibmLogoGray15{width:40px;height:15px;background-position:0 -46px}
+.brandingLogos15-ibmLogoWhite15{width:40px;height:15px;background-position:0 -69px}
+.brandingLogos15-ibmLogoOpaque16{width:41px;height:16px;background-position:0 -92px}
+.brandingLogos15-ibmLogoTranslucent16{width:41px;height:16px;background-position:0 -116px}
+
+.brandingLogos15{background-image:url('./brandingLogos15-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .brandingLogos15{display:none}

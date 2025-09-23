@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IBM OneUI Generation4 Styles
+Bundle-SymbolicName: com.ibm.social.gen4.theme;singleton:=true
+Bundle-Version: 4.0.0.qualifier
+Bundle-Vendor: IBM

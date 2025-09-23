@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<messagebundle>
+  <msg name="as_title">Ажурирања</msg>
+  <msg name="as_description">Ажурирања од IBM Connections</msg>
+  <msg name="as_error">Има грешка со конфигурацијата за текот Ажурирања. Контактирајте со администраторот.</msg>
+</messagebundle>

@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "ja",
+      "Play": "再生",
+      "Pause": "一時停止",
+      "Current Time": "現在の時刻",
+      "Duration Time": "継続時間",
+      "Remaining Time": "残り時間",
+      "Stream Type": "ストリーム・タイプ",
+      "LIVE": "ライブ",
+      "Loaded": "ロード済み",
+      "Progress": "進行状況",
+      "Fullscreen": "フルスクリーン",
+      "Non-Fullscreen": "非フルスクリーン",
+      "Mute": "ミュート",
+      "Unmute": "ミュート解除",
+      "Unmuted": "ミュート解除",
+      "Playback Rate": "再生速度",
+      "Subtitles": "サブタイトル",
+      "subtitles off": "サブタイトル・オフ",
+      "Captions": "表題",
+      "captions off": "表題オフ",
+      "Chapters": "チャプター",
+      "Volume": "ボリューム",
+      "You aborted the video playback.": "ビデオの再生を中断しました",
+      "A network error caused the video download to fail part-way.": "ネットワーク・エラーによりビデオのダウンロードが途中で失敗しました。",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "ビデオをロードできませんでした。原因はサーバーまたはネットワークでエラーが発生したか、形式がサポートされないかのいずれかです。",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "ビデオの再生が中断されました。破損の問題、またはビデオで使用される機能が使用するブラウザーでサポートされないことが原因です。",
+      "No compatible source was found for this video.": "このビデオの互換ソースが見つかりませんでした。"
+});
+

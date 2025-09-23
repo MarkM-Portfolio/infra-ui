@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+define({
+		"CLOSE_HELP_DATE":"Lukk Hjelp til Datoer",
+		"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Lukk Hjelp til Dokumenttyper",
+		"CLOSE_HELP_PERSON":"Lukk Hjelp til Personer",
+		"CLOSE_HELP_TAG":"Lukk Hjelp til Tagger",
+		"CLOSE_HELP_TREND":"Lukk Hjelp til Trender",
+		"COLLAPSE_DATE":"Komprimer Datoer-filteret",
+		"COLLAPSE_ECM_DOCUMENT_TYPE":"Komprimer Dokumenttyper-filteret",
+		"COLLAPSE_PERSON":"Komprimer Personer-filteret",
+		"COLLAPSE_TAG":"Komprimer Tagger-filteret",
+		"COLLAPSE_TREND":"Komprimer filteret for trender",
+		"DESCRIPTION_DATE":"For å få frem resultater som er opprettet eller oppdatert på et bestemt tidspunkt, utvider du trekanten og filtrerer informasjonen etter år og måned.",
+		"DESCRIPTION_ECM_DOCUMENT_TYPE":"En dokumenttype er et nøkkelord du tildeler filer for å gjøre det enklere å finne dem. Klikk på en dokumenttype for å vise søkeresultater som er blitt tildelt det nøkkelordet.",
+		"DESCRIPTION_PERSON":"Vis personer knyttet til søkeresultatene. Klikk på et navn for å vise søkeresultatene som er knyttet til en bestemt person.",
+		"DESCRIPTION_TAG":"En tagg er et nøkkelord du tildeler innhold eller personer for å gjøre det enklere å finne innholdet eller personene. Klikk på en tagg for å vise søkeresultater som er blitt tildelt det nøkkelordet.",
+		"DESCRIPTION_TREND":"En trend er et nøkkelord som blir generert av systemet for å gjøre det enklere å utføre søk i Statusoppdateringer. Klikk på en trend for å vise søkeresultater som er blitt tildelt det nøkkelordet.",
+		"EXPAND_DATE":"Utvid Datoer-filteret",
+		"EXPAND_ECM_DOCUMENT_TYPE":"Utvid Dokumenttyper-filteret",
+		"EXPAND_PERSON":"Utvid Personer-filteret",
+		"EXPAND_TAG":"Utvid Tagger-filteret",
+		"EXPAND_TREND":"Utvid filteret for trender",
+		"HELP_DATE":"Hjelp til Datoer",
+		"HELP_ECM_DOCUMENT_TYPE":"Hjelp til Dokumenttyper",
+		"HELP_PERSON":"Hjelp til Personer",
+		"HELP_TAG":"Hjelp til Tagger",
+		"HELP_TREND":"Hjelp til Trender",
+		"NO_DATE_CONTENT":"Datoer er ikke tilgjengelig nå",
+		"NO_ECM_DOCUMENT_TYPE_CONTENT":"Dokumenttyper er ikke tilgjengelig nå",
+		"NO_PERSON_CONTENT":"Personer er ikke tilgjengelig nå",
+		"NO_TAG_CONTENT":"Tagger er ikke tilgjengelig nå",
+		"NO_TREND_CONTENT":"Trender er ikke tilgjengelig nå",
+		"TITLE_DATE":"Datoer",
+		"TITLE_ECM_DOCUMENT_TYPE":"Dokumenttyper",
+		"TITLE_PERSON":"Personer",
+		"TITLE_TAG":"Tagger",
+		"TITLE_TREND":"Trender"
+});
+

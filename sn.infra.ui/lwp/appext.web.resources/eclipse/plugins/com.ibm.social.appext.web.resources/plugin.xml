@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2013                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="net.jazz.ajax.webBundles">
+      <alias
+            value="com.ibm.social.appext">
+      </alias>
+   </extension>
+   <extension
+         point="net.jazz.ajax.dojoModules">
+      <dojoModule
+            id="com.ibm.social.appext.nls.ui"
+            provider="com.ibm.social.appext.web.resources.MessageBundles">
+      </dojoModule>
+   </extension>
+
+    <!--extension point="net.jazz.ajax.dojoModuleBinding">
+        <dojoModuleBinding bind="com.ibm.social.appext.hooks.common" to="lconn.core.bundle_common" />
+    </extension>
+    <extension point="net.jazz.ajax.dojoModuleBinding">
+        <dojoModuleBinding bind="com.ibm.social.appext.hooks.files" to="lconn.files.start_devmode" />
+    </extension>
+    <extension point="net.jazz.ajax.dojoModuleBinding">
+        <dojoModuleBinding bind="com.ibm.social.appext.hooks.wikis" to="lconn.wikis._bootstrap" />
+    </extension-->
+    <!-- TODO: other components -->
+</plugin>

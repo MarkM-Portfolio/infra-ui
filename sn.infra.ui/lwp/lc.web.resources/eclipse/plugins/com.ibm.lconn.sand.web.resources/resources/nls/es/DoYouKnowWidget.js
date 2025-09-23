@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Invitar a conectar",
+	NDYK1:"No hay más personas para recomendar",
+	LOADING: "cargando",
+	DYK_TITLE: "Gente que puede conocer",
+	INVITE_TITLE: "Enviar invitación a conectarse",
+	SEND_ACTION: "Enviar",
+	CANCEL_ACTION: "Cancelar",
+	PREV: "Anterior",
+	NEXT: "Siguiente",
+	bpct: "Ha comentado en su blog",
+	bpcc: "Usted ha comentado en el mismo blog",
+	lpfr: "Es compañero de alguien que conoce",
+	lm1: "Usted es su responsable",
+	le1: "Es su responsable",
+	sdm: "Comparten responsable",
+	pt: "Le ha etiquetado a usted",
+	pbt: "Usted le ha etiquetado",
+	acm: "Comparten actividades",
+	wikiCoContribution: "Han editado la misma wiki",
+	bpcb: "Ha comentado en su blog",
+	lpcfr: "Comparten compañeros",
+	ccmf: "Están juntos en una comunidad",
+	ccms: "Están juntos en una comunidad",
+	filesharing: "Comparte algunos archivos",
+	forumthreaddiscussion: "Comparten un hilo de debate",
+	ctb: "Comparten un marcador",
+	tgw: "Sus etiquetas coinciden",
+	tcu: "Han utilizado la misma etiqueta",
+	pctg: "Han etiquetado a la misma persona",
+	tgb: "Las mismas personas les han etiquetado"
+})

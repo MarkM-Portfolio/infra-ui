@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+define({
+		"CLOSE_HELP_DATE":"Zapri pomoč za datume",
+		"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Zapri pomoč za vrste dokumentov",
+		"CLOSE_HELP_PERSON":"Zapri pomoč za osebe",
+		"CLOSE_HELP_TAG":"Zapri pomoč za oznake",
+		"CLOSE_HELP_TREND":"Zapri pomoč za trende",
+		"COLLAPSE_DATE":"Strni datumski filter",
+		"COLLAPSE_ECM_DOCUMENT_TYPE":"Strni filter vrst dokumentov",
+		"COLLAPSE_PERSON":"Strni filter oseb",
+		"COLLAPSE_TAG":"Strni filter oznak",
+		"COLLAPSE_TREND":"Strni filter trendov",
+		"DESCRIPTION_DATE":"Če želite prikazati rezultate, ki so bili ustvarjeni ali posodobljeni ob določenem času, razširite razširljivi meni in filtrirajte informacije po letu in mesecu.",
+		"DESCRIPTION_ECM_DOCUMENT_TYPE":"Vrsta dokumenta je ključna beseda, ki jo dodelite datotekam, da jih lažje najdete. Kliknite vrsto dokumenta za prikaz rezultatov iskanja, ki so bili dodeljeni tej ključni besedi.",
+		"DESCRIPTION_PERSON":"Oglejte si osebe, povezane z rezultati iskanja. Kliknite ime, da prikažete rezultate iskanja, povezane s specifično osebo.",
+		"DESCRIPTION_TAG":"Oznaka je ključna beseda, ki jo dodelite vsebini ali osebam, da jih lažje najdete. Kliknite oznako za prikaz rezultatov iskanja, ki so bili dodeljeni tej ključni besedi.",
+		"DESCRIPTION_TREND":"Trend je ključna beseda, ki jo generira sistem, da poenostavi iskanje v posodobitvah statusov. Kliknite trend, če želite prikazati rezultate iskanje, ki so bili dodeljeni tej ključni besedi.",
+		"EXPAND_DATE":"Razširi datumski filter",
+		"EXPAND_ECM_DOCUMENT_TYPE":"Razširi filter vrst dokumentov",
+		"EXPAND_PERSON":"Razširi filter oseb",
+		"EXPAND_TAG":"Razširi filter oznak",
+		"EXPAND_TREND":"Razširi filter trendov",
+		"HELP_DATE":"Pomoč za datume",
+		"HELP_ECM_DOCUMENT_TYPE":"Pomoč za vrste dokumentov",
+		"HELP_PERSON":"Pomoč za osebe",
+		"HELP_TAG":"Pomoč za oznake",
+		"HELP_TREND":"Pomoč za trende",
+		"NO_DATE_CONTENT":"Datumi trenutno niso na voljo",
+		"NO_ECM_DOCUMENT_TYPE_CONTENT":"Vrste dokumentov trenutno niso na voljo",
+		"NO_PERSON_CONTENT":"Osebe trenutno niso na voljo",
+		"NO_TAG_CONTENT":"Oznake trenutno niso na voljo",
+		"NO_TREND_CONTENT":"Trendi trenutno niso na voljo",
+		"TITLE_DATE":"Datumi",
+		"TITLE_ECM_DOCUMENT_TYPE":"Vrste dokumentov",
+		"TITLE_PERSON":"Osebe",
+		"TITLE_TAG":"Oznake",
+		"TITLE_TREND":"Trendi"
+});
+

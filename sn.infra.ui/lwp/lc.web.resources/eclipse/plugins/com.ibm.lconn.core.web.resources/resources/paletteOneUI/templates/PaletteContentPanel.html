@@ -1,0 +1,15 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusPaletteContent">
+<div dojoAttachPoint="noWidgetNode" aria-live="assertive" aria-atomic="true" class="lotusHidden lotusPaging" style="width: auto; text-align: justify;">
+${_resourceBundle.NO_WIDGET_NO_SHELF}</div>
+<div dojoAttachPoint="containerNode"></div>
+<div class="lotusPaging lotusHidden"
+	dojoAttachPoint="pagerContainerNode">
+<div class="lotusLeft" dojoAttachPoint="pagerNode" aria-live="polite" aria-atomic="true"></div>
+<ul class="lotusRight lotusInlinelist lotusHidden" dojoAttachPoint="scrollControlNode">
+	<li class="lotusFirst" dojoAttachPoint="previousNode">${_resourceBundle.PREVIOUS}</li>
+	<li dojoAttachPoint="nextNode">
+	<a role="button" href="javascript:;">${_resourceBundle.NEXT}</a></li>
+</ul>
+</div>
+</div>

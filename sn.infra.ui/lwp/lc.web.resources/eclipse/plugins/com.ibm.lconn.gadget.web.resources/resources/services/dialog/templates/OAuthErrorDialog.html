@@ -1,0 +1,20 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div id="${id}_dialog" role="dialog" aria-labelledby="${id}_title" class="lotusDialog">
+	<div class="lotusDialogBorder">
+		<div class="lotusDialog">
+			<div class="lotusDialogHeader">
+				<a class="lotusDialogClose" href="javascript:;" dojoAttachEvent="onclick:closeDialog" title="${nls.MESSAGE.DISMISS}">
+					<img alt="${nls.MESSAGE.DISMISS}" src="${blankGif}" />
+					<span class="lotusAltText">${nls.MESSAGE.DISMISS}</span>
+				</a>
+			</div>
+			<div class="lotusDialogContent" id="${id}_dialog_content">
+				<div class="lotusMessage2" role="alert">
+					<img class="lotusIcon lotusIconMsgError" src="${blankGif}" alt="${nls.MESSAGE.ERROR_ALT_TEXT}" />
+					<span class="lotusAltText">${nls.MESSAGE.ERROR_ALT_TEXT}</span>
+					<div class="lotusMessageBody">${errorMessage}</div>
+				</div>
+			</div>
+		</div><!--end lotusDialog-->
+	</div><!--end lotusDialogBorder-->
+</div><!--end dialog-->

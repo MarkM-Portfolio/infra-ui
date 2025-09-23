@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>IBM Connections - Plain Dialog</title>
+${endhead}
+    <div class="lotusFrame">
+        <div role="region" aria-label="Select page width">
+            <a onclick="dojo.query('.lotusContent')[0].style.width = '1000px'; return false;" href="javascript:;">Page width 1000px</a> |
+            <a onclick="dojo.query('.lotusContent')[0].style.width = '800px'; return false;" href="javascript:;">Page width 800px</a> |
+            <a onclick="dojo.query('.lotusContent')[0].style.width = '600px'; return false;" href="javascript:;">Page width 600px</a> |
+            <a onclick="dojo.query('.lotusContent')[0].style.width = '400px'; return false;" href="javascript:;">Page width 400px</a>
+        </div>
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <!--  Add your test DOM here -->
+
+<!--  plain dialog -->
+<div id="overlay" class="lotusOverlay">&nbsp;</div>
+<div id="dialog1" class="lotusDialogWrapper" title="Plain Dialog">
+<div class="lotusDialogBorder">
+    <form class="lotusDialog lotusForm2" action="javascript:;" method="post" aria-live="assertive">
+        <!-- header is an HTML5 element. Use div if you are using HTML4. -->
+        <header class="lotusDialogHeader">
+            <h1 id="dialogHeader" class="lotusHeading">Plain Dialog</h1>
+            <a class="lotusDialogClose" href="javascript:;" title="Close"><img alt="Close" src="${_blankGif}"/><span class="lotusAltText">X</span></a>
+        </header>
+        <div class="lotusDialogContent">
+        <div class="lotusFormField">
+            <label for="title"><span class="lotusFormRequired">*</span>Title:</label>
+            <div class="lotusFieldWrapper"><input class="lotusText" type="text" id="title" name="title" aria-required="true" /></div>
+        </div>
+        <div class="lotusFormField">
+            <label for="description">Description:</label>
+            <div class="lotusFieldWrapper"><textarea id="description" name="description" rows="5" cols="16" class="lotusText"></textarea></div>
+        </div>
+        <div class="lotusFormField">
+            <label for="tags">Tags: <a class="lotusIcon" id="help1" href="javascript:;" role="button" aria-haspopup="true" aria-owns="popupIdGoesHere"><img class="iconsOther16 iconsOther16-Help12" src="${_blankGif}" alt="Help" /><span class="lotusAltText">?</span></a></label>
+            <div class="lotusFieldWrapper"><input class="lotusText" type="text" id="tags" name="tags" value="" /></div>
+        </div>
+        <div class="lotusFormField">
+            <fieldset role="radiogroup"><!--fieldset and legend are for accessibility-->
+            <legend id="radioLabel" class="lotusAccess">Label:</legend>
+                <div class="lotusFieldWrapper"><input type="radio" id="radio1" name="radio1" class="lotusCheckbox" checked="checked" value="false" /><label class="lotusCheckbox" for="radio1">Radio button label text</label></div>
+                <div class="lotusFieldWrapper"><input type="radio" id="radio2" name="radio1" class="lotusCheckbox" value="true" /><label class="lotusCheckbox" for="radio2">Radio button label text</label></div>
+            </fieldset>
+        </div>              
+    </div><!--end lotusDialogContent-->
+    <div class="lotusDialogFooter">
+        <input value="OK" class="lotusBtn" type="submit" /> <input name="yourButtonName" value="Cancel" class="lotusBtn" type="button" />
+    </div>
+    </form> 
+    </div><!--end lotusDialogBorder-->
+</div><!-- end dialog -->
+
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:dojo.parser}
+    ${script:dijit.Dialog}
+    ${script:dijit.layout.TabContainer}
+    <script>
+        dojo.addOnLoad(function() {
+            var vDialog=document.getElementById('dialog1');
+            vDialog.style.top="40px";
+            vDialog.style.left="40px";
+            vDialog.style.display="block";
+            var vOverlay=document.getElementById("overlay");    
+            //have to use javascript to get overlay to be as tall as the whole page
+            var body = document.documentElement ? document.documentElement : document.body;
+            var windowHeight = window.innerHeight ? window.innerHeight : body.clientHeight; 
+            if (body.scrollHeight > windowHeight) { windowHeight = body.scrollHeight; }
+            vOverlay.style.height=windowHeight+ "px";
+            vOverlay.style.display="block"; 
+        });
+    </script>
+</body>
+</html>

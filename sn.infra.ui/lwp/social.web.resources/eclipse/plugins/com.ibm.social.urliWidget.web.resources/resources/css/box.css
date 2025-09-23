@@ -1,0 +1,66 @@
+.lconnBox body {
+	background-color: #ffffff;
+}
+
+.lconnBox #loadingMessage {
+		font:75%/1.5 Arial, Helvetica, sans-serif;
+}
+
+.lconnBox #action_select_folder_edit {
+	margin-top: 10px;
+	margin-bottom: 40px;
+}
+
+.lconnBox .showcontentmsg {
+	color: #222;
+   padding-left: 2px;
+}
+
+.lconnBox iframe {
+	border-width: 0;
+}
+
+.lconnBox iframe body {
+	font-size: 1.2em;
+}
+
+.lconnBox .lotusImagesOff .box-svg-icon {
+	visibility: hidden;
+}
+
+.lconnBox .box-svg-icon {
+   display: inline-block;
+   width: 16px;
+   height: 16px;
+}
+
+.lconnBox .box-svg-icon path {
+   fill: #5a5a5a;
+}
+
+.lconnBox .fullpage .lconnFirstConfigContainer {
+	margin-top: 28px;
+	margin-left: 40px;
+}
+
+.lconnBox .lconnBoxWarningMessage {
+  display: none;
+}
+
+.lconnBox .lconnFooter{
+	border-width: 1px 0 0;
+	border-style: solid;
+	border-color: #aaa;
+	padding: 15px 0 20px 0;
+	margin-top: 40px;
+	width: 100%;
+}
+
+.lconnBox .lconnFirstConfigContainer,
+.lconnBox .lconnUpdateConfigContainer {
+	margin-top: 10px;
+}
+.lconnBox .lotusTable td:first-child {
+    padding-right: 6px;
+}
+

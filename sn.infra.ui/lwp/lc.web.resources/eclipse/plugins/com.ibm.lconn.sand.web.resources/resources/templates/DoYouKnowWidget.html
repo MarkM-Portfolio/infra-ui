@@ -1,0 +1,42 @@
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<div dojoAttachPoint="root" class="topContainer">
+	<!-- loading -->
+	<div dojoAttachPoint="DYKLoading">
+		<center>${loading}</center>
+	</div>
+	<!-- caching for paging -->
+	<div dojoAttachPoint="boardingNode" style="display:none"></div>
+	<!-- No content -->
+	<div dojoAttachPoint="welcomeNode" style="margin-bottom: -3px; margin-top: -3px; display:none;background-color:#c7e1fa;">
+		<span>${noDYKEntry1}</span>
+	</div>
+	<!-- main content container -->
+	<div dojoAttachPoint="DYKContainer" style="display: none;">
+		<!-- individual entries to display -->
+		<div class="lotusLeft">
+			<a href="javascript:void(0);" dojoAttachEvent="onclick:previousDYK" alt="${prev}">&lt;&lt;</a>
+		</div>
+		<div class="lotusRight">
+			<a href="javascript:void(0);" dojoAttachEvent="onclick:nextDYK" alt="${next}">&gt;&gt;</a>
+		</div>
+		<div>
+			<div dojoAttachPoint="DYKNode">
+			</div>
+			<div class="actions">
+					<a href="javascript:void(0);" style="margin-left:53px;" alt="${connectString}" dojoAttachEvent="onclick:invite">
+						<img class="lconnSprite lconnSprite-iconAddRating16" src="${_blankGif}" />
+						${connectString}
+					</a>
+			</div>
+		</div>
+	</div>
+	<div dojoAttachPoint="DYKInviteNode" style="display:none;">
+		<h3>${inviteTitle}</h3>
+		<input type="text"/>
+		<div class="lotusBtnContainer">
+			<button class="lotusLeft lotusBtn lotusBtnSpecial" dojoAttachEvent="onclick:sendInvite">${sendAction}</button>
+			<button class="lotusBtn" dojoAttachEvent="onclick:cancelInvite">${cancelAction}</button>
+		</div>
+	</div>	
+</div> 

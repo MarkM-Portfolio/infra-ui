@@ -1,0 +1,1186 @@
+{
+	"definitions" : [{
+			"type" : "community_widget",
+			"name" : "Members",
+			"description" : null,
+			"payload" : {
+				"modes" : "view fullpage",
+				"defId" : "Members",
+				"uniqueInstance" : "true",
+				"primaryWidget" : "false",
+				"showInPalette" : "false",
+				"themes" : "wpthemeThin wpthemeNarrow wpthemeWide wpthemeBanner",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/t_com_membership_view.html",
+				"itemSet" : [{
+						"value" : "12",
+						"name" : "membersPerPage"
+					}, {
+						"value" : "16",
+						"name" : "membersPerPageFullPage"
+					}
+				],
+				"url" : "{webresourcesSvcRef}\/web\/lconn.comm\/communityMembers\/communityMembers.xml?etag={version}"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "MembersSummary",
+			"description" : "memberSummaryDescription",
+			"payload" : {
+				"showFullWidgetDeleteConfirmation" : "false",
+				"modes" : "view",
+				"defId" : "MembersSummary",
+				"uniqueInstance" : "true",
+				"primaryWidget" : "false",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/com.ibm.oneui3.styles\/imageLibrary\/Icons\/ComponentsGray\/CommunitiesGray16.png",
+				"showInPalette" : "true",
+				"themes" : "wpthemeNarrow wpthemeWide wpthemeThin wpthemeBanner",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/t_com_membership_view.html",
+				"description" : "memberSummaryDescription",
+				"itemSet" : [{
+						"value" : "16",
+						"name" : "membersPerPage"
+					}, {
+						"value" : "16",
+						"name" : "membersPerPageFullPage"
+					}
+				],
+				"url" : "{webresourcesSvcRef}\/web\/lconn.comm\/communityMembers\/communityMembers.xml?etag={version}"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "Blog",
+			"description" : "blogsDescription",
+			"payload" : {
+				"modes" : "view edit search",
+				"defId" : "Blog",
+				"uniqueInstance" : "true",
+				"prerequisite" : "blogs",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/com.ibm.oneui3.styles\/imageLibrary\/Icons\/ComponentsGray\/BlogsGray16.png",
+				"lifecycle" : {
+					"remoteHandlerAuthenticationAlias" : "connectionsAdmin",
+					"events" : [{
+							"name" : "widget.added"
+						}, {
+							"name" : "widget.removed"
+						}, {
+							"name" : "community.visibility.changed"
+						}, {
+							"name" : "community.prepare.delete"
+						}, {
+							"name" : "remote.app.transfer"
+						}, {
+							"name" : "community.updated"
+						}, {
+							"name" : "community.org.changed"
+						}, {
+							"name" : "community.members.added"
+						}, {
+							"name" : "community.members.removed"
+						}, {
+							"name" : "community.members.modified"
+						}, {
+							"name" : "community.softdeleted"
+						}
+					],
+					"remoteHandlerURL" : "{blogsInterSvcRef}\/roller-ui\/BlogsWidgetEventHandler.do"
+				},
+				"themes" : "wpthemeNarrow wpthemeWide wpthemeBanner",
+				"navBarLink" : "{blogsSvcRef}\/{resourceId}",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/community_blog_frame.html",
+				"description" : "blogsDescription",
+				"itemSet" : [{
+						"value" : "{lang}",
+						"name" : "lang"
+					}, {
+						"value" : "{communitiesSvcRef}",
+						"name" : "communitiesBaseUrl"
+					}, {
+						"value" : "{blogsSvcRef}",
+						"name" : "blogsBaseUrl"
+					}, {
+						"value" : "{blogsSvcRef}\/static\/{version}!{locale}",
+						"name" : "staticLanguageRoot"
+					}, {
+						"value" : "{profilesSvcRef}",
+						"name" : "profilesBaseUrl"
+					}, {
+						"value" : "{blogsSvcRef}\/atom_form\/blogs?commUuid={resourceId}&blogType=communityblog",
+						"name" : "atomFeedUrl"
+					}, {
+						"value" : "{blogsSvcRef}\/atom\/blogs?commUuid={resourceId}&blogType=communityblog",
+						"name" : "atomFeedUrl.basic"
+					}, {
+						"value" : "{blogsSvcRef}\/oauth\/atom\/blogs?commUuid={resourceId}&blogType=communityblog",
+						"name" : "atomFeedUrl.oauth"
+					}, {
+						"value" : "{blogsSvcRef}\/api_form\/blogs?commUuid={resourceId}&blogType=communityblog",
+						"name" : "atomPubUrl"
+					}, {
+						"value" : "{blogsSvcRef}\/api\/blogs?commUuid={resourceId}&blogType=communityblog",
+						"name" : "atomPubUrl.basic"
+					}, {
+						"value" : "{blogsSvcRef}\/oauth\/api\/blogs?commUuid={resourceId}&blogType=communityblog",
+						"name" : "atomPubUrl.oauth"
+					}, {
+						"value" : "{blogsSvcRef}\/atom_form?search={searchTerm}&commUuid={resourceId}&t=entry&ps=5&page=0&sortby=0&order=desc&lang=en",
+						"name" : "searchUrl"
+					}, {
+						"value" : "{blogsSvcRef}\/atom?search={searchTerm}&commUuid={resourceId}&t=entry&ps=5&page=0&sortby=0&order=desc&lang=en",
+						"name" : "searchUrl.basic"
+					}, {
+						"value" : "{blogsSvcRef}\/oauth\/atom?search={searchTerm}&commUuid={resourceId}&t=entry&ps=5&page=0&sortby=0&order=desc&lang=en",
+						"name" : "searchUrl.oauth"
+					}
+				],
+				"url" : "{blogsSvcRef}\/static\/{version}!{locale}\/iwidgets\/blog\/blogsWidget.jsp"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "IdeationBlog",
+			"description" : "ideationBlogsDescription",
+			"payload" : {
+				"modes" : "view edit fullpage search",
+				"defId" : "IdeationBlog",
+				"uniqueInstance" : "true",
+				"prerequisite" : "blogs",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/com.ibm.oneui3.styles\/imageLibrary\/Icons\/ComponentsGray\/BlogsGray16.png",
+				"lifecycle" : {
+					"remoteHandlerAuthenticationAlias" : "connectionsAdmin",
+					"events" : [{
+							"name" : "widget.added"
+						}, {
+							"name" : "widget.removed"
+						}, {
+							"name" : "community.visibility.changed"
+						}, {
+							"name" : "community.prepare.delete"
+						}, {
+							"name" : "remote.app.transfer"
+						}, {
+							"name" : "community.updated"
+						}, {
+							"name" : "community.members.added"
+						}, {
+							"name" : "community.members.removed"
+						}, {
+							"name" : "community.members.modified"
+						}, {
+							"name" : "community.softdeleted"
+						}
+					],
+					"remoteHandlerURL" : "{blogsInterSvcRef}\/roller-ui\/BlogsWidgetEventHandler.do"
+				},
+				"themes" : "wpthemeNarrow wpthemeWide wpthemeBanner",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/ideationblog_frame.html",
+				"description" : "ideationBlogsDescription",
+				"itemSet" : [{
+						"value" : "{lang}",
+						"name" : "lang"
+					}, {
+						"value" : "{communitiesSvcRef}",
+						"name" : "communitiesBaseUrl"
+					}, {
+						"value" : "{blogsSvcRef}",
+						"name" : "blogsBaseUrl"
+					}, {
+						"value" : "{blogsSvcRef}\/static\/{version}!{locale}",
+						"name" : "staticLanguageRoot"
+					}, {
+						"value" : "{profilesSvcRef}",
+						"name" : "profilesBaseUrl"
+					}, {
+						"value" : "{blogsSvcRef}\/atom_form\/blogs?commUuid={resourceId}&blogType=ideationblog",
+						"name" : "atomFeedUrl"
+					}, {
+						"value" : "{blogsSvcRef}\/atom\/blogs?commUuid={resourceId}&blogType=ideationblog",
+						"name" : "atomFeedUrl.basic"
+					}, {
+						"value" : "{blogsSvcRef}\/oauth\/atom\/blogs?commUuid={resourceId}&blogType=ideationblog",
+						"name" : "atomFeedUrl.oauth"
+					}, {
+						"value" : "{blogsSvcRef}\/api_form\/blogs?commUuid={resourceId}&blogType=ideationblog",
+						"name" : "atomPubUrl"
+					}, {
+						"value" : "{blogsSvcRef}\/api\/blogs?commUuid={resourceId}&blogType=ideationblog",
+						"name" : "atomPubUrl.basic"
+					}, {
+						"value" : "{blogsSvcRef}\/oauth\/api\/blogs?commUuid={resourceId}&blogType=ideationblog",
+						"name" : "atomPubUrl.oauth"
+					}, {
+						"value" : "{blogsSvcRef}\/atom_form?search={searchTerm}&commUuid={resourceId}&t=idea&ps=5&page=0&sortby=0&order=desc&lang=en",
+						"name" : "searchUrl"
+					}, {
+						"value" : "{blogsSvcRef}\/atom?search={searchTerm}&commUuid={resourceId}&t=idea&ps=5&page=0&sortby=0&order=desc&lang=en",
+						"name" : "searchUrl.basic"
+					}, {
+						"value" : "{blogsSvcRef}\/oauth\/atom?search={searchTerm}&commUuid={resourceId}&t=idea&ps=5&page=0&sortby=0&order=desc&lang=en",
+						"name" : "searchUrl.oauth"
+					}
+				],
+				"url" : "{blogsSvcRef}\/static\/{version}!{locale}\/iwidgets\/ideationblog\/Ideations.xml"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "Activities",
+			"description" : "commActivitesDescription",
+			"payload" : {
+				"modes" : "view edit fullpage search",
+				"defId" : "Activities",
+				"uniqueInstance" : "true",
+				"prerequisite" : "activities",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/com.ibm.oneui3.styles\/imageLibrary\/Icons\/ComponentsGray\/ActivitiesGray16.png",
+				"lifecycle" : {
+					"remoteHandlerAuthenticationAlias" : "connectionsAdmin",
+					"events" : [{
+							"name" : "remote.app.removed"
+						}, {
+							"name" : "remote.app.added"
+						}, {
+							"name" : "community.visibility.changed",
+							"doesNotRequireWidget" : "true"
+						}, {
+							"name" : "community.prepare.delete",
+							"doesNotRequireWidget" : "true"
+						}, {
+							"name" : "remote.app.transfer"
+						}, {
+							"name" : "community.updated",
+							"doesNotRequireWidget" : "true"
+						}, {
+							"name" : "community.members.removed",
+							"doesNotRequireWidget" : "true"
+						}, {
+							"name" : "community.org.changed",
+							"doesNotRequireWidget" : "true"
+						}
+					],
+					"remoteHandlerURL" : "{activitiesInterSvcRef}\/service\/atom2\/forms\/communityEvent"
+				},
+				"themes" : "wpthemeNarrow wpthemeWide wpthemeBanner",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/community_activity_frame.html",
+				"description" : "commActivitesDescription",
+				"itemSet" : [{
+						"value" : "{activitiesSvcRef}",
+						"name" : "activityBaseUrl"
+					}, {
+						"value" : "{activitiesSvcRef}\/service\/atom2\/service?commUuid={resourceId}",
+						"name" : "atomPubUrl"
+					}, {
+						"value" : "{activitiesSvcRef}\/service\/atom2\/activities?commUuid={resourceId}&public=yes&authenticate=no",
+						"name" : "atomFeedUrl"
+					}, {
+						"value" : "{activitiesSvcRef}\/service\/atom2\/activities?commUuid={resourceId}&public=yes&authenticate=no&search={searchTerm}",
+						"name" : "searchUrl"
+					}, {
+						"value" : "{activitiesSvcRef}\/service\/atom2\/forms\/service?commUuid={resourceId}",
+						"name" : "atomPubUrl.forms"
+					}, {
+						"value" : "{activitiesSvcRef}\/service\/atom2\/forms\/activities?commUuid={resourceId}&public=yes&authenticate=no",
+						"name" : "atomFeedUrl.forms"
+					}, {
+						"value" : "{activitiesSvcRef}\/service\/atom2\/forms\/activities?commUuid={resourceId}&public=yes&authenticate=no&search={searchTerm}",
+						"name" : "searchUrl.forms"
+					}, {
+						"value" : "{activitiesSvcRef}\/oauth\/atom2\/service?commUuid={resourceId}",
+						"name" : "atomPubUrl.oauth"
+					}, {
+						"value" : "{activitiesSvcRef}\/oauth\/atom2\/activities?commUuid={resourceId}&public=yes&authenticate=no",
+						"name" : "atomFeedUrl.oauth"
+					}, {
+						"value" : "{activitiesSvcRef}\/oauth\/atom2\/activities?commUuid={resourceId}&public=yes&authenticate=no&search={searchTerm}",
+						"name" : "searchUrl.oauth"
+					}, {
+						"value" : "5",
+						"name" : "activitiesPerPage"
+					}, {
+						"value" : "10",
+						"name" : "activitiesPerPageFullpage"
+					}, {
+						"value" : "3",
+						"name" : "numHistoryItems"
+					}, {
+						"value" : "{contextRoot}",
+						"name" : "cPath"
+					}
+				],
+				"url" : "{webresourcesSvcRef}\/web\/lconn.communityactivities\/ActivityList.xml?etag={version}"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "Wiki",
+			"description" : "wikiDescription",
+			"payload" : {
+				"modes" : "view search edit",
+				"defId" : "Wiki",
+				"uniqueInstance" : "true",
+				"prerequisite" : "wikis",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/com.ibm.oneui3.styles\/imageLibrary\/Icons\/ComponentsGray\/WikisGray16.png",
+				"lifecycle" : {
+					"remoteHandlerAuthenticationAlias" : "connectionsAdmin",
+					"events" : [{
+							"name" : "widget.added"
+						}, {
+							"name" : "widget.removed"
+						}, {
+							"name" : "community.visibility.changed"
+						}, {
+							"name" : "community.updated"
+						}, {
+							"name" : "community.prepare.delete"
+						}, {
+							"name" : "remote.app.transfer"
+						}, {
+							"name" : "community.members.removed"
+						}, {
+							"name" : "community.org.changed"
+						}, {
+							"name" : "community.softdeleted"
+						}, {
+							"name" : "community.restored"
+						}
+					],
+					"remoteHandlerURL" : "{wikisInterSvcRef}\/wl\/lifecycle\/wikis"
+				},
+				"themes" : "wpthemeNarrow wpthemeWide wpthemeBanner",
+				"navBarLink" : "{wikisSvcRef}\/communitywiki?communityUuid={resourceId}",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/community_wiki_frame.html",
+				"description" : "wikiDescription",
+				"itemSet" : [{
+						"value" : "{wikisSvcRef}",
+						"name" : "wikisRoot"
+					}, {
+						"value" : "{wikisSvcRef}\/form\/api\/community\/{resourceId}\/introspection",
+						"name" : "atomPubUrl"
+					}, {
+						"value" : "{wikisSvcRef}\/basic\/api\/community\/{resourceId}\/introspection",
+						"name" : "atomPubUrl.basic"
+					}, {
+						"value" : "{wikisSvcRef}\/oauth\/api\/community\/{resourceId}\/introspection",
+						"name" : "atomPubUrl.oauth"
+					}, {
+						"value" : "{wikisSvcRef}\/form\/api\/communitywiki\/{resourceId}\/feed",
+						"name" : "atomFeedUrl"
+					}, {
+						"value" : "{wikisSvcRef}\/basic\/api\/communitywiki\/{resourceId}\/feed",
+						"name" : "atomFeedUrl.basic"
+					}, {
+						"value" : "{wikisSvcRef}\/oauth\/api\/communitywiki\/{resourceId}\/feed",
+						"name" : "atomFeedUrl.oauth"
+					}, {
+						"value" : "{wikisSvcRef}\/form\/api\/communitywiki\/{resourceId}\/feed?search={searchTerm}",
+						"name" : "searchUrl"
+					}, {
+						"value" : "{wikisSvcRef}\/basic\/api\/communitywiki\/{resourceId}\/feed?search={searchTerm}",
+						"name" : "searchUrl.basic"
+					}, {
+						"value" : "{wikisSvcRef}\/oauth\/api\/communitywiki\/{resourceId}\/feed?search={searchTerm}",
+						"name" : "searchUrl.oauth"
+					}
+				],
+				"url" : "{wikisSvcRef}\/static\/iwidgets\/{version}\/CommunityWidget\/WikiWidget.xml"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "Forum",
+			"description" : "forumDescription",
+			"payload" : {
+				"modes" : "view edit fullpage search",
+				"defId" : "Forum",
+				"uniqueInstance" : "true",
+				"prerequisite" : "forums",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/com.ibm.oneui3.styles\/imageLibrary\/Icons\/ComponentsGray\/ForumsGray16.png",
+				"lifecycle" : {
+					"remoteHandlerAuthenticationAlias" : "connectionsAdmin",
+					"events" : [{
+							"name" : "remote.app.added"
+						}, {
+							"name" : "remote.app.removed"
+						}, {
+							"name" : "community.prepare.delete"
+						}, {
+							"name" : "community.visibility.changed"
+						}, {
+							"name" : "community.updated"
+						}, {
+							"name" : "community.members.added"
+						}, {
+							"name" : "community.members.removed"
+						}, {
+							"name" : "remote.app.transfer"
+						}, {
+							"name" : "ed"
+						}
+					],
+					"remoteHandlerURL" : "{forumsInterSvcRef}\/lifecycle\/communityEvent"
+				},
+				"themes" : "wpthemeNarrow wpthemeWide wpthemeBanner",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/community_forum_frame.html",
+				"description" : "forumDescription",
+				"itemSet" : [{
+						"value" : "{contextRoot}",
+						"name" : "contextPath"
+					}, {
+						"value" : "{forumsSvcRef}\/atom\/forms\/service?communityUuid={resourceId}",
+						"name" : "atomPubUrl"
+					}, {
+						"value" : "{forumsSvcRef}\/atom\/service?communityUuid={resourceId}",
+						"name" : "atomPubUrl.basic"
+					}, {
+						"value" : "{forumsSvcRef}\/oauth\/atom\/service?communityUuid={resourceId}",
+						"name" : "atomPubUrl.oauth"
+					}, {
+						"value" : "{forumsSvcRef}\/atom\/forms\/topics?communityUuid={resourceId}",
+						"name" : "atomFeedUrl"
+					}, {
+						"value" : "{forumsSvcRef}\/atom\/topics?communityUuid={resourceId}",
+						"name" : "atomFeedUrl.basic"
+					}, {
+						"value" : "{forumsSvcRef}\/oauth\/atom\/topics?communityUuid={resourceId}",
+						"name" : "atomFeedUrl.oauth"
+					}, {
+						"value" : "{forumsSvcRef}\/atom\/forms\/topics?communityUuid={resourceId}&search={searchTerm}",
+						"name" : "searchUrl"
+					}, {
+						"value" : "{forumsSvcRef}\/atom\/topics?communityUuid={resourceId}&search={searchTerm}",
+						"name" : "searchUrl.basic"
+					}, {
+						"value" : "{forumsSvcRef}\/oauth\/atom\/topics?communityUuid={resourceId}&search={searchTerm}",
+						"name" : "searchUrl.oauth"
+					}, {
+						"value" : "{forumsSvcRef}\/atom\/forms\/topics?overview=true&communityUuid={resourceId}",
+						"name" : "topicFeedPath"
+					}, {
+						"value" : "5",
+						"name" : "overviewPageSize"
+					}, {
+						"value" : "25",
+						"name" : "fullpagePageSize"
+					}, {
+						"value" : "{forumsSvcRef}\/ajax\/comm\/forums?communityId={resourceId}",
+						"name" : "forumsPage"
+					}, {
+						"value" : "{webresourcesSvcRef}\/web\/com.ibm.lconn.core.styles\/base\/applications\/forums.css?etag={version}",
+						"name" : "forumStyles"
+					}, {
+						"value" : "{forumsSvcRef}",
+						"name" : "forumsContextPath"
+					}
+				],
+				"url" : "{webresourcesSvcRef}\/web\/lconn.forums\/widgets\/topicList.xml?etag={version}"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "SubcommunityNav",
+			"description" : "subcommunityDescription",
+			"payload" : {
+				"showFullWidgetDeleteConfirmation" : "false",
+				"modes" : "view",
+				"defId" : "SubcommunityNav",
+				"uniqueInstance" : "true",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/com.ibm.oneui3.styles\/imageLibrary\/Icons\/ComponentsGray\/CommunitiesGray16.png",
+				"themes" : "wpthemeWide wpthemeNarrow wpthemeThin wpthemeBanner",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/t_com_create_subcommunity.html",
+				"description" : "subcommunityDescription",
+				"itemSet" : [{
+						"value" : "{communitiesSvcRef}\/service\/atom{authSubpath}\/community\/subcommunities?communityUuid={resourceId}&ps=200",
+						"name" : "subcommunitiesFeedUrl"
+					}, {
+						"value" : "images",
+						"name" : "defaultView"
+					}
+				],
+				"url" : "{webresourcesSvcRef}\/web\/lconn.comm\/widgets\/subcommunityNav\/subcommunitynav.xml?etag={version}"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "Bookmarks",
+			"description" : "commBookmarks",
+			"payload" : {
+				"modes" : "view search",
+				"defId" : "Bookmarks",
+				"uniqueInstance" : "true",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/com.ibm.oneui3.styles\/imageLibrary\/Icons\/ComponentsGray\/BookmarksGray16.png",
+				"lifecycle" : {
+					"events" : [{
+							"name" : "remote.app.removed"
+						}
+					],
+					"handler" : "com.ibm.lconn.comm.lifecycle.ReferencesLifecycleHandler"
+				},
+				"themes" : "wpthemeWide wpthemeNarrow wpthemeThin wpthemeBanner",
+				"navBarLink" : "{contextRoot}\/service\/html\/community\/bookmarks?communityUuid={resourceId}",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/community_bookmarks_frame.html",
+				"description" : "commBookmarks",
+				"itemSet" : [{
+						"value" : "bookmarks",
+						"name" : "widgetType"
+					}, {
+						"value" : "{communitiesSvcRef}\/service\/atom{authSubpath}\/community\/bookmarks?communityUuid={resourceId}&ps=5",
+						"name" : "feedUrl"
+					}, {
+						"value" : "{communitiesSvcRef}\/service\/atom{authSubpath}\/community\/bookmarks\/service?communityUuid={resourceId}",
+						"name" : "atomPubUrl"
+					}, {
+						"value" : "{communitiesSvcRef}\/service\/atom{authSubpath}\/community\/bookmarks?communityUuid={resourceId}&search={searchTerm}",
+						"name" : "searchUrl"
+					}
+				],
+				"url" : "{webresourcesSvcRef}\/web\/lconn.comm\/widgets\/feedReader\/feedreader.xml?etag={version}"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "ImportantBookmarks",
+			"description" : "importantBookmarksDescription",
+			"payload" : {
+				"showFullWidgetDeleteConfirmation" : "false",
+				"modes" : "view",
+				"defId" : "ImportantBookmarks",
+				"uniqueInstance" : "true",
+				"primaryWidget" : "false",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/com.ibm.oneui3.styles\/imageLibrary\/Icons\/ComponentsGray\/BookmarksGray16.png",
+				"themes" : "wpthemeNarrow wpthemeWide wpthemeThin wpthemeBanner",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/community_bookmarks_frame.html",
+				"description" : "importantBookmarksDescription",
+				"url" : "{webresourcesSvcRef}\/web\/lconn.comm\/importantBookmarks\/importantBookmarks.xml?etag={version}"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "Tags",
+			"description" : "tagsDescription",
+			"payload" : {
+				"showFullWidgetDeleteConfirmation" : "false",
+				"modes" : "view",
+				"defId" : "Tags",
+				"uniqueInstance" : "true",
+				"primaryWidget" : "false",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/com.ibm.oneui3.styles\/imageLibrary\/Icons\/ComponentsGray\/tag_32.png",
+				"showInPalette" : "true",
+				"themes" : "wpthemeNarrow wpthemeWide wpthemeThin wpthemeBanner",
+				"description" : "tagsDescription",
+				"url" : "{webresourcesSvcRef}\/web\/lconn.comm\/tags\/tags.xml?etag={version}"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "description",
+			"description" : "descriptionDescription",
+			"payload" : {
+				"showFullWidgetDeleteConfirmation" : "false",
+				"modes" : "view edit",
+				"defId" : "description",
+				"uniqueInstance" : "true",
+				"primaryWidget" : "true",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/com.ibm.oneui3.styles\/imageLibrary\/Icons\/ComponentsGray\/CommunitiesGray16.png",
+				"themes" : "wpthemeWide wpthemeBanner wpthemeNarrow wpthemeThin",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/t_com_edit.html",
+				"description" : "descriptionDescription",
+				"url" : "{webresourcesSvcRef}\/web\/lconn.comm\/description\/description.xml?etag={version}"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "Feeds",
+			"description" : "commFeeds",
+			"payload" : {
+				"modes" : "view search",
+				"defId" : "Feeds",
+				"uniqueInstance" : "true",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/com.ibm.oneui3.styles\/imageLibrary\/Icons\/Other\/FeedGray16.png",
+				"lifecycle" : {
+					"events" : [{
+							"name" : "remote.app.removed"
+						}
+					],
+					"handler" : "com.ibm.lconn.comm.lifecycle.ReferencesLifecycleHandler"
+				},
+				"themes" : "wpthemeWide wpthemeBanner wpthemeThin wpthemeNarrow",
+				"navBarLink" : "{contextRoot}\/service\/html\/community\/feeds?communityUuid={resourceId}",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/community_feeds_frame.html",
+				"description" : "commFeeds",
+				"itemSet" : [{
+						"value" : "feeds",
+						"name" : "widgetType"
+					}, {
+						"value" : "{communitiesSvcRef}\/service\/atom{authSubpath}\/community\/feeds?communityUuid={resourceId}&ps=5",
+						"name" : "feedUrl"
+					}, {
+						"value" : "{communitiesSvcRef}\/service\/atom{authSubpath}\/community\/feeds\/service?communityUuid={resourceId}",
+						"name" : "atomPubUrl"
+					}, {
+						"value" : "{communitiesSvcRef}\/service\/atom{authSubpath}\/community\/feeds?communityUuid={resourceId}&search={searchTerm}",
+						"name" : "searchUrl"
+					}
+				],
+				"url" : "{webresourcesSvcRef}\/web\/lconn.comm\/widgets\/feedReader\/feedreader.xml?etag={version}"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "Files",
+			"description" : "filesDescription",
+			"payload" : {
+				"modes" : "view fullpage search edit",
+				"defId" : "Files",
+				"uniqueInstance" : "true",
+				"prerequisite" : "files",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/com.ibm.oneui3.styles\/imageLibrary\/Icons\/ComponentsGray\/FilesGray16.png",
+				"lifecycle" : {
+					"remoteHandlerAuthenticationAlias" : "connectionsAdmin",
+					"events" : [{
+							"name" : "widget.added"
+						}, {
+							"name" : "widget.removed"
+						}, {
+							"name" : "community.visibility.changed",
+							"doesNotRequireWidget" : "true"
+						}, {
+							"name" : "community.updated",
+							"doesNotRequireWidget" : "true"
+						}, {
+							"name" : "community.prepare.delete",
+							"doesNotRequireWidget" : "true"
+						}, {
+							"name" : "community.org.changed",
+							"doesNotRequireWidget" : "true"
+						}, {
+							"name" : "remote.app.transfer"
+						}, {
+							"name" : "community.members.removed",
+							"doesNotRequireWidget" : "true"
+						}, {
+							"name" : "community.softdeleted",
+							"doesNotRequireWidget" : "true"
+						}, {
+							"name" : "community.restored",
+							"doesNotRequireWidget" : "true"
+						}
+					],
+					"remoteHandlerURL" : "{filesInterSvcRef}\/wl\/lifecycle\/files"
+				},
+				"themes" : "wpthemeNarrow wpthemeWide wpthemeBanner",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/community_files_frame.html",
+				"description" : "filesDescription",
+				"itemSet" : [{
+						"value" : "{filesSvcRef}",
+						"name" : "filesRoot"
+					}, {
+						"value" : "{filesSvcRef}\/static\/js\/{version}!{locale}",
+						"name" : "filesJsRoot"
+					}, {
+						"value" : "{contextRoot}",
+						"name" : "contextRoot"
+					}, {
+						"value" : "{filesSvcRef}\/static\/{version}!{locale}\/",
+						"name" : "staticLanguageRoot"
+					}, {
+						"value" : "{filesSvcRef}\/form\/api\/community\/{resourceId}\/introspection",
+						"name" : "atomPubUrl"
+					}, {
+						"value" : "{filesSvcRef}\/basic\/api\/community\/{resourceId}\/introspection",
+						"name" : "atomPubUrl.basic"
+					}, {
+						"value" : "{filesSvcRef}\/oauth\/api\/community\/{resourceId}\/introspection",
+						"name" : "atomPubUrl.oauth"
+					}, {
+						"value" : "{filesSvcRef}\/form\/api\/communitycollection\/{resourceId}\/feed",
+						"name" : "atomFeedUrl"
+					}, {
+						"value" : "{filesSvcRef}\/basic\/api\/communitycollection\/{resourceId}\/feed",
+						"name" : "atomFeedUrl.basic"
+					}, {
+						"value" : "{filesSvcRef}\/oauth\/api\/communitycollection\/{resourceId}\/feed",
+						"name" : "atomFeedUrl.oauth"
+					}, {
+						"value" : "{filesSvcRef}\/form\/api\/communitylibrary\/{resourceId}\/feed?search={searchTerm}",
+						"name" : "searchUrl"
+					}, {
+						"value" : "{filesSvcRef}\/basic\/api\/communitylibrary\/{resourceId}\/feed?search={searchTerm}",
+						"name" : "searchUrl.basic"
+					}, {
+						"value" : "{filesSvcRef}\/oauth\/api\/communitylibrary\/{resourceId}\/feed?search={searchTerm}",
+						"name" : "searchUrl.oauth"
+					}
+				],
+				"url" : "{filesSvcRef}\/static\/{version}!{locale}\/iwidgets\/CommunityReferentialWidget\/widget.xml"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "widgetPalette",
+			"description" : null,
+			"payload" : {
+				"defId" : "widgetPalette",
+				"showInPalette" : "false",
+				"resourceOwnerWidget" : "true",
+				"themes" : "wpthemeBanner",
+				"url" : "{webresourcesSvcRef}\/web\/lconn.comm\/widgets\/applicationPalette\/applicationPalette.xml?etag={version}"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "sand_recomComm",
+			"description" : null,
+			"payload" : {
+				"defId" : "sand_recomComm",
+				"primaryWidget" : "false",
+				"prerequisite" : "sand",
+				"displayLoginRequired" : "true",
+				"showInPalette" : "false",
+				"themes" : "wpthemeNarrow",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/t_com_using_recommended_comms_widget.html",
+				"bundleRefId" : "lc_sand",
+				"itemSet" : [{
+						"value" : "{webresourcesSvcRef}\/web\/lconn.sand\/",
+						"name" : "sandUIRoot"
+					}, {
+						"value" : "{searchSvcRef}",
+						"name" : "sandBackEndRoot"
+					}, {
+						"value" : "communities",
+						"name" : "sourceList"
+					}, {
+						"value" : "{searchSvcRef}\/atom\/social\/recommend",
+						"name" : "ApiUrl"
+					}, {
+						"value" : "{contextRoot}\/nav",
+						"name" : "navContentLocation"
+					}, {
+						"value" : "lconn.core.errorhandling.DefaultXHRErrorHandler",
+						"name" : "xhrErrorHandlerAsString"
+					}
+				],
+				"url" : "{webresourcesSvcRef}\/web\/lconn.sand\/descriptors\/CommunityRecommend.xml?etag={version}"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "Gallery",
+			"description" : "Gallery.description",
+			"payload" : {
+				"showFullWidgetDeleteConfirmation" : "false",
+				"modes" : "view edit",
+				"defId" : "Gallery",
+				"primaryWidget" : "false",
+				"prerequisite" : "files",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/lconn.gallery\/images\/gallery_16.png",
+				"themes" : "wpthemeThin wpthemeNarrow wpthemeWide wpthemeBanner",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/gallery_frame.html",
+				"description" : "Gallery.description",
+				"bundleRefId" : "lc_clib",
+				"url" : "{webresourcesSvcRef}\/web\/lconn.gallery\/Gallery.xml?etag={version}"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "Calendar",
+			"description" : "calendarDescription",
+			"payload" : {
+				"modes" : "view edit fullpage search",
+				"defId" : "Calendar",
+				"uniqueInstance" : "true",
+				"primaryWidget" : "false",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/com.ibm.oneui3.styles\/imageLibrary\/Icons\/ComponentsGray\/CalendarGray16.png",
+				"showInPalette" : "true",
+				"lifecycle" : {
+					"remoteHandlerAuthenticationAlias" : "connectionsAdmin",
+					"events" : [{
+							"name" : "remote.app.added"
+						}, {
+							"name" : "remote.app.removed"
+						}, {
+							"name" : "community.prepare.delete"
+						}, {
+							"name" : "community.visibility.changed"
+						}, {
+							"name" : "community.updated"
+						}, {
+							"name" : "community.members.added"
+						}, {
+							"name" : "community.members.removed"
+						}, {
+							"name" : "community.members.modified"
+						}
+					],
+					"remoteHandlerURL" : "{communitiesInterSvcRef}\/calendar\/handleEvent"
+				},
+				"themes" : "wpthemeThin wpthemeNarrow wpthemeWide wpthemeBanner",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/community_events_frame.html",
+				"description" : "calendarDescription",
+				"itemSet" : [{
+						"value" : "{communitiesSvcRef}\/calendar",
+						"name" : "calendarRoot"
+					}, {
+						"value" : "{communitiesSvcRef}",
+						"name" : "communitiesBaseUrl"
+					}, {
+						"value" : "list",
+						"name" : "defaultView"
+					}, {
+						"value" : "{version}",
+						"name" : "version"
+					}, {
+						"value" : "{profilesSvcRef}",
+						"name" : "profilesBaseUrl"
+					}, {
+						"value" : "{communitiesSvcRef}\/calendar\/atom_form\/calendar\/service?calendarUuid={resourceId}",
+						"name" : "atomPubUrl"
+					}, {
+						"value" : "{communitiesSvcRef}\/calendar\/atom\/calendar\/service?calendarUuid={resourceId}",
+						"name" : "atomPubUrl.basic"
+					}, {
+						"value" : "{communitiesSvcRef}\/calendar\/oauth\/atom\/calendar\/service?calendarUuid={resourceId}",
+						"name" : "atomPubUrl.oauth"
+					}, {
+						"value" : "{communitiesSvcRef}\/calendar\/atom_form\/calendar\/event?type=event&calendarUuid={resourceId}",
+						"name" : "atomFeedUrl"
+					}, {
+						"value" : "{communitiesSvcRef}\/calendar\/atom\/calendar\/event?type=event&calendarUuid={resourceId}",
+						"name" : "atomFeedUrl.basic"
+					}, {
+						"value" : "{communitiesSvcRef}\/calendar\/oauth\/atom\/calendar\/event?type=event&calendarUuid={resourceId}",
+						"name" : "atomFeedUrl.oauth"
+					}, {
+						"value" : "{communitiesSvcRef}\/calendar\/atom_form\/search?search={searchTerm}&calendarUuid={resourceId}",
+						"name" : "searchUrl"
+					}, {
+						"value" : "{communitiesSvcRef}\/calendar\/atom\/search?search={searchTerm}&calendarUuid={resourceId}",
+						"name" : "searchUrl.basic"
+					}, {
+						"value" : "{communitiesSvcRef}\/calendar\/oauth\/atom\/search?search={searchTerm}&calendarUuid={resourceId}",
+						"name" : "searchUrl.oauth"
+					}
+				],
+				"url" : "{communitiesSvcRef}\/calendar\/Calendar.xml?version={version}"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "RecentUpdates",
+			"description" : "updatesDescription",
+			"payload" : {
+				"modes" : "view",
+				"defId" : "RecentUpdates",
+				"uniqueInstance" : "true",
+				"showInPalette" : "false",
+				"themes" : "wpthemeWide",
+				"navBarLink" : "{contextRoot}\/service\/html\/community\/updates?communityUuid={resourceId}&filter=all",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/t_com_updates.html",
+				"description" : "updatesDescription",
+				"fixedPosition" : "true",
+				"itemSet" : [{
+						"value" : "{opensocialSvcRef}\/rest\/ublog\/c!{resourceId}\/@all?format=atom",
+						"name" : "atomFeedUrl"
+					}, {
+						"value" : "{opensocialSvcRef}\/basic\/rest\/ublog\/c!{resourceId}\/@all?format=atom",
+						"name" : "atomFeedUrl.basic"
+					}, {
+						"value" : "{opensocialSvcRef}\/oauth\/rest\/ublog\/c!{resourceId}\/@all?format=atom",
+						"name" : "atomFeedUrl.oauth"
+					}
+				],
+				"url" : "{webresourcesSvcRef}\/web\/com.ibm.social.as.lconn\/widgets\/communitiesActivityStream.xml?etag={version}"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "StatusUpdates",
+			"description" : "updatesDescription",
+			"payload" : {
+				"defId" : "StatusUpdates",
+				"uniqueInstance" : "true",
+				"lifecycle" : {
+					"remoteHandlerAuthenticationAlias" : "connectionsAdmin",
+					"events" : [{
+							"name" : "remote.app.added"
+						}, {
+							"name" : "remote.app.removed"
+						}, {
+							"name" : "remote.app.transfer"
+						}, {
+							"name" : "community.visibility.changed"
+						}, {
+							"name" : "community.updated"
+						}, {
+							"name" : "community.org.changed"
+						}, {
+							"name" : "community.prepare.delete"
+						}
+					],
+					"remoteHandlerURL" : "{newsInterSvcRef}\/widget\/communityHandler.do"
+				},
+				"navBarLink" : "{contextRoot}\/service\/html\/community\/updates?communityUuid={resourceId}&filter=status",
+				"themes" : "wpthemeWide",
+				"url" : "{webresourcesSvcRef}\/web\/com.ibm.social.as.lconn\/widgets\/communitiesActivityStream.xml?etag={version}",
+				"itemSet" : [{
+						"value" : "{opensocialSvcRef}\/rest\/ublog\/urn:lsid:lconn.ibm.com:communities.community:{resourceId}\/@all?format=atom",
+						"name" : "atomFeedUrl"
+					}, {
+						"value" : "{opensocialSvcRef}\/basic\/rest\/ublog\/urn:lsid:lconn.ibm.com:communities.community:{resourceId}\/@all?format=atom",
+						"name" : "atomFeedUrl.basic"
+					}, {
+						"value" : "{opensocialSvcRef}\/oauth\/rest\/ublog\/urn:lsid:lconn.ibm.com:communities.community:{resourceId}\/@all?format=atom",
+						"name" : "atomFeedUrl.oauth"
+					}, {
+						"value" : "{searchSvcRef}\/atomfba\/mysearch\/results?scope=status_updates&social=%7B%22type%22%3A%22community%22%2C%22id%22%3A%22{resourceId}%22%7D&query={searchTerm}",
+						"name" : "searchUrl"
+					}, {
+						"value" : "{searchSvcRef}\/atom\/mysearch\/results?scope=status_updates&social=%7B%22type%22%3A%22community%22%2C%22id%22%3A%22{resourceId}%22%7D&query={searchTerm}",
+						"name" : "searchUrl.basic"
+					}, {
+						"value" : "{searchSvcRef}\/oauth\/atom\/mysearch\/results?scope=status_updates&social=%7B%22type%22%3A%22community%22%2C%22id%22%3A%22{resourceId}%22%7D&query={searchTerm}",
+						"name" : "searchUrl.oauth"
+					}
+				],
+				"modes" : "view edit search",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/com.ibm.oneui3.styles\/imageLibrary\/Icons\/ComponentsGray\/StatusUpdateGray16.png",
+				"prerequisite" : "microblogging",
+				"showInPalette" : "true",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/t_com_share_status.html",
+				"description" : "updatesDescription",
+				"fixedPosition" : "true"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "RelatedCommunities",
+			"description" : "relatedCommunitiesDescription",
+			"payload" : {
+				"modes" : "view fullpage",
+				"defId" : "RelatedCommunities",
+				"uniqueInstance" : "true",
+				"primaryWidget" : "false",
+				"iconUrl" : "{webresourcesSvcRef}\/web\/com.ibm.oneui3.styles\/imageLibrary\/Icons\/ComponentsGray\/CommunitiesGray16.png",
+				"showInPalette" : "true",
+				"lifecycle" : {
+					"remoteHandlerAuthenticationAlias" : "connectionsAdmin",
+					"events" : [{
+							"name" : "remote.app.added"
+						}, {
+							"name" : "remote.app.removed"
+						}, {
+							"name" : "community.prepare.delete"
+						}, {
+							"name" : "community.visibility.changed"
+						}, {
+							"name" : "community.updated"
+						}
+					],
+					"remoteHandlerURL" : "{communitiesInterSvcRef}\/recomm\/handleEvent"
+				},
+				"themes" : "wpthemeThin wpthemeNarrow wpthemeWide wpthemeBanner",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/t_com_share_related_communities.html",
+				"description" : "relatedCommunitiesDescription",
+				"itemSet" : [{
+						"value" : "{communitiesSvcRef}\/recomm",
+						"name" : "recommRoot"
+					}, {
+						"value" : "{communitiesSvcRef}",
+						"name" : "communitiesBaseUrl"
+					}, {
+						"value" : "{version}",
+						"name" : "version"
+					}, {
+						"value" : "{communitiesSvcRef}\/recomm\/atom_form\/service?communityUuid={resourceId}",
+						"name" : "atomPubUrl"
+					}, {
+						"value" : "{communitiesSvcRef}\/recomm\/atom\/service?communityUuid={resourceId}",
+						"name" : "atomPubUrl.basic"
+					}, {
+						"value" : "{communitiesSvcRef}\/recomm\/oauth\/atom\/service?communityUuid={resourceId}",
+						"name" : "atomPubUrl.oauth"
+					}, {
+						"value" : "{communitiesSvcRef}\/recomm\/atom_form\/relatedCommunities?communityUuid={resourceId}&ps=10",
+						"name" : "feedUrl"
+					}, {
+						"value" : "{communitiesSvcRef}\/recomm\/atom\/relatedCommunities?communityUuid={resourceId}&ps=10",
+						"name" : "feedUrl.basic"
+					}, {
+						"value" : "{communitiesSvcRef}\/recomm\/oauth\/atom\/relatedCommunities?communityUuid={resourceId}&ps=10",
+						"name" : "feedUrl.oauth"
+					}
+				],
+				"url" : "{communitiesSvcRef}\/recomm\/Recomm.xml?version={version}"
+			}
+		}, {
+			"type" : "community_widget",
+			"name" : "Library",
+			"description" : "Library.description",
+			"payload" : {
+				"modes" : "view search edit fullpage",
+				"defId" : "Library",
+				"prerequisite" : "ecm_files",
+				"iconUrl" : "{contextRoot}\/nav\/common\/images\/ManagedFiles.png",
+				"lifecycle" : {
+					"remoteHandlerAuthenticationAlias" : "filenetAdmin",
+					"events" : [{
+							"name" : "widget.added"
+						}, {
+							"name" : "widget.removed"
+						}, {
+							"name" : "widget.renamed"
+						}, {
+							"name" : "community.members.added"
+						}, {
+							"name" : "community.members.removed"
+						}, {
+							"name" : "community.members.modified"
+						}, {
+							"name" : "community.visibility.changed"
+						}, {
+							"name" : "community.prepare.delete"
+						}, {
+							"name" : "community.updated"
+						}
+					],
+					"remoteHandlerURL" : "{ecm_filesInterSvcRef}\/atom\/communities\/feed"
+				},
+				"themes" : "wpthemeNarrow wpthemeWide wpthemeBanner",
+				"showInExternalCommunities" : "true",
+				"helpLink" : "{helpSvcRef}\/topic\/com.ibm.lotus.connections.communities.help\/c_com_library_frame.html",
+				"description" : "Library.description",
+				"bundleRefId" : "lc_clib",
+				"itemSet" : [{
+						"value" : "{contextRoot}\/commonProxy",
+						"name" : "proxyUrl"
+					}, {
+						"value" : "true",
+						"name" : "isLifecycle"
+					}
+				],
+				"url" : "{webresourcesSvcRef}\/web\/quickr.lw\/widgetDefs\/LibraryWidget_QCS_Connections.xml?etag={version}"
+			}
+		}
+	],
+	"layouts" : [{
+			"pages" : [{
+					"widgetInstances" : [{
+							"defIdRef" : "RecentUpdates",
+							"uiLocation" : "col2recentposts"
+						}, {
+							"defIdRef" : "Members",
+							"uiLocation" : "none"
+						}, {
+							"instanceId" : "We1b2655bd8b5_4ff7_845a_6832def1337d",
+							"defIdRef" : "ImportantBookmarks",
+							"uiLocation" : "col3"
+						}, {
+							"instanceId" : "W98b5ed4bcd4e_42af_84b5_ddd8e95f2f4f",
+							"defIdRef" : "MembersSummary",
+							"uiLocation" : "col3"
+						}, {
+							"instanceId" : "W5ff49d49eaba_4982_907d_8c4c4ee70159",
+							"defIdRef" : "StatusUpdates",
+							"uiLocation" : "col2statusposts",
+							"itemSet" : [{
+									"value" : "d01a7bd1-19b8-4dcb-999b-2cfb4950b5d7",
+									"name" : "objectIdentifyingId"
+								}
+							]
+						}, {
+							"instanceId" : "Wced910b14cf5_4426_9e57_00273552d50e",
+							"defIdRef" : "description",
+							"uiLocation" : "col2"
+						}, {
+							"instanceId" : "W01e450af69c6_4e6b_a152_01bc9ac08a2a",
+							"defIdRef" : "Forum",
+							"uiLocation" : "col2"
+						}, {
+							"instanceId" : "W5117086d682a_47bc_8491_efceaa024600",
+							"defIdRef" : "Bookmarks",
+							"uiLocation" : "col2"
+						}, {
+							"instanceId" : "W99821507936c_44de_9637_9acd747cda08",
+							"defIdRef" : "Files",
+							"uiLocation" : "col2"
+						}, {
+							"instanceId" : "W7905dafa2dc4_4402_a572_0f166d25d6a1",
+							"defIdRef" : "Tags",
+							"uiLocation" : "col1"
+						}
+					],
+					"pageId" : "communityOverview"
+				}, {
+					"widgetInstances" : [{
+							"defIdRef" : "RecentUpdates",
+							"uiLocation" : "col2recentposts"
+						}, {
+							"defIdRef" : "MembersSummary",
+							"uiLocation" : "col3"
+						}
+					],
+					"pageId" : "recentUpdates"
+				}, {
+					"widgetInstances" : [{
+							"defIdRef" : "MembersSummary",
+							"uiLocation" : "col3"
+						}, {
+							"instanceId" : "W5ff49d49eaba_4982_907d_8c4c4ee70159",
+							"defIdRef" : "StatusUpdates",
+							"uiLocation" : "col2statusposts",
+							"itemSet" : [{
+									"value" : "d01a7bd1-19b8-4dcb-999b-2cfb4950b5d7",
+									"name" : "objectIdentifyingId"
+								}
+							]
+						}
+					],
+					"pageId" : "statusUpdates"
+				}, {
+					"widgetInstances" : [{
+							"defIdRef" : "sand_recomComm",
+							"uiLocation" : "col1"
+						}
+					],
+					"pageId" : "allCommunities"
+				}, {
+					"widgetInstances" : [{
+							"defIdRef" : "sand_recomComm",
+							"uiLocation" : "col1"
+						}
+					],
+					"pageId" : "myCommunities"
+				}, {
+					"widgetInstances" : [{
+							"defIdRef" : "sand_recomComm",
+							"uiLocation" : "col1"
+						}
+					],
+					"pageId" : "own"
+				}, {
+					"widgetInstances" : [{
+							"defIdRef" : "sand_recomComm",
+							"uiLocation" : "col1"
+						}
+					],
+					"pageId" : "my"
+				}, {
+					"widgetInstances" : [{
+							"defIdRef" : "sand_recomComm",
+							"uiLocation" : "col1"
+						}
+					],
+					"pageId" : "follow"
+				}, {
+					"widgetInstances" : [{
+							"defIdRef" : "sand_recomComm",
+							"uiLocation" : "col1"
+						}
+					],
+					"pageId" : "invite"
+				}, {
+					"widgetInstances" : [{
+							"defIdRef" : "sand_recomComm",
+							"uiLocation" : "col1"
+						}
+					],
+					"pageId" : "all"
+				}, {
+					"widgetInstances" : [{
+							"defIdRef" : "sand_recomComm",
+							"uiLocation" : "col1"
+						}
+					],
+					"pageId" : "restricted"
+				}, {
+					"widgetInstances" : [{
+							"defIdRef" : "sand_recomComm",
+							"uiLocation" : "col1"
+						}
+					],
+					"pageId" : "trash"
+				}
+			],
+			"resourceSubType" : "default"
+		}
+	]
+}

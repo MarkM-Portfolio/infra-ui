@@ -1,0 +1,75 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+
+/* Reduce main photo from 48x48 */
+.activityStreamPhotoOf {
+	height: 40px;
+	width: 40px;
+}
+
+/* Reduce secondary photos from 32x32 */
+.activityStreamSummary .activityStreamPhotoOf, .lotusCommentList .activityStreamPhotoOf {
+    height: 25px;
+    width: 25px;
+}
+
+/* Reduce max preview from 240x60 */
+.activityStreamImageUpload {
+    max-width: 200px;
+    max-height: 50px;
+}
+
+/* Reduce padding around main photo */
+.lotusui30 .lotusBoard .lotusPostAuthorInfo {
+	padding: 0 5px 0 0;
+}
+
+/* Reduce margins at side of preview image */
+.lotusui30 .lotusPost .lotusPostObject {
+    margin-right: 5;
+}
+
+.lotusui30 .lotusStream .filterArea .asFilterMenu{
+	padding-bottom: 3px;
+	padding-right: 5px;
+	display: block;
+}
+
+.lotusui30_body.asGadget .lotusFrame {
+	min-width: 250px;
+}
+
+.lotusui30_body .lotusMain {
+	margin-top: 0px;
+}
+
+.lotusui30 .lotusStream .filterArea .icStream-labelInner {
+	display: none;
+}
+
+.lotusui30 .lotusStream .filterArea {
+	padding: 0 1px;
+}
+
+.lotusui30 .lotusStream .filterArea .asFilterMenu{
+	padding-right: 5px;
+	font-size: 85%;
+}
+
+.lotusui30 .lotusStream .filterAreaInner {
+	padding: 5px 0;
+}
+
+.lotusui30 .lotusPaging input, .lotusui30 .lotusPaging select {
+    margin-bottom: 2px;
+    max-width: 120px;
+    text-overflow: ellipsis;
+}
+
+.lotusui30 .lotusStream .lotusWidgetBody#activityStreamMain .lotusPagingTop.lotusPaging {
+    padding-top: 10px;
+    padding-left: 6px;
+}
+
+.lotusui30 .lotusLeft {
+	padding-left: 4px;
+}

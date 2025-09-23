@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2014                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<suite name="Core UI Automation (Legacy)" verbose="1">
+	<test name="UI Widgets (Legacy)">
+		<groups>
+			<define name="_current_">
+				<include name="legacy" />
+			</define>
+			<run>
+				<include name="_current_" />
+			</run>
+		</groups>
+		<packages>
+			<package name="com.ibm.ic.web.resources.auto.legacy.*" />
+		</packages>
+	</test>
+</suite>

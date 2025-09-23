@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "ca",
+      "Play": "Reprodueix",
+      "Pause": "Pausa",
+      "Current Time": "Hora actual",
+      "Duration Time": "Durada",
+      "Remaining Time": "Temps que queda",
+      "Stream Type": "Tipus de seqüència",
+      "LIVE": "EN DIRECTE",
+      "Loaded": "Carregats",
+      "Progress": "Progressió",
+      "Fullscreen": "Pantalla completa",
+      "Non-Fullscreen": "Sense pantalla completa",
+      "Mute": "Silenci",
+      "Unmute": "Desactiva el silenci",
+      "Unmuted": "No silenciat",
+      "Playback Rate": "Taxa de reproducció",
+      "Subtitles": "Subtítols",
+      "subtitles off": "subtítols desactivats",
+      "Captions": "Etiquetes",
+      "captions off": "llegendes desactivades",
+      "Chapters": "Capítols",
+      "Volume": "Volume",
+      "You aborted the video playback.": "Heu avortat la reproducció de vídeo.",
+      "A network error caused the video download to fail part-way.": "Un error de xarxa ha provocat que falli parcialment la baixada de vídeo.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "No s'ha pogut descarregar el vídeo, perquè el servidor o la xarxa han fallat o bé perquè no s'admet el format.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "La reproducció del vídeo s'ha avortat a causa d'un problema de dades malmeses o perquè el vídeo utilitza característiques que el vostre navegador no admet.",
+      "No compatible source was found for this video.": "No s'ha trobat cap font compatible per a aquest vídeo."
+});
+

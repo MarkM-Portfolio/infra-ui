@@ -1,0 +1,45 @@
+define({
+	      /* ***************************************************************** */
+  /*                                                                   */
+  /* Copyright IBM Corp. 2011, 2018  All Rights Reserved.              */
+
+		   dialogTitle : "Resim Ekle",
+		   newUpload : "Yeni Karşıya Yükleme",
+		   URL : "URL",
+		   imageLibrary : "Resim Kitaplığı",
+		   description : "Açıklama:",
+		   imageFile : "Dosyalar:",
+		   OK: "Tamam",
+		   cancel: "İptal",
+		   required: "Zorunlu alan",
+		   preview: "Önizleme:",
+		   previewWarning: "Görünüşe göre resim yüklenemiyor, bunun geçerli bir resim URL'si olduğundan emin misiniz?",
+		   alt: "Diğer metin:",
+		   filesTab: "Dosyalardan",
+		   images:"Resimler:",
+		   browse:"Göz at...",
+		   imagePickerTitle:"Dosyalardan Resim Ekle",
+		   componentImagePickerTitle:" ${0} karşıya yüklenen görüntüleri",
+		   /* New String for insert image dialog */
+		   title: "Resim Ekle",
+		   uploadBtn: "Resmi Karşıya Yükle",
+		   insertBtn: "Resim Ekle",
+		   uploadTab: "Yerel Dosyalar",
+		   externalTab: "Web URL'si",
+		   internalTab: "Var Olan Resimler",
+		   fileFieldTip: "Resimleri karşıya yüklemek için masaüstünüzden resimleri doğrudan bu pencereye sürükleyip bırakın.",
+		   AdditionalSection: "Ek Seçenekler",
+		   ExpandSection: "Ek Seçenekleri Genişlet",
+		   CloseSection: "Ek Seçenekleri Daralt",
+		   webURLPrompt: "Web Resim URL'si:",
+		   previewPrompt: "Önizleme alanı: Büyük resimlerin görüntülenmesi biraz zaman alabilir.",
+		   noExistingImage: "Üzgünüz! Henüz bir resim eklenmedi.",
+		   selectExistingImage: "Var olan bir resmi seçin:",
+		   urlMissing: "URL girin",
+		   urlInvalid: "Geçersiz URL. Geçerli bir URL girdiğinizden emin olun ve yeniden deneyin.",
+		   previousItem: "Önceki",
+		   nextItem: "Sonraki",
+			 oneImageOneTime: "Bu Pencereye zaten bir resim eklendi. Aynı anda yalnızca bir resim ekleyebilirsiniz.",
+			 altTextForImgInList: "Bir resim seçmek için tıklatın"
+});
+

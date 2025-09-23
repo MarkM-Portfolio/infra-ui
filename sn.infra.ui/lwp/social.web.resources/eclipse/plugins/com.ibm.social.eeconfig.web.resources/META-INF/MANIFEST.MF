@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Embedded Experience Social Resources Configuration
+Bundle-SymbolicName: com.ibm.social.eeconfig.web.resources;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: IBM
+Bundle-ActivationPolicy: lazy
+Import-Package: com.ibm.lconn.core.web.resources.map,
+ com.ibm.ventura.internal.config.api;version="3.0.0",
+ com.ibm.ventura.internal.config.exception;version="3.0.0",
+ com.ibm.ventura.internal.config.helper.api;version="3.0.0",
+ net.jazz.ajax.internal.util,
+ net.jazz.ajax.model,
+ org.apache.commons.configuration;version="1.5.0",
+ org.eclipse.core.runtime;version="3.4.0",
+ org.osgi.framework;version="1.5.0"

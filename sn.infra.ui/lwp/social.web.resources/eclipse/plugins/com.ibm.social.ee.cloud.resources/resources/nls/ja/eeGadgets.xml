@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">IBM Connections</msg>
+  <msg name="connectionsEE_description">IBM Connections のイベントの追加の詳細とアクションを表示するために使用される埋め込み画面 OpenSocial ガジェット</msg>
+  <msg name="connectionsEE_errorTitle">エラー</msg>
+  <msg name="connectionsEE_errorDescription">このコンテンツは組織で承認されていないため使用できません。組織の管理者に連絡してこの拡張を有効にしてもらってください。</msg>
+</messagebundle>

@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IBM Connections UI Web Resources
+Bundle-SymbolicName: com.ibm.ic.ui.web.resources;singleton:=true
+Bundle-Version: 5.0.0.qualifier
+Bundle-Vendor: IBM
+Bundle-ClassPath: _properties/, .
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cache SYSTEM "cachespec.dtd">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2013                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<cache>
+   <cache-entry>
+      <class>servlet</class>
+      <name>web/_style</name>
+      <cache-id>
+         <component id="include" type="parameter">
+            <required>true</required>
+         </component>
+         <component id="etag" type="parameter">
+            <required>true</required>
+         </component>
+         <timeout>1800</timeout>
+      </cache-id>
+   </cache-entry>
+   <cache-entry>
+      <class>servlet</class>
+      <name>web/_js/</name>
+      <name>web/_js</name>
+      <cache-id>
+         <component id="include" type="parameter">
+            <required>true</required>
+         </component>
+         <component id="exclude" type="parameter">
+            <required>false</required>
+         </component>
+         <component id="etag" type="parameter">
+            <required>true</required>
+         </component>
+         <component id="_proxyURL" type="parameter">
+            <required>true</required>
+         </component>
+         <component id="lang" type="parameter">
+            <required>false</required>
+         </component>
+         <component id="country" type="parameter">
+            <required>false</required>
+         </component>
+         <component id="variant" type="parameter">
+            <required>false</required>
+         </component>
+         <component id="debug" type="parameter">
+            <required>false</required>
+         </component>
+         <component id="_localeOverride" type="parameter">
+            <required>false</required>
+         </component>
+         <component id="xdloader" type="parameter">
+            <required>false</required>
+         </component>
+         
+         <timeout>1800</timeout>
+      </cache-id>
+   </cache-entry>
+</cache> 

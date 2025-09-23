@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">“嵌入式体验”OpenSocial 小配件用于显示 Connections 事件的附加详细信息和操作</msg>
+  <msg name="connectionsEE_errorTitle">错误</msg>
+  <msg name="connectionsEE_errorDescription">此内容未经贵组织批准而不可用。请联系贵组织的管理员以启用此扩展。</msg>
+</messagebundle>

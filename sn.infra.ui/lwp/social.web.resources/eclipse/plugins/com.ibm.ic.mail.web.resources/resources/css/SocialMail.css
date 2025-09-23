@@ -1,0 +1,103 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+#lotusBannerMail {
+	position: relative;
+}
+
+.os-site-mail-notify {
+	left: 50%;
+	top: 10%;
+	position: absolute;
+}
+
+.lotusui30dojo .dijitTooltipContainer {
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	padding: 0px !important;
+	-webkit-box-shadow: 0 2px 5px #eeeeee;
+	-moz-box-shadow: 0 2px 5px #eeeeee;
+	box-shadow: 0 2px 5px #eeeeee;
+}
+
+.os-site-mail-hover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	overflow: hidden;
+}
+
+.os-site-calendar-hover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	overflow: hidden;
+}
+
+.os-site-mail-hover-preview-messages {
+	width: 740px;
+	height: 520px;
+	overflow: hidden;
+	position: relative;
+}
+
+.lotusui30dojo .mailMessageDialog {
+	border: 3px solid #555;
+	/*this is needed for IE*/
+	border: 3px solid rgba(2, 2, 2, 0.4);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+	padding: 0;
+}
+
+.lotusui30dojo .mailMessageDialog .dijitDialogTitleBar {
+	padding: 0;
+	display: block;
+}
+
+.lotusui30dojo .mailMessageDialog .dijitDialogCloseIcon {
+	z-index: 1;
+	display: block;
+}
+
+.lotusui30dojo .mailMessageDialog .dijitDialogPaneContent {
+	padding: 0px;
+	background: #ffffff;
+	position: relative;
+}
+
+#messageSiteProgress {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#messageSiteProgress td {
+	width: 50%;
+	overflow: hidden;
+}
+
+.cm-preview-site-container {
+	position: relative;
+	height: 520px;
+	width: 740px;
+	overflow: hidden;
+}
+
+.cm-preview-site-container div {
+	position: absolute !important;
+	height: 100%;
+	width: 100%;
+}
+
+.os-site.os-site-mail-hover-preview-messages-ee {
+	display: none;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box; /*Firefox*/
+	-webkit-box-sizing: border-box; /*Safari*/
+}
+
+.os-site.os-site-mail-hover-preview-messages-ee iframe {
+	height: 100% !important;
+}

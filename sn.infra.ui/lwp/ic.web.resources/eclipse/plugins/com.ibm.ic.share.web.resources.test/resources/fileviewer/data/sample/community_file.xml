@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<entry xmlns:thr="http://purl.org/syndication/thread/1.0" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:snx="http://www.ibm.com/xmlns/prod/sn" xmlns:td="urn:ibm.com/td" xmlns="http://www.w3.org/2005/Atom">
+  <id>urn:lsid:ibm.com:td:12800c80-a159-4004-a0de-470a34cf56c9</id>
+  <td:uuid>12800c80-a159-4004-a0de-470a34cf56c9</td:uuid>
+  <td:label>Lighthouse.jpg</td:label>
+  <link href="http://docs.rtp.raleigh.ibm.com/files/basic/api/library/ea500cf8-73db-4b71-9c72-574a9308f693/document/12800c80-a159-4004-a0de-470a34cf56c9/entry" rel="self"/>
+  <link href="http://docs.rtp.raleigh.ibm.com/communities/service/html/communityview?communityUuid=08297103-8e2f-49f1-a52d-b87636313b61#fullpageWidgetId=W84f7840d9a32_4311_91d3_1374e3bf5fd8&amp;file=12800c80-a159-4004-a0de-470a34cf56c9" rel="alternate" type="text/html"/>
+  <link href="http://docs.rtp.raleigh.ibm.com/files/basic/api/library/ea500cf8-73db-4b71-9c72-574a9308f693/document/12800c80-a159-4004-a0de-470a34cf56c9/entry" rel="edit"/>
+  <link href="http://docs.rtp.raleigh.ibm.com/files/basic/api/library/ea500cf8-73db-4b71-9c72-574a9308f693/document/12800c80-a159-4004-a0de-470a34cf56c9/media" rel="edit-media"/>
+  <link href="http://docs.rtp.raleigh.ibm.com/files/basic/anonymous/api/library/ea500cf8-73db-4b71-9c72-574a9308f693/document/12800c80-a159-4004-a0de-470a34cf56c9/media/Lighthouse.jpg" rel="enclosure" type="image/jpeg" title="Lighthouse.jpg" hreflang="en" length="22971"/>
+  <link href="http://docs.rtp.raleigh.ibm.com/files/basic/anonymous/api/library/ea500cf8-73db-4b71-9c72-574a9308f693/document/12800c80-a159-4004-a0de-470a34cf56c9/thumbnail?renditionKind=mediumview" rel="thumbnail"/>
+  <category term="document" scheme="tag:ibm.com,2006:td/type" label="document"/>
+  <link xmlns:thr="http://purl.org/syndication/thread/1.0" href="http://docs.rtp.raleigh.ibm.com/files/basic/api/library/ea500cf8-73db-4b71-9c72-574a9308f693/document/12800c80-a159-4004-a0de-470a34cf56c9/feed" rel="replies" type="application/atom+xml" thr:count="1"/>
+  <td:notifications>
+    <td:media>on</td:media>
+    <td:comment>on</td:comment>
+  </td:notifications>
+  <author>
+    <name>Vivian Hanley</name>
+    <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+    <email>vhanley@renovations.com</email>
+    <snx:userState>active</snx:userState>
+  </author>
+  <title type="text">Lighthouse.jpg</title>
+  <published>2015-02-24T19:40:11.478Z</published>
+  <updated>2015-03-24T16:48:04.079Z</updated>
+  <td:created>2015-02-24T19:40:11.478Z</td:created>
+  <td:modified>2015-03-24T16:35:33.611Z</td:modified>
+  <td:lastAccessed/>
+  <td:modifier>
+    <name>Vivian Hanley</name>
+    <snx:userid>d8a42d71-bdb9-46bd-a71c-1fe1226897b4</snx:userid>
+    <email>vhanley@renovations.com</email>
+    <snx:userState>active</snx:userState>
+  </td:modifier>
+  <snx:isExternal>false</snx:isExternal>
+  <td:libraryId>ea500cf8-73db-4b71-9c72-574a9308f693</td:libraryId>
+  <td:libraryType>communityFiles</td:libraryType>
+  <td:libraryTitle>Test Community</td:libraryTitle>
+  <td:libraryAuthor>
+    <name>System User</name>
+    <snx:userid>00000000-0000-0000-0000-000000000000</snx:userid>
+  </td:libraryAuthor>
+  <td:downloadInfo>
+    <td:downloadedDate>2015-03-24T16:48:04.079Z</td:downloadedDate>
+    <td:versionUuid>619e327f-27b9-45d5-a203-9c7257f7211a</td:versionUuid>
+    <td:versionNumber>4</td:versionNumber>
+  </td:downloadInfo>
+  <td:versionUuid>619e327f-27b9-45d5-a203-9c7257f7211a</td:versionUuid>
+  <td:versionLabel>4</td:versionLabel>
+  <td:propagation>false</td:propagation>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/recommendations">0</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/comment">1</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/share">0</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/collections">1</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/attachments">3</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/versions">3</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/references">0</snx:rank>
+  <td:isFiledInFolder>false</td:isFiledInFolder>
+  <td:totalMediaSize>705317</td:totalMediaSize>
+  <summary type="text"/>
+  <content type="image/jpeg" src="http://docs.rtp.raleigh.ibm.com/files/basic/api/library/ea500cf8-73db-4b71-9c72-574a9308f693/document/12800c80-a159-4004-a0de-470a34cf56c9/media"/>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/hit">180</snx:rank>
+  <snx:rank scheme="http://www.ibm.com/xmlns/prod/sn/anonymous_hit">0</snx:rank>
+  <td:permissions>AddChild, Delete, Purge, EditProperties, EditContent, Edit, ViewProperties, ViewContent, View, GrantAccess, Lock, GrantAccessView, GrantAccessEdit</td:permissions>
+  <td:restrictedVisibility>false</td:restrictedVisibility>
+  <td:objectTypeName>snx:file</td:objectTypeName>
+  <td:lock type="HARD"/>
+  <snx:isExternal>false</snx:isExternal>
+</entry>

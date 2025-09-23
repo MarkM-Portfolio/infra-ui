@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "ko",
+      "Play": "재생",
+      "Pause": "일시정지",
+      "Current Time": "현재 시간",
+      "Duration Time": "지속 시간",
+      "Remaining Time": "남은 시간",
+      "Stream Type": "스트림 유형",
+      "LIVE": "라이브",
+      "Loaded": "로드됨",
+      "Progress": "진행",
+      "Fullscreen": "전화면",
+      "Non-Fullscreen": "작은 화면",
+      "Mute": "음소거",
+      "Unmute": "음소거 해제",
+      "Unmuted": "음소거 해제됨",
+      "Playback Rate": "재생률",
+      "Subtitles": "부제",
+      "subtitles off": "부제 끄기",
+      "Captions": "캡션",
+      "captions off": "캡션 끄기",
+      "Chapters": "장",
+      "Volume": "볼륨",
+      "You aborted the video playback.": "비디오 재생을 중단했습니다.",
+      "A network error caused the video download to fail part-way.": "네트워크 오류로 인해 비디오 다운로드가 도중에 실패했습니다.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "비디오를 로드할 수 없습니다. 서버 또는 네트워크에 장애가 있거나 비디오 형식이 지원되지 않기 때문입니다.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "비디오가 손상되었거나 브라우저에서 지원되지 않는 기능을 사용하므로 비디오 재생이 중단되었습니다.",
+      "No compatible source was found for this video.": "이 비디오에 대해 호환가능한 소스를 찾을 수 없습니다."
+});
+

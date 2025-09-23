@@ -1,0 +1,41 @@
+<%@ page session="false" contentType="text/html; charset=UTF-8" buffer="48kb" %>
+<%--wscExemptBegin--%>
+<%-- ***************************************************************** --%>
+<%--                                                                   --%>
+<%-- IBM Confidential                                                  --%>
+<%--                                                                   --%>
+<%-- OCO Source Materials                                              --%>
+<%--                                                                   --%>
+<%-- Copyright IBM Corp. 2006, 2012                                    --%>
+<%--                                                                   --%>
+<%-- The source code for this program is not published or otherwise    --%>
+<%-- divested of its trade secrets, irrespective of what has been      --%>
+<%-- deposited with the U.S. Copyright Office.                         --%>
+<%--                                                                   --%>
+<%-- ***************************************************************** --%>
+<%--wscExemptEnd--%>
+
+<%@ taglib prefix="c" 			uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" 			uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" 			uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="hu" 			uri="http://www.ibm.com/bookmarklet/tags/htmlutil" %>
+<tr id="dogearFields" class="tabcontent">
+	<td colspan="3" valign="top" style="padding:0px;">
+		<c:if test="${DogearEnabled && (not addToCommunities) && (not addToActivities) && (not addToBlogs)}">
+		<table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+			<tr class="lotusFormTabContentFirst">
+				<td class="lotusFormFieldRow lotusIndent40">
+					<input type="hidden" id="addtodogear"  value="true" name="addtodogear"/>
+					<span><fmt:message key = "jsp.posting.dogear.new" /></span>
+					<div class="lotusChunk" role="group">
+						<input type="radio" name="privateDogear" class="lotusCheckbox" id="publicDogear" onclick="TabController.imgEffect(dojo.byId('noneDogear'), 0)" checked="true" value="false" title="<fmt:message key="jsp.posting.public.hover" />"><label title="<fmt:message key="jsp.posting.public.hover" />" class="labelForBookmark" for="publicDogear"><fmt:message key="jsp.posting.public" /></label>
+						<input type="radio" name="privateDogear" class="lotusCheckbox" id="privateDogear" onclick="TabController.imgEffect(dojo.byId('noneDogear'), 0)" <c:if test="${form.privateFlag}">checked="true"</c:if> value="true" title="<hu:encode><fmt:message key="jsp.posting.private.hover" /></hu:encode>"><label for="privateDogear" title="<hu:encode><fmt:message key="jsp.posting.private.hover" /></hu:encode>" class="labelForBookmark"><fmt:message key="jsp.posting.private" /></label>
+						<input type="radio" name="privateDogear" class="lotusCheckbox" id="noneDogear" onclick="TabController.imgEffect(this, 0)" title="<fmt:message key="jsp.posting.none" />"><label title="<fmt:message key="jsp.posting.none" />" class="labelForBookmark" for="noneDogear"><fmt:message key="jsp.posting.none" /></label>
+					</div>
+				</td>
+			</tr>
+		</table>	
+		</c:if>	
+		
+	</td>
+</tr>

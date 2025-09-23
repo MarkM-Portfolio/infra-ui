@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+${script:lconn.test.HeaderDialog}
+${style:com.ibm.oneui/controls/templates/Dialog}
+${style:com.ibm.oneui/controls/templates/HoverPopup}
+${style:com.ibm.oneui/controls/templates/ResourceLink}
+${endhead}
+
+<div class="lotusFrame lotusui30 lotusui30_layout">
+
+	<style>
+	.lotusui .lotusHover .content-wrapper {max-height: none; max-width: none;}
+	#peopleMenuWrapper {
+ 		padding: 5px 10px; 
+ 		padding-bottom: 3px; 
+ 		width: 560px; 
+ 		text-align: center;
+ 	}	
+	#peopleMenuWrapper .peopleSearchBox {
+	  -moz-border-radius: 15px;
+	  background: url("search_icon.gif") no-repeat scroll 5px 50% #FFFFFF;
+	  border: 1px solid #999999;
+	  padding: 2px 8px 4px 20px;
+	  width: 200px;
+	}
+								
+	#peopleSearchList {
+	    margin: 0;
+	    margin-top: 5px;
+	    padding: 0;
+	}
+	#peopleSearchList .personItem {
+	    float: left;
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	}
+	#peopleSearchList .personItem .personRecord {
+	    border: 1px solid transparent;
+	    padding: 5px;
+	    text-align: left;
+	    width: 263px;
+	    display: block;
+	    font-weight: normal;
+	    text-decoration: none !important;
+	}
+	#peopleSearchList .personItem .personRecord:hover {
+	    background-color: #FFFFFF;
+	    border: 1px solid #CCCCCC;
+	    cursor: pointer;
+	}
+	#peopleSearchList .personItem .personRecord .avatarWrapper {
+	    float: left;
+	}
+	#peopleSearchList .personItem .personRecord .avatarWrapper img {
+	    width: 32px;
+	}
+	#peopleSearchList .personItem .personRecord .personDetails {
+	    padding-left: 10px;
+	    white-space: nowrap;
+	    overflow: hidden;
+	}
+	.lotusui_ie #peopleSearchList .personItem .personRecord .personDetails {
+       display: inline-block;
+	}
+	
+	#peopleSearchList .personItem .personRecord .personDetails .personName {
+	    font-size: 1em;
+	    font-weight: bold;
+	    margin: 0 0 -4px;
+	    padding: 0;
+	}
+	#peopleSearchList .hideme {
+	    display: none;
+	}
+	#peopleSearchList .showme .personRecord {
+	    display: block;
+	}
+	#peopleSearchList .infoText {
+	    color: #666666;
+	    font-style: italic;
+	    list-style-type: none;
+	    margin-top: 5px;
+	}
+	.peopleListWrapper .personRecord {
+	    display: none;
+	}
+	#peopleMenuWrapper .peopleMenuFooter {
+		 clear: both;
+	    border-top: 1px solid #CCCCCC;
+	    color: #666666;
+	    font-size: 0.9em;
+	    padding-top: 3px;
+	    margin-top: 10px;
+	}		
+	#peopleMenuWrapper a, #peopleMenuWrapper a:active {
+	    color: #222222;
+	    font-weight: bold;
+	}					
+	
+	.lotusui .lotusHover .lotusInfoBox {max-width: 200px; border: 0px; padding: 10px; padding-top: 5px; margin: 0; background-color: transparent;}
+	.lotusui .lotusHover .lotusInfoBox h3 {margin: 0;padding: 0; padding-right: 10px; padding-top: 3px; overflow: auto;}
+	
+	</style>
+							
+	<div class="dijitPopup" id="exampleHeaderMenu"
+		style="display: block; top: 27px; left: 96.5px;">
+		<div dojoattachpoint="wrapper" class="lotusHover lotusHoverTop">
+			<div class="lotusHoverContentWrapper" dojoattachpoint="contentWrapper">
+				<div class="lotusHoverContent" dojoattachpoint="content">
+					<div>
+						<div id="peopleMenuWrapper">
+							
+							<input class="peopleSearchBox" value="" type="text">
+							
+							<ul id="peopleSearchList" class="peopleListWrapper">
+								<li class="infoText">Type to begin searching for people</li>
+							</ul>
+							
+							<div class="peopleMenuFooter">
+								<a href="javascript:;">My Network</a> &nbsp;|&nbsp; <a href="javascript:;">My Profile</a> &nbsp;|&nbsp; <a href="javascript:;">Advanced Search</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="lotusHoverConnector" dojoattachpoint="arrow" style="left: 54.5px;"></div>
+		</div>
+	</div>
+	
+	<div class="dijitPopup" id="exampleHeaderMenu2"
+		style="display: block; top: 140px; left: 96.5px;">
+		<div dojoattachpoint="wrapper" class="lotusHover lotusHoverTop">
+			<div class="lotusHoverContentWrapper" dojoattachpoint="contentWrapper">
+				<div class="lotusHoverContent" dojoattachpoint="content">
+					<div>
+						<div id="peopleMenuWrapper">
+							
+							<input class="peopleSearchBox" value="" type="text">
+							
+							<ul id="peopleSearchList" class="peopleListWrapper">
+								<li class="personItem showme">    
+									<a class="personRecord personInfo" href="frank">     
+										<span class="avatarWrapper"><img src="FrankAdams.jpg"></span>     
+										<div class="personDetails">      
+											<h3 class="personName">Frank Adams</h3>      
+											<span class="personMeta">Chief Information Officer</span>    
+										</div>    
+									</a>   
+								</li>
+								<li class="personItem showme">    
+									<a class="personRecord personInfo" href="frank">     
+										<span class="avatarWrapper"><img src="JasmineHaj.jpg"></span>     
+										<div class="personDetails">      
+											<h3 class="personName">Jasmine Haj</h3>      
+											<span class="personMeta">Administrative Assistant to Lucille Suarez</span>     
+										</div>    
+									</a>   
+								</li>
+								<li class="personItem showme">    
+									<a class="personRecord personInfo" href="frank">     
+										<span class="avatarWrapper"><img src="TedAmado.jpg"></span>     
+										<div class="personDetails">      
+											<h3 class="personName">Ted Amado</h3>      
+											<span class="personMeta">Senior VP, Marketing &amp; Merchandising</span>     
+										</div>    
+									</a>   
+								</li>
+							</ul>
+							
+							
+							<div class="peopleMenuFooter">
+								<a href="javascript:;">My Network</a> &nbsp;|&nbsp; <a href="javascript:;">My Profile</a> &nbsp;|&nbsp; <a href="javascript:;">Advanced Search</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="lotusHoverConnector" dojoattachpoint="arrow" style="left: 54.5px;"></div>
+		</div>
+	</div>
+
+	<div class="dijitPopup" id="exampleMenu3"	style="display: block; top: 350px; left: 96.5px;">
+		<div dojoattachpoint="wrapper" class="lotusHover lotusHoverRight">
+			<div class="lotusHoverContentWrapper" dojoattachpoint="contentWrapper">
+				<div class="lotusHoverContent" dojoattachpoint="content">
+					<div class="lotusInfoBox">
+						<a class="lotusHoverClose lotusClose" href="#" title="Close"><img alt="Close" src="/web/dojo/resources/blank.gif"></a>
+						<h3>Title</h3>
+						<div class="lotusChunk">This is a useful bit of help text that explains some information about the product.  It might be multiline.</div>
+					</div>
+				</div>
+			</div>
+			<div class="lotusHoverConnector" dojoattachpoint="arrow" style="top: 10px;"></div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	new lconn.test.HeaderDialog({id: "calendar", around: "menuLink_calendar"});
+</script>
+${end}

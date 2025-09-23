@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">يتم استخدام أداة Embedded Experience OpenSocial لعرض تفاصيل وتصرفات أضافية لأحداث Connections</msg>
+  <msg name="connectionsEE_errorTitle">لا يمكن لوحدة الخدمة اجراء البحث الآن.  حاول اجراء البحث في وقت لاحق.</msg>
+  <msg name="connectionsEE_errorDescription">حدث خطأ أثناء تحميل مصادر الأدوات. يرجى التأكد من أنك متصل بشبكة الاتصال وحاول تحميل الأداة مرة أخرى.</msg>
+</messagebundle>

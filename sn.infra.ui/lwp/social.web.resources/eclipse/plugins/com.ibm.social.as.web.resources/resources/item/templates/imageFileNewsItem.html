@@ -1,0 +1,19 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lotusPostDetails lotusChunk">
+
+	<div dojoAttachPoint="imageCellNode" class="lotusPostObject">
+		<img class="${imageClass}" dojoAttachPoint="previewImage" src="${imageSrc}" title="${!fileName}" alt="${!fileName}">
+	</div>
+
+	<h4 class="lotusTitle ${fileNameClass}" dojoAttachPoint="fileNameHeaderNode">
+		<a dojoAttachPoint="iconFileLink" href="${filePageURL}">${!fileName}</a>
+	</h4>
+
+	<div class="lotusMeta">
+		<ul class="lotusInlinelist">
+			<li dojoAttachPoint="authorInfoItem" class="lotusFirst asLinkContainer">${!authorInfo}</li>
+			<li dojoAttachPoint="tagsListItem" class="lotusHidden"></li>
+		</ul>
+	</div>
+
+</div>

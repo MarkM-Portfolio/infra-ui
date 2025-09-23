@@ -1,0 +1,218 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+.ics-viewer-overlay {
+   position: fixed;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   opacity: .9;
+   background-color: #16181A;
+   z-index: 998;
+}
+
+.lotusui_ie8 .ics-viewer-overlay {
+   filter: alpha(opacity=90);
+}
+
+.ics-viewer {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   z-index: 999;
+   color: white;
+}
+
+body.ics-viewer-open {
+   overflow: hidden;
+}
+
+.ics-viewer .ics-viewer-banner {
+   background-color: #16181a;
+   color: #fff;
+   height: 50px;
+   overflow: hidden;
+   margin-right: 0;
+}
+
+.ics-viewer.ics-viewer-details-expanded .ics-viewer-banner {
+   margin-right: 285px;
+   position:relative;
+}
+
+.ics-viewer.ics-viewer-details-expanded.rtl .ics-viewer-banner {
+   margin-right: 0;
+   margin-left: 285px;
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-icon {
+   float: left;
+   margin: 16px 10px 16px 20px;
+}
+
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-icon {
+   float: right;
+}
+
+.lotusui_ie8 .ics-viewer .ics-viewer-banner .ics-viewer-icon {
+   margin-top: 6px;
+}
+
+.lotusui_ie9 .ics-viewer .ics-viewer-banner .ics-viewer-icon {
+   margin-top: 14px;
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-title {
+   font-size: 18px;
+   margin: 3px 0;
+   font-weight: normal;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 150px;
+}
+
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-title {
+   left: 150px;
+   right: 0;
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-title a {
+   color: white;
+   text-decoration: none;
+   position: relative;
+   top: 9px;
+   display: inline;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
+   max-width: 550px;
+   
+}
+
+.ics-viewer .ics-viewer-banner .ics-viewer-title .ics-viewer-title-name {
+   display: block;
+}
+
+.ics-viewer.rtl .ics-viewer-banner .ics-viewer-title .ics-viewer-title-name {
+   float: right;
+}
+
+.ics-viewer .ics-viewer-content {
+   bottom: 0;
+   left: 0;
+   overflow: auto;
+   position: absolute;
+   right: 0;
+   top: 50px;
+   /* transition: all 0.4s ease 0s; */
+   z-index: 100;
+}
+
+.ics-viewer.ics-viewer-details-expanded .ics-viewer-content {
+   margin-right: 285px;
+}
+
+.ics-viewer.ics-viewer-details-expanded.rtl .ics-viewer-content {
+   margin-right: 0;
+   margin-left: 285px;
+}
+
+.ics-viewer .ics-viewer-details {
+   background-color: #FFF;
+   bottom: 0;
+   box-shadow: -5px 0 5px -5px #000000;
+   color: #fff;
+   overflow: hidden;
+   position: absolute;
+   top: 0;
+   /* transition: width 0.4s ease 0s; */
+   width: 285px;
+   z-index: 150;
+   display: none;
+}
+
+.ics-viewer.ltr .ics-viewer-details {
+   right: 0;
+}
+
+.ics-viewer.rtl .ics-viewer-details {
+   left: 0;
+}
+
+.ics-viewer.ics-viewer-details-expanded .ics-viewer-details {
+   display: block;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf {
+   top: 0;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf {
+   color: #4c4c4c;
+   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+   font-size: 14px;
+   
+   bottom: 0;
+   left: 0;
+   overflow: auto;
+   padding: 0;
+   position: absolute;
+   right: 0;
+}
+
+.ics-viewer .ics-viewer-details .ics-shelf.selected {
+   display: block;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf h3 {
+   border-bottom: 1px solid #ECECEC;
+   font-size: 18px;
+   font-weight: normal;
+   margin: 0;
+   padding: 14px 25px;
+   line-height: 21px;
+   background-color: #F3F3F3
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section {
+   margin: 0 25px;
+   padding: 25px 0 0;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section p {
+   margin: 0;
+}
+
+.ics-viewer .ics-viewer-details .ics-viewer-details-shelf .info-section.divide {
+   border-bottom: 1px solid #ECECEC;
+   padding: 25px 0;
+}
+
+.ics-viewer .ics-viewer-details .ics-info {
+   position: relative;
+}
+
+.ics-viewer .ics-viewer-details .ics-info .ics-info-filename {
+   margin: 0;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.ics-viewer .ics-viewer-content {
+   text-align: center;
+}
+
+.ics-viewer .align-helper {
+   display: inline-block;
+   height: 100%;
+   vertical-align: middle;
+}
+
+.ics-viewer .lotusAccess {
+   display: none;
+}

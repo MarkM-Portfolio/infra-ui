@@ -1,0 +1,13 @@
+<!-- Copyright IBM Corp. 2010, 2015  All Rights Reserved.              -->
+
+<iw:iwidget name="DYK" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" useHomepageEnhancedFeatures="true" iScope="lconn.sand.DYKWrapped">
+<!--	<iw:resource uri="../js_src/lconn/sand/DYKWrapped.js" /> -->
+	<iw:resource uri="../sandAll.js" />
+
+	<iw:content mode="view">
+		<![CDATA[
+			<div id="_IWID_root">
+			</div>
+		]]> 
+	 </iw:content>
+</iw:iwidget>

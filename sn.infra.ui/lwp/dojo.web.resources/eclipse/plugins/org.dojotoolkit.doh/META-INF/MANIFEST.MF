@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-Description: From https://github.com/dojo/util/releases
+Bundle-Name: D.O.H. Plug-in
+Bundle-SymbolicName: org.dojotoolkit.doh;singleton:=true
+Bundle-Version: 1.9.1.v6e58b36
+Bundle-ManifestVersion: 2
+

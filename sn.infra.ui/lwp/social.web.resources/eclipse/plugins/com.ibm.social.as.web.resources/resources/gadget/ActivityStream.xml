@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright IBM Corp. 2012, 2015  All Rights Reserved.              -->
+
+<Module>
+	<ModulePrefs title="__MSG_as_title__"
+		description="__MSG_as_description__"
+		height="600"
+		width="750"
+		thumbnail="./notes/NewsWhite16.png">
+		<Require feature="opensocial-0.9"/>
+		<Require feature="osapi" />
+		<Optional feature="open-views"/> 
+		<Require feature="oauthpopup" />
+		<Require feature="opensocial-templates">
+			<Param name="requireLibrary">../../com.ibm.social.gadget/loader/ResourceLoaderTemplate.xml</Param>
+		</Require>
+		<Require feature="opensocial-data"/>
+		<Optional feature="dynamic-height"/>
+		<Optional feature="actions">
+			<Param name="action-contributions">
+				<![CDATA[
+					<actions>
+						<action id="showAS" dataType="opensocial.Person" viewTarget="SIDEBAR" label="__MSG_as_title__" tooltip="__MSG_as_description__" />
+					</actions>
+				]]>
+			</Param>
+		</Optional>
+		<Optional feature="sso-domain" />
+		<Optional feature="cre.service.sso" />
+		<Optional feature="cre.services.oauth.Popup"/>
+		<Optional feature="smartcloud3" />
+		<Locale messages="./nls/ActivityStream_ALL_ALL.xml"/>
+      	<Locale lang="ar" messages="./nls/ActivityStream_ar_ALL.xml" language_direction="rtl"/>
+      	<Locale lang="ca" messages="./nls/ActivityStream_ca_ALL.xml"/>
+      	<Locale lang="cs" messages="./nls/ActivityStream_cs_ALL.xml"/>
+      	<Locale lang="da" messages="./nls/ActivityStream_da_ALL.xml"/>
+      	<Locale lang="de" messages="./nls/ActivityStream_de_ALL.xml"/>
+      	<Locale lang="el" messages="./nls/ActivityStream_el_ALL.xml"/>
+      	<Locale lang="es" messages="./nls/ActivityStream_es_ALL.xml"/>
+      	<Locale lang="fi" messages="./nls/ActivityStream_fi_ALL.xml"/>
+      	<Locale lang="fr" messages="./nls/ActivityStream_fr_ALL.xml"/>
+      	<Locale lang="hu" messages="./nls/ActivityStream_hu_ALL.xml"/>
+      	<Locale lang="it" messages="./nls/ActivityStream_it_ALL.xml"/>
+      	<Locale lang="iw" messages="./nls/ActivityStream_iw_ALL.xml" language_direction="rtl"/>
+      	<Locale lang="ja" messages="./nls/ActivityStream_ja_ALL.xml"/>
+      	<Locale lang="kk" messages="./nls/ActivityStream_kk_ALL.xml"/>
+      	<Locale lang="ko" messages="./nls/ActivityStream_ko_ALL.xml"/>
+      	<Locale lang="nb" messages="./nls/ActivityStream_nb_ALL.xml"/>
+      	<Locale lang="nl" messages="./nls/ActivityStream_nl_ALL.xml"/>
+      	<Locale lang="no" messages="./nls/ActivityStream_no_ALL.xml"/>
+      	<Locale lang="pl" messages="./nls/ActivityStream_pl_ALL.xml"/>
+      	<Locale lang="pt" messages="./nls/ActivityStream_pt_ALL.xml"/>
+      	<Locale lang="pt" country="br" messages="./nls/ActivityStream_pt_BR_ALL.xml"/>
+      	<Locale lang="ru" messages="./nls/ActivityStream_ru_ALL.xml"/>
+      	<Locale lang="sl" messages="./nls/ActivityStream_sl_ALL.xml"/>
+      	<Locale lang="sr" messages="./nls/ActivityStream_sr_ALL.xml"/>
+      	<Locale lang="sv" messages="./nls/ActivityStream_sv_ALL.xml"/>      	
+      	<Locale lang="th" messages="./nls/ActivityStream_th_ALL.xml"/>
+      	<Locale lang="tr" messages="./nls/ActivityStream_tr_ALL.xml"/>
+      	<Locale lang="zh" messages="./nls/ActivityStream_zh_ALL.xml"/>
+      	<Locale lang="zh" country="tw" messages="./nls/ActivityStream_zh_TW_ALL.xml"/>
+		<OAuth2>
+			<Service name="connections_service" scope="Connections" />
+		</OAuth2> 
+	</ModulePrefs>
+	<UserPref name="debug" required="false" datatype="bool" default_value="false"/>
+	<UserPref name="debugFF" required="false" datatype="hidden" default_value="false"/>
+	<UserPref name="showSharebox" required="false" datatype="hidden" default_value="true"/>
+	<UserPref name="shareboxBoardId" required="false" datatype="hidden" default_value=""/>
+	<UserPref name="shareboxPostType" required="false" datatype="hidden" default_value=""/>
+	<UserPref name="showFeedLink" required="false" datatype="hidden" default_value="true"/>
+	<UserPref name="showHeader" required="false" datatype="hidden" default_value="true"/>
+	<UserPref name="isCommunityStream" required="false" datatype="hidden" default_value="false"/>
+	<UserPref name="asMaxWidth" required="false" datatype="hidden" default_value=""/>
+	<UserPref name="asMinWidth" required="false" datatype="hidden" default_value=""/>
+    <Content view="default, home, canvas, profile" href="./ActivityStream.html" type="html" />
+</Module>

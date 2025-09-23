@@ -1,0 +1,188 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<html><body><p>${head}
+<meta http-equiv="X-UA-Compatible" content="IE=7"> 
+${script:com.ibm.lconn.gadget.resources.iRuntimeModule}
+${script:com.ibm.lconn.gadget.container._Accessor}
+${script:com.ibm.lconn.gadget.container._Handle}
+${script:com.ibm.lconn.gadget.container._Container}
+${script:com.ibm.lconn.gadget.container.iContainer2}
+
+
+<!-- Redirect to &render=test -->
+<script type="text/javascript">	
+	var loc = location + '';
+	if (loc.indexOf('render=test') < 0) {
+		if (loc.indexOf('?') > 0) {
+			location = loc + "&render=test&debug=true&oneui=3";
+		}
+		else {
+			location = loc + "?render=test&debug=true&oneui=3";
+		}
+	}
+</script>
+
+<script type="text/javascript">	
+	dojo.require('lconn.core.config');
+	dojo.require('lconn.core.config.services');
+	dojo.require("com.ibm.oneui.util.proxy");
+	dojo.require("lconn.core.url");
+	
+	var web_resources_url = lconn.core.config.services['webresources'].url;
+	var page_url_dotdot_dotdot = lconn.core.url.parse(window.location.toString(), '../..').toString();
+	page_url_dotdot_dotdot = page_url_dotdot_dotdot.substring(0, page_url_dotdot_dotdot.length - 1);
+</script>
+
+<script type="text/javascript">
+	var mContainer = null;
+	var mHandles = [];
+	var count = 0;
+	
+	//dojo.registerModulePath("com.ibm.lconn.gadget", page_url_dotdot_dotdot);
+</script>
+
+
+<style>
+#ee_attach_point1 {
+  width: 500px;
+  height: 100px;
+}
+
+</style>
+
+${endhead}
+
+</p><h1>Showcases the Connections oauthpopup modal dialog override. </h1>
+	<div>
+	<h3> Loads a simple test gadget which implements the scenario specified in the <a href="http://opensocial-resources.googlecode.com/svn/spec/2.0.1/Core-Gadget.xml#gadgets.oauth.Popup">spec</a></h3>
+	</div>
+
+<!-- BODY -->
+<table width="100%"><tr><td>	
+</td></tr><tr>
+<td valign="top">
+	<script type="text/javascript">
+		window.viewParams = {};
+		function load_ee_widget(definitionUrl, context) {
+			com.ibm.cre.iRuntime.getCommonContainer().renderDebug_ = true;
+			var eeContext;
+			if ( dojo.trim(context).charAt(0) == '{' ) {
+				eeContext = dojo.fromJson(context);
+			} else  {
+				eeContext = context;
+			}
+			
+			var attach1;
+			attach1 = dojo.byId("ee_attach_point1");
+			
+			attach1.innerHTML = '';
+
+
+			var def = {
+					definitionUrl: definitionUrl,
+					componentType : "gadget",
+					instanceData : {
+						renderParams : {
+						},
+						eeDataModel : {
+							context : eeContext
+						},
+						viewParams : viewParams
+					},
+					callback: function () {
+						console.debug("bootstrap_test - gadget rendered")
+					}
+			};
+			
+			mHandles = [];
+			
+			var id = 'ee_elm_' + count++;
+			dojo.create('div', { id : id }, attach1);
+			def.placement = id;
+					
+			mHandles.push(mContainer.loadWidget(def));
+		}
+		
+		function refresh_ee_widget() {
+			dojo.forEach(mHandles, function(handle){
+				handle.refresh();	
+			});
+		}
+			
+		function close_ee_widget() {
+			dojo.forEach(mHandles, function(handle){
+				handle.unload();	
+			});
+		}
+		
+	</script>
+
+	<div id="eeBootstrapForm1">
+		<form name="eeGadgetBootstrapper1" id="eeGadgetBootstrapper1">
+			Gadget Url:
+			<input type="text" id="eeGadget1" name="eeGadget1" style="width: 60%"><br>
+	        Context:
+	        <input type="text" id="eeContext1" name="eeContext1" style="width: 60%" value="Some context goes here">
+		</form>
+		<script>
+			var baseUrl = new dojo._Url(window.location.toString(), "auto_oauth_popup.html?render=test&debug=true&oneui=3").toString();
+		
+			function preFillOAuthPopup() {
+				var gadgetUrl = lconn.core.url.parse(location.toString(), 'gadgets/OAuthPopupModalDialog.xml').toString();
+				dojo.byId('eeGadget1').value = gadgetUrl;
+				dojo.byId('eeContext1').value = 'some context goes here';
+			}
+
+			function preFillAutoOauthPopupFalse() {
+				var gadgetUrl = lconn.core.url.parse(location.toString(), 'gadgets/AutoOAuthPopupModalDialog.xml').toString();
+				dojo.byId('eeGadget1').value = gadgetUrl;
+				dojo.byId('eeContext1').value = 'some context goes here';
+				viewParams.popupUrl = baseUrl + "&_oauth_client_auto_authorize=false"
+			}
+			
+			function preFillAutoOauthPopupTrueAutoSucceed() {
+				var gadgetUrl = lconn.core.url.parse(location.toString(), 'gadgets/AutoOAuthPopupModalDialog.xml').toString();
+				dojo.byId('eeGadget1').value = gadgetUrl;
+				dojo.byId('eeContext1').value = 'some context goes here';
+				viewParams.popupUrl = baseUrl + "&_oauth_client_auto_authorize=true&auto_succeed=true"
+			}
+			
+			function preFillAutoOauthPopupTrueAutoFail() {
+				var gadgetUrl = lconn.core.url.parse(location.toString(), 'gadgets/AutoOAuthPopupModalDialog.xml').toString();
+				dojo.byId('eeGadget1').value = gadgetUrl;
+				dojo.byId('eeContext1').value = 'some context goes here';
+				viewParams.popupUrl = baseUrl + "&_oauth_client_auto_authorize=true&auto_succeed=false"
+			}
+			
+
+			
+			
+		</script>
+		<button onclick="preFillOAuthPopup();">Pre-fill sample oauth popup gadget</button>
+		<button onclick="preFillAutoOauthPopupFalse();">Pre-fill sample auto oauth gadget with auto=false</button>
+		<button onclick="preFillAutoOauthPopupTrueAutoSucceed();">Pre-fill sample auto oauth gadget with auto=true, auto succeeds</button>
+		<button onclick="preFillAutoOauthPopupTrueAutoFail();">Pre-fill sample auto oauth gadget with auto=true, auto fails</button>
+
+		
+		<br><br>
+		<button onclick="load_ee_widget(dojo.byId('eeGadget1').value,  dojo.byId('eeContext1').value);">Load Gadget</button>
+		<button onclick="refresh_ee_widget();">Refresh</button>
+		<button onclick="close_ee_widget();">Close</button>
+	</div>   
+	
+	<div id="ee_attach_point1" style="">OAuth Popup Gadget Goes Here...</div>
+</td>
+</tr>
+
+</table>
+	
+<script type="text/javascript">
+	dojo.addOnLoad(function() {
+		dojo.addClass(dojo.body(), "lotusui30 lotusui30_fonts lotusui30_layout lotusui30_body lotusui30dojo");
+		
+		mContainer = com.ibm.lconn.gadget.container.iContainer2;			
+		mContainer.init();
+	});
+</script>
+
+${end}
+</body></html>

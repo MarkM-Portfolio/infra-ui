@@ -1,0 +1,14 @@
+/* Copyright IBM Corp. 2009, 2015  All Rights Reserved.              */
+
+/* Fix to unify the appearance of .lotusSection and .lotusWidget2 */
+.lotusSection { border-style:solid; border-width:0 1px 1px; margin-right: 0; margin-left: 0; padding-bottom: 0; }
+.lotusSection h2, .lotusSection .dijitTitlePaneTitle { padding-right: 7px; padding-left: 6px; border-style:solid; border-width:1px 0; }
+.lotusSection .lotusSectionBody { margin: 4px 7px 4px 8px; }
+.lotusSection .lotusList { margin-right: -4px; margin-left: -5px; }
+.lotusSection .lotusList li { padding-right: 4px; padding-left: 5px; }
+
+.lotusSection { border-color:#E8ECEE; }
+.lotusSection h2, .lotusSection .dijitTitlePaneTitle { background-color:#E8ECEE; background-image:url(themeImages/lotusThemeSprite-8bit.png); background-position:0 -900px; background-repeat:repeat-x; border-color:#E8ECEE; }
+
+/* Set Connections logo dimensions */
+.lotusui .lotusLogo, .lotusLoginLogo{height:18px;width:90px;background-image:url(themeImages/logo.png);background-repeat:no-repeat}

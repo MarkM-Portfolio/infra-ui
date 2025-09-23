@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Convidar para o Connect",
+	NDYK1:"Sem mais utilizadores para recomendar",
+	LOADING: "a carregar",
+	DYK_TITLE: "Pessoas que pode conhecer",
+	INVITE_TITLE: "Enviar convites para ligar",
+	SEND_ACTION: "Enviar",
+	CANCEL_ACTION: "Cancelar",
+	PREV: "Anterior",
+	NEXT: "Seguinte",
+	bpct: "Comentou o seu blogue",
+	bpcc: "Comentou o mesmo blogue",
+	lpfr: "É um colega de alguém que conhece",
+	lm1: "É o gestor deste utilizador",
+	le1: "Este utilizador é o seu gestor",
+	sdm: "Partilham o mesmo gestor",
+	pt: "Esta pessoa atribuiu-lhe uma etiqueta",
+	pbt: "Atribuiu uma etiqueta a esta pessoa",
+	acm: "Têm atividades partilhadas",
+	wikiCoContribution: "Editaram o mesmo wiki",
+	bpcb: "Comentou no blogue deles",
+	lpcfr: "Têm colegas em comum",
+	ccmf: "Estão na mesma comunidade",
+	ccms: "Estão na mesma comunidade",
+	filesharing: "Partilham alguns ficheiros",
+	forumthreaddiscussion: "Partilham uma sessão no fórum em comum",
+	ctb: "Partilham um marcador",
+	tgw: "Têm etiquetas correspondentes",
+	tcu: "Utilizaram a mesma etiqueta",
+	pctg: "Atribuíram uma etiqueta ao mesmo utilizador",
+	tgb: "As mesmas pessoas atribuíram-vos uma etiqueta"
+})

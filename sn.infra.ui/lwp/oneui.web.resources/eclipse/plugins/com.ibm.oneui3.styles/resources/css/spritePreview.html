@@ -1,0 +1,122 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<html>
+<head>
+<script>
+/* @author Jeremy Kalinowski 
+   Simple html page to help view sprites in connections.
+*/
+
+function resizeWindow(id){
+
+}
+
+
+function loadSpritePage(evt){
+
+	var targetNode = document.getElementById('renderSpriteArea');
+    targetNode.innerHTML = "Loading...."
+    var url = document.getElementById('selector').value;
+    if(url==0){
+    	targetNode.innerHTML = "Use the selector to make a selection."
+    	return;
+    }else{
+    	targetNode.src = url;
+    	return;
+    }
+
+ var xhrArgs = {
+    url: url,
+    handleAs: "text",
+    load: function(data){
+      targetNode.innerHTML = data;
+    },
+    error: function(error){
+      targetNode.innerHTML = "An unexpected error occurred: " + error + "<p>Please check that the following path: "+url+" is correct</p>";
+      
+	}
+  }
+}
+</script>
+</head>
+<body>
+</body>
+<h2>Sprite Preview Helper</h2>
+<div>
+<select size="8" id="selector" onChange="loadSpritePage();">
+	<option value="0">Make a selection</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Branding/Logos/brandingLogos15-test.html">Branding - Logos - 15</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Branding/Logos/brandingLogos23-test.html">Branding - Logos - 23</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Branding/Logos/brandingLogos30-test.html">Branding - Logos - 30</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Branding/Other/brandingOther16-test.html">Branding Other - 16</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Branding/Other/brandingOther24-test.html">Branding - Other - 24</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Branding/Other/brandingOther32-test.html">Branding - Other - 32</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Branding/Other/brandingOther128-test.html">Branding - Other - 128</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/Actions/iconsActions16-test.html">Icon - Actions - 16</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/CKActions/iconsCKActions16-test.html">Icon - CKActions - 16</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/Components/iconsComponents16-test.html">Icon - Components - 16</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/Components/iconsComponents32-test.html">Icon - Components - 32</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/Components/iconsComponents64-test.html">Icon - Components - 64</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/Components/iconsComponents128-test.html">Icon - Components - 128</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/ComponentsBlue/iconsComponentsBlue16-test.html">Icon - Components Blue - 16</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/ComponentsBlue/iconsComponentsBlue24-test.html">Icon - Components Blue - 24</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/ComponentsBlue/iconsComponentsBlue32-test.html">Icon - Components Blue - 32</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/ComponentsGray/iconsComponentsGray16-test.html">Icon - Components Gray - 16</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/ComponentsGray/iconsComponentsGray24-test.html">Icon - Components Gray - 24</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/ComponentsGray/iconsComponentsGray32-test.html">Icon - Components Gray - 32</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/ComponentsWhite/iconsComponentsWhite16-test.html">Icon - Components White - 16</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/ComponentsWhite/iconsComponentsWhite24-test.html">Icon - Components White - 24</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/ComponentsWhite/iconsComponentsWhite32-test.html">Icon - Components White - 32</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/ComponentsWhite/iconsComponentsWhite128-test.html">Icon - Components White - 128</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/ComponentTypes/iconsComponentTypes16-test.html">Icon - Component Types - 16</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/DisplayControls/iconsDisplayControls16-test.html">Icon - Display Controls - 16</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/FileTypes/iconsFileTypes16-test.html">Icon - File Types - 16</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/FileTypes/iconsFileTypes32-test.html">Icon - File Types - 32</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/FileTypes/iconsFileTypes64-test.html">Icon - File Types - 64</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/Messages/iconsMessages16-test.html">Icon - Messages - 16</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/Messages/iconsMessages48-test.html">Icon - Messages - 48</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/Other/iconsOther16-test.html">Icon - Other - 16</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/Other/iconsOther48-test.html">Icon - Other - 48</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/Icons/States/iconsStates16-test.html">Icon - States - 16</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/ColumnHeadings/otherColumnHeadings16-test.html">Other - ColumnHeadings - 16</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/Framework/otherFramework16-test.html">Other - Framework - 16</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/Framework/otherFramework32-test.html">Other - Framework - 32</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/MediaPlayer/otherMediaPlayer16-test.html">Other - MediaPlayer - 16</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/MediaPlayer/otherMediaPlayer32-test.html">Other - MediaPlayer - 32</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/MediaPlayer/otherMediaPlayer45-test.html">Other - MediaPlayer - 45</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/MediaPlayer/otherMediaPlayer75-test.html">Other - MediaPlayer - 75</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/HTML5Player/otherHTML5Player16-test.html">Other - HTML5Player - 16</option>
+    <option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/HTML5Player/otherHTML5Player32-test.html">Other - HTML5Player - 24</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/People/otherPeople16-test.html">Other - People - 16</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/People/otherPeople24-test.html">Other - People - 24</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/People/otherPeople32-test.html">Other - People - 32</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/People/otherPeople48-test.html">Other - People - 48</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/People/otherPeople64-test.html">Other - People - 64</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/People/otherPeople128-test.html">Other - People - 128</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/People/otherPeople155-test.html">Other - People - 155</option>
+	
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/Status/otherStatus9-test.html">Other - Status - 9</option>
+	<option value="/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/OtherImages/Tree/otherTree16-test.html">Other - Tree - 16</option>
+	
+</select>
+</div>
+<div>
+<iframe height="100%" width="100%" onLoad="resizeWindow('renderSpriteArea');"id="renderSpriteArea"></iframe>
+</div>
+</html>

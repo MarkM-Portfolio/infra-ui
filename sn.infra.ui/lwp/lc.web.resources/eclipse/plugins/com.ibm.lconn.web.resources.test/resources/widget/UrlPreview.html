@@ -1,0 +1,197 @@
+${head}
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+
+<title>IBM Connections - URL Preview Test Page</title>
+
+<script>
+   closeFunction = function() {
+      alert("Pressed close button");
+   };
+
+   loadPreviews = function() {
+      var content = dojo.query(".lotusContent")[0];
+      var test1 = new lconn.core.widget.urlPreview.URLPreviewNode({
+         url : "http://www.irishtimes.com/news/environment/it-s-official-winter-was-wettest-on-record-met-eireann-says-1.1711013",
+         data : {
+            url : "http://www.irishtimes.com/news/environment/it-s-official-winter-was-wettest-on-record-met-eireann-says-1.1711013",
+            provider_url : "http://www.irishtimes.com",
+            title : "It's official winter was wettest on record met eireann says",
+            description : "Some stations recorded 80 wet days; New maximum wave  set in Kinsale.",
+            thumbnails : []
+         }
+      });
+      test1.placeAt(content);
+
+      var test2 = new lconn.core.widget.urlPreview.URLPreviewNode({
+         url : "www.engadget.com",
+         data : {
+            url : "http://www.irishtimes.com/news/environment/it-s-official-winter-was-wettest-on-record-met-eireann-says-1.1711013",
+            provider_url : "http://www.irishtimes.com",
+            title : "It's official winter was wettest on record met eireann says",
+            description : "Some stations recorded 80 wet days; New maximum wave  set in Kinsale.",
+            thumbnails : [ {
+               src : "http://www.blogcdn.com/www.engadget.com/media/2012/12/eng-podcast-620_620x340.jpg",
+               alt : "Engadget"
+            }, {
+               src : "http://www.blogcdn.com/www.engadget.com/media/2013/04/mercedes-suv-concept-1366298453.jpg",
+               alt : "Mercedes Concept"
+            } ]
+         },
+         closeCallback : closeFunction
+      });
+      test2.placeAt(content);
+
+      var test3 = new lconn.core.widget.urlPreview.URLPreviewNode(
+            {
+               url : "http://www.youtube.com/watch?v=IgFE7RETE_o",
+               data : {
+                  url : "http://www.youtube.com/watch?v=IgFE7RETE_o",
+                  provider_url : "http://www.youtube.com",
+                  title : "IBM Lotus Symphony 3",
+                  description : "Be free and work smart with IBM Lotus released Symphony 3, a major new version of the Open Office-based desktop productivity editors that is freely available to all users. Lotus Symphony 3 features major improvements in usability, integration, programability, and compatibility. Download your freely available copy at http://symphony.lotus.com",
+                  enablePlayback : true,
+                  thumbnails : [ {
+                     src : "http://i1.ytimg.com/vi/IgFE7RETE_o/1.jpg",
+                     alt : "youtube"
+                  } ],
+                  video : [ {
+                     url : "http://www.youtube.com/v/IgFE7RETE_o?autohide=1&version=3",
+                     type : "application/x-shockwave-flash"
+                  } ]
+               }
+            });
+      test3.placeAt(content);
+
+      test4 = new lconn.core.widget.urlPreview.URLPreviewNode(
+            {
+               url : "http://vimeo.com/58964862",
+               data : {
+                  url : "http://www.youtube.com/watch?v=IgFE7RETE_o",
+                  provider_url : "http://www.youtube.com",
+                  title : "IBM Lotus Symphony 3",
+                  description : "Be free and work smart with IBM Lotus released Symphony 3, a major new version of the Open Office-based desktop productivity editors that is freely available to all users. Lotus Symphony 3 features major improvements in usability, integration, programability, and compatibility. Download your freely available copy at http://symphony.lotus.com",
+                  enablePlayback : true,
+                  thumbnails : [ {
+                     src : "http://i1.ytimg.com/vi/IgFE7RETE_o/1.jpg",
+                     alt : "youtube"
+                  }, {
+                     src : "http://www.blogcdn.com/www.engadget.com/media/2013/04/mercedes-suv-concept-1366298453.jpg",
+                     alt : "Mercedes Concept"
+                  } ],
+                  video : [ {
+                     url : "http://www.youtube.com/v/IgFE7RETE_o?autohide=1&version=3",
+                     type : "application/x-shockwave-flash"
+                  } ]
+               },
+               closeCallback : closeFunction
+            });
+      test4.placeAt(content);
+
+      var test5 = new lconn.core.widget.urlPreview.URLPreviewNode({
+         url : "http://vimeo.com/58964862",
+         data : {
+            url : "http://vimeo.com/58964862",
+            provider_url : "http://vimeo.com",
+            title : "Happy Planet (with Behind the scene)",
+            description : "IBM holidays greeting card, with Ogilvy agency.  Full project :  http://www.behance.net/gallery/Happy-Planet/7028673",
+            enablePlayback : true,
+            thumbnails : [ {
+               src : "http://b.vimeocdn.com/ts/409/591/409591871_200.jpg",
+               alt : "vimeo"
+            } ],
+            video : [ {
+               url : "http://vimeo.com/moogaloop.swf?clip_id=58964862",
+               type : "application/x-shockwave-flash"
+            } ]
+         },
+         closeCallback : closeFunction
+      });
+      test5.placeAt(content);
+      
+      dojo.xhrGet({
+        url: 'urlpreview.json',
+        handleAs: 'json'
+      }).then(function(response) {
+            var test6 = new lconn.core.widget.urlPreview.URLPreviewNode({
+                url : "http://vimeo.com/58964862",
+                data : response,
+                closeCallback : closeFunction
+            });
+            test6.placeAt(content);
+        });
+    };
+
+   dojo.addOnLoad(loadPreviews);
+</script>
+
+<style>
+.lotusContent .lconnPreview {
+	margin-bottom: 15px
+}
+</style>
+
+${endhead}
+
+	<div class="lotusBanner">
+		<div class="lotusRightCorner">
+			<div class="lotusInner">
+				<a href="#lotusMainContent" accesskey="S" class="lotusAccess"> <img
+					src="${_blankGif}" />
+				</a>
+				<div class="lotusLogo">
+					<span class="lotusAltText">IBM Connections Common UI</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="lotusTitleBar2 lotusTitleBar2Tabs">
+		<div class="lotusWrapper">
+			<div class="lotusInner">
+				<div class="lotusTitleBarContent">
+					<h2 class="lotusHeading">
+						<span class="lotusText">URL Preview Tests</span>
+					</h2>
+					<nav aria-label="Select page width" role="navigation">
+						<ul class="lotusNavTabs" role="toolbar">
+							<!--put class="lotusSelected" on the li element of the selected tab-->
+							<li role="presentation"><div class="lotusTabWrapper">
+									<a class="lotusTab" href="javascript:;" role="button"
+										onclick="dojo.query('.lotusContent')[0].style.width = '1000px'; return false;"><span
+										class="lotusTabInner">Page width 1000px</span></a>
+								</div></li>
+							<li role="presentation"><div class="lotusTabWrapper">
+									<a class="lotusTab" href="javascript:;" role="button"
+										onclick="dojo.query('.lotusContent')[0].style.width = '800px'; return false;"><span
+										class="lotusTabInner">Page width 800px</span></a>
+								</div></li>
+							<li role="presentation"><div class="lotusTabWrapper">
+									<a class="lotusTab" href="javascript:;" role="button"
+										onclick="dojo.query('.lotusContent')[0].style.width = '600px'; return false;"><span
+										class="lotusTabInner">Page width 600px</span></a>
+								</div></li>
+							<li role="presentation"><div class="lotusTabWrapper">
+									<a class="lotusTab" href="javascript:;" role="button"
+										onclick="dojo.query('.lotusContent')[0].style.width = '400px'; return false;"><span
+										class="lotusTabInner">Page width 400px</span></a>
+								</div></li>
+						</ul>
+						<div class="lotusClear"></div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="lotusMain" role="main" aria-label="URL Preview Test content">
+		<div class="lotusContent"></div>
+	</div>
+	
+	<!--  Add your dojo config flags here -->
+	<script>
+		djConfig.parseOnLoad=true;
+	</script>
+	<!--  List the Dojo modules your test page requires -->
+	${script:lconn.core.widget.urlPreview.URLPreviewNode}
+</body>
+</html>

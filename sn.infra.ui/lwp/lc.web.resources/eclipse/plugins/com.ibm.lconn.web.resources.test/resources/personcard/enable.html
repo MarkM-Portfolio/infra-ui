@@ -1,0 +1,74 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+${script:lconn.core.people}
+
+${style:com.ibm.oneui/controls/templates/HoverPopup}
+${style:com.ibm.oneui/controls/templates/ResourceLink}
+
+${endhead}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+<div>The person card and sametime proxy awareness are controlled by the following configuration options:
+
+<h4>Legacy person card (3.0) is enabled when:</h4>
+<ul>
+	<li>The 'profiles' service is enabled in LotusConnections-config.xml
+	<li>The generic property 'com.ibm.lconn.personcard.enable' in LotusConnections-config.xml is set to 'legacy' or is not specified.
+</ul>
+<em>Note: to complete disable the person card, set the generic property 'com.ibm.lconn.personcard.enable' to 'off' in LotusConnections-config.xml</em>
+
+<h4>Standard person card (4.0) is enabled when:</h4>
+<ul>
+	<li>The 'profiles' service is enabled in LotusConnections-config.xml
+	<li>The generic property 'com.ibm.lconn.personcard.enable' is set to 'standard'
+</ul>
+
+<h4>Sametime Awareness via the client is enabled when:</h4>
+<ul>
+	<li>The &lt;sametimeAwareness&gt; tag in profiles-config.xml is set to enabled
+</ul>
+
+<h4>Sametime Proxy Awareness is enabled when:</h4>
+<ul>
+	<li>The &lt;sametimeAwareness&gt; tag in profiles-config.xml is disabled
+	<li>The 'sametimeProxy' service in LotusConnections-config.xml is enabled
+</ul>
+
+</div>
+
+<table>
+
+<tr>
+<td style="color: red;"><script>
+if (dojo.getObject("com.ibm.lconn.personcard.legacy"))
+	document.write("Running in legacy person card mode");
+else if (dojo.getObject("com.ibm.lconn.personcard.standard"))
+	document.write("Running in standard person card mode");
+else
+	document.write("Business card disabled");
+</script></td>
+<td>The text to the left will display the status of the business card</td>
+</tr>
+
+<tr>
+<td style="color: red;"><script>
+if (dojo.getObject("lconn.profiles.sametime.sametimeAwareness"))
+	document.write("Sametime Connect integration enabled");
+else if (dojo.getObject("lconn.profiles.sametime.sametimeProxyAwareness"))
+	document.write("Sametime Proxy integration enabled");
+else
+	document.write("Sametime awareness integration disabled");
+</script></td>
+<td>The text to the left will display the status of Sametime integration</td>
+</tr>
+
+</table>
+
+
+</div>
+</div>
+</body>
+${end}

@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html dir="ltr" lang="en">
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<head>
+<meta content="text/html;charset=UTF-8"></meta>
+<script>
+   var netJazzAjaxConfig = {base: "/connections/resources"}; 
+   var djConfig = {
+         proxy: "/connections/resources/ajaxProxy", 
+         isDebug: true, 
+         baseUrl: "/connections/resources/web/dojo/", 
+         locale: "en", 
+         blankGif: "/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif?etag=20120715.155729",
+         localizationComplete: true
+         }
+</script>
+         
+<script src="/connections/resources/web/_js?include=dojo.dojo.js&debug=true&lang=en"></script>
+<script type="text/javascript">
+dojo.require("dijit._Widget");
+</script>
+
+<script type="text/javascript">
+function loadJS(connHost){
+   var d = document;
+   var script = d.createElement("script");
+      script.src = connHost + "files/picker/file/script.js?lang=en&debug=true";
+      script.type = "text/javascript";
+   var header = document.getElementsByTagName("head")[0];
+      header.appendChild(script);
+}
+
+function _loadJS(){
+   var connHost = dojo.byId("connHost").value;
+   loadJS(connHost);
+}
+
+</script>
+</head>
+<body>
+   <div>
+	   <div>Steps to use Connections file picker: </div>
+	   <ul>
+	      <li>You will need to set up SSO between your product server and Connections server</li>
+	      <li>Your product server needs ajax proxy set up and you need to define this in your djConfig</li>
+	      <li>You will need to add the following in your page that will open file picker. </li>
+	   </ul>
+	   <div style="margin:0 30px;padding:5px;background-color:#F0F0F0;border:1px black solid; width:600px">
+		   &lt;script src="http://&lt;Connections host>/files/picker/file/script.js?lang=en" type="text/javascript">&lt;/script>
+		   <br>
+	   </div>
+	   <br>
+	   <div>Options: </div>
+	   <div style="margin:0 30px">
+        <label for="connHost">Connections host url("http://sample.dyn.webahead.ibm.com/"): </label>
+           <input type="text" id="connHost" value="http://sample.dyn.webahead.ibm.com/" size="50"/>
+           <button id="loadJS" onclick="_loadJS()">Load JS</button><br>
+        <label for="pickerTitle">Dialog Title: </label><input id="pickerTitle" size="40" value="Hello File Picker"><br>
+	     <input type="checkbox" id="useCompactPicker"><label for="useCompactPicker">Use compact mode picker</label><br>
+	     <input type="checkbox" id="supportUpload"><label for="supportUpload">Can upload files from local</label><br>
+	     <input type="checkbox" id="useCustomCSS"><label for="useCustomCSS">Use Custom CSS</label>
+	        <div style="margin:0 30px;display:none" id="cssUrlContainer"><label for="cssUrl">Custom CSS url: </label><input type="text" id="cssUrl"></div>
+        <br>Set show share with
+        <input type="radio" id="showShareTrue" name="showShare" checked='checked'/><label for="showShareTrue">true</label>
+        <input type="radio" id="showShareFalse" name="showShare" /><label for="showShareFalse">false</label>
+	   </div>
+	   <br>
+	   <div>
+	     <button id="btnOpenPicker">Open Picker</button>
+	   </div>
+   </div>
+   <script language="javascript">
+   dojo.connect(dojo.byId("useCustomCSS"), "onclick", function(){
+      dojo.byId("cssUrlContainer").style.display = dojo.byId("useCustomCSS").checked ? "":"none";
+   });
+   dojo.connect(dojo.byId("btnOpenPicker"), "onclick", function(){
+      var useCustomCSS = !!dojo.byId("useCustomCSS").checked;
+      var opts = {
+            visibility: "private",
+            showShare: !!dojo.byId('showShareTrue').checked || !dojo.byId('showShareFalse').checked,
+            showExternal: true,
+            filesService: dojo.getObject("lconn.core.config.services.files"),
+            browse: {
+               show: !!dojo.byId("supportUpload").checked,
+               title: "Upload File from sample picker",
+               link: "Browse Local File"
+            },
+            useCompact: !!dojo.byId("useCompactPicker").checked,
+		      title: dojo.byId("pickerTitle").value || "File Picker Sample",
+              oneuiVersion: 3,
+		      onSave: console.log,
+		      login: function(){console.log("Session timeout, please login..");}
+      };
+      if (useCustomCSS){
+         opts.cssUrl = dojo.byId("cssUrl").value;
+      }         
+      lconn.core.filepicker.open(opts);
+   });
+   </script>
+</body>
+</html>

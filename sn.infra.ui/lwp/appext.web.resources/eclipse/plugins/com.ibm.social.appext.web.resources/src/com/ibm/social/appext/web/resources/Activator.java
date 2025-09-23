@@ -1,0 +1,45 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2011, 2012                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+package com.ibm.social.appext.web.resources;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+
+/**
+ * OSGi Bundle Activator of the Connections AppExt bundle
+ * 
+ * @author Claudio Procida <procidac@ie.ibm.com>
+ */
+public class Activator implements BundleActivator
+{
+
+  private static BundleContext context;
+
+  static BundleContext getContext()
+  {
+    return context;
+  }
+
+  public void start(BundleContext bundleContext) throws Exception
+  {
+    Activator.context = bundleContext;
+  }
+
+  public void stop(BundleContext bundleContext) throws Exception
+  {
+    Activator.context = null;
+  }
+
+}

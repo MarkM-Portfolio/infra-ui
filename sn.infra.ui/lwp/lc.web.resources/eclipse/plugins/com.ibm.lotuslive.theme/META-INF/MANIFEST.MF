@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ibm lotuslive theme
+Bundle-SymbolicName: com.ibm.lotuslive.theme;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: IBM
+Bundle-ActivationPolicy: lazy

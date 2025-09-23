@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "pl",
+      "Play": "Odtwórz",
+      "Pause": "Pause",
+      "Current Time": "Bieżący czas",
+      "Duration Time": "Czas trwania",
+      "Remaining Time": "Pozostały czas",
+      "Stream Type": "Typ strumienia",
+      "LIVE": "Na żywo",
+      "Loaded": "Załadowany",
+      "Progress": "Postęp",
+      "Fullscreen": "Tryb pełnoekranowy",
+      "Non-Fullscreen": "Wyłącz tryb pełnoekranowy",
+      "Mute": "Wycisz",
+      "Unmute": "Anuluj wyciszenie",
+      "Unmuted": "Anulowano wyciszenie",
+      "Playback Rate": "Częstotliwość odtwarzania",
+      "Subtitles": "Napisy",
+      "subtitles off": "Napisy wyłączone",
+      "Captions": "Podpisy",
+      "captions off": "Podpisy wyłączone",
+      "Chapters": "Rozdziały",
+      "Volume": "Głośność",
+      "You aborted the video playback.": "Przerwano odtwarzanie filmu wideo",
+      "A network error caused the video download to fail part-way.": "Błąd sieciowy spowodował niepowodzenie pobierania filmu wideo.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "Nie można załadować filmu wideo, albo z powodu błędu serwera lub sieci, albo z powodu nieobsługiwanego formatu.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "Odtwarzanie filmu wideo zostało przerwane z powodu uszkodzenia albo dlatego, że film wideo korzystał z funkcji nieobsługiwanych przez używaną przeglądarkę.",
+      "No compatible source was found for this video.": "Nie znaleziono zgodnego źródła dla tego filmu wideo."
+});
+

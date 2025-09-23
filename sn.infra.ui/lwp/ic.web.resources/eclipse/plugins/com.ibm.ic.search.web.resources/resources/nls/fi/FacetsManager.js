@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+define({
+		"CLOSE_HELP_DATE":"Sulje päivämäärien ohje",
+		"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Sulje Asiakirjalajit-ohje",
+		"CLOSE_HELP_PERSON":"Sulje Henkilöt-palvelun ohje",
+		"CLOSE_HELP_TAG":"Sulje tunnisteohje",
+		"CLOSE_HELP_TREND":"Sulje trendien ohje",
+		"COLLAPSE_DATE":"Pienennä päivämäärien suodatin",
+		"COLLAPSE_ECM_DOCUMENT_TYPE":"Pienennä Asiakirjalajit-suodatin",
+		"COLLAPSE_PERSON":"Pienennä henkilöiden suodatin",
+		"COLLAPSE_TAG":"Pienennä tunnisteiden suodatin",
+		"COLLAPSE_TREND":"Pienennä trendien suodatin",
+		"DESCRIPTION_DATE":"Voit näyttää tiettynä ajanjaksona luodut tai päivitetyt tulokset laajentamalla kääntönuoliobjektin ja suodattamalla tietoja vuoden ja kuukauden mukaan.",
+		"DESCRIPTION_ECM_DOCUMENT_TYPE":"Asiakirjalaji on tiedostoon liitettävä avainsana, jonka avulla tiedosto on helpompi löytää. Napsauttamalla asiakirjalajia voit näyttää hakutulokset, joihin on liitetty kyseinen avainsana.",
+		"DESCRIPTION_PERSON":"Näytä hakutuloksiin liittyvät henkilöt. Voit tuoda tiettyyn henkilöön liittyvät hakutulokset napsauttamalla henkilön nimeä.",
+		"DESCRIPTION_TAG":"Tunnisteet ovat avainsanoja, joita voit liittää sisältöön tai henkilötietoihin niiden löytämisen helpottamiseksi. Napsauttamalla tunnistetta voit näyttää hakutulokset, jotka on määritetty avainsanalle.",
+		"DESCRIPTION_TREND":"Trendi on järjestelmän luoma avainsana, jonka avulla tilapäivityksistä on helppo hakea tietoja. Napsauttamalla trendiä voit näyttää hakutulokset, jotka on määritetty avainsanalle.",
+		"EXPAND_DATE":"Laajenna päivämäärien suodatin",
+		"EXPAND_ECM_DOCUMENT_TYPE":"Laajenna Asiakirjalajit-suodatin",
+		"EXPAND_PERSON":"Laajenna henkilöiden suodatin",
+		"EXPAND_TAG":"Laajenna tunnisteiden suodatin",
+		"EXPAND_TREND":"Laajenna trendien suodatin",
+		"HELP_DATE":"Päivämäärien ohje",
+		"HELP_ECM_DOCUMENT_TYPE":"Asiakirjalajit-ohje",
+		"HELP_PERSON":"Henkilöt-palvelun ohje",
+		"HELP_TAG":"Tunnisteiden ohje",
+		"HELP_TREND":"Trendien ohje",
+		"NO_DATE_CONTENT":"Päivämäärät eivät ole juuri nyt käytettävissä",
+		"NO_ECM_DOCUMENT_TYPE_CONTENT":"Asiakirjalajit eivät ole juuri nyt käytettävissä",
+		"NO_PERSON_CONTENT":"Henkilöt eivät ole juuri nyt käytettävissä",
+		"NO_TAG_CONTENT":"Tunnisteet eivät ole juuri nyt käytettävissä",
+		"NO_TREND_CONTENT":"Trendit eivät ole juuri nyt käytettävissä",
+		"TITLE_DATE":"Päivämäärät",
+		"TITLE_ECM_DOCUMENT_TYPE":"Asiakirjalajit",
+		"TITLE_PERSON":"Henkilöt",
+		"TITLE_TAG":"Tunnisteet",
+		"TITLE_TREND":"Trendit"
+});
+

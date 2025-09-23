@@ -1,0 +1,57 @@
+/* Copyright IBM Corp. 2015  All Rights Reserved.                    */
+
+// NLS_CHARSET=UTF-8
+define({
+	root: {
+		SEARCH_ALT_TEXT: "Search",
+		ALL_CONTENT: "All Content",
+		SEARCH_LABEL: "Search and History",
+		SEARCH_BUTTON_LABEL: "Click to open Search and History panel",
+		GLOBAL_SCOPE_PLACEHOLDER: "Search",
+		GLOBAL_SCOPE_BUTTON: "Search in All Content",
+		LOCAL_SCOPE_PLACEHOLDER: "Search ${scope}", //intended as "search over ${scope}". eg: see above
+		LOCAL_SCOPE_BUTTON: "Search in ${scope}",
+		SEARCH_SCOPE_ANNOUNCEMENT: "Press enter to Search in ${scope}",
+		QUICK_RESULTS_ANNOUNCEMENT: "${number} History results found",
+		QUICK_RESULTS_ANNOUNCEMENT_SINGULAR: "1 History result found",
+		PEOPLE_FINDER_ANNOUNCEMENT: "${number} People results found",
+		PEOPLE_FINDER_ANNOUNCEMENT_SINGULAR: "1 Person result found",
+		SEARCH_BAR_PLACEHOLDER: "Type to filter or find people",
+		SEARCH_BAR_ALT_TEXT: "Filter your history or find people",
+		SEARCH_BAR_INSTRUCTIONS: "Type and press Enter to search all content.",
+		TYPEAHEAD_NO_RESULTS: "Sorry, there are no results that match your recent history or people. Type something else or press Enter to search all content."
+	},
+	
+	"ar": true,
+	"bg": true,
+	"ca": true,
+	"cs": true,
+	"da": true,
+	"de": true,
+	"el": true,
+	"es": true,
+	"fi": true,
+	"fr": true,
+	"he": true,
+	"hr": true,
+	"hu": true,
+	"id": true,
+	"it": true,
+	"ja": true,
+	"kk": true,
+	"ko": true,
+	"nb": true,
+	"nl": true,
+	"pl": true,
+	"pt": true,
+	"pt-br": true,
+	"ro": true,
+	"ru": true,
+	"sk": true,
+	"sl": true,
+	"sv": true,
+	"th": true,
+	"tr": true,
+	"zh": true,
+	"zh-tw": true
+});

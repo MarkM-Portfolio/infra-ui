@@ -1,0 +1,3 @@
+sn.infra.ui/lwp/ic.web.resources/eclipse/plugins/com.ibm.ic.web.resources.test/bin
+sn.infra.ui/lwp/connections.info.war/war/nav
+sn.infra.ui/lwp/lc.web.resources.war/war/WEB-INF/eclipse/features

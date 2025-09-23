@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Връзки</msg>
+  <msg name="connectionsEE_description">Вградена притурка Experience OpenSocial, използвана за показване на допълнителни подробности и действия за събитията на Connections</msg>
+  <msg name="connectionsEE_errorTitle">Грешка</msg>
+  <msg name="connectionsEE_errorDescription">Това съдържание не е одобрено от Вашата организация и е недостъпно. Моля, свържете се с администратора на Вашата организация, за да позволи разширението.</msg>
+</messagebundle>

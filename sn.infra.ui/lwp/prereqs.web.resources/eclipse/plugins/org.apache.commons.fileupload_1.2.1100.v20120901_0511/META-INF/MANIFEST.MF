@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ClassPath: org.apache.commons.fileupload_1.2.1.jar
+Bundle-Name: Fileupload Plug-in
+Bundle-SymbolicName: org.apache.commons.fileupload
+Export-Package: org.apache.commons.fileupload,org.apache.commons.fileu
+ pload.disk,org.apache.commons.fileupload.portlet,org.apache.commons.f
+ ileupload.servlet,org.apache.commons.fileupload.util
+Bundle-Version: 1.2.1100.v20120901_0511
+Import-Package: javax.servlet;version="2.5",javax.servlet.http;versi
+ on="2.5",org.apache.commons.io,org.apache.commons.io.output
+Bundle-ManifestVersion: 2
+

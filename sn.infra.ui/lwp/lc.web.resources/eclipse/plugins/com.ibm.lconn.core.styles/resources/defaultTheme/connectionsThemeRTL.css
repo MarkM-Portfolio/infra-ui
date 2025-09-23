@@ -1,0 +1,14 @@
+/* Copyright IBM Corp. 2009, 2015  All Rights Reserved.              */
+
+/* SPR #LMZO87ZDBC.  Items in the footer should gracefully wrap as they exceed the width of the browser */
+.lotusFooter table {text-align: center;}
+
+/* Inline elements in RTL mode in IE do not put padding/margins in the correct location without hasLayout */ 
+.lotusui_ie .lotusFooter table td ul li a {display: inline-block;}
+.lotusui_ie .lotusFooter ul li a {display: inline-block;}
+
+/* Fixes styles for messages */
+.lotusui30 .lotusMessage {font-weight:normal;}
+
+/* RTC 88488 fix alignment issue of bizcard launch box */
+.lotusui30 .lotusVCardHover{ background-position: 98% -3282px;} 

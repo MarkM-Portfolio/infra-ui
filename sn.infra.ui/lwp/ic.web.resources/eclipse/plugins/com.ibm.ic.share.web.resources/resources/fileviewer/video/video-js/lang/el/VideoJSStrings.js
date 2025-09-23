@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "en",
+      "Play": "Αναπαραγωγή",
+      "Pause": "Παύση",
+      "Current Time": "Τρέχουσα ώρα",
+      "Duration Time": "Διάρκεια",
+      "Remaining Time": "Χρόνος που απομένει",
+      "Stream Type": "Είδος ροής",
+      "LIVE": "ΖΩΝΤΑΝΗ ΜΕΤΑΔΟΣΗ",
+      "Loaded": "Φορτώθηκε",
+      "Progress": "Πρόοδος",
+      "Fullscreen": "Πλήρης οθόνη",
+      "Non-Fullscreen": "Όχι πλήρης οθόνη",
+      "Mute": "Σίγαση",
+      "Unmute": "Αναίρεση σίγασης",
+      "Unmuted": "Χωρίς σίγαση",
+      "Playback Rate": "Ρυθμός αναπαραγωγής",
+      "Subtitles": "Υπότιτλοι",
+      "subtitles off": "υπότιτλοι απενεργοποιημένοι",
+      "Captions": "Λεζάντες",
+      "captions off": "λεζάντες απενεργοποιημένες",
+      "Chapters": "Κεφάλαια",
+      "Volume": "Τόμος",
+      "You aborted the video playback.": "Διακόψατε την αναπαραγωγή βίντεο",
+      "A network error caused the video download to fail part-way.": "Ένα σφάλμα δικτύου προκάλεσε την αποτυχία της μεταφόρτωσης του βίντεο.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "Δεν ήταν δυνατή η φόρτωση του βίντεο, είτε λόγω αποτυχίας του εξυπηρετητή ή του δικτύου, είτε επειδή η μορφή δεν υποστηρίζεται.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "Η αναπαραγωγή βίντεο απορρίφθηκε επειδή το βίντεο είναι κατεστραμμένο ή χρησιμοποιεί λειτουργίες που δεν υποστηρίζονται από το πρόγραμμα πλοήγησης.",
+      "No compatible source was found for this video.": "Δεν βρέθηκε συμβατή προέλευση για αυτό το βίντεο."
+});
+

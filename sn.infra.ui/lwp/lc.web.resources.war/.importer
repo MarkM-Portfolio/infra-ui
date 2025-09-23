@@ -1,0 +1,3 @@
+archivename=connections.web.resources.war
+contextroot=/connections/resources
+manifestcontents=lc.web.resources.remote.jar

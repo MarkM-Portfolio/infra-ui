@@ -1,0 +1,9 @@
+{
+  "Double": 2.0,
+  "Integer": 1,
+  "List\x3cString\x3e": [
+    "value1",
+    "value2"
+  ],
+  "String": "value"
+}

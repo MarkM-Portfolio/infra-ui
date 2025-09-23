@@ -1,0 +1,35 @@
+<div class="${baseClass}">
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+  <div class="lotusPaging" dojoAttachPoint="topPageNode" style="${_initPageStyle}">
+     <div class="lotusLeft numShape" style="display:none;" dojoAttachPoint="pageInfoNode"></div>
+     <ul class="lotusRight lotusInlinelist" dojoAttachPoint="topPageNavigateNode" style="display:none;">
+        <li dojoAttachPoint="tPreviousLinkNode" class="lotusFirst"><a href="#" dojoAttachEvent="onclick:previous" title="${_strings.PREVIOUS_TOOLTIP}">${_strings.PREVIOUS}</a></li>
+        <li dojoAttachPoint="tPreviousTextNode" class="lotusFirst">${_strings.PREVIOUS}</li>
+        <li dojoAttachPoint="tNextLinkNode"><a href="#" dojoAttachEvent="onclick:next" title="${_strings.NEXT_TOOLTIP}">${_strings.NEXT}</a></li>
+        <li dojoAttachPoint="tNextTextNode">${_strings.NEXT}</li>
+     </ul>
+     <ul class="lotusInlinelist" style="display:none" dojoAttachPoint="pageListNode">${_strings.PAGE}<li /></ul>
+  </div>
+  <div dojoAttachPoint="streamNode"></div>
+  <div class="lotusPaging" dojoAttachPoint="bottomPageNode" style="${_initPageStyle}">
+     <ul class="lotusRight lotusInlinelist" dojoAttachPoint="bottomPageNavigateNode" style="display: none;">
+        <li dojoAttachPoint="bPreviousLinkNode" class="lotusFirst"><a href="#" dojoAttachEvent="onclick:previous" title="${_strings.PREVIOUS_TOOLTIP}">${_strings.PREVIOUS}</a></li>
+        <li dojoAttachPoint="bPreviousTextNode" class="lotusFirst">${_strings.PREVIOUS}</li>
+        <li dojoAttachPoint="bNextLinkNode"><a href="#" dojoAttachEvent="onclick:next" title="${_strings.NEXT_TOOLTIP}">${_strings.NEXT}</a></li>
+        <li dojoAttachPoint="bNextTextNode">${_strings.NEXT}</li>
+     </ul>
+  </div>
+</div>

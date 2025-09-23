@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+<title>Test palette tree widget</title>
+${endhead}
+
+<script type="text/javascript">
+	function categorySelected(item) {
+		console.log("category selected");
+		console.log(item);
+	}
+
+	dojo.addOnLoad( function() {
+		dojo.subscribe(lconn.core.paletteOneUI.PaletteList.prototype.CATEGORY_SELECTED_EVENT, categorySelected);
+	});
+
+	dojo.addOnLoad( function() {
+		doh.registerGroup("palette list", [ {
+			// fetch the item with type=widget in the store
+			name :"test widgets store",
+			setUp : function(t) {
+			},
+			runTest : function(t) {
+				console.log("test");
+			}
+		} ]);
+		
+		doh.run();
+	});
+</script>
+
+<div class="lotusPalette">
+<div class="lotusPaletteBody">
+		<div class="lotusPaletteNav">
+
+
+<div dojoType="dojo.data.ItemFileWriteStore" url="widgets.txt"
+	jsId="widgetStore"></div>
+<div dojoType="lconn.core.paletteOneUI.PaletteList"
+	query="{type:'widgetCategory'}" store="widgetStore"></div> 
+	
+</div>
+</div>
+</div>
+
+    <script>
+        djConfig.parseOnLoad=true;
+        djConfig.isDebug=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+
+    ${script:dojo.parser}
+    ${script:net.jazz.ajax.xdloader}
+    ${script:dojo.data.ItemFileWriteStore}
+    ${script:lconn.core.paletteOneUI.PaletteList}
+    ${script:doh.runner}
+</body>
+</html>

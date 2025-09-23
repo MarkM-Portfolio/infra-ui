@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+({
+	"CLOSE_HELP_DATE":"关闭“日期”帮助",
+	"CLOSE_HELP_ECM_DOCUMENT_TYPE":"关闭“文档类型”帮助",
+	"CLOSE_HELP_PERSON":"关闭人员帮助",
+	"CLOSE_HELP_TAG":"关闭标签帮助",
+	"CLOSE_HELP_TREND":"关闭“趋势”帮助",
+	"COLLAPSE_DATE":"折叠“日期”过滤器",
+	"COLLAPSE_ECM_DOCUMENT_TYPE":"折叠“文档类型”过滤器",
+	"COLLAPSE_PERSON":"折叠“人员”过滤器",
+	"COLLAPSE_TAG":"折叠“标签”过滤器",
+	"COLLAPSE_TREND":"折叠“趋势”过滤器",
+	"DESCRIPTION_DATE":"要显示在特定时间创建或更新的结果，请展开折叠标记并按年和月过滤信息。",
+	"DESCRIPTION_ECM_DOCUMENT_TYPE":"文档类型是为了能更轻松查找文件而分配给文件的关键字。 单击文档类型可显示与该关键字相关的搜索结果。",
+	"DESCRIPTION_PERSON":"查看与搜索结果关联的人员。 单击姓名可显示与特定人员关联的搜索结果。",
+	"DESCRIPTION_TAG":"标签是指定给内容或人员以便于对其进行查找的关键字。 单击标签可显示已分配到该关键字的搜索结果。",
+	"DESCRIPTION_TREND":"趋势是系统生成的关键字，用于使您更方便地在状态更新中执行搜索。 单击趋势可显示已分配到该关键字的搜索结果。",
+	"EXPAND_DATE":"展开“日期”过滤器",
+	"EXPAND_ECM_DOCUMENT_TYPE":"展开“文档类型”过滤器",
+	"EXPAND_PERSON":"展开“人员”过滤器",
+	"EXPAND_TAG":"展开“标签”过滤器",
+	"EXPAND_TREND":"展开“趋势”过滤器",
+	"HELP_DATE":"“日期”帮助",
+	"HELP_ECM_DOCUMENT_TYPE":"“文档类型”帮助",
+	"HELP_PERSON":"人员帮助",
+	"HELP_TAG":"标签帮助",
+	"HELP_TREND":"“趋势”帮助",
+	"NO_DATE_CONTENT":"“日期”当前不可用",
+	"NO_ECM_DOCUMENT_TYPE_CONTENT":"“文档类型”当前不可用",
+	"NO_PERSON_CONTENT":"“人员”当前不可用",
+	"NO_TAG_CONTENT":"“标签”当前不可用",
+	"NO_TREND_CONTENT":"“趋势”当前不可用",
+	"TITLE_DATE":"日期",
+	"TITLE_ECM_DOCUMENT_TYPE":"文档类型",
+	"TITLE_PERSON":"人员",
+	"TITLE_TAG":"标签",
+	"TITLE_TREND":"趋势"
+})
+

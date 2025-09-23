@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Invitare la conectare",
+	NDYK1:"Nu mai sunt persoane de recomandat",
+	LOADING: "se încarcă",
+	DYK_TITLE: "Persoane pe care este posibil să le cunoașteți",
+	INVITE_TITLE: "Trimitere invitație de conectare",
+	SEND_ACTION: "Trimitere",
+	CANCEL_ACTION: "Anulare",
+	PREV: "Anterior",
+	NEXT: "Următor",
+	bpct: "A comentat pe blogul dvs.",
+	bpcc: "Ați comentat pe același blog",
+	lpfr: "Este un coleg sau cineva cunoscut dvs.",
+	lm1: "Sunteți managerul acestei persoane",
+	le1: "Această persoană este managerul dvs.",
+	sdm: "Aveți același manager",
+	pt: "Această persoană v-a marcat cu tag",
+	pbt: "Ați marcat cu tag această persoană",
+	acm: "Partajați activități",
+	wikiCoContribution: "Ați editat amândoi același wiki",
+	bpcb: "Ați comentat pe blogul acestuia",
+	lpcfr: "Aveți colegi comuni",
+	ccmf: "Sunteți împreună într-o comunitate",
+	ccms: "Sunteți împreună într-o comunitate",
+	filesharing: "Partajați câteva fișiere",
+	forumthreaddiscussion: "Partajați un fir de forum",
+	ctb: "Partajați un semn de carte",
+	tgw: "Aveți tag-uri care se potrivesc",
+	tcu: "Ați utilizat acelaşi tag",
+	pctg: "Ați marcat cu tag amândoi aceeași persoană",
+	tgb: "Aceleași persoane v-au marcat cu tag pe amândoi"
+})

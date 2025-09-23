@@ -1,0 +1,36 @@
+<div>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2015                                          -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+   <div dojoAttachPoint="sortNode" style="display: none;">
+      <div class="lotusSort">
+         <ul class="lotusInlinelist">
+            <li class="lotusFirst">${_strings.SORT_BY}</li>
+            <li class="lotusFirst">
+               <a id="sortDesc" role="button" aria-pressed="true" class="lotusActiveSort lotusDescending" aria-sort="descending" title="${_strings.SORTS.DATE_TOOLTIP_REVERSE}" href="#" dojoAttachEvent="onclick:_sortAsc">${_strings.SORTS.DATE}</a>
+               <a id="sortAsc" role="button" aria-pressed="true" class="lotusActiveSort lotusAscending" aria-sort="ascending" title="${_strings.SORTS.DATE_TOOLTIP}" href="#" dojoAttachEvent="onclick:_sortDesc" style="display: none;">${_strings.SORTS.DATE}</a>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div class="lotusBoard" dojoAttachPoint="main" style="display: none;">
+      <ul dojoAttachPoint="listCtnr" class="lotusCommentList lotusCommentsCondensed"></ul>
+   </div>
+   <div dojoAttachPoint="empty" style="display: none;"></div>
+   <div dojoAttachPoint="error" style="display: none;"></div>
+   <div dojoAttachPoint="loading" style="display: none;"></div>
+   <div dojoAttachPoint="moreLink" style="display: none;">
+      <a href="#" role="button" dojoAttachEvent="onclick:_showMoreHistory">${_strings.MORE}</a>
+   </div>
+</div>

@@ -1,0 +1,23 @@
+/* Copyright HCL Technologies Ltd. 2012, 2022  All Rights Reserved.              */
+.iconsComponentsWhite128-ActivitiesWhite128{width:128px;height:128px;background-position:0 0}
+.iconsComponentsWhite128-BlogsWhite128{width:128px;height:128px;background-position:0 -136px}
+.iconsComponentsWhite128-BookmarksWhite128{width:128px;height:128px;background-position:0 -272px}
+.iconsComponentsWhite128-CalendarWhite128{width:128px;height:128px;background-position:0 -408px}
+.iconsComponentsWhite128-CommunitiesWhite128{width:128px;height:128px;background-position:0 -544px}
+.iconsComponentsWhite128-FilesWhite128{width:128px;height:128px;background-position:0 -680px}
+.iconsComponentsWhite128-ForumsWhite128{width:128px;height:128px;background-position:0 -816px}
+.iconsComponentsWhite128-HomeWhite128{width:128px;height:128px;background-position:0 -952px}
+.iconsComponentsWhite128-MailWhite128{width:128px;height:128px;background-position:0 -1088px}
+.iconsComponentsWhite128-MetricsWhite128{width:128px;height:128px;background-position:0 -1224px}
+.iconsComponentsWhite128-ModerationWhite128{width:128px;height:128px;background-position:0 -1360px}
+.iconsComponentsWhite128-ProfilesWhite128{width:128px;height:128px;background-position:0 -1496px}
+.iconsComponentsWhite128-StatusUpdateWhite128{width:128px;height:128px;background-position:0 -1632px}
+.iconsComponentsWhite128-ToDoWhite128{width:128px;height:128px;background-position:0 -1768px}
+.iconsComponentsWhite128-WikisWhite128{width:128px;height:128px;background-position:0 -1904px}
+
+.iconsComponentsWhite128{background-image:url('./iconsComponentsWhite128-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+
+.cnx8-ui .iconsComponentsWhite128-ProfilesWhite128 { background-image: url('./iconsComponentsWhite128-8bit-cnx8ui.png'); background-position:0;}
+
+.lotusImagesOff .iconsComponentsWhite128{display:none}
+.cnx8-ui .cnx8ui-iconsComponentsWhite128 {background-image: url('./iconsComponentsWhite128-8bit-cnx8ui.png') !important; background-position:0 !important;}

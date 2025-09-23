@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Ендірілген әрекеттің OpenSocial гаджеті қосымша мәліметтерді және қосылымдар оқиғалары үшін әрекеттерді көрсету үшін пайдаланылды</msg>
+  <msg name="connectionsEE_errorTitle">Қате</msg>
+  <msg name="connectionsEE_errorDescription">Бұл мазмұн ұйымыңыз арқылы қолданылмады және қолжетімді емес. Кеңейтілімді іске қосу үшін ұйым әкімшісіне хабарласыңыз.</msg>
+</messagebundle>

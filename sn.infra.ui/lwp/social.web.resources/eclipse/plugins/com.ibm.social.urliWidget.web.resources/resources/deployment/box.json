@@ -1,0 +1,56 @@
+{
+   "name": "Box",
+   "description": "This widget allows users to work with files in a specific folder in the box",
+   "type":"community_widget",
+   "urls":{
+      "icon_url":"{webresourcesSvcRef}/web/lconn.box/img/Box_16.svg", 
+      "url":"{webresourcesSvcRef}/web/lconn.urlwidget/descriptor/SingleIframeWidget.xml?version={version}"
+   },
+   "payload": {
+      "defId": "Box",
+      "bundleRefId": "lc_box",
+      "description": "Box.description",
+      "helpLink":"{helpSvcRef}/topic/com.ibm.cloud.communities.doc/community_box_frame.html",
+      "showInPalette": "true",
+      "showIfGatekeeperSet":"CONNECTIONS_ENABLE_BOX",
+      "primaryWidget": "true",
+      "modes": "view edit fullpage",
+      "themes": "wpthemeWide wpthemeBanner wpthemeNarrowPlus",
+      "uniqueInstance": "false",
+      "url": "{webresourcesSvcRef}/web/lconn.urlwidget/descriptor/SingleIframeWidget.xml?version={version}",
+      "itemSet": [
+         {
+            "value": "{webresourcesSvcRef}/web/lconn.box/community/home.html?render=html-template",
+            "name": "url"
+         },
+         {
+            "value": "100%",
+            "name": "width"
+         },
+         {
+            "value": "600px",
+            "name": "height"
+         },
+         {
+            "value": "700px",
+            "name": "fullpageHeight"
+         },
+         {
+            "value": "pttmlzu911ctqzi20r6lfrkbe8em6xy7",
+            "name": "clientId"
+         },
+         {
+            "value": "true",
+            "name": "edit_saveBeforeLeave"
+         },
+         {
+            "value": "{\"communityActions\":\"none\",\"searchAction\":\"none\"}",
+            "name": "LeftNaviationLayout"
+         },
+         {
+            "value": "{\"communityActions\": \"none\", \"searchAction\":\"none\", \"leftPane\":\"none\"}",
+            "name": "TabbedNavigationLayout"
+         }
+      ]
+   }
+}

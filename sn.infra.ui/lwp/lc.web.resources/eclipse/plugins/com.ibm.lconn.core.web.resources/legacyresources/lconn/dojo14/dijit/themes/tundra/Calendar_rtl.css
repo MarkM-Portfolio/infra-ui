@@ -1,0 +1,10 @@
+/* Copyright IBM Corp. 2015  All Rights Reserved.                    */
+/* Calendar */
+
+.dijitRtl .tundra .dijitCalendarDecrease {
+	background-position: -30px top;
+}
+
+.dijitRtl .tundra .dijitCalendarIncrease {
+	background-position: 0px top;
+}

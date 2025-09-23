@@ -1,0 +1,26 @@
+/* Copyright IBM Corp. 2013, 2015  All Rights Reserved.              */
+
+/* contains overrides to oneui css */
+
+
+
+/*remove one oneui css contains fix for height of webkit thumbnail next/prev links */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.lotusui30 .lotusGallery .lotusThumbnails .lotusNavControl {
+		height: 80px;
+	}
+}
+
+.lotusui30 .lotusGallery .lotusThumbnailScroller {
+	text-align: left;
+}
+
+.lotusui_ie .lotusui30 .lotusGallery .lotusThumbnailStrip {
+	left: auto;
+}
+
+.lotusui_ie .lotusui30 .lotusGallery .lotusThumbnailStrip .lotusThumbnail .lotusThumbOverlay {
+	left: auto;
+}
+*/

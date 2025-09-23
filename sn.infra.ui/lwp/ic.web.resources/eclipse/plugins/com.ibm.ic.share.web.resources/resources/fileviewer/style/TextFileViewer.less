@@ -1,0 +1,75 @@
+.textfileviewer {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+
+   min-height: 48px;
+   padding-bottom: 12px;
+   overflow: scroll;
+   padding: 50px 100px 0;
+
+   /* Override Prism style */
+   pre[class*="language-"] {
+      margin: 0;
+   }
+    
+   .textfileviewer-message {
+      margin-top: 8px;
+      padding: 16px;
+      font-style: italic;
+   }
+
+   .textfileviewer-loading-indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1710;
+
+      div {
+         width: 100px;
+         margin: auto;
+         margin-top: 12px;
+         padding: 12px 24px;
+         text-align: center;
+         background-color: rgba(245, 242, 240, .85);
+         border: 1px solid black;
+      }
+   }
+
+   .textfileviewer-content, .textfileviewer-content code {
+      overflow-y: hidden;
+   }
+
+   // Start by hiding everything
+    
+   .textfileviewer-loading-indicator {
+      visibility: hidden;
+   }
+
+   .textfileviewer-empty-indicator, .textfileviewer-error-indicator, .textfileviewer-content {
+      display: none;
+   }
+
+   // Now selectively show parts
+
+   &.loading-true .textfileviewer-loading-indicator {
+      visibility: visible;
+   }
+
+   &.error-true .textfileviewer-error-indicator {
+      display: inherit;
+   }
+
+   &.error-default, &.error-false {
+      &.textfileviewer-empty .textfileviewer-empty-indicator {
+         display: inherit;
+      }
+
+      &.textfileviewer-nonempty .textfileviewer-content {
+         display: inherit;
+      }
+   }
+}

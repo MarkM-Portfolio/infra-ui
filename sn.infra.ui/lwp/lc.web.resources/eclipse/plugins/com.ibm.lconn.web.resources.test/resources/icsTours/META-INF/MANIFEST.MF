@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Export-Package: com.ibm.pim.ics-tours
+Embed-Directory: lib
+Tool: Bnd-2.4.0.201411031534
+Bundle-Name: ics-tours
+Created-By: 1.7.0 (IBM Corporation)
+Require-Bundle: org.eclipse.core.runtime,org.eclipse.equinox.http.regi
+ stry
+Bundle-Vendor: IBM
+Bundle-Version: 1.0.7
+Bnd-LastModified: 1475603163000
+Bundle-ManifestVersion: 2
+Bundle-Description: ICS Tours framework
+Bundle-SymbolicName: com.ibm.pim.ics-tours
+Embed-StripGroup: true
+Import-Package: javax.servlet;version="[2,4)",javax.servlet.http;versi
+ on="[2,4)"
+

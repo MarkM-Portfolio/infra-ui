@@ -1,0 +1,18 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.              -->
+<div>
+   <div dojoAttachPoint="breadcrumb"
+        id="${id}_nav"
+        class="${classBreadcrumb}"
+        style="display:none;">
+      <div dojoAttachPoint="breadcrumbPrefix" class="${classBreadcrumbPrefix}" tabindex=-1 aria-label="Breadcrumb prefix ${prefix}" title="${prefix}">
+         <span class="bidiAware">${prefix}</span>
+      </div>
+      <div role="toolbar"
+           dojoAttachPoint="breadcrumbDropdownDiv"
+           class=${classBreadcrumbItem}
+           aria-label="Dropdown for hidden breadcrumb"
+           >
+      </div>
+      <div dojoAttachPoint="breadcrumbShownNodes" id="${id}_visible"></div>
+   </div>
+</div>

@@ -1,0 +1,14 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div dojoattachpoint="evArea" style="clear: both">
+	<div dojoattachpoint="evAreaTitle">
+		<a href="javascript:;" dojoAttachPoint="twisty" aria-labelledby="${id}_evidenceTitle"
+				 aria-expanded="false" role="button">
+			<span class="lotusAltText" dojoAttachPoint="twistySymbol" role="presentation"> &gt;</span> 
+			<img class="lotusSprite lotusArrow lotusTwistyClosed" dojoAttachPoint="twistyImg" src="${_blankGif}" role="presentation" alt=""/>
+			<b dojoAttachPoint="evidenceTitle" id="${id}_evidenceTitle"></b>
+		</a>
+	</div>
+	<div style="display: none;" dojoAttachPoint="evSubArea">
+		<span dojoAttachPoint="evList"></span>
+	</div>
+</div>

@@ -1,0 +1,47 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+${script:com.ibm.social.personcard.test.card.TestResourceLink}
+
+${style:com.ibm.oneui/controls/templates/Dialog}
+${style:com.ibm.oneui/controls/templates/HoverPopup}
+${style:com.ibm.oneui/controls/templates/ResourceLink}
+
+<link rel='stylesheet' href='http://rtpgsa.ibm.com/projects/o/oneui/development/OneUI_3.0.x_daily/css_OneUI-3.0.0_20110405-1720/base/core.css' type='text/css' />
+<link rel='stylesheet' href='http://rtpgsa.ibm.com/projects/o/oneui/development/OneUI_3.0.x_daily/css_OneUI-3.0.0_20110405-1720/defaultTheme/defaultTheme.css' type='text/css' />
+<link rel='stylesheet' href='http://rtpgsa.ibm.com/projects/o/oneui/development/OneUI_3.0.x_daily/docResources_OneUI-OneUI-3.0.0_20110405-1720/css/yourProductSprite_defaultTheme.css' type='text/css' />
+
+${endhead}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+<div>
+<a id="link1" href="person.oslccompact">Compact (same domain)</a>
+<script>new com.ibm.oneui.controls.ResourceLink({lazyFetch: true}, dojo.byId('link1'));</script>
+</div>
+<div>
+<a id="link2" href="person_xd.oslccompact">Compact (cross domain)</a>
+<script>new com.ibm.oneui.controls.ResourceLink({lazyFetch: true}, dojo.byId('link2'));</script>
+</div>
+<div>
+<a id="link3" href="person_legacy.oslccompact">Legacy browsers (same domain)</a>
+<script>new com.ibm.oneui.controls.ResourceLink({lazyFetch: true}, dojo.byId('link3'));</script>
+</div>
+
+<div>
+<a id="link4" href="person_title.oslccompact">With title and large</a>
+<script>new com.ibm.oneui.controls.ResourceLink({lazyFetch: true}, dojo.byId('link4'));</script>
+</div>
+
+<div class="lotusRight">
+<a id="link5" href="person_legacy.oslccompact">Legacy browsers (same domain)</a>
+<script>new com.ibm.oneui.controls.ResourceLink({lazyFetch: true}, dojo.byId('link5'));</script>
+</div>
+<div id="output" style="margin-top: 300px;"></div>
+<script>
+</script>
+</div>
+</div>
+</body>
+${end}

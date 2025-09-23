@@ -1,0 +1,118 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2001, 2014                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+/*
+    U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+This CSS was built on August 16 2012. (version: OneUI-3.0.3_20120816-1522)
+this file contains layout style adjustments for dojo widgets
+they override/add to the styles in dijit.css
+companion files: dojo.css / dojoTheme.css
+companion files: dojoRTL.css / dojoThemeRTL.css*/
+
+/******************************/
+
+/*** D O J O   S T Y L E S ****/
+
+/******************************/
+
+.lotusui30 .lotusMenu .lotusTree .dijitTreeRow {
+  margin: 0;
+  padding: 4px 20px;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lotusui30 .lotusMenu .lotusTree .dijitTreeRow.lotusSelected {
+  position: relative;
+  background-color: transparent;
+  color: #292929;
+  margin: 0;
+  padding: 4px 35px 4px 20px;
+  border: 0;
+  border-left: 1px solid #222;
+}
+
+/*** M E N U  T R E E ***/
+
+/* Apply identical styles to dijit tree menus */
+
+.lotusui30 .lotusMenu .lotusTree .dijitTreeRow {
+  margin: 0;
+  padding: 6px 20px 6px 10px;
+  border-width: 0;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.lotusui30 .lotusMenu .lotusTree .dijitTreeRow.lotusSelected {
+  margin: -1px 0;
+  padding-right: 20px;
+  border-width: 1px 0;
+}
+
+.lotusui30 .lotusMenu .lotusTree .dijitTreeRow a {
+  text-decoration: none;
+}
+
+/* Dojo-only menu styles */
+
+.lotusui30 .lotusMenu .lotusTree .dijitTreeRow.lotusSelected a {
+  color: #292929;
+}
+
+.lotusui30 .lotusMenu .lotusTree .lotusSelected .dijitTreeExpando {
+  margin-right: 5px;
+}
+
+.lotusui30 .lotusMenu .lotusTree .dijitTreeIsRoot .dijitTreeRow,
+/* Normal root */
+.lotusui30 .lotusMenu .lotusTree .dijitTreeIsRoot .dijitTreeRow a,
+/* Link root */
+.lotusui30 .lotusMenu .lotusTree .dijitTreeIsRoot .dijitTreeIsRoot .dijitTreeRow,
+/* Visible root when showRoot=false */
+.lotusui30 .lotusMenu .lotusTree .dijitTreeIsRoot .dijitTreeIsRoot .dijitTreeRow a /* Link root when showRoot=false */ {
+  font-weight: bold;
+}
+
+.lotusui30 .lotusMenu .lotusTree .dijitTreeContainer .dijitTreeRow,
+/* Normal child items */
+.lotusui30 .lotusMenu .lotusTree .dijitTreeContainer .dijitTreeRow a,
+/* Link child items */
+.lotusui30 .lotusMenu .lotusTree .dijitTreeIsRoot .dijitTreeIsRoot .dijitTreeContainer .dijitTreeRow,
+/* Visible child items when showRoot=false */
+.lotusui30 .lotusMenu .lotusTree .dijitTreeIsRoot .dijitTreeIsRoot .dijitTreeContainer .dijitTreeRow a /* Link child items when showRoot=false */ {
+  font-weight: normal;
+}
+
+.lotusui30 .lotusMenu .lotusTree .dijitTreeIsRoot .dijitTreeRow,
+.lotusui30 .lotusMenu .lotusTree .dijitTreeIsRoot .dijitTreeRow a,
+.lotusui30 .lotusMenu .lotusTree .dijitTreeIsRoot .dijitTreeIsRoot .dijitTreeRow,
+.lotusui30 .lotusMenu .lotusTree .dijitTreeIsRoot .dijitTreeIsRoot .dijitTreeRow a {
+  font-weight: normal;
+}
+
+
+
+
+
+/*this is what we need to do to target an item that does not have a twistie.*/
+
+
+
+/*.lotusui30 .lotusMenu .lotusTree .dijitTreeRow.dijitTreeRowHover, .lotusui30 .lotusMenu .lotusTree .dijitTreeRow.dijitTreeRowActive { background-color:#e1f4f9; } */
+
+/***********************************************************/
+

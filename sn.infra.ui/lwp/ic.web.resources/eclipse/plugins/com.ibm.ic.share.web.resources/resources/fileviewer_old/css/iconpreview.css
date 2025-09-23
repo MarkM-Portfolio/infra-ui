@@ -1,0 +1,26 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+.ics-viewer .ics-viewer-icon-preview {
+   height: 100%;
+   white-space: nowrap;
+}
+
+.ics-viewer .ics-viewer-icon-preview > div {
+   display: inline-block;
+   background-color: #16181A;
+   vertical-align: middle;
+   padding: 50px 70px;
+   position: relative;
+   top: -10%;
+}
+
+.ics-viewer .ics-viewer-icon-preview > div > div {
+   color: white;
+   font-size: 14px;
+   text-decoration: none;
+}
+
+.ics-viewer .ics-viewer-icon-preview img {
+   margin: 0;
+   margin-bottom: 16px;
+}

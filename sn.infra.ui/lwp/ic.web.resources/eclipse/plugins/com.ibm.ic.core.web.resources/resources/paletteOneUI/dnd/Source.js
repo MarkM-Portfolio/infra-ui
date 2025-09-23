@@ -1,0 +1,65 @@
+define([
+	"dojo",
+	"dojo/_base/declare",
+	"dojo/_base/window",
+	"dojo/dom-class",
+	"dojo/topic",
+	"ic-core/dnd/Source"
+], function (dojo, declare, windowModule, domClass, topic, Source) {
+
+	/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+	
+	 //FIXME: Remove all references to this old name and refactor to new package
+	var Source = declare("lconn.dboard.dnd.Source", Source, {
+	
+	   flagNotHide: false,
+	   isPalette: false,
+	
+	   checkAcceptance: function(source, nodes) {
+	      // summary: overriden to add support for our palette
+	      if (this.isPalette) return false;
+	      else return lconn.dboard.dnd.Source.superclass.checkAcceptance.apply(this, arguments);
+	   },
+	
+	   onDndDrop: function( /* dojo.dnd.Source */ source, /* DOM Node array*/ nodes, /* Boolean */ copy) {
+	      // summary: Overriden method to add support for the palette
+	      // description: If the dragged item has the class "paletteItem":
+	      //            - the event "/lconn/dboard/dropPaletteItem" is published 
+	      //               with the params [dragged item node, dropIndicator node, destination container node]
+	      //               The dropIndicator node can be used to determine the location where to insert a new node for instance
+	      //            - the dnd operation is cancelled
+	      //            For all the other elements:
+	      //            - the event "/lconn/dboard/dnd/drop" is published 
+	      //               with the params [source container node, destination container node, dragged item node]
+	      if (this.containerState == "Over" && domClass.contains(nodes[0], "paletteItem")) {
+	         // palette item dropped on this container
+	         topic.publish("/lconn/dboard/dropPaletteItem", nodes[0], this.dropIndicator, this.node);
+	         this.deleteDropIndicator();
+	         Source.superclass.onDndCancel.call(this);
+	      } else {
+	         // palette item dropped on another target container ==> set a flag to avoid the item to be displayed in onDndCancel()
+	         if (domClass.contains(nodes[0], "paletteItem")) this.flagNotHide = true;
+	
+	         // some processing needed before calling the parent method
+	         var oldCurrent = this.current;
+	         this.current = this.dropIndicator;
+	         lconn.dboard.dnd.Source.superclass.onDndDrop.apply(this, arguments);
+	
+	         this.flagNotHide = false;
+	         this.current = oldCurrent;
+	
+	         // drop any other element (not a palette item)
+	         if (this.containerState == "Over") topic.publish("/lconn/dboard/dnd/drop", source.node, this.node, nodes[0]);
+	      }
+	
+	      // reenable selection as the dnd operation is done
+	      windowModule.body().onselectstart = null;
+	      windowModule.body().unselectable = "off";
+	
+	      // SPR #DMCE79MCDA reset can drop flag
+	      dojo.dnd.manager().canDropFlag = false;
+	   }
+	});
+	
+	return Source;
+});

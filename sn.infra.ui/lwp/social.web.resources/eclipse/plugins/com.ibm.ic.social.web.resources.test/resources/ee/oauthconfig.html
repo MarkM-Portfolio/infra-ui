@@ -1,0 +1,51 @@
+<html>
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+<body><p>${head}
+</p><title>Configure OAuth Testing</title>
+${script:dojo.cookie}
+${script:com.ibm.social.eeconfig.config}
+<script type="text/javascript">
+(function() {
+  function $(id) {
+    return dojo.byId(id);
+  }
+  function updateUI() {
+    var setting = dojo.cookie("_oauthEnabled") || (com.ibm.social.eeconfig.config.useSSO ? "true" : "false");
+    if (setting === "true") {
+       $("notEnabled").style.display = "none";
+       $("isEnabled").style.display = "";
+    }
+    else {
+       $("isEnabled").style.display = "none";
+       $("notEnabled").style.display = "";    
+    }
+  }
+  
+  function initConfig() {
+     updateUI();
+     dojo.connect($("enableOAuth"), "onclick", null, function() {
+        dojo.cookie("_oauthEnabled", "true", { path: "/" });
+        updateUI();
+     });
+     
+     dojo.connect($("disableOAuth"), "onclick", null, function() {
+        dojo.cookie("_oauthEnabled", "false", { path: "/" });
+        updateUI();
+     });
+  }
+    
+  dojo.addOnLoad(initConfig);
+})();
+</script>
+${endhead}
+<div id="notEnabled">
+<h1>OAuth is not enabled</h1>
+<button id="enableOAuth">Enable</button>
+</div>
+<div id="isEnabled" style="display:none">
+<h1>OAuth is enabled</h1>
+<button id="disableOAuth">Disable</button>
+</div>
+
+</body><p>
+${end}</p></html>

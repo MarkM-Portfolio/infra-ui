@@ -1,0 +1,24 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="ics-share-options">
+   <div class="shareOptionsTitle">${title}</div>
+   <div class="panelContent propagation" data-dojo-attach-point="propContent">
+      <input type="checkbox" name="stopPropagation" checked="${defaultCheck}" data-dojo-attach-point="stopPropagation"><span>&nbsp;&nbsp;</span><span>${nls.PROPAGATION}</span><br>
+      <label data-dojo-attach-point="stopPropagationLabel" class="lotusOffScreen"></label>
+   </div>
+
+   <div data-dojo-attach-point="everyoneShareContent">
+      <span data-dojo-attach-point="everyoneShare">${nls.EVERYONE}</span><br>
+   </div>
+   
+   <div data-dojo-attach-point="ownerShareContent">
+      <span data-dojo-attach-point="ownerShare">${nls.OWNER_ONLY}</span><br>
+   </div>
+
+   <div class="panelContent stopShare" data-dojo-attach-point="stopShareContent">
+      <a href="javascript:;" data-dojo-attach-point="stopShare" data-dojo-attach-event="click:_showStopSharePrompt" role="button">${nls.STOP_SHARE}</a>
+   </div>
+
+   <div class="panelContent stopShare" data-dojo-attach-point="makeInternalContent">
+      <a href="javascript:;" data-dojo-attach-point="makeInternal" data-dojo-attach-event="click:_setupInternal" role="button">${nls.MAKE_INTERNAL}</a>
+   </div>
+</div>

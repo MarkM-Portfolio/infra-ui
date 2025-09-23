@@ -1,0 +1,175 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+/* CSS Document */ /*version 1.04.2 2/12/08*/
+/*** C S S   S P R I T E S ***/
+/*these refer to one graphic file that contains many individual graphics
+- individual graphics are positioned using CSS
+- coordinates are x,y coordinates of the image placement within the larger image (with minus sign in front)*/
+.lotusSprite{float:none;display:inline;}
+/*arrows, for dropdowns and twisties*/
+.lotusArrow{margin-right:2px;width:13px;height:18px;background-image:url(./images/arrows.gif);float:left;display:block;background-repeat:no-repeat;}
+.lotusDropDownSprite, .lotusDropDownActionSprite{margin-right:0;padding:1px;display:inline;float:none;text-decoration:none}
+.lotusStatus .lotusArrow{width:11px;height:16px;margin-right:3px;}
+#lotusColLeft .lotusArrow, .lotusColLeft .lotusArrow{width:11px;height:16px}
+.lotusTwistyOpen{background-position:0 0}
+/*arrow sprites*/
+.lotusDraggableSection .lotusTwistyOpen{background-position:-52px 0}
+.lotusTwistyOpen:hover, .lotusTwistyOpen:focus{background-position:-13px 0}
+.lotusTwistyClosed{background-position:-26px 0}
+.lotusDraggableSection .lotusTwistyClosed{background-position:-65px 0}
+.lotusTwistyClosed:hover, .lotusTwistyClosed:focus{background-position:-39px 0}
+/*drop down arrows*/
+.lotusDropDownActionSprite{background-position:-57px -14px}
+.lotusDropDownSprite{background-position:-71px -15px}
+/*status section*/
+.lotusStatus .lotusTwistyOpen{background-position:0 -34px}
+.lotusStatus .lotusTwistyOpen:hover, .lotusStatus .lotusTwistyOpen:focus{background-position:-11px -34px}
+.lotusStatus .lotusTwistyClosed{background-position:-22px -34px}
+.lotusStatus .lotusTwistyClosed:hover, .lotusStatus .lotusTwistyClosed:focus{background-position:-33px -34px}
+/*left column and menu arrows are a little smaller*/
+#lotusColLeft .lotusTwistyOpen, .lotusColLeft .lotusTwistyOpen{background-position:0 -18px}
+#lotusColLeft .lotusTwistyOpen:hover, #lotusColLeft .lotusTwistyOpen:focus, 
+.lotusColLeft .lotusTwistyOpen:hover, .lotusColLeft .lotusTwistyOpen:focus{background-position:-11px -18px}
+#lotusColLeft .lotusTwistyClosed, 
+.lotusColLeft .lotusTwistyClosed{background-position:-22px -18px}
+#lotusColLeft .lotusTwistyClosed:hover, #lotusColLeft .lotusTwistyClosed:focus, 
+.lotusColLeft .lotusTwistyClosed:hover, .lotusColLeft .lotusTwistyClosed:focus{background-position:-33px -18px}
+.lotusTwistyOpenMenu{background-position:-11px -34px}
+.lotusTwistyOpenMenu:hover, .lotusTwistyOpenMenu:focus{background-position:-11px -34px}
+.lotusTwistyClosedMenu{background-position:-22px -34px}
+.lotusTwistyClosedMenu:hover, .lotusTwistyClosedMenu:focus{background-position:-33px -34px}
+
+/*16 pixel icons*/
+.lotusIconSprite{margin:0;padding:0 6px;background-image:url(images/16pxIcons.gif);background-repeat:no-repeat;font-size:1.3em;}
+a.lotusIconSprite:hover{text-decoration:none}
+.lotusFeedback{padding:0 0 4px 16px;font-size:.9em;white-space:nowrap;width:30px}/*used in addition to the lotusIconSprite class for recommendations and comments, where a number is to the right of the icon*/
+/*16 pixel icon sprites*/
+.lotusIconHome{background-position:-16px -16px}
+.lotusIconWidgetClose{background-position:-16px -48px}
+.lotusIconWidgetEdit{background-position:-16px -80px}
+.lotusIconWidgetHelp{background-position:-16px -112px}
+.lotusIconWidgetReload{background-position:-16px -144px}
+
+.lotusIconBlogs{background-position:-48px -16px}
+.lotusIconMAI{background-position:-48px -48px}
+.lotusIconEmail{background-position:-48px -80px}
+.lotusIconExtURL{background-position:-48px -112px}
+.lotusIconMyBlog{background-position:-48px -144px}
+.lotusIconNoRec{margin:0;background-position:-48px -176px}
+.lotusIconSomeRec{margin:0;background-position:-48px -208px}
+
+.lotusIconMoreRec{margin:0;background-position:-80px -16px}
+.lotusIconMostRec{margin:0;background-position:-80px -48px}
+.lotusIconRemoveColleague{background-position:-80px -80px}
+.lotusIconChooseTheme{background-position:-80px -112px}
+.lotusIconVisitor{background-position:-80px -144px}
+.lotusIconComments{background-position:-80px -176px}
+.lotusIconNoComments{background-position:-80px -208px}
+
+.lotusIconAddLink{background-position:-112px -16px}
+.lotusIconAddLinkFolder{background-position:-112px -48px}
+.lotusIconCreateBlog{background-position:-112px -80px}
+.lotusIconDatePicker{background-position:-112px -112px}
+.lotusIconEdit{background-position:-112px -144px}
+.lotusIconEntries{background-position:-112px -176px}
+.lotusIconImportLinks{background-position:-112px -208px}
+
+.lotusIconNewEntry{background-position:-144px -16px}
+.lotusIconPostEntry{background-position:-144px -48px}
+.lotusIconRemove{background-position:-144px -80px}
+.lotusIconSettings{background-position:-144px -112px}
+.lotusIconVisit{background-position:-144px -144px}
+
+.lotusIconProfiles{background-position:-176px -16px}
+.lotusIconExportContact{background-position:-176px -48px}
+.lotusIconViewProfile{background-position:-176px -80px}
+.lotusIconAddToSametime{background-position:-176px -112px}
+.lotusIconAddToActivity{background-position:-176px -144px}
+.lotusIconSendMail{background-position:-176px -176px}
+.lotusIconViewPhotoFull{background-position:-176px -208px}
+
+.lotusIconRotateImg{background-position:-208px -16px}
+.lotusIconTrash{background-position:-208px -48px}
+.lotusIconVCard{background-position:-208px -80px}
+
+.lotusIconBookmarks{background-position:-240px -16px}
+.lotusIconDelete{background-position:-240px -48px}
+.lotusIconIntranet{background-position:-240px -80px}
+.lotusIconSecure{background-position:-240px -112px;}
+.lotusIconPrivate{background-position:-240px -144px;}
+.lotusIconPopup{background-position:-240px -176px;}
+.lotusIconRelatedTags{background-position:-240px -208px;}
+
+.lotusIconCommunities{background-position:-272px -16px}
+.lotusIconCommentArrow{background-position:-272px -48px}
+
+.lotusIconActivity{background-position:-308px -16px}
+.lotusIconTunedOut{background-position:-308px -48px}
+.lotusIconMediumPriority{background-position:-308px -80px}
+.lotusIconHighPriority{background-position:-308px -112px}
+.lotusIconActivityTemplate{background-position:-308px -144px}
+.lotusIconFavActTemp{background-position:-308px -176px}
+.lotusIconRelateActivity{background-position:-308px -208px}
+
+.lotusIconTodo{background-position:-340px -16px}
+.lotusIconMessage{background-position:-340px -48px}
+.lotusIconMailMsg{background-position:-340px -80px}
+.lotusIconBookmark{background-position:-340px -112px}
+.lotusIconFile{background-position:-340px -144px}
+.lotusIconQuickr{background-position:-340px -176px}
+.lotusIconNotes{background-position:-340px -208px}
+
+.lotusIconFileGeneric{background-position:-372px -16px}
+.lotusIconArchiveFile{background-position:-372px -48px}
+.lotusIconSpreadsheet{background-position:-372px -80px}
+.lotusIconPresentation{background-position:-372px -112px}
+.lotusIconImage{background-position:-372px -144px}
+.lotusIconTextDoc{background-position:-372px -176px}
+.lotusIconVideo{background-position:-372px -208px}
+
+.lotusIconAudio{background-position:-404px -16px}
+.lotusIconProperty{background-position:-404px -48px}
+.lotusIconTextProp{background-position:-404px -80px}
+.lotusIconMembershipChange{background-position:-404px -112px}
+
+.lotusIconCompleted{background-position:-436px -16px}
+.lotusIconActivityHome{background-position:-436px -48px}
+.lotusIconTodoList{background-position:-436px -80px}
+.lotusIconChat{background-position:-436px -112px}
+
+.lotusIconFeed{background-position:-468px -16px}
+.lotusIconInfo{background-position:-468px -48px}
+.lotusIconError{background-position:-468px -80px}
+.lotusIconHelp{background-position:-468px -112px}
+.lotusIconTags{background-position:-468px -144px}
+.lotusIconPrint{background-position:-468px -176px}
+
+/*view controls*/
+.lotusView{margin:0;padding:0;width:20px;height:20px;background-image:url(images/views.gif);float:left;display:block;}
+/*view control sprites*/
+.lotusListOff {background-position:-2px -52px}
+.lotusListOff:hover, lotusListOff:focus{background-position:-27px -52px}
+.lotusListOn {background-position:-52px -52px}
+.lotusDetailsOff {background-position:-2px -77px}
+.lotusDetailsOff:hover, .lotusDetailsOff:focus {background-position:-27px -77px}
+.lotusDetailsOn {background-position:-52px -77px}
+.lotusDetailsOn:hover, .lotusDetailsOn: {background-position:-52px -77px}
+.lotusTreeOff {background-position: -2px -2px;}
+.lotusTreeOff:hover, .lotusTreeOff:focus {background-position: -27px -2px;}
+.lotusTreeOn {background-position: -52px -2px;}
+.lotusTileOff {background-position: -2px -27px;}
+.lotusTileOff:hover, .lotusTileOff:hover {background-position: -27px -27px;}
+.lotusTileOn {background-position: -52px -27px;}
+.lotusFolderOff {background-position: -2px -102px;}
+.lotusFolderOff:hover, .lotusTileOff:hover {background-position: -27px -102px;}
+.lotusFolderOn {background-position: -52px -102px;}
+/***********************************************************/
+
+/*style overrides for One UI*/
+.lotusDiscussion .lotusCommentArrow{float:none;margin-top:0}
+.lotusHeader .lotusIconSprite{margin:0 7px;}
+.lotusSection h2 .lotusIconSprite{margin:0}
+.lotusMenu ul.lotusIcons span{margin-right:3px;}
+.lotusStatus div .lotusIconSprite{margin-right:3px;}
+
+

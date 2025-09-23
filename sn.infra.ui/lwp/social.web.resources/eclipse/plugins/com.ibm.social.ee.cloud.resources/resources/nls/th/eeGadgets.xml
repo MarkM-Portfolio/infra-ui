@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">การเชื่อมต่อ</msg>
+  <msg name="connectionsEE_description">แกดเก็จ Experience OpenSocial ที่ฝังไว้ถูกใช้เพื่อแสดงรายละเอยีดเพิ่มเติมและแอ็คชันสำหรับเหตุการณ์เชื่อมต่อ</msg>
+  <msg name="connectionsEE_errorTitle">Error</msg>
+  <msg name="connectionsEE_errorDescription">เนื้อหานี้ไม่ได้รับการอนุมัติโดยองค์กรของคุณและไม่พร้อมใช้งาน โปรดติดต่อผู้ดูแลระบบองค์กรของคุณเพื่อเปิดใช้งานส่วนขยาย</msg>
+</messagebundle>

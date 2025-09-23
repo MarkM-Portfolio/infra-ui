@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>IBM Connections - File upload (Dojo 1.9)</title>
+${endhead}
+    <div class="lotusFrame">
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <form class="lotusForm2" id="theform">
+                    <!-- error summary -->
+                    <div id="errorSummary" class="lotusMessage2" role="alert" style="display:none;">
+                        <img class="lotusIcon lotusIconMsgError" src="${_blankGif}" alt="Error" /><span class="lotusAltText">Error:</span>
+                        <div class="lotusMessageBody">You must choose a file</div>
+                    </div>
+                    
+                    <!-- form header (use a div instead of a header tag if you aren't using html5) -->
+                    <header class="lotusFormTitle">
+                        <h1 class="lotusHeading" aria-describedby="formDesc">Multipart form post</h1>
+                        <div id="formDesc" class="lotusMeta">
+                            <p>
+                            This page posts a multipart form using <code>dojo/request/iframe</code>. Inspect the module <code>lconn.test.upload.iframe</code> for details.
+                            Note we have to require the AMD module using its non-AMD alias <code>lconn.test</code>, i.e. <code>require(['lconn.test/upload/iframe'], callback)</code>.
+                            </p>
+                        </div>
+                    </header>
+                    
+                    <!-- form body -->
+                    <div class="lotusFormBody">
+
+                    <div class="lotusFormField">
+                        <label for="the_file"><span class="lotusFormRequired" title="Required field">*</span>Pick a file:</label>
+                        <div class="lotusFieldWrapper"><input type="file" id="the_file" /></div>
+                    </div>
+                    
+                    </div>
+                    
+                    <!-- form footer -->    
+                    <div class="lotusFormFooter">
+                        <button class="lotusBtn" onclick="return validate(this.form, send)">Send</button>
+                    </div>
+                </form>
+                <h2>Output</h2>
+                <div id="output"></div>
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        // Note we must define <code>netJazzAjaxConfig</code> when using AMD require()
+        var netJazzAjaxConfig = {
+            base: "http://localhost:52450",
+            skipStyles: true,
+            params: "etag=20131214.222614&lang=en"
+        }; 
+        
+        djConfig.parseOnLoad=true;
+        
+        function validate(form, callback) {
+            if (dojo.filter(dojo.query('.lotusFormRequired', form), function(el) {
+                return !dojo.byId(dojo.attr(el.parentNode, 'for')).value;
+            }).length > 0)
+                dojo.style('errorSummary', 'display', '');
+            else {
+                dojo.style('errorSummary', 'display', 'none');
+                callback();
+            }
+            return false;
+        }
+        
+        function send() {
+            // Note we have to require the AMD module using its non-AMD alias lconn.test
+            require(['lconn.test/upload/iframe'], function(iframe){
+                var i = 0;
+                iframe("",{
+                    form: "theform",
+                    handleAs: "xml"
+                }, function(data){
+                    dojo.place("<p>data: <code>Done</code></p>", "output");
+                });
+            });
+        }
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:net.jazz.ajax.xdloader}
+    ${script:lconn.test.upload.iframe}
+</body>
+</html>

@@ -1,0 +1,9 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.otherVoting12-VoteAccepted12{width:12px;height:12px;background-position:0 0}
+.otherVoting12-VoteNotRequired12{width:12px;height:12px;background-position:0 -20px}
+.otherVoting12-VoteRejected12{width:12px;height:12px;background-position:0 -40px}
+.otherVoting12-VoteUnknown12{width:12px;height:12px;background-position:0 -60px}
+.otherVoting12-VoteUnknown12-ar{width:12px;height:12px;background-position:0 -80px}
+
+.otherVoting12{background-image:url('./otherVoting12-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .otherVoting12{display:none}

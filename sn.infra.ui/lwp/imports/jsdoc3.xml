@@ -1,0 +1,59 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2013, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<project name="jsdoc3">
+	<property name="jsdoc.task.jar"   value="${basedir}/../imports/jsdoc3-ant-task-1.0.jar"/>
+	<property name="jsdoc.version"    value="3.2.0"/>
+	<property name="jsdoc.zip"        value="jsdoc-${jsdoc.version}.zip"/>
+	<!-- Set to true to launch Rhino in debug mode -->
+	<property name="rhino.debug"      value="false"/>
+	<property name="skip.jsdoc"       value="true"/>
+	<property name="jsdoc.output.dir" value="/tmp/jsdoc"/>
+
+	<!-- Use the task that forks Rhino in a child process -->
+	<!--taskdef name="jsdoc3" classname="net.jannon.ant.tasks.JsDoc3" classpath="${jsdoc3-task-jar}:${rhino-jar}"/-->
+	<taskdef name="jsdoc3" classname="net.jannon.ant.tasks.JsDoc3Fork" classpath="${jsdoc.task.jar}:${rhino.jar}"/>
+
+	<target name="copy_jsdoc_resources" unless="${skip.jsdoc}">
+		<property name="jsdoc.home" value="${dir.tmpout}/jsdoc-${jsdoc.version}"/>
+		
+		<echo>Copying JSDoc3 resources</echo>
+		<collector componentName="prereqs.sn/jsdoc3" groupList="default" verbose="${verbose}" overrideDest="false" includeDependencies="false"
+			recurseDependencies="false" usePreferredInstallLocation="false" type="zip" platform="all" toDir="${dir.tmpout}" />
+		<unzip src="${dir.tmpout}/${jsdoc.zip}" dest="${dir.tmpout}" />
+		<collector componentName="prereqs.sn/jsdoc3" groupList="default" verbose="${verbose}" overrideDest="true" includeDependencies="false"
+			recurseDependencies="false" usePreferredInstallLocation="false" type="dir" platform="all" toDir="${jsdoc.home}" />
+	</target>
+
+	<target name="run_jsdoc" depends="copy_jsdoc_resources" unless="${skip.jsdoc}">
+		<property name="jsdoc.home" value="${dir.tmpout}/jsdoc-${jsdoc.version}"/>
+		<property name="docs.dir"   value="${dir.build}/jsdoc"/>
+		<property name="rhino.jar"  value="${jsdoc.home}/rhino/js.jar"/>
+		<echo>Generating documentation for ${src.dir}</echo>
+		<jsdoc3 jsdochome="${jsdoc.home}" debug="${rhino.debug}" to="${docs.dir}/${docs.topic.dir}" dir="${src.dir}" recurse="true" private="true" encoding="utf-8">
+			<arg line="-c ${jsdoc.home}/conf.json.ics"/>
+			<arg line="--verbose"/>
+			<arg line="-t ${jsdoc.home}/templates/ics"/>
+		</jsdoc3>
+	</target>
+	
+	<!-- Override in your component -->
+	<target name="generate_jsdoc" />
+	
+	<target name="collect_jsdoc">
+		<mkdir dir="${jsdoc.output.dir}" />
+		<collector componentName="${ant.project.name}" groupList="to_jsdoc" verbose="${verbose}" overrideDest="yes" includeDependencies="false"
+			recurseDependencies="false" usePreferredInstallLocation="false" type="dir" platform="all" toDir="${dir.build}/../jsdoc" />
+	</target>
+</project>
+

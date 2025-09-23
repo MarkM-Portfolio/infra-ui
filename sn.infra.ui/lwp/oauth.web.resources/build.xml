@@ -1,0 +1,87 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="oauth.web.resources" default="development" basedir=".">
+   <!-- Import helpers for property builds, do not change -->
+   <locateComponent component="prereqs.web.resources" property="eclipseBuildDir" locateBuildDir="false"/>
+   <import file="${eclipseBuildDir}/build_utils.xml" />
+
+	<locateComponent component="prereqs.sn/jsdoc3" property="jsdoc.basedir" locateBuildDir="false"/>
+	<import file="${jsdoc.basedir}/jsdoc3.xml" />
+
+	<locateComponent component="prereqs.sn/jslint4java" property="jslint.basedir" locateBuildDir="false"/>
+	<import file="${jslint.basedir}/jslint.xml" />
+
+	<import file="${env.WPLC_IMPORT}/pde_build.xml"/>
+
+	<locateComponent component="prereqs.sn/ant-contrib" property="ant-contrib.basedir" locateBuildDir="false"/>
+	<taskdef name="for_each" classname="net.sf.antcontrib.logic.ForEach" classpath="${ant-contrib.basedir}/ant-contrib-1.0b3.jar" />
+
+	<import file="${basedir}/../imports/jscover.xml" />
+	<property name="jscover.bundles" value="com.ibm.ic.oauth.web.resources,com.ibm.lconn.oauth.web.resources" />
+
+	<target name="custom_init" depends="instrument-for-jscover">
+		<reuseExistingProperties unique="_x1" 
+			component="lc.oauth/provider.web" 
+			toBundle="com.ibm.lconn.oauth.web.resources"
+			fromJar="lib/lc.oauth.provider.web.jar">
+			<includes><include name="com/ibm/lconn/oauth/strings/*.properties" /></includes>
+		</reuseExistingProperties>
+
+		<reuseExistingProperties unique="_x2" 
+			component="lc.oauth/provider.web" 
+			toBundle="com.ibm.ic.oauth.web.resources"
+			fromJar="lib/lc.oauth.provider.web.jar">
+			<includes><include name="com/ibm/lconn/oauth/strings/*.properties" /></includes>
+		</reuseExistingProperties>
+   </target>
+
+	<target name="custom_complete" depends="generate_jsdoc" />
+
+	<target name="run_jslint">
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.lconn.oauth.web.resources/resources/" />
+			<param name="jslint.outfile" value="jslint.lconn.oauth.out" />
+			<param name="jslint.halt" value="true"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.oauth.web.resources/resources/" />
+			<param name="jslint.outfile" value="jslint.ic-oauth.out" />
+			<param name="jslint.halt" value="true"/>
+			<param name="jslint.excludes" value="**/nls/**/*.js"/>
+		</antcall>
+		<antcall target="jslint">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.oauth.web.resources.test/resources/" />
+			<param name="jslint.outfile" value="jslint.ic-oauth-test.out" />
+			<param name="jslint.halt" value="true"/>
+		</antcall>
+	</target>
+	
+	<target name="generate_jsdoc">
+		<mkdir dir="${dir.build}/jsdoc"/>
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.lconn.oauth.web.resources/resources/" />
+			<param name="docs.topic.dir" value="lconn.oauth" />
+		</antcall>
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.oauth.web.resources/resources/" />
+			<param name="docs.topic.dir" value="ic-oauth" />
+		</antcall>
+		<antcall target="run_jsdoc">
+			<param name="src.dir" value="${basedir}/eclipse/plugins/com.ibm.ic.oauth.web.resources.test/resources/" />
+			<param name="docs.topic.dir" value="ic-oauth-test" />
+		</antcall>
+	</target>
+</project>

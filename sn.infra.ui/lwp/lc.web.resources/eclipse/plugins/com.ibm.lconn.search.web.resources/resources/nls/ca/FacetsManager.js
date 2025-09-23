@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+({
+	"CLOSE_HELP_DATE":"Tanca l'ajuda de dates",
+	"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Tanca l'ajuda de Tipus de document",
+	"CLOSE_HELP_PERSON":"Tanca l'Ajuda de persones",
+	"CLOSE_HELP_TAG":"Tanca l'Ajuda l'etiquetes",
+	"CLOSE_HELP_TREND":"Tanca l'ajuda de tendència",
+	"COLLAPSE_DATE":"Reduïu el filtre de dates",
+	"COLLAPSE_ECM_DOCUMENT_TYPE":"Reduïu el filtre de tipus de document",
+	"COLLAPSE_PERSON":"Reduïu el filtre de persones",
+	"COLLAPSE_TAG":"Reduïu el filtre d'etiquetes",
+	"COLLAPSE_TREND":"Reduïu el filtre de tendències",
+	"DESCRIPTION_DATE":"Per visualitzar els resultats creats o actualitzats en un moment determinat, expandiu la fletxeta i filtreu la informació per any i mes.",
+	"DESCRIPTION_ECM_DOCUMENT_TYPE":"Un tipus de document és una paraula clau a la qual s'hi assigna fitxers perquè sigui més fàcil de trobar. Feu clic a un tipus de document per visualitzar els resultats de cerca als quals s'ha assignat la paraula clau en qüestió.",
+	"DESCRIPTION_PERSON":"Visualitza les persones associades amb els resultats de cerca. Feu clic a un nom per visualitzar els resultats de cerca associats amb una persona específica.",
+	"DESCRIPTION_TAG":"Una etiqueta és una paraula clau que assigneu a contingut o persones per facilitar-ne la cerca. Feu clic a una etiqueta per visualitzar els resultats de cerca als quals s'ha assignat la paraula clau en qüestió.",
+	"DESCRIPTION_TREND":"Una tendència és una paraula clau que genera el sistema per facilitar la cerca a les actualitzacions d'estat. Feu clic a una tendència per mostrar els resultats de cerca amb la paraula clau assignada.",
+	"EXPAND_DATE":"Expandiu el filtre de dates",
+	"EXPAND_ECM_DOCUMENT_TYPE":"Amplieu el filtre de tipus de document",
+	"EXPAND_PERSON":"Expandiu el filtre de persones",
+	"EXPAND_TAG":"Expandiu el filtre d'etiquetes",
+	"EXPAND_TREND":"Expandiu el filtre de tendències",
+	"HELP_DATE":"Ajuda de dates",
+	"HELP_ECM_DOCUMENT_TYPE":"Ajuda de Tipus de document",
+	"HELP_PERSON":"Ajuda de persones",
+	"HELP_TAG":"Ajuda d'etiqueta",
+	"HELP_TREND":"Ajuda de tendència",
+	"NO_DATE_CONTENT":"Les dates no estan disponibles en aquests moments",
+	"NO_ECM_DOCUMENT_TYPE_CONTENT":"Els tipus de documents no estan disponibles en aquests moments",
+	"NO_PERSON_CONTENT":"Les persones no estan disponibles en aquests moments",
+	"NO_TAG_CONTENT":"Les etiquetes no estan disponibles en aquests moments",
+	"NO_TREND_CONTENT":"Les tendències no estan disponibles en aquests moments",
+	"TITLE_DATE":"Dates",
+	"TITLE_ECM_DOCUMENT_TYPE":"Tipus de document",
+	"TITLE_PERSON":"Persones",
+	"TITLE_TAG":"Etiquetes",
+	"TITLE_TREND":"Tendència"
+})
+

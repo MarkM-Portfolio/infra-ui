@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+({
+	"CLOSE_HELP_DATE":"日付のヘルプを閉じる",
+	"CLOSE_HELP_ECM_DOCUMENT_TYPE":"文書タイプのヘルプを閉じる",
+	"CLOSE_HELP_PERSON":"ユーザーのヘルプを閉じる",
+	"CLOSE_HELP_TAG":"タグのヘルプを閉じる",
+	"CLOSE_HELP_TREND":"トレンドのヘルプを閉じる",
+	"COLLAPSE_DATE":"日付フィルターを省略表示する",
+	"COLLAPSE_ECM_DOCUMENT_TYPE":"文書タイプ・フィルターを省略表示する",
+	"COLLAPSE_PERSON":"ユーザー・フィルターを省略表示する",
+	"COLLAPSE_TAG":"タグ・フィルターを省略表示する",
+	"COLLAPSE_TREND":"トレンド・フィルターを省略表示する",
+	"DESCRIPTION_DATE":"特定の時刻に作成または更新された結果を表示するには、三角アイコンを展開し、情報を年と月でフィルターに掛けます。",
+	"DESCRIPTION_ECM_DOCUMENT_TYPE":"文書タイプは、ファイルをより簡単に検索するためにファイルに割り当てるキーワードです。 そのキーワードが割り当てられた検索結果を表示するには、文書タイプをクリックします。",
+	"DESCRIPTION_PERSON":"検索結果に関連付けられているユーザーを表示します。 名前をクリックすると、特定のユーザーに関連付けられた検索結果が表示されます。",
+	"DESCRIPTION_TAG":"タグは、コンテンツまたはユーザーを見つけやすくするために、それらに割り当てるキーワードです。 そのキーワードが割り当てられた検索結果を表示するには、タグをクリックします。",
+	"DESCRIPTION_TREND":"トレンドは、システムによって生成されるキーワードで、最新の状況内で簡単に検索を行えるようになります。 トレンドをクリックすると、そのキーワードが割り当てられた検索結果が表示されます。",
+	"EXPAND_DATE":"日付フィルターを展開する",
+	"EXPAND_ECM_DOCUMENT_TYPE":"文書タイプ・フィルターを展開する",
+	"EXPAND_PERSON":"ユーザー・フィルターを展開する",
+	"EXPAND_TAG":"タグ・フィルターを展開する",
+	"EXPAND_TREND":"トレンド・フィルターを展開する",
+	"HELP_DATE":"日付のヘルプ",
+	"HELP_ECM_DOCUMENT_TYPE":"文書タイプのヘルプ",
+	"HELP_PERSON":"ユーザーのヘルプ",
+	"HELP_TAG":"タグのヘルプ",
+	"HELP_TREND":"トレンドのヘルプ",
+	"NO_DATE_CONTENT":"日付は現在使用できません",
+	"NO_ECM_DOCUMENT_TYPE_CONTENT":"文書タイプは現在使用できません",
+	"NO_PERSON_CONTENT":"ユーザーは現在使用できません",
+	"NO_TAG_CONTENT":"タグは現在使用できません",
+	"NO_TREND_CONTENT":"トレンドは現在使用できません",
+	"TITLE_DATE":"日付",
+	"TITLE_ECM_DOCUMENT_TYPE":"文書タイプ",
+	"TITLE_PERSON":"ユーザー",
+	"TITLE_TAG":"タグ",
+	"TITLE_TREND":"トレンド"
+})
+

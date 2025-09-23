@@ -1,0 +1,236 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2009, 2015                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+(function() {
+dojo.provide("lconn.core.LanguageSelector");
+
+dojo.require("dojo.cookie");
+
+dojo.require("dijit.Menu");
+dojo.require("dijit._Widget");
+
+dojo.require("lconn.core.MenuUtility");
+dojo.require("lconn.core.Res");
+dojo.require("lconn.core.url");
+
+var BROWSER_DETERMINED = "BD";
+
+/**
+ * Validates the JSON string for languages. If the string includes BD and another language only,
+ * the language selector should not appear. This is in fact the argument passed when a single language
+ * is forced through LotusConnections-config.xml
+ * @returns {boolean} true if the JSON allows a valid selection
+ */
+
+function validateJSON(jsonString) {
+   var total = 0;
+   for (var prop in jsonString) {
+      if (jsonString.hasOwnProperty(prop)) {
+         switch (prop) {
+         case BROWSER_DETERMINED:
+            break;
+         default:
+            total++;
+         }
+      }
+   }
+   return total > 1;
+}
+
+/**
+ * @class lconn.core.LanguageSelector
+ */
+dojo.declare("lconn.core.LanguageSelector", null, /** @lends lconn.core.LanguageSelector.prototype */ {
+   _jsonString: null,
+   _selectorNode: null,
+   _menu: null,
+   _cookieProperties: null,
+
+   COOKIE_NAME: null,
+
+   constructor: function(selectorNode, jsonString, cookieName, cookieProperties) {
+      this._selectorNode = selectorNode;
+      this._jsonString = jsonString;
+      this._cookieProperties = cookieProperties;
+      this.id = this._selectorNode.id;
+      this.COOKIE_NAME = lconn.core.LanguageSelector.COOKIE_NAME = cookieName;
+      if (validateJSON(jsonString)) {
+         this._setSelectorLabel();
+         dojo.connect(this._selectorNode, "onclick", dojo.hitch(this, "_openMenu"));
+      }
+   },
+
+   _openMenu: function(evt) {
+      try {
+         this._buildLanguageMenu();
+         this._attachLanguageMenu(this.id);
+
+         // FIXME: still needed?
+         // Clear existing style attributes on dijitPopup div
+         // Causing conflict with placement of languageSelector
+//         var dd = dojo.query(".dijitPopup");
+//         for (var i = 0; i < dd.length; i++) {
+//            if (dd[i].id.indexOf("_dropdown") != -1) {
+//               dojo.removeAttr(dd[i], "style");
+//            }
+//         }
+
+         menuUtility.openMenu(null, this._menu.id, this._selectorNode);
+         dojo.stopEvent(evt);
+      } catch (e) {
+         console.log(e);
+      }
+   },
+
+   _setSelectorLabel: function() {
+      var languageKey = dojo.cookie(this.COOKIE_NAME);
+
+      var res = new lconn.core.Res();
+      res.loadDefaultBundle();
+      this.strBundle = res.resBundle;
+
+      var img = ' <img alt="" role="presentation" src="' + dijit._Widget.prototype._blankGif + '"  class="lotusArrow lotusDropDownSprite"><span class="lotusAltText">&#9660;</span>';
+      // TODO: nls
+      var span = '<span class="lotusAccess">Language Selector</span>';
+
+      if (languageKey) {
+         // Default to "Custom language"
+         var bestMatchLength = 0;
+         var label = this.strBundle.rs_customLangaugeLinkLabel + span + img;
+         for (var key in this._jsonString) {
+            if (this._isCodeEqual(key, languageKey)) {
+               // If this matches exactly, update the label and stop
+               label = this._jsonString[key] + span + img;
+               break;
+            } else if (this._isCodeEqualOrMoreSpecific(key, languageKey) && key.length > bestMatchLength) {
+               // If this matches generally, update the label
+               label = this._jsonString[key] + span + img;
+               bestMatchLength = key.length;
+            }
+         }
+         this._selectorNode.innerHTML = label;
+      } else {
+         // TODO: should never get here if server side logic sets the cookie correctly
+         this._selectorNode.innerHTML = this.strBundle.rs_customLangaugeLinkLabel + span + img;
+      }
+   },
+
+   _attachLanguageMenu: function(id) {
+      var parentNode = dojo.byId(id);
+      dijit.setWaiState(parentNode, "owns", id + "_popup");
+   },
+
+   _buildLanguageMenu: function() {
+      if (this._menu == null) {
+         var showBrowserSetting = true;
+
+         this._menu = new dijit.Menu({
+            "class": "lotusNavMenu",
+            id: this.id + "_popup"
+         });
+
+         for (var key in this._jsonString) {
+            if (key != BROWSER_DETERMINED) this._menu.addChild(this._buildMenuItem(this._jsonString[key], key));
+            else showBrowserSetting = false;
+         }
+
+         var res = new lconn.core.Res();
+         res.loadDefaultBundle();
+         this.strBundle = res.resBundle;
+
+         if (showBrowserSetting) this._menu.addChild(this._buildMenuItem(this.strBundle.rs_browser_setting, BROWSER_DETERMINED));
+
+         this._menu.domNode.style.display = "none";
+         dojo.body().appendChild(this._menu.domNode);
+
+         var that = this;
+
+         dojo.connect(this._menu, "onItemClick", function(item) {
+            if ((item != null) && (typeof item.language != "undefined")) {
+
+               dojo.cookie(that.COOKIE_NAME, item.language, that._cookieProperties);
+
+               // override any lang param in the URL before we reload
+               var currentUrl = null;
+               var forwardElement = document.getElementById('REFRESH_URL');
+               if (forwardElement) {
+                  currentUrl = forwardElement.getAttribute('href');
+               }
+               if (!currentUrl) {
+                  currentUrl = window.location.href;
+               }
+
+               // If they've chosen BD (browser-determined), we actually remove the locale from the URL
+               var newLang = item.language;
+               if (newLang == BROWSER_DETERMINED || !newLang) {
+                  newLang = null;
+               }
+
+               var url = lconn.core.url.parse(currentUrl);
+               if (newLang == null && url.queryParameters.lang == null) {
+                  /*
+                  The current url doesn't have a lang parameter, and we're switching to browser-determined locale, so we won't be adding a lang parameter
+                  The only way to reload the page and use the updated cookie is to force a refresh
+                  NOTE: This could cause browser warnings if the current page was generated by a POST request
+                  */
+                  window.location.reload(true);
+               } else {
+                  window.location = lconn.core.url.rewrite(currentUrl, {
+                     lang: newLang
+                  });
+               }
+            }
+         });
+      }
+   },
+
+   _buildMenuItem: function(label, language) {
+      var item = new dijit.MenuItem({
+         label: label,
+         iconClass: "lotusHidden" // Hide icon space in drop down
+      });
+      item.attr('lang', language);
+      item.language = language;
+      return item;
+   },
+
+   _isCodeEqualOrMoreSpecific: function(lang01, lang02) {
+      var str1 = lang01.toLowerCase().replace(/-/, "_");
+      var str2 = lang02.toLowerCase().replace(/-/, "_");
+
+      if (str1 == str2) return true;
+
+      var fuzzyMatch = str1.length > 0 && str2.indexOf(str1 + "_") == 0;
+      if (fuzzyMatch) {
+         var disallow = {
+            zh: "zh_tw",
+            // zh and zh_tw should be considered different languages
+            pt: "pt_br" // pt and pt_br should be considered different languages
+         };
+
+         if (disallow[str1] == str2) return false;
+         else return true;
+      }
+
+      return false;
+   },
+
+   _isCodeEqual: function(lang01, lang02) {
+      var str1 = lang01.toLowerCase().replace(/-/, "_");
+      var str2 = lang02.toLowerCase().replace(/-/, "_");
+      return str1 === str2;
+   }
+});
+
+})();

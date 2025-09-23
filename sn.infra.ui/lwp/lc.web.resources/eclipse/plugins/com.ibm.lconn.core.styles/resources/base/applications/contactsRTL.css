@@ -1,0 +1,97 @@
+/* Copyright IBM Corp. 2013, 2015  All Rights Reserved.              */
+@import url(../../contacts.css);
+
+.lotusui30 .scImport .lotusMenu .lotusAction{
+   margin-right: 30px;
+}
+
+.scdirectory .lotusFloatContent,
+.sc .dijitMenuPopup .lotusActionMenu .dijitMenuItem{
+   text-align: right;
+}
+
+.sc .scSearchInput{border: 0px;margin-right:8px; width:100%;text-overflow:ellipsis;}
+
+
+.sc .profileDataTable .lotusText{width:276px;}
+.sc .scSceneBody .profileDataTable .scFieldTable .yearMonthDayPicker .yearInput{width: 36%;}
+.sc .scSceneBody .profileDataTable .scFieldTable .yearMonthDayPicker .daySelect{width: 26%;}
+.sc .scEditButton{left:5px;right:auto;}
+.sc .dropDown .dijitComboBox{width:271px;border: 1px solid #CCCCCC; padding-left: 5px !important;}
+.sc .dijitTextBox .dijitInputField {
+   width: 83%;
+}
+/*
+Add !important to workround connections css defect 89266
+*/
+.sc .scFieldTable td {
+   text-align: right;
+}
+.sc ul.editRow  li {
+   float: right;
+}
+.sc .scSceneBody .lotusInlinelist li.lotusFirst{
+   width: 84%;
+}
+.sc .scSceneBody .profileFields .lotusInlinelist li.lotusFirst + li{
+   margin-left: 20px;
+   min-width:146px;
+}
+.sc .scSceneBody .profileFields .lotusInlinelist li.lotusFirst.iconNode{
+   margin-left: 0;
+   margin-right: 5px;
+}
+.sccontact{
+   float: right;
+}
+
+/*overwrite others styles like package3.css/common.css/gen4.css*/
+.sc.lotusui30 .lotusTitleBar h2,
+.sc .scFieldList li{
+   float: right;
+}
+.lotusui30 div.lotusTitleBar .lotusSearch{
+}
+.lotusui30 .profileFields .scFieldTable .lotusHidden{
+   display: none;
+}
+.lotusui30 .lotusMessage2 .lotusDelete img{
+   float: left;
+}
+/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
+
+.scdirectory .lotusFloatContent {
+   text-align: right;
+}
+.sc .lotusColRight .lotusSection .lotusArrow{
+   float: left;
+}
+.sc .scSceneBody .lotusFirst div.scBidiMessage{
+   width: 200px;
+   height: 100%;
+   position: relative;
+   top: -18px;
+   right: 69px;
+}
+.sc .scSceneBody .lotusFirst div.scBidiMessage > div{
+   padding: 5px;
+   height: 60%;
+   border: 1px solid rgb(102, 102, 102);
+   box-shadow: -3px 3px 4px rgb(153, 153, 153);
+}
+.sc .scSceneBody .lotusFirst div.scBidiMessage s{
+   border-style: solid solid solid solid;
+   border-width: 10px;
+   position: absolute;
+   right: -20px;
+   top: 6px;
+   border-color: transparent transparent transparent rgb(0, 0, 0);
+}
+.sc .scSceneBody .lotusFirst div.scBidiMessage i{
+   border-color: transparent transparent transparent rgb(255, 255, 255);
+   border-style: dashed solid;
+   border-width: 10px;
+   position: absolute;
+   top: 6px;
+   right: -19px;
+}

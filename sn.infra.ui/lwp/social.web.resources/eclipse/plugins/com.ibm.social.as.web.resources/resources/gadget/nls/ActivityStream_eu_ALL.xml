@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015, 2016  All Rights Reserved.                    -->
+<messagebundle>
+  <msg name="as_title">Berriak</msg>
+  <msg name="as_description">IBM Connections gunearen berriak</msg>
+  <msg name="as_error">Errorea gertatu da berri-korronteren konfigurazioan. Jarri harremanetan administratzailearekin.</msg>
+</messagebundle>

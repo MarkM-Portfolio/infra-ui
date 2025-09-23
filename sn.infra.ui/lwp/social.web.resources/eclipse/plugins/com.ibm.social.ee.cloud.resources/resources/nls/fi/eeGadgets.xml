@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Sisäisen käytön OpenSocial-gadget-komponentti, jonka avulla järjestelmä esittää Connections-tapahtumien lisätietoja ja -toimintoja.</msg>
+  <msg name="connectionsEE_errorTitle">Virhe</msg>
+  <msg name="connectionsEE_errorDescription">Organisaatiosi ei ole hyväksynyt tätä sisältöä, ja sisältö ei ole käytettävissä. Ota yhteys organisaatiosi pääkäyttäjään ja pyydä häntä ottamaan laajennus käyttöön.</msg>
+</messagebundle>

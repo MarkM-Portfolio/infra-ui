@@ -1,0 +1,140 @@
+/* Copyright IBM Corp. 2014, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	UPDATED_BY: "${author}(e)k eguneratua",
+	PREVIEW_MODE_ONLY: "(Aurrebista-modua soilik)",
+	
+	//Community
+	COMMUNITY_VIEWED_TODAY: "Gaur ikusitako komunitatea",
+	COMMUNITY_VIEWED_YESTERDAY: "Atzo ikusitako komunitatea",
+	COMMUNITY_VIEWED_HOURS_AGO: "Duela ${hours} ordu ikusitako komunitatea",
+	COMMUNITY_VIEWED_MINUTES_AGO: "Duela ${minutes} minutu ikusitako komunitatea",
+	COMMUNITY_VIEWED_SECONDS_AGO: "Duela ${seconds} segundo ikusitako komunitatea",
+	COMMUNITY_VIEWED_1_HOUR_AGO: "Duela ordubete ikusitako komunitatea",
+	COMMUNITY_VIEWED_1_MINUTE_AGO: "Duela minutu bat ikusitako komunitatea",
+	COMMUNITY_VIEWED_1_SECOND_AGO: "Duela segundo bat ikusitako komunitatea",
+	COMMUNITY_VIEWED_AT_DATE: "${date}(e)(a)n ikusitako komunitatea",
+	
+	//File
+	FILE_VIEWED_TODAY: "Gaur ikusitako fitxategia",
+	FILE_VIEWED_YESTERDAY: "Atzo ikusitako fitxategia",
+	FILE_VIEWED_HOURS_AGO: "Duela ${hours} ordu ikusitako fitxategia",
+	FILE_VIEWED_MINUTES_AGO: "Duela ${minutes} minutu ikusitako fitxategia",
+	FILE_VIEWED_SECONDS_AGO: "Duela ${seconds} segundo ikusitako fitxategia",
+	FILE_VIEWED_1_HOUR_AGO: "Duela ordubete ikusitako fitxategia",
+	FILE_VIEWED_1_MINUTE_AGO: "Duela minutu bat ikusitako fitxategia",
+	FILE_VIEWED_1_SECOND_AGO: "Duela segundo bat ikusitako fitxategia",
+	FILE_VIEWED_AT_DATE: "${date}(e)(a)n ikusitako fitxategia",
+	
+	//Profile
+	PROFILE_VIEWED_TODAY: "Gaur ikusitako profila",
+	PROFILE_VIEWED_YESTERDAY: "Atzo ikusitako profila",
+	PROFILE_VIEWED_HOURS_AGO: "Duela ${hours} ordu ikusitako profila",
+	PROFILE_VIEWED_MINUTES_AGO: "Duela ${minutes} minutu ikusitako profila",
+	PROFILE_VIEWED_SECONDS_AGO: "Duela ${seconds} segundo ikusitako profila",
+	PROFILE_VIEWED_1_HOUR_AGO: "Duela ordubete ikusitako profila",
+	PROFILE_VIEWED_1_MINUTE_AGO: "Duela minutu bat ikusitako profila",
+	PROFILE_VIEWED_1_SECOND_AGO: "Duela segundo bat ikusitako profila",
+	PROFILE_VIEWED_AT_DATE: "${date}(e)(a)n ikusitako profila",
+	
+	//Activity
+	ACTIVITY_VIEWED_TODAY: "Gaur ikusitako jarduera",
+	ACTIVITY_VIEWED_YESTERDAY: "Atzo ikusitako jarduera",
+	ACTIVITY_VIEWED_HOURS_AGO: "Duela ${hours} ordu ikusitako jarduera",
+	ACTIVITY_VIEWED_MINUTES_AGO: "Duela ${minutes} minutu ikusitako jarduera",
+	ACTIVITY_VIEWED_SECONDS_AGO: "Duela ${seconds} segundo ikusitako jarduera",
+	ACTIVITY_VIEWED_1_HOUR_AGO: "Duela ordubete ikusitako jarduera",
+	ACTIVITY_VIEWED_1_MINUTE_AGO: "Duela minutu bat ikusitako jarduera",
+	ACTIVITY_VIEWED_1_SECOND_AGO: "Duela segundo bat ikusitako jarduera",
+	ACTIVITY_VIEWED_AT_DATE: "${date}(e)(a)n ikusitako jarduera",
+	
+	//Bookmark
+	BOOKMARK_VIEWED_TODAY: "Gaur ikusitako laster-marka",
+	BOOKMARK_VIEWED_YESTERDAY: "Atzo ikusitako laster-marka",
+	BOOKMARK_VIEWED_HOURS_AGO: "Duela ${hours} ordu ikusitako laster-marka",
+	BOOKMARK_VIEWED_MINUTES_AGO: "Duela ${minutes} minutu ikusitako laster-marka",
+	BOOKMARK_VIEWED_SECONDS_AGO: "Duela ${seconds} segundo ikusitako laster-marka",
+	BOOKMARK_VIEWED_1_HOUR_AGO: "Duela ordubete ikusitako laster-marka",
+	BOOKMARK_VIEWED_1_MINUTE_AGO: "Duela minutu bat ikusitako laster-marka",
+	BOOKMARK_VIEWED_1_SECOND_AGO: "Duela segundo bat ikusitako laster-marka",
+	BOOKMARK_VIEWED_AT_DATE: "${date}(e)(a)n ikusitako laster-marka",
+	
+	//Blog
+	BLOG_VIEWED_TODAY: "Gaur ikusitako bloga",
+	BLOG_VIEWED_YESTERDAY: "Atzo ikusitako bloga",
+	BLOG_VIEWED_HOURS_AGO: "Duela ${hours} ordu ikusitako bloga",
+	BLOG_VIEWED_MINUTES_AGO: "Duela ${minutes} minutu ikusitako bloga",
+	BLOG_VIEWED_SECONDS_AGO: "Duela ${seconds} segundo ikusitako bloga",
+	BLOG_VIEWED_1_HOUR_AGO: "Duela ordubete ikusitako bloga",
+	BLOG_VIEWED_1_MINUTE_AGO: "Duela minutu bat ikusitako bloga",
+	BLOG_VIEWED_1_SECOND_AGO: "Duela segundo bat ikusitako bloga",
+	BLOG_VIEWED_AT_DATE: "${date}(e)(a)n ikusitako bloga",
+	
+	//Forum
+	FORUM_VIEWED_TODAY: "Gaur ikusitako foroa",
+	FORUM_VIEWED_YESTERDAY: "Atzo ikusitako foroa",
+	FORUM_VIEWED_HOURS_AGO: "Duela ${hours} ordu ikusitako foroa",
+	FORUM_VIEWED_MINUTES_AGO: "Duela ${minutes} minutu ikusitako foroa",
+	FORUM_VIEWED_SECONDS_AGO: "Duela ${seconds} segundo ikusitako foroa",
+	FORUM_VIEWED_1_HOUR_AGO: "Duela ordubete ikusitako foroa",
+	FORUM_VIEWED_1_MINUTE_AGO: "Duela minutu bat ikusitako foroa",
+	FORUM_VIEWED_1_SECOND_AGO: "Duela segundo bat ikusitako foroa",
+	FORUM_VIEWED_AT_DATE: "${date}(e)(a)n ikusitako foroa",
+	
+	//Wiki
+	WIKI_VIEWED_TODAY: "Gaur ikusitako wikia",
+	WIKI_VIEWED_YESTERDAY: "Atzo ikusitako wikia",
+	WIKI_VIEWED_HOURS_AGO: "Duela ${hours} ordu ikusitako wikia",
+	WIKI_VIEWED_MINUTES_AGO: "Duela ${minutes} minutu ikusitako wikia",
+	WIKI_VIEWED_SECONDS_AGO: "Duela ${seconds} segundo ikusitako wikia",
+	WIKI_VIEWED_1_HOUR_AGO: "Duela ordubete ikusitako wikia",
+	WIKI_VIEWED_1_MINUTE_AGO: "Duela minutu bat ikusitako wikia",
+	WIKI_VIEWED_1_SECOND_AGO: "Duela segundo bat ikusitako wikia",
+	WIKI_VIEWED_AT_DATE: "${date}(e)(a)n ikusitako wikia",
+
+	//Event
+	EVENT_VIEWED_TODAY: "Gaur ikusitako gertakaria",
+	EVENT_VIEWED_YESTERDAY: "Atzo ikusitako gertakaria",
+	EVENT_VIEWED_HOURS_AGO: "Duela ${hours} ordu ikusitako gertakaria",
+	EVENT_VIEWED_MINUTES_AGO: "Duela ${minutes} minutu ikusitako gertakaria",
+	EVENT_VIEWED_SECONDS_AGO: "Duela ${seconds} segundo ikusitako gertakaria",
+	EVENT_VIEWED_1_HOUR_AGO: "Duela ordu 1 ikusitako gertakaria",
+	EVENT_VIEWED_1_MINUTE_AGO: "Duela minutu 1 ikusitako gertakaria",
+	EVENT_VIEWED_1_SECOND_AGO: "Duela segundo 1 ikusitako gertakaria",
+	EVENT_VIEWED_AT_DATE: "${date}(e)an ikusitako gertakaria",
+	
+	//To Do
+	TODO_VIEWED_TODAY: "Gaur ikusitako egitekoak",
+	TODO_VIEWED_YESTERDAY: "Atzo ikusitako egitekoa",
+	TODO_VIEWED_HOURS_AGO: "Duela ${hours} ordu ikusitako egitekoa",
+	TODO_VIEWED_MINUTES_AGO: "Duela ${minutes} minutu ikusitako egitekoa",
+	TODO_VIEWED_SECONDS_AGO: "Duela ${seconds} segundo ikusitako egitekoa",
+	TODO_VIEWED_1_HOUR_AGO: "Duela ordubete ikusitako egitekoa",
+	TODO_VIEWED_1_MINUTE_AGO: "Duela minutu bat ikusitako egitekoa",
+	TODO_VIEWED_1_SECOND_AGO: "Duela segundo bat ikusitako egitekoa",
+	TODO_VIEWED_AT_DATE: "${date}(e)(a)n ikusitako egitekoa",
+	
+	//Survey
+	SURVEY_VIEWED_TODAY: "Gaur ikusitako inkesta",
+	SURVEY_VIEWED_YESTERDAY: "Atzo ikusitako inkesta",
+	SURVEY_VIEWED_HOURS_AGO: "Duela ${hours} ordu ikusitako inkesta",
+	SURVEY_VIEWED_MINUTES_AGO: "Duela ${minutes} minutu ikusitako inkesta",
+	SURVEY_VIEWED_SECONDS_AGO: "Duela ${seconds} segundo ikusitako inkesta",
+	SURVEY_VIEWED_1_HOUR_AGO: "Duela ordu 1 ikusitako inkesta",
+	SURVEY_VIEWED_1_MINUTE_AGO: "Duela minutu 1 ikusitako inkesta",
+	SURVEY_VIEWED_1_SECOND_AGO: "Duela segundo 1 ikusitako inkesta",
+	SURVEY_VIEWED_AT_DATE: "${date}(e)(a)n ikusitako inkesta",
+	
+	//Survey
+	GENERIC_VIEWED_TODAY: "Gaur ikusia",
+	GENERIC_VIEWED_YESTERDAY: "Atzo ikusia",
+	GENERIC_VIEWED_HOURS_AGO: "Duela ${hours} ordu ikusia",
+	GENERIC_VIEWED_MINUTES_AGO: "Duela ${minutes} minutu ikusia",
+	GENERIC_VIEWED_SECONDS_AGO: "Duela ${seconds} segundo ikusia",
+	GENERIC_VIEWED_1_HOUR_AGO: "Duela ordu 1 ikusia",
+	GENERIC_VIEWED_1_MINUTE_AGO: "Duela minutu 1 ikusia",
+	GENERIC_VIEWED_1_SECOND_AGO: "Duela segundo 1 ikusia",
+	GENERIC_VIEWED_AT_DATE: "${date}(e)(a)n ikusia"
+})
+

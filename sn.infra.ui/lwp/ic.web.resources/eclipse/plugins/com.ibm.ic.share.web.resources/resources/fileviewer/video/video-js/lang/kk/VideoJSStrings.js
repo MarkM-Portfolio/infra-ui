@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "kk",
+      "Play": "Ойнату",
+      "Pause": "Пауза",
+      "Current Time": "Ағымдағы уақыт",
+      "Duration Time": "Жиілік уақыты",
+      "Remaining Time": "Қалған уақыт",
+      "Stream Type": "Жол түрі",
+      "LIVE": "ТІРІ",
+      "Loaded": "Жүктелді",
+      "Progress": "Үрдіс",
+      "Fullscreen": "Толық экран",
+      "Non-Fullscreen": "Толық экран жоқ",
+      "Mute": "Дыбысты өшіру",
+      "Unmute": "Дыбысты қосу",
+      "Unmuted": "Дыбысы қосылды",
+      "Playback Rate": "Ойнату жиілігі",
+      "Subtitles": "Субтитрлар",
+      "subtitles off": "субтитрлар өшірілді",
+      "Captions": "Тақырыптар",
+      "captions off": "тақырыптар өшірілді",
+      "Chapters": "Бөлімдер",
+      "Volume": "Дауыс",
+      "You aborted the video playback.": "Бейне ойнатуын тоқтаттыңыз",
+      "A network error caused the video download to fail part-way.": "Желі қателігі бейненің жүктелуіне жарты жолда әсер етті.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "Бейне жүктелмейді, не сервер, не желі қателігінен немесе пішіні қолдауға ие болмайды.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "Бейнені ойнату зақымдану мәселесіне байланысты үзілді немесе бейне сіздің шолғышыңыз қолдамайтын мүмкіндіктерді қолданды.",
+      "No compatible source was found for this video.": "Бұл бейне үшін сыйысымды қайнар көз жоқ."
+});
+

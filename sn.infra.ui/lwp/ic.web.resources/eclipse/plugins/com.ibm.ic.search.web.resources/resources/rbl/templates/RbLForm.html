@@ -1,0 +1,40 @@
+<div>
+	<form name="requestMembershipForm" action="${formAction}" method="${formMethod}" class="lotusForm" enctype="multipart/form-data" data-dojo-attach-point="requestMembershipForm">
+		<input type="hidden" name="dangerousurlnonce" value="${dangerousUrlNonce}">
+		<input type="hidden" name="uuid" value="${commUuid}" data-dojo-attach-point="commUuidField">
+		<table class="lotusFormTable" cellspacing="2" cellpadding="2" role="presentation">
+			<tr>
+				<td>
+					<h2>${REQUEST_MEMBERSHIP} ${commName}</h2>
+				</td>
+			</tr>
+			<tr style="display: none;" data-dojo-attach-point="descriptionNode">
+				<td class="lotusFormFieldRow" style="padding-bottom: 10px;">
+					<div>${commDescription}</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="lotusFormFieldRow" style="border-color: #aaaaaa !important; border-style: solid !important; border-width: 1px 0 0 !important; padding: 15px 3px 0 !important">
+					<div id="${id}_membershipRequestBodyLabel">${!REQUEST_INSTRUCTIONS}</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="lotusFormFieldRow">
+					<span data-dojo-attach-point="editorContainer">
+						<div tabindex="-1" data-dojo-attach-point="membershipRequestBodyDiv">
+							<div aria-describedby="${id}_membershipRequestBodyLabel" data-dojo-attach-point="membershipRequestBody"></div>
+						</div>
+						<div tabindex="-1" style="height: 2px; width: 10px;" data-dojo-attach-point="postRteFocusPlaceholderReqMem"></div>
+						<input type="hidden" name="body" data-dojo-attach-point="formBody">
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="lotusFormFieldFooter">
+					<input type="submit" class="lotusFormButton" name="${SEND}" value="${SEND}" data-dojo-attach-point="reqMemSubmit">&nbsp;
+					<input type="button" class="lotusFormButton" name="${CANCEL}" value="${CANCEL}" data-dojo-attach-point="reqMemCancel">
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>

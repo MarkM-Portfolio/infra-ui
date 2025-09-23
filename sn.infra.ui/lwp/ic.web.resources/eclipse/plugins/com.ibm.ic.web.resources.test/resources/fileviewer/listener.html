@@ -1,0 +1,58 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+
+${head}
+
+<title>File viewer launcher</title>
+
+
+<script>
+dojoConfig.parseOnLoad=true;
+
+</script>
+${script:dojo/parser}
+${script:net.jazz.ajax.xdloader}
+<script>
+    // Declare your custom scripts here
+    var gatekeeperConfig = {
+          'fileviewer-everywhere' : true
+    };
+</script>
+<!--  add your custom modules here -->
+${script:ic-ui/util/fileViewerListener}
+
+
+<style>
+/* Add your custom styles here */
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-test/fileviewer/index.html?render=test">File Viewer</a>
+    <span class="lotusDivider">&gt;</span>
+    Click Listener
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain">
+<div class="lotusContent">
+<h1>Click Listener</h1>
+<dl>
+    <!--  Update the module ID -->
+    <dt>Module ID: <code>ic-ui/util/fileViewerListener</code></dt>
+    <!--  Update the JSDoc page URL -->
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/">JSDoc</a></dd>
+</dl>
+<div>
+    <h3>Links to files</h3>
+    <ul>
+    <li><a href="/files/app#/file/a0bd2831-5567-4dd3-8cbd-71d644cfc83d">File summary page</a></li>
+    </ul>
+</div>
+</div>
+</div>
+</body>
+${end}

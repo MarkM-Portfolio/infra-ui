@@ -1,0 +1,141 @@
+${html_begin}
+${head_begin}
+
+${dojoMainScript}
+${icBaseStyle}
+${icSpritesStyle}
+${icThemeStyle}
+
+<script>
+var lang = "en";
+var search = window.location.search.match("lang=([a-zA-Z\\d-_]*)");
+if (search) {
+   lang = search[1];
+}
+
+var search = window.location.search.match("theme=([a-zA-Z\\d-_]*)");
+if (search) {
+   window.themeId = search[1];
+}
+
+document.write("<link rel='stylesheet' type='text/css' href='../css/box${cssRTL}.css'>");
+if(window.themeId){
+   if(window.themeId == "hikari"){
+      document.write("<link rel='stylesheet' type='text/css' href='../css/hikari/box${cssRTL}.css'>");
+   }else if(window.themeId == "gen4"){
+      document.write("<link rel='stylesheet' type='text/css' href='../css/gen4/box${cssRTL}.css'>");
+   }
+}
+
+</script>
+<script type="text/javascript" src="/connections/resources/web/lconn.urlwidget/api/UWidget.js"></script>
+<script type="text/javascript" src="https://app.box.com/js/static/select.js"></script>
+<script>
+
+   var logPrefix = "[lconn.box.comunity.home.html]";
+   var app = null;
+
+   document.addEventListener("DOMContentLoaded", function(event) {
+   
+      require(["dojo",
+	      "dojo/dom",
+	      "dojo/dom-style",
+	      "ic-core/theme",
+	      "ic-extension-box/community/app",
+	      "dojo/dom-class", 
+	      "dojo/domReady!"
+      ], function(dojo, djDom, djDomStyle, icTheme, BoxApp, domClass) {
+      
+      console.debug(logPrefix + " DOMContentLoaded listener ");
+      
+      var htmlNode = document.getElementsByTagName("html")[0];
+      htmlNode.className += " lconnBox";
+      
+      var bodyElem = window.parent.document.getElementsByTagName("body")[0];
+      isAlly = domClass.contains(bodyElem, "dijit_a11y");
+      var mainElem = djDom.byId("main"); 
+      if (isAlly) {
+         domClass.add(mainElem, "lotusImagesOff");
+      }
+      else {
+         domClass.remove(mainElem, "lotusImagesOff");
+      } 
+      
+      if (UWidget) {
+         UWidget.getContext(function(context) {
+            var mainNode = djDom.byId("main");
+            if (context.mode == "fullpage") {
+               domClass.add(dojo.body(), "fullpage");
+            
+               if (context.widgetMaxHeight)
+                  djDomStyle.set(mainNode, "height", context.widgetMaxHeight);
+               else if (context.widgetAttributes.fullpageHeight)
+                  djDomStyle.set(mainNode, "height", context.widgetAttributes.fullpageHeight);
+            }
+            else {
+               domClass.remove(dojo.body(), "fullpage");
+            }
+            
+            app = new BoxApp(context, mainNode, {
+              clientId: context.widgetAttributes.clientId,
+              linkType: "shared",
+              multiselect: "false"
+            }); // Should pass some information like mode, user role, 
+            
+            app.startup();
+         }, UWidget);
+         
+	      UWidget.addWidgetEventListener("onview", function(data) {
+            domClass.remove(dojo.body(), "fullpage");
+
+            if (app)
+	           app.startup();
+	           
+	      }, window);
+	
+	      UWidget.addWidgetEventListener("onedit", function(data) {
+            domClass.remove(dojo.body(), "fullpage");
+
+            if (app)
+	           app.chooseFolder();
+	         
+	      }, window);
+	
+	      UWidget.addWidgetEventListener("onfullpage", function(data) {
+            domClass.add(dojo.body(), "fullpage");
+	         
+	         if (app) {
+	            app.startup();
+	            app.resize(data);    
+	         }
+	              
+	      }, window);
+	      
+	      UWidget.addWidgetEventListener("onresize", function(data) {
+	        if (app)
+	           app.resize(data);         
+	      }, window);
+      } 
+      else {
+         console.error("UWidget doesn't exist");
+      }
+      
+      
+   });
+});
+
+</script>
+${head_end}
+
+${body_begin}
+   <div id="loadingMessage"></div>
+
+   <div id="main" style="overflow:hidden" class="lotusContent">
+	   <div id="msg_container" ></div>
+	   <div id="content_containter" class="lconnContentContainer" style="height:100%"></div>
+	   <div id="first_config_container" class="lconnFirstConfigContainer"></div>
+	   <div id="update_config_container" class="lconnUpdateConfigContainer"></div>
+	   <div id="footer_container" class="lconnFooter"></div>
+   </div>
+${body_end}
+${html_end}

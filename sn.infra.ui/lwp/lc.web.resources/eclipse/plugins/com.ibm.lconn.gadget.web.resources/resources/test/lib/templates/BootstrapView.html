@@ -1,0 +1,17 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div style="width: 520px; height: 800px; border-style: solid; border-color: black; padding: 5px 5px 5px 5px;">
+	<div>
+		<h3>Render Preview</h3>
+	</div>
+	<div dojoType="dijit.layout.StackContainer" dojoAttachPoint="viewContainer" style="width: 100%; height: 100%;" >
+		<div dojoType="dijit.layout.ContentPane" title="EE Rendering |"  dojoAttachPoint="eeBootstrapPanel">
+			<div dojoAttachPoint="eeBootstrap" dojoType="com.ibm.lconn.gadget.test.lib.BootstrapEE"></div>
+		</div>
+		<div dojoType="dijit.layout.ContentPane" title="Share Dialog Rendering |" disabled="true" dojoAttachPoint="shareBootstrapPanel">
+			<div dojoAttachPoint="shareBootstrap" dojoType="com.ibm.lconn.gadget.test.lib.BootstrapShare"></div>
+		</div>
+		<div dojoType="dijit.layout.ContentPane" title="Homepage Rendering" disabled="true" dojoAttachPoint="homepageBootstrapPanel">
+			<div dojoAttachPoint="homepageBootstrap" dojoType="com.ibm.lconn.gadget.test.lib.BootstrapHomepage"></div>
+		</div>
+    </div>
+</div>

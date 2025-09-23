@@ -1,0 +1,175 @@
+/* ***************************************************************** */
+/*                                                                   */
+/* IBM Confidential                                                  */
+/*                                                                   */
+/* OCO Source Materials                                              */
+/*                                                                   */
+/* Copyright IBM Corp. 2012, 2014                                    */
+/*                                                                   */
+/* The source code for this program is not published or otherwise    */
+/* divested of its trade secrets, irrespective of what has been      */
+/* deposited with the U.S. Copyright Office.                         */
+/*                                                                   */
+/* ***************************************************************** */
+
+@import '../colors';
+
+	$icBlack: #222;
+	
+.lotusui30 {
+	div.lotusHeader.lconnSearchHeader {
+		margin-bottom: 4px;
+	}
+	.lotusContent .lotusSearch {
+		.lotusText {
+			border: 0;
+			padding-top: 4px;
+			padding-right: 0;
+			padding-bottom: 3px;
+			padding-left: 9px;
+			background: none;
+			color: #666;
+			width: 99%;
+			
+			&:focus {
+				color: $icBlack;
+			}
+		}
+		.lotusLayout {
+			td {
+				width: 100%;
+			}
+			
+			border: 1px solid #ccc;
+			background: #fff;
+			@include border-radius(15px);
+			width: 100%;
+		}
+		.lotusSearchButton {
+			opacity: 0.4;
+			filter: alpha(opacity = 40);
+		}
+		.lotusBtnImg {
+			border: 0;
+			margin-top: 1px;
+			margin-bottom: 4px;
+			margin-left: 1px;
+			margin-right: 5px;
+			background: none;
+			padding: 1px;
+		}
+	}
+	.lotusTitleBar .lotusSearch .lotusText:active {
+		color: $icBlack;
+	}
+	.lotusSuggestion {
+		margin-top: 12px;
+	}
+	.lotusColLeft {
+		ul.lotusYearTree ul.lotusMonthTree {
+			list-style: none;
+		}
+		ul.lotusMonthTree li.lotusMonthEntry {
+			list-style: none;
+			padding-left: 60px;
+		}
+	}
+	.lconnFacet .lotusInlinelist.lotusActions {
+		margin-right: -20px;
+	}
+	.lconnSearchResults .lconnPromotedStatusUpdatesContainer .lotusTable {
+		&, td {
+			border-color:#ccc;
+		}
+	}
+}
+
+form#advancedSearchForm1 {
+	.lotusText {
+		width: 22em;
+	}
+	strong {
+		text-decoration: underline;
+	}
+}
+
+.lconnSearchPageSection {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 20px
+}
+
+.lconnSearchColumn {
+	padding-left: 10px;
+}
+
+.lconnSearchColumnItem {
+	padding-top: 0.5em;
+}
+
+.lconnSearchInputContainer {
+	padding:15px;
+	padding-bottom: 0px
+}
+
+.lotusSuggestion.lotusMessage span {
+	margin-left: 0px;
+	display: inline;
+}
+.lconnSearchResults {
+	.searchComponentCategory .lotusMeta {
+		color: black;
+	}
+	.lotusDim {
+		opacity: 0.5;
+		filter: alpha(opacity = 50);
+	}
+	a:visited {
+		color: #551a8b;
+	}
+}
+
+#datebin ul.lotusYearTree {
+	list-style: none;
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+ul.lotusYearTree li.lotusYearEntry {
+	list-style: none;
+	margin-bottom: 2px;
+	margin-top: 2px;
+}
+
+.lconnFacet .lotusArrow {
+	margin-left: 12px;
+}
+
+/*overrides inline styles*/
+#filtersContainer, #searchFilters > div {
+	border-width: 0 !important;
+}
+
+.search-global-search-restyle .lotusui30 .icSearchResultsPage {
+	.lconnSearchHeader .lotusSearch {
+		border-bottom-color: $action-color;
+		
+		.icSubmitSearch {
+			background-color: $action-color;
+		}
+	}
+	div.lconnSearchResults .lotusTable tr:hover {
+		border-left-color: $action-color;
+	}
+	.lconnSearchHeader .lotusSearch .icSearchInputBox input,
+	.lconnSearchResults .icPagination .icSelected,
+	div.lconnSearchResults .lotusTable tr:hover .icSearchTitle a,
+	.lotusTable tr:hover:not(.icLastPageMessage) .lotusMeta,
+	.lotusTable tr:hover .lotusMeta .icGreyText,
+	div.lconnSearchResults .lotusTable tr:hover .icSearchDetails a,
+	.lconnSearchResults .lotusTable tr:hover .lconnSearchBookmarkUrl,
+	div.lconnSearchResults .lotusTable tr:hover .lconnStatusUpdateTitle .lotusPerson,
+	div.lconnSearchResults .lotusTable tr:hover .lconnStatusUpdateTitle .icStatusUpdate,
+	div.lconnSearchResults .lconnSearchBookmarkUrl {
+		color: $action-color;
+	}
+}

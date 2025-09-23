@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!-- ***************************************************************** -->
+<feature
+      id="com.ibm.lconn.web.resources.feature"
+      label="Web Resources"
+      version="3.0.0.qualifier"
+      provider-name="IBM">
+
+   <description url="http://www.example.com/description">
+      This feature includes the PDE mantis example.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="com.ibm.lconn.core.styles"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="com.ibm.lconn.core.styles.test"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
+         id="com.ibm.lotuslive.theme"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.ajax.auth.web.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.mm.web.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.lconn.core.web.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+	
+   <plugin
+         id="com.ibm.lconn.osgi.servletbridge"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="com.ibm.lconn.bookmarklet.web.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="com.ibm.lconn.communityactivities.web.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+		 
+   <plugin
+         id="com.ibm.lconn.sand.web.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+	
+	<plugin
+         id="com.ibm.lconn.search.web.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+   <plugin
+         id="com.ibm.lconn.share.web.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.social.layout.web.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false" />
+
+   <plugin
+         id="com.ibm.lconn.layout.web.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false" />
+
+   <plugin
+         id="com.ibm.social.personcard.web.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false" />
+
+   <plugin
+         id="com.ibm.lconn.personcard.web.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false" />
+		 
+	<plugin
+         id="com.ibm.lconn.gadget.web.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false" />
+		 
+	<plugin
+         id="com.ibm.lconn.web.resources.test"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false" />
+         
+    <plugin
+         id="com.ibm.lconn.share.web.resources.test"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false" />
+         
+
+   <plugin
+         id="com.ibm.lconn.highway.web.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+
+   <plugin
+         id="com.ibm.lconn.search.web.resources.test"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+
+</feature>

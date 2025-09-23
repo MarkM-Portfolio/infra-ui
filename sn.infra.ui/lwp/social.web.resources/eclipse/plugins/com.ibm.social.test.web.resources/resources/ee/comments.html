@@ -1,0 +1,195 @@
+${head}
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<title>Show More Datastore Test</title>
+${script:lconn.core.config.services}
+${script:com.ibm.social.ee.test.ds.TestDsTotalKnown}
+${script:com.ibm.social.ee.test.ds.TestDsTotalNotKnown}
+${script:com.ibm.social.ee.data.ShowMoreDataStore}
+
+<script>
+(function () {
+   
+   var data;
+   var currentSize;
+   var itemsList;
+   var dsCountAvail;
+   var dsCountUnavail;
+   var dsShowMoreCountAvail;
+   var dsShowMoreCountUnavail;
+   var startIndex = 0;
+   var resultsUl;
+   var messagesDiv;
+   var hasMore = false;
+   
+   function generateData (size) {
+      var data = [];
+      for (var i = 0; i < size; i++) {
+         var item = { id: (i+1) + "_" + (new Date()).getTime(), name: "item " + (i+1), date: new Date() };
+         data.push(item);
+         /*
+         var start = (new Date()).getTime();
+         do {
+            var now = (new Date()).getTime();
+            if (now - start > 100)
+               break;            
+         } while (true);
+         */
+      }
+      return data;
+   }
+   
+   function deleteItem (item, li) {
+      dojo.destroy(li);
+      data.splice(dojo.indexOf(data, item), 1);
+   }
+   
+   function appendItems (link) {
+      var span = dojo.create("div", { }, link, "after");
+      dojo.create("label", { innerHTML: "Enter number of items: " }, span);
+      var input = dojo.create("input", { type: "text", value:"5" }, span);
+      var btn = dojo.create("button", { innerHTML: "Create" }, span);
+      var btn2 = dojo.create("button", { innerHTML: "Cancel" }, span);
+      dojo.connect(btn2, "onclick", null, function() {
+         dojo.destroy(span);
+      });
+      var conn = dojo.connect(btn, "onclick", null, function () {
+         var nItems = parseInt(input.value);
+         var ul = itemsList;
+         for (var i = 0; i < nItems; i++) {
+            var ndx = currentSize + i + 1;
+            var item = { id: ndx + "_" + (new Date()).getTime(), name: "item " + ndx, date: (new Date()) };
+            data.push(item);
+            var li = dojo.create("li", { }, ul);
+            dojo.create("span", { innerHTML: "item id=" + item.id + ", name=" + item.name + ", date: " + item.date + " " }, li);
+            var a = dojo.create("a", { innerHTML: "Delete", href:"javascript:;", className: "lotusLink"}, li);
+            dojo.connect(a, "onclick", null, dojo.hitch(null, deleteItem, item, li));
+         }
+         currentSize += nItems;
+         dojo.disconnect(conn);
+         dojo.destroy(span);
+      });
+   }
+   
+   function displayData (items) {
+      var dsData = dojo.byId("dsData");
+      dojo.empty(dsData);
+      var ul = itemsList = dojo.create("ul", { }, dsData);
+      for (var i = 0; i < data.length; i++) {
+         var li = dojo.create("li", { }, ul);
+         dojo.create("span", { innerHTML: "item id=" + data[i].id + ", name=" + data[i].name + ", date:" + data[i].date + " " }, li);
+         var a = dojo.create("a", { innerHTML: "Delete", href:"javascript:;", className: "lotusLink"}, li);
+         dojo.connect(a, "onclick", null, dojo.hitch(null, deleteItem, data[i], li));
+      }
+      var a = dojo.create("a", { innerHTML: "Append...", href:"javascript:;" }, dsData);
+      dojo.connect(a, "onclick", null, dojo.hitch(null, appendItems, a));
+   }
+
+   dojo.addOnLoad(function() {
+      dojo.config.debugAtAllCosts=true;
+      dojo.connect(dojo.byId("generateDs"), "onclick", null, function () {
+         var dsSize = parseInt(dojo.byId("dsSize").value);
+         data = generateData (dsSize);
+         currentSize = dsSize;      
+         var dsCountAvail = new com.ibm.social.ee.test.ds.TestDsTotalKnown(data);
+         dsShowMoreCountAvail = new com.ibm.social.ee.data.ShowMoreDataStore({ ds: dsCountAvail, countAvailable: true, dateAttr: "date", idAttr: "id" });
+         displayData(data);
+         dojo.byId("dsTest").style.display = "";
+         dojo.empty(dojo.byId("dsResults"));
+         startIndex = 0;
+         resultsUl = null;
+         messagesDiv = null;
+         if (dsSize > 0)
+            hasMore = true;
+         dojo.byId("currentIndex").innerHTML = "" + startIndex;
+      });
+      
+      dojo.connect(dojo.byId("showMore"), "onclick", null, function () {
+         if (!hasMore) {
+            alert("There is no more");
+         }
+         var ds = dsShowMoreCountAvail;
+         var start = startIndex;         
+         var descending = true;
+         var sort = [ { attributeName: "id",  descending: descending}];
+         var results = dojo.byId("dsResults");        
+         if (!resultsUl) {
+            resultsUl = dojo.create("ul", { }, results);
+         }
+         if (!messagesDiv) {
+            messagesDiv = dojo.create("div", { }, results);
+         }
+         var count = dojo.query("li", resultsUl).length ? 10 : 5; // Show 5 initially, then 10
+         
+         dojo.empty(messagesDiv);
+         
+         
+         ds.fetch ({
+            start: start,
+            count: count,
+            sort: sort,
+            onBegin: function (count, request) {
+               dojo.create("span", { innerHTML: "Total results: " + count + ", hasMore: " + request.hasMore + ", skipCount: " + ds.skipCount }, messagesDiv);
+               hasMore = request.hasMore;
+            },
+            onComplete: function (items, request) {
+               startIndex += items.length;
+               dojo.byId("currentIndex").innerHTML = "" + startIndex;
+               for (var i = 0; i < items.length; i++) {
+                  var item = items[i];
+                  var li = dojo.create("li", { innerHTML: "item id=" + item.id + ", name=" + item.name + ", date: " + item.date + " " }, resultsUl, "first");
+               }
+            },
+            onError: function (error, request) {
+               dojo.create("div", { innerHTML: " -- " + error, style: "color:red" }, messagesDiv);
+            }
+         });
+         
+      });
+   });
+})();
+</script>
+${endhead}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+<table>
+<tr>
+<td style="vertical-align:top">
+<div>
+<h3>Generate Datastore</h3>
+<label for="dsSize">Number of items</label><input id="dsSize" type="text" value="10"><br />
+<button id="generateDs">Go</button>
+</div>
+
+<div id="dsData">
+   
+</div>
+</td>
+<td style="vertical-align:top">
+<div id="dsTest" style="display:none">
+<div>Next fetch start index: <span id="currentIndex">0</span></div>
+<button id="showMore">Show More</button>
+<div id="dsResults"></div>
+</div>
+</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+</body>
+${end}

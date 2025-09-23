@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<Module>
+	<ModulePrefs title="cre_gadget"
+		description="cre_gadget"
+		height="320">
+		<Optional feature="cre.service.people_1.1"/>
+		<Require feature="inline"/>
+  	</ModulePrefs>
+	<UserPref name="id" required="true" default_value=""/>
+	<Content type="html" view="default">
+   <![CDATA[
+      <!-- Initialize djConfig -->
+		<script type="text/javascript">
+		(function() {
+		
+			var baseUrl = window.location.href;		
+			var gadgetUrlRE = /[?&]url=([^&]+)/;
+			var hostInfoRE = /http(s)?:\/\/([^\/]+)([^?]+)/;
+			var gadgetUrl = decodeURIComponent(baseUrl.match(gadgetUrlRE)[1]);
+			var hostInfo = gadgetUrl.match(hostInfoRE);	
+			var gadgetPath = "/web/com.ibm.social.gadget/test/gadgets/cre_gadget.xml";
+			
+			var baseProtocol = hostInfo[1] ? "https" : "http";			
+			var baseHost = hostInfo[2];
+			var basePath = hostInfo[3].substring(0, hostInfo[3].lastIndexOf(gadgetPath));
+			window.djConfig = {
+			   isDebug: false,
+			   baseUrl: (baseProtocol + "://" + baseHost) + basePath + "/web/dojo/",
+			   locale: "en-us",
+			   blankGif: baseProtocol + "://" + baseHost + basePath + "/web/com.ibm.oneui.styles/css/images/blank.gif",
+			   usePlainJson: true,
+			   localizationComplete: true,
+			   isSecure: (baseProtocol == "https")
+			};
+		})();
+		
+		</script>
+      <!-- Include Connections JS -->
+      <script src="../../../_js?include=lconn.core.config.services.js~com.ibm.social.gadget.people.scanner.js"></script>
+      <!-- Initialize the gadget -->
+      <script type="text/javascript">
+         function run_scanner() {
+         	com.ibm.social.gadget.people.scanner.scan(document.getElementById("vcardDiv"));
+         }
+         function load_profile_link(){
+		var uid = document.getElementById("userId").value;
+		var displayName = document.getElementById("displayName").value;
+		var profileUrl = lconn.core.url.getServiceUrl(lconn.core.config.services.profiles);
+		var photoText = "Photo of " + displayName;
+		var linkText = "This is a link to the profile of " + displayName;
+		var profileUserUrl = profileUrl + "/html/profileView.do?userid=" + uid;
+		var vcard = dojo.create("span", {className: "vcard"});
+		vcard = dojo.place(vcard, "simple");
+		
+		var cardAnchor = 
+			dojo.create("a", {
+				href: profileUserUrl,
+				title: linkText,
+				className: "fn url",
+				target: this.linkTarget,
+				innerHTML: displayName
+		}, vcard);
+		
+		dojo.create("span", {
+			className: "photo",
+			src: profileUrl + "/photo.do?userid=" + uid,
+			alt: photoText,
+			style: {display: "none"}
+		}, cardAnchor);
+		
+		dojo.create("span", {
+			className: "x-lconn-userid",
+			style: {display: "none"},
+			innerHTML: uid
+		}, vcard);
+		com.ibm.social.gadget.people.scanner.scan(document.getElementById("simple"));
+	}
+     </script>
+     <h3> scanner tests</h3>
+     <table>
+		<tr>
+			<td>User Id:</td><td><input id="userId" /><td/>
+		</tr>
+		<tr>
+			<td>Display Name:</td><td><input id="displayName" /><td/>
+		</tr>	 
+		</table>
+	 	<div id="simple"></div>
+		<div><button onClick="load_profile_link();">Load Profile Link</button> (this will create a vcard node from the given information, and then invoke the scanner on that node)</div>
+     <br />
+     <button onClick="run_scanner();">Run Scanner</button>
+     <br />
+     <div> sample vCard microformat :
+     <div id="vcardDiv">
+     	<span class="vcard">
+		   <a href="http://fake.url"class="fn url">David McMullin</a>
+		   <span class="x-lconn-userid" style="display: none;">253aa593-0bc5-43c3-8b77-7ec1be384858</span>
+		   <span class="email" style="display: none;">dmcmulli@ie.ibm.com</span>
+		</span>
+		<br />
+		<span class="vcard">
+		   <a href="http://fake.url"class="fn url">Amy Jones22</a>
+		   <span class="x-lconn-userid" style="display: none;">22222</span>
+		   <span class="email" style="display: none;">ajones@iris.com</span>
+		</span>
+		<br />
+		<div>
+			<div>
+				<span class="vcard">
+				   <a href="http://fake.url"class="fn url">Amy Jones33</a>
+				   <span class="x-lconn-userid" style="display: none;">33333</span>
+				   <span class="email" style="display: none;">ajones@iris.com</span>
+				</span>
+			</div>
+		</div>
+     </div>
+     </div>
+	  
+	]]>
+	</Content>
+</Module>

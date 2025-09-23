@@ -1,0 +1,9 @@
+/* Copyright IBM Corp. 2015  All Rights Reserved.                    */
+
+// NLS_CHARSET=UTF-8
+({
+	RECENT_SEARCHES: "RECENT SEARCHES",
+	RECENTLY_VISITED: "RECENTLY VISITED",
+	TODAY: "TODAY",
+	YESTERDAY: "YESTERDAY"
+})

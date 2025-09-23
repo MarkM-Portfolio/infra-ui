@@ -1,0 +1,80 @@
+<!-- Copyright IBM Corp. 2013, 2015  All Rights Reserved.              -->
+
+<div>
+
+  <!--  TODO : Create a separate CSS class for the overrides below ! -->
+  <table dojoattachpoint="tableNode" class="lotusInfoBox" style="${extraStyles} ${spacingStyles}" width="100%"  tabindex="0" 
+    dojoattachevent="onfocus:onSettingFocus,onblur:onSettingBlur,onmouseover:onMouseOver,onmouseout:onMouseOut">
+
+	  <tr>
+	  	<td colspan="3">
+  			<div aria-live="assertive" dojoattachpoint="messageContainerNode"></div>
+  		</td>
+	  </tr>
+
+	  <tr>
+	  
+		<td class="lotusAlignLeft ${displayValueClass}" title="${displayDescription}" dojoattachevent="onclick:toggleRoles" dojoattachpoint="titleNode">
+			${settingDetails.title}
+		</td>
+		<td class="lotusAlignRight ${displayValueClass}">
+			<span dojoattachpoint="valueNode">
+				${displayValue}
+			</span>
+			<span dojoattachpoint="valueUpdatingNode" class="lotusHidden lotusInactive">
+				${_resourceBundle.settingUpdating}
+			</span>
+			<span dojoattachpoint="valueEditNode" class="lotusHidden" >
+				<input type="text" aria-required="true" class="lotusText" value="${displayValue}" title="${_resourceBundle.settingValue}" style="width:100% !important;" dojoattachpoint="valueEditTextBox" />
+			</span>
+		</td>
+		
+		<!-- All actions are hidden until needed -->
+		<td class="lotusAlignRight" width="100">
+			<ul class="lotusInlinelist lotusActions" >
+				<span dojoattachpoint="editActionNode" class="lotusHidden" dojoattachevent="onclick:onEdit">
+					<li title="${_resourceBundle.settingEditActionDescription}" class="lotusFirst lotusAlignLeft">
+						<a href="javascript:;" role="button">${_resourceBundle.settingEditActionName}</a>
+					</li>
+				</span>
+				<span dojoattachpoint="deleteActionNode" class="lotusHidden" dojoattachevent="onclick:onDelete">
+					<li title="${_resourceBundle.settingDeleteActionDescription}" class="lotusAlignLeft">
+						| <a href="javascript:;" role="button" class="${displayValueClass}" >${_resourceBundle.settingDeleteActionName}</a> <!-- TODO : Remove bar and use style instead -->
+					</li>
+				</span>
+				<span dojoattachpoint="overrideActionNode" class="lotusHidden" dojoattachevent="onclick:onEdit">
+					<li title="${_resourceBundle.settingOverrideActionDescription}" class="lotusFirst lotusAlignLeft">
+						<a href="javascript:;" role="button">${_resourceBundle.settingOverrideActionName}</a>
+					</li>
+				</span>
+				<span dojoattachpoint="saveActionNode" class="lotusHidden" dojoattachevent="onclick:onSave">
+					<li title="${_resourceBundle.settingSaveActionDescription}" class="lotusFirst lotusAlignLeft">
+						<a href="javascript:;" role="button">${_resourceBundle.settingSaveActionName}</a>
+					</li>
+				</span>
+				<span dojoattachpoint="cancelActionNode" class="lotusHidden"  dojoattachevent="onclick:onCancel">
+					<li title="${_resourceBundle.settingCancelActionDescription}" class="lotusAlignLeft">
+						| <a href="javascript:;" role="button">${_resourceBundle.settingCancelActionName}</a>  <!-- TODO : Remove bar and use style instead -->
+					</li>
+				</span>
+				<span dojoattachpoint="addRoleActionNode" class="lotusHidden"  dojoattachevent="onclick:onAddRole">
+					<li title="${_resourceBundle.settingAddRoleActionDescription}" class="lotusFirst lotusAlignLeft">
+						<a href="javascript:;" role="button">${_resourceBundle.settingAddRoleActionName}</a> | <!-- TODO : Remove bar and use style instead -->
+					</li>
+				</span>
+				<span dojoattachpoint="rolesActionNode" class="lotusHidden" dojoattachevent="onclick:toggleRoles" >
+					<li title="${_resourceBundle.settingRolesActionDescription}" class="lotusFirst lotusAlignLeft">
+						<a href="javascript:;" role="button">${_resourceBundle.settingRolesActionName}</a>
+					</li>
+				</span>
+
+			</ul>
+		</td>
+	  </tr>
+	  
+  </table>
+
+  <div dojoattachpoint="containerNode"></div>
+  
+  
+</div>

@@ -1,0 +1,241 @@
+${head}
+<!-- Copyright IBM Corp. 2014, 2015  All Rights Reserved.              -->
+
+<title>URL Preview</title>
+
+<style>
+.lotusContent .lconnPreview {
+    margin-bottom: 15px
+}
+</style>
+
+${endhead}
+
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-test/ui/index.html?render=test">Core UI widgets and utilities</a>
+    <span class="lotusDivider">&gt;</span>
+    URL Preview
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+    <div class="lotusMain" role="main" aria-label="URL Preview Test content">
+        <div class="lotusContent">
+<h1>URL Preview</h1>
+<dl>
+    <dt>Module ID: <code>ic-ui/URLPreview</code></dt>
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-ui/ic-ui.URLPreview.html">JSDoc</a></dd>
+</dl>
+            <h2>Editable, plain text</h2>
+            <div id="pw1"></div>
+
+            <h2>Editable, single thumbnail</h2>
+            <div id="pw2"></div>
+
+            <h2>Editable, two thumbnails</h2>
+            <div id="pw3"></div>
+
+            <h2>Editable, video playback, video vimeo with http</h2>
+            <div id="pw4"></div>
+
+            <h2>Read only, plain text</h2>
+            <div id="pw5"></div>
+
+            <h2>Read only, thumbnail</h2>
+            <div id="pw6"></div>
+
+            <h2>Read only, video playback with http</h2>
+            <div id="pw7"></div>
+            
+            <h2>Read only, video playback Youtube with https</h2>
+            <div id="pw8"></div>
+            
+            <h2>Direct embed video vimeo with https</h2>
+            <div id="pw10"></div>
+        </div>
+    </div>
+
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:net.jazz.ajax.xdloader}
+    ${script:ic-ui/URLPreview}
+    ${script:dojo/dom}
+    ${script:dojo/request/xhr}
+    <script>
+        var closeFunction = function() {
+                console.log("Pressed close button");
+            };
+
+        require([
+            "ic-ui/URLPreview",
+            "dojo/dom",
+            "dojo/request/xhr",
+            "dojo/domReady!"
+        ], function(URLPreview, dom, request) {
+            var content = dojo.query(".lotusContent")[0];
+            new URLPreview({
+                editable: true,
+                url: "http://www.irishtimes.com/news/environment/it-s-official-winter-was-wettest-on-record-met-eireann-says-1.1711013",
+                data: {
+                    url: "http://www.irishtimes.com/news/environment/it-s-official-winter-was-wettest-on-record-met-eireann-says-1.1711013",
+                    provider_url: "http://www.irishtimes.com",
+                    title: "It's official winter was wettest on record met eireann says",
+                    description: "Some stations recorded 80 wet days; New maximum wave  set in Kinsale.",
+                    thumbnails: []
+                }
+            }).placeAt(dom.byId('pw1'));
+
+            request('../data/urlpreview_instagram_1thumb.json', {
+                handleAs: 'json'
+            }).then(function(response) {
+                new URLPreview({
+                    url : "http://vimeo.com/58964862",
+                    editable : true,
+                    data : response
+                }).placeAt(dom.byId('pw2'));
+            });
+
+            new URLPreview({
+                url: "http://www.youtube.com/watch?v=IgFE7RETE_o",
+                data: {
+                    url: "http://www.youtube.com/watch?v=IgFE7RETE_o",
+                    provider_url: "http://www.youtube.com",
+                    title: "IBM Lotus Symphony 3",
+                    description: "Be free and work smart with IBM Lotus released Symphony 3, a major new version of the Open Office-based desktop productivity editors that is freely available to all users. Lotus Symphony 3 features major improvements in usability, integration, programability, and compatibility. Download your freely available copy at http://symphony.lotus.com",
+                    thumbnails: [{
+                        src: "http://i1.ytimg.com/vi/IgFE7RETE_o/1.jpg",
+                        alt: "youtube"
+                    }, {
+                        src: "https://i1.ytimg.com/vi/YwfJVwknvRo/default.jpg",
+                        alt: "youtube"
+                    }],
+                    video: [{
+                        url: "http://www.youtube.com/v/IgFE7RETE_o?autohide=1&version=3",
+                        type: "application/x-shockwave-flash"
+                    }]
+                },
+                closeCallback: closeFunction
+            }).placeAt(dom.byId('pw3'));
+
+            new URLPreview({
+                url: "http://vimeo.com/58964862",
+                editable: true,
+                enablePlayback: true,
+                data: {
+                    "url": "http://vimeo.com/87180764",
+                    "provider_url": "http://vimeo.com",
+                    "title": "7 days in Ireland",
+                    "description": "7 days in Ireland is a video about a road trip we took in Ireland in 2013's fall.  It was 4 friends in 7 days of discoveries. We passed through many famous landmarks…",
+                    "thumbnails": [{
+                        "src": "http://i.vimeocdn.com/video/465141729_1280.jpg",
+                        "alt": "7 days in Ireland"
+                    }],
+                    "video": [{
+                        "video:height": "360",
+                        "video:secure_url": "https://vimeo.com/moogaloop.swf?clip_id=87180764",
+                        "video:width": "640",
+                        "video:type": "application/x-shockwave-flash",
+                        "video": "http://vimeo.com/moogaloop.swf?clip_id=87180764"
+                    }]
+                },
+                closeCallback: closeFunction
+            }).placeAt(dom.byId('pw4'));
+
+            new URLPreview({
+                url: "http://www.youtube.com/watch?v=IgFE7RETE_o",
+                data: {
+                    "url": "https://jazz.net",
+                    "provider_url": "http://jazz.net",
+                    "title": "Jazz.net",
+                    "description": "At IBM Rational's Jazz Community Site, we're building a new generation of products to help make software and systems development more collaborative, productive, and enjoyable.",
+                    "thumbnails": null,
+                    "video": null
+                }
+            }).placeAt(dom.byId('pw5'));
+
+            new URLPreview({
+                url: "https://www.youtube.com/watch?v=39jtNUGgmd4",
+                data: {
+                    "url": "https://www.youtube.com/watch?v=39jtNUGgmd4",
+                    "provider_url": "http://www.youtube.com",
+                    "title": "IBM Centennial Film: 100 X 100 - A century of achievements that have changed the world",
+                    "description": "The film features one hundred people, who each present the IBM achievement recorded in the year they were born. The film chronology flows from the oldest per...",
+                    "thumbnails": [{
+                        "src": "https://i1.ytimg.com/vi/39jtNUGgmd4/hqdefault.jpg",
+                        "alt": "IBM Centennial Film: 100 X 100 - A century of achievements that have changed the world"
+                    }],
+                    "video": [{
+                        "video:height": "1080",
+                        "video:width": "1920",
+                        "video:type": "application/x-shockwave-flash",
+                        "video": "https://www.youtube.com/v/39jtNUGgmd4?version=3&autohide=1"
+                    }]
+                }
+            }).placeAt(dom.byId('pw6'));
+
+            new URLPreview({
+                url: "http://vimeo.com/58964862",
+                data: {
+                    url: "http://vimeo.com/58964862",
+                    provider_url: "http://vimeo.com",
+                    title: "Happy Planet (with Behind the scene)",
+                    description: "IBM holidays greeting card, with Ogilvy agency.  Full project :  http://www.behance.net/gallery/Happy-Planet/7028673",
+                    enablePlayback: true,
+                    thumbnails: [{
+                        src: "http://b.vimeocdn.com/ts/409/591/409591871_200.jpg",
+                        alt: "vimeo"
+                    }],
+                    video: [{
+                        url: "http://vimeo.com/moogaloop.swf?clip_id=58964862",
+                        type: "application/x-shockwave-flash"
+                    }]
+                }
+            }).placeAt(dom.byId('pw7'));
+            
+            new URLPreview({
+                url: "https://www.youtube.com/watch?v=FzUrfi-GWeI",
+                data: {
+                    url: "https://www.youtube.com/watch?v=FzUrfi-GWeI",
+                    provider_url: "https://youtube.com/",
+                    title: "IBM Design Studio Austin",
+                    description: "On Nov 6, 2013, IBM opens the first half of a 50,000 product design studio, located on the IBM Austin campus. From this studio, IBM will transform how the company designs software, including applications and solutions for big data, cloud, mobile and social software. This new space is built for direct collaboration, bringing together designers, developers and product managers to help IBM revolutionize its approach to software design and the way users develop and interact with software.",
+                    enablePlayback: true,
+                    thumbnails: [{
+                        src: "https://img.youtube.com/vi/FzUrfi-GWeI/1.jpg",
+                        alt: "youtube"
+                    }],
+                    video: [{
+                        url: "https://www.youtube.com/watch?v=FzUrfi-GWeI",
+                        type: "application/x-shockwave-flash"
+                    }]
+                }
+            }).placeAt(dom.byId('pw8'));
+            
+            new URLPreview({
+                url: "https://vimeo.com/187819553",
+                data: {
+                    url: "https://vimeo.com/187819553",
+                    provider_url: "http://vimeo.com/",
+                    title: "Be Water - Bobby Brown",
+                    description: "Be Water - Bobby Brown",
+                    enablePlayback: true,
+                    thumbnails: [{
+                        src: "http://img.youtube.com/vi/FzUrfi-GWeI/1.jpg",
+                        alt: "youtube"
+                    }],
+                    video: [{
+                        url: "https://vimeo.com/187819553",
+                        type: "application/x-shockwave-flash"
+                    }]
+                }
+            }).placeAt(dom.byId('pw10'));
+        });
+    </script>
+</body>
+</html>

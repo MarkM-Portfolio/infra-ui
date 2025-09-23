@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "sv",
+      "Play": "Spela upp",
+      "Pause": "Paus",
+      "Current Time": "Aktuell tid",
+      "Duration Time": "Varaktighet",
+      "Remaining Time": "Återstående tid",
+      "Stream Type": "Strömtyp",
+      "LIVE": "LIVE",
+      "Loaded": "Inläst",
+      "Progress": "Förlopp",
+      "Fullscreen": "Helskärm",
+      "Non-Fullscreen": "Ej helskärm",
+      "Mute": "Stäng av ljud",
+      "Unmute": "Slå på ljud",
+      "Unmuted": "Ljud påslaget",
+      "Playback Rate": "Uppspelningshastighet",
+      "Subtitles": "Undertexter",
+      "subtitles off": "undertexter av",
+      "Captions": "Bildtexter",
+      "captions off": "bildtexter av",
+      "Chapters": "Kapitel",
+      "Volume": "Volym",
+      "You aborted the video playback.": "Du avbröt videouppspelningen",
+      "A network error caused the video download to fail part-way.": "Ett nätverksfel ledde till att den pågående videonedladdningen avbröts.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "Videon kunden inte laddas, antingen pga. att servern eller nätverket slutade fungera eller pga. att formatet inte stöds.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "Videouppspelningen avbröts pga. ett korruptionsproblem eller pga. att videon använder funktioner som webbläsaren inte stöder.",
+      "No compatible source was found for this video.": "Ingen kompatibel källa hittades för den här videon."
+});
+

@@ -1,0 +1,35 @@
+/* Copyright IBM Corp. 2008, 2015  All Rights Reserved.              */
+
+// NLS_CHARSET=UTF-8
+({
+	CONNECT_TO: "Bjud in till Connect",
+	NDYK1:"Det finns inga personer att rekommendera",
+	LOADING: "läser in",
+	DYK_TITLE: "Personer du kanske känner",
+	INVITE_TITLE: "Skicka anslutningsinbjudan",
+	SEND_ACTION: "Skicka",
+	CANCEL_ACTION: "Avbryt",
+	PREV: "Föregående",
+	NEXT: "Nästa",
+	bpct: "Har kommenterat din blogg",
+	bpcc: "Du har kommenterat samma blogg",
+	lpfr: "Är en kollega till någon du känner",
+	lm1: "Du är den här personens chef",
+	le1: "Den här personen är din chef",
+	sdm: "Ni har samma chef",
+	pt: "Den här personen har taggat dig",
+	pbt: "Du har taggat den här personen",
+	acm: "Ni delar aktiviteter",
+	wikiCoContribution: "Ni ändrade samma wiki",
+	bpcb: "Du kommenterade deras blogg",
+	lpcfr: "Ni delar vissa kollegor",
+	ccmf: "Ni ingår i samma gemenskap",
+	ccms: "Ni ingår i samma gemenskap",
+	filesharing: "Ni delar några filer",
+	forumthreaddiscussion: "Ni delar en forumtråd",
+	ctb: "Ni delar ett bokmärke",
+	tgw: "Ni har matchande taggar",
+	tcu: "Ni har använt samma tagg",
+	pctg: "Ni har taggat samma person",
+	tgb: "Samma personer har taggat er"
+})

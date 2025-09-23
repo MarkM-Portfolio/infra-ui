@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">Pliki</msg>
+  <msg name="description">Gadżet Pliki umożliwia przesyłanie i współużytkowanie plików</msg>
+  <msg name="action_uploadFile_label">Pliki</msg>
+  <msg name="action_uploadFile_tooltip">Prześlij i udostępnij pliki</msg>
+  <msg name="loading">Ładowanie...</msg>
+  <msg name="error_msg">Nie można załadować treści. Spróbuj ponownie później lub skontaktuj się z administratorem systemu.</msg>
+  <msg name="error_alt">Błąd</msg>
+</messagebundle>

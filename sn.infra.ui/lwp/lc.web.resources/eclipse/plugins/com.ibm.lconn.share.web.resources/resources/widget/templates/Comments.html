@@ -1,0 +1,32 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="${baseClass} ${additionalClasses}" style="${_initWidgetStyle}">
+   <div class="lotusPaging" role="navigation" aria-label="${_strings.PAGING_TOP_LABEL}" dojoAttachPoint="topPageNode" style="${_initPageStyle}">
+      <div class="lotusLeft numShape" style="display:none;" dojoAttachPoint="pageInfoNode"></div>
+      <ul class="lotusRight lotusInlinelist" dojoAttachPoint="topPageNavigateNode" style="display:none;">
+         <li dojoAttachPoint="tPreviousLinkNode" class="lotusFirst"><a class="numShape" href="#" dojoAttachEvent="onclick:previous" title="${_strings.PREVIOUS_T}">${_strings.PREVIOUS}</a></li>
+         <li dojoAttachPoint="tPreviousTextNode" class="lotusFirst">${_strings.PREVIOUS}</li>
+         <li dojoAttachPoint="tNextLinkNode"><a class="numShape" href="#" dojoAttachEvent="onclick:next" title="${_strings.NEXT_T}">${_strings.NEXT}</a></li>
+         <li dojoAttachPoint="tNextTextNode">${_strings.NEXT}</li>
+      </ul>
+      <ul class="lotusInlinelist" style="display:none" dojoAttachPoint="pageListNode"><li class="lotusFirst">${_strings.PAGE}</li></ul>
+   </div>
+   <div dojoAttachPoint="streamNode"></div>
+   <form dojoAttachPoint="addCommentNode" dojoAttachEvent="onsubmit:performCreate" class="qkrAddComment lotusForm" style="display:none;">
+      <table class="lotusFormTable" role="presentation">
+         <tr class="lotusFormFieldRow" dojoAttachPoint="externalMsgNode"></tr>
+         <tr class="lotusFormFieldRow"><td><label for="addCommentBody">${_strings.COMMENT_LABEL}</label><textarea id="addCommentBody" class="lotusText bidiAware" name="description"></textarea></td></tr>
+         <tr class="lotusFormFieldRow" dojoAttachPoint="notifyNode" style="display:none"><td><input id="notifyOnComment" dojoAttachPoint="notifyCheckboxNode" type="checkbox" class="lotusCheckbox" name="notifyOnComment"><label for="notifyOnComment" class="lotusCheckbox">${msgNotification}</label></td></tr>
+         <tr><td><input class="lotusFormButton" type="submit" value="${_strings.SAVE}"><input class="lotusFormButton" type="button" value="${_strings.CANCEL}" dojoAttachEvent="onclick:cancelCreate"></td></tr>
+      </table>
+   </form>
+   <div dojoAttachPoint="toggleNode" style="display:none;" class="lotusChunk"><a href="javascript:;" dojoAttachPoint="toggleLink" dojoAttachEvent="onclick:createComment" role="button">${_strings.ADD_COMMENT}</a></div>
+   <div class="lotusPaging" role="navigation" aria-label="${_strings.PAGING_BOTTOM_LABEL}" dojoAttachPoint="bottomPageNode" style="${_initPageStyle}">
+      <ul class="lotusRight lotusInlinelist" dojoAttachPoint="bottomPageNavigateNode" style="display: none;">
+         <li dojoAttachPoint="bPreviousLinkNode" class="lotusFirst"><a class="numShape" href="#" dojoAttachEvent="onclick:previous" title="${_strings.PREVIOUS_T}">${_strings.PREVIOUS}</a></li>
+         <li dojoAttachPoint="bPreviousTextNode" class="lotusFirst">${_strings.PREVIOUS}</li>
+         <li dojoAttachPoint="bNextLinkNode"><a class="numShape" href="#" dojoAttachEvent="onclick:next" title="${_strings.NEXT_T}">${_strings.NEXT}</a></li>
+         <li dojoAttachPoint="bNextTextNode">${_strings.NEXT}</li>
+      </ul>
+      <div style="display:none;" dojoAttachPoint="jumpPageNode"></div>
+   </div>      
+</div>

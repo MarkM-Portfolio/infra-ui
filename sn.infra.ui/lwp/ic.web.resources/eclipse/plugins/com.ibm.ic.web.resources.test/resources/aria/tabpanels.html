@@ -1,0 +1,88 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+<title>Tab Panel</title>
+
+
+<script>
+dojoConfig.parseOnLoad=true;
+
+</script>
+${script:net.jazz.ajax.xdloader}
+${script:ic-ui.aria.TabPanel}
+${script:dojo._base.array}
+${script:dojo.query}
+
+<script>
+    require(['dojo/dom', 'ic-ui/aria/TabPanel', 'dojo/domReady!'], function(dom, TabPanel) {
+        new TabPanel(dom.byId('tp1'));
+        new TabPanel(dom.byId('tp2'), {cycle:false});
+    });
+    
+    // This is a silly implementation, we're just interested into showing one tab
+    function show(toolbar_id, panel_id) {
+        var dom = require('dojo/dom'),
+            array = require('dojo/_base/array'),
+            query = require('dojo/query');
+        query('div', dom.byId(panel_id).parentNode).forEach(function(node) {
+            node.style.display = 'none';
+        });
+        dom.byId(panel_id).style.display = 'block';
+    }
+</script>
+
+
+<style>
+    div.tab-container { position: relative; width: 250px; height: 50px; }
+    div.tab-container div { position: absolute; background-color: #fff; border: 2px solid #ccc; width: 100%; padding: 1em;}
+</style>
+
+${endhead}
+<header role="banner">
+<div class="lotusBannerExt"><div class="lotusWrapper"><div class="lotusInner">
+<nav class="lotusBreadcrumbs" role="navigation" aria-label="Breadcrumbs">
+    <a href="${contextRoot}/web/ic-test/index.html?render=test">Index</a>
+    <span class="lotusDivider">&gt;</span>
+    <a href="${contextRoot}/web/ic-test/aria/index.html?render=test">ARIA Helpers</a>
+    <span class="lotusDivider">&gt;</span>
+    Tab Panel
+</nav>
+</div></div></div><!--end lotusBannerExt-->
+</header>
+<div class="lotusMain">
+<div class="lotusContent">
+<h1>Tab Panel</h1>
+<dl>
+    <dt>Module ID: <code>ic-ui/aria/TabPanel</code></dt>
+    <dd><a href="http://dubgsa.ibm.com/~procidac/public/jsdoc/main/ic-ui/ic-ui.aria.TabPanel.html">JSDoc</a></dd>
+</dl>
+
+<p>This helper enables a tab panel for keyboard navigation. It acts as a single tab stop when focusing in e.g. from <a id="a1" href="#" onclick="return false">this link</a>. Tabs can be focused using the arrow keys. The caller owns displaying the associated panel on click.</p>
+
+<h2>Toolbar, first pressed, cyclical</h2>
+<div id="tp1" role="tablist">
+    <button role="tab" aria-selected="true" onclick="show('tp1','p1')">Tab1</button>
+    <button role="tab" onclick="show('tp1','p2')">Tab2</button>
+    <button role="tab" onclick="show('tp1','p3')">Tab3</button>
+</div>
+<div id="tc1" class="tab-container">
+    <div id="p1">First panel</div>
+    <div id="p2">Second panel</div>
+    <div id="p3">Third panel</div>
+</div>
+
+<h2>Toolbar, first pressed, acyclical</h2>
+<div id="tp2" role="tablist">
+    <button role="tab" aria-selected="true" onclick="show('tp2','p4')">Tab4</button>
+    <button role="tab" onclick="show('tp2','p5')">Tab5</button>
+    <button role="tab" onclick="show('tp2','p6')">Tab6</button>
+</div>
+<div id="tc2" class="tab-container">
+    <div id="p4">Fourth panel</div>
+    <div id="p5">Fifth panel</div>
+    <div id="p6">Sixth panel</div>
+</div>
+</div>
+</div>
+</body>
+${end}

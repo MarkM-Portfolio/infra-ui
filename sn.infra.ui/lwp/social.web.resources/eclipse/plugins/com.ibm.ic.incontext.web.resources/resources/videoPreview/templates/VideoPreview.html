@@ -1,0 +1,20 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lconnPreview" style="overflow: hidden;" data-dojo-attach-point="videoPreview">
+	<div class="lconnPreviewLeft" data-dojo-attach-point="leftPane">
+		<a class="lconnPreviewCenter" data-dojo-attach-point="thumbnailContainer">
+            <span dir="ltr" class="lotusHidden" data-dojo-attach-point="highContrastThumbnailText">${!data.title}</span>
+            <span dir="ltr" class="lotusHidden" data-dojo-attach-point="highContrastPlayText"></span>
+			<span class="playBtn otherHTML5Player16 otherHTML5Player16-play-overlay-sm" data-dojo-attach-point="playBtn"></span>
+			<img src="${_blankGif}" dir="ltr" alt="${data.title}" data-dojo-attach-point="thumbnail">
+		</a>
+	</div>
+	<div class="lconnPreviewContent" data-dojo-attach-point="rightPane">
+		<div class="lconnPreviewContentTitle" data-dojo-attach-point="titleNode"><a href="${data.filePageUrl}" dir="ltr" target="_blank">${!data.title}</a></div>
+        <div class="fileMeta lotusHidden" data-dojo-attach-point="fileMetaNode">
+            <ul class="inlineSepList">
+                <li class="fileAuthor" data-dojo-attach-point="authorNode">${!data.authorInfo}</li>
+                <li class="lotusHidden fileTags" data-dojo-attach-point="tagNode">
+            </ul>
+        </div>
+	</div>		
+</div>

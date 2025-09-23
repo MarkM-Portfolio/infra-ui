@@ -1,0 +1,30 @@
+[{
+displayName: 'social-business',
+name: 'social-business',
+frequency: 1
+},
+{
+displayName: 'connections',
+name: 'connections',
+frequency: 2
+},
+{
+displayName: 'mentions',
+name: 'mentions',
+frequency: 4
+},
+{
+displayName: 'microblogging',
+name: 'microblogging',
+frequency: 3
+},
+{
+displayName: 'social-analytics',
+name: 'social-analytics',
+frequency: 3
+},
+{
+displayName: 'watson',
+name: 'watson',
+frequency: 1
+}]

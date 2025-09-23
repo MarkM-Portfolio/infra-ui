@@ -1,0 +1,45 @@
+define({
+	      /* ***************************************************************** */
+  /*                                                                   */
+  /* Copyright IBM Corp. 2011, 2018  All Rights Reserved.              */
+
+		   dialogTitle : "اضافة صورة",
+		   newUpload : "تحميل جديد",
+		   URL : "عنوان URL",
+		   imageLibrary : "مكتبة الصور",
+		   description : "‏الوصف:‏",
+		   imageFile : "الملفات:",
+		   OK: "‏حسنا‏",
+		   cancel: "الغاء",
+		   required: "‏مجال مطلوب‏",
+		   preview: "المعاينة:",
+		   previewWarning: "حدث فشل في تحميل الصورة، هل أنت متأكد من أنه يعد عنوان URL صحيح للصورة؟",
+		   alt: "النص البديل:",
+		   filesTab: "من الملفات",
+		   images:"الصور:",
+		   browse:"استعراض...",
+		   imagePickerTitle:"ادراج صور من الملفات",
+		   componentImagePickerTitle:" ${0} صور تم تحميلها",
+		   /* New String for insert image dialog */
+		   title: "‏ادراج صورة‏",
+		   uploadBtn: "تحميل الصورة",
+		   insertBtn: "‏ادراج صورة‏",
+		   uploadTab: "الملفات المحلية",
+		   externalTab: "عنوان URL لشبكة الانترنت",
+		   internalTab: "الصور الموجودة",
+		   fileFieldTip: "قم بسحب ووضع الصور من سطح المكتب الخاص بك الى هذه النافذة لتحميلها مباشرة. ",
+		   AdditionalSection: "الاختيارات الاضافية",
+		   ExpandSection: "عرض الاختيارات الاضافية",
+		   CloseSection: "طي الاختيارات الاضافية",
+		   webURLPrompt: "عنوان URL لصورة شبكة الانترنت:",
+		   previewPrompt: "مساحة المعاينة: قد تستغرق الصور الكبيرة بعض الوقت ليتم عرضهم.",
+		   noExistingImage: "عفوا! لم يتم اضافة أية صور بعد.",
+		   selectExistingImage: "حدد صورة موجودة:",
+		   urlMissing: "أدخل عنوان URL",
+		   urlInvalid: "عنوان URL غير صحيح. تأكد من ادخال عنوان URL صحيح وأعد المحاولة مرة أخرى.",
+		   previousItem: "السابق",
+		   nextItem: "التالي",
+			 oneImageOneTime: "تم اضافة صورة الى هذه النافذة بالفعل. يمكنك ادراج صورة واحدة فقط في كل مرة.",
+			 altTextForImgInList: "اضغط لتحديد صورة واحدة"
+});
+

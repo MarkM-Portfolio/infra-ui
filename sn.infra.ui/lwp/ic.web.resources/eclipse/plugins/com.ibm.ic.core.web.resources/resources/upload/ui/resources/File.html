@@ -1,0 +1,20 @@
+<!-- Copyright IBM Corp. 2015, 2018  All Rights Reserved.                    -->
+<html><body><div role="presentation">
+	<div class=" lconnFileUpload" style="padding-bottom:2px;" data-dojo-attach-point="labelRow">
+		<img src="${_blankGif}" role="presentation" class="lconnFileUploadIcon ${_ui.fileIcon}" data-dojo-attach-point="fileIcon">
+		<div class="lconnFileUploadLabel">
+			<div>
+				<div class="lconnFilenameContainer bidiSTT_FILE_PATH_SIZE" data-dojo-attach-point="nameNode">${_ui.originalName}</div>
+				<a role="button" href="javascript:;" class="lconnFilenameContainer bidiSTT_FILE_PATH_SIZE" data-dojo-attach-point="nameLink,focusNode" data-dojo-attach-event="onclick:startRename">${_ui.originalName}</a> 
+				<input type="text" class="lotusText lotusLtr" style="display: none" data-dojo-attach-point="nameInput" data-dojo-attach-event="onkeydown:_onEditKeyPress,onblur:_onEditBlur">	
+			</div>
+			<div class="lotusMeta lotusTiny" style="display:none" data-dojo-attach-point="editTooltipNode">${nls.UI_EDIT_TOOLTIP}</div>
+		</div>
+		<div style="display: inline" class="lconnFileUploadAction" data-dojo-attach-point="actionNode">		
+			<a role="button" href="javascript:;" class="lconnRemoveLink" data-dojo-attach-point="removeLink" data-dojo-attach-event="onclick:_remove,onmouseover:_startHover,onmouseout:_stopHover"><img src="${_blankGif}" class="lotusDelete" data-dojo-attach-point="removeNode"><span class="lotusAltText">X</span></a>
+			<span style="display:none" data-dojo-attach-point="progressNode"><img src="${_blankGif}" class="lotusLoading" data-dojo-attach-point="progressNodeImg"><span class="lotusAltText" data-dojo-attach-point="progressNodeA11y">⌛</span></span>
+			<span style="display:none" data-dojo-attach-point="uploadedNode"><img src="${_blankGif}" class="lconnSprite lconnSprite-iconConfirmation16" data-dojo-attach-point="uploadedNodeImg"><span class="lotusAltText" data-dojo-attach-point="uploadedNodeA11y">✓</span></span>
+		</div>
+	</div>
+	<div class="lconnFileUploadStatus lotusIndent20" data-dojo-attach-point="statusContainerNode"></div>
+</div></body></html>

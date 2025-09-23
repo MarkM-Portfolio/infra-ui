@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+({
+	"CLOSE_HELP_DATE":"Zatvoriť pomoc k dátumom",
+	"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Zatvoriť pomoc k typom dokumentov",
+	"CLOSE_HELP_PERSON":"Zatvoriť pomoc k ľuďom",
+	"CLOSE_HELP_TAG":"Zatvoriť pomoc k značkám",
+	"CLOSE_HELP_TREND":"Zatvoriť pomoc k trendom",
+	"COLLAPSE_DATE":"Zvinúť filter dátumov",
+	"COLLAPSE_ECM_DOCUMENT_TYPE":"Zvinúť filter typov dokumentov",
+	"COLLAPSE_PERSON":"Zvinúť filter ľudí",
+	"COLLAPSE_TAG":"Zvinúť filter značiek",
+	"COLLAPSE_TREND":"Zvinúť filter trendov",
+	"DESCRIPTION_DATE":"Ak chcete zobraziť výsledky, ktoré boli vytvorené alebo odoslané v špecifickom čase, rozviňte twistie a filtrujte informácie podľa roku a mesiaca.",
+	"DESCRIPTION_ECM_DOCUMENT_TYPE":"Typ dokumentu je kľúčové slovo, ktoré priradíte k súborom, aby ste zjednodušili ich nájdenie. Kliknite na niektorý typ dokumentu, ak chcete zobraziť výsledky vyhľadávania, ktoré majú priradené dané kľúčové slovo.",
+	"DESCRIPTION_PERSON":"Zobrazte osoby spojené s vašimi výsledkami vyhľadávania. Ak chcete zobraziť výsledky vyhľadávania spojené so špecifickou osobou, kliknite na meno.",
+	"DESCRIPTION_TAG":"Značka je kľúčové slovo, ktoré priradíte k obsahu alebo ľuďom, aby ste zjednodušili ich nájdenie. Ak chcete zobraziť výsledky vyhľadávania, ktoré majú priradené dané kľúčové slovo, kliknite na značku.",
+	"DESCRIPTION_TREND":"Trend je kľúčové slovo, ktoré vygeneroval systém, aby zjednodušil vyhľadávanie v Aktualizáciách stavu. Ak chcete zobraziť výsledky vyhľadávania, ktoré majú priradené dané kľúčové slovo, kliknite na trend.",
+	"EXPAND_DATE":"Rozvinúť filter dátumov",
+	"EXPAND_ECM_DOCUMENT_TYPE":"Rozvinúť filter typov dokumentov",
+	"EXPAND_PERSON":"Rozvinúť filter ľudí",
+	"EXPAND_TAG":"Rozvinúť filter značiek",
+	"EXPAND_TREND":"Rozvinúť filter trendov",
+	"HELP_DATE":"Pomoc k dátumom",
+	"HELP_ECM_DOCUMENT_TYPE":"Pomoc k typom dokumentu",
+	"HELP_PERSON":"Zatvoriť pomoc k ľuďom",
+	"HELP_TAG":"Pomoc k značkám",
+	"HELP_TREND":"Pomoc k trendom",
+	"NO_DATE_CONTENT":"Dátumy aktuálne nie sú k dispozícii",
+	"NO_ECM_DOCUMENT_TYPE_CONTENT":"Typy dokumentov aktuálne nie sú k dispozícii",
+	"NO_PERSON_CONTENT":"Ľudia aktuálne nie sú k dispozícii",
+	"NO_TAG_CONTENT":"Značky aktuálne nie sú k dispozícii",
+	"NO_TREND_CONTENT":"Trendy aktuálne nie sú k dispozícii",
+	"TITLE_DATE":"Dátumy",
+	"TITLE_ECM_DOCUMENT_TYPE":"Typy dokumentu",
+	"TITLE_PERSON":"Ľudia",
+	"TITLE_TAG":"Značky",
+	"TITLE_TREND":"Trendy"
+})
+

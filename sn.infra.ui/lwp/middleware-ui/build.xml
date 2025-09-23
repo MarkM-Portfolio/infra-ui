@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- HCL Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright HCL Technologies Limited 2010, 2021                     -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+
+<project name="middleware-ui" default="development">
+	<import file="${env.WPLC_IMPORT}/std_props.xml" />
+	<import file="${env.WPLC_IMPORT}/std_dirs.xml" />
+
+	<!-- artifact constants
+	    #       Location of the artifact this component will bring down
+		#		generally this information will not really change unless
+		#		some refactoring takes place
+	-->
+	<property name="artifact.server" value="https://artifactory.cwp.pnp-hcl.com" />
+	<property name="artifact.repository" value="connections-core" />
+	<property name="artifact.group" value="com/ibm/connections" />
+	<property name="artifact.artifact" value="middleware-ui" />
+
+
+	<!-- how to process artifact
+	    #       If set, the artifact will be expanded
+	    #       and the artifact contents will be the product
+		#		of this component
+		#
+		#		if you wish just the artifact (ie the tar, or jar, etc)
+		#		as output, then set this to false
+	-->
+	<property name="artifact.expand" value="true" />
+
+	<!-- artifact build label
+	    #       Label used to identify which artifact build to bring down
+	    #       This needs to be co-ordinated with artifact owners
+		#		label can be change depending release schedule
+	-->
+	<property name="artifact.label" value="release" />
+
+	<!-- artifact build version
+	    #       ONLY Use this if you wish to override and
+	    #       bring down an explicit version ONLY
+		#		
+
+		<property name="artifact.version" value="20181101-140749"/>
+	-->
+
+	  <import file="${env.WPLC_IMPORT}/check.xml"/>
+	  <import file="${env.WPLC_IMPORT}/package_extra.xml"/>
+
+	  <import file="${env.WPLC_IMPORT}/compile.xml"/>
+	  <import file="${env.WPLC_IMPORT}/rmic.xml"/>
+	  <import file="${env.WPLC_IMPORT}/javadoc.xml"/>
+	  <import file="${env.WPLC_IMPORT}/jdepend.xml"/>
+	  <import file="${env.WPLC_IMPORT}/clean.xml"/>
+	  <import file="${env.WPLC_IMPORT}/comp_zip.xml"/>
+	  <import file="${env.WPLC_IMPORT}/std_targets.xml"/>
+	  <import file="${env.WPLC_IMPORT}/process_nls.xml"/>
+	  <import file="${env.WPLC_IMPORT}/performance.xml"/> 
+
+	<!--
+		# ********************************************************************
+		# **** META DATA 
+		# ********************************************************************
+	-->
+
+	<!-- download-metadata
+	    #       cleans up build output
+	    #       generates proper URL and brings down the maven-metadata.xml
+	    #
+	    -->
+	<target name="download-metadata">
+
+		<delete quiet="true" dir="${dir.tmpout}" />
+		<delete quiet="true" dir="${dir.lib}" />
+		
+		<mkdir dir="${dir.tmpout}" />
+		<mkdir dir="${dir.zip.tmpout}" />
+		<mkdir dir="${dir.lib}" />
+
+		<property name="artifact.URL" value="${artifact.server}/artifactory/${artifact.repository}/${artifact.group}/${artifact.artifact}" />
+
+		<get ignoreerrors="true" src="${artifact.URL}/maven-metadata.xml" dest="${dir.tmpout}/maven-metadata.xml" />
+
+		<available file="${dir.tmpout}/maven-metadata.xml" property="ispresent.metadata.file" />
+	</target>
+
+	<!-- no-metadata
+	    #       if metadata file did not come down correctly
+	-->
+	<target name="no-metadata" unless="ispresent.metadata.file">
+		<echo message="ERROR: no metadata Present for artifact" />
+		<echo message="ERROR: check URL is accurate : [${artifact.URL}/maven-metadata.xml]" />
+	</target>
+
+	<!-- get-metadata-info
+	    #       If meta file was brought down successfully
+	    #       imports xml data as properties
+	-->
+	<target name="get-metadata-info" if="ispresent.metadata.file">
+		<xmlproperty file="${dir.tmpout}/maven-metadata.xml" prefix="artifact" collapseAttributes="true" />
+
+		<condition property="ispresent.metadata.data">
+			<and>
+				<isset property="artifact.metadata.versioning.${artifact.label}"/>
+				<isset property="artifact.metadata.versioning.lastUpdated" />
+			</and>
+		</condition>
+	</target>
+
+	<!-- no-metadata-info
+	    #       if meta data content was not as expected
+	-->
+	<target name="no-metadata-info" unless="ispresent.metadata.data">
+		<echo message="ERROR: artifact metadata downloaded, but appears not contain expected data" />
+		<echo message="ERROR: in : [${artifact.URL}/maven-metadata.xml]" />
+		<echo message="ERROR: was expecting" />
+		<echo message="ERROR: 	${artifact.label}" />
+		<echo message="ERROR: 	lastUpdated" />
+	</target>
+
+
+	<!--
+		# ********************************************************************
+		# **** PROJECT OBJECT MODEL
+		# ********************************************************************
+	-->
+
+	<!-- download-pom
+	    #       generates proper URL and brings down the pom.xml
+	    #
+	-->
+	<target name="download-pom"  if="ispresent.metadata.data">
+
+		<propertycopy name="test.artifact.version" from="artifact.metadata.versioning.${artifact.label}" />
+
+		<condition property="display.override.artifact.version" value="Version Override has been set: [${artifact.version}]" else="">
+			<isset property="artifact.version" />
+		</condition>
+
+		<property name="artifact.version" value="${test.artifact.version}"/>
+
+		<property name="artifact.URL.pom" value="${artifact.URL}/${artifact.version}/${artifact.metadata.artifactId}-${artifact.version}.pom" />
+
+		<property name="artifact.file.pom" value="${dir.tmpout}/pom.xml" />
+
+		<get ignoreerrors="true" src="${artifact.URL.pom}" dest="${artifact.file.pom}" />
+
+		<available file="${artifact.file.pom}" property="ispresent.pom.file" />
+	</target>
+
+	<!-- no-pom
+	    #       if pom file did not come down correctly
+	-->
+	<target name="no-pom" unless="ispresent.pom.file" if="ispresent.metadata.data">
+		<echo message="ERROR: no pom file present for artifact version" />
+		<echo message="ERROR: check URL is accurate : [${artifact.URL.pom}]" />
+	</target>
+
+	<!-- get-pom-info
+	    #       If pom file was brought down successfully
+	    #       imports xml data as properties
+	-->
+	<target name="get-pom-info" if="ispresent.pom.file">
+		<xmlproperty file="${artifact.file.pom}" prefix="pom" collapseAttributes="true" />
+
+		<!-- 
+			#       If no package is defined, default to :jar
+			#       as this is the maven default
+		-->
+		<condition property="display.pom.packing.default" value="    no package type defined, defaulting to 'jar'" else="" >
+		<not>
+			<isset property="pom.project.packaging" />
+		</not>
+		</condition>
+
+		<condition property="pom.project.packaging" value="jar">
+		<not>
+			<isset property="pom.project.packaging" />
+		</not>
+		</condition>
+	</target>
+
+	<!--
+		# ********************************************************************
+		# **** ARTIFACT
+		# ********************************************************************
+	-->
+
+
+	<!-- download-artifact
+	    #       brings down the artifact
+	    #
+	-->
+	<target name="download-artifact" if="ispresent.pom.file">
+		<!--
+	    <echoproperties/>
+	    -->
+
+		<propertycopy name="display.label.artifact.version" from="artifact.metadata.versioning.${artifact.label}" />
+
+		<echo message="==============================" />
+		<echo message="Artifact Information" />
+		<echo message="group: [${artifact.metadata.groupId}]" />
+		<echo message="id:    [${artifact.metadata.artifactId}]" />
+		<echo message="repo:  [${artifact.repository}]" />
+		<echo message="---" />
+		<echo message="lastUpdated: [${artifact.metadata.versioning.lastUpdated}]" />
+		<echo message="${artifact.label}:      [${display.label.artifact.version}]" />
+		<echo message="---" />
+		<echo message="${display.override.artifact.version}" />
+		<echo message="download version:   [${artifact.version}]" />
+		<echo message="${display.pom.packing.default}" />
+		<echo message="package type:       [${pom.project.packaging}]" />
+		<echo message="==============================" />
+
+		<property name="artifact.URL.package" value="${artifact.URL}/${artifact.version}/${artifact.metadata.artifactId}-${artifact.version}.${pom.project.packaging}" />
+		<property name="artifact.file" value="${dir.zip.tmpout}/${artifact.metadata.artifactId}-${artifact.version}.${pom.project.packaging}" />
+
+		<get ignoreerrors="true" src="${artifact.URL.package}" dest="${artifact.file}" />
+
+		<available file="${artifact.file}" property="ispresent.artifact.file" />
+	</target>
+
+	<!-- no-artifact
+	    #       if artifact file did not come down correctly
+	-->
+	<target name="no-artifact" if="ispresent.pom.file" unless="ispresent.artifact.file">
+		<echo message="ERROR: artifact does not appear to have downloaded" />
+		<echo message="ERROR: check URL is accurate : [${artifact.URL.package}]" />
+	</target>
+
+
+	<!--
+		# ********************************************************************
+		# **** PROCESS ARTIFACT
+		# ********************************************************************
+	-->
+
+
+	<!-- check-expansion-type
+	    #		decide what do to with the artifact
+	    #		do we expand it, if so how
+		#		if not, do we just copy it...
+	-->
+	<target name="check-expansion-type" if="ispresent.artifact.file">
+		<condition property="artifact.expand.tar">
+			<and>
+				<istrue value="${artifact.expand}"/>
+				<equals arg1="${pom.project.packaging}" arg2="tar" casesensitive="false"/>
+			</and>
+		</condition>
+
+		<condition property="artifact.expand.tar.bz2">
+			<and>
+				<istrue value="${artifact.expand}"/>
+				<equals arg1="${pom.project.packaging}" arg2="tar.bz2" casesensitive="false"/>
+			</and>
+		</condition>
+
+		<condition property="artifact.expand.tar.gz">
+			<and>
+				<istrue value="${artifact.expand}"/>
+				<or>
+					<equals arg1="${pom.project.packaging}" arg2="gz" casesensitive="false"/>
+					<equals arg1="${pom.project.packaging}" arg2="tgz" casesensitive="false"/>
+					<equals arg1="${pom.project.packaging}" arg2="tar.gz" casesensitive="false"/>
+				</or>
+			</and>
+		</condition>
+
+		<condition property="artifact.expand.zip">
+			<and>
+				<istrue value="${artifact.expand}"/>
+				<or>
+					<equals arg1="${pom.project.packaging}" arg2="zip" casesensitive="false"/>
+					<equals arg1="${pom.project.packaging}" arg2="jar" casesensitive="false"/>
+					<equals arg1="${pom.project.packaging}" arg2="war" casesensitive="false"/>
+					<equals arg1="${pom.project.packaging}" arg2="ear" casesensitive="false"/>
+				</or>
+			</and>
+		</condition>
+
+		<condition property="artifact.expand.copy">
+			<not>
+				<istrue value="${artifact.expand}"/>
+			</not>
+		</condition>
+
+	</target>
+
+			<target name="expand-copy" if="artifact.expand.copy">
+				<copy file="${sourceFile}" todir="${destFile}"/>
+			</target>
+
+			<target name="expand-zip" if="artifact.expand.zip">
+				<unzip src="${sourceFile}" dest="${destFile}"/>
+			</target>
+
+			<target name="expand-tar" if="artifact.expand.tar">
+				<untar src="${sourceFile}" dest="${destFile}"/>
+			</target>
+
+			<target name="expand-tar-gz" if="artifact.expand.tar.gz">
+			<!--
+				as a temporay work around until we can properly track this issue
+				24776: Lotus Connections/Lotus Connections - middleware-ui: some react components not copied over to dist/js
+				https://jazz01.swg.usma.ibm.com:9445/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/24776
+
+				I am going to just call out to the native tar command
+				<untar src="${sourceFile}" dest="${destFile}" compression="gzip">
+					<patternset>
+						<exclude name="**/PaxHeader"/>
+					</patternset>
+				</untar>
+
+				add v for verbose if you wish to detailed progress
+			-->
+
+				<echo message="untaring: ${sourceFile}"/>
+				<exec executable="tar">
+					<arg value="xzf"/>
+					<arg value="${sourceFile}"/>
+					<arg value="-C"/>
+					<arg value="${destFile}"/>
+				</exec>
+			</target>
+
+			<target name="expand-tar-bz2" if="artifact.expand.tar.bz2">
+				<untar src="${sourceFile}" dest="${destFile}" compression="bzip2"/>
+			</target>
+
+
+	<!-- expand-artifact
+	    #		Process artifact
+	    #		be it expand, or copy etc
+	-->
+	<target name="expand-artifact" if="ispresent.artifact.file">
+
+		<antcall target="expand-zip">
+			<param name="sourceFile" value="${artifact.file}"/>
+			<param name="destFile" value="${dir.lib}"/>
+		</antcall>
+
+		<antcall target="expand-copy">
+			<param name="sourceFile" value="${artifact.file}"/>
+			<param name="destFile" value="${dir.lib}"/>
+		</antcall>
+
+		<antcall target="expand-tar">
+			<param name="sourceFile" value="${artifact.file}"/>
+			<param name="destFile" value="${dir.lib}"/>
+		</antcall>
+
+		<antcall target="expand-tar-gz">
+			<param name="sourceFile" value="${artifact.file}"/>
+			<param name="destFile" value="${dir.lib}"/>
+		</antcall>
+
+		<antcall target="expand-tar-bz2">
+			<param name="sourceFile" value="${artifact.file}"/>
+			<param name="destFile" value="${dir.lib}"/>
+		</antcall>
+
+	</target>
+	
+  <target name="touch-version" depends="expand-artifact" >
+    <echo file="${dir.lib}/version.txt" message="${artifact.version}" />
+  </target>
+	
+	
+	<!--
+		# ********************************************************************
+		# **** PROCESS DEPENDENCY FILE
+		# ********************************************************************
+	-->
+
+
+	<!-- check-dependency
+	    #		starting work, lets have a look at dependency.txt.
+	-->
+	
+	<target name="check-dependency" >
+		<property name="dependency.file" value="${env.WPLC_HOME}/${fe.log.dir}/dependency.txt" />
+	
+		<available file="${dependency.file}" property="ispresent.dependency.txt.file" />
+	</target>
+
+	<target name="update-dependency" if="ispresent.dependency.txt.file">
+		<echo message="updating: ${dependency.file}"/>
+		<exec executable="/bin/bash">
+			<arg value="${basedir}/processDep.sh"/>
+			<arg value="${dependency.file}"/>
+			<arg value="${artifact.artifact}"/>
+			<arg value="${artifact.version}"/>
+		</exec>
+	</target>
+
+	<target name="no-dependency" unless="ispresent.dependency.txt.file">
+		<echo message="NOT FOUND: ${dependency.file}"/>
+		<echo message="================================================="/>
+	</target>
+
+	<!--
+		# ********************************************************************
+		# **** MAIN
+		# ********************************************************************
+	-->
+
+	<!-- get-metadata
+	    #       wrapper target for bringing down and using the artifacts metadata
+	-->
+	<target name="get-metadata" depends="download-metadata,no-metadata,get-metadata-info">
+	</target>
+
+	<!-- get-pom
+	    #       wrapper target for bringing down and using the artifacts POM
+		#		(Project Object Model)
+	-->
+	<target name="get-pom" depends="download-pom,no-pom,get-pom-info">
+	</target>
+
+	<!-- get-artifact
+	    #       wrapper target for bringing down the artifact
+	-->
+	<target name="get-artifact" depends="download-artifact,no-artifact">
+	</target>
+
+	<!-- process-artifact
+	    #       wrapper target for processing the artifact
+		#		be it, unzip, untar,unjar or copy etc...
+	-->
+	<target name="process-artifact" depends="check-expansion-type,expand-artifact,touch-version">
+	</target>
+
+	<!-- process dependency
+	    #       wrapper target for processing logs/dependency.txt
+	-->
+	<target name="process-dependency" depends="check-dependency,update-dependency,no-dependency">
+	</target>
+
+	<target name="development" depends="get-metadata,get-pom,get-artifact,process-artifact,process-dependency"/>
+	<target name="production" depends="development" />
+
+</project>

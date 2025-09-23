@@ -1,0 +1,59 @@
+/* Copyright IBM Corp. 2013, 2015  All Rights Reserved.              */
+
+define([
+   "dojo",
+   "dojo/_base/window",
+   "ic-core/widget/mentions/MentionsTypeaheadUtils"
+], function (dojo, windowModule, MentionsTypeaheadUtils) {
+
+   var CHAR_CODE_AT = '@'.charCodeAt(0),
+      CHAR_CODE_HASH = '#'.charCodeAt(0),
+      CHAR_CODE_DOLLAR = '$'.charCodeAt(0);
+   
+   function noop(){
+      return;
+   }
+
+   function getSelection(selStart, selEnd, startContainer, endContainer) {
+      return {
+         selection: {
+            removeAllRanges: noop,
+            addRange: noop
+         },
+         range: {
+            endContainer: endContainer,
+            setStartAfter: noop,
+            setEndAfter: noop
+         }
+      };
+   }
+
+   describe("the method MentionsTypeaheadUtils.isTrackedKeyCode", function() {
+      var m, t;
+      beforeEach(function() {
+         m = new MentionsTypeaheadUtils();
+         m.textAreaNode = windowModule.doc.createElement('div', {contentEditable: true});
+         // Mock
+         m.getSelection = getSelection;
+         m.detectURL = noop;
+
+         t = windowModule.doc.createTextNode("Let's create a smarter mentions control.");
+         m.textAreaNode.appendChild(t);
+      });
+      it("returns true if char code matches a registered type", function() {
+         m._registeredTypes = [{_activatorChar: "@"}];
+         expect(m.isTrackedKeyCode({keyCode: CHAR_CODE_AT, charCode: CHAR_CODE_AT})).toBeTruthy();
+
+         m._registeredTypes = [{_activatorChar: "$"}];
+         expect(m.isTrackedKeyCode({keyCode: CHAR_CODE_DOLLAR, charCode: CHAR_CODE_DOLLAR})).toBeTruthy();
+
+         m._registeredTypes = [{_activatorChar: "#"}];
+         expect(m.isTrackedKeyCode({keyCode: CHAR_CODE_HASH, charCode: CHAR_CODE_HASH})).toBeTruthy();
+      });
+      it("returns false for other characters", function() {
+         expect(m.isTrackedKeyCode({keyCode: dojo.keys.SPACE, charCode: dojo.keys.SPACE})).toBeFalsy();
+         expect(m.isTrackedKeyCode({keyCode: dojo.keys.BACKSPACE})).toBeFalsy();
+         expect(m.isTrackedKeyCode({keyCode: dojo.keys.ENTER})).toBeFalsy();
+      });
+   });
+});

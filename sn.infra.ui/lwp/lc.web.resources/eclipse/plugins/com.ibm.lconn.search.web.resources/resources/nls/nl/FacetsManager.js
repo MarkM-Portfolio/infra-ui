@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+({
+	"CLOSE_HELP_DATE":"Help bij Datums sluiten",
+	"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Help bij Documenttypen sluiten",
+	"CLOSE_HELP_PERSON":"Help bij Personen sluiten",
+	"CLOSE_HELP_TAG":"Help bij Tags sluiten",
+	"CLOSE_HELP_TREND":"Help bij Trending sluiten",
+	"COLLAPSE_DATE":"Het datumfilter samenvouwen",
+	"COLLAPSE_ECM_DOCUMENT_TYPE":"Het documenttypefilter samenvouwen",
+	"COLLAPSE_PERSON":"Het personenfilter samenvouwen",
+	"COLLAPSE_TAG":"Het tagsfilter samenvouwen",
+	"COLLAPSE_TREND":"Het trendsfilter samenvouwen",
+	"DESCRIPTION_DATE":"Om de resultaten af te beelden die in een bepaalde persiode zijn toegevoegd of bijgewerkt, vouwt u de twistie uit en filtert u de informatie op jaar en maand.",
+	"DESCRIPTION_ECM_DOCUMENT_TYPE":"Een documenttype is een trefwoord dat u aan bestanden toewijst om deze gemakkelijker te kunnen vinden. Klik op een documenttype om de zoekresultaten weer te geven waaraan dit trefwoord is toegewezen.",
+	"DESCRIPTION_PERSON":"Bekijk de gebruikers die gekoppeld zijn aan uw zoekresultaten. Klik op een naam om de zoekresultaten voor een specifieke persoon af te beelden.",
+	"DESCRIPTION_TAG":"Een tag is een trefwoord dat u kunt toewijzen aan content of aan personen zodat u deze gemakkelijker kunt zoeken. Klik op een tag om de zoekresultaten weer te geven waaraan dit trefwoord is toegewezen.",
+	"DESCRIPTION_TREND":"Een trend is een trefwoord dat door het systeem wordt gegenereerd voor het vereenvoudigen van zoekacties in Statusupdates. Klik op een trend om de zoekresultaten weer te geven waaraan dit trefwoord is toegewezen.",
+	"EXPAND_DATE":"Het datumfilter uitvouwen",
+	"EXPAND_ECM_DOCUMENT_TYPE":"Het documenttypefilter uitvouwen",
+	"EXPAND_PERSON":"Het personenfilter uitvouwen",
+	"EXPAND_TAG":"Het tagsfilter uitvouwen",
+	"EXPAND_TREND":"Het trendsfilter uitvouwen",
+	"HELP_DATE":"Help bij Datums",
+	"HELP_ECM_DOCUMENT_TYPE":"Help bij Documenttypen",
+	"HELP_PERSON":"Help bij Personen",
+	"HELP_TAG":"Help bij Tags",
+	"HELP_TREND":"Help bij Trending",
+	"NO_DATE_CONTENT":"Er zijn op dit moment geen datums beschikbaar",
+	"NO_ECM_DOCUMENT_TYPE_CONTENT":"Er zijn op dit moment geen documenttypen beschikbaar",
+	"NO_PERSON_CONTENT":"Er zijn op dit moment geen personen beschikbaar",
+	"NO_TAG_CONTENT":"Er zijn op dit moment geen tags beschikbaar",
+	"NO_TREND_CONTENT":"Er zijn op dit moment geen trends beschikbaar",
+	"TITLE_DATE":"Datums",
+	"TITLE_ECM_DOCUMENT_TYPE":"Documenttypen",
+	"TITLE_PERSON":"Personen",
+	"TITLE_TAG":"Tags",
+	"TITLE_TREND":"Trending"
+})
+

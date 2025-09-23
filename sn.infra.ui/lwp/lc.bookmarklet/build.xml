@@ -1,0 +1,128 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2002, 2012                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="lc.bookmarklet" default="development" basedir="."> 
+	
+  <import file="${env.WPLC_IMPORT}/std_props.xml"/>
+  <import file="${env.WPLC_IMPORT}/std_dirs.xml"/>
+
+  <!--property name="manifest.file" value="${dir.websrc}/META-INF/MANIFEST.MF"/-->
+  <property name="jsObfuscator.skipobfuscation" value="true"/>
+  <property name="include.pattern" value="**/*.gif" />
+	
+  <property name="output.jar" value="${dir.lib}/lc-bookmarklet.jar"/>                                
+  <property name="output.war" value="${dir.lib}/lc-bookmarklet.war"/>    
+	
+  <!-- <property name="dojo.build.enable" value="false" />
+  <property name="dojo.build.profile" value="dojo-src/1.4-blue-buildtools/util/buildscripts/profiles/bookmarklet141.profile.js" />
+  <property name="dojo.build.profile.component" value="dojo-src" />
+  <property name="dojo.build.local.source" value="dojo/" />
+  <property name="dojo.build.include.files" value="lconn/**" /> -->
+
+  <property name="precompile.override" value="copy-necessary-files"/>
+  <property name="war_package.optional" value="precompile-bookmarklet"/>
+  <property name="build.prop.file"  location="${dir.classes}/com/ibm/lconn/bookmarklet/util/build.properties"/>
+  <property name="postcompile.override" value="postcompilework" /> 
+	
+  <import file="${env.WPLC_IMPORT}/check.xml"/>
+  <import file="${env.WPLC_IMPORT}/compile.xml"/>
+  <import file="${env.WPLC_IMPORT}/rmic.xml"/>
+  <import file="${env.WPLC_IMPORT}/package_extra.xml"/>
+  <import file="${env.WPLC_IMPORT}/javadoc.xml"/>
+  <import file="${env.WPLC_IMPORT}/jdepend.xml"/>
+  <import file="${env.WPLC_IMPORT}/clean.xml"/>
+  <import file="${env.WPLC_IMPORT}/comp_zip.xml"/>
+  <import file="${env.WPLC_IMPORT}/std_targets.xml"/>
+  <import file="${env.WPLC_IMPORT}/process_nls.xml"/>
+  <import file="${env.WPLC_IMPORT}/performance.xml"/>
+  
+  <locateComponent component="lc.bookmarklet" locateBuildDir="true" property="build.home"/>
+	
+  <target name="precompile-bookmarklet">
+	  <antcall target="copyBuildNav" />
+	  <antcall target="copyInstaller" />  	  
+  </target>  
+	
+  <target name="copy-necessary-files">
+	<copy todir="${dir.classes}/META-INF" overwrite="true">
+	  <fileset dir="${dir.src}/META-INF" />
+	</copy>
+	
+  </target>
+
+  <target name="copyBuildNav">
+   <antcall target="copyNavToDir">
+      <param name="target.nav.dir" value="${dir.war.tmpout}/nav" />
+   </antcall>
+  </target>
+
+  <target name="copyNavToDir">
+    <locateComponent component="sn.coreui" path="nav" locateBuildDir="true" property="sn.coreui.path" />
+    <delete dir="${target.nav.dir}" />
+    <copy todir="${target.nav.dir}" includeEmptyDirs="true">
+      <fileset dir="${sn.coreui.path}" includes="**" />
+    </copy>
+  </target>
+   <target name="postcompilework">
+      <antcall target="buildstamp"/>
+   </target>
+   
+
+
+   <target name="copyInstaller" if="env.MSVCNTDIR">
+     <locateComponent component="lc.iebtn.installer/installer" locateBuildDir="true" property="installer.home"/>
+     <copy todir="${dir.war.tmpout}/tools/bookmarkletinstaller" overwrite="true">
+	   <fileset dir="${installer.home}/bin">
+		   <include name="**" />
+	   </fileset>
+     </copy>
+	 <!--remove pseudo translation files for beta. This section should be removed when the translation files are ready. -->
+	   <!--
+	 <copy file="${dir.websrc}/tools/bookmarkletinstaller/GRes409.dll" tofile="${dir.websrc}/tools/bookmarkletinstaller/GRes401.dll" overwrite="true" />
+	 <copy file="${dir.websrc}/tools/bookmarkletinstaller/GRes409.dll" tofile="${dir.websrc}/tools/bookmarkletinstaller/GRes404.dll" overwrite="true" />
+	 <copy file="${dir.websrc}/tools/bookmarkletinstaller/GRes409.dll" tofile="${dir.websrc}/tools/bookmarkletinstaller/GRes405.dll" overwrite="true" />		 
+	 <copy file="${dir.websrc}/tools/bookmarkletinstaller/GRes409.dll" tofile="${dir.websrc}/tools/bookmarkletinstaller/GRes408.dll" overwrite="true" />
+	 <copy file="${dir.websrc}/tools/bookmarkletinstaller/GRes409.dll" tofile="${dir.websrc}/tools/bookmarkletinstaller/GRes40d.dll" overwrite="true" />
+	 <copy file="${dir.websrc}/tools/bookmarkletinstaller/GRes409.dll" tofile="${dir.websrc}/tools/bookmarkletinstaller/GRes410.dll" overwrite="true" />
+	 <copy file="${dir.websrc}/tools/bookmarkletinstaller/GRes409.dll" tofile="${dir.websrc}/tools/bookmarkletinstaller/GRes411.dll" overwrite="true" />
+	 <copy file="${dir.websrc}/tools/bookmarkletinstaller/GRes409.dll" tofile="${dir.websrc}/tools/bookmarkletinstaller/GRes412.dll" overwrite="true" />
+	 <copy file="${dir.websrc}/tools/bookmarkletinstaller/GRes409.dll" tofile="${dir.websrc}/tools/bookmarkletinstaller/GRes415.dll" overwrite="true" />
+	 <copy file="${dir.websrc}/tools/bookmarkletinstaller/GRes409.dll" tofile="${dir.websrc}/tools/bookmarkletinstaller/GRes416.dll" overwrite="true" />
+	 <copy file="${dir.websrc}/tools/bookmarkletinstaller/GRes409.dll" tofile="${dir.websrc}/tools/bookmarkletinstaller/GRes419.dll" overwrite="true" />
+	 <copy file="${dir.websrc}/tools/bookmarkletinstaller/GRes409.dll" tofile="${dir.websrc}/tools/bookmarkletinstaller/GRes41f.dll" overwrite="true" />
+	 <copy file="${dir.websrc}/tools/bookmarkletinstaller/GRes409.dll" tofile="${dir.websrc}/tools/bookmarkletinstaller/GRes804.dll" overwrite="true" />
+	 <copy file="${dir.websrc}/tools/bookmarkletinstaller/GRes409.dll" tofile="${dir.websrc}/tools/bookmarkletinstaller/GRes80c.dll" overwrite="true" />
+	 <copy file="${dir.websrc}/tools/bookmarkletinstaller/GRes409.dll" tofile="${dir.websrc}/tools/bookmarkletinstaller/GResc07.dll" overwrite="true" />
+	 <copy file="${dir.websrc}/tools/bookmarkletinstaller/GRes409.dll" tofile="${dir.websrc}/tools/bookmarkletinstaller/GResc0a.dll" overwrite="true" />
+		   -->
+	 <!--complete-->
+   </target>
+
+   <target name="build.prop.file.check">
+      <available file="${build.prop.file}" property="buildstamp.done" />
+   </target>
+	
+	
+   <target name="buildstamp" depends="build.prop.file.check" unless="buildstamp.done">
+      <tstamp/>
+	  <!-- create build.properties file -->
+	  <echo file="${build.prop.file}" append="false" message="# Ant generated build.properties file -- Do not edit!&#10;" />
+	  <echo file="${build.prop.file}" append="true"  message="#&#10;" />
+	  <echo file="${build.prop.file}" append="true"  message="str.dtstamp=${env.CMVC_RELEASE}_${env.BUILDLEVEL}&#10;" />
+	  <echo file="${build.prop.file}" append="true"  message="str.debug.flag=${debug.flag}&#10;" />
+	  <property name="buildstamp.done" value="true" />
+	   
+   </target>
+</project>
+

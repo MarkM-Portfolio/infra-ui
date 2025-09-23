@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2012, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!-- ***************************************************************** -->
+<!-- DOH test to ensure the constants events declarations are correct  -->
+<!-- in each of the components. Important to ensure that the constants -->
+<!-- for the events in each class are correct. Test mainly used when   -->
+<!-- changing events to constants to ensure all references to events   -->
+<!-- match. 														   -->
+<!-- ***************************************************************** -->
+<html>
+	<head>
+		<title>ActivityStream Event Constants DOH Tests</title>
+	
+		<!-- Load JS resources -->
+		<script type="text/javascript">
+			var djConfig = {
+			   isDebug: true,
+			   locale: "en",
+			   localizationComplete: true,
+			   baseUrl: "/connections/resources/web/dojo/",
+			   dojoBlankHtmlUrl: "/homepage/static/20111229.234923/nav/blankIE.html",
+			   blankGif: "/connections/resources/web/com.ibm.lconn.core.styles.oneui3/images/blank.gif"
+			};
+		</script>
+		
+		<script type="text/javascript" 
+			src="/connections/resources/web/_js?include=com.ibm.social.test.modules.as.constants.constantsTestPrepare.js"></script>
+
+		<script type="text/javascript">
+			// Wait until dojo is loaded before running tests
+	        dojo.addOnLoad(function(){
+	        	/** These constants are required by a number of the test runs. Take are to
+	        	    only create them if needed. **/
+	        	if (!(lconn.homepage.global)) lconn.homepage.global={};
+	        	if (!(lconn.homepage.global.events)) lconn.homepage.global.events={}; 
+				if (!(lconn.homepage.global.contextRoot)) lconn.homepage.global.contextRoot="/root";
+	        	
+	        	dojo.require("lconn.homepage.as.extension.TagManagerExtension");
+	        	dojo.require("lconn.homepage.as.sidenav.SideNavigation");
+				dojo.require("lconn.homepage.as.tagmanager.TagFilterDijit");
+				dojo.require("lconn.homepage.as.tagmanager.TagManager");
+	        	dojo.require("com.ibm.social.test.as.testfeeds.StandardConnectionsFeed");
+	        	
+				var eventConstants = com.ibm.social.as.constants.events;
+				com.ibm.social.as.configManager = new com.ibm.social.as.config.ConfigManager({configObject: activityStreamConfig});
+				
+				// Define a mock for the abtractHelper if it isn't defined.
+				if (!(window.abstractHelper)) window.abstractHelper={ register: function(){}};
+
+				// Mock for the eventController that provides stubs for required functions.
+				var eventController = { onFilterChange: function() {},
+										onSecondFilterChange: function() {},
+										onPageChange: function() {}
+										};
+	        	
+				// There is one test function for each class having it's events changed to constants.
+				doh.register("com.ibm.social.test.as.constants.ConstantTests", [
+
+					function test_ActionRequiredBadge() {
+						var actionRequired = new lconn.homepage.as.badge.ActionRequiredBadge();
+						
+						doh.t(actionRequired.updateBadgeEventName === eventConstants.ACTIONREQUIREDBADGEUPDATE);
+						doh.t(actionRequired.decreaseBadgeEventName === eventConstants.ACTIONREQUIREDBADGEDECREASE);
+					},
+
+					function test_ActivityStream() {
+						var realOnLoad = com.ibm.social.as.ActivityStream.prototype.onLoad;
+						
+						dojo.extend(com.ibm.social.as.ActivityStream,
+							{onLoad: function(){}});
+						var activityStream = new com.ibm.social.as.ActivityStream(
+												{isGadget: false,
+												 configObject:{}
+						});
+						doh.t(activityStream.activityStreamLoadedEvent === eventConstants.ACTIVITYSTREAMLOADED);
+						doh.t(activityStream.updateStateEvent === eventConstants.UPDATESTATE);
+
+						dojo.extend(com.ibm.social.as.ActivityStream,
+							{onLoad: realOnLoad});
+					},
+
+					function test_ActivityStreamView() {
+						var activityStreamView = new com.ibm.social.as.view.ActivityStreamView({configManager: com.ibm.social.as.configManager});
+						doh.t(activityStreamView.populateInitEventName === eventConstants.INIT);
+						doh.t(activityStreamView.populateFeedErrorEventName === eventConstants.POPULATEERROR);
+						doh.t(activityStreamView.populateEventName === eventConstants.POPULATE);
+					},
+
+					function test_Controller() {
+						var controller = new com.ibm.social.as.controller.Controller({configManager: com.ibm.social.as.configManager});
+						doh.t(controller.populateFeedInitEventName === eventConstants.INIT);
+						doh.t(controller.populateFeedEventName === eventConstants.POPULATE);
+						doh.t(controller.stateUpdatedEvent === eventConstants.STATEUPDATED);
+						doh.t(controller.populateFeedErrorEventName === eventConstants.POPULATEERROR);
+					},
+					
+					function test_EEManager() {
+						var eemanager = new com.ibm.social.as.ee.EEManager();
+						doh.t(eemanager.stateUpdatedEvent === eventConstants.STATEUPDATED);
+					},
+
+					function test_EventListener() {
+						var eventListener = new com.ibm.social.as.listener.EventListener({controller: eventController});
+						doh.t(eventListener.pageChangeEvent === eventConstants.PAGECHANGE);
+					},
+					
+					function test_ExternalEventListener() {
+						var extEventController = {onUpdateState: function() {}};
+						var externalEventListener = new com.ibm.social.as.listener.ExternalEventListener({controller: extEventController});
+						doh.t(externalEventListener.updateStateEvent === eventConstants.UPDATESTATE);					
+					},
+					
+					function test_FilterContainer() {
+						var realCreateFirstFilter = com.ibm.social.as.filter.FilterContainer.prototype.createFirstFilter;
+						
+						dojo.extend(com.ibm.social.as.filter.FilterContainer,
+							{createFirstFilter: function(){}});
+						var filterContainer = new com.ibm.social.as.filter.FilterContainer(
+													{currentView: {filters: {label:""}}});
+						doh.t(filterContainer.filterMenus.first.eventName === eventConstants.UPDATESTATE);
+						doh.t(filterContainer.filterMenus.second.eventName === eventConstants.UPDATESTATE);
+						
+						dojo.extend(com.ibm.social.as.filter.FilterContainer,
+							{createFirstFilter: realCreateFirstFilter});
+					},
+					
+					function test_FilterMenu() {
+						var realUpdateFilterOptions = com.ibm.social.as.filter.FilterMenu.prototype.updateFilterOptions;
+						
+						dojo.extend(com.ibm.social.as.filter.FilterMenu, {updateFilterOptions: function(){}});
+						var filterMenu = new com.ibm.social.as.filter.FilterMenu({filter:{label:""}});
+						doh.t(filterMenu.onFilterChangeEventName === eventConstants.UPDATESTATE);
+						
+						dojo.extend(com.ibm.social.as.filter.FilterMenu, {updateFilterOptions: realUpdateFilterOptions});
+					},
+
+					function test_MessageContainer() {
+						var container = new lconn.homepage.as.message.MessageContainer();
+						doh.t(container.createMessageEventName === eventConstants.CREATEMESSAGE);
+						doh.t(container.clearMessageEventName === eventConstants.CLEARMESSAGE);
+						doh.t(container.stateUpdatedEvent === eventConstants.STATEUPDATED);
+					},
+					
+					function test_NewsItem() {
+						var standardFeed = new com.ibm.social.test.as.testfeeds.StandardConnectionsFeed();
+						var newsData = dojo.safeMixin(standardFeed.content.entry[0], 
+												new com.ibm.social.as.item.data.NewsDataAccessor());
+							
+						var newsItem = new com.ibm.social.as.item.NewsItem({
+								newsData: newsData
+						}, dojo.byId("newsItemDiv"));
+						
+						doh.t(newsItem.itemClickedEvent == com.ibm.social.as.constants.events.ITEMCLICKED);
+					},
+										
+					
+					function test_PagingHandler() {
+						var pagingHandler = new com.ibm.social.as.paging.PagingHandler();
+						doh.t(pagingHandler.pagingEventName === eventConstants.PAGECHANGE);
+					},
+					
+					
+					function test_PlaceHolderView() {
+						var placeHolderView = new com.ibm.social.as.view.PlaceholderView({configManager: com.ibm.social.as.configManager});
+						for(var eventName in placeHolderView.placeholderEvents) {
+							doh.t(eventName === eventConstants.PLACEHOLDERADD ||
+										   eventName === eventConstants.PLACEHOLDERREMOVE);
+						}
+					},
+					
+					function test_SideNavigation() {
+						var nav = new lconn.homepage.as.sidenav.SideNavigation();
+						doh.t(nav.updateStateEvent === eventConstants.UPDATESTATE);
+						doh.t(nav.stateUpdatedEvent === eventConstants.STATEUPDATED);
+					},
+
+					function test_StateHandler() {
+						var handler = new lconn.homepage.as.state.StateHandler();
+						doh.t(handler.updateStateEvent === eventConstants.UPDATESTATE);
+						doh.t(handler.stateUpdatedEvent === eventConstants.STATEUPDATED);
+						doh.t(handler.activityStreamLoadedEvent === eventConstants.ACTIVITYSTREAMLOADED);
+					},
+					
+					function test_TagFilterDijit() {
+						var realCreateTagFilterMenu = lconn.homepage.as.tagmanager.TagFilterDijit.prototype.createTagFilterMenu;
+						dojo.extend(lconn.homepage.as.tagmanager.TagFilterDijit, 
+							{createTagFilterMenu: function(){}});
+						
+						var tagFilter = new lconn.homepage.as.tagmanager.TagFilterDijit();
+						doh.t(tagFilter.updateFilterEventName === eventConstants.UPDATETAGFILTER);
+						doh.t(tagFilter.fliterChangeEventName === eventConstants.UPDATESTATE);
+						
+						dojo.extend(lconn.homepage.as.tagmanager.TagFilterDijit,
+							{createTagFilterMenu : realCreateTagFilterMenu});;
+					},
+					
+					function test_TagManagerExtension() {
+						var realGetTagSubscriptions = lconn.homepage.as.tagmanager.TagManager.prototype.getTagSubscriptions;
+						var realSetupAddTagsTypeAhead = lconn.homepage.as.tagmanager.TagManager.prototype._setupAddTagsTypeAhead;
+						var realSetupRemoveTagCombo = lconn.homepage.as.tagmanager.TagManager.prototype._setupRemoveTagCombo;
+
+						dojo.extend(lconn.homepage.as.tagmanager.TagManager,
+							{getTagSubscriptions: function(){}});
+						dojo.extend(lconn.homepage.as.tagmanager.TagManager,
+							{_setupAddTagsTypeAhead: function(){}});
+						dojo.extend(lconn.homepage.as.tagmanager.TagManager, 
+							{_setupRemoveTagCombo: function(){}});
+						
+						var ext = new lconn.homepage.as.extension.TagManagerExtension();
+						doh.t(ext.placeholderAddEventName === eventConstants.PLACEHOLDERADD);
+						doh.t(ext.placeholderRemoveEventName === eventConstants.PLACEHOLDERREMOVE);
+						doh.t(ext.tagsFollowingEventName === eventConstants.TAGSFOLLOWING);
+						
+						dojo.extend(lconn.homepage.as.tagmanager.TagManager,
+							{getTagSubscriptions: realGetTagSubscriptions});
+						dojo.extend(lconn.homepage.as.tagmanager.TagManager,
+							{_setupAddTagsTypeAhead: realSetupAddTagsTypeAhead});
+						dojo.extend(lconn.homepage.as.tagmanager.TagManager,
+							{_setupRemoveTagCombo: realSetupRemoveTagCombo});
+					}
+				]);
+				
+				// Run the doh tests
+				doh.run();
+			});
+		</script>
+	</head>
+	<body>
+		<div id="pageBodyNode">		
+		</div>
+		<div id="newsItemDiv">
+		</div>
+	</body>
+</html>

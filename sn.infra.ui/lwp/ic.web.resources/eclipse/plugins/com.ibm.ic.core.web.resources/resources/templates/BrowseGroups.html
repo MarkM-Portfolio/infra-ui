@@ -1,0 +1,28 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div style="display:none;" data-dojo-attach-point="browseGroupsExp_AP">
+    <div class="BrowseGroups" data-dojo-attach-point="browseGroupsDialog_AP">
+        <form method="POST" name="memberAddForm" class="lotusDialog lotusForm lotusSearch" enctype="multipart/form-data" style="background-color: transparent;" data-dojo-attach-point="browseGroupsForm_AP" data-dojo-attach-event="onsubmit: findGroupList">
+            <fieldset>
+            	<legend style="display:none;">${rs_browseGroupsDialogTitle}</legend>
+                <div style="width: 440px; white-space: nowrap;" data-dojo-attach-point="findGroupDiv_AP">
+					<div id="browseGroupName">${rs_browseGroupName}</div>
+					<input type="text" name="groupEntry" class="groupEntryLighter lotusText" aria-labelledby="browseGroupName" data-dojo-attach-point="groupEntry_AP" data-dojo-attach-event="onclick: clearGroupEntry">
+					<span title="${rs_browseFindGroups}" class="lotusBtnImg" role="button" data-dojo-attach-point="findGroupSpan_AP"><input type="image" src="${_blankGif}" class="lotusSearchButton" href="javascript:void(0);" alt="${rs_browseFindGroups}" data-dojo-attach-point="findGroupBtn_AP" data-dojo-attach-event="onclick: findGroupList"><a href="javascript:;" class="lotusAltText" data-dojo-attach-event="onclick: findGroupList">${rs_browseFindGroups}</a></span>
+				</div>
+				<div id="browseGroupsWidgetLabel">${rs_browseMatchingGroup}</div>
+				<div aria-labeledby="browseGroupsWidgetLabel" data-dojo-attach-point="groupBrowseList_AP"></div>
+				<div style="display: none;" data-dojo-attach-point="showGroupListBreadcrumb_AP">
+					<div class="lotusBreadcrumbs" aria-hidden="true">
+						<span>${rs_browseParentName}</span>
+						<span data-dojo-attach-point="groupListBreadcrumb_AP"></span>
+					</div> 
+					<div id="browseGroupsBreadcrumbs" style="left: 0; top: -5000px; position: absolute;" aria-live="polite" aria-hidden="false" data-dojo-attach-point="groupListLiveRegion_AP"></div>					 
+				</div>
+                <div style="display: none;" data-dojo-attach-point="showGroupSelected_AP">
+                    <span class="selectedLabel">${rs_browseGroupSelected} </span>
+                    <span data-dojo-attach-point="groupSelected_AP"></span>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

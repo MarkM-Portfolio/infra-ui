@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">Datoteke</msg>
+  <msg name="description">Gadgeti datoteka koji omogućuju učitavanje i dijeljenje datoteka</msg>
+  <msg name="action_uploadFile_label">Datoteke</msg>
+  <msg name="action_uploadFile_tooltip">Učitaj i dijeli datoteke</msg>
+  <msg name="loading">Učitavanje...</msg>
+  <msg name="error_msg">Sadržaj se ne može učitati. Pokušajte ponovno kasnije ili kontaktirajte vašeg sistemskog administratora.</msg>
+  <msg name="error_alt">Greška</msg>
+</messagebundle>

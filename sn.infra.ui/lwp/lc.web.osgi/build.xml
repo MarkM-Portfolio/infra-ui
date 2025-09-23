@@ -1,0 +1,86 @@
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2003, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<project name="lc.web.osgi" default="development" basedir=".">
+   <!-- Import helpers for property builds, do not change -->
+   <locateComponent component="prereqs.web.resources" property="eclipseBuildDir" locateBuildDir="false"/>
+   <import file="${eclipseBuildDir}/build_utils.xml" />
+   <import file="${env.WPLC_IMPORT}/pde_build.xml"/>  
+
+   <target name="custom_init">
+      <property name="dir.comp.osgi.lib" value="${basedir}/eclipse/plugins/com.ibm.lconn.core.web/lib" />
+      <mkdir dir="${dir.comp.osgi.lib}" />
+      <collector componentName="${ant.project.name}" groupList="to_war"
+         verbose="${verbose}" overrideDest="true"
+         includeDependencies="true"
+         recurseDependencies="false"
+         usePreferredInstallLocation="false" type="jar" platform="all"
+         toDir="${dir.comp.osgi.lib}" />
+      <locateComponent component="prereqs.sn/jakarta.commons" property="comp.prereq.jakarta.commons" locateBuildDir="false" />
+      <copy file="${comp.prereq.jakarta.commons}/commons-lang3-3.1.jar" todir="${dir.comp.osgi.lib}" />
+
+      <property name="dir.comp.osgi.eclipse.lib" value="${basedir}/eclipse/plugins/com.ibm.lconn.core.web.eclipse/lib" />
+      <mkdir dir="${dir.comp.osgi.eclipse.lib}" />
+      <collector componentName="lc.core/web.resources.remote" groupList="to_war"
+         verbose="${verbose}" overrideDest="true"
+         includeDependencies="false"
+         recurseDependencies="false"
+         usePreferredInstallLocation="false" type="jar" platform="all"
+         toDir="${dir.comp.osgi.eclipse.lib}" />
+      <collector componentName="lc.shindig.serverapi/core" groupList="to_war"
+         verbose="${verbose}" overrideDest="true"
+         includeDependencies="false"
+         recurseDependencies="false"
+         usePreferredInstallLocation="false" type="jar" platform="all"
+         toDir="${dir.comp.osgi.eclipse.lib}" />
+      <collector componentName="lc.oauth/platform" groupList="to_war"
+         verbose="${verbose}" overrideDest="true"
+         includeDependencies="false"
+         recurseDependencies="false"
+         usePreferredInstallLocation="false" type="jar" platform="all"
+         toDir="${dir.comp.osgi.eclipse.lib}" />
+      <collector componentName="lc.oauth/messages" groupList="to_war"
+         verbose="${verbose}" overrideDest="true"
+         includeDependencies="false"
+         recurseDependencies="false"
+         usePreferredInstallLocation="false" type="jar" platform="all"
+         toDir="${dir.comp.osgi.eclipse.lib}" />
+      <!--collector componentName="notify/client" groupList="to_war"
+         verbose="${verbose}" overrideDest="true"
+         includeDependencies="false"
+         recurseDependencies="false"
+         usePreferredInstallLocation="false" type="jar" platform="all"
+         toDir="${dir.comp.osgi.eclipse.lib}" />
+      <collector componentName="tk.rproxysvc/server" groupList="to_war"
+         verbose="${verbose}" overrideDest="true"
+         includeDependencies="false"
+         recurseDependencies="false"
+         usePreferredInstallLocation="false" type="jar" platform="all"
+         toDir="${dir.comp.osgi.eclipse.lib}" />
+      <collector componentName="tk.rproxysvc/transport" groupList="to_war"
+         verbose="${verbose}" overrideDest="true"
+         includeDependencies="false"
+         recurseDependencies="false"
+         usePreferredInstallLocation="false" type="jar" platform="all"
+         toDir="${dir.comp.osgi.eclipse.lib}" /-->
+      <!--locateComponent component="prereqs.sn/was7.0" property="comp.prereq.was7" locateBuildDir="false" />
+      <copy file="${comp.prereq.was7}/j2ee.jar" todir="${dir.comp.osgi.eclipse.lib}" /-->
+
+      <property name="dir.comp.osgi.was.lib" value="${basedir}/eclipse/plugins/com.ibm.lconn.core.web.was/lib" />
+      <mkdir dir="${dir.comp.osgi.eclipse.lib}" />
+      <locateComponent component="prereqs.sn/was7.0" property="comp.prereq.was7" locateBuildDir="false" />
+      <!--copy file="${comp.prereq.was7}/j2ee.jar" todir="${dir.comp.osgi.eclipse.lib}" /-->
+      <copy file="${comp.prereq.was7}/com.ibm.jaxws.thinclient_8.0.0.jar" todir="${dir.comp.osgi.was.lib}" />
+   </target>
+</project>

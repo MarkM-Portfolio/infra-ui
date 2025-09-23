@@ -1,0 +1,112 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+
+.lotusAbout h1 {font:normal 1.8em/1.0, Helvetica, Arial, Verdana, sans-serif;margin-bottom:0;}
+.lotusAbout p {color:#444444;margin:5px 0px;}
+.lotusAboutBoxBody {padding-right:25px;background:#a2d7ff url("/com.ibm.lconn.core.styles.oneui3/images/backgroundAbout.gif") left top repeat-x;overflow:hidden;}
+.lotusAboutBoxBody img {vertical-align:center;float:left;margin:0 5px 0 10px}
+.lotusAboutText {margin:22px 20px 20px 225px;}
+.lotusAboutText h2{color:#fff;margin:0;font-size:3em !important;padding:0}
+.lotusAboutText h3 {text-align:left;margin:3px 0 15px 0;font-size:1.5em;color:#274a71;}
+.lotusAboutText p {text-align:left;color:#000;}
+.lotusContentColOne {width:45%;margin:0 0px 10px 10px;padding-right:10px;}
+.lotusContentColTwo {width:45%;margin:0 10px 10px 0px;text-align:left;}
+#lotusFooter .lotusAboutInfo {margin:10px 100px;}
+#lotusFooter .lotusAboutInfo p{font-size:.8em;color:#666;margin:0 60px 0 120px;}
+.lotusWelcomeBox {margin-bottom:20px;}
+.lotusList ul.lotusEditable li{text-align:right;overflow:hidden;clear:both;border-bottom:1px solid #b4b4b4;padding:2px;}
+.lotusList .lotusEditable .icon{background-image:url("/com.ibm.lconn.core.styles.oneui3/images/delete.gif");background-position:right center;background-repeat:no-repeat}
+.lotusList .lotusEditable .icon:hover, .list .editable .icon:focus{background-image:url("/com.ibm.lconn.core.styles.oneui3/images/xRed.gif");background-color:transparent}
+.lotusList .lotusEditable .icon img{width:10px;height:10px;}
+a.dogearUntag, a.dogearUntag:visited {background:  url("/com.ibm.lconn.core.styles.oneui3/images/delete.gif") center left no-repeat; padding-left:12px; }
+a.dogearUntag:hover {color: black;background-image: url("/com.ibm.lconn.core.styles.oneui3/images/delete.gif");}
+a.dogearPlustag,a.dogearPlustag:visited {background: url("/com.ibm.lconn.core.styles.oneui3/images/moveUp.gif") center left no-repeat; padding-left:12px;}
+a.dogearPlustag:hover,.my a.dogearPlustag:hover {color: #000;background-image: url("/com.ibm.lconn.core.styles.oneui3/images/moveUp.gif");}
+.lotusSection h6{margin:0 0 2px 0;color:gray;clear:both;}
+a.lotusClear,
+a.lotusClear:visited
+{
+color: #244064;
+font-size: 1.0em;
+font-weight: normal;
+text-decoration:underline;
+padding-left:10px;
+}
+a.dtButton {text-decoration:none;cursor:pointer;display:block;background:url("/com.ibm.lconn.core.styles.oneui3/images/dogearThisButtonBgBottom.gif") no-repeat bottom left;color:#000;  font-size:1.1em;padding:7px 15px 5px 30px;}
+* html a.dtButton{height:1%;}
+.toolBMtext{color:#FDCC65; font-weight:bold; font-size:1.2em; line-height:1.0em; overflow:hidden; margin-left:10px; margin-top:5px;}
+.toolBMImage{float:left;margin-top:5px;width:120px;background: url("/com.ibm.lconn.core.styles.oneui3/images/dogearThisButtonBgTop.gif") no-repeat top left;}
+a.fdtButton {text-decoration:none;cursor:pointer;color:#000;font-size:1.1em;margin:10px 0 0 30px;float:left; border:1px solid #ccc; -moz-border-radius:3px; padding:2px;}
+a.fdtButton:hover{text-decoration:underline}
+a.fdtButton img{margin-top:-5px}
+.ftoolBMImage{float: left !important; margin: -5px 0 0 10px;}
+.ftoolBMtext{color:#FDCC65; font-weight:bold; font-size:1.2em; line-height:1.0em; float:left; margin-left:10px; margin-top:5px;}
+.toolHeader {color:#4F9BEF; clear:both; font-weight:normal;}
+ol.decimal{list-style-type:decimal;}
+.lotusHelp{padding:4px;position:absolute;padding:4px;top:-9999px;}
+.lotusAllTagsPopup{top:-9999px;position:absolute;background-color:#FFFFFF;border:2px solid #669CE2;padding:10px 10px 10px 30px;width:600px;}
+.lotusAllTagsPopup img{float:right;}
+#retagMultiForm .lotusText, #addtagMultiForm .lotusText, #deltagMultiForm .lotusText, #notifyMultiForm .lotusText{width:90%;}
+.completedIcon {background:transparent url("/com.ibm.lconn.core.styles.oneui3/images/checkmark.gif") no-repeat scroll left center;}
+.memberList{border: 1px solid #9A9A9A; border-bottom:none;margin-bottom:4px;width:50%;}
+.member {padding:1px 5px;background-color:#EBEFFA;border:1px solid #90CAFF;margin-right:8px;color:#105CB6;margin-bottom:5px;float:left;}
+.member .picon{background:transparent url("/com.ibm.lconn.core.styles.oneui3/images/iconVisitor.gif") no-repeat scroll center center;height:16px;width:16px;padding:3px;}
+.fieldDel{background:transparent url("/com.ibm.lconn.core.styles.oneui3/images/iconClose.png") no-repeat scroll center center;border:medium none;height:16px;width:16px;}
+.fieldDelText{border:medium none;display:none;height:16px;width:16px;}
+.scroll{overflow-x:hidden;overflow-y:auto;}
+.importDialogDesc{padding:10px;}
+.importDialogActionDiv{paddding:8px;}
+.fieldhelp{color:#7B7B7B;font-size:1em;}
+.lotusEditBookmarksIndent{margin-left:20px;}
+a.lotusFeed{display:inline;padding-left:5px;}
+.globalSearchForm table.dijitComboButton .dijitButtonContents {text-align:left;}
+.lotusui_ie .globalSearchForm .baseIcon {display:inline;}
+.lotusui_ie .globalSearchForm table.dijitComboButton  {DISPLAY: inline;vertical-align:middle;}
+.dijit_a11y .globalSearchForm .dijitArrowButtonChar {display:inline !important;}
+.lotusMessage{clear:both;}
+.lotusui_ie .globalSearchForm .dijitInline {display: inline !important;}
+.lotusHelp h3{float:none;}
+.privateBookmark {font-size:0.75em;font-weight:normal;padding:0 0 6px 6px;}
+#commonTagsWidget {width: 75% !important;}
+.lotusImagesOff .lotusViewControl .lotusDetailsOff span{text-decoration:underline;}
+.lotusImagesOff .lotusViewControl .lotusSummaryOff span{text-decoration:underline;}
+.lotusToolHeader {clear:both;font-size:1.5em;font-weight:normal;padding-top:5px;}
+.lotusToolHeaderStep {background-color:#4C8AD6;color:#FFFFFF;font-weight:bold;display:inline-block;padding:2px 5px 1px;}
+.lotusFFToolBMText{color:#FDCC65;float:left;font-size:1.2em;font-weight:bold;line-height:1em;margin-left:10px;margin-top:5px;}
+.lotusFFToolBMText {color:#FDCC65;float:left;font-size:1.2em;font-weight:bold;line-height:1em;margin-left:10px;margin-top:5px;}
+.lotusToolTip {color:#4F9BEF;clear:both;font-weight:normal;}
+.lotusFFToolBMImage{float:left;}
+#notifyMessage span{color: red; padding-left: 25px;}
+.rightalign{text-align:right;}
+.lotusTable tr.lotusDetails td [dir="rtl"]{text-align:right !important;}
+.lotusTable tr.lotusDetails td [dir="ltr"]{text-align:left !important;}
+.lotusTable tr.lotusDetails td * {text-align:expression( this.getAttribute("dir")=="ltr"?"left":this.getAttribute("dir")=="rtl"?"right":"left" +"!important;")}
+.lotusui .lotusForm td label.lotusInactive {
+color: #999999;
+}
+.lotusDialogBorder{
+max-width: 600px;
+min-width: 400px;
+}
+div.dijitDialog ul {
+list-style-type:none;
+margin: 0px;
+padding: 0px;
+}
+.dogearTableFix {
+table-layout: fixed;
+}
+.dogearTableFix td {
+overflow: hidden;
+word-wrap: break-word;
+}
+.checkWidth {width: 16px;}
+.iconWidth, .iconFirstWidth{width: 20px;}
+.moreWidth {width: 40px;}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+.checkWidth {width: 28px; !important}
+.iconWidth {width: 24px; !important}
+.iconFirstWidth{width: 32px; !important}
+.moreWidth {width: 52px; !important}
+}
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2013, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+${head}
+<title>Sharebox Dialog Launcher Test Page</title>
+${endhead}
+<div class="lotusFrame">
+<h3>Sharebox Dialog Launcher Test Page</h3>
+
+<div>
+   <a href="javascript:;" onclick="com.ibm.social.sharebox.DialogLauncher.open()">Open Share Dialog</a>
+</div>
+<div class="lotusMain">
+   <div class="lotusContent">
+   <h3>This is the content area</h3>
+   </div>
+</div>
+</div>
+<script>
+        djConfig.parseOnLoad=true;
+        djConfig.isDebug=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+
+    ${script:dijit.Dialog}
+    ${script:com.ibm.social.sharebox.DialogLauncher}
+</body>
+</html>

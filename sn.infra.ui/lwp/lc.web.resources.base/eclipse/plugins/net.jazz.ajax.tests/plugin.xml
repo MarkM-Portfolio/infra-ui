@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2009, 2012                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<?eclipse version="3.0"?>
+<!--
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<plugin>
+
+	<!-- extensions -->
+
+	<extension id="TestResultServlet" point="org.eclipse.equinox.http.registry.servlets">
+		<servlet alias="/_testResults" class="net.jazz.ajax.tests.internal.TestResultServlet"/>
+	</extension>
+
+	<!-- Jazz Ajax Framework web bundle marker -->
+	
+	<extension point="net.jazz.ajax.webBundles"/>
+
+	<!-- JavaScript unit testing page -->
+
+	<extension point="net.jazz.ajax.applications">
+		<application id="net.jazz.ajax.tests.testHarness"
+					 alias="/_test"
+					 jsclass="net.jazz.ajax.tests.ui.internal.TestHarness" />
+	</extension>
+	
+	<extension point="net.jazz.ajax.ajaxModules">
+		<ajaxModule id="net.jazz.ajax.tests.harness.DohTests"
+				widgetClass="net.jazz.ajax.tests.harness.DohTests">
+		</ajaxModule>
+	</extension>
+	
+	<extension point="net.jazz.ajax.ajaxModules">
+		<ajaxModule id="net.jazz.ajax.tests.harness.RobotTests"
+				widgetClass="net.jazz.ajax.tests.harness.RobotTests">
+		</ajaxModule>
+	</extension>
+	
+	<extension point="net.jazz.ajax.ajaxModules">
+		<ajaxModule id="net.jazz.ajax.tests.harness.RobotXTests"
+				widgetClass="net.jazz.ajax.tests.harness.RobotXTests">
+		</ajaxModule>
+	</extension>
+	
+	<extension point="net.jazz.ajax.cssBindingSets">
+		<cssBindingSet id="net.jazz.ajax.tests.CSSBindingSet" path="/ui/internal/widget/templates">
+			<cssBinding jsModule="net.jazz.ajax.tests.ui.internal.widget.TestHarnessWidget">
+				<cssModule path="/TestHarnessWidget.css"/>
+			</cssBinding>
+		</cssBindingSet>
+	</extension>
+	 <!--
+	<extension point="net.jazz.ajax.bootstrapProperties">
+		<bootstrapProperties 
+			id="net.jazz.ajax.tests.TestBootstrapProperties"
+			priority="1"
+			class="net.jazz.ajax.tests.bootstrapProperties.TestBootstrapProperties"/>
+	</extension>
+
+	<extension point="net.jazz.ajax.bootstrapProperties">
+		<bootstrapProperties 
+			id="net.jazz.ajax.tests.TestBootstrapProperties2"
+			priority="2"
+			class="net.jazz.ajax.tests.bootstrapProperties.TestBootstrapProperties2"/>
+	</extension> -->
+</plugin>

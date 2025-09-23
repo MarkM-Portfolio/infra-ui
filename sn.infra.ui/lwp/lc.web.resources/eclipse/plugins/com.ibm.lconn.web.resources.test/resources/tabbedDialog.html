@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+${head}
+<!-- Copyright IBM Corp. 2008, 2015  All Rights Reserved.              -->
+        <title>IBM Connections - Tabbed Dialog</title>
+${endhead}
+    <div class="lotusFrame">
+        <div role="region" aria-label="Select page width">
+            <a onclick="dojo.query('.lotusContent')[0].style.width = '1000px'; return false;" href="javascript:;">Page width 1000px</a> |
+            <a onclick="dojo.query('.lotusContent')[0].style.width = '800px'; return false;" href="javascript:;">Page width 800px</a> |
+            <a onclick="dojo.query('.lotusContent')[0].style.width = '600px'; return false;" href="javascript:;">Page width 600px</a> |
+            <a onclick="dojo.query('.lotusContent')[0].style.width = '400px'; return false;" href="javascript:;">Page width 400px</a>
+        </div>
+        <div class="lotusMain" role="main" aria-label="Test page template">
+            <div class="lotusContent">
+                <!--  Add your test DOM here -->
+
+<!--  tabbed dialog -->
+<div id="dialog1" dojoType="dijit.Dialog" class="lotusTabDialog" title="Share Something">
+    <div class="dijitDialogPaneContentArea lotusui30">
+
+        <div dojoType="dijit.layout.TabContainer" style="width:500px;" useSlider="false" useMenu="false" doLayout="false">
+            <div dojoType="dijit.layout.ContentPane" title="Status Update" selected="true">
+                <div style="height:400px; background:#39abe9;">Lorem ipsum and all around - first...</div>
+            </div>
+            <div dojoType="dijit.layout.ContentPane" title="File">
+                <div style="height:300px; background:#f7bc19;">Lorem ipsum and all around - second...</div>
+            </div>
+            <div dojoType="dijit.layout.ContentPane" title="Third Party App">
+                <div style="height:350px; background:#4bab46;">Lorem ipsum and all around - third...</div>
+            </div>
+        </div>
+
+    </div>
+</div><!-- end dialog -->
+
+            </div>
+        </div>
+    </div>
+    <!--  Add your dojo config flags here -->
+    <script>
+        djConfig.parseOnLoad=true;
+    </script>
+    <!--  List the Dojo modules your test page requires -->
+    ${script:dojo.parser}
+    ${script:dijit.Dialog}
+    ${script:dijit.layout.TabContainer}
+    <script>
+        dojo.addOnLoad(function() {
+            dijit.byId('dialog1').show();
+        });
+    </script>
+</body>
+</html>

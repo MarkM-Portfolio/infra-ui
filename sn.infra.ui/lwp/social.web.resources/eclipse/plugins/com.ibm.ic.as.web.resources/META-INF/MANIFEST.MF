@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ActivityStream Resources 
+Bundle-SymbolicName: com.ibm.ic.as.web.resources;singleton:=true
+Bundle-Version: 6.0.0.qualifier
+Bundle-Vendor: IBM
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: properties, .

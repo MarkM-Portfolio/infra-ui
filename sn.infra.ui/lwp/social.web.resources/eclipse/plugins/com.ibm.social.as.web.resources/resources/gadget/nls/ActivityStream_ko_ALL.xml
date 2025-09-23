@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2015, 2016  All Rights Reserved.                    -->
+<messagebundle>
+  <msg name="as_title">업데이트</msg>
+  <msg name="as_description">IBM Connections의 업데이트</msg>
+  <msg name="as_error">업데이트 스트림에 대한 구성에 오류가 있습니다. 관리자에게 문의하십시오.</msg>
+</messagebundle>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<messagebundle>  
+  <msg name="title">Dateien</msg>
+  <msg name="description">Dateien-Gadget zum Hochladen und Teilen von Dateien</msg>
+  <msg name="action_uploadFile_label">Dateien</msg>
+  <msg name="action_uploadFile_tooltip">Dateien hochladen und teilen</msg>
+  <msg name="loading">Ladevorgang läuft...</msg>
+  <msg name="error_msg">Der Inhalt kann nicht geladen werden. Versuchen Sie es später erneut oder wenden Sie sich an den zuständigen Systemadministrator.</msg>
+  <msg name="error_alt">Fehler</msg>
+</messagebundle>

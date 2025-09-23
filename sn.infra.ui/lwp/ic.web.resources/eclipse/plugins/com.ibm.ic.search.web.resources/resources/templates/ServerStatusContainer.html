@@ -1,0 +1,40 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div>
+	<div class="lotusTabContainer" role="tablist" id="tabContainer">
+			<ul class="lotusTabs" id="tabs">
+				<li class="lotusSelected" id="tabOne">
+					<a id="settingsTab" class="defaultSelection" style="display: block; font-weight: bold;" role="tab" selected href="javascript:;" data-dojo-attach-event="onclick: selectTab">
+						${SERVER_STATUS}
+					</a>
+				</li>
+				<li id="tabTwo">
+					<a id="initialIndexBuildTab" role="tab" href="javascript:;" style="display: block; font-weight: bold;" data-dojo-attach-event="onclick: selectTab">
+						${INITIAL_INDEXING_EXCEPTIONS}
+					</a>
+				</li>
+				<li id="tabThree">
+					<a id="logsValidationTab" role="tab" href="javascript:;" style="display: block; font-weight: bold;" data-dojo-attach-event="onclick: selectTab">
+						${SYS_OUT_EXCEPTIONS}
+					</a>
+				</li>
+				<li id="tabFour">
+					<a id="seedlistValidation" role="tab" href="javascript:;" style="display: block; font-weight: bold;" data-dojo-attach-event="onclick: selectTab">
+						${SEEDLIST_VALIDATE}
+					</a>
+				</li>
+				<li id="tabFive">
+					<a id="sandValidationTab" role="tab" href="javascript:;" style="display: block; font-weight: bold;" data-dojo-attach-event="onclick: selectTab">
+						${SAND_VALIDATE}
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div role="tabpanel" aria-labelledby="settingsValidation" aria-hidden="true" id="contentForTab">
+			<div data-dojo-attach-point="serverStatus" data-dojo-type="ic-search/searchValidation"></div>
+			<div class="lotusHidden" data-dojo-attach-point="initialIndexBuild" data-dojo-type="ic-search/searchInitialIndexBuildValidation"></div>
+			<div class="lotusHidden" data-dojo-attach-point="logs" data-dojo-type="ic-search/searchSystemOutValidation"></div>
+			<div class="lotusHidden" data-dojo-attach-point="seedlist" data-dojo-type="ic-search/searchSeedlistValidation"></div>
+			<div class="lotusHidden" data-dojo-attach-point="sand" data-dojo-type="ic-search/sandValidation"></div>
+		</div>
+</div>

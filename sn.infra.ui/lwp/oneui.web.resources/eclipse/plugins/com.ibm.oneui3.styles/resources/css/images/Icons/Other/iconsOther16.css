@@ -1,0 +1,46 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.iconsOther16-bannerBadgeStarDark8{width:8px;height:8px;background-position:0 0}
+.iconsOther16-bannerBadgeStarLight8{width:8px;height:8px;background-position:0 -16px}
+.iconsOther16-bannerHelpNormal16-ar{width:16px;height:16px;background-position:0 -32px}
+.iconsOther16-bannerHelpNormal16{width:16px;height:16px;background-position:0 -56px}
+.iconsOther16-bannerShareHover16{width:16px;height:16px;background-position:0 -80px}
+.iconsOther16-bannerShareNormal16{width:16px;height:16px;background-position:0 -104px}
+.iconsOther16-Chart16{width:16px;height:16px;background-position:0 -128px}
+.iconsOther16-Cogs16{width:16px;height:16px;background-position:0 -152px}
+.iconsOther16-Feed12{width:12px;height:12px;background-position:0 -176px}
+.iconsOther16-Feed16{width:16px;height:16px;background-position:0 -196px}
+.iconsOther16-FolderCollapse16{width:16px;height:16px;background-position:0 -220px}
+.iconsOther16-FolderExpand16{width:16px;height:16px;background-position:0 -244px}
+.iconsOther16-FolderNormal16{width:16px;height:16px;background-position:0 -268px}
+.iconsOther16-FolderOpen16{width:16px;height:16px;background-position:0 -292px}
+.iconsOther16-FolderPrivate16{width:16px;height:16px;background-position:0 -316px}
+.iconsOther16-FolderPublic16{width:16px;height:16px;background-position:0 -340px}
+.iconsOther16-FolderShared16{width:16px;height:16px;background-position:0 -364px}
+.iconsOther16-Help12-ar{width:12px;height:12px;background-position:0 -388px}
+.iconsOther16-Help12{width:12px;height:12px;background-position:0 -408px}
+.iconsOther16-iconArrowBack16-rtl{width:16px;height:16px;background-position:0 -428px}
+.iconsOther16-iconArrowBack16{width:16px;height:16px;background-position:0 -452px}
+.iconsOther16-iconContext14{width:14px;height:14px;background-position:0 -476px}
+.iconsOther16-iconContextHover14{width:14px;height:14px;background-position:0 -498px}
+.iconsOther16-iconNewBlog16{width:16px;height:16px;background-position:0 -520px}
+.iconsOther16-iconNewEntry16{width:16px;height:16px;background-position:0 -544px}
+.iconsOther16-ModeratedCommunity16{width:16px;height:16px;background-position:0 -568px}
+.iconsOther16-Refresh16{width:16px;height:16px;background-position:0 -592px}
+.iconsOther16-RelatedActivities16{width:16px;height:16px;background-position:0 -616px}
+.iconsOther16-Repost16{width:16px;height:16px;background-position:0 -640px}
+.iconsOther16-Tags16{width:16px;height:16px;background-position:0 -664px}
+.iconsOther16-Trash16{width:16px;height:16px;background-position:0 -688px}
+.iconsOther16-Vote14{width:16px;height:16px;background-position:0 -712px}
+.iconsOther16-WatchDemoBlue14-rtl{width:14px;height:14px;background-position:0 -736px}
+.iconsOther16-WatchDemoBlue14{width:14px;height:14px;background-position:0 -758px}
+.iconsOther16-WatchDemoWhite14-rtl{width:14px;height:14px;background-position:0 -780px}
+.iconsOther16-WatchDemoWhite14{width:14px;height:14px;background-position:0 -802px}
+.iconsOther16-thumbnail-checkbox16{width:16px;height:16px;background-position:0 -824px}
+.iconsOther16-thumbnail-checkbox-sel16{width:16px;height:16px;background-position:0 -848px}
+.iconsOther16-thumbnail-details16{width:16px;height:16px;background-position:0 -872px}
+.iconsOther16-thumbnail-download16{width:16px;height:16px;background-position:0 -896px}
+.iconsOther16-thumbnail-edit16{width:16px;height:16px;background-position:0 -920px}
+.iconsOther16-thumbnail-view16{width:16px;height:16px;background-position:0 -944px}
+
+.iconsOther16{background-image:url('./iconsOther16-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsOther16{display:none}

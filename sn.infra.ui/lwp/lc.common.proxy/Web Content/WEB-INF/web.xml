@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2001, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<web-app id="WebApp_ID" version="2.4"
+    xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <display-name>LC Common Proxy</display-name>
+   
+    <context-param>
+        <param-name>
+            javax.servlet.jsp.jstl.fmt.fallbackLocale
+        </param-name>
+        <param-value>en</param-value>
+    </context-param>
+
+    <filter>
+        <description>Sets cache headers to no caching as a default.  Subsequent code can override settings.</description>
+        <filter-name>NoCacheFilter</filter-name>
+        <filter-class>com.ibm.lconn.core.web.cache.NoCacheFilter</filter-class>
+    </filter>
+
+    <filter>
+        <display-name>HttpRequestFilter</display-name>
+        <filter-name>HttpRequestFilter</filter-name>
+        <filter-class>com.ibm.lconn.core.web.request.HttpRequestFilter</filter-class>
+    </filter>
+
+<!--    
+    <filter>
+        <filter-name>LCUserDataConstraintFilter</filter-name>
+        <filter-class>com.ibm.lconn.core.web.auth.LCUserDataConstraintFilter</filter-class>
+        <init-param>
+            <param-name>service.name</param-name>
+            <param-value>communities</param-value>
+        </init-param>
+    </filter>
+-->
+
+    <filter>
+        <filter-name>I18NFilter</filter-name> 
+        <filter-class>com.ibm.lconn.core.web.util.lang.I18NFilter</filter-class> 
+    </filter>
+
+<!--
+    <filter>
+        <filter-name>LoginRedirectFilter</filter-name>
+        <filter-class>com.ibm.lconn.core.web.auth.LCDirectLoginRedirectFilter</filter-class>
+        <init-param>
+             <param-name>service.name</param-name>
+             <param-value>communities</param-value>
+        </init-param>
+    </filter>
+-->
+
+	<filter>
+		<display-name>CustomizationFilter</display-name>
+		<filter-name>CustomizationFilter</filter-name>
+		<filter-class>com.ibm.lconn.core.web.customization.CustomizationFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>CustomizationFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+    
+    <filter-mapping>
+        <filter-name>NoCacheFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>I18NFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+        
+    <!-- Required for reverse proxy support. Must come before LCUserDataConstraintFilter. -->
+    <filter-mapping>
+        <filter-name>HttpRequestFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+<!--
+    <filter-mapping>
+        <filter-name>LCUserDataConstraintFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+-->
+
+    <!-- ==========================================
+            END static content filter
+         ========================================== -->
+
+    
+    <servlet>
+        <servlet-name>CommonProxyServlet</servlet-name>
+        <servlet-class>com.ibm.mm.proxy.servlet.AjaxProxyServlet</servlet-class>
+        <init-param>
+            <description>Add component name to config file name: proxy-communites-config.xml</description>
+            <param-name>componentname</param-name>
+            <param-value>communities</param-value>
+        </init-param>
+    </servlet>  
+    
+    <servlet-mapping>
+        <servlet-name>CommonProxyServlet</servlet-name>
+        <url-pattern>/commonProxy/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Secure Common Proxy usage -->
+    <security-constraint>
+        <display-name>common proxy constraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>securecommonproxy</web-resource-name>
+            <url-pattern>/commonProxy/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>reader</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    
+    <security-role>
+        <role-name>everyone</role-name>
+    </security-role>
+    <security-role>
+        <description>Logical role for read-only access to the application.  Mapped to 'everyone' by default.</description>
+        <role-name>reader</role-name>
+    </security-role>
+    <security-role>
+        <description>Logical role for write access to the application.  Mapped to 'All authenticated' by default.</description>
+        <role-name>person</role-name>
+    </security-role>
+</web-app>

@@ -1,0 +1,17 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div aria-live="assertive">
+<div id="${id}_dialog" role="dialog" aria-labelledby="${gadgetNodeId}_title">
+	<div class="lotusDialogBorder">
+		<div class="lotusDialog">
+			<div class="lotusDialogHeader">
+				<h1 id="${gadgetNodeId}_title" class="lotusHeading" data-dojo-attach-point="titleNode">${gadgettitle}</h1>
+				<a class="lotusDialogClose" role="button" href="javascript:;" title="${nlsCommon.rs_close}" data-dojo-attach-event="onclick:closeDialog">
+					<img alt="${nlsCommon.rs_close}" src="${blankGif}">
+					<span class="lotusAltText">${nlsCommon.rs_close}</span>
+				</a>
+			</div><!--end lotusDialogHeader-->
+			<div class="lotusDialogContent" id="${gadgetNodeId}" style="padding-right:0px;padding-bottom:0px;overflow:auto;width:${gadgetwidth};height:${gadgetheight};" data-dojo-attach-point="gadgetNode">gadget goes here</div>
+		</div><!--end lotusDialog-->
+	</div><!--end lotusDialogBorder-->
+</div><!--end dialog-->
+</div>

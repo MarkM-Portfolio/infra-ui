@@ -1,0 +1,27 @@
+/* Copyright IBM Corp. 2011, 2015  All Rights Reserved.              */
+
+.lotusDialog .lotusDialogHeader .lotusDialogClose {
+	padding: 3px;
+	border: 1px solid #aaa;
+	line-height: 1em;
+	position: absolute;
+	top: 15px;
+	left: 15px;
+}
+
+.lotusDialog .lotusDialogHeader .lotusDialogClose img {
+	background-image: url(../../images/lotusHSprite-8bit.png);
+	background-position: -459px -8px;
+	width: 16px;
+	height: 16px;
+}
+
+/*don't use opacity here because the gen3 image has partial transparency and IE can't handle opacity overrides when there is transparency*/
+.lotusImagesOff .lotusDialog .lotusDialogHeader .lotusDialogClose img,.lotusImagesOff .lotusDialog .lotusDialogHeader .lotusDialogClose img
+	{
+	display: none;
+}
+
+.lotusui_ie .lotusDialogFooter .lotusAction { 
+	vertical-align: super; 
+}

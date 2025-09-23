@@ -1,0 +1,35 @@
+<html>
+<!-- Copyright IBM Corp. 2011, 2015  All Rights Reserved.              -->
+<body><p>${head}
+</p><title>Gadget Test</title>
+${script:lconn.core.config.services}
+${script:com.ibm.social.ee.test.util.serviceutil}
+${script:com.ibm.lconn.gadget.container.iContainer}
+<script>
+(function () {
+   var iContainer = com.ibm.lconn.gadget.container.iContainer;
+   dojo.addOnLoad(function() {
+      iContainer.init();
+      var currentTime = (new Date()).getTime();
+      var gadget = {definitionUrl: "http://cawong.raleigh.ibm.com:9080/connections/resources/web/com.ibm.social.ee/File.xml?time=" + currentTime, placement: 'attach_point' };
+      iContainer.renderGadget(gadget);
+      window.setTimeout(function () {
+         var iframe = dojo.byId("attach_point").firstChild; 
+         iframe.style.width = "500px";
+         iframe.style.height = "1000px";
+      }, 100);
+   });   
+})();
+</script>
+${endhead}
+
+<div class="lotusMain" style="min-height:0px">
+<div class="lotusContent">
+
+<div id="attach_point"></div>
+
+</div>
+</div>
+
+</body><p>
+${end}</p></html>

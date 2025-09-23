@@ -1,0 +1,46 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+${head}
+
+${script:com.ibm.lconn.personcard.legacy}
+${script:lconn.profiles.sametime.sametimeProxyAwareness}
+
+${endhead}
+
+<div class="lotusMain">
+<div class="lotusContent">
+
+<div>To retrieve data, set LotusConnections-config.xml to point to a profiles server and make sure the personTag service is enabled.  The business card will appear after you hover and display based on the specified key.</div>
+
+<span id="headerUserName" style="display: none;">Allie Singh</span>
+
+<table>
+
+<tr>
+<td><input type="text" onblur="dojo.byId('test1-email').innerHTML = this.value;" value="asingh@renovations.com">
+<span class='vcard'>		
+	<a href='#' class='fn url lotusPerson'>
+		Business Card by Email
+	</a>
+	<span id='test1-email' class='email' style='display: none;'></span>
+</span></td>
+<td>Enter the e-mail of the user to find in the text box and then hover over the link.</td>
+</tr>
+
+<tr>
+<td><input type="text" onblur="dojo.byId('test2-id').innerHTML = this.value;" value="asingh">
+<span class='vcard'>		
+	<a href='#' class='fn url lotusPerson'>
+		Business Card by snx:userid
+	</a>
+	<span id='test2-id' class='x-lconn-userid' style='display: none;'></span>
+</span></td>
+<td>Enter the snx:userid of the user to find in the text box and then hover over the link.</td>
+</tr>
+
+</table>
+
+
+</div>
+</div>
+</body>
+${end}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><?pde version="3.6"?><target name="Connections Web Resources source platform (JazzFoundation I20101012-1700)">
+<locations>
+<location path="${workspace_loc:/prereqs.web.resources/eclipse}" type="Directory"/>
+</locations>
+</target>

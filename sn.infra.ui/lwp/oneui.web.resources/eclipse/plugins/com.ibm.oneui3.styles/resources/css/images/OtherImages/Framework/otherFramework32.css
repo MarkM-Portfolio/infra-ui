@@ -1,0 +1,5 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.otherFramework32-ClosePopup32{width:32px;height:32px;background-position:0 0}
+
+.otherFramework32{background-image:url('./otherFramework32-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .otherFramework32{display:none}

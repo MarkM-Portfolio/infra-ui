@@ -1,0 +1,65 @@
+/* Copyright IBM Corp. 2015  All Rights Reserved.                    */
+
+/**
+ * This is for demo/prototyping purposes only.
+ * 
+ * This file should contain a single JSON array where each element is an object containing:
+ * 
+ *    "types"   - an array of file name extensions
+ *    "target"  - the URL to invoke when the button is clicked
+ *    "label"   - the text of the button in the file details overlay header
+ *    
+ * If an extension appears in multiple keys, only the first extension will apply.
+ * 
+ * The following placeholders are supported in target URLs:
+ * 
+ *    file_id - The UUID of the file
+ *    user_id - The profiles ID of the current user (empty if the user is anonymous)
+ *    org_id  - The ID of the user's organization (empty if the user is anonymous or on-prem)
+ * 
+ * For example:
+ * 
+ * [
+ *    {
+ *       "types":  [ "doc", "docx" ],
+ *       "target": "https://example.com/document?file=${file_id}&user=${user_id}&org=${org_id}",
+ *       "label":  "Edit in Office 365"
+ *    },
+ *    {
+ *       "types":  [ "xls", "xlsx" ],
+ *       "target": "https://example.com/spreadsheet?file=${file_id}&user=${user_id}&org=${org_id}",
+ *       "label":  "Edit in Office 365"
+ *    }
+ * ]
+ * 
+ * Possible resulting URLs might be:
+ * 
+ * Cloud:
+ *    https://example.com/document?file=3fb46...8e7d2&user=20000703&org=20000699
+ *    
+ * On-prem, authenticated:
+ *    https://example.com/document?file=3fb46...8e7d2&user=a8cff...7c698&org=
+ * 
+ * On-prem, anonymous:
+ *    https://example.com/document?file=3fb46...8e7d2&user=&org=
+ * 
+ * The URL will be opened in a new tab (or window, depending on the user's browser preferences).
+ * 
+ */
+ [
+    {
+       "fileType": "Word",
+       "types":  [ "docm", "docx", "odt" ],
+       "target": "${wopi}/word?file_id=${file_id}"
+    },
+    {
+       "fileType": "Excel",
+       "types":  [ "xlsb", "xlsm", "xlsx", "ods" ],
+       "target": "${wopi}/excel?file_id=${file_id}"
+    },
+    {
+       "fileType": "PowerPoint",
+       "types":  [ "ppsx", "pptx", "odp" ],
+       "target": "${wopi}/ppt?file_id=${file_id}"
+    }
+ ]

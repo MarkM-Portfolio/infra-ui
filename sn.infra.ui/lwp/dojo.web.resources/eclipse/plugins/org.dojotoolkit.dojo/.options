@@ -1,0 +1,7 @@
+net.jazz.ajax/AjaxFramework=false
+net.jazz.ajax/Cache=false
+net.jazz.ajax/ExtensionRegistry=false
+net.jazz.ajax/Render=false
+net.jazz.ajax/Resources/StyleSheet=false
+net.jazz.ajax/Servlets/WebBundle=false
+net.jazz.ajax/WebBundleScanner=false

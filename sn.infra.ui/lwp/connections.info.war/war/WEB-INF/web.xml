@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2012, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<description>A utility WAR independent of any other Connections service that is able to return information about configured services, and force authentication to introspect the user's identity.</description>
+	<display-name>connections.info.war</display-name>
+	
+	<!-- Servlet Context Listeners -->
+	<listener>
+		<listener-class>com.ibm.lconn.core.web.customization.CustomizationInitializer</listener-class>
+	</listener>
+
+	<context-param>
+		<param-name>service.name</param-name>
+		<param-value>deploymentConfig</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>customization.directory.name</param-name>
+		<param-value>common</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>customization.directory.name</param-name>
+		<param-value>widgets</param-value>
+	</context-param>
+
+    <filter>
+        <filter-name>ExtensibleFilter</filter-name>
+        <filter-class>com.ibm.lconn.core.web.extension.ExtensibleFilter</filter-class>
+    </filter>
+	<filter>
+		<display-name>ConnectionsUrlSetup</display-name>
+		<filter-name>ConnectionsUrlSetup</filter-name>
+		<filter-class>com.ibm.lconn.core.web.request.HttpRequestFilter</filter-class>
+	</filter>
+
+	<filter>
+		<description>This filter applies Gatekeeper-controlled dark launched behavior to the request and response. In order to work, it must be placed after TenantLookupFilter.</description>
+		<display-name>ConnectionsDarkLaunch</display-name>
+		<filter-name>ConnectionsDarkLaunch</filter-name>
+		<filter-class>com.ibm.lconn.core.web.request.DarkLaunchFilter</filter-class>
+	</filter>
+
+	<!-- TODO: need a service name to use here... -->
+	<filter>
+		<display-name>ConnectionsSslProtection</display-name>
+		<filter-name>ConnectionsSslProtection</filter-name>
+		<filter-class>com.ibm.lconn.core.web.auth.LCUserDataConstraintFilter</filter-class>
+		<init-param>
+			<param-name>service.name</param-name>
+			<param-value>deploymentConfig</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<display-name>ConfigurationEnabled</display-name>
+		<filter-name>ConfigurationEnabled</filter-name>
+		<filter-class>com.ibm.lconn.core.web.error.ConfigurationEnabledFilter</filter-class>
+		<init-param>
+			<param-name>property.name</param-name>
+			<param-value>com.ibm.lconn.core.web.globalization.settings.enabled</param-value>
+		</init-param>
+		<init-param>
+			<param-name>message.key</param-name>
+			<param-value>globalization.unavailable</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<display-name>ConnectionsI18N</display-name>
+		<filter-name>ConnectionsI18N</filter-name>
+		<filter-class>com.ibm.lconn.core.web.util.lang.I18NFilter</filter-class>
+	</filter>
+
+	<filter>
+		<display-name>ConnectionsFormAuthSecured</display-name>
+		<filter-name>ConnectionsFormAuthSecured</filter-name>
+		<filter-class>com.ibm.lconn.core.web.auth.LCRestSecurityFilter</filter-class>
+		<init-param>
+			<param-name>enforce.read.role</param-name>
+			<param-value>allAuthenticated,person</param-value>
+		</init-param>
+		<init-param>
+			<param-name>enforce.write.role</param-name>
+			<param-value>allAuthenticated,person</param-value>
+		</init-param>
+		<init-param>
+			<param-name>authentication.chooser.forward</param-name>
+			<param-value>/form/internal_login_redirect</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<display-name>Utf8</display-name>
+		<filter-name>Utf8</filter-name>
+		<filter-class>com.ibm.lconn.core.web.util.Utf8CharsetFilter</filter-class>
+	</filter>
+
+	<filter>
+		<display-name>NoCacheFilter</display-name>
+		<filter-name>NoCacheFilter</filter-name>
+		<filter-class>com.ibm.lconn.core.web.cache.NoCacheFilter</filter-class>
+	</filter>
+
+	<filter>
+		<display-name>FormAuthorizationSetup</display-name>
+		<filter-name>FormAuthorizationSetup</filter-name>
+		<filter-class>com.ibm.lconn.core.web.auth.FormAuthorizationSetup</filter-class>
+		<init-param>
+			<param-name>login</param-name>
+			<param-value>/login</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<description>When the authenticated user changes (or the user reverts to unauthenticated), the session object
+		 should be invalidated to ensure that no private data is available on the session object. This filter should
+		 protect all URLs that may access session data.</description>
+		<display-name>SessionUserProtectionFilter</display-name>
+		<filter-name>SessionUserProtectionFilter</filter-name>
+		<filter-class>com.ibm.lconn.core.web.auth.SessionUserProtectionFilter</filter-class>
+	</filter>
+
+	<filter>
+		<display-name>CustomizationFilter</display-name>
+		<filter-name>CustomizationFilter</filter-name>
+		<filter-class>com.ibm.lconn.core.web.customization.CustomizationFilter</filter-class>
+	</filter>
+	<filter>
+		<display-name>ConnectionsThemeFilter</display-name>
+		<filter-name>ConnectionsThemeFilter</filter-name>
+		<filter-class>com.ibm.lconn.core.web.css.ConnectionsThemeFilter</filter-class>
+	</filter>
+	<filter>
+		<description>
+		This filter looks up the organization of the request user for multitenant configurations</description>
+		<display-name>TenantLookupFilter</display-name>
+		<filter-name>TenantLookupFilter</filter-name>
+		<filter-class>com.ibm.lconn.core.web.mt.TenantLookupFilter</filter-class>
+		<init-param>
+			<description>
+			Service name used to look this application up in the SPI.</description>
+			<param-name>application</param-name>
+			<param-value>deploymentConfig</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<display-name>CSRFFilter</display-name>
+		<filter-name>CSRFFilter</filter-name>
+		<filter-class>com.ibm.lconn.core.web.atom.CSRFFilter</filter-class>
+	</filter>
+	
+	<filter>
+        <filter-name>
+            StaticContentFilter
+        </filter-name>
+        <filter-class>
+            com.ibm.lconn.core.web.cache.StaticContentFilter
+        </filter-class>
+        <init-param>
+            <param-name>
+                fakeLastModified
+            </param-name>
+            <param-value>
+                false
+            </param-value>
+        </init-param>
+        <init-param>
+            <param-name>
+                fakeNotModSince
+            </param-name>
+            <param-value>
+                false
+            </param-value>
+        </init-param>
+        <init-param>
+            <param-name>
+                time2live
+            </param-name>
+            <param-value>
+                315360000
+            </param-value>
+        </init-param>
+        <init-param>
+            <param-name>
+                expires
+            </param-name>
+            <param-value>
+                true
+            </param-value>
+        </init-param>
+    </filter>
+
+	<servlet>
+		<servlet-name>globalization-settings</servlet-name>
+		<jsp-file>/WEB-INF/pages/globalization.jsp</jsp-file>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>cnext-bootstrap</servlet-name>
+		<jsp-file>/WEB-INF/pages/next.jsp</jsp-file>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>globalization-settings-service</servlet-name>
+		<servlet-class>com.ibm.lconn.core.web.globalization.servlet.Service</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>app-serviceconfig</servlet-name>
+		<servlet-class>com.ibm.lconn.share.web.servlet.ConnectionsServiceConfig</servlet-class>
+	</servlet>
+
+   <servlet>
+      <servlet-name>app-myserviceconfig</servlet-name>
+      <servlet-class>com.ibm.lconn.share.web.servlet.ConnectionsServiceConfig</servlet-class>
+   </servlet>
+
+	<servlet>
+		<servlet-name>app-identity</servlet-name>
+		<servlet-class>com.ibm.lconn.share.web.servlet.ConnectionsIdentity</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>css-base</servlet-name>
+		<servlet-class>com.ibm.lconn.core.web.css.ConnectionsStylesheet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>css-theme</servlet-name>
+		<servlet-class>com.ibm.lconn.core.web.css.ConnectionsStylesheet</servlet-class>
+	</servlet>
+
+	<!-- Using old (deprecated) login servlet for now -->
+	<!--servlet>
+		<servlet-name>app-login</servlet-name>
+		<servlet-class>com.ibm.lconn.core.web.login.LoginServlet</servlet-class>
+		<init-param>
+			<param-name>service.name</param-name>
+			<param-value>deploymentConfig</param-value>
+		</init-param>
+	</servlet-->
+	<servlet>
+		<servlet-name>app-login</servlet-name>
+		<servlet-class>com.ibm.lconn.core.web.auth.LoginServlet</servlet-class>
+		<init-param><param-name>service.name</param-name><param-value>deploymentConfig</param-value></init-param>
+		<init-param><param-name>cookie.name</param-name><param-value>WASReqURL</param-value></init-param>
+		<init-param><param-name>login.jsp</param-name><param-value>/WEB-INF/pages/login.jsp</param-value></init-param>
+	</servlet>
+
+	<servlet>
+		<servlet-name>app-login-redirect</servlet-name>
+		<servlet-class>com.ibm.lconn.core.web.util.ServiceRedirectServlet</servlet-class>
+		<init-param>
+			<param-name>service.name</param-name>
+			<param-value>deploymentConfig</param-value>
+		</init-param>
+		<init-param>
+			<param-name>relative.path</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet>
+		<description>This servlet reads the values put on the request by LCRestSecurityFilter and builds the appropriate
+		 redirect to either the SSL login page (if SSL is enabled) or the standard login page.  It also sets the
+		 cookie described in "cookie.name" to the path the server should redirect to after login.
+	  </description>
+		<servlet-name>form-login-redirect</servlet-name>
+		<servlet-class>com.ibm.lconn.core.web.auth.RedirectToLoginServlet</servlet-class>
+		<init-param>
+			<param-name>service.name</param-name>
+			<param-value>deploymentConfig</param-value>
+		</init-param>
+		<init-param>
+			<param-name>cookie.name</param-name>
+			<param-value>WASReqURL</param-value>
+		</init-param>
+		<init-param>
+			<param-name>login.path</param-name>
+			<param-value>/login</param-value>
+		</init-param>
+	</servlet>
+	
+	
+	<servlet>
+		<servlet-name>servlet-request-logout</servlet-name>
+		<jsp-file>/WEB-INF/pages/servlet-request-logout.jsp</jsp-file>
+	</servlet>
+	
+	
+	
+	<servlet>
+		<description>
+		This servlet redirects to the Mobile UI equivalent of a Desktop UI URL</description>
+		<display-name>Mobile Redirect Servlet</display-name>
+		<servlet-name>mobile-redirect</servlet-name>
+		<servlet-class>com.ibm.lconn.core.mobile.redirect.MobileRedirectServlet</servlet-class>
+	</servlet>
+
+	<!-- BEGIN STATIC CONTENT -->
+	<servlet>
+        <servlet-name>
+            StaticContentForwardServlet
+        </servlet-name>
+        <servlet-class>
+            com.ibm.lconn.core.web.cache.StaticContentForwardServlet
+        </servlet-class>
+        <init-param>
+            <param-name>
+                servletPathPrefix
+            </param-name>
+            <param-value>
+                /static
+            </param-value>
+        </init-param>
+         <init-param>
+             <param-name>
+                skipBuildPath
+            </param-name>
+            <param-value>
+                true
+            </param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>
+            StaticContentForwardServlet
+        </servlet-name>
+        <url-pattern>
+            /static/*
+        </url-pattern>
+    </servlet-mapping>
+	<!-- END STATIC CONTENT -->
+
+	<servlet-mapping>
+		<servlet-name>app-serviceconfig</servlet-name>
+		<url-pattern>/serviceconfigs/*</url-pattern>
+	</servlet-mapping>
+
+   <!-- Protected servlet to return enabled services for request user -->
+   <servlet-mapping>
+      <servlet-name>app-myserviceconfig</servlet-name>
+      <url-pattern>/myserviceconfigs/*</url-pattern>
+   </servlet-mapping>
+   
+	<servlet-mapping>
+		<servlet-name>globalization-settings</servlet-name>
+		<url-pattern>/settings/globalization</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>cnext-bootstrap</servlet-name>
+		<url-pattern>/next/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet-mapping>
+		<servlet-name>servlet-request-logout</servlet-name>
+		<url-pattern>/servlet-request-logout</url-pattern>
+	</servlet-mapping>
+	
+	
+    <filter-mapping>
+         <filter-name>ExtensibleFilter</filter-name>
+         <url-pattern>/*</url-pattern>
+    </filter-mapping>
+	<filter-mapping>
+		<filter-name>ConfigurationEnabled</filter-name>
+		<url-pattern>/settings/globalization</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsI18N</filter-name>
+		<url-pattern>/settings/globalization</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsUrlSetup</filter-name>
+		<url-pattern>/settings/globalization</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsI18N</filter-name>
+		<url-pattern>/next/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsUrlSetup</filter-name>
+		<url-pattern>/next/*</url-pattern>
+	</filter-mapping>
+
+	<servlet-mapping>
+		<servlet-name>app-identity</servlet-name>
+		<url-pattern>/core/identity/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>app-identity</servlet-name>
+		<url-pattern>/core/oauth/identity/*</url-pattern>
+	</servlet-mapping>	
+	<filter-mapping>
+		<filter-name>SessionUserProtectionFilter</filter-name>
+		<url-pattern>/</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsUrlSetup</filter-name>
+		<url-pattern>/</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsSslProtection</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsI18N</filter-name>
+		<url-pattern>/</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>SessionUserProtectionFilter</filter-name>
+		<url-pattern>/core/identity/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsUrlSetup</filter-name>
+		<url-pattern>/core/identity/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsSslProtection</filter-name>
+		<url-pattern>/core/identity/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsI18N</filter-name>
+		<url-pattern>/core/identity/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>SessionUserProtectionFilter</filter-name>
+		<url-pattern>/core/oauth/identity/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsUrlSetup</filter-name>
+		<url-pattern>/core/oauth/identity/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsSslProtection</filter-name>
+		<url-pattern>/core/oauth/identity/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsI18N</filter-name>
+		<url-pattern>/core/oauth/identity/*</url-pattern>
+	</filter-mapping>
+
+	<servlet-mapping>
+		<servlet-name>css-base</servlet-name>
+		<url-pattern>/nav/common/styles/base/base.css</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>css-theme</servlet-name>
+		<url-pattern>/WEB-INF/css/theme</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>app-login</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsI18N</filter-name>
+		<url-pattern>/login</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsUrlSetup</filter-name>
+		<url-pattern>/login</url-pattern>
+	</filter-mapping>
+
+
+	<filter-mapping>
+		<filter-name>FormAuthorizationSetup</filter-name>
+		<url-pattern>/j_security_check</url-pattern>
+	</filter-mapping>
+
+	<!-- Filters covering more than a single servlet mapping -->
+	<filter-mapping>
+		<filter-name>NoCacheFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	  <filter-mapping>
+        <filter-name>
+            StaticContentFilter
+        </filter-name>
+        <url-pattern>
+            /ui/*
+        </url-pattern>
+    </filter-mapping>
+	<filter-mapping>
+		<filter-name>CustomizationFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Utf8</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsI18N</filter-name>
+		<url-pattern>/templates/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CacheWebResource</filter-name>
+		<url-pattern>/images/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CacheWebResource</filter-name>
+		<url-pattern>/common/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CacheWebResource</filter-name>
+		<url-pattern>/nav/common/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsThemeFilter</filter-name>
+		<url-pattern>/nav/common/styles/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+
+	<!-- Tenant Lookup filter -->
+	<filter-mapping>
+		<filter-name>TenantLookupFilter</filter-name>
+		<url-pattern>/nav/templates/menu/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>TenantLookupFilter</filter-name>
+		<url-pattern>/settings/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>ConnectionsDarkLaunch</filter-name>
+		<url-pattern>/serviceconfigs*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsDarkLaunch</filter-name>
+		<url-pattern>/settings*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsDarkLaunch</filter-name>
+		<url-pattern>/form*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsDarkLaunch</filter-name>
+		<url-pattern>/core*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>SessionUserProtectionFilter</filter-name>
+		<url-pattern>/serviceconfigs/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsI18N</filter-name>
+		<url-pattern>/serviceconfigs/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsUrlSetup</filter-name>
+		<url-pattern>/serviceconfigs/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsDarkLaunch</filter-name>
+		<url-pattern>/myserviceconfigs*</url-pattern>
+	</filter-mapping>
+	<servlet-mapping>
+		<servlet-name>form-login-redirect</servlet-name>
+		<url-pattern>/form/internal_login_redirect</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>mobile-redirect</servlet-name>
+		<url-pattern>/core/mobile_redirect</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>globalization-settings-service</servlet-name>
+		<url-pattern>/settings/globalization/service</url-pattern>
+	</servlet-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsI18N</filter-name>
+		<url-pattern>/form/internal_login_redirect</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsUrlSetup</filter-name>
+		<url-pattern>/form/internal_login_redirect</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ConnectionsFormAuthSecured</filter-name>
+		<url-pattern>/core/identity/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>TenantLookupFilter</filter-name>
+		<url-pattern>/TenantLookupFilter</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>TenantLookupFilter</filter-name>
+		<url-pattern>/static/*</url-pattern>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	
+	<!-- CSRF Filter to be put on all API end points-->
+    <filter-mapping>
+        <filter-name>CSRFFilter</filter-name>
+        <url-pattern>/serviceconfigs/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>CSRFFilter</filter-name>
+        <url-pattern>/core/identity/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>CSRFFilter</filter-name>
+        <url-pattern>/TenantLookupFilter/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>CSRFFilter</filter-name>
+        <url-pattern>/core/mobile_redirect/*</url-pattern>
+    </filter-mapping>
+        <filter-mapping>
+        <filter-name>CSRFFilter</filter-name>
+        <url-pattern>/core/oauth/identity/*</url-pattern>
+    </filter-mapping>
+        <filter-mapping>
+        <filter-name>CSRFFilter</filter-name>
+        <url-pattern>/settings/globalization/service/*</url-pattern>
+    </filter-mapping>
+    
+	
+	<!-- Filters for /myserviceconfigs -->
+   <servlet-mapping><servlet-name>app-myserviceconfig</servlet-name><url-pattern>/myserviceconfigs/*</url-pattern></servlet-mapping>
+   <filter-mapping><filter-name>SessionUserProtectionFilter</filter-name><url-pattern>/myserviceconfigs/*</url-pattern></filter-mapping>
+   <filter-mapping><filter-name>ConnectionsUrlSetup</filter-name><url-pattern>/myserviceconfigs/*</url-pattern></filter-mapping>
+   <filter-mapping><filter-name>ConnectionsSslProtection</filter-name><url-pattern>/myserviceconfigs/*</url-pattern></filter-mapping>
+   <filter-mapping><filter-name>ConnectionsFormAuthSecured</filter-name><url-pattern>/myserviceconfigs/*</url-pattern></filter-mapping>
+   <filter-mapping><filter-name>ConnectionsI18N</filter-name><url-pattern>/myserviceconfigs/*</url-pattern></filter-mapping>
+   <filter-mapping><filter-name>TenantLookupFilter</filter-name><url-pattern>/myserviceconfigs/*</url-pattern></filter-mapping>   
+   
+	<security-constraint>
+		<display-name>LoginRedirects</display-name>
+		<web-resource-collection>
+			<web-resource-name>LoginRedirects</web-resource-name>
+			<url-pattern>/form/login_redirect</url-pattern>
+			<url-pattern>/login</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>PUT</http-method>
+			<http-method>POST</http-method>
+			<http-method>DELETE</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<description>LoginRedirects</description>
+			<role-name>allAuthenticated</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<display-name>SecureGlobalizationSettings</display-name>
+		<web-resource-collection>
+			<web-resource-name>GlobalizationSettings</web-resource-name>
+			<url-pattern>/settings/globalization</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>PUT</http-method>
+			<http-method>HEAD</http-method>
+			<http-method>TRACE</http-method>
+			<http-method>POST</http-method>
+			<http-method>DELETE</http-method>
+			<http-method>OPTIONS</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<description>PersonRoleConstraint</description>
+			<role-name>person</role-name>
+		</auth-constraint>
+		<!-- user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint-->
+	</security-constraint>
+
+	<security-constraint>
+		<display-name>SecureCNextUI</display-name>
+		<web-resource-collection>
+			<web-resource-name>CNextUI</web-resource-name>
+			<url-pattern>/next*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>PUT</http-method>
+			<http-method>HEAD</http-method>
+			<http-method>TRACE</http-method>
+			<http-method>POST</http-method>
+			<http-method>DELETE</http-method>
+			<http-method>OPTIONS</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<description>PersonRoleConstraint</description>
+			<role-name>person</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-role>
+		<description>
+		</description>
+		<role-name>person</role-name>
+	</security-role>
+	<security-role>
+		<description>
+		</description>
+		<role-name>everyone</role-name>
+	</security-role>
+	<security-role>
+		<description>Used for authentication.  Do not change</description>
+		<role-name>allAuthenticated</role-name>
+	</security-role>
+
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/login</form-login-page>
+			<form-error-page>/login?error=true</form-error-page>
+		</form-login-config>
+	</login-config>
+
+	<error-page>
+		<error-code>403</error-code>
+		<location>/nav/templates/error.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/nav/templates/error.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/nav/templates/error.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>503</error-code>
+		<location>/nav/templates/error.jsp</location>
+	</error-page>
+
+</web-app>

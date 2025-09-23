@@ -1,0 +1,41 @@
+/* Copyright IBM Corp. 2012, 2016  All Rights Reserved.           */
+
+// NLS_CHARSET=UTF-8
+define({
+		"CLOSE_HELP_DATE":"Dátumok súgójának bezárása",
+		"CLOSE_HELP_ECM_DOCUMENT_TYPE":"Dokumentumtípusok súgójának bezárása",
+		"CLOSE_HELP_PERSON":"Személyek súgó bezárása",
+		"CLOSE_HELP_TAG":"Címkék súgójának bezárása",
+		"CLOSE_HELP_TREND":"Trendek súgójának bezárása",
+		"COLLAPSE_DATE":"Dátum szűrő összehúzása",
+		"COLLAPSE_ECM_DOCUMENT_TYPE":"A dokumentumtípusok szűrőjének összezárása",
+		"COLLAPSE_PERSON":"Személy szűrő összehúzása",
+		"COLLAPSE_TAG":"Címke szűrő összehúzása",
+		"COLLAPSE_TREND":"Trend szűrő összehúzása",
+		"DESCRIPTION_DATE":"Adott időben létrehozott vagy frissített találatok megjelenítéséhez bontsa ki a listát, és szűrje az információkat év és hónap szerint.",
+		"DESCRIPTION_ECM_DOCUMENT_TYPE":"A dokumentumtípus a fájlokhoz rendelt kulcsszó a keresésük megkönnyítéséhez. Egy dokumentumtípusra kattintva megjelenítheti a keresési találatokat, amelyekhez az adott kulcsszót hozzárendelték.",
+		"DESCRIPTION_PERSON":"A keresési eredményekhez kapcsolódó személyek megtekintése. Az egyes nevekre kattintva megjelennek az illetőhöz tartozó keresési eredmények.",
+		"DESCRIPTION_TAG":"A címke tartalomhoz vagy személyekhez rendelt kulcsszó, amely megkönnyíti a megkeresésüket. Egy címkére kattintva megjelenítheti a keresési találatokat, amelyekhez az adott kulcsszót hozzárendelték.",
+		"DESCRIPTION_TREND":"A trend a rendszer által előállított kulcsszó, ami megkönnyíti a keresés végrehajtását az állapotfrissítésekben. Egy trendre kattintva megjelenítheti a keresési találatokat, amelyekhez az adott kulcsszót hozzárendelték.",
+		"EXPAND_DATE":"Dátum szűrő kibontása",
+		"EXPAND_ECM_DOCUMENT_TYPE":"Dokumentumtípus szűrőjének kibontása",
+		"EXPAND_PERSON":"Személy szűrő kibontása",
+		"EXPAND_TAG":"Címke szűrő kibontása",
+		"EXPAND_TREND":"Trend szűrő kibontása",
+		"HELP_DATE":"Dátumok súgója",
+		"HELP_ECM_DOCUMENT_TYPE":"Dokumentumtípusok súgója",
+		"HELP_PERSON":"Személyek súgó",
+		"HELP_TAG":"Címkék súgó",
+		"HELP_TREND":"Trendek súgója",
+		"NO_DATE_CONTENT":"A dátumok jelenleg nem érhetők el",
+		"NO_ECM_DOCUMENT_TYPE_CONTENT":"A dokumentumtípusok jelenleg nem érhetők el",
+		"NO_PERSON_CONTENT":"A személyek jelenleg nem érhetők el",
+		"NO_TAG_CONTENT":"A címkék jelenleg nem érhetők el",
+		"NO_TREND_CONTENT":"A trendek jelenleg nem érhetők el",
+		"TITLE_DATE":"Dátumok",
+		"TITLE_ECM_DOCUMENT_TYPE":"Dokumentumtípusok",
+		"TITLE_PERSON":"Személyek",
+		"TITLE_TAG":"Címkék",
+		"TITLE_TREND":"Trendek"
+});
+

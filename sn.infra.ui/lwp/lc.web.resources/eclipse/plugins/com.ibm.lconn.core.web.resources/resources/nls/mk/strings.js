@@ -1,0 +1,340 @@
+/* *************************************************************** */
+/*                                                                 */
+/* HCL Confidential                                                */
+/*                                                                 */
+/* OCO Source Materials                                            */
+/*                                                                 */
+/* Copyright HCL Technologies Limited 2008, 2019                   */
+/*                                                                 */
+/* The source code for this program is not published or otherwise  */
+/* divested of its trade secrets, irrespective of what has been    */
+/* deposited with the U.S. Copyright Office.                       */
+/*                                                                 */
+/* *************************************************************** */
+
+// NLS_CHARSET=UTF-8
+({
+   'rs_close' : "Затвори",
+   'rs_loading' : "Вчитување...",
+
+   'rs_searchDirectory' : "Лицето не е наведено? Користи целосно пребарување...",
+   'rs_searchGroupDirectory' : "Групата не е наведена? Користи целосно пребарување...",
+   'rs_searchPersonAndGroupDirectory' : "Лицето или групата не се наведени? Користи целосно пребарување...",
+   'rs_searchCommunityDirectory' : "Заедницата не е наведена? Користи целосно пребарување...",
+
+   'rs_shadowText_searchDirectory' : "Напишете за да најдете лице",
+   'rs_shadowText_searchGroupDirectory' : "Напишете за да најдете група",
+   'rs_shadowText_searchPersonAndGroupDirectory' : "Напишете за да најдете лице или група",
+   'rs_shadowText_searchCommunityDirectory' : "Напишете за да најдете заедница",
+
+   'rs_listItem' : "Ставка од листата",
+   'rs_noResults' : "Нема резултати за „${0}“",
+   'rs_today' : "Денеска",
+   'rs_tomorrow' : "Утре",
+   'rs_yesterday' : "Вчера",
+
+   /* Activity List Widget */
+   'rs_activityFeedLink' : "Навестување на содржина за овие активности",
+   'rs_externalText' : "Оваа активност може да има членови надвор од вашата организација.",
+   'rs_moveActivitySuccess' : '\„${activityTitle}\“ е успешно преместена во подзаедницата \„${destCommName}\“.',
+   // copy 'rs_moreInfo' and 'rs_hideInfo' from activity's strings.js
+   'rs_moreInfo' : 'Покажи повеќе информации за оваа активност',
+   'rs_hideInfo' : 'Сокриј дополнителни информации',
+   'rs_more' : "Повеќе",
+   'rs_hide' : "Сокриј",
+   'rs_edit' : "Уреди",
+   'rs_restore' : "Врати",
+   'rs_deleteEntry' : "Избриши",
+   'rs_prioritize' : "Постави приоритет",
+   'rs_markComplete' : "Обележи како завршено",
+   'rs_markIncomplete' : "Врати",
+   'rs_linkMore' : "... [повеќe]",
+   'rs_linkLess' : "... [помалку]",
+   'rs_actUpdatedByDate' : "Ажурирано од ${0} ${1}",// Updated by (author name) (date)
+   'rs_actUpdatedBy' : "Ажурирано од ${0}",// Updated by (author name)
+   'rs_actDue' : "Рок ${0}",// Due (date)
+   'rs_actTags' : "Ознаки: ",
+   'rs_actTagsDelim' : ", ",
+   'rs_startFromTemplate' : "Започни активност од овој шаблон",
+   'rs_favoriteTemplate' : "Обележи како омилен шаблон",
+   'rs_normalTemplate' : "Обележи како нормален шаблон",
+   'rs_tunedOutPri' : "Исклучено",
+   'rs_pagepos' : "${0} - ${1} од ${2}", // pagination - e.g. 1 - 10 of 100
+   'rs_navPrevLabel' : "Претходно",
+   'rs_navNextLabel' : "Следно",
+   'rs_noActivities' : "Нема започнати активности за оваа заедница.",
+   'rs_feedError' : "Навестувањето на содржината не се вчита успешно.",
+   'rs_highPri' : "Висок приоритет",
+   'rs_medPri' : "Среден приоритет",
+   'rs_normalPri' : "Нормален приоритет (стандардно)",
+   'rs_tuneOut' : "Обележи како исклучено",
+   'rs_startActivity' : "Започни активност",
+   'rs_startFirstActivity' : "Креирај своја прва активност",
+   'rs_navNextLabel' : "Следно",
+   'rs_viewAll' : "Прикажи ги сите",
+   'rs_activityWidgetTitle' : "Активности",
+   'rs_activityWidgetBriefDescription' : "Следете ги целите на заедницата. Креирајте ставки што треба да се извршат и споделувајте ресурси.",
+   'rs_activityWidgetDescription' : "Активностите на заедницата можат да се користат за соработка и следење на напредокот на проектите или иницијативите на заедницата.",
+   'rs_completedActivityLink' : "Покажи завршени активности",
+   'rs_activitiesUnavailable' : "Услугата за активности не е достапна.",
+   'rs_errorPersists' : "Ако проблемот продолжи да постои, контактирајте го системскиот администратор.",
+   'rs_shared' : "Споделено",
+   'rs_removeActFromComm' : "Отстрани од заедницата",
+   'rs_externalLabel' : "Надворешно",
+
+   // for ActivityForm
+   'rs_templateOptions' : "Опции за шаблон",
+   'rs_template' : "Шаблон",
+   'rs_tagsLabel' : "Ознаки",
+   'rs_peopleLabel' : "Лица",
+   'rs_aboutThisTemplate' : "За овој шаблон",
+   'rs_activity' : "Активност",
+   'rs_copyOf' : "Копија на ${0}",// copy of (activity name)
+   'rs_activityFormGoal' : "Цел на активноста",
+   'rs_noTemplate' : "Нема",
+   'rs_copyActivityMembers' : "Користи членови од активност",
+   'rs_copyTemplateMembers' : "Користи членови од шаблон",
+
+   /* Forum Widget */
+   'rs_noTopics' : "Сè уште нема теми за оваа заедница.",
+   'rs_noTopicsLoggedIn' : "Поставувајте прашања, размислувања или едноставно споделувајте идеи.",
+   'rs_postedBy' : "Последна објава од",
+   'rs_topics' : "теми",
+   'rs_noTopicsShort' : "Нема теми",
+   'rs_topic' : "тема",
+   'rs_replies' : "одговори",
+   'rs_noReplies' : "Нема одговори",
+   'rs_reply' : "одговори",
+   'rs_startTopic' : "Започни тема",
+   'rs_startFirstTopic' : "Започнете ја првата тема",
+   'rs_ok' : "ОК",
+   'rs_locked' : "[Заклучено]",
+   'rs_manageForumSetting' : "Поставки за управување со форумот",
+   'rs_forumSettingCommunityOverviewPage' : "Страница за краток преглед на заедницата:",
+   'rs_defaultForumList' : "Стандардно прикажи список на форум",
+   'rs_defaultTopicList' : "Стандардно прикажи список на форум",
+   'rs_forumSettingApplicationView' : "Стандарден приказ на апликацијата форум:",
+   'rs_forumSettingNote' : "Белешка: Темите се прикажуваат стандардно ако има само еден форум.",
+   'rs_forumSettingSubmit' : "Поднеси",
+   'rs_forumSettingSave' : "Зачувај",
+   'rs_forumSettingSaveAndClose' : "Зачувај и затвори",
+   'rs_forumSettingConfirm' : "Измените за Форуми се зачувани",
+   'rs_forumSettingError' : "Се појави грешка. Контактирајте го администраторот.",
+   'rs_formSettingHideMessage' : "Сокриј ја поракава",
+   'rs_forumSettingCancel' : "Откажи",
+   'rs_forumAnsweredQuestion' : "Одговорено прашање",
+   'rs_forumUnAnsweredQuestion' : "Неодговорено прашање",
+   'rs_forumSortBy' : "Сортирај според:",
+   'rs_forumSortByDate' : "Датум",
+   'rs_forumSortByReplies' : "Одговори",
+   'rs_forumSortByTopic' : "Теми",
+   'rs_forumSortByTopicsAndReplies' : "Теми и одговори",
+   'rs_sortByReplies' : "Сортирај според одговори",
+   'rs_sortbyTopicsAndReplies' : "Сортирај според теми и одговори",
+   'rs_forumOpenQuestions' : "Отвори прашања",
+   'rs_feedOpenQuestions' : "Навестувања на содржина за овие отворени прашања",
+   'rs_feedAnsweredQuestions' : "Навестување на содржина за овие одговорени прашања",
+   'rs_forumMessages' : "${0} пораки",
+   'rs_forumLastAddedPost' : "Најнова објава од ${0}",
+   'rs_forumTopics' : "${0} теми",
+   /* End discussion forum */
+
+   /* Editor plugins -- some for a possible one we haven't implemented yet */
+   'rs_createPersonLink' : "Креирај врска за лице",
+   'rs_quote' : "Цитат",
+   'rs_labelColon' : "Етикета:",
+   'rs_personColon' : "Лице: ",
+   'rs_personLink' : "Врска за лице",
+   'rs_replace' : "Замени",
+   'rs_inactivePerson' : "${0} (неактивно)", // person's name (inactive)
+   'rs_PersonPicture' : "Фотографија на ${0}", // person name's picture
+
+   /*Visitor mode -- external user name decoration use cases */
+   'rs_PersonExternalLabel' : "Надворешен корисник", // A label for the visitor model use cases.
+   'rs_PersonExternal' : "${0} (Надворешен корисник)", //'{0}' is the person's name. This will be used for the user profile name and profile photo tooltip
+   'rs_PersonPictureExternal' : "Фотографија на ${0} (Надворешен корисник)", // Alt text for the external user's profile photo
+   'rs_personExternalDesc' : "Корисникот има пристап до датотеки и заедници кои се споделуваат надворешно.",
+   /* End editor plugins */
+
+   /* Notification Form */
+   'rs_notifyOthers' : "Извести други лица",
+   'rs_messageColon' : "Порака: ",
+   'rs_notifyColon' : "Извести: ",
+   'rs_notificationConfirm' : "Пораката за известување е успешно испратена. ",
+   'rs_notificationFail' : "Пораката за известување не е испратена. Обидете се повторно подоцна и контактирајте го системскиот администратор ако продолжи проблемот.",
+   'rs_pickCommunity' : "Одберете од списокот на заедници",
+   'rs_typeName' : "Напишете име",
+   'rs_typeToFilter' : "Напишете за да се филтрира списокот",
+   /* End Notification Form */
+
+   /* FilteringCheckbox */
+   'rs_filterListPrompt' : "Напишете за да се филтрира списокот",
+   'rs_filterGroupLabel' : "Одбери група",
+   'rs_noResults' : "Не се пронајдени резултати",
+   // ${0} will be replaced with a number
+   'rs_numResults' : "Покажува ${0} резултати од ${1}",
+
+   /* PeopleFilterList */
+   'rs_removeFilter' : "Отстрани",
+
+   /* Language Selector */
+   'rs_browser_setting' : "Поставки за пребарувач",
+   'rs_customLangaugeLinkLabel' : "Прилагоден јазик",
+
+   /* Paging controls */
+   // 0 and 1 are page numbers
+   'rs_jumpPage' : "Скокни на страница ${0} од ${1}",
+   "rs_jumpPageLabel" : "Скокни на страница",
+   'rs_pageNumLabel' : "Број на страница",
+   'rs_pageLabel' : "Страница:",
+
+   /* Common Tags Widget */
+   'rs_tagCloudNavigationLabel' : 'Ознаки',
+   'rs_tagCloudToggleHint' : "Кликни за да се сокрие или покаже",
+   'rs_tagCloudHelpAlt' : "Побарај помош за ознаки",
+   'rs_tagCloudNoTags' : "Сè уште нема ознаки",
+   'rs_tagCloudNoRecentTags' : "Нема нови ознаки",
+   'rs_tagCloudNoTagsProfiles' : "Пребарајте го именикот. Ознаките кои се поврзани со профилите добиени од пребарувањето ќе се прикажат тука.",
+   'rs_tagLoadingTags' : "Вчитување на содржина",
+   'rs_tagCloudSelectedTags' : "Избрани ознаки",
+   'rs_tagCloudSeachDesc' : "Пронајди ознака",
+   'rs_tagCloudSeach' : "Пребарај",
+   'rs_tagCloudRelatedTags' : "Поврзани ознаки",
+   'rs_tagCloudRelatedTagsDescription' : "Додајте поврзана ознака за да го подобрите пребарувањето",
+   'rs_tagCloudError' : 'Имаше грешка',
+
+   'rs_viewAsCloud' : "Облак",
+   'rs_viewAsCloudTitle' : "Наброј ознаки во вид на ознака облак",
+   'rs_viewAsCloudDescription' : "Преглед на ознаките во вид на ознака облак",
+   'rs_viewAsList' : "Список",
+   'rs_viewAsListTitle' : "Наброј ознаки во вид на последователен список на ознаки",
+   'rs_viewAsListDescription' : "Преглед на ознаките во вид на последователен список на ознаки",
+   'rs_tagCloudViewAll' : "Прегледај",
+   'rs_tagCloudViewAllTitle' : "Прегледај ги сите ознаки",
+
+   'rs_normalTags' : "Активни ознаки",
+
+   'rs_removeTag' : "Отстрани ја ознаката од одбраните ознаки за филтрирање",
+   'rs_clearAll' : "Избриши ги сите",
+   'rs_searchInputDefault' : "Напишете за да најдете ознака",
+   'rs_searchInputTagSelected' : "Напишете друга ознака",
+   'rs_relatedTagTitle' : "Додај ја ознаката ${0} со број ${1}",
+   'rs_removeTagTitle' : "Отстрани ја ознаката ${0} од одбраните ознаки за филтрирање",
+   'rs_addTagTitle' : "Филтрирај според ознаката ${0} со број ${1}",
+
+   'rs_tagDialogCloseTile' : "Затвори",
+   'rs_tagDialogTitle' : "Сите ознаки",
+   'rs_tagDialogPageInfo' : "${0} - ${1} од ${2} ознаки",
+
+   /* Group Selection (Picker) Widget */
+   'rs_group_browse_groups' : "Прегледај групи",
+   'rs_group_browse_groups_dialog_title' : "Прегледај групи",
+   'rs_group_browse_find_groups' : "Најди групи",
+   'rs_group_browse_add_button' : "Додај",
+   'rs_group_browse_cancel_button' : "Откажи",
+   'rs_group_browse_enter_string' : "Напишете за да најдете групи",
+   'rs_group_browse_group_typeahead_label' : "Напишете име на група:",
+   'rs_group_browse_group_name' : "Име на група:",
+   'rs_group_browse_results_label' : "Одберете група што се совпаѓа:",
+   'rs_group_browse_parent_group_label' : "Вие сте во:",
+   'rs_group_browse_next_page' : "Следна страница",
+   'rs_group_browse_previous' : "Претходно",
+   'rs_group_browse_next' : "Следно",
+   'rs_group_browse_paging' : "Нумерирање страници",
+   'rs_group_browse_previous_page' : "Претходна страница",
+   'rs_group_browse_group_selected' : "Одбрана група:",
+   'rs_group_browse_group_no_groups' : "Оваа група не содржи никакви групи",
+   'rs_group_browse_page_info' : "${0} - ${1} од ${2}",
+   'rs_group_browse_page_info_alt' : "Групи што се совпаѓаат од ${0} до ${1} од ${2}",
+   'rs_group_browse_remove_selection' : 'Отстрани избор на вгнездена група: ${0}',
+   'rs_group_browse_paging' : "Нумерирање страници",
+   'rs_member_groups' : "Групи",
+   'rs_member_members' : "Членови",
+   'rs_member_no_results' : "Не се пронајдени резултати",
+   'rs_member_remove_group' : "Отстрани ${0}",
+   'rs_member_add_to_community' : "Кликнете за да додадете член",
+   'rs_member_remove_name' : "Кликнете за да отстраните член",
+   'rs_group_add_to_community' : "Кликнете за да додадете група",
+   'rs_group_remove_name' : "Кликнете за да отстраните група",
+   'rs_group_name' : "Име на група",
+   'rs_group_role' : "Улога на групата",
+
+   'rs_warning' : "Предупредување",
+   'rs_a11y_warning' : "Предупредување:",
+
+   'rs_messagebox_close_btn_title' : "Затвори",
+   'rs_messagebox_close_btn_alt' : "Затвори",
+   'rs_messagebox_error_icon_alt' : "Грешка",
+   'rs_messagebox_error_a11y_label' : "Грешка:",
+   'rs_messagebox_warning_icon_alt' : "Предупредување",
+   'rs_messagebox_warning_a11y_label' : "Предупредување:",
+   'rs_messagebox_info_icon_alt' : "Информации",
+   'rs_messagebox_info_a11y_label' : "Информации:",
+   'rs_messagebox_success_icon_alt' : "Успех",
+   'rs_messagebox_success_a11y_label' : "Успех:",
+
+   /* Document Picker CK Plugin */
+   'rs_docpicker_title' : "Внеси врска за датотеки",
+   'rs_docpicker_label' : "Врска за датотеки",
+   // '{0}' is a filename
+   'rs_docpicker_download_title' : "Преземи ${0}",
+   'rs_docpicker_viewdetails_text' : "Прикажи детали",
+   // '{0}' is a filename
+   'rs_docpicker_viewdetails_title' : "Прикажи детали за ${0}",
+
+   /* AttachedFileList widget */
+   'rs_attachedfile_remove_alt' : "Отстрани",
+   'rs_attachedfile_filename' : "Слика ${0}",
+
+   'rs_feedreader_warning' : "Предупредување: Оваа врска е наменета за читачи за навестување на содржина и може да се прикаже неправилно во пребарувачот. Кликнете на OK за да продолжите, или на Откажи за да се вратите на страницата.",
+
+   'rs_search' : "Пребарај",
+   'rs_all_connections' : "Сите врски",
+   'rs_advanced' : "Напредно",
+   'rs_select_scope' : "Одбери опсег на пребарувањето",
+
+   'rs_icfixlayout' : {
+      button_label : "Реформатирање",
+      dialog_title : "Реформатирање на содржините",
+      warning : "Предупредување",
+      reformat_save : "Реформатирај и зачувај",
+      save_as_is : "Зачувај како што е",
+      cancel : "Откажи",
+      warn_layout : "Содржината ја надминува максималната ширина на приказ. Дали сакате автоматски да се реформатира за да одговара на достапниот простор?",
+      remember_decision : "Запомни ја мојата одлука"
+   },
+
+   //The following error messages are used by icdocpicker when private files are shared with a Community.
+   'rs_sharefile_constraint_violation' : "Се случи грешка при споделувањето на избраните датотеки.",
+   'rs_sharefile_access_denied' : "Оваа датотека беше избришана или повеќе не е споделена со вас.",
+   'rs_sharefile_invalid_request' : "Се случи грешка при споделувањето на избраните датотеки.",
+   'rs_sharefile_sharing_intent_restriction' : "Датотеката може да споделува само во рамките на вашата организација.",
+   'rs_sharefile_error_title' : "Грешка",
+
+   /* Strings for the native mobile app banners */
+   'rs_mobileBanner_title' : 'HCL Connections',
+   'rs_mobileBanner_inAppStore' : 'На App Store',
+   'rs_mobileBanner_inGooglePlay' : 'На Google Play',
+   'rs_mobileBanner_author' : 'HCL Software',
+   'rs_mobileBanner_open' : 'Отвори',
+   'rs_mobileBanner_view' : 'Прикажи',
+   'rs_mobileBanner_hide' : 'Сокриј',
+
+   'rs_empty_column_placeholder' : 'Овде повлекувај апликација(и).',
+   'rs_widget_loading_error_title' : 'Не може да се прикаже графичката контрола',
+   'rs_widget_loading_error_message' : 'Обидете се повторно подоцна и контактирајте го системскиот администратор ако продолжи проблемот.',
+   'rs_widgets_loading_error_title' : 'Не може да се прикаже графичката контрола(и) во заедницата',
+   'rs_widget_misplacement_warning' : 'Оваа апликација не се вклопува во колоната. Сопственикот на заедницата може да ја премести во друга колона или да ја отстрани од страницата.',
+
+   'rs_widget_title_change_fail_message' : {
+      title_too_long : 'Насловот кој го внесовте е премногу долг.',
+      empty_new_title : 'Насловот кој го внесовте не смее да биде празен.',
+      default_message : 'Не може да се смени насловот за оваа апликација ${0}.'
+   },
+
+   /* Strings for change title dialog */
+   'rs_widget_title_change_label' : 'Наслов:  ',
+   'rs_widget_title_change_direction' : 'Сменете го насловот за оваа апликација ${0}.',
+   'rs_widget_title_change_title' : 'Измени наслов'
+
+})

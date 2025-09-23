@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright IBM Corp. 2011, 2016  All Rights Reserved.              -->
+
+<messagebundle>
+  <msg name="connectionsEE_title">Connections</msg>
+  <msg name="connectionsEE_description">Embedded Experience OpenSocial 小工具是用來顯示 Connections 事件的其他詳細資料和動作</msg>
+  <msg name="connectionsEE_errorTitle">錯誤</msg>
+  <msg name="connectionsEE_errorDescription">此內容未經組織核准，因此無法使用。請聯絡組織的管理者以啟用此延伸。</msg>
+</messagebundle>

@@ -1,0 +1,40 @@
+/* Copyright IBM Corp. 2012, 2015  All Rights Reserved.              */
+.iconsCKActions16-atnArrowDown16{width:16px;height:16px;background-position:0 0}
+.iconsCKActions16-atnBulletedList16-rtl{width:16px;height:16px;background-position:0 -24px}
+.iconsCKActions16-atnCreateDiv16{width:16px;height:16px;background-position:0 -48px}
+.iconsCKActions16-atnDocProperties16{width:16px;height:16px;background-position:0 -72px}
+.iconsCKActions16-atnDocumentBookmark16{width:16px;height:16px;background-position:0 -96px}
+.iconsCKActions16-atnEditDiv16{width:16px;height:16px;background-position:0 -120px}
+.iconsCKActions16-atnExpand16{width:16px;height:16px;background-position:0 -144px}
+.iconsCKActions16-atnIframe16{width:16px;height:16px;background-position:0 -168px}
+.iconsCKActions16-atnInsertDocLink16{width:16px;height:16px;background-position:0 -192px}
+.iconsCKActions16-atnLinkFile16{width:16px;height:16px;background-position:0 -216px}
+.iconsCKActions16-atnLtr16-rtl{width:16px;height:16px;background-position:0 -240px}
+.iconsCKActions16-atnLtr16{width:16px;height:16px;background-position:0 -264px}
+.iconsCKActions16-atnMaximize16{width:16px;height:16px;background-position:0 -288px}
+.iconsCKActions16-atnNewPage16{width:16px;height:16px;background-position:0 -312px}
+.iconsCKActions16-atnNumberedList16-rtl{width:16px;height:16px;background-position:0 -336px}
+.iconsCKActions16-atnNumberedList16{width:16px;height:16px;background-position:0 -360px}
+.iconsCKActions16-atnPasteGeneral16{width:16px;height:16px;background-position:0 -384px}
+.iconsCKActions16-atnPasteLink16{width:16px;height:16px;background-position:0 -408px}
+.iconsCKActions16-atnPasteWord16{width:16px;height:16px;background-position:0 -432px}
+.iconsCKActions16-atnPreview16{width:16px;height:16px;background-position:0 -456px}
+.iconsCKActions16-atnPrint16{width:16px;height:16px;background-position:0 -480px}
+.iconsCKActions16-atnQuickLink16{width:16px;height:16px;background-position:0 -504px}
+.iconsCKActions16-atnRemoveDiv16{width:16px;height:16px;background-position:0 -528px}
+.iconsCKActions16-atnRemoveLink16{width:16px;height:16px;background-position:0 -552px}
+.iconsCKActions16-atnReplace16{width:16px;height:16px;background-position:0 -576px}
+.iconsCKActions16-atnRtl16-rtl{width:16px;height:16px;background-position:0 -600px}
+.iconsCKActions16-atnRtl16{width:16px;height:16px;background-position:0 -624px}
+.iconsCKActions16-atnSave16{width:16px;height:16px;background-position:0 -648px}
+.iconsCKActions16-atnSelect16{width:16px;height:16px;background-position:0 -672px}
+.iconsCKActions16-atnSelectAll16{width:16px;height:16px;background-position:0 -696px}
+.iconsCKActions16-atnShowBlocks16{width:16px;height:16px;background-position:0 -720px}
+.iconsCKActions16-atnSubscript16-rtl{width:16px;height:16px;background-position:0 -744px}
+.iconsCKActions16-atnSuperscript16-rtl{width:16px;height:16px;background-position:0 -768px}
+.iconsCKActions16-atnTemplates16{width:16px;height:16px;background-position:0 -792px}
+.iconsCKActions16-atnViewSource16{width:16px;height:16px;background-position:0 -816px}
+.iconsCKActions16-atnWikiPage16{width:16px;height:16px;background-position:0 -840px}
+
+.iconsCKActions16{background-image:url('./iconsCKActions16-8bit.png');background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .iconsCKActions16{display:none}

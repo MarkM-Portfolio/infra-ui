@@ -1,0 +1,10 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<iw:iwidget name="TestProxy" xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" supportedModes="view" mode="view" 
+	iScope="com.ibm.test.TestProxy">
+	<iw:resource uri="TestProxy.js" mimeType="text/javascript"/>
+    <iw:content mode="view">
+<![CDATA[
+    	<div id="_IWID_placement"></div>
+]]>
+    </iw:content>
+</iw:iwidget>

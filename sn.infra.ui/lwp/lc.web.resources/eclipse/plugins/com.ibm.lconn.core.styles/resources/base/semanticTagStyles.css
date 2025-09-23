@@ -1,0 +1,31 @@
+/* Copyright IBM Corp. 2009, 2015  All Rights Reserved.              */
+
+/* Set to 10000 to be higher than the dijit tooltip */
+#semtagmenu {z-index:10000;}
+*html .javlinHover {width:auto !important;}
+.javlinHover {background:url(../images/javlinHoverIcon.gif) no-repeat #fef89a; border:1px solid #afaeac;background-position:3px;padding:2px 3px 2px 21px;width:auto;font-size:.9em;white-space:nowrap}
+
+/* Values specific to inline menu */
+.X-javlin-display-inline .personMenu { background-color:#CBD2DF; }
+.X-javlin-display-inline .photoCard { padding: 2px 2px 2px 2px; }
+.X-javlin-display-inline .photoCard img { padding: 2px 2px 2px 2px; }
+.X-javlin-display-inline .businessCard { }
+.X-javlin-display-inline .businessCard ul { list-style:none; }
+.X-javlin-display-inline .businessCard .cardName { }
+.X-javlin-display-inline .businessCard li { color:#555555; font-size:7pt; margin:2px; padding: 2px 2px 2px 2px; font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif; }
+.X-javlin-display-inline .personMenuActions { background-color:#4477BB; }
+.X-javlin-display-inline .personMenuActions ul { }
+.X-javlin-display-inline .personMenuActions li { padding: 2px 2px 2px 2px; font-size:7pt; font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif; }
+.X-javlin-display-inline .personMenuActions a:link, .X-javlin-display-inline .personMenuActions a:visited{ color:#FFFFFF; text-decoration:none; }
+
+/* Values specific to popup menu */
+.popupPersonCard { width:400px; }
+
+/*general list styles*/
+#container .inlinelist{margin:0;padding:0}
+#container .inlinelist li{display:inline;margin:0 0 0 -4px;padding:0 10px;border-left:1px solid #ccc;}
+#container .inlinelist li.first{margin-left:0;padding-left:0;border-left-width:0;}
+#container .inlinelist li.first, .popupPersonCard .inlinelist li.last{margin-left:-5px;padding-left:0;border-left-width:0;}
+
+/* custom text color for awareness */
+.awareness{color: #444444;text-decoration: none;background-repeat: no-repeat;background-position: left center;padding: 4px 0px 4px 18px;cursor: pointer;}

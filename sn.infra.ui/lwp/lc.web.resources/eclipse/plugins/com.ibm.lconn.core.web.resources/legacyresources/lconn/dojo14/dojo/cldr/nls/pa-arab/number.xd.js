@@ -1,0 +1,5 @@
+dojo._xdResourceLoaded(function(dojo, dijit, dojox){
+return {depends: [["provide", "dojo.cldr.nls.pa-arab.number"]],
+defineResource: function(dojo, dijit, dojox){dojo.provide("dojo.cldr.nls.pa-arab.number");dojo._xdLoadFlattenedBundle("dojo.cldr", "number", "pa-arab", ({"nativeZeroDigit":"٠","decimalFormat":"#,##,##0.###","percentFormat":"#,##,##0%","currencyFormat":"¤ #,##,##0.00","scientificFormat":"#E0","currencySpacing-afterCurrency-currencyMatch":"[:letter:]","infinity":"∞","list":";","percentSign":"%","minusSign":"-","currencySpacing-beforeCurrency-surroundingMatch":"[:digit:]","currencySpacing-afterCurrency-insertBetween":" ","nan":"NaN","plusSign":"+","currencySpacing-afterCurrency-surroundingMatch":"[:digit:]","currencySpacing-beforeCurrency-currencyMatch":"[:letter:]","perMille":"‰","group":",","decimal":".","patternDigit":"#","currencySpacing-beforeCurrency-insertBetween":" ","exponential":"E"})
+);
+}};});

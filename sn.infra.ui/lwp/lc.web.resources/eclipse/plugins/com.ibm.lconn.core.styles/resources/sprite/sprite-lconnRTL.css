@@ -1,0 +1,309 @@
+/* Copyright IBM Corp. 2010, 2015  All Rights Reserved.                    */
+.lconnSprite-iconActivities16{width:16px;height:16px;background-position:0 0}
+.lconnSprite-iconActivitiesItem16{width:16px;height:16px;background-position:0 -24px}
+.lconnSprite-iconBlogs16{width:16px;height:16px;background-position:0 -48px}
+.lconnSprite-iconBlogsItem16{width:16px;height:16px;background-position:0 -72px}
+.lconnSprite-iconBookmarks16, .lconnSprite-iconDogear16{width:16px;height:16px;background-position:0 -96px}
+.lconnSprite-iconBookmarksItem16, .lconnSprite-iconDogearItem16{width:16px;height:16px;background-position:0 -120px}
+.lconnSprite-iconCommunities16{width:16px;height:16px;background-position:0 -144px}
+.lconnSprite-iconCommunitiesItem16{width:16px;height:16px;background-position:0 -168px}
+.lconnSprite-iconFiles16{width:16px;height:16px;background-position:0 -192px}
+.lconnSprite-iconForums16, .lconnSprite-iconForum16{width:16px;height:16px;background-position:0 -216px}
+.lconnSprite-iconForumsItem16, .lconnSprite-iconForumItem16{width:16px;height:16px;background-position:0 -240px}
+.lconnSprite-iconHome16{width:16px;height:16px;background-position:0 -264px}
+.lconnSprite-iconProfiles16{width:16px;height:16px;background-position:0 -288px}
+.lconnSprite-iconProfilesItem16{width:16px;height:16px;background-position:0 -312px}
+.lconnSprite-iconWikis16{width:16px;height:16px;background-position:0 -336px}
+.lconnSprite-iconWikisItem16{width:16px;height:16px;background-position:0 -360px}
+.lconnSprite-iconActivitiesBlue16{width:16px;height:16px;background-position:0 -384px}
+.lconnSprite-iconBlogsBlue16{width:16px;height:16px;background-position:0 -408px}
+.lconnSprite-iconBookmarksBlue16{width:16px;height:16px;background-position:0 -432px}
+.lconnSprite-iconFilesBlue16{width:16px;height:16px;background-position:0 -456px}
+.lconnSprite-iconForumsBlue16{width:16px;height:16px;background-position:0 -480px}
+.lconnSprite-iconHomeBlue16{width:16px;height:16px;background-position:0 -504px}
+.lconnSprite-iconCommunitiesBlue16{width:16px;height:16px;background-position:0 -528px}
+.lconnSprite-iconProfilesBlue16{width:16px;height:16px;background-position:0 -552px}
+.lconnSprite-iconWikisBlue16{width:16px;height:16px;background-position:0 -576px}
+.lconnSprite-iconStatusUpdateBlue16{width:16px;height:16px;background-position:0 -600px}
+.lconnSprite-iconMetricsBlue16{width:16px;height:16px;background-position:0 -624px}
+.lconnSprite-iconCalendarBlue16{width:16px;height:16px;background-position:0 -648px}
+.lconnSprite-iconMailBlue16{width:16px;height:16px;background-position:0 -672px}
+.lconnSprite-iconActivitiesWhite16{width:16px;height:16px;background-position:0 -696px}
+.lconnSprite-iconBlogsWhite16{width:16px;height:16px;background-position:0 -720px}
+.lconnSprite-iconBookmarksWhite16{width:16px;height:16px;background-position:0 -744px}
+.lconnSprite-iconFilesWhite16{width:16px;height:16px;background-position:0 -768px}
+.lconnSprite-iconForumsWhite16{width:16px;height:16px;background-position:0 -792px}
+.lconnSprite-iconHomeWhite16{width:16px;height:16px;background-position:0 -816px}
+.lconnSprite-iconCommunitiesWhite16{width:16px;height:16px;background-position:0 -840px}
+.lconnSprite-iconProfilesWhite16{width:16px;height:16px;background-position:0 -864px}
+.lconnSprite-iconWikisWhite16{width:16px;height:16px;background-position:0 -888px}
+.lconnSprite-iconStatusUpdateWhite16{width:16px;height:16px;background-position:0 -912px}
+.lconnSprite-iconMetricsWhite16{width:16px;height:16px;background-position:0 -936px}
+.lconnSprite-iconCalendarWhite16{width:16px;height:16px;background-position:0 -960px}
+.lconnSprite-iconMailWhite16{width:16px;height:16px;background-position:0 -984px}
+.lconnSprite-iconFolderCollapse16{width:16px;height:16px;background-position:0 -1008px}
+.lconnSprite-iconFolderExpand16{width:16px;height:16px;background-position:0 -1032px}
+.lconnSprite-iconFolderNormal16{width:16px;height:16px;background-position:0 -1056px}
+.lconnSprite-iconFolderPrivate16{width:16px;height:16px;background-position:0 -1080px}
+.lconnSprite-iconFolderPublic16{width:16px;height:16px;background-position:0 -1104px}
+.lconnSprite-iconFolderShared16{width:16px;height:16px;background-position:0 -1128px}
+.lconnSprite-iconFolderOpen16{width:16px;height:16px;background-position:0 -1152px}
+.lconnSprite-iconAttention16{width:16px;height:16px;background-position:0 -1176px}
+.lconnSprite-iconConfirmation16{width:16px;height:16px;background-position:0 -1200px}
+.lconnSprite-iconError16{width:16px;height:16px;background-position:0 -1224px}
+.lconnSprite-iconWarning16{width:16px;height:16px;background-position:0 -1248px}
+.lconnSprite-iconPriorityHigh16{width:16px;height:16px;background-position:0 -1272px}
+.lconnSprite-iconPriorityMedium16{width:16px;height:16px;background-position:0 -1296px}
+.lconnSprite-iconPrivate10{width:9px;height:12px;background-position:0 -1320px}
+.lconnSprite-iconPrivate16{width:16px;height:16px;background-position:0 -1340px}
+.lconnSprite-iconPublic10{width:10px;height:10px;background-position:0 -1364px}
+.lconnSprite-iconPublic16{width:16px;height:16px;background-position:0 -1382px}
+.lconnSprite-iconShared16{width:16px;height:16px;background-position:0 -1406px}
+.lconnSprite-iconExternal16{width:16px;height:16px;background-position:0 -1430px}
+.lconnSprite-iconAddRating16{width:11px;height:11px;background-position:0 -1454px}
+.lconnSprite-iconAttachment16{width:16px;height:16px;background-position:0 -1473px}
+.lconnSprite-iconBlock16{width:14px;height:14px;background-position:0 -1497px}
+.lconnSprite-iconCalendar16{width:16px;height:16px;background-position:0 -1519px}
+.lconnSprite-iconChat16{width:16px;height:16px;background-position:0 -1543px}
+.lconnSprite-iconChatTranscript16{width:16px;height:16px;background-position:0 -1567px}
+.lconnSprite-iconCheckedOut{width:16px;height:16px;background-position:0 -1591px}
+.lconnSprite-iconCheckedOutMe{width:16px;height:16px;background-position:0 -1615px}
+.lconnSprite-iconCog16{width:16px;height:16px;background-position:0 -1639px}
+.lconnSprite-iconCollection16{width:16px;height:16px;background-position:0 -1663px}
+.lconnSprite-iconComment16{width:16px;height:16px;background-position:0 -1687px}
+.lconnSprite-iconCompleted16{width:12px;height:10px;background-position:0 -1711px}
+.lconnSprite-iconConnections16{width:16px;height:16px;background-position:0 -1729px}
+.lconnSprite-iconCopy16{width:16px;height:16px;background-position:0 -1753px}
+.lconnSprite-iconDelete12{width:10px;height:10px;background-position:0 -1777px}
+a:hover .lconnSprite-iconDelete12, a.hover .lconnSprite-iconDelete12, .lconnSprite-iconDelete12-hover{width:10px;height:10px;background-position:0 -1795px}
+.lconnSprite-iconDemote9{width:9px;height:9px;background-position:0 -1813px}
+.lconnSprite-iconDnd12{width:12px;height:12px;background-position:0 -1830px}
+.lconnSprite-iconDownload16{width:16px;height:16px;background-position:0 -1850px}
+.lconnSprite-iconDownloadedCurrent6{width:6px;height:6px;background-position:0 -1874px}
+.lconnSprite-iconDownloadedNever6{width:6px;height:6px;background-position:0 -1888px}
+.lconnSprite-iconDownloadedOlder6{width:6px;height:6px;background-position:0 -1902px}
+.lconnSprite-iconDropDown5x3{width:8px;height:8px;background-position:0 -1916px}
+.lconnSprite-iconExpandeeBlackLeft{width:14px;height:14px;background-position:0 -1932px}
+.lconnSprite-iconExpandeeBlackRight{width:14px;height:14px;background-position:0 -1954px}
+.lconnSprite-iconExpandeeWhiteLeft{width:14px;height:14px;background-position:0 -1976px}
+.lconnSprite-iconExpandeeWhiteRight{width:14px;height:14px;background-position:0 -1998px}
+.lconnSprite-iconEntries16{width:15px;height:16px;background-position:0 -2020px}
+.lconnSprite-iconExportProfile16{width:16px;height:16px;background-position:0 -2044px}
+.lconnSprite-iconFavTemplate16{width:16px;height:16px;background-position:0 -2068px}
+.lconnSprite-iconFeed12{width:12px;height:12px;background-position:0 -2092px}
+.lconnSprite-iconFeed16{width:16px;height:16px;background-position:0 -2112px}
+.lconnSprite-iconFilterActive8{width:8px;height:8px;background-position:0 -2136px}
+.lconnSprite-iconHelp16{width:12px;height:12px;background-position:0 -2152px}
+.lconnSprite-iconHelp16-ar{width:12px;height:12px;background-position:0 -2169px}
+.lconnSprite-iconImage16{width:16px;height:16px;background-position:0 -2192px}
+.lconnSprite-iconIntranet16{width:16px;height:16px;background-position:0 -2216px}
+.lconnSprite-iconLibrary16{width:16px;height:16px;background-position:0 -2240px}
+.lconnSprite-iconLotusnotes16{width:16px;height:16px;background-position:0 -2264px}
+.lconnSprite-iconMail16{width:16px;height:16px;background-position:0 -2288px}
+.lconnSprite-iconModerated16{width:16px;height:16px;background-position:0 -2312px}
+.lconnSprite-iconNewBlog16{width:16px;height:16px;background-position:0 -2336px}
+.lconnSprite-iconNewEntry16{width:16px;height:16px;background-position:0 -2360px}
+.lconnSprite-iconNoComments16{width:16px;height:16px;background-position:0 -2384px}
+.lconnSprite-iconPageHits16{width:16px;height:16px;background-position:0 -2408px}
+.lconnSprite-iconPaletteAdd16{width:11px;height:11px;background-position:0 -2432px}
+.lconnSprite-iconPaletteAdd16-Hover{width:11px;height:11px;background-position:0 -2451px}
+.lconnSprite-iconPerson16{width:16px;height:16px;background-position:0 -2470px}
+.lconnSprite-iconPeople16{width:16px;height:16px;background-position:0 -2494px}
+.lconnSprite-iconPopup16{width:13px;height:13px;background-position:0 -2518px}
+.lconnSprite-iconPromote9{width:9px;height:9px;background-position:0 -2539px}
+.lconnSprite-iconQuickr16{width:16px;height:16px;background-position:0 -2556px}
+.lconnSprite-iconQuote16{width:12px;height:11px;background-position:0 -2580px}
+.lconnSprite-iconRating16-off{width:16px;height:16px;background-position:0 -2599px}
+.lconnSprite-iconRating16-on, .lconnSprite-iconRating2-16, .lconnSprite-iconRating3-16{width:16px;height:16px;background-position:0 -2623px}
+.lconnSprite-iconRating14-off{width:14px;height:14px;background-position:0 -2647px}
+.lconnSprite-iconRating14-on{width:14px;height:14px;background-position:0 -2669px}
+.lconnSprite-iconRating11-off{width:13px;height:11px;background-position:0 -2691px}
+.lconnSprite-iconRating11-on{width:13px;height:11px;background-position:0 -2710px}
+.lconnSprite-iconRatingOff12{width:12px;height:12px;background-position:0 -2729px}
+.lconnSprite-iconRatingOff14{width:14px;height:14px;background-position:0 -2749px}
+.lconnSprite-iconRatingOff16{width:16px;height:16px;background-position:0 -2771px}
+.lconnSprite-iconRatingOn12{width:12px;height:12px;background-position:0 -2795px}
+.lconnSprite-iconRatingOn14{width:14px;height:14px;background-position:0 -2815px}
+.lconnSprite-iconRatingOn16{width:16px;height:16px;background-position:0 -2837px}
+.lconnSprite-iconBlock14{width:14px;height:14px;background-position:0 -2861px}
+.lconnSprite-iconRelatedActivity16{width:16px;height:16px;background-position:0 -2883px}
+.lconnSprite-iconSecure10{width:10px;height:10px;background-position:0 -2907px}
+.lconnSprite-iconSecure16{width:16px;height:16px;background-position:0 -2925px}
+.lconnSprite-iconSendMail16{width:16px;height:14px;background-position:0 -2949px}
+.lconnSprite-iconSettings16{width:16px;height:16px;background-position:0 -2971px}
+.lconnSprite-iconSpeaker16{width:16px;height:16px;background-position:0 -2995px}
+.lconnSprite-iconTag16{width:16px;height:16px;background-position:0 -3019px}
+.lconnSprite-iconThirdParty16{width:16px;height:16px;background-position:0 -3043px}
+.lconnSprite-iconToDo16{width:14px;height:13px;background-position:0 -3067px}
+.lconnSprite-iconToDoList16{width:16px;height:16px;background-position:0 -3088px}
+.lconnSprite-iconTrashCan16{width:16px;height:16px;background-position:0 -3112px}
+.lconnSprite-iconTunedOut16{width:16px;height:16px;background-position:0 -3136px}
+.lconnSprite-iconURL16{width:16px;height:16px;background-position:0 -3160px}
+.lconnSprite-iconWidgetClose16{width:16px;height:16px;background-position:0 -3184px}
+.lconnSprite-iconWidgetDown16{width:16px;height:16px;background-position:0 -3208px}
+.lconnSprite-iconWidgetEdit16{width:16px;height:16px;background-position:0 -3232px}
+.lconnSprite-iconWidgetLeft16{width:16px;height:16px;background-position:0 -3256px}
+.lconnSprite-iconWidgetRefresh16{width:16px;height:16px;background-position:0 -3280px}
+.lconnSprite-iconWidgetRight16{width:16px;height:16px;background-position:0 -3304px}
+.lconnSprite-iconWidgetUp16{width:16px;height:16px;background-position:0 -3328px}
+.lconnSprite-STAwnsActive9{width:9px;height:9px;background-position:0 -3352px}
+.lconnSprite-STAwnsActiveMobile13x14{width:14px;height:14px;background-position:0 -3369px}
+.lconnSprite-STAwnsAway9{width:9px;height:9px;background-position:0 -3391px}
+.lconnSprite-STAWnsAwayMobile14{width:14px;height:14px;background-position:0 -3408px}
+.lconnSprite-STAwnsDND9{width:9px;height:9px;background-position:0 -3430px}
+.lconnSprite-STAwnsDNDMobile13x14{width:14px;height:14px;background-position:0 -3447px}
+.lconnSprite-STAwnsInAMtgMobile13x14{width:14px;height:14px;background-position:0 -3469px}
+.lconnSprite-STAwnsInAMtng9{width:9px;height:9px;background-position:0 -3491px}
+.lconnSprite-STAwnsOffline12{width:12px;height:12px;background-position:0 -3508px}
+.lconnSprite-STAwnsOffline9{width:9px;height:9px;background-position:0 -3528px}
+.lconnSprite-iconContext{width:14px;height:13px;background-position:0 -3545px}
+a:hover .lconnSprite-iconContext, a.hover .lconnSprite-iconContext, .lconnSprite-iconContextHover{width:14px;height:13px;background-position:0 -3566px}
+.lconnSprite-iconFileStack16{width:16px;height:16px;background-position:0 -3587px}
+.lconnSprite-iconAnswered16{width:16px;height:16px;background-position:0 -3611px}
+.lconnSprite-iconQuestion16{width:16px;height:16px;background-position:0 -3635px}
+.lconnSprite-iconPinned16-on, .lconnSprite-iconPin16{width:16px;height:16px;background-position:0 -3659px}
+.lconnSprite-iconPinned16-off{width:16px;height:16px;background-position:0 -3683px}
+.lconnSprite-iconBannerShare16{width:16px;height:16px;background-position:0 -3707px}
+a:hover .lconnSprite-iconBannerShare16, a.hover .lconnSprite-iconBannerShare16, .lconnSprite-iconBannerShare16-Hover{width:16px;height:16px;background-position:0 -3731px}
+.lconnSprite-iconRepost16{width:16px;height:16px;background-position:0 -3755px}
+.lconnSprite-iconChart16{width:16px;height:16px;background-position:0 -3779px}
+.lconnSprite-iconCogs16{width:16px;height:16px;background-position:0 -3803px}
+.lconnSprite-iconContext14{width:14px;height:14px;background-position:0 -3827px}
+a:hover .lconnSprite-iconContext, a.hover .lconnSprite-iconContext, .lconnSprite-iconContextHover14{width:14px;height:14px;background-position:0 -3849px}
+.lconnSprite-iconModeratedCommunity16{width:16px;height:16px;background-position:0 -3871px}
+.lconnSprite-iconRelatedActivities16{width:16px;height:16px;background-position:0 -3895px}
+.lconnSprite-iconTrash16{width:16px;height:16px;background-position:0 -3919px}
+.lconnSprite-iconStatusUpdate16{width:16px;height:16px;background-position:0 -3943px}
+.lconnSprite-iconMetrics16{width:16px;height:16px;background-position:0 -3967px}
+
+.lconnSprite{background-image:url(sprite-lconn-8bit.png);background-repeat:no-repeat;display:-moz-inline-box;display:inline-block}
+.lotusImagesOff .lconnSprite{display:none}
+
+
+.fileSprite{vertical-align:top}
+
+
+/* Override lconnSprite classes to use file type images from common sprite */
+.lconnSprite-iconAudio16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 0; }
+.lconnSprite-iconCode16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -24px; }
+.lconnSprite-iconCompressed16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -48px; }
+.lconnSprite-iconContact16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -72px; }
+.lconnSprite-iconData16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -96px; }
+.lconnSprite-iconDocument16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position: 0 -120px; }
+.lconnSprite-iconFile16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -144px; }
+.lconnSprite-iconFileSyncCheckmark16{ background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:10px;width:10px;background-position:0 -192px; }
+.lconnSprite-iconFolderOpen16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -234px; }
+.lconnSprite-iconFolderClose16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -210px; }
+.lconnSprite-iconFolderOpen32 { background-image:url(../images/Icons/FileTypes/iconsFileTypes32-8bit.png) !important;height:32px;width:32px;background-position:0 -382px; }
+.lconnSprite-iconFolderClose32 { background-image:url(../images/Icons/FileTypes/iconsFileTypes32-8bit.png) !important;height:32px;width:32px;background-position:0 -342px; }
+.lconnSprite-iconCategory16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -120px; }
+.lconnSprite-iconGraphic16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -258px; }
+.lconnSprite-iconPhoto16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -258px; }
+.lconnSprite-iconLink16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -282px; }
+.lconnSprite-iconPage16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -306px; }
+.lconnSprite-iconPdf16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -330px; }
+.lconnSprite-iconPresentation16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -354px; }
+.lconnSprite-iconText16, .lconnSprite-iconNote16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -402px; }
+.lconnSprite-iconVideo16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -426px; }
+.lconnSprite-iconVisualization16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -450px; }
+.lconnSprite-iconWordProcessing16 { background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png) !important;height:16px;width:16px;background-position:0 -474px; }
+
+.lconnSprite-iconFolderClose24{background-image:url('/com.ibm.oneui3.styles/css/images/Icons/FileTypes/iconsFileTypes24-8bit.png');width:24px;height:24px;background-position:0 -32px}
+.lconnSprite-iconFolderCommunity24{width:24px;height:24px;background-position:0 0 !important}
+.lconnSprite-iconFolderPrivate24{width:24px;height:24px;background-position:0 -32px !important}
+.lconnSprite-iconFolderPublic24{width:24px;height:24px;background-position:0 -64px !important}
+.lconnSprite-iconFolderShared24{width:24px;height:24px;background-position:0 -96px !important}
+
+.lconnSprite-iconFolderCommunity32{width:32px;height:32px;background-position:0 -862px !important}
+.lconnSprite-iconFolderPrivate32{width:32px;height:32px;background-position:0 -902px !important}
+.lconnSprite-iconFolderPublic32{width:32px;height:32px;background-position:0 -942px !important}
+.lconnSprite-iconFolderShared32{width:32px;height:32px;background-position:0 -982px !important}
+
+/* File type icons by file extension. For example, class="lconn-ftype16 lconn-ftype16-jpg" */
+.lconn-ftype16 {background-repeat:no-repeat;display:-moz-inline-box;display:inline-block;background-image:url(../images/Icons/FileTypes/iconsFileTypes16-8bit.png)}
+.lconn-ftype32 {background-repeat:no-repeat;display:-moz-inline-box;display:inline-block;background-image:url(../images/Icons/FileTypes/iconsFileTypes32-8bit.png)} 
+.lconn-ftype64 {background-repeat:no-repeat;display:-moz-inline-box;display:inline-block;background-image:url(../images/Icons/FileTypes/iconsFileTypes64-8bit.png)}
+.lconn-ftype256 {background-repeat:no-repeat;display:-moz-inline-box;display:inline-block;background-image:url(../images/Icons/FileTypes/iconsFileTypes256-8bit.png)}
+.lconn-ftype16 {width:16px;height:16px;background-position: 0 -144px;}
+.lconn-ftype32 {width:32px;height:32px;background-position: 0 -240px;}
+.lconn-ftype64 {width:64px;height:64px;background-position: 0 -432px;}
+.lconn-ftype256 {width:256px;height:256px;background-position:0 -4053px}
+.lotusImagesOff .lconn-ftype16, .lotusImagesOff .lconn-ftype32, .lotusImagesOff .lconn-ftype64, .lotusImagesOff .iconsFileTypes256{display:none;}
+
+.lconn-ftype64-dir {width:64px;height:64px;background-position:0 -614px;}
+.lconn-ftype16-asf,.lconn-ftype16-asr,.lconn-ftype16-asx,.lconn-ftype16-avi,.lconn-ftype16-divx,.lconn-ftype16-flv,.lconn-ftype16-lsf,.lconn-ftype16-lsx,.lconn-ftype16-mov,.lconn-ftype16-movie,.lconn-ftype16-mp2,.lconn-ftype16-mp4,.lconn-ftype16-mpa,.lconn-ftype16-mpe,.lconn-ftype16-mpeg,.lconn-ftype16-mpg,.lconn-ftype16-mpv2,.lconn-ftype16-qt,.lconn-ftype16-svi,.lconn-ftype16-wmv,.lconn-ftype16-mv4 {background-position: 0 -426px;}
+.lconn-ftype32-asf,.lconn-ftype32-asr,.lconn-ftype32-asx,.lconn-ftype32-avi,.lconn-ftype32-divx,.lconn-ftype32-flv,.lconn-ftype32-lsf,.lconn-ftype32-lsx,.lconn-ftype32-mov,.lconn-ftype32-movie,.lconn-ftype32-mp2,.lconn-ftype32-mp4,.lconn-ftype32-mpa,.lconn-ftype32-mpe,.lconn-ftype32-mpeg,.lconn-ftype32-mpg,.lconn-ftype32-mpv2,.lconn-ftype32-qt,.lconn-ftype32-svi,.lconn-ftype32-wmv,.lconn-ftype32-mv4 {background-position: 0 -702px;}
+.lconn-ftype64-asf,.lconn-ftype64-asr,.lconn-ftype64-asx,.lconn-ftype64-avi,.lconn-ftype64-divx,.lconn-ftype64-flv,.lconn-ftype64-lsf,.lconn-ftype64-lsx,.lconn-ftype64-mov,.lconn-ftype64-movie,.lconn-ftype64-mp2,.lconn-ftype64-mp4,.lconn-ftype64-mpa,.lconn-ftype64-mpe,.lconn-ftype64-mpeg,.lconn-ftype64-mpg,.lconn-ftype64-mpv2,.lconn-ftype64-qt,.lconn-ftype64-svi,.lconn-ftype64-wmv,.lconn-ftype64-mv4 {background-position: 0 -1262px;}
+.lconn-ftype16-flw,.lconn-ftype16-key,.lconn-ftype16-mass,.lconn-ftype16-odp,.lconn-ftype16-ope,.lconn-ftype16-otc,.lconn-ftype16-otp,.lconn-ftype16-pot,.lconn-ftype16-potm,.lconn-ftype16-potx,.lconn-ftype16-pp2,.lconn-ftype16-pp97,.lconn-ftype16-ppam,.lconn-ftype16-pps,.lconn-ftype16-ppsm,.lconn-ftype16-ppsx,.lconn-ftype16-ppt,.lconn-ftype16-pptm,.lconn-ftype16-pptx,.lconn-ftype16-prz,.lconn-ftype16-shw3,.lconn-ftype16-sti,.lconn-ftype16-sxi {background-position: 0 -354px;}
+.lconn-ftype32-flw,.lconn-ftype32-key,.lconn-ftype32-mass,.lconn-ftype32-odp,.lconn-ftype32-ope,.lconn-ftype32-otc,.lconn-ftype32-otp,.lconn-ftype32-pot,.lconn-ftype32-potm,.lconn-ftype32-potx,.lconn-ftype32-pp2,.lconn-ftype32-pp97,.lconn-ftype32-ppam,.lconn-ftype32-pps,.lconn-ftype32-ppsm,.lconn-ftype32-ppsx,.lconn-ftype32-ppt,.lconn-ftype32-pptm,.lconn-ftype32-pptx,.lconn-ftype32-prz,.lconn-ftype32-shw3,.lconn-ftype32-sti,.lconn-ftype32-sxi {background-position: 0 -582px;}
+.lconn-ftype64-flw,.lconn-ftype64-key,.lconn-ftype64-mass,.lconn-ftype64-odp,.lconn-ftype64-ope,.lconn-ftype64-otc,.lconn-ftype64-otp,.lconn-ftype64-pot,.lconn-ftype64-potm,.lconn-ftype64-potx,.lconn-ftype64-pp2,.lconn-ftype64-pp97,.lconn-ftype64-ppam,.lconn-ftype64-pps,.lconn-ftype64-ppsm,.lconn-ftype64-ppsx,.lconn-ftype64-ppt,.lconn-ftype64-pptm,.lconn-ftype64-pptx,.lconn-ftype64-prz,.lconn-ftype64-shw3,.lconn-ftype64-sti,.lconn-ftype64-sxi {background-position: 0 -1046px;}
+.lconn-ftype16-rtz {background-position: 0 -306px;}
+.lconn-ftype32-rtz {background-position: 0 -502px;}
+.lconn-ftype64-rtz {background-position: 0 -902px;}
+.lconn-ftype16-link {background-position: 0 -282px;}
+.lconn-ftype32-link {background-position: 0 -462px;}
+.lconn-ftype64-link {background-position: 0 -830px;}
+.lconn-ftype16-cab,.lconn-ftype16-dmg,.lconn-ftype16-gtar,.lconn-ftype16-gz,.lconn-ftype16-jar,.lconn-ftype16-rar,.lconn-ftype16-sit,.lconn-ftype16-sqx,.lconn-ftype16-tar,.lconn-ftype16-taz,.lconn-ftype16-tgz,.lconn-ftype16-z,.lconn-ftype16-zip {background-position: 0 -48px;}
+.lconn-ftype32-cab,.lconn-ftype32-dmg,.lconn-ftype32-gtar,.lconn-ftype32-gz,.lconn-ftype32-jar,.lconn-ftype32-rar,.lconn-ftype32-sit,.lconn-ftype32-sqx,.lconn-ftype32-tar,.lconn-ftype32-taz,.lconn-ftype32-tgz,.lconn-ftype32-z,.lconn-ftype32-zip {background-position: 0 -80px;}
+.lconn-ftype64-cab,.lconn-ftype64-dmg,.lconn-ftype64-gtar,.lconn-ftype64-gz,.lconn-ftype64-jar,.lconn-ftype64-rar,.lconn-ftype64-sit,.lconn-ftype64-sqx,.lconn-ftype64-tar,.lconn-ftype64-taz,.lconn-ftype64-tgz,.lconn-ftype64-z,.lconn-ftype64-zip {background-position: 0 -144px;}
+.lconn-ftype16-doc,.lconn-ftype16-docm,.lconn-ftype16-docx,.lconn-ftype16-dot,.lconn-ftype16-dotm,.lconn-ftype16-dotx,.lconn-ftype16-en4,.lconn-ftype16-enw,.lconn-ftype16-leg,.lconn-ftype16-lwp,.lconn-ftype16-lwp7,.lconn-ftype16-manu,.lconn-ftype16-msw,.lconn-ftype16-mwp,.lconn-ftype16-mwp2,.lconn-ftype16-mwpf,.lconn-ftype16-odc,.lconn-ftype16-odg,.lconn-ftype16-odt,.lconn-ftype16-ort,.lconn-ftype16-otg,.lconn-ftype16-oth,.lconn-ftype16-odm,.lconn-ftype16-ott,.lconn-ftype16-pages,.lconn-ftype16-pcl,.lconn-ftype16-rtx,.lconn-ftype16-std,.lconn-ftype16-stw,.lconn-ftype16-sxd,.lconn-ftype16-sxq,.lconn-ftype16-sxw,.lconn-ftype16-w6,.lconn-ftype16-w97,.lconn-ftype16-wm,.lconn-ftype16-wp5,.lconn-ftype16-wp6,.lconn-ftype16-wpf {background-position: 0 -474px;}
+.lconn-ftype32-doc,.lconn-ftype32-docm,.lconn-ftype32-docx,.lconn-ftype32-dot,.lconn-ftype32-dotm,.lconn-ftype32-dotx,.lconn-ftype32-en4,.lconn-ftype32-enw,.lconn-ftype32-leg,.lconn-ftype32-lwp,.lconn-ftype32-lwp7,.lconn-ftype32-manu,.lconn-ftype32-msw,.lconn-ftype32-mwp,.lconn-ftype32-mwp2,.lconn-ftype32-mwpf,.lconn-ftype32-odc,.lconn-ftype32-odg,.lconn-ftype32-odt,.lconn-ftype32-ort,.lconn-ftype32-otg,.lconn-ftype32-oth,.lconn-ftype32-odm,.lconn-ftype32-ott,.lconn-ftype32-pages,.lconn-ftype32-pcl,.lconn-ftype32-rtx,.lconn-ftype32-std,.lconn-ftype32-stw,.lconn-ftype32-sxd,.lconn-ftype32-sxq,.lconn-ftype32-sxw,.lconn-ftype32-w6,.lconn-ftype32-w97,.lconn-ftype32-wm,.lconn-ftype32-wp5,.lconn-ftype32-wp6,.lconn-ftype32-wpf {background-position: 0 -783px;}
+.lconn-ftype64-doc,.lconn-ftype64-docm,.lconn-ftype64-docx,.lconn-ftype64-dot,.lconn-ftype64-dotm,.lconn-ftype64-dotx,.lconn-ftype64-en4,.lconn-ftype64-enw,.lconn-ftype64-leg,.lconn-ftype64-lwp,.lconn-ftype64-lwp7,.lconn-ftype64-manu,.lconn-ftype64-msw,.lconn-ftype64-mwp,.lconn-ftype64-mwp2,.lconn-ftype64-mwpf,.lconn-ftype64-odc,.lconn-ftype64-odg,.lconn-ftype64-odt,.lconn-ftype64-ort,.lconn-ftype64-otg,.lconn-ftype64-oth,.lconn-ftype64-odm,.lconn-ftype64-ott,.lconn-ftype64-pages,.lconn-ftype64-pcl,.lconn-ftype64-rtx,.lconn-ftype64-std,.lconn-ftype64-stw,.lconn-ftype64-sxd,.lconn-ftype64-sxq,.lconn-ftype64-sxw,.lconn-ftype64-w6,.lconn-ftype64-w97,.lconn-ftype64-wm,.lconn-ftype64-wp5,.lconn-ftype64-wp6,.lconn-ftype64-wpf {background-position: 0 -1406px;}
+.lconn-ftype16-crd,.lconn-ftype16-vcard,.lconn-ftype16-vcf,.lconn-ftype16-vcrd {background-position: 0 -72px;}
+.lconn-ftype32-crd,.lconn-ftype32-vcard,.lconn-ftype32-vcf,.lconn-ftype32-vcrd {background-position: 0 -120px;}
+.lconn-ftype64-crd,.lconn-ftype64-vcard,.lconn-ftype64-vcf,.lconn-ftype64-vcrd {background-position: 0 -216px;}
+.lconn-ftype16-asp,.lconn-ftype16-axs,.lconn-ftype16-css,.lconn-ftype16-htc,.lconn-ftype16-htm,.lconn-ftype16-html,.lconn-ftype16-java,.lconn-ftype16-js,.lconn-ftype16-jsp,.lconn-ftype16-php,.lconn-ftype16-sct,.lconn-ftype16-stm,.lconn-ftype16-wml,.lconn-ftype16-xml,.lconn-ftype16-xsl,.lconn-ftype16-log {background-position: 0 -24px;}
+.lconn-ftype32-asp,.lconn-ftype32-axs,.lconn-ftype32-css,.lconn-ftype32-htc,.lconn-ftype32-htm,.lconn-ftype32-html,.lconn-ftype32-java,.lconn-ftype32-js,.lconn-ftype32-jsp,.lconn-ftype32-php,.lconn-ftype32-sct,.lconn-ftype32-stm,.lconn-ftype32-wml,.lconn-ftype32-xml,.lconn-ftype32-xsl,.lconn-ftype32-log {background-position: 0 -40px;}
+.lconn-ftype64-asp,.lconn-ftype64-axs,.lconn-ftype64-css,.lconn-ftype64-htc,.lconn-ftype64-htm,.lconn-ftype64-html,.lconn-ftype64-java,.lconn-ftype64-js,.lconn-ftype64-jsp,.lconn-ftype64-php,.lconn-ftype64-sct,.lconn-ftype64-stm,.lconn-ftype64-wml,.lconn-ftype64-xml,.lconn-ftype64-xsl,.lconn-ftype64-log {background-position: 0 -72px;}
+.lconn-ftype16-djv,.lconn-ftype16-djvu,.lconn-ftype16-jpe,.lconn-ftype16-jpeg,.lconn-ftype16-jpg,.lconn-ftype16-odi,.lconn-ftype16-oti,.lconn-ftype16-pic,.lconn-ftype16-pict,.lconn-ftype16-png,.lconn-ftype16-tif,.lconn-ftype16-tif6,.lconn-ftype16-tiff {background-position: 0 -258px;}
+.lconn-ftype32-djv,.lconn-ftype32-djvu,.lconn-ftype32-jpe,.lconn-ftype32-jpeg,.lconn-ftype32-jpg,.lconn-ftype32-odi,.lconn-ftype32-oti,.lconn-ftype32-pic,.lconn-ftype32-pict,.lconn-ftype32-png,.lconn-ftype32-tif,.lconn-ftype32-tif6,.lconn-ftype32-tiff {background-position: 0 -422px;}
+.lconn-ftype64-djv,.lconn-ftype64-djvu,.lconn-ftype64-jpe,.lconn-ftype64-jpeg,.lconn-ftype64-jpg,.lconn-ftype64-odi,.lconn-ftype64-oti,.lconn-ftype64-pic,.lconn-ftype64-pict,.lconn-ftype64-png,.lconn-ftype64-tif,.lconn-ftype64-tif6,.lconn-ftype64-tiff {background-position: 0 -758px;}
+.lconn-ftype16-123,.lconn-ftype16-12m,.lconn-ftype16-acs,.lconn-ftype16-csv,.lconn-ftype16-dbs,.lconn-ftype16-dez,.lconn-ftype16-ens,.lconn-ftype16-fcd,.lconn-ftype16-fcs,.lconn-ftype16-mwkd,.lconn-ftype16-mwks,.lconn-ftype16-odf,.lconn-ftype16-ods,.lconn-ftype16-oss,.lconn-ftype16-otf,.lconn-ftype16-ots,.lconn-ftype16-qad,.lconn-ftype16-smd,.lconn-ftype16-sms,.lconn-ftype16-stc,.lconn-ftype16-sxc,.lconn-ftype16-sxm,.lconn-ftype16-wg2,.lconn-ftype16-wk4,.lconn-ftype16-wk6,.lconn-ftype16-xla,.lconn-ftype16-xlam,.lconn-ftype16-xlc,.lconn-ftype16-xlm,.lconn-ftype16-xls,.lconn-ftype16-xlsb,.lconn-ftype16-xlsm,.lconn-ftype16-xlsx,.lconn-ftype16-xlt,.lconn-ftype16-xltm,.lconn-ftype16-xltx,.lconn-ftype16-xlw,.lconn-ftype16-numbers {background-position: 0 -96px;}
+.lconn-ftype32-123,.lconn-ftype32-12m,.lconn-ftype32-acs,.lconn-ftype32-csv,.lconn-ftype32-dbs,.lconn-ftype32-dez,.lconn-ftype32-ens,.lconn-ftype32-fcd,.lconn-ftype32-fcs,.lconn-ftype32-mwkd,.lconn-ftype32-mwks,.lconn-ftype32-odf,.lconn-ftype32-ods,.lconn-ftype32-oss,.lconn-ftype32-otf,.lconn-ftype32-ots,.lconn-ftype32-qad,.lconn-ftype32-smd,.lconn-ftype32-sms,.lconn-ftype32-stc,.lconn-ftype32-sxc,.lconn-ftype32-sxm,.lconn-ftype32-wg2,.lconn-ftype32-wk4,.lconn-ftype32-wk6,.lconn-ftype32-xla,.lconn-ftype32-xlam,.lconn-ftype32-xlc,.lconn-ftype32-xlm,.lconn-ftype32-xls,.lconn-ftype32-xlsb,.lconn-ftype32-xlsm,.lconn-ftype32-xlsx,.lconn-ftype32-xlt,.lconn-ftype32-xltm,.lconn-ftype32-xltx,.lconn-ftype32-xlw,.lconn-ftype32-numbers {background-position: 0 -160px;}
+.lconn-ftype64-123,.lconn-ftype64-12m,.lconn-ftype64-acs,.lconn-ftype64-csv,.lconn-ftype64-dbs,.lconn-ftype64-dez,.lconn-ftype64-ens,.lconn-ftype64-fcd,.lconn-ftype64-fcs,.lconn-ftype64-mwkd,.lconn-ftype64-mwks,.lconn-ftype64-odf,.lconn-ftype64-ods,.lconn-ftype64-oss,.lconn-ftype64-otf,.lconn-ftype64-ots,.lconn-ftype64-qad,.lconn-ftype64-smd,.lconn-ftype64-sms,.lconn-ftype64-stc,.lconn-ftype64-sxc,.lconn-ftype64-sxm,.lconn-ftype64-wg2,.lconn-ftype64-wk4,.lconn-ftype64-wk6,.lconn-ftype64-xla,.lconn-ftype64-xlam,.lconn-ftype64-xlc,.lconn-ftype64-xlm,.lconn-ftype64-xls,.lconn-ftype64-xlsb,.lconn-ftype64-xlsm,.lconn-ftype64-xlsx,.lconn-ftype64-xlt,.lconn-ftype64-xltm,.lconn-ftype64-xltx,.lconn-ftype64-xlw,.lconn-ftype64-numbers {background-position: 0 -288px;}
+.lconn-ftype16-eps,.lconn-ftype16-ich,.lconn-ftype16-ich6,.lconn-ftype16-iwp,.lconn-ftype16-pdf,.lconn-ftype16-ps {background-position: 0 -330px;}
+.lconn-ftype32-eps,.lconn-ftype32-ich,.lconn-ftype32-ich6,.lconn-ftype32-iwp,.lconn-ftype32-pdf,.lconn-ftype32-ps {background-position: 0 -542px;}
+.lconn-ftype64-eps,.lconn-ftype64-ich,.lconn-ftype64-ich6,.lconn-ftype64-iwp,.lconn-ftype64-pdf,.lconn-ftype64-ps {background-position: 0 -974px;}
+.lconn-ftype16-swf,.lconn-ftype16-fla {background-position: 0 -168px;}
+.lconn-ftype32-swf,.lconn-ftype32-fla {background-position: 0 -280px;}
+.lconn-ftype64-swf,.lconn-ftype64-fla {background-position: 0 -504px;}
+.lconn-ftype16-aac,.lconn-ftype16-aif,.lconn-ftype16-aifc,.lconn-ftype16-aiff,.lconn-ftype16-au,.lconn-ftype16-kar,.lconn-ftype16-m3u,.lconn-ftype16-m4a,.lconn-ftype16-mid,.lconn-ftype16-midi,.lconn-ftype16-mp3,.lconn-ftype16-mpga,.lconn-ftype16-ra,.lconn-ftype16-ram,.lconn-ftype16-rm,.lconn-ftype16-rmi,.lconn-ftype16-rpm,.lconn-ftype16-snd,.lconn-ftype16-wav,.lconn-ftype16-wma {background-position: 0 0;}
+.lconn-ftype32-aac,.lconn-ftype32-aif,.lconn-ftype32-aifc,.lconn-ftype32-aiff,.lconn-ftype32-au,.lconn-ftype32-kar,.lconn-ftype32-m3u,.lconn-ftype32-m4a,.lconn-ftype32-mid,.lconn-ftype32-midi,.lconn-ftype32-mp3,.lconn-ftype32-mpga,.lconn-ftype32-ra,.lconn-ftype32-ram,.lconn-ftype32-rm,.lconn-ftype32-rmi,.lconn-ftype32-rpm,.lconn-ftype32-snd,.lconn-ftype32-wav,.lconn-ftype32-wma {background-position: 0 0;}
+.lconn-ftype64-aac,.lconn-ftype64-aif,.lconn-ftype64-aifc,.lconn-ftype64-aiff,.lconn-ftype64-au,.lconn-ftype64-kar,.lconn-ftype64-m3u,.lconn-ftype64-m4a,.lconn-ftype64-mid,.lconn-ftype64-midi,.lconn-ftype64-mp3,.lconn-ftype64-mpga,.lconn-ftype64-ra,.lconn-ftype64-ram,.lconn-ftype64-rm,.lconn-ftype64-rmi,.lconn-ftype64-rpm,.lconn-ftype64-snd,.lconn-ftype64-wav,.lconn-ftype64-wma {background-position: 0 0;}
+.lconn-ftype16-323,.lconn-ftype16-asc,.lconn-ftype16-bas,.lconn-ftype16-c,.lconn-ftype16-etx,.lconn-ftype16-h,.lconn-ftype16-jw,.lconn-ftype16-mcw,.lconn-ftype16-msg,.lconn-ftype16-ow,.lconn-ftype16-pfs,.lconn-ftype16-qa,.lconn-ftype16-rtf,.lconn-ftype16-sow,.lconn-ftype16-text,.lconn-ftype16-tsv,.lconn-ftype16-tw,.lconn-ftype16-txt,.lconn-ftype16-uls,.lconn-ftype16-vw3,.lconn-ftype16-ws,.lconn-ftype16-xy {background-position: 0 -402px;}
+.lconn-ftype32-323,.lconn-ftype32-asc,.lconn-ftype32-bas,.lconn-ftype32-c,.lconn-ftype32-etx,.lconn-ftype32-h,.lconn-ftype32-jw,.lconn-ftype32-mcw,.lconn-ftype32-msg,.lconn-ftype32-ow,.lconn-ftype32-pfs,.lconn-ftype32-qa,.lconn-ftype32-rtf,.lconn-ftype32-sow,.lconn-ftype32-text,.lconn-ftype32-tsv,.lconn-ftype32-tw,.lconn-ftype32-txt,.lconn-ftype32-uls,.lconn-ftype32-vw3,.lconn-ftype32-ws,.lconn-ftype32-xy {background-position: 0 -662px;}
+.lconn-ftype64-323,.lconn-ftype64-asc,.lconn-ftype64-bas,.lconn-ftype64-c,.lconn-ftype64-etx,.lconn-ftype64-h,.lconn-ftype64-jw,.lconn-ftype64-mcw,.lconn-ftype64-msg,.lconn-ftype64-ow,.lconn-ftype64-pfs,.lconn-ftype64-qa,.lconn-ftype64-rtf,.lconn-ftype64-sow,.lconn-ftype64-text,.lconn-ftype64-tsv,.lconn-ftype64-tw,.lconn-ftype64-txt,.lconn-ftype64-uls,.lconn-ftype64-vw3,.lconn-ftype64-ws,.lconn-ftype64-xy {background-position: 0 -1190px;}
+.lconn-ftype16-bmp,.lconn-ftype16-cgm,.lconn-ftype16-cmx,.lconn-ftype16-cod,.lconn-ftype16-drw,.lconn-ftype16-dxf,.lconn-ftype16-eshr,.lconn-ftype16-gif,.lconn-ftype16-hgs,.lconn-ftype16-ico,.lconn-ftype16-ief,.lconn-ftype16-img,.lconn-ftype16-jfif,.lconn-ftype16-pbm,.lconn-ftype16-pcx,.lconn-ftype16-pgl,.lconn-ftype16-pgm,.lconn-ftype16-pnm,.lconn-ftype16-pntg,.lconn-ftype16-ppm,.lconn-ftype16-psd,.lconn-ftype16-psp6,.lconn-ftype16-ras,.lconn-ftype16-rgb,.lconn-ftype16-sdw,.lconn-ftype16-svg,.lconn-ftype16-svgz,.lconn-ftype16-tga,.lconn-ftype16-wbmp,.lconn-ftype16-wpg,.lconn-ftype16-xbm,.lconn-ftype16-xpm,.lconn-ftype16-xwd,.lconn-ftype16-ai {background-position: 0 -258px;}
+.lconn-ftype32-bmp,.lconn-ftype32-cgm,.lconn-ftype32-cmx,.lconn-ftype32-cod,.lconn-ftype32-drw,.lconn-ftype32-dxf,.lconn-ftype32-eshr,.lconn-ftype32-gif,.lconn-ftype32-hgs,.lconn-ftype32-ico,.lconn-ftype32-ief,.lconn-ftype32-img,.lconn-ftype32-jfif,.lconn-ftype32-pbm,.lconn-ftype32-pcx,.lconn-ftype32-pgl,.lconn-ftype32-pgm,.lconn-ftype32-pnm,.lconn-ftype32-pntg,.lconn-ftype32-ppm,.lconn-ftype32-psd,.lconn-ftype32-psp6,.lconn-ftype32-ras,.lconn-ftype32-rgb,.lconn-ftype32-sdw,.lconn-ftype32-svg,.lconn-ftype32-svgz,.lconn-ftype32-tga,.lconn-ftype32-wbmp,.lconn-ftype32-wpg,.lconn-ftype32-xbm,.lconn-ftype32-xpm,.lconn-ftype32-xwd,.lconn-ftype32-ai {background-position: 0 -422px;}
+.lconn-ftype64-bmp,.lconn-ftype64-cgm,.lconn-ftype64-cmx,.lconn-ftype64-cod,.lconn-ftype64-drw,.lconn-ftype64-dxf,.lconn-ftype64-eshr,.lconn-ftype64-gif,.lconn-ftype64-hgs,.lconn-ftype64-ico,.lconn-ftype64-ief,.lconn-ftype64-img,.lconn-ftype64-jfif,.lconn-ftype64-pbm,.lconn-ftype64-pcx,.lconn-ftype64-pgl,.lconn-ftype64-pgm,.lconn-ftype64-pnm,.lconn-ftype64-pntg,.lconn-ftype64-ppm,.lconn-ftype64-psd,.lconn-ftype64-psp6,.lconn-ftype64-ras,.lconn-ftype64-rgb,.lconn-ftype64-sdw,.lconn-ftype64-svg,.lconn-ftype64-svgz,.lconn-ftype64-tga,.lconn-ftype64-wbmp,.lconn-ftype64-wpg,.lconn-ftype64-xbm,.lconn-ftype64-xpm,.lconn-ftype64-xwd,.lconn-ftype64-ai {background-position: 0 -758px;}
+
+.lconnFileLinkContainer{display:inline-block;padding-left:10px;max-width:300px;height:32px;background-color:#eee;line-height:32px;overflow:hidden;white-space: nowrap;text-overflow: ellipsis;margin-left:20px;margin-bottom:10px;float:right;vertical-align: middle;}
+.lconnFileLinkContainer .iconSpan{display: inline-block;margin-left: 10px;float:right;}
+.lconnFileLinkIcon {display: inline-block;width: 32px;height: 32px;position: relative;}
+.lconnFileLinkContainer .linkNameSpan{display: inline-block;height: 32px;line-height: 32px;}
+.lconnFileLinkContainer .linkNameSpan a{display:inline-block;max-width: 258px;overflow: hidden; white-space: nowrap;text-overflow: ellipsis; }
+.lconnEmbededPreview{border-width:0;width:600px;height:400px;}
+
+.lconnSprite-iconActivities30 { background-image:url(searchSprite-30px-icons.png) !important;background-repeat:no-repeat;height:30px;width:30px;background-position:0px 0px; }
+.lconnSprite-iconActivities40 { background-image:url(searchSprite-40px-icons.png) !important;background-repeat:no-repeat;height:40px;width:40px;background-position:0px 0px; }
+.lconnSprite-iconBlogs30 { background-image:url(searchSprite-30px-icons.png) !important;background-repeat:no-repeat;height:30px;width:30px;background-position:0px -30px; }
+.lconnSprite-iconBlogs40 { background-image:url(searchSprite-40px-icons.png) !important;background-repeat:no-repeat;height:40px;width:40px;background-position:0px -40px; }
+.lconnSprite-iconBookmarks30 { background-image:url(searchSprite-30px-icons.png) !important;background-repeat:no-repeat;height:30px;width:30px;background-position:0px -60px; }
+.lconnSprite-iconBookmarks40 { background-image:url(searchSprite-40px-icons.png) !important;background-repeat:no-repeat;height:40px;width:40px;background-position:0px -80px; }
+.lconnSprite-iconCommunities30 { background-image:url(searchSprite-30px-icons.png) !important;background-repeat:no-repeat;height:30px;width:30px;background-position:0px -90px; }
+.lconnSprite-iconCommunities40 { background-image:url(searchSprite-40px-icons.png) !important;background-repeat:no-repeat;height:40px;width:40px;background-position:0px -120px; }
+.lconnSprite-iconFiles30 { background-image:url(searchSprite-30px-icons.png) !important;background-repeat:no-repeat;height:30px;width:30px;background-position:0px -120px; }
+.lconnSprite-iconFiles40 { background-image:url(searchSprite-40px-icons.png) !important;background-repeat:no-repeat;height:40px;width:40px;background-position:0px -160px; }
+.lconnSprite-iconForums30 { background-image:url(searchSprite-30px-icons.png) !important;background-repeat:no-repeat;height:30px;width:30px;background-position:0px -150px; }
+.lconnSprite-iconForums40 { background-image:url(searchSprite-40px-icons.png) !important;background-repeat:no-repeat;height:40px;width:40px;background-position:0px -200px; }
+.lconnSprite-iconProfiles30 { background-image:url(searchSprite-30px-icons.png) !important;background-repeat:no-repeat;height:30px;width:30px;background-position:0px -180px; }
+.lconnSprite-iconProfiles40 { background-image:url(searchSprite-40px-icons.png) !important;background-repeat:no-repeat;height:40px;width:40px;background-position:0px -240px; }
+.lconnSprite-iconTodos30 { background-image:url(searchSprite-30px-icons.png) !important;background-repeat:no-repeat;height:30px;width:30px;background-position:0px -210px; }
+.lconnSprite-iconTodos40 { background-image:url(searchSprite-40px-icons.png) !important;background-repeat:no-repeat;height:40px;width:40px;background-position:0px -280px; }
+.lconnSprite-iconWikis30 { background-image:url(searchSprite-30px-icons.png) !important;background-repeat:no-repeat;height:30px;width:30px;background-position:0px -240px; }
+.lconnSprite-iconWikis40 { background-image:url(searchSprite-40px-icons.png) !important;background-repeat:no-repeat;height:40px;width:40px;background-position:0px -320px; }
+.lconnSprite-iconCalendar30 { background-image:url(searchSprite-30px-icons.png) !important;background-repeat:no-repeat;height:30px;width:30px;background-position:0px -270px; }
+.lconnSprite-iconCalendar40 { background-image:url(searchSprite-40px-icons.png) !important;background-repeat:no-repeat;height:40px;width:40px;background-position:0px -360px; }
+.lconnSprite-iconGenericFile30 { background-image:url(searchSprite-30px-icons.png) !important;background-repeat:no-repeat;height:30px;width:30px;background-position:0px -300px; }
+.lconnSprite-iconGenericFile40 { background-image:url(searchSprite-40px-icons.png) !important;background-repeat:no-repeat;height:40px;width:40px;background-position:0px -400px; }
+.lconn-iconSurvey30 { background-image:url(survey-30px-icon.png) !important;background-repeat:no-repeat;height:30px;width:30px }

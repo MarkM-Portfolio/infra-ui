@@ -1,0 +1,30 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<div class="lconn_personContainer compact">
+	<div class="lconn_profileImage">
+		<img class="lconn_userImage" alt="" role="presentation" src="${photoUrl}" style="max-width: ${_compactSize}px; max-height: ${_compactSize}px;" data-dojo-attach-point="photoNode">
+	</div>
+	<div class="lconn_profileInfo">
+		<div>
+			<span class="lconn_title" data-dojo-attach-point="linkNode">${!displayNameString}</span>
+			<a class="lconn_title" href="${profileUrl}" style="display: none;" data-dojo-attach-point="hiddenLinkNode">${!displayNameString}</a>
+		</div>
+		<div class="lconn_gray">
+			<span data-dojo-attach-point="jobResponsibilityNode">${!jobResponsibility}</span>
+		</div>
+		<div class="lconn_gray">
+			<span data-dojo-attach-point="addressNode">${!address}</span>
+		</div>
+		<div class="lconn_additionalInfo-compact lconn_gray">
+			<div>
+				<span data-dojo-attach-point="mailNode">${!mail}</span>
+			</div>
+			<div>
+				<span data-dojo-attach-point="phoneNode">${!phone}</span>
+			</div>
+		</div>
+		<div class="lconn_separator-compact"></div>
+		<div class="lconn_tags-compact lconn_gray" data-dojo-attach-point="tagsContainer">
+			<div data-dojo-attach-point="tagCloudNode">${!tagString}</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,366 @@
+/* *************************************************************** */
+/*                                                                 */
+/* HCL Confidential                                                */
+/*                                                                 */
+/* OCO Source Materials                                            */
+/*                                                                 */
+/* Copyright HCL Technologies Limited 2008, 2019                   */
+/*                                                                 */
+/* The source code for this program is not published or otherwise  */
+/* divested of its trade secrets, irrespective of what has been    */
+/* deposited with the U.S. Copyright Office.                       */
+/*                                                                 */
+/* *************************************************************** */
+
+// NLS_CHARSET=UTF-8
+({
+   'rs_close' : "Zapri",
+   'rs_loading' : "Nalaganje ...",
+   'rs_at' : "ob",
+
+   'rs_searchDirectory' : "Ali oseba ni navedena? Uporabite celotno iskanje ...",
+   'rs_searchGroupDirectory' : "Ali skupina ni navedena? Uporabite celotno iskanje ...",
+   'rs_searchPersonAndGroupDirectory' : "Ali oseba ali skupina ni navedena? Uporabite celotno iskanje ...",
+   'rs_searchCommunityDirectory' : "Ali skupnost ni navedena? Uporabite celotno iskanje ...",
+
+   'rs_shadowText_searchDirectory' : "Vnesite iskani izraz, da poiščete osebo",
+   'rs_shadowText_searchGroupDirectory' : "Vnesite iskani izraz, da poiščete skupino",
+   'rs_shadowText_searchPersonAndGroupDirectory' : "Vnesite iskani izraz, da poiščete osebo ali skupino",
+   'rs_shadowText_searchCommunityDirectory' : "Vnesite iskani izraz, da poiščete skupnost",
+
+   'rs_listItem' : "Postavka seznama",
+   'rs_noResults' : "Ni rezultatov za '${0}'",
+   'rs_today' : "Danes",
+   'rs_tomorrow' : "Jutri",
+   'rs_yesterday' : "Včeraj",
+
+   /* Activity List Widget */
+   'rs_activityFeedLink' : "Vir za te dejavnosti",
+   'rs_externalText' : "Ta dejavnost ima lahko člane zunaj vaše organizacije.",
+   'rs_moveActivitySuccess' : '\"${activityTitle}\" je bil uspešno premaknjen v podskupnost \"${destCommName}\".',
+   // copy 'rs_moreInfo' and 'rs_hideInfo' from activity's strings.js
+   'rs_moreInfo' : 'Pokaži več informacij o tej dejavnosti',
+   'rs_hideInfo' : 'Skrij dodatne informacije',
+   'rs_more' : "Več",
+   'rs_hide' : "Skrij",
+   'rs_edit' : "Urejanje",
+   'rs_restore' : "Obnovi",
+   'rs_deleteEntry' : "Izbriši",
+   'rs_prioritize' : "Nastavi prioriteto",
+   'rs_markComplete' : "Označi kot dokončano",
+   'rs_markIncomplete' : "Obnovi",
+   'rs_linkMore' : "... [več]",
+   'rs_linkLess' : "... [manj]",
+   'rs_actUpdatedByDate' : "Posodobila oseba ${0} ${1}",// Updated by (author name) (date)
+   'rs_actUpdatedBy' : "Posodobila oseba ${0}",// Updated by (author name)
+   'rs_actDue' : "Datum zapadlosti ${0}",// Due (date)
+   'rs_actTags' : "Oznake: ",
+   'rs_actTagsDelim' : ", ",
+   'rs_startFromTemplate' : "Začni dejavnost iz te predloge",
+   'rs_favoriteTemplate' : "Označi kot priljubljeno predlogo",
+   'rs_normalTemplate' : "Označi kot navadno predlogo",
+   'rs_tunedOutPri' : "Izključeno",
+   'rs_pagepos' : "${0} - ${1} od ${2}", // pagination - e.g. 1 - 10 of 100
+   'rs_navPrevLabel' : "Nazaj",
+   'rs_navNextLabel' : "Naprej",
+   'rs_noActivities' : "Za to skupnost ni zagnane nobene dejavnosti.",
+   'rs_feedError' : "Nalaganje vira ni uspelo.",
+   'rs_highPri' : "Visoka prioriteta",
+   'rs_medPri' : "Srednja prioriteta",
+   'rs_normalPri' : "Navadna prioriteta (privzeto)",
+   'rs_tuneOut' : "Označi kot izključeno",
+   'rs_startActivity' : "Začni dejavnost",
+   'rs_startFirstActivity' : "Ustvarite svojo prvo dejavnost",
+   'rs_navNextLabel' : "Naprej",
+   'rs_viewAll' : "Prikaži vse",
+   'rs_activityWidgetTitle' : "Dejavnosti",
+   'rs_activityWidgetBriefDescription' : "Sledite ciljem skupnosti.  Ustvarite opravila in souporabljajte vire.",
+   'rs_activityWidgetDescription' : "Dejavnosti skupnosti omogočajo sodelovanje in sledenje poteku v projektih ali pobudah skupnosti.",
+   'rs_completedActivityLink' : "Pokaži dokončane dejavnosti",
+   'rs_activitiesUnavailable' : "Storitev dejavnosti ni na voljo.",
+   'rs_errorPersists' : "Če težave ne uspete odpraviti, se obrnite na skrbnika sistema.",
+   'rs_shared' : "V skupni rabi",
+   'rs_removeActFromComm' : "Odstrani iz skupnosti",
+   'rs_externalLabel' : "Zunanje",
+
+   // for ActivityForm
+   'rs_templateOptions' : "Možnosti predloge",
+   'rs_template' : "Predloga",
+   'rs_tagsLabel' : "Oznake",
+   'rs_peopleLabel' : "Osebe",
+   'rs_aboutThisTemplate' : "O tej predlogi",
+   'rs_activity' : "Dejavnost",
+   'rs_copyOf' : "Kopija za ${0}",// copy of (activity name)
+   'rs_activityFormGoal' : "Cilj dejavnosti",
+   'rs_noTemplate' : "Brez",
+   'rs_copyActivityMembers' : "Uporabi člane iz dejavnosti",
+   'rs_copyTemplateMembers' : "Uporabi člane iz predloge",
+
+   /* Forum Widget */
+   'rs_noTopics' : "Za to skupnost še ni nobene teme.",
+   'rs_noTopicsLoggedIn' : "Zastavljajte vprašanja, izmenjujte ideje ali preprosto delite svoje zamisli z drugimi.",
+   'rs_postedBy' : "Najnovejša objava osebe",
+   'rs_topics' : "teme",
+   'rs_noTopicsShort' : "Ni tem",
+   'rs_topic' : "tema",
+   'rs_replies' : "odgovorov",
+   'rs_noReplies' : "Ni odgovorov",
+   'rs_reply' : "odgovor",
+   'rs_startTopic' : "Začni temo",
+   'rs_startFirstTopic' : "Začnite prvo temo",
+   'rs_ok' : "V redu",
+   'rs_locked' : "[Zaklenjeno]",
+   'rs_manageForumSetting' : "Upravljanje nastavitev foruma",
+   'rs_forumSettingCommunityOverviewPage' : "Stran pregleda skupnosti:",
+   'rs_defaultForumList' : "Seznam forumov pokaži po privzetku",
+   'rs_defaultTopicList' : "Seznam tem pokaži po privzetku",
+   'rs_forumSettingApplicationView' : "Privzeti pogled aplikacije foruma:",
+   'rs_forumSettingNote' : "Opomba: Če obstaja samo en forum, so teme prikazane po privzetku.",
+   'rs_forumSettingSubmit' : "Predloži",
+   'rs_forumSettingSave' : "Shrani",
+   'rs_forumSettingSaveAndClose' : "Shrani in zapri",
+   'rs_forumSettingConfirm' : "Vaše spremembe Forumov so bile shranjene.",
+   'rs_forumSettingError' : "Prišlo je do napake. Obrnite se na skrbnika.",
+   'rs_formSettingHideMessage' : "Skrij to sporočilo",
+   'rs_forumSettingCancel' : "Prekliči",
+   'rs_forumAnsweredQuestion' : "Odgovorjeno vprašanje",
+   'rs_forumUnAnsweredQuestion' : "Neodgovorjeno vprašanje",
+   'rs_forumSortBy' : "Razvrsti po:",
+   'rs_forumSortByDate' : "Datum",
+   'rs_forumSortByReplies' : "Odgovori",
+   'rs_forumSortByTopic' : "Teme",
+   'rs_forumSortByTopicsAndReplies' : "Teme in odgovori",
+   'rs_sortByReplies' : "Razvrsti po odgovorih",
+   'rs_sortbyTopicsAndReplies' : "Razvrsti po temah in odgovorih",
+   'rs_forumOpenQuestions' : "Odprta vprašanja",
+   'rs_feedOpenQuestions' : "Vir za ta odprta vprašanja",
+   'rs_feedAnsweredQuestions' : "Vir za ta odgovorjena vprašanja",
+   'rs_forumMessages' : "Št. sporočil: ${0}",
+   'rs_forumLastAddedPost' : "Najnovejša objava osebe ${0}",
+   'rs_forumTopics' : "Št. tem: ${0}",
+   /* End discussion forum */
+
+   /* Editor plugins -- some for a possible one we haven't implemented yet */
+   'rs_createPersonLink' : "Ustvari povezavo osebe",
+   'rs_quote' : "Citat",
+   'rs_labelColon' : "Oznaka: ",
+   'rs_personColon' : "Oseba: ",
+   'rs_personLink' : "Povezava osebe",
+   'rs_replace' : "Zamenjaj",
+   'rs_inactivePerson' : "${0} (neaktiven)", // person's name (inactive)
+   'rs_PersonPicture' : "Slika osebe ${0}", // person name's picture
+
+   /*Visitor mode -- external user name decoration use cases */
+   'rs_PersonExternalLabel' : "Zunanji uporabnik", // A label for the visitor model use cases.
+   'rs_PersonExternal' : "${0} (zunanji uporabnik)", //'{0}' is the person's name. This will be used for the user profile name and profile photo tooltip
+   'rs_PersonPictureExternal' : "Slika osebe ${0} (zunanji uporabnik)", // Alt text for the external user's profile photo
+   'rs_personExternalDesc' : "Ta uporabnik ima dostop do Datotek in Skupnosti, ki v skupni rabi zunanje.",
+   /* End editor plugins */
+
+   /* Notification Form */
+   'rs_notifyOthers' : "Obvesti druge osebe",
+   'rs_messageColon' : "Sporočilo: ",
+   'rs_notifyColon' : "Obvesti: ",
+   'rs_notificationConfirm' : "Obvestilno sporočilo je bilo uspešno poslano. ",
+   'rs_notificationFail' : "Obvestilno sporočilo ni bilo poslano. Znova poskusite pozneje in se v primeru težave obrnite na skrbnika sistema.",
+   'rs_pickCommunity' : "Izberi s seznama skupnosti",
+   'rs_typeName' : "Vnesite ime",
+   'rs_typeToFilter' : "Vnesite iskani izraz, da filtrirate seznam",
+   /* End Notification Form */
+
+   /* FilteringCheckbox */
+   'rs_filterListPrompt' : "Vnesite iskani izraz, da filtrirate seznam",
+   'rs_filterGroupLabel' : "Izberite skupino",
+   'rs_noResults' : "Ni rezultatov",
+   // ${0} will be replaced with a number
+   'rs_numResults' : "Prikazovanje ${0} rezultatov od ${1}",
+
+   /* PeopleFilterList */
+   'rs_removeFilter' : "Odstrani",
+
+   /* Language Selector */
+   'rs_browser_setting' : "Nastavitev brskalnika",
+   'rs_customLangaugeLinkLabel' : "Jezik po meri",
+
+   /* Paging controls */
+   // 0 and 1 are page numbers
+   'rs_jumpPage' : "Skoči na stran ${0} od ${1}",
+   "rs_jumpPageLabel" : "Skoči na stran",
+   'rs_pageNumLabel' : "Številka strani",
+   'rs_pageLabel' : "Stran:",
+
+   /* Common Tags Widget */
+   'rs_tagCloudNavigationLabel' : 'Oznake',
+   'rs_tagCloudToggleHint' : "Kliknite za skritje ali prikaz",
+   'rs_tagCloudHelpAlt' : "Oglejte si pomoč za oznake",
+   'rs_tagCloudNoTags' : "Trenutno še ni nobene oznake",
+   'rs_tagCloudNoRecentTags' : "Ni nedavnih oznak",
+   'rs_tagCloudNoTagsProfiles' : "Preiščite imenik. Tukaj bodo prikazane oznake s profili, ki jih vrne iskanje.",
+   'rs_tagLoadingTags' : "Nalaganje vsebine",
+   'rs_tagCloudSelectedTags' : "Izbrane oznake",
+   'rs_tagCloudSeachDesc' : "Najdi oznako",
+   'rs_tagCloudSeach' : "Iskanje",
+   'rs_tagCloudRelatedTags' : "Sorodne oznake",
+   'rs_tagCloudRelatedTagsDescription' : "Dodajte sorodno oznako, da še izboljšate iskanje",
+   'rs_tagCloudError' : 'Prišlo je do napake',
+
+   'rs_viewAsCloud' : "Oblak",
+   'rs_viewAsCloudTitle' : "Prikažite oznake kot oblak oznak",
+   'rs_viewAsCloudDescription' : "Prikaz oznak v oblaku oznak",
+   'rs_viewAsList' : "Seznam",
+   'rs_viewAsListTitle' : "Prikažite oznake kot zaporeden seznam oznak",
+   'rs_viewAsListDescription' : "Prikaz oznak kot zaporedni seznam oznak",
+   'rs_tagCloudViewAll' : "Prebrskaj",
+   'rs_tagCloudViewAllTitle' : "Prebrskaj vse oznake",
+
+   'rs_normalTags' : "Aktivne oznake",
+
+   'rs_removeTag' : "Odstrani oznako iz izbranih filtrirnih oznak",
+   'rs_clearAll' : "Počisti vse",
+   'rs_searchInputDefault' : "Vnesite iskani izraz, da poiščete oznako",
+   'rs_searchInputTagSelected' : "Vnesite drugo oznako",
+   'rs_relatedTagTitle' : "Pokaži rezultate iskanja oznake ${0}, število ${1}",
+   'rs_removeTagTitle' : "Odstrani oznako ${0} iz izbranih filtrirnih oznak",
+   'rs_addTagTitle' : "Filtriraj po oznaki ${0} s števcem ${1}",
+
+   'rs_tagDialogCloseTile' : "Zapri",
+   'rs_tagDialogTitle' : "Vse oznake",
+   'rs_tagDialogPageInfo' : "${0} - ${1} od ${2} oznak",
+
+   /* Group Selection (Picker) Widget */
+   'rs_group_browse_groups' : "Prebrskaj skupine",
+   'rs_group_browse_groups_dialog_title' : "Prebrskaj skupine",
+   'rs_group_browse_find_groups' : "Najdi skupine",
+   'rs_group_browse_add_button' : "Dodaj",
+   'rs_group_browse_cancel_button' : "Prekliči",
+   'rs_group_browse_enter_string' : "Vnesite iskani izraz, da poiščete skupine",
+   'rs_group_browse_group_typeahead_label' : "Vnesite ime skupine:",
+   'rs_group_browse_group_name' : "Ime skupine:",
+   'rs_group_browse_results_label' : "Izberite ujemajočo se skupino:",
+   'rs_group_browse_parent_group_label' : "Nahajate se v:",
+   'rs_group_browse_next_page' : "Naslednja stran",
+   'rs_group_browse_previous' : "Nazaj",
+   'rs_group_browse_next' : "Naprej",
+   'rs_group_browse_paging' : "Ostranjevanje",
+   'rs_group_browse_previous_page' : "Prejšnja stran",
+   'rs_group_browse_group_selected' : "Izbrana skupina:",
+   'rs_group_browse_group_no_groups' : "Ta skupina ne vsebuje skupin",
+   'rs_group_browse_page_info' : "${0} - ${1} od ${2}",
+   'rs_group_browse_page_info_alt' : "Ujemajoče se skupine ${0} - ${1} od ${2}",
+   'rs_group_browse_remove_selection' : 'Odstrani izbor ugnezdenih skupin: ${0}',
+   'rs_group_browse_paging' : "Ostranjevanje",
+   'rs_member_groups' : "Skupine",
+   'rs_member_members' : "Člani",
+   'rs_member_no_results' : "Ni rezultatov",
+   'rs_member_remove_group' : "Odstrani: ${0}",
+   'rs_member_add_to_community' : "Kliknite, da dodate člana",
+   'rs_member_remove_name' : "Kliknite, da odstranite člana",
+   'rs_group_add_to_community' : "Kliknite, da dodate skupino",
+   'rs_group_remove_name' : "Kliknite, da odstranite skupino",
+   'rs_group_name' : "Ime skupine",
+   'rs_group_role' : "Vloga skupine",
+
+   'rs_warning' : "Opozorilo",
+   'rs_a11y_warning' : "Opozorilo:",
+
+   'rs_messagebox_close_btn_title' : "Zapri",
+   'rs_messagebox_close_btn_alt' : "Zapri",
+   'rs_messagebox_error_icon_alt' : "Napaka",
+   'rs_messagebox_error_a11y_label' : "Napaka:",
+   'rs_messagebox_warning_icon_alt' : "Opozorilo",
+   'rs_messagebox_warning_a11y_label' : "Opozorilo:",
+   'rs_messagebox_info_icon_alt' : "Informacije",
+   'rs_messagebox_info_a11y_label' : "Informacije:",
+   'rs_messagebox_success_icon_alt' : "Uspeh",
+   'rs_messagebox_success_a11y_label' : "Uspešno:",
+
+   /* Document Picker CK Plugin */
+   'rs_docpicker_title' : "Vstavi povezavo na datoteke",
+   'rs_docpicker_label' : "Povezava na Datoteke Connections",
+   // '{0}' is a filename
+   'rs_docpicker_download_title' : "Prenesi ${0}",
+   'rs_docpicker_viewdetails_text' : "Prikaži podrobnosti",
+   // '{0}' is a filename
+   'rs_docpicker_viewdetails_title' : "Prikaži podrobnosti za ${0}",
+
+   /* AttachedFileList widget */
+   'rs_attachedfile_remove_alt' : "Odstrani",
+   'rs_attachedfile_filename' : "Slika ${0}",
+
+   'rs_feedreader_warning' : "Opozorilo: Ta povezava je namenjena bralnikom virov in se v brskalniku lahko ne prikazuje pravilno. Za nadaljevanje kliknite V redu, za vrnitev na stran pa Prekliči.",
+
+   'rs_search' : "Iskanje",
+   'rs_all_connections' : "Celoten Connections",
+   'rs_advanced' : "Napredno",
+   'rs_select_scope' : "Izberi iskalno območje",
+
+   'rs_icfixlayout' : {
+      button_label : "Preoblikuj",
+      dialog_title : "Preoblikuj vsebino",
+      warning : "Opozorilo",
+      reformat_save : "Preoblikuj in shrani",
+      save_as_is : "Shrani tako, kot je",
+      cancel : "Prekliči",
+      warn_layout : "Vsebina presega največjo širino prikaza.  Ali želite, da se samodejno preoblikuje, tako da se bo prilegala razpoložljivem prostoru?",
+      remember_decision : "Zapomni si mojo odločitev"
+   },
+
+   //The following error messages are used by icdocpicker when private files are shared with a Community.
+   'rs_sharefile_constraint_violation' : "Med souporabo izbranih datotek je prišlo do napake.",
+   'rs_sharefile_access_denied' : "Ta datoteka je bila izbrisana ali pa ni več v skupni rabi z vami.",
+   'rs_sharefile_invalid_request' : "Med souporabo izbranih datotek je prišlo do napake.",
+   'rs_sharefile_sharing_intent_restriction' : "Datoteko je mogoče dati v skupno rabo samo znotraj organizacije.",
+   'rs_sharefile_error_title' : "Napaka",
+
+   /* Strings for the native mobile app banners */
+   'rs_mobileBanner_title' : 'HCL Connections',
+   'rs_mobileBanner_inAppStore' : 'V shrambi aplikacij',
+   'rs_mobileBanner_inGooglePlay' : 'V Google Play',
+   'rs_mobileBanner_author' : 'HCL Software',
+   'rs_mobileBanner_open' : 'Odpri',
+   'rs_mobileBanner_view' : 'Prikaži',
+   'rs_mobileBanner_hide' : 'Skrij',
+
+   'rs_empty_column_placeholder' : 'Povlecite aplikacije sem.',
+   'rs_widget_loading_error_title' : 'Gradnika ni mogoče prikazati',
+   'rs_widget_loading_error_message' : 'Znova poskusite pozneje in se v primeru težave obrnite na skrbnika sistema.',
+   'rs_widgets_loading_error_title' : 'Gradnikov v tej skupnosti ni mogoče prikazati',
+   'rs_widget_misplacement_warning' : 'Aplikacija je prevelika za ta stolpec. Lastnik skupnosti jo lahko premakne v drug stolpec ali jo odstrani s strani.',
+
+   'rs_widget_title_change_fail_message' : {
+      title_too_long : 'Vneseni naslov je predolg.',
+      empty_new_title : 'Vneseni naslov ne sme biti prazen.',
+      default_message : 'Naslova za to aplikacijo ${0} ni mogoče spremeniti.'
+   },
+
+   /* Strings for change title dialog */
+   'rs_widget_title_change_label' : 'Naslov:  ',
+   'rs_widget_title_change_direction' : 'Spremenite naslov za aplikacijo: ${0}.',
+   'rs_widget_title_change_title' : 'Spremeni naslov',
+
+   /* Strings for Visitor Model Invite dialog */
+	'rs_vmmainContentTitle' : "Povabi ali dodaj člane",
+	'rs_vmmainContentDesc' : "Povabite člane, da jim daste priložnost, da se pridružijo skupnosti. Dodajte člane, da jih samodejno vključite.",
+	'rs_vmtypeAheadLabel' : "Ime ali e-pošta: ",
+	'rs_vmgroupTypeAheadLabel' : "Ime: ",
+	'rs_vmtypeAheadRoleLabel' : " kot ",
+	'rs_vmgroupTypeAheadRoleLabel' : " kot člani ",
+	'rs_vmtaNoResults' : "Ni rezultatov.",
+	'rs_vmtaHeader' : "glava",
+	'rs_vmaddUser' : "Dodaj",
+	'rs_vmradioSectionTitle' : "Možnosti člana:",
+	'rs_vmradioOne' : "Pošlji vabila za pridružitev skupnosti",
+	'rs_vmradioTwo' : "Samodejno dodaj uporabnike skupnosti",
+	'rs_vmtwistyA' : "Dodaj izbirno sporočilo",
+	'rs_vmtwistyB' : "Odstrani dodatno besedilo",
+	'rs_vmmessage' : "Sporočilo:",
+	'rs_vmtextAreaStartText' : "Recite nekaj ..",
+	'rs_vmcheckboxLabel' : "Pošlji mi kopijo",
+	'rs_vmsave' : "Shrani",
+	'rs_vminvite' : "Povabi",
+	'rs_vmcancel' : "Prekliči",
+	'rs_userContentTitle' : "Vnos informacij",
+	'rs_vmaddUser' : "Ustvari uporabnika",
+	'rs_vmback'	 : "Nazaj",
+	'rs_vmvisitor'	 : "Obiskovalec"
+})

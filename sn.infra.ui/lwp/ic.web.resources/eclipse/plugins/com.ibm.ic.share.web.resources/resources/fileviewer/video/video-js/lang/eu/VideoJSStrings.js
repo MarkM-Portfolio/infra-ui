@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "en",
+      "Play": "Erreproduzitu",
+      "Pause": "Pausa",
+      "Current Time": "Oraingo ordua",
+      "Duration Time": "Iraupena",
+      "Remaining Time": "Falta den denbora",
+      "Stream Type": "Korronte mota",
+      "LIVE": "ZUZENEAN",
+      "Loaded": "Kargatuta",
+      "Progress": "Aurrerapena",
+      "Fullscreen": "Pantaila osoa",
+      "Non-Fullscreen": "Pantaila osoa ez",
+      "Mute": "Mututu",
+      "Unmute": "Aktibatu audioa",
+      "Unmuted": "Audioa aktibatuta",
+      "Playback Rate": "Erreprodukzioaren abiadura",
+      "Subtitles": "Azpitituluak",
+      "subtitles off": "azpitituluak desaktibatuta",
+      "Captions": "Epigrafeak",
+      "captions off": "epigrafeak desaktibatuta",
+      "Chapters": "Kapituluak",
+      "Volume": "Bolumena",
+      "You aborted the video playback.": "Bideoaren erreprodukzioa bertan behera utzi duzu",
+      "A network error caused the video download to fail part-way.": "Sare-errore batek bideoaren deskarga erdibidean utzi du.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "Ezin izan da bideoa kargatu, zerbitzariak edo sareak huts egin duelako edo formatua ez delako onartzen.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "Bideoaren erreprodukzioa bertan behera utzi da hondatuta dagoelako edo bideoak zure arakatzaileak onartzen ez dituen eginbideak darabiltzalako.",
+      "No compatible source was found for this video.": "Ez da bideo honentzako iturburu bateragarririk aurkitu."
+});
+

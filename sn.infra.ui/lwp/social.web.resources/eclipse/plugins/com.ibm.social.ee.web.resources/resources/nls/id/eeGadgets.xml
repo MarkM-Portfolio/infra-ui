@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2011, 2016                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+<messagebundle>
+  <msg name="connectionsEE_title">Koneksi</msg>
+  <msg name="connectionsEE_description">Gadget Embedded Experience OpenSocial digunakan untuk menampilkan detail tambahan dan tindakan untuk Peristiwa Koneksi</msg>
+  <msg name="connectionsEE_errorTitle">Salah</msg>
+  <msg name="connectionsEE_errorDescription">Terjadi kesalahan saat sedang memuat sumber gadget. Pastikan Anda terhubung ke jaringan dan coba muat gadget kembali.</msg>
+</messagebundle>

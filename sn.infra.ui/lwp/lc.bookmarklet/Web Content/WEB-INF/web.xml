@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2007, 2015                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<!-- 5724-S68                                                          -->
+
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+    http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+   <display-name>Multiple Bookmark</display-name> 
+   <description>Multiple Bookmark</description> 
+   
+ 
+   <context-param>
+        <param-name>
+        javax.servlet.jsp.jstl.fmt.localizationContext
+        </param-name>
+        <param-value>
+        com.ibm.lconn.bookmarklet.resources.jspresources
+        </param-value>
+   </context-param>
+   
+   <context-param>
+        <param-name>service.name</param-name>
+        <param-value>bookmarklet</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>customization.directory.name</param-name>
+        <param-value>bookmarklet</param-value>
+    </context-param>
+    
+    <filter>
+     <filter-name>ExtensibleFilter</filter-name>
+     <filter-class>com.ibm.lconn.core.web.extension.ExtensibleFilter</filter-class>
+    </filter>
+    <filter-mapping>
+     <filter-name>ExtensibleFilter</filter-name>
+     <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <filter>
+      <display-name>CustomizationFilter</display-name>
+      <filter-name>CustomizationFilter</filter-name>
+      <filter-class>com.ibm.lconn.core.web.customization.CustomizationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+      <filter-name>CustomizationFilter</filter-name>
+      <url-pattern>/*</url-pattern>
+      <dispatcher>REQUEST</dispatcher>
+      <dispatcher>FORWARD</dispatcher>
+      <dispatcher>INCLUDE</dispatcher>
+      <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+    
+    <filter>
+        <display-name>ConnectionsThemeFilter</display-name>
+        <filter-name>ConnectionsThemeFilter</filter-name>
+        <filter-class>com.ibm.lconn.core.web.css.ConnectionsThemeFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ConnectionsThemeFilter</filter-name>
+        <url-pattern>/nav/common/styles/*</url-pattern>
+ 
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+
+    <filter>
+        <description>This filter stores the request in the thread local so that the configuration provider and event infrastructure can hijack it</description>
+        <display-name>ConnectionsUrlSetup</display-name>
+        <filter-name>ConnectionsUrlSetup</filter-name>
+        <filter-class>com.ibm.lconn.core.web.request.HttpRequestFilter</filter-class>
+    </filter>
+
+   <filter-mapping>
+       <filter-name>ConnectionsUrlSetup</filter-name>
+       <url-pattern>/*</url-pattern>
+   </filter-mapping>
+
+	<filter>
+        <description>Determines the current organization from the URL and places it on the request</description>
+        <display-name>TenantLookupFilter</display-name>
+        <filter-name>TenantLookupFilter</filter-name>
+        <filter-class>com.ibm.lconn.core.web.mt.TenantLookupFilter</filter-class>
+        <init-param>
+            <param-name>application</param-name>
+            <param-value>bookmarklet</param-value>
+        </init-param>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>TenantLookupFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <description>This filter applies Gatekeeper-controlled dark launched behavior to the request and response. In order to work, it must be placed after TenantLookupFilter.</description>
+        <display-name>ConnectionsDarkLaunch</display-name>
+        <filter-name>ConnectionsDarkLaunch</filter-name>
+        <filter-class>com.ibm.lconn.core.web.request.DarkLaunchFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ConnectionsDarkLaunch</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <filter>
+        <filter-name>Utf8CharEncodingFilter</filter-name>
+        <filter-class>
+           com.ibm.lconn.bookmarklet.filter.Utf8CharEncodingFilter
+        </filter-class>
+   </filter>
+   <filter-mapping>
+        <filter-name>Utf8CharEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+   </filter-mapping>
+     
+   <filter>
+        <filter-name>I18NFilter</filter-name>
+        <filter-class>com.ibm.lconn.core.web.util.lang.I18NFilter</filter-class>
+        <init-param>
+            <param-name>qualifyingPaths</param-name>
+            <param-value>login,post,tagslike,discussThis,relatedCommunity</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>I18NFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <filter>
+        <description></description>
+        <display-name>LanguageFilter</display-name>
+        <filter-name>LanguageFilter</filter-name>
+        <filter-class>com.ibm.lconn.core.web.util.lang.LanguageFilter</filter-class>
+        <init-param>
+            <param-name>qualifyingPaths</param-name>
+            <param-value>login,post,tagslike,discussThis,relatedCommunity</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>LanguageFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+   <filter>
+        <filter-name>public cache filter long</filter-name>
+        <filter-class>com.ibm.lconn.core.web.cache.PublicCacheFilter</filter-class>
+   </filter>
+   <filter-mapping>
+        <filter-name>public cache filter long</filter-name>
+        <url-pattern>/auth/*</url-pattern>
+   </filter-mapping>
+   <filter-mapping>
+        <filter-name>public cache filter long</filter-name>
+        <url-pattern>*.html</url-pattern>
+   </filter-mapping>
+   <filter-mapping>
+        <filter-name>public cache filter long</filter-name>
+        <url-pattern>/tools/*</url-pattern>
+   </filter-mapping>
+   <filter-mapping>
+        <filter-name>public cache filter long</filter-name>
+        <url-pattern>*.png</url-pattern>
+   </filter-mapping>
+   <filter-mapping>
+        <filter-name>public cache filter long</filter-name>
+        <url-pattern>*.gif</url-pattern>
+   </filter-mapping>
+   <filter-mapping>
+        <filter-name>public cache filter long</filter-name>
+        <url-pattern>*.ico</url-pattern>
+   </filter-mapping>
+   <filter-mapping>
+        <filter-name>public cache filter long</filter-name>
+        <url-pattern>/nav/common/styles/*</url-pattern>
+   </filter-mapping>
+  
+   <filter-mapping>
+        <filter-name>public cache filter long</filter-name>
+        <url-pattern>/login/*</url-pattern>
+   </filter-mapping>
+
+   
+   <filter>
+        <filter-name>nocachefilter</filter-name>
+        <filter-class>com.ibm.lconn.core.web.cache.NoCacheFilter</filter-class>
+   </filter>
+   <filter-mapping>
+        <filter-name>nocachefilter</filter-name>
+        <url-pattern>/tagslike/proxy/*</url-pattern>
+   </filter-mapping>
+   <filter-mapping>
+        <filter-name>nocachefilter</filter-name>
+        <url-pattern>/evaluateURL/*</url-pattern>
+   </filter-mapping>
+   <filter-mapping>
+        <filter-name>nocachefilter</filter-name>
+        <url-pattern>/post/*</url-pattern>
+   </filter-mapping>
+   <filter-mapping>
+        <filter-name>nocachefilter</filter-name>
+        <url-pattern>/discussThis/*</url-pattern>
+   </filter-mapping>
+   <filter-mapping>
+        <filter-name>nocachefilter</filter-name>
+        <url-pattern>/relatedCommunity/*</url-pattern>
+   </filter-mapping>
+    
+    <servlet>
+        <servlet-name>Evaluate URL Servlet</servlet-name>
+        <servlet-class>com.ibm.lconn.bookmarklet.servlet.EvaluateURLServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Evaluate URL Servlet</servlet-name>
+        <url-pattern>/evaluateURL/*</url-pattern>
+    </servlet-mapping>
+    <security-constraint>
+      <display-name>must auth constraint</display-name>
+      <web-resource-collection>
+         <web-resource-name>must auth constraint</web-resource-name>
+         <url-pattern>/post/*</url-pattern>
+          <url-pattern>/postFeed/*</url-pattern>
+         <url-pattern>/service/proxy/*</url-pattern>
+         <url-pattern>/tagslike/proxy/*</url-pattern>
+         <url-pattern>/discussThis/*</url-pattern>
+         <url-pattern>/relatedCommunity/*</url-pattern>      
+      </web-resource-collection>
+      <auth-constraint>
+        <role-name>person</role-name>
+      </auth-constraint>
+      <user-data-constraint>
+         <transport-guarantee>NONE</transport-guarantee>
+      </user-data-constraint>
+   </security-constraint> 
+   
+   <security-constraint>
+      <display-name>ajax proxy constraint</display-name>
+      <web-resource-collection>
+         <web-resource-name>secureajaxproxy</web-resource-name>
+         <url-pattern>/ajaxProxy/*</url-pattern>
+      </web-resource-collection>
+      <auth-constraint>
+         <role-name>person</role-name>
+      </auth-constraint>
+   </security-constraint>
+    
+   <security-role>
+      <description>
+      </description>
+      <role-name>person</role-name>
+   </security-role>
+   
+   <security-role>
+      <description>
+      </description>
+      <role-name>everyone</role-name>
+   </security-role>
+    
+    <login-config>
+      <auth-method>FORM</auth-method>
+      <realm-name>Connections</realm-name>
+      <form-login-config>
+        <form-login-page>/login</form-login-page>
+        <form-error-page>/login?error=true</form-error-page>
+      </form-login-config>
+   </login-config>
+
+   <servlet>
+        <servlet-name>Login</servlet-name> 
+        <jsp-file>/auth/customLogin.jsp</jsp-file>
+        <load-on-startup>5</load-on-startup> 
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name> 
+        <url-pattern>/login/*</url-pattern> 
+    </servlet-mapping>
+    
+   <servlet>
+        <servlet-name>css-base</servlet-name>
+        <servlet-class>com.ibm.lconn.core.web.css.ConnectionsStylesheet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>css-base</servlet-name>
+        <url-pattern>/nav/common/styles/base/base.css</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>css-theme</servlet-name>
+        <servlet-class>com.ibm.lconn.core.web.css.ConnectionsStylesheet</servlet-class>
+    </servlet>  
+    <servlet-mapping>
+        <servlet-name>css-theme</servlet-name>
+        <url-pattern>/WEB-INF/css/theme</url-pattern>
+    </servlet-mapping>
+                
+    
+    
+   <servlet>
+        <servlet-name>Connections Bookmark</servlet-name> 
+        <servlet-class>com.ibm.lconn.bookmarklet.servlet.MultipleBookmarkServlet</servlet-class> 
+        <load-on-startup>5</load-on-startup> 
+   </servlet>
+   
+   <servlet-mapping>
+        <servlet-name>Connections Bookmark</servlet-name> 
+        <url-pattern>/post/*</url-pattern> 
+   </servlet-mapping>
+   
+   <servlet-mapping>
+        <servlet-name>Connections Bookmark</servlet-name> 
+        <url-pattern>/postAjax/*</url-pattern> 
+   </servlet-mapping>
+   
+    <servlet>
+        <servlet-name>Connections Bookmark DiscussThis Popup Window</servlet-name> 
+        <servlet-class>com.ibm.lconn.bookmarklet.servlet.DiscussThisPopupServlet</servlet-class> 
+        <load-on-startup>5</load-on-startup> 
+    </servlet>
+   
+    <servlet-mapping>
+        <servlet-name>Connections Bookmark DiscussThis Popup Window</servlet-name> 
+        <url-pattern>/discussThis/*</url-pattern> 
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Connections Bookmark related community Popup Window</servlet-name> 
+        <servlet-class>com.ibm.lconn.bookmarklet.servlet.RelatedCommunityServlet</servlet-class> 
+        <load-on-startup>5</load-on-startup> 
+    </servlet>
+   
+    <servlet-mapping>
+        <servlet-name>Connections Bookmark related community Popup Window</servlet-name> 
+        <url-pattern>/relatedCommunity/*</url-pattern> 
+    </servlet-mapping>
+   
+    <servlet>
+        <servlet-name>AjaxProxyServlet</servlet-name>
+        <servlet-class>com.ibm.lconn.core.proxy.LCProxyServlet</servlet-class>
+        <init-param>
+            <description>Add component name to config file name: proxy-bookmarklet-config.tpl</description>
+            <param-name>componentname</param-name>
+            <param-value>bookmarklet</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AjaxProxyServlet</servlet-name>
+            <url-pattern>/ajaxProxy/*</url-pattern>
+    </servlet-mapping>
+   
+    <servlet>
+        <servlet-name>Tags Like Proxy</servlet-name>
+        <servlet-class>com.ibm.lconn.bookmarklet.servlet.TagsLikeProxyServlet</servlet-class>
+        <load-on-startup>5</load-on-startup> 
+    </servlet>      
+    
+   <servlet-mapping>
+        <servlet-name>Tags Like Proxy</servlet-name> 
+        <url-pattern>/tagslike/proxy/*</url-pattern> 
+   </servlet-mapping>
+    
+   <servlet>
+       <servlet-name>Connections Bookmarklet Service Proxy</servlet-name>
+       <servlet-class>com.ibm.lconn.bookmarklet.servlet.ServiceEntriesServlet</servlet-class>
+       <load-on-startup>5</load-on-startup> 
+   </servlet>
+   <servlet-mapping>
+        <servlet-name>Connections Bookmarklet Service Proxy</servlet-name> 
+        <url-pattern>/service/proxy/*</url-pattern> 
+   </servlet-mapping>
+    
+   <servlet>
+        <servlet-name>Connections Feedlet</servlet-name> 
+        <servlet-class>com.ibm.lconn.bookmarklet.servlet.MultipleBookmarkServlet</servlet-class> 
+        <load-on-startup>5</load-on-startup> 
+   </servlet>
+   
+   <servlet-mapping>
+        <servlet-name>Connections Feedlet</servlet-name> 
+        <url-pattern>/postFeed/*</url-pattern> 
+   </servlet-mapping>
+   
+   <servlet-mapping>
+        <servlet-name>Connections Feedlet</servlet-name> 
+        <url-pattern>/postFeedAjax/*</url-pattern> 
+   </servlet-mapping>
+   
+   <servlet>
+       <servlet-name>Feed actions servlet</servlet-name>
+       <servlet-class>com.ibm.lconn.feedlet.servlet.FeedletActionsServlet</servlet-class>
+   </servlet>
+   
+   <servlet-mapping>
+       <servlet-name>Feed actions servlet</servlet-name>
+       <url-pattern>/script/feedMarkletActions.js</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+        <servlet-name>Blank html</servlet-name> 
+        <jsp-file>/jsp/blankHtml.jsp</jsp-file> 
+   </servlet>
+   
+   <servlet-mapping>
+        <servlet-name>Blank html</servlet-name> 
+        <url-pattern>/post/blank</url-pattern> 
+   </servlet-mapping>
+    
+    <servlet>
+       <servlet-name>StaticContentForwardServlet</servlet-name>
+       <servlet-class>com.ibm.lconn.core.web.cache.StaticContentForwardServlet</servlet-class>
+       <init-param>
+          <param-name>servletPathPrefix</param-name>
+              <param-value>
+                /static
+              </param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StaticContentForwardServlet</servlet-name>
+        <url-pattern>/static/dojo_1.2.3/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StaticContentForwardServlet</servlet-name>
+        <url-pattern>/static/dojo_1.4/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StaticContentForwardServlet</servlet-name>
+        <url-pattern>/static/script/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ConnectionsStaticContentForwardServlet</servlet-name>
+        <servlet-class>com.ibm.lconn.core.web.cache.ConnectionsStaticContentForwardServlet</servlet-class>
+        <init-param><param-name>allowedPrefixes</param-name><param-value>/script/,/dojo_1.2.3/,/dojo_1.4/</param-value></init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConnectionsStaticContentForwardServlet</servlet-name>
+        <url-pattern>/static/*</url-pattern>
+    </servlet-mapping>
+    
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <el-ignored>false</el-ignored>
+            <page-encoding>UTF-8</page-encoding>
+            <scripting-invalid>false</scripting-invalid>
+        </jsp-property-group>
+        <jsp-property-group>
+            <url-pattern>*.jspf</url-pattern>
+            <el-ignored>false</el-ignored>
+            <page-encoding>UTF-8</page-encoding>
+            <scripting-invalid>false</scripting-invalid>
+        </jsp-property-group>
+    </jsp-config>
+
+    <listener>
+        <listener-class>com.ibm.lconn.bookmarklet.installer.IEButtonInstallerUpdater</listener-class>
+    </listener>
+    
+    <listener>
+        <listener-class>com.ibm.lconn.bookmarklet.listener.HttpClientCookiePolicySetter</listener-class>
+    </listener>
+    
+    <listener>
+        <listener-class>com.ibm.lconn.core.web.customization.CustomizationInitializer</listener-class>
+    </listener>
+</web-app>
+
+

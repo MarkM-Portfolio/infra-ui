@@ -1,0 +1,52 @@
+<!-- Copyright IBM Corp. 2015  All Rights Reserved.                    -->
+<html><body><p>${head}
+
+${script:com.ibm.social.personcard.test.card.TestScanResourceLink}
+
+${style:com.ibm.oneui/controls/templates/HoverPopup}
+${style:com.ibm.oneui/controls/templates/ResourceLink}
+
+${endhead}
+
+</p><div class="lotusMain">
+<div class="lotusContent">
+
+<div><a id="link2" href="person.main_oslccompact" class="lotusPerson">Registry 1</a></div>
+<br>
+<div><a id="link3" href="person.other_oslccompact" class="lotusPerson">Registry 2</a></div>
+<br>
+<div><a id="link5" href="person.oslccompact" class="lotusPerson">No registry</a></div>
+<script>
+	com.ibm.oneui.controls.ResourceLink.register(function(uri, link) {
+		if (/\.main_oslccompact$/.exec(uri))
+			return {
+				"smallPreview": {
+					document: dojo.moduleUrl("com.ibm.social.personcard", "test/card/person_legacy_small.html?render=test"),
+					hintWidth: "400px",
+					hintHeight: "200px"
+				},
+				"largePreview": {
+					document: dojo.moduleUrl("com.ibm.social.personcard", "test/card/person_legacy_large.html?render=test"),
+					hintWidth: "500px",
+					hintHeight: "600px"
+				},
+				"title": "Provided by registry 1"
+			}
+	});
+	com.ibm.oneui.controls.ResourceLink.register(function(uri, link) {
+		if (/\.other_oslccompact$/.exec(uri))
+			return {
+				"smallPreview": {
+					document: dojo.moduleUrl("com.ibm.social.personcard", "test/card/person.html?render=test"),
+					hintWidth: "450px",
+					hintHeight: "200px"
+				},
+				"title": "Provided by registry 2"
+			}
+	});
+</script>
+
+</div>
+</div>
+</body><p>
+${end}</p></html>

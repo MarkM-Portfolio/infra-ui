@@ -1,0 +1,31 @@
+//left side english, right side translated
+define({
+      "Language": "en",
+      "Play": "Pokreni",
+      "Pause": "Pauziraj",
+      "Current Time": "Trenutno vrijeme",
+      "Duration Time": "Vrijeme trajanja",
+      "Remaining Time": "preostalo vrijeme",
+      "Stream Type": "Tip toka podataka",
+      "LIVE": "UŽIVO",
+      "Loaded": "Učitano",
+      "Progress": "Napredovanje",
+      "Fullscreen": "Puni zaslon",
+      "Non-Fullscreen": "Nije puni zaslon",
+      "Mute": "Stišaj",
+      "Unmute": "Poništi stišavanje",
+      "Unmuted": "Poništeno stišavanje",
+      "Playback Rate": "Brzina reproduciranja",
+      "Subtitles": "Titlovi",
+      "subtitles off": "titlovi isključeni",
+      "Captions": "Opisi",
+      "captions off": "opisi isključeni",
+      "Chapters": "Poglavlja",
+      "Volume": "Glasnoća",
+      "You aborted the video playback.": "Prekinuli ste prikaz videa",
+      "A network error caused the video download to fail part-way.": "Greška mreže uzrokovala je prekid preuzimanja prije završetka.",
+      "The video could not be loaded, either because the server or network failed or because the format is not supported.": "Video se nije mogao učitati zbog greške poslužitelja ili mreže ili zbog nepodržanog formata.",
+      "The video playback was aborted due to a corruption problem or because the video used features your browser did not support.": "Prikaz videa je prekinut zbog neispravnosti videa ili video koristi funkcije koje vaš pretražitelj ne podržava.",
+      "No compatible source was found for this video.": "Nije pronađen kompatibilni izvor za ovaj video."
+});
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- IBM Confidential                                                  -->
+<!--                                                                   -->
+<!-- OCO Source Materials                                              -->
+<!--                                                                   -->
+<!-- Copyright IBM Corp. 2010, 2014                                    -->
+<!--                                                                   -->
+<!-- The source code for this program is not published or otherwise    -->
+<!-- divested of its trade secrets, irrespective of what has been      -->
+<!-- deposited with the U.S. Copyright Office.                         -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<?eclipse version="3.4"?>
+<!--
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<plugin>
+    <extension point="net.jazz.ajax.webBundles">
+		<alias value="ic-gadget" />
+	</extension>
+
+	<!--extension point="net.jazz.ajax.dojoResourceModules">
+    	<dojoResourceModule package="ic-gadget" name="container" 
+    		file="/com/ibm/lconn/gadget/nls/container.properties" />
+    </extension-->
+    
+    <extension point="net.jazz.ajax.dojoModules">
+    	<dojoModule id="ic-gadget.config.settings" provider="com.ibm.ic.core.services.cre.web.resources.config.Settings" />
+    	<dojoModule id="ic-gadget.resources._iRuntimeModule_" provider="com.ibm.ic.core.services.cre.web.resources.jsbridge.IRuntimeModule" />
+    	<dojoModule id="ic-gadget.resources.preloadresource" provider="com.ibm.ic.core.services.cre.web.resources.jsbridge.ShareBox" />    	
+    </extension>
+        
+</plugin>

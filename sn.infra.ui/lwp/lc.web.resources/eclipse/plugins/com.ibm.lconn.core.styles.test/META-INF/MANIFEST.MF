@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IBM Lotus Connections OneUI Styles Test Bundle
+Bundle-SymbolicName: com.ibm.lconn.core.styles.test;singleton:=true
+Bundle-Version: 4.7.0.qualifier
+Bundle-Vendor: IBM
+Import-Package: com.ibm.lconn.core.customization,
+ com.ibm.lconn.core.styles,
+ com.ibm.lconn.web.resources.test.customresources,
+ com.ibm.ventura.internal.config,
+ com.ibm.ventura.internal.config.api,
+ com.ibm.ventura.internal.config.exception,
+ net.jazz.ajax.model,
+ net.jazz.ajax.servlets,
+ net.jazz.ajax.tests,
+ net.jazz.ajax.tests.mocks,
+ org.eclipse.core.runtime;version="3.4.0",
+ org.osgi.framework;version="1.5.0"
+Require-Bundle: org.junit;bundle-version="4.8.1",
+ com.ibm.lconn.core.styles;bundle-version="3.0.0"
